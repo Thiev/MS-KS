@@ -1,0 +1,2315 @@
+<!DOCTYPE html>
+<html class="projects_show  fontface no-js" lang="en">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# kickstarter: http://ogp.me/ns/fb/kickstarter#">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-5.newrelic.com","errorBeacon":"jserror.newrelic.com","licenseKey":"b04b883ad2","applicationID":"11086","transactionName":"cFteRUULX1wHFhtIEFxeVVJDFxxDCgtD","queueTime":18,"applicationTime":1469,"ttGuid":"","agentToken":null,"agent":"js-agent.newrelic.com/nr-411.min.js"}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"Vw4BVEVSCQMIUg=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e){function n(t,e,n){n||(n={});for(var r=o[t],a=r&&r.length||0,s=n[i]||(n[i]={}),u=0;a>u;u++)r[u].apply(s,e);return s}function r(t,e){var n=o[t]||(o[t]=[]);n.push(e)}var o={},i="nr@context";e.exports={on:r,emit:n}},{}],2:[function(t){function e(t,e,n,i,s){return u?u-=1:r("err",[s||new UncaughtException(t,e,n)]),"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t(5),a=window.onerror,s=!1,u=0;t("loader").features.push("err"),window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(d){"stack"in d&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(4),s=!0)}i.on("fn-start",function(){s&&(u+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&u>0&&(u-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:4,3:3,4:6,5:1,6:14,handle:"D5DuLP",loader:"G9z0Bl"}],3:[function(t){function e(t){r.inPlace(t,["addEventListener","removeEventListener"],"-",n)}function n(t){return t[1]}var r=t(1),o=(t(3),t(2));if(e(window),"getPrototypeOf"in Object){for(var i=document;i&&!i.hasOwnProperty("addEventListener");)i=Object.getPrototypeOf(i);i&&e(i);for(var a=XMLHttpRequest.prototype;a&&!a.hasOwnProperty("addEventListener");)a=Object.getPrototypeOf(a);a&&e(a)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&e(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=e["nr@wrapped"]?t[1]=e["nr@wrapped"]:e["nr@wrapped"]=t[1]=r(e,"fn-"):"function"==typeof e.handleEvent&&r.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:15,2:1,3:14}],4:[function(t){var e=(t(3),t(1)),n=t(2);e.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=e(t[0],"fn-")})},{1:15,2:1,3:14}],5:[function(t){function e(t){var e=t[0];"string"==typeof e&&(e=new Function(e)),t[0]=n(e,"fn-")}var n=(t(3),t(1)),r=t(2);n.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",e)},{1:15,2:1,3:14}],6:[function(t){function e(){o.inPlace(this,s,"fn-")}function n(t,e){o.inPlace(e,["onreadystatechange"],"fn-")}function r(t,e){return e}var o=t(1),i=t(2),a=window.XMLHttpRequest,s=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];window.XMLHttpRequest=function(t){var n=new a(t);try{i.emit("new-xhr",[],n),o.inPlace(n,["addEventListener","removeEventListener"],"-",function(t,e){return e}),n.addEventListener("readystatechange",e,!1)}catch(r){try{i.emit("internal-error",r)}catch(s){}}return n},window.XMLHttpRequest.prototype=a.prototype,o.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",r),i.on("send-xhr-start",n),i.on("open-xhr-start",n)},{1:15,2:1}],7:[function(t){function e(){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;u>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,d="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=e(d);if(f&&(r.rxSize=f),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}t("loader").features.push("xhr");var o=t("handle"),i=t(1),a=t(5),s=["load","error","abort","timeout"],u=s.length,d=t(2);t(3),t(4),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var d=e(o);d&&(r.txSize=d)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",e)}catch(r){}}};for(var f=0;u>f;f++)n.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&e()},{1:8,2:11,3:3,4:6,5:1,handle:"D5DuLP",loader:"G9z0Bl"}],8:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e){var n=r[t];return n?n.apply(this,e):(o[t]||(o[t]=[]),void o[t].push(e))}var r={},o={};e.exports=n,n.queues=o,n.handlers=r},{}],11:[function(t,e){function n(t){if(!t||"object"!=typeof t&&"function"!=typeof t)return-1;if(t===window)return 0;if(o.call(t,"__nr"))return t.__nr;try{return Object.defineProperty(t,"__nr",{value:r,writable:!0,enumerable:!1}),r}catch(e){return t.__nr=r,r}finally{r+=1}}var r=1,o=Object.prototype.hasOwnProperty;e.exports=n},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&u&&u.body){p.proto="https"===c.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=u.createElement("script");e.src=p.proto+t.agent,u.body.appendChild(e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,u=s.document,d="addEventListener",f="attachEvent",c=(""+location).split("?")[0],p=e.exports={offset:i(),origin:c,features:[]};u[d]?(u[d]("DOMContentLoaded",o,!1),s[d]("load",n,!1)):(u[f]("onreadystatechange",r),s[f]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],14:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],15:[function(t,e){function n(t,e,r,s){function nrWrapper(){try{var n,a=u(arguments),d=this,f=r&&r(a,d)||{}}catch(c){i([c,"",[a,d,s],f])}o(e+"start",[a,d,s],f);try{return n=t.apply(d,a)}catch(p){throw o(e+"err",[a,d,p],f),p}finally{o(e+"end",[a,d,n],f)}}return a(t)?t:(e||(e=""),nrWrapper[n.flag]=!0,nrWrapper)}function r(t,e,r,o){r||(r="");var i,s,u,d="-"===r.charAt(0);for(u=0;u<e.length;u++)s=e[u],i=t[s],a(i)||(t[s]=n(i,d?s+r:r,o,s,t))}function o(t,e,n){try{s.emit(t,e,n)}catch(r){i([r,t,e,n])}}function i(t){try{s.emit("internal-error",t)}catch(e){}}function a(t){return!(t&&"function"==typeof t&&t.apply&&!t[n.flag])}var s=t(1),u=t(2);e.exports=n,n.inPlace=r,n.flag="nr@wrapper"},{1:1,2:14}]},{},["G9z0Bl",2,7]);</script><script>
+  //<![CDATA[
+    docElement = this.document.documentElement;
+    docElement.className=docElement.className.replace(/\bno-js\b/,'') + 'js';
+  //]]>
+</script>
+<title>Unwritten: Echoes of Twilight by Druid Gameworks &mdash; Kickstarter</title><script>
+  //<![CDATA[
+    window.report_errors = true;
+    window.honeybadger_configuration = {
+      api_key : "02ab109335c0dd1a93506d92f22217a7",
+      environment : "production",
+      component : "projects",
+      action : "show",
+      onerror : false
+    };
+  //]]>
+</script>
+
+
+<!--[if lt IE 9]>
+  <script src="//html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta content="telephone=no" name="format-detection">
+
+<!--[if !IE]> -->
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base-9f623ad5d021a188cfb2d68a0cdf7a7b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<!-- <![endif]-->
+<!--[if IE]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base_blessed-2640c72487552f9a2ef9f2620b4af860.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<!--[if lte IE 9]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_nine-a93fe10530f175f96c4078b7e070d7e1.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 8]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_eight-f75aeb274436f94a0d243774456b1c62.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 7]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie-c019c01acd3a96588b346cf577a3504f.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_seven-5a3d2cef660cd281fd844b04b2397dbb.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if IE 6]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_six-e4d3caf76e405fe19aee6ece8bda701b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<link href="https://d297h9he240fqh.cloudfront.net/favicon.png" rel="icon" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-precomposed-7b603dba7cf80e4acc57d94a991bebbd.png" rel="apple-touch-icon-precomposed" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-ipad-precomposed-3176f72977daf43dee3b0d348484dc01.png" rel="apple-touch-icon-precomposed" sizes="72x72" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-iphone4-precomposed-b93b70168cd8492c843d0fea873c7f83.png" rel="apple-touch-icon-precomposed" sizes="114x114" type="image/png">
+<link href="https://www.kickstarter.com/services/oembed?url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2F594743529%2Funwritten-echoes-of-twilight" rel="alternate" title="Unwritten: Echoes of Twilight Script Tag oEmbed" type="application/json+oembed">
+<link rel="alternate" type="application/atom+xml" title="Unwritten: Echoes of Twilight : Kickstarter" href="https://www.kickstarter.com/projects/594743529/unwritten-echoes-of-twilight/posts.atom" />
+<meta property="twitter:app:id:iphone" content="596961532"/>
+<meta property="twitter:app:name:iphone" content="Kickstarter"/>
+<meta property="twitter:app:url:iphone" content="ksr://www.kickstarter.com/projects/594743529/unwritten-echoes-of-twilight"/>
+<meta name="video_height" content="360"/>
+<meta name="video_width" content="640"/>
+<meta name="video_type" content="application/x-shockwave-flash"/>
+<meta name="title" content="Kickstarter &gt;&gt; Unwritten: Echoes of Twilight by Druid Gameworks"/>
+<meta name="description" content="Druid Gameworks is raising funds for Unwritten: Echoes of Twilight on Kickstarter! 
+
+ A single player, open world, open play, fantasy RPG where player choices determine the direction, flow, and the outcome of the game."/>
+<meta name="robots" content="noindex"/>
+<meta property="og:title" content="Unwritten: Echoes of Twilight"/>
+<meta property="og:type" content="kickstarter:project"/>
+<meta property="og:image" content="https://s3.amazonaws.com/ksr/projects/549106/photo-main.jpg?1397819805"/>
+<meta property="og:url" content="https://www.kickstarter.com/projects/594743529/unwritten-echoes-of-twilight"/>
+<meta property="og:site_name" content="Kickstarter"/>
+<meta property="fb:app_id" content="69103156693"/>
+<meta property="og:description" content="A single player, open world, open play, fantasy RPG where player choices determine the direction, flow, and the outcome of the game."/>
+<meta property="kickstarter:creator" content="https://www.kickstarter.com/profile/594743529"/>
+<meta property="twitter:url:landing_url" content="https://www.kickstarter.com/projects/594743529/unwritten-echoes-of-twilight"/>
+<meta property="twitter:card" content="2427656750:kickstarter_project"/>
+<meta property="twitter:site" content="@kickstarter"/>
+<meta property="twitter:site:id" content="16186995"/>
+<meta property="twitter:text:title" content="Unwritten: Echoes of Twilight"/>
+<meta property="twitter:text:artist" content="Druid Gameworks"/>
+<meta property="twitter:text:backers" content="661"/>
+<meta property="twitter:text:pledged" content="$51,688 USD"/>
+<meta property="twitter:text:time" content="0 seconds"/>
+<meta property="twitter:text:location" content="O&#39;fallon, IL"/>
+<meta property="twitter:image:location_image" content="https://d3mlfyygrfdi2i.cloudfront.net/b40e/pin.png"/>
+<meta property="twitter:text:description" content="A single player, open world, open play, fantasy RPG where player choices determine the direction, flow, and the outcome of the game."/>
+<meta property="twitter:image:media" content="https://s3.amazonaws.com/ksr/projects/549106/photo-main.jpg?1397819805"/>
+<meta property="twitter:image:width" content="640"/>
+<meta property="twitter:image:height" content="480"/>
+<meta property="twitter:player:stream:url" content="https://d2pq0u4uni88oo.cloudfront.net/projects/549106/video-297777-h264_base.mp4"/>
+<meta property="twitter:player:stream:content" content="video/mp4"/>
+<meta property="twitter:player:url" content="https://www.kickstarter.com/projects/594743529/unwritten-echoes-of-twilight/widget/video.html"/>
+<meta property="twitter:player:height" content="360"/>
+<meta property="twitter:player:width" content="640"/>
+<meta property="twitter:maxage" content="60"/>
+<meta property="og:video" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F549106%2Fvideo-297777-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F549106%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Druid+Gameworks&amp;project_title=Unwritten%3A+Echoes+of+Twilight&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2F594743529%2Funwritten-echoes-of-twilight&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:secure_url" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F549106%2Fvideo-297777-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F549106%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Druid+Gameworks&amp;project_title=Unwritten%3A+Echoes+of+Twilight&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2F594743529%2Funwritten-echoes-of-twilight&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:height" content="360"/>
+<meta property="og:video:width" content="640"/>
+<meta property="og:video:type" content="application/x-shockwave-flash"/>
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="XBVwUNFGSMwPizDX1TGaDKlSy9o4BWgDsLMEtRpXHIc=" name="csrf-token" />
+<script type="text/javascript">
+  var _sift = _sift || [];
+  _sift.push(['_setAccount', '637102']);
+  _sift.push(['_setUserId', '']);
+  _sift.push(['_trackPageview']);
+
+  (function() {
+    function loadSift() {
+      var sift, s;
+      if (root.visitor_id) {
+        _sift.push(['_setSessionId', root.visitor_id]);
+      }
+      sift = document.createElement('script');
+      sift.type = 'text/javascript';
+      sift.async = true;
+      sift.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dtlilztwypawv.cloudfront.net/s.js';
+      s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(sift, s);
+    }
+    if (window.attachEvent) {
+      window.attachEvent('onload', loadSift);
+    } else {
+      window.addEventListener('load', loadSift, false);
+    }
+  })();
+</script>
+<link href="http://kck.st/16Ac9SR" rel="shorturl">
+<link href="https://www.kickstarter.com/projects/594743529/unwritten-echoes-of-twilight" rel="canonical">
+<link href="https://s3.amazonaws.com/ksr/projects/549106/photo-med.jpg?1397819805" rel="image_src">
+<link href="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F549106%2Fvideo-297777-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F549106%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Druid+Gameworks&amp;project_title=Unwritten%3A+Echoes+of+Twilight&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2F594743529%2Funwritten-echoes-of-twilight&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque" rel="video_src">
+<script>
+  //<![CDATA[
+    window.current_checkout = "{&quot;id&quot;:0,&quot;domestic&quot;:null,&quot;amount&quot;:0.0,&quot;updated_at&quot;:0,&quot;created_at&quot;:0}";
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.current_ip = '94.209.101.212';
+    window.current_ip_datacenter = 'false';
+    window.enabled_features = {"elasticsearch":true,"security_history_read":true,"security_history_write":true,"advanced_discovery_es":true,"ios_crashlytics":true,"ios_mixpanel":true,"stories_veronica_mars":true,"veronica_mars_hero":true,"password_reset_banner":true};
+    window.fb_app_id = '69103156693';
+    
+    var _sf_startpt=(new Date()).getTime();
+    
+    window.current_project = "{&quot;id&quot;:53654119,&quot;name&quot;:&quot;Unwritten: Echoes of Twilight&quot;,&quot;blurb&quot;:&quot;A single player, open world, open play, fantasy RPG where player choices determine the direction, flow, and the outcome of the game.&quot;,&quot;goal&quot;:500000.0,&quot;pledged&quot;:51688.37,&quot;state&quot;:&quot;failed&quot;,&quot;slug&quot;:&quot;unwritten-echoes-of-twilight&quot;,&quot;disable_communication&quot;:false,&quot;country&quot;:&quot;US&quot;,&quot;currency&quot;:&quot;USD&quot;,&quot;currency_symbol&quot;:&quot;$&quot;,&quot;currency_trailing_code&quot;:true,&quot;deadline&quot;:1383008486,&quot;state_changed_at&quot;:1383008489,&quot;created_at&quot;:1367967267,&quot;launched_at&quot;:1380416486,&quot;backers_count&quot;:661,&quot;photo&quot;:{&quot;full&quot;:&quot;https://s3.amazonaws.com/ksr/projects/549106/photo-full.jpg?1397819805&quot;,&quot;ed&quot;:&quot;https://s3.amazonaws.com/ksr/projects/549106/photo-ed.jpg?1397819805&quot;,&quot;med&quot;:&quot;https://s3.amazonaws.com/ksr/projects/549106/photo-med.jpg?1397819805&quot;,&quot;little&quot;:&quot;https://s3.amazonaws.com/ksr/projects/549106/photo-little.jpg?1397819805&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/projects/549106/photo-small.jpg?1397819805&quot;,&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/projects/549106/photo-thumb.jpg?1397819805&quot;,&quot;1024x768&quot;:&quot;https://s3.amazonaws.com/ksr/projects/549106/photo-1024x768.jpg?1397819805&quot;,&quot;1536x1152&quot;:&quot;https://s3.amazonaws.com/ksr/projects/549106/photo-1536x1152.jpg?1397819805&quot;},&quot;creator&quot;:{&quot;id&quot;:594743529,&quot;name&quot;:&quot;Druid Gameworks&quot;,&quot;avatar&quot;:{&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/6500624/KnotBgdWhite.thumb.jpg?1377747005&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/6500624/KnotBgdWhite.small.jpg?1377747005&quot;,&quot;medium&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/6500624/KnotBgdWhite.medium.jpg?1377747005&quot;},&quot;urls&quot;:{&quot;web&quot;:{&quot;user&quot;:&quot;https://www.kickstarter.com/profile/594743529&quot;},&quot;api&quot;:{&quot;user&quot;:&quot;https://api.kickstarter.com/v1/users/594743529?signature=1399954409.d9502811ff955735f9580d95b877065976f6ab38&quot;}}},&quot;location&quot;:{&quot;id&quot;:2462629,&quot;name&quot;:&quot;O&#39;fallon&quot;,&quot;slug&quot;:&quot;ofallon-il&quot;,&quot;short_name&quot;:&quot;O&#39;fallon, IL&quot;,&quot;displayable_name&quot;:&quot;O&#39;fallon, IL&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:&quot;IL&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/ofallon-il&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/ofallon-il&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1399953621.63b2e5650b31be8d0af5d45546edb80fa5226d3c&amp;woe_id=2462629&quot;}}},&quot;category&quot;:{&quot;id&quot;:35,&quot;name&quot;:&quot;Video Games&quot;,&quot;slug&quot;:&quot;games/video games&quot;,&quot;position&quot;:7,&quot;parent_id&quot;:12,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;http://www.kickstarter.com/discover/categories/games/video%20games&quot;}}},&quot;urls&quot;:{&quot;web&quot;:{&quot;project&quot;:&quot;https://www.kickstarter.com/projects/594743529/unwritten-echoes-of-twilight&quot;,&quot;project_short&quot;:&quot;http://kck.st/16Ac9SR&quot;,&quot;updates&quot;:&quot;https://www.kickstarter.com/projects/594743529/unwritten-echoes-of-twilight/posts&quot;},&quot;api&quot;:{&quot;project&quot;:&quot;https://api.kickstarter.com/v1/projects/53654119?signature=1399954409.5314402b9637c3780ec3e6a6db882d2f1e9c0ccf&quot;,&quot;comments&quot;:&quot;https://api.kickstarter.com/v1/projects/53654119/comments?signature=1399954409.d54895bcad9ff0f8fc3b51933361f33c88f29352&quot;,&quot;updates&quot;:&quot;https://api.kickstarter.com/v1/projects/53654119/updates?signature=1399954409.2ffc3ef02435c1b70e1dcbf8ebef07520ebbd453&quot;}},&quot;updated_at&quot;:1397819812,&quot;failed_at&quot;:1383008489,&quot;video&quot;:{&quot;id&quot;:297777,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/549106/video-297777-h264_high.mp4?2013&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/549106/video-297777-h264_base.mp4?2013&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/549106/video-297777-webm.webm?2013&quot;,&quot;width&quot;:640,&quot;height&quot;:360,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/549106/video-297777-h264_base.jpg?2013&quot;},&quot;comments_count&quot;:120,&quot;updates_count&quot;:15,&quot;rewards&quot;:[{&quot;id&quot;:0,&quot;minimum&quot;:1,&quot;reward&quot;:&quot;No Reward&quot;},{&quot;id&quot;:1802542,&quot;minimum&quot;:5.0,&quot;reward&quot;:&quot;COMMONER- An Exclusive Kickstarter Backer Wallpaper and our thanks for being awesome!&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1380585600,&quot;project_id&quot;:53654119,&quot;backers_count&quot;:13,&quot;updated_at&quot;:1382921786},{&quot;id&quot;:1802544,&quot;minimum&quot;:10.0,&quot;reward&quot;:&quot;ADVENTURER- Insider Access Pass to our Backer Forum with a Backer Forum Tag, Early Updates, and News!&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1380585600,&quot;project_id&quot;:53654119,&quot;backers_count&quot;:7,&quot;updated_at&quot;:1382305234},{&quot;id&quot;:1802545,&quot;minimum&quot;:20.0,&quot;reward&quot;:&quot;HUNTER- A Limited Kickstarter Edition Digital Soundtrack from Unwritten: Echoes of Twilight (22 Tracks)&quot;,&quot;limit&quot;:2,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1383264000,&quot;project_id&quot;:53654119,&quot;remaining&quot;:0,&quot;backers_count&quot;:2,&quot;updated_at&quot;:1381365361},{&quot;id&quot;:2019021,&quot;minimum&quot;:20.0,&quot;reward&quot;:&quot;[NEW] HUNTER- An Early Release, DRM Free, Digital Copy of the Finished Game for Windows PC&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1412121600,&quot;project_id&quot;:53654119,&quot;backers_count&quot;:222,&quot;updated_at&quot;:1382983008},{&quot;id&quot;:1802584,&quot;minimum&quot;:30.0,&quot;reward&quot;:&quot;GUILDSMAN- An Early Release Digital Copy of the Finished Game for Windows PC&quot;,&quot;limit&quot;:56,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1409529600,&quot;project_id&quot;:53654119,&quot;remaining&quot;:0,&quot;backers_count&quot;:56,&quot;updated_at&quot;:1382465769},{&quot;id&quot;:2019029,&quot;minimum&quot;:30.0,&quot;reward&quot;:&quot;[NEW] GUILDSMAN- An Early Release, DRM Free, Digital Copy of the Finished Game for Windows PC, A Limited Kickstarter Edition Digital Soundtrack from Unwritten: Echoes of Twilight (22 Tracks) Featuring Exclusive Art, PLUS a Bonus Copy of the game for a friend!&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1412121600,&quot;project_id&quot;:53654119,&quot;backers_count&quot;:129,&quot;updated_at&quot;:1383008025},{&quot;id&quot;:2014833,&quot;minimum&quot;:40.0,&quot;reward&quot;:&quot;GUILDMASTER- An Early Release Digital Copy of the Finished Game for Windows PC, PLUS Access to Our Alpha Game!&quot;,&quot;limit&quot;:28,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1409529600,&quot;project_id&quot;:53654119,&quot;remaining&quot;:0,&quot;backers_count&quot;:28,&quot;updated_at&quot;:1382178991},{&quot;id&quot;:2019064,&quot;minimum&quot;:40.0,&quot;reward&quot;:&quot;[NEW] GUILDMASTER- Receive all the perks of the GUILDSMAN Tier PLUS an Access Pass to Our Alpha Game!&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1412121600,&quot;project_id&quot;:53654119,&quot;backers_count&quot;:58,&quot;updated_at&quot;:1382946036},{&quot;id&quot;:1802627,&quot;minimum&quot;:50.0,&quot;reward&quot;:&quot;PADFOOT- Kickstarter Exclusive Weapons Pack Quest DLC: Bowrick&#39;s Arsenal: Quest deep into the ruins of the infamous Nagaten Prison to learn the truth about Bowrick&#39;s fate and recover his legendary arsenal...if you can.&quot;,&quot;limit&quot;:25,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1414800000,&quot;project_id&quot;:53654119,&quot;remaining&quot;:0,&quot;backers_count&quot;:25,&quot;updated_at&quot;:1382142614},{&quot;id&quot;:2070976,&quot;minimum&quot;:50.0,&quot;reward&quot;:&quot;[NEW] PADFOOT: Kickstarter Exclusive Weapons Pack Quest DLC: Bowrick&#39;s Arsenal: Quest deep into the ruins of the infamous Nagaten Prison to learn the truth about Bowrick&#39;s fate and recover his legendary arsenal...if you can. PLUS a Druid Gameworks Decal (black or white)&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;5.0&quot;,&quot;estimated_delivery_on&quot;:1412121600,&quot;project_id&quot;:53654119,&quot;backers_count&quot;:6,&quot;updated_at&quot;:1382815829},{&quot;id&quot;:2070562,&quot;minimum&quot;:60.0,&quot;reward&quot;:&quot;SHADOW- Exclusive Voter Pass: Cast Your Vote in Developer Polls to Push the Content YOU want to see into the game! PLUS a 1-Disc Physical Boxed Copy of our Game for Windows PC!&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1414800000,&quot;project_id&quot;:53654119,&quot;backers_count&quot;:3,&quot;updated_at&quot;:1382615335},{&quot;id&quot;:1931143,&quot;minimum&quot;:75.0,&quot;reward&quot;:&quot;RANGER- Kickstarter Exclusive Armor Pack Quest DLC: The Falconer PLUS Signed Digital Gamemap! Quest to restore the falconer&#39;s armor and learn the secrets of this ancient trade.&quot;,&quot;limit&quot;:12,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1414800000,&quot;project_id&quot;:53654119,&quot;remaining&quot;:0,&quot;backers_count&quot;:12,&quot;updated_at&quot;:1382089385},{&quot;id&quot;:2070978,&quot;minimum&quot;:75.0,&quot;reward&quot;:&quot;[NEW] RANGER: Kickstarter Exclusive Armor Pack Quest DLC: The Falconer PLUS Signed Digital Gamemap! Quest to restore the falconer&#39;s armor and learn the secrets of this ancient trade. BONUS Kickstarter Exclusive DLC: Heritage: Choose your inheritance and unlock a family legacy that will help you begin your journey in style!&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1414800000,&quot;project_id&quot;:53654119,&quot;backers_count&quot;:3,&quot;updated_at&quot;:1382388745},{&quot;id&quot;:1931154,&quot;minimum&quot;:100.0,&quot;reward&quot;:&quot;GUARDIAN- Kickstarter Exclusive Quest DLC: Agenem&#39;s Sorrow!!! Travel to a new world in the footsteps of the lost patron Agenem; explore new terrains, creatures, and characters in your quest to complete the journey of a god!!\\r\\n\\r\\nPLUS Signed Digital Postcard with Exclusive Game Art and Signatures from All Druid Developers!&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1414800000,&quot;project_id&quot;:53654119,&quot;backers_count&quot;:60,&quot;updated_at&quot;:1382905816},{&quot;id&quot;:1931169,&quot;minimum&quot;:150.0,&quot;reward&quot;:&quot;KNIGHT- Signed Digital Artbook with Exclusive Behind the Scenes Game Art and Signatures from All Druid Developers! PLUS a T-shirt! [Your choice from 3 Designs While Supplies Last-Please Add $8 to your pledge for shipping]&quot;,&quot;limit&quot;:1500,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;domestic&quot;,&quot;shipping_amount&quot;:&quot;0.0&quot;,&quot;estimated_delivery_on&quot;:1401580800,&quot;project_id&quot;:53654119,&quot;remaining&quot;:1497,&quot;backers_count&quot;:3,&quot;updated_at&quot;:1381196735},{&quot;id&quot;:2070543,&quot;minimum&quot;:250.0,&quot;reward&quot;:&quot;[NEW] MASTER- A 2 Disc Special Edition Physical Copy of our game for Windows PC, PLUS: A Physical Full Color Artbook and a digital Access Pass to our BETA GAME!&quot;,&quot;limit&quot;:500,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1409529600,&quot;project_id&quot;:53654119,&quot;remaining&quot;:500,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1382071962},{&quot;id&quot;:1931178,&quot;minimum&quot;:250.0,&quot;reward&quot;:&quot;MASTER- Exclusive Voter Pass: Cast Your Vote in Developer Polls to Push the Content YOU want to see into the game!  PLUS: A Physical Full Color Artbook, and Access to our Alpha Game! [Please add $6 to your pledge for shipping!]&quot;,&quot;limit&quot;:2,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;domestic&quot;,&quot;shipping_amount&quot;:&quot;0.0&quot;,&quot;estimated_delivery_on&quot;:1404172800,&quot;project_id&quot;:53654119,&quot;remaining&quot;:0,&quot;backers_count&quot;:2,&quot;updated_at&quot;:1382071944},{&quot;id&quot;:1802625,&quot;minimum&quot;:500.0,&quot;reward&quot;:&quot;NOBLE- See your likeness or avatar appear as an NPC extra in Unwritten: Echoes of Twilight! PLUS Receive a Lifetime Pass and get a free digital copy code for every future title in the Unwritten Series!&quot;,&quot;limit&quot;:100,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1412121600,&quot;project_id&quot;:53654119,&quot;remaining&quot;:99,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1382897248},{&quot;id&quot;:1802626,&quot;minimum&quot;:1000.0,&quot;reward&quot;:&quot;PATRON- KICKSTARTER EXCLUSIVE Receive a Limited Boxed Collector&#39;s Edition of our Game for Windows PC&quot;,&quot;limit&quot;:2,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;domestic&quot;,&quot;shipping_amount&quot;:&quot;0.0&quot;,&quot;estimated_delivery_on&quot;:1412121600,&quot;project_id&quot;:53654119,&quot;remaining&quot;:0,&quot;backers_count&quot;:2,&quot;updated_at&quot;:1382089540},{&quot;id&quot;:2070980,&quot;minimum&quot;:1000.0,&quot;reward&quot;:&quot;[NEW] PATRON: KICKSTARTER EXCLUSIVE Receive a Limited 3-Disc Boxed Collector&#39;s Edition of our Game for Windows PC, PLUS see the legend of your Patron self written into our universe lore!&quot;,&quot;limit&quot;:1250,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1412121600,&quot;project_id&quot;:53654119,&quot;remaining&quot;:1250,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1382089623},{&quot;id&quot;:2070569,&quot;minimum&quot;:5000.0,&quot;reward&quot;:&quot;[NEW] LEGACY: Receive Special Thanks in our Credit Reel PLUS Join the Development Team on Skype and sit-in for two of our regular staff meetings and get exclusive access to insider info, make suggestions, and give feedback, straight to the team!&quot;,&quot;limit&quot;:50,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1412121600,&quot;project_id&quot;:53654119,&quot;remaining&quot;:50,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1382072775},{&quot;id&quot;:1802583,&quot;minimum&quot;:5000.0,&quot;reward&quot;:&quot;LEGACY- Receive Special Thanks in our Credit Reel PLUS All Lower Tier Rewards!&quot;,&quot;limit&quot;:1,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;35.0&quot;,&quot;estimated_delivery_on&quot;:1412121600,&quot;project_id&quot;:53654119,&quot;remaining&quot;:1,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1382072661},{&quot;id&quot;:2070564,&quot;minimum&quot;:10000.0,&quot;reward&quot;:&quot;[NEW] UNWRITTEN PACKAGE- Receive Executive Producer Credit in the game\\u2019s Credit Reel, and Join the Developers for a Launch Party in St Louis to receive all your rewards in person and signed by the team! PLUS a special Druid Gameworks Staff T-Shirt with your Name!&quot;,&quot;limit&quot;:30,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1412121600,&quot;project_id&quot;:53654119,&quot;remaining&quot;:29,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1382917751},{&quot;id&quot;:1930697,&quot;minimum&quot;:10000.0,&quot;reward&quot;:&quot;UNWRITTEN PACKAGE-\\r\\nAll Rewards in Lower Tiers, PLUS Executive Producer Credits, and Join the Developers for a Launch Party in St Louis!&quot;,&quot;limit&quot;:1,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;domestic&quot;,&quot;shipping_amount&quot;:&quot;0.0&quot;,&quot;estimated_delivery_on&quot;:1412121600,&quot;project_id&quot;:53654119,&quot;remaining&quot;:0,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1382072502}]}";
+    
+    
+    
+    
+    
+    
+    
+    
+    window.timeRemaining = function timeRemaining(epochTime){
+    
+      var diff = epochTime - ((new Date()).getTime() / 1000);
+      var num_unit = (diff < 60 && [Math.max(diff, 0), 'seconds']) ||
+        ((diff/=60) < 60 && [diff, 'minutes']) ||
+        ((diff/=60) < 72 && [diff, 'hours']) ||
+        [diff/=24, 'days'];
+    
+      // Round down
+      num_unit[0] = Math.floor(num_unit[0]);
+      // Singularize unit
+      if (num_unit[0] == 1) { num_unit[1] = num_unit[1].replace(/s$/,""); }
+    
+      return num_unit;
+    };
+  //]]>
+</script>
+
+<script>
+  //<![CDATA[
+    window.current_variants = ["discover_link_copy[explore]","rewards_hover[without_hover_text]"];
+  //]]>
+</script>
+
+
+</head>
+
+<body class="project projects not-mobile not-phone not-forces-video-controls not-tablet not-touchable not-native-app-request video_mode" id="projects_show">
+<div class="jGrowl center" id="growl_section"></div>
+<div class="NS_layouts__navigation" id="header">
+<div class="main-nav relative bg-white">
+<h1 class="no-margin ml1 mr2 left">
+<a href="/?ref=nav" class="block p2"><span class="ss-icon green-dark">KICK</span><span class="ss-icon green">STARTER</span>
+</a></h1>
+<ul class="primary-links list no-margin left">
+<li class="left discover-link full-height">
+<a href="/discover?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Explore</a>
+</li>
+<li class="left full-height mr2">
+<a href="/learn?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Start</a>
+</li>
+</ul>
+<ul class="list no-margin right" id="menu-sub">
+<li class="right"><a href="/login?ref=nav" class="block h5 bold p2 full-height border-box">Log in</a></li>
+<li class="right"><a href="/signup?ref=nav" class="block h5 bold p2 full-height border-box">Sign up</a></li>
+</ul>
+<div class="search-link pl2 full-height border-left border-box clip">
+<form accept-charset="UTF-8" action="/projects/search" class="search pt1 pb1 block relative form-simple" method="get"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /></div>
+<div class="field relative pl3">
+<span class="ss-icon ss-search grey-dark ml1 mt1 absolute"></span>
+<input class="input-search header full-width text" data-tracker-name="Header Live Search" id="term" name="term" placeholder="Search projects" type="text" />
+</div>
+</form>
+
+</div>
+<div class="clear"></div>
+</div>
+</div>
+<div class="hide pt4 pb4 bg-grey-light" id="search_results-wrap">
+<div class="relative container" id="search_results">
+<a class="close right grey-dark mr1"><span class="ss-icon ss-delete"></span></a>
+<h3 class="header ml1 clearfix"></h3>
+<div class="clip clearfix" id="search_results_panel"></div>
+<a class="prev arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateleft"></span>
+</a>
+<a class="next arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateright"></span>
+</a>
+</div>
+</div>
+
+
+
+
+<div class="Project-ended-true Project-is_starred- Project-state-failed Project53654119_cxt border-top" id="main_content">
+<div id="running-board-wrap">
+<div class="container" id="running-board">
+<div id="project-header">
+<div class="NS_projects__running_board ml1 mr1 clearfix">
+<div class="title center py4">
+<h2 class="mb1">
+<a href="/projects/594743529/unwritten-echoes-of-twilight" class="green-dark">Unwritten: Echoes of Twilight</a>
+</h2>
+<p class="no-margin">
+<span class="creator">
+by
+<a href="/projects/594743529/unwritten-echoes-of-twilight/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography" id="name">Druid Gameworks</a>
+</span>
+</p>
+</div>
+<ul class="project-nav list-inline left h5 bold mb1">
+<li class="mr2">
+<a href="/projects/594743529/unwritten-echoes-of-twilight" class="grey-dark py1 current" id="home_nav">Home</a>
+</li>
+<li class="mr2">
+<span data-updates-count="15" id="updates_count">
+<a href="/projects/594743529/unwritten-echoes-of-twilight/posts" class="grey-dark py1" id="updates_nav">Updates
+<span class="count h6 bg-grey-dark white">15</span>
+</a></span>
+</li>
+<li class="mr2">
+<a href="/projects/594743529/unwritten-echoes-of-twilight/backers" class="grey-dark py1" id="backers_nav">Backers
+<span class="count h6 bg-grey-dark white"><data class="Project53654119" data-format="number" data-value="661" itemprop="Project[backers_count]">661</data></span>
+</a></li>
+<li>
+<span data-comments-count="120" id="comments_count">
+<a href="/projects/594743529/unwritten-echoes-of-twilight/comments" class="grey-dark py1" id="comments_nav">Comments
+<span class="count h6 bg-grey-dark white"><data class="Project53654119" data-format="number" data-value="120" itemprop="Project[comments_count]">120</data></span>
+</a></span>
+</li>
+</ul>
+<ul class="list-inline right h5 bold mb1">
+<li class="location mr2">
+<a href="/discover/places/ofallon-il?ref=city" class="grey-dark"><span class="ss-icon ss-location margin-right"></span>
+O&#39;fallon, IL
+</a></li>
+<li class="category" data-project-parent-category="Games">
+<a href="/discover/categories/games/video%20games?ref=category" class="grey-dark"><span class="ss-icon ss-tag margin-right"></span>
+Video Games
+</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+</div>
+<div class="bg-grey-light pb4" id="content-wrap">
+<div class="Project53654119" data-conditions="[{&quot;!state&quot;:&quot;live&quot;}]" data-evaluation="true" data-render="&quot;&lt;div class=\&quot;NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-failed Project53654119_cxt bg-grey container pb1 pt1\&quot;&gt;\n&lt;div class=\&quot;Project53654119\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;successful&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;Funded!&amp;lt;/b&amp;gt;\\nThis project was successfully funded &amp;lt;data class=\\&amp;quot;Project53654119\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2013-10-28T21:01:26-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[deadline]\\&amp;quot;&amp;gt;on October 28, 2013&amp;lt;/data&amp;gt;.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project53654119\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:[&amp;quot;started&amp;quot;,&amp;quot;submitted&amp;quot;]}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;THIS PROJECT IS NOT LIVE&amp;lt;/b&amp;gt;\\nThis is only a draft that the creator has chosen to share.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project53654119\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;suspended&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Suspended&amp;lt;/b&amp;gt;\\nFunding for this project was suspended &amp;lt;data class=\\&amp;quot;Project53654119\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2013-10-28T21:01:29-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on October 28, 2013&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project53654119\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;canceled&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Canceled&amp;lt;/b&amp;gt;\\nFunding for this project was canceled by the project creator &amp;lt;data class=\\&amp;quot;Project53654119\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2013-10-28T21:01:29-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on October 28, 2013&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project53654119\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;failed&amp;quot;}]\&quot; data-evaluation=\&quot;true\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Unsuccessful&amp;lt;/b&amp;gt;\\nThis project\\u2019s funding goal was not reached on &amp;lt;time class=\\&amp;quot;js-adjust\\&amp;quot; data-format=\\&amp;quot;LL\\&amp;quot; datetime=\\&amp;quot;2013-10-28T21:01:26-04:00\\&amp;quot;&amp;gt;October 28, 2013&amp;lt;/time&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Unsuccessful&lt;/b&gt;\nThis project\u2019s funding goal was not reached on &lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;LL\&quot; datetime=\&quot;2013-10-28T21:01:26-04:00\&quot;&gt;October 28, 2013&lt;/time&gt;.\n&lt;/div&gt;&lt;div class=\&quot;Project53654119\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;purged&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;This project is purged and only visible to staff.&amp;lt;/b&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;/div&gt;\n&quot;"><div class="NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-failed Project53654119_cxt bg-grey container pb1 pt1">
+<div class="Project53654119" data-conditions="[{&quot;state&quot;:&quot;successful&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;Funded!&lt;/b&gt;\nThis project was successfully funded &lt;data class=\&quot;Project53654119\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-10-28T21:01:26-04:00&amp;quot;\&quot; itemprop=\&quot;Project[deadline]\&quot;&gt;on October 28, 2013&lt;/data&gt;.\n&lt;/p&gt;\n&quot;"></div><div class="Project53654119" data-conditions="[{&quot;state&quot;:[&quot;started&quot;,&quot;submitted&quot;]}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;THIS PROJECT IS NOT LIVE&lt;/b&gt;\nThis is only a draft that the creator has chosen to share.\n&lt;/p&gt;\n&quot;"></div><div class="Project53654119" data-conditions="[{&quot;state&quot;:&quot;suspended&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Suspended&lt;/b&gt;\nFunding for this project was suspended &lt;data class=\&quot;Project53654119\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-10-28T21:01:29-04:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on October 28, 2013&lt;/data&gt;.\n&quot;"></div><div class="Project53654119" data-conditions="[{&quot;state&quot;:&quot;canceled&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Canceled&lt;/b&gt;\nFunding for this project was canceled by the project creator &lt;data class=\&quot;Project53654119\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-10-28T21:01:29-04:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on October 28, 2013&lt;/data&gt;.\n&quot;"></div><div class="Project53654119" data-conditions="[{&quot;state&quot;:&quot;failed&quot;}]" data-evaluation="true" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Unsuccessful&lt;/b&gt;\nThis project\u2019s funding goal was not reached on &lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;LL\&quot; datetime=\&quot;2013-10-28T21:01:26-04:00\&quot;&gt;October 28, 2013&lt;/time&gt;.\n&quot;"><p class="no-margin"></p>
+<b>Funding Unsuccessful</b>
+This project’s funding goal was not reached on <time class="js-adjust" data-format="LL" datetime="2013-10-28T21:01:26-04:00">October 28, 2013</time>.
+</div><div class="Project53654119" data-conditions="[{&quot;state&quot;:&quot;purged&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;This project is purged and only visible to staff.&lt;/b&gt;\n&quot;"></div></div>
+</div>
+<div class="container bg-white border rounded py3 pl2 pr2" id="content">
+<div class="NS-projects-content">
+<div class="grid_11">
+<div data-has-video="true" id="video-section">
+<div class="video-player" data-dimensions="{&quot;width&quot;:640,&quot;height&quot;:480}" data-image="https://s3.amazonaws.com/ksr/projects/549106/photo-main.jpg?1397819805" data-video-tracker-url="https://www.kickstarter.com/projects/594743529/unwritten-echoes-of-twilight/video/plays" data-video-url="https://d2pq0u4uni88oo.cloudfront.net/projects/549106/video-297777-h264_high.mp4" data-video="{&quot;id&quot;:297777,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/549106/video-297777-h264_high.mp4?2013&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/549106/video-297777-h264_base.mp4?2013&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/549106/video-297777-webm.webm?2013&quot;,&quot;width&quot;:640,&quot;height&quot;:360,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/549106/video-297777-h264_base.jpg?2013&quot;}" id="video_pitch"><video class="has_webm landscape" preload="none">
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/549106/video-297777-h264_high.mp4" type='video/mp4; codecs="avc1.64001E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/549106/video-297777-h264_base.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/549106/video-297777-webm.webm" type="video/webm"></source>
+You'll need an HTML5 capable browser to see this content.
+</video>
+<img alt="Photo-main" class="has_played_hide poster landscape" src="https://s3.amazonaws.com/ksr/projects/549106/photo-main.jpg?1397819805" />
+<div class="play_button_big play_button_dark absolute-center rounded has_played_hide">
+<span class="ss-icon ss-play"></span>
+Play
+</div>
+<div class="player_controls clearfix absolute-bottom mb2 rounded white bg-green-dark forces-video-controls_hide">
+<div class="left">
+<a class="button button_icon button_dark playpause play mr1">
+<span class="play ss-icon ss-play"></span>
+<span class="pause ss-icon ss-pause"></span>
+</a>
+<span class="time current_time h12 left">00:00</span>
+</div>
+<div class="right">
+<span class="time total_time h12 left mr1">00:00</span>
+<a class="left button button_icon button_icon_white volume">
+<span class="ss-icon ss-volume icon_volume_nudge"></span>
+<span class="ss-icon ss-highvolume"></span>
+</a>
+<div class="volume_container left">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+<a class="left button button_icon button_icon_white fullscreen">
+<span class="ss-icon ss-expand"></span>
+<span class="ss-icon ss-contract"></span>
+</a>
+</div>
+<div class="clip">
+<div class="progress_container pr1 pl1">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="buffer progress_bar_buffer"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div data-project-state="failed" id="about">
+<div class="NS_projects__project_share clearfix py2 pl1 pr1">
+<ul class="left list-inline no-margin h5 bold">
+<li class="facebook mr2">
+<a href="https://www.kickstarter.com/projects/594743529/unwritten-echoes-of-twilight"><span class="ss-icon ss-social ss-facebook color-facebook"></span>
+<span class="color-facebook">Share</span>
+<span class="share_bubble"><div class="triangle grey"></div>
+<div class="triangle white"></div>
+<span class="count"></span></span>
+</a></li>
+<li class="twitter mr2">
+<a  href="https://twitter.com/intent/tweet?text=Unwritten%3A%20Echoes%20of%20Twilight%20by%20Druid%20Gameworks&amp;via=kickstarter&amp;url=http://kck.st/16Ac9SR" rel="nofollow"><span class="ss-icon ss-social ss-twitter color-twitter"></span>
+<span class="color-twitter">Tweet</span>
+</a></li>
+<li class="embed">
+<a href="/projects/594743529/unwritten-echoes-of-twilight/widget" class="remote_modal_dialog grey-dark" data-modal-title="Embed a widget on your site" data-tracker-name="Embed"><span class="ss-icon ss-navigateleft"></span>
+<span class="ss-icon ss-navigateright"></span>
+Embed
+</a></li>
+</ul>
+<ul class="right list-inline no-margin h5 bold">
+<li class="curate mr2">
+</li>
+<li class="remind">
+<div class="ajax-container" id="watching-widget">
+<div class="Project53654119" data-conditions="[{&quot;is_starred&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div id=\&quot;unwatch\&quot;&gt;\n&lt;a href=\&quot;/projects/594743529/unwritten-echoes-of-twilight/unwatch\&quot; class=\&quot;on\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"></div><div class="Project53654119" data-conditions="[{&quot;!is_starred&quot;:true}]" data-evaluation="true" data-render="&quot;&lt;div id=\&quot;watch\&quot;&gt;\n&lt;a href=\&quot;/projects/594743529/unwritten-echoes-of-twilight/watch\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;span class=\&quot;text\&quot;&gt;\n&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"><div id="watch">
+<a href="/projects/594743529/unwritten-echoes-of-twilight/watch"><span class="ss-icon ss-star"></span>
+<span class="text">
+</span>
+</a></div>
+
+</div></div>
+</li>
+</ul>
+</div>
+
+<div class="short_blurb py2 pl1 pr1">
+<p class="h3">A single player, open world, open play, fantasy RPG where player choices determine the direction, flow, and the outcome of the game.</p>
+</div>
+<div class="full-description">
+<h1>
+<br>We're Coming Back in November!</h1><b><a href="http://kickstarter.druidgameworks.com" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/594743529/unwritten-echoes-of-twilight/assets/1242887/edit" data-id="1242887">
+<figure><img alt="Watch for our new Kickstarter in November!" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/242/887/41a99732674e0902ecf8b6092a2969f9_large.jpg?1382833180"><figcaption>Watch for our new Kickstarter in November!</figcaption></figure>
+</div>
+</a></b><p>Only 48 hours remain of our campaign here and even the most optimistic among us has to concede a round one victory to the Kickstarter Gods. We are far from defeated however! In the last couple weeks we've really taken on the feedback from our backers here and applied it to a new Kickstarter campaign with a smaller goal, loads more content prepared for sharing, and lots of cool new rewards! </p>
+<p>If you have been promoting our campaign or plan to continue promoting, please update your links to our new redirect at <a href="http://kickstarter.druidgameworks.com" target="_blank">http://kickstarter.druidgameworks.com</a> which directs to this page for now but will automatically redirect to the new campaign once it's live! </p>
+<p>Thanks again to everyone who pledged, offered feedback, joined our community, and just cheered along the way, you've inspired us in ways you will never know. Thank you for believing in us, we'll see you in November!</p>
+<p>- <i>The Druid Gameworks Dev Team</i></p><div class="template asset" contenteditable="false" data-edit_url="/projects/594743529/unwritten-echoes-of-twilight/assets/939753/edit" data-id="939753">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/939/753/731a82f0b1deee3a550972264b8e260f_large.?1379664159"></figure>
+</div>
+<p><b>Unwritten: Echoes of Twilight</b>
+ is a single player, open world, role playing adventure game that 
+combines the visual appeal of modern graphics and animation technologies
+ with the classic role-playing elements hardcore RPG gamers love. In 
+modern games, immersion, interactivity, and customization are often 
+watered down by major studios, resulting in diluted replay value and 
+degradation of the “role play” nature of the games. As RPG gamers 
+ourselves, Druid Gameworks understands all those fun nerdy things RPG 
+gamers want to see, or do, and we plan to give it to them in spades.<br><br>
+In this precursor and introduction to the Unwritten 
+series, players are introduced to the world of Arthanswold through the 
+heartland isles of Aerendwel and Byre, where the diverse and often 
+unforgiving landscapes range from perilous mountain passes to dark 
+ominous marsh lands, and overgrown jungles. In a player driven 
+adventure, you can explore the world in any direction you want your 
+story to go! Unearth hidden locations, unique characters, and dynamic 
+quests. Chronicle your adventure in your journal, taking real notes 
+whenever something important crosses your path. Customize pets and 
+companions, take ownership of shops, wield powerful ritual magicks, join
+ factions to form friendships, and uncover the shards of an ancient 
+mystery that echoes from the past.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/594743529/unwritten-echoes-of-twilight/assets/928355/edit" data-id="928355">
+<figure><img alt="Aerendwel Concept Map" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/928/355/cb5245c26e476f9815f5508f88c83345_large.?1379395488"><figcaption>Aerendwel Concept Map</figcaption></figure>
+</div><p><b>So what is a player driven adventure?</b><br><br>
+Think of it as a “choose your own adventure” video game. Most RPGs out 
+there today would be considered story driven, where a main quest line is
+ presented as the overall premise for the game play. Even when it’s 
+possible to delay the main quest, it’s not usually possible to avoid it 
+and still progress within the game. In the Unwritten series, game play 
+is player driven, meaning you create your own game experience as you 
+play and develop your avatar’s story. As you explore our universe and 
+make your choices you will lock and unlock different experience pathways
+ with every play through.</p><a href="http://www.havok.com/products/vision-engine" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/594743529/unwritten-echoes-of-twilight/assets/932868/edit" data-id="932868">
+<figure><img alt="See What Makes Havok's Vision Engine Tick" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/932/868/ea06ed241d633d85408da1bfb0f621dc_large.?1379494968"><figcaption>See What Makes Havok's Vision Engine Tick</figcaption></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</a>
+
+<p><i>“Providing a
+flexible, easily extensible game engine that fits into any development pipeline
+is vital, as is minimizing turnaround times for both artists and programmers.”</i> - Dag
+Frommhold, Principal Engineer, Havok Vision Engine</p><p>From the minute we started planning our game we were evaluating engines. Like most fledgling studios we started with all the old standards, Unreal, CryEngine, Unity, Hero Engine, etc. Yet one by one we eliminated them as "not quite right" for our project's needs. Then we took a look at Havok's Vision Engine. Highly modular, adaptable, well documented, fair licensing terms, built in support, and a whole line of AAA products to expand our project's potential?! We were hooked and it's true, in Havok we trust. If you're not familiar with this AAA software powering Unwritten: Echoes of Twilight, grab a minute to check out this video and take in all the awesomeness for yourself!</p><div class="template oembed" contenteditable="false" data-href="http://www.youtube.com/watch?v=cQnrll8H-z4">
+<iframe width="612" height="344" src="https://www.youtube.com/embed/cQnrll8H-z4?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div><p><a href="http://www.druidgameworks.com/projectunwritten.html" title="" target="_blank">Unwritten: Echoes of Twilight</a> is a Single Player RPG in development on Havok's AAA Vision Engine, for Windows PC, XBox Live, and Playstation Networks</p><div class="template asset" contenteditable="false" data-edit_url="/projects/594743529/unwritten-echoes-of-twilight/assets/965290/edit" data-id="965290">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/965/290/db9f8af8910874fe13dbc3975773cc46_large.?1380414612"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/594743529/unwritten-echoes-of-twilight/assets/924829/edit" data-id="924829">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/924/829/fefad5f1a8133752a1fc34e7bbefbfb2_large.?1379314355"></figure>
+</div><p>Your consciousness stirs in an otherworldly place. All around you plays of light and shadow distort your surroundings in a shroud of mist. You can feel yourself lifting into the air, held aloft as if by magic, as a glowing form appears before you; so bright the only detail you can make out is the delicate outline of feathered wings. A distant voice echoes in your mind urging you to reach forward and it's only then that you notice the great husk of an ancient tree that seems to cradle you in the remnants of its tattered boughs. All along the carved wood, unfamiliar symbols ebb and glow. When you reach out and touch them awareness blooms inside you and you begin to piece together a plan for the future that awaits you. Again that haunting voice beckons you from within, "You will be Unwritten," it says in hallowed reverence, "The fulcrum of our salvation or our destruction, we do not know, but pray you are not led asunder. Go forth into the world and write your destiny."</p><div class="template asset" contenteditable="false" data-edit_url="/projects/594743529/unwritten-echoes-of-twilight/assets/928341/edit" data-id="928341">
+<figure><img alt="CharGen Concept Art" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/928/341/618af53ff637dbdae06daacf2e4cc7ca_large.?1379395189"><figcaption>CharGen Concept Art</figcaption></figure>
+</div><p>You awaken as if from a dream, the same dream you've had over and over again across the years of your life. Returning to the present the dreams fade away like the last shades of night withering before a rising sun. Today is a special day, your clan is preparing to celebrate your coming of age; a time of great change and a chance to make your way in the world.</p><p>Choose from one of six playable character races to design and customize to suit your vision for your avatar. Explore dynamic and changing landscapes, supernatural worlds, interact with rich characters and their unique stories. Recruit companions or join a faction to make new allies. Choose your path and write your story as it unfolds. Will you choose to be the hero? Or the villain? The everyman? The choice is yours and the possibilities are almost endless.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/594743529/unwritten-echoes-of-twilight/assets/924854/edit" data-id="924854">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/924/854/887e795a35ec6f6f1cd1d45e60c403b5_large.?1379314854"></figure>
+</div><p>While we would love to pack every game we make with every feature we love that's not usually a feasible goal. Here's a list of those features we plan to make our top priorities throughout development!</p><ul>
+<li>
+    Player Driven Gameplay</li>
+<li>Player Created Journal Option</li>
+<li>Open World Map with Few Load Screens</li>
+<li>Unique Explorable Landscapes</li>
+<li>Six Playable Races with Rich Histories (<b>Unlock More by Hitting Our Stretch Goals!</b>) </li>
+<li>Unique Alternate Starts</li>
+<li>Evolving Storylines and Game Map that Respond to Your Choices</li>
+<li>Crafting, Trading, Economy</li>
+<li>Character Tailored Questlines</li>
+<li>Customized Companions and Mounts </li>
+<li>Dungeon Diving &amp; Rewards </li>
+<li>Unique Weaponry with Race Bonuses</li>
+<li>Optional Survival Needs (Eating, Sleeping, etc) </li>
+<li>Role-playing Immersion Focus</li>
+<li>Modability!</li>
+<li>And much, much, more!</li>
+
+</ul><div class="template asset" contenteditable="false" data-edit_url="/projects/594743529/unwritten-echoes-of-twilight/assets/924848/edit" data-id="924848">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/924/848/b42ff5b30161ffd67613aee4a16d77cb_large.?1379314719"></figure>
+</div><p>
+<i>Concept Artworks Created By: dleoblack</i></p><div class="template asset" contenteditable="false" data-edit_url="/projects/594743529/unwritten-echoes-of-twilight/assets/870945/edit" data-id="870945">
+<figure><img alt="City of Fearn" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/870/945/e371f9adae7855da7e9dcc8e2ef4a6df_large.?1377750548"><figcaption>City of Fearn</figcaption></figure>
+</div><a href="http://i244.photobucket.com/albums/gg21/Darkrder/Druid%20Gaming/Kickstarter/BowerRenderLg_zps32d85cff.jpg" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/594743529/unwritten-echoes-of-twilight/assets/870948/edit" data-id="870948">
+<figure><img alt="City of Bower" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/870/948/5a651b242da84b41fc793bc86dafdc37_large.?1377750632"><figcaption>City of Bower</figcaption></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+</a><a href="http://i244.photobucket.com/albums/gg21/Darkrder/Druid%20Gaming/Kickstarter/AislingRenderLg_zpsad72629a.jpg" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/594743529/unwritten-echoes-of-twilight/assets/870950/edit" data-id="870950">
+<figure><img alt="Ruins of Aisling" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/870/950/256a1505bd29d19e18fab0cf8a309d9b_large.?1377750678"><figcaption>Ruins of Aisling</figcaption></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+</a><a href="http://i244.photobucket.com/albums/gg21/Darkrder/Druid%20Gaming/Kickstarter/CartheRenderLg_zpsbc5490ac.jpg" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/594743529/unwritten-echoes-of-twilight/assets/902381/edit" data-id="902381">
+<figure><img alt="City of Carthe" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/902/381/567ba4cd14f3a36196faacef1eebe064_large.jpg?1378708755"><figcaption>City of Carthe</figcaption></figure>
+</div>
+
+
+
+</a><a href="http://www.druidgameworks.com/forums/index.php?/gallery/slideshow/category-3/" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/594743529/unwritten-echoes-of-twilight/assets/976649/edit" data-id="976649">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/976/649/66b4caefd23085f08fd5a6a2684531ca_large.png?1380702708"></figure>
+</div>
+
+
+
+
+</a><div class="template asset" contenteditable="false" data-edit_url="/projects/594743529/unwritten-echoes-of-twilight/assets/924843/edit" data-id="924843">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/924/843/f6ef5efdfa0d2b5e80d44c507854ea49_large.?1379314669"></figure>
+</div><div class="template oembed" contenteditable="false" data-href="http://youtu.be/ER36IuyTtkU">
+<iframe width="612" height="344" src="https://www.youtube.com/embed/ER36IuyTtkU?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div><div class="template oembed" contenteditable="false" data-href="http://www.youtube.com/watch?v=hnTbAPvY1lk">
+<iframe width="612" height="344" src="https://www.youtube.com/embed/hnTbAPvY1lk?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/594743529/unwritten-echoes-of-twilight/assets/924859/edit" data-id="924859">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/924/859/dc23b6835b74973e0934ebe1e27b77d9_large.?1379314886"></figure>
+</div><p><i>Original Music Composed By: João Guerra</i></p><p><b>Explorations</b></p><div class="template asset" contenteditable="false" data-id="870774">
+<figure><embed allowscriptaccess="always" height="30" src="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?audioonly=true&amp;controlbar.idlehide=false&amp;controlbar=bottom&amp;file=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fassets%2F000%2F870%2F774%2F39b5c34d6a1f2f9b7761283d5eefa4d7_original.mp3%3F1377744727&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf" type="application/x-shockwave-flash" width="560" wmode="transparent"></embed></figure>
+</div><p><b>Main Theme</b></p><div class="template asset" contenteditable="false" data-id="870776">
+<figure><embed allowscriptaccess="always" height="30" src="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?audioonly=true&amp;controlbar.idlehide=false&amp;controlbar=bottom&amp;file=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fassets%2F000%2F870%2F776%2F8b06e706f9a54ef217f32f3faf4b73b2_original.mp3%3F1377744767&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf" type="application/x-shockwave-flash" width="560" wmode="transparent"></embed></figure>
+</div>
+<p><b>The Highlanders</b></p><div class="template asset" contenteditable="false" data-id="939747">
+<figure><embed allowscriptaccess="always" height="30" src="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?audioonly=true&amp;controlbar.idlehide=false&amp;controlbar=bottom&amp;file=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fassets%2F000%2F939%2F747%2F98d8d8da0926a42582e65cb97498cb2c_original.mp3%3F1379663791&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf" type="application/x-shockwave-flash" width="560" wmode="transparent"></embed></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/594743529/unwritten-echoes-of-twilight/assets/924838/edit" data-id="924838">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/924/838/56c0bb144ef8f99328cfd7905913f91e_large.?1379314584"></figure>
+</div><p>What is awesome about Kickstarter is it gives you, the people who love RPGs as much as we do, a chance to support this project and get involved in its design from the ground up! Through pledging you not only have a hand in raising our budget, but you get the opportunity to synch up with developers, share your ideas, vote on options, get early access, behind the scenes info, and much more!  </p>
+
+<a href="http://www.druidgameworks.com/kickstarterfundsoverview.html" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/594743529/unwritten-echoes-of-twilight/assets/932944/edit" data-id="932944">
+<figure><img alt="Click Here to Review a Detailed Breakdown of Our Project Budget" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/932/944/255f710d2b0b0067640f7feb1031ef09_large.?1379499566"><figcaption>Click Here to Review a Detailed Breakdown of Our Project Budget</figcaption></figure>
+</div>
+
+
+
+</a><div class="template asset" contenteditable="false" data-edit_url="/projects/594743529/unwritten-echoes-of-twilight/assets/924830/edit" data-id="924830">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/924/830/24dda8677e73a76f82ddb209868ea35c_large.?1379314392"></figure>
+</div><p>Along with our eternal gratitude we've put together a list of prizes here to reward you for your generosity and general superbness! Most of these things, DLCs included, will be Kickstarter exclusives and won't be available again after our project ends here so get them while they're hot! </p><p><b>Please note all reward tiers stack so you receive the reward at the level you pledge AND ALSO all rewards for the levels below it as outlined in the overview graphic below. </b></p><a href="http://i244.photobucket.com/albums/gg21/Darkrder/Druid%20Gaming/Kickstarter/RewardsNew_zps8d9c401d.png" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/594743529/unwritten-echoes-of-twilight/assets/991980/edit" data-id="991980">
+<figure><img alt="Click Image to Zoom View Rewards Matrix" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/991/980/d55c767a8933a3fc4c1b13c4077b2c71_large.png?1381102875"><figcaption>Click Image to Zoom View Rewards Matrix</figcaption></figure>
+</div>
+
+
+</a>
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/594743529/unwritten-echoes-of-twilight/assets/932479/edit" data-id="932479">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/932/479/fbad5ecae8f81b55ce3db0c0448c48f3_large.?1379479997"></figure>
+</div><p>There are six playable races planned in Unwritten: Echoes of Twilight, but there are a total of fourteen races in our universe planned for future titles. Bust the lid off our goal by $10,000 and unlock the next race to be included in the roster! As you unlock one we'll set a new goal until the lid is blown off our goal and all fourteen races are playable! </p><div class="template asset" contenteditable="false" data-edit_url="/projects/594743529/unwritten-echoes-of-twilight/assets/932982/edit" data-id="932982">
+<figure><img alt="How many playable races can we unlock!?" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/932/982/4563669b1b1ac5236ecf9ba69ed0f548_large.png?1379501009"><figcaption>How many playable races can we unlock!?</figcaption></figure>
+</div>
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/594743529/unwritten-echoes-of-twilight/assets/932525/edit" data-id="932525">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/932/525/f0c5cb1c5664bac80f95db840534e6ac_large.?1379480794"></figure>
+</div><p>Druid Gameworks Studio LLC began back in 
+2010 when core members Cole MacLean, Jamie Ford, and Mark Buckley were 
+two years into development on <a href="http://www.reclaimsancretor.com/" target="_blank">Reclaiming Sancre Tor</a>, a 40+ gameplay hour expansion project for 
+Bethesda's Elder Scrolls IV: Oblivion. It was during that long 
+collaboration that we discovered a shared passion for making great 
+games and almost immediately we began drafting ideas for a truly engaging role play gaming experience. When our project was complete we began testing engines, doing our homework on the industry and took those first steps into indie development on a new breed of RPG game. The dev plan for the Unwritten series was born three years ago 
+with these words "Make a better RP Experience for Immersion Players" and
+ that remains our goal.<br><br>
+Today Druid Gameworks is a fledgling Indie Game Studio made up of 
+several veteran developers from the Elder Scrolls Modding community as 
+well as industry experienced artists. Combined we have over 50 years 
+of game design credit and we're ready to put it to the test in our first
+ commercial title. We brought you some of your favorite mods and can't wait to earn a spot on your list of favorite games!
+</p><a href="http://www.druidgameworks.com/meet_dev_team.html" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/594743529/unwritten-echoes-of-twilight/assets/932523/edit" data-id="932523">
+<figure><img alt="Click This Image to Read More About the Team" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/932/523/c2dd8c8ddec3de76ef2e896598d0ce1d_large.?1379480738"><figcaption>Click This Image to Read More About the Team</figcaption></figure>
+</div>
+
+
+
+
+
+
+
+
+</a><p>For more about Druid Gameworks, please take a spin by our <a href="http://www.druidgameworks.com/forums/index.php?/topic/128-druid-gameworks-faq/" target="_blank">F.A.Q</a> thread. We'd love to hear what you'd like to see most in an open play RPG environment so stop by and tell us, <a href="http://www.druidgameworks.com/forums/index.php?/topic/52-were-listening-tell-us-what-youd-like-to-see-in-an-rpg-game/" target="_blank">We're Listening</a>!</p><a href="http://www.druidgameworks.com/forums/" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/594743529/unwritten-echoes-of-twilight/assets/932488/edit" data-id="932488">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/932/488/39baec762b5f445b543664c65d51b82b_large.?1379480163"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+</a><a href="http://www.druidgameworks.com/forums/index.php?/topic/2-follow-druid-gameworks/" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/594743529/unwritten-echoes-of-twilight/assets/932490/edit" data-id="932490">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/932/490/d1bbfb6d0eced38337c96c3ee0093b9b_large.?1379480189"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+</a><p><b>--------------------------------------------------------------------------------------</b></p><div class="template asset" contenteditable="false" data-edit_url="/projects/594743529/unwritten-echoes-of-twilight/assets/932492/edit" data-id="932492">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/932/492/e72cc4356d1593305780b71893b9bc48_large.?1379480229"></figure>
+</div><p><b>Please help us spread the word about our Kickstarter so we can get additional funding to make this game as phenomenal as possible! Grab one of these sig bars for your forum sigs, profiles, blogs, and help us get folks kicking into our project to make our dream come true!</b></p><div class="template asset" contenteditable="false" data-edit_url="/projects/594743529/unwritten-echoes-of-twilight/assets/932506/edit" data-id="932506">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/932/506/cdfba796bfb38be0beaf75935b1166c3_large.?1379480432"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/594743529/unwritten-echoes-of-twilight/assets/932510/edit" data-id="932510">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/932/510/9fec0c7d3df44044aad7153e2e9b2b23_large.?1379480452"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/594743529/unwritten-echoes-of-twilight/assets/932514/edit" data-id="932514">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/932/514/645ff4343fff29b54dcafc2db905b7a8_large.?1379480486"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/594743529/unwritten-echoes-of-twilight/assets/932998/edit" data-id="932998">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/932/998/5c867853545c046bc1530c033c660714_large.jpg?1379501698"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/594743529/unwritten-echoes-of-twilight/assets/933000/edit" data-id="933000">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/933/000/0e16a9430d8e462597f2bd41ceb14152_large.jpg?1379501713"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/594743529/unwritten-echoes-of-twilight/assets/932517/edit" data-id="932517">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/932/517/2081c9f59829315af0a896ad54862e4f_large.?1379480537"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/594743529/unwritten-echoes-of-twilight/assets/933001/edit" data-id="933001">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/933/001/74a5bf5ca7c0ac0d8a14fdafc577410c_large.jpg?1379501731"></figure>
+</div>
+</div>
+<div id="risks">
+<h2 class="title grey-dark mt6 mb4">
+<span>Risks and challenges</span>
+<a href="/help/faq/kickstarter%20basics#Acco" class="right normal h5" target="_blank">Learn about accountability on Kickstarter</a>
+<div class="divider clear"></div>
+</h2>
+<p><p>Every creative project has the potential to hit some potholes on the road to success and we&#39;re certainly no strangers to Murphy&#39;s Law, but our team has experience in not only attempting large scale development but completing it, despite some terrible setbacks. Here are some of the common dangers for game designers and how we plan to tackle them if they crop up on us!</p>
+
+<p>1) Workflow Blocks: These sort of hurdles are common in game development. They can be caused by poor planning, lack of productivity, even software limitations. We will do everything we can to avoid bottlenecks in our workflow, or to expedite solutions if something does sneak up on us. From thorough planning and regular team meetings, to replacing unproductive team members, to utilizing Havok&#39;s top notch support for technical issues, we won&#39;t allow these things to delay production for long. Managing workflow and maintaining a project&#39;s scope is something experience teaches best, and that&#39;s experience we gained during the development years on our expansion Reclaiming Sancre Tor. </p>
+
+<p>2) Hardware Failure: This is always a concern when the success of the project depends on functional hardware. Our team uses top notch equipment, custom built and designed to handle the heavy demands of game content creation. We have an emergency fund at the ready to replace any failing hardware quickly and we have the know how to handle most common types of repair ourselves.</p>
+
+<p>3) Data Loss: Just like hardware, losing data can be a huge setback to a creative project so we&#39;re not cutting any corners when it comes to protecting our interests, and yours. Our data is housed on two separate servers, with separate hosts, each equipped with malware/hacker protection, and daily offsite backups. We employ the same secure networking system AAA studios like ZeniMax, Lionhead, and Ubisoft have used to manage our development network. We also use version control and monitoring to ensure our data isn&#39;t accidentally overwritten with many developers editing the same project.</p>
+
+<p>4) Zombie Apocalypse: In this day and age the threat of a zombie hoard crashing through one&#39;s office should not be underestimated. We are confident that we have developed a fool proof zombie training program that will turn these single minded little guys into the ideal office assistants: shuffling off to make our coffee or to power our generator so that whatever doomsday brings will not interrupt development on the coolest game in RP history!</p>
+
+<p>5) Company Instability: Very often Indie companies form as just a loose collective of friends working together with a gentleman&#39;s handshake holding their structure together. When productivity goes down, or problems arise, these companies can quickly tear themselves apart and collapse their project. Druid Gameworks Studio LLC is a proper company, having consulted attorneys to put together all the paperwork, registrations, and contracts required to form a solid business structure. There is no ambiguity in our company and that&#39;s the foundation of a solid creative endeavor.</p>
+
+<p>========================================================
+<br />What Happens If Our Kickstarter Fails?</p>
+
+<p>Obviously the best case scenario would be success. It would allow us to purchase our licenses and access software early in development, hire industry experienced staff to round out our team, empower us to not only achieve our vision, but make our game the best and fullest it can be. That said, we know we are under dogs; an unproven studio, minimal industry experience, and the game is early in development. We&#39;re asking you to toss your lot in on a veritable long shot, and we can appreciate the concerns this can raise for potential backers.</p>
+
+<p>This game is our dream and we&#39;re tossing our lot in too, so if Kickstarter fails, we are committed to continuing development using personal funds and private investors to keep the project afloat and moving forward in the short term. There&#39;s no way to finish our game in its entirety without additional funding so after further development, we would reattempt raising a project budget with a new Kickstarter campaign. We&#39;ll need your help to reach the end goal and we&#39;ll keep working until we earn your trust.</p></p>
+</div>
+</div>
+<div class="NS-projects-faqs" id="project-faqs">
+<h2 class="title grey-dark mt6 mb4">
+FAQ
+<div class="divider clear"></div>
+</h2>
+<ul class="faqs">
+<li class="faq" id="project_faq_69231">
+<div class="faq-question">
+<a href="#project_faq_69231" name="project_faq_69231">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">What is the camera perspective for Unwritten: Echoes of Twilight?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Players will be able to choose between 3rd and 1st person perspectives, with a zoom function for investigating detailed environment clues.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-09-29T18:54:26-04:00">Sun, Sep 29 2013 6:54 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_69257">
+<div class="faq-question">
+<a href="#project_faq_69257" name="project_faq_69257">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">What is the combat style?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>The planned combat style will be free form, not turn based or command prompted, though you will be able to give companions strategic commands and set their fight style before engaging an enemy.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-09-30T05:19:47-04:00">Mon, Sep 30 2013 5:19 am EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_69259">
+<div class="faq-question">
+<a href="#project_faq_69259" name="project_faq_69259">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Will there be mod support for this game?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Short answer, yes. Modding is a major part of our development plans, however it&#39;s too soon to speculate just what level of modability will be possible within our engine&#39;s licensing terms.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-09-30T05:19:47-04:00">Mon, Sep 30 2013 5:19 am EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_69258">
+<div class="faq-question">
+<a href="#project_faq_69258" name="project_faq_69258">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Will there be a DRM Free version of the game?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>All early release copies and physical copies rewarded through Kickstarter will be DRM Free. We also plan to sell a DRM Free digital version on our website as part of our public release, provided it&#39;s not a violation of our other distribution agreements.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-09-30T05:19:47-04:00">Mon, Sep 30 2013 5:19 am EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_69378">
+<div class="faq-question">
+<a href="#project_faq_69378" name="project_faq_69378">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Will There Be Linux or Mac Versions Available?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>It&#39;s undecided. Havok&#39;s Vision Engine is capable of creating Linux and Mac versions but we haven&#39;t worked out what the workload would entail on top of an already ambitious project. We are currently researching our options and will update with a firm answer one way or the other once we decide</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-09-30T22:13:35-04:00">Mon, Sep 30 2013 10:13 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_69338">
+<div class="faq-question">
+<a href="#project_faq_69338" name="project_faq_69338">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Wasn&#39;t there another game on here called &quot;Unwritten&quot;?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Turns out, yes there was, &quot;Unwritten: That Which Happened&quot; by Roxlou Games. Despite several searches early in development we found no significant related hits for the title phrase &quot;Unwritten&quot; and only learned of the coincidence when Roxlou Games reached out to us here to express their support and acknowledge the vast difference between our two projects despite a similar name. They have since renamed their game &quot;Unwritten Passage&quot; due to a dust up with Marvel Comics over their comic series titled &quot;The Unwritten&quot;. We will likely follow Roxlou&#39;s example and change the title of our game down the road, but for now we are keeping our &quot;working title&quot; to prevent disruption and confusion throughout our Kickstarter campaign. We wish Roxlou Games all the best with their endeavors!</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-09-30T17:00:17-04:00">Mon, Sep 30 2013 5:00 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_69474">
+<div class="faq-question">
+<a href="#project_faq_69474" name="project_faq_69474">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">$500,000 seems like a lot of money for a new studio, why so much?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Producing the kind of content we want to feature in Echoes of Twilight requires a lot of funding especially in the beginning with needing to pay licenses just to access proprietary softwares. Adding developers with industry experience brings a heavy price tag too, even if contracted for a year they need a competitive wage or will go elsewhere. We&#39;ve broken down our budget for those backers looking for more expense details. Some of these are rough estimates based on research, but most of the prices listed are the result of direct quotes with the various software creators and contractors. <a href="http://www.druidgameworks.com/kickstarterfundsoverview.html" rel="nofollow">http://www.druidgameworks.com/kickstarterfundsoverview.html</a></p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-10-01T23:38:25-04:00">Tue, Oct 1 2013 11:38 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_70111">
+<div class="faq-question">
+<a href="#project_faq_70111" name="project_faq_70111">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Do you have Facebook and/or Twitter?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Yes! You can find our company facebook page at: <a href="https://www.facebook.com/DruidGameworks" rel="nofollow">https://www.facebook.com/DruidGameworks</a> and our new project page here: <a href="https://www.facebook.com/UnwrittenEoT" rel="nofollow">https://www.facebook.com/UnwrittenEoT</a></p>
+
+<p>On Twitter we are @DruidGameworks</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-10-08T19:32:52-04:00">Tue, Oct 8 2013 7:32 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_71161">
+<div class="faq-question">
+<a href="#project_faq_71161" name="project_faq_71161">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">What are the Rewards Available for Pledging?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Since Reward tiers can&#39;t be edited once a pledge has been made, we have posted a current updated copy of the rewards here for your convenience!</p>
+
+<p>===============================================================</p>
+
+<p>COMMONER: Pledge $5 or more An Exclusive Kickstarter Backer Wallpaper, a unique Backer badge on our forums and our thanks for being awesome!!</p>
+
+<p>===============================================================</p>
+
+<p>ADVENTURER: Pledge $10 or more Insider Access Pass to our Backer Forum with a Backer Forum Tag, Early Updates, and News!</p>
+
+<p>===============================================================</p>
+
+<p>HUNTER: Pledge $20 or more An Early Release, DRM Free, Digital Copy of the Finished Game on YOUR CHOICE of platform PLUS Unlock Exclusive Kickstarter Achievement and get your name added to our Beta Tester pool for a chance at being a beta tester!!</p>
+
+<p>===============================================================</p>
+
+<p>GUILDSMAN: Pledge $30 or more An Early Release, DRM Free, Digital Copy of the Finished Game on YOUR CHOICE of platform, A Limited Kickstarter Edition Digital Soundtrack from Unwritten: Echoes of Twilight (22 Tracks) Featuring Exclusive Game Art PLUS a Bonus Digital Copy of the game for a friend!!</p>
+
+<p>===============================================================</p>
+
+<p>GUILDMASTER: Pledge $40 or more Receive all the perks of the GUILDSMAN Tier PLUS an Access Pass to Our Alpha Game!</p>
+
+<p>===============================================================</p>
+
+<p>PADFOOT: Pledge $50 or more Kickstarter Exclusive Weapons Pack Quest DLC: Bowrick&#39;s Arsenal: Quest deep into the ruins of the infamous Nagaten Prison to learn the truth about Bowrick&#39;s fate and recover his legendary arsenal...if you can. PLUS a Druid Gameworks Decal (black or white)</p>
+
+<p>===============================================================</p>
+
+<p>SHADOW: Pledge $60 or more Exclusive Voter Pass: Cast Your Vote in Developer Polls to Push the Content YOU want to see into the game! PLUS a 1-Disc Physical Boxed Copy of our Game for Windows PC!</p>
+
+<p>===============================================================</p>
+
+<p>RANGER: Pledge $75 or more Kickstarter Exclusive Armor Pack Quest DLC: The Falconer PLUS Signed Digital Gamemap! Quest to restore the falconer&#39;s armor and learn the secrets of this ancient trade. PLUS Kickstarter Exclusive DLC: Heritage: Choose your inheritance and unlock a family legacy that will help you begin your journey in style!</p>
+
+<p>===============================================================</p>
+
+<p>GUARDIAN: Pledge $100 or more Kickstarter Exclusive Quest DLC: Agenem&#39;s Sorrow!!! Travel to a new world in the footsteps of the lost patron Agenem; explore new terrains, creatures, and characters in your quest to complete the journey of a god!! PLUS Signed Digital Postcard with Exclusive Game Art and Signatures from All Druid Developers!</p>
+
+<p>===============================================================</p>
+
+<p>KNIGHT: Pledge $150 or more Signed Digital Artbook with Exclusive Behind the Scenes Game Art and Signatures from All Druid Developers! PLUS a T-shirt! [Your choice from 3 Designs While Supplies Last-Please Add $8 to your pledge for shipping]</p>
+
+<p>===============================================================</p>
+
+<p>MASTER: Pledge $250 or more A 2 Disc Special Edition Physical Copy of our game for Windows PC, PLUS: A Physical Full Color Artbook and a digital Access Pass to our BETA GAME! </p>
+
+<p>===============================================================</p>
+
+<p>NOBLE: Pledge $500 or more See your likeness or avatar appear as an NPC extra in Unwritten: Echoes of Twilight! PLUS Receive a Lifetime Pass and get a free digital copy for every future title in the Unwritten Series!</p>
+
+<p>===============================================================</p>
+
+<p>PATRON: Pledge $1,000 or more KICKSTARTER EXCLUSIVE Receive a Limited 3-Disc Boxed Collector&#39;s Edition of our Game for Windows PC, PLUS see the legend of your Patron self written into our universe lore!</p>
+
+<p>===============================================================</p>
+
+<p>LEGACY: Pledge $5,000 or more Receive Special Thanks in our Credit Reel PLUS Join the Development Team on Skype and sit-in for two of our regular staff meetings and get exclusive access to insider info, make suggestions, and give feedback, straight to the team!</p>
+
+<p>===============================================================</p>
+
+<p>UNWRITTEN PACKAGE: Pledge $10,000 or more Receive Executive Producer Credit in the game’s Credit Reel, and Join the Developers for a Launch Party in St Louis to receive all your rewards in person and signed by the team! PLUS a special Druid Gameworks Staff T-Shirt with your Name!</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-10-18T05:22:02-04:00">Fri, Oct 18 2013 5:22 am EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_71162">
+<div class="faq-question">
+<a href="#project_faq_71162" name="project_faq_71162">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Are there any Add-Ons for my Pledge?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>There sure are!!!</p>
+
+<p>•	Add $5 for a Druid Gameworks Logo Decal in black or white
+<br />•	Add $5 for a Full Color Echoes of Twilight Postcard
+<br />•	Add $5 for an Echoes of Twilight Mouse Pad
+<br />•	Add $12 for a Druid Logo or Echoes of Twilight Mug
+<br />•	Add $15 for a Druid Gameworks Logo T-Shirt
+<br />•	Add $15 for an Echoes of Twilight T-Shirt
+<br />•	Add $20 for City Postcard Set of 4 [Signed!!!]</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-10-18T05:22:45-04:00">Fri, Oct 18 2013 5:22 am EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_71163">
+<div class="faq-question">
+<a href="#project_faq_71163" name="project_faq_71163">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">If this Kickstarter fails to get funded will you guys keep trying? :(</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>We love that our fans make sad face when thinking about this game not getting funded :D</p>
+
+<p>Yes, we will keep trying. This first Kickstarter has been a real learning experience. Despite weeks of preparation, and looking at other successful game projects, and reading through the Kickstarter tips and tutorials, nothing could poke holes in our project quite as effectively as actually running it. We have a much better idea about what our backers expect, what you folks need to see to get behind us, and what we need to do to improve our campaign on the next try!</p>
+
+<p>We plan to put together a new streamlined Kickstarter very quickly after this one ends, waiting only long enough to prepare the materials we didn&#39;t have early enough this time around.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-10-18T05:34:26-04:00">Fri, Oct 18 2013 5:34 am EDT</time>
+</div>
+</div>
+</li>
+
+</ul>
+<div class="faq-ask-box">
+<a href="/projects/594743529/unwritten-echoes-of-twilight/messages/new?message%5Bto%5D=594743529&amp;mode=FAQ" class="button button_blue remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Ask a question about Unwritten: Echoes of Twilight">Ask a question</a>
+
+</div>
+</div>
+
+<div class="mt4 ml1 mr1 mb2" id="report-issue-wrap">
+<a href="/login?then=%2Fprojects%2F594743529%2Funwritten-echoes-of-twilight" class="button button_grey">Report this project to Kickstarter</a>
+</div>
+</div>
+<div class="NS-projects-rightcol grid_5" id="rightcol">
+<div class="NS_projects__ecom">
+<div class="digits_5 pb2 pl2 pt2" id="stats">
+<h5>
+<div class="num h48 no-margin" data-backers-count="661" id="backers_count"><data class="Project53654119" data-format="number" data-value="661" itemprop="Project[backers_count]">661</data></div>
+<span><data class="Project53654119" data-attr="backers_count" data-format="pluralize" data-value="661" data-word="Backer">Backers</data></span>
+</h5>
+<h5>
+<div class="num h48 no-margin" data-goal="500000.0" data-percent-raised="0.10337674" data-pledged="51688.37" id="pledged">
+<data class="Project53654119" data-currency="USD" data-format="shorter_money" data-precision="0" data-value="51688" data-without_code="true" itemprop="Project[pledged]">$51,688</data>
+<span class="money usd project_currency_code"></span>
+</div>
+pledged of
+<span class="money usd no-code">$500,000</span>
+goal
+</h5>
+<span data-duration="30.0" data-end_time="2013-10-28T21:01:26-04:00" data-hours-remaining="0" id="project_duration_data"></span>
+<div class="Project53654119" data-conditions="[{&quot;!state&quot;:[&quot;canceled&quot;,&quot;suspended&quot;]}]" data-evaluation="true" data-render="&quot;&lt;h5 class=\&quot;poll \&quot; data-dynamic=\&quot;5\&quot; data-end_time=\&quot;2013-10-28T21:01:26-04:00\&quot; data-poll_url=\&quot;https://d2oher2uhvl0ur.cloudfront.net/projects/594743529/unwritten-echoes-of-twilight/stats.json\&quot;&gt;\n&lt;div class=\&quot;num h48 no-margin\&quot;&gt;0&lt;/div&gt;\n&lt;span class=\&quot;text\&quot;&gt;seconds to go&lt;/span&gt;\n&lt;/h5&gt;\n&quot;"><h5 class="poll " data-dynamic="5" data-end_time="2013-10-28T21:01:26-04:00" data-poll_url="https://d2oher2uhvl0ur.cloudfront.net/projects/594743529/unwritten-echoes-of-twilight/stats.json">
+<div class="num h48 no-margin">0</div>
+<span class="text">seconds to go</span>
+</h5>
+</div></div>
+<div class="Project53654119" data-conditions="[{&quot;state&quot;:&quot;live&quot;},{&quot;!ended?&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;pr2 pl2\&quot; id=\&quot;pledge-wrap\&quot;&gt;\n&lt;a href=\&quot;/projects/594743529/unwritten-echoes-of-twilight/pledge/new?clicked_reward=false\&quot; class=\&quot;button button_green button_box button_block\&quot; id=\&quot;button-back-this-proj\&quot; title=\&quot;Back this project\&quot;&gt;Back This Project &lt;small class=&#39;h6 normal block green-dark&#39;&gt;&lt;span class=\&quot;money usd \&quot;&gt;$1&lt;/span&gt; minimum pledge&lt;/small&gt;&lt;/a&gt;\n&lt;/div&gt;\n&quot;"></div><div class="Project53654119" data-conditions="[{&quot;state&quot;:&quot;live&quot;}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;p2\&quot; id=\&quot;banner\&quot;&gt;\n&lt;p class=\&quot;tiny_type no-margin\&quot;&gt;\nThis project will only be funded if at least\n&lt;span class=\&quot;money usd \&quot;&gt;$500,000&lt;/span&gt;\nis pledged by\n&lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;llll z\&quot; datetime=\&quot;2013-10-28T21:01:26-04:00\&quot;&gt;Mon, Oct 28 2013 9:01 pm EDT&lt;/time&gt;.\n&lt;/p&gt;\n&lt;/div&gt;\n&quot;"></div></div>
+
+<div class="NS_projects__rightcol_projectby bg-blue-light rounded">
+<div class="p2 clearfix">
+<div class="avatar inline-block align-middle">
+<a href="/projects/594743529/unwritten-echoes-of-twilight/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography"><img alt="Knotbgdwhite.small" class="avatar-small" height="80" src="https://s3.amazonaws.com/ksr/avatars/6500624/KnotBgdWhite.small.jpg?1377747005" width="80" />
+</a></div>
+<div class="creator-name inline-block align-middle ml1">
+<h6 class="mb1">Project by</h6>
+<h5 class="mb1">
+<a href="/projects/594743529/unwritten-echoes-of-twilight/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">Druid Gameworks</a>
+</h5>
+<p class="location h6 bold mb1">
+<a href="/discover/places/ofallon-il">O&#39;fallon, IL</a>
+</p>
+</div>
+</div>
+<div class="creator-details pl2 pr2 pb1">
+<ul class="list-simple h5 mb1">
+<li class="projects-more">
+<span class="ss-icon ss-kickstarter grey-dark margin-right"></span>
+<span class="text">
+<a href="/profile/594743529/created" class="green-dark bold more-button remote_modal_dialog" data-modal-title="Projects created by Druid Gameworks">2 created</a>
+<span class="divider">&middot;</span>
+<a href="/profile/594743529/backed" class="green-dark bold more-button remote_modal_dialog" data-modal-title="Projects backed by Druid Gameworks">1 backed</a>
+</span>
+</li>
+<li>
+<span class="ss-icon ss-facebook margin-right grey-dark"></span>
+<span class="text">
+Not connected
+</span>
+</li>
+<li class="links">
+<span class="ss-icon ss-globe margin-right grey-dark"></span>
+<span class="text">
+<a href="http://www.druidgameworks.com" class="popup" rel="nofollow" target="_blank">druidgameworks.com</a>
+</span>
+</li>
+</ul>
+</div>
+<div class="footer center h5 bold clearfix rounded-bottom clip">
+<a href="/projects/594743529/unwritten-echoes-of-twilight/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">See full bio</a>
+<a href="/projects/594743529/unwritten-echoes-of-twilight/messages/new?message%5Bto%5D=594743529" class="remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Send a message to Druid Gameworks">Contact me</a>
+
+</div>
+</div>
+
+<ul class="NS-projects-rightcol-rewards rounded clip list mt2" data-reward-count="24" id="what-you-get">
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$5</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+13 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>COMMONER- An Exclusive Kickstarter Backer Wallpaper and our thanks for being awesome!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-10-01">Oct 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$10</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+7 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>ADVENTURER- Insider Access Pass to our Backer Forum with a Backer Forum Tag, Early Updates, and News!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-10-01">Oct 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$20</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+2 backers
+</span>
+<span class="bg-grey no-wrap pl1 pr1 sold-out">
+All gone!
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>HUNTER- A Limited Kickstarter Edition Digital Soundtrack from Unwritten: Echoes of Twilight (22 Tracks)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-11-01">Nov 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$20</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+222 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>[NEW] HUNTER- An Early Release, DRM Free, Digital Copy of the Finished Game for Windows PC</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-10-01">Oct 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$30</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+56 backers
+</span>
+<span class="bg-grey no-wrap pl1 pr1 sold-out">
+All gone!
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>GUILDSMAN- An Early Release Digital Copy of the Finished Game for Windows PC</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-09-01">Sep 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$30</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+129 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>[NEW] GUILDSMAN- An Early Release, DRM Free, Digital Copy of the Finished Game for Windows PC, A Limited Kickstarter Edition Digital Soundtrack from Unwritten: Echoes of Twilight (22 Tracks) Featuring Exclusive Art, PLUS a Bonus Copy of the game for a friend!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-10-01">Oct 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$40</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+58 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>[NEW] GUILDMASTER- Receive all the perks of the GUILDSMAN Tier PLUS an Access Pass to Our Alpha Game!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-10-01">Oct 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$40</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+28 backers
+</span>
+<span class="bg-grey no-wrap pl1 pr1 sold-out">
+All gone!
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>GUILDMASTER- An Early Release Digital Copy of the Finished Game for Windows PC, PLUS Access to Our Alpha Game!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-09-01">Sep 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$50</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+25 backers
+</span>
+<span class="bg-grey no-wrap pl1 pr1 sold-out">
+All gone!
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>PADFOOT- Kickstarter Exclusive Weapons Pack Quest DLC: Bowrick&#39;s Arsenal: Quest deep into the ruins of the infamous Nagaten Prison to learn the truth about Bowrick&#39;s fate and recover his legendary arsenal...if you can.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-11-01">Nov 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$50</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+6 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>[NEW] PADFOOT: Kickstarter Exclusive Weapons Pack Quest DLC: Bowrick&#39;s Arsenal: Quest deep into the ruins of the infamous Nagaten Prison to learn the truth about Bowrick&#39;s fate and recover his legendary arsenal...if you can. PLUS a Druid Gameworks Decal (black or white)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-10-01">Oct 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $5 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$60</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+3 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>SHADOW- Exclusive Voter Pass: Cast Your Vote in Developer Polls to Push the Content YOU want to see into the game! PLUS a 1-Disc Physical Boxed Copy of our Game for Windows PC!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-11-01">Nov 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $15 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$75</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+12 backers
+</span>
+<span class="bg-grey no-wrap pl1 pr1 sold-out">
+All gone!
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>RANGER- Kickstarter Exclusive Armor Pack Quest DLC: The Falconer PLUS Signed Digital Gamemap! Quest to restore the falconer&#39;s armor and learn the secrets of this ancient trade.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-11-01">Nov 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$75</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+3 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>[NEW] RANGER: Kickstarter Exclusive Armor Pack Quest DLC: The Falconer PLUS Signed Digital Gamemap! Quest to restore the falconer&#39;s armor and learn the secrets of this ancient trade. BONUS Kickstarter Exclusive DLC: Heritage: Choose your inheritance and unlock a family legacy that will help you begin your journey in style!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-11-01">Nov 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$100</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+60 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>GUARDIAN- Kickstarter Exclusive Quest DLC: Agenem&#39;s Sorrow!!! Travel to a new world in the footsteps of the lost patron Agenem; explore new terrains, creatures, and characters in your quest to complete the journey of a god!!
+
+PLUS Signed Digital Postcard with Exclusive Game Art and Signatures from All Druid Developers!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-11-01">Nov 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$150</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+3 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(1497 left of 1500)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>KNIGHT- Signed Digital Artbook with Exclusive Behind the Scenes Game Art and Signatures from All Druid Developers! PLUS a T-shirt! [Your choice from 3 Designs While Supplies Last-Please Add $8 to your pledge for shipping]</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-06-01">Jun 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="domestic">
+Ships within the US only
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$250</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(500 left of 500)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>[NEW] MASTER- A 2 Disc Special Edition Physical Copy of our game for Windows PC, PLUS: A Physical Full Color Artbook and a digital Access Pass to our BETA GAME!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-09-01">Sep 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $15 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$250</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+2 backers
+</span>
+<span class="bg-grey no-wrap pl1 pr1 sold-out">
+All gone!
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>MASTER- Exclusive Voter Pass: Cast Your Vote in Developer Polls to Push the Content YOU want to see into the game!  PLUS: A Physical Full Color Artbook, and Access to our Alpha Game! [Please add $6 to your pledge for shipping!]</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-07-01">Jul 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="domestic">
+Ships within the US only
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(99 left of 100)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>NOBLE- See your likeness or avatar appear as an NPC extra in Unwritten: Echoes of Twilight! PLUS Receive a Lifetime Pass and get a free digital copy code for every future title in the Unwritten Series!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-10-01">Oct 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$1,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(1250 left of 1250)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>[NEW] PATRON: KICKSTARTER EXCLUSIVE Receive a Limited 3-Disc Boxed Collector&#39;s Edition of our Game for Windows PC, PLUS see the legend of your Patron self written into our universe lore!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-10-01">Oct 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $15 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$1,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+2 backers
+</span>
+<span class="bg-grey no-wrap pl1 pr1 sold-out">
+All gone!
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>PATRON- KICKSTARTER EXCLUSIVE Receive a Limited Boxed Collector&#39;s Edition of our Game for Windows PC</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-10-01">Oct 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="domestic">
+Ships within the US only
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$5,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(50 left of 50)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>[NEW] LEGACY: Receive Special Thanks in our Credit Reel PLUS Join the Development Team on Skype and sit-in for two of our regular staff meetings and get exclusive access to insider info, make suggestions, and give feedback, straight to the team!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-10-01">Oct 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$5,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(1 left of 1)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>LEGACY- Receive Special Thanks in our Credit Reel PLUS All Lower Tier Rewards!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-10-01">Oct 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $35 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$10,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(29 left of 30)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>[NEW] UNWRITTEN PACKAGE- Receive Executive Producer Credit in the game’s Credit Reel, and Join the Developers for a Launch Party in St Louis to receive all your rewards in person and signed by the team! PLUS a special Druid Gameworks Staff T-Shirt with your Name!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-10-01">Oct 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$10,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+<span class="bg-grey no-wrap pl1 pr1 sold-out">
+All gone!
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>UNWRITTEN PACKAGE-
+All Rewards in Lower Tiers, PLUS Executive Producer Credits, and Join the Developers for a Launch Party in St Louis!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-10-01">Oct 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="domestic">
+Ships within the US only
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+</ul>
+
+<div class="p2" id="meta">
+<h5>Funding period</h5>
+<p class="tiny_type">
+<time class="js-adjust" data-format="ll" datetime="2013-09-28T21:01:26-04:00">Sep 28, 2013</time> - 
+<time class="js-adjust" data-format="ll" datetime="2013-10-28T21:01:26-04:00">Oct 28, 2013</time>
+(30 days)
+</p>
+</div>
+</div>
+
+</div>
+
+<a href="#" id="video_mode_tab" style="display: none;">
+View in Video Mode
+</a>
+
+</div>
+</div>
+
+
+</div>
+
+<div class="h5 bg-green-dark" id="mega-footer-wrap">
+<div class="bg-green-dark white full-height" id="footer-newsletter-signup">
+<div class="container py4">
+<div class="grid_8 prefix_4 suffix_4 center mt4">
+<h2>
+Eureka! You've found
+<br>
+our little secret.
+</h2>
+<p>Sign up for our Happening email for all the inside info about arts and culture in the Kickstarter universe and beyond.</p>
+<div class="newsletter_signup">
+<form accept-charset="UTF-8" action="/newsletters/happening/signup" class="overlabels" method="post"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /><input class="hidden" name="authenticity_token" type="hidden" value="XBVwUNFGSMwPizDX1TGaDKlSy9o4BWgDsLMEtRpXHIc=" /></div><input class="hidden" id="location" name="location" type="hidden" value="footer" />
+<textarea class="hide textarea" id="comment" name="comment">
+</textarea>
+<div class="field newsletter">
+<label class="overlabel z1 overlabel-newsletter">Email address</label>
+<input class="text" id="email" name="email" type="text" />
+</div>
+<input class="button button_green submit" name="commit" type="submit" value="Submit" />
+</form>
+
+</div>
+
+</div>
+</div>
+</div>
+<div class="container relative" id="mega-footer">
+<span class="scissors icon-scissors-1"></span>
+<div class="grid_16 alpha omega pt4 pb2" id="mega-footer-links">
+<div class="grid_4 link-group">
+<h5 class="white">About us</h5>
+<ul class="list">
+<li><a href="/year/2013/?ref=footer">2013 highlights</a></li>
+<li><a href="/year/2012?ref=footer">2012 highlights</a></li>
+<li><a href="/team?ref=footer">Who we are</a></li>
+<li><a href="/jobs?ref=footer">Jobs</a></li>
+<li><a href="/press?ref=footer">Press</a></li>
+<li><a href="/help/stats?ref=footer">Stats</a></li>
+<li><a href="/newsletters/weekly">Projects we love</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group">
+<h5><a href="/help?ref=footer" class="white">Help</a></h5>
+<ul class="list">
+<li><a href="/hello?ref=footer">What is Kickstarter?</a></li>
+<li><a href="/help?ref=footer">FAQ</a></li>
+<li><a href="/contact?ref=footer">Support</a></li>
+<li><a href="/help/school?ref=footer">Kickstarter School</a></li>
+<li><a href="/terms-of-use?ref=footer">Terms of Use</a></li>
+<li><a href="/privacy?ref=footer">Privacy Policy</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group alpha omega suffix_1">
+<h5 class="alpha"><a href="/discover/advanced?ref=footer" class="white">Discover</a></h5>
+<ul class="column column-0 grid_2 list">
+<li><a href="/discover/categories/art?ref=footer">Art</a></li>
+<li><a href="/discover/categories/comics?ref=footer">Comics</a></li>
+<li><a href="/discover/categories/dance?ref=footer">Dance</a></li>
+<li><a href="/discover/categories/design?ref=footer">Design</a></li>
+<li><a href="/discover/categories/fashion?ref=footer">Fashion</a></li>
+<li><a href="/discover/categories/film%20&amp;%20video?ref=footer">Film &amp; Video</a></li>
+<li><a href="/discover/categories/food?ref=footer">Food</a></li>
+</ul>
+<ul class="column column-1 grid_2 list">
+<li><a href="/discover/categories/games?ref=footer">Games</a></li>
+<li><a href="/discover/categories/music?ref=footer">Music</a></li>
+<li><a href="/discover/categories/photography?ref=footer">Photography</a></li>
+<li><a href="/discover/categories/publishing?ref=footer">Publishing</a></li>
+<li><a href="/discover/categories/technology?ref=footer">Technology</a></li>
+<li><a href="/discover/categories/theater?ref=footer">Theater</a></li>
+</ul>
+</div>
+<div class="grid_3 link-group">
+<h5 class="white">Hello</h5>
+<ul class="list">
+<li>
+<a href="https://twitter.com/kickstarter"><span class="ss-icon ss-social-regular ss-twitter"></span>
+Twitter
+</a></li>
+<li>
+<a href="https://www.facebook.com/Kickstarter"><span class="ss-icon ss-social-regular ss-facebook"></span>
+Facebook
+</a></li>
+<li>
+<a href="http://kickstarter.tumblr.com"><span class="ss-icon ss-social-regular ss-tumblr"></span>
+Tumblr
+</a></li>
+<li>
+<a href="http://instagram.com/kickstarter"><span class="ss-icon ss-social-regular ss-instagram"></span>
+Instagram
+</a></li>
+<li>
+<a href="https://vine.co/Kickstarter"><span class="ss-icon ss-social-regular ss-vine"></span>
+Vine
+</a></li>
+<li>
+<a href="/blog?ref=footer">Blog</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="grid_16 py4" id="mega-footer-bottom">
+<div class="logo left">
+<a href="/" class="grey-dark"><span class="ss-icon h3">KICKSTARTER</span>
+</a></div>
+<p class="right h5 grey-dark">
+&copy;
+2014
+Kickstarter, Inc.
+</p>
+</div>
+</div>
+</div>
+
+<script>
+  //<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    var analytics_vars = { google_analytics_id : "UA-7621056-1", logged_in : "false", social_user: "false" }
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.mixpanel_id = '75b1d24a516ecfc955eadfadc4910661';
+    window.mixpanel_debug = false;
+  //]]>
+</script>
+
+
+<noscript>
+<img alt="Quantcast" border="0" height="1" src="//secure.quantserve.com/pixel/p-34IbSpw2K94Sg.gif" style="display:none" width="1" />
+</noscript>
+
+
+<script>
+  //<![CDATA[
+    window.benchmark = (typeof window.performance == 'object' && typeof window.performance.mark == 'function');
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    (function (root) {
+      function instrument_function (original) {
+        return function () {
+          try {
+            return original.apply(this, arguments);
+          } catch (e) {
+            if (e.stack && root.Honeybadger) {
+              Honeybadger.notify(e, {
+                current_project : root.current_project,
+                current_user : root.current_user
+              });
+            }
+            throw(e);
+          }
+        };
+      }
+      root.instrument_function = instrument_function;
+    }(this));
+  //]]>
+</script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+
+<script>
+  //<![CDATA[
+    (function(){function c(a){this.local_start_time=new Date;this.settings={cookie_name:"request_time"};for(var b in a)this.settings[b]=a[b];this.get_remote_offset()}c.prototype.get_remote_offset=function(){this.cookie_value=this.read_cookie();var a=new Date(this.cookie_value);if(!this.cookie_value||"Invalid Date"===a.toString()){if(this.remote_offset=this.read_cookie("local_offset"))this.remote_offset=parseInt(this.remote_offset,10)}else this.remote_offset=a-this.local_start_time;"undefined"!==typeof this.remote_offset&& !isNaN(this.remote_offset)?(document.cookie="local_offset="+this.remote_offset+"; path=/",this.is_set=!0):this.is_set=!1};c.prototype.time_units=[["milliseconds",1],["seconds",1E3],["minutes",6E4],["hours",36E5],["days",864E5]];c.prototype.get_units_in_interval=function(a,b){var d=a.replace(/^\w/,function(d){return"get"+d.toUpperCase()});return b[d]()};c.prototype.milliseconds_in_day=function(a){"undefined"===typeof a&&(a=new Date);for(var b=0,d=this.time_units.length-2;0<=d;d--)b+=this.get_units_in_interval(this.time_units[d][0], a)*this.time_units[d][1];return b};c.prototype.milliseconds_in_interval=function(a,b){return this.milliseconds_in_day(b)%a};c.prototype.milliseconds_to_next_interval=function(a,b){return a-this.milliseconds_in_interval(a,b)};c.prototype.pluralize=function(a,b){1===b&&(a=a.replace(/s$/,""));return a};c.prototype.read_cookie=function(a){for(var b=window.document.cookie.split(";"),a=(a||this.settings.cookie_name)+"=",d=0;d<b.length;d++){for(var e=b[d];" "==e.charAt(0);)e=e.substring(1,e.length);if(0== e.indexOf(a))return b=e.substring(a.length,e.length),decodeURIComponent(b).replace(/\+/g," ")}return null};c.prototype.destroy_cookie=function(a){var b=new Date;a||(a=this.settings.cookie_name);b.setTime(b.getTime()-864E5);window.document.cookie=a+"=; expires="+b.toGMTString()+"; path=/"};c.prototype.get_remote_time=function(){var a=new Date,b=a.getTime()+this.remote_offset;return a=a.setTime(b)};window.ksr_page_clock=new c})(); (function(){function c(d,a,b){if(d){this.options={unit_base:{seconds:119,minutes:119,hours:72,days:0},end_phrase:d.getAttribute("data-word")||"to go",count_down:d.getAttribute("data-dynamic")||!1};for(k in b)this.options[k]=b[k];this.clock=a;this.time_units=this.clock.time_units.slice(1);this.element=d;this.clock.is_set&&this.attach()}}function a(){this.elements=[];this.attach()}var b=function(d,a){var b=a||window.document.body,c=d.split("."),g=c[c.length-1],c=1<c.length&&c[0]?c[0]:"*";if(window.document.getElementsByClassName)return b.getElementsByClassName(g); if(b.querySelectorAll)return b.querySelectorAll(d);for(var c=b.getElementsByTagName(c),h=[],i=0,f;f=c[i];i++)b=RegExp("(^|\\s)"+g+"(\\s|$)"),(""+f.className).match(b)&&h.push(f);return h};c.prototype.get_remaining_time=function(){var d=this.remote_end_time-this.clock.get_remote_time();0>d&&(d=0);return d};c.prototype.get_current_unit=function(){for(var d,a=0;a<this.time_units.length&&!(d=this.time_units[a],this.get_remaining_time()<=this.options.unit_base[d[0]]*d[1]);a++);return d};c.prototype.update_element= function(){var a=this.get_current_unit(),b=Math.floor(this.get_remaining_time()/a[1]);isNaN(b)||(this.number_element.innerHTML=b,this.text_element.innerHTML=this.clock.pluralize(a[0],b)+" "+this.options.end_phrase)};c.prototype.valid=function(){return!(!this.number_element||!this.text_element)};c.prototype.attach=function(){function a(){c.update_element();if(c.options.count_down&&0<c.get_remaining_time()){var b=c.get_current_unit();this.timeout=window.setTimeout(a,c.clock.milliseconds_to_next_interval(b[1]))}} var c=this;if(this.remote_end_time_string=this.element.getAttribute("data-end_time"))this.remote_end_time_string.match(/^\d+$/)?(this.remote_end_time=new Date,this.remote_end_time.setTime(this.remote_end_time_string)):this.remote_end_time=new Date(this.remote_end_time_string),this.number_element=b(".num",this.element)[0],this.text_element=b(".text",this.element)[0],this.element.ksr_page_timer=!0,this.valid()&&a()};c.prototype.cancel=function(){this.timeout&&clearTimeout(this.timeout)};a.prototype.loading= !0;a.prototype.stop_finding=function(){this.attach_timers();this.loading=!1;document.addEventListener?document.removeEventListener("DOMContentLoaded",this.stop_finding,!1):document.attachEvent&&"complete"===document.readyState&&document.detachEvent("onreadystatechange",this.stop_finding)};a.prototype.bind_ready=function(){var a=this,b=function(){a.stop_finding.call(a)};document.addEventListener?(document.addEventListener("DOMContentLoaded",b,!1),window.addEventListener("load",b,!1)):document.attachEvent&& (document.attachEvent("onreadystatechange",b),window.attachEvent("onload",b))};a.prototype.attach_timers=function(){for(var a=b("div.ksr_page_timer"),e=0;e<a.length;e++)a[e].ksr_page_timer||(new c(a[e],window.ksr_page_clock),this.elements.push(a[e]))};a.prototype.attach=function(){var a=this;this.bind_ready();(function(){a.attach_timers();a.loading&&window.setTimeout(function(){a.attach_timers()},200)})()};window.ProjectTimer=c;new a})();
+  //]]>
+</script>
+
+<script class="template" id="template-widgets__video_embed_code" type="text/x-tmpl-mustache"><iframe width="{{width}}" height="{{height}}" src="{{{path}}}" frameborder="0" scrolling="no"> </iframe>
+</script><script class="template" id="template-projects__baseball_card_tall" type="text/x-tmpl-mustache"><div class="project-card-wrap project-card-wrap-tall border bg-white rounded clip">
+  <div class="project-card relative project-live {{#successful?}}successful{{/successful?}}">
+    <div class="project-thumbnail pt1 pl1 pr1">
+      <a href="{{urls.web.project}}" target="">
+        <img alt="Photo-little" class="projectphoto-little" src="{{photo.little}}" class="fit">
+      </a>
+    </div>
+    <div class="project-card-interior p1 h6 grey-dark">
+      <h6 class="project-title">
+        <a href="{{urls.web.project}}" target="" class="green-dark">{{name}}</a>
+      </h6>
+      <p class="mb1 ellipsis">
+        by
+        {{creator.name}}
+      </p>
+      <p class="blurb">
+        {{blurb}}
+      </p>
+    </div>
+    <div class="absolute-bottom bg-white rounded-bottom">
+
+      {{#location}}
+        <ul class="p1 list project-meta no-margin h6">
+          <li class="ellipsis">
+            <a href="{{location.urls.web.discover}}" data-location="{{location_json}}" class="grey-dark">
+              <span class="ss-icon ss-location"></span>
+              <span class="location-name">{{location.displayable_name}}</span>
+            </a>
+          </li>
+        </ul>
+      {{/location}}
+
+      <div class="project-stats-wrap pb1 pl1 pr1">
+
+        {{#failed?}}
+          <div class='project-status project-failed h6'>
+            <strong> Funding Unsuccessful</strong><br />
+            <span class="grey-dark">Project ended on {{formatted_deadline}}</span>
+          </div>
+        {{/failed?}}
+
+        {{#canceled?}}
+          <div class='project-status project-canceled h6'>
+            <strong> Funding Canceled</strong><br />
+            <span class="grey-dark">Project canceled on {{formatted_state_changed_at}}</span>
+          </div>
+        {{/canceled?}}
+
+        {{#successful?}}
+          <div class='project-pledged-successful bg-green white h6 pl1 pr1 mb1'>
+            <strong>Successful!</strong>
+          </div>
+        {{/successful?}}
+
+        {{#live_or_successful?}}
+          {{#live?}}
+            <div class="project-pledged-wrap bg-grey clip mb1">
+              <div class="project-pledged bg-green full-height" style="width: {{percent_raised_to_100}}%"></div>
+            </div>
+          {{/live?}}
+          <ul class="project-stats list no-margin h6 no-wrap">
+            <li class="first funded inline-block mr1">
+              <strong class="block h6">{{percent_raised_rounded}}%</strong>
+              <span class="grey-dark">funded</span>
+            </li>
+            <li class="pledged inline-block mr1">
+              <strong class="block h6">{{currency_symbol}}{{formatted_money}}</strong>
+              <span class="grey-dark">pledged</span>
+            </li>
+            {{#successful?}}
+              <li class="last successful inline-block">
+                <strong class="block h6">Funded</strong>
+                <div class="deadline grey-dark">{{formatted_deadline}}</div>
+              </li>
+            {{/successful?}}
+            {{#live?}}
+              <li class="last ksr_page_timer inline-block" data-end_time="{{javascript_deadline}}">
+                <strong class="block h6">
+                  <div class="num">30</div>
+                </strong>
+                <div class="span text grey-dark" data-word="left">days to go</div>
+              </li>
+            {{/live?}}
+          </ul>
+        {{/live_or_successful?}}
+      </div>
+    </div>
+  </div>
+</div>
+
+{{#friends_backing?}}
+  <div class="friend_project_context">
+    <div class="friend_facepile">
+      {{#truncated_friends}}
+        <img src="{{avatar.thumb}}" class="{{#has_metadata?}}small{{/has_metadata?}}">
+      {{/truncated_friends}}
+    </div>
+    <p class="friend_namepile">
+      {{{escaped_sentence}}}
+    </p>
+  </div>
+{{/friends_backing?}}
+</script><script class="template" id="template-projects__video_mode" type="text/x-tmpl-mustache"><a href='#' id='video_mode_close' class='close_button z2'><span class='ss-icon ss-delete'></span></a>
+
+<div class='title_card z1 {{context_classes}}' style="display:none;">
+  <div class='interior'>
+    <h2 class='project_title normal_weight'>{{name}}</h2>
+    <p class='blurb'>{{blurb}}</p>
+    <nav class='bar'>
+      <a id='play_button' class='left play' href='#'>
+        <span class='play_active'>
+          <span class='ss-icon ss-play'></span>
+          Play
+        </span>
+        <span class='pause_active'>
+          <span class='ss-icon ss-pause'></span>
+          Pause
+        </span>
+      </a>
+      {{#logged_in}}
+        <div class='remind right'>
+          {{#if_not_starred}}
+            <a class='follow' href='{{urls.web.project}}/watch'><span class='ss-icon ss-star'></span></a>
+          {{/if_not_starred}}
+          {{#if_starred}}
+            <a class='unfollow' href='{{urls.web.project}}/unwatch'><span class='ss-icon ss-star active'></span></a>
+          {{/if_starred}}
+        </div>
+      {{/logged_in}}
+      <a class='right explore button button_green small' href='#'>Explore this project</a>
+    </nav>
+  </div>
+</div>
+
+<div class='channel_controls z1'>
+  <a href='#' class='{{#playlist_is_location}}selected {{/playlist_is_location}}location'>Something else near {{location.first_name}} <span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_featured}}selected {{/playlist_is_featured}}featured'>Something different<span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_category}}selected {{/playlist_is_category}}category'>Something else in {{category.name}} <span class='ss-icon ss-navigateright'></span></a>
+</div>
+
+<div class='project_video' style='background-image: url('{{photo.full}}')'>
+  <div class='cover'>
+    <video>
+      <source src='{{video.high}}' type='video/mp4'/>
+      <source src='{{video.webm}}' type='video/webm'/>
+    </video>
+  </div>
+</div>
+</script><script class="template" id="template-site__video_mode_fourohfour" type="text/x-tmpl-mustache"><section class='four_oh_four'>
+  <p class='big_type'>
+    Looks like you've reached the end of the line! <br />Check out <a class="another" href='#'>another channel</a> or <a href='/discover'>browse projects in discover</a>.
+  </p>
+</section>
+</script>
+
+<script id="schwamm_formatting_options" type="text/javascript">
+//<![CDATA[
+(function(){window.formatters = window.formatters || {}; var formatting_options = {"distance_date_intervals":[[5,"just now"],[29,"less than a minute ago"],[89,"1 minute ago"],[2640,"%m minutes ago"],[5340,"about 1 hour ago"],[82800,"about %h hours ago"],[147600,"1 day ago"],[604800,"%d days ago"],[15552000,"on %t"],[0,"on %y"]],"currency_symbol_mappings":{"AFN":"\u060b","ALL":"Lek","ARS":"$","AUD":"$","AWG":"\u0192","AZN":"\u043c\u0430\u043d","BAM":"KM","BBD":"$","BGN":"\u043b\u0432","BMD":"$","BND":"$","BOB":"$b","BRL":"R$","BSD":"$","BWP":"P","BYR":"p.","BZD":"BZ$","CAD":"$","CLP":"$","CNY":"\u00a5","COP":"$","CRC":"\u20a1","CUP":"\u20b1","CZK":"K\u010d","DKK":"kr","DOP":"RD$","EGP":"\u00a3","EUR":"\u20ac","FJD":"$","FKP":"\u00a3","GBP":"\u00a3","GIP":"\u00a3","GTQ":"Q","GYD":"$","HKD":"$","HNL":"L","HRK":"kn","HUF":"Ft","IDR":"Rp","ILS":"\u20aa","IRR":"\ufdfc","ISK":"kr","JMD":"J$","JPY":"\u00a5","KGS":"\u043b\u0432","KHR":"\u17db","KPW":"\u20a9","KRW":"\u20a9","KYD":"$","KZT":"\u043b\u0432","LAK":"\u20ad","LBP":"\u00a3","LKR":"\u20a8","LRD":"$","LTL":"Lt","LVL":"Ls","MKD":"\u0434\u0435\u043d","MNT":"\u20ae","MUR":"\u20a8","MXN":"$","MYR":"RM","MZN":"MT","NAD":"$","NGN":"\u20a6","NIO":"C$","NOK":"kr","NPR":"\u20a8","NZD":"$","OMR":"\ufdfc","PAB":"B/.","PEN":"S/.","PHP":"\u20b1","PKR":"\u20a8","PLN":"z\u0142","PYG":"Gs","QAR":"\ufdfc","RON":"lei","RSD":"\u0414\u0438\u043d.","RUB":"\u0440\u0443\u0431","SAR":"\ufdfc","SBD":"$","SCR":"\u20a8","SEK":"kr","SGD":"$","SHP":"\u00a3","SOS":"S","SRD":"$","SVC":"$","SYP":"\u00a3","THB":"\u0e3f","TRY":"TL","TTD":"TT$","TWD":"NT$","UAH":"\u20b4","USD":"$","UYU":"$U","UZS":"\u043b\u0432","VEF":"Bs","VND":"\u20ab","YER":"\ufdfc","ZAR":"R"},"currency_trailing_code_mappings":{"AUD":true,"CAD":true,"NZD":true,"USD":true},"currency_formats":["money","shorter_money"]}; for (key in formatting_options) {window.formatters[key] = formatting_options[key]};}());
+//]]>
+</script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("begin_base.js_tag");}
+  //]]>
+</script>
+<script src="https://d297h9he240fqh.cloudfront.net/assets/packages/base-45cdab84617ddfb8905b7cddc8500c19.js" type="text/javascript"></script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("end_base.js_tag");}
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    document.domain='kickstarter.com';
+  //]]>
+</script>
+
+<iframe height="0" id="api_xdreceiver" src="https://api.kickstarter.com/xdreceiver/85e6.html" style="display: none;" width="0"></iframe>
+
+
+
+<div id="fb-root"></div>
+<script>
+  //<![CDATA[
+    var channelUrl = window.location.protocol + "//" + window.location.host + "/channel.html",
+      skip_autologin = $('body').is('.skip_autologin');
+    
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId: window.fb_app_id,
+        channelUrl: channelUrl,
+        status: true,    // check login status
+        cookie: true,    // enable cookies to allow the server to access the session
+        xfbml: true,     // parse XFBML
+        logging: false   // turn off logging
+      });
+    
+      FB.getLoginStatus(function (response) {
+        if (response.status === 'connected') {
+          if (read_cookie("logout_from_fb")) {
+            FB.logout();
+            destroy_cookie("logout_from_fb");
+          } else if (!skip_autologin) {
+            $.get("/fb/autologin", {'fbsr': response.authResponse.signedRequest});
+          } else if (false && 0 == response.authResponse.userID) {
+            $.get("/fb/refresh", {'fbsr': response.authResponse.signedRequest});
+          }
+        } else {
+          if (read_cookie("logout_from_fb")) {
+            destroy_cookie("logout_from_fb");
+          }
+        }
+      })
+    
+      $(document).trigger('fb:loaded');
+    };
+    
+    
+    // Load the SDK Asynchronously
+    (function(d){
+      var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+      js = d.createElement('script'); js.id = id; js.async = true;
+      js.src = "//connect.facebook.net/en_US/all.js";
+      d.getElementsByTagName('head')[0].appendChild(js);
+    }(document));
+  //]]>
+</script>
+
+
+</body>
+</html>

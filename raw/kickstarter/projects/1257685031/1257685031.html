@@ -1,0 +1,2102 @@
+<!DOCTYPE html>
+<html class="projects_show  fontface no-js" lang="en">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# kickstarter: http://ogp.me/ns/fb/kickstarter#">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-5.newrelic.com","errorBeacon":"jserror.newrelic.com","licenseKey":"b04b883ad2","applicationID":"11086","transactionName":"cFteRUULX1wHFhtIEFxeVVJDFxxDCgtD","queueTime":4,"applicationTime":1109,"ttGuid":"","agentToken":null,"agent":"js-agent.newrelic.com/nr-411.min.js"}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"Vw4BVEVSCQMIUg=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e){function n(t,e,n){n||(n={});for(var r=o[t],a=r&&r.length||0,s=n[i]||(n[i]={}),u=0;a>u;u++)r[u].apply(s,e);return s}function r(t,e){var n=o[t]||(o[t]=[]);n.push(e)}var o={},i="nr@context";e.exports={on:r,emit:n}},{}],2:[function(t){function e(t,e,n,i,s){return u?u-=1:r("err",[s||new UncaughtException(t,e,n)]),"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t(5),a=window.onerror,s=!1,u=0;t("loader").features.push("err"),window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(d){"stack"in d&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(4),s=!0)}i.on("fn-start",function(){s&&(u+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&u>0&&(u-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:4,3:3,4:6,5:1,6:14,handle:"D5DuLP",loader:"G9z0Bl"}],3:[function(t){function e(t){r.inPlace(t,["addEventListener","removeEventListener"],"-",n)}function n(t){return t[1]}var r=t(1),o=(t(3),t(2));if(e(window),"getPrototypeOf"in Object){for(var i=document;i&&!i.hasOwnProperty("addEventListener");)i=Object.getPrototypeOf(i);i&&e(i);for(var a=XMLHttpRequest.prototype;a&&!a.hasOwnProperty("addEventListener");)a=Object.getPrototypeOf(a);a&&e(a)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&e(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=e["nr@wrapped"]?t[1]=e["nr@wrapped"]:e["nr@wrapped"]=t[1]=r(e,"fn-"):"function"==typeof e.handleEvent&&r.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:15,2:1,3:14}],4:[function(t){var e=(t(3),t(1)),n=t(2);e.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=e(t[0],"fn-")})},{1:15,2:1,3:14}],5:[function(t){function e(t){var e=t[0];"string"==typeof e&&(e=new Function(e)),t[0]=n(e,"fn-")}var n=(t(3),t(1)),r=t(2);n.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",e)},{1:15,2:1,3:14}],6:[function(t){function e(){o.inPlace(this,s,"fn-")}function n(t,e){o.inPlace(e,["onreadystatechange"],"fn-")}function r(t,e){return e}var o=t(1),i=t(2),a=window.XMLHttpRequest,s=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];window.XMLHttpRequest=function(t){var n=new a(t);try{i.emit("new-xhr",[],n),o.inPlace(n,["addEventListener","removeEventListener"],"-",function(t,e){return e}),n.addEventListener("readystatechange",e,!1)}catch(r){try{i.emit("internal-error",r)}catch(s){}}return n},window.XMLHttpRequest.prototype=a.prototype,o.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",r),i.on("send-xhr-start",n),i.on("open-xhr-start",n)},{1:15,2:1}],7:[function(t){function e(){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;u>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,d="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=e(d);if(f&&(r.rxSize=f),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}t("loader").features.push("xhr");var o=t("handle"),i=t(1),a=t(5),s=["load","error","abort","timeout"],u=s.length,d=t(2);t(3),t(4),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var d=e(o);d&&(r.txSize=d)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",e)}catch(r){}}};for(var f=0;u>f;f++)n.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&e()},{1:8,2:11,3:3,4:6,5:1,handle:"D5DuLP",loader:"G9z0Bl"}],8:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e){var n=r[t];return n?n.apply(this,e):(o[t]||(o[t]=[]),void o[t].push(e))}var r={},o={};e.exports=n,n.queues=o,n.handlers=r},{}],11:[function(t,e){function n(t){if(!t||"object"!=typeof t&&"function"!=typeof t)return-1;if(t===window)return 0;if(o.call(t,"__nr"))return t.__nr;try{return Object.defineProperty(t,"__nr",{value:r,writable:!0,enumerable:!1}),r}catch(e){return t.__nr=r,r}finally{r+=1}}var r=1,o=Object.prototype.hasOwnProperty;e.exports=n},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&u&&u.body){p.proto="https"===c.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=u.createElement("script");e.src=p.proto+t.agent,u.body.appendChild(e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,u=s.document,d="addEventListener",f="attachEvent",c=(""+location).split("?")[0],p=e.exports={offset:i(),origin:c,features:[]};u[d]?(u[d]("DOMContentLoaded",o,!1),s[d]("load",n,!1)):(u[f]("onreadystatechange",r),s[f]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],14:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],15:[function(t,e){function n(t,e,r,s){function nrWrapper(){try{var n,a=u(arguments),d=this,f=r&&r(a,d)||{}}catch(c){i([c,"",[a,d,s],f])}o(e+"start",[a,d,s],f);try{return n=t.apply(d,a)}catch(p){throw o(e+"err",[a,d,p],f),p}finally{o(e+"end",[a,d,n],f)}}return a(t)?t:(e||(e=""),nrWrapper[n.flag]=!0,nrWrapper)}function r(t,e,r,o){r||(r="");var i,s,u,d="-"===r.charAt(0);for(u=0;u<e.length;u++)s=e[u],i=t[s],a(i)||(t[s]=n(i,d?s+r:r,o,s,t))}function o(t,e,n){try{s.emit(t,e,n)}catch(r){i([r,t,e,n])}}function i(t){try{s.emit("internal-error",t)}catch(e){}}function a(t){return!(t&&"function"==typeof t&&t.apply&&!t[n.flag])}var s=t(1),u=t(2);e.exports=n,n.inPlace=r,n.flag="nr@wrapper"},{1:1,2:14}]},{},["G9z0Bl",2,7]);</script><script>
+  //<![CDATA[
+    docElement = this.document.documentElement;
+    docElement.className=docElement.className.replace(/\bno-js\b/,'') + 'js';
+  //]]>
+</script>
+<title>CHROMANCER Adaptive Strategy Online Trading Card Game by The Started Hare LLC &mdash; Kickstarter</title><script>
+  //<![CDATA[
+    window.report_errors = true;
+    window.honeybadger_configuration = {
+      api_key : "02ab109335c0dd1a93506d92f22217a7",
+      environment : "production",
+      component : "projects",
+      action : "show",
+      onerror : false
+    };
+  //]]>
+</script>
+
+
+<!--[if lt IE 9]>
+  <script src="//html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta content="telephone=no" name="format-detection">
+
+<!--[if !IE]> -->
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base-9f623ad5d021a188cfb2d68a0cdf7a7b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<!-- <![endif]-->
+<!--[if IE]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base_blessed-2640c72487552f9a2ef9f2620b4af860.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<!--[if lte IE 9]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_nine-a93fe10530f175f96c4078b7e070d7e1.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 8]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_eight-f75aeb274436f94a0d243774456b1c62.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 7]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie-c019c01acd3a96588b346cf577a3504f.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_seven-5a3d2cef660cd281fd844b04b2397dbb.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if IE 6]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_six-e4d3caf76e405fe19aee6ece8bda701b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<link href="https://d297h9he240fqh.cloudfront.net/favicon.png" rel="icon" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-precomposed-7b603dba7cf80e4acc57d94a991bebbd.png" rel="apple-touch-icon-precomposed" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-ipad-precomposed-3176f72977daf43dee3b0d348484dc01.png" rel="apple-touch-icon-precomposed" sizes="72x72" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-iphone4-precomposed-b93b70168cd8492c843d0fea873c7f83.png" rel="apple-touch-icon-precomposed" sizes="114x114" type="image/png">
+<link href="https://www.kickstarter.com/services/oembed?url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Ftsh%2Fchromancer-adaptive-strategy-online-trading-card-g" rel="alternate" title="CHROMANCER Adaptive Strategy Online Trading Card Game Script Tag oEmbed" type="application/json+oembed">
+<link rel="alternate" type="application/atom+xml" title="CHROMANCER Adaptive Strategy Online Trading Card Game : Kickstarter" href="https://www.kickstarter.com/projects/tsh/chromancer-adaptive-strategy-online-trading-card-g/posts.atom" />
+<meta property="twitter:app:id:iphone" content="596961532"/>
+<meta property="twitter:app:name:iphone" content="Kickstarter"/>
+<meta property="twitter:app:url:iphone" content="ksr://www.kickstarter.com/projects/tsh/chromancer-adaptive-strategy-online-trading-card-g"/>
+<meta name="video_height" content="360"/>
+<meta name="video_width" content="640"/>
+<meta name="video_type" content="application/x-shockwave-flash"/>
+<meta name="title" content="Kickstarter &gt;&gt; CHROMANCER Adaptive Strategy Online Trading Card Game by The Started Hare LLC"/>
+<meta name="description" content="The Started Hare LLC is raising funds for CHROMANCER Adaptive Strategy Online Trading Card Game on Kickstarter! 
+
+ Free-to-play online &quot;adaptive strategy&quot; TCG with groundbreaking gameplay mechanics, and an innovative approach to virtual goods."/>
+<meta property="og:title" content="CHROMANCER Adaptive Strategy Online Trading Card Game"/>
+<meta property="og:type" content="kickstarter:project"/>
+<meta property="og:image" content="https://s3.amazonaws.com/ksr/projects/595431/photo-main.jpg?1397824791"/>
+<meta property="og:url" content="https://www.kickstarter.com/projects/tsh/chromancer-adaptive-strategy-online-trading-card-g"/>
+<meta property="og:site_name" content="Kickstarter"/>
+<meta property="fb:app_id" content="69103156693"/>
+<meta property="og:description" content="Free-to-play online &quot;adaptive strategy&quot; TCG with groundbreaking gameplay mechanics, and an innovative approach to virtual goods."/>
+<meta property="kickstarter:creator" content="https://www.kickstarter.com/profile/tsh"/>
+<meta property="twitter:url:landing_url" content="https://www.kickstarter.com/projects/tsh/chromancer-adaptive-strategy-online-trading-card-g"/>
+<meta property="twitter:card" content="2427656750:kickstarter_project"/>
+<meta property="twitter:site" content="@kickstarter"/>
+<meta property="twitter:site:id" content="16186995"/>
+<meta property="twitter:text:title" content="CHROMANCER Adaptive Strategy Online Trading Card Game"/>
+<meta property="twitter:text:artist" content="The Started Hare LLC"/>
+<meta property="twitter:text:backers" content="570"/>
+<meta property="twitter:text:pledged" content="$68,319 USD"/>
+<meta property="twitter:text:time" content="0 seconds"/>
+<meta property="twitter:text:location" content="Washington, DC"/>
+<meta property="twitter:image:location_image" content="https://d3mlfyygrfdi2i.cloudfront.net/b40e/pin.png"/>
+<meta property="twitter:text:description" content="Free-to-play online &quot;adaptive strategy&quot; TCG with groundbreaking gameplay mechanics, and an innovative approach to virtual goods."/>
+<meta property="twitter:image:media" content="https://s3.amazonaws.com/ksr/projects/595431/photo-main.jpg?1397824791"/>
+<meta property="twitter:image:width" content="640"/>
+<meta property="twitter:image:height" content="480"/>
+<meta property="twitter:player:stream:url" content="https://d2pq0u4uni88oo.cloudfront.net/projects/595431/video-291862-h264_base.mp4"/>
+<meta property="twitter:player:stream:content" content="video/mp4"/>
+<meta property="twitter:player:url" content="https://www.kickstarter.com/projects/tsh/chromancer-adaptive-strategy-online-trading-card-g/widget/video.html"/>
+<meta property="twitter:player:height" content="360"/>
+<meta property="twitter:player:width" content="640"/>
+<meta property="twitter:maxage" content="60"/>
+<meta property="og:video" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F595431%2Fvideo-291862-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F595431%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+The+Started+Hare+LLC&amp;project_title=CHROMANCER+Adaptive+Strategy+Online+Trading+Card+Game&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Ftsh%2Fchromancer-adaptive-strategy-online-trading-card-g&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:secure_url" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F595431%2Fvideo-291862-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F595431%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+The+Started+Hare+LLC&amp;project_title=CHROMANCER+Adaptive+Strategy+Online+Trading+Card+Game&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Ftsh%2Fchromancer-adaptive-strategy-online-trading-card-g&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:height" content="360"/>
+<meta property="og:video:width" content="640"/>
+<meta property="og:video:type" content="application/x-shockwave-flash"/>
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="UHdVA0o7LAmI0ZUAn006zNrPnYU4eMEmUMbVrvoxQjw=" name="csrf-token" />
+<script type="text/javascript">
+  var _sift = _sift || [];
+  _sift.push(['_setAccount', '637102']);
+  _sift.push(['_setUserId', '']);
+  _sift.push(['_trackPageview']);
+
+  (function() {
+    function loadSift() {
+      var sift, s;
+      if (root.visitor_id) {
+        _sift.push(['_setSessionId', root.visitor_id]);
+      }
+      sift = document.createElement('script');
+      sift.type = 'text/javascript';
+      sift.async = true;
+      sift.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dtlilztwypawv.cloudfront.net/s.js';
+      s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(sift, s);
+    }
+    if (window.attachEvent) {
+      window.attachEvent('onload', loadSift);
+    } else {
+      window.addEventListener('load', loadSift, false);
+    }
+  })();
+</script>
+<link href="http://kck.st/15X2ioT" rel="shorturl">
+<link href="https://www.kickstarter.com/projects/tsh/chromancer-adaptive-strategy-online-trading-card-g" rel="canonical">
+<link href="https://s3.amazonaws.com/ksr/projects/595431/photo-med.jpg?1397824791" rel="image_src">
+<link href="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F595431%2Fvideo-291862-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F595431%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+The+Started+Hare+LLC&amp;project_title=CHROMANCER+Adaptive+Strategy+Online+Trading+Card+Game&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Ftsh%2Fchromancer-adaptive-strategy-online-trading-card-g&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque" rel="video_src">
+<script>
+  //<![CDATA[
+    window.current_checkout = "{&quot;id&quot;:0,&quot;domestic&quot;:null,&quot;amount&quot;:0.0,&quot;updated_at&quot;:0,&quot;created_at&quot;:0}";
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.current_ip = '94.209.101.212';
+    window.current_ip_datacenter = 'false';
+    window.enabled_features = {"elasticsearch":true,"security_history_read":true,"security_history_write":true,"advanced_discovery_es":true,"ios_crashlytics":true,"ios_mixpanel":true,"stories_veronica_mars":true,"veronica_mars_hero":true,"password_reset_banner":true};
+    window.fb_app_id = '69103156693';
+    
+    var _sf_startpt=(new Date()).getTime();
+    
+    window.current_project = "{&quot;id&quot;:1257685031,&quot;name&quot;:&quot;CHROMANCER Adaptive Strategy Online Trading Card Game&quot;,&quot;blurb&quot;:&quot;Free-to-play online \\&quot;adaptive strategy\\&quot; TCG with groundbreaking gameplay mechanics, and an innovative approach to virtual goods.&quot;,&quot;goal&quot;:60000.0,&quot;pledged&quot;:68319.0,&quot;state&quot;:&quot;successful&quot;,&quot;slug&quot;:&quot;chromancer-adaptive-strategy-online-trading-card-g&quot;,&quot;disable_communication&quot;:false,&quot;country&quot;:&quot;US&quot;,&quot;currency&quot;:&quot;USD&quot;,&quot;currency_symbol&quot;:&quot;$&quot;,&quot;currency_trailing_code&quot;:true,&quot;deadline&quot;:1379523700,&quot;state_changed_at&quot;:1379523700,&quot;created_at&quot;:1371729559,&quot;launched_at&quot;:1376067700,&quot;backers_count&quot;:570,&quot;photo&quot;:{&quot;full&quot;:&quot;https://s3.amazonaws.com/ksr/projects/595431/photo-full.jpg?1397824791&quot;,&quot;ed&quot;:&quot;https://s3.amazonaws.com/ksr/projects/595431/photo-ed.jpg?1397824791&quot;,&quot;med&quot;:&quot;https://s3.amazonaws.com/ksr/projects/595431/photo-med.jpg?1397824791&quot;,&quot;little&quot;:&quot;https://s3.amazonaws.com/ksr/projects/595431/photo-little.jpg?1397824791&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/projects/595431/photo-small.jpg?1397824791&quot;,&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/projects/595431/photo-thumb.jpg?1397824791&quot;,&quot;1024x768&quot;:&quot;https://s3.amazonaws.com/ksr/projects/595431/photo-1024x768.jpg?1397824791&quot;,&quot;1536x1152&quot;:&quot;https://s3.amazonaws.com/ksr/projects/595431/photo-1536x1152.jpg?1397824791&quot;},&quot;creator&quot;:{&quot;id&quot;:1858211097,&quot;name&quot;:&quot;The Started Hare LLC&quot;,&quot;slug&quot;:&quot;tsh&quot;,&quot;avatar&quot;:{&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/1484205/Kickstarter-Profile-Image.thumb.jpg?1377677338&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/1484205/Kickstarter-Profile-Image.small.jpg?1377677338&quot;,&quot;medium&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/1484205/Kickstarter-Profile-Image.medium.jpg?1377677338&quot;},&quot;urls&quot;:{&quot;web&quot;:{&quot;user&quot;:&quot;https://www.kickstarter.com/profile/tsh&quot;},&quot;api&quot;:{&quot;user&quot;:&quot;https://api.kickstarter.com/v1/users/1858211097?signature=1399959557.ef151029e8a8c7cb1792b10540a6f97c66007a12&quot;}}},&quot;location&quot;:{&quot;id&quot;:2514815,&quot;name&quot;:&quot;Washington&quot;,&quot;slug&quot;:&quot;washington-dc&quot;,&quot;short_name&quot;:&quot;Washington, DC&quot;,&quot;displayable_name&quot;:&quot;Washington, DC&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:&quot;DC&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/washington-dc&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/washington-dc&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1399951821.f0279ab74504305ad95e00233fc0d80c111a063e&amp;woe_id=2514815&quot;}}},&quot;category&quot;:{&quot;id&quot;:35,&quot;name&quot;:&quot;Video Games&quot;,&quot;slug&quot;:&quot;games/video games&quot;,&quot;position&quot;:7,&quot;parent_id&quot;:12,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;http://www.kickstarter.com/discover/categories/games/video%20games&quot;}}},&quot;urls&quot;:{&quot;web&quot;:{&quot;project&quot;:&quot;https://www.kickstarter.com/projects/tsh/chromancer-adaptive-strategy-online-trading-card-g&quot;,&quot;project_short&quot;:&quot;http://kck.st/15X2ioT&quot;,&quot;updates&quot;:&quot;https://www.kickstarter.com/projects/tsh/chromancer-adaptive-strategy-online-trading-card-g/posts&quot;},&quot;api&quot;:{&quot;project&quot;:&quot;https://api.kickstarter.com/v1/projects/1257685031?signature=1399959557.4af91b7c3e02791c5ba3c02ada18d82489452cef&quot;,&quot;comments&quot;:&quot;https://api.kickstarter.com/v1/projects/1257685031/comments?signature=1399959557.acc1804796b18d02dae547d473ac5d5bbc09c8c9&quot;,&quot;updates&quot;:&quot;https://api.kickstarter.com/v1/projects/1257685031/updates?signature=1399959557.bb7d58ca6f31b1bb538c289816003316d8c4f79c&quot;}},&quot;updated_at&quot;:1397824797,&quot;successful_at&quot;:1379523700,&quot;video&quot;:{&quot;id&quot;:291862,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/595431/video-291862-h264_high.mp4?2013&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/595431/video-291862-h264_base.mp4?2013&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/595431/video-291862-webm.webm?2013&quot;,&quot;width&quot;:640,&quot;height&quot;:360,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/595431/video-291862-h264_base.jpg?2013&quot;},&quot;comments_count&quot;:251,&quot;updates_count&quot;:18,&quot;rewards&quot;:[{&quot;id&quot;:0,&quot;minimum&quot;:1,&quot;reward&quot;:&quot;No Reward&quot;},{&quot;id&quot;:1746730,&quot;minimum&quot;:1.0,&quot;reward&quot;:&quot;Symbolic Supporter =============================\\r\\n\\r\\nYou have our eternal gratitude for this symbolic show of support!&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1385856000,&quot;project_id&quot;:1257685031,&quot;backers_count&quot;:18,&quot;updated_at&quot;:1397576150},{&quot;id&quot;:1746731,&quot;minimum&quot;:5.0,&quot;reward&quot;:&quot;Starter Deck =============================\\r\\n\\r\\nYou receive a 48-card starter deck which you can use to instantly jump in and play upon release ($7.81 value)&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1385856000,&quot;project_id&quot;:1257685031,&quot;backers_count&quot;:55,&quot;updated_at&quot;:1391535796},{&quot;id&quot;:1746732,&quot;minimum&quot;:15.0,&quot;reward&quot;:&quot;Intro Pack =============================\\r\\n\\r\\nStarter Deck ($7.81 value); 3 Booster Packs: The Primeval\\u2122 ($6 value); \\r\\nUltra-Rare Hero Card ($14 value);\\r\\nForum Badge&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1385856000,&quot;project_id&quot;:1257685031,&quot;backers_count&quot;:78,&quot;updated_at&quot;:1396458769},{&quot;id&quot;:1746734,&quot;minimum&quot;:25.0,&quot;reward&quot;:&quot;Kickstarter Pack ==============================\\r\\n\\r\\n1 set exclusive Kickstarter Cards ($5 value);\\r\\n5 Booster Packs: The Primeval\\u2122 ($10 value);\\r\\n1 month subscription membership ($7 value);\\r\\nStarter Deck ($7.81 value);\\r\\nUltra-Rare Hero Card ($14 value);\\r\\nForum Badge + Avatar Accessories&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1385856000,&quot;project_id&quot;:1257685031,&quot;backers_count&quot;:189,&quot;updated_at&quot;:1393594704},{&quot;id&quot;:1853781,&quot;minimum&quot;:40.0,&quot;reward&quot;:&quot;Kickstarter Advanced Pack ============================\\r\\n2000 chroma for use in our game store ($20 value); 5 Booster Packs - The Primeval\\u2122 ($10 value); 1 month subscription membership ($7 value); \\r\\n Starter Deck ($7.81 value); Ultra-Rare Hero Card ($14 value); 1 set exclusive Kickstarter cards, ($5 value); Forum Badge + Avatar Accessories&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1385856000,&quot;project_id&quot;:1257685031,&quot;backers_count&quot;:41,&quot;updated_at&quot;:1397847946},{&quot;id&quot;:1853784,&quot;minimum&quot;:60.0,&quot;reward&quot;:&quot;Trader Pack ============================== 8000 chroma for use in our game store ($80 value); 4 sets exclusive Kickstarter cards ($20 value); 4 sets Forum Badge + Avatar Accessories&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1385856000,&quot;project_id&quot;:1257685031,&quot;backers_count&quot;:10,&quot;updated_at&quot;:1380132020},{&quot;id&quot;:1853790,&quot;minimum&quot;:65.0,&quot;reward&quot;:&quot;Kickstarter Deluxe Pack ============================ 4500 chroma for use in our game store ($45 value); 3 Month subscription membership ($21 value); 8 Booster Packs - The Primeval\\u2122 ($16 value); 2 Starter Decks ($15.62 value); Ultra-Rare Hero Card ($14 value); 1 set Kickstarter exclusive cards ($5 value); Forum Badge + Avatar Accessories&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1385856000,&quot;project_id&quot;:1257685031,&quot;backers_count&quot;:47,&quot;updated_at&quot;:1379608865},{&quot;id&quot;:1853809,&quot;minimum&quot;:100.0,&quot;reward&quot;:&quot;Collector Value Pack ============================== 1 Card Set Box (1 copy of each card, $104.83 value); 1 Month subscription membership ($7 value); 3x INTRO PACK reward tiers ($83.43 value); 3 sets Kickstarter exclusive cards ($15 value); Forum Badge + Avatar Accessories&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1385856000,&quot;project_id&quot;:1257685031,&quot;backers_count&quot;:41,&quot;updated_at&quot;:1380132012},{&quot;id&quot;:1853817,&quot;minimum&quot;:125.0,&quot;reward&quot;:&quot;Supporter Pack ============================== Chromancer Digital Artbook (HD images); 1 month free entry for 1 tournament daily ($15 value); 5000 chroma for use in our game store ($50 value); 3 months subscription membership ($21 value); 3x INTRO PACK reward tiers ($83.43 value); 12 Booster Packs - The Primeval\\u2122 ($24 value); 3 sets Kickstarter exclusive cards ($15 value); Forum Badge + Avatar Accessories&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1385856000,&quot;project_id&quot;:1257685031,&quot;backers_count&quot;:7,&quot;updated_at&quot;:1379524690},{&quot;id&quot;:1976499,&quot;minimum&quot;:145.0,&quot;reward&quot;:&quot;Extra Value Pack ============================== 1x COLLECTOR VALUE PACK reward tier ($210.26 value); 6000 chroma for use in our game store ($60 value); Chromancer Digital Artbook (HD images)&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1385856000,&quot;project_id&quot;:1257685031,&quot;backers_count&quot;:13,&quot;updated_at&quot;:1379632712},{&quot;id&quot;:1853820,&quot;minimum&quot;:160.0,&quot;reward&quot;:&quot;Evangelist Pack ============================== 6 month subscription membership for you and 2 friends ($126 value); 3x KICKSTARTER PACK reward tiers ($108 value); Chromancer Digital Artbook (HD images)&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1385856000,&quot;project_id&quot;:1257685031,&quot;backers_count&quot;:3,&quot;updated_at&quot;:1380132026},{&quot;id&quot;:1976500,&quot;minimum&quot;:200.0,&quot;reward&quot;:&quot;Real Card Set Pack ============================== 1x EXTRA VALUE PACK reward tier ($270.26 value); 6 month subscription membership ($42 value); 1 Real Card Set of 50 cards. NOTE: THE MASTER DECKBUILDER PACK AT $300 HAS A REAL CARD SET INCLUDED.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1385856000,&quot;project_id&quot;:1257685031,&quot;backers_count&quot;:3,&quot;updated_at&quot;:1379524723},{&quot;id&quot;:1853821,&quot;minimum&quot;:300.0,&quot;reward&quot;:&quot;Master Deckbuilder Pack ============================== 1 Total Set Box (1 copy of each card and heroes, $272.83 value); 12 Starter Decks ($96 value); 2 Booster Boxes (42 Booster Packs); 28 Field Packs ($28 value); 5 sets Kickstarter exclusive cards ($25 value); Chromancer Digital Artbook (HD images); Forum Badge + Avatar Accessories&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1385856000,&quot;project_id&quot;:1257685031,&quot;backers_count&quot;:8,&quot;updated_at&quot;:1379524713},{&quot;id&quot;:1976501,&quot;minimum&quot;:375.0,&quot;reward&quot;:&quot;Deckbuilder Deluxe Pack ============================== 1x MASTER DECKBUILDER PACK reward tier ($503.55 value); 9 month subscription membership ($63 value); 2 Real Card Sets of 50 cards each. NOTE: ALL TIERS BEYOND THIS ONE HAVE 2x REAL CARD SETS INCLUDED.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1385856000,&quot;project_id&quot;:1257685031,&quot;backers_count&quot;:4,&quot;updated_at&quot;:1379524716},{&quot;id&quot;:1853822,&quot;minimum&quot;:550.0,&quot;reward&quot;:&quot;Patron Pack ============================== 1 Autographed art print; 2x MASTER DECKBUILDER PACK reward tiers ($1007.10 value); 12 Month subscription membership ($84 value)&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1385856000,&quot;project_id&quot;:1257685031,&quot;backers_count&quot;:11,&quot;updated_at&quot;:1379524713},{&quot;id&quot;:1976502,&quot;minimum&quot;:770.0,&quot;reward&quot;:&quot;Resource Poole Pack ============================== 1x PATRON PACK reward tier ($1091.10 value); 1 Autographed Mark Poole limited edition print (1 of a set of 40).&quot;,&quot;limit&quot;:20,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1385856000,&quot;project_id&quot;:1257685031,&quot;remaining&quot;:19,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1380132020},{&quot;id&quot;:1853823,&quot;minimum&quot;:1400.0,&quot;reward&quot;:&quot;Door Pass Pack ============================== Free entry to all daily tournaments for five years ($912.50 value); 1 Free Drafting Booster every day for five years ($3650 value);  2x MASTER DECKBUILDER PACK reward tiers ($1007.10 value); 24 Month subscription membership ($168 value); Autographed art print&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1385856000,&quot;project_id&quot;:1257685031,&quot;backers_count&quot;:5,&quot;updated_at&quot;:1379524715},{&quot;id&quot;:1976503,&quot;minimum&quot;:1500.0,&quot;reward&quot;:&quot;Poole Pass Pack ============================== 1x DOOR PASS PACK reward tier ($5737.60 value); 1 Autographed Mark Poole limited edition print (1 of a set of 40). NOTE: ALL TIERS BEYOND THIS ONE INCLUDE A MARK POOLE PRINT.&quot;,&quot;limit&quot;:6,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1385856000,&quot;project_id&quot;:1257685031,&quot;remaining&quot;:4,&quot;backers_count&quot;:2,&quot;updated_at&quot;:1380132016},{&quot;id&quot;:1892218,&quot;minimum&quot;:2500.0,&quot;reward&quot;:&quot;Void Conqueror Pack ============================== Design an artifact with the dev team; Be the first holder of said artifact when introduced into the game; 1 Free Drafting Booster every day for five years ($3650 value); Free entry to all daily tournaments for five years ($912.50 value); Total Set Box for every future expansion ($2182.64 value); 2x MASTER DECKBUILDER PACK reward tiers ($1007.10 value); Free subscription membership for five years and $1/year renewal for every year thereafter ($420 value); Autographed art print&quot;,&quot;limit&quot;:6,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1385856000,&quot;project_id&quot;:1257685031,&quot;remaining&quot;:5,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1379533168},{&quot;id&quot;:1976504,&quot;minimum&quot;:5000.0,&quot;reward&quot;:&quot;Lord of the Arcanum Pack ============================== Design and name your own Starter Deck; Personalized Deck Seal Icons for all your decks across the entire website; 3 Free Drafting Boosters every day for five years ($10950 value); Free entry for all daily tournaments for five years ($912 value); Total Set Box for every future expansion ($2182.64 value); 2x MASTER DECKBUILDER PACK reward tiers ($1007 value); Free subscription membership for five years with $1/year renewal every year thereafter ($420 value); Autographed art print; 1 Autographed Mark Poole limited edition print (1 of a set of 40); Credit as associate game producer on our website&quot;,&quot;limit&quot;:5,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1385856000,&quot;project_id&quot;:1257685031,&quot;remaining&quot;:3,&quot;backers_count&quot;:2,&quot;updated_at&quot;:1379524631},{&quot;id&quot;:1853842,&quot;minimum&quot;:6000.0,&quot;reward&quot;:&quot;Hero of Prisme Pack ============================== Design a Hero card with the dev team, with the art in your own likeness; 1 Free Draft every day for five years ($18250 value); Free entry for all daily tournaments for five years ($912 value); Total Set Box for every future expansion ($2182.64 value); 2x MASTER DECKBUILDER PACK reward tiers ($1007 value); Free subscription membership for five years with $1/year renewal every year thereafter ($420 value); Autographed art print; Credit as game producer on our website&quot;,&quot;limit&quot;:3,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1385856000,&quot;project_id&quot;:1257685031,&quot;remaining&quot;:1,&quot;backers_count&quot;:2,&quot;updated_at&quot;:1379524642}]}";
+    
+    
+    
+    
+    
+    
+    
+    
+    window.timeRemaining = function timeRemaining(epochTime){
+    
+      var diff = epochTime - ((new Date()).getTime() / 1000);
+      var num_unit = (diff < 60 && [Math.max(diff, 0), 'seconds']) ||
+        ((diff/=60) < 60 && [diff, 'minutes']) ||
+        ((diff/=60) < 72 && [diff, 'hours']) ||
+        [diff/=24, 'days'];
+    
+      // Round down
+      num_unit[0] = Math.floor(num_unit[0]);
+      // Singularize unit
+      if (num_unit[0] == 1) { num_unit[1] = num_unit[1].replace(/s$/,""); }
+    
+      return num_unit;
+    };
+  //]]>
+</script>
+
+<script>
+  //<![CDATA[
+    window.current_variants = ["discover_link_copy[explore]","rewards_hover[without_hover_text]"];
+  //]]>
+</script>
+
+
+</head>
+
+<body class="project projects not-mobile not-phone not-forces-video-controls not-tablet not-touchable not-native-app-request video_mode" id="projects_show">
+<div class="jGrowl center" id="growl_section"></div>
+<div class="NS_layouts__navigation" id="header">
+<div class="main-nav relative bg-white">
+<h1 class="no-margin ml1 mr2 left">
+<a href="/?ref=nav" class="block p2"><span class="ss-icon green-dark">KICK</span><span class="ss-icon green">STARTER</span>
+</a></h1>
+<ul class="primary-links list no-margin left">
+<li class="left discover-link full-height">
+<a href="/discover?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Explore</a>
+</li>
+<li class="left full-height mr2">
+<a href="/learn?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Start</a>
+</li>
+</ul>
+<ul class="list no-margin right" id="menu-sub">
+<li class="right"><a href="/login?ref=nav" class="block h5 bold p2 full-height border-box">Log in</a></li>
+<li class="right"><a href="/signup?ref=nav" class="block h5 bold p2 full-height border-box">Sign up</a></li>
+</ul>
+<div class="search-link pl2 full-height border-left border-box clip">
+<form accept-charset="UTF-8" action="/projects/search" class="search pt1 pb1 block relative form-simple" method="get"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /></div>
+<div class="field relative pl3">
+<span class="ss-icon ss-search grey-dark ml1 mt1 absolute"></span>
+<input class="input-search header full-width text" data-tracker-name="Header Live Search" id="term" name="term" placeholder="Search projects" type="text" />
+</div>
+</form>
+
+</div>
+<div class="clear"></div>
+</div>
+</div>
+<div class="hide pt4 pb4 bg-grey-light" id="search_results-wrap">
+<div class="relative container" id="search_results">
+<a class="close right grey-dark mr1"><span class="ss-icon ss-delete"></span></a>
+<h3 class="header ml1 clearfix"></h3>
+<div class="clip clearfix" id="search_results_panel"></div>
+<a class="prev arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateleft"></span>
+</a>
+<a class="next arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateright"></span>
+</a>
+</div>
+</div>
+
+
+
+
+<div class="Project-ended-true Project-is_starred- Project-state-successful Project1257685031_cxt border-top" id="main_content">
+<div id="running-board-wrap">
+<div class="container" id="running-board">
+<div id="project-header">
+<div class="NS_projects__running_board ml1 mr1 clearfix">
+<div class="title center py4">
+<h2 class="mb1">
+<a href="/projects/tsh/chromancer-adaptive-strategy-online-trading-card-g" class="green-dark">CHROMANCER Adaptive Strategy Online Trading Card Game</a>
+</h2>
+<p class="no-margin">
+<span class="creator">
+by
+<a href="/projects/tsh/chromancer-adaptive-strategy-online-trading-card-g/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography" id="name">The Started Hare LLC</a>
+</span>
+</p>
+</div>
+<ul class="project-nav list-inline left h5 bold mb1">
+<li class="mr2">
+<a href="/projects/tsh/chromancer-adaptive-strategy-online-trading-card-g" class="grey-dark py1 current" id="home_nav">Home</a>
+</li>
+<li class="mr2">
+<span data-updates-count="18" id="updates_count">
+<a href="/projects/tsh/chromancer-adaptive-strategy-online-trading-card-g/posts" class="grey-dark py1" id="updates_nav">Updates
+<span class="count h6 bg-grey-dark white">18</span>
+</a></span>
+</li>
+<li class="mr2">
+<a href="/projects/tsh/chromancer-adaptive-strategy-online-trading-card-g/backers" class="grey-dark py1" id="backers_nav">Backers
+<span class="count h6 bg-grey-dark white"><data class="Project1257685031" data-format="number" data-value="570" itemprop="Project[backers_count]">570</data></span>
+</a></li>
+<li>
+<span data-comments-count="251" id="comments_count">
+<a href="/projects/tsh/chromancer-adaptive-strategy-online-trading-card-g/comments" class="grey-dark py1" id="comments_nav">Comments
+<span class="count h6 bg-grey-dark white"><data class="Project1257685031" data-format="number" data-value="251" itemprop="Project[comments_count]">251</data></span>
+</a></span>
+</li>
+</ul>
+<ul class="list-inline right h5 bold mb1">
+<li class="location mr2">
+<a href="/discover/places/washington-dc?ref=city" class="grey-dark"><span class="ss-icon ss-location margin-right"></span>
+Washington, DC
+</a></li>
+<li class="category" data-project-parent-category="Games">
+<a href="/discover/categories/games/video%20games?ref=category" class="grey-dark"><span class="ss-icon ss-tag margin-right"></span>
+Video Games
+</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+</div>
+<div class="bg-grey-light pb4" id="content-wrap">
+<div class="Project1257685031" data-conditions="[{&quot;!state&quot;:&quot;live&quot;}]" data-evaluation="true" data-render="&quot;&lt;div class=\&quot;NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-successful Project1257685031_cxt bg-grey container pb1 pt1\&quot;&gt;\n&lt;div class=\&quot;Project1257685031\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;successful&amp;quot;}]\&quot; data-evaluation=\&quot;true\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;Funded!&amp;lt;/b&amp;gt;\\nThis project was successfully funded &amp;lt;data class=\\&amp;quot;Project1257685031\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2013-09-18T13:01:40-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[deadline]\\&amp;quot;&amp;gt;on September 18, 2013&amp;lt;/data&amp;gt;.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;Funded!&lt;/b&gt;\nThis project was successfully funded &lt;data class=\&quot;Project1257685031\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-09-18T13:01:40-04:00&amp;quot;\&quot; itemprop=\&quot;Project[deadline]\&quot;&gt;on September 18, 2013&lt;/data&gt;.\n&lt;/p&gt;\n&lt;/div&gt;&lt;div class=\&quot;Project1257685031\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:[&amp;quot;started&amp;quot;,&amp;quot;submitted&amp;quot;]}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;THIS PROJECT IS NOT LIVE&amp;lt;/b&amp;gt;\\nThis is only a draft that the creator has chosen to share.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1257685031\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;suspended&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Suspended&amp;lt;/b&amp;gt;\\nFunding for this project was suspended &amp;lt;data class=\\&amp;quot;Project1257685031\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2013-09-18T13:01:40-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on September 18, 2013&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1257685031\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;canceled&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Canceled&amp;lt;/b&amp;gt;\\nFunding for this project was canceled by the project creator &amp;lt;data class=\\&amp;quot;Project1257685031\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2013-09-18T13:01:40-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on September 18, 2013&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1257685031\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;failed&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Unsuccessful&amp;lt;/b&amp;gt;\\nThis project\\u2019s funding goal was not reached on &amp;lt;time class=\\&amp;quot;js-adjust\\&amp;quot; data-format=\\&amp;quot;LL\\&amp;quot; datetime=\\&amp;quot;2013-09-18T13:01:40-04:00\\&amp;quot;&amp;gt;September 18, 2013&amp;lt;/time&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1257685031\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;purged&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;This project is purged and only visible to staff.&amp;lt;/b&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;/div&gt;\n&quot;"><div class="NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-successful Project1257685031_cxt bg-grey container pb1 pt1">
+<div class="Project1257685031" data-conditions="[{&quot;state&quot;:&quot;successful&quot;}]" data-evaluation="true" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;Funded!&lt;/b&gt;\nThis project was successfully funded &lt;data class=\&quot;Project1257685031\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-09-18T13:01:40-04:00&amp;quot;\&quot; itemprop=\&quot;Project[deadline]\&quot;&gt;on September 18, 2013&lt;/data&gt;.\n&lt;/p&gt;\n&quot;"><p class="no-margin">
+<b>Funded!</b>
+This project was successfully funded <data class="Project1257685031" data-format="distance_date" data-value="&quot;2013-09-18T13:01:40-04:00&quot;" itemprop="Project[deadline]">on September 18, 2013</data>.
+</p>
+</div><div class="Project1257685031" data-conditions="[{&quot;state&quot;:[&quot;started&quot;,&quot;submitted&quot;]}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;THIS PROJECT IS NOT LIVE&lt;/b&gt;\nThis is only a draft that the creator has chosen to share.\n&lt;/p&gt;\n&quot;"></div><div class="Project1257685031" data-conditions="[{&quot;state&quot;:&quot;suspended&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Suspended&lt;/b&gt;\nFunding for this project was suspended &lt;data class=\&quot;Project1257685031\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-09-18T13:01:40-04:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on September 18, 2013&lt;/data&gt;.\n&quot;"></div><div class="Project1257685031" data-conditions="[{&quot;state&quot;:&quot;canceled&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Canceled&lt;/b&gt;\nFunding for this project was canceled by the project creator &lt;data class=\&quot;Project1257685031\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-09-18T13:01:40-04:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on September 18, 2013&lt;/data&gt;.\n&quot;"></div><div class="Project1257685031" data-conditions="[{&quot;state&quot;:&quot;failed&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Unsuccessful&lt;/b&gt;\nThis project\u2019s funding goal was not reached on &lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;LL\&quot; datetime=\&quot;2013-09-18T13:01:40-04:00\&quot;&gt;September 18, 2013&lt;/time&gt;.\n&quot;"></div><div class="Project1257685031" data-conditions="[{&quot;state&quot;:&quot;purged&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;This project is purged and only visible to staff.&lt;/b&gt;\n&quot;"></div></div>
+</div>
+<div class="container bg-white border rounded py3 pl2 pr2" id="content">
+<div class="NS-projects-content">
+<div class="grid_11">
+<div data-has-video="true" id="video-section">
+<div class="video-player" data-dimensions="{&quot;width&quot;:640,&quot;height&quot;:480}" data-image="https://s3.amazonaws.com/ksr/projects/595431/photo-main.jpg?1397824791" data-video-tracker-url="https://www.kickstarter.com/projects/tsh/chromancer-adaptive-strategy-online-trading-card-g/video/plays" data-video-url="https://d2pq0u4uni88oo.cloudfront.net/projects/595431/video-291862-h264_high.mp4" data-video="{&quot;id&quot;:291862,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/595431/video-291862-h264_high.mp4?2013&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/595431/video-291862-h264_base.mp4?2013&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/595431/video-291862-webm.webm?2013&quot;,&quot;width&quot;:640,&quot;height&quot;:360,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/595431/video-291862-h264_base.jpg?2013&quot;}" id="video_pitch"><video class="has_webm landscape" preload="none">
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/595431/video-291862-h264_high.mp4" type='video/mp4; codecs="avc1.64001E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/595431/video-291862-h264_base.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/595431/video-291862-webm.webm" type="video/webm"></source>
+You'll need an HTML5 capable browser to see this content.
+</video>
+<img alt="Photo-main" class="has_played_hide poster landscape" src="https://s3.amazonaws.com/ksr/projects/595431/photo-main.jpg?1397824791" />
+<div class="play_button_big play_button_dark absolute-center rounded has_played_hide">
+<span class="ss-icon ss-play"></span>
+Play
+</div>
+<div class="player_controls clearfix absolute-bottom mb2 rounded white bg-green-dark forces-video-controls_hide">
+<div class="left">
+<a class="button button_icon button_dark playpause play mr1">
+<span class="play ss-icon ss-play"></span>
+<span class="pause ss-icon ss-pause"></span>
+</a>
+<span class="time current_time h12 left">00:00</span>
+</div>
+<div class="right">
+<span class="time total_time h12 left mr1">00:00</span>
+<a class="left button button_icon button_icon_white volume">
+<span class="ss-icon ss-volume icon_volume_nudge"></span>
+<span class="ss-icon ss-highvolume"></span>
+</a>
+<div class="volume_container left">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+<a class="left button button_icon button_icon_white fullscreen">
+<span class="ss-icon ss-expand"></span>
+<span class="ss-icon ss-contract"></span>
+</a>
+</div>
+<div class="clip">
+<div class="progress_container pr1 pl1">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="buffer progress_bar_buffer"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div data-project-state="successful" id="about">
+<div class="NS_projects__project_share clearfix py2 pl1 pr1">
+<ul class="left list-inline no-margin h5 bold">
+<li class="facebook mr2">
+<a href="https://www.kickstarter.com/projects/tsh/chromancer-adaptive-strategy-online-trading-card-g"><span class="ss-icon ss-social ss-facebook color-facebook"></span>
+<span class="color-facebook">Share</span>
+<span class="share_bubble"><div class="triangle grey"></div>
+<div class="triangle white"></div>
+<span class="count"></span></span>
+</a></li>
+<li class="twitter mr2">
+<a  href="https://twitter.com/intent/tweet?text=CHROMANCER%20Adaptive%20Strategy%20Online%20Trading%20Card%20Game%20by%20The%20Started%20Hare%20LLC&amp;via=kickstarter&amp;url=http://kck.st/15X2ioT" rel="nofollow"><span class="ss-icon ss-social ss-twitter color-twitter"></span>
+<span class="color-twitter">Tweet</span>
+</a></li>
+<li class="embed">
+<a href="/projects/tsh/chromancer-adaptive-strategy-online-trading-card-g/widget" class="remote_modal_dialog grey-dark" data-modal-title="Embed a widget on your site" data-tracker-name="Embed"><span class="ss-icon ss-navigateleft"></span>
+<span class="ss-icon ss-navigateright"></span>
+Embed
+</a></li>
+</ul>
+<ul class="right list-inline no-margin h5 bold">
+<li class="curate mr2">
+</li>
+<li class="remind">
+<div class="ajax-container" id="watching-widget">
+<div class="Project1257685031" data-conditions="[{&quot;is_starred&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div id=\&quot;unwatch\&quot;&gt;\n&lt;a href=\&quot;/projects/tsh/chromancer-adaptive-strategy-online-trading-card-g/unwatch\&quot; class=\&quot;on\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"></div><div class="Project1257685031" data-conditions="[{&quot;!is_starred&quot;:true}]" data-evaluation="true" data-render="&quot;&lt;div id=\&quot;watch\&quot;&gt;\n&lt;a href=\&quot;/projects/tsh/chromancer-adaptive-strategy-online-trading-card-g/watch\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;span class=\&quot;text\&quot;&gt;\n&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"><div id="watch">
+<a href="/projects/tsh/chromancer-adaptive-strategy-online-trading-card-g/watch"><span class="ss-icon ss-star"></span>
+<span class="text">
+</span>
+</a></div>
+
+</div></div>
+</li>
+</ul>
+</div>
+
+<div class="short_blurb py2 pl1 pr1">
+<p class="h3">Free-to-play online &quot;adaptive strategy&quot; TCG with groundbreaking gameplay mechanics, and an innovative approach to virtual goods.</p>
+</div>
+<div class="full-description">
+<div><br></div>
+
+
+
+
+<h1>We Made It! THANK YOU!!!!</h1><p>Dear everyone, we can't thank you enough for making this campaign a success. We're on our way to making an incredible game and we do hope that you stay in touch with us, follow our progress through our <a href="http://chromancer.com" target="_blank">website</a>, and playtest in our alphas and betas as we approach launch.</p><h1>Tiers Still Available Through PayPal!</h1><p>If you guys missed your opportunity you can still get in on our reward tiers (minus the exclusive Kickstarter rewards of course). We set up an interface on our website, using PayPal, so you can still get any of our rewards there!</p><a href="http://chromancer.com/paypal" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/tsh/chromancer-adaptive-strategy-online-trading-card-g/assets/933677/edit" data-id="933677">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/933/677/159af1bd7798ca9ead0260bcf491d4d1_large.png?1379522276"></figure>
+</div>
+</a><h1>Kickstarter Original Intro Video:</h1><p>Here's our older video -- we haven't removed it; we just put the gameplay video up top since fewer people have seen that one. Enjoy!</p><div class="template oembed" contenteditable="false" data-href="http://youtu.be/5tNIr2WWg7A">
+<iframe width="612" height="344" src="https://www.youtube.com/embed/5tNIr2WWg7A?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div>
+
+<h1>Chromancer</h1><div class="template asset" contenteditable="false" data-edit_url="/projects/tsh/chromancer-adaptive-strategy-online-trading-card-g/assets/929639/edit" data-id="929639">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/929/639/cf9e2fac3ef1cca0bb34b902a8f1119b_large.jpg?1379433659"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/tsh/chromancer-adaptive-strategy-online-trading-card-g/assets/929641/edit" data-id="929641">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/929/641/db6a538b9040678830463c706f94ab29_large.jpg?1379433677"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/tsh/chromancer-adaptive-strategy-online-trading-card-g/assets/929642/edit" data-id="929642">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/929/642/2781e81903cba9f254bb387c7320d77f_large.jpg?1379433688"></figure>
+</div>
+<p>--</p><div class="template asset" contenteditable="false" data-edit_url="/projects/tsh/chromancer-adaptive-strategy-online-trading-card-g/assets/929646/edit" data-id="929646">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/929/646/b840851ca9f25e572b88828b7aa8628d_large.jpg?1379433733"></figure>
+</div>
+<h1>Last Kickstarter Livestream on Twitch!</h1><p>We've been running daily streams all through the past week, demo'ing the game, giving away prizes and chatting with the devs and featured guests. Only two of these to go before the Kickstarter ends, so get in while you can!</p><p><b>Livestream #7: Wednesday 9/18</b></p><p><b>Time: 1</b>0:30 am EST until the end at 1:00 pm.</p><p><b>Where: </b><a href="http://twitch.tv/chromancer" target="_blank">twitch.tv/chromancer </a></p><p><b>Trivia question: </b><i>&lt;Check the stream!&gt;</i></p><p>We'll be <b>giving away lots of promo cards and booster packs</b>, and maybe a little something more too!</p><p><b>Recorded gameplay videos from these streams can be found on our <a href="http://www.twitch.tv/chromancer" target="_blank">Twitch </a>and <a href="http://www.youtube.com/chromancergame" target="_blank">Youtube </a>channels</b></p><div class="template asset" contenteditable="false" data-edit_url="/projects/tsh/chromancer-adaptive-strategy-online-trading-card-g/assets/918860/edit" data-id="918860">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/918/860/1d6e069b464b98259e99e005c5077bcc_large.jpg?1379112288"></figure>
+</div>
+<h1>
+Most recent updates:</h1><p>9/14 <a href="http://www.kickstarter.com/projects/tsh/chromancer-adaptive-strategy-online-trading-card-g/posts/599033" target="_blank">Mark Poole joins Chromancer! New physical cards offered! New tiers announced!</a></p><p>9/9 <a href="http://www.kickstarter.com/projects/tsh/chromancer-adaptive-strategy-online-trading-card-g/posts/593660" target="_blank">Learn about the 12 colors, and new short stories</a></p><p>9/5 <a href="http://www.kickstarter.com/projects/tsh/chromancer-adaptive-strategy-online-trading-card-g/posts/589654" target="_blank">Latest News, and Playtest Announcement</a></p><p>9/1 <a href="http://www.kickstarter.com/projects/tsh/chromancer-adaptive-strategy-online-trading-card-g/posts/586384" target="_blank">Amazing new Art Update</a></p><p><i><b>Don't forget about these extra rewards, not listed on our main page:</b></i></p><p>We've been blown away by the support for Chromancer as well as the generosity of the members in this community. A couple of weeks ago we decided to reward some of our earliest adopters (our kickstarter backers!) with "more stuff". These Kickstarter exclusive booster packs contain versions of the original card set with different graphics and design that will only be made available now, for our earliest backers. This is our way of saying "thank you!" and we hope you hear us loud and clear!</p><a href="http://www.kickstarter.com/projects/tsh/chromancer-adaptive-strategy-online-trading-card-g/posts/581621" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/tsh/chromancer-adaptive-strategy-online-trading-card-g/assets/868078/edit" data-id="868078">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/868/078/5c8a565142f0b8274d1f08976d067804_large.jpg?1377678429"></figure>
+</div>
+</a><h1><b>Chromancer in Brief</b></h1><p>Chromancer is a game that's totally different. After years of playing card games ourselves, we designed it to solve all the problems we had with other games. Here are 3 reasons Chromancer is the TCG of the future:</p><p>1. <b>Chromancer is not a Magic clone.</b> Lots of games claim to be new. They add a few things like animation, morphing or some other mechanic. But when you're a card player the strategy of these games is identical to Magic, even if these other games are fun and well made. We designed Chromancer to present new strategy that actually makes you think differently about how to play.</p><p>In Chromancer, you win by destroying your opponent's draw deck, his discard pile, and his resource pool. When you destroy any one of them, he can't use it for the rest of the game. So if you knock out his Bank, he can't save resources from turn to turn, if you knock out his draw deck (Castle) he can't draw anymore, and if you knock out his discard pile (Graveyard), all the cards he uses like spells leave play forever once they expire.</p><p>If any of these should fall, you need to be able to adapt to playing a card game without one or more basic capability. The types of strategy in deckbuilding and gameplay this involves <i>is something you will never have had to think about before as a card player</i>.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/tsh/chromancer-adaptive-strategy-online-trading-card-g/assets/867728/edit" data-id="867728">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/867/728/2bcd222def69987dbbab24c7dfd9512f_large.jpg?1377664976"></figure>
+</div>
+<p>2. <b>We deal strictly in persistent virtual goods.</b> We are the first online TCG to do this, as far as we know, and it's about time.</p><p>All our cards are part of limited digital print runs with serial numbers, and all cards in our system are treated as singular items that cannot be duplicated.</p><p>This approach solves the major struggle between collectibility and playability of TCGs, in which merchants can dominate a marketplace and abusively drive up prices for normal players. In our model, collectors are not marginalized but can instead collect a specific edition of a card set, while we use more current editions (exact same card but with different design and card art) to ensure cards are available for players who only care about game mechanics.</p><p>We also support absolutely unrestricted free trade on our game amongst players. In Chromancer you can trade cards, unopened packs, virtual currency, tickets to events and tournaments, avatar accessories, and eventually even player-made goods like a subscription to your newsletter about the state of our economy! The future of gaming will involve this type of emergent gameplay and open economics, and we're not waiting for the future to get here.</p><p>3. <b>We are card players.</b> We are an indie company. We need Kickstarter to launch properly. We need the support of our community. And we're not going anywhere either. If we are lucky enough to succeed <i>mark our words</i> that we will be tireless advocates and supporters of other indie projects later on.</p><p>We care about card players, and we care about what card players care about. Our resources are colorless and there's no mana burn. We don't have pointless chase cards that are stronger than any normal cards. We hate power creep. We hate, hate, hate pay-to-win. That's not us and it will never be us.</p><a href="http://chromancer.com/readarticle/WORKSHOP/5216a60c429d8b022c00001a" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/tsh/chromancer-adaptive-strategy-online-trading-card-g/assets/909277/edit" data-id="909277">
+<figure><img alt='"Black Balrog" by Alonzo Emata' class="fit" src="https://s3.amazonaws.com/ksr/assets/000/909/277/195434c888b53ed3d29c533130ba7c55_large.jpg?1378866785"><figcaption>"Black Balrog" by Alonzo Emata</figcaption></figure>
+</div></a><div class="template asset" contenteditable="false" data-edit_url="/projects/tsh/chromancer-adaptive-strategy-online-trading-card-g/assets/820008/edit" data-id="820008">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/820/008/1729a6938573f2476958605e8f52fb6f_large.jpg?1376200769"></figure>
+</div>
+<p>Chromancer is a browser-based, exclusively online, free-to-play trading card game. No download is required to play. It's easy to learn and tough to master. And it's free in the truest sense of the word: you can earn all of the cards by playing the game as a free player.</p><p>Chromancer is also the very first <i>adaptive strategy</i> card game, and as such is the first game in a long time to bring truly innovative mechanics to the genre. Unlike the vast majority of new TCGs and CCGs, Chromancer is not just a new flavor of the “attack your opponent until his life points are reduced to 0” mechanic. Instead, the game focuses on strategically disabling one's opponent, while simultaneously and constantly adapting to shifting game rules. The game was conceived by a team of card players at the very top of international competition in multiple games, both offline and online, and it was designed above all to be truly innovative and engaging for players.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/tsh/chromancer-adaptive-strategy-online-trading-card-g/assets/813539/edit" data-id="813539">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/813/539/742cbc50b23109d24cf166d8b23fb35a_large.jpg?1375946535"></figure>
+</div>
+<p>Chromancer does offer a membership model with a very small monthly fee in exchange for regular free booster packs and access to a few members-only tournaments. However, the game is carefully designed <i>not</i> to be pay-to-win; that is, a paying player does not inherently have any advantage, ever, over a free player.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/tsh/chromancer-adaptive-strategy-online-trading-card-g/assets/811040/edit" data-id="811040">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/811/040/17c54c8b8529edcdae79de543ceea555_large.jpg?1375886898"></figure>
+</div>
+<p>We are a small, independent game development team that was brought together with the express goal of developing Chromancer and bringing it to market. While we’re technically based in Washington D.C., we are a geographically diverse group with representation in San Francisco, London, and Athens. We also have quite a diverse set of backgrounds and competencies, including game design, tech, art, and writing. What we all have in common though is a passion for games. PC, console, tabletop, we've played them all and continue to do so. We are extremely excited about Chromancer and through it bringing what we believe are truly best-in-class and innovative elements to the TCG genre.</p><p><i>JP+George talk Chromancer with MrSeriousBsns:</i></p><div class="template oembed" contenteditable="false" data-href="http://www.youtube.com/watch?v=PgtEcfGXqu0">
+<iframe width="612" height="344" src="https://www.youtube.com/embed/PgtEcfGXqu0?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/tsh/chromancer-adaptive-strategy-online-trading-card-g/assets/811042/edit" data-id="811042">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/811/042/7d91b7214f03d576c7853aada969b80a_large.jpg?1375886954"></figure>
+</div>
+<h1><b>Gameplay </b></h1><p>Chromancer is a duel-style game, with two players facing each other at a time. Each player is a chromancer, a powerful arcanist who materializes creatures and spells to drive back his opponent’s forces.
+
+</p><p>The basic goal of the game is to destroy the three <i>strongholds</i> of the opponent, and each of these is tied to a basic functionality. Any time a stronghold is damaged, the controlling player is harmed in a related way, and any time a stronghold is destroyed, that player is permanently disabled for the rest of the game, effectively changing the rules of how play occurs. In this fashion a player can prevent his opponent from drawing cards, from using cards more than once and from keeping resources turn to turn. Different deck and play strategies will thrive on targeting or defending given strongholds, while ignoring others. Above all, the strategy of the game evolves during play, both as players’ tactics become evident and as players begin to lose some of the functional capability of normal play. </p><div class="template asset" contenteditable="false" data-edit_url="/projects/tsh/chromancer-adaptive-strategy-online-trading-card-g/assets/870229/edit" data-id="870229">
+<figure><img alt="(Unpublished Alpha Version) A game relatively early on. Both players still have all three strongholds intact." class="fit" src="https://s3.amazonaws.com/ksr/assets/000/870/229/af4b098bd84aba5c9c0166a355acb8ea_large.jpg?1377734681"><figcaption>(Unpublished Alpha Version) A game relatively early on. Both players still have all three strongholds intact.</figcaption></figure>
+</div>
+
+<p>Cards fall into several categories, including creatures which generally orchestrate attacks and defense on various targets; fields and structures which dually define the play area and provide per-turn income to players; and spells and equipment which provide a range of effects but generally require a creature to be implemented.</p><p>There are 12 different colors, each of which has its own strengths and weaknesses, and its own play style. Structures, spells and equipment are mono-colored and as a rule can be used by any creature of the same color. Creatures themselves are mono- or dual-colored.</p><p>
+
+Because resources are <i>not</i> colored (all cards have a simple cost in the game currency "chroma"), card synergy is defined largely by creatures' access to various spells and items. Red creatures will usually use red spells and items, and blue creatures blue. There are no card limits within decks either, so it is up to the player to determine how best to balance a deck based on its efficiency and compatibility of cards. 
+
+More information on the specifics of game mechanics can be found at our official website in an article called <a href="http://chromancer.com/userforums/51b610b60f96c20000000001/thread/51b8425461838114b9000001?page=1" target="_blank">The Basics</a>.</p><p><i>Machinima Realm gameplay video by Galucia081:</i></p><div class="template oembed" contenteditable="false" data-href="http://www.youtube.com/watch?v=Ldl8gv2oSjU">
+<iframe width="612" height="344" src="https://www.youtube.com/embed/Ldl8gv2oSjU?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div><p><i>"Serious Sneak Peek" with MrSeriousBsns:</i></p><div class="template oembed" contenteditable="false" data-href="http://www.youtube.com/watch?v=dMJVMwA8NQ8">
+<iframe width="459" height="344" src="https://www.youtube.com/embed/dMJVMwA8NQ8?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/tsh/chromancer-adaptive-strategy-online-trading-card-g/assets/813580/edit" data-id="813580">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/813/580/5869841da4ec9083fa0aebd2950249ea_large.jpg?1375948015"></figure>
+</div>
+<h1>Beyond Gameplay: In-Game Economics, UI, and More </h1>
+<p><b>Economy - Tradeable Cards and in-Game Goods </b></p><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Chromancer will feature a completely open,
+unfettered, transparent secondary market for cards. Players will be able to put
+cards up and determine the terms of any transaction, whether for cards, in-game
+currency, tournament tickets, or any other good manufactured by a player that
+we can reasonably support. Our goal is to enable emergent gameplay – that is,
+players inventing their own rulesets – wherever we can, and that will include our marketplace.   </p><div class="template asset" contenteditable="false" data-edit_url="/projects/tsh/chromancer-adaptive-strategy-online-trading-card-g/assets/908969/edit" data-id="908969">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/908/969/9748813fcf95065e1697448549a9a84f_large.jpg?1378859820"></figure>
+</div>
+<p><b>Economy - Persistent Virtual Goods</b> </p><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+An important part of this economy is the fact
+that the supply of cards for a given edition will be set based on a digital
+print run. Each card will therefore be unique, with a unique serial number.
+Players will be able to track cards with a few clicks to see past transactions
+and changes in ownership, as well as the current market value of any card.
+Further, every player’s total card pool will have a market value, updated
+continuously to reflect changes in the way cards are trading.</p><p>This setup means
+we won’t simply press a button when we want to generate more cards to sell in
+our store. Rather, in order to supply additional demand we will print follow-on
+editions that would not dilute the collectibility of existing editions.   </p><p><b>Economy - Transparency </b></p><p>
+We believe strongly that making as much information as possible available to players improves the game experience for everyone when it comes to managing market tools. In practical terms this means that at any time a player will be able to get information on any card in our system: its current trade volume on the market, its current value according to recent trades, trends thereof, its use in active or popular decks, the win ratio of those decks, etc. etc. As an aside, this level of transparency will also inevitably help combat any attempted scamming or other abuses of the system.</p><a href="http://chromancer.com/readarticle/WORKSHOP/5222259b306b5a0000000003" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/tsh/chromancer-adaptive-strategy-online-trading-card-g/assets/909279/edit" data-id="909279">
+<figure><img alt='"Corporeal Fire" by Alonzo Emata' class="fit" src="https://s3.amazonaws.com/ksr/assets/000/909/279/5dc772a59e8b62053e5a4b707bc2896f_large.jpg?1378866831"><figcaption>"Corporeal Fire" by Alonzo Emata</figcaption></figure>
+</div>
+</a><p><b>Deckbuilding - The Deck Seal System</b> </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>Chromancer will work with an innovative deckbuilding system
+using deck seals. Seals in the world of Chromancer are the equivalent of deck
+templates: they are magical talismans that can summon forth a specific group of
+cards from a chromancer's collection (very useful indeed in a suddenly-brought
+on battle). Players can create these without owning all the cards in the
+template, and simply activate the seals when all of the card ownership
+conditions are met. We say card ownership conditions, because it might not
+necessarily imply outright ownership. We plan to implement functionality such
+as shared guild card pools, and in some contexts shared friend card pools for
+example.</p>
+
+<p>Deckbuilders are truly empowered in Chromancer, as evidence
+by the public resource we provide called the <i>Arcanum</i>.
+This archive is accessible to all players and contains a comprehensive list of
+deck seals, sortable by popularity, win rates, color content and more. Players
+will be able to post their own decks to the Arcanum and vote on the decks they
+like best, or browse the existing collection at their leisure.</p>
+
+<p>In general deck seals will be represented on the
+site with a deck icon and the deck's name. These might appear anywhere -- on a
+player's profile, in a forum post, on a guild's homepage -- and with a single
+click any player will be able to copy the seal to his own personal deck
+archive. Then, a player will be able to see how many cards from the deck he
+currently owns; he will be able to access the marketplace and see all sales of
+cards used in that deck; and filter search results to see what the cheapest
+current price would be for completing the deck through player auctions; etc.</p><p><b>Fantasy - Roleplaying a Chromancer</b> </p><p>The Chromancer team includes a fantasy team, led by an
+in-house professional fantasy writer. We are deliberate in our efforts to flesh
+out the game fantasy and provide a rich context for the game content.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/tsh/chromancer-adaptive-strategy-online-trading-card-g/assets/811272/edit" data-id="811272">
+<figure><img alt="Concept art - Chromancers" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/811/272/085882bf9cee74809f7af816de8aae4c_large.jpg?1375892804"><figcaption>Concept art - Chromancers</figcaption></figure>
+</div>
+<p>In our fantasy, chromancers are card-wielders, and are broadly speaking
+knowledge-seekers. It is the knowledge of worlds and ages beyond their world of
+Prisme that enables them to craft new cards and add to their power, after all. Similarly, by acquiring new cards, players will also
+unlock a greater understanding of the game world through flavor text on the
+cards themselves, short stories and other fiction that we publish.</p><p>Our aim, though, is not to make this a one-sided process. As
+players form their own guilds, corporations and alliances, they will play an
+active role in driving the top-level fantasy narrative. We will support this
+where appropriate, by giving degrees of autonomy to guilds, enabling top
+players to enter the game lore, or allowing merchant companies of players to
+advertise to others on our website, for example; and because the fantasy will
+be constantly evolving, the community as a whole will inevitably change the
+course of our storylines.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/tsh/chromancer-adaptive-strategy-online-trading-card-g/assets/811082/edit" data-id="811082">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/811/082/8af487da24b8dad5d0d76c9016133d4c_large.jpg?1375888306"></figure>
+</div>
+<p>Having high
+quality artwork is a huge part of what makes TCGs such incredible games, and as
+long-time players we recognize that importance. We’ve made it our mission to develop the most jaw-dropping artwork we
+can get our hands on, and the samples below are just the beginning! Please, step into...</p><h1>The Workshop</h1><a href="http://chromancer.com/readarticle/WORKSHOP/520157f5fa77f50000000017" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/tsh/chromancer-adaptive-strategy-online-trading-card-g/assets/909302/edit" data-id="909302">
+<figure><img alt='"Balefire Pillar" by Joshua Calloway' class="fit" src="https://s3.amazonaws.com/ksr/assets/000/909/302/9169f1e19bbe37bb70f531bb5d803d99_large.jpg?1378867080"><figcaption>"Balefire Pillar" by Joshua Calloway</figcaption></figure>
+</div>
+</a><a href="http://chromancer.com/readarticle/WORKSHOP/51fedc256510d9000000000d" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/tsh/chromancer-adaptive-strategy-online-trading-card-g/assets/909300/edit" data-id="909300">
+<figure><img alt='"Bladefin" by Alonzo Emata' class="fit" src="https://s3.amazonaws.com/ksr/assets/000/909/300/087a07fc19060eb7e3acde06c28ddffa_large.jpg?1378867050"><figcaption>"Bladefin" by Alonzo Emata</figcaption></figure>
+</div>
+</a><div class="template asset" contenteditable="false" data-edit_url="/projects/tsh/chromancer-adaptive-strategy-online-trading-card-g/assets/909298/edit" data-id="909298">
+<figure><img alt='"Red Hordeling" by Ramon Puasa, Jr.' class="fit" src="https://s3.amazonaws.com/ksr/assets/000/909/298/d63a15ef42dc260e3cc1c045691d28ea_large.jpg?1378866987"><figcaption>"Red Hordeling" by Ramon Puasa, Jr.</figcaption></figure>
+</div>
+<a href="http://chromancer.com/readarticle/WORKSHOP/51de1d7f3f97ea91be00000c" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/tsh/chromancer-adaptive-strategy-online-trading-card-g/assets/909293/edit" data-id="909293">
+<figure><img alt='"Burning Blood" by Joshua Calloway' class="fit" src="https://s3.amazonaws.com/ksr/assets/000/909/293/4dd9139b36548b4a2abb39586c667a93_large.jpg?1378866942"><figcaption>"Burning Blood" by Joshua Calloway</figcaption></figure>
+</div>
+</a>
+<p>With a release set of 300 cards, we still have a way to go
+in order to cover all of the art requirements that will go into the game. And that is where the lion’s share of the
+money we raise through this campaign will go: towards paying artists and illustrators to make some kick-ass art. We hope you like what you see so far. Don’t
+forget to check back for some updates on this page … there will be more pieces
+in the coming days and weeks!</p><div class="template asset" contenteditable="false" data-edit_url="/projects/tsh/chromancer-adaptive-strategy-online-trading-card-g/assets/811104/edit" data-id="811104">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/811/104/90b9ab4584a29a7ea183c3c0983209e4_large.jpg?1375888827"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>Chromancers inhabit Prisme, a world of shifting
+energies and aethers that has seen civilizations rise and fall a hundred times
+over.</p><p>It is a world that was sundered centuries ago in a great cataclysm of unknown origin. Prisme is now comprised of large city-states isolated by vast regions of Void where volatile energies defy the laws of physics and time. This cosmic wilderness poses a mortal threat for those who venture forth unprepared, but it also houses the promise of wealth and knowledge. For nestled in the loopholes of time and space are fonts of pure energy which spring in and out of existence. This energy is known as <i>chroma</i> and it is the material of existence; the eitr; the essence that binds all together. Chroma mined from the Void powers all magical technology in Prisme, and as such, it is an invaluable and highly contested resource.</p><a href="http://chromancer.com/readarticle/WORKSHOP/5206a6e235d3f8272c00000f" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/tsh/chromancer-adaptive-strategy-online-trading-card-g/assets/909309/edit" data-id="909309">
+<figure><img alt='"Forest" by Joshua Calloway' class="fit" src="https://s3.amazonaws.com/ksr/assets/000/909/309/5023093c4f9daa5cf67c01c92f664058_large.jpg?1378867238"><figcaption>"Forest" by Joshua Calloway</figcaption></figure>
+</div>
+</a><p>Chromancers are wizards that use their minds and magical powers to shape chroma itself. This source of arcane energy is focused and multiplied a hundredfold through the use of magical cards that can be used to bend the Void to the will of the caster. Being able to shape the Void around them and hence defend against its destructive energies, chromancers are uniquely suited as chroma collectors. Therefore they are highly sought after to ensure the safety and success of chroma mining operations. As chroma nodes are hotly contested by competing mining outfits, chromancers engage in arcane duels, drawing on the fonts of chroma to summon forth creatures and magics from alternate realities, with the victor laying claim to that particular node.</p><p>Our aim is to have the cards that you play with exist in a broader world context. This means that we will be fleshing out the world of Chromancer in detail, through both works of fiction and the art itself. Central characters of the world will be introduced, their adventures and travails recorded in short stories which we will share on a regular basis with the community. These evolving story lines will manifest in new artwork and ultimately new cards as well. Heroes, villains, weapons, artifacts, spells, mysterious locales, dark dungeons – all will be explored in an evolving multi-faceted story that you can eventually get your hands on and play with in-game.</p><p><b><i>Over the course of this Kickstarter campaign we will be posting updates to introduce the Lore of Prisme! This will involve releasing some of our great short stories so you can start learning about the world of the chromancers -- stay tuned!</i></b></p><div class="template asset" contenteditable="false" data-edit_url="/projects/tsh/chromancer-adaptive-strategy-online-trading-card-g/assets/811140/edit" data-id="811140">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/811/140/f85cd8bb4c6984cd20b2a43ff12ef2dc_large.jpg?1375889592"></figure>
+</div>
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/tsh/chromancer-adaptive-strategy-online-trading-card-g/assets/811060/edit" data-id="811060">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/811/060/15fedf7d484a3437c025749eb150e1eb_large.jpg?1375887730"></figure>
+</div>
+
+
+
+
+<p>So far, this project has been completely self-funded. We all either have full-time jobs and are
+doing this on the side, or are living off savings in order to devote our time
+to making it a reality. We've gone quite
+a ways with this approach, but we need some help to complete the journey!</p><p>We have a working prototype of the game and will be demoing
+and perhaps offering some betas during this Kickstarter, but of course the game
+remains incomplete without the majority of needed art, as well as some user
+interface design for various game tools. All of those things we are capable and
+ready to manage but we don’t have the funds to pay for the artists – and that’s
+why we’ve come to Kickstarter.</p><p>So sourcing artists and contracting card art will be the
+main use of the funds, with the remainder being expenses for PR and marketing. We
+are going with a grassroots approach through indie gaming sites, YouTube
+reviewers and word of mouth, but we will also be attending conventions such as Gen
+Con and PAX where we plan to get the word out to as many people as possible,
+and this has a cost associated with it. We believe it's worth it though. It's
+great exposure for us and will ensure we gather a strong community of early
+adopters to make the game a success at launch.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/tsh/chromancer-adaptive-strategy-online-trading-card-g/assets/811142/edit" data-id="811142">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/811/142/9d75cb8cce4d0567107fb3692e16e82c_large.jpg?1375889634"></figure>
+</div>
+<p>We’ve put together some graphics to show you what you get in
+each reward tier below. <b>If you are unclear about anything offered, note that there are summaries written at the very bottom of the Kickstarter page</b></p><div class="template asset" contenteditable="false" data-edit_url="/projects/tsh/chromancer-adaptive-strategy-online-trading-card-g/assets/921406/edit" data-id="921406">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/921/406/0bbf85b009979a597b0f1769d5225dde_large.jpg?1379205772"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/tsh/chromancer-adaptive-strategy-online-trading-card-g/assets/921408/edit" data-id="921408">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/921/408/dc393ff11ba9ed420d51f60da8efd12a_large.jpg?1379205786"></figure>
+</div>
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/tsh/chromancer-adaptive-strategy-online-trading-card-g/assets/921674/edit" data-id="921674">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/921/674/cfb15680da5d5db0370f86e5be899079_large.?1379213194"></figure>
+</div>
+<p>By all means leave us a comment if you have questions … heck, if you
+decide you want something not listed here, ask us for it and we might add a
+tier just for you!</p><p><b>Note: We have decided to improve the 5-year membership rewards in some of our top tiers to include $1/year membership renewal for every year thereafter!</b></p><ul><li>
+<b>Starter Deck</b> -<i> 48 cards. Starter Decks are designed for beginners, with cards working well together. There are fewer rarer cards per unit in a Starter Deck than there are in normal Booster Packs. Depending on supply, we will let players choose the colors in the Starter Deck they want (first come first serve).</i>
+</li></ul><div></div><ul><li>
+<b>Booster Pack </b>- <i>7 cards. Booster Packs contain a completely random assortment of cards from our standard launch set called The Primeval™ and may contain any rarity of card including Heroes.</i>
+</li></ul><ul><li>
+<b>Field Pack</b> - <i>7 cards. Field Packs are cheap and contain only fields, but they are extremely useful for anyone who wants to do some serious deckbuilding.</i>
+</li></ul><ul><li>
+<b>Ultra-Rare Hero Card</b> -<i> 1 card. Every account on Chromancer will have access to free-to-use heroes, but there are also some hero cards that normally can only be found in Booster Packs. This reward includes one of those hard-to-find heroes. Note that while we call them "Ultra Rare" they are nowhere near as hard to find as similarly-named cards in other games. We have no intention of creating "chase cards" that are nearly impossible to get.</i>
+</li></ul><ul>
+<li>
+<b>Forum Badge</b> - <i>All supporters as of the $15 level will be given a special badge that will appear next to their names whenever posting to our game forums.</i>
+</li>
+<li>
+<b>Kickstarter Cards</b> -<i> Several cards. This set of exclusive cards is available to our Kickstarter backers as of the $25 level. These will be normal, functioning game cards and tradeable just like any other cards (and at higher rewards levels we will give you extra sets to trade). We will make announcements giving more info on these cards during the campaign. If we are lucky enough to start hitting stretch goals later on, the number of these cards available to everyone will increase.</i>
+</li>
+</ul><ul>
+<li>
+<b>Avatar Accessories </b>- <i>In addition to forum badges, supporters at $25 or more will receive a small set of exclusive accessories with which to adorn their game avatars. Avatars are visible in all public areas of the game, including chat, trading centers and when battling other chromancers. Avatar accessories, like most things, are tradeable.</i>
+</li>
+<li>
+<b>Membership</b> - <i>For a small monthly fee, players can unlock "membership" status at Chromancer. This will imply a constant stream of free booster packs and other perks like access to members-only tournaments. Some of our reward tiers offer free membership for a given amount of time.</i>
+</li>
+</ul><ul><li>
+<b>Chroma for use in our store</b> - <i>The Chromancer store and everything in it will be accessible to both free and paying players. Chroma is the in-game currency used to buy things like booster packs, card singles, and an array of other game items like avatar accessories and tournament tickets. Chroma is also tradeable amongst players, free and paying alike.</i>
+</li></ul><ul><li>
+<b>Card Set Box</b> - <i>288 cards. The Card Set box from our first standard set, The Primeval™, contains one copy of every non-hero card in the entire set.</i>
+</li></ul><ul><li>
+<b>Total Set Box</b> - <i>300 cards. The Total Set box from our first standard set, The Primeval™, contains one copy of every card in the entire set, including all 12 ultra-rare heroes.</i>
+</li></ul><ul><li>
+<b>Digital Artbook</b> - <i>Designed by our brilliant art director and filled with sketches, concept art, and behind-the-scenes art in addition to some of the beautiful original pieces, our stunning Digital Artbook features many of our top artists.</i>
+</li></ul><ul>
+<li>
+<b>Free Entry to Daily Tournaments</b> - <i>There will be free tournaments held every day once Chromancer launches; but there will be many standard buy-in tournaments with tempting prize pools as well. This award confers a free pass to any standard tournament and can be used once per day, for the given duration.</i>
+</li>
+<li>
+<b>Free Entry to Drafts</b> - <i>Chromancer is a game that also works beautifully in a fan-favorite tournament structure known as "drafting." Drafts are so popular because players must create their own decks to play with on the spot, and stand to win lots of cards if they are skilled (and sometimes lucky). Entering a draft usually requires staking several booster packs. Some of our upper-end rewards will give the player some or all of the boosters required for any draft tournament of his or her choice, for free, once a day. In the hands of a skilled card player, this reward could pay incredible dividends.</i>
+</li>
+</ul><ul><li>
+<b>Autographed Art Print</b> - <i>At our top tiers, we are giving away some of the absolutely beautiful original prints of our game art, signed by both the artist and game design team. We will accommodate any special request for art that we can.</i>
+</li></ul><ul><li>
+<b>Design and Hold an Artifact</b> - <i>One exciting innovation of Chromancer is the existence of artifacts. These cards are singular entities in the entire community, and their current owner at any given time is public information. Immensely powerful pieces of equipment, they can drive a victory all by themselves in a battle, but any player who possesses one will be forced to stake it in several matches daily, meaning they will be changing hands regularly. At the Void Conqueror tier, we are offering up to 6 players the chance to design their own artifacts alongside the development team, as well as to be the first player to hold that artifact when it is released into the community. A unique forum badge and avatar accessories will also be included to show off the fantastic support level of these players.</i>
+</li></ul><ul>
+<li>
+<b>A Hero in Your Likeness </b>- <i>At the top tier, we will welcome you as a paragon of Prisme. The design team will fashion a hero after your likeness and with your input, you will be given an exclusive avatar and forum title, and ten free copies of your hero card.</i>
+</li>
+<li>
+<b>Producer Credit</b> - <i>For top-tier supporters we will also recognize your contribution officially in our game credits, and permit you, with approval, to list yourself as a producer of our game anywhere else you'd like to (personal website, resumé, etc).</i>
+</li>
+</ul><div><br></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>--</p><p>Thank you for all your support and please remember that you can help us <i>immensely</i> just by spreading the word far and wide! We can’t do this without a community effort, so let’s get on our rooftops and let the whole world know …</p><h1>Chromancer is coming !!</h1><div class="template asset" contenteditable="false" data-edit_url="/projects/tsh/chromancer-adaptive-strategy-online-trading-card-g/assets/811254/edit" data-id="811254">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/811/254/adc37ef0f7cf2c6b98969a3080218e07_large.jpg?1375892410"></figure>
+</div>
+<p>Now that we've hit the goal, we have some great ideas for what we can offer our backers at higher levels! Let's see what we can achieve with our last days!</p><div class="template asset" contenteditable="false" data-edit_url="/projects/tsh/chromancer-adaptive-strategy-online-trading-card-g/assets/933706/edit" data-id="933706">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/933/706/894286da1ae7573ba7d11c8ef1fcbe3c_large.jpg?1379522796"></figure>
+</div>
+</div>
+<div id="risks">
+<h2 class="title grey-dark mt6 mb4">
+<span>Risks and challenges</span>
+<a href="/help/faq/kickstarter%20basics#Acco" class="right normal h5" target="_blank">Learn about accountability on Kickstarter</a>
+<div class="divider clear"></div>
+</h2>
+<p><p>By definition the biggest challenge for us is producing the art we need to launch the game fully. As such, the vast majority of the funds we raise will go towards paying contracted artists to produce artwork.</p>
+
+<p>There is always inherent risk for any contractor who brings in external talent. Luckily, our art director is a graphic designer who has run his own independent studio for 13+ years and is experienced in managing these type of projects and in handling large teams of artists. We have invested time and effort into building a crew of reliable, top artists, but in addition to that, we have both a large network of backup artists and ample experience in finding solutions to related logistical problems. To-date we’ve not had any single major problem on this front, and we’ve had some outstanding art produced already.</p>
+
+<p>Another challenge that might arise would be if we tried to include extra features paid for by stretch goals as early as in our initial product release. Our launch date of Winter 2013 is projected with the game in its basic state. Stretch goals that are achieved that require additional functionality might create delays in delivering the &quot;expanded&quot; product. If this is the case, we will not hesitate to release our &quot;base&quot; game on time and add on expanded functionality based on stretch goals met down the road. But most importantly, we will always be transparent regarding delivery dates for these add-on functions to the game.</p></p>
+</div>
+</div>
+<div class="NS-projects-faqs" id="project-faqs">
+<h2 class="title grey-dark mt6 mb4">
+FAQ
+<div class="divider clear"></div>
+</h2>
+<ul class="faqs">
+<li class="faq" id="project_faq_64872">
+<div class="faq-question">
+<a href="#project_faq_64872" name="project_faq_64872">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Will trading be allowed in Chromancer?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Yes, we plan to use a system of &quot;persistent virtual goods&quot; which will feature completely unrestricted free trade between all players. This will even include promotional cards, unopened packs, game currency (chroma), tournament tickets, avatar accessories, and more. Basically our concept is: if you could trade it in real life, you can trade it on Chromancer.</p>
+
+<p>We will provide more detail on our trading system and marketplace in general in a future update. For now you can find quite a bit of information on these topics by browsing our website forums at <a href="http://www.chromancer.com" rel="nofollow">www.chromancer.com</a>.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-08-11T15:05:18-04:00">Sun, Aug 11 2013 3:05 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_65218">
+<div class="faq-question">
+<a href="#project_faq_65218" name="project_faq_65218">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">What does &quot;membership&quot; mean in this free-to-play game?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Chromancer is free to play and free players can earn every card that paid players can. That said, our membership subscription unlocks some bonuses including access to members-only tournaments and areas, AND 4 free booster packs per month. Because our membership is priced at $7/month, this actually means members will receive more back in boosters alone than the membership price (4 booster packs have an $8 value).</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-08-14T19:19:03-04:00">Wed, Aug 14 2013 7:19 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_64893">
+<div class="faq-question">
+<a href="#project_faq_64893" name="project_faq_64893">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Does Chromancer cater to people with color deficiencies?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>We have made an effort to design a color system with each color being extremely distinct on an array of monitor and tech setups. That said, we also have a system whereby each color is represented by a given rune, and we will use those ubiquitously where we use colors. You can see which runes correspond to each color on our logo! We believe that this will enhance the experience for anyone with partial or full colorblindness.</p>
+
+<p>We may also have an update later on specifically dedicated to the 12 game colors, what they represent, and so forth. Stay tuned!</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-08-11T18:16:47-04:00">Sun, Aug 11 2013 6:16 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_66268">
+<div class="faq-question">
+<a href="#project_faq_66268" name="project_faq_66268">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Are the Kickstarter Exclusive cards obtainable without being a backer?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Yes and no.</p>
+
+<p>The Kickstarter Exclusive rewards are only available in booster packs which are only awarded for being a project backer. However, because everything in Chromancer is tradable in a truly open economy, you can always trade for these cards once the game goes live (assuming you can find someone willing to trade!)</p>
+
+<p>You can read all about the KS Exclusive card set in our update here: <a href="http://kck.st/153YvAM" rel="nofollow">http://kck.st/153YvAM</a></p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-08-28T12:55:52-04:00">Wed, Aug 28 2013 12:55 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_66993">
+<div class="faq-question">
+<a href="#project_faq_66993" name="project_faq_66993">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Will it be possible to get exclusive cards after the Kickstarter?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Let us be clear that the exclusive cards are an exclusive *edition* of cards. This does not mean that the cards themselves and their mechanics will no longer be obtainable later on. We will definitely have further editions of the same cards so that players who care about game mechanics are not hindered by merchants.</p>
+
+<p>At the same time, it is important for us to continue to maintain the collectibility aspect of our cards so that  collectors and merchants are not marginalized either. It&#39;s terrible ethics to have someone spend time and/or money in the game acquiring something precious and then to turn around and immediately invalidate that investment by flooding the market with copies of that same precious good -- or even worse by drastically reducing its price artificially (e.g. charging real money for a product and then giving it away for free a bit later after people have paid for it).</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-09-05T20:09:05-04:00">Thu, Sep 5 2013 8:09 pm EDT</time>
+</div>
+</div>
+</li>
+
+</ul>
+<div class="faq-ask-box">
+<a href="/projects/tsh/chromancer-adaptive-strategy-online-trading-card-g/messages/new?message%5Bto%5D=tsh&amp;mode=FAQ" class="button button_blue remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Ask a question about CHROMANCER Adaptive Strategy Online Trading Car...">Ask a question</a>
+
+</div>
+</div>
+
+<div class="mt4 ml1 mr1 mb2" id="report-issue-wrap">
+<a href="/login?then=%2Fprojects%2Ftsh%2Fchromancer-adaptive-strategy-online-trading-card-g" class="button button_grey">Report this project to Kickstarter</a>
+</div>
+</div>
+<div class="NS-projects-rightcol grid_5" id="rightcol">
+<div class="NS_projects__ecom">
+<div class="digits_5 pb2 pl2 pt2" id="stats">
+<h5>
+<div class="num h48 no-margin" data-backers-count="570" id="backers_count"><data class="Project1257685031" data-format="number" data-value="570" itemprop="Project[backers_count]">570</data></div>
+<span><data class="Project1257685031" data-attr="backers_count" data-format="pluralize" data-value="570" data-word="Backer">Backers</data></span>
+</h5>
+<h5>
+<div class="num h48 no-margin" data-goal="60000.0" data-percent-raised="1.13865" data-pledged="68319.0" id="pledged">
+<data class="Project1257685031" data-currency="USD" data-format="shorter_money" data-precision="0" data-value="68319" data-without_code="true" itemprop="Project[pledged]">$68,319</data>
+<span class="money usd project_currency_code"></span>
+</div>
+pledged of
+<span class="money usd no-code">$60,000</span>
+goal
+</h5>
+<span data-duration="40.0" data-end_time="2013-09-18T13:01:40-04:00" data-hours-remaining="0" id="project_duration_data"></span>
+<div class="Project1257685031" data-conditions="[{&quot;!state&quot;:[&quot;canceled&quot;,&quot;suspended&quot;]}]" data-evaluation="true" data-render="&quot;&lt;h5 class=\&quot;poll \&quot; data-dynamic=\&quot;5\&quot; data-end_time=\&quot;2013-09-18T13:01:40-04:00\&quot; data-poll_url=\&quot;https://d2oher2uhvl0ur.cloudfront.net/projects/tsh/chromancer-adaptive-strategy-online-trading-card-g/stats.json\&quot;&gt;\n&lt;div class=\&quot;num h48 no-margin\&quot;&gt;0&lt;/div&gt;\n&lt;span class=\&quot;text\&quot;&gt;seconds to go&lt;/span&gt;\n&lt;/h5&gt;\n&quot;"><h5 class="poll " data-dynamic="5" data-end_time="2013-09-18T13:01:40-04:00" data-poll_url="https://d2oher2uhvl0ur.cloudfront.net/projects/tsh/chromancer-adaptive-strategy-online-trading-card-g/stats.json">
+<div class="num h48 no-margin">0</div>
+<span class="text">seconds to go</span>
+</h5>
+</div></div>
+<div class="Project1257685031" data-conditions="[{&quot;state&quot;:&quot;live&quot;},{&quot;!ended?&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;pr2 pl2\&quot; id=\&quot;pledge-wrap\&quot;&gt;\n&lt;a href=\&quot;/projects/tsh/chromancer-adaptive-strategy-online-trading-card-g/pledge/new?clicked_reward=false\&quot; class=\&quot;button button_green button_box button_block\&quot; id=\&quot;button-back-this-proj\&quot; title=\&quot;Back this project\&quot;&gt;Back This Project &lt;small class=&#39;h6 normal block green-dark&#39;&gt;&lt;span class=\&quot;money usd \&quot;&gt;$1&lt;/span&gt; minimum pledge&lt;/small&gt;&lt;/a&gt;\n&lt;/div&gt;\n&quot;"></div><div class="Project1257685031" data-conditions="[{&quot;state&quot;:&quot;live&quot;}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;p2\&quot; id=\&quot;banner\&quot;&gt;\n&lt;p class=\&quot;tiny_type no-margin\&quot;&gt;\nThis project will be funded on\n&lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;llll z\&quot; datetime=\&quot;2013-09-18T13:01:40-04:00\&quot;&gt;Wed, Sep 18 2013 1:01 pm EDT&lt;/time&gt;.\n&lt;/p&gt;\n&lt;/div&gt;\n&quot;"></div></div>
+
+<div class="NS_projects__rightcol_projectby bg-blue-light rounded">
+<div class="p2 clearfix">
+<div class="avatar inline-block align-middle">
+<a href="/projects/tsh/chromancer-adaptive-strategy-online-trading-card-g/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography"><img alt="Kickstarter-profile-image.small" class="avatar-small" height="80" src="https://s3.amazonaws.com/ksr/avatars/1484205/Kickstarter-Profile-Image.small.jpg?1377677338" width="80" />
+</a></div>
+<div class="creator-name inline-block align-middle ml1">
+<h6 class="mb1">Project by</h6>
+<h5 class="mb1">
+<a href="/projects/tsh/chromancer-adaptive-strategy-online-trading-card-g/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">The Started Hare LLC</a>
+</h5>
+<p class="location h6 bold mb1">
+<a href="/discover/places/washington-dc">Washington, DC</a>
+</p>
+</div>
+</div>
+<div class="creator-details pl2 pr2 pb1">
+<ul class="list-simple h5 mb1">
+<li class="projects">
+<span class="ss-icon ss-kickstarter grey-dark margin-right"></span>
+<span class="text">
+First created
+<span class="divider">&middot;</span>
+<a href="/profile/tsh/backed" class="green-dark bold more-button remote_modal_dialog" data-modal-title="Projects backed by The Started Hare LLC">12 backed</a>
+</span>
+</li>
+<li>
+<span class="ss-icon ss-facebook margin-right grey-dark"></span>
+<span class="text">
+Not connected
+</span>
+</li>
+<li class="links">
+<span class="ss-icon ss-globe margin-right grey-dark"></span>
+<span class="text">
+<a href="http://chromancer.com/" class="popup" rel="nofollow" target="_blank">chromancer.com</a>
+</span>
+</li>
+</ul>
+</div>
+<div class="footer center h5 bold clearfix rounded-bottom clip">
+<a href="/projects/tsh/chromancer-adaptive-strategy-online-trading-card-g/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">See full bio</a>
+<a href="/projects/tsh/chromancer-adaptive-strategy-online-trading-card-g/messages/new?message%5Bto%5D=tsh" class="remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Send a message to The Started Hare LLC">Contact me</a>
+
+</div>
+</div>
+
+<ul class="NS-projects-rightcol-rewards rounded clip list mt2" data-reward-count="21" id="what-you-get">
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$1</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+18 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Symbolic Supporter =============================
+
+You have our eternal gratitude for this symbolic show of support!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-12-01">Dec 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$5</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+55 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Starter Deck =============================
+
+You receive a 48-card starter deck which you can use to instantly jump in and play upon release ($7.81 value)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-12-01">Dec 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$15</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+78 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Intro Pack =============================
+
+Starter Deck ($7.81 value); 3 Booster Packs: The Primeval™ ($6 value); 
+Ultra-Rare Hero Card ($14 value);
+Forum Badge</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-12-01">Dec 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$25</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+189 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Kickstarter Pack ==============================
+
+1 set exclusive Kickstarter Cards ($5 value);
+5 Booster Packs: The Primeval™ ($10 value);
+1 month subscription membership ($7 value);
+Starter Deck ($7.81 value);
+Ultra-Rare Hero Card ($14 value);
+Forum Badge + Avatar Accessories</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-12-01">Dec 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$40</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+41 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Kickstarter Advanced Pack ============================
+2000 chroma for use in our game store ($20 value); 5 Booster Packs - The Primeval™ ($10 value); 1 month subscription membership ($7 value); 
+ Starter Deck ($7.81 value); Ultra-Rare Hero Card ($14 value); 1 set exclusive Kickstarter cards, ($5 value); Forum Badge + Avatar Accessories</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-12-01">Dec 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$60</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+10 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Trader Pack ============================== 8000 chroma for use in our game store ($80 value); 4 sets exclusive Kickstarter cards ($20 value); 4 sets Forum Badge + Avatar Accessories</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-12-01">Dec 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$65</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+47 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Kickstarter Deluxe Pack ============================ 4500 chroma for use in our game store ($45 value); 3 Month subscription membership ($21 value); 8 Booster Packs - The Primeval™ ($16 value); 2 Starter Decks ($15.62 value); Ultra-Rare Hero Card ($14 value); 1 set Kickstarter exclusive cards ($5 value); Forum Badge + Avatar Accessories</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-12-01">Dec 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$100</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+41 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Collector Value Pack ============================== 1 Card Set Box (1 copy of each card, $104.83 value); 1 Month subscription membership ($7 value); 3x INTRO PACK reward tiers ($83.43 value); 3 sets Kickstarter exclusive cards ($15 value); Forum Badge + Avatar Accessories</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-12-01">Dec 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$125</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+7 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Supporter Pack ============================== Chromancer Digital Artbook (HD images); 1 month free entry for 1 tournament daily ($15 value); 5000 chroma for use in our game store ($50 value); 3 months subscription membership ($21 value); 3x INTRO PACK reward tiers ($83.43 value); 12 Booster Packs - The Primeval™ ($24 value); 3 sets Kickstarter exclusive cards ($15 value); Forum Badge + Avatar Accessories</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-12-01">Dec 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$145</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+13 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Extra Value Pack ============================== 1x COLLECTOR VALUE PACK reward tier ($210.26 value); 6000 chroma for use in our game store ($60 value); Chromancer Digital Artbook (HD images)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-12-01">Dec 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$160</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+3 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Evangelist Pack ============================== 6 month subscription membership for you and 2 friends ($126 value); 3x KICKSTARTER PACK reward tiers ($108 value); Chromancer Digital Artbook (HD images)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-12-01">Dec 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$200</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+3 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Real Card Set Pack ============================== 1x EXTRA VALUE PACK reward tier ($270.26 value); 6 month subscription membership ($42 value); 1 Real Card Set of 50 cards. NOTE: THE MASTER DECKBUILDER PACK AT $300 HAS A REAL CARD SET INCLUDED.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-12-01">Dec 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$300</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+8 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Master Deckbuilder Pack ============================== 1 Total Set Box (1 copy of each card and heroes, $272.83 value); 12 Starter Decks ($96 value); 2 Booster Boxes (42 Booster Packs); 28 Field Packs ($28 value); 5 sets Kickstarter exclusive cards ($25 value); Chromancer Digital Artbook (HD images); Forum Badge + Avatar Accessories</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-12-01">Dec 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$375</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+4 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Deckbuilder Deluxe Pack ============================== 1x MASTER DECKBUILDER PACK reward tier ($503.55 value); 9 month subscription membership ($63 value); 2 Real Card Sets of 50 cards each. NOTE: ALL TIERS BEYOND THIS ONE HAVE 2x REAL CARD SETS INCLUDED.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-12-01">Dec 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$550</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+11 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Patron Pack ============================== 1 Autographed art print; 2x MASTER DECKBUILDER PACK reward tiers ($1007.10 value); 12 Month subscription membership ($84 value)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-12-01">Dec 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$770</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(19 left of 20)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Resource Poole Pack ============================== 1x PATRON PACK reward tier ($1091.10 value); 1 Autographed Mark Poole limited edition print (1 of a set of 40).</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-12-01">Dec 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$1,400</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+5 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Door Pass Pack ============================== Free entry to all daily tournaments for five years ($912.50 value); 1 Free Drafting Booster every day for five years ($3650 value);  2x MASTER DECKBUILDER PACK reward tiers ($1007.10 value); 24 Month subscription membership ($168 value); Autographed art print</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-12-01">Dec 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$1,500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+2 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(4 left of 6)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Poole Pass Pack ============================== 1x DOOR PASS PACK reward tier ($5737.60 value); 1 Autographed Mark Poole limited edition print (1 of a set of 40). NOTE: ALL TIERS BEYOND THIS ONE INCLUDE A MARK POOLE PRINT.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-12-01">Dec 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$2,500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(5 left of 6)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Void Conqueror Pack ============================== Design an artifact with the dev team; Be the first holder of said artifact when introduced into the game; 1 Free Drafting Booster every day for five years ($3650 value); Free entry to all daily tournaments for five years ($912.50 value); Total Set Box for every future expansion ($2182.64 value); 2x MASTER DECKBUILDER PACK reward tiers ($1007.10 value); Free subscription membership for five years and $1/year renewal for every year thereafter ($420 value); Autographed art print</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-12-01">Dec 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$5,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+2 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(3 left of 5)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Lord of the Arcanum Pack ============================== Design and name your own Starter Deck; Personalized Deck Seal Icons for all your decks across the entire website; 3 Free Drafting Boosters every day for five years ($10950 value); Free entry for all daily tournaments for five years ($912 value); Total Set Box for every future expansion ($2182.64 value); 2x MASTER DECKBUILDER PACK reward tiers ($1007 value); Free subscription membership for five years with $1/year renewal every year thereafter ($420 value); Autographed art print; 1 Autographed Mark Poole limited edition print (1 of a set of 40); Credit as associate game producer on our website</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-12-01">Dec 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$6,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+2 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(1 left of 3)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Hero of Prisme Pack ============================== Design a Hero card with the dev team, with the art in your own likeness; 1 Free Draft every day for five years ($18250 value); Free entry for all daily tournaments for five years ($912 value); Total Set Box for every future expansion ($2182.64 value); 2x MASTER DECKBUILDER PACK reward tiers ($1007 value); Free subscription membership for five years with $1/year renewal every year thereafter ($420 value); Autographed art print; Credit as game producer on our website</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-12-01">Dec 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+</ul>
+
+<div class="p2" id="meta">
+<h5>Funding period</h5>
+<p class="tiny_type">
+<time class="js-adjust" data-format="ll" datetime="2013-08-09T13:01:40-04:00">Aug 9, 2013</time> - 
+<time class="js-adjust" data-format="ll" datetime="2013-09-18T13:01:40-04:00">Sep 18, 2013</time>
+(40 days)
+</p>
+</div>
+</div>
+
+</div>
+
+<a href="#" id="video_mode_tab" style="display: none;">
+View in Video Mode
+</a>
+
+</div>
+</div>
+
+
+</div>
+
+<div class="h5 bg-green-dark" id="mega-footer-wrap">
+<div class="bg-green-dark white full-height" id="footer-newsletter-signup">
+<div class="container py4">
+<div class="grid_8 prefix_4 suffix_4 center mt4">
+<h2>
+Eureka! You've found
+<br>
+our little secret.
+</h2>
+<p>Sign up for our Happening email for all the inside info about arts and culture in the Kickstarter universe and beyond.</p>
+<div class="newsletter_signup">
+<form accept-charset="UTF-8" action="/newsletters/happening/signup" class="overlabels" method="post"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /><input class="hidden" name="authenticity_token" type="hidden" value="UHdVA0o7LAmI0ZUAn006zNrPnYU4eMEmUMbVrvoxQjw=" /></div><input class="hidden" id="location" name="location" type="hidden" value="footer" />
+<textarea class="hide textarea" id="comment" name="comment">
+</textarea>
+<div class="field newsletter">
+<label class="overlabel z1 overlabel-newsletter">Email address</label>
+<input class="text" id="email" name="email" type="text" />
+</div>
+<input class="button button_green submit" name="commit" type="submit" value="Submit" />
+</form>
+
+</div>
+
+</div>
+</div>
+</div>
+<div class="container relative" id="mega-footer">
+<span class="scissors icon-scissors-1"></span>
+<div class="grid_16 alpha omega pt4 pb2" id="mega-footer-links">
+<div class="grid_4 link-group">
+<h5 class="white">About us</h5>
+<ul class="list">
+<li><a href="/year/2013/?ref=footer">2013 highlights</a></li>
+<li><a href="/year/2012?ref=footer">2012 highlights</a></li>
+<li><a href="/team?ref=footer">Who we are</a></li>
+<li><a href="/jobs?ref=footer">Jobs</a></li>
+<li><a href="/press?ref=footer">Press</a></li>
+<li><a href="/help/stats?ref=footer">Stats</a></li>
+<li><a href="/newsletters/weekly">Projects we love</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group">
+<h5><a href="/help?ref=footer" class="white">Help</a></h5>
+<ul class="list">
+<li><a href="/hello?ref=footer">What is Kickstarter?</a></li>
+<li><a href="/help?ref=footer">FAQ</a></li>
+<li><a href="/contact?ref=footer">Support</a></li>
+<li><a href="/help/school?ref=footer">Kickstarter School</a></li>
+<li><a href="/terms-of-use?ref=footer">Terms of Use</a></li>
+<li><a href="/privacy?ref=footer">Privacy Policy</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group alpha omega suffix_1">
+<h5 class="alpha"><a href="/discover/advanced?ref=footer" class="white">Discover</a></h5>
+<ul class="column column-0 grid_2 list">
+<li><a href="/discover/categories/art?ref=footer">Art</a></li>
+<li><a href="/discover/categories/comics?ref=footer">Comics</a></li>
+<li><a href="/discover/categories/dance?ref=footer">Dance</a></li>
+<li><a href="/discover/categories/design?ref=footer">Design</a></li>
+<li><a href="/discover/categories/fashion?ref=footer">Fashion</a></li>
+<li><a href="/discover/categories/film%20&amp;%20video?ref=footer">Film &amp; Video</a></li>
+<li><a href="/discover/categories/food?ref=footer">Food</a></li>
+</ul>
+<ul class="column column-1 grid_2 list">
+<li><a href="/discover/categories/games?ref=footer">Games</a></li>
+<li><a href="/discover/categories/music?ref=footer">Music</a></li>
+<li><a href="/discover/categories/photography?ref=footer">Photography</a></li>
+<li><a href="/discover/categories/publishing?ref=footer">Publishing</a></li>
+<li><a href="/discover/categories/technology?ref=footer">Technology</a></li>
+<li><a href="/discover/categories/theater?ref=footer">Theater</a></li>
+</ul>
+</div>
+<div class="grid_3 link-group">
+<h5 class="white">Hello</h5>
+<ul class="list">
+<li>
+<a href="https://twitter.com/kickstarter"><span class="ss-icon ss-social-regular ss-twitter"></span>
+Twitter
+</a></li>
+<li>
+<a href="https://www.facebook.com/Kickstarter"><span class="ss-icon ss-social-regular ss-facebook"></span>
+Facebook
+</a></li>
+<li>
+<a href="http://kickstarter.tumblr.com"><span class="ss-icon ss-social-regular ss-tumblr"></span>
+Tumblr
+</a></li>
+<li>
+<a href="http://instagram.com/kickstarter"><span class="ss-icon ss-social-regular ss-instagram"></span>
+Instagram
+</a></li>
+<li>
+<a href="https://vine.co/Kickstarter"><span class="ss-icon ss-social-regular ss-vine"></span>
+Vine
+</a></li>
+<li>
+<a href="/blog?ref=footer">Blog</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="grid_16 py4" id="mega-footer-bottom">
+<div class="logo left">
+<a href="/" class="grey-dark"><span class="ss-icon h3">KICKSTARTER</span>
+</a></div>
+<p class="right h5 grey-dark">
+&copy;
+2014
+Kickstarter, Inc.
+</p>
+</div>
+</div>
+</div>
+
+<script>
+  //<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    var analytics_vars = { google_analytics_id : "UA-7621056-1", logged_in : "false", social_user: "false" }
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.mixpanel_id = '75b1d24a516ecfc955eadfadc4910661';
+    window.mixpanel_debug = false;
+  //]]>
+</script>
+
+
+<noscript>
+<img alt="Quantcast" border="0" height="1" src="//secure.quantserve.com/pixel/p-34IbSpw2K94Sg.gif" style="display:none" width="1" />
+</noscript>
+
+
+<script>
+  //<![CDATA[
+    window.benchmark = (typeof window.performance == 'object' && typeof window.performance.mark == 'function');
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    (function (root) {
+      function instrument_function (original) {
+        return function () {
+          try {
+            return original.apply(this, arguments);
+          } catch (e) {
+            if (e.stack && root.Honeybadger) {
+              Honeybadger.notify(e, {
+                current_project : root.current_project,
+                current_user : root.current_user
+              });
+            }
+            throw(e);
+          }
+        };
+      }
+      root.instrument_function = instrument_function;
+    }(this));
+  //]]>
+</script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+
+<script>
+  //<![CDATA[
+    (function(){function c(a){this.local_start_time=new Date;this.settings={cookie_name:"request_time"};for(var b in a)this.settings[b]=a[b];this.get_remote_offset()}c.prototype.get_remote_offset=function(){this.cookie_value=this.read_cookie();var a=new Date(this.cookie_value);if(!this.cookie_value||"Invalid Date"===a.toString()){if(this.remote_offset=this.read_cookie("local_offset"))this.remote_offset=parseInt(this.remote_offset,10)}else this.remote_offset=a-this.local_start_time;"undefined"!==typeof this.remote_offset&& !isNaN(this.remote_offset)?(document.cookie="local_offset="+this.remote_offset+"; path=/",this.is_set=!0):this.is_set=!1};c.prototype.time_units=[["milliseconds",1],["seconds",1E3],["minutes",6E4],["hours",36E5],["days",864E5]];c.prototype.get_units_in_interval=function(a,b){var d=a.replace(/^\w/,function(d){return"get"+d.toUpperCase()});return b[d]()};c.prototype.milliseconds_in_day=function(a){"undefined"===typeof a&&(a=new Date);for(var b=0,d=this.time_units.length-2;0<=d;d--)b+=this.get_units_in_interval(this.time_units[d][0], a)*this.time_units[d][1];return b};c.prototype.milliseconds_in_interval=function(a,b){return this.milliseconds_in_day(b)%a};c.prototype.milliseconds_to_next_interval=function(a,b){return a-this.milliseconds_in_interval(a,b)};c.prototype.pluralize=function(a,b){1===b&&(a=a.replace(/s$/,""));return a};c.prototype.read_cookie=function(a){for(var b=window.document.cookie.split(";"),a=(a||this.settings.cookie_name)+"=",d=0;d<b.length;d++){for(var e=b[d];" "==e.charAt(0);)e=e.substring(1,e.length);if(0== e.indexOf(a))return b=e.substring(a.length,e.length),decodeURIComponent(b).replace(/\+/g," ")}return null};c.prototype.destroy_cookie=function(a){var b=new Date;a||(a=this.settings.cookie_name);b.setTime(b.getTime()-864E5);window.document.cookie=a+"=; expires="+b.toGMTString()+"; path=/"};c.prototype.get_remote_time=function(){var a=new Date,b=a.getTime()+this.remote_offset;return a=a.setTime(b)};window.ksr_page_clock=new c})(); (function(){function c(d,a,b){if(d){this.options={unit_base:{seconds:119,minutes:119,hours:72,days:0},end_phrase:d.getAttribute("data-word")||"to go",count_down:d.getAttribute("data-dynamic")||!1};for(k in b)this.options[k]=b[k];this.clock=a;this.time_units=this.clock.time_units.slice(1);this.element=d;this.clock.is_set&&this.attach()}}function a(){this.elements=[];this.attach()}var b=function(d,a){var b=a||window.document.body,c=d.split("."),g=c[c.length-1],c=1<c.length&&c[0]?c[0]:"*";if(window.document.getElementsByClassName)return b.getElementsByClassName(g); if(b.querySelectorAll)return b.querySelectorAll(d);for(var c=b.getElementsByTagName(c),h=[],i=0,f;f=c[i];i++)b=RegExp("(^|\\s)"+g+"(\\s|$)"),(""+f.className).match(b)&&h.push(f);return h};c.prototype.get_remaining_time=function(){var d=this.remote_end_time-this.clock.get_remote_time();0>d&&(d=0);return d};c.prototype.get_current_unit=function(){for(var d,a=0;a<this.time_units.length&&!(d=this.time_units[a],this.get_remaining_time()<=this.options.unit_base[d[0]]*d[1]);a++);return d};c.prototype.update_element= function(){var a=this.get_current_unit(),b=Math.floor(this.get_remaining_time()/a[1]);isNaN(b)||(this.number_element.innerHTML=b,this.text_element.innerHTML=this.clock.pluralize(a[0],b)+" "+this.options.end_phrase)};c.prototype.valid=function(){return!(!this.number_element||!this.text_element)};c.prototype.attach=function(){function a(){c.update_element();if(c.options.count_down&&0<c.get_remaining_time()){var b=c.get_current_unit();this.timeout=window.setTimeout(a,c.clock.milliseconds_to_next_interval(b[1]))}} var c=this;if(this.remote_end_time_string=this.element.getAttribute("data-end_time"))this.remote_end_time_string.match(/^\d+$/)?(this.remote_end_time=new Date,this.remote_end_time.setTime(this.remote_end_time_string)):this.remote_end_time=new Date(this.remote_end_time_string),this.number_element=b(".num",this.element)[0],this.text_element=b(".text",this.element)[0],this.element.ksr_page_timer=!0,this.valid()&&a()};c.prototype.cancel=function(){this.timeout&&clearTimeout(this.timeout)};a.prototype.loading= !0;a.prototype.stop_finding=function(){this.attach_timers();this.loading=!1;document.addEventListener?document.removeEventListener("DOMContentLoaded",this.stop_finding,!1):document.attachEvent&&"complete"===document.readyState&&document.detachEvent("onreadystatechange",this.stop_finding)};a.prototype.bind_ready=function(){var a=this,b=function(){a.stop_finding.call(a)};document.addEventListener?(document.addEventListener("DOMContentLoaded",b,!1),window.addEventListener("load",b,!1)):document.attachEvent&& (document.attachEvent("onreadystatechange",b),window.attachEvent("onload",b))};a.prototype.attach_timers=function(){for(var a=b("div.ksr_page_timer"),e=0;e<a.length;e++)a[e].ksr_page_timer||(new c(a[e],window.ksr_page_clock),this.elements.push(a[e]))};a.prototype.attach=function(){var a=this;this.bind_ready();(function(){a.attach_timers();a.loading&&window.setTimeout(function(){a.attach_timers()},200)})()};window.ProjectTimer=c;new a})();
+  //]]>
+</script>
+
+<script class="template" id="template-widgets__video_embed_code" type="text/x-tmpl-mustache"><iframe width="{{width}}" height="{{height}}" src="{{{path}}}" frameborder="0" scrolling="no"> </iframe>
+</script><script class="template" id="template-projects__baseball_card_tall" type="text/x-tmpl-mustache"><div class="project-card-wrap project-card-wrap-tall border bg-white rounded clip">
+  <div class="project-card relative project-live {{#successful?}}successful{{/successful?}}">
+    <div class="project-thumbnail pt1 pl1 pr1">
+      <a href="{{urls.web.project}}" target="">
+        <img alt="Photo-little" class="projectphoto-little" src="{{photo.little}}" class="fit">
+      </a>
+    </div>
+    <div class="project-card-interior p1 h6 grey-dark">
+      <h6 class="project-title">
+        <a href="{{urls.web.project}}" target="" class="green-dark">{{name}}</a>
+      </h6>
+      <p class="mb1 ellipsis">
+        by
+        {{creator.name}}
+      </p>
+      <p class="blurb">
+        {{blurb}}
+      </p>
+    </div>
+    <div class="absolute-bottom bg-white rounded-bottom">
+
+      {{#location}}
+        <ul class="p1 list project-meta no-margin h6">
+          <li class="ellipsis">
+            <a href="{{location.urls.web.discover}}" data-location="{{location_json}}" class="grey-dark">
+              <span class="ss-icon ss-location"></span>
+              <span class="location-name">{{location.displayable_name}}</span>
+            </a>
+          </li>
+        </ul>
+      {{/location}}
+
+      <div class="project-stats-wrap pb1 pl1 pr1">
+
+        {{#failed?}}
+          <div class='project-status project-failed h6'>
+            <strong> Funding Unsuccessful</strong><br />
+            <span class="grey-dark">Project ended on {{formatted_deadline}}</span>
+          </div>
+        {{/failed?}}
+
+        {{#canceled?}}
+          <div class='project-status project-canceled h6'>
+            <strong> Funding Canceled</strong><br />
+            <span class="grey-dark">Project canceled on {{formatted_state_changed_at}}</span>
+          </div>
+        {{/canceled?}}
+
+        {{#successful?}}
+          <div class='project-pledged-successful bg-green white h6 pl1 pr1 mb1'>
+            <strong>Successful!</strong>
+          </div>
+        {{/successful?}}
+
+        {{#live_or_successful?}}
+          {{#live?}}
+            <div class="project-pledged-wrap bg-grey clip mb1">
+              <div class="project-pledged bg-green full-height" style="width: {{percent_raised_to_100}}%"></div>
+            </div>
+          {{/live?}}
+          <ul class="project-stats list no-margin h6 no-wrap">
+            <li class="first funded inline-block mr1">
+              <strong class="block h6">{{percent_raised_rounded}}%</strong>
+              <span class="grey-dark">funded</span>
+            </li>
+            <li class="pledged inline-block mr1">
+              <strong class="block h6">{{currency_symbol}}{{formatted_money}}</strong>
+              <span class="grey-dark">pledged</span>
+            </li>
+            {{#successful?}}
+              <li class="last successful inline-block">
+                <strong class="block h6">Funded</strong>
+                <div class="deadline grey-dark">{{formatted_deadline}}</div>
+              </li>
+            {{/successful?}}
+            {{#live?}}
+              <li class="last ksr_page_timer inline-block" data-end_time="{{javascript_deadline}}">
+                <strong class="block h6">
+                  <div class="num">30</div>
+                </strong>
+                <div class="span text grey-dark" data-word="left">days to go</div>
+              </li>
+            {{/live?}}
+          </ul>
+        {{/live_or_successful?}}
+      </div>
+    </div>
+  </div>
+</div>
+
+{{#friends_backing?}}
+  <div class="friend_project_context">
+    <div class="friend_facepile">
+      {{#truncated_friends}}
+        <img src="{{avatar.thumb}}" class="{{#has_metadata?}}small{{/has_metadata?}}">
+      {{/truncated_friends}}
+    </div>
+    <p class="friend_namepile">
+      {{{escaped_sentence}}}
+    </p>
+  </div>
+{{/friends_backing?}}
+</script><script class="template" id="template-projects__video_mode" type="text/x-tmpl-mustache"><a href='#' id='video_mode_close' class='close_button z2'><span class='ss-icon ss-delete'></span></a>
+
+<div class='title_card z1 {{context_classes}}' style="display:none;">
+  <div class='interior'>
+    <h2 class='project_title normal_weight'>{{name}}</h2>
+    <p class='blurb'>{{blurb}}</p>
+    <nav class='bar'>
+      <a id='play_button' class='left play' href='#'>
+        <span class='play_active'>
+          <span class='ss-icon ss-play'></span>
+          Play
+        </span>
+        <span class='pause_active'>
+          <span class='ss-icon ss-pause'></span>
+          Pause
+        </span>
+      </a>
+      {{#logged_in}}
+        <div class='remind right'>
+          {{#if_not_starred}}
+            <a class='follow' href='{{urls.web.project}}/watch'><span class='ss-icon ss-star'></span></a>
+          {{/if_not_starred}}
+          {{#if_starred}}
+            <a class='unfollow' href='{{urls.web.project}}/unwatch'><span class='ss-icon ss-star active'></span></a>
+          {{/if_starred}}
+        </div>
+      {{/logged_in}}
+      <a class='right explore button button_green small' href='#'>Explore this project</a>
+    </nav>
+  </div>
+</div>
+
+<div class='channel_controls z1'>
+  <a href='#' class='{{#playlist_is_location}}selected {{/playlist_is_location}}location'>Something else near {{location.first_name}} <span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_featured}}selected {{/playlist_is_featured}}featured'>Something different<span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_category}}selected {{/playlist_is_category}}category'>Something else in {{category.name}} <span class='ss-icon ss-navigateright'></span></a>
+</div>
+
+<div class='project_video' style='background-image: url('{{photo.full}}')'>
+  <div class='cover'>
+    <video>
+      <source src='{{video.high}}' type='video/mp4'/>
+      <source src='{{video.webm}}' type='video/webm'/>
+    </video>
+  </div>
+</div>
+</script><script class="template" id="template-site__video_mode_fourohfour" type="text/x-tmpl-mustache"><section class='four_oh_four'>
+  <p class='big_type'>
+    Looks like you've reached the end of the line! <br />Check out <a class="another" href='#'>another channel</a> or <a href='/discover'>browse projects in discover</a>.
+  </p>
+</section>
+</script>
+
+<script id="schwamm_formatting_options" type="text/javascript">
+//<![CDATA[
+(function(){window.formatters = window.formatters || {}; var formatting_options = {"distance_date_intervals":[[5,"just now"],[29,"less than a minute ago"],[89,"1 minute ago"],[2640,"%m minutes ago"],[5340,"about 1 hour ago"],[82800,"about %h hours ago"],[147600,"1 day ago"],[604800,"%d days ago"],[15552000,"on %t"],[0,"on %y"]],"currency_symbol_mappings":{"AFN":"\u060b","ALL":"Lek","ARS":"$","AUD":"$","AWG":"\u0192","AZN":"\u043c\u0430\u043d","BAM":"KM","BBD":"$","BGN":"\u043b\u0432","BMD":"$","BND":"$","BOB":"$b","BRL":"R$","BSD":"$","BWP":"P","BYR":"p.","BZD":"BZ$","CAD":"$","CLP":"$","CNY":"\u00a5","COP":"$","CRC":"\u20a1","CUP":"\u20b1","CZK":"K\u010d","DKK":"kr","DOP":"RD$","EGP":"\u00a3","EUR":"\u20ac","FJD":"$","FKP":"\u00a3","GBP":"\u00a3","GIP":"\u00a3","GTQ":"Q","GYD":"$","HKD":"$","HNL":"L","HRK":"kn","HUF":"Ft","IDR":"Rp","ILS":"\u20aa","IRR":"\ufdfc","ISK":"kr","JMD":"J$","JPY":"\u00a5","KGS":"\u043b\u0432","KHR":"\u17db","KPW":"\u20a9","KRW":"\u20a9","KYD":"$","KZT":"\u043b\u0432","LAK":"\u20ad","LBP":"\u00a3","LKR":"\u20a8","LRD":"$","LTL":"Lt","LVL":"Ls","MKD":"\u0434\u0435\u043d","MNT":"\u20ae","MUR":"\u20a8","MXN":"$","MYR":"RM","MZN":"MT","NAD":"$","NGN":"\u20a6","NIO":"C$","NOK":"kr","NPR":"\u20a8","NZD":"$","OMR":"\ufdfc","PAB":"B/.","PEN":"S/.","PHP":"\u20b1","PKR":"\u20a8","PLN":"z\u0142","PYG":"Gs","QAR":"\ufdfc","RON":"lei","RSD":"\u0414\u0438\u043d.","RUB":"\u0440\u0443\u0431","SAR":"\ufdfc","SBD":"$","SCR":"\u20a8","SEK":"kr","SGD":"$","SHP":"\u00a3","SOS":"S","SRD":"$","SVC":"$","SYP":"\u00a3","THB":"\u0e3f","TRY":"TL","TTD":"TT$","TWD":"NT$","UAH":"\u20b4","USD":"$","UYU":"$U","UZS":"\u043b\u0432","VEF":"Bs","VND":"\u20ab","YER":"\ufdfc","ZAR":"R"},"currency_trailing_code_mappings":{"AUD":true,"CAD":true,"NZD":true,"USD":true},"currency_formats":["money","shorter_money"]}; for (key in formatting_options) {window.formatters[key] = formatting_options[key]};}());
+//]]>
+</script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("begin_base.js_tag");}
+  //]]>
+</script>
+<script src="https://d297h9he240fqh.cloudfront.net/assets/packages/base-45cdab84617ddfb8905b7cddc8500c19.js" type="text/javascript"></script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("end_base.js_tag");}
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    document.domain='kickstarter.com';
+  //]]>
+</script>
+
+<iframe height="0" id="api_xdreceiver" src="https://api.kickstarter.com/xdreceiver/85e6.html" style="display: none;" width="0"></iframe>
+
+
+
+<div id="fb-root"></div>
+<script>
+  //<![CDATA[
+    var channelUrl = window.location.protocol + "//" + window.location.host + "/channel.html",
+      skip_autologin = $('body').is('.skip_autologin');
+    
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId: window.fb_app_id,
+        channelUrl: channelUrl,
+        status: true,    // check login status
+        cookie: true,    // enable cookies to allow the server to access the session
+        xfbml: true,     // parse XFBML
+        logging: false   // turn off logging
+      });
+    
+      FB.getLoginStatus(function (response) {
+        if (response.status === 'connected') {
+          if (read_cookie("logout_from_fb")) {
+            FB.logout();
+            destroy_cookie("logout_from_fb");
+          } else if (!skip_autologin) {
+            $.get("/fb/autologin", {'fbsr': response.authResponse.signedRequest});
+          } else if (false && 0 == response.authResponse.userID) {
+            $.get("/fb/refresh", {'fbsr': response.authResponse.signedRequest});
+          }
+        } else {
+          if (read_cookie("logout_from_fb")) {
+            destroy_cookie("logout_from_fb");
+          }
+        }
+      })
+    
+      $(document).trigger('fb:loaded');
+    };
+    
+    
+    // Load the SDK Asynchronously
+    (function(d){
+      var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+      js = d.createElement('script'); js.id = id; js.async = true;
+      js.src = "//connect.facebook.net/en_US/all.js";
+      d.getElementsByTagName('head')[0].appendChild(js);
+    }(document));
+  //]]>
+</script>
+
+
+</body>
+</html>

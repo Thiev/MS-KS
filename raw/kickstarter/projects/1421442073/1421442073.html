@@ -1,0 +1,2414 @@
+<!DOCTYPE html>
+<html class="projects_show  fontface no-js" lang="en">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# kickstarter: http://ogp.me/ns/fb/kickstarter#">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-5.newrelic.com","errorBeacon":"jserror.newrelic.com","licenseKey":"b04b883ad2","applicationID":"11086","transactionName":"cFteRUULX1wHFhtIEFxeVVJDFxxDCgtD","queueTime":14,"applicationTime":461,"ttGuid":"","agentToken":null,"agent":"js-agent.newrelic.com/nr-411.min.js"}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"Vw4BVEVSCQMIUg=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e){function n(t,e,n){n||(n={});for(var r=o[t],a=r&&r.length||0,s=n[i]||(n[i]={}),u=0;a>u;u++)r[u].apply(s,e);return s}function r(t,e){var n=o[t]||(o[t]=[]);n.push(e)}var o={},i="nr@context";e.exports={on:r,emit:n}},{}],2:[function(t){function e(t,e,n,i,s){return u?u-=1:r("err",[s||new UncaughtException(t,e,n)]),"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t(5),a=window.onerror,s=!1,u=0;t("loader").features.push("err"),window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(d){"stack"in d&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(4),s=!0)}i.on("fn-start",function(){s&&(u+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&u>0&&(u-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:4,3:3,4:6,5:1,6:14,handle:"D5DuLP",loader:"G9z0Bl"}],3:[function(t){function e(t){r.inPlace(t,["addEventListener","removeEventListener"],"-",n)}function n(t){return t[1]}var r=t(1),o=(t(3),t(2));if(e(window),"getPrototypeOf"in Object){for(var i=document;i&&!i.hasOwnProperty("addEventListener");)i=Object.getPrototypeOf(i);i&&e(i);for(var a=XMLHttpRequest.prototype;a&&!a.hasOwnProperty("addEventListener");)a=Object.getPrototypeOf(a);a&&e(a)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&e(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=e["nr@wrapped"]?t[1]=e["nr@wrapped"]:e["nr@wrapped"]=t[1]=r(e,"fn-"):"function"==typeof e.handleEvent&&r.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:15,2:1,3:14}],4:[function(t){var e=(t(3),t(1)),n=t(2);e.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=e(t[0],"fn-")})},{1:15,2:1,3:14}],5:[function(t){function e(t){var e=t[0];"string"==typeof e&&(e=new Function(e)),t[0]=n(e,"fn-")}var n=(t(3),t(1)),r=t(2);n.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",e)},{1:15,2:1,3:14}],6:[function(t){function e(){o.inPlace(this,s,"fn-")}function n(t,e){o.inPlace(e,["onreadystatechange"],"fn-")}function r(t,e){return e}var o=t(1),i=t(2),a=window.XMLHttpRequest,s=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];window.XMLHttpRequest=function(t){var n=new a(t);try{i.emit("new-xhr",[],n),o.inPlace(n,["addEventListener","removeEventListener"],"-",function(t,e){return e}),n.addEventListener("readystatechange",e,!1)}catch(r){try{i.emit("internal-error",r)}catch(s){}}return n},window.XMLHttpRequest.prototype=a.prototype,o.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",r),i.on("send-xhr-start",n),i.on("open-xhr-start",n)},{1:15,2:1}],7:[function(t){function e(){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;u>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,d="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=e(d);if(f&&(r.rxSize=f),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}t("loader").features.push("xhr");var o=t("handle"),i=t(1),a=t(5),s=["load","error","abort","timeout"],u=s.length,d=t(2);t(3),t(4),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var d=e(o);d&&(r.txSize=d)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",e)}catch(r){}}};for(var f=0;u>f;f++)n.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&e()},{1:8,2:11,3:3,4:6,5:1,handle:"D5DuLP",loader:"G9z0Bl"}],8:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e){var n=r[t];return n?n.apply(this,e):(o[t]||(o[t]=[]),void o[t].push(e))}var r={},o={};e.exports=n,n.queues=o,n.handlers=r},{}],11:[function(t,e){function n(t){if(!t||"object"!=typeof t&&"function"!=typeof t)return-1;if(t===window)return 0;if(o.call(t,"__nr"))return t.__nr;try{return Object.defineProperty(t,"__nr",{value:r,writable:!0,enumerable:!1}),r}catch(e){return t.__nr=r,r}finally{r+=1}}var r=1,o=Object.prototype.hasOwnProperty;e.exports=n},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&u&&u.body){p.proto="https"===c.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=u.createElement("script");e.src=p.proto+t.agent,u.body.appendChild(e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,u=s.document,d="addEventListener",f="attachEvent",c=(""+location).split("?")[0],p=e.exports={offset:i(),origin:c,features:[]};u[d]?(u[d]("DOMContentLoaded",o,!1),s[d]("load",n,!1)):(u[f]("onreadystatechange",r),s[f]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],14:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],15:[function(t,e){function n(t,e,r,s){function nrWrapper(){try{var n,a=u(arguments),d=this,f=r&&r(a,d)||{}}catch(c){i([c,"",[a,d,s],f])}o(e+"start",[a,d,s],f);try{return n=t.apply(d,a)}catch(p){throw o(e+"err",[a,d,p],f),p}finally{o(e+"end",[a,d,n],f)}}return a(t)?t:(e||(e=""),nrWrapper[n.flag]=!0,nrWrapper)}function r(t,e,r,o){r||(r="");var i,s,u,d="-"===r.charAt(0);for(u=0;u<e.length;u++)s=e[u],i=t[s],a(i)||(t[s]=n(i,d?s+r:r,o,s,t))}function o(t,e,n){try{s.emit(t,e,n)}catch(r){i([r,t,e,n])}}function i(t){try{s.emit("internal-error",t)}catch(e){}}function a(t){return!(t&&"function"==typeof t&&t.apply&&!t[n.flag])}var s=t(1),u=t(2);e.exports=n,n.inPlace=r,n.flag="nr@wrapper"},{1:1,2:14}]},{},["G9z0Bl",2,7]);</script><script>
+  //<![CDATA[
+    docElement = this.document.documentElement;
+    docElement.className=docElement.className.replace(/\bno-js\b/,'') + 'js';
+  //]]>
+</script>
+<title>Armikrog. by Pencil Test Studios, Inc. &mdash; Kickstarter</title><script>
+  //<![CDATA[
+    window.report_errors = true;
+    window.honeybadger_configuration = {
+      api_key : "02ab109335c0dd1a93506d92f22217a7",
+      environment : "production",
+      component : "projects",
+      action : "show",
+      onerror : false
+    };
+  //]]>
+</script>
+
+
+<!--[if lt IE 9]>
+  <script src="//html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta content="telephone=no" name="format-detection">
+
+<!--[if !IE]> -->
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base-9f623ad5d021a188cfb2d68a0cdf7a7b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<!-- <![endif]-->
+<!--[if IE]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base_blessed-2640c72487552f9a2ef9f2620b4af860.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<!--[if lte IE 9]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_nine-a93fe10530f175f96c4078b7e070d7e1.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 8]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_eight-f75aeb274436f94a0d243774456b1c62.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 7]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie-c019c01acd3a96588b346cf577a3504f.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_seven-5a3d2cef660cd281fd844b04b2397dbb.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if IE 6]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_six-e4d3caf76e405fe19aee6ece8bda701b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<link href="https://d297h9he240fqh.cloudfront.net/favicon.png" rel="icon" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-precomposed-7b603dba7cf80e4acc57d94a991bebbd.png" rel="apple-touch-icon-precomposed" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-ipad-precomposed-3176f72977daf43dee3b0d348484dc01.png" rel="apple-touch-icon-precomposed" sizes="72x72" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-iphone4-precomposed-b93b70168cd8492c843d0fea873c7f83.png" rel="apple-touch-icon-precomposed" sizes="114x114" type="image/png">
+<link href="https://www.kickstarter.com/services/oembed?url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Farmikrog%2Farmikrog" rel="alternate" title="Armikrog. Script Tag oEmbed" type="application/json+oembed">
+<link rel="alternate" type="application/atom+xml" title="Armikrog. : Kickstarter" href="https://www.kickstarter.com/projects/armikrog/armikrog/posts.atom" />
+<meta property="twitter:app:id:iphone" content="596961532"/>
+<meta property="twitter:app:name:iphone" content="Kickstarter"/>
+<meta property="twitter:app:url:iphone" content="ksr://www.kickstarter.com/projects/armikrog/armikrog"/>
+<meta name="video_height" content="360"/>
+<meta name="video_width" content="640"/>
+<meta name="video_type" content="application/x-shockwave-flash"/>
+<meta name="title" content="Kickstarter &gt;&gt; Armikrog. by Pencil Test Studios, Inc."/>
+<meta name="description" content="Pencil Test Studios, Inc. is raising funds for Armikrog. on Kickstarter! 
+
+ A new adventure game made of clay. From the Neverhood creators - made possible because of YOU, our generous supporters."/>
+<meta property="og:title" content="Armikrog."/>
+<meta property="og:type" content="kickstarter:project"/>
+<meta property="og:image" content="https://s3.amazonaws.com/ksr/projects/260224/photo-main.jpg?1397790131"/>
+<meta property="og:url" content="https://www.kickstarter.com/projects/armikrog/armikrog"/>
+<meta property="og:site_name" content="Kickstarter"/>
+<meta property="fb:app_id" content="69103156693"/>
+<meta property="og:description" content="A new adventure game made of clay. From the Neverhood creators - made possible because of YOU, our generous supporters."/>
+<meta property="kickstarter:creator" content="https://www.kickstarter.com/profile/armikrog"/>
+<meta property="twitter:url:landing_url" content="https://www.kickstarter.com/projects/armikrog/armikrog"/>
+<meta property="twitter:card" content="2427656750:kickstarter_project"/>
+<meta property="twitter:site" content="@kickstarter"/>
+<meta property="twitter:site:id" content="16186995"/>
+<meta property="twitter:text:title" content="Armikrog."/>
+<meta property="twitter:text:artist" content="Pencil Test Studios, Inc."/>
+<meta property="twitter:text:backers" content="18126"/>
+<meta property="twitter:text:pledged" content="$974,578 USD"/>
+<meta property="twitter:text:time" content="0 seconds"/>
+<meta property="twitter:text:location" content="Lake Forest, CA"/>
+<meta property="twitter:image:location_image" content="https://d3mlfyygrfdi2i.cloudfront.net/b40e/pin.png"/>
+<meta property="twitter:text:description" content="A new adventure game made of clay. From the Neverhood creators - made possible because of YOU, our generous supporters."/>
+<meta property="twitter:image:media" content="https://s3.amazonaws.com/ksr/projects/260224/photo-main.jpg?1397790131"/>
+<meta property="twitter:image:width" content="640"/>
+<meta property="twitter:image:height" content="480"/>
+<meta property="twitter:player:stream:url" content="https://d2pq0u4uni88oo.cloudfront.net/projects/260224/video-247387-h264_base.mp4"/>
+<meta property="twitter:player:stream:content" content="video/mp4"/>
+<meta property="twitter:player:url" content="https://www.kickstarter.com/projects/armikrog/armikrog/widget/video.html"/>
+<meta property="twitter:player:height" content="360"/>
+<meta property="twitter:player:width" content="640"/>
+<meta property="twitter:maxage" content="60"/>
+<meta property="og:video" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F260224%2Fvideo-247387-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F260224%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Pencil+Test+Studios%2C+Inc.&amp;project_title=Armikrog.&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Farmikrog%2Farmikrog&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:secure_url" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F260224%2Fvideo-247387-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F260224%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Pencil+Test+Studios%2C+Inc.&amp;project_title=Armikrog.&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Farmikrog%2Farmikrog&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:height" content="360"/>
+<meta property="og:video:width" content="640"/>
+<meta property="og:video:type" content="application/x-shockwave-flash"/>
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="iJfip0dL8eki0G6t/BAAJfQCn87dDCJ/oC20Ace/Izo=" name="csrf-token" />
+<script type="text/javascript">
+  var _sift = _sift || [];
+  _sift.push(['_setAccount', '637102']);
+  _sift.push(['_setUserId', '']);
+  _sift.push(['_trackPageview']);
+
+  (function() {
+    function loadSift() {
+      var sift, s;
+      if (root.visitor_id) {
+        _sift.push(['_setSessionId', root.visitor_id]);
+      }
+      sift = document.createElement('script');
+      sift.type = 'text/javascript';
+      sift.async = true;
+      sift.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dtlilztwypawv.cloudfront.net/s.js';
+      s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(sift, s);
+    }
+    if (window.attachEvent) {
+      window.attachEvent('onload', loadSift);
+    } else {
+      window.addEventListener('load', loadSift, false);
+    }
+  })();
+</script>
+<link href="http://kck.st/144NDkA" rel="shorturl">
+<link href="https://www.kickstarter.com/projects/armikrog/armikrog" rel="canonical">
+<link href="https://s3.amazonaws.com/ksr/projects/260224/photo-med.jpg?1397790131" rel="image_src">
+<link href="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F260224%2Fvideo-247387-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F260224%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Pencil+Test+Studios%2C+Inc.&amp;project_title=Armikrog.&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Farmikrog%2Farmikrog&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque" rel="video_src">
+<script>
+  //<![CDATA[
+    window.current_checkout = "{&quot;id&quot;:0,&quot;domestic&quot;:null,&quot;amount&quot;:0.0,&quot;updated_at&quot;:0,&quot;created_at&quot;:0}";
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.current_ip = '94.209.101.212';
+    window.current_ip_datacenter = 'false';
+    window.enabled_features = {"elasticsearch":true,"security_history_read":true,"security_history_write":true,"advanced_discovery_es":true,"ios_crashlytics":true,"ios_mixpanel":true,"stories_veronica_mars":true,"veronica_mars_hero":true,"password_reset_banner":true};
+    window.fb_app_id = '69103156693';
+    
+    var _sf_startpt=(new Date()).getTime();
+    
+    window.current_project = "{&quot;id&quot;:1421442073,&quot;name&quot;:&quot;Armikrog.&quot;,&quot;blurb&quot;:&quot;A new adventure game made of clay. From the Neverhood creators - made possible because of YOU, our generous supporters.&quot;,&quot;goal&quot;:900000.0,&quot;pledged&quot;:974578.01,&quot;state&quot;:&quot;successful&quot;,&quot;slug&quot;:&quot;armikrog&quot;,&quot;disable_communication&quot;:false,&quot;country&quot;:&quot;US&quot;,&quot;currency&quot;:&quot;USD&quot;,&quot;currency_symbol&quot;:&quot;$&quot;,&quot;currency_trailing_code&quot;:true,&quot;deadline&quot;:1372349261,&quot;state_changed_at&quot;:1372349261,&quot;created_at&quot;:1342476999,&quot;launched_at&quot;:1369757261,&quot;backers_count&quot;:18126,&quot;photo&quot;:{&quot;full&quot;:&quot;https://s3.amazonaws.com/ksr/projects/260224/photo-full.jpg?1397790131&quot;,&quot;ed&quot;:&quot;https://s3.amazonaws.com/ksr/projects/260224/photo-ed.jpg?1397790131&quot;,&quot;med&quot;:&quot;https://s3.amazonaws.com/ksr/projects/260224/photo-med.jpg?1397790131&quot;,&quot;little&quot;:&quot;https://s3.amazonaws.com/ksr/projects/260224/photo-little.jpg?1397790131&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/projects/260224/photo-small.jpg?1397790131&quot;,&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/projects/260224/photo-thumb.jpg?1397790131&quot;,&quot;1024x768&quot;:&quot;https://s3.amazonaws.com/ksr/projects/260224/photo-1024x768.jpg?1397790131&quot;,&quot;1536x1152&quot;:&quot;https://s3.amazonaws.com/ksr/projects/260224/photo-1536x1152.jpg?1397790131&quot;},&quot;creator&quot;:{&quot;id&quot;:1949537745,&quot;name&quot;:&quot;Pencil Test Studios, Inc.&quot;,&quot;slug&quot;:&quot;armikrog&quot;,&quot;avatar&quot;:{&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/315854/PTS_Avatar01.thumb.jpg?1369852921&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/315854/PTS_Avatar01.small.jpg?1369852921&quot;,&quot;medium&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/315854/PTS_Avatar01.medium.jpg?1369852921&quot;},&quot;urls&quot;:{&quot;web&quot;:{&quot;user&quot;:&quot;https://www.kickstarter.com/profile/armikrog&quot;},&quot;api&quot;:{&quot;user&quot;:&quot;https://api.kickstarter.com/v1/users/1949537745?signature=1399959235.264e904241f3fbc582338f60440e2c516524483a&quot;}}},&quot;location&quot;:{&quot;id&quot;:2434887,&quot;name&quot;:&quot;Lake Forest&quot;,&quot;slug&quot;:&quot;lake-forest-orange-ca&quot;,&quot;short_name&quot;:&quot;Lake Forest, CA&quot;,&quot;displayable_name&quot;:&quot;Lake Forest, CA&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:&quot;CA&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/lake-forest-orange-ca&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/lake-forest-orange-ca&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1399951936.df5a2d4d237131d0e84c064cd4bbba659acf810f&amp;woe_id=2434887&quot;}}},&quot;category&quot;:{&quot;id&quot;:35,&quot;name&quot;:&quot;Video Games&quot;,&quot;slug&quot;:&quot;games/video games&quot;,&quot;position&quot;:7,&quot;parent_id&quot;:12,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;http://www.kickstarter.com/discover/categories/games/video%20games&quot;}}},&quot;urls&quot;:{&quot;web&quot;:{&quot;project&quot;:&quot;https://www.kickstarter.com/projects/armikrog/armikrog&quot;,&quot;project_short&quot;:&quot;http://kck.st/144NDkA&quot;,&quot;updates&quot;:&quot;https://www.kickstarter.com/projects/armikrog/armikrog/posts&quot;},&quot;api&quot;:{&quot;project&quot;:&quot;https://api.kickstarter.com/v1/projects/1421442073?signature=1399959235.69fd3e49eb12b38c5de8a3211085eac27b881bc9&quot;,&quot;comments&quot;:&quot;https://api.kickstarter.com/v1/projects/1421442073/comments?signature=1399959235.df78b553b4418bbf7ae127ace2cf5d05b987d809&quot;,&quot;updates&quot;:&quot;https://api.kickstarter.com/v1/projects/1421442073/updates?signature=1399959235.9022139e71fbde319d0e8fb5ae70f195984a0fc0&quot;}},&quot;updated_at&quot;:1399789143,&quot;successful_at&quot;:1372349261,&quot;potd_at&quot;:1369785600,&quot;video&quot;:{&quot;id&quot;:247387,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/260224/video-247387-h264_high.mp4?2013&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/260224/video-247387-h264_base.mp4?2013&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/260224/video-247387-webm.webm?2013&quot;,&quot;width&quot;:640,&quot;height&quot;:360,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/260224/video-247387-h264_base.jpg?2013&quot;},&quot;comments_count&quot;:17081,&quot;updates_count&quot;:50,&quot;rewards&quot;:[{&quot;id&quot;:0,&quot;minimum&quot;:1,&quot;reward&quot;:&quot;No Reward&quot;},{&quot;id&quot;:969148,&quot;minimum&quot;:5.0,&quot;reward&quot;:&quot;ARMIKROG SUPPORTER (DIGITAL)\\r\\n-------------------------------------------------\\r\\nThank you! Your support helps get us closer to making ARMIKROG a reality! You&#39;ll receive a hi-rez digital download AMRIKROG desktop image painted by Earthworm Jim poster artist - Mike Koelsch!&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1404172800,&quot;project_id&quot;:1421442073,&quot;backers_count&quot;:587,&quot;updated_at&quot;:1395931014},{&quot;id&quot;:969149,&quot;minimum&quot;:20.0,&quot;reward&quot;:&quot;THE ARIMKROG GAME - EARLY EXPLORER (DIGITAL)\\r\\n-------------------------------------------------\\r\\nA special price for you early supporters! You&#39;ll receive a DRM-free digital download of the ARMIKROG game for PC, MAC or LINUX (distributed though Steam and/or other comparable download venues). PLUS the hi-rez desktop image painted by Earthworm Jim poster artist - Mike Koelsch, and a THANK YOU for your support!&quot;,&quot;limit&quot;:7000,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1404172800,&quot;project_id&quot;:1421442073,&quot;remaining&quot;:0,&quot;backers_count&quot;:7002,&quot;updated_at&quot;:1394473346},{&quot;id&quot;:1665789,&quot;minimum&quot;:25.0,&quot;reward&quot;:&quot;THE GAME (DIGITAL) - You&#39;ll receive a DRM-free digital download of the ARMIKROG game (distributed though Steam and/or other comparable download venues) for PC, MAC or LINUX. PLUS the hi-rez desktop image painted by Earthworm Jim poster artist - Mike Koelsch, and a THANK YOU for your support!&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1404172800,&quot;project_id&quot;:1421442073,&quot;backers_count&quot;:3389,&quot;updated_at&quot;:1390256497},{&quot;id&quot;:969150,&quot;minimum&quot;:30.0,&quot;reward&quot;:&quot;THE ART AND SOUNDS OF ARMIKROG (DIGITAL)\\r\\n-------------------------------------------------\\r\\nYou&#39;ll receive a 100 page digital download (PDF) of concept art used to create the ARMIKROG game and universe, PLUS a digital download sampler of 3 original songs from the ARMIKROG soundtrack, written and performed by TERRY S. TAYLOR. Terry was the composer of the original Neverhood soundtrack, so you know his music will inspire and amaze! PLUS all previous reward tiers!&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1404172800,&quot;project_id&quot;:1421442073,&quot;backers_count&quot;:670,&quot;updated_at&quot;:1398980277},{&quot;id&quot;:969152,&quot;minimum&quot;:35.0,&quot;reward&quot;:&quot;ARMIKROG COMIC BOOK BY DOUG TENNAPEL + BEHIND THE SCENES MINI DOCUMENTARY (DIGITAL)\\r\\n-------------------------------------------------\\r\\nYou&#39;ll receive a digital download (PDF) of the 24 page, full color ARMIKROG comic book created for YOU, the supporters! PLUS a digital download of the \\&quot;making-of\\&quot; mini documentary (approx. 20 min. long). This includes interviews with the team, and an exclusive look at what it takes to create a clay and puppet animated game! PLUS all previous reward tiers!&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1404172800,&quot;project_id&quot;:1421442073,&quot;backers_count&quot;:836,&quot;updated_at&quot;:1392515179},{&quot;id&quot;:969153,&quot;minimum&quot;:45.0,&quot;reward&quot;:&quot;FULL ORIGINAL SOUNDTRACK (DIGITAL)\\r\\n-------------------------------------------------\\r\\nYou&#39;ll receive a digital download of the full original ARMIKROG soundtrack, written and performed by TERRY S. TAYLOR. PLUS all previous reward tiers!&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1404172800,&quot;project_id&quot;:1421442073,&quot;backers_count&quot;:1070,&quot;updated_at&quot;:1399548898},{&quot;id&quot;:969154,&quot;minimum&quot;:50.0,&quot;reward&quot;:&quot;ANIMATOR&#39;S SCRAP HEAP + DELUXE DOCUMENTARY (DIGITAL)\\r\\n-------------------------------------------------\\r\\nYou&#39;ll receive a 50 page digital download (PDF) of animation sketches, notes,  exposure sheets, pencil test drawings, and other animation related artwork! PLUS a digital download of the deluxe \\&quot;making-of\\&quot; documentary (approx. 60 min. long). This includes additional behind the scenes footage, more interviews, and outtakes. PLUS all previous reward tiers!&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1404172800,&quot;project_id&quot;:1421442073,&quot;backers_count&quot;:1097,&quot;updated_at&quot;:1398350707},{&quot;id&quot;:969155,&quot;minimum&quot;:60.0,&quot;reward&quot;:&quot;DEVELOPERS COMMENTARY + DANCE MIXES (DIGITAL)\\r\\n-------------------------------------------------\\r\\nYou&#39;ll receive a digital download of game footage with audio commentary from Michael J. Nelson (Rifftrax / MST3K) and the ARMIKROG development team (approx. 60 min. long). PLUS exclusive dance mixes of songs from the ARMIKROG soundtrack!. PLUS all previous reward tiers!&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1404172800,&quot;project_id&quot;:1421442073,&quot;backers_count&quot;:572,&quot;updated_at&quot;:1372957277},{&quot;id&quot;:969156,&quot;minimum&quot;:75.0,&quot;reward&quot;:&quot;ARMIKROG \\&quot;ASTRONAUT HANDBOOK\\&quot; + PRINTED AMRIKROG COMIC BOOK by Doug TenNapel (PHYSICAL)\\r\\n-------------------------------------------------\\r\\nYou&#39;ll receive a digital download of the 100 page written novel by The Neverhood&#39;s \\&quot;Wall of Records\\&quot; authors--Doug TenNapel and Mark Lorenzen! PLUS a PRINTED VERSION of the 24 page, ARMIKROG comic book. This LIMITED EDITION comic will ONLY be avalible for Kickstarter supporters. PLUS all previous reward tiers!&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;5.0&quot;,&quot;estimated_delivery_on&quot;:1404172800,&quot;project_id&quot;:1421442073,&quot;backers_count&quot;:418,&quot;updated_at&quot;:1388270306},{&quot;id&quot;:969157,&quot;minimum&quot;:90.0,&quot;reward&quot;:&quot;BOXED EDITION (PHYSICAL)\\r\\n-------------------------------------------------\\r\\nThis boxed version includes a DVD of the ARMIKROG game along with the printed manual. PLUS all previous reward tiers!. (Free shipping in the U.S. Please add $15 for international shipping).&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1404172800,&quot;project_id&quot;:1421442073,&quot;backers_count&quot;:475,&quot;updated_at&quot;:1372957566},{&quot;id&quot;:969168,&quot;minimum&quot;:125.0,&quot;reward&quot;:&quot;BOXED EDITION COLLECTOR&#39;S SET (PHYSICAL)\\r\\n-------------------------------------------------\\r\\nIncludes everything from the $75 tier, PLUS a DVD of the ARMIKROG game and printed manual, the BEHIND THE SCENES documentary on DVD, and a CD of the TERRY S.TAYLOR soundtrack, together in a boxed set. (Free shipping in the U.S. Please add $20 for international shipping).&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;20.0&quot;,&quot;estimated_delivery_on&quot;:1404172800,&quot;project_id&quot;:1421442073,&quot;backers_count&quot;:791,&quot;updated_at&quot;:1372957574},{&quot;id&quot;:1705385,&quot;minimum&quot;:130.0,&quot;reward&quot;:&quot;TENNAPEL&#39;S SKETCHBOOK ARCHIVES (PHYSICAL)\\r\\n-------------------------------------------------\\r\\nYou&#39;ll get a digital copy of the Armikrog game with this FINAL OFFERING of Doug TenNapel&#39;s \\&quot;Sketchbook Archives\\&quot; to the public! Comes signed, with a doodle of Beak-Beak inside. This is a stand alone tier, but you can still buff it out with Add-Ons. (Free shipping in the U.S. Please add $23 for Canada &amp; Mexico, $33 for all other international orders).&quot;,&quot;limit&quot;:100,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;33.0&quot;,&quot;estimated_delivery_on&quot;:1372636800,&quot;project_id&quot;:1421442073,&quot;remaining&quot;:0,&quot;backers_count&quot;:100,&quot;updated_at&quot;:1395941000},{&quot;id&quot;:1716560,&quot;minimum&quot;:150.0,&quot;reward&quot;:&quot;YOU CREATE A NAME FOR AN ITEM + \\&quot;GUARDIAN OF GOODS\\&quot; GAME CREDIT + THE \\&quot;ASTRONAUT HANDBOOK\\&quot; (ALL DIGITAL) ------------------------------------------------- Includes everything from the $60 tier, PLUS you&#39;ll create a name for an ITEM that will be included in the Armikrog Histories within the game (subject to approval by Pencil Test Studios). Your item could be a weapon, tool, magical scroll, or a variety of other things! PLUS you&#39;ll receive your name listed in the game credits as a \\&quot;Guardian of the Goods\\&quot; noting the item you named. PLUS you&#39;ll receive a digital download of the \\&quot;Astronaut Handbook,\\&quot; the 100 page written novel by The Neverhood&#39;s \\&quot;Wall of Records\\&quot; authors--Doug TenNapel and Mark Lorenzen!&quot;,&quot;limit&quot;:300,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1404172800,&quot;project_id&quot;:1421442073,&quot;remaining&quot;:230,&quot;backers_count&quot;:70,&quot;updated_at&quot;:1372957268},{&quot;id&quot;:1665727,&quot;minimum&quot;:200.0,&quot;reward&quot;:&quot;BOXED EDITION COLLECTOR&#39;S SET + KICKSTARTER EXCLUSIVE ARMIKROG T-SHIRT + YOUR NAME IN THE GAME CREDITS (PHYSICAL) \\r\\n-------------------------------------------------\\r\\nIncludes everything from the $75 tier, PLUS a DVD of the ARMIKROG game and printed manual, the BEHIND THE SCENES documentary on DVD, and a CD of the TERRY S.TAYLOR soundtrack, together in a boxed set. PLUS you&#39;ll receive a T-shirt designed exclusively for Kickstarter supporters (please specify XXL, XL, L, M, or S). PLUS a special thanks in the game credits! (Free shipping in the U.S. Please add $20 for international shipping).&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;20.0&quot;,&quot;estimated_delivery_on&quot;:1404172800,&quot;project_id&quot;:1421442073,&quot;backers_count&quot;:275,&quot;updated_at&quot;:1395354921},{&quot;id&quot;:1716561,&quot;minimum&quot;:250.0,&quot;reward&quot;:&quot;YOU CREATE A NAME FOR AN ASTRONAUT + \\&quot;ARMIKROG ASTRONAUT\\&quot; GAME CREDIT + THE \\&quot;ASTRONAUT HANDBOOK\\&quot; (ALL DIGITAL) ------------------------------------------------- Includes everything from the $60 tier, PLUS you&#39;ll create a name for an ASTRONAUT that will be listed in the Armikrog Histories within the game (subject to approval by Pencil Test Studios). PLUS you&#39;ll receive your name listed in the game credits as an \\&quot;Armikrog Astronaut\\&quot; noting the character you named. PLUS you&#39;ll receive a digital download of the \\&quot;Astronaut Handbook,\\&quot; the 100 page written novel by The Neverhood&#39;s \\&quot;Wall of Records\\&quot; authors--Doug TenNapel and Mark Lorenzen!&quot;,&quot;limit&quot;:200,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1404172800,&quot;project_id&quot;:1421442073,&quot;remaining&quot;:173,&quot;backers_count&quot;:27,&quot;updated_at&quot;:1372413561},{&quot;id&quot;:1665728,&quot;minimum&quot;:350.0,&quot;reward&quot;:&quot;ULTIMATE LIMITED EDITION BOXED COLLECTOR&#39;S SET SIGNED (FOR BACKERS ONLY) +  KICKSTARTER EXCLUSIVE ARMIKROG T-SHIRT + \\&quot;HONORARY DEVELOPMENT TEAM MEMBER\\&quot; GAME CREDIT (PHYSICAL)\\r\\n-------------------------------------------------\\r\\nIncludes everything from the $75 tier, PLUS a signed and numbered LIMITED RUN, LIMITED EDITION boxed set of the GAME, BEHIND THE SCENES and SOUNDTRACK. This collectors edition has unique artwork and packaging (different than the BOXED EDITION COLLECTOR&#39;S SET) and will ONLY be available to Kickstarter supporters. This set will not be available once the campaign has ended. PLUS you&#39;ll receive a T-shirt designed exclusively for Kickstarter supporters (please specify XXL, XL, L, M, or S). PLUS you&#39;ll have your name in the game credits as \\&quot;Honorary Development Team Member\\&quot;! (Free shipping in the U.S. Please add $20 for international shipping).&quot;,&quot;limit&quot;:1000,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;20.0&quot;,&quot;estimated_delivery_on&quot;:1404172800,&quot;project_id&quot;:1421442073,&quot;remaining&quot;:864,&quot;backers_count&quot;:136,&quot;updated_at&quot;:1372957257},{&quot;id&quot;:1716562,&quot;minimum&quot;:400.0,&quot;reward&quot;:&quot;YOU CREATE THE BACKSTORY FOR A CHARACTER + \\&quot;CURATOR OF HISTORIES\\&quot; GAME CREDIT + THE \\&quot;ASTRONAUT HANDBOOK\\&quot; (ALL DIGITAL) ------------------------------------------------- Includes everything from the $60 tier, PLUS you&#39;ll write a backstory for a character (approx. 1 paragraph) that will be included in the Armikrog Histories within the game (subject to approval by Pencil Test Studios - edited by Doug TenNapel). We&#39;ll give you an image or a physical description of the character, and you create the backstory! PLUS you&#39;ll receive your name listed in the game credits as a \\&quot;Curator of Histories\\&quot; noting the character you&#39;ve chronicled. PLUS you&#39;ll receive a digital download of the \\&quot;Astronaut Handbook,\\&quot; the 100 page written novel by The Neverhood&#39;s \\&quot;Wall of Records\\&quot; authors--Doug TenNapel and Mark Lorenzen!&quot;,&quot;limit&quot;:100,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1404172800,&quot;project_id&quot;:1421442073,&quot;remaining&quot;:92,&quot;backers_count&quot;:8,&quot;updated_at&quot;:1372957227},{&quot;id&quot;:1753333,&quot;minimum&quot;:495.0,&quot;reward&quot;:&quot;YOUR NAME IN A SONG BY TERRY S. TAYLOR (+ PHYSICAL)\\r\\n-------------------------------------------------\\r\\nIncludes everything from the $90 tier (PHYSICAL), PLUS your name will be sung in the \\u201cName Song\\u201d by Terry S. Taylor! For those who choose this tier, Terry will be composing and performing a song where he will include the names of all those who support this tier. Have your name be forever sung on the Armikrog soundtrack! You can use your own name (first and last), or the name of a loved one or friend. One full name per pledge.&quot;,&quot;limit&quot;:100,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1404172800,&quot;project_id&quot;:1421442073,&quot;remaining&quot;:92,&quot;backers_count&quot;:8,&quot;updated_at&quot;:1372353330},{&quot;id&quot;:1665797,&quot;minimum&quot;:500.0,&quot;reward&quot;:&quot;BEAUTIFULLY PRINTED ARMIKROG \\&quot;ASTRONAUT HANDBOOK\\&quot; (PHYSICAL)\\r\\n-------------------------------------------------\\r\\nIncludes everything from the $350 tier, PLUS a LIMITED RUN beautifully printed and bound version of the 100 page written novel by The Neverhood&#39;s \\&quot;Wall of Records\\&quot; authors--Doug TenNapel and Mark Lorenzen. (Free shipping in the U.S. Please add $20 for international shipping).&quot;,&quot;limit&quot;:500,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;20.0&quot;,&quot;estimated_delivery_on&quot;:1404172800,&quot;project_id&quot;:1421442073,&quot;remaining&quot;:456,&quot;backers_count&quot;:44,&quot;updated_at&quot;:1372957278},{&quot;id&quot;:1665730,&quot;minimum&quot;:650.0,&quot;reward&quot;:&quot;ORIGINAL SIGNED PENCIL TEST DRAWING\\r\\n(PHYSICAL)\\r\\n-------------------------------------------------\\r\\nIncludes everything from the $500 tier, PLUS an original ARMIKROG pencil test drawing used in the production of the game. These hand drawn animation images are used to plan out how a character moves, acts or reacts. Each drawing is unique to a specific character and their movement. (Free shipping in the U.S. Please add $20 for international shipping).&quot;,&quot;limit&quot;:200,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;20.0&quot;,&quot;estimated_delivery_on&quot;:1404172800,&quot;project_id&quot;:1421442073,&quot;remaining&quot;:194,&quot;backers_count&quot;:6,&quot;updated_at&quot;:1372431739},{&quot;id&quot;:1665731,&quot;minimum&quot;:1000.0,&quot;reward&quot;:&quot;YOUR NAME IN AN ARMIKROG PUZZLE\\r\\n-------------------------------------------------\\r\\nIncludes everything from the $650 tier, PLUS your name will be etched in eternity into the wall of a secret room dedicated only to those who support this tier.&quot;,&quot;limit&quot;:30,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1404172800,&quot;project_id&quot;:1421442073,&quot;remaining&quot;:12,&quot;backers_count&quot;:18,&quot;updated_at&quot;:1372373465},{&quot;id&quot;:1665732,&quot;minimum&quot;:1500.0,&quot;reward&quot;:&quot;ORIGINAL PRODUCTION SETPIECE USED IN THE ARMIKROG GAME\\r\\n-------------------------------------------------\\r\\nIncludes everything from the $650 tier, PLUS you&#39;ll receive a setpiece that was used in the production of the game. Own a physical piece of the ARMIKROG world!&quot;,&quot;limit&quot;:25,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1404172800,&quot;project_id&quot;:1421442073,&quot;remaining&quot;:22,&quot;backers_count&quot;:3,&quot;updated_at&quot;:1372352689},{&quot;id&quot;:1665733,&quot;minimum&quot;:2500.0,&quot;reward&quot;:&quot;LIMITED EDITION TOMMYNAUT &amp; BEAK-BEAK SCULPTED STATUETTE (10\\&quot; tall)\\r\\n-------------------------------------------------\\r\\nIncludes everything from the $650 tier, PLUS a LIMITED EDITION statuette sculpted by Disney character sculptor TONY CIPRIANO. This cast of Tommynaut (our Hero) and Beak-Beak (Tommynaut&#39;s trusted companion) is approx. 10 inches tall and is hand painted by the ARMIKROG production team.&quot;,&quot;limit&quot;:20,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1404172800,&quot;project_id&quot;:1421442073,&quot;remaining&quot;:15,&quot;backers_count&quot;:5,&quot;updated_at&quot;:1372866971},{&quot;id&quot;:1665734,&quot;minimum&quot;:3500.0,&quot;reward&quot;:&quot;YOU NAME A WORLD + DEVELOPERS SKYPE SESSION + \\&quot;ADDITIONAL DESIGN\\&quot; GAME CREDIT\\r\\n-------------------------------------------------\\r\\nIncludes everything from the $2500 tier, PLUS you&#39;ll have a 20 minute SKYPE session with Doug TenNapel, Mike Dietz and Ed Schofield where you pitch your name ideas for a world that will end up in the AMRIKROG universe. PLUS you&#39;ll receive \\&quot;additional design\\&quot; credit!&quot;,&quot;limit&quot;:5,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1404172800,&quot;project_id&quot;:1421442073,&quot;remaining&quot;:0,&quot;backers_count&quot;:5,&quot;updated_at&quot;:1372352234},{&quot;id&quot;:1739113,&quot;minimum&quot;:4500.0,&quot;reward&quot;:&quot;YOUR LIKENESS IN THE GAME + A SCULPTURE OF YOU + YOU NAME YOUR STATUE + \\u201cADDITIONAL DESIGN\\u201d GAME CREDIT ------------------------------------------------- Includes everything from the $2500 tier, PLUS your likeness will be caricatured, sculpted and featured as a statue in the \\u201cExalted Heroes\\u201d section of the Armikrog Histories. PLUS your name (or a name of your choice - subject to approval by Pencil Test Studios) will be featured on the base of the statue. PLUS you&#39;ll receive the actual statue of you used in the game (approx. 9 inches tall). PLUS you\\u2019ll receive \\&quot;additional design\\&quot; credit!&quot;,&quot;limit&quot;:5,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1404172800,&quot;project_id&quot;:1421442073,&quot;remaining&quot;:0,&quot;backers_count&quot;:5,&quot;updated_at&quot;:1372352520},{&quot;id&quot;:1759443,&quot;minimum&quot;:4500.0,&quot;reward&quot;:&quot;BEAK-BEAK PRODUCTION PUPPET + \\&quot;BEAK-BEAK WRANGLER\\&quot; GAME CREDIT + A \\&quot;CREW\\&quot; T-SHIRT ------------------------------------------------- Includes everything from the $2500 tier, PLUS a Beak-Beak  production puppet used in the game -- suitable for display or animation! PLUS your name will be listed in the credits as \\&quot;Beak-Beak Wrangler\\&quot; PLUS an ARMIKROG \\&quot;CREW\\&quot; t-shirt!&quot;,&quot;limit&quot;:5,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1404172800,&quot;project_id&quot;:1421442073,&quot;remaining&quot;:4,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1372353380},{&quot;id&quot;:1665735,&quot;minimum&quot;:6000.0,&quot;reward&quot;:&quot;ARMIKROG PRODUCTION PUPPET + A \\&quot;CREW\\&quot; T-SHIRT\\r\\n-------------------------------------------------\\r\\nIncludes everything from the $2500 tier, PLUS a Tommynaut foam latex production puppet used in the game -- suitable for display or animation! PLUS an ARMIKROG \\&quot;CREW\\&quot; t-shirt!&quot;,&quot;limit&quot;:5,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1404172800,&quot;project_id&quot;:1421442073,&quot;remaining&quot;:3,&quot;backers_count&quot;:2,&quot;updated_at&quot;:1372350877},{&quot;id&quot;:1665736,&quot;minimum&quot;:10000.0,&quot;reward&quot;:&quot;YOU ANIMATE ON THE GAME + STUDIO VISIT + A STOP MOTION ANIMATION LESSON + \\&quot;ADDITIONAL ANIMATION\\&quot; GAME CREDIT + A DELICIOUS MEAL + 10 SIGNED COPIES OF THE \\&quot;ULTIMATE LIMITED EDITION BOXED COLLECTOR&#39;S SET\\&quot;\\r\\n-------------------------------------------------\\r\\nFor your generous pledge, we want to meet you in person! This reward includes everything from the $6,000 tier, PLUS come visit Pencil Test Studios for a day: You&#39;ll get a tutorial on stop-motion animation, and YOU will animate a sequence that will end up in the game, PLUS you&#39;ll receive \\&quot;additional animation\\&quot; credit, PLUS an ARMIKROG \\&quot;CREW\\&quot; t-shirt, PLUS we&#39;ll take you out for a delicious meal, PLUS you&#39;ll receive 10 additional copies of the \\&quot;ULTIMATE LIMITED EDITION BOXED COLLECTOR&#39;S SET\\&quot; to give to your family and friends. Whew! (Travel and accommodations not included--must be able to travel to Lake Forest, CA).&quot;,&quot;limit&quot;:3,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1404172800,&quot;project_id&quot;:1421442073,&quot;remaining&quot;:0,&quot;backers_count&quot;:3,&quot;updated_at&quot;:1372353191}]}";
+    
+    
+    
+    
+    
+    
+    
+    
+    window.timeRemaining = function timeRemaining(epochTime){
+    
+      var diff = epochTime - ((new Date()).getTime() / 1000);
+      var num_unit = (diff < 60 && [Math.max(diff, 0), 'seconds']) ||
+        ((diff/=60) < 60 && [diff, 'minutes']) ||
+        ((diff/=60) < 72 && [diff, 'hours']) ||
+        [diff/=24, 'days'];
+    
+      // Round down
+      num_unit[0] = Math.floor(num_unit[0]);
+      // Singularize unit
+      if (num_unit[0] == 1) { num_unit[1] = num_unit[1].replace(/s$/,""); }
+    
+      return num_unit;
+    };
+  //]]>
+</script>
+
+<script>
+  //<![CDATA[
+    window.current_variants = ["discover_link_copy[discover]","rewards_hover[with_hover_text]"];
+  //]]>
+</script>
+
+
+</head>
+
+<body class="project projects not-mobile not-phone not-forces-video-controls not-tablet not-touchable not-native-app-request video_mode" id="projects_show">
+<div class="jGrowl center" id="growl_section"></div>
+<div class="NS_layouts__navigation" id="header">
+<div class="main-nav relative bg-white">
+<h1 class="no-margin ml1 mr2 left">
+<a href="/?ref=nav" class="block p2"><span class="ss-icon green-dark">KICK</span><span class="ss-icon green">STARTER</span>
+</a></h1>
+<ul class="primary-links list no-margin left">
+<li class="left discover-link full-height">
+<a href="/discover?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Discover</a>
+</li>
+<li class="left full-height mr2">
+<a href="/learn?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Start</a>
+</li>
+</ul>
+<ul class="list no-margin right" id="menu-sub">
+<li class="right"><a href="/login?ref=nav" class="block h5 bold p2 full-height border-box">Log in</a></li>
+<li class="right"><a href="/signup?ref=nav" class="block h5 bold p2 full-height border-box">Sign up</a></li>
+</ul>
+<div class="search-link pl2 full-height border-left border-box clip">
+<form accept-charset="UTF-8" action="/projects/search" class="search pt1 pb1 block relative form-simple" method="get"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /></div>
+<div class="field relative pl3">
+<span class="ss-icon ss-search grey-dark ml1 mt1 absolute"></span>
+<input class="input-search header full-width text" data-tracker-name="Header Live Search" id="term" name="term" placeholder="Search projects" type="text" />
+</div>
+</form>
+
+</div>
+<div class="clear"></div>
+</div>
+</div>
+<div class="hide pt4 pb4 bg-grey-light" id="search_results-wrap">
+<div class="relative container" id="search_results">
+<a class="close right grey-dark mr1"><span class="ss-icon ss-delete"></span></a>
+<h3 class="header ml1 clearfix"></h3>
+<div class="clip clearfix" id="search_results_panel"></div>
+<a class="prev arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateleft"></span>
+</a>
+<a class="next arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateright"></span>
+</a>
+</div>
+</div>
+
+
+
+
+<div class="Project-ended-true Project-is_starred- Project-state-successful Project1421442073_cxt border-top" id="main_content">
+<div id="running-board-wrap">
+<div class="container" id="running-board">
+<div id="project-header">
+<div class="NS_projects__running_board ml1 mr1 clearfix">
+<div class="title center py4">
+<h2 class="mb1">
+<a href="/projects/armikrog/armikrog" class="green-dark">Armikrog.</a>
+</h2>
+<p class="no-margin">
+<span class="creator">
+by
+<a href="/projects/armikrog/armikrog/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography" id="name">Pencil Test Studios, Inc.</a>
+</span>
+</p>
+</div>
+<ul class="project-nav list-inline left h5 bold mb1">
+<li class="mr2">
+<a href="/projects/armikrog/armikrog" class="grey-dark py1 current" id="home_nav">Home</a>
+</li>
+<li class="mr2">
+<span data-updates-count="50" id="updates_count">
+<a href="/projects/armikrog/armikrog/posts" class="grey-dark py1" id="updates_nav">Updates
+<span class="count h6 bg-grey-dark white">50</span>
+</a></span>
+</li>
+<li class="mr2">
+<a href="/projects/armikrog/armikrog/backers" class="grey-dark py1" id="backers_nav">Backers
+<span class="count h6 bg-grey-dark white"><data class="Project1421442073" data-format="number" data-value="18126" itemprop="Project[backers_count]">18,126</data></span>
+</a></li>
+<li>
+<span data-comments-count="17081" id="comments_count">
+<a href="/projects/armikrog/armikrog/comments" class="grey-dark py1" id="comments_nav">Comments
+<span class="count h6 bg-grey-dark white"><data class="Project1421442073" data-format="number" data-value="17072" itemprop="Project[comments_count]">17,072</data></span>
+</a></span>
+</li>
+</ul>
+<ul class="list-inline right h5 bold mb1">
+<li class="location mr2">
+<a href="/discover/places/lake-forest-orange-ca?ref=city" class="grey-dark"><span class="ss-icon ss-location margin-right"></span>
+Lake Forest, CA
+</a></li>
+<li class="category" data-project-parent-category="Games">
+<a href="/discover/categories/games/video%20games?ref=category" class="grey-dark"><span class="ss-icon ss-tag margin-right"></span>
+Video Games
+</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+</div>
+<div class="bg-grey-light pb4" id="content-wrap">
+<div class="Project1421442073" data-conditions="[{&quot;!state&quot;:&quot;live&quot;}]" data-evaluation="true" data-render="&quot;&lt;div class=\&quot;NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-successful Project1421442073_cxt bg-grey container pb1 pt1\&quot;&gt;\n&lt;div class=\&quot;Project1421442073\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;successful&amp;quot;}]\&quot; data-evaluation=\&quot;true\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;Funded!&amp;lt;/b&amp;gt;\\nThis project was successfully funded &amp;lt;data class=\\&amp;quot;Project1421442073\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2013-06-27T12:07:41-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[deadline]\\&amp;quot;&amp;gt;on June 27, 2013&amp;lt;/data&amp;gt;.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;Funded!&lt;/b&gt;\nThis project was successfully funded &lt;data class=\&quot;Project1421442073\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-06-27T12:07:41-04:00&amp;quot;\&quot; itemprop=\&quot;Project[deadline]\&quot;&gt;on June 27, 2013&lt;/data&gt;.\n&lt;/p&gt;\n&lt;/div&gt;&lt;div class=\&quot;Project1421442073\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:[&amp;quot;started&amp;quot;,&amp;quot;submitted&amp;quot;]}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;THIS PROJECT IS NOT LIVE&amp;lt;/b&amp;gt;\\nThis is only a draft that the creator has chosen to share.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1421442073\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;suspended&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Suspended&amp;lt;/b&amp;gt;\\nFunding for this project was suspended &amp;lt;data class=\\&amp;quot;Project1421442073\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2013-06-27T12:07:41-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on June 27, 2013&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1421442073\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;canceled&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Canceled&amp;lt;/b&amp;gt;\\nFunding for this project was canceled by the project creator &amp;lt;data class=\\&amp;quot;Project1421442073\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2013-06-27T12:07:41-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on June 27, 2013&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1421442073\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;failed&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Unsuccessful&amp;lt;/b&amp;gt;\\nThis project\\u2019s funding goal was not reached on &amp;lt;time class=\\&amp;quot;js-adjust\\&amp;quot; data-format=\\&amp;quot;LL\\&amp;quot; datetime=\\&amp;quot;2013-06-27T12:07:41-04:00\\&amp;quot;&amp;gt;June 27, 2013&amp;lt;/time&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1421442073\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;purged&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;This project is purged and only visible to staff.&amp;lt;/b&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;/div&gt;\n&quot;"><div class="NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-successful Project1421442073_cxt bg-grey container pb1 pt1">
+<div class="Project1421442073" data-conditions="[{&quot;state&quot;:&quot;successful&quot;}]" data-evaluation="true" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;Funded!&lt;/b&gt;\nThis project was successfully funded &lt;data class=\&quot;Project1421442073\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-06-27T12:07:41-04:00&amp;quot;\&quot; itemprop=\&quot;Project[deadline]\&quot;&gt;on June 27, 2013&lt;/data&gt;.\n&lt;/p&gt;\n&quot;"><p class="no-margin">
+<b>Funded!</b>
+This project was successfully funded <data class="Project1421442073" data-format="distance_date" data-value="&quot;2013-06-27T12:07:41-04:00&quot;" itemprop="Project[deadline]">on June 27, 2013</data>.
+</p>
+</div><div class="Project1421442073" data-conditions="[{&quot;state&quot;:[&quot;started&quot;,&quot;submitted&quot;]}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;THIS PROJECT IS NOT LIVE&lt;/b&gt;\nThis is only a draft that the creator has chosen to share.\n&lt;/p&gt;\n&quot;"></div><div class="Project1421442073" data-conditions="[{&quot;state&quot;:&quot;suspended&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Suspended&lt;/b&gt;\nFunding for this project was suspended &lt;data class=\&quot;Project1421442073\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-06-27T12:07:41-04:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on June 27, 2013&lt;/data&gt;.\n&quot;"></div><div class="Project1421442073" data-conditions="[{&quot;state&quot;:&quot;canceled&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Canceled&lt;/b&gt;\nFunding for this project was canceled by the project creator &lt;data class=\&quot;Project1421442073\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-06-27T12:07:41-04:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on June 27, 2013&lt;/data&gt;.\n&quot;"></div><div class="Project1421442073" data-conditions="[{&quot;state&quot;:&quot;failed&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Unsuccessful&lt;/b&gt;\nThis project\u2019s funding goal was not reached on &lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;LL\&quot; datetime=\&quot;2013-06-27T12:07:41-04:00\&quot;&gt;June 27, 2013&lt;/time&gt;.\n&quot;"></div><div class="Project1421442073" data-conditions="[{&quot;state&quot;:&quot;purged&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;This project is purged and only visible to staff.&lt;/b&gt;\n&quot;"></div></div>
+</div>
+<div class="container bg-white border rounded py3 pl2 pr2" id="content">
+<div class="NS-projects-content">
+<div class="grid_11">
+<div data-has-video="true" id="video-section">
+<div class="video-player" data-dimensions="{&quot;width&quot;:640,&quot;height&quot;:480}" data-image="https://s3.amazonaws.com/ksr/projects/260224/photo-main.jpg?1397790131" data-video-tracker-url="https://www.kickstarter.com/projects/armikrog/armikrog/video/plays" data-video-url="https://d2pq0u4uni88oo.cloudfront.net/projects/260224/video-247387-h264_high.mp4" data-video="{&quot;id&quot;:247387,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/260224/video-247387-h264_high.mp4?2013&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/260224/video-247387-h264_base.mp4?2013&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/260224/video-247387-webm.webm?2013&quot;,&quot;width&quot;:640,&quot;height&quot;:360,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/260224/video-247387-h264_base.jpg?2013&quot;}" id="video_pitch"><video class="has_webm landscape" preload="none">
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/260224/video-247387-h264_high.mp4" type='video/mp4; codecs="avc1.64001E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/260224/video-247387-h264_base.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/260224/video-247387-webm.webm" type="video/webm"></source>
+You'll need an HTML5 capable browser to see this content.
+</video>
+<img alt="Photo-main" class="has_played_hide poster landscape" src="https://s3.amazonaws.com/ksr/projects/260224/photo-main.jpg?1397790131" />
+<div class="play_button_big play_button_dark absolute-center rounded has_played_hide">
+<span class="ss-icon ss-play"></span>
+Play
+</div>
+<div class="player_controls clearfix absolute-bottom mb2 rounded white bg-green-dark forces-video-controls_hide">
+<div class="left">
+<a class="button button_icon button_dark playpause play mr1">
+<span class="play ss-icon ss-play"></span>
+<span class="pause ss-icon ss-pause"></span>
+</a>
+<span class="time current_time h12 left">00:00</span>
+</div>
+<div class="right">
+<span class="time total_time h12 left mr1">00:00</span>
+<a class="left button button_icon button_icon_white volume">
+<span class="ss-icon ss-volume icon_volume_nudge"></span>
+<span class="ss-icon ss-highvolume"></span>
+</a>
+<div class="volume_container left">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+<a class="left button button_icon button_icon_white fullscreen">
+<span class="ss-icon ss-expand"></span>
+<span class="ss-icon ss-contract"></span>
+</a>
+</div>
+<div class="clip">
+<div class="progress_container pr1 pl1">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="buffer progress_bar_buffer"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div data-project-state="successful" id="about">
+<div class="NS_projects__project_share clearfix py2 pl1 pr1">
+<ul class="left list-inline no-margin h5 bold">
+<li class="facebook mr2">
+<a href="https://www.kickstarter.com/projects/armikrog/armikrog"><span class="ss-icon ss-social ss-facebook color-facebook"></span>
+<span class="color-facebook">Share</span>
+<span class="share_bubble"><div class="triangle grey"></div>
+<div class="triangle white"></div>
+<span class="count"></span></span>
+</a></li>
+<li class="twitter mr2">
+<a  href="https://twitter.com/intent/tweet?text=Armikrog.%20by%20Pencil%20Test%20Studios%2C%20Inc.&amp;via=kickstarter&amp;url=http://kck.st/144NDkA" rel="nofollow"><span class="ss-icon ss-social ss-twitter color-twitter"></span>
+<span class="color-twitter">Tweet</span>
+</a></li>
+<li class="embed">
+<a href="/projects/armikrog/armikrog/widget" class="remote_modal_dialog grey-dark" data-modal-title="Embed a widget on your site" data-tracker-name="Embed"><span class="ss-icon ss-navigateleft"></span>
+<span class="ss-icon ss-navigateright"></span>
+Embed
+</a></li>
+</ul>
+<ul class="right list-inline no-margin h5 bold">
+<li class="curate mr2">
+</li>
+<li class="remind">
+<div class="ajax-container" id="watching-widget">
+<div class="Project1421442073" data-conditions="[{&quot;is_starred&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div id=\&quot;unwatch\&quot;&gt;\n&lt;a href=\&quot;/projects/armikrog/armikrog/unwatch\&quot; class=\&quot;on\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"></div><div class="Project1421442073" data-conditions="[{&quot;!is_starred&quot;:true}]" data-evaluation="true" data-render="&quot;&lt;div id=\&quot;watch\&quot;&gt;\n&lt;a href=\&quot;/projects/armikrog/armikrog/watch\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;span class=\&quot;text\&quot;&gt;\n&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"><div id="watch">
+<a href="/projects/armikrog/armikrog/watch"><span class="ss-icon ss-star"></span>
+<span class="text">
+</span>
+</a></div>
+
+</div></div>
+</li>
+</ul>
+</div>
+
+<div class="short_blurb py2 pl1 pr1">
+<p class="h3">A new adventure game made of clay. From the Neverhood creators - made possible because of YOU, our generous supporters.</p>
+</div>
+<div class="full-description">
+<a href="http://armikrog.com/" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/armikrog/armikrog/assets/1235266/edit" data-id="1235266">
+<figure><img alt="PayPal payments accepted at Armikrog.com" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/235/266/6489df1043aa659dd149a59ce403e6ca_large.jpg?1382650537"><figcaption>PayPal payments accepted at Armikrog.com</figcaption></figure>
+</div></a>
+<p>For the latest news and information, you can follow us on <a href="https://twitter.com/Armikrog" target="_blank">Twitter</a> and <a href="https://www.facebook.com/PencilTestStudios" target="_blank">Facebook</a>!</p><p>Armikrog will be available<b> DRM-free </b>for PC (WINDOWS), MAC OSX and LINUX, and will be localized for French, Italian, German, Spanish, Russian and Polish. The game will be distributed though <a href="http://GOG.com" target="_blank">GOG.com</a>, The Humble Store and several other digital distribution platforms. For those of you who prefer Steam, we are now on <a href="http://steamcommunity.com/sharedfiles/filedetails/?id=151640574" target="_blank">Steam Greenlight</a>. <a href="http://steamcommunity.com/sharedfiles/filedetails/?id=151640574" target="_blank">Click this link and vote YES for Armikrog and boost our popularity</a>!</p><h1><b>The Wii U Stretch!</b></h1><p>Pending the success of our $950,000 stretch goal, Armikrog will also be released on the Wii U through Nintendo's eShop! Check out <a href="http://Armikrog.com" target="_blank">Armikrog.com</a> for the most current status of the Wii U Stretch!</p><div class="template asset" contenteditable="false" data-edit_url="/projects/armikrog/armikrog/assets/694761/edit" data-id="694761">
+<figure><img alt="Early Wii U Concepts" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/694/761/0117556effdc954b25b39fc8f2ded46d_large.jpg?1371984480"><figcaption>Early Wii U Concepts</figcaption></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/armikrog/armikrog/assets/694762/edit" data-id="694762">
+<figure><img alt="Early Wii U Concepts" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/694/762/d297e0ac571bfcdd911f34365ed1504d_large.jpg?1371984615"><figcaption>Early Wii U Concepts</figcaption></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/armikrog/armikrog/assets/694763/edit" data-id="694763">
+<figure><img alt="Early Wii U Concepts" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/694/763/3a0ec16a6856dddd645087c333b9f97b_large.jpg?1371984707"><figcaption>Early Wii U Concepts</figcaption></figure>
+</div><h1>
+Q &amp; A with Michael J. Nelson</h1><div class="template oembed" contenteditable="false" data-href="http://www.youtube.com/watch?v=EpV7ZyZ63KY&amp;feature=youtu.be">
+<iframe width="612" height="344" src="https://www.youtube.com/embed/EpV7ZyZ63KY?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div><h1>
+<br>Q &amp; A with Mike and Ed</h1><div class="template oembed" contenteditable="false" data-href="http://www.youtube.com/watch?v=nC5pK3n8HZU">
+<iframe width="612" height="344" src="https://www.youtube.com/embed/nC5pK3n8HZU?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div><h1>Localization</h1><p>Armikrog will be localized for French, Italian, German, Spanish, Russian and Polish. View the localized French, German and Spanish version of the Armikrog intro movie below. </p><div class="template oembed" contenteditable="false" data-href="www.youtube.com/watch?v=vQi-8GNg_zI">
+<iframe width="612" height="344" src="https://www.youtube.com/embed/vQi-8GNg_zI?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div><p>Armikrog featured on GameTrailers</p><div class="template oembed" contenteditable="false" data-href="http://www.gametrailers.com/videos/u41osh/armikrog-beyond-the-clay">
+<iframe class="embedly-embed" src="https://cdn.embedly.com/widgets/media.html?src=http%3A%2F%2Fmedia.mtvnservices.com%2Fembed%2Fmgid%3Aarc%3Avideo%3Agametrailers.com%3A945ae382-3925-4f75-8629-5fbd53192cfb&amp;url=http%3A%2F%2Fwww.gametrailers.com%2Fvideos%2Fu41osh%2Farmikrog-beyond-the-clay&amp;image=http%3A%2F%2F4.images.gametrailers.com%2Fimage_root%2Fvid_thumbs%2F2013%2F06_jun_2013%2Fjun_25%2Fgt_armikrog_beyond_the_clay_int_1280x720_3500_h32.jpg%3F&amp;key=d3cf44f504524614bc66d6797c5dd848&amp;type=text%2Fhtml&amp;schema=gametrailers" width="639" height="359" scrolling="no" frameborder="0" allowfullscreen></iframe>
+
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/armikrog/armikrog/assets/649172/edit" data-id="649172">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/649/172/cc6f975d0e6d6bcd75f5169414b5b238_large.jpg?1370465935"></figure>
+</div><p>Want to know more about Add-On's? Check out the FAQ section at the bottom of this page for more info.</p><p>To receive an Add-On, pledge the additional amount of the item (or
+items) to your tier. Once the campaign has ended, you’ll receive a survey where
+you can specify the Add-On you have chosen.</p><h1>Digital Add-Ons for any Tier
+</h1><p><b>$3 - Armikrog Wallpaper Image
+created by our pals over at CreatureBox!</b> High resolution at 1920x1200. <i>This Add-On is not offered in any
+reward tier.</i></p><div class="template asset" contenteditable="false" data-edit_url="/projects/armikrog/armikrog/assets/649213/edit" data-id="649213">
+<figure><img alt="Armikrog art by CreatureBox" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/649/213/eb9b5fcf3680c3757a94977db2659149_large.jpg?1370466477"><figcaption>Armikrog art by CreatureBox</figcaption></figure>
+</div><p><b>$5 - Access to the Private
+Developers Community:</b> Receive access to a members-only forum where you can jump into conversations with the team about Armikrog’s
+game design and development. We’ll also discuss past projects like The
+Neverhood and Earthworm Jim! <i>This Add-On is not offered in any reward tier.</i></p><p><br><b>$5 - Set of 4 character sketches by Mike Dietz! </b>High resolution digital download of 4 character sketches drawn by animation director Mike Dietz.<i>This Add-On is not offered in any reward tier.</i><b> (Original hand drawn sketches by Mike Dietz offered in the Physical Add-On section)</b></p><div class="template asset" contenteditable="false" data-edit_url="/projects/armikrog/armikrog/assets/690843/edit" data-id="690843">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/690/843/d7c0ee0bd8f0894da7fe003c3369cb75_large.jpg?1371800954"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/armikrog/armikrog/assets/690849/edit" data-id="690849">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/690/849/0f9eba6a1befb47fb97b8d028cc1a5bc_large.jpg?1371801161"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/armikrog/armikrog/assets/690853/edit" data-id="690853">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/690/853/f120ad25f0387bfe3156f0aa2d470257_large.jpg?1371801324"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/armikrog/armikrog/assets/690856/edit" data-id="690856">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/690/856/f1315700e5a382960ba60351a92100bb_large.jpg?1371801394"></figure>
+</div>
+<h1>Digital Add-Ons for $20 Tier and Above
+</h1><p>(These Add-Ons are available only to backers that have pledged to tiers $20 or higher)</p><p><b>$10 - Developers Roundtable
+Discussion:</b> A digital download of a 2 hour reunion with much of the original
+Neverhood team where they <i>discuss how our games came to be!</i> You’ll hear the
+stories like: how Steven Spielberg invited the team to his house to pitch The
+Neverhood game—and the events that lead up to the infamous soda-drinking
+competition…and much, much, more!<i> This Add-On is not offered in any reward tier.</i></p><p><b>$15 - Developers Commentary: </b>A
+digital download of Armikrog game footage with audio commentary by Michael J.
+Nelson (Rifftrax and Mystery Science Theater 3000) and the Armikrog development
+team. Approx. 60 min long. <i>This Add-On is included in the $60 tier and above.</i></p><p><b>$15 - Armikrog “Astronaut Handbook”:</b>
+A digital download of the 100 page written novel by The Neverhood’s “Wall of
+Records” authors, Doug TenNapel and Mark Lorenzen. <i>This Add-On is included in the $75 tier and above. </i></p><p><b>$20 - Beta Test Access: </b> You'll receive access to Beta Test builds where you can play the game before it's released to the public! You'll also have the opportunity to provide feedback through the Private Developers Community -- access to the Private Developers Community is INCLUDED in this Beta Test Access Add-On!</p><p><b>$20 - The Chumpy Cam:</b> You’ll get
+access to live streaming video on one of our stop-motion sets. See the building
+and lighting of the sets, and watch animators create the animation—all from the
+comfort of home! Access will be for the duration of the project.<i> This
+Add-On is not offered in any reward tier.</i></p><p><b>$20 - Additional Game Copy:</b> Receive
+an extra digital download of the Armikrog game. Great for a gift! <i>This Add-On is not offered in any reward tier.</i></p><h1>Physical Add-Ons for any Tier</h1><p><b>Hand painted portraits by Doug TenNapel!</b> Each portrait is painted with sumi ink on bristol board, and signed by Doug TenNapel. These are handsome, one-of-a-kind works of art, painted just for you. They are available in SMALL (8.5" x 11") or LARGE (11" x 17"). <i>These Add-Ons are limited to the portraits shown below. Please, no special orders.</i></p><p>How are these portraits created? Watch Doug paint Tommynaut before your very eyes!</p><div class="template oembed" contenteditable="false" data-href="http://www.youtube.com/watch?v=M5UopWn3Y58">
+<iframe width="612" height="344" src="https://www.youtube.com/embed/M5UopWn3Y58?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div><p><i>These Add-Ons are limited to the portraits shown below. Please, no special orders.</i></p><p><b>Portrait #1----------------------------------------------------</b></p><div class="template asset" contenteditable="false" data-edit_url="/projects/armikrog/armikrog/assets/687511/edit" data-id="687511">
+<figure><img alt="Portrait #1" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/687/511/73cf44e8cc513cc3bdaaba79e25a7a57_large.jpg?1371686341"><figcaption>Portrait #1</figcaption></figure>
+</div>
+<p><b>$100 - </b><b><b>(8.5" x 11") Small </b>PORTRAIT #1:</b> Each portrait is painted in sumi ink on bristol board, and signed by Doug TenNapel. These are handsome, one-of-a-kind works of art, painted just for you.<i> Free shipping in the U.S. Please
+add $10 for shipping outside the U.S. </i><i>This Add-On is not offered in any reward tier.</i></p><p><b>$200 - </b><b><b>(11" x 17") </b>Large PORTRAIT #1:</b> Each portrait is painted in sumi ink on bristol board, and signed by 
+Doug TenNapel. These are handsome, one-of-a-kind works of art, painted just for you.<i> Free shipping in the U.S. Please
+add $20 for shipping outside the U.S. </i><i>This Add-On is not offered in any reward tier.</i></p><p><b>Portrait #2----------------------------------------------------</b></p><div class="template asset" contenteditable="false" data-edit_url="/projects/armikrog/armikrog/assets/687525/edit" data-id="687525">
+<figure><img alt="Portrait #2" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/687/525/cf9dc6f6c66cf4c56d7731d4ab518d0c_large.jpg?1371686485"><figcaption>Portrait #2</figcaption></figure>
+</div><p><b>$100 - </b><b><b>(8.5" x 11") </b>Small PORTRAIT #2: </b>Each portrait is painted in sumi ink on bristol board, and signed by 
+Doug TenNapel. These are handsome, one-of-a-kind works of art, painted just for you. <i>Free shipping in the U.S. Please
+add $10 for shipping outside the U.S. </i><i>This Add-On is not offered in any reward tier.</i></p><p><b>$200 - </b><b><b>(11" x 17") </b>Large PORTRAIT #2:</b> Each portrait is painted in sumi ink on bristol board, and signed by 
+Doug TenNapel. These are handsome, one-of-a-kind works of art, painted just for you. <i>Free shipping in the U.S. Please
+add $20 for shipping outside the U.S. </i><i>This Add-On is not offered in any reward tier.</i></p><p><br><b>Portrait #3-----------------------------------------------------</b></p><div class="template asset" contenteditable="false" data-edit_url="/projects/armikrog/armikrog/assets/687536/edit" data-id="687536">
+<figure><img alt="Portrait #3" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/687/536/810c4452ef0948b1370c579613ba694e_large.jpg?1371686697"><figcaption>Portrait #3</figcaption></figure>
+</div>
+<p><b>$100 - </b><b><b>(8.5" x 11") Small </b>PORTRAIT #3:</b> Each portrait is painted in sumi ink on bristol board, and signed by 
+Doug TenNapel. These are handsome, one-of-a-kind works of art, painted just for you. <i>Free shipping in the U.S. Please
+add $10 for shipping outside the U.S. </i><i>This Add-On is not offered in any reward tier.</i></p><p><b>$200 - </b><b><b>(11" x 17") Large </b>PORTRAIT #3:</b> Each portrait is painted in sumi ink on bristol board, and signed by 
+Doug TenNapel. These are handsome, one-of-a-kind works of art, painted just for you. <i>Free shipping in the U.S. Please
+add $20 for shipping outside the U.S. </i><i>This Add-On is not offered in any reward tier.</i></p><p><br><b>Portrait #4-----------------------------------------------------</b></p><div class="template asset" contenteditable="false" data-edit_url="/projects/armikrog/armikrog/assets/687540/edit" data-id="687540">
+<figure><img alt="Portrait #4" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/687/540/7951f733397ad7cb25efc09e33254bfd_large.jpg?1371686743"><figcaption>Portrait #4</figcaption></figure>
+</div>
+<p><b>$100 - </b><b><b>(8.5" x 11") </b>Small PORTRAIT #4:</b> Each portrait is painted in sumi ink on bristol board, and signed by 
+Doug TenNapel. These are handsome, one-of-a-kind works of art, painted just for you. <i>Free shipping in the U.S. Please
+add $10 for shipping outside the U.S. </i><i>This Add-On is not offered in any reward tier.</i></p><p><b>$200 - </b><b><b>(11" x 17") </b>Large PORTRAIT #4:</b> Each portrait is painted in sumi ink on bristol board, and signed by 
+Doug TenNapel. These are handsome, one-of-a-kind works of art, painted just for you. <i>Free shipping in the U.S. Please
+add $20 for shipping outside the U.S. </i><i>This Add-On is not offered in any reward tier.</i></p><p><b>WAIT...THERE'S MORE!</b></p><p><b>Character sketches by Mike Dietz! </b>These sketches are drawn with Blackwing
+and Col-Erase pencils on 8.5” x 11” animation paper and are signed by animation director Mike Dietz. <i>These Add-Ons are limited
+to the characters below. Please no special orders.</i></p><p><b>Sketch #1---------------------------------------------------------------------</b></p><div class="template asset" contenteditable="false" data-edit_url="/projects/armikrog/armikrog/assets/690900/edit" data-id="690900">
+<figure><img alt="Sketch #1" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/690/900/d7c0ee0bd8f0894da7fe003c3369cb75_large.jpg?1371803246"><figcaption>Sketch #1</figcaption></figure>
+</div>
+<p><b>$25 - </b><b><b>(8.5" x 11") SKETCH</b> #1:</b> These sketches are drawn with Blackwing
+and Col-Erase pencils on 8.5” x 11” animation paper and are signed by animation director Mike Dietz. <i>Free shipping in the U.S. Please
+add $10 for shipping outside the U.S. </i><i>This Add-On is not offered in any reward tier.</i></p><p><b>Sketch #2---------------------------------------------------------------------</b></p><div class="template asset" contenteditable="false" data-edit_url="/projects/armikrog/armikrog/assets/690893/edit" data-id="690893">
+<figure><img alt="Sketch #2" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/690/893/0f9eba6a1befb47fb97b8d028cc1a5bc_large.jpg?1371802941"><figcaption>Sketch #2</figcaption></figure>
+</div><p><b>$25 - </b><b><b>(8.5" x 11") SKETCH</b> #2:</b> These sketches are drawn with Blackwing
+and Col-Erase pencils on 8.5” x 11” animation paper and are signed by animation director Mike Dietz. <i>Free shipping in the U.S. Please
+add $10 for shipping outside the U.S. </i><i>This Add-On is not offered in any reward tier.</i></p><p><b>Sketch #3---------------------------------------------------------------------</b></p><div class="template asset" contenteditable="false" data-edit_url="/projects/armikrog/armikrog/assets/690895/edit" data-id="690895">
+<figure><img alt="Sketch #3" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/690/895/f120ad25f0387bfe3156f0aa2d470257_large.jpg?1371803068"><figcaption>Sketch #3</figcaption></figure>
+</div>
+<p><b>$25 - </b><b><b>(8.5" x 11") SKETCH</b> #3:</b> These sketches are drawn with Blackwing
+and Col-Erase pencils on 8.5” x 11” animation paper and are signed by animation director Mike Dietz. <i>Free shipping in the U.S. Please
+add $10 for shipping outside the U.S. </i><i>This Add-On is not offered in any reward tier.</i></p><p><b>Sketch #4---------------------------------------------------------------------</b></p><div class="template asset" contenteditable="false" data-edit_url="/projects/armikrog/armikrog/assets/690899/edit" data-id="690899">
+<figure><img alt="Sketch #4" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/690/899/f1315700e5a382960ba60351a92100bb_large.jpg?1371803147"><figcaption>Sketch #4</figcaption></figure>
+</div>
+<p><b>$25 - </b><b><b>(8.5" x 11") SKETCH</b> #4:</b> These sketches are drawn with Blackwing
+and Col-Erase pencils on 8.5” x 11” animation paper and are signed by animation director Mike Dietz. <i>Free shipping in the U.S. Please
+add $10 for shipping outside the U.S. </i><i>This Add-On is not offered in any reward tier.</i></p><h1>Physical Add-Ons for $20 Tier and Above</h1><p>(These Add-Ons are available only to backers that have pledged to tiers $20 or higher)</p><p>Note: <i>The printed comic book in the $75 tier (and above) will be SIGNED by Doug TenNapel</i></p><p><br><b>INTERNATIONAL BACKERS</b>: If you have already pledged to a tier that
+ includes a comic book ($75 tier or higher) you do not have to pay 
+additional shipping when adding a comic book or books. </p><p><b>$12 - Printed Armikrog Comic Book
+by Doug TenNapel (unsigned): </b>Receive a printed 24 page full color comic book. <i>Free shipping in the U.S. Please
+add $5 for shipping outside the U.S.</i></p><h1>Physical Add-Ons for $45 Tier and Above</h1><p>(These Add-Ons are available only to backers that have pledged to tiers $45 and higher)</p><p><b>INTERNATIONAL BACKERS</b>: If you have already pledged to a tier that includes a T-shirt ($200 tier or higher) you do not have to pay additional shipping when adding a T-shirt or shirts. </p><p><b>$25 - Armikrog "Beak-Beak E3 Exclusive" T-Shirt: </b>Receive a
+T-shirt (sizes XXL, XL, L, M, S) designed exclusively for E3 2013!<i><i>Free shipping in the U.S. </i>Please add $10 for shipping outside the U.S. This
+Add-On is not offered in any reward tier.</i></p><div class="template asset" contenteditable="false" data-edit_url="/projects/armikrog/armikrog/assets/687384/edit" data-id="687384">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/687/384/ccb9d935a05c990a29176531acf90201_large.jpg?1371683638"></figure>
+</div><p><b>$25 - Armikrog "Tommynaut" T-Shirt: </b>Receive a
+T-shirt (sizes XXL, XL, L, M, S) designed exclusively for Kickstarter supporters!<i><i>Free shipping in the U.S. </i>Please add $10 for shipping outside the U.S.</i>  <i>This Add-On is included in the $200 tier
+and above.</i></p><div class="template asset" contenteditable="false" data-edit_url="/projects/armikrog/armikrog/assets/649311/edit" data-id="649311">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/649/311/4413d79527b717c2bf08b8dbd458214c_large.jpg?1370467868"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/armikrog/armikrog/assets/616301/edit" data-id="616301">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/616/301/6059a7f5f2a99df095c8a5bb0e0f4e2d_large.jpg?1369366640"></figure>
+</div><p>Doug
+TenNapel, creator of <i>Earthworm Jim™ (Interplay)</i> and <i>The Neverhood™
+(Electronic Arts) </i>has partnered with Pencil Test Studios, to create what some have called
+The Neverhood's "spiritual successor" -- a clay and puppet animated
+adventure game called <b>ARMIKROG.</b> </p><div class="template asset" contenteditable="false" data-edit_url="/projects/armikrog/armikrog/assets/616339/edit" data-id="616339">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/616/339/0271b6ec4acf2e6b7c50afbe3a303556_large.jpg?1369367790"></figure>
+</div>
+<p>The founders of Pencil Test Studios, Mike Dietz and Ed Schofield (also from<i> Earthworm
+Jim</i> and <i>The Neverhood</i>), have assembled much of
+the original Neverhood development team to create a brand new game that blurs the lines between art and technology, using stop-motion animation and sculpture to bring this project to life.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/armikrog/armikrog/assets/623972/edit" data-id="623972">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/623/972/cee6a1d2858ef5a1a62c78d4a42eb69a_large.jpg?1369696891"></figure>
+</div><h1><b>The Story</b></h1><p>Without giving too much away, Armikrog follows the adventures of a space explorer named Tommynaut and his blind alien, talking dog named Beak-Beak. They crash land on a weird planet and end up locked in a mysterious fortress called Armikrog. Then...the adventure begins!</p><div class="template asset" contenteditable="false" data-edit_url="/projects/armikrog/armikrog/assets/622261/edit" data-id="622261">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/622/261/83714ad93e95352aebb5009320da27ce_large.jpg?1369629245"></figure>
+</div>
+
+
+
+
+<h1><b>The Game</b></h1><p>Armikrog is a point and click adventure game that features all of the characteristics of TenNapel's unmistakable style: </p><ul>
+<li>Quirky and lovable characters </li>
+<li>Unique worlds</li>
+<li>A compelling story</li>
+<li>Mind-bending puzzles</li>
+<li>Great animation </li>
+<li>Tons of clay!</li>
+</ul><div class="template asset" contenteditable="false" data-edit_url="/projects/armikrog/armikrog/assets/624000/edit" data-id="624000">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/624/000/62157c82fa2b8e2a7efa84bfecbbc381_large.jpg?1369697553"></figure>
+</div>
+<h1>
+<b>The Music</b>
+</h1><p><b>Terry S. Taylor</b> --
+the award winning composer of The Neverhood soundtrack, will be composing and performing an entirely new <i>original soundtrack</i> for the game. Hooray!!!</p><p>Armikrog will be available <b>DRM-free </b>for PC (WINDOWS), MAC OSX and LINUX, and distributed though <a href="http://GOG.com" target="_blank">GOG.com</a>, The Humble Store and 
+several other digital distribution platforms. For those of you who 
+prefer Steam, we are now on <a href="http://steamcommunity.com/sharedfiles/filedetails/?id=151640574" target="_blank">Steam Greenlight</a>. Click the link below where you can vote YES for Armikrog and boost our popularity!</p><p><a href="http://steamcommunity.com/sharedfiles/filedetails/?id=151640574" target="_blank">Armikrog on Steam Greenlight</a></p><div class="template asset" contenteditable="false" data-edit_url="/projects/armikrog/armikrog/assets/622437/edit" data-id="622437">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/622/437/7a4fbba053a4acad61f54ede16c76c18_large.jpg?1369640255"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/armikrog/armikrog/assets/616313/edit" data-id="616313">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/616/313/8a60dde9e86b28ca849cc3790dced791_large.jpg?1369367078"></figure>
+</div><p>Making this game will be a labor
+of love, and a "thank you" to all Neverhood fans and adventure gamers. </p><div class="template asset" contenteditable="false" data-edit_url="/projects/armikrog/armikrog/assets/616344/edit" data-id="616344">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/616/344/f6775bfb5c1e06ce59a62079b1e85975_large.jpg?1369368099"></figure>
+</div>
+
+
+
+
+
+<p>Armikrog is being developed by Pencil Test Studios, an independent game development company located in Lake Forest, CA. Along with Doug TenNapel, the team includes core members from The Neverhood, as well as puppet fabricators, sculptors, and animators that will help to create the stop-motion that makes this project so unique. </p><div class="template asset" contenteditable="false" data-edit_url="/projects/armikrog/armikrog/assets/616422/edit" data-id="616422">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/616/422/7ac231aca5de617ded1bafa56f9f16a0_large.jpg?1369369985"></figure>
+</div>
+
+
+
+
+<h1>Armikrog will also feature the
+voice talents of:</h1><div class="template asset" contenteditable="false" data-edit_url="/projects/armikrog/armikrog/assets/616394/edit" data-id="616394">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/616/394/5784bf646262e5336914a2afdb2de6c7_large.jpg?1369369168"></figure>
+</div><p>The Neverhood was conceived and created from the ground up over a 12 month period. Armikrog will be developed using the Unity engine for PC, MAC and LINUX in order to secure the goal of completing the project within one year. We'll also be using many of the
+same animation, modelling, sculpting, set building and clay &amp; puppet fabrication methods we've used before—keeping the overall game design scalable so
+that we can create a fun and exciting experience within our targeted funding
+goal, but still have the flexibility to expand, should the opportunity present itself. </p><div class="template asset" contenteditable="false" data-edit_url="/projects/armikrog/armikrog/assets/624002/edit" data-id="624002">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/624/002/65c1764ee75bcb2fd17c56db70cc026d_large.jpg?1369697590"></figure>
+</div>
+
+<p>Of course, none of this happens without your support, which is why we are reaching out to you through Kickstarter. Why Kickstarter? Funny you should ask...</p><div class="template asset" contenteditable="false" data-edit_url="/projects/armikrog/armikrog/assets/616319/edit" data-id="616319">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/616/319/367e9da6b1f912b5ce95555a69b9382a_large.jpg?1369367188"></figure>
+</div><p>Kickstarter is our most direct
+link to you, the fans. This is your opportunity to express whether or not you'd
+like to see another clay and puppet, stop-motion adventure game. Armikrog is a
+unique and creative project that we would love to make for those of
+you who have, over the years, dreamed of the chance to immerse yourself in
+another world made of clay. We're here to offer you the opportunity to make this project a reality.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/armikrog/armikrog/assets/622464/edit" data-id="622464">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/622/464/ce338cacfcf6747d0639b4bf245cebf7_large.jpg?1369642537"></figure>
+</div>
+
+<p>While our funding goal is considerably less than The Neverhood cost to produce in 1997, it is still our biggest hurdle. But in light of what it will cost to create, the real question is this: Would you support and play this game for $25?</p>
+
+<p><i>If enough of you support it, you
+will get this game. </i></p><div class="template asset" contenteditable="false" data-edit_url="/projects/armikrog/armikrog/assets/616322/edit" data-id="616322">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/616/322/20123f3c24291d5a318768af4509783b_large.jpg?1369367288"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/armikrog/armikrog/assets/622479/edit" data-id="622479">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/622/479/dd73a58513aac78a24a707a9eb08eec8_large.jpg?1369644233"></figure>
+</div>
+<p>The Armikrog game will be comparable in size and scope to The Neverhood. It's been noted that our initial funding goal is significantly less than the cost of the original Neverhood game--this is possible since we are now utilizing technology that was not available to us 15 years ago (Unity engine, post-production and editing software, etc) which will allow us to create this game more efficiently with a overall higher level of quality. </p>
+<p>In addition to our more conventional game production pipeline, we are also utilizing many of the same stop motion techniques used in such feature films as <i>Paranorman</i> and <i>Nightmare Before Christmas.</i> A significant portion of our budget is allocated toward puppet fabrication and sculpting, set building, lights, cameras, and lots and lots of clay! </p><div class="template asset" contenteditable="false" data-edit_url="/projects/armikrog/armikrog/assets/622478/edit" data-id="622478">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/622/478/58946b2e39a862b3ef8d802cc13631a7_large.jpg?1369644152"></figure>
+</div>
+<p>Stop motion animation is an art all of its own. Each puppet, set and 
+prop is individually hand-crafted by artists, while each and every frame is 
+painstakingly animated. This specialized process is what makes this game unique--and we feel the time and talent that it takes to bring a project like this to this to life is worth every penny.</p><p>100% of the funds that are raised will go directly into the
+production of the game. To date, we’ve invested over $100,000 into the preproduction,
+design, and development, and we can see how fun and amazing this project will
+be. We want to deliver an incredible experience to all of you who support us, and applying 100% of your contributions toward development is the
+only way this will happen. </p><div class="template asset" contenteditable="false" data-edit_url="/projects/armikrog/armikrog/assets/616629/edit" data-id="616629">
+<figure><img alt="Illustration by Earthworm Jim poster artist, Mike Koelsch" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/616/629/e7b2f6777710de15b0a3e732333405ce_large.jpg?1369375408"><figcaption>Illustration by Earthworm Jim poster artist, Mike Koelsch</figcaption></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/armikrog/armikrog/assets/616583/edit" data-id="616583">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/616/583/50f6930ad4e452c3586ec1c393f52eaa_large.jpg?1369374283"></figure>
+</div><p>
+Rewards fall into two basic categories: <i>Digital Rewards </i>that are distributed though Steam and/or comparable download venues, and <i>Physical Rewards </i>that will be distributed through the mail. Note that all physical rewards under $1000 have an additional shipping cost for supporters with addresses outside of the United States. </p><p>Rewards that are not dependent on the production of the actual game will be fulfilled before the date specified in the reward tiers. Since we can't predict the amount of rewards that will need to be fulfilled, all rewards have been given the same fulfillment date as the game's ship date (July 2014). Once the campaign has ended, we will notify you of the fulfillment dates for those rewards that will ship sooner.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/armikrog/armikrog/assets/650557/edit" data-id="650557">
+<figure><img alt="Boxed Edition in the big, old-school size (mockup - design not finalized)" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/650/557/e4ac0d3bfaf8b45d0c8bb5eee63837f5_large.jpg?1370499374"><figcaption>Boxed Edition in the big, old-school size (mockup - design not finalized)</figcaption></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/armikrog/armikrog/assets/649597/edit" data-id="649597">
+<figure><img alt="Kickstarter Exclusive Armikrog T-Shirt ($200 tier and above)" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/649/597/4413d79527b717c2bf08b8dbd458214c_large.jpg?1370473734"><figcaption>Kickstarter Exclusive Armikrog T-Shirt ($200 tier and above)</figcaption></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/armikrog/armikrog/assets/623984/edit" data-id="623984">
+<figure><img alt="Tommynaut stop-motion production puppet" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/623/984/b1ccc4349ce5454d38e180c3a9188c0d_large.jpg?1369697148"><figcaption>Tommynaut stop-motion production puppet</figcaption></figure>
+</div>
+
+<h1>Digital Rewards</h1><div class="template asset" contenteditable="false" data-edit_url="/projects/armikrog/armikrog/assets/662943/edit" data-id="662943">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/662/943/c8c33ec664ec0ab5f6d5f8c2e441a616_large.jpg?1370909316"></figure>
+</div>
+
+
+<h1>Physical Rewards</h1><div class="template asset" contenteditable="false" data-edit_url="/projects/armikrog/armikrog/assets/624729/edit" data-id="624729">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/624/729/d2fa8ba80254faf42d7cd670538eb44d_large.jpg?1369718722"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/armikrog/armikrog/assets/629979/edit" data-id="629979">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/629/979/7ceaabfd115519322bcfcdb9605fdc6f_large.jpg?1369860488"></figure>
+</div>
+<p>Armikrog is already getting a lot of great press. Here are a few examples:</p><p><a href="http://multiplayerblog.mtv.com/2013/05/28/armikrog-kickstarter/" target="_blank">MTV</a></p><p><a href="http://www.joystiq.com/2013/05/28/armikrog-stop-motions-you-toward-its-kickstarter-campaign/" target="_blank">Joystiq</a></p><p><a href="http://www.gameinformer.com/b/news/archive/2013/05/28/earthworm-jim-creator-returns-to-claymation-with-armikrog.aspx" target="_blank">Game Informer</a></p><p><a href="http://www.eurogamer.net/articles/2013-05-31-the-neverhood-creators-launches-kickstarter-for-spiritual-successor-armikrog" target="_blank">Eurogamer</a></p><p><a href="http://www.cartoonbrew.com/games/earthworm-jim-creator-doug-tennapel-is-crowdfunding-armikrog-a-stop-motion-game-83433.html" target="_blank">Cartoon Brew</a></p><p><a href="http://endcredits.podbean.com/2013/05/28/ep46-w-doug-tennaple-mike-dietz-and-ed-scholfield/" target="_blank">End Credits</a> (podcast)</p><p><a href="http://www.pcgamer.com/2013/05/29/i-dream-of-plasticine-neverhood-developer-is-carving-out-a-new-claymation-vision/" target="_blank">PC
+Gamer</a></p><p><a href="http://www.wired.co.uk/news/archive/2013-05/29/armikrog-kickstarter" target="_blank">Wired</a></p><p><a href="http://www.gamefocus.ca/news/earthworm-jim-creator-launches-kickstarter-for-new-game-armikrog-39975.php" target="_blank">Game Focus</a></p><p><a href="http://www.igameresponsibly.com/2013/06/kickstarter-projects-you-should-pay-attention-to-65/" target="_blank">iGR</a></p><p><a href="http://www.vg247.com/2013/05/29/armikrog-kickstarter-aims-to-fund-new-game-from-neverhood-creator/" target="_blank">VG 24/7</a></p><p><a href="http://www.idg.se/2.1085/1.509931/neverhood-far-spirituell-uppfoljare--ge-armikrog-ditt-stod" target="_blank">IDG (Swedish)</a>  <a href="http://translate.google.com/translate?sl=sv&amp;tl=en&amp;js=n&amp;prev=_t&amp;hl=en&amp;ie=UTF-8&amp;eotf=1&amp;u=http%3A%2F%2Fwww.idg.se%2F2.1085%2F1.509931%2Fneverhood-far-spirituell-uppfoljare--ge-armikrog-ditt-stod&amp;act=url" target="_blank">(English Translation)</a></p><p><a href="http://www.gamezebo.com/news/2013/05/30/kickstarter-picks-armikrog" target="_blank">Gamezebo</a></p><p><a href="http://nerdluster.com/indie/17-kickstarter-knuggets/310-20130530-armikrog" target="_blank">Nerdluster</a></p><p><a href="http://gamerspack.com/?p=24286" target="_blank">Gamerspack</a></p><p><a href="http://www.ynet.co.il/articles/0,7340,L-4386053,00.html?utm_source=dlvr.it&amp;utm_medium=twitter" target="_blank">Ynet</a></p><p><a href="http://www.ausgamers.com/news/read/3311227/neverhood-creators-launch-kickstarter-for-armikrog-a-new-claymation-adventure-game" target="_blank">Aus Gamers</a></p><p><a href="http://www.gameplanet.com.au/news/1033142.20130530.The-Neverhood-spiritual-successor-hits-Kickstarter/" target="_blank">Game Planet</a></p><p><a href="http://nzgamer.com/all/news/6588/spiritual-successor-to-the-neverhood-hits-kickstarter.html" target="_blank">NZ Gamer</a></p><p><a href="http://www.3djuegos.com/noticia/134025/0/armikrog/sucesor-the-neverhood/kickstarter/" target="_blank">3D Juegos</a></p><p><a href="http://www.gameland.ru/news/55824/" target="_blank">Gameland.ru</a></p>
+<a href="http://kickingitforward.org/" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/armikrog/armikrog/assets/699462/edit" data-id="699462">
+<figure><img alt="Proud sponsor of KickingItForward.org" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/699/462/1727ff98bee59d1774ab7b55523abbcd_large.jpg?1372179203"><figcaption>Proud sponsor of KickingItForward.org</figcaption></figure>
+</div>
+
+
+</a>
+</div>
+<div id="risks">
+<h2 class="title grey-dark mt6 mb4">
+<span>Risks and challenges</span>
+<a href="/help/faq/kickstarter%20basics#Acco" class="right normal h5" target="_blank">Learn about accountability on Kickstarter</a>
+<div class="divider clear"></div>
+</h2>
+<p><p>Pencil Test Studios has an experienced crew developing this project. Having many of the original members of The Neverhood team is a tremendous asset, as we already have the experience of creating this type of game. All games face unforeseen challenges throughout the course of production, but we have yet to face a challenge that we couldn&#39;t overcome. We have already begun to detail the entire scope of the game before production begins, which will help to define and minimize risks--which is key to the successful development of any game.</p>
+
+<p>We&#39;ve already invested a substantial amount of time and money into preproduction, laying the groundwork for an amazing game and we hope that you are as excited as we are about this project. Ultimately, we want to bring the magic of Armikrog to all of you who support it.</p></p>
+</div>
+</div>
+<div class="NS-projects-faqs" id="project-faqs">
+<h2 class="title grey-dark mt6 mb4">
+FAQ
+<div class="divider clear"></div>
+</h2>
+<ul class="faqs">
+<li class="faq" id="project_faq_58028">
+<div class="faq-question">
+<a href="#project_faq_58028" name="project_faq_58028">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Is Armikrog a sequel to The Neverhood? (No)</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>No. There are similarities between Armikrog and The Neverhood (created and developed by much of the same team, both point and click adventure games made of clay and puppet animation, similar styles and art directions, etc.) but Armikrog is not a sequel.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-06-06T02:35:58-04:00">Thu, Jun 6 2013 2:35 am EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_58029">
+<div class="faq-question">
+<a href="#project_faq_58029" name="project_faq_58029">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Why don’t you make a sequel to The Neverhood?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>A sequel would be a blast, but unfortunately, we don’t own the rights to The Neverhood. When we made the original game for Dreamworks Interactive, we had to assign the rights over to them to in order to get the funding for the project. Now, E.A. owns those rights. We’ve tried over the years to get the rights back from E.A., and while they’ve always been appreciative of our interest, they’ve chosen not to do anything with it for now.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-05-30T18:50:16-04:00">Thu, May 30 2013 6:50 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_58032">
+<div class="faq-question">
+<a href="#project_faq_58032" name="project_faq_58032">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">What are Add-Ons?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Add-Ons are additional items you can add to a tier you have already selected. By making an additional pledge to your tier, you can receive additional items listed in the &quot;Add-On&quot; section. For example, if you&#39;ve selected the $45 tier, and you&#39;d like to also receive the $20 Chumpy-Cam, you would click the &quot;Manage Your Pledge&quot; button and make an additional pledge of $20. Once the campaign has ended, you will receive a survey where you can specify the item you have added on. </p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-06-06T16:48:41-04:00">Thu, Jun 6 2013 4:48 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_58030">
+<div class="faq-question">
+<a href="#project_faq_58030" name="project_faq_58030">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Will there be additional tiers added?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Yes! A lot of you international supporters have requested higher digital-only tiers, which we will be making. We’ve also got some other great additions in the works as well.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-05-30T18:50:16-04:00">Thu, May 30 2013 6:50 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_58033">
+<div class="faq-question">
+<a href="#project_faq_58033" name="project_faq_58033">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Will Armikrog be translated into other languages?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Yes! The game will be available in French, Italian, German, Spanish, Russian and Polish.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-06-26T03:16:29-04:00">Wed, Jun 26 2013 3:16 am EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_58034">
+<div class="faq-question">
+<a href="#project_faq_58034" name="project_faq_58034">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Will the boxed editions be the big, old-school boxed (Yes)</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Yes! Check out the &quot;Rewards&quot; section to see the mockup of the boxed edition (design not finalized). </p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-06-06T02:23:57-04:00">Thu, Jun 6 2013 2:23 am EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_58035">
+<div class="faq-question">
+<a href="#project_faq_58035" name="project_faq_58035">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Will Armikrog be available for other gaming platforms besides PC, MAC and LINUX?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>If we reach our stretch goal of $950,000 we will also be developing Armikrog for the Wii-U. This version of the game will be available for digital download through the Nintendo eShop.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-06-26T03:16:29-04:00">Wed, Jun 26 2013 3:16 am EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_58036">
+<div class="faq-question">
+<a href="#project_faq_58036" name="project_faq_58036">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Will there be any CG in this game?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Some. The design of the game will require some CG, but we’ll use it sparingly, and only in support of the stop motion. Our main focus is on puppet animation…and tons of clay!</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-05-30T18:55:51-04:00">Thu, May 30 2013 6:55 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_58037">
+<div class="faq-question">
+<a href="#project_faq_58037" name="project_faq_58037">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Can I change my pledge once I’ve made it?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Yes! You can change your pledge at any time by clicking the “Manage Your Pledge” button, at the right of the screen.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-05-30T18:55:51-04:00">Thu, May 30 2013 6:55 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_58038">
+<div class="faq-question">
+<a href="#project_faq_58038" name="project_faq_58038">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Will you be offering any Neverhood related rewards? (No)</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>No. Since we don’t own the rights to The Neverhood, we can’t offer any Neverhood related rewards.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-06-06T02:35:58-04:00">Thu, Jun 6 2013 2:35 am EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_59143">
+<div class="faq-question">
+<a href="#project_faq_59143" name="project_faq_59143">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Where do I tell you my T-shirt size?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Once the campaign has ended, you will receive a survey where you can specify your T-shirt size.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-06-10T18:18:10-04:00">Mon, Jun 10 2013 6:18 pm EDT</time>
+</div>
+</div>
+</li>
+
+</ul>
+<div class="faq-ask-box">
+<a href="/projects/armikrog/armikrog/messages/new?message%5Bto%5D=armikrog&amp;mode=FAQ" class="button button_blue remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Ask a question about Armikrog.">Ask a question</a>
+
+</div>
+</div>
+
+<div class="mt4 ml1 mr1 mb2" id="report-issue-wrap">
+<a href="/login?then=%2Fprojects%2Farmikrog%2Farmikrog" class="button button_grey">Report this project to Kickstarter</a>
+</div>
+</div>
+<div class="NS-projects-rightcol grid_5" id="rightcol">
+<div class="NS_projects__ecom">
+<div class="digits_6 pb2 pl2 pt2" id="stats">
+<h5>
+<div class="num h48 no-margin" data-backers-count="18126" id="backers_count"><data class="Project1421442073" data-format="number" data-value="18126" itemprop="Project[backers_count]">18,126</data></div>
+<span><data class="Project1421442073" data-attr="backers_count" data-format="pluralize" data-value="18126" data-word="Backer">Backers</data></span>
+</h5>
+<h5>
+<div class="num h48 no-margin" data-goal="900000.0" data-percent-raised="1.082864455555555555555555556" data-pledged="974578.01" id="pledged">
+<data class="Project1421442073" data-currency="USD" data-format="shorter_money" data-precision="0" data-value="974578" data-without_code="true" itemprop="Project[pledged]">$974,578</data>
+<span class="money usd project_currency_code"></span>
+</div>
+pledged of
+<span class="money usd no-code">$900,000</span>
+goal
+</h5>
+<span data-duration="30.0" data-end_time="2013-06-27T12:07:41-04:00" data-hours-remaining="0" id="project_duration_data"></span>
+<div class="Project1421442073" data-conditions="[{&quot;!state&quot;:[&quot;canceled&quot;,&quot;suspended&quot;]}]" data-evaluation="true" data-render="&quot;&lt;h5 class=\&quot;poll \&quot; data-dynamic=\&quot;5\&quot; data-end_time=\&quot;2013-06-27T12:07:41-04:00\&quot; data-poll_url=\&quot;https://d2oher2uhvl0ur.cloudfront.net/projects/armikrog/armikrog/stats.json\&quot;&gt;\n&lt;div class=\&quot;num h48 no-margin\&quot;&gt;0&lt;/div&gt;\n&lt;span class=\&quot;text\&quot;&gt;seconds to go&lt;/span&gt;\n&lt;/h5&gt;\n&quot;"><h5 class="poll " data-dynamic="5" data-end_time="2013-06-27T12:07:41-04:00" data-poll_url="https://d2oher2uhvl0ur.cloudfront.net/projects/armikrog/armikrog/stats.json">
+<div class="num h48 no-margin">0</div>
+<span class="text">seconds to go</span>
+</h5>
+</div></div>
+<div class="Project1421442073" data-conditions="[{&quot;state&quot;:&quot;live&quot;},{&quot;!ended?&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;pr2 pl2\&quot; id=\&quot;pledge-wrap\&quot;&gt;\n&lt;a href=\&quot;/projects/armikrog/armikrog/pledge/new?clicked_reward=false\&quot; class=\&quot;button button_green button_box button_block\&quot; id=\&quot;button-back-this-proj\&quot; title=\&quot;Back this project\&quot;&gt;Back This Project &lt;small class=&#39;h6 normal block green-dark&#39;&gt;&lt;span class=\&quot;money usd \&quot;&gt;$1&lt;/span&gt; minimum pledge&lt;/small&gt;&lt;/a&gt;\n&lt;/div&gt;\n&quot;"></div><div class="Project1421442073" data-conditions="[{&quot;state&quot;:&quot;live&quot;}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;p2\&quot; id=\&quot;banner\&quot;&gt;\n&lt;p class=\&quot;tiny_type no-margin\&quot;&gt;\nThis project will be funded on\n&lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;llll z\&quot; datetime=\&quot;2013-06-27T12:07:41-04:00\&quot;&gt;Thu, Jun 27 2013 12:07 pm EDT&lt;/time&gt;.\n&lt;/p&gt;\n&lt;/div&gt;\n&quot;"></div></div>
+
+<div class="NS_projects__rightcol_projectby bg-blue-light rounded">
+<div class="p2 clearfix">
+<div class="avatar inline-block align-middle">
+<a href="/projects/armikrog/armikrog/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography"><img alt="Pts_avatar01.small" class="avatar-small" height="80" src="https://s3.amazonaws.com/ksr/avatars/315854/PTS_Avatar01.small.jpg?1369852921" width="80" />
+</a></div>
+<div class="creator-name inline-block align-middle ml1">
+<h6 class="mb1">Project by</h6>
+<h5 class="mb1">
+<a href="/projects/armikrog/armikrog/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">Pencil Test Studios, Inc.</a>
+</h5>
+<p class="location h6 bold mb1">
+<a href="/discover/places/lake-forest-orange-ca">Lake Forest, CA</a>
+</p>
+</div>
+</div>
+<div class="creator-details pl2 pr2 pb1">
+<ul class="list-simple h5 mb1">
+<li class="projects">
+<span class="ss-icon ss-kickstarter grey-dark margin-right"></span>
+<span class="text">
+First created
+<span class="divider">&middot;</span>
+<a href="/profile/armikrog/backed" class="green-dark bold more-button remote_modal_dialog" data-modal-title="Projects backed by Pencil Test Studios, Inc.">19 backed</a>
+</span>
+</li>
+<li>
+<span class="ss-icon ss-facebook margin-right grey-dark"></span>
+<span class="text">
+Has not connected Facebook
+</span>
+</li>
+<li class="links">
+<span class="ss-icon ss-globe margin-right grey-dark"></span>
+<span class="text">
+<a href="http://www.armikrog.com" class="popup" rel="nofollow" target="_blank">armikrog.com</a>
+</span>
+</li>
+</ul>
+</div>
+<div class="footer center h5 bold clearfix rounded-bottom clip">
+<a href="/projects/armikrog/armikrog/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">See full bio</a>
+<a href="/projects/armikrog/armikrog/messages/new?message%5Bto%5D=armikrog" class="remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Send a message to Pencil Test Studios, Inc.">Contact me</a>
+
+</div>
+</div>
+
+<ul class="NS-projects-rightcol-rewards rounded clip list mt2" data-reward-count="28" id="what-you-get">
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$5</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+587 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>ARMIKROG SUPPORTER (DIGITAL)
+-------------------------------------------------
+Thank you! Your support helps get us closer to making ARMIKROG a reality! You&#39;ll receive a hi-rez digital download AMRIKROG desktop image painted by Earthworm Jim poster artist - Mike Koelsch!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-07-01">Jul 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$20</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+7002 backers
+</span>
+<span class="bg-grey no-wrap pl1 pr1 sold-out">
+All gone!
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>THE ARIMKROG GAME - EARLY EXPLORER (DIGITAL)
+-------------------------------------------------
+A special price for you early supporters! You&#39;ll receive a DRM-free digital download of the ARMIKROG game for PC, MAC or LINUX (distributed though Steam and/or other comparable download venues). PLUS the hi-rez desktop image painted by Earthworm Jim poster artist - Mike Koelsch, and a THANK YOU for your support!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-07-01">Jul 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$25</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+3389 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>THE GAME (DIGITAL) - You&#39;ll receive a DRM-free digital download of the ARMIKROG game (distributed though Steam and/or other comparable download venues) for PC, MAC or LINUX. PLUS the hi-rez desktop image painted by Earthworm Jim poster artist - Mike Koelsch, and a THANK YOU for your support!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-07-01">Jul 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$30</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+670 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>THE ART AND SOUNDS OF ARMIKROG (DIGITAL)
+-------------------------------------------------
+You&#39;ll receive a 100 page digital download (PDF) of concept art used to create the ARMIKROG game and universe, PLUS a digital download sampler of 3 original songs from the ARMIKROG soundtrack, written and performed by TERRY S. TAYLOR. Terry was the composer of the original Neverhood soundtrack, so you know his music will inspire and amaze! PLUS all previous reward tiers!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-07-01">Jul 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$35</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+836 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>ARMIKROG COMIC BOOK BY DOUG TENNAPEL + BEHIND THE SCENES MINI DOCUMENTARY (DIGITAL)
+-------------------------------------------------
+You&#39;ll receive a digital download (PDF) of the 24 page, full color ARMIKROG comic book created for YOU, the supporters! PLUS a digital download of the &quot;making-of&quot; mini documentary (approx. 20 min. long). This includes interviews with the team, and an exclusive look at what it takes to create a clay and puppet animated game! PLUS all previous reward tiers!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-07-01">Jul 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$45</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1070 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>FULL ORIGINAL SOUNDTRACK (DIGITAL)
+-------------------------------------------------
+You&#39;ll receive a digital download of the full original ARMIKROG soundtrack, written and performed by TERRY S. TAYLOR. PLUS all previous reward tiers!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-07-01">Jul 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$50</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1097 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>ANIMATOR&#39;S SCRAP HEAP + DELUXE DOCUMENTARY (DIGITAL)
+-------------------------------------------------
+You&#39;ll receive a 50 page digital download (PDF) of animation sketches, notes,  exposure sheets, pencil test drawings, and other animation related artwork! PLUS a digital download of the deluxe &quot;making-of&quot; documentary (approx. 60 min. long). This includes additional behind the scenes footage, more interviews, and outtakes. PLUS all previous reward tiers!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-07-01">Jul 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$60</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+572 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>DEVELOPERS COMMENTARY + DANCE MIXES (DIGITAL)
+-------------------------------------------------
+You&#39;ll receive a digital download of game footage with audio commentary from Michael J. Nelson (Rifftrax / MST3K) and the ARMIKROG development team (approx. 60 min. long). PLUS exclusive dance mixes of songs from the ARMIKROG soundtrack!. PLUS all previous reward tiers!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-07-01">Jul 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$75</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+418 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>ARMIKROG &quot;ASTRONAUT HANDBOOK&quot; + PRINTED AMRIKROG COMIC BOOK by Doug TenNapel (PHYSICAL)
+-------------------------------------------------
+You&#39;ll receive a digital download of the 100 page written novel by The Neverhood&#39;s &quot;Wall of Records&quot; authors--Doug TenNapel and Mark Lorenzen! PLUS a PRINTED VERSION of the 24 page, ARMIKROG comic book. This LIMITED EDITION comic will ONLY be avalible for Kickstarter supporters. PLUS all previous reward tiers!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-07-01">Jul 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $5 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$90</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+475 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>BOXED EDITION (PHYSICAL)
+-------------------------------------------------
+This boxed version includes a DVD of the ARMIKROG game along with the printed manual. PLUS all previous reward tiers!. (Free shipping in the U.S. Please add $15 for international shipping).</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-07-01">Jul 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $15 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$125</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+791 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>BOXED EDITION COLLECTOR&#39;S SET (PHYSICAL)
+-------------------------------------------------
+Includes everything from the $75 tier, PLUS a DVD of the ARMIKROG game and printed manual, the BEHIND THE SCENES documentary on DVD, and a CD of the TERRY S.TAYLOR soundtrack, together in a boxed set. (Free shipping in the U.S. Please add $20 for international shipping).</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-07-01">Jul 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $20 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$130</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+100 backers
+</span>
+<span class="bg-grey no-wrap pl1 pr1 sold-out">
+All gone!
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>TENNAPEL&#39;S SKETCHBOOK ARCHIVES (PHYSICAL)
+-------------------------------------------------
+You&#39;ll get a digital copy of the Armikrog game with this FINAL OFFERING of Doug TenNapel&#39;s &quot;Sketchbook Archives&quot; to the public! Comes signed, with a doodle of Beak-Beak inside. This is a stand alone tier, but you can still buff it out with Add-Ons. (Free shipping in the U.S. Please add $23 for Canada &amp; Mexico, $33 for all other international orders).</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-07-01">Jul 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $33 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$150</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+70 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(230 left of 300)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>YOU CREATE A NAME FOR AN ITEM + &quot;GUARDIAN OF GOODS&quot; GAME CREDIT + THE &quot;ASTRONAUT HANDBOOK&quot; (ALL DIGITAL) ------------------------------------------------- Includes everything from the $60 tier, PLUS you&#39;ll create a name for an ITEM that will be included in the Armikrog Histories within the game (subject to approval by Pencil Test Studios). Your item could be a weapon, tool, magical scroll, or a variety of other things! PLUS you&#39;ll receive your name listed in the game credits as a &quot;Guardian of the Goods&quot; noting the item you named. PLUS you&#39;ll receive a digital download of the &quot;Astronaut Handbook,&quot; the 100 page written novel by The Neverhood&#39;s &quot;Wall of Records&quot; authors--Doug TenNapel and Mark Lorenzen!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-07-01">Jul 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$200</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+275 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>BOXED EDITION COLLECTOR&#39;S SET + KICKSTARTER EXCLUSIVE ARMIKROG T-SHIRT + YOUR NAME IN THE GAME CREDITS (PHYSICAL) 
+-------------------------------------------------
+Includes everything from the $75 tier, PLUS a DVD of the ARMIKROG game and printed manual, the BEHIND THE SCENES documentary on DVD, and a CD of the TERRY S.TAYLOR soundtrack, together in a boxed set. PLUS you&#39;ll receive a T-shirt designed exclusively for Kickstarter supporters (please specify XXL, XL, L, M, or S). PLUS a special thanks in the game credits! (Free shipping in the U.S. Please add $20 for international shipping).</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-07-01">Jul 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $20 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$250</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+27 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(173 left of 200)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>YOU CREATE A NAME FOR AN ASTRONAUT + &quot;ARMIKROG ASTRONAUT&quot; GAME CREDIT + THE &quot;ASTRONAUT HANDBOOK&quot; (ALL DIGITAL) ------------------------------------------------- Includes everything from the $60 tier, PLUS you&#39;ll create a name for an ASTRONAUT that will be listed in the Armikrog Histories within the game (subject to approval by Pencil Test Studios). PLUS you&#39;ll receive your name listed in the game credits as an &quot;Armikrog Astronaut&quot; noting the character you named. PLUS you&#39;ll receive a digital download of the &quot;Astronaut Handbook,&quot; the 100 page written novel by The Neverhood&#39;s &quot;Wall of Records&quot; authors--Doug TenNapel and Mark Lorenzen!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-07-01">Jul 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$350</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+136 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(864 left of 1000)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>ULTIMATE LIMITED EDITION BOXED COLLECTOR&#39;S SET SIGNED (FOR BACKERS ONLY) +  KICKSTARTER EXCLUSIVE ARMIKROG T-SHIRT + &quot;HONORARY DEVELOPMENT TEAM MEMBER&quot; GAME CREDIT (PHYSICAL)
+-------------------------------------------------
+Includes everything from the $75 tier, PLUS a signed and numbered LIMITED RUN, LIMITED EDITION boxed set of the GAME, BEHIND THE SCENES and SOUNDTRACK. This collectors edition has unique artwork and packaging (different than the BOXED EDITION COLLECTOR&#39;S SET) and will ONLY be available to Kickstarter supporters. This set will not be available once the campaign has ended. PLUS you&#39;ll receive a T-shirt designed exclusively for Kickstarter supporters (please specify XXL, XL, L, M, or S). PLUS you&#39;ll have your name in the game credits as &quot;Honorary Development Team Member&quot;! (Free shipping in the U.S. Please add $20 for international shipping).</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-07-01">Jul 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $20 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$400</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+8 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(92 left of 100)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>YOU CREATE THE BACKSTORY FOR A CHARACTER + &quot;CURATOR OF HISTORIES&quot; GAME CREDIT + THE &quot;ASTRONAUT HANDBOOK&quot; (ALL DIGITAL) ------------------------------------------------- Includes everything from the $60 tier, PLUS you&#39;ll write a backstory for a character (approx. 1 paragraph) that will be included in the Armikrog Histories within the game (subject to approval by Pencil Test Studios - edited by Doug TenNapel). We&#39;ll give you an image or a physical description of the character, and you create the backstory! PLUS you&#39;ll receive your name listed in the game credits as a &quot;Curator of Histories&quot; noting the character you&#39;ve chronicled. PLUS you&#39;ll receive a digital download of the &quot;Astronaut Handbook,&quot; the 100 page written novel by The Neverhood&#39;s &quot;Wall of Records&quot; authors--Doug TenNapel and Mark Lorenzen!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-07-01">Jul 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$495</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+8 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(92 left of 100)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>YOUR NAME IN A SONG BY TERRY S. TAYLOR (+ PHYSICAL)
+-------------------------------------------------
+Includes everything from the $90 tier (PHYSICAL), PLUS your name will be sung in the “Name Song” by Terry S. Taylor! For those who choose this tier, Terry will be composing and performing a song where he will include the names of all those who support this tier. Have your name be forever sung on the Armikrog soundtrack! You can use your own name (first and last), or the name of a loved one or friend. One full name per pledge.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-07-01">Jul 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $15 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+44 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(456 left of 500)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>BEAUTIFULLY PRINTED ARMIKROG &quot;ASTRONAUT HANDBOOK&quot; (PHYSICAL)
+-------------------------------------------------
+Includes everything from the $350 tier, PLUS a LIMITED RUN beautifully printed and bound version of the 100 page written novel by The Neverhood&#39;s &quot;Wall of Records&quot; authors--Doug TenNapel and Mark Lorenzen. (Free shipping in the U.S. Please add $20 for international shipping).</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-07-01">Jul 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $20 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$650</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+6 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(194 left of 200)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>ORIGINAL SIGNED PENCIL TEST DRAWING
+(PHYSICAL)
+-------------------------------------------------
+Includes everything from the $500 tier, PLUS an original ARMIKROG pencil test drawing used in the production of the game. These hand drawn animation images are used to plan out how a character moves, acts or reacts. Each drawing is unique to a specific character and their movement. (Free shipping in the U.S. Please add $20 for international shipping).</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-07-01">Jul 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $20 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$1,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+18 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(12 left of 30)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>YOUR NAME IN AN ARMIKROG PUZZLE
+-------------------------------------------------
+Includes everything from the $650 tier, PLUS your name will be etched in eternity into the wall of a secret room dedicated only to those who support this tier.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-07-01">Jul 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$1,500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+3 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(22 left of 25)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>ORIGINAL PRODUCTION SETPIECE USED IN THE ARMIKROG GAME
+-------------------------------------------------
+Includes everything from the $650 tier, PLUS you&#39;ll receive a setpiece that was used in the production of the game. Own a physical piece of the ARMIKROG world!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-07-01">Jul 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$2,500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+5 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(15 left of 20)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>LIMITED EDITION TOMMYNAUT &amp; BEAK-BEAK SCULPTED STATUETTE (10&quot; tall)
+-------------------------------------------------
+Includes everything from the $650 tier, PLUS a LIMITED EDITION statuette sculpted by Disney character sculptor TONY CIPRIANO. This cast of Tommynaut (our Hero) and Beak-Beak (Tommynaut&#39;s trusted companion) is approx. 10 inches tall and is hand painted by the ARMIKROG production team.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-07-01">Jul 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$3,500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+5 backers
+</span>
+<span class="bg-grey no-wrap pl1 pr1 sold-out">
+All gone!
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>YOU NAME A WORLD + DEVELOPERS SKYPE SESSION + &quot;ADDITIONAL DESIGN&quot; GAME CREDIT
+-------------------------------------------------
+Includes everything from the $2500 tier, PLUS you&#39;ll have a 20 minute SKYPE session with Doug TenNapel, Mike Dietz and Ed Schofield where you pitch your name ideas for a world that will end up in the AMRIKROG universe. PLUS you&#39;ll receive &quot;additional design&quot; credit!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-07-01">Jul 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$4,500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+5 backers
+</span>
+<span class="bg-grey no-wrap pl1 pr1 sold-out">
+All gone!
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>YOUR LIKENESS IN THE GAME + A SCULPTURE OF YOU + YOU NAME YOUR STATUE + “ADDITIONAL DESIGN” GAME CREDIT ------------------------------------------------- Includes everything from the $2500 tier, PLUS your likeness will be caricatured, sculpted and featured as a statue in the “Exalted Heroes” section of the Armikrog Histories. PLUS your name (or a name of your choice - subject to approval by Pencil Test Studios) will be featured on the base of the statue. PLUS you&#39;ll receive the actual statue of you used in the game (approx. 9 inches tall). PLUS you’ll receive &quot;additional design&quot; credit!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-07-01">Jul 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$4,500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(4 left of 5)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>BEAK-BEAK PRODUCTION PUPPET + &quot;BEAK-BEAK WRANGLER&quot; GAME CREDIT + A &quot;CREW&quot; T-SHIRT ------------------------------------------------- Includes everything from the $2500 tier, PLUS a Beak-Beak  production puppet used in the game -- suitable for display or animation! PLUS your name will be listed in the credits as &quot;Beak-Beak Wrangler&quot; PLUS an ARMIKROG &quot;CREW&quot; t-shirt!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-07-01">Jul 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$6,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+2 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(3 left of 5)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>ARMIKROG PRODUCTION PUPPET + A &quot;CREW&quot; T-SHIRT
+-------------------------------------------------
+Includes everything from the $2500 tier, PLUS a Tommynaut foam latex production puppet used in the game -- suitable for display or animation! PLUS an ARMIKROG &quot;CREW&quot; t-shirt!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-07-01">Jul 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$10,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+3 backers
+</span>
+<span class="bg-grey no-wrap pl1 pr1 sold-out">
+All gone!
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>YOU ANIMATE ON THE GAME + STUDIO VISIT + A STOP MOTION ANIMATION LESSON + &quot;ADDITIONAL ANIMATION&quot; GAME CREDIT + A DELICIOUS MEAL + 10 SIGNED COPIES OF THE &quot;ULTIMATE LIMITED EDITION BOXED COLLECTOR&#39;S SET&quot;
+-------------------------------------------------
+For your generous pledge, we want to meet you in person! This reward includes everything from the $6,000 tier, PLUS come visit Pencil Test Studios for a day: You&#39;ll get a tutorial on stop-motion animation, and YOU will animate a sequence that will end up in the game, PLUS you&#39;ll receive &quot;additional animation&quot; credit, PLUS an ARMIKROG &quot;CREW&quot; t-shirt, PLUS we&#39;ll take you out for a delicious meal, PLUS you&#39;ll receive 10 additional copies of the &quot;ULTIMATE LIMITED EDITION BOXED COLLECTOR&#39;S SET&quot; to give to your family and friends. Whew! (Travel and accommodations not included--must be able to travel to Lake Forest, CA).</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-07-01">Jul 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+</ul>
+
+<div class="p2" id="meta">
+<h5>Funding period</h5>
+<p class="tiny_type">
+<time class="js-adjust" data-format="ll" datetime="2013-05-28T12:07:41-04:00">May 28, 2013</time> - 
+<time class="js-adjust" data-format="ll" datetime="2013-06-27T12:07:41-04:00">Jun 27, 2013</time>
+(30 days)
+</p>
+</div>
+</div>
+
+</div>
+
+<a href="#" id="video_mode_tab" style="display: none;">
+View in Video Mode
+</a>
+
+</div>
+</div>
+
+
+</div>
+
+<div class="h5 bg-green-dark" id="mega-footer-wrap">
+<div class="bg-green-dark white full-height" id="footer-newsletter-signup">
+<div class="container py4">
+<div class="grid_8 prefix_4 suffix_4 center mt4">
+<h2>
+Eureka! You've found
+<br>
+our little secret.
+</h2>
+<p>Sign up for our Happening email for all the inside info about arts and culture in the Kickstarter universe and beyond.</p>
+<div class="newsletter_signup">
+<form accept-charset="UTF-8" action="/newsletters/happening/signup" class="overlabels" method="post"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /><input class="hidden" name="authenticity_token" type="hidden" value="iJfip0dL8eki0G6t/BAAJfQCn87dDCJ/oC20Ace/Izo=" /></div><input class="hidden" id="location" name="location" type="hidden" value="footer" />
+<textarea class="hide textarea" id="comment" name="comment">
+</textarea>
+<div class="field newsletter">
+<label class="overlabel z1 overlabel-newsletter">Email address</label>
+<input class="text" id="email" name="email" type="text" />
+</div>
+<input class="button button_green submit" name="commit" type="submit" value="Submit" />
+</form>
+
+</div>
+
+</div>
+</div>
+</div>
+<div class="container relative" id="mega-footer">
+<span class="scissors icon-scissors-1"></span>
+<div class="grid_16 alpha omega pt4 pb2" id="mega-footer-links">
+<div class="grid_4 link-group">
+<h5 class="white">About us</h5>
+<ul class="list">
+<li><a href="/year/2013/?ref=footer">2013 highlights</a></li>
+<li><a href="/year/2012?ref=footer">2012 highlights</a></li>
+<li><a href="/team?ref=footer">Who we are</a></li>
+<li><a href="/jobs?ref=footer">Jobs</a></li>
+<li><a href="/press?ref=footer">Press</a></li>
+<li><a href="/help/stats?ref=footer">Stats</a></li>
+<li><a href="/newsletters/weekly">Projects we love</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group">
+<h5><a href="/help?ref=footer" class="white">Help</a></h5>
+<ul class="list">
+<li><a href="/hello?ref=footer">What is Kickstarter?</a></li>
+<li><a href="/help?ref=footer">FAQ</a></li>
+<li><a href="/contact?ref=footer">Support</a></li>
+<li><a href="/help/school?ref=footer">Kickstarter School</a></li>
+<li><a href="/terms-of-use?ref=footer">Terms of Use</a></li>
+<li><a href="/privacy?ref=footer">Privacy Policy</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group alpha omega suffix_1">
+<h5 class="alpha"><a href="/discover/advanced?ref=footer" class="white">Discover</a></h5>
+<ul class="column column-0 grid_2 list">
+<li><a href="/discover/categories/art?ref=footer">Art</a></li>
+<li><a href="/discover/categories/comics?ref=footer">Comics</a></li>
+<li><a href="/discover/categories/dance?ref=footer">Dance</a></li>
+<li><a href="/discover/categories/design?ref=footer">Design</a></li>
+<li><a href="/discover/categories/fashion?ref=footer">Fashion</a></li>
+<li><a href="/discover/categories/film%20&amp;%20video?ref=footer">Film &amp; Video</a></li>
+<li><a href="/discover/categories/food?ref=footer">Food</a></li>
+</ul>
+<ul class="column column-1 grid_2 list">
+<li><a href="/discover/categories/games?ref=footer">Games</a></li>
+<li><a href="/discover/categories/music?ref=footer">Music</a></li>
+<li><a href="/discover/categories/photography?ref=footer">Photography</a></li>
+<li><a href="/discover/categories/publishing?ref=footer">Publishing</a></li>
+<li><a href="/discover/categories/technology?ref=footer">Technology</a></li>
+<li><a href="/discover/categories/theater?ref=footer">Theater</a></li>
+</ul>
+</div>
+<div class="grid_3 link-group">
+<h5 class="white">Hello</h5>
+<ul class="list">
+<li>
+<a href="https://twitter.com/kickstarter"><span class="ss-icon ss-social-regular ss-twitter"></span>
+Twitter
+</a></li>
+<li>
+<a href="https://www.facebook.com/Kickstarter"><span class="ss-icon ss-social-regular ss-facebook"></span>
+Facebook
+</a></li>
+<li>
+<a href="http://kickstarter.tumblr.com"><span class="ss-icon ss-social-regular ss-tumblr"></span>
+Tumblr
+</a></li>
+<li>
+<a href="http://instagram.com/kickstarter"><span class="ss-icon ss-social-regular ss-instagram"></span>
+Instagram
+</a></li>
+<li>
+<a href="https://vine.co/Kickstarter"><span class="ss-icon ss-social-regular ss-vine"></span>
+Vine
+</a></li>
+<li>
+<a href="/blog?ref=footer">Blog</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="grid_16 py4" id="mega-footer-bottom">
+<div class="logo left">
+<a href="/" class="grey-dark"><span class="ss-icon h3">KICKSTARTER</span>
+</a></div>
+<p class="right h5 grey-dark">
+&copy;
+2014
+Kickstarter, Inc.
+</p>
+</div>
+</div>
+</div>
+
+<script>
+  //<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    var analytics_vars = { google_analytics_id : "UA-7621056-1", logged_in : "false", social_user: "false" }
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.mixpanel_id = '75b1d24a516ecfc955eadfadc4910661';
+    window.mixpanel_debug = false;
+  //]]>
+</script>
+
+
+<noscript>
+<img alt="Quantcast" border="0" height="1" src="//secure.quantserve.com/pixel/p-34IbSpw2K94Sg.gif" style="display:none" width="1" />
+</noscript>
+
+
+<script>
+  //<![CDATA[
+    window.benchmark = (typeof window.performance == 'object' && typeof window.performance.mark == 'function');
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    (function (root) {
+      function instrument_function (original) {
+        return function () {
+          try {
+            return original.apply(this, arguments);
+          } catch (e) {
+            if (e.stack && root.Honeybadger) {
+              Honeybadger.notify(e, {
+                current_project : root.current_project,
+                current_user : root.current_user
+              });
+            }
+            throw(e);
+          }
+        };
+      }
+      root.instrument_function = instrument_function;
+    }(this));
+  //]]>
+</script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+
+<script>
+  //<![CDATA[
+    (function(){function c(a){this.local_start_time=new Date;this.settings={cookie_name:"request_time"};for(var b in a)this.settings[b]=a[b];this.get_remote_offset()}c.prototype.get_remote_offset=function(){this.cookie_value=this.read_cookie();var a=new Date(this.cookie_value);if(!this.cookie_value||"Invalid Date"===a.toString()){if(this.remote_offset=this.read_cookie("local_offset"))this.remote_offset=parseInt(this.remote_offset,10)}else this.remote_offset=a-this.local_start_time;"undefined"!==typeof this.remote_offset&& !isNaN(this.remote_offset)?(document.cookie="local_offset="+this.remote_offset+"; path=/",this.is_set=!0):this.is_set=!1};c.prototype.time_units=[["milliseconds",1],["seconds",1E3],["minutes",6E4],["hours",36E5],["days",864E5]];c.prototype.get_units_in_interval=function(a,b){var d=a.replace(/^\w/,function(d){return"get"+d.toUpperCase()});return b[d]()};c.prototype.milliseconds_in_day=function(a){"undefined"===typeof a&&(a=new Date);for(var b=0,d=this.time_units.length-2;0<=d;d--)b+=this.get_units_in_interval(this.time_units[d][0], a)*this.time_units[d][1];return b};c.prototype.milliseconds_in_interval=function(a,b){return this.milliseconds_in_day(b)%a};c.prototype.milliseconds_to_next_interval=function(a,b){return a-this.milliseconds_in_interval(a,b)};c.prototype.pluralize=function(a,b){1===b&&(a=a.replace(/s$/,""));return a};c.prototype.read_cookie=function(a){for(var b=window.document.cookie.split(";"),a=(a||this.settings.cookie_name)+"=",d=0;d<b.length;d++){for(var e=b[d];" "==e.charAt(0);)e=e.substring(1,e.length);if(0== e.indexOf(a))return b=e.substring(a.length,e.length),decodeURIComponent(b).replace(/\+/g," ")}return null};c.prototype.destroy_cookie=function(a){var b=new Date;a||(a=this.settings.cookie_name);b.setTime(b.getTime()-864E5);window.document.cookie=a+"=; expires="+b.toGMTString()+"; path=/"};c.prototype.get_remote_time=function(){var a=new Date,b=a.getTime()+this.remote_offset;return a=a.setTime(b)};window.ksr_page_clock=new c})(); (function(){function c(d,a,b){if(d){this.options={unit_base:{seconds:119,minutes:119,hours:72,days:0},end_phrase:d.getAttribute("data-word")||"to go",count_down:d.getAttribute("data-dynamic")||!1};for(k in b)this.options[k]=b[k];this.clock=a;this.time_units=this.clock.time_units.slice(1);this.element=d;this.clock.is_set&&this.attach()}}function a(){this.elements=[];this.attach()}var b=function(d,a){var b=a||window.document.body,c=d.split("."),g=c[c.length-1],c=1<c.length&&c[0]?c[0]:"*";if(window.document.getElementsByClassName)return b.getElementsByClassName(g); if(b.querySelectorAll)return b.querySelectorAll(d);for(var c=b.getElementsByTagName(c),h=[],i=0,f;f=c[i];i++)b=RegExp("(^|\\s)"+g+"(\\s|$)"),(""+f.className).match(b)&&h.push(f);return h};c.prototype.get_remaining_time=function(){var d=this.remote_end_time-this.clock.get_remote_time();0>d&&(d=0);return d};c.prototype.get_current_unit=function(){for(var d,a=0;a<this.time_units.length&&!(d=this.time_units[a],this.get_remaining_time()<=this.options.unit_base[d[0]]*d[1]);a++);return d};c.prototype.update_element= function(){var a=this.get_current_unit(),b=Math.floor(this.get_remaining_time()/a[1]);isNaN(b)||(this.number_element.innerHTML=b,this.text_element.innerHTML=this.clock.pluralize(a[0],b)+" "+this.options.end_phrase)};c.prototype.valid=function(){return!(!this.number_element||!this.text_element)};c.prototype.attach=function(){function a(){c.update_element();if(c.options.count_down&&0<c.get_remaining_time()){var b=c.get_current_unit();this.timeout=window.setTimeout(a,c.clock.milliseconds_to_next_interval(b[1]))}} var c=this;if(this.remote_end_time_string=this.element.getAttribute("data-end_time"))this.remote_end_time_string.match(/^\d+$/)?(this.remote_end_time=new Date,this.remote_end_time.setTime(this.remote_end_time_string)):this.remote_end_time=new Date(this.remote_end_time_string),this.number_element=b(".num",this.element)[0],this.text_element=b(".text",this.element)[0],this.element.ksr_page_timer=!0,this.valid()&&a()};c.prototype.cancel=function(){this.timeout&&clearTimeout(this.timeout)};a.prototype.loading= !0;a.prototype.stop_finding=function(){this.attach_timers();this.loading=!1;document.addEventListener?document.removeEventListener("DOMContentLoaded",this.stop_finding,!1):document.attachEvent&&"complete"===document.readyState&&document.detachEvent("onreadystatechange",this.stop_finding)};a.prototype.bind_ready=function(){var a=this,b=function(){a.stop_finding.call(a)};document.addEventListener?(document.addEventListener("DOMContentLoaded",b,!1),window.addEventListener("load",b,!1)):document.attachEvent&& (document.attachEvent("onreadystatechange",b),window.attachEvent("onload",b))};a.prototype.attach_timers=function(){for(var a=b("div.ksr_page_timer"),e=0;e<a.length;e++)a[e].ksr_page_timer||(new c(a[e],window.ksr_page_clock),this.elements.push(a[e]))};a.prototype.attach=function(){var a=this;this.bind_ready();(function(){a.attach_timers();a.loading&&window.setTimeout(function(){a.attach_timers()},200)})()};window.ProjectTimer=c;new a})();
+  //]]>
+</script>
+
+<script class="template" id="template-widgets__video_embed_code" type="text/x-tmpl-mustache"><iframe width="{{width}}" height="{{height}}" src="{{{path}}}" frameborder="0" scrolling="no"> </iframe>
+</script><script class="template" id="template-projects__baseball_card_tall" type="text/x-tmpl-mustache"><div class="project-card-wrap project-card-wrap-tall border bg-white rounded clip">
+  <div class="project-card relative project-live {{#successful?}}successful{{/successful?}}">
+    <div class="project-thumbnail pt1 pl1 pr1">
+      <a href="{{urls.web.project}}" target="">
+        <img alt="Photo-little" class="projectphoto-little" src="{{photo.little}}" class="fit">
+      </a>
+    </div>
+    <div class="project-card-interior p1 h6 grey-dark">
+      <h6 class="project-title">
+        <a href="{{urls.web.project}}" target="" class="green-dark">{{name}}</a>
+      </h6>
+      <p class="mb1 ellipsis">
+        by
+        {{creator.name}}
+      </p>
+      <p class="blurb">
+        {{blurb}}
+      </p>
+    </div>
+    <div class="absolute-bottom bg-white rounded-bottom">
+
+      {{#location}}
+        <ul class="p1 list project-meta no-margin h6">
+          <li class="ellipsis">
+            <a href="{{location.urls.web.discover}}" data-location="{{location_json}}" class="grey-dark">
+              <span class="ss-icon ss-location"></span>
+              <span class="location-name">{{location.displayable_name}}</span>
+            </a>
+          </li>
+        </ul>
+      {{/location}}
+
+      <div class="project-stats-wrap pb1 pl1 pr1">
+
+        {{#failed?}}
+          <div class='project-status project-failed h6'>
+            <strong> Funding Unsuccessful</strong><br />
+            <span class="grey-dark">Project ended on {{formatted_deadline}}</span>
+          </div>
+        {{/failed?}}
+
+        {{#canceled?}}
+          <div class='project-status project-canceled h6'>
+            <strong> Funding Canceled</strong><br />
+            <span class="grey-dark">Project canceled on {{formatted_state_changed_at}}</span>
+          </div>
+        {{/canceled?}}
+
+        {{#successful?}}
+          <div class='project-pledged-successful bg-green white h6 pl1 pr1 mb1'>
+            <strong>Successful!</strong>
+          </div>
+        {{/successful?}}
+
+        {{#live_or_successful?}}
+          {{#live?}}
+            <div class="project-pledged-wrap bg-grey clip mb1">
+              <div class="project-pledged bg-green full-height" style="width: {{percent_raised_to_100}}%"></div>
+            </div>
+          {{/live?}}
+          <ul class="project-stats list no-margin h6 no-wrap">
+            <li class="first funded inline-block mr1">
+              <strong class="block h6">{{percent_raised_rounded}}%</strong>
+              <span class="grey-dark">funded</span>
+            </li>
+            <li class="pledged inline-block mr1">
+              <strong class="block h6">{{currency_symbol}}{{formatted_money}}</strong>
+              <span class="grey-dark">pledged</span>
+            </li>
+            {{#successful?}}
+              <li class="last successful inline-block">
+                <strong class="block h6">Funded</strong>
+                <div class="deadline grey-dark">{{formatted_deadline}}</div>
+              </li>
+            {{/successful?}}
+            {{#live?}}
+              <li class="last ksr_page_timer inline-block" data-end_time="{{javascript_deadline}}">
+                <strong class="block h6">
+                  <div class="num">30</div>
+                </strong>
+                <div class="span text grey-dark" data-word="left">days to go</div>
+              </li>
+            {{/live?}}
+          </ul>
+        {{/live_or_successful?}}
+      </div>
+    </div>
+  </div>
+</div>
+
+{{#friends_backing?}}
+  <div class="friend_project_context">
+    <div class="friend_facepile">
+      {{#truncated_friends}}
+        <img src="{{avatar.thumb}}" class="{{#has_metadata?}}small{{/has_metadata?}}">
+      {{/truncated_friends}}
+    </div>
+    <p class="friend_namepile">
+      {{{escaped_sentence}}}
+    </p>
+  </div>
+{{/friends_backing?}}
+</script><script class="template" id="template-projects__video_mode" type="text/x-tmpl-mustache"><a href='#' id='video_mode_close' class='close_button z2'><span class='ss-icon ss-delete'></span></a>
+
+<div class='title_card z1 {{context_classes}}' style="display:none;">
+  <div class='interior'>
+    <h2 class='project_title normal_weight'>{{name}}</h2>
+    <p class='blurb'>{{blurb}}</p>
+    <nav class='bar'>
+      <a id='play_button' class='left play' href='#'>
+        <span class='play_active'>
+          <span class='ss-icon ss-play'></span>
+          Play
+        </span>
+        <span class='pause_active'>
+          <span class='ss-icon ss-pause'></span>
+          Pause
+        </span>
+      </a>
+      {{#logged_in}}
+        <div class='remind right'>
+          {{#if_not_starred}}
+            <a class='follow' href='{{urls.web.project}}/watch'><span class='ss-icon ss-star'></span></a>
+          {{/if_not_starred}}
+          {{#if_starred}}
+            <a class='unfollow' href='{{urls.web.project}}/unwatch'><span class='ss-icon ss-star active'></span></a>
+          {{/if_starred}}
+        </div>
+      {{/logged_in}}
+      <a class='right explore button button_green small' href='#'>Explore this project</a>
+    </nav>
+  </div>
+</div>
+
+<div class='channel_controls z1'>
+  <a href='#' class='{{#playlist_is_location}}selected {{/playlist_is_location}}location'>Something else near {{location.first_name}} <span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_featured}}selected {{/playlist_is_featured}}featured'>Something different<span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_category}}selected {{/playlist_is_category}}category'>Something else in {{category.name}} <span class='ss-icon ss-navigateright'></span></a>
+</div>
+
+<div class='project_video' style='background-image: url('{{photo.full}}')'>
+  <div class='cover'>
+    <video>
+      <source src='{{video.high}}' type='video/mp4'/>
+      <source src='{{video.webm}}' type='video/webm'/>
+    </video>
+  </div>
+</div>
+</script><script class="template" id="template-site__video_mode_fourohfour" type="text/x-tmpl-mustache"><section class='four_oh_four'>
+  <p class='big_type'>
+    Looks like you've reached the end of the line! <br />Check out <a class="another" href='#'>another channel</a> or <a href='/discover'>browse projects in discover</a>.
+  </p>
+</section>
+</script>
+
+<script id="schwamm_formatting_options" type="text/javascript">
+//<![CDATA[
+(function(){window.formatters = window.formatters || {}; var formatting_options = {"distance_date_intervals":[[5,"just now"],[29,"less than a minute ago"],[89,"1 minute ago"],[2640,"%m minutes ago"],[5340,"about 1 hour ago"],[82800,"about %h hours ago"],[147600,"1 day ago"],[604800,"%d days ago"],[15552000,"on %t"],[0,"on %y"]],"currency_symbol_mappings":{"AFN":"\u060b","ALL":"Lek","ARS":"$","AUD":"$","AWG":"\u0192","AZN":"\u043c\u0430\u043d","BAM":"KM","BBD":"$","BGN":"\u043b\u0432","BMD":"$","BND":"$","BOB":"$b","BRL":"R$","BSD":"$","BWP":"P","BYR":"p.","BZD":"BZ$","CAD":"$","CLP":"$","CNY":"\u00a5","COP":"$","CRC":"\u20a1","CUP":"\u20b1","CZK":"K\u010d","DKK":"kr","DOP":"RD$","EGP":"\u00a3","EUR":"\u20ac","FJD":"$","FKP":"\u00a3","GBP":"\u00a3","GIP":"\u00a3","GTQ":"Q","GYD":"$","HKD":"$","HNL":"L","HRK":"kn","HUF":"Ft","IDR":"Rp","ILS":"\u20aa","IRR":"\ufdfc","ISK":"kr","JMD":"J$","JPY":"\u00a5","KGS":"\u043b\u0432","KHR":"\u17db","KPW":"\u20a9","KRW":"\u20a9","KYD":"$","KZT":"\u043b\u0432","LAK":"\u20ad","LBP":"\u00a3","LKR":"\u20a8","LRD":"$","LTL":"Lt","LVL":"Ls","MKD":"\u0434\u0435\u043d","MNT":"\u20ae","MUR":"\u20a8","MXN":"$","MYR":"RM","MZN":"MT","NAD":"$","NGN":"\u20a6","NIO":"C$","NOK":"kr","NPR":"\u20a8","NZD":"$","OMR":"\ufdfc","PAB":"B/.","PEN":"S/.","PHP":"\u20b1","PKR":"\u20a8","PLN":"z\u0142","PYG":"Gs","QAR":"\ufdfc","RON":"lei","RSD":"\u0414\u0438\u043d.","RUB":"\u0440\u0443\u0431","SAR":"\ufdfc","SBD":"$","SCR":"\u20a8","SEK":"kr","SGD":"$","SHP":"\u00a3","SOS":"S","SRD":"$","SVC":"$","SYP":"\u00a3","THB":"\u0e3f","TRY":"TL","TTD":"TT$","TWD":"NT$","UAH":"\u20b4","USD":"$","UYU":"$U","UZS":"\u043b\u0432","VEF":"Bs","VND":"\u20ab","YER":"\ufdfc","ZAR":"R"},"currency_trailing_code_mappings":{"AUD":true,"CAD":true,"NZD":true,"USD":true},"currency_formats":["money","shorter_money"]}; for (key in formatting_options) {window.formatters[key] = formatting_options[key]};}());
+//]]>
+</script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("begin_base.js_tag");}
+  //]]>
+</script>
+<script src="https://d297h9he240fqh.cloudfront.net/assets/packages/base-45cdab84617ddfb8905b7cddc8500c19.js" type="text/javascript"></script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("end_base.js_tag");}
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    document.domain='kickstarter.com';
+  //]]>
+</script>
+
+<iframe height="0" id="api_xdreceiver" src="https://api.kickstarter.com/xdreceiver/85e6.html" style="display: none;" width="0"></iframe>
+
+
+
+<div id="fb-root"></div>
+<script>
+  //<![CDATA[
+    var channelUrl = window.location.protocol + "//" + window.location.host + "/channel.html",
+      skip_autologin = $('body').is('.skip_autologin');
+    
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId: window.fb_app_id,
+        channelUrl: channelUrl,
+        status: true,    // check login status
+        cookie: true,    // enable cookies to allow the server to access the session
+        xfbml: true,     // parse XFBML
+        logging: false   // turn off logging
+      });
+    
+      FB.getLoginStatus(function (response) {
+        if (response.status === 'connected') {
+          if (read_cookie("logout_from_fb")) {
+            FB.logout();
+            destroy_cookie("logout_from_fb");
+          } else if (!skip_autologin) {
+            $.get("/fb/autologin", {'fbsr': response.authResponse.signedRequest});
+          } else if (false && 0 == response.authResponse.userID) {
+            $.get("/fb/refresh", {'fbsr': response.authResponse.signedRequest});
+          }
+        } else {
+          if (read_cookie("logout_from_fb")) {
+            destroy_cookie("logout_from_fb");
+          }
+        }
+      })
+    
+      $(document).trigger('fb:loaded');
+    };
+    
+    
+    // Load the SDK Asynchronously
+    (function(d){
+      var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+      js = d.createElement('script'); js.id = id; js.async = true;
+      js.src = "//connect.facebook.net/en_US/all.js";
+      d.getElementsByTagName('head')[0].appendChild(js);
+    }(document));
+  //]]>
+</script>
+
+
+</body>
+</html>

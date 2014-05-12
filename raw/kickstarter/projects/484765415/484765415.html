@@ -1,0 +1,1258 @@
+<!DOCTYPE html>
+<html class="projects_show  fontface no-js" lang="en">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# kickstarter: http://ogp.me/ns/fb/kickstarter#">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-5.newrelic.com","errorBeacon":"jserror.newrelic.com","licenseKey":"b04b883ad2","applicationID":"11086","transactionName":"cFteRUULX1wHFhtIEFxeVVJDFxxDCgtD","queueTime":8,"applicationTime":872,"ttGuid":"","agentToken":null,"agent":"js-agent.newrelic.com/nr-411.min.js"}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"Vw4BVEVSCQMIUg=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e){function n(t,e,n){n||(n={});for(var r=o[t],a=r&&r.length||0,s=n[i]||(n[i]={}),u=0;a>u;u++)r[u].apply(s,e);return s}function r(t,e){var n=o[t]||(o[t]=[]);n.push(e)}var o={},i="nr@context";e.exports={on:r,emit:n}},{}],2:[function(t){function e(t,e,n,i,s){return u?u-=1:r("err",[s||new UncaughtException(t,e,n)]),"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t(5),a=window.onerror,s=!1,u=0;t("loader").features.push("err"),window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(d){"stack"in d&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(4),s=!0)}i.on("fn-start",function(){s&&(u+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&u>0&&(u-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:4,3:3,4:6,5:1,6:14,handle:"D5DuLP",loader:"G9z0Bl"}],3:[function(t){function e(t){r.inPlace(t,["addEventListener","removeEventListener"],"-",n)}function n(t){return t[1]}var r=t(1),o=(t(3),t(2));if(e(window),"getPrototypeOf"in Object){for(var i=document;i&&!i.hasOwnProperty("addEventListener");)i=Object.getPrototypeOf(i);i&&e(i);for(var a=XMLHttpRequest.prototype;a&&!a.hasOwnProperty("addEventListener");)a=Object.getPrototypeOf(a);a&&e(a)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&e(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=e["nr@wrapped"]?t[1]=e["nr@wrapped"]:e["nr@wrapped"]=t[1]=r(e,"fn-"):"function"==typeof e.handleEvent&&r.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:15,2:1,3:14}],4:[function(t){var e=(t(3),t(1)),n=t(2);e.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=e(t[0],"fn-")})},{1:15,2:1,3:14}],5:[function(t){function e(t){var e=t[0];"string"==typeof e&&(e=new Function(e)),t[0]=n(e,"fn-")}var n=(t(3),t(1)),r=t(2);n.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",e)},{1:15,2:1,3:14}],6:[function(t){function e(){o.inPlace(this,s,"fn-")}function n(t,e){o.inPlace(e,["onreadystatechange"],"fn-")}function r(t,e){return e}var o=t(1),i=t(2),a=window.XMLHttpRequest,s=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];window.XMLHttpRequest=function(t){var n=new a(t);try{i.emit("new-xhr",[],n),o.inPlace(n,["addEventListener","removeEventListener"],"-",function(t,e){return e}),n.addEventListener("readystatechange",e,!1)}catch(r){try{i.emit("internal-error",r)}catch(s){}}return n},window.XMLHttpRequest.prototype=a.prototype,o.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",r),i.on("send-xhr-start",n),i.on("open-xhr-start",n)},{1:15,2:1}],7:[function(t){function e(){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;u>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,d="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=e(d);if(f&&(r.rxSize=f),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}t("loader").features.push("xhr");var o=t("handle"),i=t(1),a=t(5),s=["load","error","abort","timeout"],u=s.length,d=t(2);t(3),t(4),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var d=e(o);d&&(r.txSize=d)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",e)}catch(r){}}};for(var f=0;u>f;f++)n.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&e()},{1:8,2:11,3:3,4:6,5:1,handle:"D5DuLP",loader:"G9z0Bl"}],8:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e){var n=r[t];return n?n.apply(this,e):(o[t]||(o[t]=[]),void o[t].push(e))}var r={},o={};e.exports=n,n.queues=o,n.handlers=r},{}],11:[function(t,e){function n(t){if(!t||"object"!=typeof t&&"function"!=typeof t)return-1;if(t===window)return 0;if(o.call(t,"__nr"))return t.__nr;try{return Object.defineProperty(t,"__nr",{value:r,writable:!0,enumerable:!1}),r}catch(e){return t.__nr=r,r}finally{r+=1}}var r=1,o=Object.prototype.hasOwnProperty;e.exports=n},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&u&&u.body){p.proto="https"===c.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=u.createElement("script");e.src=p.proto+t.agent,u.body.appendChild(e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,u=s.document,d="addEventListener",f="attachEvent",c=(""+location).split("?")[0],p=e.exports={offset:i(),origin:c,features:[]};u[d]?(u[d]("DOMContentLoaded",o,!1),s[d]("load",n,!1)):(u[f]("onreadystatechange",r),s[f]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],14:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],15:[function(t,e){function n(t,e,r,s){function nrWrapper(){try{var n,a=u(arguments),d=this,f=r&&r(a,d)||{}}catch(c){i([c,"",[a,d,s],f])}o(e+"start",[a,d,s],f);try{return n=t.apply(d,a)}catch(p){throw o(e+"err",[a,d,p],f),p}finally{o(e+"end",[a,d,n],f)}}return a(t)?t:(e||(e=""),nrWrapper[n.flag]=!0,nrWrapper)}function r(t,e,r,o){r||(r="");var i,s,u,d="-"===r.charAt(0);for(u=0;u<e.length;u++)s=e[u],i=t[s],a(i)||(t[s]=n(i,d?s+r:r,o,s,t))}function o(t,e,n){try{s.emit(t,e,n)}catch(r){i([r,t,e,n])}}function i(t){try{s.emit("internal-error",t)}catch(e){}}function a(t){return!(t&&"function"==typeof t&&t.apply&&!t[n.flag])}var s=t(1),u=t(2);e.exports=n,n.inPlace=r,n.flag="nr@wrapper"},{1:1,2:14}]},{},["G9z0Bl",2,7]);</script><script>
+  //<![CDATA[
+    docElement = this.document.documentElement;
+    docElement.className=docElement.className.replace(/\bno-js\b/,'') + 'js';
+  //]]>
+</script>
+<title>Starlight by Creative Genius &mdash; Kickstarter</title><script>
+  //<![CDATA[
+    window.report_errors = true;
+    window.honeybadger_configuration = {
+      api_key : "02ab109335c0dd1a93506d92f22217a7",
+      environment : "production",
+      component : "projects",
+      action : "show",
+      onerror : false
+    };
+  //]]>
+</script>
+
+
+<!--[if lt IE 9]>
+  <script src="//html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta content="telephone=no" name="format-detection">
+
+<!--[if !IE]> -->
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base-9f623ad5d021a188cfb2d68a0cdf7a7b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<!-- <![endif]-->
+<!--[if IE]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base_blessed-2640c72487552f9a2ef9f2620b4af860.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<!--[if lte IE 9]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_nine-a93fe10530f175f96c4078b7e070d7e1.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 8]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_eight-f75aeb274436f94a0d243774456b1c62.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 7]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie-c019c01acd3a96588b346cf577a3504f.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_seven-5a3d2cef660cd281fd844b04b2397dbb.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if IE 6]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_six-e4d3caf76e405fe19aee6ece8bda701b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<link href="https://d297h9he240fqh.cloudfront.net/favicon.png" rel="icon" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-precomposed-7b603dba7cf80e4acc57d94a991bebbd.png" rel="apple-touch-icon-precomposed" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-ipad-precomposed-3176f72977daf43dee3b0d348484dc01.png" rel="apple-touch-icon-precomposed" sizes="72x72" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-iphone4-precomposed-b93b70168cd8492c843d0fea873c7f83.png" rel="apple-touch-icon-precomposed" sizes="114x114" type="image/png">
+<link href="https://www.kickstarter.com/services/oembed?url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Fcreativegeniusgames%2Fstarlight-0" rel="alternate" title="Starlight Script Tag oEmbed" type="application/json+oembed">
+<link rel="alternate" type="application/atom+xml" title="Starlight : Kickstarter" href="https://www.kickstarter.com/projects/creativegeniusgames/starlight-0/posts.atom" />
+<meta property="twitter:app:id:iphone" content="596961532"/>
+<meta property="twitter:app:name:iphone" content="Kickstarter"/>
+<meta property="twitter:app:url:iphone" content="ksr://www.kickstarter.com/projects/creativegeniusgames/starlight-0"/>
+<meta name="video_height" content="426"/>
+<meta name="video_width" content="640"/>
+<meta name="video_type" content="application/x-shockwave-flash"/>
+<meta name="title" content="Kickstarter &gt;&gt; Starlight by Creative Genius"/>
+<meta name="description" content="Creative Genius is raising funds for Starlight on Kickstarter! 
+
+ A shattered Sun, an eternal night, a frightened boy, a wish upon a star, a journey begins with only his courage and an unlikely friend"/>
+<meta property="og:title" content="Starlight"/>
+<meta property="og:type" content="kickstarter:project"/>
+<meta property="og:image" content="https://s3.amazonaws.com/ksr/projects/780724/photo-main.jpg?1397858437"/>
+<meta property="og:url" content="https://www.kickstarter.com/projects/creativegeniusgames/starlight-0"/>
+<meta property="og:site_name" content="Kickstarter"/>
+<meta property="fb:app_id" content="69103156693"/>
+<meta property="og:description" content="A shattered Sun, an eternal night, a frightened boy, a wish upon a star, a journey begins with only his courage and an unlikely friend"/>
+<meta property="kickstarter:creator" content="https://www.kickstarter.com/profile/creativegeniusgames"/>
+<meta property="twitter:url:landing_url" content="https://www.kickstarter.com/projects/creativegeniusgames/starlight-0"/>
+<meta property="twitter:card" content="2427656750:kickstarter_project"/>
+<meta property="twitter:site" content="@kickstarter"/>
+<meta property="twitter:site:id" content="16186995"/>
+<meta property="twitter:text:title" content="Starlight"/>
+<meta property="twitter:text:artist" content="Creative Genius"/>
+<meta property="twitter:text:backers" content="36"/>
+<meta property="twitter:text:pledged" content="£4,071"/>
+<meta property="twitter:text:time" content="0 seconds"/>
+<meta property="twitter:text:location" content="London, UK"/>
+<meta property="twitter:image:location_image" content="https://d3mlfyygrfdi2i.cloudfront.net/b40e/pin.png"/>
+<meta property="twitter:text:description" content="A shattered Sun, an eternal night, a frightened boy, a wish upon a star, a journey begins with only his courage and an unlikely friend"/>
+<meta property="twitter:image:media" content="https://s3.amazonaws.com/ksr/projects/780724/photo-main.jpg?1397858437"/>
+<meta property="twitter:image:width" content="640"/>
+<meta property="twitter:image:height" content="480"/>
+<meta property="twitter:player:stream:url" content="https://d2pq0u4uni88oo.cloudfront.net/projects/780724/video-333195-h264_base.mp4"/>
+<meta property="twitter:player:stream:content" content="video/mp4"/>
+<meta property="twitter:player:url" content="https://www.kickstarter.com/projects/creativegeniusgames/starlight-0/widget/video.html"/>
+<meta property="twitter:player:height" content="426"/>
+<meta property="twitter:player:width" content="640"/>
+<meta property="twitter:maxage" content="60"/>
+<meta property="og:video" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F780724%2Fvideo-333195-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F780724%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Creative+Genius&amp;project_title=Starlight&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Fcreativegeniusgames%2Fstarlight-0&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:secure_url" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F780724%2Fvideo-333195-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F780724%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Creative+Genius&amp;project_title=Starlight&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Fcreativegeniusgames%2Fstarlight-0&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:height" content="426"/>
+<meta property="og:video:width" content="640"/>
+<meta property="og:video:type" content="application/x-shockwave-flash"/>
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="x8sI9L84DeUJCy0W/CpGoTouYwAtpyx6aL9IZlz3Rc8=" name="csrf-token" />
+<script type="text/javascript">
+  var _sift = _sift || [];
+  _sift.push(['_setAccount', '637102']);
+  _sift.push(['_setUserId', '']);
+  _sift.push(['_trackPageview']);
+
+  (function() {
+    function loadSift() {
+      var sift, s;
+      if (root.visitor_id) {
+        _sift.push(['_setSessionId', root.visitor_id]);
+      }
+      sift = document.createElement('script');
+      sift.type = 'text/javascript';
+      sift.async = true;
+      sift.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dtlilztwypawv.cloudfront.net/s.js';
+      s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(sift, s);
+    }
+    if (window.attachEvent) {
+      window.attachEvent('onload', loadSift);
+    } else {
+      window.addEventListener('load', loadSift, false);
+    }
+  })();
+</script>
+<link href="http://kck.st/Kkg4bC" rel="shorturl">
+<link href="https://www.kickstarter.com/projects/creativegeniusgames/starlight-0" rel="canonical">
+<link href="https://s3.amazonaws.com/ksr/projects/780724/photo-med.jpg?1397858437" rel="image_src">
+<link href="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F780724%2Fvideo-333195-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F780724%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Creative+Genius&amp;project_title=Starlight&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Fcreativegeniusgames%2Fstarlight-0&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque" rel="video_src">
+<script>
+  //<![CDATA[
+    window.current_checkout = "{&quot;id&quot;:0,&quot;domestic&quot;:null,&quot;amount&quot;:0.0,&quot;updated_at&quot;:0,&quot;created_at&quot;:0}";
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.current_ip = '94.209.101.212';
+    window.current_ip_datacenter = 'false';
+    window.enabled_features = {"elasticsearch":true,"security_history_read":true,"security_history_write":true,"advanced_discovery_es":true,"ios_crashlytics":true,"ios_mixpanel":true,"stories_veronica_mars":true,"veronica_mars_hero":true,"password_reset_banner":true};
+    window.fb_app_id = '69103156693';
+    
+    var _sf_startpt=(new Date()).getTime();
+    
+    window.current_project = "{&quot;id&quot;:484765415,&quot;name&quot;:&quot;Starlight&quot;,&quot;blurb&quot;:&quot;A shattered Sun, an eternal night, a frightened boy, a wish upon a star, a journey begins with only his courage and an unlikely friend&quot;,&quot;goal&quot;:4000.0,&quot;pledged&quot;:4071.36,&quot;state&quot;:&quot;successful&quot;,&quot;slug&quot;:&quot;starlight-0&quot;,&quot;disable_communication&quot;:false,&quot;country&quot;:&quot;GB&quot;,&quot;currency&quot;:&quot;GBP&quot;,&quot;currency_symbol&quot;:&quot;\\u00a3&quot;,&quot;currency_trailing_code&quot;:false,&quot;deadline&quot;:1392598800,&quot;state_changed_at&quot;:1392598816,&quot;created_at&quot;:1385941536,&quot;launched_at&quot;:1389837285,&quot;backers_count&quot;:36,&quot;photo&quot;:{&quot;full&quot;:&quot;https://s3.amazonaws.com/ksr/projects/780724/photo-full.jpg?1397858437&quot;,&quot;ed&quot;:&quot;https://s3.amazonaws.com/ksr/projects/780724/photo-ed.jpg?1397858437&quot;,&quot;med&quot;:&quot;https://s3.amazonaws.com/ksr/projects/780724/photo-med.jpg?1397858437&quot;,&quot;little&quot;:&quot;https://s3.amazonaws.com/ksr/projects/780724/photo-little.jpg?1397858437&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/projects/780724/photo-small.jpg?1397858437&quot;,&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/projects/780724/photo-thumb.jpg?1397858437&quot;,&quot;1024x768&quot;:&quot;https://s3.amazonaws.com/ksr/projects/780724/photo-1024x768.jpg?1397858437&quot;,&quot;1536x1152&quot;:&quot;https://s3.amazonaws.com/ksr/projects/780724/photo-1536x1152.jpg?1397858437&quot;},&quot;creator&quot;:{&quot;id&quot;:1326309966,&quot;name&quot;:&quot;Creative Genius&quot;,&quot;slug&quot;:&quot;creativegeniusgames&quot;,&quot;avatar&quot;:{&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/8923175/CG_Logo.thumb.jpg?1385941356&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/8923175/CG_Logo.small.jpg?1385941356&quot;,&quot;medium&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/8923175/CG_Logo.medium.jpg?1385941356&quot;},&quot;urls&quot;:{&quot;web&quot;:{&quot;user&quot;:&quot;https://www.kickstarter.com/profile/creativegeniusgames&quot;},&quot;api&quot;:{&quot;user&quot;:&quot;https://api.kickstarter.com/v1/users/1326309966?signature=1399960135.c7d93515466c1a389bfedd9f6752165592fbe2db&quot;}}},&quot;location&quot;:{&quot;id&quot;:44418,&quot;name&quot;:&quot;London&quot;,&quot;slug&quot;:&quot;london-gb&quot;,&quot;short_name&quot;:&quot;London, UK&quot;,&quot;displayable_name&quot;:&quot;London, UK&quot;,&quot;country&quot;:&quot;GB&quot;,&quot;state&quot;:&quot;England&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/london-gb&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/london-gb&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1399951820.4a5a7b0ecc6c7d5db9cf8dec147595e90d6d2ec1&amp;woe_id=44418&quot;}}},&quot;category&quot;:{&quot;id&quot;:35,&quot;name&quot;:&quot;Video Games&quot;,&quot;slug&quot;:&quot;games/video games&quot;,&quot;position&quot;:7,&quot;parent_id&quot;:12,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;http://www.kickstarter.com/discover/categories/games/video%20games&quot;}}},&quot;urls&quot;:{&quot;web&quot;:{&quot;project&quot;:&quot;https://www.kickstarter.com/projects/creativegeniusgames/starlight-0&quot;,&quot;project_short&quot;:&quot;http://kck.st/Kkg4bC&quot;,&quot;updates&quot;:&quot;https://www.kickstarter.com/projects/creativegeniusgames/starlight-0/posts&quot;},&quot;api&quot;:{&quot;project&quot;:&quot;https://api.kickstarter.com/v1/projects/484765415?signature=1399960135.3b974ccff3166ac257303d8f50fe4530051184b5&quot;,&quot;comments&quot;:&quot;https://api.kickstarter.com/v1/projects/484765415/comments?signature=1399960135.0d4f92d8baf6b444ed6c965cc8b13ee3a3482856&quot;,&quot;updates&quot;:&quot;https://api.kickstarter.com/v1/projects/484765415/updates?signature=1399960135.069f3167f1e8a001fabf9c3021a07869471f2a86&quot;}},&quot;updated_at&quot;:1397858446,&quot;successful_at&quot;:1392598816,&quot;video&quot;:{&quot;id&quot;:333195,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/780724/video-333195-h264_high.mp4?2014&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/780724/video-333195-h264_base.mp4?2014&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/780724/video-333195-webm.webm?2014&quot;,&quot;width&quot;:640,&quot;height&quot;:426,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/780724/video-333195-h264_base.jpg?2014&quot;},&quot;comments_count&quot;:6,&quot;updates_count&quot;:5,&quot;rewards&quot;:[{&quot;id&quot;:0,&quot;minimum&quot;:1,&quot;reward&quot;:&quot;No Reward&quot;},{&quot;id&quot;:2197398,&quot;minimum&quot;:1.0,&quot;reward&quot;:&quot;Light Giver:\\r\\n   For \\u00a31, we give our personal thanks, a copy of the game at launch and the option to opt in to the Starlight newsletter and keep up to date with our progress.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1396310400,&quot;project_id&quot;:484765415,&quot;backers_count&quot;:11,&quot;updated_at&quot;:1393201865},{&quot;id&quot;:2197399,&quot;minimum&quot;:5.0,&quot;reward&quot;:&quot;Light Bringer:\\r\\n   For \\u00a35 you gain access to the Starlight forums, make suggestions towards game development and you can add your name to the credits under the title of Light Bringer.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1396310400,&quot;project_id&quot;:484765415,&quot;backers_count&quot;:4,&quot;updated_at&quot;:1392600349},{&quot;id&quot;:2197400,&quot;minimum&quot;:10.0,&quot;reward&quot;:&quot;Light Seeker:\\r\\n   For \\u00a310 you get in game credit for purchasing at least one DLC package, and access to pre-launch updates (including current and future game features), helping you choose the DLC for you!&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1396310400,&quot;project_id&quot;:484765415,&quot;backers_count&quot;:3,&quot;updated_at&quot;:1392600350},{&quot;id&quot;:2197401,&quot;minimum&quot;:25.0,&quot;reward&quot;:&quot;Light Finder:\\r\\n   For \\u00a325, you get digital copies of the game soundtrack and concept art, and enough credit for at least two DLC expansion packs.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1396310400,&quot;project_id&quot;:484765415,&quot;backers_count&quot;:7,&quot;updated_at&quot;:1392600350},{&quot;id&quot;:2197402,&quot;minimum&quot;:50.0,&quot;reward&quot;:&quot;Light Beacon:\\r\\n   For \\u00a350 you can choose your own image or original avatar to represent you in the credits, enough credit for three expansion packs, and physical copies of the soundtrack and concept art!&quot;,&quot;limit&quot;:15,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;domestic&quot;,&quot;shipping_amount&quot;:&quot;0.0&quot;,&quot;estimated_delivery_on&quot;:1396310400,&quot;project_id&quot;:484765415,&quot;remaining&quot;:13,&quot;backers_count&quot;:2,&quot;updated_at&quot;:1392600349},{&quot;id&quot;:2197403,&quot;minimum&quot;:100.0,&quot;reward&quot;:&quot;Light Creator:\\r\\n   For \\u00a3100 you can send us original art (images, music, ambigous short stories) that will appear in the game, and in the credits next to your name. You can also access the creators forums, to see how it will be used.&quot;,&quot;limit&quot;:15,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1396310400,&quot;project_id&quot;:484765415,&quot;remaining&quot;:12,&quot;backers_count&quot;:3,&quot;updated_at&quot;:1392600349},{&quot;id&quot;:2197404,&quot;minimum&quot;:500.0,&quot;reward&quot;:&quot;Light Source:\\r\\n   For \\u00a3500+ you get the chance to meet the team, discuss ideas, like how to add your creative work to the game, add your own rewards &amp; secret items to find, and have a group photo that will appear in the credits.\\r\\nYou also get a collection of merchandise to call your own.&quot;,&quot;limit&quot;:5,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;domestic&quot;,&quot;shipping_amount&quot;:&quot;0.0&quot;,&quot;estimated_delivery_on&quot;:1398902400,&quot;project_id&quot;:484765415,&quot;remaining&quot;:4,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1392600349}]}";
+    
+    
+    
+    
+    
+    
+    
+    
+    window.timeRemaining = function timeRemaining(epochTime){
+    
+      var diff = epochTime - ((new Date()).getTime() / 1000);
+      var num_unit = (diff < 60 && [Math.max(diff, 0), 'seconds']) ||
+        ((diff/=60) < 60 && [diff, 'minutes']) ||
+        ((diff/=60) < 72 && [diff, 'hours']) ||
+        [diff/=24, 'days'];
+    
+      // Round down
+      num_unit[0] = Math.floor(num_unit[0]);
+      // Singularize unit
+      if (num_unit[0] == 1) { num_unit[1] = num_unit[1].replace(/s$/,""); }
+    
+      return num_unit;
+    };
+  //]]>
+</script>
+
+<script>
+  //<![CDATA[
+    window.current_variants = ["discover_link_copy[discover]","rewards_hover[with_hover_text]"];
+  //]]>
+</script>
+
+
+</head>
+
+<body class="project projects not-mobile not-phone not-forces-video-controls not-tablet not-touchable not-native-app-request video_mode" id="projects_show">
+<div class="jGrowl center" id="growl_section"></div>
+<div class="NS_layouts__navigation" id="header">
+<div class="main-nav relative bg-white">
+<h1 class="no-margin ml1 mr2 left">
+<a href="/?ref=nav" class="block p2"><span class="ss-icon green-dark">KICK</span><span class="ss-icon green">STARTER</span>
+</a></h1>
+<ul class="primary-links list no-margin left">
+<li class="left discover-link full-height">
+<a href="/discover?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Discover</a>
+</li>
+<li class="left full-height mr2">
+<a href="/learn?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Start</a>
+</li>
+</ul>
+<ul class="list no-margin right" id="menu-sub">
+<li class="right"><a href="/login?ref=nav" class="block h5 bold p2 full-height border-box">Log in</a></li>
+<li class="right"><a href="/signup?ref=nav" class="block h5 bold p2 full-height border-box">Sign up</a></li>
+</ul>
+<div class="search-link pl2 full-height border-left border-box clip">
+<form accept-charset="UTF-8" action="/projects/search" class="search pt1 pb1 block relative form-simple" method="get"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /></div>
+<div class="field relative pl3">
+<span class="ss-icon ss-search grey-dark ml1 mt1 absolute"></span>
+<input class="input-search header full-width text" data-tracker-name="Header Live Search" id="term" name="term" placeholder="Search projects" type="text" />
+</div>
+</form>
+
+</div>
+<div class="clear"></div>
+</div>
+</div>
+<div class="hide pt4 pb4 bg-grey-light" id="search_results-wrap">
+<div class="relative container" id="search_results">
+<a class="close right grey-dark mr1"><span class="ss-icon ss-delete"></span></a>
+<h3 class="header ml1 clearfix"></h3>
+<div class="clip clearfix" id="search_results_panel"></div>
+<a class="prev arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateleft"></span>
+</a>
+<a class="next arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateright"></span>
+</a>
+</div>
+</div>
+
+
+
+
+<div class="Project-ended-true Project-is_starred- Project-state-successful Project484765415_cxt border-top" id="main_content">
+<div id="running-board-wrap">
+<div class="container" id="running-board">
+<div id="project-header">
+<div class="NS_projects__running_board ml1 mr1 clearfix">
+<div class="title center py4">
+<h2 class="mb1">
+<a href="/projects/creativegeniusgames/starlight-0" class="green-dark">Starlight</a>
+</h2>
+<p class="no-margin">
+<span class="creator">
+by
+<a href="/projects/creativegeniusgames/starlight-0/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography" id="name">Creative Genius</a>
+</span>
+</p>
+</div>
+<ul class="project-nav list-inline left h5 bold mb1">
+<li class="mr2">
+<a href="/projects/creativegeniusgames/starlight-0" class="grey-dark py1 current" id="home_nav">Home</a>
+</li>
+<li class="mr2">
+<span data-updates-count="5" id="updates_count">
+<a href="/projects/creativegeniusgames/starlight-0/posts" class="grey-dark py1" id="updates_nav">Updates
+<span class="count h6 bg-grey-dark white">5</span>
+</a></span>
+</li>
+<li class="mr2">
+<a href="/projects/creativegeniusgames/starlight-0/backers" class="grey-dark py1" id="backers_nav">Backers
+<span class="count h6 bg-grey-dark white"><data class="Project484765415" data-format="number" data-value="36" itemprop="Project[backers_count]">36</data></span>
+</a></li>
+<li>
+<span data-comments-count="6" id="comments_count">
+<a href="/projects/creativegeniusgames/starlight-0/comments" class="grey-dark py1" id="comments_nav">Comments
+<span class="count h6 bg-grey-dark white"><data class="Project484765415" data-format="number" data-value="6" itemprop="Project[comments_count]">6</data></span>
+</a></span>
+</li>
+</ul>
+<ul class="list-inline right h5 bold mb1">
+<li class="location mr2">
+<a href="/discover/places/london-gb?ref=city" class="grey-dark"><span class="ss-icon ss-location margin-right"></span>
+London, UK
+</a></li>
+<li class="category" data-project-parent-category="Games">
+<a href="/discover/categories/games/video%20games?ref=category" class="grey-dark"><span class="ss-icon ss-tag margin-right"></span>
+Video Games
+</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+</div>
+<div class="bg-grey-light pb4" id="content-wrap">
+<div class="Project484765415" data-conditions="[{&quot;!state&quot;:&quot;live&quot;}]" data-evaluation="true" data-render="&quot;&lt;div class=\&quot;NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-successful Project484765415_cxt bg-grey container pb1 pt1\&quot;&gt;\n&lt;div class=\&quot;Project484765415\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;successful&amp;quot;}]\&quot; data-evaluation=\&quot;true\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;Funded!&amp;lt;/b&amp;gt;\\nThis project was successfully funded &amp;lt;data class=\\&amp;quot;Project484765415\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2014-02-16T20:00:00-05:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[deadline]\\&amp;quot;&amp;gt;on February 16&amp;lt;/data&amp;gt;.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;Funded!&lt;/b&gt;\nThis project was successfully funded &lt;data class=\&quot;Project484765415\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2014-02-16T20:00:00-05:00&amp;quot;\&quot; itemprop=\&quot;Project[deadline]\&quot;&gt;on February 16&lt;/data&gt;.\n&lt;/p&gt;\n&lt;/div&gt;&lt;div class=\&quot;Project484765415\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:[&amp;quot;started&amp;quot;,&amp;quot;submitted&amp;quot;]}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;THIS PROJECT IS NOT LIVE&amp;lt;/b&amp;gt;\\nThis is only a draft that the creator has chosen to share.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project484765415\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;suspended&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Suspended&amp;lt;/b&amp;gt;\\nFunding for this project was suspended &amp;lt;data class=\\&amp;quot;Project484765415\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2014-02-16T20:00:16-05:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on February 16&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project484765415\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;canceled&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Canceled&amp;lt;/b&amp;gt;\\nFunding for this project was canceled by the project creator &amp;lt;data class=\\&amp;quot;Project484765415\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2014-02-16T20:00:16-05:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on February 16&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project484765415\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;failed&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Unsuccessful&amp;lt;/b&amp;gt;\\nThis project\\u2019s funding goal was not reached on &amp;lt;time class=\\&amp;quot;js-adjust\\&amp;quot; data-format=\\&amp;quot;MMMM D\\&amp;quot; datetime=\\&amp;quot;2014-02-16T20:00:00-05:00\\&amp;quot;&amp;gt;February 16&amp;lt;/time&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project484765415\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;purged&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;This project is purged and only visible to staff.&amp;lt;/b&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;/div&gt;\n&quot;"><div class="NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-successful Project484765415_cxt bg-grey container pb1 pt1">
+<div class="Project484765415" data-conditions="[{&quot;state&quot;:&quot;successful&quot;}]" data-evaluation="true" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;Funded!&lt;/b&gt;\nThis project was successfully funded &lt;data class=\&quot;Project484765415\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2014-02-16T20:00:00-05:00&amp;quot;\&quot; itemprop=\&quot;Project[deadline]\&quot;&gt;on February 16&lt;/data&gt;.\n&lt;/p&gt;\n&quot;"><p class="no-margin">
+<b>Funded!</b>
+This project was successfully funded <data class="Project484765415" data-format="distance_date" data-value="&quot;2014-02-16T20:00:00-05:00&quot;" itemprop="Project[deadline]">on February 16</data>.
+</p>
+</div><div class="Project484765415" data-conditions="[{&quot;state&quot;:[&quot;started&quot;,&quot;submitted&quot;]}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;THIS PROJECT IS NOT LIVE&lt;/b&gt;\nThis is only a draft that the creator has chosen to share.\n&lt;/p&gt;\n&quot;"></div><div class="Project484765415" data-conditions="[{&quot;state&quot;:&quot;suspended&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Suspended&lt;/b&gt;\nFunding for this project was suspended &lt;data class=\&quot;Project484765415\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2014-02-16T20:00:16-05:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on February 16&lt;/data&gt;.\n&quot;"></div><div class="Project484765415" data-conditions="[{&quot;state&quot;:&quot;canceled&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Canceled&lt;/b&gt;\nFunding for this project was canceled by the project creator &lt;data class=\&quot;Project484765415\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2014-02-16T20:00:16-05:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on February 16&lt;/data&gt;.\n&quot;"></div><div class="Project484765415" data-conditions="[{&quot;state&quot;:&quot;failed&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Unsuccessful&lt;/b&gt;\nThis project\u2019s funding goal was not reached on &lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;MMMM D\&quot; datetime=\&quot;2014-02-16T20:00:00-05:00\&quot;&gt;February 16&lt;/time&gt;.\n&quot;"></div><div class="Project484765415" data-conditions="[{&quot;state&quot;:&quot;purged&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;This project is purged and only visible to staff.&lt;/b&gt;\n&quot;"></div></div>
+</div>
+<div class="container bg-white border rounded py3 pl2 pr2" id="content">
+<div class="NS-projects-content">
+<div class="grid_11">
+<div data-has-video="true" id="video-section">
+<div class="video-player" data-dimensions="{&quot;width&quot;:640,&quot;height&quot;:480}" data-image="https://s3.amazonaws.com/ksr/projects/780724/photo-main.jpg?1397858437" data-video-tracker-url="https://www.kickstarter.com/projects/creativegeniusgames/starlight-0/video/plays" data-video-url="https://d2pq0u4uni88oo.cloudfront.net/projects/780724/video-333195-h264_high.mp4" data-video="{&quot;id&quot;:333195,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/780724/video-333195-h264_high.mp4?2014&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/780724/video-333195-h264_base.mp4?2014&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/780724/video-333195-webm.webm?2014&quot;,&quot;width&quot;:640,&quot;height&quot;:426,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/780724/video-333195-h264_base.jpg?2014&quot;}" id="video_pitch"><video class="has_webm landscape" preload="none">
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/780724/video-333195-h264_high.mp4" type='video/mp4; codecs="avc1.64001E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/780724/video-333195-h264_base.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/780724/video-333195-webm.webm" type="video/webm"></source>
+You'll need an HTML5 capable browser to see this content.
+</video>
+<img alt="Photo-main" class="has_played_hide poster landscape" src="https://s3.amazonaws.com/ksr/projects/780724/photo-main.jpg?1397858437" />
+<div class="play_button_big play_button_dark absolute-center rounded has_played_hide">
+<span class="ss-icon ss-play"></span>
+Play
+</div>
+<div class="player_controls clearfix absolute-bottom mb2 rounded white bg-green-dark forces-video-controls_hide">
+<div class="left">
+<a class="button button_icon button_dark playpause play mr1">
+<span class="play ss-icon ss-play"></span>
+<span class="pause ss-icon ss-pause"></span>
+</a>
+<span class="time current_time h12 left">00:00</span>
+</div>
+<div class="right">
+<span class="time total_time h12 left mr1">00:00</span>
+<a class="left button button_icon button_icon_white volume">
+<span class="ss-icon ss-volume icon_volume_nudge"></span>
+<span class="ss-icon ss-highvolume"></span>
+</a>
+<div class="volume_container left">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+<a class="left button button_icon button_icon_white fullscreen">
+<span class="ss-icon ss-expand"></span>
+<span class="ss-icon ss-contract"></span>
+</a>
+</div>
+<div class="clip">
+<div class="progress_container pr1 pl1">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="buffer progress_bar_buffer"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div data-project-state="successful" id="about">
+<div class="NS_projects__project_share clearfix py2 pl1 pr1">
+<ul class="left list-inline no-margin h5 bold">
+<li class="facebook mr2">
+<a href="https://www.kickstarter.com/projects/creativegeniusgames/starlight-0"><span class="ss-icon ss-social ss-facebook color-facebook"></span>
+<span class="color-facebook">Share</span>
+<span class="share_bubble"><div class="triangle grey"></div>
+<div class="triangle white"></div>
+<span class="count"></span></span>
+</a></li>
+<li class="twitter mr2">
+<a  href="https://twitter.com/intent/tweet?text=Starlight%20by%20Creative%20Genius&amp;via=kickstarter&amp;url=http://kck.st/Kkg4bC" rel="nofollow"><span class="ss-icon ss-social ss-twitter color-twitter"></span>
+<span class="color-twitter">Tweet</span>
+</a></li>
+<li class="embed">
+<a href="/projects/creativegeniusgames/starlight-0/widget" class="remote_modal_dialog grey-dark" data-modal-title="Embed a widget on your site" data-tracker-name="Embed"><span class="ss-icon ss-navigateleft"></span>
+<span class="ss-icon ss-navigateright"></span>
+Embed
+</a></li>
+</ul>
+<ul class="right list-inline no-margin h5 bold">
+<li class="curate mr2">
+</li>
+<li class="remind">
+<div class="ajax-container" id="watching-widget">
+<div class="Project484765415" data-conditions="[{&quot;is_starred&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div id=\&quot;unwatch\&quot;&gt;\n&lt;a href=\&quot;/projects/creativegeniusgames/starlight-0/unwatch\&quot; class=\&quot;on\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"></div><div class="Project484765415" data-conditions="[{&quot;!is_starred&quot;:true}]" data-evaluation="true" data-render="&quot;&lt;div id=\&quot;watch\&quot;&gt;\n&lt;a href=\&quot;/projects/creativegeniusgames/starlight-0/watch\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;span class=\&quot;text\&quot;&gt;\n&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"><div id="watch">
+<a href="/projects/creativegeniusgames/starlight-0/watch"><span class="ss-icon ss-star"></span>
+<span class="text">
+</span>
+</a></div>
+
+</div></div>
+</li>
+</ul>
+</div>
+
+<div class="short_blurb py2 pl1 pr1">
+<p class="h3">A shattered Sun, an eternal night, a frightened boy, a wish upon a star, a journey begins with only his courage and an unlikely friend</p>
+</div>
+<div class="full-description">
+<div class="template asset" contenteditable="false" data-edit_url="/projects/creativegeniusgames/starlight-0/assets/1641354/edit" data-id="1641354">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/641/354/5314fbd7a02a94869d1d62505787e4e2_large.png?1392570636"></figure>
+</div><p>Thank you everyone who has supported us so far, we are grateful beyond words, but like how a Star has different stages within its lifecycle, our Kickstarter project has different milestones which, when reached, will allow us to accomplish a great deal more, and as you can see below, there is still a way to go!</p><div class="template asset" contenteditable="false" data-edit_url="/projects/creativegeniusgames/starlight-0/assets/1641364/edit" data-id="1641364">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/641/364/f2465be53a7c10182f9e54287f2b70da_large.png?1392570939"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/creativegeniusgames/starlight-0/assets/1641342/edit" data-id="1641342">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/641/342/9c7af5f9afd18992fdf5899eada30d02_large.png?1392570402"></figure>
+</div><p>Starlight is an adventure platform game riddled with puzzles, traps and opportunities for exploration, where you play as both Timothy Brave, a boy afraid of the dark, and Altair, a shooting star, on a journey through a world almost completely devoid of light. </p><div class="template asset" contenteditable="false" data-edit_url="/projects/creativegeniusgames/starlight-0/assets/1473644/edit" data-id="1473644">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/473/644/d9c943b3dc99d9cecd5e231e5e1d20b2_large.png?1388073809"></figure>
+</div><p>In a unique experience, the player controls both Timothy and Altair simultaneously and independently, facing many obstacles that the two must overcome. Some of these obstacles will hinder only Timothy, for example the darkness will drain his courage and prevent him from moving. Other obstacles will affect only Altair, such as reflective surfaces (like mirrors and water), which will repel him and limit his ability to illuminate and comfort Timothy, potentially ending the journey for them both. </p><div class="template asset" contenteditable="false" data-edit_url="/projects/creativegeniusgames/starlight-0/assets/1548039/edit" data-id="1548039">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/548/039/a6cdd04ac3ee1d5883de0477fcdad0bc_large.png?1390313977"></figure>
+</div><p><b>Players: </b>   </p><p> - Single Player</p><p><b>Game Length:</b></p><p> - The initial play through would not take longer than 45 minutes, but as as the game expands and more levels become available, this time will increase.</p><p> - The game encourages exploration and repeating previous levels to get uncover all the options, so despite our detailed level integration plan, without testing the complete version, it is hard to determine how long it would take to complete.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/creativegeniusgames/starlight-0/assets/1548057/edit" data-id="1548057">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/548/057/09bf10db6f3b4c5cfe4ae5ae65f346f6_large.png?1390314872"></figure>
+</div><p><b>Target Platforms:</b></p><p><i>In order of production, our target platforms are: </i></p><p> - <b>iPad    </b>This is our intended launch platform, using the bigger screen to get the most out of the unique gameplay.</p><p> - <b>iPod/iPhone    </b>With enough funding, the extra time and resources will let us launch to the smaller devices too. </p><p> -  <b>Android   </b> After gauging the success and desire for the game after launch and feedback from kick-starter, we will buy the tools required to make the android version too.</p><p> - (Hopefully) <b>Nintendo 3DS   </b> This game has a great deal of potential, and no console will bring out as much as the Nintendo DS family, so we hope to launch it on that platform sometime next year. </p><p><b>Estimated Release Dates:</b>    </p><p> - We intend to launch the iPad version of Starlight on April 17th, 2014.</p><p> - If we reach our secondary funding goal, we aim to simultaneously launch the iPod/iPhone version, the extra money will help us speed up the required tweaks and testing. </p><p> - Depending on the initial success of the project, reaching our tertiary funding will set our Android release for June 2014.</p><p> - We will wait a year to determine the value of future development, but intend to announce the games development for the DS by April 2015.</p><p><b>Target Market:   </b></p><p> - Our initial market research show that children between the ages of 7 - 12 would be most drawn to the game.</p><p> - Our Alpha testing and early design showed that teenage girls between the ages of 13 - 16 would show high levels of interest too.</p><p> - Combing the results of our research and broader testing, along with our intended development, we predict that the market of young women between 18 - 23 would be appealed to by the games design, style and mechanics. </p><p>The dynamic difficulty of the game (where the harder to find levels are the harder to play levels) and the many options for exploration and character development make it diverse enough for a variety of market groups, but we have isolated the core market above.</p><p><b>Target Audience:</b></p><p> - Parents (primarily the mothers, but we have a different approach that can be used to market to the fathers of players too) of the children and teenagers in our Target Market</p><p> - Teenage girls directly and young women between the ages 15 - 23</p><p><b>Target Prices: </b>(Currently estimates as production costs depend on Kickstarters success)</p><p> - The launch game, including the Tutorial, Level 1 and the first mini-game at least, will be a free to play trail.</p><p> - The full launch game, going all the way to the end of the first set of levels (referred to as the first play through), will be significantly longer, and cost about £1.99. (This will be free for donators). </p><p> - The additional DLC will come as area bundles, that branch off from the different points on the original levels. Each bundle will in itself contain branches, and the cost would be close to that of the first play through, at £1.99 or perhaps more, depending on how far the branches go (The initial play through is not as long as the additional branches).</p><p>All these prices are subject to change as we factor in any additional costs of production, but the further we are along our Stretch Goals, the less likely any of these prices will increase.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/creativegeniusgames/starlight-0/assets/1467064/edit" data-id="1467064">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/467/064/3c7d864afd3b21362826b1972faf1984_large.png?1387765795"></figure>
+</div><p>When the Sun shattered and the pieces fell to the Earth, the world was dashed into an endless night. Timothy Brave was just a boy, afraid of his own shadow, kneeling by his bed while his nightlight began to dim. Desperate and afraid, he looked upon that shooting star, and made a simple wish:</p><div class="template asset" contenteditable="false" data-edit_url="/projects/creativegeniusgames/starlight-0/assets/1466926/edit" data-id="1466926">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/466/926/2c5c9244b85a3717b9d5ce064b632ef9_large.png?1387762083"></figure>
+</div><p>"Please don't let the light go out. Please don't let the dark get in."</p><p>To his astonishment, the star came to him, introducing itself as Altair and filling his room with light. Timothy was filled with joy, dancing around to the light of the star, but Altair's miracle was not over.</p><p>"Timothy, this is all I can do to push back the darkness, but the light I cast will not last. The only light that will is the light of the Sun."</p><p>Timothy was scared and confused. He clung to his blanket and begged the star not to go.</p><p>"Like that lamp, my power will fade, but if you help me, you won't have to worry ever again."</p><p>From here, the star proposed a deal. Altair promised to light Timothy's path and never be far from his side, if in return, Timothy would guide Altair through this alien world and help him gather the fallen fragments of the Sun. </p><div class="template asset" contenteditable="false" data-edit_url="/projects/creativegeniusgames/starlight-0/assets/1480152/edit" data-id="1480152">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/480/152/0c56fa65e9fb1c522eb498d835caed4d_large.jpg?1388349928"></figure>
+</div><p>Timothy was reluctant at first, but with the warm glow of the star by his side, he felt a strange kind of courage build up inside of him. He left the comforts of his room, and with Altair he felt he could face the darkness of the house, but when the time came to leave, the dark shadows dancing along the walls sent him into a state of panic.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/creativegeniusgames/starlight-0/assets/1467189/edit" data-id="1467189">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/467/189/ea87a109bfd67bc6067014931db9dbed_large.jpg?1387769587"></figure>
+</div><p>But Altair illuminated the path to reveal the source to be nothing more than a cluster of toys, casting unusually large shadows. </p><p>"See Timothy, I can always show you that there is nothing you need to fear."</p><p>Altair led Timothy to the window, where the faint lights of the city and the distant lights of the Sun Fragments could be seen, glittering in the distance. The path was not absolute darkness after all. This realisation gave Timothy conviction; he stood up, walked to the door, and took that first step into the world of Starlight.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/creativegeniusgames/starlight-0/assets/1467066/edit" data-id="1467066">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/467/066/ca9b934f4e017eee498fe8de0ddfc343_large.png?1387765830"></figure>
+</div><p><b>Objectives:</b></p><p>Traverse the Starlight universe with Timothy and Altair, collecting the fallen pieces of the Sun, until they can finally be returned to the sky.</p><p><b>Obstacles:</b></p><p>Timothy is obstructed by areas of low light, physical objects, fearful images, and unknown events (sounds, flashes, etc) that occur within the darkness.</p><p>Altair is obstructed by reflective surfaces, his power weakens with any contact with water and he is pulled in by live cables and other darker energy sources you encounter throughout the game.</p><p><b>Character Development:</b></p><p>As the game progresses, Timothy is able to do more daring things, and stay in the darkness longer periods of time before panicking.</p><p>As Altair takes in star shards, he gains abilities, similar to those of the Sun throughout the different stages of its life cycle (e.g. Red Giant, Supernova, Neutron Star). The different powers have different effects on the environment, which allow Timothy to do different things as well. </p><p><b>Summary:</b></p><p>Starlight is not just a standard adventure game; it is composed of real-time reactions to events and puzzle-solving elements. Timothy and Altair must gather the fallen pieces of the Sun and eventually return it to the sky, but Timothy doesn't just fear the darkness, he makes it "<i>real</i>" allowing him to interact with shadows, and even dropping into panic attacks if they are too threatening. This makes him dependent on Altair, who can freely manipulate the shape of the darkness, casting light onto various objects and projecting shadows across the walls while awakening new powers to affect the environment in different ways. However, Altair has his own weaknesses, unlike Timothy he cannot move or touch solid objects, and reflective surfaces and flowing water repel or weaken him, so Timothy must clear paths, find alternate routes and even face the darkness in order to help Altair progress. </p><div class="template asset" contenteditable="false" data-edit_url="/projects/creativegeniusgames/starlight-0/assets/1467068/edit" data-id="1467068">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/467/068/f420b830c9df88812d937eedf700c403_large.png?1387765859"></figure>
+</div><p><b>Timothy can:</b></p><p>- Walk over shadows</p><div class="template asset" contenteditable="false" data-edit_url="/projects/creativegeniusgames/starlight-0/assets/1423932/edit" data-id="1423932">
+<figure><img alt="Walking on Star-shine" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/423/932/e24056d69022ed5e0f81f0ed2ace45cd_large.png?1386560806"><figcaption>Walking on Star-shine</figcaption></figure>
+</div><p>- Climb over various obstacles</p><p> - Move physical objects</p><p> - Protect Altair from a variety of harmful elements</p><p> - Collect Star fragments and other treasures</p><p><b>Altair can:</b></p><p>- Illuminate and reveal the true nature of various threats, changing Timothy's emotional state</p><div class="template asset" contenteditable="false" data-edit_url="/projects/creativegeniusgames/starlight-0/assets/1467277/edit" data-id="1467277">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/467/277/89cfedee7273691d132b4a88e28f5d64_large.png?1387772643"></figure>
+</div><p>- Cast light in various shapes</p><p> - Manipulate or disintegrate shadows</p><p> - Comfort Timothy and give him courage</p><p> - Bloom flowers and return colour and radiance to the world</p><div class="template asset" contenteditable="false" data-edit_url="/projects/creativegeniusgames/starlight-0/assets/1467071/edit" data-id="1467071">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/467/071/bf71c0f7aa143f59f787b1fbfa06858a_large.png?1387765897"></figure>
+</div><p><b>Controls:</b></p><p>Timothy is controlled using a virtual joystick on the touch screen of the intended device. With this you can make him run, jump, push and climb, and there are other buttons that will allow Timothy to use other skills as he attains them.</p><p>Altair can be dragged around the screen through touch-move events, activating his unique powers with multi-touch gestures. He can be used to cast a light in a particular direction, illuminate a vast area, or throw projectile balls of light called "Solar Flares", to light multiple areas at once. As with Timothy, more gestures become available to Altair over time. </p><p>Since there will be times where the two must be separated, there will be a switch button that will make the camera follow Altair instead of Timothy, and a call button that will make Altair return (if possible) to Timothy's side. </p><p><b>Progression:</b></p><p>You progress through the game one level at a time, especially on the first play through; however, instead of following a linear path, the game branches out as you awaken new abilities, you can use them to explore additional areas of the same maps, and even find portals to entirely different levels. Every original level (even the tutorial) branches off into at least one other level or area, or both. You are encouraged to replay levels and use the different powers to reach places you otherwise may not have known even existed. </p><p>Because of this mechanic, after your first play through, the level select options will become available, and with DLC, more areas will be added to discover, until you find the path that leads to the games conclusion, having enough Sun Fragments to bring the Sun back. </p><p><b>Darkness:</b></p><p>The darkness is not just something to be feared, but also explored. Many things are hidden in the shadows, and as Altair and Timothy progress, there will be ways to illuminate more of the darkness at once. </p><p>Non-essential discoveries include dying flowers that can be refreshed, toys, books and notes in various forms that can be found around every level, and even elements of the story, explaining what happened to the world after the lights went out.</p><p><b>Bonuses:</b></p><p>For each discovery, non-essential, essential and everything in-between, the player gains points. Certain discoveries and even activities will earn specific rewards, "Medals" that can be seen on Timothy's wall in the title screen. </p><p>Some rewards are just bragging rights, others add toward the completion of the game, but some give the player access to additional content, including levels, artwork, and even sneak peaks at our other projects.</p><p>In Timothy's room, items you find along your journey will gather and be viewable. In his bookshelf you will find notes, text and even pictures he found. On his floor the different toys will begin to gather, and on his table, the places he has visited will be drawn out for you to view again at any time.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/creativegeniusgames/starlight-0/assets/1467074/edit" data-id="1467074">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/467/074/2bb443c5d8a5ad46e71cd3ae33bf8cbd_large.png?1387765918"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/creativegeniusgames/starlight-0/assets/1423764/edit" data-id="1423764">
+<figure><img alt="Timothy and Altair" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/423/764/2f42fa8c30424718a33d76b9352e0ffe_large.png?1386558356"><figcaption>Timothy and Altair</figcaption></figure>
+</div><p>Both characters have had many make-overs, and while we are happy with Timothy's design, we may still change Altair a couple more times.</p><p><b>Beneficial:</b></p><div class="template asset" contenteditable="false" data-edit_url="/projects/creativegeniusgames/starlight-0/assets/1603587/edit" data-id="1603587">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/603/587/a2ee991f5fba9ea9fbf7d43373c2840b_large.png?1391661614"></figure>
+</div><p>Toys will comfort Timothy, and give him more courage (as well as more maximum courage), and can be found in most levels in some way, shape or form. </p><p>Precarious objects will often fall when Timothy goes passed them, scaring him directly, or indirectly if he does not see what it was that made the sound. Finding them with the Star or collecting them with Timothy will reassure him, and make at least some of the sounds he hears from the darkness less threatening. </p><p><b>Detrimental</b> </p><div class="template asset" contenteditable="false" data-edit_url="/projects/creativegeniusgames/starlight-0/assets/1423779/edit" data-id="1423779">
+<figure><img alt="Shadows" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/423/779/311575fcfb08d0b4c5de45baf4a5e8c9_large.png?1386558811"><figcaption>Shadows</figcaption></figure>
+</div><p>Some shadows will be useful to Timothy, as long as Altair is not too close, he can use them to climb up to higher places, but others will take a menacing form, which will stop Timothy even getting close, and unless you can dispel the shadow or reveal its source, Timothy may not be able to progress at all. </p><div class="template asset" contenteditable="false" data-edit_url="/projects/creativegeniusgames/starlight-0/assets/1467076/edit" data-id="1467076">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/467/076/c2c7b8ada9f222a68b5fd8865ef4683b_large.png?1387765955"></figure>
+</div><p>Creative Genius is a new group of game designers, artists and programmers. We fund the company with part-time work and our own savings, and our motto "When we're not working, we're working" is testament to the effort we put in, on and off the clock, but there's a limit to what we can do with this effort alone. For over a year we have been building up our ideas, our designs and even our team, but we have reached certain financial, space and time barriers that are hindering our progress. We need equipment, we need external help to refine our incomplete soundtrack, we need more space to work from, but most importantly, we need licenses for expensive software. With the equipment we have, we could finish this project in two or three months, but it'd take 4 to 5 months to afford all the software we need, and we would not be able to do everything until we get it, so what would take maybe 3 months, would be pushed closer to 6 or 7. </p><p>With the funding, not only would we have the software we need, but with the new equipment, we would be able to speed up production, and not only have the game finished by our desired date of March 14th, but with a lot more content and to much higher quality. </p><p>Without enough previous experience, a bank loan would be difficult to attain, and the focus of paying it back, would take our attention away from creating the best possible product. </p><p>We've spent almost a year trying to secure government grants but it's tricky, a lot of them are region or category restricted. Our options were running dry when we found out about Kick starter. Through this site, we could show people our ideas, and raise the funds we "need" to make them into reality, as well as have the opportunity to raise more, and really bring out our concepts' full potential. Not only that, but the more money we get from individuals, instead of bulk amounts, the more interest there is in our idea, and the more confidence it gives us in its potential success. </p><p>With the money we could raise, it would not just launch this idea, but us as a company, and we could see at least three of our ideas being launched by the end of 2014, and with really big things happening in 2015, we just need that little extra push before our private funds run out, which will mean we will have to pull back a little from our work as Creative Genius, and take up full time jobs just to keep the company going. </p><p>We've seen what Kickstarter has done for others, and we know it can do just as much for us, so please, have a look at what we've got to offer, even if it's just a look, because this is only the beginning of much greater things to come. </p><div class="template asset" contenteditable="false" data-edit_url="/projects/creativegeniusgames/starlight-0/assets/1467283/edit" data-id="1467283">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/467/283/a40a4ca82113c41323887127d3d8a659_large.png?1387772756"></figure>
+</div><p>Each of our rewards is associated with a rank. Any contributors who opt to have their names in the credits will appear under that rank in order, and every rank is entitled to a free copy of the launch version of the game. Each of the below rewards includes the bonuses from the ones above.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/creativegeniusgames/starlight-0/assets/1472356/edit" data-id="1472356">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/472/356/11fbce95f42048c428a046369cf0ccad_large.png?1387985895"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/creativegeniusgames/starlight-0/assets/1472357/edit" data-id="1472357">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/472/357/7054869a102b059d09b94dc4b63993c3_large.png?1387985915"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/creativegeniusgames/starlight-0/assets/1472358/edit" data-id="1472358">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/472/358/f61dd0fb305d19adaf8d40ebd45dfc11_large.png?1387985950"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/creativegeniusgames/starlight-0/assets/1472359/edit" data-id="1472359">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/472/359/fef4eee5c2c25b8622688ebb03a57f96_large.png?1387985971"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/creativegeniusgames/starlight-0/assets/1472361/edit" data-id="1472361">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/472/361/df0f11accf0c0fb9ee15b387029c6197_large.png?1387985990"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/creativegeniusgames/starlight-0/assets/1472362/edit" data-id="1472362">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/472/362/60388cc26a7fd0a6130150ac63a56258_large.png?1387986014"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/creativegeniusgames/starlight-0/assets/1472365/edit" data-id="1472365">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/472/365/517515e9dca02c433f4e9f30ea581b15_large.png?1387986030"></figure>
+</div><p>All images, avatars and creative content must be suitable for all ages, and would be moderated before inclusion. You would be told if we had an issue with any content, and given opportunity to adjust it. This is not an opportunity for commercial advertisement but for creative expression, so we reserve the right to reject any content we deem inappropriate or in breach of these terms. </p><div class="template asset" contenteditable="false" data-edit_url="/projects/creativegeniusgames/starlight-0/assets/1467080/edit" data-id="1467080">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/467/080/9af8b21a78f768a6a1512277d686cbb0_large.png?1387766012"></figure>
+</div><p>The team consists of a few long-term members and newer part-time members. With multiple programmers, artists and designers, we all share the same dream of making original and memorable games, that will inspire others the same way our favourite games have inspired us. We only take on people that share that passion, so that we are not just colleagues, but we are all friends, capable of criticising and encouraging each other proportionally. </p><p>Follow us on Twitter or like our Facebook page for weekly updates on how the project is going, new imagery and even future projects that are in the pipeline. Stay tuned and keep on shining ^_^ </p><p>More on <a href="http://www.creativegeniusgames.co.uk/?page_id=572" target="_blank">Starlight</a></p><p>Find us on <a href="https://www.facebook.com/CreativeGeniusGames" target="_blank">Facebook</a> and <a href="https://twitter.com/Creating_Genius" target="_blank">Twitter</a></p>
+</div>
+<div id="risks">
+<h2 class="title grey-dark mt6 mb4">
+<span>Risks and challenges</span>
+<a href="/help/faq/kickstarter%20basics#Acco" class="right normal h5" target="_blank">Learn about accountability on Kickstarter</a>
+<div class="divider clear"></div>
+</h2>
+<p><p>As a company, we are still quite young, but as a group, most of us have been working together for a while and we have experience with working on larger projects than this with tighter deadlines and it&#39;s given us both insight and confidence in what we are doing now. </p>
+
+<p>The biggest issues we are looking at are:</p>
+
+<p>License and permissions:
+<br />Before releasing we need to have all the licences and permissions from our platforms. The licence costs have been included in our &quot;Essential Fund&quot;, and we&#39;re confident we can reach that, but permissions will come from content and technical requirements. We doubt they will stop us, but they might delay our release, we plan to finish the game by Late February to give us time to overcome any issues faced when trying to get permission to launch the app in April as planned. </p>
+
+<p>Funding: 
+<br />Don&#39;t be intimidated by the amount we&#39;re asking for. The &quot;Essential Fund&quot; is what we need to finish to project, but the &quot;Stretch Goals&quot; are what we need to make it truly great. We have estimated that the initial release will include five levels and a tutorial, plus some mini-games, and we will have to add the rest later as DLC (Downloadable Content). However, the rest of the amount is to push us to have the complete &quot;story mode&quot; in the initial release, and only bonus levels as DLC. Speed of production and quality of scenery and sound (like video cutscenes, voices instead of text) depend on whether we can call in the extra help using the extra funds.</p>
+
+<p>Time and space management:
+<br />Since all of us are working from different locations, it is difficult and arduous trying to collaborate. Right now we work with regular conference calls on Skype, email and phone for weekly updates, and we meet up at least once a month, but if we had one central location to work from, we could get things done so more easily and quickly. We can&#39;t afford it yet, but the extra money we need has been included in the &quot;Bonus Funds&quot; as it is not essential, but will really help us move forward and at a much greater pace.</p></p>
+</div>
+</div>
+<div class="NS-projects-faqs" id="project-faqs">
+<h2 class="title grey-dark mt6 mb4">
+FAQ
+<div class="divider clear"></div>
+</h2>
+<ul class="faqs">
+
+</ul>
+<div class="faq-ask-box">
+<p>
+<strong>Have a question?</strong>
+If the info above doesn't help, you can ask the project creator directly.
+</p>
+<a href="/projects/creativegeniusgames/starlight-0/messages/new?message%5Bto%5D=creativegeniusgames&amp;mode=FAQ" class="button button_blue remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Ask a question about Starlight">Ask a question</a>
+
+</div>
+</div>
+
+<div class="mt4 ml1 mr1 mb2" id="report-issue-wrap">
+<a href="/login?then=%2Fprojects%2Fcreativegeniusgames%2Fstarlight-0" class="button button_grey">Report this project to Kickstarter</a>
+</div>
+</div>
+<div class="NS-projects-rightcol grid_5" id="rightcol">
+<div class="NS_projects__ecom">
+<div class="digits_4 pb2 pl2 pt2" id="stats">
+<h5>
+<div class="num h48 no-margin" data-backers-count="36" id="backers_count"><data class="Project484765415" data-format="number" data-value="36" itemprop="Project[backers_count]">36</data></div>
+<span><data class="Project484765415" data-attr="backers_count" data-format="pluralize" data-value="36" data-word="Backer">Backers</data></span>
+</h5>
+<h5>
+<div class="num h48 no-margin" data-goal="4000.0" data-percent-raised="1.01784" data-pledged="4071.36" id="pledged">
+<data class="Project484765415" data-currency="GBP" data-format="shorter_money" data-precision="0" data-value="4071" data-without_code="true" itemprop="Project[pledged]">£4,071</data>
+<span class="money gbp project_currency_code"></span>
+</div>
+pledged of
+<span class="money gbp no-code">£4,000</span>
+goal
+</h5>
+<span data-duration="31.961979166666666" data-end_time="2014-02-16T20:00:00-05:00" data-hours-remaining="0" id="project_duration_data"></span>
+<div class="Project484765415" data-conditions="[{&quot;!state&quot;:[&quot;canceled&quot;,&quot;suspended&quot;]}]" data-evaluation="true" data-render="&quot;&lt;h5 class=\&quot;poll \&quot; data-dynamic=\&quot;5\&quot; data-end_time=\&quot;2014-02-16T20:00:00-05:00\&quot; data-poll_url=\&quot;https://d2oher2uhvl0ur.cloudfront.net/projects/creativegeniusgames/starlight-0/stats.json\&quot;&gt;\n&lt;div class=\&quot;num h48 no-margin\&quot;&gt;0&lt;/div&gt;\n&lt;span class=\&quot;text\&quot;&gt;seconds to go&lt;/span&gt;\n&lt;/h5&gt;\n&quot;"><h5 class="poll " data-dynamic="5" data-end_time="2014-02-16T20:00:00-05:00" data-poll_url="https://d2oher2uhvl0ur.cloudfront.net/projects/creativegeniusgames/starlight-0/stats.json">
+<div class="num h48 no-margin">0</div>
+<span class="text">seconds to go</span>
+</h5>
+</div></div>
+<div class="Project484765415" data-conditions="[{&quot;state&quot;:&quot;live&quot;},{&quot;!ended?&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;pr2 pl2\&quot; id=\&quot;pledge-wrap\&quot;&gt;\n&lt;a href=\&quot;/projects/creativegeniusgames/starlight-0/pledge/new?clicked_reward=false\&quot; class=\&quot;button button_green button_box button_block\&quot; id=\&quot;button-back-this-proj\&quot; title=\&quot;Back this project\&quot;&gt;Back This Project &lt;small class=&#39;h6 normal block green-dark&#39;&gt;&lt;span class=\&quot;money gbp no-code\&quot;&gt;\u00a31&lt;/span&gt; minimum pledge&lt;/small&gt;&lt;/a&gt;\n&lt;/div&gt;\n&quot;"></div><div class="Project484765415" data-conditions="[{&quot;state&quot;:&quot;live&quot;}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;p2\&quot; id=\&quot;banner\&quot;&gt;\n&lt;p class=\&quot;tiny_type no-margin\&quot;&gt;\nThis project will be funded on\n&lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;llll z\&quot; datetime=\&quot;2014-02-16T20:00:00-05:00\&quot;&gt;Sun, Feb 16 2014 8:00 pm EST&lt;/time&gt;.\n&lt;/p&gt;\n&lt;/div&gt;\n&quot;"></div></div>
+
+<div class="NS_projects__rightcol_projectby bg-blue-light rounded">
+<div class="p2 clearfix">
+<div class="avatar inline-block align-middle">
+<a href="/projects/creativegeniusgames/starlight-0/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography"><img alt="Cg_logo.small" class="avatar-small" height="80" src="https://s3.amazonaws.com/ksr/avatars/8923175/CG_Logo.small.jpg?1385941356" width="80" />
+</a></div>
+<div class="creator-name inline-block align-middle ml1">
+<h6 class="mb1">Project by</h6>
+<h5 class="mb1">
+<a href="/projects/creativegeniusgames/starlight-0/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">Creative Genius</a>
+</h5>
+<p class="location h6 bold mb1">
+<a href="/discover/places/london-gb">London, UK</a>
+</p>
+</div>
+</div>
+<div class="creator-details pl2 pr2 pb1">
+<ul class="list-simple h5 mb1">
+<li class="projects">
+<span class="ss-icon ss-kickstarter grey-dark margin-right"></span>
+<span class="text">
+First created
+<span class="divider">&middot;</span>
+<a href="/profile/creativegeniusgames/backed" class="green-dark bold more-button remote_modal_dialog" data-modal-title="Projects backed by Creative Genius">2 backed</a>
+</span>
+</li>
+<li class="facebook-connected">
+<span class="ss-icon ss-facebook facebook color-facebook margin-right"></span>
+<span class="text">
+<a href="https://www.facebook.com/717380229" class="popup" target="_blank">Daniel No Kuroikaze</a>
+<span class="number h6">
+258
+friends
+</span>
+</span>
+
+</li>
+<li class="links">
+<span class="ss-icon ss-globe margin-right grey-dark"></span>
+<span class="text">
+<a href="http://www.creativegeniusgames.co.uk" class="popup" rel="nofollow" target="_blank">creativegeniusgames.co.uk</a>
+</span>
+</li>
+</ul>
+</div>
+<div class="footer center h5 bold clearfix rounded-bottom clip">
+<a href="/projects/creativegeniusgames/starlight-0/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">See full bio</a>
+<a href="/projects/creativegeniusgames/starlight-0/messages/new?message%5Bto%5D=creativegeniusgames" class="remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Send a message to Creative Genius">Contact me</a>
+
+</div>
+</div>
+
+<ul class="NS-projects-rightcol-rewards rounded clip list mt2" data-reward-count="7" id="what-you-get">
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£1</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+11 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Light Giver:
+   For £1, we give our personal thanks, a copy of the game at launch and the option to opt in to the Starlight newsletter and keep up to date with our progress.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-04-01">Apr 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£5</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+4 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Light Bringer:
+   For £5 you gain access to the Starlight forums, make suggestions towards game development and you can add your name to the credits under the title of Light Bringer.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-04-01">Apr 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£10</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+3 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Light Seeker:
+   For £10 you get in game credit for purchasing at least one DLC package, and access to pre-launch updates (including current and future game features), helping you choose the DLC for you!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-04-01">Apr 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£25</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+7 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Light Finder:
+   For £25, you get digital copies of the game soundtrack and concept art, and enough credit for at least two DLC expansion packs.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-04-01">Apr 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£50</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+2 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(13 left of 15)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Light Beacon:
+   For £50 you can choose your own image or original avatar to represent you in the credits, enough credit for three expansion packs, and physical copies of the soundtrack and concept art!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-04-01">Apr 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="domestic">
+Ships within the UK only
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£100</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+3 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(12 left of 15)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Light Creator:
+   For £100 you can send us original art (images, music, ambigous short stories) that will appear in the game, and in the credits next to your name. You can also access the creators forums, to see how it will be used.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-04-01">Apr 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(4 left of 5)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Light Source:
+   For £500+ you get the chance to meet the team, discuss ideas, like how to add your creative work to the game, add your own rewards &amp; secret items to find, and have a group photo that will appear in the credits.
+You also get a collection of merchandise to call your own.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-05-01">May 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="domestic">
+Ships within the UK only
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+</ul>
+
+<div class="p2" id="meta">
+<h5>Funding period</h5>
+<p class="tiny_type">
+<time class="js-adjust" data-format="ll" datetime="2014-01-15T20:54:45-05:00">Jan 15, 2014</time> - 
+<time class="js-adjust" data-format="ll" datetime="2014-02-16T20:00:00-05:00">Feb 16, 2014</time>
+(31 days)
+</p>
+</div>
+</div>
+
+</div>
+
+<a href="#" id="video_mode_tab" style="display: none;">
+View in Video Mode
+</a>
+
+</div>
+</div>
+
+
+</div>
+
+<div class="h5 bg-green-dark" id="mega-footer-wrap">
+<div class="bg-green-dark white full-height" id="footer-newsletter-signup">
+<div class="container py4">
+<div class="grid_8 prefix_4 suffix_4 center mt4">
+<h2>
+Eureka! You've found
+<br>
+our little secret.
+</h2>
+<p>Sign up for our Happening email for all the inside info about arts and culture in the Kickstarter universe and beyond.</p>
+<div class="newsletter_signup">
+<form accept-charset="UTF-8" action="/newsletters/happening/signup" class="overlabels" method="post"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /><input class="hidden" name="authenticity_token" type="hidden" value="x8sI9L84DeUJCy0W/CpGoTouYwAtpyx6aL9IZlz3Rc8=" /></div><input class="hidden" id="location" name="location" type="hidden" value="footer" />
+<textarea class="hide textarea" id="comment" name="comment">
+</textarea>
+<div class="field newsletter">
+<label class="overlabel z1 overlabel-newsletter">Email address</label>
+<input class="text" id="email" name="email" type="text" />
+</div>
+<input class="button button_green submit" name="commit" type="submit" value="Submit" />
+</form>
+
+</div>
+
+</div>
+</div>
+</div>
+<div class="container relative" id="mega-footer">
+<span class="scissors icon-scissors-1"></span>
+<div class="grid_16 alpha omega pt4 pb2" id="mega-footer-links">
+<div class="grid_4 link-group">
+<h5 class="white">About us</h5>
+<ul class="list">
+<li><a href="/year/2013/?ref=footer">2013 highlights</a></li>
+<li><a href="/year/2012?ref=footer">2012 highlights</a></li>
+<li><a href="/team?ref=footer">Who we are</a></li>
+<li><a href="/jobs?ref=footer">Jobs</a></li>
+<li><a href="/press?ref=footer">Press</a></li>
+<li><a href="/help/stats?ref=footer">Stats</a></li>
+<li><a href="/newsletters/weekly">Projects we love</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group">
+<h5><a href="/help?ref=footer" class="white">Help</a></h5>
+<ul class="list">
+<li><a href="/hello?ref=footer">What is Kickstarter?</a></li>
+<li><a href="/help?ref=footer">FAQ</a></li>
+<li><a href="/contact?ref=footer">Support</a></li>
+<li><a href="/help/school?ref=footer">Kickstarter School</a></li>
+<li><a href="/terms-of-use?ref=footer">Terms of Use</a></li>
+<li><a href="/privacy?ref=footer">Privacy Policy</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group alpha omega suffix_1">
+<h5 class="alpha"><a href="/discover/advanced?ref=footer" class="white">Discover</a></h5>
+<ul class="column column-0 grid_2 list">
+<li><a href="/discover/categories/art?ref=footer">Art</a></li>
+<li><a href="/discover/categories/comics?ref=footer">Comics</a></li>
+<li><a href="/discover/categories/dance?ref=footer">Dance</a></li>
+<li><a href="/discover/categories/design?ref=footer">Design</a></li>
+<li><a href="/discover/categories/fashion?ref=footer">Fashion</a></li>
+<li><a href="/discover/categories/film%20&amp;%20video?ref=footer">Film &amp; Video</a></li>
+<li><a href="/discover/categories/food?ref=footer">Food</a></li>
+</ul>
+<ul class="column column-1 grid_2 list">
+<li><a href="/discover/categories/games?ref=footer">Games</a></li>
+<li><a href="/discover/categories/music?ref=footer">Music</a></li>
+<li><a href="/discover/categories/photography?ref=footer">Photography</a></li>
+<li><a href="/discover/categories/publishing?ref=footer">Publishing</a></li>
+<li><a href="/discover/categories/technology?ref=footer">Technology</a></li>
+<li><a href="/discover/categories/theater?ref=footer">Theater</a></li>
+</ul>
+</div>
+<div class="grid_3 link-group">
+<h5 class="white">Hello</h5>
+<ul class="list">
+<li>
+<a href="https://twitter.com/kickstarter"><span class="ss-icon ss-social-regular ss-twitter"></span>
+Twitter
+</a></li>
+<li>
+<a href="https://www.facebook.com/Kickstarter"><span class="ss-icon ss-social-regular ss-facebook"></span>
+Facebook
+</a></li>
+<li>
+<a href="http://kickstarter.tumblr.com"><span class="ss-icon ss-social-regular ss-tumblr"></span>
+Tumblr
+</a></li>
+<li>
+<a href="http://instagram.com/kickstarter"><span class="ss-icon ss-social-regular ss-instagram"></span>
+Instagram
+</a></li>
+<li>
+<a href="https://vine.co/Kickstarter"><span class="ss-icon ss-social-regular ss-vine"></span>
+Vine
+</a></li>
+<li>
+<a href="/blog?ref=footer">Blog</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="grid_16 py4" id="mega-footer-bottom">
+<div class="logo left">
+<a href="/" class="grey-dark"><span class="ss-icon h3">KICKSTARTER</span>
+</a></div>
+<p class="right h5 grey-dark">
+&copy;
+2014
+Kickstarter, Inc.
+</p>
+</div>
+</div>
+</div>
+
+<script>
+  //<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    var analytics_vars = { google_analytics_id : "UA-7621056-1", logged_in : "false", social_user: "false" }
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.mixpanel_id = '75b1d24a516ecfc955eadfadc4910661';
+    window.mixpanel_debug = false;
+  //]]>
+</script>
+
+
+<noscript>
+<img alt="Quantcast" border="0" height="1" src="//secure.quantserve.com/pixel/p-34IbSpw2K94Sg.gif" style="display:none" width="1" />
+</noscript>
+
+
+<script>
+  //<![CDATA[
+    window.benchmark = (typeof window.performance == 'object' && typeof window.performance.mark == 'function');
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    (function (root) {
+      function instrument_function (original) {
+        return function () {
+          try {
+            return original.apply(this, arguments);
+          } catch (e) {
+            if (e.stack && root.Honeybadger) {
+              Honeybadger.notify(e, {
+                current_project : root.current_project,
+                current_user : root.current_user
+              });
+            }
+            throw(e);
+          }
+        };
+      }
+      root.instrument_function = instrument_function;
+    }(this));
+  //]]>
+</script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+
+<script>
+  //<![CDATA[
+    (function(){function c(a){this.local_start_time=new Date;this.settings={cookie_name:"request_time"};for(var b in a)this.settings[b]=a[b];this.get_remote_offset()}c.prototype.get_remote_offset=function(){this.cookie_value=this.read_cookie();var a=new Date(this.cookie_value);if(!this.cookie_value||"Invalid Date"===a.toString()){if(this.remote_offset=this.read_cookie("local_offset"))this.remote_offset=parseInt(this.remote_offset,10)}else this.remote_offset=a-this.local_start_time;"undefined"!==typeof this.remote_offset&& !isNaN(this.remote_offset)?(document.cookie="local_offset="+this.remote_offset+"; path=/",this.is_set=!0):this.is_set=!1};c.prototype.time_units=[["milliseconds",1],["seconds",1E3],["minutes",6E4],["hours",36E5],["days",864E5]];c.prototype.get_units_in_interval=function(a,b){var d=a.replace(/^\w/,function(d){return"get"+d.toUpperCase()});return b[d]()};c.prototype.milliseconds_in_day=function(a){"undefined"===typeof a&&(a=new Date);for(var b=0,d=this.time_units.length-2;0<=d;d--)b+=this.get_units_in_interval(this.time_units[d][0], a)*this.time_units[d][1];return b};c.prototype.milliseconds_in_interval=function(a,b){return this.milliseconds_in_day(b)%a};c.prototype.milliseconds_to_next_interval=function(a,b){return a-this.milliseconds_in_interval(a,b)};c.prototype.pluralize=function(a,b){1===b&&(a=a.replace(/s$/,""));return a};c.prototype.read_cookie=function(a){for(var b=window.document.cookie.split(";"),a=(a||this.settings.cookie_name)+"=",d=0;d<b.length;d++){for(var e=b[d];" "==e.charAt(0);)e=e.substring(1,e.length);if(0== e.indexOf(a))return b=e.substring(a.length,e.length),decodeURIComponent(b).replace(/\+/g," ")}return null};c.prototype.destroy_cookie=function(a){var b=new Date;a||(a=this.settings.cookie_name);b.setTime(b.getTime()-864E5);window.document.cookie=a+"=; expires="+b.toGMTString()+"; path=/"};c.prototype.get_remote_time=function(){var a=new Date,b=a.getTime()+this.remote_offset;return a=a.setTime(b)};window.ksr_page_clock=new c})(); (function(){function c(d,a,b){if(d){this.options={unit_base:{seconds:119,minutes:119,hours:72,days:0},end_phrase:d.getAttribute("data-word")||"to go",count_down:d.getAttribute("data-dynamic")||!1};for(k in b)this.options[k]=b[k];this.clock=a;this.time_units=this.clock.time_units.slice(1);this.element=d;this.clock.is_set&&this.attach()}}function a(){this.elements=[];this.attach()}var b=function(d,a){var b=a||window.document.body,c=d.split("."),g=c[c.length-1],c=1<c.length&&c[0]?c[0]:"*";if(window.document.getElementsByClassName)return b.getElementsByClassName(g); if(b.querySelectorAll)return b.querySelectorAll(d);for(var c=b.getElementsByTagName(c),h=[],i=0,f;f=c[i];i++)b=RegExp("(^|\\s)"+g+"(\\s|$)"),(""+f.className).match(b)&&h.push(f);return h};c.prototype.get_remaining_time=function(){var d=this.remote_end_time-this.clock.get_remote_time();0>d&&(d=0);return d};c.prototype.get_current_unit=function(){for(var d,a=0;a<this.time_units.length&&!(d=this.time_units[a],this.get_remaining_time()<=this.options.unit_base[d[0]]*d[1]);a++);return d};c.prototype.update_element= function(){var a=this.get_current_unit(),b=Math.floor(this.get_remaining_time()/a[1]);isNaN(b)||(this.number_element.innerHTML=b,this.text_element.innerHTML=this.clock.pluralize(a[0],b)+" "+this.options.end_phrase)};c.prototype.valid=function(){return!(!this.number_element||!this.text_element)};c.prototype.attach=function(){function a(){c.update_element();if(c.options.count_down&&0<c.get_remaining_time()){var b=c.get_current_unit();this.timeout=window.setTimeout(a,c.clock.milliseconds_to_next_interval(b[1]))}} var c=this;if(this.remote_end_time_string=this.element.getAttribute("data-end_time"))this.remote_end_time_string.match(/^\d+$/)?(this.remote_end_time=new Date,this.remote_end_time.setTime(this.remote_end_time_string)):this.remote_end_time=new Date(this.remote_end_time_string),this.number_element=b(".num",this.element)[0],this.text_element=b(".text",this.element)[0],this.element.ksr_page_timer=!0,this.valid()&&a()};c.prototype.cancel=function(){this.timeout&&clearTimeout(this.timeout)};a.prototype.loading= !0;a.prototype.stop_finding=function(){this.attach_timers();this.loading=!1;document.addEventListener?document.removeEventListener("DOMContentLoaded",this.stop_finding,!1):document.attachEvent&&"complete"===document.readyState&&document.detachEvent("onreadystatechange",this.stop_finding)};a.prototype.bind_ready=function(){var a=this,b=function(){a.stop_finding.call(a)};document.addEventListener?(document.addEventListener("DOMContentLoaded",b,!1),window.addEventListener("load",b,!1)):document.attachEvent&& (document.attachEvent("onreadystatechange",b),window.attachEvent("onload",b))};a.prototype.attach_timers=function(){for(var a=b("div.ksr_page_timer"),e=0;e<a.length;e++)a[e].ksr_page_timer||(new c(a[e],window.ksr_page_clock),this.elements.push(a[e]))};a.prototype.attach=function(){var a=this;this.bind_ready();(function(){a.attach_timers();a.loading&&window.setTimeout(function(){a.attach_timers()},200)})()};window.ProjectTimer=c;new a})();
+  //]]>
+</script>
+
+<script class="template" id="template-widgets__video_embed_code" type="text/x-tmpl-mustache"><iframe width="{{width}}" height="{{height}}" src="{{{path}}}" frameborder="0" scrolling="no"> </iframe>
+</script><script class="template" id="template-projects__baseball_card_tall" type="text/x-tmpl-mustache"><div class="project-card-wrap project-card-wrap-tall border bg-white rounded clip">
+  <div class="project-card relative project-live {{#successful?}}successful{{/successful?}}">
+    <div class="project-thumbnail pt1 pl1 pr1">
+      <a href="{{urls.web.project}}" target="">
+        <img alt="Photo-little" class="projectphoto-little" src="{{photo.little}}" class="fit">
+      </a>
+    </div>
+    <div class="project-card-interior p1 h6 grey-dark">
+      <h6 class="project-title">
+        <a href="{{urls.web.project}}" target="" class="green-dark">{{name}}</a>
+      </h6>
+      <p class="mb1 ellipsis">
+        by
+        {{creator.name}}
+      </p>
+      <p class="blurb">
+        {{blurb}}
+      </p>
+    </div>
+    <div class="absolute-bottom bg-white rounded-bottom">
+
+      {{#location}}
+        <ul class="p1 list project-meta no-margin h6">
+          <li class="ellipsis">
+            <a href="{{location.urls.web.discover}}" data-location="{{location_json}}" class="grey-dark">
+              <span class="ss-icon ss-location"></span>
+              <span class="location-name">{{location.displayable_name}}</span>
+            </a>
+          </li>
+        </ul>
+      {{/location}}
+
+      <div class="project-stats-wrap pb1 pl1 pr1">
+
+        {{#failed?}}
+          <div class='project-status project-failed h6'>
+            <strong> Funding Unsuccessful</strong><br />
+            <span class="grey-dark">Project ended on {{formatted_deadline}}</span>
+          </div>
+        {{/failed?}}
+
+        {{#canceled?}}
+          <div class='project-status project-canceled h6'>
+            <strong> Funding Canceled</strong><br />
+            <span class="grey-dark">Project canceled on {{formatted_state_changed_at}}</span>
+          </div>
+        {{/canceled?}}
+
+        {{#successful?}}
+          <div class='project-pledged-successful bg-green white h6 pl1 pr1 mb1'>
+            <strong>Successful!</strong>
+          </div>
+        {{/successful?}}
+
+        {{#live_or_successful?}}
+          {{#live?}}
+            <div class="project-pledged-wrap bg-grey clip mb1">
+              <div class="project-pledged bg-green full-height" style="width: {{percent_raised_to_100}}%"></div>
+            </div>
+          {{/live?}}
+          <ul class="project-stats list no-margin h6 no-wrap">
+            <li class="first funded inline-block mr1">
+              <strong class="block h6">{{percent_raised_rounded}}%</strong>
+              <span class="grey-dark">funded</span>
+            </li>
+            <li class="pledged inline-block mr1">
+              <strong class="block h6">{{currency_symbol}}{{formatted_money}}</strong>
+              <span class="grey-dark">pledged</span>
+            </li>
+            {{#successful?}}
+              <li class="last successful inline-block">
+                <strong class="block h6">Funded</strong>
+                <div class="deadline grey-dark">{{formatted_deadline}}</div>
+              </li>
+            {{/successful?}}
+            {{#live?}}
+              <li class="last ksr_page_timer inline-block" data-end_time="{{javascript_deadline}}">
+                <strong class="block h6">
+                  <div class="num">30</div>
+                </strong>
+                <div class="span text grey-dark" data-word="left">days to go</div>
+              </li>
+            {{/live?}}
+          </ul>
+        {{/live_or_successful?}}
+      </div>
+    </div>
+  </div>
+</div>
+
+{{#friends_backing?}}
+  <div class="friend_project_context">
+    <div class="friend_facepile">
+      {{#truncated_friends}}
+        <img src="{{avatar.thumb}}" class="{{#has_metadata?}}small{{/has_metadata?}}">
+      {{/truncated_friends}}
+    </div>
+    <p class="friend_namepile">
+      {{{escaped_sentence}}}
+    </p>
+  </div>
+{{/friends_backing?}}
+</script><script class="template" id="template-projects__video_mode" type="text/x-tmpl-mustache"><a href='#' id='video_mode_close' class='close_button z2'><span class='ss-icon ss-delete'></span></a>
+
+<div class='title_card z1 {{context_classes}}' style="display:none;">
+  <div class='interior'>
+    <h2 class='project_title normal_weight'>{{name}}</h2>
+    <p class='blurb'>{{blurb}}</p>
+    <nav class='bar'>
+      <a id='play_button' class='left play' href='#'>
+        <span class='play_active'>
+          <span class='ss-icon ss-play'></span>
+          Play
+        </span>
+        <span class='pause_active'>
+          <span class='ss-icon ss-pause'></span>
+          Pause
+        </span>
+      </a>
+      {{#logged_in}}
+        <div class='remind right'>
+          {{#if_not_starred}}
+            <a class='follow' href='{{urls.web.project}}/watch'><span class='ss-icon ss-star'></span></a>
+          {{/if_not_starred}}
+          {{#if_starred}}
+            <a class='unfollow' href='{{urls.web.project}}/unwatch'><span class='ss-icon ss-star active'></span></a>
+          {{/if_starred}}
+        </div>
+      {{/logged_in}}
+      <a class='right explore button button_green small' href='#'>Explore this project</a>
+    </nav>
+  </div>
+</div>
+
+<div class='channel_controls z1'>
+  <a href='#' class='{{#playlist_is_location}}selected {{/playlist_is_location}}location'>Something else near {{location.first_name}} <span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_featured}}selected {{/playlist_is_featured}}featured'>Something different<span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_category}}selected {{/playlist_is_category}}category'>Something else in {{category.name}} <span class='ss-icon ss-navigateright'></span></a>
+</div>
+
+<div class='project_video' style='background-image: url('{{photo.full}}')'>
+  <div class='cover'>
+    <video>
+      <source src='{{video.high}}' type='video/mp4'/>
+      <source src='{{video.webm}}' type='video/webm'/>
+    </video>
+  </div>
+</div>
+</script><script class="template" id="template-site__video_mode_fourohfour" type="text/x-tmpl-mustache"><section class='four_oh_four'>
+  <p class='big_type'>
+    Looks like you've reached the end of the line! <br />Check out <a class="another" href='#'>another channel</a> or <a href='/discover'>browse projects in discover</a>.
+  </p>
+</section>
+</script>
+
+<script id="schwamm_formatting_options" type="text/javascript">
+//<![CDATA[
+(function(){window.formatters = window.formatters || {}; var formatting_options = {"distance_date_intervals":[[5,"just now"],[29,"less than a minute ago"],[89,"1 minute ago"],[2640,"%m minutes ago"],[5340,"about 1 hour ago"],[82800,"about %h hours ago"],[147600,"1 day ago"],[604800,"%d days ago"],[15552000,"on %t"],[0,"on %y"]],"currency_symbol_mappings":{"AFN":"\u060b","ALL":"Lek","ARS":"$","AUD":"$","AWG":"\u0192","AZN":"\u043c\u0430\u043d","BAM":"KM","BBD":"$","BGN":"\u043b\u0432","BMD":"$","BND":"$","BOB":"$b","BRL":"R$","BSD":"$","BWP":"P","BYR":"p.","BZD":"BZ$","CAD":"$","CLP":"$","CNY":"\u00a5","COP":"$","CRC":"\u20a1","CUP":"\u20b1","CZK":"K\u010d","DKK":"kr","DOP":"RD$","EGP":"\u00a3","EUR":"\u20ac","FJD":"$","FKP":"\u00a3","GBP":"\u00a3","GIP":"\u00a3","GTQ":"Q","GYD":"$","HKD":"$","HNL":"L","HRK":"kn","HUF":"Ft","IDR":"Rp","ILS":"\u20aa","IRR":"\ufdfc","ISK":"kr","JMD":"J$","JPY":"\u00a5","KGS":"\u043b\u0432","KHR":"\u17db","KPW":"\u20a9","KRW":"\u20a9","KYD":"$","KZT":"\u043b\u0432","LAK":"\u20ad","LBP":"\u00a3","LKR":"\u20a8","LRD":"$","LTL":"Lt","LVL":"Ls","MKD":"\u0434\u0435\u043d","MNT":"\u20ae","MUR":"\u20a8","MXN":"$","MYR":"RM","MZN":"MT","NAD":"$","NGN":"\u20a6","NIO":"C$","NOK":"kr","NPR":"\u20a8","NZD":"$","OMR":"\ufdfc","PAB":"B/.","PEN":"S/.","PHP":"\u20b1","PKR":"\u20a8","PLN":"z\u0142","PYG":"Gs","QAR":"\ufdfc","RON":"lei","RSD":"\u0414\u0438\u043d.","RUB":"\u0440\u0443\u0431","SAR":"\ufdfc","SBD":"$","SCR":"\u20a8","SEK":"kr","SGD":"$","SHP":"\u00a3","SOS":"S","SRD":"$","SVC":"$","SYP":"\u00a3","THB":"\u0e3f","TRY":"TL","TTD":"TT$","TWD":"NT$","UAH":"\u20b4","USD":"$","UYU":"$U","UZS":"\u043b\u0432","VEF":"Bs","VND":"\u20ab","YER":"\ufdfc","ZAR":"R"},"currency_trailing_code_mappings":{"AUD":true,"CAD":true,"NZD":true,"USD":true},"currency_formats":["money","shorter_money"]}; for (key in formatting_options) {window.formatters[key] = formatting_options[key]};}());
+//]]>
+</script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("begin_base.js_tag");}
+  //]]>
+</script>
+<script src="https://d297h9he240fqh.cloudfront.net/assets/packages/base-45cdab84617ddfb8905b7cddc8500c19.js" type="text/javascript"></script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("end_base.js_tag");}
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    document.domain='kickstarter.com';
+  //]]>
+</script>
+
+<iframe height="0" id="api_xdreceiver" src="https://api.kickstarter.com/xdreceiver/85e6.html" style="display: none;" width="0"></iframe>
+
+
+
+<div id="fb-root"></div>
+<script>
+  //<![CDATA[
+    var channelUrl = window.location.protocol + "//" + window.location.host + "/channel.html",
+      skip_autologin = $('body').is('.skip_autologin');
+    
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId: window.fb_app_id,
+        channelUrl: channelUrl,
+        status: true,    // check login status
+        cookie: true,    // enable cookies to allow the server to access the session
+        xfbml: true,     // parse XFBML
+        logging: false   // turn off logging
+      });
+    
+      FB.getLoginStatus(function (response) {
+        if (response.status === 'connected') {
+          if (read_cookie("logout_from_fb")) {
+            FB.logout();
+            destroy_cookie("logout_from_fb");
+          } else if (!skip_autologin) {
+            $.get("/fb/autologin", {'fbsr': response.authResponse.signedRequest});
+          } else if (false && 0 == response.authResponse.userID) {
+            $.get("/fb/refresh", {'fbsr': response.authResponse.signedRequest});
+          }
+        } else {
+          if (read_cookie("logout_from_fb")) {
+            destroy_cookie("logout_from_fb");
+          }
+        }
+      })
+    
+      $(document).trigger('fb:loaded');
+    };
+    
+    
+    // Load the SDK Asynchronously
+    (function(d){
+      var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+      js = d.createElement('script'); js.id = id; js.async = true;
+      js.src = "//connect.facebook.net/en_US/all.js";
+      d.getElementsByTagName('head')[0].appendChild(js);
+    }(document));
+  //]]>
+</script>
+
+
+</body>
+</html>

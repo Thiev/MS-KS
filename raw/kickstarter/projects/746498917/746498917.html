@@ -1,0 +1,2248 @@
+<!DOCTYPE html>
+<html class="projects_show  fontface no-js" lang="en">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# kickstarter: http://ogp.me/ns/fb/kickstarter#">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-5.newrelic.com","errorBeacon":"jserror.newrelic.com","licenseKey":"b04b883ad2","applicationID":"11086","transactionName":"cFteRUULX1wHFhtIEFxeVVJDFxxDCgtD","queueTime":10,"applicationTime":303,"ttGuid":"","agentToken":null,"agent":"js-agent.newrelic.com/nr-411.min.js"}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"Vw4BVEVSCQMIUg=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e){function n(t,e,n){n||(n={});for(var r=o[t],a=r&&r.length||0,s=n[i]||(n[i]={}),u=0;a>u;u++)r[u].apply(s,e);return s}function r(t,e){var n=o[t]||(o[t]=[]);n.push(e)}var o={},i="nr@context";e.exports={on:r,emit:n}},{}],2:[function(t){function e(t,e,n,i,s){return u?u-=1:r("err",[s||new UncaughtException(t,e,n)]),"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t(5),a=window.onerror,s=!1,u=0;t("loader").features.push("err"),window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(d){"stack"in d&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(4),s=!0)}i.on("fn-start",function(){s&&(u+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&u>0&&(u-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:4,3:3,4:6,5:1,6:14,handle:"D5DuLP",loader:"G9z0Bl"}],3:[function(t){function e(t){r.inPlace(t,["addEventListener","removeEventListener"],"-",n)}function n(t){return t[1]}var r=t(1),o=(t(3),t(2));if(e(window),"getPrototypeOf"in Object){for(var i=document;i&&!i.hasOwnProperty("addEventListener");)i=Object.getPrototypeOf(i);i&&e(i);for(var a=XMLHttpRequest.prototype;a&&!a.hasOwnProperty("addEventListener");)a=Object.getPrototypeOf(a);a&&e(a)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&e(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=e["nr@wrapped"]?t[1]=e["nr@wrapped"]:e["nr@wrapped"]=t[1]=r(e,"fn-"):"function"==typeof e.handleEvent&&r.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:15,2:1,3:14}],4:[function(t){var e=(t(3),t(1)),n=t(2);e.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=e(t[0],"fn-")})},{1:15,2:1,3:14}],5:[function(t){function e(t){var e=t[0];"string"==typeof e&&(e=new Function(e)),t[0]=n(e,"fn-")}var n=(t(3),t(1)),r=t(2);n.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",e)},{1:15,2:1,3:14}],6:[function(t){function e(){o.inPlace(this,s,"fn-")}function n(t,e){o.inPlace(e,["onreadystatechange"],"fn-")}function r(t,e){return e}var o=t(1),i=t(2),a=window.XMLHttpRequest,s=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];window.XMLHttpRequest=function(t){var n=new a(t);try{i.emit("new-xhr",[],n),o.inPlace(n,["addEventListener","removeEventListener"],"-",function(t,e){return e}),n.addEventListener("readystatechange",e,!1)}catch(r){try{i.emit("internal-error",r)}catch(s){}}return n},window.XMLHttpRequest.prototype=a.prototype,o.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",r),i.on("send-xhr-start",n),i.on("open-xhr-start",n)},{1:15,2:1}],7:[function(t){function e(){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;u>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,d="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=e(d);if(f&&(r.rxSize=f),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}t("loader").features.push("xhr");var o=t("handle"),i=t(1),a=t(5),s=["load","error","abort","timeout"],u=s.length,d=t(2);t(3),t(4),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var d=e(o);d&&(r.txSize=d)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",e)}catch(r){}}};for(var f=0;u>f;f++)n.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&e()},{1:8,2:11,3:3,4:6,5:1,handle:"D5DuLP",loader:"G9z0Bl"}],8:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e){var n=r[t];return n?n.apply(this,e):(o[t]||(o[t]=[]),void o[t].push(e))}var r={},o={};e.exports=n,n.queues=o,n.handlers=r},{}],11:[function(t,e){function n(t){if(!t||"object"!=typeof t&&"function"!=typeof t)return-1;if(t===window)return 0;if(o.call(t,"__nr"))return t.__nr;try{return Object.defineProperty(t,"__nr",{value:r,writable:!0,enumerable:!1}),r}catch(e){return t.__nr=r,r}finally{r+=1}}var r=1,o=Object.prototype.hasOwnProperty;e.exports=n},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&u&&u.body){p.proto="https"===c.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=u.createElement("script");e.src=p.proto+t.agent,u.body.appendChild(e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,u=s.document,d="addEventListener",f="attachEvent",c=(""+location).split("?")[0],p=e.exports={offset:i(),origin:c,features:[]};u[d]?(u[d]("DOMContentLoaded",o,!1),s[d]("load",n,!1)):(u[f]("onreadystatechange",r),s[f]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],14:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],15:[function(t,e){function n(t,e,r,s){function nrWrapper(){try{var n,a=u(arguments),d=this,f=r&&r(a,d)||{}}catch(c){i([c,"",[a,d,s],f])}o(e+"start",[a,d,s],f);try{return n=t.apply(d,a)}catch(p){throw o(e+"err",[a,d,p],f),p}finally{o(e+"end",[a,d,n],f)}}return a(t)?t:(e||(e=""),nrWrapper[n.flag]=!0,nrWrapper)}function r(t,e,r,o){r||(r="");var i,s,u,d="-"===r.charAt(0);for(u=0;u<e.length;u++)s=e[u],i=t[s],a(i)||(t[s]=n(i,d?s+r:r,o,s,t))}function o(t,e,n){try{s.emit(t,e,n)}catch(r){i([r,t,e,n])}}function i(t){try{s.emit("internal-error",t)}catch(e){}}function a(t){return!(t&&"function"==typeof t&&t.apply&&!t[n.flag])}var s=t(1),u=t(2);e.exports=n,n.inPlace=r,n.flag="nr@wrapper"},{1:1,2:14}]},{},["G9z0Bl",2,7]);</script><script>
+  //<![CDATA[
+    docElement = this.document.documentElement;
+    docElement.className=docElement.className.replace(/\bno-js\b/,'') + 'js';
+  //]]>
+</script>
+<title>Hyper Light Drifter by Heart Machine &mdash; Kickstarter</title><script>
+  //<![CDATA[
+    window.report_errors = true;
+    window.honeybadger_configuration = {
+      api_key : "02ab109335c0dd1a93506d92f22217a7",
+      environment : "production",
+      component : "projects",
+      action : "show",
+      onerror : false
+    };
+  //]]>
+</script>
+
+
+<!--[if lt IE 9]>
+  <script src="//html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta content="telephone=no" name="format-detection">
+
+<!--[if !IE]> -->
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base-9f623ad5d021a188cfb2d68a0cdf7a7b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<!-- <![endif]-->
+<!--[if IE]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base_blessed-2640c72487552f9a2ef9f2620b4af860.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<!--[if lte IE 9]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_nine-a93fe10530f175f96c4078b7e070d7e1.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 8]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_eight-f75aeb274436f94a0d243774456b1c62.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 7]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie-c019c01acd3a96588b346cf577a3504f.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_seven-5a3d2cef660cd281fd844b04b2397dbb.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if IE 6]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_six-e4d3caf76e405fe19aee6ece8bda701b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<link href="https://d297h9he240fqh.cloudfront.net/favicon.png" rel="icon" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-precomposed-7b603dba7cf80e4acc57d94a991bebbd.png" rel="apple-touch-icon-precomposed" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-ipad-precomposed-3176f72977daf43dee3b0d348484dc01.png" rel="apple-touch-icon-precomposed" sizes="72x72" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-iphone4-precomposed-b93b70168cd8492c843d0fea873c7f83.png" rel="apple-touch-icon-precomposed" sizes="114x114" type="image/png">
+<link href="https://www.kickstarter.com/services/oembed?url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2F1661802484%2Fhyper-light-drifter" rel="alternate" title="Hyper Light Drifter Script Tag oEmbed" type="application/json+oembed">
+<link rel="alternate" type="application/atom+xml" title="Hyper Light Drifter : Kickstarter" href="https://www.kickstarter.com/projects/1661802484/hyper-light-drifter/posts.atom" />
+<meta property="twitter:app:id:iphone" content="596961532"/>
+<meta property="twitter:app:name:iphone" content="Kickstarter"/>
+<meta property="twitter:app:url:iphone" content="ksr://www.kickstarter.com/projects/1661802484/hyper-light-drifter"/>
+<meta name="video_height" content="426"/>
+<meta name="video_width" content="640"/>
+<meta name="video_type" content="application/x-shockwave-flash"/>
+<meta name="title" content="Kickstarter &gt;&gt; Hyper Light Drifter by Heart Machine"/>
+<meta name="description" content="Heart Machine is raising funds for Hyper Light Drifter on Kickstarter! 
+
+ Explore a beautiful, vast and ruined world riddled with unknown dangers and lost technologies. Inspired by nightmares and dreams alike."/>
+<meta property="og:title" content="Hyper Light Drifter"/>
+<meta property="og:type" content="kickstarter:project"/>
+<meta property="og:image" content="https://s3.amazonaws.com/ksr/projects/660047/photo-main.jpg?1397831981"/>
+<meta property="og:url" content="https://www.kickstarter.com/projects/1661802484/hyper-light-drifter"/>
+<meta property="og:site_name" content="Kickstarter"/>
+<meta property="fb:app_id" content="69103156693"/>
+<meta property="og:description" content="Explore a beautiful, vast and ruined world riddled with unknown dangers and lost technologies. Inspired by nightmares and dreams alike."/>
+<meta property="kickstarter:creator" content="https://www.kickstarter.com/profile/1661802484"/>
+<meta property="twitter:url:landing_url" content="https://www.kickstarter.com/projects/1661802484/hyper-light-drifter"/>
+<meta property="twitter:card" content="2427656750:kickstarter_project"/>
+<meta property="twitter:site" content="@kickstarter"/>
+<meta property="twitter:site:id" content="16186995"/>
+<meta property="twitter:text:title" content="Hyper Light Drifter"/>
+<meta property="twitter:text:artist" content="Heart Machine"/>
+<meta property="twitter:text:backers" content="24150"/>
+<meta property="twitter:text:pledged" content="$645,158 USD"/>
+<meta property="twitter:text:time" content="0 seconds"/>
+<meta property="twitter:text:location" content="Los Angeles, CA"/>
+<meta property="twitter:image:location_image" content="https://d3mlfyygrfdi2i.cloudfront.net/b40e/pin.png"/>
+<meta property="twitter:text:description" content="Explore a beautiful, vast and ruined world riddled with unknown dangers and lost technologies. Inspired by nightmares and dreams alike."/>
+<meta property="twitter:image:media" content="https://s3.amazonaws.com/ksr/projects/660047/photo-main.jpg?1397831981"/>
+<meta property="twitter:image:width" content="640"/>
+<meta property="twitter:image:height" content="480"/>
+<meta property="twitter:player:stream:url" content="https://d2pq0u4uni88oo.cloudfront.net/projects/660047/video-289384-h264_base.mp4"/>
+<meta property="twitter:player:stream:content" content="video/mp4"/>
+<meta property="twitter:player:url" content="https://www.kickstarter.com/projects/1661802484/hyper-light-drifter/widget/video.html"/>
+<meta property="twitter:player:height" content="426"/>
+<meta property="twitter:player:width" content="640"/>
+<meta property="twitter:maxage" content="60"/>
+<meta property="og:video" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F660047%2Fvideo-289384-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F660047%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Heart+Machine&amp;project_title=Hyper+Light+Drifter&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2F1661802484%2Fhyper-light-drifter&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:secure_url" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F660047%2Fvideo-289384-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F660047%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Heart+Machine&amp;project_title=Hyper+Light+Drifter&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2F1661802484%2Fhyper-light-drifter&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:height" content="426"/>
+<meta property="og:video:width" content="640"/>
+<meta property="og:video:type" content="application/x-shockwave-flash"/>
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="I0PkQnj0mKQGqwqoY0xzMryOZ/RIH0E5544pZ9PMUhc=" name="csrf-token" />
+<script type="text/javascript">
+  var _sift = _sift || [];
+  _sift.push(['_setAccount', '637102']);
+  _sift.push(['_setUserId', '']);
+  _sift.push(['_trackPageview']);
+
+  (function() {
+    function loadSift() {
+      var sift, s;
+      if (root.visitor_id) {
+        _sift.push(['_setSessionId', root.visitor_id]);
+      }
+      sift = document.createElement('script');
+      sift.type = 'text/javascript';
+      sift.async = true;
+      sift.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dtlilztwypawv.cloudfront.net/s.js';
+      s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(sift, s);
+    }
+    if (window.attachEvent) {
+      window.attachEvent('onload', loadSift);
+    } else {
+      window.addEventListener('load', loadSift, false);
+    }
+  })();
+</script>
+<link href="http://kck.st/1e78Qoh" rel="shorturl">
+<link href="https://www.kickstarter.com/projects/1661802484/hyper-light-drifter" rel="canonical">
+<link href="https://s3.amazonaws.com/ksr/projects/660047/photo-med.jpg?1397831981" rel="image_src">
+<link href="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F660047%2Fvideo-289384-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F660047%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Heart+Machine&amp;project_title=Hyper+Light+Drifter&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2F1661802484%2Fhyper-light-drifter&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque" rel="video_src">
+<script>
+  //<![CDATA[
+    window.current_checkout = "{&quot;id&quot;:0,&quot;domestic&quot;:null,&quot;amount&quot;:0.0,&quot;updated_at&quot;:0,&quot;created_at&quot;:0}";
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.current_ip = '94.209.101.212';
+    window.current_ip_datacenter = 'false';
+    window.enabled_features = {"elasticsearch":true,"security_history_read":true,"security_history_write":true,"advanced_discovery_es":true,"ios_crashlytics":true,"ios_mixpanel":true,"stories_veronica_mars":true,"veronica_mars_hero":true,"password_reset_banner":true};
+    window.fb_app_id = '69103156693';
+    
+    var _sf_startpt=(new Date()).getTime();
+    
+    window.current_project = "{&quot;id&quot;:746498917,&quot;name&quot;:&quot;Hyper Light Drifter&quot;,&quot;blurb&quot;:&quot;Explore a beautiful, vast and ruined world riddled with unknown dangers and lost technologies. Inspired by nightmares and dreams alike.&quot;,&quot;goal&quot;:27000.0,&quot;pledged&quot;:645158.88,&quot;state&quot;:&quot;successful&quot;,&quot;slug&quot;:&quot;hyper-light-drifter&quot;,&quot;disable_communication&quot;:false,&quot;country&quot;:&quot;US&quot;,&quot;currency&quot;:&quot;USD&quot;,&quot;currency_symbol&quot;:&quot;$&quot;,&quot;currency_trailing_code&quot;:true,&quot;deadline&quot;:1381606699,&quot;state_changed_at&quot;:1381606699,&quot;created_at&quot;:1377301566,&quot;launched_at&quot;:1379014699,&quot;backers_count&quot;:24150,&quot;photo&quot;:{&quot;full&quot;:&quot;https://s3.amazonaws.com/ksr/projects/660047/photo-full.jpg?1397831981&quot;,&quot;ed&quot;:&quot;https://s3.amazonaws.com/ksr/projects/660047/photo-ed.jpg?1397831981&quot;,&quot;med&quot;:&quot;https://s3.amazonaws.com/ksr/projects/660047/photo-med.jpg?1397831981&quot;,&quot;little&quot;:&quot;https://s3.amazonaws.com/ksr/projects/660047/photo-little.jpg?1397831981&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/projects/660047/photo-small.jpg?1397831981&quot;,&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/projects/660047/photo-thumb.jpg?1397831981&quot;,&quot;1024x768&quot;:&quot;https://s3.amazonaws.com/ksr/projects/660047/photo-1024x768.jpg?1397831981&quot;,&quot;1536x1152&quot;:&quot;https://s3.amazonaws.com/ksr/projects/660047/photo-1536x1152.jpg?1397831981&quot;},&quot;creator&quot;:{&quot;id&quot;:1661802484,&quot;name&quot;:&quot;Heart Machine&quot;,&quot;avatar&quot;:{&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/2443156/HM_Icon.thumb.jpg?1378058411&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/2443156/HM_Icon.small.jpg?1378058411&quot;,&quot;medium&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/2443156/HM_Icon.medium.jpg?1378058411&quot;},&quot;urls&quot;:{&quot;web&quot;:{&quot;user&quot;:&quot;https://www.kickstarter.com/profile/1661802484&quot;},&quot;api&quot;:{&quot;user&quot;:&quot;https://api.kickstarter.com/v1/users/1661802484?signature=1399959683.b77159019347005aae0b74164de893c640df3b9b&quot;}}},&quot;location&quot;:{&quot;id&quot;:2442047,&quot;name&quot;:&quot;Los Angeles&quot;,&quot;slug&quot;:&quot;los-angeles-ca&quot;,&quot;short_name&quot;:&quot;Los Angeles, CA&quot;,&quot;displayable_name&quot;:&quot;Los Angeles, CA&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:&quot;CA&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/los-angeles-ca&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/los-angeles-ca&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1399951818.e609e9257aa2bbc4a05b2f5e5d3584cce5ac138e&amp;woe_id=2442047&quot;}}},&quot;category&quot;:{&quot;id&quot;:35,&quot;name&quot;:&quot;Video Games&quot;,&quot;slug&quot;:&quot;games/video games&quot;,&quot;position&quot;:7,&quot;parent_id&quot;:12,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;http://www.kickstarter.com/discover/categories/games/video%20games&quot;}}},&quot;urls&quot;:{&quot;web&quot;:{&quot;project&quot;:&quot;https://www.kickstarter.com/projects/1661802484/hyper-light-drifter&quot;,&quot;project_short&quot;:&quot;http://kck.st/1e78Qoh&quot;,&quot;updates&quot;:&quot;https://www.kickstarter.com/projects/1661802484/hyper-light-drifter/posts&quot;},&quot;api&quot;:{&quot;project&quot;:&quot;https://api.kickstarter.com/v1/projects/746498917?signature=1399959683.a8ce204f4faf605ec7f1bbbdc7379ee8b6746503&quot;,&quot;comments&quot;:&quot;https://api.kickstarter.com/v1/projects/746498917/comments?signature=1399959683.9224c5113cb09074ca0d3565f7a1b1eb20fdf6f3&quot;,&quot;updates&quot;:&quot;https://api.kickstarter.com/v1/projects/746498917/updates?signature=1399959683.e2cd0f41ed995ec967f5b2199c43580f61ad1788&quot;}},&quot;updated_at&quot;:1399531338,&quot;successful_at&quot;:1381606699,&quot;video&quot;:{&quot;id&quot;:289384,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/660047/video-289384-h264_high.mp4?2013&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/660047/video-289384-h264_base.mp4?2013&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/660047/video-289384-webm.webm?2013&quot;,&quot;width&quot;:640,&quot;height&quot;:426,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/660047/video-289384-h264_base.jpg?2013&quot;},&quot;comments_count&quot;:7074,&quot;updates_count&quot;:48,&quot;rewards&quot;:[{&quot;id&quot;:0,&quot;minimum&quot;:1,&quot;reward&quot;:&quot;No Reward&quot;},{&quot;id&quot;:1939102,&quot;minimum&quot;:10.0,&quot;reward&quot;:&quot;EARLY BACKER COPY - - -\\r\\n\\r\\nA DRM-free digital copy of Hyper Light Drifter is yours to play (or make distressing faces at).&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1401580800,&quot;project_id&quot;:746498917,&quot;backers_count&quot;:8431,&quot;updated_at&quot;:1399294072},{&quot;id&quot;:1939110,&quot;minimum&quot;:15.0,&quot;reward&quot;:&quot;FULL PACKAGE COPY - - - \\r\\nDRM-free copy of the game plus a PDF instruction booklet (crafted from endlessly refracted light) and a set of hi-res Backer-only wallpapers to stare at in a dreamy fashion.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1401580800,&quot;project_id&quot;:746498917,&quot;backers_count&quot;:5643,&quot;updated_at&quot;:1399354721},{&quot;id&quot;:2002760,&quot;minimum&quot;:20.0,&quot;reward&quot;:&quot;FULL PACKAGE + BONUS ---Receive all items from the previous tier, plus an alternate Golden Companion Sprite and a flashy Golden secondary weapon. These will be included in all tiers above as well.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1401580800,&quot;project_id&quot;:746498917,&quot;backers_count&quot;:1708,&quot;updated_at&quot;:1397024200},{&quot;id&quot;:1939109,&quot;minimum&quot;:25.0,&quot;reward&quot;:&quot;EARLY BETA ACCESS - - - \\r\\nHelp improve the game by breaking it, thus making it stronger and rich with scars. You&#39;ll also be thanked by name in the credits. All previous rewards included.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1401580800,&quot;project_id&quot;:746498917,&quot;backers_count&quot;:2596,&quot;updated_at&quot;:1399859952},{&quot;id&quot;:1939112,&quot;minimum&quot;:40.0,&quot;reward&quot;:&quot;DIGITAL COMPANION ART BOOK + OST - - - \\r\\nReceive a glimmering digital copy of the soundtrack composed by Disasterpeace, and a book that includes concept art, game assets, story revelations, behind the scenes notes and silly drawings chiseled into PDF format and sent your way, plus another copy (key or download) of the game. All previous rewards included.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1401580800,&quot;project_id&quot;:746498917,&quot;backers_count&quot;:3301,&quot;updated_at&quot;:1399445163},{&quot;id&quot;:1976825,&quot;minimum&quot;:60.0,&quot;reward&quot;:&quot;SPECIAL T-SHIRT + GAME --- This tier ONLY! Receive a T-Shirt with design by Casey Hunt (see Update #9) plus a copy of the game! All previous rewards included. All awards above this price do not auto-receive T-shirt; it will be available as a stand-alone purchase after the Kickstarter.&quot;,&quot;limit&quot;:200,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;domestic&quot;,&quot;shipping_amount&quot;:&quot;0.0&quot;,&quot;estimated_delivery_on&quot;:1401580800,&quot;project_id&quot;:746498917,&quot;remaining&quot;:0,&quot;backers_count&quot;:200,&quot;updated_at&quot;:1398601300},{&quot;id&quot;:2009720,&quot;minimum&quot;:62.0,&quot;reward&quot;:&quot;SPECIAL T-SHIRT + GAME #2 --- This tier ONLY! Receive a T-Shirt with design by Casey Hunt (see Update #9) plus a copy of the game! All previous rewards included. All awards above this price do not auto-receive T-shirt; it will be available as a stand-alone purchase after the Kickstarter.&quot;,&quot;limit&quot;:300,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;domestic&quot;,&quot;shipping_amount&quot;:&quot;0.0&quot;,&quot;estimated_delivery_on&quot;:1401580800,&quot;project_id&quot;:746498917,&quot;remaining&quot;:116,&quot;backers_count&quot;:184,&quot;updated_at&quot;:1398187201},{&quot;id&quot;:1992455,&quot;minimum&quot;:64.0,&quot;reward&quot;:&quot;PHYSICAL BOX AND MANUAL --- This includes the physical box for the game, physical manual, a digital copy of the game (platform of your choice, bonus content included), digital download of the OST (on release), digital copy of the Companion Art Book, and Hi Res Wallpapers. A tier packed heart and soul.&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;10.0&quot;,&quot;estimated_delivery_on&quot;:1404172800,&quot;project_id&quot;:746498917,&quot;backers_count&quot;:418,&quot;updated_at&quot;:1382212864},{&quot;id&quot;:1939127,&quot;minimum&quot;:75.0,&quot;reward&quot;:&quot;ALTERNATE DRIFTER + EXTRA KEYS- - - \\r\\nReceive a specialized alternate character sprite to play in-game, plus an extra key for a friend (3 keys in total), and a second set of wallpapers. All previous rewards included.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1401580800,&quot;project_id&quot;:746498917,&quot;backers_count&quot;:700,&quot;updated_at&quot;:1394984217},{&quot;id&quot;:1939131,&quot;minimum&quot;:100.0,&quot;reward&quot;:&quot;RESPLENDANT PRINT - - - \\r\\nA hand signed limited edition archival poster shipped directly to your location with a crudely fashioned thank you note on back. All previous rewards included.&quot;,&quot;limit&quot;:100,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;domestic&quot;,&quot;shipping_amount&quot;:&quot;0.0&quot;,&quot;estimated_delivery_on&quot;:1401580800,&quot;project_id&quot;:746498917,&quot;remaining&quot;:0,&quot;backers_count&quot;:100,&quot;updated_at&quot;:1382212824},{&quot;id&quot;:2015745,&quot;minimum&quot;:109.0,&quot;reward&quot;:&quot;PRINTED COMPANION ART BOOK ============================== A softcover, full-color printed version of the book, which contains all production art work, unseen concepts and unused pixel work, back story, characters and lore not explored in-game, artist commissioned side stories and character pinups as well as a collection of fan art. Includes all previous digital rewards. (Check the rewards section and reference sheet for details.) PRINTED book NOT included automatically in higher tiers.&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1401580800,&quot;project_id&quot;:746498917,&quot;backers_count&quot;:245,&quot;updated_at&quot;:1391311508},{&quot;id&quot;:1974751,&quot;minimum&quot;:110.0,&quot;reward&quot;:&quot;RESPLENDANT PRINT PART 2 ---\\r\\nThe same as the print reward before, but open for international shipping and additional cost for labor intensive shipping and packing.&quot;,&quot;limit&quot;:100,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;10.0&quot;,&quot;estimated_delivery_on&quot;:1401580800,&quot;project_id&quot;:746498917,&quot;remaining&quot;:1,&quot;backers_count&quot;:99,&quot;updated_at&quot;:1397413640},{&quot;id&quot;:1980339,&quot;minimum&quot;:115.0,&quot;reward&quot;:&quot;RESPLENDENT PRINT PART 3 --- One more chance to grab a print. All previous rewards included.&quot;,&quot;limit&quot;:50,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;10.0&quot;,&quot;estimated_delivery_on&quot;:1401580800,&quot;project_id&quot;:746498917,&quot;remaining&quot;:0,&quot;backers_count&quot;:50,&quot;updated_at&quot;:1393218695},{&quot;id&quot;:2011310,&quot;minimum&quot;:120.0,&quot;reward&quot;:&quot;LUXURIANT PRINT --- LAST chance for a print. An ALTERNATE hand signed limited edition archival poster shipped directly to your location with a crudely fashioned thank you note on back. All previous rewards included.&quot;,&quot;limit&quot;:200,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;10.0&quot;,&quot;estimated_delivery_on&quot;:1404172800,&quot;project_id&quot;:746498917,&quot;remaining&quot;:64,&quot;backers_count&quot;:136,&quot;updated_at&quot;:1382212856},{&quot;id&quot;:1978057,&quot;minimum&quot;:150.0,&quot;reward&quot;:&quot;THANK-YOU SCROLL --- Your name will be scrawled in neon upon a massive tablet of pixel stone, set in a special area of the game. All rewards - excluding the t-shirt, print, immortal sprite and enemy design - included.&quot;,&quot;limit&quot;:100,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1401580800,&quot;project_id&quot;:746498917,&quot;remaining&quot;:41,&quot;backers_count&quot;:59,&quot;updated_at&quot;:1382212847},{&quot;id&quot;:1974753,&quot;minimum&quot;:200.0,&quot;reward&quot;:&quot;UNIQUE COMPANION SPRITE --- Receive an alternate Sprite Companion, functionally the same, but with a trim new format and color scheme. All previous rewards - excluding the print - included.&quot;,&quot;limit&quot;:1,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1401580800,&quot;project_id&quot;:746498917,&quot;remaining&quot;:0,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1381609154},{&quot;id&quot;:1997534,&quot;minimum&quot;:225.0,&quot;reward&quot;:&quot;LIMITED PRINTED PACKAGE --- This is a special one-of-a-kind tier; you receive a special limited edition printed copy of the book, the physical box + manual, and 3 keys for the game.&quot;,&quot;limit&quot;:50,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;domestic&quot;,&quot;shipping_amount&quot;:&quot;0.0&quot;,&quot;estimated_delivery_on&quot;:1404172800,&quot;project_id&quot;:746498917,&quot;remaining&quot;:0,&quot;backers_count&quot;:50,&quot;updated_at&quot;:1382201332},{&quot;id&quot;:1987837,&quot;minimum&quot;:250.0,&quot;reward&quot;:&quot;CREATE A CHALLENGE --- Help us develop a unique Challenge Quest for the upcoming Challenge Mode. You&#39;ll work with us on a custom Quest that all players will have access to. All previous rewards - excluding the t-shirt, Thank-You Scroll and resplendent print - included.&quot;,&quot;limit&quot;:25,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1401580800,&quot;project_id&quot;:746498917,&quot;remaining&quot;:20,&quot;backers_count&quot;:5,&quot;updated_at&quot;:1381612072},{&quot;id&quot;:1941834,&quot;minimum&quot;:350.0,&quot;reward&quot;:&quot;IMMORTAL SPRITE - - - \\r\\nSubmit your name to be transformed into a custom rune to appear in-game. Also receive a drawing upon note paper, adorned with neon colors and a sweet whispered message, much akin to the ones you cherished in Junior High. (Oh the tragic memories!) All previous rewards - excluding the print - included.&quot;,&quot;limit&quot;:20,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;domestic&quot;,&quot;shipping_amount&quot;:&quot;0.0&quot;,&quot;estimated_delivery_on&quot;:1401580800,&quot;project_id&quot;:746498917,&quot;remaining&quot;:9,&quot;backers_count&quot;:11,&quot;updated_at&quot;:1382212828},{&quot;id&quot;:1941833,&quot;minimum&quot;:500.0,&quot;reward&quot;:&quot;DESIGN A DASTARDLY ENEMY - - - \\r\\nWork with us to create a custom enemy: influence the look, behavior and place of origin. All rewards, excluding the print and immortal sprite, included.&quot;,&quot;limit&quot;:10,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1401580800,&quot;project_id&quot;:746498917,&quot;remaining&quot;:5,&quot;backers_count&quot;:5,&quot;updated_at&quot;:1381854828},{&quot;id&quot;:1994495,&quot;minimum&quot;:600.0,&quot;reward&quot;:&quot;CUSTOM WORK --- You&#39;ll receive a one-of-a-kind hand drawn piece on archival paper featuring the main character, crafted ever so gently by Heart Machine, plus 6 keys for the game, the physical box and manual, all wallpapers, the Companion Art Book, and a digital copy of the OST.&quot;,&quot;limit&quot;:12,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;11.0&quot;,&quot;estimated_delivery_on&quot;:1404172800,&quot;project_id&quot;:746498917,&quot;remaining&quot;:4,&quot;backers_count&quot;:8,&quot;updated_at&quot;:1382212851},{&quot;id&quot;:1941839,&quot;minimum&quot;:1000.0,&quot;reward&quot;:&quot;DESIGN A BOSS + BEHIND THE SCENES - - \\r\\nHelp create the look, behavior, location and backstory of a mid-boss creature! Participate in a design meeting where your feedback will influence a level, receive 10 copies of the game (in key or download form). All rewards - excluding the print, immortal sprite and prior enemy design - included.&quot;,&quot;limit&quot;:7,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1401580800,&quot;project_id&quot;:746498917,&quot;remaining&quot;:0,&quot;backers_count&quot;:7,&quot;updated_at&quot;:1382212822},{&quot;id&quot;:1981856,&quot;minimum&quot;:1400.0,&quot;reward&quot;:&quot;MASSIVE PHYSICAL LUST + MEETUP --- A heavy package: printed Companion Art Book, first-run poster Print, T-Shirt, printed box and manual, all signed by the entire team. Digital rewards as well: a copy of the game for the platform of your choice, bonus Gold Sprite and Weapon, Beta access, Alternate Drifter, digital copy of the original soundtrack. LASTLY you&#39;re invited to join us for the wrap party at the studio on the 12th. (Travel and lodging not included.)&quot;,&quot;limit&quot;:10,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1401580800,&quot;project_id&quot;:746498917,&quot;remaining&quot;:9,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1381832417}]}";
+    
+    
+    
+    
+    
+    
+    
+    
+    window.timeRemaining = function timeRemaining(epochTime){
+    
+      var diff = epochTime - ((new Date()).getTime() / 1000);
+      var num_unit = (diff < 60 && [Math.max(diff, 0), 'seconds']) ||
+        ((diff/=60) < 60 && [diff, 'minutes']) ||
+        ((diff/=60) < 72 && [diff, 'hours']) ||
+        [diff/=24, 'days'];
+    
+      // Round down
+      num_unit[0] = Math.floor(num_unit[0]);
+      // Singularize unit
+      if (num_unit[0] == 1) { num_unit[1] = num_unit[1].replace(/s$/,""); }
+    
+      return num_unit;
+    };
+  //]]>
+</script>
+
+<script>
+  //<![CDATA[
+    window.current_variants = ["discover_link_copy[discover]","rewards_hover[with_hover_text]"];
+  //]]>
+</script>
+
+
+</head>
+
+<body class="project projects not-mobile not-phone not-forces-video-controls not-tablet not-touchable not-native-app-request video_mode" id="projects_show">
+<div class="jGrowl center" id="growl_section"></div>
+<div class="NS_layouts__navigation" id="header">
+<div class="main-nav relative bg-white">
+<h1 class="no-margin ml1 mr2 left">
+<a href="/?ref=nav" class="block p2"><span class="ss-icon green-dark">KICK</span><span class="ss-icon green">STARTER</span>
+</a></h1>
+<ul class="primary-links list no-margin left">
+<li class="left discover-link full-height">
+<a href="/discover?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Discover</a>
+</li>
+<li class="left full-height mr2">
+<a href="/learn?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Start</a>
+</li>
+</ul>
+<ul class="list no-margin right" id="menu-sub">
+<li class="right"><a href="/login?ref=nav" class="block h5 bold p2 full-height border-box">Log in</a></li>
+<li class="right"><a href="/signup?ref=nav" class="block h5 bold p2 full-height border-box">Sign up</a></li>
+</ul>
+<div class="search-link pl2 full-height border-left border-box clip">
+<form accept-charset="UTF-8" action="/projects/search" class="search pt1 pb1 block relative form-simple" method="get"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /></div>
+<div class="field relative pl3">
+<span class="ss-icon ss-search grey-dark ml1 mt1 absolute"></span>
+<input class="input-search header full-width text" data-tracker-name="Header Live Search" id="term" name="term" placeholder="Search projects" type="text" />
+</div>
+</form>
+
+</div>
+<div class="clear"></div>
+</div>
+</div>
+<div class="hide pt4 pb4 bg-grey-light" id="search_results-wrap">
+<div class="relative container" id="search_results">
+<a class="close right grey-dark mr1"><span class="ss-icon ss-delete"></span></a>
+<h3 class="header ml1 clearfix"></h3>
+<div class="clip clearfix" id="search_results_panel"></div>
+<a class="prev arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateleft"></span>
+</a>
+<a class="next arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateright"></span>
+</a>
+</div>
+</div>
+
+
+
+
+<div class="Project-ended-true Project-is_starred- Project-state-successful Project746498917_cxt border-top" id="main_content">
+<div id="running-board-wrap">
+<div class="container" id="running-board">
+<div id="project-header">
+<div class="NS_projects__running_board ml1 mr1 clearfix">
+<div class="title center py4">
+<h2 class="mb1">
+<a href="/projects/1661802484/hyper-light-drifter" class="green-dark">Hyper Light Drifter</a>
+</h2>
+<p class="no-margin">
+<span class="creator">
+by
+<a href="/projects/1661802484/hyper-light-drifter/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography" id="name">Heart Machine</a>
+</span>
+</p>
+</div>
+<ul class="project-nav list-inline left h5 bold mb1">
+<li class="mr2">
+<a href="/projects/1661802484/hyper-light-drifter" class="grey-dark py1 current" id="home_nav">Home</a>
+</li>
+<li class="mr2">
+<span data-updates-count="48" id="updates_count">
+<a href="/projects/1661802484/hyper-light-drifter/posts" class="grey-dark py1" id="updates_nav">Updates
+<span class="count h6 bg-grey-dark white">48</span>
+</a></span>
+</li>
+<li class="mr2">
+<a href="/projects/1661802484/hyper-light-drifter/backers" class="grey-dark py1" id="backers_nav">Backers
+<span class="count h6 bg-grey-dark white"><data class="Project746498917" data-format="number" data-value="24150" itemprop="Project[backers_count]">24,150</data></span>
+</a></li>
+<li>
+<span data-comments-count="7074" id="comments_count">
+<a href="/projects/1661802484/hyper-light-drifter/comments" class="grey-dark py1" id="comments_nav">Comments
+<span class="count h6 bg-grey-dark white"><data class="Project746498917" data-format="number" data-value="7069" itemprop="Project[comments_count]">7,069</data></span>
+</a></span>
+</li>
+</ul>
+<ul class="list-inline right h5 bold mb1">
+<li class="location mr2">
+<a href="/discover/places/los-angeles-ca?ref=city" class="grey-dark"><span class="ss-icon ss-location margin-right"></span>
+Los Angeles, CA
+</a></li>
+<li class="category" data-project-parent-category="Games">
+<a href="/discover/categories/games/video%20games?ref=category" class="grey-dark"><span class="ss-icon ss-tag margin-right"></span>
+Video Games
+</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+</div>
+<div class="bg-grey-light pb4" id="content-wrap">
+<div class="Project746498917" data-conditions="[{&quot;!state&quot;:&quot;live&quot;}]" data-evaluation="true" data-render="&quot;&lt;div class=\&quot;NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-successful Project746498917_cxt bg-grey container pb1 pt1\&quot;&gt;\n&lt;div class=\&quot;Project746498917\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;successful&amp;quot;}]\&quot; data-evaluation=\&quot;true\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;Funded!&amp;lt;/b&amp;gt;\\nThis project was successfully funded &amp;lt;data class=\\&amp;quot;Project746498917\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2013-10-12T15:38:19-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[deadline]\\&amp;quot;&amp;gt;on October 12, 2013&amp;lt;/data&amp;gt;.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;Funded!&lt;/b&gt;\nThis project was successfully funded &lt;data class=\&quot;Project746498917\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-10-12T15:38:19-04:00&amp;quot;\&quot; itemprop=\&quot;Project[deadline]\&quot;&gt;on October 12, 2013&lt;/data&gt;.\n&lt;/p&gt;\n&lt;/div&gt;&lt;div class=\&quot;Project746498917\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:[&amp;quot;started&amp;quot;,&amp;quot;submitted&amp;quot;]}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;THIS PROJECT IS NOT LIVE&amp;lt;/b&amp;gt;\\nThis is only a draft that the creator has chosen to share.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project746498917\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;suspended&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Suspended&amp;lt;/b&amp;gt;\\nFunding for this project was suspended &amp;lt;data class=\\&amp;quot;Project746498917\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2013-10-12T15:38:19-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on October 12, 2013&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project746498917\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;canceled&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Canceled&amp;lt;/b&amp;gt;\\nFunding for this project was canceled by the project creator &amp;lt;data class=\\&amp;quot;Project746498917\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2013-10-12T15:38:19-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on October 12, 2013&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project746498917\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;failed&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Unsuccessful&amp;lt;/b&amp;gt;\\nThis project\\u2019s funding goal was not reached on &amp;lt;time class=\\&amp;quot;js-adjust\\&amp;quot; data-format=\\&amp;quot;LL\\&amp;quot; datetime=\\&amp;quot;2013-10-12T15:38:19-04:00\\&amp;quot;&amp;gt;October 12, 2013&amp;lt;/time&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project746498917\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;purged&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;This project is purged and only visible to staff.&amp;lt;/b&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;/div&gt;\n&quot;"><div class="NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-successful Project746498917_cxt bg-grey container pb1 pt1">
+<div class="Project746498917" data-conditions="[{&quot;state&quot;:&quot;successful&quot;}]" data-evaluation="true" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;Funded!&lt;/b&gt;\nThis project was successfully funded &lt;data class=\&quot;Project746498917\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-10-12T15:38:19-04:00&amp;quot;\&quot; itemprop=\&quot;Project[deadline]\&quot;&gt;on October 12, 2013&lt;/data&gt;.\n&lt;/p&gt;\n&quot;"><p class="no-margin">
+<b>Funded!</b>
+This project was successfully funded <data class="Project746498917" data-format="distance_date" data-value="&quot;2013-10-12T15:38:19-04:00&quot;" itemprop="Project[deadline]">on October 12, 2013</data>.
+</p>
+</div><div class="Project746498917" data-conditions="[{&quot;state&quot;:[&quot;started&quot;,&quot;submitted&quot;]}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;THIS PROJECT IS NOT LIVE&lt;/b&gt;\nThis is only a draft that the creator has chosen to share.\n&lt;/p&gt;\n&quot;"></div><div class="Project746498917" data-conditions="[{&quot;state&quot;:&quot;suspended&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Suspended&lt;/b&gt;\nFunding for this project was suspended &lt;data class=\&quot;Project746498917\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-10-12T15:38:19-04:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on October 12, 2013&lt;/data&gt;.\n&quot;"></div><div class="Project746498917" data-conditions="[{&quot;state&quot;:&quot;canceled&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Canceled&lt;/b&gt;\nFunding for this project was canceled by the project creator &lt;data class=\&quot;Project746498917\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-10-12T15:38:19-04:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on October 12, 2013&lt;/data&gt;.\n&quot;"></div><div class="Project746498917" data-conditions="[{&quot;state&quot;:&quot;failed&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Unsuccessful&lt;/b&gt;\nThis project\u2019s funding goal was not reached on &lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;LL\&quot; datetime=\&quot;2013-10-12T15:38:19-04:00\&quot;&gt;October 12, 2013&lt;/time&gt;.\n&quot;"></div><div class="Project746498917" data-conditions="[{&quot;state&quot;:&quot;purged&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;This project is purged and only visible to staff.&lt;/b&gt;\n&quot;"></div></div>
+</div>
+<div class="container bg-white border rounded py3 pl2 pr2" id="content">
+<div class="NS-projects-content">
+<div class="grid_11">
+<div data-has-video="true" id="video-section">
+<div class="video-player" data-dimensions="{&quot;width&quot;:640,&quot;height&quot;:480}" data-image="https://s3.amazonaws.com/ksr/projects/660047/photo-main.jpg?1397831981" data-video-tracker-url="https://www.kickstarter.com/projects/1661802484/hyper-light-drifter/video/plays" data-video-url="https://d2pq0u4uni88oo.cloudfront.net/projects/660047/video-289384-h264_high.mp4" data-video="{&quot;id&quot;:289384,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/660047/video-289384-h264_high.mp4?2013&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/660047/video-289384-h264_base.mp4?2013&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/660047/video-289384-webm.webm?2013&quot;,&quot;width&quot;:640,&quot;height&quot;:426,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/660047/video-289384-h264_base.jpg?2013&quot;}" id="video_pitch"><video class="has_webm landscape" preload="none">
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/660047/video-289384-h264_high.mp4" type='video/mp4; codecs="avc1.64001E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/660047/video-289384-h264_base.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/660047/video-289384-webm.webm" type="video/webm"></source>
+You'll need an HTML5 capable browser to see this content.
+</video>
+<img alt="Photo-main" class="has_played_hide poster landscape" src="https://s3.amazonaws.com/ksr/projects/660047/photo-main.jpg?1397831981" />
+<div class="play_button_big play_button_dark absolute-center rounded has_played_hide">
+<span class="ss-icon ss-play"></span>
+Play
+</div>
+<div class="player_controls clearfix absolute-bottom mb2 rounded white bg-green-dark forces-video-controls_hide">
+<div class="left">
+<a class="button button_icon button_dark playpause play mr1">
+<span class="play ss-icon ss-play"></span>
+<span class="pause ss-icon ss-pause"></span>
+</a>
+<span class="time current_time h12 left">00:00</span>
+</div>
+<div class="right">
+<span class="time total_time h12 left mr1">00:00</span>
+<a class="left button button_icon button_icon_white volume">
+<span class="ss-icon ss-volume icon_volume_nudge"></span>
+<span class="ss-icon ss-highvolume"></span>
+</a>
+<div class="volume_container left">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+<a class="left button button_icon button_icon_white fullscreen">
+<span class="ss-icon ss-expand"></span>
+<span class="ss-icon ss-contract"></span>
+</a>
+</div>
+<div class="clip">
+<div class="progress_container pr1 pl1">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="buffer progress_bar_buffer"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div data-project-state="successful" id="about">
+<div class="NS_projects__project_share clearfix py2 pl1 pr1">
+<ul class="left list-inline no-margin h5 bold">
+<li class="facebook mr2">
+<a href="https://www.kickstarter.com/projects/1661802484/hyper-light-drifter"><span class="ss-icon ss-social ss-facebook color-facebook"></span>
+<span class="color-facebook">Share</span>
+<span class="share_bubble"><div class="triangle grey"></div>
+<div class="triangle white"></div>
+<span class="count"></span></span>
+</a></li>
+<li class="twitter mr2">
+<a  href="https://twitter.com/intent/tweet?text=Hyper%20Light%20Drifter%20by%20Heart%20Machine&amp;via=kickstarter&amp;url=http://kck.st/1e78Qoh" rel="nofollow"><span class="ss-icon ss-social ss-twitter color-twitter"></span>
+<span class="color-twitter">Tweet</span>
+</a></li>
+<li class="embed">
+<a href="/projects/1661802484/hyper-light-drifter/widget" class="remote_modal_dialog grey-dark" data-modal-title="Embed a widget on your site" data-tracker-name="Embed"><span class="ss-icon ss-navigateleft"></span>
+<span class="ss-icon ss-navigateright"></span>
+Embed
+</a></li>
+</ul>
+<ul class="right list-inline no-margin h5 bold">
+<li class="curate mr2">
+</li>
+<li class="remind">
+<div class="ajax-container" id="watching-widget">
+<div class="Project746498917" data-conditions="[{&quot;is_starred&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div id=\&quot;unwatch\&quot;&gt;\n&lt;a href=\&quot;/projects/1661802484/hyper-light-drifter/unwatch\&quot; class=\&quot;on\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"></div><div class="Project746498917" data-conditions="[{&quot;!is_starred&quot;:true}]" data-evaluation="true" data-render="&quot;&lt;div id=\&quot;watch\&quot;&gt;\n&lt;a href=\&quot;/projects/1661802484/hyper-light-drifter/watch\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;span class=\&quot;text\&quot;&gt;\n&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"><div id="watch">
+<a href="/projects/1661802484/hyper-light-drifter/watch"><span class="ss-icon ss-star"></span>
+<span class="text">
+</span>
+</a></div>
+
+</div></div>
+</li>
+</ul>
+</div>
+
+<div class="short_blurb py2 pl1 pr1">
+<p class="h3">Explore a beautiful, vast and ruined world riddled with unknown dangers and lost technologies. Inspired by nightmares and dreams alike.</p>
+</div>
+<div class="full-description">
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1661802484/hyper-light-drifter/assets/913029/edit" data-id="913029">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/913/029/73caab21e0e1b0370baf550afc89104d_large.jpg?1378969769"></figure>
+</div>
+<h1>Final Hour! <a href="http://www.twitch.tv/heart_machine" target="_blank">Join our Livestream</a>
+</h1><h1><b><a href="http://steamcommunity.com/sharedfiles/filedetails/?id=179340415&amp;searchtext=hyper+light+drifter" target="_blank">We are on Steam now!</a> Thanks for voting!</b></h1><h1><b><a href="http://www.heart-machine.com/" target="_blank">We have a PayPal Humble Bundle up!</a></b></h1><p>===========================================================</p><h1>
+<a href="http://www.kickstarter.com/projects/1661802484/hyper-light-drifter/posts/625376" target="_blank">Update #31 - Add-ons &amp; Friday Livestream</a>
+</h1><h1><a href="http://www.kickstarter.com/projects/1661802484/hyper-light-drifter/posts/624235" target="_blank">Update #30 - $5 Soundtrack and more!</a></h1><h1><b><a href="http://www.kickstarter.com/projects/1661802484/hyper-light-drifter/posts/619187" target="_blank">Update #27 - Wii U Stretch Goal!</a></b></h1><div>
+<b>Note: </b><b> $10 gets you the game on PC, Mac or Linux, Steam or DRM-free. $15 and up lets you choose PS4, Vita, Wii U, or OUYA!</b>
+</div><div></div><div>
+
+
+<h1>Add-Ons</h1>
+<p>You can add extra rewards to your current tier if you so desire (remember, no need to change your tier, just add the amount and we'll see the amount and a note from you during the survey):</p>
+<ul>
+<li>Add $5 - Digital OST for the game</li>
+<li>Add $10 - Unlock the Alternate playable Drifter</li>
+<li>Add $15 - Additional Copy of the Game for any platform</li>
+<li>Add $30 - Limited run t-shirt (no international yet)</li>
+<li>Add $35 - SNES style physical box and manual (no international yet)</li>
+<li>Add $42 - Limited Compact Print (11x14) (no international yet)</li>
+<li>Add $60 - Printed Softcover Companion Art Book (no international yet)</li>
+</ul>
+</div><div></div><p>===========================================================</p><p>Drifters of this world are the collectors of forgotten knowledge, lost technologies and broken histories. Our Drifter is haunted by an insatiable illness, traveling further into the lands of Buried Time, steeped in blood and treasure hoping to discover a way to quiet the vicious disease. Echoes of a dark and violent past from the dead eras resonate throughout and he can't help but listen.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/1661802484/hyper-light-drifter/assets/898535/edit" data-id="898535">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/898/535/b9f5444aa20474411b08058414429433_large.jpg?1378595881"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1661802484/hyper-light-drifter/assets/899899/edit" data-id="899899">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/899/899/e05c1db2fd5f0f4133084b18f37f08e7_large.gif?1378652027"></figure>
+</div>
+<p>Hyper Light Drifter is a 2D Action RPG in the vein of the best 8-bit and 16-bit classics, with modernized mechanics and designs on a much grander scale.</p><p>Visions for this game have been fluttering in my skull for ages; something dark and fantastic, with giant forests to navigate, huge floating structures to explore, deep crumbling ruins to loot, massive throngs of enemies to rend, and behemoths both flesh and mechanical to overcome. I want it all to be as beautiful as possible, forging color with the dark and eerie wastes and intimidating landscapes. It plays like the best parts of A Link to the Past and Diablo, evolved: lightning fast combat, more mobility, an array of tactical options, more numerous and intelligent enemies, and a larger world with a twisted past to do it all in.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/1661802484/hyper-light-drifter/assets/907249/edit" data-id="907249">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/907/249/420b35d90bc2dbc1ddc6209f1a71b731_large.jpg?1378829236"></figure>
+</div>
+<ul><li><p>Rip through enemies with responsive, fun combat; engaging and brutal. Upgrade weapons, discover new equipment and trek deeper than ever.</p></li></ul><ul><li><p>Traverse a dark, detailed and interconnected world with alternate paths and secret loot. Miyazaki films have taught me that beautiful animation and design add life to a world. From characters to background elements, everything is lovingly crafted while I hum show-tunes and squint suspiciously at the flickering pixels until they perform as intended.</p></li></ul><ul>
+<li><p>A challenge - The game is accessible and easy to pick up, but difficult to master and complete; enemies and hazards become more vicious and numerous, so players must use clever tactics to avoid death. (Some yell hurtful phrases at players simply to bring tears to the cereal bowl below.)</p></li>
+</ul><div class="template asset" contenteditable="false" data-edit_url="/projects/1661802484/hyper-light-drifter/assets/903961/edit" data-id="903961">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/903/961/a87e61f132e6e8ef93dcdbf37459dbc5_large.jpg?1378751967"></figure>
+</div>
+<div> </div><div class="template asset" contenteditable="false" data-edit_url="/projects/1661802484/hyper-light-drifter/assets/898329/edit" data-id="898329">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/898/329/7f11ab35ff22494d8067e2c49e2dec41_large.gif?1378590665"></figure>
+</div>
+<h1>Core Mechanics</h1><ul>
+<li>
+<b>Primary weapon - </b>Composed of phase shifted Hard Light (also known as Solid Light), your sword acts as the primary means of offense; it's quick, brutal, and can slash through most anything. Best of all it never runs low on energy.</li>
+<li>
+<b>Sprite Companion -</b> An indispensable personalized drone, the Sprite manages your inventory virtually, maintains your shields, seeks out hidden paths and lights the way in the darkest of times. Functionality may be expanded with new modules.</li>
+<li>
+<b>Secondary items -</b> You'll come across a variety of advanced weaponry, items and gear throughout your travels; Light Rail Pistols, Heavy Rifles, various hi-power explosives and enemy-aware Seeker Drones. All of these are powered by limited batteries, found scattered throughout the world. </li>
+<li>
+<b>Defense System -</b> A rechargeable Hard Light Diamond shield which offers total protection from attacks for a short burst of time. If timed correctly projectiles can be reflected back at enemies for extra damage. Can be upgraded to extend duration.</li>
+<li>
+<b>Dash Module -</b> Multi-use gear that enables a triple speed dash; can be used to evade attacks, cut across gaps and chasms, break through certain blocks and rubble and even stun enemies.
+</li>
+</ul><div class="template asset" contenteditable="false" data-edit_url="/projects/1661802484/hyper-light-drifter/assets/911932/edit" data-id="911932">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/911/932/f90668b1ff60f1245eb05ccd706fcd6e_large.gif?1378940584"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>Rifle</p><div class="template asset" contenteditable="false" data-edit_url="/projects/1661802484/hyper-light-drifter/assets/922890/edit" data-id="922890">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/922/890/72b9ff506b73f416eb878a9a4f960c5d_large.gif?1379272237"></figure>
+</div>
+<p>Roly Poly</p><div class="template asset" contenteditable="false" data-edit_url="/projects/1661802484/hyper-light-drifter/assets/922891/edit" data-id="922891">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/922/891/6662e2c1198c069896c7e6e864a60c0f_large.gif?1379272313"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1661802484/hyper-light-drifter/assets/945686/edit" data-id="945686">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/945/686/c415709a876b3373dc79153e9897e6e2_large.gif?1379877085"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/1661802484/hyper-light-drifter/assets/988912/edit" data-id="988912">
+<figure><img alt="From Sean Ward" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/988/912/f415bf4f05a8b0ba3272d3ea47da6c14_large.gif?1381020132"><figcaption>From Sean Ward</figcaption></figure>
+</div>
+<h1>Enemy Sprites</h1><div class="template asset" contenteditable="false" data-edit_url="/projects/1661802484/hyper-light-drifter/assets/955228/edit" data-id="955228">
+<figure><img alt="From Nick Wozniak" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/955/228/1ef6d51f1fed1cb5db90b64692dfddaa_large.gif?1380130050"><figcaption>From Nick Wozniak</figcaption></figure>
+</div>
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1661802484/hyper-light-drifter/assets/955159/edit" data-id="955159">
+<figure><img alt="From Ian Schlaepfer" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/955/159/03ba6549a9bf73cead2f634f9d2da638_large.gif?1380128809"><figcaption>From Ian Schlaepfer</figcaption></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1661802484/hyper-light-drifter/assets/955165/edit" data-id="955165">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/955/165/51b0d54bb79f023ab860ebae7d5bf9a1_large.gif?1380128852"></figure>
+</div>
+<h1>Boss Reveals</h1><p><b>#1</b></p><div class="template asset" contenteditable="false" data-edit_url="/projects/1661802484/hyper-light-drifter/assets/931568/edit" data-id="931568">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/931/568/a79baaa611dcac73105dd2342f95de9b_large.jpg?1379462516"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/1661802484/hyper-light-drifter/assets/964323/edit" data-id="964323">
+<figure><img alt="Sprite work: Johan Vinet" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/964/323/b9d35291acb1487c54ec527137bd9db3_large.gif?1380388542"><figcaption>Sprite work: Johan Vinet</figcaption></figure>
+</div>
+
+
+<p>Name: Rivan The Tamer</p><p>Attributes: User of searing RedShift light, causing great destruction when attacking. His companion beast adds to his already fierce tactics.</p><p>Domain:  The Deep Red Keep, roaming the Barren Halls.</p><p><b>#2</b></p><div class="template asset" contenteditable="false" data-edit_url="/projects/1661802484/hyper-light-drifter/assets/975872/edit" data-id="975872">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/975/872/67334dfb2332b5f985cb0c32d517bb4e_large.jpg?1380675116"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1661802484/hyper-light-drifter/assets/975875/edit" data-id="975875">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/975/875/7e8d2a0efd00b82cde225b67bdef4bfe_large.?1380675164"></figure>
+</div>
+<h1>Music Reveal</h1><p>From the Masterful Disasterpeace (Rich Vreeland) here's the first sample track:</p><div class="template oembed" contenteditable="false" data-href="https://soundcloud.com/dzasterpeace/hyper-light-drifter/s-7Wl1f">
+<iframe width="639" height="400" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?visual=true&amp;url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F112341913&amp;show_artwork=true&amp;maxwidth=639&amp;scheme=https&amp;width=639&amp;secret_token=s-7Wl1f"></iframe>
+
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/1661802484/hyper-light-drifter/assets/1088512/edit" data-id="1088512">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/088/512/2d5f627e7615e07a0c63465d78d596b6_large.gif?1381556358"></figure>
+</div>
+
+
+
+
+
+<h1>Notes on $160,000 Goal:</h1><p>I want this game to shine. I want to fully indulge this vision, so I will use the funds to further the quality of the game rather than bolster any after-thoughts.</p><h1>On $180,000 Goal:</h1><p>There are so many great artists, illustrators, writers, wonderfully creative people that I'm surrounded by and I want them in on this! I plan to commission small pieces of art to flesh out the world; they can create new character that live in this world, write new lore, and punch out some rad art, all within the limitations of the history and style of this world. All work will be collected in the Companion Art Book and their pieces featured on our site once they start producing!</p><h1>On $200,000 Goal:</h1><p>The Companion Art Book is a physical compendium of knowledge and reference materials, high res unused art assets and never before seen art works for the project. It will also include commissioned pieces and extended lore for the world and characters within created by several artists throughout the community as well as a collection of some of the fan art that has been and continues to be posted. (Love it all!) this will be available for purchase after the campaign has ended, once everything has been commissioned and compiled. </p><h1>Notes on PS4 + Vita + Wii U + OUYA support</h1><p>REVISION! I'd like for everyone to be able to get the version they want. If you have already contributed at the $10 tier, simply pledge an additional $5 and I'll compose a survey after the campaign is over to determine which version you would like a key for. Cross-buy is undetermined for right now. If you have already contributed at $15 or more, you will be given the choice of PC, Linux, Mac, PS4, Vita, Wii U, or OUYA. That's as simple as I can make it for now!</p><h1>Details on the Challenge Mode</h1><p>This mode will have several mix-up mini quests for you to test your skills at; you'll have wave-based challenges where you fight off increasingly difficult hordes to see how long you can survive as you level up, boss rush runs, speed runs and other odd modes that wouldn't typically fit in the main game. All will have a scoring mechanism that unlocks achievements, plus we are working on local co-op for this mode.</p><h1><b>Physical Box and Manual</b></h1><p>We will be able to provide and ship out a slick designed SNES style physical box and manual to go with your digital download! Both printed in full color and shipped directly to you. This is NOW a Reward Tier AND you can get it as an add-on for any Tier if you add $35 to your pledge! The Stretch Goal allows us to offer it outside of the Kickstarter for any who would like to nab it down the line.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/1661802484/hyper-light-drifter/assets/912014/edit" data-id="912014">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/912/014/f0a0cb9a1b008b6c0d428e18be10c7c4_large.gif?1378942726"></figure>
+</div>
+<p>The game is in a prototype phase, planned initially for PC, though I would love to expand to other platforms. </p><p>Having worked with Beau Blyth of Samurai Gunn fame on the programming side, the framework for the game is in place - remaining mechanics and the body of the game will slot nicely into current systems. All will be refined until it feels sleek, satisfying and fun. </p><p>The venerable and talented Disasterpeace (Rich Vreeland) has been gracious enough to jump on board to compose the soundtrack!</p><div class="template asset" contenteditable="false" data-edit_url="/projects/1661802484/hyper-light-drifter/assets/911876/edit" data-id="911876">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/911/876/9966ed679c84b8d97846724643acc29e_large.gif?1378939519"></figure>
+</div>
+<p>The bigger task ahead is asset generation; enemy sprites (which use dozens of frames of hand drawn art, including the major Boss encounters), new level designs (plus fancy lighting!), and sound design.</p><p>If I reach the $64,000 stretch goal, I will be able to hire a secondary animator/designer which will allow more time to sink into expanding the world.</p><p>The $75,000 goal will allow for an even deeper soundtrack with bonus tracks plus a SFX pro.</p><p>I have planned for a potential release date in mid 2014, with beta access at least two months prior, allowing time to tweak and bug-fix and adjust according to player feedback. A more solid schedule will become apparent for backers once resources have been assessed.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/1661802484/hyper-light-drifter/assets/899907/edit" data-id="899907">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/899/907/6973046540a497bd85c5ff7e630a053e_large.gif?1378652320"></figure>
+</div>
+<p>This project has rapidly evolved into a much larger world and story and needs the help of the community in order for it to thrive.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/1661802484/hyper-light-drifter/assets/897307/edit" data-id="897307">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/897/307/69ed2dfbbc8160f6b657d677653f9639_large.jpg?1378552378"></figure>
+</div>
+
+<p>Completing this game by mid 2014 requires focus and time; the initial goal will afford me these two (current) luxuries.The higher stretch goals will allow a fully realized version.</p><ul>
+<li>
+<b>Paying outside help - </b>This is a passion project for me, but other friends and professionals (such as Beau and Rich) need to be compensated for their tremendous talents. Having a sound effects producer/musical talent as well as an animator to assist would lighten the workload considerably and allow me to concentrate on the overall structure and scope of the game, as well as fine tuning all of the time consuming little things.</li>
+<li>
+<b>Company and operation costs - </b>In order to begin selling through any platform I'll need to establish Heart Machine as a full game company, which takes a fair chunk of money and time, plus licensing, living costs and bills factor in.</li>
+<li>
+<b>Improving and fixing -</b> Getting testers, implementing community feedback, using every ounce of my soul to produce a game I've been dreaming of for decades.</li>
+</ul><h1>Access to the Game </h1><p>I have been researching distribution methods. Now I have PC, Mac, Linux (DRM-Free or Steam), PS4, Vita, Wii U, and OUYA.</p><p>The closed Beta will surely hold some valuable insight, and in order to implement that knowledge delays may happen. I will do my best to keep Backers informed of progress on all fronts.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/1661802484/hyper-light-drifter/assets/908875/edit" data-id="908875">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/908/875/1e20fdb77d1fc92d39bb27bd81bd45f3_large.gif?1378857126"></figure>
+</div>
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1661802484/hyper-light-drifter/assets/908506/edit" data-id="908506">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/908/506/a75b6f195b36b90ff4b42d7bf2cf5b3b_large.jpg?1378849898"></figure>
+</div>
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1661802484/hyper-light-drifter/assets/903665/edit" data-id="903665">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/903/665/3d6a967d63e5dcfe7682cf185009cc10_large.jpg?1378747349"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1661802484/hyper-light-drifter/assets/903603/edit" data-id="903603">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/903/603/a685f820d5c8287b5bd28cdcd9bc384a_large.png?1378746217"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1661802484/hyper-light-drifter/assets/903482/edit" data-id="903482">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/903/482/c3b6db0930e2205959b775a0e11fad5a_large.png?1378743580"></figure>
+</div>
+
+
+<div> </div><div></div><div></div><div></div><div>
+
+
+
+
+
+
+
+
+</div><p><b>Concepts</b></p><div class="template asset" contenteditable="false" data-edit_url="/projects/1661802484/hyper-light-drifter/assets/911205/edit" data-id="911205">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/911/205/e1507b2c06ad3a501181b3438a3f6457_large.jpg?1378927173"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1661802484/hyper-light-drifter/assets/911210/edit" data-id="911210">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/911/210/e80ff7a9c0968caf5f6b696dd445d084_large.gif?1378927215"></figure>
+</div>
+<p><b>Alex Presto</b><b>n (Heart Machine) -</b><a href="http://alxpreston.com" target="_blank">alxpreston.com</a>, @HeartMachineZ</p><p>Lead Designer + Animator + Secondary Programming</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1661802484/hyper-light-drifter/assets/905601/edit" data-id="905601">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/905/601/85fc14e0485f46df5fb13c3a69ec8e42_large.png?1378780400"></figure>
+</div>
+<p>I've been an illustrator and designer for a good long while now. Developing games has been a passion of mine since I was a child, though I've never had the courage and support until now to actually release something into the wild. Spread your neon wings you sweet pixelated bastard!</p><div></div><p><b>Beau Blyth (Teknopants) -</b><a href="http://teknopants.com" target="_blank">teknopants.com</a>, @Teknopants</p><p>Lead Programmer + Tremendous Hair</p><div class="template asset" contenteditable="false" data-edit_url="/projects/1661802484/hyper-light-drifter/assets/909021/edit" data-id="909021">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/909/021/584fde468da7edcebd9a5a3b5eae1356_large.png?1378861203"></figure>
+</div>
+<p>Developed loads of rad fast-paced arcade style games including the upcoming super bad-ass Samurai Gunn. A master of many disciplines and the man helping me code this beastly project. A massive thanks and unending high fives/hugs/punches go his way. Also payment.</p><div></div><p><b>Rich Vreeland (Disasterpeace) - </b><a href="http://disasterpeace.com/" target="_blank">disasterpeace.com/</a>, @Disasterpeace</p><p>Musical Score + Piercing Eyes</p><div class="template asset" contenteditable="false" data-edit_url="/projects/1661802484/hyper-light-drifter/assets/906132/edit" data-id="906132">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/906/132/b736a1f5e3c29647de166152f9b03c44_large.png?1378791029"></figure>
+</div>
+<p>This chip-blasting machine of a man has produced tons of fantastic game albums, most notably Fez. (Which completely wrecked my mind for a solid year.) I've been lucky enough to get him aboard on this project to develop the soundtrack; you know he'll deliver something special.</p><p><b>Will Wiesenfeld (Baths)- </b><a href="http://www.bathsmusic.com" target="_blank">bathsmusic.com</a>, @BATHSmusic</p><p>Contributor + Super Fantastic Beat-dropper</p><div class="template asset" contenteditable="false" data-edit_url="/projects/1661802484/hyper-light-drifter/assets/905590/edit" data-id="905590">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/905/590/128abd59375a2af33ce29469f2ff19d5_large.jpg?1378780247"></figure>
+</div>
+
+<p>A supreme talent and fine craftsman of music and smiles, also known as the one-man pound-storm of deep beats and carnal wailing that is Baths, has produced the trailer track. Is producing another track for the game during production.</p><p><b>Teddy Diefenbach (TeddyDief)</b> -<a href="http://teddydiefenbach.com" target="_blank">teddydiefenbach.com</a>, @TeddyDief</p><div class="template asset" contenteditable="false" data-edit_url="/projects/1661802484/hyper-light-drifter/assets/976655/edit" data-id="976655">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/976/655/9f068ef12efe758422973fd10bffc0d9_large.png?1380703287"></figure>
+</div>
+<p>A thoughtful soul who created The Moonlighters and Shove Pro, co-founded Rad Dragon, is a programmer and game designer extraordinaire. Dives deep into things such as systems design, narrative design and his ultimate mission of recreating the golden age of late 90s Squaresoft.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/1661802484/hyper-light-drifter/assets/910706/edit" data-id="910706">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/910/706/b4fde4a20e6d43434d9d0758e761cfee_large.gif?1378918230"></figure>
+</div>
+<h1>
+The Game</h1><div class="template asset" contenteditable="false" data-edit_url="/projects/1661802484/hyper-light-drifter/assets/910710/edit" data-id="910710">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/910/710/610ff60318f02ab077edaa96724d3987_large.gif?1378918322"></figure>
+</div>
+
+
+<p>All copies will be sent out upon release 2014. Planned platforms are Windows, Linux and Mac OSX and now PS4, Vita, Wii U, and OUYA. PC copies can be DRM-free or Steam keys (thanks to our backers pushing us through Greenlight!). Everyone in the $10 tier will get the PC/Mac/Linux game on release, $15 and above will net you an option for PS4, Vita, Wii U, or OUYA, and the $25 tier receives a Kickstarter exclusive version of the game with bonus side quest.</p><h1>Instruction Booklet</h1><div class="template asset" contenteditable="false" data-edit_url="/projects/1661802484/hyper-light-drifter/assets/910731/edit" data-id="910731">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/910/731/cfa71a15d502eaa4c5a64a65cd6408cf_large.gif?1378918677"></figure>
+</div>
+<p>A nifty little booklet to bring you back to the days when manuals meant something; revealing a little known move, a secret passage, or simply bolstering the story and context of the world outside of the game. This particular Instruction Book will include all of those items and more, with illustrations to accompany important sections.</p><h1>Companion Book (Art and Stories)</h1><div class="template asset" contenteditable="false" data-edit_url="/projects/1661802484/hyper-light-drifter/assets/911070/edit" data-id="911070">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/911/070/3e930391a2902551f27df3e97d0fa544_large.gif?1378924870"></figure>
+</div>
+<p>This beauty will contain tons of concept illustrations, sprites, sketches, notes on characters and the world, plus revealing knowledge of the finer details of this realm. This process has already generated a lot of assets that won't be used in game, so I'd like to provide a look behind-the-scenes of a project like this. Plus silly drawings of cat creatures and Pork-Peoples will be stuffed into the pages for pure entertainment purposes. Much mocking of lowly creatures shall be had!</p><h1>Original Soundtrack</h1><div class="template asset" contenteditable="false" data-edit_url="/projects/1661802484/hyper-light-drifter/assets/912193/edit" data-id="912193">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/912/193/05b1690bf5e5ef9a0b18e4558e9f1fcb_large.gif?1378946407"></figure>
+</div>
+
+<p>The master Rich Vreeland (Disasterpeace) will be composing the eerie OST for this game! I'm jazz-handin' all around this room with excitement at this very moment, nearly unable to continue typing! The full OST will be included in digital form at the $40 Tier with bonus tracks. Boom!</p><h1>Alternate Drifter</h1><div class="template asset" contenteditable="false" data-edit_url="/projects/1661802484/hyper-light-drifter/assets/912121/edit" data-id="912121">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/912/121/867c9d4b413c512ee4e6c45360d80705_large.gif?1378944662"></figure>
+</div>
+<p>Receive a Kickstarter-only alternative main playable character to destroy and explore with. He might have a variant weapon, glowing eyes, and sinister intentions.</p><h1>Resplendent Print</h1><div class="template asset" contenteditable="false" data-edit_url="/projects/1661802484/hyper-light-drifter/assets/912133/edit" data-id="912133">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/912/133/be63aae57ff9658bf65139dc691ea104_large.gif?1378945013"></figure>
+</div>
+<p>A 18x24 archival quality print of the main character posing in a fantastic manner (probably with creature parts flying about) will be yours to man-handle or gently place in a frame. Hand signed and numbered, with a lovely thank you note on the rear to haunt you in your sleep.</p><h1>Immortal sprite</h1><div class="template asset" contenteditable="false" data-edit_url="/projects/1661802484/hyper-light-drifter/assets/912143/edit" data-id="912143">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/912/143/fff6a93fe8280b8f205d08e9757470d5_large.gif?1378945269"></figure>
+</div>
+<p>Your name will be translated to the in-game rune system, thus immortalizing your very being into this world beyond. These symbols will be used in special locations. Real names only, please. (No, Crack McButtson is not a real name.)</p><h1>Design a dastardly enemy</h1><div class="template asset" contenteditable="false" data-edit_url="/projects/1661802484/hyper-light-drifter/assets/912158/edit" data-id="912158">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/912/158/51d97bfbc7673988cebab26ae0c3f3ba_large.gif?1378945555"></figure>
+</div>
+<p>Put your skills to use and help design the look, behavior, name and location a new enemy will appear. This is no fools errand; you'll be creating (digital) life itself, and thus comes the responsibility to nurture the sad heap until it's of age to brutalize Drifters every moment it can.</p><h1>Design a mid-boss creature</h1><div class="template asset" contenteditable="false" data-edit_url="/projects/1661802484/hyper-light-drifter/assets/912183/edit" data-id="912183">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/912/183/351a898f65cc1faf1f392205f9fa285f_large.gif?1378946138"></figure>
+</div>
+<p>Have you always wanted an angry spider to lob shells at you? Well we can help bring your vision to life! Together we will build an entire mid-boss encounter, with behavior patterns, chamber layout, the look of the creature and it's rewards. As above, choose attributes wisely.</p><h1>T-Shirt Special</h1><p>The $60 tier will net you a <a href="http://pic.twitter.com/gUiBQbdbPt" target="_blank">snazzy design</a> from Casey Hunt in small, medium, large or XL. This will be available to purchase sometime after the Kickstarter as well, so those who have already donated won't be left without something to wear.</p><h1>Party in the city</h1><p>You'll join us (a bunch of goofy independent developers) for a wrap party evening of hangabouts, Smash Brothers (plus other multi-player games) and general raging at Glitch City, the Culver City Indie game space. You'll also receive a hand-signed print, a few high fives, and some great big smiles. Your name will be listed in the credits under the Major Thank-You section. </p><h1>Reference Sheet</h1>
+
+
+
+
+
+<div> </div><div class="template asset" contenteditable="false" data-edit_url="/projects/1661802484/hyper-light-drifter/assets/973945/edit" data-id="973945">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/973/945/8bf73291297cfb7e003b469da9448152_large.gif?1380641905"></figure>
+</div>
+
+<h1>Add-Ons </h1><p>You can add extra rewards to your current tier if you so desire (remember, no need to change your tier, just add the amount and we'll see the amount and a note from you during the survey):</p><ul>
+<li>Add $5 - Digital OST for the game</li>
+<li>Add $10 - Unlock the Alternate playable Drifter</li>
+<li>Add $15 - Additional Copy of the Game for any platform</li>
+<li>Add $30 - Limited run t-shirt (no international yet)</li>
+<li>Add $35 - SNES style physical box and manual (no international yet)</li>
+<li>Add $42 - Limited Compact Print (11x14) (no international yet)</li>
+<li>Add $60 - Printed Softcover Companion Art Book (no international yet)</li>
+</ul><div></div>
+<div></div>
+<div></div>
+<div></div><div></div>
+</div>
+<div id="risks">
+<h2 class="title grey-dark mt6 mb4">
+<span>Risks and challenges</span>
+<a href="/help/faq/kickstarter%20basics#Acco" class="right normal h5" target="_blank">Learn about accountability on Kickstarter</a>
+<div class="divider clear"></div>
+</h2>
+<p><p>After months of planning and writing and drawing and programming the vision for the project became vivid and succinct. That was the biggest hurdle to overcome. The second was exposing this to the public eye, as that can be a terrifying prospect; and here it is.</p>
+
+<p>Creative endeavors like this are difficult and often unwieldy beasts with many mouths to feed and razor-tipped claws to bind. I&#39;ve written and planned as much as I possibly could up to this point, and with the framework in place I have the bulk of the more difficult obstacles conquered. Issues will come, as they always do in any long-term project, but I feel thoroughly prepared; I have the proper tools and skills and a large support network through our shared community space Glitch City which is bursting at the seams with excellent developers with vast wells of knowledge and years of experience prototyping, building, and releasing games. I feel incredibly lucky to be tapped into this community and to have such reliable friends willing to lend a hand with resources I may need in the future to complete this game.
+<br /> 
+<br />I&#39;ve done what I can to get this far through some rather extreme health struggles, and I don&#39;t plan to stop. Heart and soul have been etched into this project and I hope it shines through. Stay with me, all will be well in the end.</p></p>
+</div>
+</div>
+<div class="NS-projects-faqs" id="project-faqs">
+<h2 class="title grey-dark mt6 mb4">
+FAQ
+<div class="divider clear"></div>
+</h2>
+<ul class="faqs">
+<li class="faq" id="project_faq_67722">
+<div class="faq-question">
+<a href="#project_faq_67722" name="project_faq_67722">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">What platforms will this be on?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Currently Hyper Light Drifter is planned for Windows, Linux and Mac OSX - on Steam or DRM-free. PS4, Vita, Wii U, and OUYA are a-go! Possibly others - if the funds will allow it by the end of the campaign.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-10-11T04:32:31-04:00">Fri, Oct 11 2013 4:32 am EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_68093">
+<div class="faq-question">
+<a href="#project_faq_68093" name="project_faq_68093">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Will this have native controller support on PC?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Yes indeed! The game is designed with a controller in mind, though is playable without.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-09-16T12:16:23-04:00">Mon, Sep 16 2013 12:16 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_68094">
+<div class="faq-question">
+<a href="#project_faq_68094" name="project_faq_68094">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">What about Xbox One?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Looking into this option; requires some significant effort to place on all the platforms.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-10-11T04:32:31-04:00">Fri, Oct 11 2013 4:32 am EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_68095">
+<div class="faq-question">
+<a href="#project_faq_68095" name="project_faq_68095">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">How will picking a version work?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>I&#39;ll send a survey out after the Kickstarter and you can tell me exactly what platform(s) you want keys for, depending on your tier.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-09-16T12:16:23-04:00">Mon, Sep 16 2013 12:16 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_68138">
+<div class="faq-question">
+<a href="#project_faq_68138" name="project_faq_68138">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Will the levels be linear, hub based, open for exploration?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>The world is designed to be open for exploration with entry into enclosed Temples and Dungeons. There will be a central hub to return to.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-09-16T21:29:11-04:00">Mon, Sep 16 2013 9:29 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_68139">
+<div class="faq-question">
+<a href="#project_faq_68139" name="project_faq_68139">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Will there be puzzles or will the game be mostly combat focused?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>The game will have some puzzle elements throughout.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-09-16T21:29:11-04:00">Mon, Sep 16 2013 9:29 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_68198">
+<div class="faq-question">
+<a href="#project_faq_68198" name="project_faq_68198">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Is this on Steam Greenlight?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Yes! And we made it onto Steam thanks to you!
+<br /><a href="http://steamcommunity.com/sharedfiles/filedetails/?id=179340415&amp;searchtext=hyper+light+drifter" rel="nofollow">http://steamcommunity.com/sharedfiles/filedetails/&hellip;</a></p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-10-08T07:15:52-04:00">Tue, Oct 8 2013 7:15 am EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_68329">
+<div class="faq-question">
+<a href="#project_faq_68329" name="project_faq_68329">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Will the campaign coop be online and/or couch coop?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>For right now just local co-op</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-09-18T17:35:30-04:00">Wed, Sep 18 2013 5:35 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_68330">
+<div class="faq-question">
+<a href="#project_faq_68330" name="project_faq_68330">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Will backers that want PS4/Vita be receiving actual keys for that system?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Yes, this is what I&#39;ve been able to determine from what Sony has said.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-09-18T17:35:30-04:00">Wed, Sep 18 2013 5:35 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_68331">
+<div class="faq-question">
+<a href="#project_faq_68331" name="project_faq_68331">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Will the console ports be receiving the KS exclusive side quest?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Yes! I may just include it in all versions to keep things simple.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-09-18T17:35:30-04:00">Wed, Sep 18 2013 5:35 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_68332">
+<div class="faq-question">
+<a href="#project_faq_68332" name="project_faq_68332">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Will the game be coming to EU PSN? Will it be translated in other languages (French)?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Working towards an EU release, though it may be later down the line. It would have translations.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-09-18T17:35:30-04:00">Wed, Sep 18 2013 5:35 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_68333">
+<div class="faq-question">
+<a href="#project_faq_68333" name="project_faq_68333">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Is an iOS/Android port possible?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Possible but this would be another down the line item to approach as touch is fairly different then the controller-centric play.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-09-18T17:35:30-04:00">Wed, Sep 18 2013 5:35 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_68334">
+<div class="faq-question">
+<a href="#project_faq_68334" name="project_faq_68334">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Will all versions of the game have multiplayer (Vita)?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Yes. Vita will have local AdHoc.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-09-18T17:35:30-04:00">Wed, Sep 18 2013 5:35 pm EDT</time>
+</div>
+</div>
+</li>
+
+</ul>
+<div class="faq-ask-box">
+<a href="/projects/1661802484/hyper-light-drifter/messages/new?message%5Bto%5D=1661802484&amp;mode=FAQ" class="button button_blue remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Ask a question about Hyper Light Drifter">Ask a question</a>
+
+</div>
+</div>
+
+<div class="mt4 ml1 mr1 mb2" id="report-issue-wrap">
+<a href="/login?then=%2Fprojects%2F1661802484%2Fhyper-light-drifter" class="button button_grey">Report this project to Kickstarter</a>
+</div>
+</div>
+<div class="NS-projects-rightcol grid_5" id="rightcol">
+<div class="NS_projects__ecom">
+<div class="digits_6 pb2 pl2 pt2" id="stats">
+<h5>
+<div class="num h48 no-margin" data-backers-count="24150" id="backers_count"><data class="Project746498917" data-format="number" data-value="24150" itemprop="Project[backers_count]">24,150</data></div>
+<span><data class="Project746498917" data-attr="backers_count" data-format="pluralize" data-value="24150" data-word="Backer">Backers</data></span>
+</h5>
+<h5>
+<div class="num h48 no-margin" data-goal="27000.0" data-percent-raised="23.894773333333333333333333333" data-pledged="645158.88" id="pledged">
+<data class="Project746498917" data-currency="USD" data-format="shorter_money" data-precision="0" data-value="645158" data-without_code="true" itemprop="Project[pledged]">$645,158</data>
+<span class="money usd project_currency_code"></span>
+</div>
+pledged of
+<span class="money usd no-code">$27,000</span>
+goal
+</h5>
+<span data-duration="30.0" data-end_time="2013-10-12T15:38:19-04:00" data-hours-remaining="0" id="project_duration_data"></span>
+<div class="Project746498917" data-conditions="[{&quot;!state&quot;:[&quot;canceled&quot;,&quot;suspended&quot;]}]" data-evaluation="true" data-render="&quot;&lt;h5 class=\&quot;poll \&quot; data-dynamic=\&quot;5\&quot; data-end_time=\&quot;2013-10-12T15:38:19-04:00\&quot; data-poll_url=\&quot;https://d2oher2uhvl0ur.cloudfront.net/projects/1661802484/hyper-light-drifter/stats.json\&quot;&gt;\n&lt;div class=\&quot;num h48 no-margin\&quot;&gt;0&lt;/div&gt;\n&lt;span class=\&quot;text\&quot;&gt;seconds to go&lt;/span&gt;\n&lt;/h5&gt;\n&quot;"><h5 class="poll " data-dynamic="5" data-end_time="2013-10-12T15:38:19-04:00" data-poll_url="https://d2oher2uhvl0ur.cloudfront.net/projects/1661802484/hyper-light-drifter/stats.json">
+<div class="num h48 no-margin">0</div>
+<span class="text">seconds to go</span>
+</h5>
+</div></div>
+<div class="Project746498917" data-conditions="[{&quot;state&quot;:&quot;live&quot;},{&quot;!ended?&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;pr2 pl2\&quot; id=\&quot;pledge-wrap\&quot;&gt;\n&lt;a href=\&quot;/projects/1661802484/hyper-light-drifter/pledge/new?clicked_reward=false\&quot; class=\&quot;button button_green button_box button_block\&quot; id=\&quot;button-back-this-proj\&quot; title=\&quot;Back this project\&quot;&gt;Back This Project &lt;small class=&#39;h6 normal block green-dark&#39;&gt;&lt;span class=\&quot;money usd \&quot;&gt;$1&lt;/span&gt; minimum pledge&lt;/small&gt;&lt;/a&gt;\n&lt;/div&gt;\n&quot;"></div><div class="Project746498917" data-conditions="[{&quot;state&quot;:&quot;live&quot;}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;p2\&quot; id=\&quot;banner\&quot;&gt;\n&lt;p class=\&quot;tiny_type no-margin\&quot;&gt;\nThis project will be funded on\n&lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;llll z\&quot; datetime=\&quot;2013-10-12T15:38:19-04:00\&quot;&gt;Sat, Oct 12 2013 3:38 pm EDT&lt;/time&gt;.\n&lt;/p&gt;\n&lt;/div&gt;\n&quot;"></div></div>
+
+<div class="NS_projects__rightcol_projectby bg-blue-light rounded">
+<div class="p2 clearfix">
+<div class="avatar inline-block align-middle">
+<a href="/projects/1661802484/hyper-light-drifter/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography"><img alt="Hm_icon.small" class="avatar-small" height="80" src="https://s3.amazonaws.com/ksr/avatars/2443156/HM_Icon.small.jpg?1378058411" width="80" />
+</a></div>
+<div class="creator-name inline-block align-middle ml1">
+<h6 class="mb1">Project by</h6>
+<h5 class="mb1">
+<a href="/projects/1661802484/hyper-light-drifter/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">Heart Machine</a>
+</h5>
+<p class="location h6 bold mb1">
+<a href="/discover/places/los-angeles-ca">Los Angeles, CA</a>
+</p>
+</div>
+</div>
+<div class="creator-details pl2 pr2 pb1">
+<ul class="list-simple h5 mb1">
+<li class="projects">
+<span class="ss-icon ss-kickstarter grey-dark margin-right"></span>
+<span class="text">
+First created
+<span class="divider">&middot;</span>
+<a href="/profile/1661802484/backed" class="green-dark bold more-button remote_modal_dialog" data-modal-title="Projects backed by Heart Machine">10 backed</a>
+</span>
+</li>
+<li>
+<span class="ss-icon ss-facebook margin-right grey-dark"></span>
+<span class="text">
+Has not connected Facebook
+</span>
+</li>
+<li class="links">
+<span class="ss-icon ss-globe margin-right grey-dark"></span>
+<span class="text">
+<a href="http://heart-machine.com" class="popup" rel="nofollow" target="_blank">heart-machine.com</a>
+</span>
+</li>
+</ul>
+</div>
+<div class="footer center h5 bold clearfix rounded-bottom clip">
+<a href="/projects/1661802484/hyper-light-drifter/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">See full bio</a>
+<a href="/projects/1661802484/hyper-light-drifter/messages/new?message%5Bto%5D=1661802484" class="remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Send a message to Heart Machine">Contact me</a>
+
+</div>
+</div>
+
+<ul class="NS-projects-rightcol-rewards rounded clip list mt2" data-reward-count="23" id="what-you-get">
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$10</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+8431 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>EARLY BACKER COPY - - -
+
+A DRM-free digital copy of Hyper Light Drifter is yours to play (or make distressing faces at).</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-06-01">Jun 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$15</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+5643 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>FULL PACKAGE COPY - - - 
+DRM-free copy of the game plus a PDF instruction booklet (crafted from endlessly refracted light) and a set of hi-res Backer-only wallpapers to stare at in a dreamy fashion.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-06-01">Jun 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$20</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1708 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>FULL PACKAGE + BONUS ---Receive all items from the previous tier, plus an alternate Golden Companion Sprite and a flashy Golden secondary weapon. These will be included in all tiers above as well.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-06-01">Jun 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$25</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+2596 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>EARLY BETA ACCESS - - - 
+Help improve the game by breaking it, thus making it stronger and rich with scars. You&#39;ll also be thanked by name in the credits. All previous rewards included.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-06-01">Jun 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$40</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+3301 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>DIGITAL COMPANION ART BOOK + OST - - - 
+Receive a glimmering digital copy of the soundtrack composed by Disasterpeace, and a book that includes concept art, game assets, story revelations, behind the scenes notes and silly drawings chiseled into PDF format and sent your way, plus another copy (key or download) of the game. All previous rewards included.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-06-01">Jun 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$60</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+200 backers
+</span>
+<span class="bg-grey no-wrap pl1 pr1 sold-out">
+All gone!
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>SPECIAL T-SHIRT + GAME --- This tier ONLY! Receive a T-Shirt with design by Casey Hunt (see Update #9) plus a copy of the game! All previous rewards included. All awards above this price do not auto-receive T-shirt; it will be available as a stand-alone purchase after the Kickstarter.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-06-01">Jun 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="domestic">
+Ships within the US only
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$62</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+184 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(116 left of 300)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>SPECIAL T-SHIRT + GAME #2 --- This tier ONLY! Receive a T-Shirt with design by Casey Hunt (see Update #9) plus a copy of the game! All previous rewards included. All awards above this price do not auto-receive T-shirt; it will be available as a stand-alone purchase after the Kickstarter.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-06-01">Jun 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="domestic">
+Ships within the US only
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$64</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+418 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>PHYSICAL BOX AND MANUAL --- This includes the physical box for the game, physical manual, a digital copy of the game (platform of your choice, bonus content included), digital download of the OST (on release), digital copy of the Companion Art Book, and Hi Res Wallpapers. A tier packed heart and soul.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-07-01">Jul 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $10 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$75</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+700 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>ALTERNATE DRIFTER + EXTRA KEYS- - - 
+Receive a specialized alternate character sprite to play in-game, plus an extra key for a friend (3 keys in total), and a second set of wallpapers. All previous rewards included.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-06-01">Jun 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$100</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+100 backers
+</span>
+<span class="bg-grey no-wrap pl1 pr1 sold-out">
+All gone!
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>RESPLENDANT PRINT - - - 
+A hand signed limited edition archival poster shipped directly to your location with a crudely fashioned thank you note on back. All previous rewards included.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-06-01">Jun 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="domestic">
+Ships within the US only
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$109</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+245 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>PRINTED COMPANION ART BOOK ============================== A softcover, full-color printed version of the book, which contains all production art work, unseen concepts and unused pixel work, back story, characters and lore not explored in-game, artist commissioned side stories and character pinups as well as a collection of fan art. Includes all previous digital rewards. (Check the rewards section and reference sheet for details.) PRINTED book NOT included automatically in higher tiers.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-06-01">Jun 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $15 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$110</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+99 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(1 left of 100)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>RESPLENDANT PRINT PART 2 ---
+The same as the print reward before, but open for international shipping and additional cost for labor intensive shipping and packing.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-06-01">Jun 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $10 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$115</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+50 backers
+</span>
+<span class="bg-grey no-wrap pl1 pr1 sold-out">
+All gone!
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>RESPLENDENT PRINT PART 3 --- One more chance to grab a print. All previous rewards included.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-06-01">Jun 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $10 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$120</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+136 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(64 left of 200)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>LUXURIANT PRINT --- LAST chance for a print. An ALTERNATE hand signed limited edition archival poster shipped directly to your location with a crudely fashioned thank you note on back. All previous rewards included.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-07-01">Jul 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $10 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$150</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+59 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(41 left of 100)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>THANK-YOU SCROLL --- Your name will be scrawled in neon upon a massive tablet of pixel stone, set in a special area of the game. All rewards - excluding the t-shirt, print, immortal sprite and enemy design - included.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-06-01">Jun 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$200</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+<span class="bg-grey no-wrap pl1 pr1 sold-out">
+All gone!
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>UNIQUE COMPANION SPRITE --- Receive an alternate Sprite Companion, functionally the same, but with a trim new format and color scheme. All previous rewards - excluding the print - included.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-06-01">Jun 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$225</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+50 backers
+</span>
+<span class="bg-grey no-wrap pl1 pr1 sold-out">
+All gone!
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>LIMITED PRINTED PACKAGE --- This is a special one-of-a-kind tier; you receive a special limited edition printed copy of the book, the physical box + manual, and 3 keys for the game.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-07-01">Jul 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="domestic">
+Ships within the US only
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$250</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+5 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(20 left of 25)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>CREATE A CHALLENGE --- Help us develop a unique Challenge Quest for the upcoming Challenge Mode. You&#39;ll work with us on a custom Quest that all players will have access to. All previous rewards - excluding the t-shirt, Thank-You Scroll and resplendent print - included.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-06-01">Jun 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$350</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+11 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(9 left of 20)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>IMMORTAL SPRITE - - - 
+Submit your name to be transformed into a custom rune to appear in-game. Also receive a drawing upon note paper, adorned with neon colors and a sweet whispered message, much akin to the ones you cherished in Junior High. (Oh the tragic memories!) All previous rewards - excluding the print - included.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-06-01">Jun 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="domestic">
+Ships within the US only
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+5 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(5 left of 10)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>DESIGN A DASTARDLY ENEMY - - - 
+Work with us to create a custom enemy: influence the look, behavior and place of origin. All rewards, excluding the print and immortal sprite, included.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-06-01">Jun 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$600</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+8 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(4 left of 12)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>CUSTOM WORK --- You&#39;ll receive a one-of-a-kind hand drawn piece on archival paper featuring the main character, crafted ever so gently by Heart Machine, plus 6 keys for the game, the physical box and manual, all wallpapers, the Companion Art Book, and a digital copy of the OST.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-07-01">Jul 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $11 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$1,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+7 backers
+</span>
+<span class="bg-grey no-wrap pl1 pr1 sold-out">
+All gone!
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>DESIGN A BOSS + BEHIND THE SCENES - - 
+Help create the look, behavior, location and backstory of a mid-boss creature! Participate in a design meeting where your feedback will influence a level, receive 10 copies of the game (in key or download form). All rewards - excluding the print, immortal sprite and prior enemy design - included.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-06-01">Jun 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$1,400</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(9 left of 10)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>MASSIVE PHYSICAL LUST + MEETUP --- A heavy package: printed Companion Art Book, first-run poster Print, T-Shirt, printed box and manual, all signed by the entire team. Digital rewards as well: a copy of the game for the platform of your choice, bonus Gold Sprite and Weapon, Beta access, Alternate Drifter, digital copy of the original soundtrack. LASTLY you&#39;re invited to join us for the wrap party at the studio on the 12th. (Travel and lodging not included.)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-06-01">Jun 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+</ul>
+
+<div class="p2" id="meta">
+<h5>Funding period</h5>
+<p class="tiny_type">
+<time class="js-adjust" data-format="ll" datetime="2013-09-12T15:38:19-04:00">Sep 12, 2013</time> - 
+<time class="js-adjust" data-format="ll" datetime="2013-10-12T15:38:19-04:00">Oct 12, 2013</time>
+(30 days)
+</p>
+</div>
+</div>
+
+</div>
+
+<a href="#" id="video_mode_tab" style="display: none;">
+View in Video Mode
+</a>
+
+</div>
+</div>
+
+
+</div>
+
+<div class="h5 bg-green-dark" id="mega-footer-wrap">
+<div class="bg-green-dark white full-height" id="footer-newsletter-signup">
+<div class="container py4">
+<div class="grid_8 prefix_4 suffix_4 center mt4">
+<h2>
+Eureka! You've found
+<br>
+our little secret.
+</h2>
+<p>Sign up for our Happening email for all the inside info about arts and culture in the Kickstarter universe and beyond.</p>
+<div class="newsletter_signup">
+<form accept-charset="UTF-8" action="/newsletters/happening/signup" class="overlabels" method="post"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /><input class="hidden" name="authenticity_token" type="hidden" value="I0PkQnj0mKQGqwqoY0xzMryOZ/RIH0E5544pZ9PMUhc=" /></div><input class="hidden" id="location" name="location" type="hidden" value="footer" />
+<textarea class="hide textarea" id="comment" name="comment">
+</textarea>
+<div class="field newsletter">
+<label class="overlabel z1 overlabel-newsletter">Email address</label>
+<input class="text" id="email" name="email" type="text" />
+</div>
+<input class="button button_green submit" name="commit" type="submit" value="Submit" />
+</form>
+
+</div>
+
+</div>
+</div>
+</div>
+<div class="container relative" id="mega-footer">
+<span class="scissors icon-scissors-1"></span>
+<div class="grid_16 alpha omega pt4 pb2" id="mega-footer-links">
+<div class="grid_4 link-group">
+<h5 class="white">About us</h5>
+<ul class="list">
+<li><a href="/year/2013/?ref=footer">2013 highlights</a></li>
+<li><a href="/year/2012?ref=footer">2012 highlights</a></li>
+<li><a href="/team?ref=footer">Who we are</a></li>
+<li><a href="/jobs?ref=footer">Jobs</a></li>
+<li><a href="/press?ref=footer">Press</a></li>
+<li><a href="/help/stats?ref=footer">Stats</a></li>
+<li><a href="/newsletters/weekly">Projects we love</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group">
+<h5><a href="/help?ref=footer" class="white">Help</a></h5>
+<ul class="list">
+<li><a href="/hello?ref=footer">What is Kickstarter?</a></li>
+<li><a href="/help?ref=footer">FAQ</a></li>
+<li><a href="/contact?ref=footer">Support</a></li>
+<li><a href="/help/school?ref=footer">Kickstarter School</a></li>
+<li><a href="/terms-of-use?ref=footer">Terms of Use</a></li>
+<li><a href="/privacy?ref=footer">Privacy Policy</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group alpha omega suffix_1">
+<h5 class="alpha"><a href="/discover/advanced?ref=footer" class="white">Discover</a></h5>
+<ul class="column column-0 grid_2 list">
+<li><a href="/discover/categories/art?ref=footer">Art</a></li>
+<li><a href="/discover/categories/comics?ref=footer">Comics</a></li>
+<li><a href="/discover/categories/dance?ref=footer">Dance</a></li>
+<li><a href="/discover/categories/design?ref=footer">Design</a></li>
+<li><a href="/discover/categories/fashion?ref=footer">Fashion</a></li>
+<li><a href="/discover/categories/film%20&amp;%20video?ref=footer">Film &amp; Video</a></li>
+<li><a href="/discover/categories/food?ref=footer">Food</a></li>
+</ul>
+<ul class="column column-1 grid_2 list">
+<li><a href="/discover/categories/games?ref=footer">Games</a></li>
+<li><a href="/discover/categories/music?ref=footer">Music</a></li>
+<li><a href="/discover/categories/photography?ref=footer">Photography</a></li>
+<li><a href="/discover/categories/publishing?ref=footer">Publishing</a></li>
+<li><a href="/discover/categories/technology?ref=footer">Technology</a></li>
+<li><a href="/discover/categories/theater?ref=footer">Theater</a></li>
+</ul>
+</div>
+<div class="grid_3 link-group">
+<h5 class="white">Hello</h5>
+<ul class="list">
+<li>
+<a href="https://twitter.com/kickstarter"><span class="ss-icon ss-social-regular ss-twitter"></span>
+Twitter
+</a></li>
+<li>
+<a href="https://www.facebook.com/Kickstarter"><span class="ss-icon ss-social-regular ss-facebook"></span>
+Facebook
+</a></li>
+<li>
+<a href="http://kickstarter.tumblr.com"><span class="ss-icon ss-social-regular ss-tumblr"></span>
+Tumblr
+</a></li>
+<li>
+<a href="http://instagram.com/kickstarter"><span class="ss-icon ss-social-regular ss-instagram"></span>
+Instagram
+</a></li>
+<li>
+<a href="https://vine.co/Kickstarter"><span class="ss-icon ss-social-regular ss-vine"></span>
+Vine
+</a></li>
+<li>
+<a href="/blog?ref=footer">Blog</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="grid_16 py4" id="mega-footer-bottom">
+<div class="logo left">
+<a href="/" class="grey-dark"><span class="ss-icon h3">KICKSTARTER</span>
+</a></div>
+<p class="right h5 grey-dark">
+&copy;
+2014
+Kickstarter, Inc.
+</p>
+</div>
+</div>
+</div>
+
+<script>
+  //<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    var analytics_vars = { google_analytics_id : "UA-7621056-1", logged_in : "false", social_user: "false" }
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.mixpanel_id = '75b1d24a516ecfc955eadfadc4910661';
+    window.mixpanel_debug = false;
+  //]]>
+</script>
+
+
+<noscript>
+<img alt="Quantcast" border="0" height="1" src="//secure.quantserve.com/pixel/p-34IbSpw2K94Sg.gif" style="display:none" width="1" />
+</noscript>
+
+
+<script>
+  //<![CDATA[
+    window.benchmark = (typeof window.performance == 'object' && typeof window.performance.mark == 'function');
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    (function (root) {
+      function instrument_function (original) {
+        return function () {
+          try {
+            return original.apply(this, arguments);
+          } catch (e) {
+            if (e.stack && root.Honeybadger) {
+              Honeybadger.notify(e, {
+                current_project : root.current_project,
+                current_user : root.current_user
+              });
+            }
+            throw(e);
+          }
+        };
+      }
+      root.instrument_function = instrument_function;
+    }(this));
+  //]]>
+</script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+
+<script>
+  //<![CDATA[
+    (function(){function c(a){this.local_start_time=new Date;this.settings={cookie_name:"request_time"};for(var b in a)this.settings[b]=a[b];this.get_remote_offset()}c.prototype.get_remote_offset=function(){this.cookie_value=this.read_cookie();var a=new Date(this.cookie_value);if(!this.cookie_value||"Invalid Date"===a.toString()){if(this.remote_offset=this.read_cookie("local_offset"))this.remote_offset=parseInt(this.remote_offset,10)}else this.remote_offset=a-this.local_start_time;"undefined"!==typeof this.remote_offset&& !isNaN(this.remote_offset)?(document.cookie="local_offset="+this.remote_offset+"; path=/",this.is_set=!0):this.is_set=!1};c.prototype.time_units=[["milliseconds",1],["seconds",1E3],["minutes",6E4],["hours",36E5],["days",864E5]];c.prototype.get_units_in_interval=function(a,b){var d=a.replace(/^\w/,function(d){return"get"+d.toUpperCase()});return b[d]()};c.prototype.milliseconds_in_day=function(a){"undefined"===typeof a&&(a=new Date);for(var b=0,d=this.time_units.length-2;0<=d;d--)b+=this.get_units_in_interval(this.time_units[d][0], a)*this.time_units[d][1];return b};c.prototype.milliseconds_in_interval=function(a,b){return this.milliseconds_in_day(b)%a};c.prototype.milliseconds_to_next_interval=function(a,b){return a-this.milliseconds_in_interval(a,b)};c.prototype.pluralize=function(a,b){1===b&&(a=a.replace(/s$/,""));return a};c.prototype.read_cookie=function(a){for(var b=window.document.cookie.split(";"),a=(a||this.settings.cookie_name)+"=",d=0;d<b.length;d++){for(var e=b[d];" "==e.charAt(0);)e=e.substring(1,e.length);if(0== e.indexOf(a))return b=e.substring(a.length,e.length),decodeURIComponent(b).replace(/\+/g," ")}return null};c.prototype.destroy_cookie=function(a){var b=new Date;a||(a=this.settings.cookie_name);b.setTime(b.getTime()-864E5);window.document.cookie=a+"=; expires="+b.toGMTString()+"; path=/"};c.prototype.get_remote_time=function(){var a=new Date,b=a.getTime()+this.remote_offset;return a=a.setTime(b)};window.ksr_page_clock=new c})(); (function(){function c(d,a,b){if(d){this.options={unit_base:{seconds:119,minutes:119,hours:72,days:0},end_phrase:d.getAttribute("data-word")||"to go",count_down:d.getAttribute("data-dynamic")||!1};for(k in b)this.options[k]=b[k];this.clock=a;this.time_units=this.clock.time_units.slice(1);this.element=d;this.clock.is_set&&this.attach()}}function a(){this.elements=[];this.attach()}var b=function(d,a){var b=a||window.document.body,c=d.split("."),g=c[c.length-1],c=1<c.length&&c[0]?c[0]:"*";if(window.document.getElementsByClassName)return b.getElementsByClassName(g); if(b.querySelectorAll)return b.querySelectorAll(d);for(var c=b.getElementsByTagName(c),h=[],i=0,f;f=c[i];i++)b=RegExp("(^|\\s)"+g+"(\\s|$)"),(""+f.className).match(b)&&h.push(f);return h};c.prototype.get_remaining_time=function(){var d=this.remote_end_time-this.clock.get_remote_time();0>d&&(d=0);return d};c.prototype.get_current_unit=function(){for(var d,a=0;a<this.time_units.length&&!(d=this.time_units[a],this.get_remaining_time()<=this.options.unit_base[d[0]]*d[1]);a++);return d};c.prototype.update_element= function(){var a=this.get_current_unit(),b=Math.floor(this.get_remaining_time()/a[1]);isNaN(b)||(this.number_element.innerHTML=b,this.text_element.innerHTML=this.clock.pluralize(a[0],b)+" "+this.options.end_phrase)};c.prototype.valid=function(){return!(!this.number_element||!this.text_element)};c.prototype.attach=function(){function a(){c.update_element();if(c.options.count_down&&0<c.get_remaining_time()){var b=c.get_current_unit();this.timeout=window.setTimeout(a,c.clock.milliseconds_to_next_interval(b[1]))}} var c=this;if(this.remote_end_time_string=this.element.getAttribute("data-end_time"))this.remote_end_time_string.match(/^\d+$/)?(this.remote_end_time=new Date,this.remote_end_time.setTime(this.remote_end_time_string)):this.remote_end_time=new Date(this.remote_end_time_string),this.number_element=b(".num",this.element)[0],this.text_element=b(".text",this.element)[0],this.element.ksr_page_timer=!0,this.valid()&&a()};c.prototype.cancel=function(){this.timeout&&clearTimeout(this.timeout)};a.prototype.loading= !0;a.prototype.stop_finding=function(){this.attach_timers();this.loading=!1;document.addEventListener?document.removeEventListener("DOMContentLoaded",this.stop_finding,!1):document.attachEvent&&"complete"===document.readyState&&document.detachEvent("onreadystatechange",this.stop_finding)};a.prototype.bind_ready=function(){var a=this,b=function(){a.stop_finding.call(a)};document.addEventListener?(document.addEventListener("DOMContentLoaded",b,!1),window.addEventListener("load",b,!1)):document.attachEvent&& (document.attachEvent("onreadystatechange",b),window.attachEvent("onload",b))};a.prototype.attach_timers=function(){for(var a=b("div.ksr_page_timer"),e=0;e<a.length;e++)a[e].ksr_page_timer||(new c(a[e],window.ksr_page_clock),this.elements.push(a[e]))};a.prototype.attach=function(){var a=this;this.bind_ready();(function(){a.attach_timers();a.loading&&window.setTimeout(function(){a.attach_timers()},200)})()};window.ProjectTimer=c;new a})();
+  //]]>
+</script>
+
+<script class="template" id="template-widgets__video_embed_code" type="text/x-tmpl-mustache"><iframe width="{{width}}" height="{{height}}" src="{{{path}}}" frameborder="0" scrolling="no"> </iframe>
+</script><script class="template" id="template-projects__baseball_card_tall" type="text/x-tmpl-mustache"><div class="project-card-wrap project-card-wrap-tall border bg-white rounded clip">
+  <div class="project-card relative project-live {{#successful?}}successful{{/successful?}}">
+    <div class="project-thumbnail pt1 pl1 pr1">
+      <a href="{{urls.web.project}}" target="">
+        <img alt="Photo-little" class="projectphoto-little" src="{{photo.little}}" class="fit">
+      </a>
+    </div>
+    <div class="project-card-interior p1 h6 grey-dark">
+      <h6 class="project-title">
+        <a href="{{urls.web.project}}" target="" class="green-dark">{{name}}</a>
+      </h6>
+      <p class="mb1 ellipsis">
+        by
+        {{creator.name}}
+      </p>
+      <p class="blurb">
+        {{blurb}}
+      </p>
+    </div>
+    <div class="absolute-bottom bg-white rounded-bottom">
+
+      {{#location}}
+        <ul class="p1 list project-meta no-margin h6">
+          <li class="ellipsis">
+            <a href="{{location.urls.web.discover}}" data-location="{{location_json}}" class="grey-dark">
+              <span class="ss-icon ss-location"></span>
+              <span class="location-name">{{location.displayable_name}}</span>
+            </a>
+          </li>
+        </ul>
+      {{/location}}
+
+      <div class="project-stats-wrap pb1 pl1 pr1">
+
+        {{#failed?}}
+          <div class='project-status project-failed h6'>
+            <strong> Funding Unsuccessful</strong><br />
+            <span class="grey-dark">Project ended on {{formatted_deadline}}</span>
+          </div>
+        {{/failed?}}
+
+        {{#canceled?}}
+          <div class='project-status project-canceled h6'>
+            <strong> Funding Canceled</strong><br />
+            <span class="grey-dark">Project canceled on {{formatted_state_changed_at}}</span>
+          </div>
+        {{/canceled?}}
+
+        {{#successful?}}
+          <div class='project-pledged-successful bg-green white h6 pl1 pr1 mb1'>
+            <strong>Successful!</strong>
+          </div>
+        {{/successful?}}
+
+        {{#live_or_successful?}}
+          {{#live?}}
+            <div class="project-pledged-wrap bg-grey clip mb1">
+              <div class="project-pledged bg-green full-height" style="width: {{percent_raised_to_100}}%"></div>
+            </div>
+          {{/live?}}
+          <ul class="project-stats list no-margin h6 no-wrap">
+            <li class="first funded inline-block mr1">
+              <strong class="block h6">{{percent_raised_rounded}}%</strong>
+              <span class="grey-dark">funded</span>
+            </li>
+            <li class="pledged inline-block mr1">
+              <strong class="block h6">{{currency_symbol}}{{formatted_money}}</strong>
+              <span class="grey-dark">pledged</span>
+            </li>
+            {{#successful?}}
+              <li class="last successful inline-block">
+                <strong class="block h6">Funded</strong>
+                <div class="deadline grey-dark">{{formatted_deadline}}</div>
+              </li>
+            {{/successful?}}
+            {{#live?}}
+              <li class="last ksr_page_timer inline-block" data-end_time="{{javascript_deadline}}">
+                <strong class="block h6">
+                  <div class="num">30</div>
+                </strong>
+                <div class="span text grey-dark" data-word="left">days to go</div>
+              </li>
+            {{/live?}}
+          </ul>
+        {{/live_or_successful?}}
+      </div>
+    </div>
+  </div>
+</div>
+
+{{#friends_backing?}}
+  <div class="friend_project_context">
+    <div class="friend_facepile">
+      {{#truncated_friends}}
+        <img src="{{avatar.thumb}}" class="{{#has_metadata?}}small{{/has_metadata?}}">
+      {{/truncated_friends}}
+    </div>
+    <p class="friend_namepile">
+      {{{escaped_sentence}}}
+    </p>
+  </div>
+{{/friends_backing?}}
+</script><script class="template" id="template-projects__video_mode" type="text/x-tmpl-mustache"><a href='#' id='video_mode_close' class='close_button z2'><span class='ss-icon ss-delete'></span></a>
+
+<div class='title_card z1 {{context_classes}}' style="display:none;">
+  <div class='interior'>
+    <h2 class='project_title normal_weight'>{{name}}</h2>
+    <p class='blurb'>{{blurb}}</p>
+    <nav class='bar'>
+      <a id='play_button' class='left play' href='#'>
+        <span class='play_active'>
+          <span class='ss-icon ss-play'></span>
+          Play
+        </span>
+        <span class='pause_active'>
+          <span class='ss-icon ss-pause'></span>
+          Pause
+        </span>
+      </a>
+      {{#logged_in}}
+        <div class='remind right'>
+          {{#if_not_starred}}
+            <a class='follow' href='{{urls.web.project}}/watch'><span class='ss-icon ss-star'></span></a>
+          {{/if_not_starred}}
+          {{#if_starred}}
+            <a class='unfollow' href='{{urls.web.project}}/unwatch'><span class='ss-icon ss-star active'></span></a>
+          {{/if_starred}}
+        </div>
+      {{/logged_in}}
+      <a class='right explore button button_green small' href='#'>Explore this project</a>
+    </nav>
+  </div>
+</div>
+
+<div class='channel_controls z1'>
+  <a href='#' class='{{#playlist_is_location}}selected {{/playlist_is_location}}location'>Something else near {{location.first_name}} <span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_featured}}selected {{/playlist_is_featured}}featured'>Something different<span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_category}}selected {{/playlist_is_category}}category'>Something else in {{category.name}} <span class='ss-icon ss-navigateright'></span></a>
+</div>
+
+<div class='project_video' style='background-image: url('{{photo.full}}')'>
+  <div class='cover'>
+    <video>
+      <source src='{{video.high}}' type='video/mp4'/>
+      <source src='{{video.webm}}' type='video/webm'/>
+    </video>
+  </div>
+</div>
+</script><script class="template" id="template-site__video_mode_fourohfour" type="text/x-tmpl-mustache"><section class='four_oh_four'>
+  <p class='big_type'>
+    Looks like you've reached the end of the line! <br />Check out <a class="another" href='#'>another channel</a> or <a href='/discover'>browse projects in discover</a>.
+  </p>
+</section>
+</script>
+
+<script id="schwamm_formatting_options" type="text/javascript">
+//<![CDATA[
+(function(){window.formatters = window.formatters || {}; var formatting_options = {"distance_date_intervals":[[5,"just now"],[29,"less than a minute ago"],[89,"1 minute ago"],[2640,"%m minutes ago"],[5340,"about 1 hour ago"],[82800,"about %h hours ago"],[147600,"1 day ago"],[604800,"%d days ago"],[15552000,"on %t"],[0,"on %y"]],"currency_symbol_mappings":{"AFN":"\u060b","ALL":"Lek","ARS":"$","AUD":"$","AWG":"\u0192","AZN":"\u043c\u0430\u043d","BAM":"KM","BBD":"$","BGN":"\u043b\u0432","BMD":"$","BND":"$","BOB":"$b","BRL":"R$","BSD":"$","BWP":"P","BYR":"p.","BZD":"BZ$","CAD":"$","CLP":"$","CNY":"\u00a5","COP":"$","CRC":"\u20a1","CUP":"\u20b1","CZK":"K\u010d","DKK":"kr","DOP":"RD$","EGP":"\u00a3","EUR":"\u20ac","FJD":"$","FKP":"\u00a3","GBP":"\u00a3","GIP":"\u00a3","GTQ":"Q","GYD":"$","HKD":"$","HNL":"L","HRK":"kn","HUF":"Ft","IDR":"Rp","ILS":"\u20aa","IRR":"\ufdfc","ISK":"kr","JMD":"J$","JPY":"\u00a5","KGS":"\u043b\u0432","KHR":"\u17db","KPW":"\u20a9","KRW":"\u20a9","KYD":"$","KZT":"\u043b\u0432","LAK":"\u20ad","LBP":"\u00a3","LKR":"\u20a8","LRD":"$","LTL":"Lt","LVL":"Ls","MKD":"\u0434\u0435\u043d","MNT":"\u20ae","MUR":"\u20a8","MXN":"$","MYR":"RM","MZN":"MT","NAD":"$","NGN":"\u20a6","NIO":"C$","NOK":"kr","NPR":"\u20a8","NZD":"$","OMR":"\ufdfc","PAB":"B/.","PEN":"S/.","PHP":"\u20b1","PKR":"\u20a8","PLN":"z\u0142","PYG":"Gs","QAR":"\ufdfc","RON":"lei","RSD":"\u0414\u0438\u043d.","RUB":"\u0440\u0443\u0431","SAR":"\ufdfc","SBD":"$","SCR":"\u20a8","SEK":"kr","SGD":"$","SHP":"\u00a3","SOS":"S","SRD":"$","SVC":"$","SYP":"\u00a3","THB":"\u0e3f","TRY":"TL","TTD":"TT$","TWD":"NT$","UAH":"\u20b4","USD":"$","UYU":"$U","UZS":"\u043b\u0432","VEF":"Bs","VND":"\u20ab","YER":"\ufdfc","ZAR":"R"},"currency_trailing_code_mappings":{"AUD":true,"CAD":true,"NZD":true,"USD":true},"currency_formats":["money","shorter_money"]}; for (key in formatting_options) {window.formatters[key] = formatting_options[key]};}());
+//]]>
+</script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("begin_base.js_tag");}
+  //]]>
+</script>
+<script src="https://d297h9he240fqh.cloudfront.net/assets/packages/base-45cdab84617ddfb8905b7cddc8500c19.js" type="text/javascript"></script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("end_base.js_tag");}
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    document.domain='kickstarter.com';
+  //]]>
+</script>
+
+<iframe height="0" id="api_xdreceiver" src="https://api.kickstarter.com/xdreceiver/85e6.html" style="display: none;" width="0"></iframe>
+
+
+
+<div id="fb-root"></div>
+<script>
+  //<![CDATA[
+    var channelUrl = window.location.protocol + "//" + window.location.host + "/channel.html",
+      skip_autologin = $('body').is('.skip_autologin');
+    
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId: window.fb_app_id,
+        channelUrl: channelUrl,
+        status: true,    // check login status
+        cookie: true,    // enable cookies to allow the server to access the session
+        xfbml: true,     // parse XFBML
+        logging: false   // turn off logging
+      });
+    
+      FB.getLoginStatus(function (response) {
+        if (response.status === 'connected') {
+          if (read_cookie("logout_from_fb")) {
+            FB.logout();
+            destroy_cookie("logout_from_fb");
+          } else if (!skip_autologin) {
+            $.get("/fb/autologin", {'fbsr': response.authResponse.signedRequest});
+          } else if (false && 0 == response.authResponse.userID) {
+            $.get("/fb/refresh", {'fbsr': response.authResponse.signedRequest});
+          }
+        } else {
+          if (read_cookie("logout_from_fb")) {
+            destroy_cookie("logout_from_fb");
+          }
+        }
+      })
+    
+      $(document).trigger('fb:loaded');
+    };
+    
+    
+    // Load the SDK Asynchronously
+    (function(d){
+      var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+      js = d.createElement('script'); js.id = id; js.async = true;
+      js.src = "//connect.facebook.net/en_US/all.js";
+      d.getElementsByTagName('head')[0].appendChild(js);
+    }(document));
+  //]]>
+</script>
+
+
+</body>
+</html>

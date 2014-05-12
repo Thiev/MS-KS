@@ -1,0 +1,2099 @@
+<!DOCTYPE html>
+<html class="projects_show  fontface no-js" lang="en">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# kickstarter: http://ogp.me/ns/fb/kickstarter#">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-5.newrelic.com","errorBeacon":"jserror.newrelic.com","licenseKey":"b04b883ad2","applicationID":"11086","transactionName":"cFteRUULX1wHFhtIEFxeVVJDFxxDCgtD","queueTime":14,"applicationTime":1338,"ttGuid":"","agentToken":null,"agent":"js-agent.newrelic.com/nr-411.min.js"}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"Vw4BVEVSCQMIUg=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e){function n(t,e,n){n||(n={});for(var r=o[t],a=r&&r.length||0,s=n[i]||(n[i]={}),u=0;a>u;u++)r[u].apply(s,e);return s}function r(t,e){var n=o[t]||(o[t]=[]);n.push(e)}var o={},i="nr@context";e.exports={on:r,emit:n}},{}],2:[function(t){function e(t,e,n,i,s){return u?u-=1:r("err",[s||new UncaughtException(t,e,n)]),"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t(5),a=window.onerror,s=!1,u=0;t("loader").features.push("err"),window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(d){"stack"in d&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(4),s=!0)}i.on("fn-start",function(){s&&(u+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&u>0&&(u-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:4,3:3,4:6,5:1,6:14,handle:"D5DuLP",loader:"G9z0Bl"}],3:[function(t){function e(t){r.inPlace(t,["addEventListener","removeEventListener"],"-",n)}function n(t){return t[1]}var r=t(1),o=(t(3),t(2));if(e(window),"getPrototypeOf"in Object){for(var i=document;i&&!i.hasOwnProperty("addEventListener");)i=Object.getPrototypeOf(i);i&&e(i);for(var a=XMLHttpRequest.prototype;a&&!a.hasOwnProperty("addEventListener");)a=Object.getPrototypeOf(a);a&&e(a)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&e(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=e["nr@wrapped"]?t[1]=e["nr@wrapped"]:e["nr@wrapped"]=t[1]=r(e,"fn-"):"function"==typeof e.handleEvent&&r.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:15,2:1,3:14}],4:[function(t){var e=(t(3),t(1)),n=t(2);e.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=e(t[0],"fn-")})},{1:15,2:1,3:14}],5:[function(t){function e(t){var e=t[0];"string"==typeof e&&(e=new Function(e)),t[0]=n(e,"fn-")}var n=(t(3),t(1)),r=t(2);n.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",e)},{1:15,2:1,3:14}],6:[function(t){function e(){o.inPlace(this,s,"fn-")}function n(t,e){o.inPlace(e,["onreadystatechange"],"fn-")}function r(t,e){return e}var o=t(1),i=t(2),a=window.XMLHttpRequest,s=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];window.XMLHttpRequest=function(t){var n=new a(t);try{i.emit("new-xhr",[],n),o.inPlace(n,["addEventListener","removeEventListener"],"-",function(t,e){return e}),n.addEventListener("readystatechange",e,!1)}catch(r){try{i.emit("internal-error",r)}catch(s){}}return n},window.XMLHttpRequest.prototype=a.prototype,o.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",r),i.on("send-xhr-start",n),i.on("open-xhr-start",n)},{1:15,2:1}],7:[function(t){function e(){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;u>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,d="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=e(d);if(f&&(r.rxSize=f),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}t("loader").features.push("xhr");var o=t("handle"),i=t(1),a=t(5),s=["load","error","abort","timeout"],u=s.length,d=t(2);t(3),t(4),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var d=e(o);d&&(r.txSize=d)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",e)}catch(r){}}};for(var f=0;u>f;f++)n.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&e()},{1:8,2:11,3:3,4:6,5:1,handle:"D5DuLP",loader:"G9z0Bl"}],8:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e){var n=r[t];return n?n.apply(this,e):(o[t]||(o[t]=[]),void o[t].push(e))}var r={},o={};e.exports=n,n.queues=o,n.handlers=r},{}],11:[function(t,e){function n(t){if(!t||"object"!=typeof t&&"function"!=typeof t)return-1;if(t===window)return 0;if(o.call(t,"__nr"))return t.__nr;try{return Object.defineProperty(t,"__nr",{value:r,writable:!0,enumerable:!1}),r}catch(e){return t.__nr=r,r}finally{r+=1}}var r=1,o=Object.prototype.hasOwnProperty;e.exports=n},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&u&&u.body){p.proto="https"===c.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=u.createElement("script");e.src=p.proto+t.agent,u.body.appendChild(e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,u=s.document,d="addEventListener",f="attachEvent",c=(""+location).split("?")[0],p=e.exports={offset:i(),origin:c,features:[]};u[d]?(u[d]("DOMContentLoaded",o,!1),s[d]("load",n,!1)):(u[f]("onreadystatechange",r),s[f]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],14:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],15:[function(t,e){function n(t,e,r,s){function nrWrapper(){try{var n,a=u(arguments),d=this,f=r&&r(a,d)||{}}catch(c){i([c,"",[a,d,s],f])}o(e+"start",[a,d,s],f);try{return n=t.apply(d,a)}catch(p){throw o(e+"err",[a,d,p],f),p}finally{o(e+"end",[a,d,n],f)}}return a(t)?t:(e||(e=""),nrWrapper[n.flag]=!0,nrWrapper)}function r(t,e,r,o){r||(r="");var i,s,u,d="-"===r.charAt(0);for(u=0;u<e.length;u++)s=e[u],i=t[s],a(i)||(t[s]=n(i,d?s+r:r,o,s,t))}function o(t,e,n){try{s.emit(t,e,n)}catch(r){i([r,t,e,n])}}function i(t){try{s.emit("internal-error",t)}catch(e){}}function a(t){return!(t&&"function"==typeof t&&t.apply&&!t[n.flag])}var s=t(1),u=t(2);e.exports=n,n.inPlace=r,n.flag="nr@wrapper"},{1:1,2:14}]},{},["G9z0Bl",2,7]);</script><script>
+  //<![CDATA[
+    docElement = this.document.documentElement;
+    docElement.className=docElement.className.replace(/\bno-js\b/,'') + 'js';
+  //]]>
+</script>
+<title>KickStarter Indie Bundle by Evgeniy Kolpakov &mdash; Kickstarter</title><script>
+  //<![CDATA[
+    window.report_errors = true;
+    window.honeybadger_configuration = {
+      api_key : "02ab109335c0dd1a93506d92f22217a7",
+      environment : "production",
+      component : "projects",
+      action : "show",
+      onerror : false
+    };
+  //]]>
+</script>
+
+
+<!--[if lt IE 9]>
+  <script src="//html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta content="telephone=no" name="format-detection">
+
+<!--[if !IE]> -->
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base-9f623ad5d021a188cfb2d68a0cdf7a7b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<!-- <![endif]-->
+<!--[if IE]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base_blessed-2640c72487552f9a2ef9f2620b4af860.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<!--[if lte IE 9]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_nine-a93fe10530f175f96c4078b7e070d7e1.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 8]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_eight-f75aeb274436f94a0d243774456b1c62.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 7]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie-c019c01acd3a96588b346cf577a3504f.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_seven-5a3d2cef660cd281fd844b04b2397dbb.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if IE 6]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_six-e4d3caf76e405fe19aee6ece8bda701b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<link href="https://d297h9he240fqh.cloudfront.net/favicon.png" rel="icon" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-precomposed-7b603dba7cf80e4acc57d94a991bebbd.png" rel="apple-touch-icon-precomposed" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-ipad-precomposed-3176f72977daf43dee3b0d348484dc01.png" rel="apple-touch-icon-precomposed" sizes="72x72" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-iphone4-precomposed-b93b70168cd8492c843d0fea873c7f83.png" rel="apple-touch-icon-precomposed" sizes="114x114" type="image/png">
+<link href="https://www.kickstarter.com/services/oembed?url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Fpinkerator%2Fkickstarter-indie-bundle" rel="alternate" title="KickStarter Indie Bundle Script Tag oEmbed" type="application/json+oembed">
+<link rel="alternate" type="application/atom+xml" title="KickStarter Indie Bundle : Kickstarter" href="https://www.kickstarter.com/projects/pinkerator/kickstarter-indie-bundle/posts.atom" />
+<meta property="twitter:app:id:iphone" content="596961532"/>
+<meta property="twitter:app:name:iphone" content="Kickstarter"/>
+<meta property="twitter:app:url:iphone" content="ksr://www.kickstarter.com/projects/pinkerator/kickstarter-indie-bundle"/>
+<meta name="video_height" content="360"/>
+<meta name="video_width" content="640"/>
+<meta name="video_type" content="application/x-shockwave-flash"/>
+<meta name="title" content="Kickstarter &gt;&gt; KickStarter Indie Bundle by Evgeniy Kolpakov"/>
+<meta name="description" content="Evgeniy Kolpakov is raising funds for KickStarter Indie Bundle on Kickstarter! 
+
+ Your support will help 9 developers to make 9 different games! Lots of additional rewards for your pledges!"/>
+<meta name="robots" content="noindex"/>
+<meta property="og:title" content="KickStarter Indie Bundle"/>
+<meta property="og:type" content="kickstarter:project"/>
+<meta property="og:image" content="https://s3.amazonaws.com/ksr/projects/258316/photo-main.jpg?1397789964"/>
+<meta property="og:url" content="https://www.kickstarter.com/projects/pinkerator/kickstarter-indie-bundle"/>
+<meta property="og:site_name" content="Kickstarter"/>
+<meta property="fb:app_id" content="69103156693"/>
+<meta property="og:description" content="Your support will help 9 developers to make 9 different games! Lots of additional rewards for your pledges!"/>
+<meta property="kickstarter:creator" content="https://www.kickstarter.com/profile/pinkerator"/>
+<meta property="twitter:url:landing_url" content="https://www.kickstarter.com/projects/pinkerator/kickstarter-indie-bundle"/>
+<meta property="twitter:card" content="2427656750:kickstarter_project"/>
+<meta property="twitter:site" content="@kickstarter"/>
+<meta property="twitter:site:id" content="16186995"/>
+<meta property="twitter:text:title" content="KickStarter Indie Bundle"/>
+<meta property="twitter:text:artist" content="Evgeniy Kolpakov"/>
+<meta property="twitter:text:backers" content="258"/>
+<meta property="twitter:text:pledged" content="$6,078 USD"/>
+<meta property="twitter:text:time" content="0 seconds"/>
+<meta property="twitter:text:location" content="Earth, TX"/>
+<meta property="twitter:image:location_image" content="https://d3mlfyygrfdi2i.cloudfront.net/b40e/pin.png"/>
+<meta property="twitter:text:description" content="Your support will help 9 developers to make 9 different games! Lots of additional rewards for your pledges!"/>
+<meta property="twitter:image:media" content="https://s3.amazonaws.com/ksr/projects/258316/photo-main.jpg?1397789964"/>
+<meta property="twitter:image:width" content="640"/>
+<meta property="twitter:image:height" content="480"/>
+<meta property="twitter:player:stream:url" content="https://d2pq0u4uni88oo.cloudfront.net/projects/258316/video-141160-h264_base.mp4"/>
+<meta property="twitter:player:stream:content" content="video/mp4"/>
+<meta property="twitter:player:url" content="https://www.kickstarter.com/projects/pinkerator/kickstarter-indie-bundle/widget/video.html"/>
+<meta property="twitter:player:height" content="360"/>
+<meta property="twitter:player:width" content="640"/>
+<meta property="twitter:maxage" content="60"/>
+<meta property="og:video" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F258316%2Fvideo-141160-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F258316%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Evgeniy+Kolpakov&amp;project_title=KickStarter+Indie+Bundle&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Fpinkerator%2Fkickstarter-indie-bundle&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:secure_url" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F258316%2Fvideo-141160-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F258316%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Evgeniy+Kolpakov&amp;project_title=KickStarter+Indie+Bundle&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Fpinkerator%2Fkickstarter-indie-bundle&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:height" content="360"/>
+<meta property="og:video:width" content="640"/>
+<meta property="og:video:type" content="application/x-shockwave-flash"/>
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="ODIQQns03tfZnYGYrt37bka3VVKIL1TTU3qeUw2nqHE=" name="csrf-token" />
+<script type="text/javascript">
+  var _sift = _sift || [];
+  _sift.push(['_setAccount', '637102']);
+  _sift.push(['_setUserId', '']);
+  _sift.push(['_trackPageview']);
+
+  (function() {
+    function loadSift() {
+      var sift, s;
+      if (root.visitor_id) {
+        _sift.push(['_setSessionId', root.visitor_id]);
+      }
+      sift = document.createElement('script');
+      sift.type = 'text/javascript';
+      sift.async = true;
+      sift.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dtlilztwypawv.cloudfront.net/s.js';
+      s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(sift, s);
+    }
+    if (window.attachEvent) {
+      window.attachEvent('onload', loadSift);
+    } else {
+      window.addEventListener('load', loadSift, false);
+    }
+  })();
+</script>
+<link href="http://kck.st/NQV22a" rel="shorturl">
+<link href="https://www.kickstarter.com/projects/pinkerator/kickstarter-indie-bundle" rel="canonical">
+<link href="https://s3.amazonaws.com/ksr/projects/258316/photo-med.jpg?1397789964" rel="image_src">
+<link href="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F258316%2Fvideo-141160-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F258316%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Evgeniy+Kolpakov&amp;project_title=KickStarter+Indie+Bundle&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Fpinkerator%2Fkickstarter-indie-bundle&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque" rel="video_src">
+<script>
+  //<![CDATA[
+    window.current_checkout = "{&quot;id&quot;:0,&quot;domestic&quot;:null,&quot;amount&quot;:0.0,&quot;updated_at&quot;:0,&quot;created_at&quot;:0}";
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.current_ip = '94.209.101.212';
+    window.current_ip_datacenter = 'false';
+    window.enabled_features = {"elasticsearch":true,"security_history_read":true,"security_history_write":true,"advanced_discovery_es":true,"ios_crashlytics":true,"ios_mixpanel":true,"stories_veronica_mars":true,"veronica_mars_hero":true,"password_reset_banner":true};
+    window.fb_app_id = '69103156693';
+    
+    var _sf_startpt=(new Date()).getTime();
+    
+    window.current_project = "{&quot;id&quot;:260789957,&quot;name&quot;:&quot;KickStarter Indie Bundle&quot;,&quot;blurb&quot;:&quot;Your support will help 9 developers to make 9 different games! Lots of additional rewards for your pledges!&quot;,&quot;goal&quot;:45000.0,&quot;pledged&quot;:6078.25,&quot;state&quot;:&quot;failed&quot;,&quot;slug&quot;:&quot;kickstarter-indie-bundle&quot;,&quot;disable_communication&quot;:false,&quot;country&quot;:&quot;US&quot;,&quot;currency&quot;:&quot;USD&quot;,&quot;currency_symbol&quot;:&quot;$&quot;,&quot;currency_trailing_code&quot;:true,&quot;deadline&quot;:1346259600,&quot;state_changed_at&quot;:1346259629,&quot;created_at&quot;:1342369274,&quot;launched_at&quot;:1343667600,&quot;backers_count&quot;:258,&quot;photo&quot;:{&quot;full&quot;:&quot;https://s3.amazonaws.com/ksr/projects/258316/photo-full.jpg?1397789964&quot;,&quot;ed&quot;:&quot;https://s3.amazonaws.com/ksr/projects/258316/photo-ed.jpg?1397789964&quot;,&quot;med&quot;:&quot;https://s3.amazonaws.com/ksr/projects/258316/photo-med.jpg?1397789964&quot;,&quot;little&quot;:&quot;https://s3.amazonaws.com/ksr/projects/258316/photo-little.jpg?1397789964&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/projects/258316/photo-small.jpg?1397789964&quot;,&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/projects/258316/photo-thumb.jpg?1397789964&quot;,&quot;1024x768&quot;:&quot;https://s3.amazonaws.com/ksr/projects/258316/photo-1024x768.jpg?1397789964&quot;,&quot;1536x1152&quot;:&quot;https://s3.amazonaws.com/ksr/projects/258316/photo-1536x1152.jpg?1397789964&quot;},&quot;creator&quot;:{&quot;id&quot;:919556021,&quot;name&quot;:&quot;Evgeniy Kolpakov&quot;,&quot;slug&quot;:&quot;pinkerator&quot;,&quot;avatar&quot;:{&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/1989731/r001-007.thumb.jpg?1342639315&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/1989731/r001-007.small.jpg?1342639315&quot;,&quot;medium&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/1989731/r001-007.medium.jpg?1342639315&quot;},&quot;urls&quot;:{&quot;web&quot;:{&quot;user&quot;:&quot;https://www.kickstarter.com/profile/pinkerator&quot;},&quot;api&quot;:{&quot;user&quot;:&quot;https://api.kickstarter.com/v1/users/919556021?signature=1399951036.bdfcb2529d5598d919966e760e17cedffab4a9cc&quot;}}},&quot;location&quot;:{&quot;id&quot;:2395246,&quot;name&quot;:&quot;Earth&quot;,&quot;slug&quot;:&quot;earth-tx&quot;,&quot;short_name&quot;:&quot;Earth, TX&quot;,&quot;displayable_name&quot;:&quot;Earth, TX&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:&quot;TX&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/earth-tx&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/earth-tx&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1399916371.1473d9479e45863989e6122551f2c2afbee9e180&amp;woe_id=2395246&quot;}}},&quot;category&quot;:{&quot;id&quot;:35,&quot;name&quot;:&quot;Video Games&quot;,&quot;slug&quot;:&quot;games/video games&quot;,&quot;position&quot;:7,&quot;parent_id&quot;:12,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;http://www.kickstarter.com/discover/categories/games/video%20games&quot;}}},&quot;urls&quot;:{&quot;web&quot;:{&quot;project&quot;:&quot;https://www.kickstarter.com/projects/pinkerator/kickstarter-indie-bundle&quot;,&quot;project_short&quot;:&quot;http://kck.st/NQV22a&quot;,&quot;updates&quot;:&quot;https://www.kickstarter.com/projects/pinkerator/kickstarter-indie-bundle/posts&quot;},&quot;api&quot;:{&quot;project&quot;:&quot;https://api.kickstarter.com/v1/projects/260789957?signature=1399951036.53e419637321974fd8310bdac6753581baf3a9f6&quot;,&quot;comments&quot;:&quot;https://api.kickstarter.com/v1/projects/260789957/comments?signature=1399951036.f1d72f299823224e6a187f8c25cce6e7268a21fa&quot;,&quot;updates&quot;:&quot;https://api.kickstarter.com/v1/projects/260789957/updates?signature=1399951036.362eb12d7848142415cd2c75aae399b7a1f4b858&quot;}},&quot;updated_at&quot;:1397789977,&quot;failed_at&quot;:1346259629,&quot;video&quot;:{&quot;id&quot;:141160,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/258316/video-141160-h264_high.mp4?2012&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/258316/video-141160-h264_base.mp4?2012&quot;,&quot;width&quot;:640,&quot;height&quot;:360,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/258316/video-141160-h264_base.jpg?2012&quot;},&quot;comments_count&quot;:19,&quot;updates_count&quot;:11,&quot;rewards&quot;:[{&quot;id&quot;:0,&quot;minimum&quot;:1,&quot;reward&quot;:&quot;No Reward&quot;},{&quot;id&quot;:894312,&quot;minimum&quot;:5.0,&quot;reward&quot;:&quot;Immediately: Inner Dream (alpha) // Upon Project Completion: Thank you to your name in the credits of all games. + Y2163 Personal Invite and Welcome Package + Inner Dream Exclusive Developer Diaries&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1372636800,&quot;project_id&quot;:260789957,&quot;backers_count&quot;:7,&quot;updated_at&quot;:1344911786},{&quot;id&quot;:894311,&quot;minimum&quot;:10.0,&quot;reward&quot;:&quot;All Previous Rewards + Immediately: Retention OST + Inner Dream OST + Ensign-1 (alpha) + Silversword 1 Compendium PDF + Metagolf OST + Christmas Magic OST + Enola (alpha) // Upon Completion: Enola (full game) &amp; High resolution digital poster + Y2163 (beta) + TRI OST + Inner Dream Photo Album&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1372636800,&quot;project_id&quot;:260789957,&quot;backers_count&quot;:7,&quot;updated_at&quot;:1346010603},{&quot;id&quot;:894332,&quot;minimum&quot;:15.0,&quot;reward&quot;:&quot;All Previous Rewards + Immediately: Retention (full game) + Helena The 3rd (full game) + The Sun Is Deadly (full game) + Silversword 1 iOS Promo Code (full game, App Store limited copies) + Bipo: Mystery of the Red Panda RPG (full game) + Curse of Slate Rock Manor (full game) + Cubyrinth iOS Promo Code (full game, App Store limited copies) + Metagolf (beta) + Christmas Magic Concept Art Bundle // Upon Completion: Y2163 MED Starter Package + Silversword Dungeon Crawler iOS Promo Code (full game, App Store limited copies) + Enola OST + Metagolf (full game) + Inner Dream (full game) + Christmas Magic (full game, one platform) + Host Holic (full game)&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1372636800,&quot;project_id&quot;:260789957,&quot;backers_count&quot;:40,&quot;updated_at&quot;:1346259588},{&quot;id&quot;:894328,&quot;minimum&quot;:20.0,&quot;reward&quot;:&quot;All Previous Rewards + Upon Completion: Y2163 Large starter package + Silversword 2 (full game) + TRI (full game) + Silversword 2 Your name in the story! + Inner Dream Your photo/avatar in one episode!&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1372636800,&quot;project_id&quot;:260789957,&quot;backers_count&quot;:165,&quot;updated_at&quot;:1346245612},{&quot;id&quot;:906231,&quot;minimum&quot;:30.0,&quot;reward&quot;:&quot;All Previous Rewards + Upon Completion: Christmas Magic High Res Poster Images + Christmas Magic Source code&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1372636800,&quot;project_id&quot;:260789957,&quot;backers_count&quot;:10,&quot;updated_at&quot;:1345985392},{&quot;id&quot;:906243,&quot;minimum&quot;:35.0,&quot;reward&quot;:&quot;Set for friends. All Rewards like for 20$ pledge, but you&#39;ll receive two copy&#39;s of all games - one for you and one for your friend!&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1372636800,&quot;project_id&quot;:260789957,&quot;backers_count&quot;:14,&quot;updated_at&quot;:1346088260},{&quot;id&quot;:906280,&quot;minimum&quot;:50.0,&quot;reward&quot;:&quot;All Previous Rewards + Upon Completion: Inner Dream Digital album with backstage photos&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1372636800,&quot;project_id&quot;:260789957,&quot;backers_count&quot;:2,&quot;updated_at&quot;:1343788386},{&quot;id&quot;:906247,&quot;minimum&quot;:60.0,&quot;reward&quot;:&quot;All Previous Rewards + Upon Completion: Exclusive digital collection of arthouse video from Sometimes You. This video was shown before only at experimental festivals.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1372636800,&quot;project_id&quot;:260789957,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1344100366},{&quot;id&quot;:894327,&quot;minimum&quot;:70.0,&quot;reward&quot;:&quot;All Previous Rewards + Immediately: Pitman (full game) + TRI (Pre-Alpha) // Upon Completion: Y2163 XL Starter Package + Enola Digital Collector\\u2019s Edition (full game) + Silversword 2 Your quest idea integrated in the story + Ensign 1 Include an image of your choice in the game + Ensign 1 30 second in-game video ad + Christmas Magic \\&quot;Premium Sponsor\\&quot; status in game credits&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1372636800,&quot;project_id&quot;:260789957,&quot;backers_count&quot;:5,&quot;updated_at&quot;:1344871550},{&quot;id&quot;:894330,&quot;minimum&quot;:100.0,&quot;reward&quot;:&quot;All Previous Rewards + Upon Completion: Christmas Magic Full version on all platforms (except iOS)&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1372636800,&quot;project_id&quot;:260789957,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1343032726},{&quot;id&quot;:894329,&quot;minimum&quot;:150.0,&quot;reward&quot;:&quot;All Digital Rewards + Upon Completion: Physical Indie Bundle (dvd with all digital rewards, backer certificate, mysterious gift). International shipping is included.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1372636800,&quot;project_id&quot;:260789957,&quot;backers_count&quot;:5,&quot;updated_at&quot;:1345665148},{&quot;id&quot;:894331,&quot;minimum&quot;:200.0,&quot;reward&quot;:&quot;All Digital Rewards + Upon Completion: Physical Indie Bundle Collector\\u2019s Edition (dvd with all digital rewards, exclusive T-Shirt, badge, backer certificate, mysterious gift XL). International shipping is included.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1372636800,&quot;project_id&quot;:260789957,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1342871513},{&quot;id&quot;:906242,&quot;minimum&quot;:300.0,&quot;reward&quot;:&quot;All Previous Rewards + Upon Completion: Inner Dream A portrait of you from our lead artist based on your photo&quot;,&quot;limit&quot;:40,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1372636800,&quot;project_id&quot;:260789957,&quot;remaining&quot;:40,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1343125143},{&quot;id&quot;:906267,&quot;minimum&quot;:400.0,&quot;reward&quot;:&quot;All Previous Rewards + Upon Completion: One of your dreams featured in &#39;Inner Dream&#39;&quot;,&quot;limit&quot;:7,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1372636800,&quot;project_id&quot;:260789957,&quot;remaining&quot;:7,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1343125143},{&quot;id&quot;:907244,&quot;minimum&quot;:500.0,&quot;reward&quot;:&quot;All Previous Rewards + Upon Completion: Enola Your name and photo in the game!&quot;,&quot;limit&quot;:10,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1372636800,&quot;project_id&quot;:260789957,&quot;remaining&quot;:10,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1343155485},{&quot;id&quot;:922477,&quot;minimum&quot;:600.0,&quot;reward&quot;:&quot;All Previous Rewards + Upon Completion: Silversword 2 You may help shape the main quest. This includes description, places, characters and creatures.&quot;,&quot;limit&quot;:1,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1372636800,&quot;project_id&quot;:260789957,&quot;remaining&quot;:1,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1343662937},{&quot;id&quot;:898535,&quot;minimum&quot;:1000.0,&quot;reward&quot;:&quot;All Previous Rewards + Upon Completion: Christmas Magic Your name as Platinum Sponsor on a special Splash Screen&quot;,&quot;limit&quot;:1,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1372636800,&quot;project_id&quot;:260789957,&quot;remaining&quot;:1,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1343119098},{&quot;id&quot;:907247,&quot;minimum&quot;:1000.0,&quot;reward&quot;:&quot;All previous rewards + Upon completion: Enola, The Detective named after you + Enola, your picture as The Detective\\u2019s face + Enola source code&quot;,&quot;limit&quot;:1,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1372636800,&quot;project_id&quot;:260789957,&quot;remaining&quot;:1,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1343155538},{&quot;id&quot;:906233,&quot;minimum&quot;:1000.0,&quot;reward&quot;:&quot;All Previous Rewards + Upon Completion: Inner Dream Your name as Platinum Sponsor on a special Splash Screen&quot;,&quot;limit&quot;:1,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1372636800,&quot;project_id&quot;:260789957,&quot;remaining&quot;:1,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1343122430},{&quot;id&quot;:898536,&quot;minimum&quot;:5000.0,&quot;reward&quot;:&quot;All Previous Rewards + Upon Completion: Christmas Magic Your name in Gold as the in-game Book&#39;s Author&quot;,&quot;limit&quot;:1,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1372636800,&quot;project_id&quot;:260789957,&quot;remaining&quot;:1,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1342871707},{&quot;id&quot;:898537,&quot;minimum&quot;:10000.0,&quot;reward&quot;:&quot;You tell us! Seriously! No Reasonable Request Refused! Questions? Leave a comment :)&quot;,&quot;limit&quot;:3,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1372636800,&quot;project_id&quot;:260789957,&quot;remaining&quot;:3,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1342871513}]}";
+    
+    
+    
+    
+    
+    
+    
+    
+    window.timeRemaining = function timeRemaining(epochTime){
+    
+      var diff = epochTime - ((new Date()).getTime() / 1000);
+      var num_unit = (diff < 60 && [Math.max(diff, 0), 'seconds']) ||
+        ((diff/=60) < 60 && [diff, 'minutes']) ||
+        ((diff/=60) < 72 && [diff, 'hours']) ||
+        [diff/=24, 'days'];
+    
+      // Round down
+      num_unit[0] = Math.floor(num_unit[0]);
+      // Singularize unit
+      if (num_unit[0] == 1) { num_unit[1] = num_unit[1].replace(/s$/,""); }
+    
+      return num_unit;
+    };
+  //]]>
+</script>
+
+<script>
+  //<![CDATA[
+    window.current_variants = ["discover_link_copy[explore]","rewards_hover[without_hover_text]"];
+  //]]>
+</script>
+
+
+</head>
+
+<body class="project projects not-mobile not-phone not-forces-video-controls not-tablet not-touchable not-native-app-request video_mode" id="projects_show">
+<div class="jGrowl center" id="growl_section"></div>
+<div class="NS_layouts__navigation" id="header">
+<div class="main-nav relative bg-white">
+<h1 class="no-margin ml1 mr2 left">
+<a href="/?ref=nav" class="block p2"><span class="ss-icon green-dark">KICK</span><span class="ss-icon green">STARTER</span>
+</a></h1>
+<ul class="primary-links list no-margin left">
+<li class="left discover-link full-height">
+<a href="/discover?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Explore</a>
+</li>
+<li class="left full-height mr2">
+<a href="/learn?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Start</a>
+</li>
+</ul>
+<ul class="list no-margin right" id="menu-sub">
+<li class="right"><a href="/login?ref=nav" class="block h5 bold p2 full-height border-box">Log in</a></li>
+<li class="right"><a href="/signup?ref=nav" class="block h5 bold p2 full-height border-box">Sign up</a></li>
+</ul>
+<div class="search-link pl2 full-height border-left border-box clip">
+<form accept-charset="UTF-8" action="/projects/search" class="search pt1 pb1 block relative form-simple" method="get"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /></div>
+<div class="field relative pl3">
+<span class="ss-icon ss-search grey-dark ml1 mt1 absolute"></span>
+<input class="input-search header full-width text" data-tracker-name="Header Live Search" id="term" name="term" placeholder="Search projects" type="text" />
+</div>
+</form>
+
+</div>
+<div class="clear"></div>
+</div>
+</div>
+<div class="hide pt4 pb4 bg-grey-light" id="search_results-wrap">
+<div class="relative container" id="search_results">
+<a class="close right grey-dark mr1"><span class="ss-icon ss-delete"></span></a>
+<h3 class="header ml1 clearfix"></h3>
+<div class="clip clearfix" id="search_results_panel"></div>
+<a class="prev arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateleft"></span>
+</a>
+<a class="next arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateright"></span>
+</a>
+</div>
+</div>
+
+
+
+
+<div class="Project-ended-true Project-is_starred- Project-state-failed Project260789957_cxt border-top" id="main_content">
+<div id="running-board-wrap">
+<div class="container" id="running-board">
+<div id="project-header">
+<div class="NS_projects__running_board ml1 mr1 clearfix">
+<div class="title center py4">
+<h2 class="mb1">
+<a href="/projects/pinkerator/kickstarter-indie-bundle" class="green-dark">KickStarter Indie Bundle</a>
+</h2>
+<p class="no-margin">
+<span class="creator">
+by
+<a href="/projects/pinkerator/kickstarter-indie-bundle/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography" id="name">Evgeniy Kolpakov</a>
+</span>
+</p>
+</div>
+<ul class="project-nav list-inline left h5 bold mb1">
+<li class="mr2">
+<a href="/projects/pinkerator/kickstarter-indie-bundle" class="grey-dark py1 current" id="home_nav">Home</a>
+</li>
+<li class="mr2">
+<span data-updates-count="11" id="updates_count">
+<a href="/projects/pinkerator/kickstarter-indie-bundle/posts" class="grey-dark py1" id="updates_nav">Updates
+<span class="count h6 bg-grey-dark white">11</span>
+</a></span>
+</li>
+<li class="mr2">
+<a href="/projects/pinkerator/kickstarter-indie-bundle/backers" class="grey-dark py1" id="backers_nav">Backers
+<span class="count h6 bg-grey-dark white"><data class="Project260789957" data-format="number" data-value="258" itemprop="Project[backers_count]">258</data></span>
+</a></li>
+<li>
+<span data-comments-count="19" id="comments_count">
+<a href="/projects/pinkerator/kickstarter-indie-bundle/comments" class="grey-dark py1" id="comments_nav">Comments
+<span class="count h6 bg-grey-dark white"><data class="Project260789957" data-format="number" data-value="19" itemprop="Project[comments_count]">19</data></span>
+</a></span>
+</li>
+</ul>
+<ul class="list-inline right h5 bold mb1">
+<li class="location mr2">
+<a href="/discover/places/earth-tx?ref=city" class="grey-dark"><span class="ss-icon ss-location margin-right"></span>
+Earth, TX
+</a></li>
+<li class="category" data-project-parent-category="Games">
+<a href="/discover/categories/games/video%20games?ref=category" class="grey-dark"><span class="ss-icon ss-tag margin-right"></span>
+Video Games
+</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+</div>
+<div class="bg-grey-light pb4" id="content-wrap">
+<div class="Project260789957" data-conditions="[{&quot;!state&quot;:&quot;live&quot;}]" data-evaluation="true" data-render="&quot;&lt;div class=\&quot;NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-failed Project260789957_cxt bg-grey container pb1 pt1\&quot;&gt;\n&lt;div class=\&quot;Project260789957\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;successful&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;Funded!&amp;lt;/b&amp;gt;\\nThis project was successfully funded &amp;lt;data class=\\&amp;quot;Project260789957\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2012-08-29T13:00:00-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[deadline]\\&amp;quot;&amp;gt;on August 29, 2012&amp;lt;/data&amp;gt;.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project260789957\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:[&amp;quot;started&amp;quot;,&amp;quot;submitted&amp;quot;]}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;THIS PROJECT IS NOT LIVE&amp;lt;/b&amp;gt;\\nThis is only a draft that the creator has chosen to share.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project260789957\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;suspended&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Suspended&amp;lt;/b&amp;gt;\\nFunding for this project was suspended &amp;lt;data class=\\&amp;quot;Project260789957\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2012-08-29T13:00:29-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on August 29, 2012&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project260789957\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;canceled&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Canceled&amp;lt;/b&amp;gt;\\nFunding for this project was canceled by the project creator &amp;lt;data class=\\&amp;quot;Project260789957\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2012-08-29T13:00:29-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on August 29, 2012&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project260789957\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;failed&amp;quot;}]\&quot; data-evaluation=\&quot;true\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Unsuccessful&amp;lt;/b&amp;gt;\\nThis project\\u2019s funding goal was not reached on &amp;lt;time class=\\&amp;quot;js-adjust\\&amp;quot; data-format=\\&amp;quot;LL\\&amp;quot; datetime=\\&amp;quot;2012-08-29T13:00:00-04:00\\&amp;quot;&amp;gt;August 29, 2012&amp;lt;/time&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Unsuccessful&lt;/b&gt;\nThis project\u2019s funding goal was not reached on &lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;LL\&quot; datetime=\&quot;2012-08-29T13:00:00-04:00\&quot;&gt;August 29, 2012&lt;/time&gt;.\n&lt;/div&gt;&lt;div class=\&quot;Project260789957\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;purged&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;This project is purged and only visible to staff.&amp;lt;/b&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;/div&gt;\n&quot;"><div class="NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-failed Project260789957_cxt bg-grey container pb1 pt1">
+<div class="Project260789957" data-conditions="[{&quot;state&quot;:&quot;successful&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;Funded!&lt;/b&gt;\nThis project was successfully funded &lt;data class=\&quot;Project260789957\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2012-08-29T13:00:00-04:00&amp;quot;\&quot; itemprop=\&quot;Project[deadline]\&quot;&gt;on August 29, 2012&lt;/data&gt;.\n&lt;/p&gt;\n&quot;"></div><div class="Project260789957" data-conditions="[{&quot;state&quot;:[&quot;started&quot;,&quot;submitted&quot;]}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;THIS PROJECT IS NOT LIVE&lt;/b&gt;\nThis is only a draft that the creator has chosen to share.\n&lt;/p&gt;\n&quot;"></div><div class="Project260789957" data-conditions="[{&quot;state&quot;:&quot;suspended&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Suspended&lt;/b&gt;\nFunding for this project was suspended &lt;data class=\&quot;Project260789957\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2012-08-29T13:00:29-04:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on August 29, 2012&lt;/data&gt;.\n&quot;"></div><div class="Project260789957" data-conditions="[{&quot;state&quot;:&quot;canceled&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Canceled&lt;/b&gt;\nFunding for this project was canceled by the project creator &lt;data class=\&quot;Project260789957\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2012-08-29T13:00:29-04:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on August 29, 2012&lt;/data&gt;.\n&quot;"></div><div class="Project260789957" data-conditions="[{&quot;state&quot;:&quot;failed&quot;}]" data-evaluation="true" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Unsuccessful&lt;/b&gt;\nThis project\u2019s funding goal was not reached on &lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;LL\&quot; datetime=\&quot;2012-08-29T13:00:00-04:00\&quot;&gt;August 29, 2012&lt;/time&gt;.\n&quot;"><p class="no-margin"></p>
+<b>Funding Unsuccessful</b>
+This project’s funding goal was not reached on <time class="js-adjust" data-format="LL" datetime="2012-08-29T13:00:00-04:00">August 29, 2012</time>.
+</div><div class="Project260789957" data-conditions="[{&quot;state&quot;:&quot;purged&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;This project is purged and only visible to staff.&lt;/b&gt;\n&quot;"></div></div>
+</div>
+<div class="container bg-white border rounded py3 pl2 pr2" id="content">
+<div class="NS-projects-content">
+<div class="grid_11">
+<div data-has-video="true" id="video-section">
+<div class="video-player" data-dimensions="{&quot;width&quot;:640,&quot;height&quot;:480}" data-image="https://s3.amazonaws.com/ksr/projects/258316/photo-main.jpg?1397789964" data-video-tracker-url="https://www.kickstarter.com/projects/pinkerator/kickstarter-indie-bundle/video/plays" data-video-url="https://d2pq0u4uni88oo.cloudfront.net/projects/258316/video-141160-h264_high.mp4" data-video="{&quot;id&quot;:141160,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/258316/video-141160-h264_high.mp4?2012&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/258316/video-141160-h264_base.mp4?2012&quot;,&quot;width&quot;:640,&quot;height&quot;:360,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/258316/video-141160-h264_base.jpg?2012&quot;}" id="video_pitch"><video class="landscape" preload="none">
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/258316/video-141160-h264_high.mp4" type='video/mp4; codecs="avc1.64001E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/258316/video-141160-h264_base.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></source>
+You'll need an HTML5 capable browser to see this content.
+</video>
+<img alt="Photo-main" class="has_played_hide poster landscape" src="https://s3.amazonaws.com/ksr/projects/258316/photo-main.jpg?1397789964" />
+<div class="play_button_big play_button_dark absolute-center rounded has_played_hide">
+<span class="ss-icon ss-play"></span>
+Play
+</div>
+<div class="player_controls clearfix absolute-bottom mb2 rounded white bg-green-dark forces-video-controls_hide">
+<div class="left">
+<a class="button button_icon button_dark playpause play mr1">
+<span class="play ss-icon ss-play"></span>
+<span class="pause ss-icon ss-pause"></span>
+</a>
+<span class="time current_time h12 left">00:00</span>
+</div>
+<div class="right">
+<span class="time total_time h12 left mr1">00:00</span>
+<a class="left button button_icon button_icon_white volume">
+<span class="ss-icon ss-volume icon_volume_nudge"></span>
+<span class="ss-icon ss-highvolume"></span>
+</a>
+<div class="volume_container left">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+<a class="left button button_icon button_icon_white fullscreen">
+<span class="ss-icon ss-expand"></span>
+<span class="ss-icon ss-contract"></span>
+</a>
+</div>
+<div class="clip">
+<div class="progress_container pr1 pl1">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="buffer progress_bar_buffer"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div data-project-state="failed" id="about">
+<div class="NS_projects__project_share clearfix py2 pl1 pr1">
+<ul class="left list-inline no-margin h5 bold">
+<li class="facebook mr2">
+<a href="https://www.kickstarter.com/projects/pinkerator/kickstarter-indie-bundle"><span class="ss-icon ss-social ss-facebook color-facebook"></span>
+<span class="color-facebook">Share</span>
+<span class="share_bubble"><div class="triangle grey"></div>
+<div class="triangle white"></div>
+<span class="count"></span></span>
+</a></li>
+<li class="twitter mr2">
+<a  href="https://twitter.com/intent/tweet?text=KickStarter%20Indie%20Bundle%20by%20Evgeniy%20Kolpakov&amp;via=kickstarter&amp;url=http://kck.st/NQV22a" rel="nofollow"><span class="ss-icon ss-social ss-twitter color-twitter"></span>
+<span class="color-twitter">Tweet</span>
+</a></li>
+<li class="embed">
+<a href="/projects/pinkerator/kickstarter-indie-bundle/widget" class="remote_modal_dialog grey-dark" data-modal-title="Embed a widget on your site" data-tracker-name="Embed"><span class="ss-icon ss-navigateleft"></span>
+<span class="ss-icon ss-navigateright"></span>
+Embed
+</a></li>
+</ul>
+<ul class="right list-inline no-margin h5 bold">
+<li class="curate mr2">
+</li>
+<li class="remind">
+<div class="ajax-container" id="watching-widget">
+<div class="Project260789957" data-conditions="[{&quot;is_starred&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div id=\&quot;unwatch\&quot;&gt;\n&lt;a href=\&quot;/projects/pinkerator/kickstarter-indie-bundle/unwatch\&quot; class=\&quot;on\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"></div><div class="Project260789957" data-conditions="[{&quot;!is_starred&quot;:true}]" data-evaluation="true" data-render="&quot;&lt;div id=\&quot;watch\&quot;&gt;\n&lt;a href=\&quot;/projects/pinkerator/kickstarter-indie-bundle/watch\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;span class=\&quot;text\&quot;&gt;\n&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"><div id="watch">
+<a href="/projects/pinkerator/kickstarter-indie-bundle/watch"><span class="ss-icon ss-star"></span>
+<span class="text">
+</span>
+</a></div>
+
+</div></div>
+</li>
+</ul>
+</div>
+
+<div class="short_blurb py2 pl1 pr1">
+<p class="h3">Your support will help 9 developers to make 9 different games! Lots of additional rewards for your pledges!</p>
+</div>
+<div class="full-description">
+<div class="template asset" contenteditable="false" data-edit_url="/projects/pinkerator/kickstarter-indie-bundle/assets/79770/edit" data-id="79770">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/079/770/d3e26c481b6a8e78475a32932de0473a_large.jpg?1342986705"></figure>
+</div>
+<a href="https://twitter.com/KickstartIndies" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/pinkerator/kickstarter-indie-bundle/assets/80992/edit" data-id="80992">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/080/992/dc489b37fbb17dd71eb4a043135c5436_large.jpg?1343066861"></figure>
+</div>
+</a><p>Developers from different countries have united to bring you the Kickstarter Indie Bundle!</p><p>Your support will help 9 developers to make 9 different games at the same time! The games are being made for PC, Mac, Linux,  iOS, Android, Windows Phone and even the PS Vita!</p><p>We have tons of great rewards including: full versions of our current games, early access to alpha-versions of our current projects, original soundtracks, and lots of other gifts for our supporters.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/pinkerator/kickstarter-indie-bundle/assets/98629/edit" data-id="98629">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/098/629/a3676e57f5ee06292c13469c027c1e39_large.jpg?1344077838"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/pinkerator/kickstarter-indie-bundle/assets/98630/edit" data-id="98630">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/098/630/3f184b851c6d0c9837a6be2adad3d763_large.jpg?1344077859"></figure>
+</div>
+<h1>The Games</h1><a href="http://thedomaginarium.com/enola.html" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/pinkerator/kickstarter-indie-bundle/assets/76458/edit" data-id="76458">
+<figure><img alt="Horror game &gt; Enola (Game by 'The Domaginarium')" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/076/458/002c328dcd908248c47bcab6a8cdab3f_large.jpg?1342725186"><figcaption>Horror game &gt; Enola (Game by 'The Domaginarium')</figcaption></figure>
+</div></a>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/pinkerator/kickstarter-indie-bundle/assets/76465/edit" data-id="76465">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/076/465/5df43035283c0d7466c8c282a252a7a4_large.jpg?1342725310"></figure>
+</div>
+<p>Enola is a horror/adventure game about fear, isolation, and murder. You wake up on a desolate island, without any knowledge of your whereabouts or who you are. Over the course of your travels, you find there is something lurking in the shadows... and there is something dark and evil on this island. <br>Visit foreboding locations, solve intriguing puzzles, and find clues to uncover mysteries about the island and your own identity. You’ll have to be quick and cunning to survive, but do you have what it takes to save another life?<br>Enola is the second title by The Domaginarium, and it’s based on a game concept developed for the Ludum Dare Competition (#22).</p><div class="template asset" contenteditable="false" data-edit_url="/projects/pinkerator/kickstarter-indie-bundle/assets/77614/edit" data-id="77614">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/077/614/3167230709a1f318e6e6981db6f5a1ec_large.jpg?1342793439"></figure>
+</div>
+<p><b>Developer’s game description:</b><br>We wanted to make a horror game, but we didn’t want Enola to be a game about fighting monsters, zombies and things like that. We wanted to stay away from any “supernatural” type of horror because we wanted to focus on a more “human” kind of fear.  Human beings are capable of horrible crimes, and we really wanted to explore that with this game. Enola isn’t exactly something that “makes you jump out of your chair”, but rather a game designed to be disturbing.<br>The game is also built around the main character’s or the killer’s backstory. The killer in Enola is a very disturbed person, and everything you find or uncover in the game relates to the killer or your character in every way. Enola is a very story-driven game that invites you to figure out what happened before.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/pinkerator/kickstarter-indie-bundle/assets/80966/edit" data-id="80966">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/080/966/bf2392a9fdb9c2099118407bc56cc0b7_large.jpg?1343065372"></figure>
+</div>
+
+
+
+<p><b>Goals:</b><br>Funds will be used to cover billing costs, pay additional artists from different disciplines, and cover legal expenses that we can't do ourselves.<br>If we raise more funds, we’ll register as a Mac/iOS developer, and buy iOS devices for testing, as well as an entry-level Mac for testing and making sure system requirements are moderate.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/pinkerator/kickstarter-indie-bundle/assets/78579/edit" data-id="78579">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/078/579/3f184b851c6d0c9837a6be2adad3d763_large.jpg?1342874397"></figure>
+</div>
+
+<a href="http://www.metagolf.net/" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/pinkerator/kickstarter-indie-bundle/assets/76481/edit" data-id="76481">
+<figure><img alt="Most unusual golf &gt; Metagolf (Game by 'Michaël Lievens')" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/076/481/ddaa6c8d2909f20fcaa7f2a3c46132fd_large.jpg?1342725889"><figcaption>Most unusual golf &gt; Metagolf (Game by 'Michaël Lievens')</figcaption></figure>
+</div>
+</a><div class="template asset" contenteditable="false" data-edit_url="/projects/pinkerator/kickstarter-indie-bundle/assets/76483/edit" data-id="76483">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/076/483/2ae0b99cb69a0593d1ac056e394e38a9_large.jpg?1342725926"></figure>
+</div>
+<div>
+<p>Metagolf is a platform action game for 1 to 4 players. It’s like Mini-Golf but crazier since everyone is playing at the same time with the same golf ball. Unlock interactive championship courses with creatures, puzzles, and 7 different kind of balls or team-battle on the same computer through physics based obstacles and mazes. When a player touches the golf ball, it takes the color of his team. Players can walk with the ball since it only counts the number of shooting. You win the game if a golf ball of your color reaches the hole/target.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/pinkerator/kickstarter-indie-bundle/assets/77604/edit" data-id="77604">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/077/604/6a2730bbaef7a0ca5e89cc4eb73b21e6_large.png?1342792724"></figure>
+</div>
+<p><b>Developer’s game description:</b></p>
+<p>The idea behind Metagolf is to mix the casual 2D platform genre with a physical based golf game. The most challenging part was to avoid the widely admitted boring gameplay of golf and only keep the basic rules of Mini-golf to make something fun and unique.</p>
+<div class="template oembed" contenteditable="false" data-href="http://soundcloud.com/micha-l-lievens/metagolf-open-road">
+<iframe width="639" height="400" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?visual=true&amp;url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F53450218&amp;show_artwork=true&amp;maxwidth=639&amp;scheme=https&amp;width=639"></iframe>
+
+</div>
+<p>There is also a clear and assumed inspiration in old-school action games with split-screen multiplayer options and freedom of choice in the parameters. For example, it is very possible to add more or less rules like prohibiting the player to touch the ball or allowing unlimited number of shoot in a game. This way, you can customize each play and set your own difficulty level.</p>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/pinkerator/kickstarter-indie-bundle/assets/77605/edit" data-id="77605">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/077/605/d70d200f0cbae91a2e9a2ba9df4e165d_large.png?1342792804"></figure>
+</div><div>Another interesting feature of Metagolf is that single player level can all be played in multiplayer and vice versa! This is because there is several ways to reach a goal. Being able to create, customize and share new maps thanks to a built-in level editor was also something very important to include in this game.<br><br><p>If you enjoyed Sonic Pinball, Mario and Angry Birds then you will enjoy Metagolf :)</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/pinkerator/kickstarter-indie-bundle/assets/77606/edit" data-id="77606">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/077/606/098f5b5a7db7687a3e2eb6156ce59386_large.png?1342792903"></figure>
+</div>
+<p><b>Goals:</b></p>
+</div><div>
+<p>The game is already very playable and quite complete. Funds will be used to improve a few graphics like adding better looking players. Depending on the interest in Metagolf, we may add more features and additional levels.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/pinkerator/kickstarter-indie-bundle/assets/78580/edit" data-id="78580">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/078/580/3f184b851c6d0c9837a6be2adad3d763_large.jpg?1342874442"></figure>
+</div>
+
+<a href="http://SometimesYou.com/" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/pinkerator/kickstarter-indie-bundle/assets/76506/edit" data-id="76506">
+<figure><img alt="Dreamy game &gt; Inner Dream (Game by 'Sometimes You')" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/076/506/283d7c45a04cfdd9308bd840465cfadd_large.jpg?1342726399"><figcaption>Dreamy game &gt; Inner Dream (Game by 'Sometimes You')</figcaption></figure>
+</div>
+</a><div class="template asset" contenteditable="false" data-edit_url="/projects/pinkerator/kickstarter-indie-bundle/assets/76507/edit" data-id="76507">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/076/507/0d4d367541a3a8e598a79fd637a1c64a_large.jpg?1342726420"></figure>
+</div>
+
+<p>‘Inner
+Dream’ is a modern fairy tale about dreams. What if time froze while you were
+sleeping? How could you wake up if everything around you now looks like a
+photo? Find your way through the world of dreams and make the clock start
+ticking again to find your way back to reality. The imagination of the
+protagonist, who is lost in his dreams, will lead the player to the farthest
+corners of his mind. Here, the hidden world of the subconscious reveals its
+true colors. The events of real life, echoes in his dreams, and the silence
+around him freezes in a vacuum of empty space. 
+Inner Dream is more artful than usual games. This game is a combination
+of photography, music, and a mysterious story all together.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/pinkerator/kickstarter-indie-bundle/assets/77619/edit" data-id="77619">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/077/619/6aafe42d500327660f58b6d513bca61c_large.jpg?1342793743"></figure>
+</div>
+
+<div class="template oembed" contenteditable="false" data-href="http://soundcloud.com/muddasheep/keratordash-11-universal">
+<iframe width="639" height="400" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?visual=true&amp;url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F35344893&amp;show_artwork=true&amp;maxwidth=639&amp;scheme=https&amp;width=639"></iframe>
+
+</div>
+
+<p>‘Inner
+Dream’ participates in the international animation festival LINOLEUM 2012.</p>
+
+<p><b>Goals:</b></p>
+
+<p>Funds will allow us to finish the second, and perhaps the last, episode of Inner
+Dream. It will also help us to pay for English localization.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/pinkerator/kickstarter-indie-bundle/assets/78582/edit" data-id="78582">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/078/582/3f184b851c6d0c9837a6be2adad3d763_large.jpg?1342874458"></figure>
+</div>
+
+
+
+
+
+
+<a href="http://www.desura.com/games/ensign-1" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/pinkerator/kickstarter-indie-bundle/assets/76533/edit" data-id="76533">
+<figure><img alt="Space game &gt; Ensign -1 (Game by 'Only Human Studios')" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/076/533/9cf0ed14e4d440ef915bf9b7e39870bb_large.jpg?1342727144"><figcaption>Space game &gt; Ensign -1 (Game by 'Only Human Studios')</figcaption></figure>
+</div>
+</a><div class="template asset" contenteditable="false" data-edit_url="/projects/pinkerator/kickstarter-indie-bundle/assets/76534/edit" data-id="76534">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/076/534/2ae0b99cb69a0593d1ac056e394e38a9_large.jpg?1342727185"></figure>
+</div>
+
+<p>Ensign-1
+is a space combat game that aims to give the player limitless freedom. You
+aren't limited to merely piloting a single fighter throughout the course of
+battle. You can dock and board frigates, capital ships, and even asteroid
+bases. Players are free to man turrets while a friend pilots their ship, or
+even simply battle it out on foot. 
+Ensign-1 will feature both multiplayer modes and a single player (and
+co-op) campaign complete with story based missions and voice actors!</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/pinkerator/kickstarter-indie-bundle/assets/77617/edit" data-id="77617">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/077/617/27288d6ec77ff09e1bcc69369aaa5830_large.png?1342793630"></figure>
+</div>
+
+
+
+<p><b>Goals:</b></p>
+
+<p>Our
+project is still as ambitious as ever, so any amount donated helps us ensure we
+can make this the best space combat game we can imagine. We all want to kindly
+thank you for your consideration and your support!</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/pinkerator/kickstarter-indie-bundle/assets/78583/edit" data-id="78583">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/078/583/3f184b851c6d0c9837a6be2adad3d763_large.jpg?1342874481"></figure>
+</div>
+
+
+<a href="https://www.facebook.com/pages/Christmas-Magic-/282606301781608" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/pinkerator/kickstarter-indie-bundle/assets/76536/edit" data-id="76536">
+<figure><img alt="Family game &gt; Christmas Magic (Game by 'Anmoll Thakur and Satbir Singh')" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/076/536/407e7a2673d898b25452affbff8459e2_large.jpg?1342727261"><figcaption>Family game &gt; Christmas Magic (Game by 'Anmoll Thakur and Satbir Singh')</figcaption></figure>
+</div>
+</a>
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/pinkerator/kickstarter-indie-bundle/assets/78603/edit" data-id="78603">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/078/603/18d9ff565dc4d6bf8fe15f5ae909ad0c_large.jpg?1342878342"></figure>
+</div>
+<p>Christmas
+Magic is a unique combination of a story book and a game for the whole family
+or for short breaks from work. Relax and delve deep into the charming innocence
+of L'il Pono's magical world.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/pinkerator/kickstarter-indie-bundle/assets/79809/edit" data-id="79809">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/079/809/d45063542a8a866a130323ea989179d9_large.jpg?1342988307"></figure>
+</div>
+
+
+<p>As you
+solve beautiful puzzles and 'Magic' flows from your fingertips, you lose
+yourself in the soothing magic of floating lights and twinkling chimes of the magical
+fireflies. 'Christmas Magic' tells a warm Christmas tale of an innocent little
+elf's longing for his family, of magic that interweaves through life, and the
+eternal natural relation between all things living called "Love". Its
+simple but engaging gameplay, set in a magical natural environment, immerses
+the player with its sights and sounds in a test of visual problem solving and
+improves his/her cognitive and pattern recognition skills.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/pinkerator/kickstarter-indie-bundle/assets/78570/edit" data-id="78570">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/078/570/1ab625fe3477b7476c7b20cc46aa78e0_large.PNG?1342866476"></figure>
+</div>
+
+
+
+
+<p><i>Check
+out our game on your iPad here (it's free!): </i><a href="http://itunes.apple.com/us/app/christmas-magic/id483085364?ls=1&amp;mt=8" target="_blank">http</a><a href="http://itunes.apple.com/us/app/christmas-magic/id483085364?ls=1&amp;mt=8" target="_blank">://</a><a href="http://itunes.apple.com/us/app/christmas-magic/id483085364?ls=1&amp;mt=8" target="_blank">itunes</a><a href="http://itunes.apple.com/us/app/christmas-magic/id483085364?ls=1&amp;mt=8" target="_blank">.</a><a href="http://itunes.apple.com/us/app/christmas-magic/id483085364?ls=1&amp;mt=8" target="_blank">apple</a><a href="http://itunes.apple.com/us/app/christmas-magic/id483085364?ls=1&amp;mt=8" target="_blank">.</a><a href="http://itunes.apple.com/us/app/christmas-magic/id483085364?ls=1&amp;mt=8" target="_blank">com</a><a href="http://itunes.apple.com/us/app/christmas-magic/id483085364?ls=1&amp;mt=8" target="_blank">/</a><a href="http://itunes.apple.com/us/app/christmas-magic/id483085364?ls=1&amp;mt=8" target="_blank">us</a><a href="http://itunes.apple.com/us/app/christmas-magic/id483085364?ls=1&amp;mt=8" target="_blank">/</a><a href="http://itunes.apple.com/us/app/christmas-magic/id483085364?ls=1&amp;mt=8" target="_blank">app</a><a href="http://itunes.apple.com/us/app/christmas-magic/id483085364?ls=1&amp;mt=8" target="_blank">/</a><a href="http://itunes.apple.com/us/app/christmas-magic/id483085364?ls=1&amp;mt=8" target="_blank">christmas</a><a href="http://itunes.apple.com/us/app/christmas-magic/id483085364?ls=1&amp;mt=8" target="_blank">-</a><a href="http://itunes.apple.com/us/app/christmas-magic/id483085364?ls=1&amp;mt=8" target="_blank">magic</a><a href="http://itunes.apple.com/us/app/christmas-magic/id483085364?ls=1&amp;mt=8" target="_blank">/</a><a href="http://itunes.apple.com/us/app/christmas-magic/id483085364?ls=1&amp;mt=8" target="_blank">id</a><a href="http://itunes.apple.com/us/app/christmas-magic/id483085364?ls=1&amp;mt=8" target="_blank">483085364?</a><a href="http://itunes.apple.com/us/app/christmas-magic/id483085364?ls=1&amp;mt=8" target="_blank">ls</a><a href="http://itunes.apple.com/us/app/christmas-magic/id483085364?ls=1&amp;mt=8" target="_blank">=1&amp;</a><a href="http://itunes.apple.com/us/app/christmas-magic/id483085364?ls=1&amp;mt=8" target="_blank">mt</a><a href="http://itunes.apple.com/us/app/christmas-magic/id483085364?ls=1&amp;mt=8" target="_blank">=8</a></p>
+
+
+<p><b>Goals:</b></p>
+
+<p>Funds
+will be used to make ports of the game on ChromeStore, Mac AppStore, Android
+Tablet, and buy the necessary licenses. We’ll implement art for each platform
+and work on marketing the game before Christmas 2012.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/pinkerator/kickstarter-indie-bundle/assets/78584/edit" data-id="78584">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/078/584/3f184b851c6d0c9837a6be2adad3d763_large.jpg?1342874495"></figure>
+</div>
+
+
+
+
+<a href="http://www.tri-game.com" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/pinkerator/kickstarter-indie-bundle/assets/76544/edit" data-id="76544">
+<figure><img alt="Puzzle platformer &gt; TRI (Game by 'Rat King Entertainment')" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/076/544/87c7d5228ec2bf29536557b478f8322e_large.jpg?1342727453"><figcaption>Puzzle platformer &gt; TRI (Game by 'Rat King Entertainment')</figcaption></figure>
+</div>
+</a><div class="template asset" contenteditable="false" data-edit_url="/projects/pinkerator/kickstarter-indie-bundle/assets/76546/edit" data-id="76546">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/076/546/f3b1e132226b74d126e44e3605e3a70a_large.jpg?1342727475"></figure>
+</div>
+
+<p>TRI
+is a freeform 3D platformer with environmental puzzles - it is inspired by
+games like "Portal", "Thief" and "Zelda".  You create triangles to build platforms, walk
+on walls and ceilings, reflect light rays, laser beams and more.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/pinkerator/kickstarter-indie-bundle/assets/77611/edit" data-id="77611">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/077/611/7036f93d8295c44ee888d1faa3ac5e62_large.jpg?1342793272"></figure>
+</div>
+<p>Cast triangles
+to overcome abysses and reach unknown places; activate crystals with reflected
+light rays and destroy obstacles with dangerous lasers; explore the dungeons of
+TRI, collect treasures and solve puzzles. All this in first-person perspective,
+with an unusual graphics style and a nice soundtrack!</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/pinkerator/kickstarter-indie-bundle/assets/94700/edit" data-id="94700">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/094/700/5446b8625c42c4b3ef3c14c0e3a58a6c_large.png?1343840154"></figure>
+</div>
+
+
+
+
+<p><b>Goals:</b></p>
+
+<p>Funds
+will be used for development and administrative expenses, music composition,
+sound effects, (perhaps) additional graphics and level design, and localization
+into more languages, like French and Chinese. A port to Linux would also be
+possible.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/pinkerator/kickstarter-indie-bundle/assets/78585/edit" data-id="78585">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/078/585/3f184b851c6d0c9837a6be2adad3d763_large.jpg?1342874510"></figure>
+</div>
+
+
+
+<a href="http://goetterdaemmerung.silversword-rpg.com/" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/pinkerator/kickstarter-indie-bundle/assets/76554/edit" data-id="76554">
+<figure><img alt="Dungeons for your phone &gt; Silversword 2 – Götterdämmerung (Game by 'Mario J. Gaida')" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/076/554/d92ed83f0b46c401da6897a4e3b3a648_large.jpg?1342727622"><figcaption>Dungeons for your phone &gt; Silversword 2 – Götterdämmerung (Game by 'Mario J. Gaida')</figcaption></figure>
+</div>
+</a><div class="template asset" contenteditable="false" data-edit_url="/projects/pinkerator/kickstarter-indie-bundle/assets/76556/edit" data-id="76556">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/076/556/8c36d70e7a9ce69b0af293eef8308a8e_large.jpg?1342727647"></figure>
+</div>
+
+<p>Silversword
+2 (working title: Götterdämmerung) will be the sequel to the iOS game
+"Silversword". It will continue to delve into the culture of the
+planet Tarnak, but with significant changes and enhancements such as: new 3D
+Engine (Unity3D), animated 3d art, cloud-save, offline progression and much
+more.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/pinkerator/kickstarter-indie-bundle/assets/77601/edit" data-id="77601">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/077/601/8c2fbd31ea0ce66eef596555e8faea8a_large.png?1342792561"></figure>
+</div>
+
+
+<p><b>Goals:</b></p>
+
+<p>Funds
+will be used to create higher quality 3D art and improve the current sound and
+music to enhance the overall experience.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/pinkerator/kickstarter-indie-bundle/assets/78586/edit" data-id="78586">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/078/586/3f184b851c6d0c9837a6be2adad3d763_large.jpg?1342874523"></figure>
+</div>
+
+
+<a href="http://www.visualnovelgames.com" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/pinkerator/kickstarter-indie-bundle/assets/76560/edit" data-id="76560">
+<figure><img alt="School story &gt; The Host Holic (Game by 'Lexington Alexander')" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/076/560/5b4649ef7664066c1b9da952ff36ee6f_large.jpg?1342727701"><figcaption>School story &gt; The Host Holic (Game by 'Lexington Alexander')</figcaption></figure>
+</div>
+</a><div class="template asset" contenteditable="false" data-edit_url="/projects/pinkerator/kickstarter-indie-bundle/assets/76561/edit" data-id="76561">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/076/561/3a587604906bd3ee26ef95b395e4f2e0_large.jpg?1342727722"></figure>
+</div>
+
+<p>You
+travel to Japan for one year to teach English, and quickly become culture
+shocked by the dating scene in downtown Tokyo. 
+After a few failed attempts at blind and Internet dating, you decide to
+try your luck at the most popular host club in town. Manage your daily life as
+a foreign teacher in Tokyo by controlling your wild students and maximizing
+your return rate to ensure your performance bonus.  Can you balance your job and navigate this
+new dating world? Discover the secrets to becoming a successful teacher by day,
+and surround yourself by a group of professional playboys at night in this
+original and exciting dating-sim and time management game.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/pinkerator/kickstarter-indie-bundle/assets/77595/edit" data-id="77595">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/077/595/4bc9df020c0e6ab566a05b5f113aa21e_large.jpg?1342792273"></figure>
+</div>
+
+
+<p><b>Goals:</b></p>
+
+<p>Funds
+will be used to replace stock art, stock music, and design a more professional
+UI.  We would also like to hire an editor
+for script improvements.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/pinkerator/kickstarter-indie-bundle/assets/78587/edit" data-id="78587">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/078/587/3f184b851c6d0c9837a6be2adad3d763_large.jpg?1342874536"></figure>
+</div>
+
+
+<a href="http://www.dust-bit-games.com" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/pinkerator/kickstarter-indie-bundle/assets/76565/edit" data-id="76565">
+<figure><img alt="PvP Strategy &gt; Y2163 (Game by 'Dust.Bit.Games')" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/076/565/ced2c8bccb70b0fe8718bbf00f6103ab_large.jpg?1342727920"><figcaption>PvP Strategy &gt; Y2163 (Game by 'Dust.Bit.Games')</figcaption></figure>
+</div>
+</a>
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/pinkerator/kickstarter-indie-bundle/assets/78594/edit" data-id="78594">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/078/594/9571473e6eb4d06558ed26d0d40ae7bb_large.jpg?1342875644"></figure>
+</div>
+<p>In
+the 22nd century, resources are scarce and of great value. To control the
+remains, the united government has built a global system to remotely control,
+restructure and defend areas for their own needs. Over the years, some
+anonymous groups have found multiple ways to exploit the system. Since then,
+independent groups have been trying to gain territory and fight against the
+government and each other. However, some of these groups are using the system
+to prevent the inevitable...</p>
+
+<p>Itʼs
+the year 2163. You have your hands on a control unit. Will you fight?</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/pinkerator/kickstarter-indie-bundle/assets/81206/edit" data-id="81206">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/081/206/26a9b0abc0ad13a38c65b07934032681_large.png?1343074423"></figure>
+</div>
+
+
+<p><b>Project
+Mission / Goals:</b></p>
+
+<p>Y2163
+is part of a design-series of RTS games (Y-series), which focuses on fictional
+settings in the distant future, and the first concept which we decided to bring
+to life. It is our goal to create a highly customizable PvP (player vs. player)
+game, designed for mobile devices (and maybe more).</p>
+
+<p>A
+successful funding would allow us to produce an alpha version of the game and
+put up some test servers for our backers.</p>
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/pinkerator/kickstarter-indie-bundle/assets/93400/edit" data-id="93400">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/093/400/3f184b851c6d0c9837a6be2adad3d763_large.jpg?1343772788"></figure>
+</div>
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/pinkerator/kickstarter-indie-bundle/assets/79937/edit" data-id="79937">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/079/937/1a3d9591da81a2382fb035fd55813698_large.jpg?1342995311"></figure>
+</div>
+<p><i>T-Shirt template by maaaikel.deviantart.com</i></p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/pinkerator/kickstarter-indie-bundle/assets/79935/edit" data-id="79935">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/079/935/3f184b851c6d0c9837a6be2adad3d763_large.jpg?1342995291"></figure>
+</div>
+<p>You
+will receive games as soon as they are released.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/pinkerator/kickstarter-indie-bundle/assets/81208/edit" data-id="81208">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/081/208/e5388115c88c4e8aa6127622a0fe81fb_large.jpg?1343074463"></figure>
+</div>
+
+<div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p><i>Please
+leave a comment or contact us (</i><a href="http://visualnovelgames.com/Contact-Kickstarter-Indies.html" target="_blank">http://visualnovelgames.com/Contact-Kickstarter-Indies.html</a><i>) for specific information on any rewards.  Any content submitted by you for rewards
+should be safe for general audiences.  We
+may reject or ask you to resubmit any content upon request and reserve the
+right to refuse any material that we may deem inappropriate.  Please note that some rewards are limited to
+the initial donors of said rewards.</i></p>
+
+<p><i>Some
+games are not available for all platforms. Please review system requirements
+before donating.</i></p>
+<h1>Thanks for the support!</h1>
+
+</div>
+
+
+
+
+
+</div><div></div>
+</div>
+</div>
+<div class="NS-projects-faqs" id="project-faqs">
+<h2 class="title grey-dark mt6 mb4">
+FAQ
+<div class="divider clear"></div>
+</h2>
+<ul class="faqs">
+<li class="faq" id="project_faq_34114">
+<div class="faq-question">
+<a href="#project_faq_34114" name="project_faq_34114">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">How will the funds be divided between developers?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>All funds will be divided in equal parts between all participating developers.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-07-31T04:49:45-04:00">Tue, Jul 31 2012 4:49 am EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_34115">
+<div class="faq-question">
+<a href="#project_faq_34115" name="project_faq_34115">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Could I make a pledge only for Linux games in the bundle?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Sure, just mention it in the comments section.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-07-31T04:49:45-04:00">Tue, Jul 31 2012 4:49 am EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_34116">
+<div class="faq-question">
+<a href="#project_faq_34116" name="project_faq_34116">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Is there a chance that Silversword 2 will be ported to Linux?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Yes, if our project funds, the developer will be able to afford a Linux port.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-07-31T04:49:45-04:00">Tue, Jul 31 2012 4:49 am EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_34230">
+<div class="faq-question">
+<a href="#project_faq_34230" name="project_faq_34230">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Will the games have DRM?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Inner Dream, TRI, Metagolf, Host Holic, Christmas Magic, Y2163, Enola - Confirmed with no DRM (List will be updated soon)</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-08-01T12:47:08-04:00">Wed, Aug 1 2012 12:47 pm EDT</time>
+</div>
+</div>
+</li>
+
+</ul>
+<div class="faq-ask-box">
+<a href="/projects/pinkerator/kickstarter-indie-bundle/messages/new?message%5Bto%5D=pinkerator&amp;mode=FAQ" class="button button_blue remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Ask a question about KickStarter Indie Bundle">Ask a question</a>
+
+</div>
+</div>
+
+<div class="mt4 ml1 mr1 mb2" id="report-issue-wrap">
+<a href="/login?then=%2Fprojects%2Fpinkerator%2Fkickstarter-indie-bundle" class="button button_grey">Report this project to Kickstarter</a>
+</div>
+</div>
+<div class="NS-projects-rightcol grid_5" id="rightcol">
+<div class="NS_projects__ecom">
+<div class="digits_4 pb2 pl2 pt2" id="stats">
+<h5>
+<div class="num h48 no-margin" data-backers-count="258" id="backers_count"><data class="Project260789957" data-format="number" data-value="258" itemprop="Project[backers_count]">258</data></div>
+<span><data class="Project260789957" data-attr="backers_count" data-format="pluralize" data-value="258" data-word="Backer">Backers</data></span>
+</h5>
+<h5>
+<div class="num h48 no-margin" data-goal="45000.0" data-percent-raised="0.135072222222222222222222222" data-pledged="6078.25" id="pledged">
+<data class="Project260789957" data-currency="USD" data-format="shorter_money" data-precision="0" data-value="6078" data-without_code="true" itemprop="Project[pledged]">$6,078</data>
+<span class="money usd project_currency_code"></span>
+</div>
+pledged of
+<span class="money usd no-code">$45,000</span>
+goal
+</h5>
+<span data-duration="30.0" data-end_time="2012-08-29T13:00:00-04:00" data-hours-remaining="0" id="project_duration_data"></span>
+<div class="Project260789957" data-conditions="[{&quot;!state&quot;:[&quot;canceled&quot;,&quot;suspended&quot;]}]" data-evaluation="true" data-render="&quot;&lt;h5 class=\&quot;poll \&quot; data-dynamic=\&quot;5\&quot; data-end_time=\&quot;2012-08-29T13:00:00-04:00\&quot; data-poll_url=\&quot;https://d2oher2uhvl0ur.cloudfront.net/projects/pinkerator/kickstarter-indie-bundle/stats.json\&quot;&gt;\n&lt;div class=\&quot;num h48 no-margin\&quot;&gt;0&lt;/div&gt;\n&lt;span class=\&quot;text\&quot;&gt;seconds to go&lt;/span&gt;\n&lt;/h5&gt;\n&quot;"><h5 class="poll " data-dynamic="5" data-end_time="2012-08-29T13:00:00-04:00" data-poll_url="https://d2oher2uhvl0ur.cloudfront.net/projects/pinkerator/kickstarter-indie-bundle/stats.json">
+<div class="num h48 no-margin">0</div>
+<span class="text">seconds to go</span>
+</h5>
+</div></div>
+<div class="Project260789957" data-conditions="[{&quot;state&quot;:&quot;live&quot;},{&quot;!ended?&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;pr2 pl2\&quot; id=\&quot;pledge-wrap\&quot;&gt;\n&lt;a href=\&quot;/projects/pinkerator/kickstarter-indie-bundle/pledge/new?clicked_reward=false\&quot; class=\&quot;button button_green button_box button_block\&quot; id=\&quot;button-back-this-proj\&quot; title=\&quot;Back this project\&quot;&gt;Back This Project &lt;small class=&#39;h6 normal block green-dark&#39;&gt;&lt;span class=\&quot;money usd \&quot;&gt;$1&lt;/span&gt; minimum pledge&lt;/small&gt;&lt;/a&gt;\n&lt;/div&gt;\n&quot;"></div><div class="Project260789957" data-conditions="[{&quot;state&quot;:&quot;live&quot;}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;p2\&quot; id=\&quot;banner\&quot;&gt;\n&lt;p class=\&quot;tiny_type no-margin\&quot;&gt;\nThis project will only be funded if at least\n&lt;span class=\&quot;money usd \&quot;&gt;$45,000&lt;/span&gt;\nis pledged by\n&lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;llll z\&quot; datetime=\&quot;2012-08-29T13:00:00-04:00\&quot;&gt;Wed, Aug 29 2012 1:00 pm EDT&lt;/time&gt;.\n&lt;/p&gt;\n&lt;/div&gt;\n&quot;"></div></div>
+
+<div class="NS_projects__rightcol_projectby bg-blue-light rounded">
+<div class="p2 clearfix">
+<div class="avatar inline-block align-middle">
+<a href="/projects/pinkerator/kickstarter-indie-bundle/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography"><img alt="R001-007.small" class="avatar-small" height="80" src="https://s3.amazonaws.com/ksr/avatars/1989731/r001-007.small.jpg?1342639315" width="80" />
+</a></div>
+<div class="creator-name inline-block align-middle ml1">
+<h6 class="mb1">Project by</h6>
+<h5 class="mb1">
+<a href="/projects/pinkerator/kickstarter-indie-bundle/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">Evgeniy Kolpakov</a>
+</h5>
+<p class="location h6 bold mb1">
+<a href="/discover/places/moscow-ru">Moscow, Russia</a>
+</p>
+</div>
+</div>
+<div class="creator-details pl2 pr2 pb1">
+<ul class="list-simple h5 mb1">
+<li class="projects-more">
+<span class="ss-icon ss-kickstarter grey-dark margin-right"></span>
+<span class="text">
+<a href="/profile/pinkerator/created" class="green-dark bold more-button remote_modal_dialog" data-modal-title="Projects created by Evgeniy Kolpakov">2 created</a>
+<span class="divider">&middot;</span>
+<a href="/profile/pinkerator/backed" class="green-dark bold more-button remote_modal_dialog" data-modal-title="Projects backed by Evgeniy Kolpakov">6 backed</a>
+</span>
+</li>
+<li class="facebook-connected">
+<span class="ss-icon ss-facebook facebook color-facebook margin-right"></span>
+<span class="text">
+<a href="https://www.facebook.com/100001809484472" class="popup" target="_blank">Evgeniy Kolpakov</a>
+<span class="number h6">
+132
+friends
+</span>
+</span>
+
+</li>
+<li class="links">
+<span class="ss-icon ss-globe margin-right grey-dark"></span>
+<span class="text">
+<a href="http://www.SometimesYou.com/" class="popup" rel="nofollow" target="_blank">SometimesYou.com</a>
+</span>
+</li>
+</ul>
+</div>
+<div class="footer center h5 bold clearfix rounded-bottom clip">
+<a href="/projects/pinkerator/kickstarter-indie-bundle/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">See full bio</a>
+<a href="/projects/pinkerator/kickstarter-indie-bundle/messages/new?message%5Bto%5D=pinkerator" class="remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Send a message to Evgeniy Kolpakov">Contact me</a>
+
+</div>
+</div>
+
+<ul class="NS-projects-rightcol-rewards rounded clip list mt2" data-reward-count="21" id="what-you-get">
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$5</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+7 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Immediately: Inner Dream (alpha) // Upon Project Completion: Thank you to your name in the credits of all games. + Y2163 Personal Invite and Welcome Package + Inner Dream Exclusive Developer Diaries</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-07-01">Jul 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$10</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+7 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>All Previous Rewards + Immediately: Retention OST + Inner Dream OST + Ensign-1 (alpha) + Silversword 1 Compendium PDF + Metagolf OST + Christmas Magic OST + Enola (alpha) // Upon Completion: Enola (full game) &amp; High resolution digital poster + Y2163 (beta) + TRI OST + Inner Dream Photo Album</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-07-01">Jul 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$15</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+40 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>All Previous Rewards + Immediately: Retention (full game) + Helena The 3rd (full game) + The Sun Is Deadly (full game) + Silversword 1 iOS Promo Code (full game, App Store limited copies) + Bipo: Mystery of the Red Panda RPG (full game) + Curse of Slate Rock Manor (full game) + Cubyrinth iOS Promo Code (full game, App Store limited copies) + Metagolf (beta) + Christmas Magic Concept Art Bundle // Upon Completion: Y2163 MED Starter Package + Silversword Dungeon Crawler iOS Promo Code (full game, App Store limited copies) + Enola OST + Metagolf (full game) + Inner Dream (full game) + Christmas Magic (full game, one platform) + Host Holic (full game)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-07-01">Jul 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$20</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+165 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>All Previous Rewards + Upon Completion: Y2163 Large starter package + Silversword 2 (full game) + TRI (full game) + Silversword 2 Your name in the story! + Inner Dream Your photo/avatar in one episode!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-07-01">Jul 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$30</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+10 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>All Previous Rewards + Upon Completion: Christmas Magic High Res Poster Images + Christmas Magic Source code</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-07-01">Jul 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$35</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+14 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Set for friends. All Rewards like for 20$ pledge, but you&#39;ll receive two copy&#39;s of all games - one for you and one for your friend!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-07-01">Jul 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$50</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+2 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>All Previous Rewards + Upon Completion: Inner Dream Digital album with backstage photos</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-07-01">Jul 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$60</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>All Previous Rewards + Upon Completion: Exclusive digital collection of arthouse video from Sometimes You. This video was shown before only at experimental festivals.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-07-01">Jul 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$70</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+5 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>All Previous Rewards + Immediately: Pitman (full game) + TRI (Pre-Alpha) // Upon Completion: Y2163 XL Starter Package + Enola Digital Collector’s Edition (full game) + Silversword 2 Your quest idea integrated in the story + Ensign 1 Include an image of your choice in the game + Ensign 1 30 second in-game video ad + Christmas Magic &quot;Premium Sponsor&quot; status in game credits</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-07-01">Jul 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$100</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>All Previous Rewards + Upon Completion: Christmas Magic Full version on all platforms (except iOS)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-07-01">Jul 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$150</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+5 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>All Digital Rewards + Upon Completion: Physical Indie Bundle (dvd with all digital rewards, backer certificate, mysterious gift). International shipping is included.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-07-01">Jul 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$200</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>All Digital Rewards + Upon Completion: Physical Indie Bundle Collector’s Edition (dvd with all digital rewards, exclusive T-Shirt, badge, backer certificate, mysterious gift XL). International shipping is included.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-07-01">Jul 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$300</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(40 left of 40)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>All Previous Rewards + Upon Completion: Inner Dream A portrait of you from our lead artist based on your photo</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-07-01">Jul 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$400</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(7 left of 7)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>All Previous Rewards + Upon Completion: One of your dreams featured in &#39;Inner Dream&#39;</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-07-01">Jul 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(10 left of 10)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>All Previous Rewards + Upon Completion: Enola Your name and photo in the game!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-07-01">Jul 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$600</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(1 left of 1)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>All Previous Rewards + Upon Completion: Silversword 2 You may help shape the main quest. This includes description, places, characters and creatures.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-07-01">Jul 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$1,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(1 left of 1)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>All Previous Rewards + Upon Completion: Inner Dream Your name as Platinum Sponsor on a special Splash Screen</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-07-01">Jul 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$1,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(1 left of 1)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>All previous rewards + Upon completion: Enola, The Detective named after you + Enola, your picture as The Detective’s face + Enola source code</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-07-01">Jul 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$1,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(1 left of 1)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>All Previous Rewards + Upon Completion: Christmas Magic Your name as Platinum Sponsor on a special Splash Screen</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-07-01">Jul 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$5,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(1 left of 1)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>All Previous Rewards + Upon Completion: Christmas Magic Your name in Gold as the in-game Book&#39;s Author</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-07-01">Jul 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$10,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(3 left of 3)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>You tell us! Seriously! No Reasonable Request Refused! Questions? Leave a comment :)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-07-01">Jul 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+</ul>
+
+<div class="p2" id="meta">
+<h5>Funding period</h5>
+<p class="tiny_type">
+<time class="js-adjust" data-format="ll" datetime="2012-07-30T13:00:00-04:00">Jul 30, 2012</time> - 
+<time class="js-adjust" data-format="ll" datetime="2012-08-29T13:00:00-04:00">Aug 29, 2012</time>
+(30 days)
+</p>
+</div>
+</div>
+
+</div>
+
+<a href="#" id="video_mode_tab" style="display: none;">
+View in Video Mode
+</a>
+
+</div>
+</div>
+
+
+</div>
+
+<div class="h5 bg-green-dark" id="mega-footer-wrap">
+<div class="bg-green-dark white full-height" id="footer-newsletter-signup">
+<div class="container py4">
+<div class="grid_8 prefix_4 suffix_4 center mt4">
+<h2>
+Eureka! You've found
+<br>
+our little secret.
+</h2>
+<p>Sign up for our Happening email for all the inside info about arts and culture in the Kickstarter universe and beyond.</p>
+<div class="newsletter_signup">
+<form accept-charset="UTF-8" action="/newsletters/happening/signup" class="overlabels" method="post"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /><input class="hidden" name="authenticity_token" type="hidden" value="ODIQQns03tfZnYGYrt37bka3VVKIL1TTU3qeUw2nqHE=" /></div><input class="hidden" id="location" name="location" type="hidden" value="footer" />
+<textarea class="hide textarea" id="comment" name="comment">
+</textarea>
+<div class="field newsletter">
+<label class="overlabel z1 overlabel-newsletter">Email address</label>
+<input class="text" id="email" name="email" type="text" />
+</div>
+<input class="button button_green submit" name="commit" type="submit" value="Submit" />
+</form>
+
+</div>
+
+</div>
+</div>
+</div>
+<div class="container relative" id="mega-footer">
+<span class="scissors icon-scissors-1"></span>
+<div class="grid_16 alpha omega pt4 pb2" id="mega-footer-links">
+<div class="grid_4 link-group">
+<h5 class="white">About us</h5>
+<ul class="list">
+<li><a href="/year/2013/?ref=footer">2013 highlights</a></li>
+<li><a href="/year/2012?ref=footer">2012 highlights</a></li>
+<li><a href="/team?ref=footer">Who we are</a></li>
+<li><a href="/jobs?ref=footer">Jobs</a></li>
+<li><a href="/press?ref=footer">Press</a></li>
+<li><a href="/help/stats?ref=footer">Stats</a></li>
+<li><a href="/newsletters/weekly">Projects we love</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group">
+<h5><a href="/help?ref=footer" class="white">Help</a></h5>
+<ul class="list">
+<li><a href="/hello?ref=footer">What is Kickstarter?</a></li>
+<li><a href="/help?ref=footer">FAQ</a></li>
+<li><a href="/contact?ref=footer">Support</a></li>
+<li><a href="/help/school?ref=footer">Kickstarter School</a></li>
+<li><a href="/terms-of-use?ref=footer">Terms of Use</a></li>
+<li><a href="/privacy?ref=footer">Privacy Policy</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group alpha omega suffix_1">
+<h5 class="alpha"><a href="/discover/advanced?ref=footer" class="white">Discover</a></h5>
+<ul class="column column-0 grid_2 list">
+<li><a href="/discover/categories/art?ref=footer">Art</a></li>
+<li><a href="/discover/categories/comics?ref=footer">Comics</a></li>
+<li><a href="/discover/categories/dance?ref=footer">Dance</a></li>
+<li><a href="/discover/categories/design?ref=footer">Design</a></li>
+<li><a href="/discover/categories/fashion?ref=footer">Fashion</a></li>
+<li><a href="/discover/categories/film%20&amp;%20video?ref=footer">Film &amp; Video</a></li>
+<li><a href="/discover/categories/food?ref=footer">Food</a></li>
+</ul>
+<ul class="column column-1 grid_2 list">
+<li><a href="/discover/categories/games?ref=footer">Games</a></li>
+<li><a href="/discover/categories/music?ref=footer">Music</a></li>
+<li><a href="/discover/categories/photography?ref=footer">Photography</a></li>
+<li><a href="/discover/categories/publishing?ref=footer">Publishing</a></li>
+<li><a href="/discover/categories/technology?ref=footer">Technology</a></li>
+<li><a href="/discover/categories/theater?ref=footer">Theater</a></li>
+</ul>
+</div>
+<div class="grid_3 link-group">
+<h5 class="white">Hello</h5>
+<ul class="list">
+<li>
+<a href="https://twitter.com/kickstarter"><span class="ss-icon ss-social-regular ss-twitter"></span>
+Twitter
+</a></li>
+<li>
+<a href="https://www.facebook.com/Kickstarter"><span class="ss-icon ss-social-regular ss-facebook"></span>
+Facebook
+</a></li>
+<li>
+<a href="http://kickstarter.tumblr.com"><span class="ss-icon ss-social-regular ss-tumblr"></span>
+Tumblr
+</a></li>
+<li>
+<a href="http://instagram.com/kickstarter"><span class="ss-icon ss-social-regular ss-instagram"></span>
+Instagram
+</a></li>
+<li>
+<a href="https://vine.co/Kickstarter"><span class="ss-icon ss-social-regular ss-vine"></span>
+Vine
+</a></li>
+<li>
+<a href="/blog?ref=footer">Blog</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="grid_16 py4" id="mega-footer-bottom">
+<div class="logo left">
+<a href="/" class="grey-dark"><span class="ss-icon h3">KICKSTARTER</span>
+</a></div>
+<p class="right h5 grey-dark">
+&copy;
+2014
+Kickstarter, Inc.
+</p>
+</div>
+</div>
+</div>
+
+<script>
+  //<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    var analytics_vars = { google_analytics_id : "UA-7621056-1", logged_in : "false", social_user: "false" }
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.mixpanel_id = '75b1d24a516ecfc955eadfadc4910661';
+    window.mixpanel_debug = false;
+  //]]>
+</script>
+
+
+<noscript>
+<img alt="Quantcast" border="0" height="1" src="//secure.quantserve.com/pixel/p-34IbSpw2K94Sg.gif" style="display:none" width="1" />
+</noscript>
+
+
+<script>
+  //<![CDATA[
+    window.benchmark = (typeof window.performance == 'object' && typeof window.performance.mark == 'function');
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    (function (root) {
+      function instrument_function (original) {
+        return function () {
+          try {
+            return original.apply(this, arguments);
+          } catch (e) {
+            if (e.stack && root.Honeybadger) {
+              Honeybadger.notify(e, {
+                current_project : root.current_project,
+                current_user : root.current_user
+              });
+            }
+            throw(e);
+          }
+        };
+      }
+      root.instrument_function = instrument_function;
+    }(this));
+  //]]>
+</script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+
+<script>
+  //<![CDATA[
+    (function(){function c(a){this.local_start_time=new Date;this.settings={cookie_name:"request_time"};for(var b in a)this.settings[b]=a[b];this.get_remote_offset()}c.prototype.get_remote_offset=function(){this.cookie_value=this.read_cookie();var a=new Date(this.cookie_value);if(!this.cookie_value||"Invalid Date"===a.toString()){if(this.remote_offset=this.read_cookie("local_offset"))this.remote_offset=parseInt(this.remote_offset,10)}else this.remote_offset=a-this.local_start_time;"undefined"!==typeof this.remote_offset&& !isNaN(this.remote_offset)?(document.cookie="local_offset="+this.remote_offset+"; path=/",this.is_set=!0):this.is_set=!1};c.prototype.time_units=[["milliseconds",1],["seconds",1E3],["minutes",6E4],["hours",36E5],["days",864E5]];c.prototype.get_units_in_interval=function(a,b){var d=a.replace(/^\w/,function(d){return"get"+d.toUpperCase()});return b[d]()};c.prototype.milliseconds_in_day=function(a){"undefined"===typeof a&&(a=new Date);for(var b=0,d=this.time_units.length-2;0<=d;d--)b+=this.get_units_in_interval(this.time_units[d][0], a)*this.time_units[d][1];return b};c.prototype.milliseconds_in_interval=function(a,b){return this.milliseconds_in_day(b)%a};c.prototype.milliseconds_to_next_interval=function(a,b){return a-this.milliseconds_in_interval(a,b)};c.prototype.pluralize=function(a,b){1===b&&(a=a.replace(/s$/,""));return a};c.prototype.read_cookie=function(a){for(var b=window.document.cookie.split(";"),a=(a||this.settings.cookie_name)+"=",d=0;d<b.length;d++){for(var e=b[d];" "==e.charAt(0);)e=e.substring(1,e.length);if(0== e.indexOf(a))return b=e.substring(a.length,e.length),decodeURIComponent(b).replace(/\+/g," ")}return null};c.prototype.destroy_cookie=function(a){var b=new Date;a||(a=this.settings.cookie_name);b.setTime(b.getTime()-864E5);window.document.cookie=a+"=; expires="+b.toGMTString()+"; path=/"};c.prototype.get_remote_time=function(){var a=new Date,b=a.getTime()+this.remote_offset;return a=a.setTime(b)};window.ksr_page_clock=new c})(); (function(){function c(d,a,b){if(d){this.options={unit_base:{seconds:119,minutes:119,hours:72,days:0},end_phrase:d.getAttribute("data-word")||"to go",count_down:d.getAttribute("data-dynamic")||!1};for(k in b)this.options[k]=b[k];this.clock=a;this.time_units=this.clock.time_units.slice(1);this.element=d;this.clock.is_set&&this.attach()}}function a(){this.elements=[];this.attach()}var b=function(d,a){var b=a||window.document.body,c=d.split("."),g=c[c.length-1],c=1<c.length&&c[0]?c[0]:"*";if(window.document.getElementsByClassName)return b.getElementsByClassName(g); if(b.querySelectorAll)return b.querySelectorAll(d);for(var c=b.getElementsByTagName(c),h=[],i=0,f;f=c[i];i++)b=RegExp("(^|\\s)"+g+"(\\s|$)"),(""+f.className).match(b)&&h.push(f);return h};c.prototype.get_remaining_time=function(){var d=this.remote_end_time-this.clock.get_remote_time();0>d&&(d=0);return d};c.prototype.get_current_unit=function(){for(var d,a=0;a<this.time_units.length&&!(d=this.time_units[a],this.get_remaining_time()<=this.options.unit_base[d[0]]*d[1]);a++);return d};c.prototype.update_element= function(){var a=this.get_current_unit(),b=Math.floor(this.get_remaining_time()/a[1]);isNaN(b)||(this.number_element.innerHTML=b,this.text_element.innerHTML=this.clock.pluralize(a[0],b)+" "+this.options.end_phrase)};c.prototype.valid=function(){return!(!this.number_element||!this.text_element)};c.prototype.attach=function(){function a(){c.update_element();if(c.options.count_down&&0<c.get_remaining_time()){var b=c.get_current_unit();this.timeout=window.setTimeout(a,c.clock.milliseconds_to_next_interval(b[1]))}} var c=this;if(this.remote_end_time_string=this.element.getAttribute("data-end_time"))this.remote_end_time_string.match(/^\d+$/)?(this.remote_end_time=new Date,this.remote_end_time.setTime(this.remote_end_time_string)):this.remote_end_time=new Date(this.remote_end_time_string),this.number_element=b(".num",this.element)[0],this.text_element=b(".text",this.element)[0],this.element.ksr_page_timer=!0,this.valid()&&a()};c.prototype.cancel=function(){this.timeout&&clearTimeout(this.timeout)};a.prototype.loading= !0;a.prototype.stop_finding=function(){this.attach_timers();this.loading=!1;document.addEventListener?document.removeEventListener("DOMContentLoaded",this.stop_finding,!1):document.attachEvent&&"complete"===document.readyState&&document.detachEvent("onreadystatechange",this.stop_finding)};a.prototype.bind_ready=function(){var a=this,b=function(){a.stop_finding.call(a)};document.addEventListener?(document.addEventListener("DOMContentLoaded",b,!1),window.addEventListener("load",b,!1)):document.attachEvent&& (document.attachEvent("onreadystatechange",b),window.attachEvent("onload",b))};a.prototype.attach_timers=function(){for(var a=b("div.ksr_page_timer"),e=0;e<a.length;e++)a[e].ksr_page_timer||(new c(a[e],window.ksr_page_clock),this.elements.push(a[e]))};a.prototype.attach=function(){var a=this;this.bind_ready();(function(){a.attach_timers();a.loading&&window.setTimeout(function(){a.attach_timers()},200)})()};window.ProjectTimer=c;new a})();
+  //]]>
+</script>
+
+<script class="template" id="template-widgets__video_embed_code" type="text/x-tmpl-mustache"><iframe width="{{width}}" height="{{height}}" src="{{{path}}}" frameborder="0" scrolling="no"> </iframe>
+</script><script class="template" id="template-projects__baseball_card_tall" type="text/x-tmpl-mustache"><div class="project-card-wrap project-card-wrap-tall border bg-white rounded clip">
+  <div class="project-card relative project-live {{#successful?}}successful{{/successful?}}">
+    <div class="project-thumbnail pt1 pl1 pr1">
+      <a href="{{urls.web.project}}" target="">
+        <img alt="Photo-little" class="projectphoto-little" src="{{photo.little}}" class="fit">
+      </a>
+    </div>
+    <div class="project-card-interior p1 h6 grey-dark">
+      <h6 class="project-title">
+        <a href="{{urls.web.project}}" target="" class="green-dark">{{name}}</a>
+      </h6>
+      <p class="mb1 ellipsis">
+        by
+        {{creator.name}}
+      </p>
+      <p class="blurb">
+        {{blurb}}
+      </p>
+    </div>
+    <div class="absolute-bottom bg-white rounded-bottom">
+
+      {{#location}}
+        <ul class="p1 list project-meta no-margin h6">
+          <li class="ellipsis">
+            <a href="{{location.urls.web.discover}}" data-location="{{location_json}}" class="grey-dark">
+              <span class="ss-icon ss-location"></span>
+              <span class="location-name">{{location.displayable_name}}</span>
+            </a>
+          </li>
+        </ul>
+      {{/location}}
+
+      <div class="project-stats-wrap pb1 pl1 pr1">
+
+        {{#failed?}}
+          <div class='project-status project-failed h6'>
+            <strong> Funding Unsuccessful</strong><br />
+            <span class="grey-dark">Project ended on {{formatted_deadline}}</span>
+          </div>
+        {{/failed?}}
+
+        {{#canceled?}}
+          <div class='project-status project-canceled h6'>
+            <strong> Funding Canceled</strong><br />
+            <span class="grey-dark">Project canceled on {{formatted_state_changed_at}}</span>
+          </div>
+        {{/canceled?}}
+
+        {{#successful?}}
+          <div class='project-pledged-successful bg-green white h6 pl1 pr1 mb1'>
+            <strong>Successful!</strong>
+          </div>
+        {{/successful?}}
+
+        {{#live_or_successful?}}
+          {{#live?}}
+            <div class="project-pledged-wrap bg-grey clip mb1">
+              <div class="project-pledged bg-green full-height" style="width: {{percent_raised_to_100}}%"></div>
+            </div>
+          {{/live?}}
+          <ul class="project-stats list no-margin h6 no-wrap">
+            <li class="first funded inline-block mr1">
+              <strong class="block h6">{{percent_raised_rounded}}%</strong>
+              <span class="grey-dark">funded</span>
+            </li>
+            <li class="pledged inline-block mr1">
+              <strong class="block h6">{{currency_symbol}}{{formatted_money}}</strong>
+              <span class="grey-dark">pledged</span>
+            </li>
+            {{#successful?}}
+              <li class="last successful inline-block">
+                <strong class="block h6">Funded</strong>
+                <div class="deadline grey-dark">{{formatted_deadline}}</div>
+              </li>
+            {{/successful?}}
+            {{#live?}}
+              <li class="last ksr_page_timer inline-block" data-end_time="{{javascript_deadline}}">
+                <strong class="block h6">
+                  <div class="num">30</div>
+                </strong>
+                <div class="span text grey-dark" data-word="left">days to go</div>
+              </li>
+            {{/live?}}
+          </ul>
+        {{/live_or_successful?}}
+      </div>
+    </div>
+  </div>
+</div>
+
+{{#friends_backing?}}
+  <div class="friend_project_context">
+    <div class="friend_facepile">
+      {{#truncated_friends}}
+        <img src="{{avatar.thumb}}" class="{{#has_metadata?}}small{{/has_metadata?}}">
+      {{/truncated_friends}}
+    </div>
+    <p class="friend_namepile">
+      {{{escaped_sentence}}}
+    </p>
+  </div>
+{{/friends_backing?}}
+</script><script class="template" id="template-projects__video_mode" type="text/x-tmpl-mustache"><a href='#' id='video_mode_close' class='close_button z2'><span class='ss-icon ss-delete'></span></a>
+
+<div class='title_card z1 {{context_classes}}' style="display:none;">
+  <div class='interior'>
+    <h2 class='project_title normal_weight'>{{name}}</h2>
+    <p class='blurb'>{{blurb}}</p>
+    <nav class='bar'>
+      <a id='play_button' class='left play' href='#'>
+        <span class='play_active'>
+          <span class='ss-icon ss-play'></span>
+          Play
+        </span>
+        <span class='pause_active'>
+          <span class='ss-icon ss-pause'></span>
+          Pause
+        </span>
+      </a>
+      {{#logged_in}}
+        <div class='remind right'>
+          {{#if_not_starred}}
+            <a class='follow' href='{{urls.web.project}}/watch'><span class='ss-icon ss-star'></span></a>
+          {{/if_not_starred}}
+          {{#if_starred}}
+            <a class='unfollow' href='{{urls.web.project}}/unwatch'><span class='ss-icon ss-star active'></span></a>
+          {{/if_starred}}
+        </div>
+      {{/logged_in}}
+      <a class='right explore button button_green small' href='#'>Explore this project</a>
+    </nav>
+  </div>
+</div>
+
+<div class='channel_controls z1'>
+  <a href='#' class='{{#playlist_is_location}}selected {{/playlist_is_location}}location'>Something else near {{location.first_name}} <span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_featured}}selected {{/playlist_is_featured}}featured'>Something different<span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_category}}selected {{/playlist_is_category}}category'>Something else in {{category.name}} <span class='ss-icon ss-navigateright'></span></a>
+</div>
+
+<div class='project_video' style='background-image: url('{{photo.full}}')'>
+  <div class='cover'>
+    <video>
+      <source src='{{video.high}}' type='video/mp4'/>
+      <source src='{{video.webm}}' type='video/webm'/>
+    </video>
+  </div>
+</div>
+</script><script class="template" id="template-site__video_mode_fourohfour" type="text/x-tmpl-mustache"><section class='four_oh_four'>
+  <p class='big_type'>
+    Looks like you've reached the end of the line! <br />Check out <a class="another" href='#'>another channel</a> or <a href='/discover'>browse projects in discover</a>.
+  </p>
+</section>
+</script>
+
+<script id="schwamm_formatting_options" type="text/javascript">
+//<![CDATA[
+(function(){window.formatters = window.formatters || {}; var formatting_options = {"distance_date_intervals":[[5,"just now"],[29,"less than a minute ago"],[89,"1 minute ago"],[2640,"%m minutes ago"],[5340,"about 1 hour ago"],[82800,"about %h hours ago"],[147600,"1 day ago"],[604800,"%d days ago"],[15552000,"on %t"],[0,"on %y"]],"currency_symbol_mappings":{"AFN":"\u060b","ALL":"Lek","ARS":"$","AUD":"$","AWG":"\u0192","AZN":"\u043c\u0430\u043d","BAM":"KM","BBD":"$","BGN":"\u043b\u0432","BMD":"$","BND":"$","BOB":"$b","BRL":"R$","BSD":"$","BWP":"P","BYR":"p.","BZD":"BZ$","CAD":"$","CLP":"$","CNY":"\u00a5","COP":"$","CRC":"\u20a1","CUP":"\u20b1","CZK":"K\u010d","DKK":"kr","DOP":"RD$","EGP":"\u00a3","EUR":"\u20ac","FJD":"$","FKP":"\u00a3","GBP":"\u00a3","GIP":"\u00a3","GTQ":"Q","GYD":"$","HKD":"$","HNL":"L","HRK":"kn","HUF":"Ft","IDR":"Rp","ILS":"\u20aa","IRR":"\ufdfc","ISK":"kr","JMD":"J$","JPY":"\u00a5","KGS":"\u043b\u0432","KHR":"\u17db","KPW":"\u20a9","KRW":"\u20a9","KYD":"$","KZT":"\u043b\u0432","LAK":"\u20ad","LBP":"\u00a3","LKR":"\u20a8","LRD":"$","LTL":"Lt","LVL":"Ls","MKD":"\u0434\u0435\u043d","MNT":"\u20ae","MUR":"\u20a8","MXN":"$","MYR":"RM","MZN":"MT","NAD":"$","NGN":"\u20a6","NIO":"C$","NOK":"kr","NPR":"\u20a8","NZD":"$","OMR":"\ufdfc","PAB":"B/.","PEN":"S/.","PHP":"\u20b1","PKR":"\u20a8","PLN":"z\u0142","PYG":"Gs","QAR":"\ufdfc","RON":"lei","RSD":"\u0414\u0438\u043d.","RUB":"\u0440\u0443\u0431","SAR":"\ufdfc","SBD":"$","SCR":"\u20a8","SEK":"kr","SGD":"$","SHP":"\u00a3","SOS":"S","SRD":"$","SVC":"$","SYP":"\u00a3","THB":"\u0e3f","TRY":"TL","TTD":"TT$","TWD":"NT$","UAH":"\u20b4","USD":"$","UYU":"$U","UZS":"\u043b\u0432","VEF":"Bs","VND":"\u20ab","YER":"\ufdfc","ZAR":"R"},"currency_trailing_code_mappings":{"AUD":true,"CAD":true,"NZD":true,"USD":true},"currency_formats":["money","shorter_money"]}; for (key in formatting_options) {window.formatters[key] = formatting_options[key]};}());
+//]]>
+</script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("begin_base.js_tag");}
+  //]]>
+</script>
+<script src="https://d297h9he240fqh.cloudfront.net/assets/packages/base-45cdab84617ddfb8905b7cddc8500c19.js" type="text/javascript"></script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("end_base.js_tag");}
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    document.domain='kickstarter.com';
+  //]]>
+</script>
+
+<iframe height="0" id="api_xdreceiver" src="https://api.kickstarter.com/xdreceiver/85e6.html" style="display: none;" width="0"></iframe>
+
+
+
+<div id="fb-root"></div>
+<script>
+  //<![CDATA[
+    var channelUrl = window.location.protocol + "//" + window.location.host + "/channel.html",
+      skip_autologin = $('body').is('.skip_autologin');
+    
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId: window.fb_app_id,
+        channelUrl: channelUrl,
+        status: true,    // check login status
+        cookie: true,    // enable cookies to allow the server to access the session
+        xfbml: true,     // parse XFBML
+        logging: false   // turn off logging
+      });
+    
+      FB.getLoginStatus(function (response) {
+        if (response.status === 'connected') {
+          if (read_cookie("logout_from_fb")) {
+            FB.logout();
+            destroy_cookie("logout_from_fb");
+          } else if (!skip_autologin) {
+            $.get("/fb/autologin", {'fbsr': response.authResponse.signedRequest});
+          } else if (false && 0 == response.authResponse.userID) {
+            $.get("/fb/refresh", {'fbsr': response.authResponse.signedRequest});
+          }
+        } else {
+          if (read_cookie("logout_from_fb")) {
+            destroy_cookie("logout_from_fb");
+          }
+        }
+      })
+    
+      $(document).trigger('fb:loaded');
+    };
+    
+    
+    // Load the SDK Asynchronously
+    (function(d){
+      var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+      js = d.createElement('script'); js.id = id; js.async = true;
+      js.src = "//connect.facebook.net/en_US/all.js";
+      d.getElementsByTagName('head')[0].appendChild(js);
+    }(document));
+  //]]>
+</script>
+
+
+</body>
+</html>

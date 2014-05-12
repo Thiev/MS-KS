@@ -1,0 +1,1734 @@
+<!DOCTYPE html>
+<html class="projects_show  fontface no-js" lang="en">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# kickstarter: http://ogp.me/ns/fb/kickstarter#">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-5.newrelic.com","errorBeacon":"jserror.newrelic.com","licenseKey":"b04b883ad2","applicationID":"11086","transactionName":"cFteRUULX1wHFhtIEFxeVVJDFxxDCgtD","queueTime":7,"applicationTime":861,"ttGuid":"","agentToken":null,"agent":"js-agent.newrelic.com/nr-411.min.js"}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"Vw4BVEVSCQMIUg=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e){function n(t,e,n){n||(n={});for(var r=o[t],a=r&&r.length||0,s=n[i]||(n[i]={}),u=0;a>u;u++)r[u].apply(s,e);return s}function r(t,e){var n=o[t]||(o[t]=[]);n.push(e)}var o={},i="nr@context";e.exports={on:r,emit:n}},{}],2:[function(t){function e(t,e,n,i,s){return u?u-=1:r("err",[s||new UncaughtException(t,e,n)]),"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t(5),a=window.onerror,s=!1,u=0;t("loader").features.push("err"),window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(d){"stack"in d&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(4),s=!0)}i.on("fn-start",function(){s&&(u+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&u>0&&(u-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:4,3:3,4:6,5:1,6:14,handle:"D5DuLP",loader:"G9z0Bl"}],3:[function(t){function e(t){r.inPlace(t,["addEventListener","removeEventListener"],"-",n)}function n(t){return t[1]}var r=t(1),o=(t(3),t(2));if(e(window),"getPrototypeOf"in Object){for(var i=document;i&&!i.hasOwnProperty("addEventListener");)i=Object.getPrototypeOf(i);i&&e(i);for(var a=XMLHttpRequest.prototype;a&&!a.hasOwnProperty("addEventListener");)a=Object.getPrototypeOf(a);a&&e(a)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&e(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=e["nr@wrapped"]?t[1]=e["nr@wrapped"]:e["nr@wrapped"]=t[1]=r(e,"fn-"):"function"==typeof e.handleEvent&&r.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:15,2:1,3:14}],4:[function(t){var e=(t(3),t(1)),n=t(2);e.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=e(t[0],"fn-")})},{1:15,2:1,3:14}],5:[function(t){function e(t){var e=t[0];"string"==typeof e&&(e=new Function(e)),t[0]=n(e,"fn-")}var n=(t(3),t(1)),r=t(2);n.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",e)},{1:15,2:1,3:14}],6:[function(t){function e(){o.inPlace(this,s,"fn-")}function n(t,e){o.inPlace(e,["onreadystatechange"],"fn-")}function r(t,e){return e}var o=t(1),i=t(2),a=window.XMLHttpRequest,s=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];window.XMLHttpRequest=function(t){var n=new a(t);try{i.emit("new-xhr",[],n),o.inPlace(n,["addEventListener","removeEventListener"],"-",function(t,e){return e}),n.addEventListener("readystatechange",e,!1)}catch(r){try{i.emit("internal-error",r)}catch(s){}}return n},window.XMLHttpRequest.prototype=a.prototype,o.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",r),i.on("send-xhr-start",n),i.on("open-xhr-start",n)},{1:15,2:1}],7:[function(t){function e(){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;u>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,d="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=e(d);if(f&&(r.rxSize=f),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}t("loader").features.push("xhr");var o=t("handle"),i=t(1),a=t(5),s=["load","error","abort","timeout"],u=s.length,d=t(2);t(3),t(4),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var d=e(o);d&&(r.txSize=d)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",e)}catch(r){}}};for(var f=0;u>f;f++)n.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&e()},{1:8,2:11,3:3,4:6,5:1,handle:"D5DuLP",loader:"G9z0Bl"}],8:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e){var n=r[t];return n?n.apply(this,e):(o[t]||(o[t]=[]),void o[t].push(e))}var r={},o={};e.exports=n,n.queues=o,n.handlers=r},{}],11:[function(t,e){function n(t){if(!t||"object"!=typeof t&&"function"!=typeof t)return-1;if(t===window)return 0;if(o.call(t,"__nr"))return t.__nr;try{return Object.defineProperty(t,"__nr",{value:r,writable:!0,enumerable:!1}),r}catch(e){return t.__nr=r,r}finally{r+=1}}var r=1,o=Object.prototype.hasOwnProperty;e.exports=n},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&u&&u.body){p.proto="https"===c.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=u.createElement("script");e.src=p.proto+t.agent,u.body.appendChild(e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,u=s.document,d="addEventListener",f="attachEvent",c=(""+location).split("?")[0],p=e.exports={offset:i(),origin:c,features:[]};u[d]?(u[d]("DOMContentLoaded",o,!1),s[d]("load",n,!1)):(u[f]("onreadystatechange",r),s[f]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],14:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],15:[function(t,e){function n(t,e,r,s){function nrWrapper(){try{var n,a=u(arguments),d=this,f=r&&r(a,d)||{}}catch(c){i([c,"",[a,d,s],f])}o(e+"start",[a,d,s],f);try{return n=t.apply(d,a)}catch(p){throw o(e+"err",[a,d,p],f),p}finally{o(e+"end",[a,d,n],f)}}return a(t)?t:(e||(e=""),nrWrapper[n.flag]=!0,nrWrapper)}function r(t,e,r,o){r||(r="");var i,s,u,d="-"===r.charAt(0);for(u=0;u<e.length;u++)s=e[u],i=t[s],a(i)||(t[s]=n(i,d?s+r:r,o,s,t))}function o(t,e,n){try{s.emit(t,e,n)}catch(r){i([r,t,e,n])}}function i(t){try{s.emit("internal-error",t)}catch(e){}}function a(t){return!(t&&"function"==typeof t&&t.apply&&!t[n.flag])}var s=t(1),u=t(2);e.exports=n,n.inPlace=r,n.flag="nr@wrapper"},{1:1,2:14}]},{},["G9z0Bl",2,7]);</script><script>
+  //<![CDATA[
+    docElement = this.document.documentElement;
+    docElement.className=docElement.className.replace(/\bno-js\b/,'') + 'js';
+  //]]>
+</script>
+<title>Predestination - A turn-based space 4X strategy game by Daniel Morse &mdash; Kickstarter</title><script>
+  //<![CDATA[
+    window.report_errors = true;
+    window.honeybadger_configuration = {
+      api_key : "02ab109335c0dd1a93506d92f22217a7",
+      environment : "production",
+      component : "projects",
+      action : "show",
+      onerror : false
+    };
+  //]]>
+</script>
+
+
+<!--[if lt IE 9]>
+  <script src="//html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta content="telephone=no" name="format-detection">
+
+<!--[if !IE]> -->
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base-9f623ad5d021a188cfb2d68a0cdf7a7b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<!-- <![endif]-->
+<!--[if IE]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base_blessed-2640c72487552f9a2ef9f2620b4af860.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<!--[if lte IE 9]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_nine-a93fe10530f175f96c4078b7e070d7e1.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 8]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_eight-f75aeb274436f94a0d243774456b1c62.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 7]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie-c019c01acd3a96588b346cf577a3504f.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_seven-5a3d2cef660cd281fd844b04b2397dbb.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if IE 6]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_six-e4d3caf76e405fe19aee6ece8bda701b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<link href="https://d297h9he240fqh.cloudfront.net/favicon.png" rel="icon" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-precomposed-7b603dba7cf80e4acc57d94a991bebbd.png" rel="apple-touch-icon-precomposed" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-ipad-precomposed-3176f72977daf43dee3b0d348484dc01.png" rel="apple-touch-icon-precomposed" sizes="72x72" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-iphone4-precomposed-b93b70168cd8492c843d0fea873c7f83.png" rel="apple-touch-icon-precomposed" sizes="114x114" type="image/png">
+<link href="https://www.kickstarter.com/services/oembed?url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Fnyphur%2Fpredestination-a-turn-based-space-4x-strategy-game" rel="alternate" title="Predestination - A turn-based space 4X strategy game Script Tag oEmbed" type="application/json+oembed">
+<link rel="alternate" type="application/atom+xml" title="Predestination - A turn-based space 4X strategy game : Kickstarter" href="https://www.kickstarter.com/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game/posts.atom" />
+<meta property="twitter:app:id:iphone" content="596961532"/>
+<meta property="twitter:app:name:iphone" content="Kickstarter"/>
+<meta property="twitter:app:url:iphone" content="ksr://www.kickstarter.com/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game"/>
+<meta name="video_height" content="360"/>
+<meta name="video_width" content="640"/>
+<meta name="video_type" content="application/x-shockwave-flash"/>
+<meta name="title" content="Kickstarter &gt;&gt; Predestination - A turn-based space 4X strategy game by Daniel Morse"/>
+<meta name="description" content="Daniel Morse is raising funds for Predestination - A turn-based space 4X strategy game on Kickstarter! 
+
+ Kickstart the Northern Ireland games industry by backing Brain and Nerd&#39;s indie 4X space strategy game Predestination."/>
+<meta property="og:title" content="Predestination - A turn-based space 4X strategy game"/>
+<meta property="og:type" content="kickstarter:project"/>
+<meta property="og:image" content="https://s3.amazonaws.com/ksr/projects/105400/photo-main.jpg?1397774859"/>
+<meta property="og:url" content="https://www.kickstarter.com/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game"/>
+<meta property="og:site_name" content="Kickstarter"/>
+<meta property="fb:app_id" content="69103156693"/>
+<meta property="og:description" content="Kickstart the Northern Ireland games industry by backing Brain and Nerd&#39;s indie 4X space strategy game Predestination."/>
+<meta property="kickstarter:creator" content="https://www.kickstarter.com/profile/nyphur"/>
+<meta property="twitter:url:landing_url" content="https://www.kickstarter.com/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game"/>
+<meta property="twitter:card" content="2427656750:kickstarter_project"/>
+<meta property="twitter:site" content="@kickstarter"/>
+<meta property="twitter:site:id" content="16186995"/>
+<meta property="twitter:text:title" content="Predestination - A turn-based space 4X strategy game"/>
+<meta property="twitter:text:artist" content="Daniel Morse"/>
+<meta property="twitter:text:backers" content="1195"/>
+<meta property="twitter:text:pledged" content="$49,899 USD"/>
+<meta property="twitter:text:time" content="0 seconds"/>
+<meta property="twitter:text:location" content="Belfast, UK"/>
+<meta property="twitter:image:location_image" content="https://d3mlfyygrfdi2i.cloudfront.net/b40e/pin.png"/>
+<meta property="twitter:text:description" content="Kickstart the Northern Ireland games industry by backing Brain and Nerd&#39;s indie 4X space strategy game Predestination."/>
+<meta property="twitter:image:media" content="https://s3.amazonaws.com/ksr/projects/105400/photo-main.jpg?1397774859"/>
+<meta property="twitter:image:width" content="640"/>
+<meta property="twitter:image:height" content="480"/>
+<meta property="twitter:player:stream:url" content="https://d2pq0u4uni88oo.cloudfront.net/projects/105400/video-186194-h264_base.mp4"/>
+<meta property="twitter:player:stream:content" content="video/mp4"/>
+<meta property="twitter:player:url" content="https://www.kickstarter.com/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game/widget/video.html"/>
+<meta property="twitter:player:height" content="360"/>
+<meta property="twitter:player:width" content="640"/>
+<meta property="twitter:maxage" content="60"/>
+<meta property="og:video" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F105400%2Fvideo-186194-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F105400%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Daniel+Morse&amp;project_title=Predestination+-+A+turn-based+space+4X+strategy+game&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Fnyphur%2Fpredestination-a-turn-based-space-4x-strategy-game&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:secure_url" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F105400%2Fvideo-186194-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F105400%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Daniel+Morse&amp;project_title=Predestination+-+A+turn-based+space+4X+strategy+game&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Fnyphur%2Fpredestination-a-turn-based-space-4x-strategy-game&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:height" content="360"/>
+<meta property="og:video:width" content="640"/>
+<meta property="og:video:type" content="application/x-shockwave-flash"/>
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="KRNgP/xAxsqdscaGZAr3rIFBF0mPPCF3xHxh9e0ro4w=" name="csrf-token" />
+<script type="text/javascript">
+  var _sift = _sift || [];
+  _sift.push(['_setAccount', '637102']);
+  _sift.push(['_setUserId', '']);
+  _sift.push(['_trackPageview']);
+
+  (function() {
+    function loadSift() {
+      var sift, s;
+      if (root.visitor_id) {
+        _sift.push(['_setSessionId', root.visitor_id]);
+      }
+      sift = document.createElement('script');
+      sift.type = 'text/javascript';
+      sift.async = true;
+      sift.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dtlilztwypawv.cloudfront.net/s.js';
+      s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(sift, s);
+    }
+    if (window.attachEvent) {
+      window.attachEvent('onload', loadSift);
+    } else {
+      window.addEventListener('load', loadSift, false);
+    }
+  })();
+</script>
+<link href="http://kck.st/TQsG7V" rel="shorturl">
+<link href="https://www.kickstarter.com/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game" rel="canonical">
+<link href="https://s3.amazonaws.com/ksr/projects/105400/photo-med.jpg?1397774859" rel="image_src">
+<link href="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F105400%2Fvideo-186194-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F105400%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Daniel+Morse&amp;project_title=Predestination+-+A+turn-based+space+4X+strategy+game&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Fnyphur%2Fpredestination-a-turn-based-space-4x-strategy-game&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque" rel="video_src">
+<script>
+  //<![CDATA[
+    window.current_checkout = "{&quot;id&quot;:0,&quot;domestic&quot;:null,&quot;amount&quot;:0.0,&quot;updated_at&quot;:0,&quot;created_at&quot;:0}";
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.current_ip = '94.209.101.212';
+    window.current_ip_datacenter = 'false';
+    window.enabled_features = {"elasticsearch":true,"security_history_read":true,"security_history_write":true,"advanced_discovery_es":true,"ios_crashlytics":true,"ios_mixpanel":true,"stories_veronica_mars":true,"veronica_mars_hero":true,"password_reset_banner":true};
+    window.fb_app_id = '69103156693';
+    
+    var _sf_startpt=(new Date()).getTime();
+    
+    window.current_project = "{&quot;id&quot;:1533737242,&quot;name&quot;:&quot;Predestination - A turn-based space 4X strategy game&quot;,&quot;blurb&quot;:&quot;Kickstart the Northern Ireland games industry by backing Brain and Nerd&#39;s indie 4X space strategy game Predestination.&quot;,&quot;goal&quot;:25000.0,&quot;pledged&quot;:49899.24,&quot;state&quot;:&quot;successful&quot;,&quot;slug&quot;:&quot;predestination-a-turn-based-space-4x-strategy-game&quot;,&quot;disable_communication&quot;:false,&quot;country&quot;:&quot;US&quot;,&quot;currency&quot;:&quot;USD&quot;,&quot;currency_symbol&quot;:&quot;$&quot;,&quot;currency_trailing_code&quot;:true,&quot;deadline&quot;:1356739581,&quot;state_changed_at&quot;:1356739581,&quot;created_at&quot;:1331987846,&quot;launched_at&quot;:1353542781,&quot;backers_count&quot;:1195,&quot;photo&quot;:{&quot;full&quot;:&quot;https://s3.amazonaws.com/ksr/projects/105400/photo-full.jpg?1397774859&quot;,&quot;ed&quot;:&quot;https://s3.amazonaws.com/ksr/projects/105400/photo-ed.jpg?1397774859&quot;,&quot;med&quot;:&quot;https://s3.amazonaws.com/ksr/projects/105400/photo-med.jpg?1397774859&quot;,&quot;little&quot;:&quot;https://s3.amazonaws.com/ksr/projects/105400/photo-little.jpg?1397774859&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/projects/105400/photo-small.jpg?1397774859&quot;,&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/projects/105400/photo-thumb.jpg?1397774859&quot;,&quot;1024x768&quot;:&quot;https://s3.amazonaws.com/ksr/projects/105400/photo-1024x768.jpg?1397774859&quot;,&quot;1536x1152&quot;:&quot;https://s3.amazonaws.com/ksr/projects/105400/photo-1536x1152.jpg?1397774859&quot;},&quot;creator&quot;:{&quot;id&quot;:871280963,&quot;name&quot;:&quot;Daniel Morse&quot;,&quot;slug&quot;:&quot;nyphur&quot;,&quot;avatar&quot;:{&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/1354302/Avatar.thumb.jpg?1354562783&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/1354302/Avatar.small.jpg?1354562783&quot;,&quot;medium&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/1354302/Avatar.medium.jpg?1354562783&quot;},&quot;urls&quot;:{&quot;web&quot;:{&quot;user&quot;:&quot;https://www.kickstarter.com/profile/nyphur&quot;},&quot;api&quot;:{&quot;user&quot;:&quot;https://api.kickstarter.com/v1/users/871280963?signature=1399958669.897183b29784ce298706c2f39fb1bfafc57ae4c1&quot;}}},&quot;location&quot;:{&quot;id&quot;:44544,&quot;name&quot;:&quot;Belfast&quot;,&quot;slug&quot;:&quot;belfast-belfast-northern-ireland&quot;,&quot;short_name&quot;:&quot;Belfast, UK&quot;,&quot;displayable_name&quot;:&quot;Belfast, UK&quot;,&quot;country&quot;:&quot;GB&quot;,&quot;state&quot;:&quot;Northern Ireland&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/belfast-belfast-northern-ireland&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/belfast-belfast-northern-ireland&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1399951844.14cfdc1e656a78721a986b1b379588d567a0f887&amp;woe_id=44544&quot;}}},&quot;category&quot;:{&quot;id&quot;:35,&quot;name&quot;:&quot;Video Games&quot;,&quot;slug&quot;:&quot;games/video games&quot;,&quot;position&quot;:7,&quot;parent_id&quot;:12,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;http://www.kickstarter.com/discover/categories/games/video%20games&quot;}}},&quot;urls&quot;:{&quot;web&quot;:{&quot;project&quot;:&quot;https://www.kickstarter.com/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game&quot;,&quot;project_short&quot;:&quot;http://kck.st/TQsG7V&quot;,&quot;updates&quot;:&quot;https://www.kickstarter.com/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game/posts&quot;},&quot;api&quot;:{&quot;project&quot;:&quot;https://api.kickstarter.com/v1/projects/1533737242?signature=1399958669.d811ea8ad3880d5f91e02148d4296bffe8749a72&quot;,&quot;comments&quot;:&quot;https://api.kickstarter.com/v1/projects/1533737242/comments?signature=1399958669.fd6e0c90151ec7b2afc3a03b2c1078ed9183c054&quot;,&quot;updates&quot;:&quot;https://api.kickstarter.com/v1/projects/1533737242/updates?signature=1399958669.e17aa596ea9c1982749c2f2aad5dcdc1c7f2aaf2&quot;}},&quot;updated_at&quot;:1399154333,&quot;successful_at&quot;:1356739581,&quot;video&quot;:{&quot;id&quot;:186194,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/105400/video-186194-h264_high.mp4?2012&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/105400/video-186194-h264_base.mp4?2012&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/105400/video-186194-webm.webm?2012&quot;,&quot;width&quot;:640,&quot;height&quot;:360,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/105400/video-186194-h264_base.jpg?2012&quot;},&quot;comments_count&quot;:448,&quot;updates_count&quot;:39,&quot;rewards&quot;:[{&quot;id&quot;:0,&quot;minimum&quot;:1,&quot;reward&quot;:&quot;No Reward&quot;},{&quot;id&quot;:530296,&quot;minimum&quot;:10.0,&quot;reward&quot;:&quot;--------- BE A SUPPORTER ---------\\r\\nReceive free digital concept art books, wallpapers and soundtrack downloads as development progresses (all DRM-free, use them how you want). You&#39;ll also get supporter rank in our community forum, where you can discuss ideas for the game.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1354320000,&quot;project_id&quot;:1533737242,&quot;backers_count&quot;:10,&quot;updated_at&quot;:1356763804},{&quot;id&quot;:530297,&quot;minimum&quot;:20.0,&quot;reward&quot;:&quot;------ PRE-ORDER THE GAME ------\\r\\nGet a DRM-free copy of the game with exclusive kickstarter-only content.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1385856000,&quot;project_id&quot;:1533737242,&quot;backers_count&quot;:63,&quot;updated_at&quot;:1356755273},{&quot;id&quot;:530298,&quot;minimum&quot;:25.0,&quot;reward&quot;:&quot;PRE-ORDER + FREE DLC FOR LIFE\\r\\nSupport our efforts to beat piracy without resorting to DRM. Get a DRM-free copy of the game with exclusive kickstarter-only content, free DLC for life, and a free copy of every expansion pack we release. We plan to release at least $25 of DLC and at least one expansion pack.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1385856000,&quot;project_id&quot;:1533737242,&quot;backers_count&quot;:780,&quot;updated_at&quot;:1399484580},{&quot;id&quot;:530299,&quot;minimum&quot;:40.0,&quot;reward&quot;:&quot;PRE-ORDER + BETA + GIFT COPY\\r\\nEverything in the $25 reward, plus a bonus gift copy of the game to send to a friend. You&#39;ll also get guaranteed access to every beta version and early beta access to the ship design and level design tools.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1385856000,&quot;project_id&quot;:1533737242,&quot;backers_count&quot;:150,&quot;updated_at&quot;:1389996050},{&quot;id&quot;:531077,&quot;minimum&quot;:50.0,&quot;reward&quot;:&quot;-- NAME A STAR + BETA + GIFT --\\r\\nEverything in the $40 reward, plus you can name a star system in the game and have your real name appear in a ship crew list! Only 100 available.&quot;,&quot;limit&quot;:100,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1385856000,&quot;project_id&quot;:1533737242,&quot;remaining&quot;:1,&quot;backers_count&quot;:99,&quot;updated_at&quot;:1399338470},{&quot;id&quot;:1268935,&quot;minimum&quot;:75.0,&quot;reward&quot;:&quot;*NEW*- DESIGN YOUR OWN MISSILE -\\r\\nEverything in the $40 reward, plus we&#39;ll work with you to design and name a type of planet-to-planet missile (See update #11) based on your own ideas. You could make the missile target specific buildings, destroy certain resources, modify terrain or have any other effect you can think of. You&#39;ll also get a mention in the game credits for your design contribution!&quot;,&quot;limit&quot;:17,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1385856000,&quot;project_id&quot;:1533737242,&quot;remaining&quot;:11,&quot;backers_count&quot;:6,&quot;updated_at&quot;:1356740641},{&quot;id&quot;:544692,&quot;minimum&quot;:100.0,&quot;reward&quot;:&quot;------- COLLECTOR&#39;S EDITION ------- A limited edition physical DVD of the finished game with bonus extra content, beta access and free DLC for life. We&#39;ll also send you a pack full of goodies: Exclusive posters, a physical soundtrack CD,  and other things that will never be released again after this Kickstarter campaign. Also included are signed personal thank-you post cards from each of the team members, and a free digital gift copy to give to a friend.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1385856000,&quot;project_id&quot;:1533737242,&quot;backers_count&quot;:28,&quot;updated_at&quot;:1357952417},{&quot;id&quot;:530300,&quot;minimum&quot;:125.0,&quot;reward&quot;:&quot;- COMMANDER DELUXE EDITION -\\r\\nEverything in the $100 collector&#39;s edition reward, plus you will get to design a military commander or colony leader in the game. You can name your commander, pick a portrait for him and select stats or decide what type of commander he&#39;ll be. You&#39;ll also get a special mention in the game credits for your design contribution. Only 50 available.&quot;,&quot;limit&quot;:35,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1385856000,&quot;project_id&quot;:1533737242,&quot;remaining&quot;:7,&quot;backers_count&quot;:28,&quot;updated_at&quot;:1356759249},{&quot;id&quot;:530302,&quot;minimum&quot;:250.0,&quot;reward&quot;:&quot;- CONCEPT ART SUPER EDITION -\\r\\nYou&#39;ll get an original piece of concept art from the game&#39;s development, signed by the artist. In the case of digital concept art, you&#39;ll receive professional prints of the artwork that are guaranteed to be one of a kind. Includes a special thank-you card from the team! *** Includes everything in the $100 collector&#39;s edition reward.&quot;,&quot;limit&quot;:10,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1385856000,&quot;project_id&quot;:1533737242,&quot;remaining&quot;:6,&quot;backers_count&quot;:4,&quot;updated_at&quot;:1356740656},{&quot;id&quot;:530303,&quot;minimum&quot;:500.0,&quot;reward&quot;:&quot;LEVEL DESIGNER PREMIUM EDITION\\r\\nWe&#39;ll work with you to design your own singleplayer scenario, which will appear in the final game for everyone to play. You will appear in the game credits as a level designer. *** Includes everything in the $100 collector&#39;s edition reward.&quot;,&quot;limit&quot;:10,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1385856000,&quot;project_id&quot;:1533737242,&quot;remaining&quot;:6,&quot;backers_count&quot;:4,&quot;updated_at&quot;:1356740614},{&quot;id&quot;:530335,&quot;minimum&quot;:1000.0,&quot;reward&quot;:&quot;DESIGN YOUR OWN RACE + LEVEL DESIGN + FREE GAMES FOR LIFE!\\r\\nWe&#39;ll work with you to design your own race, which will be one of the default races in Predestination! Character artist Connor Murphy will paint artwork based on your directions, and you&#39;ll get to decide on stats and a whole background story for the race! We&#39;ll also work with you to produce a singleplayer level that introduces your race and its story. (Your race must fit within the Predestination lore and style, and can&#39;t use any copyrighted designs.) You&#39;ll get a free copy of every game we ever make, and your name will be in the credits of every game we make. *** Also includes a $100 collector&#39;s edition&quot;,&quot;limit&quot;:8,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1385856000,&quot;project_id&quot;:1533737242,&quot;remaining&quot;:2,&quot;backers_count&quot;:6,&quot;updated_at&quot;:1356740644},{&quot;id&quot;:530359,&quot;minimum&quot;:10000.0,&quot;reward&quot;:&quot;--- CORPORATE ENDORSEMENT ---\\r\\nThis reward is intended for any development studios or companies that want to support our new studio and the emerging Northern Ireland games industry. This reward level comes with a permanent advertisement in the intro to the game with your company&#39;s logo and a message saying that the game was made possible with a generous donation from your company. *** You&#39;ll also get a copy of the game for every employee to show them what they&#39;re helping to sponsor (max 200 copies)&quot;,&quot;limit&quot;:1,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1385856000,&quot;project_id&quot;:1533737242,&quot;remaining&quot;:1,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1356563628}]}";
+    
+    
+    
+    
+    
+    
+    
+    
+    window.timeRemaining = function timeRemaining(epochTime){
+    
+      var diff = epochTime - ((new Date()).getTime() / 1000);
+      var num_unit = (diff < 60 && [Math.max(diff, 0), 'seconds']) ||
+        ((diff/=60) < 60 && [diff, 'minutes']) ||
+        ((diff/=60) < 72 && [diff, 'hours']) ||
+        [diff/=24, 'days'];
+    
+      // Round down
+      num_unit[0] = Math.floor(num_unit[0]);
+      // Singularize unit
+      if (num_unit[0] == 1) { num_unit[1] = num_unit[1].replace(/s$/,""); }
+    
+      return num_unit;
+    };
+  //]]>
+</script>
+
+<script>
+  //<![CDATA[
+    window.current_variants = ["discover_link_copy[explore]","rewards_hover[without_hover_text]"];
+  //]]>
+</script>
+
+
+</head>
+
+<body class="project projects not-mobile not-phone not-forces-video-controls not-tablet not-touchable not-native-app-request video_mode" id="projects_show">
+<div class="jGrowl center" id="growl_section"></div>
+<div class="NS_layouts__navigation" id="header">
+<div class="main-nav relative bg-white">
+<h1 class="no-margin ml1 mr2 left">
+<a href="/?ref=nav" class="block p2"><span class="ss-icon green-dark">KICK</span><span class="ss-icon green">STARTER</span>
+</a></h1>
+<ul class="primary-links list no-margin left">
+<li class="left discover-link full-height">
+<a href="/discover?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Explore</a>
+</li>
+<li class="left full-height mr2">
+<a href="/learn?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Start</a>
+</li>
+</ul>
+<ul class="list no-margin right" id="menu-sub">
+<li class="right"><a href="/login?ref=nav" class="block h5 bold p2 full-height border-box">Log in</a></li>
+<li class="right"><a href="/signup?ref=nav" class="block h5 bold p2 full-height border-box">Sign up</a></li>
+</ul>
+<div class="search-link pl2 full-height border-left border-box clip">
+<form accept-charset="UTF-8" action="/projects/search" class="search pt1 pb1 block relative form-simple" method="get"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /></div>
+<div class="field relative pl3">
+<span class="ss-icon ss-search grey-dark ml1 mt1 absolute"></span>
+<input class="input-search header full-width text" data-tracker-name="Header Live Search" id="term" name="term" placeholder="Search projects" type="text" />
+</div>
+</form>
+
+</div>
+<div class="clear"></div>
+</div>
+</div>
+<div class="hide pt4 pb4 bg-grey-light" id="search_results-wrap">
+<div class="relative container" id="search_results">
+<a class="close right grey-dark mr1"><span class="ss-icon ss-delete"></span></a>
+<h3 class="header ml1 clearfix"></h3>
+<div class="clip clearfix" id="search_results_panel"></div>
+<a class="prev arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateleft"></span>
+</a>
+<a class="next arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateright"></span>
+</a>
+</div>
+</div>
+
+
+
+
+<div class="Project-ended-true Project-is_starred- Project-state-successful Project1533737242_cxt border-top" id="main_content">
+<div id="running-board-wrap">
+<div class="container" id="running-board">
+<div id="project-header">
+<div class="NS_projects__running_board ml1 mr1 clearfix">
+<div class="title center py4">
+<h2 class="mb1">
+<a href="/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game" class="green-dark">Predestination - A turn-based space 4X strategy game</a>
+</h2>
+<p class="no-margin">
+<span class="creator">
+by
+<a href="/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography" id="name">Daniel Morse</a>
+</span>
+</p>
+</div>
+<ul class="project-nav list-inline left h5 bold mb1">
+<li class="mr2">
+<a href="/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game" class="grey-dark py1 current" id="home_nav">Home</a>
+</li>
+<li class="mr2">
+<span data-updates-count="39" id="updates_count">
+<a href="/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game/posts" class="grey-dark py1" id="updates_nav">Updates
+<span class="count h6 bg-grey-dark white">39</span>
+</a></span>
+</li>
+<li class="mr2">
+<a href="/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game/backers" class="grey-dark py1" id="backers_nav">Backers
+<span class="count h6 bg-grey-dark white"><data class="Project1533737242" data-format="number" data-value="1195" itemprop="Project[backers_count]">1,195</data></span>
+</a></li>
+<li>
+<span data-comments-count="448" id="comments_count">
+<a href="/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game/comments" class="grey-dark py1" id="comments_nav">Comments
+<span class="count h6 bg-grey-dark white"><data class="Project1533737242" data-format="number" data-value="447" itemprop="Project[comments_count]">447</data></span>
+</a></span>
+</li>
+</ul>
+<ul class="list-inline right h5 bold mb1">
+<li class="location mr2">
+<a href="/discover/places/belfast-belfast-northern-ireland?ref=city" class="grey-dark"><span class="ss-icon ss-location margin-right"></span>
+Belfast, UK
+</a></li>
+<li class="category" data-project-parent-category="Games">
+<a href="/discover/categories/games/video%20games?ref=category" class="grey-dark"><span class="ss-icon ss-tag margin-right"></span>
+Video Games
+</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+</div>
+<div class="bg-grey-light pb4" id="content-wrap">
+<div class="Project1533737242" data-conditions="[{&quot;!state&quot;:&quot;live&quot;}]" data-evaluation="true" data-render="&quot;&lt;div class=\&quot;NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-successful Project1533737242_cxt bg-grey container pb1 pt1\&quot;&gt;\n&lt;div class=\&quot;Project1533737242\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;successful&amp;quot;}]\&quot; data-evaluation=\&quot;true\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;Funded!&amp;lt;/b&amp;gt;\\nThis project was successfully funded &amp;lt;data class=\\&amp;quot;Project1533737242\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2012-12-28T19:06:21-05:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[deadline]\\&amp;quot;&amp;gt;on December 28, 2012&amp;lt;/data&amp;gt;.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;Funded!&lt;/b&gt;\nThis project was successfully funded &lt;data class=\&quot;Project1533737242\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2012-12-28T19:06:21-05:00&amp;quot;\&quot; itemprop=\&quot;Project[deadline]\&quot;&gt;on December 28, 2012&lt;/data&gt;.\n&lt;/p&gt;\n&lt;/div&gt;&lt;div class=\&quot;Project1533737242\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:[&amp;quot;started&amp;quot;,&amp;quot;submitted&amp;quot;]}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;THIS PROJECT IS NOT LIVE&amp;lt;/b&amp;gt;\\nThis is only a draft that the creator has chosen to share.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1533737242\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;suspended&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Suspended&amp;lt;/b&amp;gt;\\nFunding for this project was suspended &amp;lt;data class=\\&amp;quot;Project1533737242\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2012-12-28T19:06:21-05:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on December 28, 2012&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1533737242\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;canceled&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Canceled&amp;lt;/b&amp;gt;\\nFunding for this project was canceled by the project creator &amp;lt;data class=\\&amp;quot;Project1533737242\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2012-12-28T19:06:21-05:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on December 28, 2012&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1533737242\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;failed&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Unsuccessful&amp;lt;/b&amp;gt;\\nThis project\\u2019s funding goal was not reached on &amp;lt;time class=\\&amp;quot;js-adjust\\&amp;quot; data-format=\\&amp;quot;LL\\&amp;quot; datetime=\\&amp;quot;2012-12-28T19:06:21-05:00\\&amp;quot;&amp;gt;December 28, 2012&amp;lt;/time&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1533737242\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;purged&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;This project is purged and only visible to staff.&amp;lt;/b&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;/div&gt;\n&quot;"><div class="NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-successful Project1533737242_cxt bg-grey container pb1 pt1">
+<div class="Project1533737242" data-conditions="[{&quot;state&quot;:&quot;successful&quot;}]" data-evaluation="true" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;Funded!&lt;/b&gt;\nThis project was successfully funded &lt;data class=\&quot;Project1533737242\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2012-12-28T19:06:21-05:00&amp;quot;\&quot; itemprop=\&quot;Project[deadline]\&quot;&gt;on December 28, 2012&lt;/data&gt;.\n&lt;/p&gt;\n&quot;"><p class="no-margin">
+<b>Funded!</b>
+This project was successfully funded <data class="Project1533737242" data-format="distance_date" data-value="&quot;2012-12-28T19:06:21-05:00&quot;" itemprop="Project[deadline]">on December 28, 2012</data>.
+</p>
+</div><div class="Project1533737242" data-conditions="[{&quot;state&quot;:[&quot;started&quot;,&quot;submitted&quot;]}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;THIS PROJECT IS NOT LIVE&lt;/b&gt;\nThis is only a draft that the creator has chosen to share.\n&lt;/p&gt;\n&quot;"></div><div class="Project1533737242" data-conditions="[{&quot;state&quot;:&quot;suspended&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Suspended&lt;/b&gt;\nFunding for this project was suspended &lt;data class=\&quot;Project1533737242\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2012-12-28T19:06:21-05:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on December 28, 2012&lt;/data&gt;.\n&quot;"></div><div class="Project1533737242" data-conditions="[{&quot;state&quot;:&quot;canceled&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Canceled&lt;/b&gt;\nFunding for this project was canceled by the project creator &lt;data class=\&quot;Project1533737242\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2012-12-28T19:06:21-05:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on December 28, 2012&lt;/data&gt;.\n&quot;"></div><div class="Project1533737242" data-conditions="[{&quot;state&quot;:&quot;failed&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Unsuccessful&lt;/b&gt;\nThis project\u2019s funding goal was not reached on &lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;LL\&quot; datetime=\&quot;2012-12-28T19:06:21-05:00\&quot;&gt;December 28, 2012&lt;/time&gt;.\n&quot;"></div><div class="Project1533737242" data-conditions="[{&quot;state&quot;:&quot;purged&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;This project is purged and only visible to staff.&lt;/b&gt;\n&quot;"></div></div>
+</div>
+<div class="container bg-white border rounded py3 pl2 pr2" id="content">
+<div class="NS-projects-content">
+<div class="grid_11">
+<div data-has-video="true" id="video-section">
+<div class="video-player" data-dimensions="{&quot;width&quot;:640,&quot;height&quot;:480}" data-image="https://s3.amazonaws.com/ksr/projects/105400/photo-main.jpg?1397774859" data-video-tracker-url="https://www.kickstarter.com/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game/video/plays" data-video-url="https://d2pq0u4uni88oo.cloudfront.net/projects/105400/video-186194-h264_high.mp4" data-video="{&quot;id&quot;:186194,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/105400/video-186194-h264_high.mp4?2012&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/105400/video-186194-h264_base.mp4?2012&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/105400/video-186194-webm.webm?2012&quot;,&quot;width&quot;:640,&quot;height&quot;:360,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/105400/video-186194-h264_base.jpg?2012&quot;}" id="video_pitch"><video class="has_webm landscape" preload="none">
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/105400/video-186194-h264_high.mp4" type='video/mp4; codecs="avc1.64001E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/105400/video-186194-h264_base.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/105400/video-186194-webm.webm" type="video/webm"></source>
+You'll need an HTML5 capable browser to see this content.
+</video>
+<img alt="Photo-main" class="has_played_hide poster landscape" src="https://s3.amazonaws.com/ksr/projects/105400/photo-main.jpg?1397774859" />
+<div class="play_button_big play_button_dark absolute-center rounded has_played_hide">
+<span class="ss-icon ss-play"></span>
+Play
+</div>
+<div class="player_controls clearfix absolute-bottom mb2 rounded white bg-green-dark forces-video-controls_hide">
+<div class="left">
+<a class="button button_icon button_dark playpause play mr1">
+<span class="play ss-icon ss-play"></span>
+<span class="pause ss-icon ss-pause"></span>
+</a>
+<span class="time current_time h12 left">00:00</span>
+</div>
+<div class="right">
+<span class="time total_time h12 left mr1">00:00</span>
+<a class="left button button_icon button_icon_white volume">
+<span class="ss-icon ss-volume icon_volume_nudge"></span>
+<span class="ss-icon ss-highvolume"></span>
+</a>
+<div class="volume_container left">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+<a class="left button button_icon button_icon_white fullscreen">
+<span class="ss-icon ss-expand"></span>
+<span class="ss-icon ss-contract"></span>
+</a>
+</div>
+<div class="clip">
+<div class="progress_container pr1 pl1">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="buffer progress_bar_buffer"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div data-project-state="successful" id="about">
+<div class="NS_projects__project_share clearfix py2 pl1 pr1">
+<ul class="left list-inline no-margin h5 bold">
+<li class="facebook mr2">
+<a href="https://www.kickstarter.com/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game"><span class="ss-icon ss-social ss-facebook color-facebook"></span>
+<span class="color-facebook">Share</span>
+<span class="share_bubble"><div class="triangle grey"></div>
+<div class="triangle white"></div>
+<span class="count"></span></span>
+</a></li>
+<li class="twitter mr2">
+<a  href="https://twitter.com/intent/tweet?text=Predestination%20-%20A%20turn-based%20space%204X%20strategy%20game%20by%20Daniel%20Morse&amp;via=kickstarter&amp;url=http://kck.st/TQsG7V" rel="nofollow"><span class="ss-icon ss-social ss-twitter color-twitter"></span>
+<span class="color-twitter">Tweet</span>
+</a></li>
+<li class="embed">
+<a href="/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game/widget" class="remote_modal_dialog grey-dark" data-modal-title="Embed a widget on your site" data-tracker-name="Embed"><span class="ss-icon ss-navigateleft"></span>
+<span class="ss-icon ss-navigateright"></span>
+Embed
+</a></li>
+</ul>
+<ul class="right list-inline no-margin h5 bold">
+<li class="curate mr2">
+</li>
+<li class="remind">
+<div class="ajax-container" id="watching-widget">
+<div class="Project1533737242" data-conditions="[{&quot;is_starred&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div id=\&quot;unwatch\&quot;&gt;\n&lt;a href=\&quot;/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game/unwatch\&quot; class=\&quot;on\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"></div><div class="Project1533737242" data-conditions="[{&quot;!is_starred&quot;:true}]" data-evaluation="true" data-render="&quot;&lt;div id=\&quot;watch\&quot;&gt;\n&lt;a href=\&quot;/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game/watch\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;span class=\&quot;text\&quot;&gt;\n&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"><div id="watch">
+<a href="/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game/watch"><span class="ss-icon ss-star"></span>
+<span class="text">
+</span>
+</a></div>
+
+</div></div>
+</li>
+</ul>
+</div>
+
+<div class="short_blurb py2 pl1 pr1">
+<p class="h3">Kickstart the Northern Ireland games industry by backing Brain and Nerd&#39;s indie 4X space strategy game Predestination.</p>
+</div>
+<div class="full-description">
+<a href="http://predestinationgame.com/paypal" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game/assets/309469/edit" data-id="309469">
+<figure><img alt="Click here to pledge via Paypal!" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/309/469/3787cd25a3ca1d552591fc71694e6847_large.png?1355812857"><figcaption>Click here to pledge via Paypal!</figcaption></figure>
+</div></a>
+<p>A lot of people have asked us to start accepting pledges via Paypal now that we've comfortably passed our goal. <a href="http://predestinationgame.com/paypal" target="_blank">We've set up a page</a> where you can pledge your support via paypal, and we'll count your pledge toward stretch goals! Once the Kickstarter ends, we'll continue to <a href="http://predestinationgame.com/paypal" target="_blank">accept pre-orders through Paypal</a>.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game/assets/279955/edit" data-id="279955">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/279/955/6483ca775be24691aa60e8b1bd438544_large.png?1353957333"></figure>
+</div>
+<p>Thanks to everyone who's supported us so far, Predestination is the first ever successful Irish game Kickstarter! <b>With Paypal, we have smashed the 50k stretch goal in the final minutes!!</b> Below are some links to interviews we've done, major media coverage of Predestination, Reddit threads people have started about us, and our Kickstarter updates.</p><ul>
+<li>
+<b>Interviews:</b> <a href="http://indiegamehq.com/predestination-developers-kickstarter-interview/?t=Predestination+Developers+Share+Game+Insight+and+Future+Plans+Through+Kickstarter" target="_blank">Indie Game HQ</a>, <a href="http://4xgamer.com/2012/11/22/predestined-interview-a-talk-with-tina-lauro/" target="_blank">4XGamer</a>, <a href="http://www.indieretronews.com/2012/12/predestination-interview-with-games.html" target="_blank">Indie Retro News</a>, <a href="http://www.spacesector.com/blog/2012/12/interview-with-brain-and-nerd-on-predestination-kickstarter/" target="_blank">Space Sector</a>
+</li>
+<li>
+<b>Podcasts:</b> <a href="http://www.gameinformer.com/blogs/members/b/jackalope38_blog/archive/2012/12/07/the-jacked-up-indie-and-mojo-show-episode-54-featuring-brain-and-nerd.aspx" target="_blank">Indie and Mojo show @ GameInformer</a>
+</li>
+<li>
+<b>Reddit:</b> <a href="http://www.reddit.com/r/4Xgaming/comments/13rc5q/predestination_a_turnbased_4x_space_strategy_game/" target="_blank">/r/4XGaming</a>, <a href="http://www.reddit.com/r/Games/comments/13tb3q/new_kickstarter_for_a_4x_game_predestination_if/" target="_blank">/r/Games</a> , <a href="http://www.reddit.com/r/space/comments/13zlrp/predestination_a_turnbased_space_4x_strategy_game/" target="_blank">/r/Space</a>, <a href="http://www.reddit.com/r/IndieGaming/comments/15kbxl/predestination_turnbased_space_4x_game_final_16/" target="_blank">/r/IndieGaming</a>
+</li>
+<li>
+<b>Media coverage:</b> <a href="http://www.spacesector.com/blog/2012/11/predestination-a-new-space-4x-game-hits-kickstarter/" target="_blank">Space Sector</a>, <a href="http://www.rockpapershotgun.com/2012/11/24/kickstarter-katchup-22nd-november-2012/" target="_blank">Rock Paper Shotgun</a>
+</li>
+<li>
+<b>Update 1: </b><a href="http://www.kickstarter.com/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game/posts/354632" target="_blank">Your questions answered</a>.</li>
+<li>
+<b>Update 2:</b> <a href="http://www.kickstarter.com/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game/posts/355211" target="_blank">Planet Colonisation gameplay</a>.</li>
+<li>
+<b>Update 3:</b> <a href="http://www.kickstarter.com/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game/posts/355334" target="_blank">Research, Fleet Combat, and Colonisation</a>.</li>
+<li>
+<b>Update 4:</b> <a href="http://www.kickstarter.com/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game/posts/356576" target="_blank">Robot race reveal and naming competition!</a>
+</li>
+<li>
+<b>Update 5:</b> <a href="http://www.kickstarter.com/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game/posts/360111" target="_blank">New trailer video and stretch goal reveal</a>
+</li>
+<li>
+<b>Update 7:</b> <a href="http://www.kickstarter.com/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game/posts/365069" target="_blank">Planetary Exploration prototype video</a>
+</li>
+<li>
+<b>Update 8:</b> <a href="http://www.kickstarter.com/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game/posts/367789" target="_blank">New stretch goals, singleplayer missions, storyline campaign!</a>
+</li>
+<li>
+<b>Update 10: </b><a href="http://www.kickstarter.com/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game/posts/373042" target="_blank">Using Blueprints to solve the Micromanagement problem!</a> </li>
+<li>
+<b>Update 11: </b><a href="http://www.kickstarter.com/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game/posts/374588" target="_blank">Galaxy Map gameplay prototype video &amp; new pledge level!</a> </li>
+<li>
+<b>Update 12:</b> <a href="http://www.kickstarter.com/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game/posts/375372" target="_blank">Merry Christmas from Brain And Nerd!</a>
+</li>
+<li>
+<b>Update 13: </b><a href="http://www.kickstarter.com/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game/posts/376055" target="_blank">Livestream plans for our final hours!</a>
+</li>
+<li>
+<b>Update 14: </b><a href="http://www.kickstarter.com/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game/posts/376075" target="_blank">Art update! Human race's two factions revealed!</a>
+</li>
+<li>
+<b>Update 15: </b><a href="http://www.kickstarter.com/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game/posts/376498" target="_blank">Our goals for Diplomacy!</a>
+</li>
+</ul><div class="template oembed" contenteditable="false" data-href="http://www.youtube.com/watch?&amp;v=HWcq-NnXQEw">
+<iframe width="612" height="344" src="https://www.youtube.com/embed/HWcq-NnXQEw?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div><h1><b>Stretch goals (50k goal reached!):</b></h1><div class="template asset" contenteditable="false" data-edit_url="/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game/assets/303422/edit" data-id="303422">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/303/422/fbee8b9d4f400fee34e8e6f5b8eda5f8_large.jpg?1355355451"></figure>
+</div>
+<div class="template oembed" contenteditable="false" data-href="http://www.youtube.com/watch?v=ZjS40EOWla8">
+<iframe width="612" height="344" src="https://www.youtube.com/embed/ZjS40EOWla8?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game/assets/273469/edit" data-id="273469">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/273/469/a0a8db5c7af16ddc145a6c27ffef1869_large.png?1353501046"></figure>
+</div>
+<p>Predestination is a turn-based space 4X game that significantly modernises and improves on the gameplay of classic games like Master of Orion II, Civilization and the Galactic Civilizations 
+series. It blends turn-based galaxy management and turn-based tactical combat with modern 3D graphics, player-generated content, and innovative new game mechanics that 4X fans have been waiting years to get their hands on: A 3D galaxy map that works, real planetary exploration, streamlined micromanagement, realistic spying and planetary bombardment mechanics, and many other revolutionary features. It's all in Predestination, whether your focus is on exploring the galaxy, expanding your galactic empire, exploiting the resources around you or exterminating all races that cross your path.</p><p><b>We're making the game that we would love to play, and we've come pretty far along in development on our own. Now we need your support to help finish Predestination and make it the 4X game we've <i>all</i> been dreaming of.</b></p><div class="template asset" contenteditable="false" data-edit_url="/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game/assets/216344/edit" data-id="216344">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/216/344/258b92034cf8a21cc6362136a1853585_large.png?1350607015"></figure>
+</div>
+<p><i>"Wow, now that’s a 3D map I could learn to love."</i> -- Adam Solo, <a href="http://www.spacesector.com/blog/2012/03/stellar-indie-venture-predestination/" target="_blank">SpaceSector</a></p><p><i>"Could be one to keep an eye on"</i> - Adam Smith, <a href="http://www.rockpapershotgun.com/2012/11/24/kickstarter-katchup-22nd-november-2012/" target="_blank">Rock Paper Shotgun</a></p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game/assets/214196/edit" data-id="214196">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/214/196/1b15ba0f1dbd70a93d243529055ea697_large.png?1350512558"></figure>
+</div>
+<p>In the year 2350, human deep space probes discovered a mysterious cloaked star system with planets filled with advanced technology. As the galaxy's empires argued over ownership of the planets, their ancient inhabitants awoke from suspended animation and began exterminating all life in the galaxy. Star by star, the empires crumbled, every inhabited world reduced to irradiated rubble.</p><p>Refugees from dozens of races joined forces for one final attack on the enemy homeworld. They planned to use the alien's own technology to freeze the entire solar system in time, but nature had plans of its own. Ruptures in space-time opened throughout the system, pitching ships back through time and scattering them throughout the galaxy.</p><p><b>"Our ship emerged alone in an unfamiliar time, and we settled on the first habitable planet we could find. Now we go forth to once again tame the wilderness of space, to seek out any allies stranded in the past as we are, and to prevent the future atrocities that left us here. Our great enemy still sleeps, but for how long?" - From cinematic trailer (to come)</b></p><div class="template asset" contenteditable="false" data-edit_url="/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game/assets/215592/edit" data-id="215592">
+<figure><img alt="(Above: Terran planet in-engine, realtime graphics, clouds are work-in-progress)" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/215/592/86f38eaa89f66e457241bf443892a0cd_large.png?1350583551"><figcaption>(Above: Terran planet in-engine, realtime graphics, clouds are work-in-progress)</figcaption></figure>
+</div>
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game/assets/214210/edit" data-id="214210">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/214/210/2e292c052b4856bebc7351016cc8de5f_large.png?1350513008"></figure>
+</div>
+<p>Below is a list of the most important features that we can definitely get into the game for release. All of these features are already in development, some even far enough along to demonstrate in videos:</p><ul>
+<li>
+<b>Traditional turn-based 4X gameplay:</b> Explore, Expand, Exploit and Exterminate. Everything from empire management to fleet combat is turn-based for the most tactical gameplay possible.</li>
+<li>
+<b><b>2D / 3D galaxy map:</b></b> Play in a 3D galaxy map or optionally flatten the map for a classic 2D game. Galaxy sizes range from a handful of stars to hundreds.</li>
+<li>
+<b><b>Sandbox mode:</b> </b>Select a galaxy size, age, and number of AI opponents  to generate a random game. No two games will ever be the same, providing massive replayability.</li>
+<li>
+<b>Custom races:</b> Create a custom race using a point-based system. Use existing race art or upload your own art to create a truly custom race.</li>
+<li>
+<b>Planetary exploration:</b> Explore the surface of procedurally generated planets and scan planets from orbit. You can even have multiple colonies on each planet. Seamlessly zoom down to the surface to build your colonies and zoom back out to explore.</li>
+<li>
+<b>Terraforming planets:</b> Each race is native to a particular type of planet, and you can terraform worlds to suit your needs. If you don't look after a planet, its climate could change over time.</li>
+<li>
+<b>Bomb planets from orbit:</b> Manually select where to drop your bombs for maximum effect. Bombs leave visible craters on the planet's surface, and biogenic weapons can poison oceans and destroy crops. Destroy the ice caps to flood the coastlines or drop enough nukes to trigger a nuclear winter.</li>
+<li>
+<b>Tactical weapons:</b> Warp-capable missiles can attack enemy planets from a distance, wormhole generators can link two systems to get behind enemy lines, and satellites can spy on enemy planets to prepare for an attack.</li>
+<li>
+<b>Real spying:</b> Manually send spies in stealth ships to specific enemy colonies and give them missions to infiltrate certain buildings to steal technology or sabotage it.</li>
+<li>
+<b>A unique colony blueprint system:</b> We've solved the micromanagement problem most 4X games face with our <a href="http://predestinationgame.com/2012/02/27/the-blueprint-system-fixing-the-micromanagement-problem/" target="_blank">optional colony blueprint system</a>. Manage up to hundreds of colonies at once. This takes all of the frustration and repetition out of colony management without sacrificing any direct control.</li>
+<li>
+<b>Turn-based tactical fleet combat:</b> Tactical fleet combat on a hexagonal grid. Directly control individual ships and make squadrons that take their turns together. Unique tactical gameplay with the <a href="http://predestinationgame.com/2012/06/09/tactical-space-combat-a-prototype-design/" target="_blank">reactive strike system</a>.</li>
+<li>
+<b>Custom ships:</b> Design your own ships and pick what modules/weapons they have, so you can design a fleet with a particular strategy in mind.</li>
+<li>
+<b>Achievements:</b> Because sparkly things popping up to tell you that you're awesome is always a good idea!</li>
+</ul><a href="http://predestinationgame.com/2012/10/10/robot-concept-art-character-artist-connor-murphy-in-action/" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game/assets/215954/edit" data-id="215954">
+<figure><img alt="(Above: Art for a robotic race by our character artist Connor Murphy)" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/215/954/dff5186dfb6adef3f4cee41e56edd43a_large.png?1350594797"><figcaption>(Above: Art for a robotic race by our character artist Connor Murphy)</figcaption></figure>
+</div>
+</a>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game/assets/214211/edit" data-id="214211">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/214/211/dbbfe22ff1d2247749dfe2e2895ac077_large.png?1350513073"></figure>
+</div>
+<p>If we raise more than our $25,000 minimum goal, we'll be able to hire a few extra hands and develop additional features. The following is a list of key features that we want to put in the game if budget and time permits:</p><ul>
+<li>
+<b>Online Multiplayer and LAN play:</b> This is something we are committed to adding, as multiplayer is where 4X games shine. Netcode takes a lot of time to develop and debug, so if we can't afford to get it in for release we'll definitely add it after launch as a free update.</li>
+<li>
+<b>3D ship design tool:</b> A simple tool that lets players slot together 
+pre-made ship parts to create a unique look. If we can complete this, players will also be able to share their ship designs on our community website!</li>
+<li>
+<b>Singleplayer missions:</b> We aim to develop a singleplayer campaign to take the player through the 
+game's core storyline, and a series of difficult challenge missions to really test
+ your skills.</li>
+<li>
+<b>Free mission designer and modding tools:</b> We'll publish the 
+mission design tools we build for free, so you can design your own story
+ campaigns or challenge scenarios. We'll let you showcase your work on our community 
+website, and you'll be able to download and play missions other 
+players have designed.</li>
+<li>
+<b>Other ideas:</b> Tactical ground combat, extra races, more buildings, additional ship parts and technologies, 3D fleet combat and colonisable moons are all possible with enough funding.</li>
+<li>Leave a comment with features you'd like to see in the game and we may add them as stretch goals.</li>
+</ul><p>If we reach our funding goal, we'll announce the next stretch goal based on your suggestions and the list above. You can help us reach our current goal by sharing a link to this page on <a href="http://twitter.com/Predestination_" target="_blank">Twitter</a> or <a href="http://facebook.com/predestinationgame" target="_blank">Facebook</a>, or by sending the news to gaming media outlets.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game/assets/214219/edit" data-id="214219">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/214/219/1188df74fbd2c3793c2c8dbf4518e089_large.png?1350513270"></figure>
+</div>
+<p>Everyone on the Predestination team grew up playing strategy games, from land-based games like Populous and Civilization to sci-fi classics K240, UFO: Enemy Unknown and Master of Orion II. These are the games we still break out on cold nights and at LAN parties, and we've all dreamed of how we'd improve them if given the chance. When Brendan finished developing a sci-fi game engine, a 4X strategy game was the obvious first choice.</p><p>The major publishers have been shying away from space 4X games since Master of Orion III flopped in 2003, and it's been left to smaller studios and independent developers to fill the gap ever since. There have been some great space 4X titles since then, but most have used simplified colony management or realtime elements, and each game has only innovated on a handful of features. </p><p><b>Wanting the full package, with turn-based tactical gameplay and truly revolutionary new features, we knew we'd have to make it ourselves</b>.</p><h1><b>Getting Players Involved in Development</b></h1><p>Our goal is to produce Predestination without going to outside investors or publishers who might want to exert creative control over the game. This will be a game funded and guided by you, and as such we'll be able to implement the big features we know 4X fans have been waiting years to get their hands on.</p><p>Most games are produced behind closed doors and only shown to players once beta starts. We want to turn that process on its head and give people a ring-side seat on development all the way through to the game's completion. Being immersed in feedback and constructive criticism throughout the project can only result in a better game, so we'll be publishing all the juicy details of Predestination's development every step of the way.</p><p><b>We need hardcore 4X veterans, strategy gamers, and sci-fi fans -- people who know good games when they see them and won't be afraid to tell us when they don't like something. This project will be a chance for you to not only <a href="http://predestinationgame.com/community/" target="_blank">help develop the space 4X game of your dreams</a> but also to prove to the entire games industry that involving players more closely in the development process works.</b></p><a href="http://predestinationgame.com/2012/08/03/nebulae-and-asteroids-in-ship-combat/" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game/assets/273464/edit" data-id="273464">
+<figure><img alt="(Above: Tactical fleet combat with nebulae and asteroids)" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/273/464/9194c7be4682151b874a63fc3570d7fa_large.png?1353500420"><figcaption>(Above: Tactical fleet combat with nebulae and asteroids)</figcaption></figure>
+</div></a>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game/assets/214220/edit" data-id="214220">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/214/220/8075faa1d302d010567dec4d7e94e351_large.png?1350513301"></figure>
+</div>
+<p>To finish developing Predestination and make it the truly great 4X game we've all been waiting for, we're going to need your support. We need to prove that there's interest in the game so that we can approach media outlets, indie game contests, grant councils, and digital distribution platforms like Steam and Desura. But most importantly, we need your financial support to continue developing the game itself.</p><p><b>We've worked on the game for free so far using placeholder art assets and working in our spare time, but if we 
+want to get to release any time soon then we're going to need enough funding to work on the game full time. Kickstarter is an all-or-nothing funding platform that lets you pledge support for projects, so if we don't reach our minimum goal of $25,000 we won't get any funding and might not be able to finish making Predestination.</b></p><p>$25,000 isn't a lot of money to develop a game on, but our team is small and has very low costs. There are also government finance schemes here in Northern Ireland that we can take advantage of, but most of them require us to have already secured finance from somewhere else like an investor or Kickstarter. Below is a list of the things we need your support for:</p><ul>
+<li>
+<b>3D art budget:</b> To commission 3D models of buildings and ship 
+parts for each race based on concept art.</li>
+<li>
+<b>Audio budget: </b>To produce/license music, sound effects and voiceovers, and buy instrument sets for our composer Dr Daniel Morse.</li>
+<li>
+<b>Tool </b><b>budget</b><b>:</b>To buy tools (a graphics tablet, art supplies and a keyboard that isn't held together with sticky tape) and commercial software licenses (e.g. Visual Studio, Photoshop).</li>
+<li>
+<b><b>Basic living costs:</b> </b>To ensure that the main people on Predestination can work on it full time. Without a full time commitment from the core staff, this project really wouldn't be possible. </li>
+<li>
+<b>Hiring more developers:</b> If we get more than our minimum budget, we'll be able to hire extra developers and contract out additional art work, letting us add extra features.</li>
+<li>
+<b>Other:</b> There are bound to be unexpected costs associated with developing a game and setting up a business. We'll set aside part of the budget to act as a buffer in case something unexpected happens.</li>
+</ul><p>Throughout this project, we'll be working on the game full time for just basic living costs and spending every penny we can on development. We'll be constantly looking for ways to stretch your pledge further and secure additional funding without taking on board investors or a publisher.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game/assets/214225/edit" data-id="214225">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/214/225/a3ab4981a044c1a91122b4ac3de035cf_large.png?1350513388"></figure>
+</div>
+<p>To thank you for backing the project, we have a selection of rewards to choose from. You can support the project for as
+little as $1, but larger pledges will get you additional rewards.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game/assets/214901/edit" data-id="214901">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/214/901/38889ac5f9c1aa8118d031e9cb4788d0_large.png?1350542793"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game/assets/214903/edit" data-id="214903">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/214/903/790d3575922e523219994e870d6cff1e_large.png?1350542907"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game/assets/214904/edit" data-id="214904">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/214/904/f3a9addb1d27724392025288bacf43ac_large.png?1350542919"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game/assets/214905/edit" data-id="214905">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/214/905/093bf8de949a1616b0b884b7b29a11db_large.png?1350542928"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game/assets/214906/edit" data-id="214906">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/214/906/8b6ae5a82ab27f23a8b88ff9e592fe5f_large.png?1350542941"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game/assets/214907/edit" data-id="214907">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/214/907/476c750d8ea90dce6b057bf7cc129f6e_large.png?1350542954"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game/assets/214908/edit" data-id="214908">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/214/908/12fccce2502f293a490d330c97db6a55_large.png?1350542961"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game/assets/214909/edit" data-id="214909">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/214/909/fdde5972e920aad03fdf229f44dbecac_large.png?1350542970"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game/assets/214910/edit" data-id="214910">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/214/910/c1d934f3ea9d341035fbbf38588af6bb_large.png?1350542977"></figure>
+</div>
+
+
+<p>If you have any questions about the rewards, please ask in the comments. Remember that you can upgrade your pledge and select a higher reward tier all the way up until the project's funding deadline.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game/assets/214226/edit" data-id="214226">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/214/226/4e92c4fc77b0b370ada97fc4cde04e30_large.png?1350513419"></figure>
+</div>
+<p><b>Predestination will be distributed digitally with no harsh DRM, and we'll continue updating the game after release for free. </b></p><p>We believe that the way to beat piracy is to make a great game and simply provide a better service than the pirates. If we are funded well enough, buyers will also get access to exclusive community features like sharing ship designs and downloading singleplayer levels other players have made. After release, we'll begin producing expansion packs and micro-DLC packs containing extra races, ship models,
+high-res textures, and new singleplayer missions. The $25 pledge level offers free DLC for life as our thank-you to everyone who believes in fighting piracy without resorting to harsh DRM.</p>
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game/assets/214227/edit" data-id="214227">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/214/227/543ea2050bffa0ec2fc3bbb8a13ef5d7_large.png?1350513438"></figure>
+</div>
+<p><b>Northern Ireland hasn't got much of a
+games industry, so each year hundreds of graduating students move abroad,
+attempt start-ups with poor financial backing, or settle for business and app development when they really want to be making great games. </b></p><p>By supporting this project, you'll be helping us kickstart a whole new game development studio, and a fledgling new industry in our country. The more we exceed our goal, the more qualified people
+we can offer work to who wouldn't be able to find it locally, and the
+better Predestination will be. We aim to work closely with universities during development and hope to eventually be able to offer jobs to emerging talent that might otherwise be lost.</p>
+
+<p>Anyone generous enough to pledge $1,000
+or more will get to design one of Predestination's default races, and a level to go with it! If you represent a development studio or large
+organisation, please consider supporting the emerging Northern
+Ireland games industry by picking the $5,000 studio-level support option. In 
+return, we will give the only thing we can: the recognition your company
+ deserves for supporting the emerging industry. Your company's logo will appear in a thank-you screen at the start of the game, and we'll send you up to 100 copies of the game for your staff so they can see the game they helped make possible.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game/assets/215262/edit" data-id="215262">
+<figure><img alt="(Above: Drill building prototype by local 3D art student Craig Stafford)" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/215/262/690c2f4e579aa0eb96f43eee18330de3_large.png?1350572556"><figcaption>(Above: Drill building prototype by local 3D art student Craig Stafford)</figcaption></figure>
+</div>
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game/assets/214264/edit" data-id="214264">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/214/264/92c17d1d95dea13e594b88c0efa64f88_large.png?1350514282"></figure>
+</div>
+<a href="http://massively.joystiq.com/category/eve-evolved" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game/assets/216535/edit" data-id="216535">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/216/535/4d71ec95f43d7da4010573aef8d72c40_large.png?1350613454"></figure>
+</div></a>
+<p>Brendan started putting 
+together a procedural graphics engine in his spare time several years 
+ago, starting with work from his masters thesis to produce impressive planetary graphics, nebulae and galaxy backgrounds. He completed the engine in January of this year and began using it to develop Predestination. Since then, he's realised that he can't do everything on his own and has expanded the team to a total of seven people. Brendan is single-handedly programming the game in its entirety at this point.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game/assets/269889/edit" data-id="269889">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/269/889/15946fa216aefd8a0fd86b0c44b6f9be_large.png?1353328441"></figure>
+</div>
+
+<p>Tina's job during the project is to oversee all aspects of the development in order to keep us on schedule (mainly by hitting us when we stop working). She will also be managing the community forum, interacting with supporters on a personal level, and making sure we keep everyone up to date with what's going on behind the scenes.  Marketing and PR are also the realm of Tina, enabling the project to get the exposure it needs to become a success.</p><a href="http://www.fifteenovereight.com/blog/?p=9" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game/assets/216617/edit" data-id="216617">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/216/617/7c6c0656dc8b24787ee62e4bd56c83f6_large.png?1350617396"></figure>
+</div></a>
+<p>Steven oversees all 3D modelling and character art, and is directly responsible for designing Predestination's user interfaces and producing concept art for buildings and spaceships.</p><a href="http://www.societyofcomposers.org/members/DanielMorse/" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game/assets/216636/edit" data-id="216636">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/216/636/01398bb9e631da394e4071c97134605f_large.png?1350618815"></figure>
+</div></a>
+<p>Dan's composition style is perfectly suited for Predestination, and he has an <a href="http://www.societyofcomposers.org/members/DanielMorse/" target="_blank">excellent portfolio</a> to prove it. Dan is originally from Hawaii, and came to Northern Ireland to undertake his PhD. All music featured in the game will be original creations that will really immerse the player in our universe.</p><a href="http://craigstafford.blogspot.co.uk/" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game/assets/216642/edit" data-id="216642">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/216/642/d71d2890a88a8a78a8f6f5d1e6281306_large.png?1350619202"></figure>
+</div></a>
+<a href="http://connor-murphy.com" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game/assets/216672/edit" data-id="216672">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/216/672/f1126f248fe3e08220b17e8c58f3bf2b_large.png?1350620222"></figure>
+</div></a>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game/assets/216677/edit" data-id="216677">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/216/677/322caaadf9bfe6d3cc32d4682c05f959_large.png?1350620455"></figure>
+</div>
+<p>Eric has plenty of time to dedicate to the project and an amazing skill-set to work with, so we are very excited by his involvement in the project.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game/assets/214239/edit" data-id="214239">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/214/239/b5fa53d2b1fc93ef698489dbdd70a34d_large.png?1350513637"></figure>
+</div>
+<p><b>We're aiming for release in December 2013, with a feature-complete beta in August 2013, in time for the Indie Games Festival.</b> </p><p>If we get funded over 100%, we may be able to hire extra developers to help get the game finished earlier and add extra features. If the game is still being refined in beta by December 2013, we may delay release to ensure we release the best game possible.</p><p>We currently plan to release on the PC (Windows), with a possible tablet release in the future. The system requirements haven't been finalised, but the game currently runs smoothly on a five year old computer that's below average on the Steam hardware profile and we aim to keep it that way.</p><p><b>The only requirement so far is a Shader Model 3.0 compliant GPU, which almost everyone has, and we can build a fallback shader for people on older systems.</b></p><div class="template asset" contenteditable="false" data-edit_url="/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game/assets/214832/edit" data-id="214832">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/214/832/fdbce6cff0dfba89ece41a5f9611a96f_large.png?1350539013"></figure>
+</div>
+<p><b>I want to thank everyone 
+who backs this project, as it would not be possible without the support pledged through Kickstarter. </b><b>If you want to follow the game's development, check out 
+the links below:</b></p>
+
+<p><b>Blog:</b> <a href="http://predestinationgame.com" target="_blank">http://predestinationgame.com</a></p><p><b>Forum:</b> <a href="http://predestinationgame.com/community" target="_blank">http://predestinationgame.com/community</a></p><p><b>Facebook:</b> <a href="http://facebook.com/predestinationgame" target="_blank">http://facebook.com/predestinationgame</a></p><p><b>Twitter: </b><a href="http://twitter.com/Predestination_" target="_blank">http://twitter.com/Predestination_</a></p>
+</div>
+<div id="risks">
+<h2 class="title grey-dark mt6 mb4">
+<span>Risks and challenges</span>
+<a href="/help/faq/kickstarter%20basics#Acco" class="right normal h5" target="_blank">Learn about accountability on Kickstarter</a>
+<div class="divider clear"></div>
+</h2>
+<p><p>1. COMPETITIVE FAILURE
+<br />The games industry in one of the most saturated and competitive of modern industries.  We have dealt with this by setting an achievable but comfortable Kickstarter target and by hiring a dedicated Project Manager / PR lead to continually work on exposure and funding.  Our Programmer is forging a game in a niche genre that is in high demand due to a lack of AAA titles in the same genre.</p>
+
+<p>2. HUMAN FAILURE
+<br />The project could fail to release due to lack of focus or effort.  To minimise this risk, we have factored the basic living costs of the core team members into the Kickstarter budget so that financial pressure does not detract from the project and those members can work full time on the game.  </p>
+
+<p>3.  TECHNICAL FAILURE
+<br />The project runs the risk of an irreparable fault with the technical components, such as the game engine and coding. Since the engine is our own creation, any issues with compatibility, coding etc. can be dealt with immediately in-house, thus eliminating that potential risk. We keep backups of every stage of development to minimise the risk of major errors ruining progress.  </p>
+
+<p>Our lead programmer is also very well qualified: he has a First Class Masters Degree in Computer Science and his thesis was directly related to the game engine. In fact, our entire team is either currently pursuing third-level education or has already gained an equivalent qualification, thus providing a solid skill base for our project.</p>
+
+<p>4. DISTRIBUTION FAILURE
+<br />Our project is not guaranteed to be accepted by a digital distributor, which could block our entry to market. Kickstarter itself will help minimise this risk: if the project is a success, we will have a strong case that demonstrates substantial interest in the game and makes the game more attractive to distributors.</p></p>
+</div>
+</div>
+<div class="NS-projects-faqs" id="project-faqs">
+<h2 class="title grey-dark mt6 mb4">
+FAQ
+<div class="divider clear"></div>
+</h2>
+<ul class="faqs">
+<li class="faq" id="project_faq_42756">
+<div class="faq-question">
+<a href="#project_faq_42756" name="project_faq_42756">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">What platform are you releasing on, and what about Linux/OSX/Mac support?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>We&#39;re planning an initial release on Windows PC, and will look into other platforms after release. We wouldn&#39;t call Linux/OSC/Mac support out of the question, but right now there are no plans to explicitly support it at launch. It could cost extra money and development time that we may not have available as we&#39;re running on a very tight budget. If this changes, we&#39;ll make an announcement to let you know!</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-12-26T17:57:30-05:00">Wed, Dec 26 2012 5:57 pm EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_42708">
+<div class="faq-question">
+<a href="#project_faq_42708" name="project_faq_42708">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Is shipping included in my donation where it applies, or will there be an extra charge?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>We already can&#39;t thank our backers enough, so we couldn&#39;t possibly charge you guys shipping for your goodies if you pick a reward tier with a physical reward.  Let us take care of shipping for you!</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-11-21T20:51:10-05:00">Wed, Nov 21 2012 8:51 pm EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_42720">
+<div class="faq-question">
+<a href="#project_faq_42720" name="project_faq_42720">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Will there be Diplomacy in Predestination? Will I be able to win games diplomatically?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Yes! We&#39;ll be implementing a similar diplomacy system to Master of Orion II, but with some great new features that we think you&#39;ll love. We&#39;ll post about Predestination&#39;s diplomacy system in an upcoming project update.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-11-22T05:52:29-05:00">Thu, Nov 22 2012 5:52 am EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_42724">
+<div class="faq-question">
+<a href="#project_faq_42724" name="project_faq_42724">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Isn&#39;t Planetary Exploration going to be a lot of micro-management, especially in a huge galaxy?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Planetary Exploration will be slow at the start of the game, but you&#39;ll be able to research technologies that speed it up, like faster scout ships and scanner buildings. There will also be an automatic mode where the scout ships will explore for you. In the late game stages, you&#39;ll be able to research a satellite that can scan an entire planet in one turn, removing the planetary exploration micro-management.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-11-22T06:14:12-05:00">Thu, Nov 22 2012 6:14 am EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_42846">
+<div class="faq-question">
+<a href="#project_faq_42846" name="project_faq_42846">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Do I get the $10 rewards with the other pledge levels?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>You sure do!  Kickstarter doesn&#39;t let us go back and edit the pledge descriptions once someone has pledged to them, but rest assured that the $10 reward of DRM-free digital soundtracks and concept art books will also be given to everyone who picks a reward above $10.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-11-25T19:24:56-05:00">Sun, Nov 25 2012 7:24 pm EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_42851">
+<div class="faq-question">
+<a href="#project_faq_42851" name="project_faq_42851">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">$25,000 isn&#39;t very much to make a game. How can you make Predestination on such a small budget?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>We base in one of the cheapest places to live in the UK, and all of the staff work from home. Three of the team (Lead Developer Brendan, Project Manager Tina and Art Director Steven) share a house that doubles as the office, reducing costs even further. We&#39;ve also already built the game engine over the past few years and coded large parts of the game since January, removing a considerable chunk of the development costs.</p>
+
+<p>$25,000 is the bare minimum we&#39;ll need to work on the game full time for a year, buy the necessary equipment and software licenses, pay business costs, and outsource some of the 3D modelling. We used that as our minimum goal to make sure we got it, but hope to exceed that goal by a large enough margin to be able to add stretch goals like multiplayer and a story campaign.</p>
+
+<p>Belfast also has some government funding schemes that will multiply any private investment we manage to get, so either way we should end up with a lot more than just $25,000 to work with.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-11-25T19:22:40-05:00">Sun, Nov 25 2012 7:22 pm EST</time>
+</div>
+</div>
+</li>
+
+</ul>
+<div class="faq-ask-box">
+<a href="/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game/messages/new?message%5Bto%5D=nyphur&amp;mode=FAQ" class="button button_blue remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Ask a question about Predestination - A turn-based space 4X strategy...">Ask a question</a>
+
+</div>
+</div>
+
+<div class="mt4 ml1 mr1 mb2" id="report-issue-wrap">
+<a href="/login?then=%2Fprojects%2Fnyphur%2Fpredestination-a-turn-based-space-4x-strategy-game" class="button button_grey">Report this project to Kickstarter</a>
+</div>
+</div>
+<div class="NS-projects-rightcol grid_5" id="rightcol">
+<div class="NS_projects__ecom">
+<div class="digits_5 pb2 pl2 pt2" id="stats">
+<h5>
+<div class="num h48 no-margin" data-backers-count="1195" id="backers_count"><data class="Project1533737242" data-format="number" data-value="1195" itemprop="Project[backers_count]">1,195</data></div>
+<span><data class="Project1533737242" data-attr="backers_count" data-format="pluralize" data-value="1195" data-word="Backer">Backers</data></span>
+</h5>
+<h5>
+<div class="num h48 no-margin" data-goal="25000.0" data-percent-raised="1.9959696" data-pledged="49899.24" id="pledged">
+<data class="Project1533737242" data-currency="USD" data-format="shorter_money" data-precision="0" data-value="49899" data-without_code="true" itemprop="Project[pledged]">$49,899</data>
+<span class="money usd project_currency_code"></span>
+</div>
+pledged of
+<span class="money usd no-code">$25,000</span>
+goal
+</h5>
+<span data-duration="37.0" data-end_time="2012-12-28T19:06:21-05:00" data-hours-remaining="0" id="project_duration_data"></span>
+<div class="Project1533737242" data-conditions="[{&quot;!state&quot;:[&quot;canceled&quot;,&quot;suspended&quot;]}]" data-evaluation="true" data-render="&quot;&lt;h5 class=\&quot;poll \&quot; data-dynamic=\&quot;5\&quot; data-end_time=\&quot;2012-12-28T19:06:21-05:00\&quot; data-poll_url=\&quot;https://d2oher2uhvl0ur.cloudfront.net/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game/stats.json\&quot;&gt;\n&lt;div class=\&quot;num h48 no-margin\&quot;&gt;0&lt;/div&gt;\n&lt;span class=\&quot;text\&quot;&gt;seconds to go&lt;/span&gt;\n&lt;/h5&gt;\n&quot;"><h5 class="poll " data-dynamic="5" data-end_time="2012-12-28T19:06:21-05:00" data-poll_url="https://d2oher2uhvl0ur.cloudfront.net/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game/stats.json">
+<div class="num h48 no-margin">0</div>
+<span class="text">seconds to go</span>
+</h5>
+</div></div>
+<div class="Project1533737242" data-conditions="[{&quot;state&quot;:&quot;live&quot;},{&quot;!ended?&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;pr2 pl2\&quot; id=\&quot;pledge-wrap\&quot;&gt;\n&lt;a href=\&quot;/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game/pledge/new?clicked_reward=false\&quot; class=\&quot;button button_green button_box button_block\&quot; id=\&quot;button-back-this-proj\&quot; title=\&quot;Back this project\&quot;&gt;Back This Project &lt;small class=&#39;h6 normal block green-dark&#39;&gt;&lt;span class=\&quot;money usd \&quot;&gt;$1&lt;/span&gt; minimum pledge&lt;/small&gt;&lt;/a&gt;\n&lt;/div&gt;\n&quot;"></div><div class="Project1533737242" data-conditions="[{&quot;state&quot;:&quot;live&quot;}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;p2\&quot; id=\&quot;banner\&quot;&gt;\n&lt;p class=\&quot;tiny_type no-margin\&quot;&gt;\nThis project will be funded on\n&lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;llll z\&quot; datetime=\&quot;2012-12-28T19:06:21-05:00\&quot;&gt;Fri, Dec 28 2012 7:06 pm EST&lt;/time&gt;.\n&lt;/p&gt;\n&lt;/div&gt;\n&quot;"></div></div>
+
+<div class="NS_projects__rightcol_projectby bg-blue-light rounded">
+<div class="p2 clearfix">
+<div class="avatar inline-block align-middle">
+<a href="/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography"><img alt="Avatar.small" class="avatar-small" height="80" src="https://s3.amazonaws.com/ksr/avatars/1354302/Avatar.small.jpg?1354562783" width="80" />
+</a></div>
+<div class="creator-name inline-block align-middle ml1">
+<h6 class="mb1">Project by</h6>
+<h5 class="mb1">
+<a href="/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">Daniel Morse</a>
+</h5>
+<p class="location h6 bold mb1">
+<a href="/discover/places/belfast-belfast-northern-ireland">Belfast, UK</a>
+</p>
+</div>
+</div>
+<div class="creator-details pl2 pr2 pb1">
+<ul class="list-simple h5 mb1">
+<li class="projects-more">
+<span class="ss-icon ss-kickstarter grey-dark margin-right"></span>
+<span class="text">
+<a href="/profile/nyphur/created" class="green-dark bold more-button remote_modal_dialog" data-modal-title="Projects created by Daniel Morse">2 created</a>
+<span class="divider">&middot;</span>
+<a href="/profile/nyphur/backed" class="green-dark bold more-button remote_modal_dialog" data-modal-title="Projects backed by Daniel Morse">13 backed</a>
+</span>
+</li>
+<li>
+<span class="ss-icon ss-facebook margin-right grey-dark"></span>
+<span class="text">
+Has not connected Facebook
+</span>
+</li>
+<li class="links">
+<span class="ss-icon ss-globe margin-right grey-dark"></span>
+<span class="text">
+<a href="http://predestinationgame.com" class="popup" rel="nofollow" target="_blank">predestinationgame.com</a>
+</span>
+</li>
+</ul>
+</div>
+<div class="footer center h5 bold clearfix rounded-bottom clip">
+<a href="/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">See full bio</a>
+<a href="/projects/nyphur/predestination-a-turn-based-space-4x-strategy-game/messages/new?message%5Bto%5D=nyphur" class="remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Send a message to Daniel Morse">Contact me</a>
+
+</div>
+</div>
+
+<ul class="NS-projects-rightcol-rewards rounded clip list mt2" data-reward-count="12" id="what-you-get">
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$10</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+10 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>--------- BE A SUPPORTER ---------
+Receive free digital concept art books, wallpapers and soundtrack downloads as development progresses (all DRM-free, use them how you want). You&#39;ll also get supporter rank in our community forum, where you can discuss ideas for the game.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2012-12-01">Dec 2012</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$20</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+63 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>------ PRE-ORDER THE GAME ------
+Get a DRM-free copy of the game with exclusive kickstarter-only content.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-12-01">Dec 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$25</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+780 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>PRE-ORDER + FREE DLC FOR LIFE
+Support our efforts to beat piracy without resorting to DRM. Get a DRM-free copy of the game with exclusive kickstarter-only content, free DLC for life, and a free copy of every expansion pack we release. We plan to release at least $25 of DLC and at least one expansion pack.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-12-01">Dec 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$40</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+150 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>PRE-ORDER + BETA + GIFT COPY
+Everything in the $25 reward, plus a bonus gift copy of the game to send to a friend. You&#39;ll also get guaranteed access to every beta version and early beta access to the ship design and level design tools.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-12-01">Dec 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$50</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+99 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(1 left of 100)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>-- NAME A STAR + BETA + GIFT --
+Everything in the $40 reward, plus you can name a star system in the game and have your real name appear in a ship crew list! Only 100 available.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-12-01">Dec 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$75</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+6 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(11 left of 17)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>*NEW*- DESIGN YOUR OWN MISSILE -
+Everything in the $40 reward, plus we&#39;ll work with you to design and name a type of planet-to-planet missile (See update #11) based on your own ideas. You could make the missile target specific buildings, destroy certain resources, modify terrain or have any other effect you can think of. You&#39;ll also get a mention in the game credits for your design contribution!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-12-01">Dec 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$100</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+28 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>------- COLLECTOR&#39;S EDITION ------- A limited edition physical DVD of the finished game with bonus extra content, beta access and free DLC for life. We&#39;ll also send you a pack full of goodies: Exclusive posters, a physical soundtrack CD,  and other things that will never be released again after this Kickstarter campaign. Also included are signed personal thank-you post cards from each of the team members, and a free digital gift copy to give to a friend.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-12-01">Dec 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$125</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+28 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(7 left of 35)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>- COMMANDER DELUXE EDITION -
+Everything in the $100 collector&#39;s edition reward, plus you will get to design a military commander or colony leader in the game. You can name your commander, pick a portrait for him and select stats or decide what type of commander he&#39;ll be. You&#39;ll also get a special mention in the game credits for your design contribution. Only 50 available.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-12-01">Dec 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$250</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+4 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(6 left of 10)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>- CONCEPT ART SUPER EDITION -
+You&#39;ll get an original piece of concept art from the game&#39;s development, signed by the artist. In the case of digital concept art, you&#39;ll receive professional prints of the artwork that are guaranteed to be one of a kind. Includes a special thank-you card from the team! *** Includes everything in the $100 collector&#39;s edition reward.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-12-01">Dec 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+4 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(6 left of 10)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>LEVEL DESIGNER PREMIUM EDITION
+We&#39;ll work with you to design your own singleplayer scenario, which will appear in the final game for everyone to play. You will appear in the game credits as a level designer. *** Includes everything in the $100 collector&#39;s edition reward.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-12-01">Dec 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$1,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+6 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(2 left of 8)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>DESIGN YOUR OWN RACE + LEVEL DESIGN + FREE GAMES FOR LIFE!
+We&#39;ll work with you to design your own race, which will be one of the default races in Predestination! Character artist Connor Murphy will paint artwork based on your directions, and you&#39;ll get to decide on stats and a whole background story for the race! We&#39;ll also work with you to produce a singleplayer level that introduces your race and its story. (Your race must fit within the Predestination lore and style, and can&#39;t use any copyrighted designs.) You&#39;ll get a free copy of every game we ever make, and your name will be in the credits of every game we make. *** Also includes a $100 collector&#39;s edition</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-12-01">Dec 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$10,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(1 left of 1)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>--- CORPORATE ENDORSEMENT ---
+This reward is intended for any development studios or companies that want to support our new studio and the emerging Northern Ireland games industry. This reward level comes with a permanent advertisement in the intro to the game with your company&#39;s logo and a message saying that the game was made possible with a generous donation from your company. *** You&#39;ll also get a copy of the game for every employee to show them what they&#39;re helping to sponsor (max 200 copies)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-12-01">Dec 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+</ul>
+
+<div class="p2" id="meta">
+<h5>Funding period</h5>
+<p class="tiny_type">
+<time class="js-adjust" data-format="ll" datetime="2012-11-21T19:06:21-05:00">Nov 21, 2012</time> - 
+<time class="js-adjust" data-format="ll" datetime="2012-12-28T19:06:21-05:00">Dec 28, 2012</time>
+(37 days)
+</p>
+</div>
+</div>
+
+</div>
+
+<a href="#" id="video_mode_tab" style="display: none;">
+View in Video Mode
+</a>
+
+</div>
+</div>
+
+
+</div>
+
+<div class="h5 bg-green-dark" id="mega-footer-wrap">
+<div class="bg-green-dark white full-height" id="footer-newsletter-signup">
+<div class="container py4">
+<div class="grid_8 prefix_4 suffix_4 center mt4">
+<h2>
+Eureka! You've found
+<br>
+our little secret.
+</h2>
+<p>Sign up for our Happening email for all the inside info about arts and culture in the Kickstarter universe and beyond.</p>
+<div class="newsletter_signup">
+<form accept-charset="UTF-8" action="/newsletters/happening/signup" class="overlabels" method="post"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /><input class="hidden" name="authenticity_token" type="hidden" value="KRNgP/xAxsqdscaGZAr3rIFBF0mPPCF3xHxh9e0ro4w=" /></div><input class="hidden" id="location" name="location" type="hidden" value="footer" />
+<textarea class="hide textarea" id="comment" name="comment">
+</textarea>
+<div class="field newsletter">
+<label class="overlabel z1 overlabel-newsletter">Email address</label>
+<input class="text" id="email" name="email" type="text" />
+</div>
+<input class="button button_green submit" name="commit" type="submit" value="Submit" />
+</form>
+
+</div>
+
+</div>
+</div>
+</div>
+<div class="container relative" id="mega-footer">
+<span class="scissors icon-scissors-1"></span>
+<div class="grid_16 alpha omega pt4 pb2" id="mega-footer-links">
+<div class="grid_4 link-group">
+<h5 class="white">About us</h5>
+<ul class="list">
+<li><a href="/year/2013/?ref=footer">2013 highlights</a></li>
+<li><a href="/year/2012?ref=footer">2012 highlights</a></li>
+<li><a href="/team?ref=footer">Who we are</a></li>
+<li><a href="/jobs?ref=footer">Jobs</a></li>
+<li><a href="/press?ref=footer">Press</a></li>
+<li><a href="/help/stats?ref=footer">Stats</a></li>
+<li><a href="/newsletters/weekly">Projects we love</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group">
+<h5><a href="/help?ref=footer" class="white">Help</a></h5>
+<ul class="list">
+<li><a href="/hello?ref=footer">What is Kickstarter?</a></li>
+<li><a href="/help?ref=footer">FAQ</a></li>
+<li><a href="/contact?ref=footer">Support</a></li>
+<li><a href="/help/school?ref=footer">Kickstarter School</a></li>
+<li><a href="/terms-of-use?ref=footer">Terms of Use</a></li>
+<li><a href="/privacy?ref=footer">Privacy Policy</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group alpha omega suffix_1">
+<h5 class="alpha"><a href="/discover/advanced?ref=footer" class="white">Discover</a></h5>
+<ul class="column column-0 grid_2 list">
+<li><a href="/discover/categories/art?ref=footer">Art</a></li>
+<li><a href="/discover/categories/comics?ref=footer">Comics</a></li>
+<li><a href="/discover/categories/dance?ref=footer">Dance</a></li>
+<li><a href="/discover/categories/design?ref=footer">Design</a></li>
+<li><a href="/discover/categories/fashion?ref=footer">Fashion</a></li>
+<li><a href="/discover/categories/film%20&amp;%20video?ref=footer">Film &amp; Video</a></li>
+<li><a href="/discover/categories/food?ref=footer">Food</a></li>
+</ul>
+<ul class="column column-1 grid_2 list">
+<li><a href="/discover/categories/games?ref=footer">Games</a></li>
+<li><a href="/discover/categories/music?ref=footer">Music</a></li>
+<li><a href="/discover/categories/photography?ref=footer">Photography</a></li>
+<li><a href="/discover/categories/publishing?ref=footer">Publishing</a></li>
+<li><a href="/discover/categories/technology?ref=footer">Technology</a></li>
+<li><a href="/discover/categories/theater?ref=footer">Theater</a></li>
+</ul>
+</div>
+<div class="grid_3 link-group">
+<h5 class="white">Hello</h5>
+<ul class="list">
+<li>
+<a href="https://twitter.com/kickstarter"><span class="ss-icon ss-social-regular ss-twitter"></span>
+Twitter
+</a></li>
+<li>
+<a href="https://www.facebook.com/Kickstarter"><span class="ss-icon ss-social-regular ss-facebook"></span>
+Facebook
+</a></li>
+<li>
+<a href="http://kickstarter.tumblr.com"><span class="ss-icon ss-social-regular ss-tumblr"></span>
+Tumblr
+</a></li>
+<li>
+<a href="http://instagram.com/kickstarter"><span class="ss-icon ss-social-regular ss-instagram"></span>
+Instagram
+</a></li>
+<li>
+<a href="https://vine.co/Kickstarter"><span class="ss-icon ss-social-regular ss-vine"></span>
+Vine
+</a></li>
+<li>
+<a href="/blog?ref=footer">Blog</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="grid_16 py4" id="mega-footer-bottom">
+<div class="logo left">
+<a href="/" class="grey-dark"><span class="ss-icon h3">KICKSTARTER</span>
+</a></div>
+<p class="right h5 grey-dark">
+&copy;
+2014
+Kickstarter, Inc.
+</p>
+</div>
+</div>
+</div>
+
+<script>
+  //<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    var analytics_vars = { google_analytics_id : "UA-7621056-1", logged_in : "false", social_user: "false" }
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.mixpanel_id = '75b1d24a516ecfc955eadfadc4910661';
+    window.mixpanel_debug = false;
+  //]]>
+</script>
+
+
+<noscript>
+<img alt="Quantcast" border="0" height="1" src="//secure.quantserve.com/pixel/p-34IbSpw2K94Sg.gif" style="display:none" width="1" />
+</noscript>
+
+
+<script>
+  //<![CDATA[
+    window.benchmark = (typeof window.performance == 'object' && typeof window.performance.mark == 'function');
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    (function (root) {
+      function instrument_function (original) {
+        return function () {
+          try {
+            return original.apply(this, arguments);
+          } catch (e) {
+            if (e.stack && root.Honeybadger) {
+              Honeybadger.notify(e, {
+                current_project : root.current_project,
+                current_user : root.current_user
+              });
+            }
+            throw(e);
+          }
+        };
+      }
+      root.instrument_function = instrument_function;
+    }(this));
+  //]]>
+</script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+
+<script>
+  //<![CDATA[
+    (function(){function c(a){this.local_start_time=new Date;this.settings={cookie_name:"request_time"};for(var b in a)this.settings[b]=a[b];this.get_remote_offset()}c.prototype.get_remote_offset=function(){this.cookie_value=this.read_cookie();var a=new Date(this.cookie_value);if(!this.cookie_value||"Invalid Date"===a.toString()){if(this.remote_offset=this.read_cookie("local_offset"))this.remote_offset=parseInt(this.remote_offset,10)}else this.remote_offset=a-this.local_start_time;"undefined"!==typeof this.remote_offset&& !isNaN(this.remote_offset)?(document.cookie="local_offset="+this.remote_offset+"; path=/",this.is_set=!0):this.is_set=!1};c.prototype.time_units=[["milliseconds",1],["seconds",1E3],["minutes",6E4],["hours",36E5],["days",864E5]];c.prototype.get_units_in_interval=function(a,b){var d=a.replace(/^\w/,function(d){return"get"+d.toUpperCase()});return b[d]()};c.prototype.milliseconds_in_day=function(a){"undefined"===typeof a&&(a=new Date);for(var b=0,d=this.time_units.length-2;0<=d;d--)b+=this.get_units_in_interval(this.time_units[d][0], a)*this.time_units[d][1];return b};c.prototype.milliseconds_in_interval=function(a,b){return this.milliseconds_in_day(b)%a};c.prototype.milliseconds_to_next_interval=function(a,b){return a-this.milliseconds_in_interval(a,b)};c.prototype.pluralize=function(a,b){1===b&&(a=a.replace(/s$/,""));return a};c.prototype.read_cookie=function(a){for(var b=window.document.cookie.split(";"),a=(a||this.settings.cookie_name)+"=",d=0;d<b.length;d++){for(var e=b[d];" "==e.charAt(0);)e=e.substring(1,e.length);if(0== e.indexOf(a))return b=e.substring(a.length,e.length),decodeURIComponent(b).replace(/\+/g," ")}return null};c.prototype.destroy_cookie=function(a){var b=new Date;a||(a=this.settings.cookie_name);b.setTime(b.getTime()-864E5);window.document.cookie=a+"=; expires="+b.toGMTString()+"; path=/"};c.prototype.get_remote_time=function(){var a=new Date,b=a.getTime()+this.remote_offset;return a=a.setTime(b)};window.ksr_page_clock=new c})(); (function(){function c(d,a,b){if(d){this.options={unit_base:{seconds:119,minutes:119,hours:72,days:0},end_phrase:d.getAttribute("data-word")||"to go",count_down:d.getAttribute("data-dynamic")||!1};for(k in b)this.options[k]=b[k];this.clock=a;this.time_units=this.clock.time_units.slice(1);this.element=d;this.clock.is_set&&this.attach()}}function a(){this.elements=[];this.attach()}var b=function(d,a){var b=a||window.document.body,c=d.split("."),g=c[c.length-1],c=1<c.length&&c[0]?c[0]:"*";if(window.document.getElementsByClassName)return b.getElementsByClassName(g); if(b.querySelectorAll)return b.querySelectorAll(d);for(var c=b.getElementsByTagName(c),h=[],i=0,f;f=c[i];i++)b=RegExp("(^|\\s)"+g+"(\\s|$)"),(""+f.className).match(b)&&h.push(f);return h};c.prototype.get_remaining_time=function(){var d=this.remote_end_time-this.clock.get_remote_time();0>d&&(d=0);return d};c.prototype.get_current_unit=function(){for(var d,a=0;a<this.time_units.length&&!(d=this.time_units[a],this.get_remaining_time()<=this.options.unit_base[d[0]]*d[1]);a++);return d};c.prototype.update_element= function(){var a=this.get_current_unit(),b=Math.floor(this.get_remaining_time()/a[1]);isNaN(b)||(this.number_element.innerHTML=b,this.text_element.innerHTML=this.clock.pluralize(a[0],b)+" "+this.options.end_phrase)};c.prototype.valid=function(){return!(!this.number_element||!this.text_element)};c.prototype.attach=function(){function a(){c.update_element();if(c.options.count_down&&0<c.get_remaining_time()){var b=c.get_current_unit();this.timeout=window.setTimeout(a,c.clock.milliseconds_to_next_interval(b[1]))}} var c=this;if(this.remote_end_time_string=this.element.getAttribute("data-end_time"))this.remote_end_time_string.match(/^\d+$/)?(this.remote_end_time=new Date,this.remote_end_time.setTime(this.remote_end_time_string)):this.remote_end_time=new Date(this.remote_end_time_string),this.number_element=b(".num",this.element)[0],this.text_element=b(".text",this.element)[0],this.element.ksr_page_timer=!0,this.valid()&&a()};c.prototype.cancel=function(){this.timeout&&clearTimeout(this.timeout)};a.prototype.loading= !0;a.prototype.stop_finding=function(){this.attach_timers();this.loading=!1;document.addEventListener?document.removeEventListener("DOMContentLoaded",this.stop_finding,!1):document.attachEvent&&"complete"===document.readyState&&document.detachEvent("onreadystatechange",this.stop_finding)};a.prototype.bind_ready=function(){var a=this,b=function(){a.stop_finding.call(a)};document.addEventListener?(document.addEventListener("DOMContentLoaded",b,!1),window.addEventListener("load",b,!1)):document.attachEvent&& (document.attachEvent("onreadystatechange",b),window.attachEvent("onload",b))};a.prototype.attach_timers=function(){for(var a=b("div.ksr_page_timer"),e=0;e<a.length;e++)a[e].ksr_page_timer||(new c(a[e],window.ksr_page_clock),this.elements.push(a[e]))};a.prototype.attach=function(){var a=this;this.bind_ready();(function(){a.attach_timers();a.loading&&window.setTimeout(function(){a.attach_timers()},200)})()};window.ProjectTimer=c;new a})();
+  //]]>
+</script>
+
+<script class="template" id="template-widgets__video_embed_code" type="text/x-tmpl-mustache"><iframe width="{{width}}" height="{{height}}" src="{{{path}}}" frameborder="0" scrolling="no"> </iframe>
+</script><script class="template" id="template-projects__baseball_card_tall" type="text/x-tmpl-mustache"><div class="project-card-wrap project-card-wrap-tall border bg-white rounded clip">
+  <div class="project-card relative project-live {{#successful?}}successful{{/successful?}}">
+    <div class="project-thumbnail pt1 pl1 pr1">
+      <a href="{{urls.web.project}}" target="">
+        <img alt="Photo-little" class="projectphoto-little" src="{{photo.little}}" class="fit">
+      </a>
+    </div>
+    <div class="project-card-interior p1 h6 grey-dark">
+      <h6 class="project-title">
+        <a href="{{urls.web.project}}" target="" class="green-dark">{{name}}</a>
+      </h6>
+      <p class="mb1 ellipsis">
+        by
+        {{creator.name}}
+      </p>
+      <p class="blurb">
+        {{blurb}}
+      </p>
+    </div>
+    <div class="absolute-bottom bg-white rounded-bottom">
+
+      {{#location}}
+        <ul class="p1 list project-meta no-margin h6">
+          <li class="ellipsis">
+            <a href="{{location.urls.web.discover}}" data-location="{{location_json}}" class="grey-dark">
+              <span class="ss-icon ss-location"></span>
+              <span class="location-name">{{location.displayable_name}}</span>
+            </a>
+          </li>
+        </ul>
+      {{/location}}
+
+      <div class="project-stats-wrap pb1 pl1 pr1">
+
+        {{#failed?}}
+          <div class='project-status project-failed h6'>
+            <strong> Funding Unsuccessful</strong><br />
+            <span class="grey-dark">Project ended on {{formatted_deadline}}</span>
+          </div>
+        {{/failed?}}
+
+        {{#canceled?}}
+          <div class='project-status project-canceled h6'>
+            <strong> Funding Canceled</strong><br />
+            <span class="grey-dark">Project canceled on {{formatted_state_changed_at}}</span>
+          </div>
+        {{/canceled?}}
+
+        {{#successful?}}
+          <div class='project-pledged-successful bg-green white h6 pl1 pr1 mb1'>
+            <strong>Successful!</strong>
+          </div>
+        {{/successful?}}
+
+        {{#live_or_successful?}}
+          {{#live?}}
+            <div class="project-pledged-wrap bg-grey clip mb1">
+              <div class="project-pledged bg-green full-height" style="width: {{percent_raised_to_100}}%"></div>
+            </div>
+          {{/live?}}
+          <ul class="project-stats list no-margin h6 no-wrap">
+            <li class="first funded inline-block mr1">
+              <strong class="block h6">{{percent_raised_rounded}}%</strong>
+              <span class="grey-dark">funded</span>
+            </li>
+            <li class="pledged inline-block mr1">
+              <strong class="block h6">{{currency_symbol}}{{formatted_money}}</strong>
+              <span class="grey-dark">pledged</span>
+            </li>
+            {{#successful?}}
+              <li class="last successful inline-block">
+                <strong class="block h6">Funded</strong>
+                <div class="deadline grey-dark">{{formatted_deadline}}</div>
+              </li>
+            {{/successful?}}
+            {{#live?}}
+              <li class="last ksr_page_timer inline-block" data-end_time="{{javascript_deadline}}">
+                <strong class="block h6">
+                  <div class="num">30</div>
+                </strong>
+                <div class="span text grey-dark" data-word="left">days to go</div>
+              </li>
+            {{/live?}}
+          </ul>
+        {{/live_or_successful?}}
+      </div>
+    </div>
+  </div>
+</div>
+
+{{#friends_backing?}}
+  <div class="friend_project_context">
+    <div class="friend_facepile">
+      {{#truncated_friends}}
+        <img src="{{avatar.thumb}}" class="{{#has_metadata?}}small{{/has_metadata?}}">
+      {{/truncated_friends}}
+    </div>
+    <p class="friend_namepile">
+      {{{escaped_sentence}}}
+    </p>
+  </div>
+{{/friends_backing?}}
+</script><script class="template" id="template-projects__video_mode" type="text/x-tmpl-mustache"><a href='#' id='video_mode_close' class='close_button z2'><span class='ss-icon ss-delete'></span></a>
+
+<div class='title_card z1 {{context_classes}}' style="display:none;">
+  <div class='interior'>
+    <h2 class='project_title normal_weight'>{{name}}</h2>
+    <p class='blurb'>{{blurb}}</p>
+    <nav class='bar'>
+      <a id='play_button' class='left play' href='#'>
+        <span class='play_active'>
+          <span class='ss-icon ss-play'></span>
+          Play
+        </span>
+        <span class='pause_active'>
+          <span class='ss-icon ss-pause'></span>
+          Pause
+        </span>
+      </a>
+      {{#logged_in}}
+        <div class='remind right'>
+          {{#if_not_starred}}
+            <a class='follow' href='{{urls.web.project}}/watch'><span class='ss-icon ss-star'></span></a>
+          {{/if_not_starred}}
+          {{#if_starred}}
+            <a class='unfollow' href='{{urls.web.project}}/unwatch'><span class='ss-icon ss-star active'></span></a>
+          {{/if_starred}}
+        </div>
+      {{/logged_in}}
+      <a class='right explore button button_green small' href='#'>Explore this project</a>
+    </nav>
+  </div>
+</div>
+
+<div class='channel_controls z1'>
+  <a href='#' class='{{#playlist_is_location}}selected {{/playlist_is_location}}location'>Something else near {{location.first_name}} <span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_featured}}selected {{/playlist_is_featured}}featured'>Something different<span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_category}}selected {{/playlist_is_category}}category'>Something else in {{category.name}} <span class='ss-icon ss-navigateright'></span></a>
+</div>
+
+<div class='project_video' style='background-image: url('{{photo.full}}')'>
+  <div class='cover'>
+    <video>
+      <source src='{{video.high}}' type='video/mp4'/>
+      <source src='{{video.webm}}' type='video/webm'/>
+    </video>
+  </div>
+</div>
+</script><script class="template" id="template-site__video_mode_fourohfour" type="text/x-tmpl-mustache"><section class='four_oh_four'>
+  <p class='big_type'>
+    Looks like you've reached the end of the line! <br />Check out <a class="another" href='#'>another channel</a> or <a href='/discover'>browse projects in discover</a>.
+  </p>
+</section>
+</script>
+
+<script id="schwamm_formatting_options" type="text/javascript">
+//<![CDATA[
+(function(){window.formatters = window.formatters || {}; var formatting_options = {"distance_date_intervals":[[5,"just now"],[29,"less than a minute ago"],[89,"1 minute ago"],[2640,"%m minutes ago"],[5340,"about 1 hour ago"],[82800,"about %h hours ago"],[147600,"1 day ago"],[604800,"%d days ago"],[15552000,"on %t"],[0,"on %y"]],"currency_symbol_mappings":{"AFN":"\u060b","ALL":"Lek","ARS":"$","AUD":"$","AWG":"\u0192","AZN":"\u043c\u0430\u043d","BAM":"KM","BBD":"$","BGN":"\u043b\u0432","BMD":"$","BND":"$","BOB":"$b","BRL":"R$","BSD":"$","BWP":"P","BYR":"p.","BZD":"BZ$","CAD":"$","CLP":"$","CNY":"\u00a5","COP":"$","CRC":"\u20a1","CUP":"\u20b1","CZK":"K\u010d","DKK":"kr","DOP":"RD$","EGP":"\u00a3","EUR":"\u20ac","FJD":"$","FKP":"\u00a3","GBP":"\u00a3","GIP":"\u00a3","GTQ":"Q","GYD":"$","HKD":"$","HNL":"L","HRK":"kn","HUF":"Ft","IDR":"Rp","ILS":"\u20aa","IRR":"\ufdfc","ISK":"kr","JMD":"J$","JPY":"\u00a5","KGS":"\u043b\u0432","KHR":"\u17db","KPW":"\u20a9","KRW":"\u20a9","KYD":"$","KZT":"\u043b\u0432","LAK":"\u20ad","LBP":"\u00a3","LKR":"\u20a8","LRD":"$","LTL":"Lt","LVL":"Ls","MKD":"\u0434\u0435\u043d","MNT":"\u20ae","MUR":"\u20a8","MXN":"$","MYR":"RM","MZN":"MT","NAD":"$","NGN":"\u20a6","NIO":"C$","NOK":"kr","NPR":"\u20a8","NZD":"$","OMR":"\ufdfc","PAB":"B/.","PEN":"S/.","PHP":"\u20b1","PKR":"\u20a8","PLN":"z\u0142","PYG":"Gs","QAR":"\ufdfc","RON":"lei","RSD":"\u0414\u0438\u043d.","RUB":"\u0440\u0443\u0431","SAR":"\ufdfc","SBD":"$","SCR":"\u20a8","SEK":"kr","SGD":"$","SHP":"\u00a3","SOS":"S","SRD":"$","SVC":"$","SYP":"\u00a3","THB":"\u0e3f","TRY":"TL","TTD":"TT$","TWD":"NT$","UAH":"\u20b4","USD":"$","UYU":"$U","UZS":"\u043b\u0432","VEF":"Bs","VND":"\u20ab","YER":"\ufdfc","ZAR":"R"},"currency_trailing_code_mappings":{"AUD":true,"CAD":true,"NZD":true,"USD":true},"currency_formats":["money","shorter_money"]}; for (key in formatting_options) {window.formatters[key] = formatting_options[key]};}());
+//]]>
+</script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("begin_base.js_tag");}
+  //]]>
+</script>
+<script src="https://d297h9he240fqh.cloudfront.net/assets/packages/base-45cdab84617ddfb8905b7cddc8500c19.js" type="text/javascript"></script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("end_base.js_tag");}
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    document.domain='kickstarter.com';
+  //]]>
+</script>
+
+<iframe height="0" id="api_xdreceiver" src="https://api.kickstarter.com/xdreceiver/85e6.html" style="display: none;" width="0"></iframe>
+
+
+
+<div id="fb-root"></div>
+<script>
+  //<![CDATA[
+    var channelUrl = window.location.protocol + "//" + window.location.host + "/channel.html",
+      skip_autologin = $('body').is('.skip_autologin');
+    
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId: window.fb_app_id,
+        channelUrl: channelUrl,
+        status: true,    // check login status
+        cookie: true,    // enable cookies to allow the server to access the session
+        xfbml: true,     // parse XFBML
+        logging: false   // turn off logging
+      });
+    
+      FB.getLoginStatus(function (response) {
+        if (response.status === 'connected') {
+          if (read_cookie("logout_from_fb")) {
+            FB.logout();
+            destroy_cookie("logout_from_fb");
+          } else if (!skip_autologin) {
+            $.get("/fb/autologin", {'fbsr': response.authResponse.signedRequest});
+          } else if (false && 0 == response.authResponse.userID) {
+            $.get("/fb/refresh", {'fbsr': response.authResponse.signedRequest});
+          }
+        } else {
+          if (read_cookie("logout_from_fb")) {
+            destroy_cookie("logout_from_fb");
+          }
+        }
+      })
+    
+      $(document).trigger('fb:loaded');
+    };
+    
+    
+    // Load the SDK Asynchronously
+    (function(d){
+      var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+      js = d.createElement('script'); js.id = id; js.async = true;
+      js.src = "//connect.facebook.net/en_US/all.js";
+      d.getElementsByTagName('head')[0].appendChild(js);
+    }(document));
+  //]]>
+</script>
+
+
+</body>
+</html>

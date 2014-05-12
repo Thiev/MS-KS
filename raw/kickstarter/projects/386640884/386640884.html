@@ -1,0 +1,2178 @@
+<!DOCTYPE html>
+<html class="projects_show  fontface no-js" lang="en">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# kickstarter: http://ogp.me/ns/fb/kickstarter#">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-5.newrelic.com","errorBeacon":"jserror.newrelic.com","licenseKey":"b04b883ad2","applicationID":"11086","transactionName":"cFteRUULX1wHFhtIEFxeVVJDFxxDCgtD","queueTime":9,"applicationTime":420,"ttGuid":"","agentToken":null,"agent":"js-agent.newrelic.com/nr-411.min.js"}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"Vw4BVEVSCQMIUg=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e){function n(t,e,n){n||(n={});for(var r=o[t],a=r&&r.length||0,s=n[i]||(n[i]={}),u=0;a>u;u++)r[u].apply(s,e);return s}function r(t,e){var n=o[t]||(o[t]=[]);n.push(e)}var o={},i="nr@context";e.exports={on:r,emit:n}},{}],2:[function(t){function e(t,e,n,i,s){return u?u-=1:r("err",[s||new UncaughtException(t,e,n)]),"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t(5),a=window.onerror,s=!1,u=0;t("loader").features.push("err"),window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(d){"stack"in d&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(4),s=!0)}i.on("fn-start",function(){s&&(u+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&u>0&&(u-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:4,3:3,4:6,5:1,6:14,handle:"D5DuLP",loader:"G9z0Bl"}],3:[function(t){function e(t){r.inPlace(t,["addEventListener","removeEventListener"],"-",n)}function n(t){return t[1]}var r=t(1),o=(t(3),t(2));if(e(window),"getPrototypeOf"in Object){for(var i=document;i&&!i.hasOwnProperty("addEventListener");)i=Object.getPrototypeOf(i);i&&e(i);for(var a=XMLHttpRequest.prototype;a&&!a.hasOwnProperty("addEventListener");)a=Object.getPrototypeOf(a);a&&e(a)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&e(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=e["nr@wrapped"]?t[1]=e["nr@wrapped"]:e["nr@wrapped"]=t[1]=r(e,"fn-"):"function"==typeof e.handleEvent&&r.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:15,2:1,3:14}],4:[function(t){var e=(t(3),t(1)),n=t(2);e.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=e(t[0],"fn-")})},{1:15,2:1,3:14}],5:[function(t){function e(t){var e=t[0];"string"==typeof e&&(e=new Function(e)),t[0]=n(e,"fn-")}var n=(t(3),t(1)),r=t(2);n.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",e)},{1:15,2:1,3:14}],6:[function(t){function e(){o.inPlace(this,s,"fn-")}function n(t,e){o.inPlace(e,["onreadystatechange"],"fn-")}function r(t,e){return e}var o=t(1),i=t(2),a=window.XMLHttpRequest,s=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];window.XMLHttpRequest=function(t){var n=new a(t);try{i.emit("new-xhr",[],n),o.inPlace(n,["addEventListener","removeEventListener"],"-",function(t,e){return e}),n.addEventListener("readystatechange",e,!1)}catch(r){try{i.emit("internal-error",r)}catch(s){}}return n},window.XMLHttpRequest.prototype=a.prototype,o.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",r),i.on("send-xhr-start",n),i.on("open-xhr-start",n)},{1:15,2:1}],7:[function(t){function e(){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;u>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,d="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=e(d);if(f&&(r.rxSize=f),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}t("loader").features.push("xhr");var o=t("handle"),i=t(1),a=t(5),s=["load","error","abort","timeout"],u=s.length,d=t(2);t(3),t(4),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var d=e(o);d&&(r.txSize=d)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",e)}catch(r){}}};for(var f=0;u>f;f++)n.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&e()},{1:8,2:11,3:3,4:6,5:1,handle:"D5DuLP",loader:"G9z0Bl"}],8:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e){var n=r[t];return n?n.apply(this,e):(o[t]||(o[t]=[]),void o[t].push(e))}var r={},o={};e.exports=n,n.queues=o,n.handlers=r},{}],11:[function(t,e){function n(t){if(!t||"object"!=typeof t&&"function"!=typeof t)return-1;if(t===window)return 0;if(o.call(t,"__nr"))return t.__nr;try{return Object.defineProperty(t,"__nr",{value:r,writable:!0,enumerable:!1}),r}catch(e){return t.__nr=r,r}finally{r+=1}}var r=1,o=Object.prototype.hasOwnProperty;e.exports=n},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&u&&u.body){p.proto="https"===c.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=u.createElement("script");e.src=p.proto+t.agent,u.body.appendChild(e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,u=s.document,d="addEventListener",f="attachEvent",c=(""+location).split("?")[0],p=e.exports={offset:i(),origin:c,features:[]};u[d]?(u[d]("DOMContentLoaded",o,!1),s[d]("load",n,!1)):(u[f]("onreadystatechange",r),s[f]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],14:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],15:[function(t,e){function n(t,e,r,s){function nrWrapper(){try{var n,a=u(arguments),d=this,f=r&&r(a,d)||{}}catch(c){i([c,"",[a,d,s],f])}o(e+"start",[a,d,s],f);try{return n=t.apply(d,a)}catch(p){throw o(e+"err",[a,d,p],f),p}finally{o(e+"end",[a,d,n],f)}}return a(t)?t:(e||(e=""),nrWrapper[n.flag]=!0,nrWrapper)}function r(t,e,r,o){r||(r="");var i,s,u,d="-"===r.charAt(0);for(u=0;u<e.length;u++)s=e[u],i=t[s],a(i)||(t[s]=n(i,d?s+r:r,o,s,t))}function o(t,e,n){try{s.emit(t,e,n)}catch(r){i([r,t,e,n])}}function i(t){try{s.emit("internal-error",t)}catch(e){}}function a(t){return!(t&&"function"==typeof t&&t.apply&&!t[n.flag])}var s=t(1),u=t(2);e.exports=n,n.inPlace=r,n.flag="nr@wrapper"},{1:1,2:14}]},{},["G9z0Bl",2,7]);</script><script>
+  //<![CDATA[
+    docElement = this.document.documentElement;
+    docElement.className=docElement.className.replace(/\bno-js\b/,'') + 'js';
+  //]]>
+</script>
+<title>The 7th Guest 3: The Collector by Rob Landeros &mdash; Kickstarter</title><script>
+  //<![CDATA[
+    window.report_errors = true;
+    window.honeybadger_configuration = {
+      api_key : "02ab109335c0dd1a93506d92f22217a7",
+      environment : "production",
+      component : "projects",
+      action : "show",
+      onerror : false
+    };
+  //]]>
+</script>
+
+
+<!--[if lt IE 9]>
+  <script src="//html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta content="telephone=no" name="format-detection">
+
+<!--[if !IE]> -->
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base-9f623ad5d021a188cfb2d68a0cdf7a7b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<!-- <![endif]-->
+<!--[if IE]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base_blessed-2640c72487552f9a2ef9f2620b4af860.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<!--[if lte IE 9]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_nine-a93fe10530f175f96c4078b7e070d7e1.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 8]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_eight-f75aeb274436f94a0d243774456b1c62.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 7]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie-c019c01acd3a96588b346cf577a3504f.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_seven-5a3d2cef660cd281fd844b04b2397dbb.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if IE 6]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_six-e4d3caf76e405fe19aee6ece8bda701b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<link href="https://d297h9he240fqh.cloudfront.net/favicon.png" rel="icon" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-precomposed-7b603dba7cf80e4acc57d94a991bebbd.png" rel="apple-touch-icon-precomposed" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-ipad-precomposed-3176f72977daf43dee3b0d348484dc01.png" rel="apple-touch-icon-precomposed" sizes="72x72" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-iphone4-precomposed-b93b70168cd8492c843d0fea873c7f83.png" rel="apple-touch-icon-precomposed" sizes="114x114" type="image/png">
+<link href="https://www.kickstarter.com/services/oembed?url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Froblanderos%2Fthe-7th-guest-3-the-collector" rel="alternate" title="The 7th Guest 3: The Collector Script Tag oEmbed" type="application/json+oembed">
+<link rel="alternate" type="application/atom+xml" title="The 7th Guest 3: The Collector : Kickstarter" href="https://www.kickstarter.com/projects/roblanderos/the-7th-guest-3-the-collector/posts.atom" />
+<meta property="twitter:app:id:iphone" content="596961532"/>
+<meta property="twitter:app:name:iphone" content="Kickstarter"/>
+<meta property="twitter:app:url:iphone" content="ksr://www.kickstarter.com/projects/roblanderos/the-7th-guest-3-the-collector"/>
+<meta name="video_height" content="360"/>
+<meta name="video_width" content="640"/>
+<meta name="video_type" content="application/x-shockwave-flash"/>
+<meta name="title" content="Kickstarter &gt;&gt; The 7th Guest 3: The Collector by Rob Landeros"/>
+<meta name="description" content="Rob Landeros is raising funds for The 7th Guest 3: The Collector on Kickstarter! 
+
+ The third game in the classic The 7th Guest series from Trilobyte Games."/>
+<meta name="robots" content="noindex"/>
+<meta property="og:title" content="The 7th Guest 3: The Collector"/>
+<meta property="og:type" content="kickstarter:project"/>
+<meta property="og:image" content="https://s3.amazonaws.com/ksr/projects/707610/photo-main.jpg?1397850370"/>
+<meta property="og:url" content="https://www.kickstarter.com/projects/roblanderos/the-7th-guest-3-the-collector"/>
+<meta property="og:site_name" content="Kickstarter"/>
+<meta property="fb:app_id" content="69103156693"/>
+<meta property="og:description" content="The third game in the classic The 7th Guest series from Trilobyte Games."/>
+<meta property="kickstarter:creator" content="https://www.kickstarter.com/profile/roblanderos"/>
+<meta property="twitter:url:landing_url" content="https://www.kickstarter.com/projects/roblanderos/the-7th-guest-3-the-collector"/>
+<meta property="twitter:card" content="2427656750:kickstarter_project"/>
+<meta property="twitter:site" content="@kickstarter"/>
+<meta property="twitter:site:id" content="16186995"/>
+<meta property="twitter:text:title" content="The 7th Guest 3: The Collector"/>
+<meta property="twitter:text:artist" content="Rob Landeros"/>
+<meta property="twitter:text:backers" content="1713"/>
+<meta property="twitter:text:pledged" content="$121,318 USD"/>
+<meta property="twitter:text:time" content="0 seconds"/>
+<meta property="twitter:text:location" content="Medford, OR"/>
+<meta property="twitter:image:location_image" content="https://d3mlfyygrfdi2i.cloudfront.net/b40e/pin.png"/>
+<meta property="twitter:text:description" content="The third game in the classic The 7th Guest series from Trilobyte Games."/>
+<meta property="twitter:image:media" content="https://s3.amazonaws.com/ksr/projects/707610/photo-main.jpg?1397850370"/>
+<meta property="twitter:image:width" content="640"/>
+<meta property="twitter:image:height" content="480"/>
+<meta property="twitter:player:stream:url" content="https://d2pq0u4uni88oo.cloudfront.net/projects/707610/video-320201-h264_base.mp4"/>
+<meta property="twitter:player:stream:content" content="video/mp4"/>
+<meta property="twitter:player:url" content="https://www.kickstarter.com/projects/roblanderos/the-7th-guest-3-the-collector/widget/video.html"/>
+<meta property="twitter:player:height" content="360"/>
+<meta property="twitter:player:width" content="640"/>
+<meta property="twitter:maxage" content="60"/>
+<meta property="og:video" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F707610%2Fvideo-320201-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F707610%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Rob+Landeros&amp;project_title=The+7th+Guest+3%3A+The+Collector&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Froblanderos%2Fthe-7th-guest-3-the-collector&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:secure_url" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F707610%2Fvideo-320201-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F707610%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Rob+Landeros&amp;project_title=The+7th+Guest+3%3A+The+Collector&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Froblanderos%2Fthe-7th-guest-3-the-collector&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:height" content="360"/>
+<meta property="og:video:width" content="640"/>
+<meta property="og:video:type" content="application/x-shockwave-flash"/>
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="M8Yex/JaCbB0yD4EQ5L5B5UVoaNrxCe8gTSwOjbpYJ4=" name="csrf-token" />
+<script type="text/javascript">
+  var _sift = _sift || [];
+  _sift.push(['_setAccount', '637102']);
+  _sift.push(['_setUserId', '']);
+  _sift.push(['_trackPageview']);
+
+  (function() {
+    function loadSift() {
+      var sift, s;
+      if (root.visitor_id) {
+        _sift.push(['_setSessionId', root.visitor_id]);
+      }
+      sift = document.createElement('script');
+      sift.type = 'text/javascript';
+      sift.async = true;
+      sift.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dtlilztwypawv.cloudfront.net/s.js';
+      s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(sift, s);
+    }
+    if (window.attachEvent) {
+      window.attachEvent('onload', loadSift);
+    } else {
+      window.addEventListener('load', loadSift, false);
+    }
+  })();
+</script>
+<link href="http://kck.st/Hz42dM" rel="shorturl">
+<link href="https://www.kickstarter.com/projects/roblanderos/the-7th-guest-3-the-collector" rel="canonical">
+<link href="https://s3.amazonaws.com/ksr/projects/707610/photo-med.jpg?1397850370" rel="image_src">
+<link href="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F707610%2Fvideo-320201-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F707610%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Rob+Landeros&amp;project_title=The+7th+Guest+3%3A+The+Collector&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Froblanderos%2Fthe-7th-guest-3-the-collector&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque" rel="video_src">
+<script>
+  //<![CDATA[
+    window.current_checkout = "{&quot;id&quot;:0,&quot;domestic&quot;:null,&quot;amount&quot;:0.0,&quot;updated_at&quot;:0,&quot;created_at&quot;:0}";
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.current_ip = '94.209.101.212';
+    window.current_ip_datacenter = 'false';
+    window.enabled_features = {"elasticsearch":true,"security_history_read":true,"security_history_write":true,"advanced_discovery_es":true,"ios_crashlytics":true,"ios_mixpanel":true,"stories_veronica_mars":true,"veronica_mars_hero":true,"password_reset_banner":true};
+    window.fb_app_id = '69103156693';
+    
+    var _sf_startpt=(new Date()).getTime();
+    
+    window.current_project = "{&quot;id&quot;:386640884,&quot;name&quot;:&quot;The 7th Guest 3: The Collector&quot;,&quot;blurb&quot;:&quot;The third game in the classic The 7th Guest series from Trilobyte Games.&quot;,&quot;goal&quot;:435000.0,&quot;pledged&quot;:121318.87,&quot;state&quot;:&quot;failed&quot;,&quot;slug&quot;:&quot;the-7th-guest-3-the-collector&quot;,&quot;disable_communication&quot;:false,&quot;country&quot;:&quot;US&quot;,&quot;currency&quot;:&quot;USD&quot;,&quot;currency_symbol&quot;:&quot;$&quot;,&quot;currency_trailing_code&quot;:true,&quot;deadline&quot;:1386565020,&quot;state_changed_at&quot;:1386565027,&quot;created_at&quot;:1381031849,&quot;launched_at&quot;:1383176052,&quot;backers_count&quot;:1713,&quot;photo&quot;:{&quot;full&quot;:&quot;https://s3.amazonaws.com/ksr/projects/707610/photo-full.jpg?1397850370&quot;,&quot;ed&quot;:&quot;https://s3.amazonaws.com/ksr/projects/707610/photo-ed.jpg?1397850370&quot;,&quot;med&quot;:&quot;https://s3.amazonaws.com/ksr/projects/707610/photo-med.jpg?1397850370&quot;,&quot;little&quot;:&quot;https://s3.amazonaws.com/ksr/projects/707610/photo-little.jpg?1397850370&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/projects/707610/photo-small.jpg?1397850370&quot;,&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/projects/707610/photo-thumb.jpg?1397850370&quot;,&quot;1024x768&quot;:&quot;https://s3.amazonaws.com/ksr/projects/707610/photo-1024x768.jpg?1397850370&quot;,&quot;1536x1152&quot;:&quot;https://s3.amazonaws.com/ksr/projects/707610/photo-1536x1152.jpg?1397850370&quot;},&quot;creator&quot;:{&quot;id&quot;:1559170459,&quot;name&quot;:&quot;Rob Landeros&quot;,&quot;slug&quot;:&quot;roblanderos&quot;,&quot;avatar&quot;:{&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/8274919/rob_fan003.thumb.jpg?1383726580&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/8274919/rob_fan003.small.jpg?1383726580&quot;,&quot;medium&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/8274919/rob_fan003.medium.jpg?1383726580&quot;},&quot;urls&quot;:{&quot;web&quot;:{&quot;user&quot;:&quot;https://www.kickstarter.com/profile/roblanderos&quot;},&quot;api&quot;:{&quot;user&quot;:&quot;https://api.kickstarter.com/v1/users/1559170459?signature=1399954719.589d8217f519715096089e9ff6c1ed6306c94ec6&quot;}}},&quot;location&quot;:{&quot;id&quot;:2448929,&quot;name&quot;:&quot;Medford&quot;,&quot;slug&quot;:&quot;medford-or&quot;,&quot;short_name&quot;:&quot;Medford, OR&quot;,&quot;displayable_name&quot;:&quot;Medford, OR&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:&quot;OR&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/medford-or&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/medford-or&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1399952075.56428477ab504ad797cd43619a15b72973300731&amp;woe_id=2448929&quot;}}},&quot;category&quot;:{&quot;id&quot;:35,&quot;name&quot;:&quot;Video Games&quot;,&quot;slug&quot;:&quot;games/video games&quot;,&quot;position&quot;:7,&quot;parent_id&quot;:12,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;http://www.kickstarter.com/discover/categories/games/video%20games&quot;}}},&quot;urls&quot;:{&quot;web&quot;:{&quot;project&quot;:&quot;https://www.kickstarter.com/projects/roblanderos/the-7th-guest-3-the-collector&quot;,&quot;project_short&quot;:&quot;http://kck.st/Hz42dM&quot;,&quot;updates&quot;:&quot;https://www.kickstarter.com/projects/roblanderos/the-7th-guest-3-the-collector/posts&quot;},&quot;api&quot;:{&quot;project&quot;:&quot;https://api.kickstarter.com/v1/projects/386640884?signature=1399954719.1fa788c724ca8a40155430b5ced79bafeeb354ee&quot;,&quot;comments&quot;:&quot;https://api.kickstarter.com/v1/projects/386640884/comments?signature=1399954719.ba6740a4b38a7a9c8ea6b3a6503e464af20f60cc&quot;,&quot;updates&quot;:&quot;https://api.kickstarter.com/v1/projects/386640884/updates?signature=1399954719.8966377f75d95e6bb29f448acc70e1f3fdb0840e&quot;}},&quot;updated_at&quot;:1399662905,&quot;failed_at&quot;:1386565027,&quot;video&quot;:{&quot;id&quot;:320201,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/707610/video-320201-h264_high.mp4?2013&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/707610/video-320201-h264_base.mp4?2013&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/707610/video-320201-webm.webm?2013&quot;,&quot;width&quot;:640,&quot;height&quot;:360,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/707610/video-320201-h264_base.jpg?2013&quot;},&quot;comments_count&quot;:1216,&quot;updates_count&quot;:27,&quot;rewards&quot;:[{&quot;id&quot;:0,&quot;minimum&quot;:1,&quot;reward&quot;:&quot;No Reward&quot;},{&quot;id&quot;:2090653,&quot;minimum&quot;:1.0,&quot;reward&quot;:&quot;Temp Worker - Trilobyte Games&#39; undying gratitude.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1385856000,&quot;project_id&quot;:386640884,&quot;backers_count&quot;:47,&quot;updated_at&quot;:1386561028},{&quot;id&quot;:2043827,&quot;minimum&quot;:5.0,&quot;reward&quot;:&quot;Laborer - The above, plus: A surprise gift.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1388534400,&quot;project_id&quot;:386640884,&quot;backers_count&quot;:26,&quot;updated_at&quot;:1386523486},{&quot;id&quot;:2090636,&quot;minimum&quot;:10.0,&quot;reward&quot;:&quot;Dry Waller - All the above, plus: Ringtones and outgoing phone messages by Henry Stauf.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1385856000,&quot;project_id&quot;:386640884,&quot;backers_count&quot;:9,&quot;updated_at&quot;:1385793762},{&quot;id&quot;:2043836,&quot;minimum&quot;:20.0,&quot;reward&quot;:&quot;Apprentice - Codes for free download of PC, Mac or Linux versions.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1443657600,&quot;project_id&quot;:386640884,&quot;backers_count&quot;:570,&quot;updated_at&quot;:1386563696},{&quot;id&quot;:2117619,&quot;minimum&quot;:25.0,&quot;reward&quot;:&quot;Surveyor - All of the above, plus: Free download of iOS version.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1443657600,&quot;project_id&quot;:386640884,&quot;backers_count&quot;:179,&quot;updated_at&quot;:1386556271},{&quot;id&quot;:2090611,&quot;minimum&quot;:30.0,&quot;reward&quot;:&quot;Framer - All of the above, plus: In game credits.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1443657600,&quot;project_id&quot;:386640884,&quot;backers_count&quot;:142,&quot;updated_at&quot;:1386562597},{&quot;id&quot;:2090642,&quot;minimum&quot;:40.0,&quot;reward&quot;:&quot;General Contractor - All of the above, plus: digital soundtrack album.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1443657600,&quot;project_id&quot;:386640884,&quot;backers_count&quot;:110,&quot;updated_at&quot;:1386558107},{&quot;id&quot;:2043844,&quot;minimum&quot;:50.0,&quot;reward&quot;:&quot;Glazier - A special-edition game poster signed by Rob Landeros &amp; the 3 team. Plus, Steam Keys for The 7th Guest &amp; The 11th Hour bundle.&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;10.0&quot;,&quot;estimated_delivery_on&quot;:1388534400,&quot;project_id&quot;:386640884,&quot;backers_count&quot;:143,&quot;updated_at&quot;:1386562390},{&quot;id&quot;:2090648,&quot;minimum&quot;:60.0,&quot;reward&quot;:&quot;Master Carpenter - All of the above, plus: Autographed 8x10 glossy photo of Henry Stauf and personalized ringtone and outgoing phone message.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1388534400,&quot;project_id&quot;:386640884,&quot;backers_count&quot;:33,&quot;updated_at&quot;:1386408136},{&quot;id&quot;:2047213,&quot;minimum&quot;:80.0,&quot;reward&quot;:&quot;Mason - All of the above, plus: Special access code to Stauf\\u2019s secret chamber of horrors.&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;5.0&quot;,&quot;estimated_delivery_on&quot;:1443657600,&quot;project_id&quot;:386640884,&quot;backers_count&quot;:55,&quot;updated_at&quot;:1386559858},{&quot;id&quot;:2047222,&quot;minimum&quot;:100.0,&quot;reward&quot;:&quot;Cabinet Maker - All of the above plus: Special collection edition boxed DVD of game.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1443657600,&quot;project_id&quot;:386640884,&quot;backers_count&quot;:281,&quot;updated_at&quot;:1386558738},{&quot;id&quot;:2163520,&quot;minimum&quot;:150.0,&quot;reward&quot;:&quot;Model Maker - All of the above, plus: A limited edition, 4\\&quot; (approx) tall cast resin model of the Stauf Mansion. Some assembly required.&quot;,&quot;limit&quot;:2000,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;5.0&quot;,&quot;estimated_delivery_on&quot;:1441065600,&quot;project_id&quot;:386640884,&quot;remaining&quot;:1964,&quot;backers_count&quot;:36,&quot;updated_at&quot;:1386542666},{&quot;id&quot;:2135377,&quot;minimum&quot;:200.0,&quot;reward&quot;:&quot;Exterior Designer - All of the above, plus: Send us your old copies of The 7th Guest and The 11th Hour and we will return them with personalized autographs by Rob Landeros and Robert Hirschboeck.&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;5.0&quot;,&quot;estimated_delivery_on&quot;:1388534400,&quot;project_id&quot;:386640884,&quot;backers_count&quot;:4,&quot;updated_at&quot;:1386311944},{&quot;id&quot;:2047224,&quot;minimum&quot;:250.0,&quot;reward&quot;:&quot;Interior Decorator - All of the above, plus: Name on plaque on special in-game Donor Wall.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1443657600,&quot;project_id&quot;:386640884,&quot;backers_count&quot;:28,&quot;updated_at&quot;:1386554295},{&quot;id&quot;:2119786,&quot;minimum&quot;:350.0,&quot;reward&quot;:&quot;Foreman - All of the above, plus: A \\&quot;haunted\\&quot; portrait of Henry Stauf that changes appearance as you walk by.&quot;,&quot;limit&quot;:300,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;10.0&quot;,&quot;estimated_delivery_on&quot;:1443657600,&quot;project_id&quot;:386640884,&quot;remaining&quot;:292,&quot;backers_count&quot;:8,&quot;updated_at&quot;:1385368031},{&quot;id&quot;:2163527,&quot;minimum&quot;:400.0,&quot;reward&quot;:&quot;Supervisor - All of the above, plus: A limited edition, 9\\&quot; (approx) tall cast resin model kit of the Stauf Mansion. Some assembly required. Add $50 for a hand painted model.&quot;,&quot;limit&quot;:1000,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;5.0&quot;,&quot;estimated_delivery_on&quot;:1441065600,&quot;project_id&quot;:386640884,&quot;remaining&quot;:995,&quot;backers_count&quot;:5,&quot;updated_at&quot;:1386552858},{&quot;id&quot;:2047226,&quot;minimum&quot;:500.0,&quot;reward&quot;:&quot;Site Manager - All of the above, plus: A talking, taunting bust of Stauf as it appears in the game.&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;10.0&quot;,&quot;estimated_delivery_on&quot;:1443657600,&quot;project_id&quot;:386640884,&quot;backers_count&quot;:6,&quot;updated_at&quot;:1385249524},{&quot;id&quot;:2047230,&quot;minimum&quot;:750.0,&quot;reward&quot;:&quot;Building Inspector - All of the above, plus: An actual working, limited edition replication of the Gear Maze Puzzle as it appears in the game.&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;10.0&quot;,&quot;estimated_delivery_on&quot;:1443657600,&quot;project_id&quot;:386640884,&quot;backers_count&quot;:4,&quot;updated_at&quot;:1385638949},{&quot;id&quot;:2047244,&quot;minimum&quot;:1000.0,&quot;reward&quot;:&quot;Architect - All of the above, plus: Your name on an object in the Stauf Mansion. (For some possibilities, see the Rewarding Experience section)&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1443657600,&quot;project_id&quot;:386640884,&quot;backers_count&quot;:5,&quot;updated_at&quot;:1386562130},{&quot;id&quot;:2173815,&quot;minimum&quot;:1250.0,&quot;reward&quot;:&quot;Structural Engineer - All the above, plus: A hand crafted, limited edition of the larger Sphinx spirit board (21\\&quot; x 15 \\u00be\\&quot;).&quot;,&quot;limit&quot;:500,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;10.0&quot;,&quot;estimated_delivery_on&quot;:1441065600,&quot;project_id&quot;:386640884,&quot;remaining&quot;:497,&quot;backers_count&quot;:3,&quot;updated_at&quot;:1385887526},{&quot;id&quot;:2047247,&quot;minimum&quot;:5000.0,&quot;reward&quot;:&quot;Master Builder - All of the above, plus: Your name and likeness in a painting or photograph somewhere in the mansion;  Two nights at the historic, Jacksonville Inn (travel to Oregon not included); dinner with Henry Stauf in costume in the Inn\\u2019s famous, cellar restaurant; a visit to Stauf Mansion &amp; local vineyards.&quot;,&quot;limit&quot;:40,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1443657600,&quot;project_id&quot;:386640884,&quot;remaining&quot;:40,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1383701328},{&quot;id&quot;:2047257,&quot;minimum&quot;:7500.0,&quot;reward&quot;:&quot;Developer - All of the above, plus: Scary, animated portrait of you in the mansion. For every $150 increase in your pledge at this level, you may add one additional person (or pet) to your haunted painting to make a family portrait of up to four.\\r\\n\\r\\nIn-game credit as an Associate Producer, as well as mention in all appropriate promotional materials; a private party in historic Jacksonville (travel to Oregon not included), hosted by Team Trilobyte &amp; Henry Stauf, for a party of four (more can be accommodated for a modest additional charge).&quot;,&quot;limit&quot;:20,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1433116800,&quot;project_id&quot;:386640884,&quot;remaining&quot;:20,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1384668735},{&quot;id&quot;:2124669,&quot;minimum&quot;:8500.0,&quot;reward&quot;:&quot;Frank Lloyd Wright - All of the above, plus: A walk-on role in the game, or, if logistics forbid, a voice-over role in the game.&quot;,&quot;limit&quot;:10,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1443657600,&quot;project_id&quot;:386640884,&quot;remaining&quot;:9,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1386215745},{&quot;id&quot;:2047261,&quot;minimum&quot;:10000.0,&quot;reward&quot;:&quot;Hephaestus - All of the above, plus: Bust in your image with name plaque in place of honor in the Stauf mansion.&quot;,&quot;limit&quot;:10,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1443657600,&quot;project_id&quot;:386640884,&quot;remaining&quot;:9,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1386019470}]}";
+    
+    
+    
+    
+    
+    
+    
+    
+    window.timeRemaining = function timeRemaining(epochTime){
+    
+      var diff = epochTime - ((new Date()).getTime() / 1000);
+      var num_unit = (diff < 60 && [Math.max(diff, 0), 'seconds']) ||
+        ((diff/=60) < 60 && [diff, 'minutes']) ||
+        ((diff/=60) < 72 && [diff, 'hours']) ||
+        [diff/=24, 'days'];
+    
+      // Round down
+      num_unit[0] = Math.floor(num_unit[0]);
+      // Singularize unit
+      if (num_unit[0] == 1) { num_unit[1] = num_unit[1].replace(/s$/,""); }
+    
+      return num_unit;
+    };
+  //]]>
+</script>
+
+<script>
+  //<![CDATA[
+    window.current_variants = ["discover_link_copy[explore]","rewards_hover[without_hover_text]"];
+  //]]>
+</script>
+
+
+</head>
+
+<body class="project projects not-mobile not-phone not-forces-video-controls not-tablet not-touchable not-native-app-request video_mode" id="projects_show">
+<div class="jGrowl center" id="growl_section"></div>
+<div class="NS_layouts__navigation" id="header">
+<div class="main-nav relative bg-white">
+<h1 class="no-margin ml1 mr2 left">
+<a href="/?ref=nav" class="block p2"><span class="ss-icon green-dark">KICK</span><span class="ss-icon green">STARTER</span>
+</a></h1>
+<ul class="primary-links list no-margin left">
+<li class="left discover-link full-height">
+<a href="/discover?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Explore</a>
+</li>
+<li class="left full-height mr2">
+<a href="/learn?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Start</a>
+</li>
+</ul>
+<ul class="list no-margin right" id="menu-sub">
+<li class="right"><a href="/login?ref=nav" class="block h5 bold p2 full-height border-box">Log in</a></li>
+<li class="right"><a href="/signup?ref=nav" class="block h5 bold p2 full-height border-box">Sign up</a></li>
+</ul>
+<div class="search-link pl2 full-height border-left border-box clip">
+<form accept-charset="UTF-8" action="/projects/search" class="search pt1 pb1 block relative form-simple" method="get"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /></div>
+<div class="field relative pl3">
+<span class="ss-icon ss-search grey-dark ml1 mt1 absolute"></span>
+<input class="input-search header full-width text" data-tracker-name="Header Live Search" id="term" name="term" placeholder="Search projects" type="text" />
+</div>
+</form>
+
+</div>
+<div class="clear"></div>
+</div>
+</div>
+<div class="hide pt4 pb4 bg-grey-light" id="search_results-wrap">
+<div class="relative container" id="search_results">
+<a class="close right grey-dark mr1"><span class="ss-icon ss-delete"></span></a>
+<h3 class="header ml1 clearfix"></h3>
+<div class="clip clearfix" id="search_results_panel"></div>
+<a class="prev arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateleft"></span>
+</a>
+<a class="next arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateright"></span>
+</a>
+</div>
+</div>
+
+
+
+
+<div class="Project-ended-true Project-is_starred- Project-state-failed Project386640884_cxt border-top" id="main_content">
+<div id="running-board-wrap">
+<div class="container" id="running-board">
+<div id="project-header">
+<div class="NS_projects__running_board ml1 mr1 clearfix">
+<div class="title center py4">
+<h2 class="mb1">
+<a href="/projects/roblanderos/the-7th-guest-3-the-collector" class="green-dark">The 7th Guest 3: The Collector</a>
+</h2>
+<p class="no-margin">
+<span class="creator">
+by
+<a href="/projects/roblanderos/the-7th-guest-3-the-collector/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography" id="name">Rob Landeros</a>
+</span>
+</p>
+</div>
+<ul class="project-nav list-inline left h5 bold mb1">
+<li class="mr2">
+<a href="/projects/roblanderos/the-7th-guest-3-the-collector" class="grey-dark py1 current" id="home_nav">Home</a>
+</li>
+<li class="mr2">
+<span data-updates-count="27" id="updates_count">
+<a href="/projects/roblanderos/the-7th-guest-3-the-collector/posts" class="grey-dark py1" id="updates_nav">Updates
+<span class="count h6 bg-grey-dark white">27</span>
+</a></span>
+</li>
+<li class="mr2">
+<a href="/projects/roblanderos/the-7th-guest-3-the-collector/backers" class="grey-dark py1" id="backers_nav">Backers
+<span class="count h6 bg-grey-dark white"><data class="Project386640884" data-format="number" data-value="1713" itemprop="Project[backers_count]">1,713</data></span>
+</a></li>
+<li>
+<span data-comments-count="1216" id="comments_count">
+<a href="/projects/roblanderos/the-7th-guest-3-the-collector/comments" class="grey-dark py1" id="comments_nav">Comments
+<span class="count h6 bg-grey-dark white"><data class="Project386640884" data-format="number" data-value="1215" itemprop="Project[comments_count]">1,215</data></span>
+</a></span>
+</li>
+</ul>
+<ul class="list-inline right h5 bold mb1">
+<li class="location mr2">
+<a href="/discover/places/medford-or?ref=city" class="grey-dark"><span class="ss-icon ss-location margin-right"></span>
+Medford, OR
+</a></li>
+<li class="category" data-project-parent-category="Games">
+<a href="/discover/categories/games/video%20games?ref=category" class="grey-dark"><span class="ss-icon ss-tag margin-right"></span>
+Video Games
+</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+</div>
+<div class="bg-grey-light pb4" id="content-wrap">
+<div class="Project386640884" data-conditions="[{&quot;!state&quot;:&quot;live&quot;}]" data-evaluation="true" data-render="&quot;&lt;div class=\&quot;NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-failed Project386640884_cxt bg-grey container pb1 pt1\&quot;&gt;\n&lt;div class=\&quot;Project386640884\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;successful&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;Funded!&amp;lt;/b&amp;gt;\\nThis project was successfully funded &amp;lt;data class=\\&amp;quot;Project386640884\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2013-12-08T23:57:00-05:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[deadline]\\&amp;quot;&amp;gt;on December 8&amp;lt;/data&amp;gt;.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project386640884\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:[&amp;quot;started&amp;quot;,&amp;quot;submitted&amp;quot;]}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;THIS PROJECT IS NOT LIVE&amp;lt;/b&amp;gt;\\nThis is only a draft that the creator has chosen to share.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project386640884\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;suspended&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Suspended&amp;lt;/b&amp;gt;\\nFunding for this project was suspended &amp;lt;data class=\\&amp;quot;Project386640884\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2013-12-08T23:57:07-05:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on December 8&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project386640884\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;canceled&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Canceled&amp;lt;/b&amp;gt;\\nFunding for this project was canceled by the project creator &amp;lt;data class=\\&amp;quot;Project386640884\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2013-12-08T23:57:07-05:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on December 8&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project386640884\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;failed&amp;quot;}]\&quot; data-evaluation=\&quot;true\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Unsuccessful&amp;lt;/b&amp;gt;\\nThis project\\u2019s funding goal was not reached on &amp;lt;time class=\\&amp;quot;js-adjust\\&amp;quot; data-format=\\&amp;quot;MMMM D\\&amp;quot; datetime=\\&amp;quot;2013-12-08T23:57:00-05:00\\&amp;quot;&amp;gt;December 8&amp;lt;/time&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Unsuccessful&lt;/b&gt;\nThis project\u2019s funding goal was not reached on &lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;MMMM D\&quot; datetime=\&quot;2013-12-08T23:57:00-05:00\&quot;&gt;December 8&lt;/time&gt;.\n&lt;/div&gt;&lt;div class=\&quot;Project386640884\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;purged&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;This project is purged and only visible to staff.&amp;lt;/b&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;/div&gt;\n&quot;"><div class="NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-failed Project386640884_cxt bg-grey container pb1 pt1">
+<div class="Project386640884" data-conditions="[{&quot;state&quot;:&quot;successful&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;Funded!&lt;/b&gt;\nThis project was successfully funded &lt;data class=\&quot;Project386640884\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-12-08T23:57:00-05:00&amp;quot;\&quot; itemprop=\&quot;Project[deadline]\&quot;&gt;on December 8&lt;/data&gt;.\n&lt;/p&gt;\n&quot;"></div><div class="Project386640884" data-conditions="[{&quot;state&quot;:[&quot;started&quot;,&quot;submitted&quot;]}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;THIS PROJECT IS NOT LIVE&lt;/b&gt;\nThis is only a draft that the creator has chosen to share.\n&lt;/p&gt;\n&quot;"></div><div class="Project386640884" data-conditions="[{&quot;state&quot;:&quot;suspended&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Suspended&lt;/b&gt;\nFunding for this project was suspended &lt;data class=\&quot;Project386640884\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-12-08T23:57:07-05:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on December 8&lt;/data&gt;.\n&quot;"></div><div class="Project386640884" data-conditions="[{&quot;state&quot;:&quot;canceled&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Canceled&lt;/b&gt;\nFunding for this project was canceled by the project creator &lt;data class=\&quot;Project386640884\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-12-08T23:57:07-05:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on December 8&lt;/data&gt;.\n&quot;"></div><div class="Project386640884" data-conditions="[{&quot;state&quot;:&quot;failed&quot;}]" data-evaluation="true" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Unsuccessful&lt;/b&gt;\nThis project\u2019s funding goal was not reached on &lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;MMMM D\&quot; datetime=\&quot;2013-12-08T23:57:00-05:00\&quot;&gt;December 8&lt;/time&gt;.\n&quot;"><p class="no-margin"></p>
+<b>Funding Unsuccessful</b>
+This project’s funding goal was not reached on <time class="js-adjust" data-format="MMMM D" datetime="2013-12-08T23:57:00-05:00">December 8</time>.
+</div><div class="Project386640884" data-conditions="[{&quot;state&quot;:&quot;purged&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;This project is purged and only visible to staff.&lt;/b&gt;\n&quot;"></div></div>
+</div>
+<div class="container bg-white border rounded py3 pl2 pr2" id="content">
+<div class="NS-projects-content">
+<div class="grid_11">
+<div data-has-video="true" id="video-section">
+<div class="video-player" data-dimensions="{&quot;width&quot;:640,&quot;height&quot;:480}" data-image="https://s3.amazonaws.com/ksr/projects/707610/photo-main.jpg?1397850370" data-video-tracker-url="https://www.kickstarter.com/projects/roblanderos/the-7th-guest-3-the-collector/video/plays" data-video-url="https://d2pq0u4uni88oo.cloudfront.net/projects/707610/video-320201-h264_high.mp4" data-video="{&quot;id&quot;:320201,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/707610/video-320201-h264_high.mp4?2013&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/707610/video-320201-h264_base.mp4?2013&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/707610/video-320201-webm.webm?2013&quot;,&quot;width&quot;:640,&quot;height&quot;:360,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/707610/video-320201-h264_base.jpg?2013&quot;}" id="video_pitch"><video class="has_webm landscape" preload="none">
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/707610/video-320201-h264_high.mp4" type='video/mp4; codecs="avc1.64001E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/707610/video-320201-h264_base.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/707610/video-320201-webm.webm" type="video/webm"></source>
+You'll need an HTML5 capable browser to see this content.
+</video>
+<img alt="Photo-main" class="has_played_hide poster landscape" src="https://s3.amazonaws.com/ksr/projects/707610/photo-main.jpg?1397850370" />
+<div class="play_button_big play_button_dark absolute-center rounded has_played_hide">
+<span class="ss-icon ss-play"></span>
+Play
+</div>
+<div class="player_controls clearfix absolute-bottom mb2 rounded white bg-green-dark forces-video-controls_hide">
+<div class="left">
+<a class="button button_icon button_dark playpause play mr1">
+<span class="play ss-icon ss-play"></span>
+<span class="pause ss-icon ss-pause"></span>
+</a>
+<span class="time current_time h12 left">00:00</span>
+</div>
+<div class="right">
+<span class="time total_time h12 left mr1">00:00</span>
+<a class="left button button_icon button_icon_white volume">
+<span class="ss-icon ss-volume icon_volume_nudge"></span>
+<span class="ss-icon ss-highvolume"></span>
+</a>
+<div class="volume_container left">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+<a class="left button button_icon button_icon_white fullscreen">
+<span class="ss-icon ss-expand"></span>
+<span class="ss-icon ss-contract"></span>
+</a>
+</div>
+<div class="clip">
+<div class="progress_container pr1 pl1">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="buffer progress_bar_buffer"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div data-project-state="failed" id="about">
+<div class="NS_projects__project_share clearfix py2 pl1 pr1">
+<ul class="left list-inline no-margin h5 bold">
+<li class="facebook mr2">
+<a href="https://www.kickstarter.com/projects/roblanderos/the-7th-guest-3-the-collector"><span class="ss-icon ss-social ss-facebook color-facebook"></span>
+<span class="color-facebook">Share</span>
+<span class="share_bubble"><div class="triangle grey"></div>
+<div class="triangle white"></div>
+<span class="count"></span></span>
+</a></li>
+<li class="twitter mr2">
+<a  href="https://twitter.com/intent/tweet?text=The%207th%20Guest%203%3A%20The%20Collector%20by%20Rob%20Landeros&amp;via=kickstarter&amp;url=http://kck.st/Hz42dM" rel="nofollow"><span class="ss-icon ss-social ss-twitter color-twitter"></span>
+<span class="color-twitter">Tweet</span>
+</a></li>
+<li class="embed">
+<a href="/projects/roblanderos/the-7th-guest-3-the-collector/widget" class="remote_modal_dialog grey-dark" data-modal-title="Embed a widget on your site" data-tracker-name="Embed"><span class="ss-icon ss-navigateleft"></span>
+<span class="ss-icon ss-navigateright"></span>
+Embed
+</a></li>
+</ul>
+<ul class="right list-inline no-margin h5 bold">
+<li class="curate mr2">
+</li>
+<li class="remind">
+<div class="ajax-container" id="watching-widget">
+<div class="Project386640884" data-conditions="[{&quot;is_starred&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div id=\&quot;unwatch\&quot;&gt;\n&lt;a href=\&quot;/projects/roblanderos/the-7th-guest-3-the-collector/unwatch\&quot; class=\&quot;on\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"></div><div class="Project386640884" data-conditions="[{&quot;!is_starred&quot;:true}]" data-evaluation="true" data-render="&quot;&lt;div id=\&quot;watch\&quot;&gt;\n&lt;a href=\&quot;/projects/roblanderos/the-7th-guest-3-the-collector/watch\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;span class=\&quot;text\&quot;&gt;\n&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"><div id="watch">
+<a href="/projects/roblanderos/the-7th-guest-3-the-collector/watch"><span class="ss-icon ss-star"></span>
+<span class="text">
+</span>
+</a></div>
+
+</div></div>
+</li>
+</ul>
+</div>
+
+<div class="short_blurb py2 pl1 pr1">
+<p class="h3">The third game in the classic The 7th Guest series from Trilobyte Games.</p>
+</div>
+<div class="full-description">
+<p><i>Old Man Stauf built a house and filled it with his toys.
+Six guests were invited one night, their screams the only noise…  </i>- Children’s Nursery Rhyme</p><div class="template asset" contenteditable="false" data-edit_url="/projects/roblanderos/the-7th-guest-3-the-collector/assets/1252244/edit" data-id="1252244">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/252/244/b9519288cf030331e9f50d3f80d2c4bb_large.png?1383038822"></figure>
+</div><p>In the world of The 7th Guest: 3, you re-enter the mysterious and magical Stauf mansion, newly remodeled and filled with classic Stauf games, toys, diabolical puzzles and artifacts. Not merely restored to its former glory, this now-historic landmark in the little hamlet of Harley-on-the-Hudson is, as the locals like to say, “the biggest damn digs in the twigs!” Some admiring looky-loos have been heard to cry “Magnificent!” Well, so it is, friends, so it is. But who is the mysterious stranger responsible for reviving the legend and unleashing the evil spirits once again, and to what purpose?</p><p>Magnificent...and more ghastly, more demented, more appallingly apparitional than ever before! Haunted by the cursed, tormented souls who’ve succumbed to the devious temptations of the mysterious madman you know as Henry Stauf, T7G3’s cavernous new mansion is replete with secrets, stories, and scandalous scenarios. Enter here at your own risk. Inside you will discover exactly what happened on that terrible night so long ago when the strange toymaker invited 6 guests to spend a night in his house of horrors. If you’re brave enough to walk through Stauf’s new front door, you’ll expose the previously hidden secrets of the gaming world’s most mysterious toymaker...like them or not!</p><div class="template asset" contenteditable="false" data-edit_url="/projects/roblanderos/the-7th-guest-3-the-collector/assets/1036378/edit" data-id="1036378">
+<figure><img alt="No house is free of ghosts, especially THIS one!" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/036/378/b59d546ee48d6420084908755d0f29cf_large.jpg?1381433346"><figcaption>No house is free of ghosts, especially THIS one!</figcaption></figure>
+</div><p>In The 7th Guest: 3, Stauf's house is filled with 20 devilishly clever puzzles (or more, with stretch goals) that will test your wits--and scare you right out of them, as well. This house is not only filled with puzzles, it <i>is</i> a puzzle; one gigantic, mechanical mind-bender. To complete the game and the story you must solve every puzzle in the house and the puzzle of the house itself. Only then will the final, dreadful secret of that brilliant madman, Henry Stauf, be revealed to you.</p><p><i>"Just when you thought your CD-ROM was safe from Stauf's scary, floating melon ..."</i> - Asylum</p><p><i>"Many gamers won't remember The 7th Guest, either because they didn't have the groundbreaking technology of a CD-ROM drive in 1993, or they hadn't been born yet. We remember The 7th Guest being an incredibly creepy game that snared our young imaginations and helped shape our minds as gamers." </i>- Slide To Play</p><p><i>"If you haven’t played either The 7th Guest or The 11th Hour, then this is the perfect opportunity to pick up these amazing games in your iPhone. The amount of thought that is required to complete the puzzles in either game makes today’s modern games look like a cake walk."</i> - IntoMobile</p><p><i>"My father purchased The 7th Guest for me as a child and it terrified me to the point of having him return it. With my increase and courage and the scary images being smaller, I think I can handle it now." - Geek Tyrant </i></p><p><i>“The new standard in electronic entertainment.”</i> - Bill Gates</p><div class="template asset" contenteditable="false" data-edit_url="/projects/roblanderos/the-7th-guest-3-the-collector/assets/1292951/edit" data-id="1292951">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/292/951/4f63b1109689650d9b0f6153d06b524c_large.jpg?1383800822"></figure>
+</div><p>For the benefit of those unfortunate souls who may be unfamiliar with the legacy of the 7th Guest line, we present these brief glimpses into the past.</p><div class="template oembed" contenteditable="false" data-href="http://youtu.be/XGqf5Yz5E-8">
+<iframe width="612" height="344" src="https://www.youtube.com/embed/XGqf5Yz5E-8?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div><div class="template oembed" contenteditable="false" data-href="http://youtu.be/_mmR9BYiD78">
+<iframe width="612" height="344" src="https://www.youtube.com/embed/_mmR9BYiD78?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div><p> <i>The above videos courtesy of Night Dive Studios who created them for the Steam edition of the classic games.</i></p><div class="template asset" contenteditable="false" data-edit_url="/projects/roblanderos/the-7th-guest-3-the-collector/assets/1252251/edit" data-id="1252251">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/252/251/a29027dda27586fd229189606f61b59f_large.jpg?1383039222"></figure>
+</div><p>Imagine The 7th Guest and 11th Hour gloriously outfitted with the latest in game tech capabilities. While the gameplay of T7G3 will fairly closely follow that of The 7th Guest and 11th Hour, Trilobyte will thoroughly leverage touch-screen, mobile technology, and modern standards in video-game presentation to bring you the 7th Guest of your fondest dreams (and nightmares)!</p><p>Visualize the Stauf mansion rendered in beautiful high-definition, extensively renovated and furnished with hundreds of interesting new items. The house's remodeler's have not stinted on redecoration, to say the least. The revamped edifice is something of an historical museum. Grand, quite grand.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/roblanderos/the-7th-guest-3-the-collector/assets/1037719/edit" data-id="1037719">
+<figure><img alt="With its murderous mesh, this puzzle is GEARED to a MAZE you!" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/037/719/2ecac4b2a3be2f9f5cfd55c2363ac102_large.jpg?1381435945"><figcaption>With its murderous mesh, this puzzle is GEARED to a MAZE you!</figcaption></figure>
+</div><p>The mansion itself is one large mechanical device, a sequential discovery puzzle. Players will alter its entire configuration by solving puzzles and riddles and tracking down hints and clues. The goal of the game is to configure the mansion in such a way that escape from its confines becomes possible. In a fiendishly Staufian twist on familiar gameplay, rather than working your way into a box within a box, you must work your way out.</p><p>The 7G3 house behaves like a slippery supernatural creature, not a reliable container of wood and stone. It defies the laws of spatial relations, of geography; it expands and contracts, reconfigures and reconfigures. Certain rooms are accessible only if the house is configured just so; certain passageways can be found only within certain house configurations….and only ONE configuration of the house will allow the escape essential to win.</p><p>Logic puzzles, you inquire? Why, of course! Many of them are taken to the next level with real time rendering and real world physical properties. You’ll need to exercise your sharpest wits not simply to solve individual puzzles, but to strategically plan your path through the house and determine what to do and when to act once you arrive at your destination.</p><p>Our fans will not be disappointed! We have listened to you, and are committed to staying true to the spirit of the original 7th Guest.</p><p><b>Game Features</b></p><ul>
+<li>
+HD full motion video with real actors</li>
+<li>CGI and practical FX</li>
+<li>Extra story content</li>
+<li>Beautiful hi-res environment</li>
+<li>Puzzles with physical properties rendered in real time</li>
+<li>20+ puzzles within a meta-puzzle that is the Stauf mansion itself</li>
+<li>The sort of game that you just can’t find and that only Trilobyte can make</li>
+</ul><div class="template asset" contenteditable="false" data-edit_url="/projects/roblanderos/the-7th-guest-3-the-collector/assets/1324952/edit" data-id="1324952">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/324/952/25e03d7080b6cd7bb54ea63eee2d7d72_large.jpg?1384399669"></figure>
+</div><a href="http://steamcommunity.com/sharedfiles/filedetails/?id=194708500" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/roblanderos/the-7th-guest-3-the-collector/assets/1324965/edit" data-id="1324965">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/324/965/7cc04bef798972ac81821a05b0d4e109_large.jpg?1384399764"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+                </a><p>Steam Greenlight is a system that enlists the community's help in picking new games to be released on Steam. Developers post information, screenshots and video of their game and seek a critical mass of 
+
+community support in order to get selected for distribution.</p><p>If you choose not to make a pledge on Kickstarter, please <a href="http://steamcommunity.com/sharedfiles/filedetails/?id=194708500" target="_blank">click here</a> to vote to get The 7th Guest 3 on Steam.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/roblanderos/the-7th-guest-3-the-collector/assets/1252253/edit" data-id="1252253">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/252/253/7ab0ec65990d6af68244ae38469a5f19_large.jpg?1383039311"></figure>
+</div><p><i>Old Man Stauf was sly as a fox, 
+He liked to make puzzles with lots of locks.
+The locks would open one by one
+Until you realize it's your undoing you've done.</i> - Anon</p><div class="template oembed" contenteditable="false" data-href="http://youtu.be/mvwqdM_zKKA">
+<iframe width="612" height="344" src="https://www.youtube.com/embed/mvwqdM_zKKA?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div><p>The creation of The 7th Guest: 3 has been a long time in the waiting. The 7th Guest, produced by the original Trilobyte (Rob Landeros and Graeme Devine) and released by Virgin Games in 1993, was a groundbreaking, game-changing success, selling over 2 million copies and garnering multiple industry awards. The release of the sequel to T7G, The 11th Hour, was delayed by internal disputes at Trilobyte; the game eventually appeared on the market in 1995. Plans for the third installment in T7G series never materialized, and the company folded not long afterward.</p><p>Rob went on to found Aftermath Media which produced Tender Loving Care and Point of View, interactive movies that illustrate his abiding interest in creating innovative entertainment, but he never abandoned his desire to complete the The 7th Guest trilogy as he had originally imagined it.</p><p>In the early 2000s, the gaming industry turned a corner and headed in a direction Landeros didn’t like. With product offerings dominated by formulaic shoot-em-ups devoid of the simple spirit of true gaming, and a production system controlled by rich corporate players wielding massive budgets and avoiding creative risk, the whole gaming enterprise lost its allure for Rob and he returned to graphic art and design. Because The 7th Guest brand was entirely abandoned by the company, the series gradually disappeared, fell into limbo, faded into the mists of time…but Rob never forgot about it. </p><p>And then touch-based tablets appeared; mobile technology took off, and digital distribution opened up new markets. The time was right for the return of The 7th Guest franchise. Rob Landeros teamed up with partners John Fricker and Charlie McHenry to form Trilobyte Games in the Fall of 2010. </p><p>All of us here at Trilobyte Games are primed and ready to finally make the dream of The 7th Guest 3 a reality. We need your help to bring the trilogy to its triumphant conclusion</p><div class="template asset" contenteditable="false" data-edit_url="/projects/roblanderos/the-7th-guest-3-the-collector/assets/1252254/edit" data-id="1252254">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/252/254/c82991e96506d5d6ab24e97db9eb1211_large.jpg?1383039346"></figure>
+</div><p>H. Stauf, Esq. himself speaks of the many possibilities of how <i>you </i>might appear within the game.</p><div class="template asset" contenteditable="false" data-id="1232476">
+<figure><embed allowscriptaccess="always" height="30" src="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?audioonly=true&amp;controlbar.idlehide=false&amp;controlbar=bottom&amp;file=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fassets%2F001%2F232%2F476%2Fb677102018ab5e5eea8f2c47399c1f90_original.mp3%3F1382602030&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf" type="application/x-shockwave-flash" width="560" wmode="transparent"></embed></figure>
+</div><p><i><i>And how, you may ask, shall I reward your generosity?<br>Oooh, let me count the ways...</i></i></p><p><i>Your name engraved on our donor wall<br>Your marble bust posed in some lonely hall<br>Your very own soup pot with your name inscribed<br>A spider’s woven web with your name inside<br>You, desperately trapped in a hallway portrait!<br>You could even buy a brick or an entryway carpet<br>Your authorship credited on a bedside book’s spine<br>Your headstone in the crypt, where you’ll always be MINE.<br>Your own private monogrammed setting at table<br>Your mention as victim in The Stauf Files fable<br><br>Any and all of these could be all YOURS...<br>And I'll relish cooking up perhaps dozens more<br><br>Look here to our menu to view the multitude;<br>Expressions--undying--of my great gratitude!</i> -- Henry Stauf</p><div class="template asset" contenteditable="false" data-edit_url="/projects/roblanderos/the-7th-guest-3-the-collector/assets/1367803/edit" data-id="1367803">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/367/803/3a402bb6b09fbdaff947131b5cfc9cf2_large.jpg?1385197708"></figure>
+</div><p>We are offering two add-ons. A digital copy of the game, and a physical boxed set of the game. Here is how to do it. Go to the big blue “Manage Your Pledge” button and increase your pledge by the cost of each desired add-on without changing your current reward tier. (See image above for costs) You may add as many of the offered add-ons as you wish. After the Kickstarter campaign ends you will receive a survey where you can confirm which add-on(s) you wanted.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/roblanderos/the-7th-guest-3-the-collector/assets/1348100/edit" data-id="1348100">
+<figure><img alt="These models of the mansion can be had at the Model Maker and Supervisor levels." class="fit" src="https://s3.amazonaws.com/ksr/assets/001/348/100/f58a1bdeb6c5e2ca6b94b5e88688fc7d_large.jpg?1384840112"><figcaption>These models of the mansion can be had at the Model Maker and Supervisor levels.</figcaption></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/roblanderos/the-7th-guest-3-the-collector/assets/1346087/edit" data-id="1346087">
+<figure><img alt="Honor your ancestors by hanging their haunted portrait in the Stauf mansion." class="fit" src="https://s3.amazonaws.com/ksr/assets/001/346/087/612a093fe6a9b77de304595dda2b4917_large.gif?1384814262"><figcaption>Honor your ancestors by hanging their haunted portrait in the Stauf mansion.</figcaption></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/roblanderos/the-7th-guest-3-the-collector/assets/1293126/edit" data-id="1293126">
+<figure><img alt="A first prototype of the physical Gear Maze puzzle." class="fit" src="https://s3.amazonaws.com/ksr/assets/001/293/126/5f2541210bd173b205228ecd27818858_large.JPG?1383804163"><figcaption>A first prototype of the physical Gear Maze puzzle.</figcaption></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/roblanderos/the-7th-guest-3-the-collector/assets/1295226/edit" data-id="1295226">
+<figure><img alt="This special, limited Collector's Edition Boxed Set could be yours for a pledge at the $100 level, or as an add-on at any level." class="fit" src="https://s3.amazonaws.com/ksr/assets/001/295/226/0bc458fd6c7b5410ab25f717c93327eb_large.jpg?1383852636"><figcaption>This special, limited Collector's Edition Boxed Set could be yours for a pledge at the $100 level, or as an add-on at any level.</figcaption></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/roblanderos/the-7th-guest-3-the-collector/assets/1302555/edit" data-id="1302555">
+<figure><img alt="Your name engraved on our donor wall..." class="fit" src="https://s3.amazonaws.com/ksr/assets/001/302/555/fea9b3b2b7f04db2dc87c539640cf5e0_large.jpg?1383981889"><figcaption>Your name engraved on our donor wall...</figcaption></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/roblanderos/the-7th-guest-3-the-collector/assets/1361966/edit" data-id="1361966">
+<figure><img alt='Let the spirit move you with this fine, hand-crafted Sphinx spirit board (21" x 15 ¾").' class="fit" src="https://s3.amazonaws.com/ksr/assets/001/361/966/503ae03ce83512c3b96c8cdceb7fff9d_large.jpg?1385077732"><figcaption>Let the spirit move you with this fine, hand-crafted Sphinx spirit board (21" x 15 ¾").</figcaption></figure>
+</div><p>All pledge levels prizes include all lower-level rewards. All contributors will be automatically inducted into the official, online The 7th Guest 3 community, which includes access to behind-the-scenes updates, sound bytes, music, videos, ringtones, message boards and more. You'll also have the chance to communicate with the 3 creative team, participate in contests, win great prizes and more. Only available to you and other T7G: 3 members.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/roblanderos/the-7th-guest-3-the-collector/assets/1373181/edit" data-id="1373181">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/373/181/2d2153b40c8e18bac7fbddd19fa3b93a_large.jpg?1385349464"></figure>
+</div><p><b>Update #1:</b><a href="http://www.kickstarter.com/projects/roblanderos/the-7th-guest-3-the-collector/posts/647200" target="_blank"> Rob Landeros greets the first troops to join the Army of 3.</a></p><p><b>Update #3</b>:<a href="http://www.kickstarter.com/projects/roblanderos/the-7th-guest-3-the-collector/posts/650588" target="_blank"> Lead artist William Hennes discusses pre vs real time rendering.
+
+We introduce two new pledge levels;
+
+ Surveyor which adds free iOS downloads, and Foreman which adds a physical "haunted" portrait of Henry Stauf.</a></p><p><b>Update #4:</b><a href="http://www.kickstarter.com/projects/roblanderos/the-7th-guest-3-the-collector/posts/654885" target="_blank"> Outtake reel from video shoot. Introduction of the Frank Lloyd Wright level which includes a walk-on part in the game.</a></p><p><b>Update #6:</b> <a href="http://www.kickstarter.com/projects/roblanderos/the-7th-guest-3-the-collector/posts/658110" target="_blank">Rob Landeros talks about puzzles and we add the Exterior Designer tier for personalized autographs of your original copies of The 7th Guest and The
+11th Hour.</a></p><p><b>Update #7:</b> <a href="http://www.kickstarter.com/projects/roblanderos/the-7th-guest-3-the-collector/posts/660210" target="_blank">We announce the license to use Fat Man music.</a></p><p><b>Update #8:</b> <a href="http://www.kickstarter.com/projects/roblanderos/the-7th-guest-3-the-collector/posts/662811" target="_blank">Henry
+in the Night, Part 1. We announce that The 7th Guest 3: The Collector, now on Steam
+Greenlight.</a></p><p><b>Update #9:</b> <a href="http://www.kickstarter.com/projects/roblanderos/the-7th-guest-3-the-collector/posts/663494" target="_blank">Marching orders for the Army of 3. Henry in the Night, Part 2.</a>
+</p><p><b>Update #10: </b><a href="http://www.kickstarter.com/projects/roblanderos/the-7th-guest-3-the-collector/posts/665010" target="_blank">Rob Landeros greets Obductees and reflects on the parallel history of Trilobyte and Cyan. Add-on to the Developer pledge level for up to three in your animated portrait to create a haunted "family" portrait.</a></p><p><b>Update #11:</b> <a href="http://www.kickstarter.com/projects/roblanderos/the-7th-guest-3-the-collector/posts/666486" target="_blank">Lead artist William Hennes talks about analog practical FX, Two new pledge levels: Model Maker and Supervisor for, respectively, small and large model kits of the Stauf Mansion.</a></p><p><b>Update #13:</b> <a href="http://www.kickstarter.com/projects/roblanderos/the-7th-guest-3-the-collector/posts/670594" target="_blank">Video interview with puzzle &amp; game design consultant Peter Oliphant. Introduction of pledge level for The Sphinx Spirit Board.</a></p><p><b>Update #14:</b> <a href="http://www.kickstarter.com/projects/roblanderos/the-7th-guest-3-the-collector/posts/672105" target="_blank">Add-ons for d</a><a href="http://www.kickstarter.com/projects/roblanderos/the-7th-guest-3-the-collector/posts/672105" target="_blank">igital download and the boxed set of The 7th Guest 3: The Collector. A look back at the making of videos for The 7th Guest and The 11th Hour</a>.</p><p><b>Update #15:</b> <a href="http://www.kickstarter.com/projects/roblanderos/the-7th-guest-3-the-collector/posts/673690" target="_blank">The evilution of a Stauf toy. </a></p><p><b>Update #16:</b><a href="http://www.kickstarter.com/projects/roblanderos/the-7th-guest-3-the-collector/posts/674943" target="_blank"> Get to know the T7G3 Team... Mazedude.</a></p><p><b>Update #17:</b><a href="http://www.kickstarter.com/projects/roblanderos/the-7th-guest-3-the-collector/posts/676930" target="_blank"> Tommy Tallirico joins Team 3.</a></p><p><b>Update #18:</b><a href="http://www.kickstarter.com/projects/roblanderos/the-7th-guest-3-the-collector/posts/678881" target="_blank"> T7G3 Avatars</a></p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/roblanderos/the-7th-guest-3-the-collector/assets/1252258/edit" data-id="1252258">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/252/258/b44259311cd5b730aa5587c9b5f97c04_large.jpg?1383039444"></figure>
+</div><p>Chart our progress here as the Stauf mansion materializes from the ground up thanks to your generous contributions.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/roblanderos/the-7th-guest-3-the-collector/assets/1399499/edit" data-id="1399499">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/399/499/3dd750d2ad7f9c2500179804d1b2067b_large.jpg?1385970153"></figure>
+</div><p>At one hundred thousand the foundation is done.<br>At two hundred thousand the walls will be plumb.<br>At three hundred thousand the roof gets the sun.<br>At four hundred thousand, furnishings come.<br>Thirty-five thousand more,<br>And you'll know the horror. </p><div class="template asset" contenteditable="false" data-edit_url="/projects/roblanderos/the-7th-guest-3-the-collector/assets/1252259/edit" data-id="1252259">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/252/259/83dff46c6619da851963c0f7bbfea1b9_large.jpg?1383039472"></figure>
+</div><p><b>Stretch Goal #1:</b> $600,000. Team Trilobyte will add video, hauntings, and supplemental story content to extend and enhance the gaming experience. </p><p><b>Stretch Goal #2:</b> $700,000. Will make drama variable. Will localize for Spanish, French, German and Russian.</p><p><b>Stretch Goal #3:</b> $1,000,000.  The Team will create an entirely new dungeon-like basement level adding 3 additional puzzles, for players intent on challenging their puzzle solving skills.</p><p><b>Stretch Goal #4:</b> $1,000,000+: Will create an expandable game that allows inexpensive in-app purchases of additional rooms and puzzles.</p><p><b>Stretch Goal #5:</b> $4,000,000: In addition to the above, Trilobyte Games will purchase The Nunan Estate, the grounds and house in Jacksonville, Oregon after which the Stauf Mansion was modeled, and open it to the public as a haunted house themed amusement center.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/roblanderos/the-7th-guest-3-the-collector/assets/1252260/edit" data-id="1252260">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/252/260/b806ed7c5c0aef3091d79a7fcb82db99_large.jpg?1383039501"></figure>
+</div><p>  <b>Rob Landeros, Lead Designer</b></p><div class="template asset" contenteditable="false" data-edit_url="/projects/roblanderos/the-7th-guest-3-the-collector/assets/1243744/edit" data-id="1243744">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/243/744/ef6c8c7c54e68c7f16f6546cb5697c93_large.jpg?1382861118"></figure>
+</div><p>Rob co-founded Trilobyte, 
+the maker of the wildly successful and classic CD-ROM products, <i>The 7th 
+Guest</i> and <i>The 11th Hour</i>. Prior to that, he was company Art Director for 
+Virgin Interactive Entertainment. While there he directed numerous 
+titles such as <i>Spirit of Excalibur</i> and <i>War in Middle Earth</i>. He 
+co-created the popular gameshow of the future, <i>Lexi-Cross</i>, published by 
+Interplay.</p><p>Rob first entered the entertainment software industry 
+in 1987 as Art Director for Cinemaware. There, he directed such 
+best-selling titles as <i>Rocket Ranger</i>, <i>King of Chicago</i> and <i>Defender of 
+the Crown</i>.</p><p>Prior to moving into entertainment software, Rob delved
+ into a variety of art forms. In the sixties he reveled in the 
+counter-culture movement, drawing outrageous underground comics to 
+support himself. Later he spent several years perfecting the art of 
+wildlife engravings in fossil ivories. Eventually, he purchased a 
+Commodore Amiga, created his first digital graphics, and never looked 
+back.</p><p>Following his time at Trilobyte, Rob founded Aftermath Media
+ where he designed and produced two award winning and critically 
+acclaimed interactive motion pictures, <i>Tender Loving Care</i> and <i>Point of 
+View</i>.</p><p>Between 2001 and and 2010, Rob focused on graphic design 
+especially as applied to print and web development through his graphic 
+design studio Landeros Design.</p><p>In the Fall of 2010, Rob 
+resurrected Trilobyte Games as a company dedicated to bringing puzzle 
+games, innovative storytelling adventures and appBooks to mobile devices
+ and touchscreen tablets.</p><p><b>David Wheeler, Writer/Director</b></p><div class="template asset" contenteditable="false" data-edit_url="/projects/roblanderos/the-7th-guest-3-the-collector/assets/1245025/edit" data-id="1245025">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/245/025/e14265bc1f0cdec73008f4458d037988_large.jpg?1382903860"></figure>
+</div><p>David
+ was born in Toronto, Canada. He is an Honors graduate of the London 
+Film School in the UK. He was brought to Los Angeles by CBS and worked 
+in film, television and commercials as a writer, director and 
+cinematographer. He directed his first video game, <i>The 11th Hour</i>, in 
+1995 and has since made many video games and interactive movies 
+including the ground breaking <i>Tender Loving Care</i> with the great British 
+actor John Hurt. David was the Content Director for game publisher 
+Vivendi/Universal and a Senior Creative Director at Electronic Arts. He 
+has founded/co-founded Terra Nova Productions in Hollywood, Aftermath 
+Media in Ashland, Oregon and Digital Circus in Vancouver, Canada. In 
+January 2012 he founded his 4th media company, Here And Now Transmedia, 
+in Los Angeles.</p><p>He has recently written his first novel, <i>white rabbit</i>.</p><p>David
+ has been a guest lecturer at AFI (American Fim Institute) and Art 
+Center College Of Design, guest speaker at E3 and GDC (Game Developers 
+Conference). He has recently been named Director of Michigan State University's Media Sandbox program</p><p><b>Robert Hirschboeck, Henry Stauf</b></p><div class="template asset" contenteditable="false" data-edit_url="/projects/roblanderos/the-7th-guest-3-the-collector/assets/1378352/edit" data-id="1378352">
+<figure><img alt="He was a drifter; moving from town to town..." class="fit" src="https://s3.amazonaws.com/ksr/assets/001/378/352/eede7d0f9093a6ec64f801a5949f1863_large.jpg?1385437550"><figcaption>He was a drifter; moving from town to town...</figcaption></figure>
+</div><p>A
+ journeyman repertory stage actor, Shakespeare scholar, published 
+writer, iconic digital game villain, traveler, teacher, and poet, Rob 
+was born in Wisconsin, raised and schooled in California. He holds 
+degrees from U.C. Berkeley in Political Theory, and a 
+graduate Education degree from Southern Oregon University... even before
+ robbing that nice old lady returning from choir practice.</p><p>Rob
+ is a 40 year theater stage veteran and professional on the regional 
+repertory circuit, having worked in multiple capacities over the years 
+as an actor, director, writer, producer, and artistic director in 
+theatrical endeavors, repertory houses, theater groups and venues from 
+coast to coast, with productions ranging from George M. Cohen and Neil 
+Simon to Ibsen, and Shakespeare ~ from Comedy Improv, Cabaret and Dinner
+ Theater to Public Television.</p><p>Credits, among others, include 
+multiple seasons as a company member with The Berkeley Repertory 
+Theater, Colorado Shakespeare Festival, the ‘Tony’ award winning Oregon 
+Shakespeare Festival, San Jose Repertory Theater, Pyramid Dinner Theater
+ Circuit, Actor’s Theater of Oregon, and The Stage Door Theater of 
+Boulder, Colorado, where he was a co-founder and Artistic Director.</p><p>For
+ his portrayal of Henry Stauf in Trilobyte classic <i>The 7th Guest</i>,
+ and <i>The 11th Hour</i>, Electronic Entertainment called Rob, “The Vincent 
+Price of Digital Gaming Media."</p><p><b>William Hennes, Lead Artist</b></p><div class="template asset" contenteditable="false" data-edit_url="/projects/roblanderos/the-7th-guest-3-the-collector/assets/1243772/edit" data-id="1243772">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/243/772/c3c013fc46da88b3ba71ff3ba2282982_large.jpg?1382863299"></figure>
+</div><p>William is a seasoned interactive 2D, 3D Artist/animator and level designer, 
+with highly developed conceptual visualization skills, and varied 
+platform, and web environment experience. His love is working in the ever 
+changing interactive media landscape, and his interpersonal skills allow him to thrive in collaborative team environments.<br><br>His specialties include: Animation, Character Design, Sculpture, Concept Art, Visual Design, Conceptual Models.</p><p><b>John Fricker, Lead Programmer</b></p><div class="template asset" contenteditable="false" data-edit_url="/projects/roblanderos/the-7th-guest-3-the-collector/assets/1243792/edit" data-id="1243792">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/243/792/f22e8966513d1d77e6fb66ef90e69479_large.jpg?1382864359"></figure>
+</div><p>Founding partner and Direktor of Programming for Trilobyte Games, John is a senior developer with 20+ years experience in applications, , testing, 
+architecture and object oriented design, having written over 20 iOS and Mac OS X apps since 
+2008.</p><p><b>Christopher Getman, AKA, Mazedude, Musical Score</b></p><div class="template asset" contenteditable="false" data-edit_url="/projects/roblanderos/the-7th-guest-3-the-collector/assets/1378273/edit" data-id="1378273">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/378/273/d2cb129fb863f7dd01d53daa3540739f_large.jpg?1385436343"></figure>
+</div><p>Christopher Getman, aka Mazedude has been a creative force since childhood, and has explored a great many careers in the world of media. He has dabbled in music, sound design, acting, voices, stunts, motion capture, video editing, web development, and much more. His first love, however, was music. Regardless of what crazy paths life took him on, he never lost the passion for creating unique musical experiences.</p><p>He has contributed to a great many albums and EPs in the video game remixing scene, has composed new original music for both films and video games, and received critical acclaim when he released <i>The American Album</i>, the first ever tribute to American video game music composers.</p><p><b>Tommy Tallirico, Sound Designer</b></p><div class="template asset" contenteditable="false" data-edit_url="/projects/roblanderos/the-7th-guest-3-the-collector/assets/1386232/edit" data-id="1386232">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/386/232/7a156f82337e336b62fd3142cf02ef5c_large.jpg?1385584844"></figure>
+</div><p>Tommy Tallirico is a veritable video game industry icon. As one of the most successful video game composers in history, he has helped revolutionize the gaming world, creating unique audio landscapes that enhance the video gaming experience. He is considered the person most instrumental in changing the game industry from bleeps &amp; bloops to real music now appreciated worldwide by tens of millions of fans. As a well-recognized on-air television personality, live performer and composer, Tommy brings his in-depth knowledge, years of experience, and love of cutting edge multimedia and video games to the masses. Tommy has worked in the gaming industry as a designer, product manager, producer, writer, games tester and heads of both music and video departments.</p><p><b>Peter Oliphant, Puzzle Consultant</b></p><div class="template asset" contenteditable="false" data-edit_url="/projects/roblanderos/the-7th-guest-3-the-collector/assets/1243773/edit" data-id="1243773">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/243/773/52c1ed1e09dd216827d9184456c2ff30_large.jpg?1382863332"></figure>
+</div><p>Peter
+ Oliphant was born in Los Angeles and grew up in Hollywood, where he 
+began working professionally at the early age of 5 as an actor on a live
+ Saturday morning KTLA kid show created by his show-business family 
+called Air Patrol. He has continued working as an actor throughout his 
+life, during which he has accumulated over 30 acting credits. These 
+include a recurring role as Freddie Helper on the original Dick Van Dyke
+ Show, and as a denizen of the town on the hit HBO western Deadwood.</p><p>In
+ his teens, Peter became fascinated with computers, and began designing 
+and programming computer games while still in high school. As a young 
+adult, Peter graduated from Harvey Mudd College with a degree in Math, 
+and attended graduate school at Purdue University. He then took his love
+ of computers, math, and computer games and became one of the very first
+ professional computer game developers. Peter already has over 20+ 
+published professional computer games, for which he has helped design, 
+program, produce, and collaborated on, to his name. To date, he has 
+worked in the computer game industry for over three decades as both an 
+employee and contractor for such prestigious companies as Mattel, 
+Activision, Sierra On-Line, Cinemaware, and Interplay. Peter has so far 
+worked with Interplay on two titles, one being the classic award-winning
+ RPG computer game called <i>Stonekeep</i>, the other being the original<i> 
+Lexicross</i>.</p><p><b>Oskar van Deventer, Puzzle Consultant</b></p><div class="template asset" contenteditable="false" data-edit_url="/projects/roblanderos/the-7th-guest-3-the-collector/assets/1245027/edit" data-id="1245027">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/245/027/776c23d16ca10d21816165d8d7420311_large.jpg?1382903893"></figure>
+</div><p>Oskar van Deventer of
+ The Netherlands is one of the world’s most prolific designers of 
+mechanical puzzles. Starting at the age of 12, he has been designing and
+ building innovative puzzles for over 35 years. Some of Oskar’s puzzles 
+have been mass-produced. Examples of these are Key Maze (Bits &amp; 
+Pieces), Cast Chain (Hanayama), Gear Cube (Mefferts), Planets (Recent 
+Toys), Anti-Virus (Smart Games), Daily Puzzle (Thinkfun), Oskar’s Disk 
+(Kadon Enterprises) and Hedgehog Escape (Popular Playthings).</p><p>Oskar’s 3D-printed Over-The-Top 17x17x17 Rubik’s Cube was 
+awarded a Guinness World Record. Oskar has won several international 
+awards in mobile gaming. Some of his electronic puzzles from 
+Clickmazes have found their way to James Noir’s Hollywood Crime 3D from 
+Ubisoft for Nintendo 3DS.</p><h1>Kickstarter Video Credits</h1><p><b>Our undying gratitude to those who worked so hard to make our video possible.</b></p><p><b>Cast</b></p><p>Robert Hirschboeck Henry Stauf<br>Rose Passione Martine Burden<br>Peter Wickliffe<br>Danielle Kelly</p><p><b>Crew</b></p><p>Rob Landeros Producer/Director/Writer<br>Robert Hirschboeck Writing/Acting<br>William Hennes, Editor/SFX<br>Howard Schreiber Production Advisor<br>Robert Cole Assistant Director<br>Marc Wells Assistant Producer<br>Claudia Everett Wardrobe<br>Virginia Carol Hudson Makeup &amp; Wigs<br>T.J. Yates-Keil Director of photography <br>Michael Greata  Lighting/Boom Coordinator<br>Josh Bender  Sound Manager<br>Costumes courtesy of Camelot Theatre, Talent, OR<br>Studio Facilities courtesy of Rogue Valley TV, Southern Oregon University</p><p><i>DISCLAIMER: Kickstarter is NOT a game store. It is a funding platform. We are NOT selling a finished game in any of the tiers. Rewards are NOT available until our project is successfully funded or completed!</i></p>
+</div>
+<div id="risks">
+<h2 class="title grey-dark mt6 mb4">
+<span>Risks and challenges</span>
+<a href="/help/faq/kickstarter%20basics#Acco" class="right normal h5" target="_blank">Learn about accountability on Kickstarter</a>
+<div class="divider clear"></div>
+</h2>
+<p><p>Trilobyte Games and our professional creative team brings with it decades of combined experience in game development. Because of this and because we are building on a well-established foundation of a known, classic brand, this is not our first rodeo. We see no great obstacles on the horizon. However, if we should run across the unexpected we believe we have the reputation and industry contacts to overcome any obstacles that may arise.</p></p>
+</div>
+</div>
+<div class="NS-projects-faqs" id="project-faqs">
+<h2 class="title grey-dark mt6 mb4">
+FAQ
+<div class="divider clear"></div>
+</h2>
+<ul class="faqs">
+<li class="faq" id="project_faq_72434">
+<div class="faq-question">
+<a href="#project_faq_72434" name="project_faq_72434">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">What platforms will the game be available on?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>The 7th Guest 3 will be developed and eventually be available on all viable platforms including, but not limited to, iOS, Android, PC, Mac, Linux, Steam and a dedicated game console to be named later.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-11-10T12:48:04-05:00">Sun, Nov 10 2013 12:48 pm EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_72435">
+<div class="faq-question">
+<a href="#project_faq_72435" name="project_faq_72435">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">How long will it take to produce the game?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>We expect to finish within an 18 month time frame following the end of a successful funding campaign.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-10-31T01:05:01-04:00">Thu, Oct 31 2013 1:05 am EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_72439">
+<div class="faq-question">
+<a href="#project_faq_72439" name="project_faq_72439">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Will you offer PayPal as a method of payment?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Kickstarter does not offer PayPal for payments. However, in the event that we get funded before the deadline, we will offer an option to pledge via PayPal. These post funding pledges would be identical to the reward levels offered on our Kickstarter page and be treated on the same terms.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-10-31T01:48:54-04:00">Thu, Oct 31 2013 1:48 am EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_72448">
+<div class="faq-question">
+<a href="#project_faq_72448" name="project_faq_72448">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">How will the money be spent?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>The money will be spent hiring a team of artists who will reconstruct and renovate the entire mansion, including at least two extra rooms never seen before, and fill it with hundreds of interesting artifacts and material that will provide backstory and subtext to the mystery and legend of Stauf. The house environment will be rendered in beautiful and rich high definition.</p>
+
+<p>There will be at least 20 new puzzles, designed by artists and craftsmen and programmed by a team of programmers. The puzzles will be rendered in real time and manipulable, many with physical properties such as gravity and friction. The most challenging programming and design challenge will be in engineering the entire mansion to be a giant puzzle that must be solved.</p>
+
+<p>We will have a small team of writers for story content and dramatic script. We will shoot a cast of live actors with hours of drama. </p>
+
+<p>We will create a variety of hauntings and frights and scares using both digital and practical effects.</p>
+
+<p>We believe we can do all this with a minimum budget that is roughly equal to the original budget of The 7th Guest that was developed 20 years ago.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-10-31T05:29:13-04:00">Thu, Oct 31 2013 5:29 am EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_72497">
+<div class="faq-question">
+<a href="#project_faq_72497" name="project_faq_72497">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Do all pledge levels include the rewards from previous levels?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Yes they do. Including the $50 level, which, for some mysterious and inexplicable reason, is not clear on that point.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-10-31T14:03:53-04:00">Thu, Oct 31 2013 2:03 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_72511">
+<div class="faq-question">
+<a href="#project_faq_72511" name="project_faq_72511">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Will the game be rendered in real time, and if not, why not?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Our initial decision was to go entirely with a realtime rendered game. However, despite our best efforts, early experiments simply did not capture the quality that we wanted nor could achieve the virtuality and richness that the original games were admired for in their time. So while we decided to restrict realtime rendering mainly to puzzles, we also plan to use it for some smaller parts of the house environment. So the larger parts of the mansion are pre-rendered, but some of the close-up, more detailed parts of the environment that will benefit from it, will be rendered in real time.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-10-31T15:06:58-04:00">Thu, Oct 31 2013 3:06 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_72546">
+<div class="faq-question">
+<a href="#project_faq_72546" name="project_faq_72546">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">What will be included in the Special Collector&#39;s Edition of the Boxed DVD?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>It will be old school... as in the days when games came in boxes and were put on store shelves. Included will be a DVD in shrink wrapped case, a booklet and poster signed by the creative team. There will be no VHS tape on the Making Of... :)</p>
+
+<p>This should have been described as a Special Limited Collector&#39;s Edition. It will only be available to backers at the $100 tier and higher and will not be sold in stores or otherwise commercially distributed. Trilobyte Games will hold no more than 100 units in reserve for special gifts or promotions.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-11-05T23:28:45-05:00">Tue, Nov 5 2013 11:28 pm EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_72549">
+<div class="faq-question">
+<a href="#project_faq_72549" name="project_faq_72549">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Is The Fat Man part of the creative team for T7G3?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Yes and no.</p>
+
+<p>While The Fat Man won&quot;t actually be an active part of the team, he will be there spirit, and his original music will be there in the game. We recognize the great contribution he and his team made to the 7th Guest and 11th Hour with his wonderful music and sincerely regret that he was unable to be a part of this project.</p>
+
+<p>We are confident that in Mazedude, we have found exactly right person to do the job of creating a great musical score for the game. In fact, The Fat Man, AKA George A. Sanger, had this comment.</p>
+
+<p>&quot;Yes, the very, very talented Mazedude will do an absolutely terrifyingly perfect job of scoring The 7th Guest 3. Of course! Have you heard his stuff?&quot;</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-11-16T14:09:39-05:00">Sat, Nov 16 2013 2:09 pm EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_72612">
+<div class="faq-question">
+<a href="#project_faq_72612" name="project_faq_72612">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">What is in Stauf&#39;s Secret Chamber of Horrors?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>We can&#39;t, tell you. That&#39;s why it&#39;s called a &quot;secret&quot; chamber of horrors. It will a hidden room that is only available by special code provided to donors of $80 and up.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-11-01T12:42:36-04:00">Fri, Nov 1 2013 12:42 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_73056">
+<div class="faq-question">
+<a href="#project_faq_73056" name="project_faq_73056">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">What is meant by &quot;in-game credits&quot;?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>In this case, credits are acknowledgments of a person&#39;s contribution or participation in the production of the game. The person&#39;s name will be included within the game in the Credits section which will be accessed from the main interface menu and upon completion of the game. It is similar to the listing of credits at the end of a movie.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-11-05T20:52:25-05:00">Tue, Nov 5 2013 8:52 pm EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_74254">
+<div class="faq-question">
+<a href="#project_faq_74254" name="project_faq_74254">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Does the $50 pledge level include rewards from the previous levels?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Yes, it does. It was a simple oversight on our part to have not made that clear.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-11-16T13:29:42-05:00">Sat, Nov 16 2013 1:29 pm EST</time>
+</div>
+</div>
+</li>
+
+</ul>
+<div class="faq-ask-box">
+<a href="/projects/roblanderos/the-7th-guest-3-the-collector/messages/new?message%5Bto%5D=roblanderos&amp;mode=FAQ" class="button button_blue remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Ask a question about The 7th Guest 3: The Collector">Ask a question</a>
+
+</div>
+</div>
+
+<div class="mt4 ml1 mr1 mb2" id="report-issue-wrap">
+<a href="/login?then=%2Fprojects%2Froblanderos%2Fthe-7th-guest-3-the-collector" class="button button_grey">Report this project to Kickstarter</a>
+</div>
+</div>
+<div class="NS-projects-rightcol grid_5" id="rightcol">
+<div class="NS_projects__ecom">
+<div class="digits_6 pb2 pl2 pt2" id="stats">
+<h5>
+<div class="num h48 no-margin" data-backers-count="1713" id="backers_count"><data class="Project386640884" data-format="number" data-value="1713" itemprop="Project[backers_count]">1,713</data></div>
+<span><data class="Project386640884" data-attr="backers_count" data-format="pluralize" data-value="1713" data-word="Backer">Backers</data></span>
+</h5>
+<h5>
+<div class="num h48 no-margin" data-goal="435000.0" data-percent-raised="0.278893954022988505747126437" data-pledged="121318.87" id="pledged">
+<data class="Project386640884" data-currency="USD" data-format="shorter_money" data-precision="0" data-value="121318" data-without_code="true" itemprop="Project[pledged]">$121,318</data>
+<span class="money usd project_currency_code"></span>
+</div>
+pledged of
+<span class="money usd no-code">$435,000</span>
+goal
+</h5>
+<span data-duration="39.22416666666667" data-end_time="2013-12-08T23:57:00-05:00" data-hours-remaining="0" id="project_duration_data"></span>
+<div class="Project386640884" data-conditions="[{&quot;!state&quot;:[&quot;canceled&quot;,&quot;suspended&quot;]}]" data-evaluation="true" data-render="&quot;&lt;h5 class=\&quot;poll \&quot; data-dynamic=\&quot;5\&quot; data-end_time=\&quot;2013-12-08T23:57:00-05:00\&quot; data-poll_url=\&quot;https://d2oher2uhvl0ur.cloudfront.net/projects/roblanderos/the-7th-guest-3-the-collector/stats.json\&quot;&gt;\n&lt;div class=\&quot;num h48 no-margin\&quot;&gt;0&lt;/div&gt;\n&lt;span class=\&quot;text\&quot;&gt;seconds to go&lt;/span&gt;\n&lt;/h5&gt;\n&quot;"><h5 class="poll " data-dynamic="5" data-end_time="2013-12-08T23:57:00-05:00" data-poll_url="https://d2oher2uhvl0ur.cloudfront.net/projects/roblanderos/the-7th-guest-3-the-collector/stats.json">
+<div class="num h48 no-margin">0</div>
+<span class="text">seconds to go</span>
+</h5>
+</div></div>
+<div class="Project386640884" data-conditions="[{&quot;state&quot;:&quot;live&quot;},{&quot;!ended?&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;pr2 pl2\&quot; id=\&quot;pledge-wrap\&quot;&gt;\n&lt;a href=\&quot;/projects/roblanderos/the-7th-guest-3-the-collector/pledge/new?clicked_reward=false\&quot; class=\&quot;button button_green button_box button_block\&quot; id=\&quot;button-back-this-proj\&quot; title=\&quot;Back this project\&quot;&gt;Back This Project &lt;small class=&#39;h6 normal block green-dark&#39;&gt;&lt;span class=\&quot;money usd \&quot;&gt;$1&lt;/span&gt; minimum pledge&lt;/small&gt;&lt;/a&gt;\n&lt;/div&gt;\n&quot;"></div><div class="Project386640884" data-conditions="[{&quot;state&quot;:&quot;live&quot;}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;p2\&quot; id=\&quot;banner\&quot;&gt;\n&lt;p class=\&quot;tiny_type no-margin\&quot;&gt;\nThis project will only be funded if at least\n&lt;span class=\&quot;money usd \&quot;&gt;$435,000&lt;/span&gt;\nis pledged by\n&lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;llll z\&quot; datetime=\&quot;2013-12-08T23:57:00-05:00\&quot;&gt;Sun, Dec 8 2013 11:57 pm EST&lt;/time&gt;.\n&lt;/p&gt;\n&lt;/div&gt;\n&quot;"></div></div>
+
+<div class="NS_projects__rightcol_projectby bg-blue-light rounded">
+<div class="p2 clearfix">
+<div class="avatar inline-block align-middle">
+<a href="/projects/roblanderos/the-7th-guest-3-the-collector/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography"><img alt="Rob_fan003.small" class="avatar-small" height="80" src="https://s3.amazonaws.com/ksr/avatars/8274919/rob_fan003.small.jpg?1383726580" width="80" />
+</a></div>
+<div class="creator-name inline-block align-middle ml1">
+<h6 class="mb1">Project by</h6>
+<h5 class="mb1">
+<a href="/projects/roblanderos/the-7th-guest-3-the-collector/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">Rob Landeros</a>
+</h5>
+<p class="location h6 bold mb1">
+<a href="/discover/places/medford-or">Medford, OR</a>
+</p>
+</div>
+</div>
+<div class="creator-details pl2 pr2 pb1">
+<ul class="list-simple h5 mb1">
+<li class="projects">
+<span class="ss-icon ss-kickstarter grey-dark margin-right"></span>
+<span class="text">
+First created
+<span class="divider">&middot;</span>
+<a href="/profile/roblanderos/backed" class="green-dark bold more-button remote_modal_dialog" data-modal-title="Projects backed by Rob Landeros">10 backed</a>
+</span>
+</li>
+<li class="facebook-connected">
+<span class="ss-icon ss-facebook facebook color-facebook margin-right"></span>
+<span class="text">
+<a href="https://www.facebook.com/1336070038" class="popup" target="_blank">Rob Landeros</a>
+<span class="number h6">
+237
+friends
+</span>
+</span>
+
+</li>
+<li class="links">
+<span class="ss-icon ss-globe margin-right grey-dark"></span>
+<span class="text">
+<a href="http://www.trilobytegames.com" class="popup" rel="nofollow" target="_blank">trilobytegames.com</a>
+</span>
+</li>
+</ul>
+</div>
+<div class="footer center h5 bold clearfix rounded-bottom clip">
+<a href="/projects/roblanderos/the-7th-guest-3-the-collector/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">See full bio</a>
+<a href="/projects/roblanderos/the-7th-guest-3-the-collector/messages/new?message%5Bto%5D=roblanderos" class="remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Send a message to Rob Landeros">Contact me</a>
+
+</div>
+</div>
+
+<ul class="NS-projects-rightcol-rewards rounded clip list mt2" data-reward-count="24" id="what-you-get">
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$1</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+47 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Temp Worker - Trilobyte Games&#39; undying gratitude.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-12-01">Dec 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$5</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+26 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Laborer - The above, plus: A surprise gift.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-01-01">Jan 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$10</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+9 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Dry Waller - All the above, plus: Ringtones and outgoing phone messages by Henry Stauf.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-12-01">Dec 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$20</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+570 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Apprentice - Codes for free download of PC, Mac or Linux versions.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-10-01">Oct 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$25</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+179 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Surveyor - All of the above, plus: Free download of iOS version.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-10-01">Oct 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$30</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+142 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Framer - All of the above, plus: In game credits.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-10-01">Oct 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$40</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+110 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>General Contractor - All of the above, plus: digital soundtrack album.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-10-01">Oct 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$50</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+143 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Glazier - A special-edition game poster signed by Rob Landeros &amp; the 3 team. Plus, Steam Keys for The 7th Guest &amp; The 11th Hour bundle.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-01-01">Jan 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $10 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$60</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+33 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Master Carpenter - All of the above, plus: Autographed 8x10 glossy photo of Henry Stauf and personalized ringtone and outgoing phone message.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-01-01">Jan 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$80</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+55 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Mason - All of the above, plus: Special access code to Stauf’s secret chamber of horrors.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-10-01">Oct 2015</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $5 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$100</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+281 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Cabinet Maker - All of the above plus: Special collection edition boxed DVD of game.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-10-01">Oct 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$150</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+36 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(1964 left of 2000)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Model Maker - All of the above, plus: A limited edition, 4&quot; (approx) tall cast resin model of the Stauf Mansion. Some assembly required.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-09-01">Sep 2015</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $5 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$200</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+4 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Exterior Designer - All of the above, plus: Send us your old copies of The 7th Guest and The 11th Hour and we will return them with personalized autographs by Rob Landeros and Robert Hirschboeck.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-01-01">Jan 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $5 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$250</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+28 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Interior Decorator - All of the above, plus: Name on plaque on special in-game Donor Wall.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-10-01">Oct 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$350</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+8 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(292 left of 300)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Foreman - All of the above, plus: A &quot;haunted&quot; portrait of Henry Stauf that changes appearance as you walk by.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-10-01">Oct 2015</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $10 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$400</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+5 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(995 left of 1000)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Supervisor - All of the above, plus: A limited edition, 9&quot; (approx) tall cast resin model kit of the Stauf Mansion. Some assembly required. Add $50 for a hand painted model.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-09-01">Sep 2015</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $5 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+6 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Site Manager - All of the above, plus: A talking, taunting bust of Stauf as it appears in the game.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-10-01">Oct 2015</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $10 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$750</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+4 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Building Inspector - All of the above, plus: An actual working, limited edition replication of the Gear Maze Puzzle as it appears in the game.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-10-01">Oct 2015</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $10 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$1,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+5 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Architect - All of the above, plus: Your name on an object in the Stauf Mansion. (For some possibilities, see the Rewarding Experience section)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-10-01">Oct 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$1,250</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+3 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(497 left of 500)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Structural Engineer - All the above, plus: A hand crafted, limited edition of the larger Sphinx spirit board (21&quot; x 15 ¾&quot;).</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-09-01">Sep 2015</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $10 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$5,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(40 left of 40)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Master Builder - All of the above, plus: Your name and likeness in a painting or photograph somewhere in the mansion;  Two nights at the historic, Jacksonville Inn (travel to Oregon not included); dinner with Henry Stauf in costume in the Inn’s famous, cellar restaurant; a visit to Stauf Mansion &amp; local vineyards.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-10-01">Oct 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$7,500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(20 left of 20)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Developer - All of the above, plus: Scary, animated portrait of you in the mansion. For every $150 increase in your pledge at this level, you may add one additional person (or pet) to your haunted painting to make a family portrait of up to four.
+
+In-game credit as an Associate Producer, as well as mention in all appropriate promotional materials; a private party in historic Jacksonville (travel to Oregon not included), hosted by Team Trilobyte &amp; Henry Stauf, for a party of four (more can be accommodated for a modest additional charge).</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-06-01">Jun 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$8,500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(9 left of 10)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Frank Lloyd Wright - All of the above, plus: A walk-on role in the game, or, if logistics forbid, a voice-over role in the game.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-10-01">Oct 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$10,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(9 left of 10)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Hephaestus - All of the above, plus: Bust in your image with name plaque in place of honor in the Stauf mansion.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-10-01">Oct 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+</ul>
+
+<div class="p2" id="meta">
+<h5>Funding period</h5>
+<p class="tiny_type">
+<time class="js-adjust" data-format="ll" datetime="2013-10-30T19:34:12-04:00">Oct 30, 2013</time> - 
+<time class="js-adjust" data-format="ll" datetime="2013-12-08T23:57:00-05:00">Dec 8, 2013</time>
+(39 days)
+</p>
+</div>
+</div>
+
+</div>
+
+<a href="#" id="video_mode_tab" style="display: none;">
+View in Video Mode
+</a>
+
+</div>
+</div>
+
+
+</div>
+
+<div class="h5 bg-green-dark" id="mega-footer-wrap">
+<div class="bg-green-dark white full-height" id="footer-newsletter-signup">
+<div class="container py4">
+<div class="grid_8 prefix_4 suffix_4 center mt4">
+<h2>
+Eureka! You've found
+<br>
+our little secret.
+</h2>
+<p>Sign up for our Happening email for all the inside info about arts and culture in the Kickstarter universe and beyond.</p>
+<div class="newsletter_signup">
+<form accept-charset="UTF-8" action="/newsletters/happening/signup" class="overlabels" method="post"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /><input class="hidden" name="authenticity_token" type="hidden" value="M8Yex/JaCbB0yD4EQ5L5B5UVoaNrxCe8gTSwOjbpYJ4=" /></div><input class="hidden" id="location" name="location" type="hidden" value="footer" />
+<textarea class="hide textarea" id="comment" name="comment">
+</textarea>
+<div class="field newsletter">
+<label class="overlabel z1 overlabel-newsletter">Email address</label>
+<input class="text" id="email" name="email" type="text" />
+</div>
+<input class="button button_green submit" name="commit" type="submit" value="Submit" />
+</form>
+
+</div>
+
+</div>
+</div>
+</div>
+<div class="container relative" id="mega-footer">
+<span class="scissors icon-scissors-1"></span>
+<div class="grid_16 alpha omega pt4 pb2" id="mega-footer-links">
+<div class="grid_4 link-group">
+<h5 class="white">About us</h5>
+<ul class="list">
+<li><a href="/year/2013/?ref=footer">2013 highlights</a></li>
+<li><a href="/year/2012?ref=footer">2012 highlights</a></li>
+<li><a href="/team?ref=footer">Who we are</a></li>
+<li><a href="/jobs?ref=footer">Jobs</a></li>
+<li><a href="/press?ref=footer">Press</a></li>
+<li><a href="/help/stats?ref=footer">Stats</a></li>
+<li><a href="/newsletters/weekly">Projects we love</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group">
+<h5><a href="/help?ref=footer" class="white">Help</a></h5>
+<ul class="list">
+<li><a href="/hello?ref=footer">What is Kickstarter?</a></li>
+<li><a href="/help?ref=footer">FAQ</a></li>
+<li><a href="/contact?ref=footer">Support</a></li>
+<li><a href="/help/school?ref=footer">Kickstarter School</a></li>
+<li><a href="/terms-of-use?ref=footer">Terms of Use</a></li>
+<li><a href="/privacy?ref=footer">Privacy Policy</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group alpha omega suffix_1">
+<h5 class="alpha"><a href="/discover/advanced?ref=footer" class="white">Discover</a></h5>
+<ul class="column column-0 grid_2 list">
+<li><a href="/discover/categories/art?ref=footer">Art</a></li>
+<li><a href="/discover/categories/comics?ref=footer">Comics</a></li>
+<li><a href="/discover/categories/dance?ref=footer">Dance</a></li>
+<li><a href="/discover/categories/design?ref=footer">Design</a></li>
+<li><a href="/discover/categories/fashion?ref=footer">Fashion</a></li>
+<li><a href="/discover/categories/film%20&amp;%20video?ref=footer">Film &amp; Video</a></li>
+<li><a href="/discover/categories/food?ref=footer">Food</a></li>
+</ul>
+<ul class="column column-1 grid_2 list">
+<li><a href="/discover/categories/games?ref=footer">Games</a></li>
+<li><a href="/discover/categories/music?ref=footer">Music</a></li>
+<li><a href="/discover/categories/photography?ref=footer">Photography</a></li>
+<li><a href="/discover/categories/publishing?ref=footer">Publishing</a></li>
+<li><a href="/discover/categories/technology?ref=footer">Technology</a></li>
+<li><a href="/discover/categories/theater?ref=footer">Theater</a></li>
+</ul>
+</div>
+<div class="grid_3 link-group">
+<h5 class="white">Hello</h5>
+<ul class="list">
+<li>
+<a href="https://twitter.com/kickstarter"><span class="ss-icon ss-social-regular ss-twitter"></span>
+Twitter
+</a></li>
+<li>
+<a href="https://www.facebook.com/Kickstarter"><span class="ss-icon ss-social-regular ss-facebook"></span>
+Facebook
+</a></li>
+<li>
+<a href="http://kickstarter.tumblr.com"><span class="ss-icon ss-social-regular ss-tumblr"></span>
+Tumblr
+</a></li>
+<li>
+<a href="http://instagram.com/kickstarter"><span class="ss-icon ss-social-regular ss-instagram"></span>
+Instagram
+</a></li>
+<li>
+<a href="https://vine.co/Kickstarter"><span class="ss-icon ss-social-regular ss-vine"></span>
+Vine
+</a></li>
+<li>
+<a href="/blog?ref=footer">Blog</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="grid_16 py4" id="mega-footer-bottom">
+<div class="logo left">
+<a href="/" class="grey-dark"><span class="ss-icon h3">KICKSTARTER</span>
+</a></div>
+<p class="right h5 grey-dark">
+&copy;
+2014
+Kickstarter, Inc.
+</p>
+</div>
+</div>
+</div>
+
+<script>
+  //<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    var analytics_vars = { google_analytics_id : "UA-7621056-1", logged_in : "false", social_user: "false" }
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.mixpanel_id = '75b1d24a516ecfc955eadfadc4910661';
+    window.mixpanel_debug = false;
+  //]]>
+</script>
+
+
+<noscript>
+<img alt="Quantcast" border="0" height="1" src="//secure.quantserve.com/pixel/p-34IbSpw2K94Sg.gif" style="display:none" width="1" />
+</noscript>
+
+
+<script>
+  //<![CDATA[
+    window.benchmark = (typeof window.performance == 'object' && typeof window.performance.mark == 'function');
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    (function (root) {
+      function instrument_function (original) {
+        return function () {
+          try {
+            return original.apply(this, arguments);
+          } catch (e) {
+            if (e.stack && root.Honeybadger) {
+              Honeybadger.notify(e, {
+                current_project : root.current_project,
+                current_user : root.current_user
+              });
+            }
+            throw(e);
+          }
+        };
+      }
+      root.instrument_function = instrument_function;
+    }(this));
+  //]]>
+</script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+
+<script>
+  //<![CDATA[
+    (function(){function c(a){this.local_start_time=new Date;this.settings={cookie_name:"request_time"};for(var b in a)this.settings[b]=a[b];this.get_remote_offset()}c.prototype.get_remote_offset=function(){this.cookie_value=this.read_cookie();var a=new Date(this.cookie_value);if(!this.cookie_value||"Invalid Date"===a.toString()){if(this.remote_offset=this.read_cookie("local_offset"))this.remote_offset=parseInt(this.remote_offset,10)}else this.remote_offset=a-this.local_start_time;"undefined"!==typeof this.remote_offset&& !isNaN(this.remote_offset)?(document.cookie="local_offset="+this.remote_offset+"; path=/",this.is_set=!0):this.is_set=!1};c.prototype.time_units=[["milliseconds",1],["seconds",1E3],["minutes",6E4],["hours",36E5],["days",864E5]];c.prototype.get_units_in_interval=function(a,b){var d=a.replace(/^\w/,function(d){return"get"+d.toUpperCase()});return b[d]()};c.prototype.milliseconds_in_day=function(a){"undefined"===typeof a&&(a=new Date);for(var b=0,d=this.time_units.length-2;0<=d;d--)b+=this.get_units_in_interval(this.time_units[d][0], a)*this.time_units[d][1];return b};c.prototype.milliseconds_in_interval=function(a,b){return this.milliseconds_in_day(b)%a};c.prototype.milliseconds_to_next_interval=function(a,b){return a-this.milliseconds_in_interval(a,b)};c.prototype.pluralize=function(a,b){1===b&&(a=a.replace(/s$/,""));return a};c.prototype.read_cookie=function(a){for(var b=window.document.cookie.split(";"),a=(a||this.settings.cookie_name)+"=",d=0;d<b.length;d++){for(var e=b[d];" "==e.charAt(0);)e=e.substring(1,e.length);if(0== e.indexOf(a))return b=e.substring(a.length,e.length),decodeURIComponent(b).replace(/\+/g," ")}return null};c.prototype.destroy_cookie=function(a){var b=new Date;a||(a=this.settings.cookie_name);b.setTime(b.getTime()-864E5);window.document.cookie=a+"=; expires="+b.toGMTString()+"; path=/"};c.prototype.get_remote_time=function(){var a=new Date,b=a.getTime()+this.remote_offset;return a=a.setTime(b)};window.ksr_page_clock=new c})(); (function(){function c(d,a,b){if(d){this.options={unit_base:{seconds:119,minutes:119,hours:72,days:0},end_phrase:d.getAttribute("data-word")||"to go",count_down:d.getAttribute("data-dynamic")||!1};for(k in b)this.options[k]=b[k];this.clock=a;this.time_units=this.clock.time_units.slice(1);this.element=d;this.clock.is_set&&this.attach()}}function a(){this.elements=[];this.attach()}var b=function(d,a){var b=a||window.document.body,c=d.split("."),g=c[c.length-1],c=1<c.length&&c[0]?c[0]:"*";if(window.document.getElementsByClassName)return b.getElementsByClassName(g); if(b.querySelectorAll)return b.querySelectorAll(d);for(var c=b.getElementsByTagName(c),h=[],i=0,f;f=c[i];i++)b=RegExp("(^|\\s)"+g+"(\\s|$)"),(""+f.className).match(b)&&h.push(f);return h};c.prototype.get_remaining_time=function(){var d=this.remote_end_time-this.clock.get_remote_time();0>d&&(d=0);return d};c.prototype.get_current_unit=function(){for(var d,a=0;a<this.time_units.length&&!(d=this.time_units[a],this.get_remaining_time()<=this.options.unit_base[d[0]]*d[1]);a++);return d};c.prototype.update_element= function(){var a=this.get_current_unit(),b=Math.floor(this.get_remaining_time()/a[1]);isNaN(b)||(this.number_element.innerHTML=b,this.text_element.innerHTML=this.clock.pluralize(a[0],b)+" "+this.options.end_phrase)};c.prototype.valid=function(){return!(!this.number_element||!this.text_element)};c.prototype.attach=function(){function a(){c.update_element();if(c.options.count_down&&0<c.get_remaining_time()){var b=c.get_current_unit();this.timeout=window.setTimeout(a,c.clock.milliseconds_to_next_interval(b[1]))}} var c=this;if(this.remote_end_time_string=this.element.getAttribute("data-end_time"))this.remote_end_time_string.match(/^\d+$/)?(this.remote_end_time=new Date,this.remote_end_time.setTime(this.remote_end_time_string)):this.remote_end_time=new Date(this.remote_end_time_string),this.number_element=b(".num",this.element)[0],this.text_element=b(".text",this.element)[0],this.element.ksr_page_timer=!0,this.valid()&&a()};c.prototype.cancel=function(){this.timeout&&clearTimeout(this.timeout)};a.prototype.loading= !0;a.prototype.stop_finding=function(){this.attach_timers();this.loading=!1;document.addEventListener?document.removeEventListener("DOMContentLoaded",this.stop_finding,!1):document.attachEvent&&"complete"===document.readyState&&document.detachEvent("onreadystatechange",this.stop_finding)};a.prototype.bind_ready=function(){var a=this,b=function(){a.stop_finding.call(a)};document.addEventListener?(document.addEventListener("DOMContentLoaded",b,!1),window.addEventListener("load",b,!1)):document.attachEvent&& (document.attachEvent("onreadystatechange",b),window.attachEvent("onload",b))};a.prototype.attach_timers=function(){for(var a=b("div.ksr_page_timer"),e=0;e<a.length;e++)a[e].ksr_page_timer||(new c(a[e],window.ksr_page_clock),this.elements.push(a[e]))};a.prototype.attach=function(){var a=this;this.bind_ready();(function(){a.attach_timers();a.loading&&window.setTimeout(function(){a.attach_timers()},200)})()};window.ProjectTimer=c;new a})();
+  //]]>
+</script>
+
+<script class="template" id="template-widgets__video_embed_code" type="text/x-tmpl-mustache"><iframe width="{{width}}" height="{{height}}" src="{{{path}}}" frameborder="0" scrolling="no"> </iframe>
+</script><script class="template" id="template-projects__baseball_card_tall" type="text/x-tmpl-mustache"><div class="project-card-wrap project-card-wrap-tall border bg-white rounded clip">
+  <div class="project-card relative project-live {{#successful?}}successful{{/successful?}}">
+    <div class="project-thumbnail pt1 pl1 pr1">
+      <a href="{{urls.web.project}}" target="">
+        <img alt="Photo-little" class="projectphoto-little" src="{{photo.little}}" class="fit">
+      </a>
+    </div>
+    <div class="project-card-interior p1 h6 grey-dark">
+      <h6 class="project-title">
+        <a href="{{urls.web.project}}" target="" class="green-dark">{{name}}</a>
+      </h6>
+      <p class="mb1 ellipsis">
+        by
+        {{creator.name}}
+      </p>
+      <p class="blurb">
+        {{blurb}}
+      </p>
+    </div>
+    <div class="absolute-bottom bg-white rounded-bottom">
+
+      {{#location}}
+        <ul class="p1 list project-meta no-margin h6">
+          <li class="ellipsis">
+            <a href="{{location.urls.web.discover}}" data-location="{{location_json}}" class="grey-dark">
+              <span class="ss-icon ss-location"></span>
+              <span class="location-name">{{location.displayable_name}}</span>
+            </a>
+          </li>
+        </ul>
+      {{/location}}
+
+      <div class="project-stats-wrap pb1 pl1 pr1">
+
+        {{#failed?}}
+          <div class='project-status project-failed h6'>
+            <strong> Funding Unsuccessful</strong><br />
+            <span class="grey-dark">Project ended on {{formatted_deadline}}</span>
+          </div>
+        {{/failed?}}
+
+        {{#canceled?}}
+          <div class='project-status project-canceled h6'>
+            <strong> Funding Canceled</strong><br />
+            <span class="grey-dark">Project canceled on {{formatted_state_changed_at}}</span>
+          </div>
+        {{/canceled?}}
+
+        {{#successful?}}
+          <div class='project-pledged-successful bg-green white h6 pl1 pr1 mb1'>
+            <strong>Successful!</strong>
+          </div>
+        {{/successful?}}
+
+        {{#live_or_successful?}}
+          {{#live?}}
+            <div class="project-pledged-wrap bg-grey clip mb1">
+              <div class="project-pledged bg-green full-height" style="width: {{percent_raised_to_100}}%"></div>
+            </div>
+          {{/live?}}
+          <ul class="project-stats list no-margin h6 no-wrap">
+            <li class="first funded inline-block mr1">
+              <strong class="block h6">{{percent_raised_rounded}}%</strong>
+              <span class="grey-dark">funded</span>
+            </li>
+            <li class="pledged inline-block mr1">
+              <strong class="block h6">{{currency_symbol}}{{formatted_money}}</strong>
+              <span class="grey-dark">pledged</span>
+            </li>
+            {{#successful?}}
+              <li class="last successful inline-block">
+                <strong class="block h6">Funded</strong>
+                <div class="deadline grey-dark">{{formatted_deadline}}</div>
+              </li>
+            {{/successful?}}
+            {{#live?}}
+              <li class="last ksr_page_timer inline-block" data-end_time="{{javascript_deadline}}">
+                <strong class="block h6">
+                  <div class="num">30</div>
+                </strong>
+                <div class="span text grey-dark" data-word="left">days to go</div>
+              </li>
+            {{/live?}}
+          </ul>
+        {{/live_or_successful?}}
+      </div>
+    </div>
+  </div>
+</div>
+
+{{#friends_backing?}}
+  <div class="friend_project_context">
+    <div class="friend_facepile">
+      {{#truncated_friends}}
+        <img src="{{avatar.thumb}}" class="{{#has_metadata?}}small{{/has_metadata?}}">
+      {{/truncated_friends}}
+    </div>
+    <p class="friend_namepile">
+      {{{escaped_sentence}}}
+    </p>
+  </div>
+{{/friends_backing?}}
+</script><script class="template" id="template-projects__video_mode" type="text/x-tmpl-mustache"><a href='#' id='video_mode_close' class='close_button z2'><span class='ss-icon ss-delete'></span></a>
+
+<div class='title_card z1 {{context_classes}}' style="display:none;">
+  <div class='interior'>
+    <h2 class='project_title normal_weight'>{{name}}</h2>
+    <p class='blurb'>{{blurb}}</p>
+    <nav class='bar'>
+      <a id='play_button' class='left play' href='#'>
+        <span class='play_active'>
+          <span class='ss-icon ss-play'></span>
+          Play
+        </span>
+        <span class='pause_active'>
+          <span class='ss-icon ss-pause'></span>
+          Pause
+        </span>
+      </a>
+      {{#logged_in}}
+        <div class='remind right'>
+          {{#if_not_starred}}
+            <a class='follow' href='{{urls.web.project}}/watch'><span class='ss-icon ss-star'></span></a>
+          {{/if_not_starred}}
+          {{#if_starred}}
+            <a class='unfollow' href='{{urls.web.project}}/unwatch'><span class='ss-icon ss-star active'></span></a>
+          {{/if_starred}}
+        </div>
+      {{/logged_in}}
+      <a class='right explore button button_green small' href='#'>Explore this project</a>
+    </nav>
+  </div>
+</div>
+
+<div class='channel_controls z1'>
+  <a href='#' class='{{#playlist_is_location}}selected {{/playlist_is_location}}location'>Something else near {{location.first_name}} <span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_featured}}selected {{/playlist_is_featured}}featured'>Something different<span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_category}}selected {{/playlist_is_category}}category'>Something else in {{category.name}} <span class='ss-icon ss-navigateright'></span></a>
+</div>
+
+<div class='project_video' style='background-image: url('{{photo.full}}')'>
+  <div class='cover'>
+    <video>
+      <source src='{{video.high}}' type='video/mp4'/>
+      <source src='{{video.webm}}' type='video/webm'/>
+    </video>
+  </div>
+</div>
+</script><script class="template" id="template-site__video_mode_fourohfour" type="text/x-tmpl-mustache"><section class='four_oh_four'>
+  <p class='big_type'>
+    Looks like you've reached the end of the line! <br />Check out <a class="another" href='#'>another channel</a> or <a href='/discover'>browse projects in discover</a>.
+  </p>
+</section>
+</script>
+
+<script id="schwamm_formatting_options" type="text/javascript">
+//<![CDATA[
+(function(){window.formatters = window.formatters || {}; var formatting_options = {"distance_date_intervals":[[5,"just now"],[29,"less than a minute ago"],[89,"1 minute ago"],[2640,"%m minutes ago"],[5340,"about 1 hour ago"],[82800,"about %h hours ago"],[147600,"1 day ago"],[604800,"%d days ago"],[15552000,"on %t"],[0,"on %y"]],"currency_symbol_mappings":{"AFN":"\u060b","ALL":"Lek","ARS":"$","AUD":"$","AWG":"\u0192","AZN":"\u043c\u0430\u043d","BAM":"KM","BBD":"$","BGN":"\u043b\u0432","BMD":"$","BND":"$","BOB":"$b","BRL":"R$","BSD":"$","BWP":"P","BYR":"p.","BZD":"BZ$","CAD":"$","CLP":"$","CNY":"\u00a5","COP":"$","CRC":"\u20a1","CUP":"\u20b1","CZK":"K\u010d","DKK":"kr","DOP":"RD$","EGP":"\u00a3","EUR":"\u20ac","FJD":"$","FKP":"\u00a3","GBP":"\u00a3","GIP":"\u00a3","GTQ":"Q","GYD":"$","HKD":"$","HNL":"L","HRK":"kn","HUF":"Ft","IDR":"Rp","ILS":"\u20aa","IRR":"\ufdfc","ISK":"kr","JMD":"J$","JPY":"\u00a5","KGS":"\u043b\u0432","KHR":"\u17db","KPW":"\u20a9","KRW":"\u20a9","KYD":"$","KZT":"\u043b\u0432","LAK":"\u20ad","LBP":"\u00a3","LKR":"\u20a8","LRD":"$","LTL":"Lt","LVL":"Ls","MKD":"\u0434\u0435\u043d","MNT":"\u20ae","MUR":"\u20a8","MXN":"$","MYR":"RM","MZN":"MT","NAD":"$","NGN":"\u20a6","NIO":"C$","NOK":"kr","NPR":"\u20a8","NZD":"$","OMR":"\ufdfc","PAB":"B/.","PEN":"S/.","PHP":"\u20b1","PKR":"\u20a8","PLN":"z\u0142","PYG":"Gs","QAR":"\ufdfc","RON":"lei","RSD":"\u0414\u0438\u043d.","RUB":"\u0440\u0443\u0431","SAR":"\ufdfc","SBD":"$","SCR":"\u20a8","SEK":"kr","SGD":"$","SHP":"\u00a3","SOS":"S","SRD":"$","SVC":"$","SYP":"\u00a3","THB":"\u0e3f","TRY":"TL","TTD":"TT$","TWD":"NT$","UAH":"\u20b4","USD":"$","UYU":"$U","UZS":"\u043b\u0432","VEF":"Bs","VND":"\u20ab","YER":"\ufdfc","ZAR":"R"},"currency_trailing_code_mappings":{"AUD":true,"CAD":true,"NZD":true,"USD":true},"currency_formats":["money","shorter_money"]}; for (key in formatting_options) {window.formatters[key] = formatting_options[key]};}());
+//]]>
+</script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("begin_base.js_tag");}
+  //]]>
+</script>
+<script src="https://d297h9he240fqh.cloudfront.net/assets/packages/base-45cdab84617ddfb8905b7cddc8500c19.js" type="text/javascript"></script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("end_base.js_tag");}
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    document.domain='kickstarter.com';
+  //]]>
+</script>
+
+<iframe height="0" id="api_xdreceiver" src="https://api.kickstarter.com/xdreceiver/85e6.html" style="display: none;" width="0"></iframe>
+
+
+
+<div id="fb-root"></div>
+<script>
+  //<![CDATA[
+    var channelUrl = window.location.protocol + "//" + window.location.host + "/channel.html",
+      skip_autologin = $('body').is('.skip_autologin');
+    
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId: window.fb_app_id,
+        channelUrl: channelUrl,
+        status: true,    // check login status
+        cookie: true,    // enable cookies to allow the server to access the session
+        xfbml: true,     // parse XFBML
+        logging: false   // turn off logging
+      });
+    
+      FB.getLoginStatus(function (response) {
+        if (response.status === 'connected') {
+          if (read_cookie("logout_from_fb")) {
+            FB.logout();
+            destroy_cookie("logout_from_fb");
+          } else if (!skip_autologin) {
+            $.get("/fb/autologin", {'fbsr': response.authResponse.signedRequest});
+          } else if (false && 0 == response.authResponse.userID) {
+            $.get("/fb/refresh", {'fbsr': response.authResponse.signedRequest});
+          }
+        } else {
+          if (read_cookie("logout_from_fb")) {
+            destroy_cookie("logout_from_fb");
+          }
+        }
+      })
+    
+      $(document).trigger('fb:loaded');
+    };
+    
+    
+    // Load the SDK Asynchronously
+    (function(d){
+      var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+      js = d.createElement('script'); js.id = id; js.async = true;
+      js.src = "//connect.facebook.net/en_US/all.js";
+      d.getElementsByTagName('head')[0].appendChild(js);
+    }(document));
+  //]]>
+</script>
+
+
+</body>
+</html>

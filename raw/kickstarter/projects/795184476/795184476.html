@@ -1,0 +1,1547 @@
+<!DOCTYPE html>
+<html class="projects_show  fontface no-js" lang="en">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# kickstarter: http://ogp.me/ns/fb/kickstarter#">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-5.newrelic.com","errorBeacon":"jserror.newrelic.com","licenseKey":"b04b883ad2","applicationID":"11086","transactionName":"cFteRUULX1wHFhtIEFxeVVJDFxxDCgtD","queueTime":17,"applicationTime":1350,"ttGuid":"","agentToken":null,"agent":"js-agent.newrelic.com/nr-411.min.js"}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"Vw4BVEVSCQMIUg=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e){function n(t,e,n){n||(n={});for(var r=o[t],a=r&&r.length||0,s=n[i]||(n[i]={}),u=0;a>u;u++)r[u].apply(s,e);return s}function r(t,e){var n=o[t]||(o[t]=[]);n.push(e)}var o={},i="nr@context";e.exports={on:r,emit:n}},{}],2:[function(t){function e(t,e,n,i,s){return u?u-=1:r("err",[s||new UncaughtException(t,e,n)]),"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t(5),a=window.onerror,s=!1,u=0;t("loader").features.push("err"),window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(d){"stack"in d&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(4),s=!0)}i.on("fn-start",function(){s&&(u+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&u>0&&(u-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:4,3:3,4:6,5:1,6:14,handle:"D5DuLP",loader:"G9z0Bl"}],3:[function(t){function e(t){r.inPlace(t,["addEventListener","removeEventListener"],"-",n)}function n(t){return t[1]}var r=t(1),o=(t(3),t(2));if(e(window),"getPrototypeOf"in Object){for(var i=document;i&&!i.hasOwnProperty("addEventListener");)i=Object.getPrototypeOf(i);i&&e(i);for(var a=XMLHttpRequest.prototype;a&&!a.hasOwnProperty("addEventListener");)a=Object.getPrototypeOf(a);a&&e(a)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&e(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=e["nr@wrapped"]?t[1]=e["nr@wrapped"]:e["nr@wrapped"]=t[1]=r(e,"fn-"):"function"==typeof e.handleEvent&&r.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:15,2:1,3:14}],4:[function(t){var e=(t(3),t(1)),n=t(2);e.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=e(t[0],"fn-")})},{1:15,2:1,3:14}],5:[function(t){function e(t){var e=t[0];"string"==typeof e&&(e=new Function(e)),t[0]=n(e,"fn-")}var n=(t(3),t(1)),r=t(2);n.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",e)},{1:15,2:1,3:14}],6:[function(t){function e(){o.inPlace(this,s,"fn-")}function n(t,e){o.inPlace(e,["onreadystatechange"],"fn-")}function r(t,e){return e}var o=t(1),i=t(2),a=window.XMLHttpRequest,s=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];window.XMLHttpRequest=function(t){var n=new a(t);try{i.emit("new-xhr",[],n),o.inPlace(n,["addEventListener","removeEventListener"],"-",function(t,e){return e}),n.addEventListener("readystatechange",e,!1)}catch(r){try{i.emit("internal-error",r)}catch(s){}}return n},window.XMLHttpRequest.prototype=a.prototype,o.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",r),i.on("send-xhr-start",n),i.on("open-xhr-start",n)},{1:15,2:1}],7:[function(t){function e(){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;u>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,d="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=e(d);if(f&&(r.rxSize=f),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}t("loader").features.push("xhr");var o=t("handle"),i=t(1),a=t(5),s=["load","error","abort","timeout"],u=s.length,d=t(2);t(3),t(4),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var d=e(o);d&&(r.txSize=d)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",e)}catch(r){}}};for(var f=0;u>f;f++)n.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&e()},{1:8,2:11,3:3,4:6,5:1,handle:"D5DuLP",loader:"G9z0Bl"}],8:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e){var n=r[t];return n?n.apply(this,e):(o[t]||(o[t]=[]),void o[t].push(e))}var r={},o={};e.exports=n,n.queues=o,n.handlers=r},{}],11:[function(t,e){function n(t){if(!t||"object"!=typeof t&&"function"!=typeof t)return-1;if(t===window)return 0;if(o.call(t,"__nr"))return t.__nr;try{return Object.defineProperty(t,"__nr",{value:r,writable:!0,enumerable:!1}),r}catch(e){return t.__nr=r,r}finally{r+=1}}var r=1,o=Object.prototype.hasOwnProperty;e.exports=n},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&u&&u.body){p.proto="https"===c.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=u.createElement("script");e.src=p.proto+t.agent,u.body.appendChild(e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,u=s.document,d="addEventListener",f="attachEvent",c=(""+location).split("?")[0],p=e.exports={offset:i(),origin:c,features:[]};u[d]?(u[d]("DOMContentLoaded",o,!1),s[d]("load",n,!1)):(u[f]("onreadystatechange",r),s[f]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],14:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],15:[function(t,e){function n(t,e,r,s){function nrWrapper(){try{var n,a=u(arguments),d=this,f=r&&r(a,d)||{}}catch(c){i([c,"",[a,d,s],f])}o(e+"start",[a,d,s],f);try{return n=t.apply(d,a)}catch(p){throw o(e+"err",[a,d,p],f),p}finally{o(e+"end",[a,d,n],f)}}return a(t)?t:(e||(e=""),nrWrapper[n.flag]=!0,nrWrapper)}function r(t,e,r,o){r||(r="");var i,s,u,d="-"===r.charAt(0);for(u=0;u<e.length;u++)s=e[u],i=t[s],a(i)||(t[s]=n(i,d?s+r:r,o,s,t))}function o(t,e,n){try{s.emit(t,e,n)}catch(r){i([r,t,e,n])}}function i(t){try{s.emit("internal-error",t)}catch(e){}}function a(t){return!(t&&"function"==typeof t&&t.apply&&!t[n.flag])}var s=t(1),u=t(2);e.exports=n,n.inPlace=r,n.flag="nr@wrapper"},{1:1,2:14}]},{},["G9z0Bl",2,7]);</script><script>
+  //<![CDATA[
+    docElement = this.document.documentElement;
+    docElement.className=docElement.className.replace(/\bno-js\b/,'') + 'js';
+  //]]>
+</script>
+<title>Cosmic Highway Wii U by Maestro Interactive Games &mdash; Kickstarter</title><script>
+  //<![CDATA[
+    window.report_errors = true;
+    window.honeybadger_configuration = {
+      api_key : "02ab109335c0dd1a93506d92f22217a7",
+      environment : "production",
+      component : "projects",
+      action : "show",
+      onerror : false
+    };
+  //]]>
+</script>
+
+
+<!--[if lt IE 9]>
+  <script src="//html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta content="telephone=no" name="format-detection">
+
+<!--[if !IE]> -->
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base-9f623ad5d021a188cfb2d68a0cdf7a7b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<!-- <![endif]-->
+<!--[if IE]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base_blessed-2640c72487552f9a2ef9f2620b4af860.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<!--[if lte IE 9]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_nine-a93fe10530f175f96c4078b7e070d7e1.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 8]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_eight-f75aeb274436f94a0d243774456b1c62.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 7]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie-c019c01acd3a96588b346cf577a3504f.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_seven-5a3d2cef660cd281fd844b04b2397dbb.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if IE 6]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_six-e4d3caf76e405fe19aee6ece8bda701b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<link href="https://d297h9he240fqh.cloudfront.net/favicon.png" rel="icon" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-precomposed-7b603dba7cf80e4acc57d94a991bebbd.png" rel="apple-touch-icon-precomposed" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-ipad-precomposed-3176f72977daf43dee3b0d348484dc01.png" rel="apple-touch-icon-precomposed" sizes="72x72" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-iphone4-precomposed-b93b70168cd8492c843d0fea873c7f83.png" rel="apple-touch-icon-precomposed" sizes="114x114" type="image/png">
+<link href="https://www.kickstarter.com/services/oembed?url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Fmaestroigames%2Fcosmic-highway-wii-u" rel="alternate" title="Cosmic Highway Wii U Script Tag oEmbed" type="application/json+oembed">
+<link rel="alternate" type="application/atom+xml" title="Cosmic Highway Wii U : Kickstarter" href="https://www.kickstarter.com/projects/maestroigames/cosmic-highway-wii-u/posts.atom" />
+<meta property="twitter:app:id:iphone" content="596961532"/>
+<meta property="twitter:app:name:iphone" content="Kickstarter"/>
+<meta property="twitter:app:url:iphone" content="ksr://www.kickstarter.com/projects/maestroigames/cosmic-highway-wii-u"/>
+<meta name="video_height" content="360"/>
+<meta name="video_width" content="640"/>
+<meta name="video_type" content="application/x-shockwave-flash"/>
+<meta name="title" content="Kickstarter &gt;&gt; Cosmic Highway Wii U by Maestro Interactive Games"/>
+<meta name="description" content="Maestro Interactive Games is raising funds for Cosmic Highway Wii U on Kickstarter! 
+
+ Cosmic Highway takes music and racing to a whole new level. Do you love engaging music, stunning visuals, and racing? We thought so."/>
+<meta name="robots" content="noindex"/>
+<meta property="og:title" content="Cosmic Highway Wii U"/>
+<meta property="og:type" content="kickstarter:project"/>
+<meta property="og:image" content="https://s3.amazonaws.com/ksr/projects/441318/photo-main.jpg?1397808367"/>
+<meta property="og:url" content="https://www.kickstarter.com/projects/maestroigames/cosmic-highway-wii-u"/>
+<meta property="og:site_name" content="Kickstarter"/>
+<meta property="fb:app_id" content="69103156693"/>
+<meta property="og:description" content="Cosmic Highway takes music and racing to a whole new level. Do you love engaging music, stunning visuals, and racing? We thought so."/>
+<meta property="kickstarter:creator" content="https://www.kickstarter.com/profile/maestroigames"/>
+<meta property="twitter:url:landing_url" content="https://www.kickstarter.com/projects/maestroigames/cosmic-highway-wii-u"/>
+<meta property="twitter:card" content="2427656750:kickstarter_project"/>
+<meta property="twitter:site" content="@kickstarter"/>
+<meta property="twitter:site:id" content="16186995"/>
+<meta property="twitter:text:title" content="Cosmic Highway Wii U"/>
+<meta property="twitter:text:artist" content="Maestro Interactive Games"/>
+<meta property="twitter:text:backers" content="38"/>
+<meta property="twitter:text:pledged" content="$1,158 USD"/>
+<meta property="twitter:text:time" content="0 seconds"/>
+<meta property="twitter:text:location" content="Austin, TX"/>
+<meta property="twitter:image:location_image" content="https://d3mlfyygrfdi2i.cloudfront.net/b40e/pin.png"/>
+<meta property="twitter:text:description" content="Cosmic Highway takes music and racing to a whole new level. Do you love engaging music, stunning visuals, and racing? We thought so."/>
+<meta property="twitter:image:media" content="https://s3.amazonaws.com/ksr/projects/441318/photo-main.jpg?1397808367"/>
+<meta property="twitter:image:width" content="640"/>
+<meta property="twitter:image:height" content="480"/>
+<meta property="twitter:player:stream:url" content="https://d2pq0u4uni88oo.cloudfront.net/projects/441318/video-210028-h264_base.mp4"/>
+<meta property="twitter:player:stream:content" content="video/mp4"/>
+<meta property="twitter:player:url" content="https://www.kickstarter.com/projects/maestroigames/cosmic-highway-wii-u/widget/video.html"/>
+<meta property="twitter:player:height" content="360"/>
+<meta property="twitter:player:width" content="640"/>
+<meta property="twitter:maxage" content="60"/>
+<meta property="og:video" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F441318%2Fvideo-210028-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F441318%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Maestro+Interactive+Games&amp;project_title=Cosmic+Highway+Wii+U&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Fmaestroigames%2Fcosmic-highway-wii-u&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:secure_url" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F441318%2Fvideo-210028-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F441318%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Maestro+Interactive+Games&amp;project_title=Cosmic+Highway+Wii+U&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Fmaestroigames%2Fcosmic-highway-wii-u&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:height" content="360"/>
+<meta property="og:video:width" content="640"/>
+<meta property="og:video:type" content="application/x-shockwave-flash"/>
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="sFWsqbZuZIIZ//qn4qshnKvmkhhAWumiHJcRd+kZis4=" name="csrf-token" />
+<script type="text/javascript">
+  var _sift = _sift || [];
+  _sift.push(['_setAccount', '637102']);
+  _sift.push(['_setUserId', '']);
+  _sift.push(['_trackPageview']);
+
+  (function() {
+    function loadSift() {
+      var sift, s;
+      if (root.visitor_id) {
+        _sift.push(['_setSessionId', root.visitor_id]);
+      }
+      sift = document.createElement('script');
+      sift.type = 'text/javascript';
+      sift.async = true;
+      sift.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dtlilztwypawv.cloudfront.net/s.js';
+      s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(sift, s);
+    }
+    if (window.attachEvent) {
+      window.attachEvent('onload', loadSift);
+    } else {
+      window.addEventListener('load', loadSift, false);
+    }
+  })();
+</script>
+<link href="http://kck.st/XLdCgL" rel="shorturl">
+<link href="https://www.kickstarter.com/projects/maestroigames/cosmic-highway-wii-u" rel="canonical">
+<link href="https://s3.amazonaws.com/ksr/projects/441318/photo-med.jpg?1397808367" rel="image_src">
+<link href="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F441318%2Fvideo-210028-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F441318%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Maestro+Interactive+Games&amp;project_title=Cosmic+Highway+Wii+U&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Fmaestroigames%2Fcosmic-highway-wii-u&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque" rel="video_src">
+<script>
+  //<![CDATA[
+    window.current_checkout = "{&quot;id&quot;:0,&quot;domestic&quot;:null,&quot;amount&quot;:0.0,&quot;updated_at&quot;:0,&quot;created_at&quot;:0}";
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.current_ip = '94.209.101.212';
+    window.current_ip_datacenter = 'false';
+    window.enabled_features = {"elasticsearch":true,"security_history_read":true,"security_history_write":true,"advanced_discovery_es":true,"ios_crashlytics":true,"ios_mixpanel":true,"stories_veronica_mars":true,"veronica_mars_hero":true,"password_reset_banner":true};
+    window.fb_app_id = '69103156693';
+    
+    var _sf_startpt=(new Date()).getTime();
+    
+    window.current_project = "{&quot;id&quot;:795184476,&quot;name&quot;:&quot;Cosmic Highway Wii U&quot;,&quot;blurb&quot;:&quot;Cosmic Highway takes music and racing to a whole new level. Do you love engaging music, stunning visuals, and racing? We thought so.&quot;,&quot;goal&quot;:6000.0,&quot;pledged&quot;:1158.75,&quot;state&quot;:&quot;failed&quot;,&quot;slug&quot;:&quot;cosmic-highway-wii-u&quot;,&quot;disable_communication&quot;:false,&quot;country&quot;:&quot;US&quot;,&quot;currency&quot;:&quot;USD&quot;,&quot;currency_symbol&quot;:&quot;$&quot;,&quot;currency_trailing_code&quot;:true,&quot;deadline&quot;:1364230670,&quot;state_changed_at&quot;:1364230670,&quot;created_at&quot;:1358824081,&quot;launched_at&quot;:1361642270,&quot;backers_count&quot;:38,&quot;photo&quot;:{&quot;full&quot;:&quot;https://s3.amazonaws.com/ksr/projects/441318/photo-full.jpg?1397808367&quot;,&quot;ed&quot;:&quot;https://s3.amazonaws.com/ksr/projects/441318/photo-ed.jpg?1397808367&quot;,&quot;med&quot;:&quot;https://s3.amazonaws.com/ksr/projects/441318/photo-med.jpg?1397808367&quot;,&quot;little&quot;:&quot;https://s3.amazonaws.com/ksr/projects/441318/photo-little.jpg?1397808367&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/projects/441318/photo-small.jpg?1397808367&quot;,&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/projects/441318/photo-thumb.jpg?1397808367&quot;,&quot;1024x768&quot;:&quot;https://s3.amazonaws.com/ksr/projects/441318/photo-1024x768.jpg?1397808367&quot;,&quot;1536x1152&quot;:&quot;https://s3.amazonaws.com/ksr/projects/441318/photo-1536x1152.jpg?1397808367&quot;},&quot;creator&quot;:{&quot;id&quot;:1028637333,&quot;name&quot;:&quot;Maestro Interactive Games&quot;,&quot;slug&quot;:&quot;maestroigames&quot;,&quot;avatar&quot;:{&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/3729776/rbKoKlRt.thumb.jpg?1393555138&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/3729776/rbKoKlRt.small.jpg?1393555138&quot;,&quot;medium&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/3729776/rbKoKlRt.medium.jpg?1393555138&quot;},&quot;urls&quot;:{&quot;web&quot;:{&quot;user&quot;:&quot;https://www.kickstarter.com/profile/maestroigames&quot;},&quot;api&quot;:{&quot;user&quot;:&quot;https://api.kickstarter.com/v1/users/1028637333?signature=1399952685.585251351ab7e0331b6bd15ca35dea63d4e4ff8b&quot;}}},&quot;location&quot;:{&quot;id&quot;:2357536,&quot;name&quot;:&quot;Austin&quot;,&quot;slug&quot;:&quot;austin-tx&quot;,&quot;short_name&quot;:&quot;Austin, TX&quot;,&quot;displayable_name&quot;:&quot;Austin, TX&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:&quot;TX&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/austin-tx&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/austin-tx&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1399951821.40b481f638520857e1b4ca887f5449fda5c8328f&amp;woe_id=2357536&quot;}}},&quot;category&quot;:{&quot;id&quot;:35,&quot;name&quot;:&quot;Video Games&quot;,&quot;slug&quot;:&quot;games/video games&quot;,&quot;position&quot;:7,&quot;parent_id&quot;:12,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;http://www.kickstarter.com/discover/categories/games/video%20games&quot;}}},&quot;urls&quot;:{&quot;web&quot;:{&quot;project&quot;:&quot;https://www.kickstarter.com/projects/maestroigames/cosmic-highway-wii-u&quot;,&quot;project_short&quot;:&quot;http://kck.st/XLdCgL&quot;,&quot;updates&quot;:&quot;https://www.kickstarter.com/projects/maestroigames/cosmic-highway-wii-u/posts&quot;},&quot;api&quot;:{&quot;project&quot;:&quot;https://api.kickstarter.com/v1/projects/795184476?signature=1399952685.6e8002aa1a10ff27b6e68be86e807edb15edfa3a&quot;,&quot;comments&quot;:&quot;https://api.kickstarter.com/v1/projects/795184476/comments?signature=1399952685.bafcb994ee59759c6b9ac614e549e3898d24f976&quot;,&quot;updates&quot;:&quot;https://api.kickstarter.com/v1/projects/795184476/updates?signature=1399952685.2717fc32742e836a1795bb4967f086c4297a05f2&quot;}},&quot;updated_at&quot;:1399588355,&quot;failed_at&quot;:1364230670,&quot;video&quot;:{&quot;id&quot;:210028,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/441318/video-210028-h264_high.mp4?2013&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/441318/video-210028-h264_base.mp4?2013&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/441318/video-210028-webm.webm?2013&quot;,&quot;width&quot;:640,&quot;height&quot;:360,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/441318/video-210028-h264_base.jpg?2013&quot;},&quot;comments_count&quot;:6,&quot;updates_count&quot;:10,&quot;rewards&quot;:[{&quot;id&quot;:0,&quot;minimum&quot;:1,&quot;reward&quot;:&quot;No Reward&quot;},{&quot;id&quot;:1325993,&quot;minimum&quot;:1.0,&quot;reward&quot;:&quot;DIGITAL ACCESS-Get added to our upcoming developer mailing list. Also, receive one free song from the game. This mailing list is different than the one on our website currently. We will also create a special KickStarter Forum on our site for you all to interact with us and each other. The song will be in FLAC, AIF, and MP3.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1362096000,&quot;project_id&quot;:795184476,&quot;backers_count&quot;:3,&quot;updated_at&quot;:1363634174},{&quot;id&quot;:1325992,&quot;minimum&quot;:5.0,&quot;reward&quot;:&quot;DIGITAL SUPPORT-We will be putting your name in the KickStarter Supporter section of the credits on the game, we will also add you to the mailing list, give you access to the forum and give you the free song. (What a steal of a deal!)&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1367366400,&quot;project_id&quot;:795184476,&quot;backers_count&quot;:10,&quot;updated_at&quot;:1364224688},{&quot;id&quot;:1325997,&quot;minimum&quot;:15.0,&quot;reward&quot;:&quot;DIGITAL MUSIC-Get a digital download of the Cosmic Highway Soundtrack. We are releasing 6 different soundtracks, 5 Digital and 1 Physical Soundtrack. We will be sending you a questionnaire asking which of the soundtracks you want. (Choose wisely)\\r\\n\\r\\nThe choices for the digital soundtrack are:\\u00a0\\r\\nThe Scientist Edition (Rock/Electronic)\\r\\nThe Dark One Edition (Orchestral)\\r\\nThe Glitcher Edition (8Bit/Chiptunes)\\r\\nThe Inventor\\u00a0Edition\\u00a0(Classical/Victorian)\\r\\nThe Comic Edition (Jazz)\\r\\n\\r\\nYou also will get the previous rewards.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1364774400,&quot;project_id&quot;:795184476,&quot;backers_count&quot;:3,&quot;updated_at&quot;:1362900987},{&quot;id&quot;:1325996,&quot;minimum&quot;:20.0,&quot;reward&quot;:&quot;DIGITAL ART BOOK- Get a copy of the Maestro Interactive Games Digital Art Book. It will feature Cosmic Highway, Alien Drop, Alien Revenge, Alien Labyrinth, Fade Into Darkness, Percy Penguin&#39;s World, Maestro Mini Golf and more. (We will try to get as much content in it as possible for you) \\r\\n\\r\\nYou will also get all of the lower levels.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1364774400,&quot;project_id&quot;:795184476,&quot;backers_count&quot;:2,&quot;updated_at&quot;:1361918836},{&quot;id&quot;:1325994,&quot;minimum&quot;:23.0,&quot;reward&quot;:&quot;BONUS DIGITAL-We are rewarding our backers of this level with a unique gift. Get exclusive access to the story of our next title Fade Into Darkness, months before the short story and game become available for sale. We will also create a unique Forum for the backers for this game, to discuss it with us.\\r\\n\\r\\nAlso you will get the lower tiers&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1362096000,&quot;project_id&quot;:795184476,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1361405234},{&quot;id&quot;:1328206,&quot;minimum&quot;:25.0,&quot;reward&quot;:&quot;THE GAME AT RELEASE-We are rewarding our backers of this level with a copy of Cosmic Highway Wii U the day it is released on the Nintendo eShop. Plus for those that have access to an iOS device, we will give you a copy of one of our previous iOS releases, Maestro Mini Golf to download. (If you do not have an iOS device, we can provide you a PC/Mac version) \\r\\n\\r\\nYou will also get the previous rewards.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1367366400,&quot;project_id&quot;:795184476,&quot;backers_count&quot;:5,&quot;updated_at&quot;:1364196293},{&quot;id&quot;:1325995,&quot;minimum&quot;:40.0,&quot;reward&quot;:&quot;PHYSICAL MUSIC- Limited to 100 People -We are providing the physical soundtrack at this donation level. This is the last of the 6 soundtracks for Cosmic Highway. This will be the only way to get this soundtrack, each album cover will be signed by the developers and will contain the special world music. We will also be giving you one of the digital soundtracks of your choice. You will get every reward in Tier 1 (See the reward section to the left). \\r\\n\\r\\n($10 extra for shipping for non-US)&quot;,&quot;limit&quot;:100,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;10.0&quot;,&quot;estimated_delivery_on&quot;:1364774400,&quot;project_id&quot;:795184476,&quot;remaining&quot;:98,&quot;backers_count&quot;:2,&quot;updated_at&quot;:1363904588},{&quot;id&quot;:1325998,&quot;minimum&quot;:40.0,&quot;reward&quot;:&quot;THE GAME EARLY: Limited to 5 People - Get the game ahead of the rest. We will be giving you the game early (a week-2weeks) \\r\\n\\r\\nYou will also get two digital soundtracks and the other rewards in Tier 1. \\r\\n(See the reward section to the left)&quot;,&quot;limit&quot;:5,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1367366400,&quot;project_id&quot;:795184476,&quot;remaining&quot;:2,&quot;backers_count&quot;:3,&quot;updated_at&quot;:1363259890},{&quot;id&quot;:1326000,&quot;minimum&quot;:60.0,&quot;reward&quot;:&quot;SIGNED POSTER: Limited to 50 People-\\u00a0We are rewarding our backers for this level, a limited print run poster of Cosmic Highway. This poster will also be signed by the developers. \\r\\nYou will also get every reward in Tier 1. \\r\\n(See the reward section to the left)\\r\\n(Picture is a very tentative idea of the poster, we will share the final poster before the end of the kickstarted)\\r\\n\\r\\n($25 extra for shipping for non-US)&quot;,&quot;limit&quot;:50,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;25.0&quot;,&quot;estimated_delivery_on&quot;:1364774400,&quot;project_id&quot;:795184476,&quot;remaining&quot;:50,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1361405867},{&quot;id&quot;:1328207,&quot;minimum&quot;:100.0,&quot;reward&quot;:&quot;ALMOST HIGH SCORE-Limited to 10 People-We will add a song inspired by a game of your choice in the game. You will also receive credit in the game in the audio section. \\r\\n\\r\\nYou will also receive the Physical Soundtrack from the Tier 2 rewards, as well as all of the rewards in Tier 1.\\r\\n(See the reward section to the left)\\r\\n\\r\\n($10 extra for shipping for non-US)&quot;,&quot;limit&quot;:10,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;10.0&quot;,&quot;estimated_delivery_on&quot;:1364774400,&quot;project_id&quot;:795184476,&quot;remaining&quot;:5,&quot;backers_count&quot;:5,&quot;updated_at&quot;:1363877396},{&quot;id&quot;:1328208,&quot;minimum&quot;:250.0,&quot;reward&quot;:&quot;THE ASSOCIATE PRODUCER- Limited to 2 People-For $250, we are giving two donators the chance to become Associate Producers on a Nintendo Wii U eShop title. \\r\\n\\r\\nYou will also get the Physical Soundtrack from Tier 2 and you will get all the rewards in Tier 1.\\r\\n($10 extra for shipping for non-US)&quot;,&quot;limit&quot;:2,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;10.0&quot;,&quot;estimated_delivery_on&quot;:1362096000,&quot;project_id&quot;:795184476,&quot;remaining&quot;:2,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1361405867},{&quot;id&quot;:1325999,&quot;minimum&quot;:500.0,&quot;reward&quot;:&quot;THE PARTY-Limited to 5 People (10 guests total) Come by Maestro Interactive Games studio and have a fun night with some of the developers. We will hook up the Wii U and play Cosmic Highway, and much more. We will be recording the night as well to show off on our website and YouTube, if you all allow us to do so. Dinner will be included and you will also leave with tons of autographed gifts and prizes. You will also get the game at Launch obviously. \\r\\nYou will also have a unique credit listed in the game as well. \\r\\n\\r\\n*Please be able to get to Austin on your own*&quot;,&quot;limit&quot;:5,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;domestic&quot;,&quot;shipping_amount&quot;:&quot;0.0&quot;,&quot;estimated_delivery_on&quot;:1367366400,&quot;project_id&quot;:795184476,&quot;remaining&quot;:5,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1361642256}]}";
+    
+    
+    
+    
+    
+    
+    
+    
+    window.timeRemaining = function timeRemaining(epochTime){
+    
+      var diff = epochTime - ((new Date()).getTime() / 1000);
+      var num_unit = (diff < 60 && [Math.max(diff, 0), 'seconds']) ||
+        ((diff/=60) < 60 && [diff, 'minutes']) ||
+        ((diff/=60) < 72 && [diff, 'hours']) ||
+        [diff/=24, 'days'];
+    
+      // Round down
+      num_unit[0] = Math.floor(num_unit[0]);
+      // Singularize unit
+      if (num_unit[0] == 1) { num_unit[1] = num_unit[1].replace(/s$/,""); }
+    
+      return num_unit;
+    };
+  //]]>
+</script>
+
+<script>
+  //<![CDATA[
+    window.current_variants = ["discover_link_copy[discover]","rewards_hover[with_hover_text]"];
+  //]]>
+</script>
+
+
+</head>
+
+<body class="project projects not-mobile not-phone not-forces-video-controls not-tablet not-touchable not-native-app-request video_mode" id="projects_show">
+<div class="jGrowl center" id="growl_section"></div>
+<div class="NS_layouts__navigation" id="header">
+<div class="main-nav relative bg-white">
+<h1 class="no-margin ml1 mr2 left">
+<a href="/?ref=nav" class="block p2"><span class="ss-icon green-dark">KICK</span><span class="ss-icon green">STARTER</span>
+</a></h1>
+<ul class="primary-links list no-margin left">
+<li class="left discover-link full-height">
+<a href="/discover?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Discover</a>
+</li>
+<li class="left full-height mr2">
+<a href="/learn?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Start</a>
+</li>
+</ul>
+<ul class="list no-margin right" id="menu-sub">
+<li class="right"><a href="/login?ref=nav" class="block h5 bold p2 full-height border-box">Log in</a></li>
+<li class="right"><a href="/signup?ref=nav" class="block h5 bold p2 full-height border-box">Sign up</a></li>
+</ul>
+<div class="search-link pl2 full-height border-left border-box clip">
+<form accept-charset="UTF-8" action="/projects/search" class="search pt1 pb1 block relative form-simple" method="get"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /></div>
+<div class="field relative pl3">
+<span class="ss-icon ss-search grey-dark ml1 mt1 absolute"></span>
+<input class="input-search header full-width text" data-tracker-name="Header Live Search" id="term" name="term" placeholder="Search projects" type="text" />
+</div>
+</form>
+
+</div>
+<div class="clear"></div>
+</div>
+</div>
+<div class="hide pt4 pb4 bg-grey-light" id="search_results-wrap">
+<div class="relative container" id="search_results">
+<a class="close right grey-dark mr1"><span class="ss-icon ss-delete"></span></a>
+<h3 class="header ml1 clearfix"></h3>
+<div class="clip clearfix" id="search_results_panel"></div>
+<a class="prev arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateleft"></span>
+</a>
+<a class="next arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateright"></span>
+</a>
+</div>
+</div>
+
+
+
+
+<div class="Project-ended-true Project-is_starred- Project-state-failed Project795184476_cxt border-top" id="main_content">
+<div id="running-board-wrap">
+<div class="container" id="running-board">
+<div id="project-header">
+<div class="NS_projects__running_board ml1 mr1 clearfix">
+<div class="title center py4">
+<h2 class="mb1">
+<a href="/projects/maestroigames/cosmic-highway-wii-u" class="green-dark">Cosmic Highway Wii U</a>
+</h2>
+<p class="no-margin">
+<span class="creator">
+by
+<a href="/projects/maestroigames/cosmic-highway-wii-u/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography" id="name">Maestro Interactive Games</a>
+</span>
+</p>
+</div>
+<ul class="project-nav list-inline left h5 bold mb1">
+<li class="mr2">
+<a href="/projects/maestroigames/cosmic-highway-wii-u" class="grey-dark py1 current" id="home_nav">Home</a>
+</li>
+<li class="mr2">
+<span data-updates-count="10" id="updates_count">
+<a href="/projects/maestroigames/cosmic-highway-wii-u/posts" class="grey-dark py1" id="updates_nav">Updates
+<span class="count h6 bg-grey-dark white">10</span>
+</a></span>
+</li>
+<li class="mr2">
+<a href="/projects/maestroigames/cosmic-highway-wii-u/backers" class="grey-dark py1" id="backers_nav">Backers
+<span class="count h6 bg-grey-dark white"><data class="Project795184476" data-format="number" data-value="38" itemprop="Project[backers_count]">38</data></span>
+</a></li>
+<li>
+<span data-comments-count="6" id="comments_count">
+<a href="/projects/maestroigames/cosmic-highway-wii-u/comments" class="grey-dark py1" id="comments_nav">Comments
+<span class="count h6 bg-grey-dark white"><data class="Project795184476" data-format="number" data-value="6" itemprop="Project[comments_count]">6</data></span>
+</a></span>
+</li>
+</ul>
+<ul class="list-inline right h5 bold mb1">
+<li class="location mr2">
+<a href="/discover/places/austin-tx?ref=city" class="grey-dark"><span class="ss-icon ss-location margin-right"></span>
+Austin, TX
+</a></li>
+<li class="category" data-project-parent-category="Games">
+<a href="/discover/categories/games/video%20games?ref=category" class="grey-dark"><span class="ss-icon ss-tag margin-right"></span>
+Video Games
+</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+</div>
+<div class="bg-grey-light pb4" id="content-wrap">
+<div class="Project795184476" data-conditions="[{&quot;!state&quot;:&quot;live&quot;}]" data-evaluation="true" data-render="&quot;&lt;div class=\&quot;NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-failed Project795184476_cxt bg-grey container pb1 pt1\&quot;&gt;\n&lt;div class=\&quot;Project795184476\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;successful&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;Funded!&amp;lt;/b&amp;gt;\\nThis project was successfully funded &amp;lt;data class=\\&amp;quot;Project795184476\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2013-03-25T12:57:50-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[deadline]\\&amp;quot;&amp;gt;on March 25, 2013&amp;lt;/data&amp;gt;.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project795184476\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:[&amp;quot;started&amp;quot;,&amp;quot;submitted&amp;quot;]}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;THIS PROJECT IS NOT LIVE&amp;lt;/b&amp;gt;\\nThis is only a draft that the creator has chosen to share.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project795184476\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;suspended&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Suspended&amp;lt;/b&amp;gt;\\nFunding for this project was suspended &amp;lt;data class=\\&amp;quot;Project795184476\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2013-03-25T12:57:50-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on March 25, 2013&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project795184476\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;canceled&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Canceled&amp;lt;/b&amp;gt;\\nFunding for this project was canceled by the project creator &amp;lt;data class=\\&amp;quot;Project795184476\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2013-03-25T12:57:50-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on March 25, 2013&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project795184476\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;failed&amp;quot;}]\&quot; data-evaluation=\&quot;true\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Unsuccessful&amp;lt;/b&amp;gt;\\nThis project\\u2019s funding goal was not reached on &amp;lt;time class=\\&amp;quot;js-adjust\\&amp;quot; data-format=\\&amp;quot;LL\\&amp;quot; datetime=\\&amp;quot;2013-03-25T12:57:50-04:00\\&amp;quot;&amp;gt;March 25, 2013&amp;lt;/time&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Unsuccessful&lt;/b&gt;\nThis project\u2019s funding goal was not reached on &lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;LL\&quot; datetime=\&quot;2013-03-25T12:57:50-04:00\&quot;&gt;March 25, 2013&lt;/time&gt;.\n&lt;/div&gt;&lt;div class=\&quot;Project795184476\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;purged&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;This project is purged and only visible to staff.&amp;lt;/b&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;/div&gt;\n&quot;"><div class="NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-failed Project795184476_cxt bg-grey container pb1 pt1">
+<div class="Project795184476" data-conditions="[{&quot;state&quot;:&quot;successful&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;Funded!&lt;/b&gt;\nThis project was successfully funded &lt;data class=\&quot;Project795184476\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-03-25T12:57:50-04:00&amp;quot;\&quot; itemprop=\&quot;Project[deadline]\&quot;&gt;on March 25, 2013&lt;/data&gt;.\n&lt;/p&gt;\n&quot;"></div><div class="Project795184476" data-conditions="[{&quot;state&quot;:[&quot;started&quot;,&quot;submitted&quot;]}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;THIS PROJECT IS NOT LIVE&lt;/b&gt;\nThis is only a draft that the creator has chosen to share.\n&lt;/p&gt;\n&quot;"></div><div class="Project795184476" data-conditions="[{&quot;state&quot;:&quot;suspended&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Suspended&lt;/b&gt;\nFunding for this project was suspended &lt;data class=\&quot;Project795184476\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-03-25T12:57:50-04:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on March 25, 2013&lt;/data&gt;.\n&quot;"></div><div class="Project795184476" data-conditions="[{&quot;state&quot;:&quot;canceled&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Canceled&lt;/b&gt;\nFunding for this project was canceled by the project creator &lt;data class=\&quot;Project795184476\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-03-25T12:57:50-04:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on March 25, 2013&lt;/data&gt;.\n&quot;"></div><div class="Project795184476" data-conditions="[{&quot;state&quot;:&quot;failed&quot;}]" data-evaluation="true" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Unsuccessful&lt;/b&gt;\nThis project\u2019s funding goal was not reached on &lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;LL\&quot; datetime=\&quot;2013-03-25T12:57:50-04:00\&quot;&gt;March 25, 2013&lt;/time&gt;.\n&quot;"><p class="no-margin"></p>
+<b>Funding Unsuccessful</b>
+This project’s funding goal was not reached on <time class="js-adjust" data-format="LL" datetime="2013-03-25T12:57:50-04:00">March 25, 2013</time>.
+</div><div class="Project795184476" data-conditions="[{&quot;state&quot;:&quot;purged&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;This project is purged and only visible to staff.&lt;/b&gt;\n&quot;"></div></div>
+</div>
+<div class="container bg-white border rounded py3 pl2 pr2" id="content">
+<div class="NS-projects-content">
+<div class="grid_11">
+<div data-has-video="true" id="video-section">
+<div class="video-player" data-dimensions="{&quot;width&quot;:640,&quot;height&quot;:480}" data-image="https://s3.amazonaws.com/ksr/projects/441318/photo-main.jpg?1397808367" data-video-tracker-url="https://www.kickstarter.com/projects/maestroigames/cosmic-highway-wii-u/video/plays" data-video-url="https://d2pq0u4uni88oo.cloudfront.net/projects/441318/video-210028-h264_high.mp4" data-video="{&quot;id&quot;:210028,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/441318/video-210028-h264_high.mp4?2013&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/441318/video-210028-h264_base.mp4?2013&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/441318/video-210028-webm.webm?2013&quot;,&quot;width&quot;:640,&quot;height&quot;:360,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/441318/video-210028-h264_base.jpg?2013&quot;}" id="video_pitch"><video class="has_webm landscape" preload="none">
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/441318/video-210028-h264_high.mp4" type='video/mp4; codecs="avc1.64001E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/441318/video-210028-h264_base.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/441318/video-210028-webm.webm" type="video/webm"></source>
+You'll need an HTML5 capable browser to see this content.
+</video>
+<img alt="Photo-main" class="has_played_hide poster landscape" src="https://s3.amazonaws.com/ksr/projects/441318/photo-main.jpg?1397808367" />
+<div class="play_button_big play_button_dark absolute-center rounded has_played_hide">
+<span class="ss-icon ss-play"></span>
+Play
+</div>
+<div class="player_controls clearfix absolute-bottom mb2 rounded white bg-green-dark forces-video-controls_hide">
+<div class="left">
+<a class="button button_icon button_dark playpause play mr1">
+<span class="play ss-icon ss-play"></span>
+<span class="pause ss-icon ss-pause"></span>
+</a>
+<span class="time current_time h12 left">00:00</span>
+</div>
+<div class="right">
+<span class="time total_time h12 left mr1">00:00</span>
+<a class="left button button_icon button_icon_white volume">
+<span class="ss-icon ss-volume icon_volume_nudge"></span>
+<span class="ss-icon ss-highvolume"></span>
+</a>
+<div class="volume_container left">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+<a class="left button button_icon button_icon_white fullscreen">
+<span class="ss-icon ss-expand"></span>
+<span class="ss-icon ss-contract"></span>
+</a>
+</div>
+<div class="clip">
+<div class="progress_container pr1 pl1">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="buffer progress_bar_buffer"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div data-project-state="failed" id="about">
+<div class="NS_projects__project_share clearfix py2 pl1 pr1">
+<ul class="left list-inline no-margin h5 bold">
+<li class="facebook mr2">
+<a href="https://www.kickstarter.com/projects/maestroigames/cosmic-highway-wii-u"><span class="ss-icon ss-social ss-facebook color-facebook"></span>
+<span class="color-facebook">Share</span>
+<span class="share_bubble"><div class="triangle grey"></div>
+<div class="triangle white"></div>
+<span class="count"></span></span>
+</a></li>
+<li class="twitter mr2">
+<a  href="https://twitter.com/intent/tweet?text=Cosmic%20Highway%20Wii%20U%20by%20Maestro%20Interactive%20Games&amp;via=kickstarter&amp;url=http://kck.st/XLdCgL" rel="nofollow"><span class="ss-icon ss-social ss-twitter color-twitter"></span>
+<span class="color-twitter">Tweet</span>
+</a></li>
+<li class="embed">
+<a href="/projects/maestroigames/cosmic-highway-wii-u/widget" class="remote_modal_dialog grey-dark" data-modal-title="Embed a widget on your site" data-tracker-name="Embed"><span class="ss-icon ss-navigateleft"></span>
+<span class="ss-icon ss-navigateright"></span>
+Embed
+</a></li>
+</ul>
+<ul class="right list-inline no-margin h5 bold">
+<li class="curate mr2">
+</li>
+<li class="remind">
+<div class="ajax-container" id="watching-widget">
+<div class="Project795184476" data-conditions="[{&quot;is_starred&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div id=\&quot;unwatch\&quot;&gt;\n&lt;a href=\&quot;/projects/maestroigames/cosmic-highway-wii-u/unwatch\&quot; class=\&quot;on\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"></div><div class="Project795184476" data-conditions="[{&quot;!is_starred&quot;:true}]" data-evaluation="true" data-render="&quot;&lt;div id=\&quot;watch\&quot;&gt;\n&lt;a href=\&quot;/projects/maestroigames/cosmic-highway-wii-u/watch\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;span class=\&quot;text\&quot;&gt;\n&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"><div id="watch">
+<a href="/projects/maestroigames/cosmic-highway-wii-u/watch"><span class="ss-icon ss-star"></span>
+<span class="text">
+</span>
+</a></div>
+
+</div></div>
+</li>
+</ul>
+</div>
+
+<div class="short_blurb py2 pl1 pr1">
+<p class="h3">Cosmic Highway takes music and racing to a whole new level. Do you love engaging music, stunning visuals, and racing? We thought so.</p>
+</div>
+<div class="full-description">
+<p><a href="http://www.maestroigames.com" target="_blank">Website</a>  <a href="https://www.facebook.com/MaestroInteractiveGames" target="_blank">Facebook Page</a> (be sure to "like" us)  <a href="https://twitter.com/Maestro_iGames" target="_blank">Twitter</a></p><p><i>We are also supporting the Kicking It Forward campaign, meaning that 5% of the revenue made from Cosmic Highway will be donated to future projects on KickStarter. We will be giving this to future game projects we want to see! <strong><a href="http://kickingitforward.org" target="_blank">http://kickingitforward.org</a></strong></i></p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/maestroigames/cosmic-highway-wii-u/assets/399067/edit" data-id="399067">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/399/067/89b99840e94475ddf6439ad89b60597c_large.png?1361392715"></figure>
+</div>
+<p>Cosmic Highway is a new game for the Nintendo Wii U being developed by Maestro Interactive Games, the same developers bringing <i><a href="http://notiongames.com" target="_blank">Notion Games Super Ubi Land</a></i> to the Wii U.</p><p>Cosmic Highway is a visually stunning, racing game blessed with some great music - perfect for after a long day. </p><p>Time Trial Work In Progress Cartoon Maps</p><div class="template oembed" contenteditable="false" data-href="http://www.youtube.com/watch?v=WJPQUIIF8Hw">
+</div><p>Below is a bunch of gameplay prototypes from last year. We will be uploading current gameplay next week.</p><div class="template oembed" contenteditable="false" data-href="http://youtu.be/tXHxLEGUsGA">
+</div><p>Below are some various screenshots of Races In the Game</p><div class="template asset" contenteditable="false" data-edit_url="/projects/maestroigames/cosmic-highway-wii-u/assets/427706/edit" data-id="427706">
+<figure><img alt="Cartoon Race 1" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/427/706/ca4d8985da5fdec818482cac289f9793_large.png?1362612520"><figcaption>Cartoon Race 1</figcaption></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/maestroigames/cosmic-highway-wii-u/assets/427708/edit" data-id="427708">
+<figure><img alt="Cartoon Race 2" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/427/708/05459078e4dc223ab673fd7b30b517c9_large.png?1362612545"><figcaption>Cartoon Race 2</figcaption></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/maestroigames/cosmic-highway-wii-u/assets/427711/edit" data-id="427711">
+<figure><img alt="Cartoon Race 3" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/427/711/a5cea56a9fa91e68f6ba85f010bb6a9b_large.png?1362612564"><figcaption>Cartoon Race 3</figcaption></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/maestroigames/cosmic-highway-wii-u/assets/427712/edit" data-id="427712">
+<figure><img alt="Unfinished SteamPunk Race" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/427/712/508d028779c6b2197b262c4d3d2f997c_large.png?1362612583"><figcaption>Unfinished SteamPunk Race</figcaption></figure>
+</div>
+<p>We have built five unique racers for players to choose from, each with their own musical style and abilities.</p><p>    1. The Steampunk Racer as seen in the video, has the ability to create a smokescreen blinding the other players. It features a victorian and classical musical style.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/maestroigames/cosmic-highway-wii-u/assets/436090/edit" data-id="436090">
+<figure><img alt="SteamPunk Racer" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/436/090/767155bbcf1b765ab56db9c2f31fda4d_large.png?1362957807"><figcaption>SteamPunk Racer</figcaption></figure>
+</div>
+<p>    2. The Modern Racer has the ability to create a shield around itself protecting the player from objects both on the track and from other players. The musical style of this racer is Rock/Electronic</p><div class="template asset" contenteditable="false" data-edit_url="/projects/maestroigames/cosmic-highway-wii-u/assets/436092/edit" data-id="436092">
+<figure><img alt="Modern Racer Concept" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/436/092/e388efa435395954bdc67d85c5048849_large.jpg?1362957834"><figcaption>Modern Racer Concept</figcaption></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/maestroigames/cosmic-highway-wii-u/assets/436094/edit" data-id="436094">
+<figure><img alt="Modern Racer Concept" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/436/094/7f2b197fe81bac5de1f3e19ddc785064_large.jpg?1362957855"><figcaption>Modern Racer Concept</figcaption></figure>
+</div>
+<p>  3. The Cartoon Racer has the ability to drop bananas on the course causing players that collide with them to swerve into the walls. The musical style of this racer is Jazz.</p><p>    4. The Dark Racer has the ability to cause spirits to stun its enemies for a short period of time. The musical styling of the Dark Racer is Orchestral. </p><p>    5. The Glitch Racer has the special ability of CopyCat. It can steal any of the other players abilities, but there is a catch. The ship has the chance to end up glitching, teleporting itself to a random place in the race. I.E (1st to 5th, 2nd to 4th, etc) The musical style of the Glitch Racer is Chiptunes.</p><p>The cool thing about the musical styles of the game is that on any given race, the music will adapt based on who is in first place. We have created songs for each race, however certain characteristics will be altered to fit the racing style of the person in the lead. We feel that this is something that can create a new racing experience for players.</p><p>So far we have developed 15 unique levels for the player to experience, each with its own music composed in house. And we plan to have 30 levels total by the end of development.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/maestroigames/cosmic-highway-wii-u/assets/399050/edit" data-id="399050">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/399/050/675071bcd32defdbee8ffc3236974265_large.png?1361392160"></figure>
+</div>
+<p>Maestro Interactive Games was founded to focus on the audio aspect of game design. We felt that gamers have gotten tired of the same old experiences that have come out lately. Everyone has become accustomed to Halo, Call of Duty and the rest. At the time, those were <b>NEW</b> experiences and they were amazing. We've had beautiful experiences from games like Limbo, Super Meat Boy, and acoustic experiences like Journey, and we've had new adventures from games like LA Noire, but we wanted to let players explore something new. We wanted players to re-experience audio in games.</p><p>This is a game designed to be fun, to be engaging, and to push the boundaries of what players expect video games to be. Most of all, it is meant to be a new experience for gamers.</p><p>Maestro Interactive Games is a team of developers with experience in the "AAA" and "Indie" game space. Our teams developers individually have some impressive titles such as <a href="http://donkeykong.nintendo.com/" target="_blank">Donkey Kong Country Returns</a>, and companies like <a href="http://www.microsoft.com/en-us/default.aspx" target="_blank">Microsoft</a> and <a href="http://www.nintendo.com" target="_blank">Nintendo</a> under their belts.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/maestroigames/cosmic-highway-wii-u/assets/399041/edit" data-id="399041">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/399/041/4ad82da470c0510b659511c18e444a4c_large.png?1361391870"></figure>
+</div>
+<p>The answer is no - this is a game for everyone, the primary objective of the game is to create a fun gaming experience for all gamers and enjoy the audio as they go. We hope that gamers will feel that the acoustic merits of games is something that should not be discounted when they play Cosmic Highway.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/maestroigames/cosmic-highway-wii-u/assets/399038/edit" data-id="399038">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/399/038/dc580ce17151d4b74fec4bcc48409531_large.png?1361391828"></figure>
+</div>
+<p>We've put a lot of effort into the stereo mode so we hope you will experiment with the way audio plays in your own gaming environment with this title. On the Wii U, you will use the Wii U GamePad to move left and right, as well as select everything using either the touch screen or the diagonal pad. We anticipate a second screen experience as well, as well as the TV off option that the GamePad supports. We are also developing extra features in the multiplayer splitscreen component for the player using the GamePad. </p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/maestroigames/cosmic-highway-wii-u/assets/399048/edit" data-id="399048">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/399/048/de2ed01bc30984b55e559c3b97369ad7_large.png?1361392104"></figure>
+</div>
+<p>We hope to raise money on Kickstarter to complete the last 15 levels and finish development for the Wii U. We plan to launch the title in late spring of 2013 on the Wii U. </p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/maestroigames/cosmic-highway-wii-u/assets/399042/edit" data-id="399042">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/399/042/eccd5e1609c3a9def5e6fb65e093586b_large.png?1361391926"></figure>
+</div>
+<p>We have an aggressive schedule in order to keep our costs down and get our backers the most value out of their donations. However, even though Cosmic Highway is currently going to be only available for the Wii U, we are developing it using cross platform practices, so do not rule out future platforms. We would like the game to be an exclusive on the Wii U, but if we get enough support we may bring it to other platforms. In fact, look at our <b><i>stretch goals</i></b> for details on that.</p><div>
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/maestroigames/cosmic-highway-wii-u/assets/399045/edit" data-id="399045">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/399/045/93cb5c154041b20da1767ed438a29d79_large.png?1361392063"></figure>
+</div>
+<p>We are currently finishing up work on Cosmic Highway as well as work on Super Ubi Land for the Wii U from Notion Games, as well as starting "pre-pre"-production work on our next Wii U title after Cosmic Highway, Fade Into Darkness, an exploratory audio experience. We are offering backers of Cosmic Highway a unique opportunity to get a copy of the short story our team has put together for Fade Into Darkness before it becomes available for sale.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/maestroigames/cosmic-highway-wii-u/assets/399340/edit" data-id="399340">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/399/340/282a00eaeb92e5f3cf3e9cf6b3e4cd19_large.png?1361399320"></figure>
+</div>
+
+</div>
+
+<p>The following Music is in MP3 Format for KIckStarter. (Not Representative of Final Audio Quality)</p><p>MENU</p><div class="template asset" contenteditable="false" data-id="399390">
+<figure><embed allowscriptaccess="always" height="30" src="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?audioonly=true&amp;controlbar.idlehide=false&amp;controlbar=bottom&amp;file=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fassets%2F000%2F399%2F390%2F056ff181ef2104055b9eff83c713f16d_original.mp3%3F1361400037&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf" type="application/x-shockwave-flash" width="560" wmode="transparent"></embed></figure>
+</div>
+
+<p>Theme</p><div class="template asset" contenteditable="false" data-id="399394">
+<figure><embed allowscriptaccess="always" height="30" src="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?audioonly=true&amp;controlbar.idlehide=false&amp;controlbar=bottom&amp;file=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fassets%2F000%2F399%2F394%2F7923392dc5539bcb28f9638ae4c535d3_original.mp3%3F1361400106&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf" type="application/x-shockwave-flash" width="560" wmode="transparent"></embed></figure>
+</div>
+<p>SteamPunk Boss Theme</p><div class="template asset" contenteditable="false" data-id="413288">
+<figure><embed allowscriptaccess="always" height="30" src="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?audioonly=true&amp;controlbar.idlehide=false&amp;controlbar=bottom&amp;file=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fassets%2F000%2F413%2F288%2F3f7ab49d36b623180865d54d45c34d26_original.mp3%3F1362071588&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf" type="application/x-shockwave-flash" width="560" wmode="transparent"></embed></figure>
+</div>
+<p>Cartoon Character Select Jingle</p><div class="template asset" contenteditable="false" data-id="413273">
+<figure><embed allowscriptaccess="always" height="30" src="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?audioonly=true&amp;controlbar.idlehide=false&amp;controlbar=bottom&amp;file=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fassets%2F000%2F413%2F273%2F61d12168edde31bbb9b578e75460b832_original.mp3%3F1362071051&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf" type="application/x-shockwave-flash" width="560" wmode="transparent"></embed></figure>
+</div>
+<p>Glitch Character Select Jingle</p><div class="template asset" contenteditable="false" data-id="413274">
+<figure><embed allowscriptaccess="always" height="30" src="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?audioonly=true&amp;controlbar.idlehide=false&amp;controlbar=bottom&amp;file=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fassets%2F000%2F413%2F274%2F775dcb927040f25d35861ac93d940bb6_original.mp3%3F1362071093&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf" type="application/x-shockwave-flash" width="560" wmode="transparent"></embed></figure>
+</div>
+<p>Modern Character Select Jingle</p><div class="template asset" contenteditable="false" data-id="413277">
+<figure><embed allowscriptaccess="always" height="30" src="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?audioonly=true&amp;controlbar.idlehide=false&amp;controlbar=bottom&amp;file=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fassets%2F000%2F413%2F277%2Fe0ffde395e78790dd33f158a4eafe1cc_original.mp3%3F1362071215&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf" type="application/x-shockwave-flash" width="560" wmode="transparent"></embed></figure>
+</div>
+<p>SteamPunk Character Select Jingle</p><div class="template asset" contenteditable="false" data-id="413278">
+<figure><embed allowscriptaccess="always" height="30" src="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?audioonly=true&amp;controlbar.idlehide=false&amp;controlbar=bottom&amp;file=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fassets%2F000%2F413%2F278%2F29315c8cbed36a82bfb65ed11790e7a5_original.mp3%3F1362071231&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf" type="application/x-shockwave-flash" width="560" wmode="transparent"></embed></figure>
+</div>
+<p>We will  continue to release more songs during the Campaign as well.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/maestroigames/cosmic-highway-wii-u/assets/399401/edit" data-id="399401">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/399/401/915ae5fc7d7cca63d9fa5284085bb693_large.png?1361400228"></figure>
+</div>
+<p>We have a great selection of rewards for you to choose from. Let us go into them in detail here. </p><div class="template asset" contenteditable="false" data-edit_url="/projects/maestroigames/cosmic-highway-wii-u/assets/398995/edit" data-id="398995">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/398/995/67c749e333cf40e388de8b8bd0a0624b_large.png?1361390626"></figure>
+</div>
+<p><b><b>Digital Access</b>-</b>For $1, get added to our upcoming developer mailing list. Also, receive one free song from the game. This mailing list is different than the one on our website currently. We will also create a special KickStarter Forum on our site for you all to interact with us and each other. The song will be in FLAC, AIF, and MP3.</p><p><b>Digital Support-</b>For $5, we will be putting your name in the KickStarter Supporter section of the credits on the game, we will also add you to the mailing list, give you access to the forum and give you the free song. (What a steal of a deal!)</p><p><b>Digital Music-</b>For $15, get a digital download of the Cosmic Highway Soundtrack. We are releasing 6 different soundtracks, 5 Digital and 1 Physical Soundtrack. We will be sending you a questionnaire asking which of the soundtracks you want.  You will also get the lower rewards. </p><p>The choices are: </p><p>The Scientist Edition (Rock/Electronic)</p><p>The Dark One Edition (Orchestral)</p><p>The Glitcher Edition (8Bit/Chiptunes)</p><p>The Inventor Edition (Classical/Victorian)</p><p>The Comic Edition (Jazz)</p><div class="template asset" contenteditable="false" data-edit_url="/projects/maestroigames/cosmic-highway-wii-u/assets/361063/edit" data-id="361063">
+<figure><img alt="Album Cover" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/361/063/85965ee44b3cb421dacf7257dd4c58da_large.jpg?1359490322"><figcaption>Album Cover</figcaption></figure>
+</div>
+<p><b>Digital Art Book- </b>For $20,  get a copy of the Maestro Interactive Games Digital Art Book. It will feature Cosmic Highway, Alien Drop, Alien Revenge, Alien Labyrinth, Fade Into Darkness, Percy Penguin's World, Maestro Mini Golf and more. (We will try to get as much content in it as possible for you) You will also get all of the lower levels.</p><p><b>Bonus Digital Tier-</b>For $21, we are rewarding our backers with a unique gift. Get exclusive access to the story of our next title <i>Fade Into Darkness, </i>months before the short story and game become available for sale. We will also create a unique Forum for the backers for this game, to discuss it with us. Also you will get the lower tiers.</p><p><b>The Game On Time-</b>For $25, we are rewarding our backers with a copy of Cosmic Highway Wii U the day it is released on the Nintendo eShop. Plus for those that have access to an iOS device, we will give you a copy of one of our previous iOS releases, Maestro Mini Golf to download. (If you do not have an iOS device, we can provide you a PC/Mac version) You will also get the previous rewards.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/maestroigames/cosmic-highway-wii-u/assets/399012/edit" data-id="399012">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/399/012/801eae1bb089669fbc2cf4257c77e85d_large.png?1361390842"></figure>
+</div>
+<p>These three prizes are all different and all very rare opportunities for our backers. Unfortunately, we can not provide backers with all three items in one donation however, so choose wisely.</p><p><b>Physical Music- Limited to 100 People -</b>For $40, we are providing the physical soundtrack. This is the last of the 6 soundtracks for Cosmic Highway. This will be the only way to get this soundtrack, each album cover will be signed by the developers and will contain the special world music. We will also be giving you one of the digital soundtracks of your choice. You will get every reward in Tier 1. ($10 extra for shipping for non-US)</p><p><b>The Game Early: Limited to 5 People - </b>At $40,get the game ahead of the rest. We will be giving you the game early (a week-2weeks) You will also get two digital soundtracks and the other rewards in Tier 1.</p><p><b>Signed Poster: Limited to 50 People- </b>For $60, we are rewarding our backers a limited print run poster of Cosmic Highway. This poster will also be signed by the developers. You will also get every reward in Tier 1. ($25 extra for shipping for non-US)</p><p><i>Below is a very rough and tentative sample of the Poster (We will submit an updated image of this during the KickStarter in an update)</i></p><div class="template asset" contenteditable="false" data-edit_url="/projects/maestroigames/cosmic-highway-wii-u/assets/361362/edit" data-id="361362">
+<figure><img alt="Poster Sample" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/361/362/f05e5c4bfcc32b68df4aee309735a3f8_large.jpg?1359500143"><figcaption>Poster Sample</figcaption></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/maestroigames/cosmic-highway-wii-u/assets/399016/edit" data-id="399016">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/399/016/44e0131ffcd3763385d812b686aba737_large.png?1361390928"></figure>
+</div>
+<p><b>Almost High Score-Limited to 10 People-</b>For $100, we will add a song inspired by a game of your choice in the game. You will also receive credit in the game in the audio section. You will also receive the Physical Soundtrack from the Tier 2 rewards, as well as all of the rewards in Tier 1.</p><p><b>The Associate Producer- Limited to 2 People-</b>For $250, we are giving two donators the chance to become Associate Producers on a Nintendo Wii U eShop title. You will also get the Physical Soundtrack from Tier 2 and you will get all the rewards in Tier 1.</p><p><b>The Party-Limited to 5 People </b>For $500, come by Maestro Interactive Games studio and have a fun night with some of the developers. We will hook up the Wii U and play Cosmic Highway, and much more. We will be recording the night as well to show off on our website and YouTube, if you all allow us to do so. Dinner will be included and you will also leave with tons of autographed gifts and prizes. You will also get the game at Launch obviously. You will also have a unique credit listed in the game as well. </p><p>*Please be able to get to Austin on your own*</p><div class="template asset" contenteditable="false" data-edit_url="/projects/maestroigames/cosmic-highway-wii-u/assets/399043/edit" data-id="399043">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/399/043/5565a3921191f7aa8dcaa33c534bd37a_large.png?1361391973"></figure>
+</div>
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/maestroigames/cosmic-highway-wii-u/assets/399023/edit" data-id="399023">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/399/023/d6a90ea20ee09e4a9de1f109137ccf86_large.png?1361391357"></figure>
+</div>
+<p>$8,000 - Five Extra Levels featuring music inspired from different video games! Some music will come from George "The Fat Man" Sanger, if we reach this point! George Sanger worked on some great games including the following: Ultima Underworld, The 7th Guest, Wing Commander, NASCAR Racing and more.</p>
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/maestroigames/cosmic-highway-wii-u/assets/399027/edit" data-id="399027">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/399/027/0250189eeda443b923c4ae300a342d0f_large.png?1361391504"></figure>
+</div>
+<p>$10,000 - iOS and Android Release</p><div class="template asset" contenteditable="false" data-edit_url="/projects/maestroigames/cosmic-highway-wii-u/assets/399028/edit" data-id="399028">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/399/028/79f8eca8be6b254fbf2ef12a3a189a42_large.png?1361391519"></figure>
+</div>
+<p>$15,000 - Mac App Store/Steam and 40 levels in the game including 10 video game music inspired levels. </p><div class="template asset" contenteditable="false" data-edit_url="/projects/maestroigames/cosmic-highway-wii-u/assets/399030/edit" data-id="399030">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/399/030/e634b30297e0ca21b2c6b40064a38519_large.png?1361391534"></figure>
+</div>
+<p>$30,000 - Hard copies of the game will become a reward tier and for sale via the website. Currently available for PC/Mac (We will try to make them for the Wii U provided Nintendo approves this) </p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/maestroigames/cosmic-highway-wii-u/assets/399057/edit" data-id="399057">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/399/057/227773aef5659b6bba307d2e5209f4ff_large.png?1361392290"></figure>
+</div>
+<p>We wanted to share some articles about our studio in the KickStarter as well.</p><p><a href="http://nintendoenthusiast.com/13065/wii-u-indie-games/" target="_blank">While the Big Publishers Snooze, Little Indie Studios Are Changing the Face of Wii U</a></p><p><a href="http://www.nintendolife.com/news/2013/01/maestro_interactive_games_bringing_super_ubi_land_to_wii_u_eshop" target="_blank">Maestro Interactive Games Bringing Super Ubi Land To Wii U eShop</a></p><p><a href="http://nintychronicle.wordpress.com/2013/01/14/nsinterview-w-maestro-interactive-games/" target="_blank">Nintendo Chronicle Interview With Maestro Interactive Games</a></p><p><a href="http://www.texasjump.com/2012/08/austin-based-maestro-games-releases.html" target="_blank">Austin Based Maestro Interactive Games Releases Audio-Oriented Games</a></p><p><a href="http://www.statesman.com/news/business/austin-incubators-aiming-to-help-create-the-next-1/nSLbx/" target="_blank">Austin Incubators Aiming to Help Create The "Next Generation Economy"</a></p><p><a href="http://www.delightedrobot.com/316/maestro-interactive-games/" target="_blank">Maestro Interactive Games Focuses on Audio and Community</a></p><p><a href="http://www.best10apps.com/apps/alien-revenge,549920267/" target="_blank">Alien Revenge Review</a></p><p><b>*Disclaimer* Video Capture lowers our quality in the video to compress it for web, we will upload a WebBuild of the Racer so backers can check it out in 720p for themselves this week.</b></p><p><b>*Disclaimer 2* Nintendo Logo's used in the video are available under Fair Use, distributed as marketing materials.</b></p>
+</div>
+<div id="risks">
+<h2 class="title grey-dark mt6 mb4">
+<span>Risks and challenges</span>
+<a href="/help/faq/kickstarter%20basics#Acco" class="right normal h5" target="_blank">Learn about accountability on Kickstarter</a>
+<div class="divider clear"></div>
+</h2>
+<p><p>Cosmic Highway has an aggressive schedule and healthy ambitions. As with any other game project, the greatest risk is that deadlines might get missed and at worst the game might fail to finish.</p>
+
+<p>Thanks to previous experience in the game industry shipping games of all sizes, we&#39;ve insulated Cosmic Highway against this regrettably common risk. Our core strategy is focusing on complex audio design, which means that we focus heavily on tools and being able to test changes quickly. This also allows us to develop the game at a much faster pace without compromising the quality of the title.</p>
+
+<p>Additionally, Cosmic Highway core mechanics &quot;scale&quot; well, which means that they can be represented very simply but also with high levels of polish. We can also develop new levels quickly, while still retaining the high quality should the stretch goals be met.</p></p>
+</div>
+</div>
+<div class="NS-projects-faqs" id="project-faqs">
+<h2 class="title grey-dark mt6 mb4">
+FAQ
+<div class="divider clear"></div>
+</h2>
+<ul class="faqs">
+<li class="faq" id="project_faq_49057">
+<div class="faq-question">
+<a href="#project_faq_49057" name="project_faq_49057">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Do you support PayPal?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Kickstarter doesnt allow PayPal, but we set up one here <a href="http://maestrointeractivegames.com/Wii_U_Kickstarter.html" rel="nofollow">http://maestrointeractivegames.com/Wii_U_Kickstarter.html</a></p>
+
+<p>Let us know which reward you want as well with your donation</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-03-04T14:06:21-05:00">Mon, Mar 4 2013 2:06 pm EST</time>
+</div>
+</div>
+</li>
+
+</ul>
+<div class="faq-ask-box">
+<a href="/projects/maestroigames/cosmic-highway-wii-u/messages/new?message%5Bto%5D=maestroigames&amp;mode=FAQ" class="button button_blue remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Ask a question about Cosmic Highway Wii U">Ask a question</a>
+
+</div>
+</div>
+
+<div class="mt4 ml1 mr1 mb2" id="report-issue-wrap">
+<a href="/login?then=%2Fprojects%2Fmaestroigames%2Fcosmic-highway-wii-u" class="button button_grey">Report this project to Kickstarter</a>
+</div>
+</div>
+<div class="NS-projects-rightcol grid_5" id="rightcol">
+<div class="NS_projects__ecom">
+<div class="digits_4 pb2 pl2 pt2" id="stats">
+<h5>
+<div class="num h48 no-margin" data-backers-count="38" id="backers_count"><data class="Project795184476" data-format="number" data-value="38" itemprop="Project[backers_count]">38</data></div>
+<span><data class="Project795184476" data-attr="backers_count" data-format="pluralize" data-value="38" data-word="Backer">Backers</data></span>
+</h5>
+<h5>
+<div class="num h48 no-margin" data-goal="6000.0" data-percent-raised="0.193125" data-pledged="1158.75" id="pledged">
+<data class="Project795184476" data-currency="USD" data-format="shorter_money" data-precision="0" data-value="1158" data-without_code="true" itemprop="Project[pledged]">$1,158</data>
+<span class="money usd project_currency_code"></span>
+</div>
+pledged of
+<span class="money usd no-code">$6,000</span>
+goal
+</h5>
+<span data-duration="29.958333333333332" data-end_time="2013-03-25T12:57:50-04:00" data-hours-remaining="0" id="project_duration_data"></span>
+<div class="Project795184476" data-conditions="[{&quot;!state&quot;:[&quot;canceled&quot;,&quot;suspended&quot;]}]" data-evaluation="true" data-render="&quot;&lt;h5 class=\&quot;poll \&quot; data-dynamic=\&quot;5\&quot; data-end_time=\&quot;2013-03-25T12:57:50-04:00\&quot; data-poll_url=\&quot;https://d2oher2uhvl0ur.cloudfront.net/projects/maestroigames/cosmic-highway-wii-u/stats.json\&quot;&gt;\n&lt;div class=\&quot;num h48 no-margin\&quot;&gt;0&lt;/div&gt;\n&lt;span class=\&quot;text\&quot;&gt;seconds to go&lt;/span&gt;\n&lt;/h5&gt;\n&quot;"><h5 class="poll " data-dynamic="5" data-end_time="2013-03-25T12:57:50-04:00" data-poll_url="https://d2oher2uhvl0ur.cloudfront.net/projects/maestroigames/cosmic-highway-wii-u/stats.json">
+<div class="num h48 no-margin">0</div>
+<span class="text">seconds to go</span>
+</h5>
+</div></div>
+<div class="Project795184476" data-conditions="[{&quot;state&quot;:&quot;live&quot;},{&quot;!ended?&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;pr2 pl2\&quot; id=\&quot;pledge-wrap\&quot;&gt;\n&lt;a href=\&quot;/projects/maestroigames/cosmic-highway-wii-u/pledge/new?clicked_reward=false\&quot; class=\&quot;button button_green button_box button_block\&quot; id=\&quot;button-back-this-proj\&quot; title=\&quot;Back this project\&quot;&gt;Back This Project &lt;small class=&#39;h6 normal block green-dark&#39;&gt;&lt;span class=\&quot;money usd \&quot;&gt;$1&lt;/span&gt; minimum pledge&lt;/small&gt;&lt;/a&gt;\n&lt;/div&gt;\n&quot;"></div><div class="Project795184476" data-conditions="[{&quot;state&quot;:&quot;live&quot;}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;p2\&quot; id=\&quot;banner\&quot;&gt;\n&lt;p class=\&quot;tiny_type no-margin\&quot;&gt;\nThis project will only be funded if at least\n&lt;span class=\&quot;money usd \&quot;&gt;$6,000&lt;/span&gt;\nis pledged by\n&lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;llll z\&quot; datetime=\&quot;2013-03-25T12:57:50-04:00\&quot;&gt;Mon, Mar 25 2013 12:57 pm EDT&lt;/time&gt;.\n&lt;/p&gt;\n&lt;/div&gt;\n&quot;"></div></div>
+
+<div class="NS_projects__rightcol_projectby bg-blue-light rounded">
+<div class="p2 clearfix">
+<div class="avatar inline-block align-middle">
+<a href="/projects/maestroigames/cosmic-highway-wii-u/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography"><img alt="Rbkoklrt.small" class="avatar-small" height="80" src="https://s3.amazonaws.com/ksr/avatars/3729776/rbKoKlRt.small.jpg?1393555138" width="80" />
+</a></div>
+<div class="creator-name inline-block align-middle ml1">
+<h6 class="mb1">Project by</h6>
+<h5 class="mb1">
+<a href="/projects/maestroigames/cosmic-highway-wii-u/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">Maestro Interactive Games</a>
+</h5>
+<p class="location h6 bold mb1">
+<a href="/discover/places/austin-tx">Austin, TX</a>
+</p>
+</div>
+</div>
+<div class="creator-details pl2 pr2 pb1">
+<ul class="list-simple h5 mb1">
+<li class="projects-more">
+<span class="ss-icon ss-kickstarter grey-dark margin-right"></span>
+<span class="text">
+<a href="/profile/maestroigames/created" class="green-dark bold more-button remote_modal_dialog" data-modal-title="Projects created by Maestro Interactive Games">2 created</a>
+<span class="divider">&middot;</span>
+<a href="/profile/maestroigames/backed" class="green-dark bold more-button remote_modal_dialog" data-modal-title="Projects backed by Maestro Interactive Games">7 backed</a>
+</span>
+</li>
+<li class="facebook-connected">
+<span class="ss-icon ss-facebook facebook color-facebook margin-right"></span>
+<span class="text">
+<a href="https://www.facebook.com/715775699" class="popup" target="_blank">Monty Goulet</a>
+<span class="number h6">
+519
+friends
+</span>
+</span>
+
+</li>
+<li class="links">
+<span class="ss-icon ss-globe margin-right grey-dark"></span>
+<span class="text">
+<a href="http://www.maestrointeractivegames.com" class="popup" rel="nofollow" target="_blank">maestrointeractivegame...</a>
+</span>
+</li>
+</ul>
+</div>
+<div class="footer center h5 bold clearfix rounded-bottom clip">
+<a href="/projects/maestroigames/cosmic-highway-wii-u/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">See full bio</a>
+<a href="/projects/maestroigames/cosmic-highway-wii-u/messages/new?message%5Bto%5D=maestroigames" class="remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Send a message to Maestro Interactive Games">Contact me</a>
+
+</div>
+</div>
+
+<ul class="NS-projects-rightcol-rewards rounded clip list mt2" data-reward-count="12" id="what-you-get">
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$1</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+3 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>DIGITAL ACCESS-Get added to our upcoming developer mailing list. Also, receive one free song from the game. This mailing list is different than the one on our website currently. We will also create a special KickStarter Forum on our site for you all to interact with us and each other. The song will be in FLAC, AIF, and MP3.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-03-01">Mar 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$5</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+10 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>DIGITAL SUPPORT-We will be putting your name in the KickStarter Supporter section of the credits on the game, we will also add you to the mailing list, give you access to the forum and give you the free song. (What a steal of a deal!)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-05-01">May 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$15</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+3 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>DIGITAL MUSIC-Get a digital download of the Cosmic Highway Soundtrack. We are releasing 6 different soundtracks, 5 Digital and 1 Physical Soundtrack. We will be sending you a questionnaire asking which of the soundtracks you want. (Choose wisely)
+
+The choices for the digital soundtrack are: 
+The Scientist Edition (Rock/Electronic)
+The Dark One Edition (Orchestral)
+The Glitcher Edition (8Bit/Chiptunes)
+The Inventor Edition (Classical/Victorian)
+The Comic Edition (Jazz)
+
+You also will get the previous rewards.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-04-01">Apr 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$20</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+2 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>DIGITAL ART BOOK- Get a copy of the Maestro Interactive Games Digital Art Book. It will feature Cosmic Highway, Alien Drop, Alien Revenge, Alien Labyrinth, Fade Into Darkness, Percy Penguin&#39;s World, Maestro Mini Golf and more. (We will try to get as much content in it as possible for you) 
+
+You will also get all of the lower levels.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-04-01">Apr 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$23</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>BONUS DIGITAL-We are rewarding our backers of this level with a unique gift. Get exclusive access to the story of our next title Fade Into Darkness, months before the short story and game become available for sale. We will also create a unique Forum for the backers for this game, to discuss it with us.
+
+Also you will get the lower tiers</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-03-01">Mar 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$25</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+5 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>THE GAME AT RELEASE-We are rewarding our backers of this level with a copy of Cosmic Highway Wii U the day it is released on the Nintendo eShop. Plus for those that have access to an iOS device, we will give you a copy of one of our previous iOS releases, Maestro Mini Golf to download. (If you do not have an iOS device, we can provide you a PC/Mac version) 
+
+You will also get the previous rewards.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-05-01">May 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$40</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+3 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(2 left of 5)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>THE GAME EARLY: Limited to 5 People - Get the game ahead of the rest. We will be giving you the game early (a week-2weeks) 
+
+You will also get two digital soundtracks and the other rewards in Tier 1. 
+(See the reward section to the left)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-05-01">May 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$40</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+2 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(98 left of 100)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>PHYSICAL MUSIC- Limited to 100 People -We are providing the physical soundtrack at this donation level. This is the last of the 6 soundtracks for Cosmic Highway. This will be the only way to get this soundtrack, each album cover will be signed by the developers and will contain the special world music. We will also be giving you one of the digital soundtracks of your choice. You will get every reward in Tier 1 (See the reward section to the left). 
+
+($10 extra for shipping for non-US)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-04-01">Apr 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $10 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$60</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(50 left of 50)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>SIGNED POSTER: Limited to 50 People- We are rewarding our backers for this level, a limited print run poster of Cosmic Highway. This poster will also be signed by the developers. 
+You will also get every reward in Tier 1. 
+(See the reward section to the left)
+(Picture is a very tentative idea of the poster, we will share the final poster before the end of the kickstarted)
+
+($25 extra for shipping for non-US)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-04-01">Apr 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $25 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$100</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+5 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(5 left of 10)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>ALMOST HIGH SCORE-Limited to 10 People-We will add a song inspired by a game of your choice in the game. You will also receive credit in the game in the audio section. 
+
+You will also receive the Physical Soundtrack from the Tier 2 rewards, as well as all of the rewards in Tier 1.
+(See the reward section to the left)
+
+($10 extra for shipping for non-US)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-04-01">Apr 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $10 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$250</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(2 left of 2)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>THE ASSOCIATE PRODUCER- Limited to 2 People-For $250, we are giving two donators the chance to become Associate Producers on a Nintendo Wii U eShop title. 
+
+You will also get the Physical Soundtrack from Tier 2 and you will get all the rewards in Tier 1.
+($10 extra for shipping for non-US)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-03-01">Mar 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $10 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(5 left of 5)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>THE PARTY-Limited to 5 People (10 guests total) Come by Maestro Interactive Games studio and have a fun night with some of the developers. We will hook up the Wii U and play Cosmic Highway, and much more. We will be recording the night as well to show off on our website and YouTube, if you all allow us to do so. Dinner will be included and you will also leave with tons of autographed gifts and prizes. You will also get the game at Launch obviously. 
+You will also have a unique credit listed in the game as well. 
+
+*Please be able to get to Austin on your own*</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-05-01">May 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="domestic">
+Ships within the US only
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+</ul>
+
+<div class="p2" id="meta">
+<h5>Funding period</h5>
+<p class="tiny_type">
+<time class="js-adjust" data-format="ll" datetime="2013-02-23T12:57:50-05:00">Feb 23, 2013</time> - 
+<time class="js-adjust" data-format="ll" datetime="2013-03-25T12:57:50-04:00">Mar 25, 2013</time>
+(30 days)
+</p>
+</div>
+</div>
+
+</div>
+
+<a href="#" id="video_mode_tab" style="display: none;">
+View in Video Mode
+</a>
+
+</div>
+</div>
+
+
+</div>
+
+<div class="h5 bg-green-dark" id="mega-footer-wrap">
+<div class="bg-green-dark white full-height" id="footer-newsletter-signup">
+<div class="container py4">
+<div class="grid_8 prefix_4 suffix_4 center mt4">
+<h2>
+Eureka! You've found
+<br>
+our little secret.
+</h2>
+<p>Sign up for our Happening email for all the inside info about arts and culture in the Kickstarter universe and beyond.</p>
+<div class="newsletter_signup">
+<form accept-charset="UTF-8" action="/newsletters/happening/signup" class="overlabels" method="post"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /><input class="hidden" name="authenticity_token" type="hidden" value="sFWsqbZuZIIZ//qn4qshnKvmkhhAWumiHJcRd+kZis4=" /></div><input class="hidden" id="location" name="location" type="hidden" value="footer" />
+<textarea class="hide textarea" id="comment" name="comment">
+</textarea>
+<div class="field newsletter">
+<label class="overlabel z1 overlabel-newsletter">Email address</label>
+<input class="text" id="email" name="email" type="text" />
+</div>
+<input class="button button_green submit" name="commit" type="submit" value="Submit" />
+</form>
+
+</div>
+
+</div>
+</div>
+</div>
+<div class="container relative" id="mega-footer">
+<span class="scissors icon-scissors-1"></span>
+<div class="grid_16 alpha omega pt4 pb2" id="mega-footer-links">
+<div class="grid_4 link-group">
+<h5 class="white">About us</h5>
+<ul class="list">
+<li><a href="/year/2013/?ref=footer">2013 highlights</a></li>
+<li><a href="/year/2012?ref=footer">2012 highlights</a></li>
+<li><a href="/team?ref=footer">Who we are</a></li>
+<li><a href="/jobs?ref=footer">Jobs</a></li>
+<li><a href="/press?ref=footer">Press</a></li>
+<li><a href="/help/stats?ref=footer">Stats</a></li>
+<li><a href="/newsletters/weekly">Projects we love</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group">
+<h5><a href="/help?ref=footer" class="white">Help</a></h5>
+<ul class="list">
+<li><a href="/hello?ref=footer">What is Kickstarter?</a></li>
+<li><a href="/help?ref=footer">FAQ</a></li>
+<li><a href="/contact?ref=footer">Support</a></li>
+<li><a href="/help/school?ref=footer">Kickstarter School</a></li>
+<li><a href="/terms-of-use?ref=footer">Terms of Use</a></li>
+<li><a href="/privacy?ref=footer">Privacy Policy</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group alpha omega suffix_1">
+<h5 class="alpha"><a href="/discover/advanced?ref=footer" class="white">Discover</a></h5>
+<ul class="column column-0 grid_2 list">
+<li><a href="/discover/categories/art?ref=footer">Art</a></li>
+<li><a href="/discover/categories/comics?ref=footer">Comics</a></li>
+<li><a href="/discover/categories/dance?ref=footer">Dance</a></li>
+<li><a href="/discover/categories/design?ref=footer">Design</a></li>
+<li><a href="/discover/categories/fashion?ref=footer">Fashion</a></li>
+<li><a href="/discover/categories/film%20&amp;%20video?ref=footer">Film &amp; Video</a></li>
+<li><a href="/discover/categories/food?ref=footer">Food</a></li>
+</ul>
+<ul class="column column-1 grid_2 list">
+<li><a href="/discover/categories/games?ref=footer">Games</a></li>
+<li><a href="/discover/categories/music?ref=footer">Music</a></li>
+<li><a href="/discover/categories/photography?ref=footer">Photography</a></li>
+<li><a href="/discover/categories/publishing?ref=footer">Publishing</a></li>
+<li><a href="/discover/categories/technology?ref=footer">Technology</a></li>
+<li><a href="/discover/categories/theater?ref=footer">Theater</a></li>
+</ul>
+</div>
+<div class="grid_3 link-group">
+<h5 class="white">Hello</h5>
+<ul class="list">
+<li>
+<a href="https://twitter.com/kickstarter"><span class="ss-icon ss-social-regular ss-twitter"></span>
+Twitter
+</a></li>
+<li>
+<a href="https://www.facebook.com/Kickstarter"><span class="ss-icon ss-social-regular ss-facebook"></span>
+Facebook
+</a></li>
+<li>
+<a href="http://kickstarter.tumblr.com"><span class="ss-icon ss-social-regular ss-tumblr"></span>
+Tumblr
+</a></li>
+<li>
+<a href="http://instagram.com/kickstarter"><span class="ss-icon ss-social-regular ss-instagram"></span>
+Instagram
+</a></li>
+<li>
+<a href="https://vine.co/Kickstarter"><span class="ss-icon ss-social-regular ss-vine"></span>
+Vine
+</a></li>
+<li>
+<a href="/blog?ref=footer">Blog</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="grid_16 py4" id="mega-footer-bottom">
+<div class="logo left">
+<a href="/" class="grey-dark"><span class="ss-icon h3">KICKSTARTER</span>
+</a></div>
+<p class="right h5 grey-dark">
+&copy;
+2014
+Kickstarter, Inc.
+</p>
+</div>
+</div>
+</div>
+
+<script>
+  //<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    var analytics_vars = { google_analytics_id : "UA-7621056-1", logged_in : "false", social_user: "false" }
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.mixpanel_id = '75b1d24a516ecfc955eadfadc4910661';
+    window.mixpanel_debug = false;
+  //]]>
+</script>
+
+
+<noscript>
+<img alt="Quantcast" border="0" height="1" src="//secure.quantserve.com/pixel/p-34IbSpw2K94Sg.gif" style="display:none" width="1" />
+</noscript>
+
+
+<script>
+  //<![CDATA[
+    window.benchmark = (typeof window.performance == 'object' && typeof window.performance.mark == 'function');
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    (function (root) {
+      function instrument_function (original) {
+        return function () {
+          try {
+            return original.apply(this, arguments);
+          } catch (e) {
+            if (e.stack && root.Honeybadger) {
+              Honeybadger.notify(e, {
+                current_project : root.current_project,
+                current_user : root.current_user
+              });
+            }
+            throw(e);
+          }
+        };
+      }
+      root.instrument_function = instrument_function;
+    }(this));
+  //]]>
+</script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+
+<script>
+  //<![CDATA[
+    (function(){function c(a){this.local_start_time=new Date;this.settings={cookie_name:"request_time"};for(var b in a)this.settings[b]=a[b];this.get_remote_offset()}c.prototype.get_remote_offset=function(){this.cookie_value=this.read_cookie();var a=new Date(this.cookie_value);if(!this.cookie_value||"Invalid Date"===a.toString()){if(this.remote_offset=this.read_cookie("local_offset"))this.remote_offset=parseInt(this.remote_offset,10)}else this.remote_offset=a-this.local_start_time;"undefined"!==typeof this.remote_offset&& !isNaN(this.remote_offset)?(document.cookie="local_offset="+this.remote_offset+"; path=/",this.is_set=!0):this.is_set=!1};c.prototype.time_units=[["milliseconds",1],["seconds",1E3],["minutes",6E4],["hours",36E5],["days",864E5]];c.prototype.get_units_in_interval=function(a,b){var d=a.replace(/^\w/,function(d){return"get"+d.toUpperCase()});return b[d]()};c.prototype.milliseconds_in_day=function(a){"undefined"===typeof a&&(a=new Date);for(var b=0,d=this.time_units.length-2;0<=d;d--)b+=this.get_units_in_interval(this.time_units[d][0], a)*this.time_units[d][1];return b};c.prototype.milliseconds_in_interval=function(a,b){return this.milliseconds_in_day(b)%a};c.prototype.milliseconds_to_next_interval=function(a,b){return a-this.milliseconds_in_interval(a,b)};c.prototype.pluralize=function(a,b){1===b&&(a=a.replace(/s$/,""));return a};c.prototype.read_cookie=function(a){for(var b=window.document.cookie.split(";"),a=(a||this.settings.cookie_name)+"=",d=0;d<b.length;d++){for(var e=b[d];" "==e.charAt(0);)e=e.substring(1,e.length);if(0== e.indexOf(a))return b=e.substring(a.length,e.length),decodeURIComponent(b).replace(/\+/g," ")}return null};c.prototype.destroy_cookie=function(a){var b=new Date;a||(a=this.settings.cookie_name);b.setTime(b.getTime()-864E5);window.document.cookie=a+"=; expires="+b.toGMTString()+"; path=/"};c.prototype.get_remote_time=function(){var a=new Date,b=a.getTime()+this.remote_offset;return a=a.setTime(b)};window.ksr_page_clock=new c})(); (function(){function c(d,a,b){if(d){this.options={unit_base:{seconds:119,minutes:119,hours:72,days:0},end_phrase:d.getAttribute("data-word")||"to go",count_down:d.getAttribute("data-dynamic")||!1};for(k in b)this.options[k]=b[k];this.clock=a;this.time_units=this.clock.time_units.slice(1);this.element=d;this.clock.is_set&&this.attach()}}function a(){this.elements=[];this.attach()}var b=function(d,a){var b=a||window.document.body,c=d.split("."),g=c[c.length-1],c=1<c.length&&c[0]?c[0]:"*";if(window.document.getElementsByClassName)return b.getElementsByClassName(g); if(b.querySelectorAll)return b.querySelectorAll(d);for(var c=b.getElementsByTagName(c),h=[],i=0,f;f=c[i];i++)b=RegExp("(^|\\s)"+g+"(\\s|$)"),(""+f.className).match(b)&&h.push(f);return h};c.prototype.get_remaining_time=function(){var d=this.remote_end_time-this.clock.get_remote_time();0>d&&(d=0);return d};c.prototype.get_current_unit=function(){for(var d,a=0;a<this.time_units.length&&!(d=this.time_units[a],this.get_remaining_time()<=this.options.unit_base[d[0]]*d[1]);a++);return d};c.prototype.update_element= function(){var a=this.get_current_unit(),b=Math.floor(this.get_remaining_time()/a[1]);isNaN(b)||(this.number_element.innerHTML=b,this.text_element.innerHTML=this.clock.pluralize(a[0],b)+" "+this.options.end_phrase)};c.prototype.valid=function(){return!(!this.number_element||!this.text_element)};c.prototype.attach=function(){function a(){c.update_element();if(c.options.count_down&&0<c.get_remaining_time()){var b=c.get_current_unit();this.timeout=window.setTimeout(a,c.clock.milliseconds_to_next_interval(b[1]))}} var c=this;if(this.remote_end_time_string=this.element.getAttribute("data-end_time"))this.remote_end_time_string.match(/^\d+$/)?(this.remote_end_time=new Date,this.remote_end_time.setTime(this.remote_end_time_string)):this.remote_end_time=new Date(this.remote_end_time_string),this.number_element=b(".num",this.element)[0],this.text_element=b(".text",this.element)[0],this.element.ksr_page_timer=!0,this.valid()&&a()};c.prototype.cancel=function(){this.timeout&&clearTimeout(this.timeout)};a.prototype.loading= !0;a.prototype.stop_finding=function(){this.attach_timers();this.loading=!1;document.addEventListener?document.removeEventListener("DOMContentLoaded",this.stop_finding,!1):document.attachEvent&&"complete"===document.readyState&&document.detachEvent("onreadystatechange",this.stop_finding)};a.prototype.bind_ready=function(){var a=this,b=function(){a.stop_finding.call(a)};document.addEventListener?(document.addEventListener("DOMContentLoaded",b,!1),window.addEventListener("load",b,!1)):document.attachEvent&& (document.attachEvent("onreadystatechange",b),window.attachEvent("onload",b))};a.prototype.attach_timers=function(){for(var a=b("div.ksr_page_timer"),e=0;e<a.length;e++)a[e].ksr_page_timer||(new c(a[e],window.ksr_page_clock),this.elements.push(a[e]))};a.prototype.attach=function(){var a=this;this.bind_ready();(function(){a.attach_timers();a.loading&&window.setTimeout(function(){a.attach_timers()},200)})()};window.ProjectTimer=c;new a})();
+  //]]>
+</script>
+
+<script class="template" id="template-widgets__video_embed_code" type="text/x-tmpl-mustache"><iframe width="{{width}}" height="{{height}}" src="{{{path}}}" frameborder="0" scrolling="no"> </iframe>
+</script><script class="template" id="template-projects__baseball_card_tall" type="text/x-tmpl-mustache"><div class="project-card-wrap project-card-wrap-tall border bg-white rounded clip">
+  <div class="project-card relative project-live {{#successful?}}successful{{/successful?}}">
+    <div class="project-thumbnail pt1 pl1 pr1">
+      <a href="{{urls.web.project}}" target="">
+        <img alt="Photo-little" class="projectphoto-little" src="{{photo.little}}" class="fit">
+      </a>
+    </div>
+    <div class="project-card-interior p1 h6 grey-dark">
+      <h6 class="project-title">
+        <a href="{{urls.web.project}}" target="" class="green-dark">{{name}}</a>
+      </h6>
+      <p class="mb1 ellipsis">
+        by
+        {{creator.name}}
+      </p>
+      <p class="blurb">
+        {{blurb}}
+      </p>
+    </div>
+    <div class="absolute-bottom bg-white rounded-bottom">
+
+      {{#location}}
+        <ul class="p1 list project-meta no-margin h6">
+          <li class="ellipsis">
+            <a href="{{location.urls.web.discover}}" data-location="{{location_json}}" class="grey-dark">
+              <span class="ss-icon ss-location"></span>
+              <span class="location-name">{{location.displayable_name}}</span>
+            </a>
+          </li>
+        </ul>
+      {{/location}}
+
+      <div class="project-stats-wrap pb1 pl1 pr1">
+
+        {{#failed?}}
+          <div class='project-status project-failed h6'>
+            <strong> Funding Unsuccessful</strong><br />
+            <span class="grey-dark">Project ended on {{formatted_deadline}}</span>
+          </div>
+        {{/failed?}}
+
+        {{#canceled?}}
+          <div class='project-status project-canceled h6'>
+            <strong> Funding Canceled</strong><br />
+            <span class="grey-dark">Project canceled on {{formatted_state_changed_at}}</span>
+          </div>
+        {{/canceled?}}
+
+        {{#successful?}}
+          <div class='project-pledged-successful bg-green white h6 pl1 pr1 mb1'>
+            <strong>Successful!</strong>
+          </div>
+        {{/successful?}}
+
+        {{#live_or_successful?}}
+          {{#live?}}
+            <div class="project-pledged-wrap bg-grey clip mb1">
+              <div class="project-pledged bg-green full-height" style="width: {{percent_raised_to_100}}%"></div>
+            </div>
+          {{/live?}}
+          <ul class="project-stats list no-margin h6 no-wrap">
+            <li class="first funded inline-block mr1">
+              <strong class="block h6">{{percent_raised_rounded}}%</strong>
+              <span class="grey-dark">funded</span>
+            </li>
+            <li class="pledged inline-block mr1">
+              <strong class="block h6">{{currency_symbol}}{{formatted_money}}</strong>
+              <span class="grey-dark">pledged</span>
+            </li>
+            {{#successful?}}
+              <li class="last successful inline-block">
+                <strong class="block h6">Funded</strong>
+                <div class="deadline grey-dark">{{formatted_deadline}}</div>
+              </li>
+            {{/successful?}}
+            {{#live?}}
+              <li class="last ksr_page_timer inline-block" data-end_time="{{javascript_deadline}}">
+                <strong class="block h6">
+                  <div class="num">30</div>
+                </strong>
+                <div class="span text grey-dark" data-word="left">days to go</div>
+              </li>
+            {{/live?}}
+          </ul>
+        {{/live_or_successful?}}
+      </div>
+    </div>
+  </div>
+</div>
+
+{{#friends_backing?}}
+  <div class="friend_project_context">
+    <div class="friend_facepile">
+      {{#truncated_friends}}
+        <img src="{{avatar.thumb}}" class="{{#has_metadata?}}small{{/has_metadata?}}">
+      {{/truncated_friends}}
+    </div>
+    <p class="friend_namepile">
+      {{{escaped_sentence}}}
+    </p>
+  </div>
+{{/friends_backing?}}
+</script><script class="template" id="template-projects__video_mode" type="text/x-tmpl-mustache"><a href='#' id='video_mode_close' class='close_button z2'><span class='ss-icon ss-delete'></span></a>
+
+<div class='title_card z1 {{context_classes}}' style="display:none;">
+  <div class='interior'>
+    <h2 class='project_title normal_weight'>{{name}}</h2>
+    <p class='blurb'>{{blurb}}</p>
+    <nav class='bar'>
+      <a id='play_button' class='left play' href='#'>
+        <span class='play_active'>
+          <span class='ss-icon ss-play'></span>
+          Play
+        </span>
+        <span class='pause_active'>
+          <span class='ss-icon ss-pause'></span>
+          Pause
+        </span>
+      </a>
+      {{#logged_in}}
+        <div class='remind right'>
+          {{#if_not_starred}}
+            <a class='follow' href='{{urls.web.project}}/watch'><span class='ss-icon ss-star'></span></a>
+          {{/if_not_starred}}
+          {{#if_starred}}
+            <a class='unfollow' href='{{urls.web.project}}/unwatch'><span class='ss-icon ss-star active'></span></a>
+          {{/if_starred}}
+        </div>
+      {{/logged_in}}
+      <a class='right explore button button_green small' href='#'>Explore this project</a>
+    </nav>
+  </div>
+</div>
+
+<div class='channel_controls z1'>
+  <a href='#' class='{{#playlist_is_location}}selected {{/playlist_is_location}}location'>Something else near {{location.first_name}} <span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_featured}}selected {{/playlist_is_featured}}featured'>Something different<span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_category}}selected {{/playlist_is_category}}category'>Something else in {{category.name}} <span class='ss-icon ss-navigateright'></span></a>
+</div>
+
+<div class='project_video' style='background-image: url('{{photo.full}}')'>
+  <div class='cover'>
+    <video>
+      <source src='{{video.high}}' type='video/mp4'/>
+      <source src='{{video.webm}}' type='video/webm'/>
+    </video>
+  </div>
+</div>
+</script><script class="template" id="template-site__video_mode_fourohfour" type="text/x-tmpl-mustache"><section class='four_oh_four'>
+  <p class='big_type'>
+    Looks like you've reached the end of the line! <br />Check out <a class="another" href='#'>another channel</a> or <a href='/discover'>browse projects in discover</a>.
+  </p>
+</section>
+</script>
+
+<script id="schwamm_formatting_options" type="text/javascript">
+//<![CDATA[
+(function(){window.formatters = window.formatters || {}; var formatting_options = {"distance_date_intervals":[[5,"just now"],[29,"less than a minute ago"],[89,"1 minute ago"],[2640,"%m minutes ago"],[5340,"about 1 hour ago"],[82800,"about %h hours ago"],[147600,"1 day ago"],[604800,"%d days ago"],[15552000,"on %t"],[0,"on %y"]],"currency_symbol_mappings":{"AFN":"\u060b","ALL":"Lek","ARS":"$","AUD":"$","AWG":"\u0192","AZN":"\u043c\u0430\u043d","BAM":"KM","BBD":"$","BGN":"\u043b\u0432","BMD":"$","BND":"$","BOB":"$b","BRL":"R$","BSD":"$","BWP":"P","BYR":"p.","BZD":"BZ$","CAD":"$","CLP":"$","CNY":"\u00a5","COP":"$","CRC":"\u20a1","CUP":"\u20b1","CZK":"K\u010d","DKK":"kr","DOP":"RD$","EGP":"\u00a3","EUR":"\u20ac","FJD":"$","FKP":"\u00a3","GBP":"\u00a3","GIP":"\u00a3","GTQ":"Q","GYD":"$","HKD":"$","HNL":"L","HRK":"kn","HUF":"Ft","IDR":"Rp","ILS":"\u20aa","IRR":"\ufdfc","ISK":"kr","JMD":"J$","JPY":"\u00a5","KGS":"\u043b\u0432","KHR":"\u17db","KPW":"\u20a9","KRW":"\u20a9","KYD":"$","KZT":"\u043b\u0432","LAK":"\u20ad","LBP":"\u00a3","LKR":"\u20a8","LRD":"$","LTL":"Lt","LVL":"Ls","MKD":"\u0434\u0435\u043d","MNT":"\u20ae","MUR":"\u20a8","MXN":"$","MYR":"RM","MZN":"MT","NAD":"$","NGN":"\u20a6","NIO":"C$","NOK":"kr","NPR":"\u20a8","NZD":"$","OMR":"\ufdfc","PAB":"B/.","PEN":"S/.","PHP":"\u20b1","PKR":"\u20a8","PLN":"z\u0142","PYG":"Gs","QAR":"\ufdfc","RON":"lei","RSD":"\u0414\u0438\u043d.","RUB":"\u0440\u0443\u0431","SAR":"\ufdfc","SBD":"$","SCR":"\u20a8","SEK":"kr","SGD":"$","SHP":"\u00a3","SOS":"S","SRD":"$","SVC":"$","SYP":"\u00a3","THB":"\u0e3f","TRY":"TL","TTD":"TT$","TWD":"NT$","UAH":"\u20b4","USD":"$","UYU":"$U","UZS":"\u043b\u0432","VEF":"Bs","VND":"\u20ab","YER":"\ufdfc","ZAR":"R"},"currency_trailing_code_mappings":{"AUD":true,"CAD":true,"NZD":true,"USD":true},"currency_formats":["money","shorter_money"]}; for (key in formatting_options) {window.formatters[key] = formatting_options[key]};}());
+//]]>
+</script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("begin_base.js_tag");}
+  //]]>
+</script>
+<script src="https://d297h9he240fqh.cloudfront.net/assets/packages/base-45cdab84617ddfb8905b7cddc8500c19.js" type="text/javascript"></script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("end_base.js_tag");}
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    document.domain='kickstarter.com';
+  //]]>
+</script>
+
+<iframe height="0" id="api_xdreceiver" src="https://api.kickstarter.com/xdreceiver/85e6.html" style="display: none;" width="0"></iframe>
+
+
+
+<div id="fb-root"></div>
+<script>
+  //<![CDATA[
+    var channelUrl = window.location.protocol + "//" + window.location.host + "/channel.html",
+      skip_autologin = $('body').is('.skip_autologin');
+    
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId: window.fb_app_id,
+        channelUrl: channelUrl,
+        status: true,    // check login status
+        cookie: true,    // enable cookies to allow the server to access the session
+        xfbml: true,     // parse XFBML
+        logging: false   // turn off logging
+      });
+    
+      FB.getLoginStatus(function (response) {
+        if (response.status === 'connected') {
+          if (read_cookie("logout_from_fb")) {
+            FB.logout();
+            destroy_cookie("logout_from_fb");
+          } else if (!skip_autologin) {
+            $.get("/fb/autologin", {'fbsr': response.authResponse.signedRequest});
+          } else if (false && 0 == response.authResponse.userID) {
+            $.get("/fb/refresh", {'fbsr': response.authResponse.signedRequest});
+          }
+        } else {
+          if (read_cookie("logout_from_fb")) {
+            destroy_cookie("logout_from_fb");
+          }
+        }
+      })
+    
+      $(document).trigger('fb:loaded');
+    };
+    
+    
+    // Load the SDK Asynchronously
+    (function(d){
+      var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+      js = d.createElement('script'); js.id = id; js.async = true;
+      js.src = "//connect.facebook.net/en_US/all.js";
+      d.getElementsByTagName('head')[0].appendChild(js);
+    }(document));
+  //]]>
+</script>
+
+
+</body>
+</html>

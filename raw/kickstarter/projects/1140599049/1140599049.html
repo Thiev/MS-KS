@@ -1,0 +1,2239 @@
+<!DOCTYPE html>
+<html class="projects_show  fontface no-js" lang="en">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# kickstarter: http://ogp.me/ns/fb/kickstarter#">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-5.newrelic.com","errorBeacon":"jserror.newrelic.com","licenseKey":"b04b883ad2","applicationID":"11086","transactionName":"cFteRUULX1wHFhtIEFxeVVJDFxxDCgtD","queueTime":7,"applicationTime":448,"ttGuid":"","agentToken":null,"agent":"js-agent.newrelic.com/nr-411.min.js"}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"Vw4BVEVSCQMIUg=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e){function n(t,e,n){n||(n={});for(var r=o[t],a=r&&r.length||0,s=n[i]||(n[i]={}),u=0;a>u;u++)r[u].apply(s,e);return s}function r(t,e){var n=o[t]||(o[t]=[]);n.push(e)}var o={},i="nr@context";e.exports={on:r,emit:n}},{}],2:[function(t){function e(t,e,n,i,s){return u?u-=1:r("err",[s||new UncaughtException(t,e,n)]),"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t(5),a=window.onerror,s=!1,u=0;t("loader").features.push("err"),window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(d){"stack"in d&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(4),s=!0)}i.on("fn-start",function(){s&&(u+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&u>0&&(u-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:4,3:3,4:6,5:1,6:14,handle:"D5DuLP",loader:"G9z0Bl"}],3:[function(t){function e(t){r.inPlace(t,["addEventListener","removeEventListener"],"-",n)}function n(t){return t[1]}var r=t(1),o=(t(3),t(2));if(e(window),"getPrototypeOf"in Object){for(var i=document;i&&!i.hasOwnProperty("addEventListener");)i=Object.getPrototypeOf(i);i&&e(i);for(var a=XMLHttpRequest.prototype;a&&!a.hasOwnProperty("addEventListener");)a=Object.getPrototypeOf(a);a&&e(a)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&e(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=e["nr@wrapped"]?t[1]=e["nr@wrapped"]:e["nr@wrapped"]=t[1]=r(e,"fn-"):"function"==typeof e.handleEvent&&r.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:15,2:1,3:14}],4:[function(t){var e=(t(3),t(1)),n=t(2);e.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=e(t[0],"fn-")})},{1:15,2:1,3:14}],5:[function(t){function e(t){var e=t[0];"string"==typeof e&&(e=new Function(e)),t[0]=n(e,"fn-")}var n=(t(3),t(1)),r=t(2);n.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",e)},{1:15,2:1,3:14}],6:[function(t){function e(){o.inPlace(this,s,"fn-")}function n(t,e){o.inPlace(e,["onreadystatechange"],"fn-")}function r(t,e){return e}var o=t(1),i=t(2),a=window.XMLHttpRequest,s=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];window.XMLHttpRequest=function(t){var n=new a(t);try{i.emit("new-xhr",[],n),o.inPlace(n,["addEventListener","removeEventListener"],"-",function(t,e){return e}),n.addEventListener("readystatechange",e,!1)}catch(r){try{i.emit("internal-error",r)}catch(s){}}return n},window.XMLHttpRequest.prototype=a.prototype,o.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",r),i.on("send-xhr-start",n),i.on("open-xhr-start",n)},{1:15,2:1}],7:[function(t){function e(){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;u>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,d="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=e(d);if(f&&(r.rxSize=f),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}t("loader").features.push("xhr");var o=t("handle"),i=t(1),a=t(5),s=["load","error","abort","timeout"],u=s.length,d=t(2);t(3),t(4),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var d=e(o);d&&(r.txSize=d)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",e)}catch(r){}}};for(var f=0;u>f;f++)n.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&e()},{1:8,2:11,3:3,4:6,5:1,handle:"D5DuLP",loader:"G9z0Bl"}],8:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e){var n=r[t];return n?n.apply(this,e):(o[t]||(o[t]=[]),void o[t].push(e))}var r={},o={};e.exports=n,n.queues=o,n.handlers=r},{}],11:[function(t,e){function n(t){if(!t||"object"!=typeof t&&"function"!=typeof t)return-1;if(t===window)return 0;if(o.call(t,"__nr"))return t.__nr;try{return Object.defineProperty(t,"__nr",{value:r,writable:!0,enumerable:!1}),r}catch(e){return t.__nr=r,r}finally{r+=1}}var r=1,o=Object.prototype.hasOwnProperty;e.exports=n},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&u&&u.body){p.proto="https"===c.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=u.createElement("script");e.src=p.proto+t.agent,u.body.appendChild(e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,u=s.document,d="addEventListener",f="attachEvent",c=(""+location).split("?")[0],p=e.exports={offset:i(),origin:c,features:[]};u[d]?(u[d]("DOMContentLoaded",o,!1),s[d]("load",n,!1)):(u[f]("onreadystatechange",r),s[f]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],14:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],15:[function(t,e){function n(t,e,r,s){function nrWrapper(){try{var n,a=u(arguments),d=this,f=r&&r(a,d)||{}}catch(c){i([c,"",[a,d,s],f])}o(e+"start",[a,d,s],f);try{return n=t.apply(d,a)}catch(p){throw o(e+"err",[a,d,p],f),p}finally{o(e+"end",[a,d,n],f)}}return a(t)?t:(e||(e=""),nrWrapper[n.flag]=!0,nrWrapper)}function r(t,e,r,o){r||(r="");var i,s,u,d="-"===r.charAt(0);for(u=0;u<e.length;u++)s=e[u],i=t[s],a(i)||(t[s]=n(i,d?s+r:r,o,s,t))}function o(t,e,n){try{s.emit(t,e,n)}catch(r){i([r,t,e,n])}}function i(t){try{s.emit("internal-error",t)}catch(e){}}function a(t){return!(t&&"function"==typeof t&&t.apply&&!t[n.flag])}var s=t(1),u=t(2);e.exports=n,n.inPlace=r,n.flag="nr@wrapper"},{1:1,2:14}]},{},["G9z0Bl",2,7]);</script><script>
+  //<![CDATA[
+    docElement = this.document.documentElement;
+    docElement.className=docElement.className.replace(/\bno-js\b/,'') + 'js';
+  //]]>
+</script>
+<title>Bear Simulator by Farjay Studios &mdash; Kickstarter</title><script>
+  //<![CDATA[
+    window.report_errors = true;
+    window.honeybadger_configuration = {
+      api_key : "02ab109335c0dd1a93506d92f22217a7",
+      environment : "production",
+      component : "projects",
+      action : "show",
+      onerror : false
+    };
+  //]]>
+</script>
+
+
+<!--[if lt IE 9]>
+  <script src="//html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta content="telephone=no" name="format-detection">
+
+<!--[if !IE]> -->
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base-9f623ad5d021a188cfb2d68a0cdf7a7b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<!-- <![endif]-->
+<!--[if IE]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base_blessed-2640c72487552f9a2ef9f2620b4af860.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<!--[if lte IE 9]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_nine-a93fe10530f175f96c4078b7e070d7e1.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 8]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_eight-f75aeb274436f94a0d243774456b1c62.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 7]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie-c019c01acd3a96588b346cf577a3504f.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_seven-5a3d2cef660cd281fd844b04b2397dbb.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if IE 6]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_six-e4d3caf76e405fe19aee6ece8bda701b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<link href="https://d297h9he240fqh.cloudfront.net/favicon.png" rel="icon" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-precomposed-7b603dba7cf80e4acc57d94a991bebbd.png" rel="apple-touch-icon-precomposed" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-ipad-precomposed-3176f72977daf43dee3b0d348484dc01.png" rel="apple-touch-icon-precomposed" sizes="72x72" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-iphone4-precomposed-b93b70168cd8492c843d0fea873c7f83.png" rel="apple-touch-icon-precomposed" sizes="114x114" type="image/png">
+<link href="https://www.kickstarter.com/services/oembed?url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2F1330754003%2Fbear-simulator" rel="alternate" title="Bear Simulator Script Tag oEmbed" type="application/json+oembed">
+<link rel="alternate" type="application/atom+xml" title="Bear Simulator : Kickstarter" href="https://www.kickstarter.com/projects/1330754003/bear-simulator/posts.atom" />
+<meta property="twitter:app:id:iphone" content="596961532"/>
+<meta property="twitter:app:name:iphone" content="Kickstarter"/>
+<meta property="twitter:app:url:iphone" content="ksr://www.kickstarter.com/projects/1330754003/bear-simulator"/>
+<meta name="video_height" content="360"/>
+<meta name="video_width" content="640"/>
+<meta name="video_type" content="application/x-shockwave-flash"/>
+<meta name="title" content="Kickstarter &gt;&gt; Bear Simulator by Farjay Studios"/>
+<meta name="description" content="Farjay Studios is raising funds for Bear Simulator on Kickstarter! 
+
+ Explore, eat stuff, be a Bear!"/>
+<meta property="og:title" content="Bear Simulator"/>
+<meta property="og:type" content="kickstarter:project"/>
+<meta property="og:image" content="https://s3.amazonaws.com/ksr/projects/822473/photo-main.jpg?1397863003"/>
+<meta property="og:url" content="https://www.kickstarter.com/projects/1330754003/bear-simulator"/>
+<meta property="og:site_name" content="Kickstarter"/>
+<meta property="fb:app_id" content="69103156693"/>
+<meta property="og:description" content="Explore, eat stuff, be a Bear!"/>
+<meta property="kickstarter:creator" content="https://www.kickstarter.com/profile/1330754003"/>
+<meta property="twitter:url:landing_url" content="https://www.kickstarter.com/projects/1330754003/bear-simulator"/>
+<meta property="twitter:card" content="2427656750:kickstarter_project"/>
+<meta property="twitter:site" content="@kickstarter"/>
+<meta property="twitter:site:id" content="16186995"/>
+<meta property="twitter:text:title" content="Bear Simulator"/>
+<meta property="twitter:text:artist" content="Farjay Studios"/>
+<meta property="twitter:text:backers" content="3871"/>
+<meta property="twitter:text:pledged" content="$100,571 USD"/>
+<meta property="twitter:text:time" content="0 seconds"/>
+<meta property="twitter:text:location" content="Portland, OR"/>
+<meta property="twitter:image:location_image" content="https://d3mlfyygrfdi2i.cloudfront.net/b40e/pin.png"/>
+<meta property="twitter:text:description" content="Explore, eat stuff, be a Bear!"/>
+<meta property="twitter:image:media" content="https://s3.amazonaws.com/ksr/projects/822473/photo-main.jpg?1397863003"/>
+<meta property="twitter:image:width" content="640"/>
+<meta property="twitter:image:height" content="480"/>
+<meta property="twitter:player:stream:url" content="https://d2pq0u4uni88oo.cloudfront.net/projects/822473/video-353754-h264_base.mp4"/>
+<meta property="twitter:player:stream:content" content="video/mp4"/>
+<meta property="twitter:player:url" content="https://www.kickstarter.com/projects/1330754003/bear-simulator/widget/video.html"/>
+<meta property="twitter:player:height" content="360"/>
+<meta property="twitter:player:width" content="640"/>
+<meta property="twitter:maxage" content="60"/>
+<meta property="og:video" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F822473%2Fvideo-353754-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F822473%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Farjay+Studios&amp;project_title=Bear+Simulator&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2F1330754003%2Fbear-simulator&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:secure_url" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F822473%2Fvideo-353754-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F822473%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Farjay+Studios&amp;project_title=Bear+Simulator&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2F1330754003%2Fbear-simulator&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:height" content="360"/>
+<meta property="og:video:width" content="640"/>
+<meta property="og:video:type" content="application/x-shockwave-flash"/>
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="M/x7NKJVX1XGtsBthPRcjEWLDiTkuk9SPlG/9cF0Mms=" name="csrf-token" />
+<script type="text/javascript">
+  var _sift = _sift || [];
+  _sift.push(['_setAccount', '637102']);
+  _sift.push(['_setUserId', '']);
+  _sift.push(['_trackPageview']);
+
+  (function() {
+    function loadSift() {
+      var sift, s;
+      if (root.visitor_id) {
+        _sift.push(['_setSessionId', root.visitor_id]);
+      }
+      sift = document.createElement('script');
+      sift.type = 'text/javascript';
+      sift.async = true;
+      sift.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dtlilztwypawv.cloudfront.net/s.js';
+      s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(sift, s);
+    }
+    if (window.attachEvent) {
+      window.attachEvent('onload', loadSift);
+    } else {
+      window.addEventListener('load', loadSift, false);
+    }
+  })();
+</script>
+<link href="http://kck.st/1mfQ028" rel="shorturl">
+<link href="https://www.kickstarter.com/projects/1330754003/bear-simulator" rel="canonical">
+<link href="https://s3.amazonaws.com/ksr/projects/822473/photo-med.jpg?1397863003" rel="image_src">
+<link href="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F822473%2Fvideo-353754-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F822473%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Farjay+Studios&amp;project_title=Bear+Simulator&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2F1330754003%2Fbear-simulator&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque" rel="video_src">
+<script>
+  //<![CDATA[
+    window.current_checkout = "{&quot;id&quot;:0,&quot;domestic&quot;:null,&quot;amount&quot;:0.0,&quot;updated_at&quot;:0,&quot;created_at&quot;:0}";
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.current_ip = '94.209.101.212';
+    window.current_ip_datacenter = 'false';
+    window.enabled_features = {"elasticsearch":true,"security_history_read":true,"security_history_write":true,"advanced_discovery_es":true,"ios_crashlytics":true,"ios_mixpanel":true,"stories_veronica_mars":true,"veronica_mars_hero":true,"password_reset_banner":true};
+    window.fb_app_id = '69103156693';
+    
+    var _sf_startpt=(new Date()).getTime();
+    
+    window.current_project = "{&quot;id&quot;:1140599049,&quot;name&quot;:&quot;Bear Simulator&quot;,&quot;blurb&quot;:&quot;Explore, eat stuff, be a Bear!&quot;,&quot;goal&quot;:29500.0,&quot;pledged&quot;:100571.47,&quot;state&quot;:&quot;successful&quot;,&quot;slug&quot;:&quot;bear-simulator&quot;,&quot;disable_communication&quot;:false,&quot;country&quot;:&quot;US&quot;,&quot;currency&quot;:&quot;USD&quot;,&quot;currency_symbol&quot;:&quot;$&quot;,&quot;currency_trailing_code&quot;:true,&quot;deadline&quot;:1397760720,&quot;state_changed_at&quot;:1397760720,&quot;created_at&quot;:1389233407,&quot;launched_at&quot;:1395168720,&quot;backers_count&quot;:3871,&quot;photo&quot;:{&quot;full&quot;:&quot;https://s3.amazonaws.com/ksr/projects/822473/photo-full.jpg?1397863003&quot;,&quot;ed&quot;:&quot;https://s3.amazonaws.com/ksr/projects/822473/photo-ed.jpg?1397863003&quot;,&quot;med&quot;:&quot;https://s3.amazonaws.com/ksr/projects/822473/photo-med.jpg?1397863003&quot;,&quot;little&quot;:&quot;https://s3.amazonaws.com/ksr/projects/822473/photo-little.jpg?1397863003&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/projects/822473/photo-small.jpg?1397863003&quot;,&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/projects/822473/photo-thumb.jpg?1397863003&quot;,&quot;1024x768&quot;:&quot;https://s3.amazonaws.com/ksr/projects/822473/photo-1024x768.jpg?1397863003&quot;,&quot;1536x1152&quot;:&quot;https://s3.amazonaws.com/ksr/projects/822473/photo-1536x1152.jpg?1397863003&quot;},&quot;creator&quot;:{&quot;id&quot;:1330754003,&quot;name&quot;:&quot;Farjay Studios&quot;,&quot;avatar&quot;:{&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/8176249/AvatarGraphicBackground.thumb.jpg?1393974048&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/8176249/AvatarGraphicBackground.small.jpg?1393974048&quot;,&quot;medium&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/8176249/AvatarGraphicBackground.medium.jpg?1393974048&quot;},&quot;urls&quot;:{&quot;web&quot;:{&quot;user&quot;:&quot;https://www.kickstarter.com/profile/1330754003&quot;},&quot;api&quot;:{&quot;user&quot;:&quot;https://api.kickstarter.com/v1/users/1330754003?signature=1399960332.4d53910f2ed6362e9680e8cf3abd44b64fa2e364&quot;}}},&quot;location&quot;:{&quot;id&quot;:2475687,&quot;name&quot;:&quot;Portland&quot;,&quot;slug&quot;:&quot;portland-or&quot;,&quot;short_name&quot;:&quot;Portland, OR&quot;,&quot;displayable_name&quot;:&quot;Portland, OR&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:&quot;OR&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/portland-or&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/portland-or&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1399951820.9f81f18e7f665a9bac6ef363c12f2a5ba7e8e131&amp;woe_id=2475687&quot;}}},&quot;category&quot;:{&quot;id&quot;:35,&quot;name&quot;:&quot;Video Games&quot;,&quot;slug&quot;:&quot;games/video games&quot;,&quot;position&quot;:7,&quot;parent_id&quot;:12,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;http://www.kickstarter.com/discover/categories/games/video%20games&quot;}}},&quot;urls&quot;:{&quot;web&quot;:{&quot;project&quot;:&quot;https://www.kickstarter.com/projects/1330754003/bear-simulator&quot;,&quot;project_short&quot;:&quot;http://kck.st/1mfQ028&quot;,&quot;updates&quot;:&quot;https://www.kickstarter.com/projects/1330754003/bear-simulator/posts&quot;},&quot;api&quot;:{&quot;project&quot;:&quot;https://api.kickstarter.com/v1/projects/1140599049?signature=1399960332.ca95444d15b3d8875b64ffbd7c8f80d555c1045b&quot;,&quot;comments&quot;:&quot;https://api.kickstarter.com/v1/projects/1140599049/comments?signature=1399960332.afdfa1f8b0f5f4793ba5fc2b633c7471b078ace8&quot;,&quot;updates&quot;:&quot;https://api.kickstarter.com/v1/projects/1140599049/updates?signature=1399960332.53a82aa035ee0fbf3b543b31a3242fc10b1c74d8&quot;}},&quot;updated_at&quot;:1399323775,&quot;successful_at&quot;:1397760720,&quot;video&quot;:{&quot;id&quot;:353754,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/822473/video-353754-h264_high.mp4?2014&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/822473/video-353754-h264_base.mp4?2014&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/822473/video-353754-webm.webm?2014&quot;,&quot;width&quot;:640,&quot;height&quot;:360,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/822473/video-353754-h264_base.jpg?2014&quot;},&quot;comments_count&quot;:336,&quot;updates_count&quot;:9,&quot;rewards&quot;:[{&quot;id&quot;:0,&quot;minimum&quot;:1,&quot;reward&quot;:&quot;No Reward&quot;},{&quot;id&quot;:2408435,&quot;minimum&quot;:5.0,&quot;reward&quot;:&quot;NAME ON SITE: Have your name listed on the Bear Simulator site in a fancy backer section. [Read about all rewards in more detail on the main page]&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1398902400,&quot;project_id&quot;:1140599049,&quot;backers_count&quot;:38,&quot;updated_at&quot;:1398369624},{&quot;id&quot;:2408436,&quot;minimum&quot;:15.0,&quot;reward&quot;:&quot;GET THE GAME + MYSTERY KEY: A digital download of Bear Simulator or a Steam key if it gets on Steam. Also included is an exclusive code for a golden key to a mysterious shed found somewhere in the wilderness. All backers at this tier and above will find out what secret it holds when the game is launched. Just don&#39;t ask how a bear would manage to use a key. (Includes previous reward.)&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1414800000,&quot;project_id&quot;:1140599049,&quot;backers_count&quot;:2325,&quot;updated_at&quot;:1399813014},{&quot;id&quot;:2408437,&quot;minimum&quot;:20.0,&quot;reward&quot;:&quot;BEAR SUNGLASSES: Get an exclusive code for totally rad sunglasses for your bear. They will give a darkened tint of the world and appear on your HUD which can be toggled on and off in a unique fashion. (Includes all previous rewards.)&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1414800000,&quot;project_id&quot;:1140599049,&quot;backers_count&quot;:532,&quot;updated_at&quot;:1398394833},{&quot;id&quot;:2408438,&quot;minimum&quot;:30.0,&quot;reward&quot;:&quot;BEAR BOOK + AMBIENT OST: Behind the scenes trivia, concepts and more about Bear Simulator await in the Bear Book, delivered as a PDF after the game&#39;s release. Also included will be the Ambient Soundtrack, a collection of each region&#39;s nature ambiance. (Includes all previous rewards.)&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1417392000,&quot;project_id&quot;:1140599049,&quot;backers_count&quot;:117,&quot;updated_at&quot;:1398369632},{&quot;id&quot;:2408440,&quot;minimum&quot;:40.0,&quot;reward&quot;:&quot;MYSTIC BEAR SKIN: Receive an exclusive mystical Mystic Skin code. Featuring white fur lined with glowing tattoos, every slash and swipe will leave a sparkly, magical trail in it&#39;s wake. (Includes all previous rewards.)&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1414800000,&quot;project_id&quot;:1140599049,&quot;backers_count&quot;:156,&quot;updated_at&quot;:1398369628},{&quot;id&quot;:2408471,&quot;minimum&quot;:50.0,&quot;reward&quot;:&quot;IN-GAME CREDIT + EARLY ACCESS: Be one of the first to play and test Bear Simulator! But that&#39;s not all, you&#39;ll also get your name credited in-game! This pledge and all above feature a unique in-game credit shown in brackets: [Backer Credit: Bear Disciple] (Includes all previous rewards.)&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1406851200,&quot;project_id&quot;:1140599049,&quot;backers_count&quot;:177,&quot;updated_at&quot;:1399690511},{&quot;id&quot;:2408478,&quot;minimum&quot;:60.0,&quot;reward&quot;:&quot;SQUIRREL BUDDY: Have a red squirrel buddy stick around your bear den who will randomly leave piles of acorns or other gifts at your doorstep. There will be other animal buddies you can befriend but the red squirrel is backer exclusive. [Backer Credit: Squirrel Owner] (Includes all previous rewards.)&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1414800000,&quot;project_id&quot;:1140599049,&quot;backers_count&quot;:211,&quot;updated_at&quot;:1398379299},{&quot;id&quot;:2408584,&quot;minimum&quot;:75.0,&quot;reward&quot;:&quot;BEAR PACK: A Bear Pack will be shipped to your residence. The pack will contain a  Mini-Poster of the title which I can sign, a collectable Bear Card and some stickers. [Backer Credit: Squirrel Owner] (Includes all previous rewards.)&quot;,&quot;limit&quot;:75,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;10.0&quot;,&quot;estimated_delivery_on&quot;:1417392000,&quot;project_id&quot;:1140599049,&quot;remaining&quot;:40,&quot;backers_count&quot;:35,&quot;updated_at&quot;:1398091163},{&quot;id&quot;:2408668,&quot;minimum&quot;:80.0,&quot;reward&quot;:&quot;STAR AS A ROCK: This is your chance to be a common rock loitering around Kickstarter Island that will have your name and you can give it a short description/quote. This reward and a few of the following rewards are a bit outlandish because they deal with Kickstarter Island, be sure to read about it on the main page. [Backer Credit: A Rock] (Includes all rewards from 60$ and below)&quot;,&quot;limit&quot;:50,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1414800000,&quot;project_id&quot;:1140599049,&quot;remaining&quot;:14,&quot;backers_count&quot;:36,&quot;updated_at&quot;:1398735336},{&quot;id&quot;:2408669,&quot;minimum&quot;:80.0,&quot;reward&quot;:&quot;STAR AS A BUTTERFLY: Similar to the previous tier where you&#39;re a rock, this tier is all about those fluttering insects. Simply pick the color butterfly you want, give it a short description/quote and a name. [Backer Credit: A Butterfly] (Includes all rewards from 60$ and below)&quot;,&quot;limit&quot;:40,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1414800000,&quot;project_id&quot;:1140599049,&quot;remaining&quot;:20,&quot;backers_count&quot;:20,&quot;updated_at&quot;:1398369627},{&quot;id&quot;:2408670,&quot;minimum&quot;:80.0,&quot;reward&quot;:&quot;ADOPT A TREE: The Kickstarter Island Park hosts a variety of different trees, take this chance to claim one which will be fenced off from the other unworthy trees. Choose the type of tree you want, title it and it will be honored with a plaque adorning your name. [Backer Credit: Friend of the Trees] (Includes all rewards from 60$ and below)&quot;,&quot;limit&quot;:40,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1414800000,&quot;project_id&quot;:1140599049,&quot;remaining&quot;:14,&quot;backers_count&quot;:26,&quot;updated_at&quot;:1398369615},{&quot;id&quot;:2408671,&quot;minimum&quot;:80.0,&quot;reward&quot;:&quot;GET YOUR PHOTO IN: Submit a photo of you, a group of friends/family, your pet, anything really as long as it&#39;s a picture you took. This photo will then be used somewhere on Kickstarter Island. It might be made into a poster, a sign, a billboard, you won&#39;t know until the game is finished so you&#39;ll have to search to see how it&#39;s incorporated with the island. [Backer Credit: Photographer] (Includes all rewards from 60$ and below)&quot;,&quot;limit&quot;:50,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1414800000,&quot;project_id&quot;:1140599049,&quot;remaining&quot;:30,&quot;backers_count&quot;:20,&quot;updated_at&quot;:1398369627},{&quot;id&quot;:2408672,&quot;minimum&quot;:80.0,&quot;reward&quot;:&quot;UNLEASH YOUR ART: There will be a Backer Museum on Kickstarter Island with several  blank canvases reserved for fine art. If you want to see one of your paintings, photographs, or maybe a drawing hanging up in this digital museum to be viewed by digital bears then this is your chance. Unless it&#39;s already digital art you would need to figure out how to upload it to internet though, scanning preferred. [Backer Credit: Artist] (Includes all rewards from 60$ and below)&quot;,&quot;limit&quot;:45,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1414800000,&quot;project_id&quot;:1140599049,&quot;remaining&quot;:34,&quot;backers_count&quot;:11,&quot;updated_at&quot;:1398355212},{&quot;id&quot;:2408605,&quot;minimum&quot;:85.0,&quot;reward&quot;:&quot;POINTLESS GAME CASE: Since the game will be digitally distributed there really is no reason for a case but what&#39;s this!? A Game Case?! [Backer Credit: Squirrel Owner] (Includes all previous rewards.)&quot;,&quot;limit&quot;:50,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;12.0&quot;,&quot;estimated_delivery_on&quot;:1417392000,&quot;project_id&quot;:1140599049,&quot;remaining&quot;:38,&quot;backers_count&quot;:12,&quot;updated_at&quot;:1397852014},{&quot;id&quot;:2408680,&quot;minimum&quot;:90.0,&quot;reward&quot;:&quot;BE FEATURED ON THE  BEAR SIMULATOR WALK OF FAME: Pssh, that boring Hollywood Walk of Fame, who would want to be featured there when you have the superior Bear Simulator Walk of Fame. Claim your star on the regal sidewalk which will be found in the town area of Kickstarter Island. [Backer Credit: Super Star] (Includes all rewards from 60$ and below)&quot;,&quot;limit&quot;:40,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1414800000,&quot;project_id&quot;:1140599049,&quot;remaining&quot;:32,&quot;backers_count&quot;:8,&quot;updated_at&quot;:1398369611},{&quot;id&quot;:2408606,&quot;minimum&quot;:100.0,&quot;reward&quot;:&quot;T-SHIRT + BEAR PACK + GAME CASE: Display the Bear Simulator logo and a mysterious bear symbol in shirt form. Plus the Bear Pack and game case. [Backer Credit: Fashionable] (Includes all previous rewards.)&quot;,&quot;limit&quot;:50,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1417392000,&quot;project_id&quot;:1140599049,&quot;remaining&quot;:0,&quot;backers_count&quot;:50,&quot;updated_at&quot;:1398369617},{&quot;id&quot;:2408679,&quot;minimum&quot;:135.0,&quot;reward&quot;:&quot;PRINTED BEAR BOOK: You see that bear book explained there up at the 30$ tier? Pledge at this tier and you get that book printed out so you can read it somewhere you&#39;re not at a computer/phone/tablet. Plus the T-Shirt and Bear Pack. [Backer Credit: Literate] (Includes all rewards from 60$ and below)&quot;,&quot;limit&quot;:50,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;20.0&quot;,&quot;estimated_delivery_on&quot;:1420070400,&quot;project_id&quot;:1140599049,&quot;remaining&quot;:42,&quot;backers_count&quot;:8,&quot;updated_at&quot;:1398380442},{&quot;id&quot;:2408738,&quot;minimum&quot;:165.0,&quot;reward&quot;:&quot;A TOTEBAG: No pledge campaign is complete without a totebag, and man, will this ever be a totebag. [Backer Credit: Owns a Tote bag](Includes T-Shirt and all rewards from 85$ and below)&quot;,&quot;limit&quot;:50,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;25.0&quot;,&quot;estimated_delivery_on&quot;:1420070400,&quot;project_id&quot;:1140599049,&quot;remaining&quot;:49,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1397762228},{&quot;id&quot;:2408740,&quot;minimum&quot;:175.0,&quot;reward&quot;:&quot;CARVE A TREE + PERSONALIZED PRINT: Virtually write something into one of the trees in Bear Simulator. Simply submit what you want etched in and which region you want the tree to be found in. Every tier above this will include a Personalized Print that&#39;s a fancy print of your creation/submission taken from in-game, framed, then sent to you. [Backer Credit: Ruined Nature] (Includes T-Shirt, Bear Pack and all rewards from 60$ and below)&quot;,&quot;limit&quot;:35,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1420070400,&quot;project_id&quot;:1140599049,&quot;remaining&quot;:30,&quot;backers_count&quot;:5,&quot;updated_at&quot;:1397790907},{&quot;id&quot;:2408739,&quot;minimum&quot;:250.0,&quot;reward&quot;:&quot;TOTEBAG + PRINTED BEAR BOOK + T-SHIRT + GAME CASE + BEAR PACK: With this pledge you get a pack of all the physical items offered so far. [Backer Credit: Owns a Tote bag] (Includes all rewards from 60$ and below)&quot;,&quot;limit&quot;:25,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;35.0&quot;,&quot;estimated_delivery_on&quot;:1420070400,&quot;project_id&quot;:1140599049,&quot;remaining&quot;:22,&quot;backers_count&quot;:3,&quot;updated_at&quot;:1397761840},{&quot;id&quot;:2408741,&quot;minimum&quot;:500.0,&quot;reward&quot;:&quot;SPOOKY PORTRAIT + PERSONALIZED PRINT: Wandering around at night, you may come across a cabin in the woods with 8 creepy portraits adorning the walls. Become one of those portraits! Submit a photo of yourself in a regal pose and it&#39;ll be photoshopped to look all \\u201coil-painty\\u201d then digitally framed to hang on the cabin wall. [Backer Credit: Eerie Portrait] (Includes T-Shirt, Bear Pack and all rewards from 60$ and below)&quot;,&quot;limit&quot;:8,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1420070400,&quot;project_id&quot;:1140599049,&quot;remaining&quot;:7,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1397761918},{&quot;id&quot;:2408742,&quot;minimum&quot;:750.0,&quot;reward&quot;:&quot;SPOOKY CONTRIBUTE + PERSONALIZED PRINT: There&#39;s a terrifying forest in Bear Simulator but it could be a little more frightening. Contribute a spooky idea and see it come to life in the game&#39;s scary region. Just think of your idea as a set piece or decoration, so it can&#39;t affect the player and you&#39;re good to go. [Backer Credit: Master of Horror] (Includes T-Shirt, Bear Pack and all rewards from 60$ and below)&quot;,&quot;limit&quot;:5,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1420070400,&quot;project_id&quot;:1140599049,&quot;remaining&quot;:5,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1395277916},{&quot;id&quot;:2408743,&quot;minimum&quot;:1000.0,&quot;reward&quot;:&quot;DESIGN AN OFFICIAL EDIBLE + PERSONALIZED PRINT: Design a food to be found in Bear Simulator. You&#39;ll be given a form to fill out where you&#39;ll describe what it is, where it&#39;s found, what it looks like, what stats it will give and finally name it. Example: Let&#39;s say you want an \\&quot;Aqua Mushroom\\&quot;, which would be found around lakes and increase your swimming stat when eaten. Something like that. [Backer Credit: Bear Chef] (Includes T-Shirt, Bear Pack and all rewards from 60$ and below)&quot;,&quot;limit&quot;:5,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1420070400,&quot;project_id&quot;:1140599049,&quot;remaining&quot;:4,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1397761658}]}";
+    
+    
+    
+    
+    
+    
+    
+    
+    window.timeRemaining = function timeRemaining(epochTime){
+    
+      var diff = epochTime - ((new Date()).getTime() / 1000);
+      var num_unit = (diff < 60 && [Math.max(diff, 0), 'seconds']) ||
+        ((diff/=60) < 60 && [diff, 'minutes']) ||
+        ((diff/=60) < 72 && [diff, 'hours']) ||
+        [diff/=24, 'days'];
+    
+      // Round down
+      num_unit[0] = Math.floor(num_unit[0]);
+      // Singularize unit
+      if (num_unit[0] == 1) { num_unit[1] = num_unit[1].replace(/s$/,""); }
+    
+      return num_unit;
+    };
+  //]]>
+</script>
+
+<script>
+  //<![CDATA[
+    window.current_variants = ["discover_link_copy[discover]","rewards_hover[with_hover_text]"];
+  //]]>
+</script>
+
+
+</head>
+
+<body class="project projects not-mobile not-phone not-forces-video-controls not-tablet not-touchable not-native-app-request video_mode" id="projects_show">
+<div class="jGrowl center" id="growl_section"></div>
+<div class="NS_layouts__navigation" id="header">
+<div class="main-nav relative bg-white">
+<h1 class="no-margin ml1 mr2 left">
+<a href="/?ref=nav" class="block p2"><span class="ss-icon green-dark">KICK</span><span class="ss-icon green">STARTER</span>
+</a></h1>
+<ul class="primary-links list no-margin left">
+<li class="left discover-link full-height">
+<a href="/discover?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Discover</a>
+</li>
+<li class="left full-height mr2">
+<a href="/learn?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Start</a>
+</li>
+</ul>
+<ul class="list no-margin right" id="menu-sub">
+<li class="right"><a href="/login?ref=nav" class="block h5 bold p2 full-height border-box">Log in</a></li>
+<li class="right"><a href="/signup?ref=nav" class="block h5 bold p2 full-height border-box">Sign up</a></li>
+</ul>
+<div class="search-link pl2 full-height border-left border-box clip">
+<form accept-charset="UTF-8" action="/projects/search" class="search pt1 pb1 block relative form-simple" method="get"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /></div>
+<div class="field relative pl3">
+<span class="ss-icon ss-search grey-dark ml1 mt1 absolute"></span>
+<input class="input-search header full-width text" data-tracker-name="Header Live Search" id="term" name="term" placeholder="Search projects" type="text" />
+</div>
+</form>
+
+</div>
+<div class="clear"></div>
+</div>
+</div>
+<div class="hide pt4 pb4 bg-grey-light" id="search_results-wrap">
+<div class="relative container" id="search_results">
+<a class="close right grey-dark mr1"><span class="ss-icon ss-delete"></span></a>
+<h3 class="header ml1 clearfix"></h3>
+<div class="clip clearfix" id="search_results_panel"></div>
+<a class="prev arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateleft"></span>
+</a>
+<a class="next arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateright"></span>
+</a>
+</div>
+</div>
+
+
+
+
+<div class="Project-ended-true Project-is_starred- Project-state-successful Project1140599049_cxt border-top" id="main_content">
+<div id="running-board-wrap">
+<div class="container" id="running-board">
+<div id="project-header">
+<div class="NS_projects__running_board ml1 mr1 clearfix">
+<div class="title center py4">
+<h2 class="mb1">
+<a href="/projects/1330754003/bear-simulator" class="green-dark">Bear Simulator</a>
+</h2>
+<p class="no-margin">
+<span class="creator">
+by
+<a href="/projects/1330754003/bear-simulator/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography" id="name">Farjay Studios</a>
+</span>
+</p>
+</div>
+<ul class="project-nav list-inline left h5 bold mb1">
+<li class="mr2">
+<a href="/projects/1330754003/bear-simulator" class="grey-dark py1 current" id="home_nav">Home</a>
+</li>
+<li class="mr2">
+<span data-updates-count="9" id="updates_count">
+<a href="/projects/1330754003/bear-simulator/posts" class="grey-dark py1" id="updates_nav">Updates
+<span class="count h6 bg-grey-dark white">9</span>
+</a></span>
+</li>
+<li class="mr2">
+<a href="/projects/1330754003/bear-simulator/backers" class="grey-dark py1" id="backers_nav">Backers
+<span class="count h6 bg-grey-dark white"><data class="Project1140599049" data-format="number" data-value="3871" itemprop="Project[backers_count]">3,871</data></span>
+</a></li>
+<li>
+<span data-comments-count="336" id="comments_count">
+<a href="/projects/1330754003/bear-simulator/comments" class="grey-dark py1" id="comments_nav">Comments
+<span class="count h6 bg-grey-dark white"><data class="Project1140599049" data-format="number" data-value="336" itemprop="Project[comments_count]">336</data></span>
+</a></span>
+</li>
+</ul>
+<ul class="list-inline right h5 bold mb1">
+<li class="location mr2">
+<a href="/discover/places/portland-or?ref=city" class="grey-dark"><span class="ss-icon ss-location margin-right"></span>
+Portland, OR
+</a></li>
+<li class="category" data-project-parent-category="Games">
+<a href="/discover/categories/games/video%20games?ref=category" class="grey-dark"><span class="ss-icon ss-tag margin-right"></span>
+Video Games
+</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+</div>
+<div class="bg-grey-light pb4" id="content-wrap">
+<div class="Project1140599049" data-conditions="[{&quot;!state&quot;:&quot;live&quot;}]" data-evaluation="true" data-render="&quot;&lt;div class=\&quot;NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-successful Project1140599049_cxt bg-grey container pb1 pt1\&quot;&gt;\n&lt;div class=\&quot;Project1140599049\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;successful&amp;quot;}]\&quot; data-evaluation=\&quot;true\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;Funded!&amp;lt;/b&amp;gt;\\nThis project was successfully funded &amp;lt;data class=\\&amp;quot;Project1140599049\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2014-04-17T14:52:00-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[deadline]\\&amp;quot;&amp;gt;on April 17&amp;lt;/data&amp;gt;.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;Funded!&lt;/b&gt;\nThis project was successfully funded &lt;data class=\&quot;Project1140599049\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2014-04-17T14:52:00-04:00&amp;quot;\&quot; itemprop=\&quot;Project[deadline]\&quot;&gt;on April 17&lt;/data&gt;.\n&lt;/p&gt;\n&lt;/div&gt;&lt;div class=\&quot;Project1140599049\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:[&amp;quot;started&amp;quot;,&amp;quot;submitted&amp;quot;]}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;THIS PROJECT IS NOT LIVE&amp;lt;/b&amp;gt;\\nThis is only a draft that the creator has chosen to share.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1140599049\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;suspended&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Suspended&amp;lt;/b&amp;gt;\\nFunding for this project was suspended &amp;lt;data class=\\&amp;quot;Project1140599049\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2014-04-17T14:52:00-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on April 17&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1140599049\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;canceled&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Canceled&amp;lt;/b&amp;gt;\\nFunding for this project was canceled by the project creator &amp;lt;data class=\\&amp;quot;Project1140599049\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2014-04-17T14:52:00-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on April 17&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1140599049\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;failed&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Unsuccessful&amp;lt;/b&amp;gt;\\nThis project\\u2019s funding goal was not reached on &amp;lt;time class=\\&amp;quot;js-adjust\\&amp;quot; data-format=\\&amp;quot;MMMM D\\&amp;quot; datetime=\\&amp;quot;2014-04-17T14:52:00-04:00\\&amp;quot;&amp;gt;April 17&amp;lt;/time&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1140599049\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;purged&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;This project is purged and only visible to staff.&amp;lt;/b&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;/div&gt;\n&quot;"><div class="NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-successful Project1140599049_cxt bg-grey container pb1 pt1">
+<div class="Project1140599049" data-conditions="[{&quot;state&quot;:&quot;successful&quot;}]" data-evaluation="true" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;Funded!&lt;/b&gt;\nThis project was successfully funded &lt;data class=\&quot;Project1140599049\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2014-04-17T14:52:00-04:00&amp;quot;\&quot; itemprop=\&quot;Project[deadline]\&quot;&gt;on April 17&lt;/data&gt;.\n&lt;/p&gt;\n&quot;"><p class="no-margin">
+<b>Funded!</b>
+This project was successfully funded <data class="Project1140599049" data-format="distance_date" data-value="&quot;2014-04-17T14:52:00-04:00&quot;" itemprop="Project[deadline]">on April 17</data>.
+</p>
+</div><div class="Project1140599049" data-conditions="[{&quot;state&quot;:[&quot;started&quot;,&quot;submitted&quot;]}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;THIS PROJECT IS NOT LIVE&lt;/b&gt;\nThis is only a draft that the creator has chosen to share.\n&lt;/p&gt;\n&quot;"></div><div class="Project1140599049" data-conditions="[{&quot;state&quot;:&quot;suspended&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Suspended&lt;/b&gt;\nFunding for this project was suspended &lt;data class=\&quot;Project1140599049\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2014-04-17T14:52:00-04:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on April 17&lt;/data&gt;.\n&quot;"></div><div class="Project1140599049" data-conditions="[{&quot;state&quot;:&quot;canceled&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Canceled&lt;/b&gt;\nFunding for this project was canceled by the project creator &lt;data class=\&quot;Project1140599049\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2014-04-17T14:52:00-04:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on April 17&lt;/data&gt;.\n&quot;"></div><div class="Project1140599049" data-conditions="[{&quot;state&quot;:&quot;failed&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Unsuccessful&lt;/b&gt;\nThis project\u2019s funding goal was not reached on &lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;MMMM D\&quot; datetime=\&quot;2014-04-17T14:52:00-04:00\&quot;&gt;April 17&lt;/time&gt;.\n&quot;"></div><div class="Project1140599049" data-conditions="[{&quot;state&quot;:&quot;purged&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;This project is purged and only visible to staff.&lt;/b&gt;\n&quot;"></div></div>
+</div>
+<div class="container bg-white border rounded py3 pl2 pr2" id="content">
+<div class="NS-projects-content">
+<div class="grid_11">
+<div data-has-video="true" id="video-section">
+<div class="video-player" data-dimensions="{&quot;width&quot;:640,&quot;height&quot;:480}" data-image="https://s3.amazonaws.com/ksr/projects/822473/photo-main.jpg?1397863003" data-video-tracker-url="https://www.kickstarter.com/projects/1330754003/bear-simulator/video/plays" data-video-url="https://d2pq0u4uni88oo.cloudfront.net/projects/822473/video-353754-h264_high.mp4" data-video="{&quot;id&quot;:353754,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/822473/video-353754-h264_high.mp4?2014&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/822473/video-353754-h264_base.mp4?2014&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/822473/video-353754-webm.webm?2014&quot;,&quot;width&quot;:640,&quot;height&quot;:360,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/822473/video-353754-h264_base.jpg?2014&quot;}" id="video_pitch"><video class="has_webm landscape" preload="none">
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/822473/video-353754-h264_high.mp4" type='video/mp4; codecs="avc1.64001E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/822473/video-353754-h264_base.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/822473/video-353754-webm.webm" type="video/webm"></source>
+You'll need an HTML5 capable browser to see this content.
+</video>
+<img alt="Photo-main" class="has_played_hide poster landscape" src="https://s3.amazonaws.com/ksr/projects/822473/photo-main.jpg?1397863003" />
+<div class="play_button_big play_button_dark absolute-center rounded has_played_hide">
+<span class="ss-icon ss-play"></span>
+Play
+</div>
+<div class="player_controls clearfix absolute-bottom mb2 rounded white bg-green-dark forces-video-controls_hide">
+<div class="left">
+<a class="button button_icon button_dark playpause play mr1">
+<span class="play ss-icon ss-play"></span>
+<span class="pause ss-icon ss-pause"></span>
+</a>
+<span class="time current_time h12 left">00:00</span>
+</div>
+<div class="right">
+<span class="time total_time h12 left mr1">00:00</span>
+<a class="left button button_icon button_icon_white volume">
+<span class="ss-icon ss-volume icon_volume_nudge"></span>
+<span class="ss-icon ss-highvolume"></span>
+</a>
+<div class="volume_container left">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+<a class="left button button_icon button_icon_white fullscreen">
+<span class="ss-icon ss-expand"></span>
+<span class="ss-icon ss-contract"></span>
+</a>
+</div>
+<div class="clip">
+<div class="progress_container pr1 pl1">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="buffer progress_bar_buffer"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div data-project-state="successful" id="about">
+<div class="NS_projects__project_share clearfix py2 pl1 pr1">
+<ul class="left list-inline no-margin h5 bold">
+<li class="facebook mr2">
+<a href="https://www.kickstarter.com/projects/1330754003/bear-simulator"><span class="ss-icon ss-social ss-facebook color-facebook"></span>
+<span class="color-facebook">Share</span>
+<span class="share_bubble"><div class="triangle grey"></div>
+<div class="triangle white"></div>
+<span class="count"></span></span>
+</a></li>
+<li class="twitter mr2">
+<a  href="https://twitter.com/intent/tweet?text=Bear%20Simulator%20by%20Farjay%20Studios&amp;via=kickstarter&amp;url=http://kck.st/1mfQ028" rel="nofollow"><span class="ss-icon ss-social ss-twitter color-twitter"></span>
+<span class="color-twitter">Tweet</span>
+</a></li>
+<li class="embed">
+<a href="/projects/1330754003/bear-simulator/widget" class="remote_modal_dialog grey-dark" data-modal-title="Embed a widget on your site" data-tracker-name="Embed"><span class="ss-icon ss-navigateleft"></span>
+<span class="ss-icon ss-navigateright"></span>
+Embed
+</a></li>
+</ul>
+<ul class="right list-inline no-margin h5 bold">
+<li class="curate mr2">
+</li>
+<li class="remind">
+<div class="ajax-container" id="watching-widget">
+<div class="Project1140599049" data-conditions="[{&quot;is_starred&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div id=\&quot;unwatch\&quot;&gt;\n&lt;a href=\&quot;/projects/1330754003/bear-simulator/unwatch\&quot; class=\&quot;on\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"></div><div class="Project1140599049" data-conditions="[{&quot;!is_starred&quot;:true}]" data-evaluation="true" data-render="&quot;&lt;div id=\&quot;watch\&quot;&gt;\n&lt;a href=\&quot;/projects/1330754003/bear-simulator/watch\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;span class=\&quot;text\&quot;&gt;\n&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"><div id="watch">
+<a href="/projects/1330754003/bear-simulator/watch"><span class="ss-icon ss-star"></span>
+<span class="text">
+</span>
+</a></div>
+
+</div></div>
+</li>
+</ul>
+</div>
+
+<div class="short_blurb py2 pl1 pr1">
+<p class="h3">Explore, eat stuff, be a Bear!</p>
+</div>
+<div class="full-description">
+<p>There's been a disturbing trend in games of late. Just take a look at this chart:</p><div class="template asset" contenteditable="false" data-edit_url="/projects/1330754003/bear-simulator/assets/1512977/edit" data-id="1512977">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/512/977/c4c2a357c24e7d0bb311372ce2ac3f13_large.png?1389332288"></figure>
+</div><p> Notice something? Sure these games are popular and you might even call them "<i>fun</i>" but they harbor a horrible bias in today’s gaming world. Most are blind to it but it's all right there, that's right, none of these games has you playing as a <b>bear</b>. </p><p>It's quite clear the fat cats in Washington with their stove top hats and contemporary jazz music don't want us playing as bears, it's about time to fight back against the tyranny.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/1330754003/bear-simulator/assets/1669480/edit" data-id="1669480">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/669/480/fa532bb1850220679800bb198d696fe0_large.jpg?1393205972"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/1330754003/bear-simulator/assets/1670523/edit" data-id="1670523">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/670/523/cf2e94b7d2bab7fb8558d54417b65fbe_large.jpg?1393231141"></figure>
+</div><p>The title gives you all you need to know as it's pretty much a bear simulator. You play in FPB (First Person Bear) and do bear things which include exploring, eating fish and plants, striking down anything that dare stand before your might, increasing your stats, sleeping and discovering mysteries of your forest home. Watch the alpha trailer above or right here on <a href="http://youtu.be/A5rJk6tLRCw" target="_blank">youtube</a> to give you an idea.</p><p><b>TL;DR</b> - It's
+like a mini Skyrim but you're a bear</p><p>The estimated release date is November(ish) 2014.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/1330754003/bear-simulator/assets/1778173/edit" data-id="1778173">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/778/173/f1acc7d2b2c672591ad1ac3903bf457c_large.jpg?1395378590"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/1330754003/bear-simulator/assets/1778166/edit" data-id="1778166">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/778/166/af700f0a0ce7e1a9e57fd6f71273fae0_large.jpg?1395378439"></figure>
+</div><p>Keep up with Bear Simulator news and updates on the official Twitter and Facebook pages:</p><ul>
+<li><a href="https://twitter.com/BearSimulator" target="_blank">Twitter.com/BearSimulator</a></li>
+<li>
+<a href="https://www.facebook.com/BearSimulatorGame" target="_blank">Facebook.com/BearSimulatorGame</a>
+</li>
+</ul><p>Trailers and other videos will be uploaded here:</p><ul><li>
+<a href="http://youtube.com/farjaystudios" target="_blank">Youtube.com/FarjayStudios</a>
+</li></ul><p>You can discuss things on the subreddit:</p><ul><li><a href="https://reddit.com/r/BearSimulator" target="_blank">reddit.com/r/BearSimulator</a></li></ul><p>If you want to contact me (the person making this bear game) here's my twitter. I'll be using this a lot during production:</p><ul><li><a href="https://twitter.com/JohnFarjay" target="_blank">twitter.com/JohnFarjay</a></li></ul><p>All questions here:</p><ul><li>britnie@farjay.com</li></ul><div class="template asset" contenteditable="false" data-edit_url="/projects/1330754003/bear-simulator/assets/1801822/edit" data-id="1801822">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/801/822/7614d1d47d2fb42d64c43b5624af1594_large.jpg?1395872601"></figure>
+</div><p> Stretch goals are tricky because I can't add a whole lot of things or else it would put things behind schedule. So a lot of the goals are stupid/fun/freelance and popular requests will be added after the games release.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/1330754003/bear-simulator/assets/1870068/edit" data-id="1870068">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/870/068/a87eeadcb301fefc1af0186708f64af1_large.jpg?1397268909"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/1330754003/bear-simulator/assets/1670530/edit" data-id="1670530">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/670/530/20f96cef5cea084970852f67391c5b6e_large.png?1393231267"></figure>
+</div><p>A few
+games in the past got it right and have been rewarded with universal
+praise, notably Banjo-Kazooie and EnviroBear, but there hasn't been many solid, somewhat realistic bear simulation games (if at all). That's
+where this comes in.</p><p>Sure
+it may seem like a “dumb idea” or a “really dumb idea” but
+you can't honestly tell me you've never secretly wanted to be a bear wandering around the forest. That's just an outright lie.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/1330754003/bear-simulator/assets/1670536/edit" data-id="1670536">
+<figure><img alt="Screenshots and Game Footage are from an early version of the game. Take extreme note of this." class="fit" src="https://s3.amazonaws.com/ksr/assets/001/670/536/b83b1c5c75aaa29ba22893d24c1b3e73_large.png?1393231406"><figcaption>Screenshots and Game Footage are from an early version of the game. Take extreme note of this.</figcaption></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/1330754003/bear-simulator/assets/1670561/edit" data-id="1670561">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/670/561/8324a7389295853a985c27f59fab4adb_large.jpg?1393232293"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/1330754003/bear-simulator/assets/1673352/edit" data-id="1673352">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/673/352/238ee1904749d78cbe1cb3abe7cf7bed_large.jpg?1393285557"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/1330754003/bear-simulator/assets/1673349/edit" data-id="1673349">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/673/349/2119fe7523597e1409e561e68e5d26be_large.jpg?1393285539"></figure>
+</div><p> Larger screens <a href="http://bearsimulator.com/media/" target="_blank">here.</a></p><div class="template asset" contenteditable="false" data-edit_url="/projects/1330754003/bear-simulator/assets/1670550/edit" data-id="1670550">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/670/550/aab73e87519f20274e71057b2ce318fc_large.jpg?1393231769"></figure>
+</div><p>Some
+of the key features you should expect in this finished bear game:</p><ul>
+<li>
+<b>Fantastic
+first person camera, motor and control</b>.<br><p><i>The
+first person view and bear control will play an extraordinary part in
+the game as it adds a huge amount of character. This is a
+number one priority and will be worked on until it's perfect. You'll be mostly crawling around in the fully featured game, standing to examine things and waddle about.</i></p>
+</li>
+<li>
+<b>Melee fighting system</b>.<br><p><i>Another
+important feature which ties into the previous feature but deserves
+it's own bullet point.</i></p>
+</li>
+<li>
+<b>Large multi-environment world with lots to see and discover</b>.<br><p><i>While
+it will be a realistic setting, the game won't be based on any
+specific real world place.</i></p>
+</li>
+</ul><ul><li>
+<b>A variety of different living things that will populate the land and beyond.</b><br><i>One of the main points of Bear Simulator is to be an exploration game (and being a bear) so it wouldn't make sense if there was nothing to search for.</i>
+</li></ul><ul><li>
+<b>A catastrophic amount of secrets.</b><br><i>The game will be like 30% secret areas and stuff.</i>
+</li></ul><ul><li>
+<b>Events</b><br><i>Events will be explained later with a flashy trailer or something since summarizing them in a bullet point lacks that dramatic punch.</i>
+</li></ul><ul><li>
+<b>Mountain goats(!)</b><br><i>An extremely important feature.</i>
+</li></ul><ul><li>
+<b><i>Lots</i> more!</b><br><i>"Lots more!" includes: Unlockable bear abilities, animal friends, ways to customize your bear and possible Oculus Rift support.</i>
+</li></ul><p><i>POSSIBLE FEATURE:</i></p><ul><li>
+<b>Multiplayer</b><br><p><i>Even
+though I have a few awesome ideas for some multiplayer modes,
+most of the development time and funding will go towards crafting a
+glorious single player experience. So count multiplayer as being a
+possible feature that may or may not be added.</i><i> Also this has nothing to do with me being unable to get multiplayer to friggen work correctly </i>ლ(ಠ益ಠლ) </p>
+</li></ul><div class="template asset" contenteditable="false" data-edit_url="/projects/1330754003/bear-simulator/assets/1670660/edit" data-id="1670660">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/670/660/3c22df947137e9ccb42a4858916a53d1_large.jpg?1393235733"></figure>
+</div><a href="http://farjay.com" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/1330754003/bear-simulator/assets/1701840/edit" data-id="1701840">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/701/840/e1bf41f4ed5647271406ccda0137f49f_large.jpg?1393888884"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</a>
+<p>
+Bear Simulator is the first project meant to <i>'kickstart'</i> a new game studio: <b>Farjay Studios.</b> Sure it's just
+one person so it's kind of odd to call it a studio but I don't know
+what else to call it. <i>Anywho</i>, this game was chosen since I already
+have a solid design for it and it's pretty simple at it's core. Plus
+it will be crazy fun to promote, you have no idea.</p>
+<p>
+Here's the <a href="http://farjay.com/" target="_blank">production blog</a> which
+will eventually be filled with updates on the game's progress.</p><h1>BearSimulator.com</h1><p>I'm being lazy with web stuff so the <a href="http://bearsimulator.com/" target="_blank">official site for Bear Simulator</a>
+is a bit lackluster at the moment. I'm not really really a web designer which is a good excuse for the laziness. If the game <i>does</i> get funded some of the funds will go towards making it more fancy and <i>forest-y</i>.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1330754003/bear-simulator/assets/1673007/edit" data-id="1673007">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/673/007/2c2e25a28df7f0d373d4de7492f85ba1_large.jpg?1393280632"></figure>
+</div><p>
+Alright, this sounds a little
+strange but I'm 80% sure it will turn out fantastic. Since I'm using
+Kickstarter and needed some interesting, lower tier pledge
+rewards, why not feature a region dedicated to these things? Boom,
+right here, <b>Kickstarter Island</b>.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/1330754003/bear-simulator/assets/1673015/edit" data-id="1673015">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/673/015/088018f21705416e136dd4076991a163_large.jpg?1393280705"></figure>
+</div><p>Available
+for all to explore and existing outside the realm of the somewhat
+realistic Bear Simulator world, the island will be similar to an
+amusement park allowing for the creative freedom to host plenty of
+nonsensical things. This means a bunch of backer submitted stuff can
+be incorporated in a way that won't break the immersion. Check the
+reward section for some info on what to expect.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/1330754003/bear-simulator/assets/1673041/edit" data-id="1673041">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/673/041/30306b75f1ae9233c06be7bad8317197_large.jpg?1393280919"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/1330754003/bear-simulator/assets/1673936/edit" data-id="1673936">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/673/936/879ca99b30caac02dc135a98fa394056_large.png?1393294072"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/1330754003/bear-simulator/assets/1673986/edit" data-id="1673986">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/673/986/57ef88169e09588accf4fa66373c5911_large.png?1393294526"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/1330754003/bear-simulator/assets/1673989/edit" data-id="1673989">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/673/989/47f887c92e0f4c6ff8f45c2a4484a46d_large.png?1393294540"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/1330754003/bear-simulator/assets/1673124/edit" data-id="1673124">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/673/124/fb9afe5dd05ff9645cef47ec239ab494_large.png?1393282077"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/1330754003/bear-simulator/assets/1773174/edit" data-id="1773174">
+<figure><img alt="This reward has been updated with an in-game credit." class="fit" src="https://s3.amazonaws.com/ksr/assets/001/773/174/20fc89b502b229ff81a2fee41ec3f6b6_large.jpg?1395277939"><figcaption>This reward has been updated with an in-game credit.</figcaption></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/1330754003/bear-simulator/assets/1773182/edit" data-id="1773182">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/773/182/a04690965339ee5df12ffe1795c8c06d_large.png?1395278021"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/1330754003/bear-simulator/assets/1732020/edit" data-id="1732020">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/732/020/dd0a2d8cf8686926f932f640f23fc054_large.jpg?1394491241"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/1330754003/bear-simulator/assets/1732062/edit" data-id="1732062">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/732/062/8a904ef28b6e62b43d89d120c71c9ffc_large.jpg?1394491846"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/1330754003/bear-simulator/assets/1773184/edit" data-id="1773184">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/773/184/2c9dce48d1f5dd2e78ce2cffa44bf100_large.jpg?1395278041"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/1330754003/bear-simulator/assets/1773500/edit" data-id="1773500">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/773/500/51bb908eba3b938044378ab20cbd4e89_large.jpg?1395282545"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/1330754003/bear-simulator/assets/1773188/edit" data-id="1773188">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/773/188/e11945a9ccbae323018556bc6e96af54_large.jpg?1395278054"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/1330754003/bear-simulator/assets/1773190/edit" data-id="1773190">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/773/190/472ed0eadbf355b0e8273f235787fbb5_large.jpg?1395278071"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/1330754003/bear-simulator/assets/1773192/edit" data-id="1773192">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/773/192/9da1deb51dec8f79eb96b8c5e67e7d00_large.png?1395278086"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/1330754003/bear-simulator/assets/1732055/edit" data-id="1732055">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/732/055/493d12978a9b0cc7e363a3f4c53007e8_large.jpg?1394491776"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/1330754003/bear-simulator/assets/1773197/edit" data-id="1773197">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/773/197/354abb081fe72798688bc8fc0c3a4416_large.jpg?1395278136"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/1330754003/bear-simulator/assets/1673431/edit" data-id="1673431">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/673/431/2518b8647612a5008f226f1a8ac617c7_large.png?1393286433"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/1330754003/bear-simulator/assets/1773199/edit" data-id="1773199">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/773/199/2c2c3625d1cffc9c4c8470f13ed40779_large.jpg?1395278161"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/1330754003/bear-simulator/assets/1773200/edit" data-id="1773200">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/773/200/d956c968f04b4f358b4d3d15ec663ce3_large.jpg?1395278179"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/1330754003/bear-simulator/assets/1773203/edit" data-id="1773203">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/773/203/6a4127ae416f0eab3b3e956d6ab3ade5_large.jpg?1395278192"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/1330754003/bear-simulator/assets/1773216/edit" data-id="1773216">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/773/216/1ce1580e927a4b1cb77ad9905542070a_large.jpg?1395278327"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/1330754003/bear-simulator/assets/1677257/edit" data-id="1677257">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/677/257/fc8b5193c6928f2b441e542f432369f6_large.jpg?1393360567"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/1330754003/bear-simulator/assets/1773204/edit" data-id="1773204">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/773/204/93458e6bdd7ea10f5d3b79d7ac2eef36_large.jpg?1395278208"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/1330754003/bear-simulator/assets/1773206/edit" data-id="1773206">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/773/206/3f376112ba473417bf9230e5ae9a8963_large.jpg?1395278218"></figure>
+</div><p>Some
+of the rewards might be a little confusing so you can ask a question in the comment section or through email.</p><p>
+<b>Email:</b> Britnie@Farjay.com</p><p>Also no advertisements for submissions, because that would be lame.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/1330754003/bear-simulator/assets/1673710/edit" data-id="1673710">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/673/710/1927228db95cd9af8962a5efe61a9d74_large.jpg?1393290835"></figure>
+</div><p>
+First of all, Bear Simulator is
+mostly done on a base level meaning that much of the tedious and time
+consuming parts are complete but a lot of the game is fairly rough
+and using placeholder art, sound and models.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/1330754003/bear-simulator/assets/1673720/edit" data-id="1673720">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/673/720/147356d06cedee69dfda5261d4c7664d_large.jpg?1393290911"></figure>
+</div><p>
+What remains are the fun parts like
+buying the needed pieces to replace the placeholder stuff so it looks
+nice, hence this Kickstarter campaign. </p><p>Here's a rundown of how the
+funding would be spent for a good bear game. Some of it involves
+commissions and freelance so there's a tiny bit of guesstimating
+going on here.</p><p><b>Models/Textures: 7,000$ </b>
+</p>
+<p>
+Because I can't model organic things
+AT ALL, a good fraction of the funding will go towards environmental
+and creature models/textures. See my spherical bee hive for reference
+of said modeling skills:</p><div class="template asset" contenteditable="false" data-edit_url="/projects/1330754003/bear-simulator/assets/1673734/edit" data-id="1673734">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/673/734/7f464208af71bf7fc6dbd3c5c7c95654_large.jpg?1393291074"></figure>
+</div><p>
+Most of the models and textures
+needed are readily available on sites like TurboSquid and the Asset
+Store. Others will be commissioned and several of them can be
+modified and reused to save on cost and give a sense of variety.</p><p><b>Hardware:
+2,500$</b></p>
+<p>
+An updated Mac for OSX testing and some other hardware like additional storage, software and <i>maybe</i> an Oculus Rift.</p>
+
+<p><b>Licensing
+and Various Fees 4,500$</b></p>
+<p>
+Engine licensing, premium site
+templates, Amazon and Kickstarter fees.</p>
+
+<p><b>Sound:
+2,500$</b></p>
+<p>
+You don't want cheap, artificial
+sound in your bear game, if you want quality sound effects you gotta
+lay down the cold hard cash.</p>
+
+<p><b>Art/Graphic
+Design: 3,500$</b></p>
+<p>
+Illustrations, better menu and hud
+design, premium stock photos, etc.</p>
+
+<p><b>Additional
+Programming: 3,500$</b></p>
+<p>
+Advanced scripts from freelancers,
+mainly camera control and movement and a more intuitive menu and
+loading system.</p>
+
+<p><b>Rewards:
+~5,000$</b></p>
+<p>
+Producing all the physical items and
+shipping. It's difficult to give an estimate on this since the price
+is based on if all the physical rewards are claimed or not.</p>
+
+<p><b>Misc:
+1000$</b></p>
+<p>
+Covers all the small things that
+might pop up like refunds, guesstimation underfunding and unforeseen shipping expenses.</p>
+
+<p><b>Big
+book of the Berenstain Bears: 10$</b></p>
+<p>
+For the powerful life lessons that
+can<i> only </i>be taught by bears.</p>
+
+<p>
+<i>Something will be set up to
+update backers where funds would be going, either through twitter, on
+the main site, or some other way.</i></p><div class="template asset" contenteditable="false" data-edit_url="/projects/1330754003/bear-simulator/assets/1673748/edit" data-id="1673748">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/673/748/13a81fd2ff4786b6e090d89b0b816f7e_large.jpg?1393291357"></figure>
+</div><p>
+Forums! Bears are a coveted animal
+on the internet, right up there with cats and that dog with the
+constant inner monologue. So a forum will be vastly important to this
+whole production. Aimed to be the grandest animal simulator in all
+the land, this message board will be used extensively for feedback,
+polls, updates, and soul crushing criticisms.</p><p>Will be using Reddit.</p><ul><li>
+<a href="http://www.reddit.com/r/hearthstone/" target="_blank">http://www.reddit.com/r/hearthstone/</a>
+</li></ul><div class="template asset" contenteditable="false" data-edit_url="/projects/1330754003/bear-simulator/assets/1673750/edit" data-id="1673750">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/673/750/8982d5f8a3d01acaa7b8962639813d9b_large.jpg?1393291417"></figure>
+</div><p>
+Contrary to the screenshots and
+trailer, your bear in Bear Simulator won't be walking around on two
+legs all the time. In the fully featured game you'll spend most of
+your time crawling around and leaping about like an actual bear.</p>
+<p>
+The constant “bipedal/two-leg
+mode” was used for a few reasons, for one it makes it easy to test
+things, second, it gives a good idea on how your bear would interact
+with stuff and lastly, I didn't want to animate and program
+everything with a placeholder bear model.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/1330754003/bear-simulator/assets/1673753/edit" data-id="1673753">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/673/753/29d825820763fcf8f7d0629f54c545dc_large.jpg?1393291479"></figure>
+</div><p>Your
+environment is divided up into large “Regions”. Each region is a
+different theme and contain different “Areas”. The harder to
+reach places tend to be dangerous but contain the rarest food and
+creatures... Not the mention the occasional “Mysterious Being”:</p><div class="template asset" contenteditable="false" data-edit_url="/projects/1330754003/bear-simulator/assets/1673761/edit" data-id="1673761">
+<figure><img alt='"Mysterious Beings" are basically powerful, fictional creatures.' class="fit" src="https://s3.amazonaws.com/ksr/assets/001/673/761/d3c003310bd25dd16a7d446435cfe35b_large.jpg?1393291563"><figcaption>"Mysterious Beings" are basically powerful, fictional creatures.</figcaption></figure>
+</div><p>These
+are the planned regions, they don't have names yet:</p>
+
+<ul><li>
+<b>Main Forest</b><br>This
+is the “Hub” region. There aren't many aggressive enemies here
+and only the basic foods. It's also where your den is located.
+</li></ul><ul><li>
+<b>Mountains</b><br>A
+snowy, rocky region. There are definitely going to be mountain goats
+here, EVEN IF IT COSTS ALL THE FUNDING.</li></ul><ul><li>
+<b>Ocean Coast</b><br>The
+ocean coast. The huge body of water probably bewilders most bears.
+Err, forest bears, not polar.
+</li></ul><ul><li>
+<b>Spooky Woods</b><br>The
+way this region is planned easily earns the name Spooky Woods, in
+fact it's probably going to stay named Spooky Woods.
+</li></ul><ul><li>
+<b>Undergrounds</b><br>A
+system of connected caves without much to eat. It also contains an
+ancient evil.
+</li></ul><ul><li>
+<b>Fields</b><br>A
+flat, wide open land. 
+
+</li></ul><ul><li>
+<b>Kickstarter Island</b><br>Read
+about it above. ^
+</li></ul><p>Welp, that's all of them. Definitely not keeping any more regions secret.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/1330754003/bear-simulator/assets/1673765/edit" data-id="1673765">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/673/765/cd864a08a64eb2b716d4fc33970440ff_large.jpg?1393291638"></figure>
+</div>
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1330754003/bear-simulator/assets/1673776/edit" data-id="1673776">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/673/776/1484f8e352269b34589f6f36eab7e04e_large.jpg?1393291826"></figure>
+</div><p>Plenty
+of animals other than bears will populate your world which come in
+all sorts of different flavors depending on where you are.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/1330754003/bear-simulator/assets/1673783/edit" data-id="1673783">
+<figure><img alt="Some animals will only appear under certain conditions." class="fit" src="https://s3.amazonaws.com/ksr/assets/001/673/783/75e2fd795bf13e0eae0dff1c1817361b_large.jpg?1393291864"><figcaption>Some animals will only appear under certain conditions.</figcaption></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/1330754003/bear-simulator/assets/1673849/edit" data-id="1673849">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/673/849/4d43619267b5e9c0142b33e5965f8914_large.jpg?1393292944"></figure>
+</div><p>A
+scientist can correct me but I'm fairly sure real bears have a mental
+menu where they track their stats. Here's a few of them which
+might change so they aren't final:</p>
+<ul><li>
+<b>Strength</b><br><p>
+High strength means more powerful
+swipes and the ability to get through any area blocking barricades.</p>
+
+</li></ul><ul><li>
+<b>Vitality</b><br><p>
+Pretentious word for Health Points.</p>
+</li></ul><ul><li>
+<b>Foraging</b><br>Increases your chance of
+successfully picking some berries, stealing honey, etc. Because as we
+all know, plucking grapes from a vine takes some serious skill
+in the bear world.
+</li></ul><ul><li>
+<b>Intelligence</b><br><p>
+Displays important info for what you're about to eat before diving right in.</p>
+</li></ul><div class="template asset" contenteditable="false" data-edit_url="/projects/1330754003/bear-simulator/assets/1728359/edit" data-id="1728359">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/728/359/32daacff359c946a27372dd63bee6108_large.jpg?1394423479"></figure>
+</div><ul>
+<li>
+<b>Swim</b><br><p>
+How long/fast you can swim before getting bear cramps and drowning.</p>
+</li>
+<li>
+<b>Jump/Leap</b><p>
+Allows you to dunk other bears that
+talk smack bout you on the court. (How high you can jump)</p>
+
+</li>
+</ul><ul><li>
+<b>Luck</b><br>I have absolutely no idea what this stat will do. WHY DID I EVEN ADD IT.</li></ul><div class="template asset" contenteditable="false" data-edit_url="/projects/1330754003/bear-simulator/assets/1673802/edit" data-id="1673802">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/673/802/cfe39ea5ea263821701582cf206171db_large.jpg?1393292099"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/1330754003/bear-simulator/assets/1673804/edit" data-id="1673804">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/673/804/f3a48489cb8325c28d647e8ec1bdd394_large.jpg?1393292113"></figure>
+</div><p>While fumbling about on your crazy bear adventure you may come upon curious things that stand out from the generic tree or frog. This all has to do with the grand Bear Simulator quest that will explore the mysterious heritage of bears with a storyline so compelling it will win several Oscars including Best Lead Actor.</p><p>Sure it's optional so you can ignore it but why would you want to do that.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/1330754003/bear-simulator/assets/1778185/edit" data-id="1778185">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/778/185/8d0842f7788a9cab3969a39d0f5273d9_large.jpg?1395378852"></figure>
+</div><p><b>March 19th Edit:</b></p><ul><li>    Several rewards lowered in price. Added an in-game credit to the 40$ Mystic Bear tier to increase value.</li></ul><p><b>March 21th Edit:</b></p><ul><li>    Updated social media links and stuff.</li></ul><p><b>March 26th Edit:</b></p><ul><li>Updated stretch goals.</li></ul><p><b>March 31st Edit:</b></p><ul><li>Updated stretch goals again and took out some old information.</li></ul><div class="template asset" contenteditable="false" data-edit_url="/projects/1330754003/bear-simulator/assets/1673814/edit" data-id="1673814">
+<figure><img alt="Sites I got stuff from to make this page." class="fit" src="https://s3.amazonaws.com/ksr/assets/001/673/814/065c438e1144bb085808fcfea3722e9f_large.jpg?1393292217"><figcaption>Sites I got stuff from to make this page.</figcaption></figure>
+</div><p><a href="http://cgtextures.com" target="_blank">cgtextures.com</a></p>
+<p><a href="http://commons.wikipedia.org" target="_blank">commons.wikipedia.org</a></p>
+<p><a href="http://www.sxc.hu/" target="_blank">sxc.hu</a></p>
+<p><a href="http://www.videocopilot.com/" target="_blank">videocopilot.com</a></p>
+<p><a href="http://incompetech.com" target="_blank">incompetech.com - </a><i>Wallpaper,
+Suvaco do Cristo -
+Kevin MacLeod</i></p>
+
+<p><a href="http://turbosquid.com" target="_blank">turbosquid.com</a></p>
+
+<p><a href="http://customink.com" target="_blank">customink.com</a></p>
+
+<p><a href="http://imdb.com/name/nm0000158/" target="_blank">imdb.com/name/nm0000158/</a></p>
+</div>
+<div id="risks">
+<h2 class="title grey-dark mt6 mb4">
+<span>Risks and challenges</span>
+<a href="/help/faq/kickstarter%20basics#Acco" class="right normal h5" target="_blank">Learn about accountability on Kickstarter</a>
+<div class="divider clear"></div>
+</h2>
+<p><p>Risk 1:
+<br />Getting physical rewards all shipped out correctly.</p>
+
+<p>Remedy:
+<br />If the rewards prove popular, they&#39;re capped so things can&#39;t get out of hand.</p>
+
+<p>Risk 2:
+<br />Having the game able to run on a variety of systems.</p>
+
+<p>Remedy:
+<br />Beta testing should help a bunch and the graphics/performance of the game will be given an in-depth menu with presets and custom options so you can manually or automatically adjust settings.</p>
+
+<p>Risk 3:
+<br />Need to make sure the game appeases bear fans lest I incur their wrath.</p>
+
+<p>Remedy:
+<br />Being active on message boards/twitter and getting feedback on major design choices should alleviate this risk.</p>
+
+<p>Risk 4:
+<br />Not making the planned release date on time.</p>
+
+<p>Remedy:
+<br />A pretty solid production schedule is set up, plus a lot of the tedious and time consuming parts of the game are complete. If it does get funded then I&#39;ll have a bunch of internet people breathing down my neck to finish the game. That&#39;s some awesome motivation to get it out on time.</p>
+
+<p>Risk 5:
+<br />Not getting the game on Steam and/or other distribution services.</p>
+
+<p>Remedy:
+<br />The plan is to get it on Steam so keys can be sent out to backers. I&#39;ll put it up on Steam Greenlight when I&#39;m further along and happier with the way the game looks. If that doesn&#39;t work out there&#39;s always the Humble Store, GoG, or some kind of makeshift way to distribute by just sending the game installer to backers but that wouldn&#39;t be very exciting now would it.</p></p>
+</div>
+</div>
+<div class="NS-projects-faqs" id="project-faqs">
+<h2 class="title grey-dark mt6 mb4">
+FAQ
+<div class="divider clear"></div>
+</h2>
+<ul class="faqs">
+
+</ul>
+<div class="faq-ask-box">
+<p>
+<strong>Have a question?</strong>
+If the info above doesn't help, you can ask the project creator directly.
+</p>
+<a href="/projects/1330754003/bear-simulator/messages/new?message%5Bto%5D=1330754003&amp;mode=FAQ" class="button button_blue remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Ask a question about Bear Simulator">Ask a question</a>
+
+</div>
+</div>
+
+<div class="mt4 ml1 mr1 mb2" id="report-issue-wrap">
+<a href="/login?then=%2Fprojects%2F1330754003%2Fbear-simulator" class="button button_grey">Report this project to Kickstarter</a>
+</div>
+</div>
+<div class="NS-projects-rightcol grid_5" id="rightcol">
+<div class="NS_projects__ecom">
+<div class="digits_6 pb2 pl2 pt2" id="stats">
+<h5>
+<div class="num h48 no-margin" data-backers-count="3871" id="backers_count"><data class="Project1140599049" data-format="number" data-value="3871" itemprop="Project[backers_count]">3,871</data></div>
+<span><data class="Project1140599049" data-attr="backers_count" data-format="pluralize" data-value="3871" data-word="Backer">Backers</data></span>
+</h5>
+<h5>
+<div class="num h48 no-margin" data-goal="29500.0" data-percent-raised="3.409202372881355932203389831" data-pledged="100571.47" id="pledged">
+<data class="Project1140599049" data-currency="USD" data-format="shorter_money" data-precision="0" data-value="100571" data-without_code="true" itemprop="Project[pledged]">$100,571</data>
+<span class="money usd project_currency_code"></span>
+</div>
+pledged of
+<span class="money usd no-code">$29,500</span>
+goal
+</h5>
+<span data-duration="30.0" data-end_time="2014-04-17T14:52:00-04:00" data-hours-remaining="0" id="project_duration_data"></span>
+<div class="Project1140599049" data-conditions="[{&quot;!state&quot;:[&quot;canceled&quot;,&quot;suspended&quot;]}]" data-evaluation="true" data-render="&quot;&lt;h5 class=\&quot;poll \&quot; data-dynamic=\&quot;5\&quot; data-end_time=\&quot;2014-04-17T14:52:00-04:00\&quot; data-poll_url=\&quot;https://d2oher2uhvl0ur.cloudfront.net/projects/1330754003/bear-simulator/stats.json\&quot;&gt;\n&lt;div class=\&quot;num h48 no-margin\&quot;&gt;0&lt;/div&gt;\n&lt;span class=\&quot;text\&quot;&gt;seconds to go&lt;/span&gt;\n&lt;/h5&gt;\n&quot;"><h5 class="poll " data-dynamic="5" data-end_time="2014-04-17T14:52:00-04:00" data-poll_url="https://d2oher2uhvl0ur.cloudfront.net/projects/1330754003/bear-simulator/stats.json">
+<div class="num h48 no-margin">0</div>
+<span class="text">seconds to go</span>
+</h5>
+</div></div>
+<div class="Project1140599049" data-conditions="[{&quot;state&quot;:&quot;live&quot;},{&quot;!ended?&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;pr2 pl2\&quot; id=\&quot;pledge-wrap\&quot;&gt;\n&lt;a href=\&quot;/projects/1330754003/bear-simulator/pledge/new?clicked_reward=false\&quot; class=\&quot;button button_green button_box button_block\&quot; id=\&quot;button-back-this-proj\&quot; title=\&quot;Back this project\&quot;&gt;Back This Project &lt;small class=&#39;h6 normal block green-dark&#39;&gt;&lt;span class=\&quot;money usd \&quot;&gt;$1&lt;/span&gt; minimum pledge&lt;/small&gt;&lt;/a&gt;\n&lt;/div&gt;\n&quot;"></div><div class="Project1140599049" data-conditions="[{&quot;state&quot;:&quot;live&quot;}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;p2\&quot; id=\&quot;banner\&quot;&gt;\n&lt;p class=\&quot;tiny_type no-margin\&quot;&gt;\nThis project will be funded on\n&lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;llll z\&quot; datetime=\&quot;2014-04-17T14:52:00-04:00\&quot;&gt;Thu, Apr 17 2014 2:52 pm EDT&lt;/time&gt;.\n&lt;/p&gt;\n&lt;/div&gt;\n&quot;"></div></div>
+
+<div class="NS_projects__rightcol_projectby bg-blue-light rounded">
+<div class="p2 clearfix">
+<div class="avatar inline-block align-middle">
+<a href="/projects/1330754003/bear-simulator/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography"><img alt="Avatargraphicbackground.small" class="avatar-small" height="80" src="https://s3.amazonaws.com/ksr/avatars/8176249/AvatarGraphicBackground.small.jpg?1393974048" width="80" />
+</a></div>
+<div class="creator-name inline-block align-middle ml1">
+<h6 class="mb1">Project by</h6>
+<h5 class="mb1">
+<a href="/projects/1330754003/bear-simulator/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">Farjay Studios</a>
+</h5>
+<p class="location h6 bold mb1">
+<a href="/discover/places/portland-or">Portland, OR</a>
+</p>
+</div>
+</div>
+<div class="creator-details pl2 pr2 pb1">
+<ul class="list-simple h5 mb1">
+<li class="projects">
+<span class="ss-icon ss-kickstarter grey-dark margin-right"></span>
+<span class="text">
+First created
+<span class="divider">&middot;</span>
+<a href="/profile/1330754003/backed" class="green-dark bold more-button remote_modal_dialog" data-modal-title="Projects backed by Farjay Studios">4 backed</a>
+</span>
+</li>
+<li>
+<span class="ss-icon ss-facebook margin-right grey-dark"></span>
+<span class="text">
+Has not connected Facebook
+</span>
+</li>
+<li class="links">
+<span class="ss-icon ss-globe margin-right grey-dark"></span>
+<span class="text">
+<a href="http://bearsimulator.com/" class="popup" rel="nofollow" target="_blank">bearsimulator.com</a>
+</span>
+</li>
+</ul>
+</div>
+<div class="footer center h5 bold clearfix rounded-bottom clip">
+<a href="/projects/1330754003/bear-simulator/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">See full bio</a>
+<a href="/projects/1330754003/bear-simulator/messages/new?message%5Bto%5D=1330754003" class="remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Send a message to Farjay Studios">Contact me</a>
+
+</div>
+</div>
+
+<ul class="NS-projects-rightcol-rewards rounded clip list mt2" data-reward-count="23" id="what-you-get">
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$5</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+38 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>NAME ON SITE: Have your name listed on the Bear Simulator site in a fancy backer section. [Read about all rewards in more detail on the main page]</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-05-01">May 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$15</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+2325 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>GET THE GAME + MYSTERY KEY: A digital download of Bear Simulator or a Steam key if it gets on Steam. Also included is an exclusive code for a golden key to a mysterious shed found somewhere in the wilderness. All backers at this tier and above will find out what secret it holds when the game is launched. Just don&#39;t ask how a bear would manage to use a key. (Includes previous reward.)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-11-01">Nov 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$20</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+532 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>BEAR SUNGLASSES: Get an exclusive code for totally rad sunglasses for your bear. They will give a darkened tint of the world and appear on your HUD which can be toggled on and off in a unique fashion. (Includes all previous rewards.)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-11-01">Nov 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$30</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+117 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>BEAR BOOK + AMBIENT OST: Behind the scenes trivia, concepts and more about Bear Simulator await in the Bear Book, delivered as a PDF after the game&#39;s release. Also included will be the Ambient Soundtrack, a collection of each region&#39;s nature ambiance. (Includes all previous rewards.)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-12-01">Dec 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$40</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+156 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>MYSTIC BEAR SKIN: Receive an exclusive mystical Mystic Skin code. Featuring white fur lined with glowing tattoos, every slash and swipe will leave a sparkly, magical trail in it&#39;s wake. (Includes all previous rewards.)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-11-01">Nov 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$50</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+177 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>IN-GAME CREDIT + EARLY ACCESS: Be one of the first to play and test Bear Simulator! But that&#39;s not all, you&#39;ll also get your name credited in-game! This pledge and all above feature a unique in-game credit shown in brackets: [Backer Credit: Bear Disciple] (Includes all previous rewards.)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-08-01">Aug 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$60</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+211 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>SQUIRREL BUDDY: Have a red squirrel buddy stick around your bear den who will randomly leave piles of acorns or other gifts at your doorstep. There will be other animal buddies you can befriend but the red squirrel is backer exclusive. [Backer Credit: Squirrel Owner] (Includes all previous rewards.)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-11-01">Nov 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$75</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+35 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(40 left of 75)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>BEAR PACK: A Bear Pack will be shipped to your residence. The pack will contain a  Mini-Poster of the title which I can sign, a collectable Bear Card and some stickers. [Backer Credit: Squirrel Owner] (Includes all previous rewards.)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-12-01">Dec 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $10 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$80</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+20 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(20 left of 40)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>STAR AS A BUTTERFLY: Similar to the previous tier where you&#39;re a rock, this tier is all about those fluttering insects. Simply pick the color butterfly you want, give it a short description/quote and a name. [Backer Credit: A Butterfly] (Includes all rewards from 60$ and below)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-11-01">Nov 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$80</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+36 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(14 left of 50)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>STAR AS A ROCK: This is your chance to be a common rock loitering around Kickstarter Island that will have your name and you can give it a short description/quote. This reward and a few of the following rewards are a bit outlandish because they deal with Kickstarter Island, be sure to read about it on the main page. [Backer Credit: A Rock] (Includes all rewards from 60$ and below)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-11-01">Nov 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$80</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+26 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(14 left of 40)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>ADOPT A TREE: The Kickstarter Island Park hosts a variety of different trees, take this chance to claim one which will be fenced off from the other unworthy trees. Choose the type of tree you want, title it and it will be honored with a plaque adorning your name. [Backer Credit: Friend of the Trees] (Includes all rewards from 60$ and below)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-11-01">Nov 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$80</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+11 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(34 left of 45)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>UNLEASH YOUR ART: There will be a Backer Museum on Kickstarter Island with several  blank canvases reserved for fine art. If you want to see one of your paintings, photographs, or maybe a drawing hanging up in this digital museum to be viewed by digital bears then this is your chance. Unless it&#39;s already digital art you would need to figure out how to upload it to internet though, scanning preferred. [Backer Credit: Artist] (Includes all rewards from 60$ and below)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-11-01">Nov 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$80</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+20 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(30 left of 50)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>GET YOUR PHOTO IN: Submit a photo of you, a group of friends/family, your pet, anything really as long as it&#39;s a picture you took. This photo will then be used somewhere on Kickstarter Island. It might be made into a poster, a sign, a billboard, you won&#39;t know until the game is finished so you&#39;ll have to search to see how it&#39;s incorporated with the island. [Backer Credit: Photographer] (Includes all rewards from 60$ and below)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-11-01">Nov 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$85</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+12 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(38 left of 50)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>POINTLESS GAME CASE: Since the game will be digitally distributed there really is no reason for a case but what&#39;s this!? A Game Case?! [Backer Credit: Squirrel Owner] (Includes all previous rewards.)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-12-01">Dec 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $12 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$90</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+8 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(32 left of 40)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>BE FEATURED ON THE  BEAR SIMULATOR WALK OF FAME: Pssh, that boring Hollywood Walk of Fame, who would want to be featured there when you have the superior Bear Simulator Walk of Fame. Claim your star on the regal sidewalk which will be found in the town area of Kickstarter Island. [Backer Credit: Super Star] (Includes all rewards from 60$ and below)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-11-01">Nov 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$100</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+50 backers
+</span>
+<span class="bg-grey no-wrap pl1 pr1 sold-out">
+All gone!
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>T-SHIRT + BEAR PACK + GAME CASE: Display the Bear Simulator logo and a mysterious bear symbol in shirt form. Plus the Bear Pack and game case. [Backer Credit: Fashionable] (Includes all previous rewards.)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-12-01">Dec 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $15 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$135</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+8 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(42 left of 50)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>PRINTED BEAR BOOK: You see that bear book explained there up at the 30$ tier? Pledge at this tier and you get that book printed out so you can read it somewhere you&#39;re not at a computer/phone/tablet. Plus the T-Shirt and Bear Pack. [Backer Credit: Literate] (Includes all rewards from 60$ and below)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-01-01">Jan 2015</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $20 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$165</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(49 left of 50)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>A TOTEBAG: No pledge campaign is complete without a totebag, and man, will this ever be a totebag. [Backer Credit: Owns a Tote bag](Includes T-Shirt and all rewards from 85$ and below)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-01-01">Jan 2015</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $25 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$175</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+5 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(30 left of 35)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>CARVE A TREE + PERSONALIZED PRINT: Virtually write something into one of the trees in Bear Simulator. Simply submit what you want etched in and which region you want the tree to be found in. Every tier above this will include a Personalized Print that&#39;s a fancy print of your creation/submission taken from in-game, framed, then sent to you. [Backer Credit: Ruined Nature] (Includes T-Shirt, Bear Pack and all rewards from 60$ and below)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-01-01">Jan 2015</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $15 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$250</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+3 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(22 left of 25)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>TOTEBAG + PRINTED BEAR BOOK + T-SHIRT + GAME CASE + BEAR PACK: With this pledge you get a pack of all the physical items offered so far. [Backer Credit: Owns a Tote bag] (Includes all rewards from 60$ and below)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-01-01">Jan 2015</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $35 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(7 left of 8)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>SPOOKY PORTRAIT + PERSONALIZED PRINT: Wandering around at night, you may come across a cabin in the woods with 8 creepy portraits adorning the walls. Become one of those portraits! Submit a photo of yourself in a regal pose and it&#39;ll be photoshopped to look all “oil-painty” then digitally framed to hang on the cabin wall. [Backer Credit: Eerie Portrait] (Includes T-Shirt, Bear Pack and all rewards from 60$ and below)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-01-01">Jan 2015</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $15 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$750</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(5 left of 5)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>SPOOKY CONTRIBUTE + PERSONALIZED PRINT: There&#39;s a terrifying forest in Bear Simulator but it could be a little more frightening. Contribute a spooky idea and see it come to life in the game&#39;s scary region. Just think of your idea as a set piece or decoration, so it can&#39;t affect the player and you&#39;re good to go. [Backer Credit: Master of Horror] (Includes T-Shirt, Bear Pack and all rewards from 60$ and below)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-01-01">Jan 2015</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $15 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$1,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(4 left of 5)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>DESIGN AN OFFICIAL EDIBLE + PERSONALIZED PRINT: Design a food to be found in Bear Simulator. You&#39;ll be given a form to fill out where you&#39;ll describe what it is, where it&#39;s found, what it looks like, what stats it will give and finally name it. Example: Let&#39;s say you want an &quot;Aqua Mushroom&quot;, which would be found around lakes and increase your swimming stat when eaten. Something like that. [Backer Credit: Bear Chef] (Includes T-Shirt, Bear Pack and all rewards from 60$ and below)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-01-01">Jan 2015</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $15 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+</ul>
+
+<div class="p2" id="meta">
+<h5>Funding period</h5>
+<p class="tiny_type">
+<time class="js-adjust" data-format="ll" datetime="2014-03-18T14:52:00-04:00">Mar 18, 2014</time> - 
+<time class="js-adjust" data-format="ll" datetime="2014-04-17T14:52:00-04:00">Apr 17, 2014</time>
+(30 days)
+</p>
+</div>
+</div>
+
+</div>
+
+<a href="#" id="video_mode_tab" style="display: none;">
+View in Video Mode
+</a>
+
+</div>
+</div>
+
+
+</div>
+
+<div class="h5 bg-green-dark" id="mega-footer-wrap">
+<div class="bg-green-dark white full-height" id="footer-newsletter-signup">
+<div class="container py4">
+<div class="grid_8 prefix_4 suffix_4 center mt4">
+<h2>
+Eureka! You've found
+<br>
+our little secret.
+</h2>
+<p>Sign up for our Happening email for all the inside info about arts and culture in the Kickstarter universe and beyond.</p>
+<div class="newsletter_signup">
+<form accept-charset="UTF-8" action="/newsletters/happening/signup" class="overlabels" method="post"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /><input class="hidden" name="authenticity_token" type="hidden" value="M/x7NKJVX1XGtsBthPRcjEWLDiTkuk9SPlG/9cF0Mms=" /></div><input class="hidden" id="location" name="location" type="hidden" value="footer" />
+<textarea class="hide textarea" id="comment" name="comment">
+</textarea>
+<div class="field newsletter">
+<label class="overlabel z1 overlabel-newsletter">Email address</label>
+<input class="text" id="email" name="email" type="text" />
+</div>
+<input class="button button_green submit" name="commit" type="submit" value="Submit" />
+</form>
+
+</div>
+
+</div>
+</div>
+</div>
+<div class="container relative" id="mega-footer">
+<span class="scissors icon-scissors-1"></span>
+<div class="grid_16 alpha omega pt4 pb2" id="mega-footer-links">
+<div class="grid_4 link-group">
+<h5 class="white">About us</h5>
+<ul class="list">
+<li><a href="/year/2013/?ref=footer">2013 highlights</a></li>
+<li><a href="/year/2012?ref=footer">2012 highlights</a></li>
+<li><a href="/team?ref=footer">Who we are</a></li>
+<li><a href="/jobs?ref=footer">Jobs</a></li>
+<li><a href="/press?ref=footer">Press</a></li>
+<li><a href="/help/stats?ref=footer">Stats</a></li>
+<li><a href="/newsletters/weekly">Projects we love</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group">
+<h5><a href="/help?ref=footer" class="white">Help</a></h5>
+<ul class="list">
+<li><a href="/hello?ref=footer">What is Kickstarter?</a></li>
+<li><a href="/help?ref=footer">FAQ</a></li>
+<li><a href="/contact?ref=footer">Support</a></li>
+<li><a href="/help/school?ref=footer">Kickstarter School</a></li>
+<li><a href="/terms-of-use?ref=footer">Terms of Use</a></li>
+<li><a href="/privacy?ref=footer">Privacy Policy</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group alpha omega suffix_1">
+<h5 class="alpha"><a href="/discover/advanced?ref=footer" class="white">Discover</a></h5>
+<ul class="column column-0 grid_2 list">
+<li><a href="/discover/categories/art?ref=footer">Art</a></li>
+<li><a href="/discover/categories/comics?ref=footer">Comics</a></li>
+<li><a href="/discover/categories/dance?ref=footer">Dance</a></li>
+<li><a href="/discover/categories/design?ref=footer">Design</a></li>
+<li><a href="/discover/categories/fashion?ref=footer">Fashion</a></li>
+<li><a href="/discover/categories/film%20&amp;%20video?ref=footer">Film &amp; Video</a></li>
+<li><a href="/discover/categories/food?ref=footer">Food</a></li>
+</ul>
+<ul class="column column-1 grid_2 list">
+<li><a href="/discover/categories/games?ref=footer">Games</a></li>
+<li><a href="/discover/categories/music?ref=footer">Music</a></li>
+<li><a href="/discover/categories/photography?ref=footer">Photography</a></li>
+<li><a href="/discover/categories/publishing?ref=footer">Publishing</a></li>
+<li><a href="/discover/categories/technology?ref=footer">Technology</a></li>
+<li><a href="/discover/categories/theater?ref=footer">Theater</a></li>
+</ul>
+</div>
+<div class="grid_3 link-group">
+<h5 class="white">Hello</h5>
+<ul class="list">
+<li>
+<a href="https://twitter.com/kickstarter"><span class="ss-icon ss-social-regular ss-twitter"></span>
+Twitter
+</a></li>
+<li>
+<a href="https://www.facebook.com/Kickstarter"><span class="ss-icon ss-social-regular ss-facebook"></span>
+Facebook
+</a></li>
+<li>
+<a href="http://kickstarter.tumblr.com"><span class="ss-icon ss-social-regular ss-tumblr"></span>
+Tumblr
+</a></li>
+<li>
+<a href="http://instagram.com/kickstarter"><span class="ss-icon ss-social-regular ss-instagram"></span>
+Instagram
+</a></li>
+<li>
+<a href="https://vine.co/Kickstarter"><span class="ss-icon ss-social-regular ss-vine"></span>
+Vine
+</a></li>
+<li>
+<a href="/blog?ref=footer">Blog</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="grid_16 py4" id="mega-footer-bottom">
+<div class="logo left">
+<a href="/" class="grey-dark"><span class="ss-icon h3">KICKSTARTER</span>
+</a></div>
+<p class="right h5 grey-dark">
+&copy;
+2014
+Kickstarter, Inc.
+</p>
+</div>
+</div>
+</div>
+
+<script>
+  //<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    var analytics_vars = { google_analytics_id : "UA-7621056-1", logged_in : "false", social_user: "false" }
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.mixpanel_id = '75b1d24a516ecfc955eadfadc4910661';
+    window.mixpanel_debug = false;
+  //]]>
+</script>
+
+
+<noscript>
+<img alt="Quantcast" border="0" height="1" src="//secure.quantserve.com/pixel/p-34IbSpw2K94Sg.gif" style="display:none" width="1" />
+</noscript>
+
+
+<script>
+  //<![CDATA[
+    window.benchmark = (typeof window.performance == 'object' && typeof window.performance.mark == 'function');
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    (function (root) {
+      function instrument_function (original) {
+        return function () {
+          try {
+            return original.apply(this, arguments);
+          } catch (e) {
+            if (e.stack && root.Honeybadger) {
+              Honeybadger.notify(e, {
+                current_project : root.current_project,
+                current_user : root.current_user
+              });
+            }
+            throw(e);
+          }
+        };
+      }
+      root.instrument_function = instrument_function;
+    }(this));
+  //]]>
+</script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+
+<script>
+  //<![CDATA[
+    (function(){function c(a){this.local_start_time=new Date;this.settings={cookie_name:"request_time"};for(var b in a)this.settings[b]=a[b];this.get_remote_offset()}c.prototype.get_remote_offset=function(){this.cookie_value=this.read_cookie();var a=new Date(this.cookie_value);if(!this.cookie_value||"Invalid Date"===a.toString()){if(this.remote_offset=this.read_cookie("local_offset"))this.remote_offset=parseInt(this.remote_offset,10)}else this.remote_offset=a-this.local_start_time;"undefined"!==typeof this.remote_offset&& !isNaN(this.remote_offset)?(document.cookie="local_offset="+this.remote_offset+"; path=/",this.is_set=!0):this.is_set=!1};c.prototype.time_units=[["milliseconds",1],["seconds",1E3],["minutes",6E4],["hours",36E5],["days",864E5]];c.prototype.get_units_in_interval=function(a,b){var d=a.replace(/^\w/,function(d){return"get"+d.toUpperCase()});return b[d]()};c.prototype.milliseconds_in_day=function(a){"undefined"===typeof a&&(a=new Date);for(var b=0,d=this.time_units.length-2;0<=d;d--)b+=this.get_units_in_interval(this.time_units[d][0], a)*this.time_units[d][1];return b};c.prototype.milliseconds_in_interval=function(a,b){return this.milliseconds_in_day(b)%a};c.prototype.milliseconds_to_next_interval=function(a,b){return a-this.milliseconds_in_interval(a,b)};c.prototype.pluralize=function(a,b){1===b&&(a=a.replace(/s$/,""));return a};c.prototype.read_cookie=function(a){for(var b=window.document.cookie.split(";"),a=(a||this.settings.cookie_name)+"=",d=0;d<b.length;d++){for(var e=b[d];" "==e.charAt(0);)e=e.substring(1,e.length);if(0== e.indexOf(a))return b=e.substring(a.length,e.length),decodeURIComponent(b).replace(/\+/g," ")}return null};c.prototype.destroy_cookie=function(a){var b=new Date;a||(a=this.settings.cookie_name);b.setTime(b.getTime()-864E5);window.document.cookie=a+"=; expires="+b.toGMTString()+"; path=/"};c.prototype.get_remote_time=function(){var a=new Date,b=a.getTime()+this.remote_offset;return a=a.setTime(b)};window.ksr_page_clock=new c})(); (function(){function c(d,a,b){if(d){this.options={unit_base:{seconds:119,minutes:119,hours:72,days:0},end_phrase:d.getAttribute("data-word")||"to go",count_down:d.getAttribute("data-dynamic")||!1};for(k in b)this.options[k]=b[k];this.clock=a;this.time_units=this.clock.time_units.slice(1);this.element=d;this.clock.is_set&&this.attach()}}function a(){this.elements=[];this.attach()}var b=function(d,a){var b=a||window.document.body,c=d.split("."),g=c[c.length-1],c=1<c.length&&c[0]?c[0]:"*";if(window.document.getElementsByClassName)return b.getElementsByClassName(g); if(b.querySelectorAll)return b.querySelectorAll(d);for(var c=b.getElementsByTagName(c),h=[],i=0,f;f=c[i];i++)b=RegExp("(^|\\s)"+g+"(\\s|$)"),(""+f.className).match(b)&&h.push(f);return h};c.prototype.get_remaining_time=function(){var d=this.remote_end_time-this.clock.get_remote_time();0>d&&(d=0);return d};c.prototype.get_current_unit=function(){for(var d,a=0;a<this.time_units.length&&!(d=this.time_units[a],this.get_remaining_time()<=this.options.unit_base[d[0]]*d[1]);a++);return d};c.prototype.update_element= function(){var a=this.get_current_unit(),b=Math.floor(this.get_remaining_time()/a[1]);isNaN(b)||(this.number_element.innerHTML=b,this.text_element.innerHTML=this.clock.pluralize(a[0],b)+" "+this.options.end_phrase)};c.prototype.valid=function(){return!(!this.number_element||!this.text_element)};c.prototype.attach=function(){function a(){c.update_element();if(c.options.count_down&&0<c.get_remaining_time()){var b=c.get_current_unit();this.timeout=window.setTimeout(a,c.clock.milliseconds_to_next_interval(b[1]))}} var c=this;if(this.remote_end_time_string=this.element.getAttribute("data-end_time"))this.remote_end_time_string.match(/^\d+$/)?(this.remote_end_time=new Date,this.remote_end_time.setTime(this.remote_end_time_string)):this.remote_end_time=new Date(this.remote_end_time_string),this.number_element=b(".num",this.element)[0],this.text_element=b(".text",this.element)[0],this.element.ksr_page_timer=!0,this.valid()&&a()};c.prototype.cancel=function(){this.timeout&&clearTimeout(this.timeout)};a.prototype.loading= !0;a.prototype.stop_finding=function(){this.attach_timers();this.loading=!1;document.addEventListener?document.removeEventListener("DOMContentLoaded",this.stop_finding,!1):document.attachEvent&&"complete"===document.readyState&&document.detachEvent("onreadystatechange",this.stop_finding)};a.prototype.bind_ready=function(){var a=this,b=function(){a.stop_finding.call(a)};document.addEventListener?(document.addEventListener("DOMContentLoaded",b,!1),window.addEventListener("load",b,!1)):document.attachEvent&& (document.attachEvent("onreadystatechange",b),window.attachEvent("onload",b))};a.prototype.attach_timers=function(){for(var a=b("div.ksr_page_timer"),e=0;e<a.length;e++)a[e].ksr_page_timer||(new c(a[e],window.ksr_page_clock),this.elements.push(a[e]))};a.prototype.attach=function(){var a=this;this.bind_ready();(function(){a.attach_timers();a.loading&&window.setTimeout(function(){a.attach_timers()},200)})()};window.ProjectTimer=c;new a})();
+  //]]>
+</script>
+
+<script class="template" id="template-widgets__video_embed_code" type="text/x-tmpl-mustache"><iframe width="{{width}}" height="{{height}}" src="{{{path}}}" frameborder="0" scrolling="no"> </iframe>
+</script><script class="template" id="template-projects__baseball_card_tall" type="text/x-tmpl-mustache"><div class="project-card-wrap project-card-wrap-tall border bg-white rounded clip">
+  <div class="project-card relative project-live {{#successful?}}successful{{/successful?}}">
+    <div class="project-thumbnail pt1 pl1 pr1">
+      <a href="{{urls.web.project}}" target="">
+        <img alt="Photo-little" class="projectphoto-little" src="{{photo.little}}" class="fit">
+      </a>
+    </div>
+    <div class="project-card-interior p1 h6 grey-dark">
+      <h6 class="project-title">
+        <a href="{{urls.web.project}}" target="" class="green-dark">{{name}}</a>
+      </h6>
+      <p class="mb1 ellipsis">
+        by
+        {{creator.name}}
+      </p>
+      <p class="blurb">
+        {{blurb}}
+      </p>
+    </div>
+    <div class="absolute-bottom bg-white rounded-bottom">
+
+      {{#location}}
+        <ul class="p1 list project-meta no-margin h6">
+          <li class="ellipsis">
+            <a href="{{location.urls.web.discover}}" data-location="{{location_json}}" class="grey-dark">
+              <span class="ss-icon ss-location"></span>
+              <span class="location-name">{{location.displayable_name}}</span>
+            </a>
+          </li>
+        </ul>
+      {{/location}}
+
+      <div class="project-stats-wrap pb1 pl1 pr1">
+
+        {{#failed?}}
+          <div class='project-status project-failed h6'>
+            <strong> Funding Unsuccessful</strong><br />
+            <span class="grey-dark">Project ended on {{formatted_deadline}}</span>
+          </div>
+        {{/failed?}}
+
+        {{#canceled?}}
+          <div class='project-status project-canceled h6'>
+            <strong> Funding Canceled</strong><br />
+            <span class="grey-dark">Project canceled on {{formatted_state_changed_at}}</span>
+          </div>
+        {{/canceled?}}
+
+        {{#successful?}}
+          <div class='project-pledged-successful bg-green white h6 pl1 pr1 mb1'>
+            <strong>Successful!</strong>
+          </div>
+        {{/successful?}}
+
+        {{#live_or_successful?}}
+          {{#live?}}
+            <div class="project-pledged-wrap bg-grey clip mb1">
+              <div class="project-pledged bg-green full-height" style="width: {{percent_raised_to_100}}%"></div>
+            </div>
+          {{/live?}}
+          <ul class="project-stats list no-margin h6 no-wrap">
+            <li class="first funded inline-block mr1">
+              <strong class="block h6">{{percent_raised_rounded}}%</strong>
+              <span class="grey-dark">funded</span>
+            </li>
+            <li class="pledged inline-block mr1">
+              <strong class="block h6">{{currency_symbol}}{{formatted_money}}</strong>
+              <span class="grey-dark">pledged</span>
+            </li>
+            {{#successful?}}
+              <li class="last successful inline-block">
+                <strong class="block h6">Funded</strong>
+                <div class="deadline grey-dark">{{formatted_deadline}}</div>
+              </li>
+            {{/successful?}}
+            {{#live?}}
+              <li class="last ksr_page_timer inline-block" data-end_time="{{javascript_deadline}}">
+                <strong class="block h6">
+                  <div class="num">30</div>
+                </strong>
+                <div class="span text grey-dark" data-word="left">days to go</div>
+              </li>
+            {{/live?}}
+          </ul>
+        {{/live_or_successful?}}
+      </div>
+    </div>
+  </div>
+</div>
+
+{{#friends_backing?}}
+  <div class="friend_project_context">
+    <div class="friend_facepile">
+      {{#truncated_friends}}
+        <img src="{{avatar.thumb}}" class="{{#has_metadata?}}small{{/has_metadata?}}">
+      {{/truncated_friends}}
+    </div>
+    <p class="friend_namepile">
+      {{{escaped_sentence}}}
+    </p>
+  </div>
+{{/friends_backing?}}
+</script><script class="template" id="template-projects__video_mode" type="text/x-tmpl-mustache"><a href='#' id='video_mode_close' class='close_button z2'><span class='ss-icon ss-delete'></span></a>
+
+<div class='title_card z1 {{context_classes}}' style="display:none;">
+  <div class='interior'>
+    <h2 class='project_title normal_weight'>{{name}}</h2>
+    <p class='blurb'>{{blurb}}</p>
+    <nav class='bar'>
+      <a id='play_button' class='left play' href='#'>
+        <span class='play_active'>
+          <span class='ss-icon ss-play'></span>
+          Play
+        </span>
+        <span class='pause_active'>
+          <span class='ss-icon ss-pause'></span>
+          Pause
+        </span>
+      </a>
+      {{#logged_in}}
+        <div class='remind right'>
+          {{#if_not_starred}}
+            <a class='follow' href='{{urls.web.project}}/watch'><span class='ss-icon ss-star'></span></a>
+          {{/if_not_starred}}
+          {{#if_starred}}
+            <a class='unfollow' href='{{urls.web.project}}/unwatch'><span class='ss-icon ss-star active'></span></a>
+          {{/if_starred}}
+        </div>
+      {{/logged_in}}
+      <a class='right explore button button_green small' href='#'>Explore this project</a>
+    </nav>
+  </div>
+</div>
+
+<div class='channel_controls z1'>
+  <a href='#' class='{{#playlist_is_location}}selected {{/playlist_is_location}}location'>Something else near {{location.first_name}} <span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_featured}}selected {{/playlist_is_featured}}featured'>Something different<span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_category}}selected {{/playlist_is_category}}category'>Something else in {{category.name}} <span class='ss-icon ss-navigateright'></span></a>
+</div>
+
+<div class='project_video' style='background-image: url('{{photo.full}}')'>
+  <div class='cover'>
+    <video>
+      <source src='{{video.high}}' type='video/mp4'/>
+      <source src='{{video.webm}}' type='video/webm'/>
+    </video>
+  </div>
+</div>
+</script><script class="template" id="template-site__video_mode_fourohfour" type="text/x-tmpl-mustache"><section class='four_oh_four'>
+  <p class='big_type'>
+    Looks like you've reached the end of the line! <br />Check out <a class="another" href='#'>another channel</a> or <a href='/discover'>browse projects in discover</a>.
+  </p>
+</section>
+</script>
+
+<script id="schwamm_formatting_options" type="text/javascript">
+//<![CDATA[
+(function(){window.formatters = window.formatters || {}; var formatting_options = {"distance_date_intervals":[[5,"just now"],[29,"less than a minute ago"],[89,"1 minute ago"],[2640,"%m minutes ago"],[5340,"about 1 hour ago"],[82800,"about %h hours ago"],[147600,"1 day ago"],[604800,"%d days ago"],[15552000,"on %t"],[0,"on %y"]],"currency_symbol_mappings":{"AFN":"\u060b","ALL":"Lek","ARS":"$","AUD":"$","AWG":"\u0192","AZN":"\u043c\u0430\u043d","BAM":"KM","BBD":"$","BGN":"\u043b\u0432","BMD":"$","BND":"$","BOB":"$b","BRL":"R$","BSD":"$","BWP":"P","BYR":"p.","BZD":"BZ$","CAD":"$","CLP":"$","CNY":"\u00a5","COP":"$","CRC":"\u20a1","CUP":"\u20b1","CZK":"K\u010d","DKK":"kr","DOP":"RD$","EGP":"\u00a3","EUR":"\u20ac","FJD":"$","FKP":"\u00a3","GBP":"\u00a3","GIP":"\u00a3","GTQ":"Q","GYD":"$","HKD":"$","HNL":"L","HRK":"kn","HUF":"Ft","IDR":"Rp","ILS":"\u20aa","IRR":"\ufdfc","ISK":"kr","JMD":"J$","JPY":"\u00a5","KGS":"\u043b\u0432","KHR":"\u17db","KPW":"\u20a9","KRW":"\u20a9","KYD":"$","KZT":"\u043b\u0432","LAK":"\u20ad","LBP":"\u00a3","LKR":"\u20a8","LRD":"$","LTL":"Lt","LVL":"Ls","MKD":"\u0434\u0435\u043d","MNT":"\u20ae","MUR":"\u20a8","MXN":"$","MYR":"RM","MZN":"MT","NAD":"$","NGN":"\u20a6","NIO":"C$","NOK":"kr","NPR":"\u20a8","NZD":"$","OMR":"\ufdfc","PAB":"B/.","PEN":"S/.","PHP":"\u20b1","PKR":"\u20a8","PLN":"z\u0142","PYG":"Gs","QAR":"\ufdfc","RON":"lei","RSD":"\u0414\u0438\u043d.","RUB":"\u0440\u0443\u0431","SAR":"\ufdfc","SBD":"$","SCR":"\u20a8","SEK":"kr","SGD":"$","SHP":"\u00a3","SOS":"S","SRD":"$","SVC":"$","SYP":"\u00a3","THB":"\u0e3f","TRY":"TL","TTD":"TT$","TWD":"NT$","UAH":"\u20b4","USD":"$","UYU":"$U","UZS":"\u043b\u0432","VEF":"Bs","VND":"\u20ab","YER":"\ufdfc","ZAR":"R"},"currency_trailing_code_mappings":{"AUD":true,"CAD":true,"NZD":true,"USD":true},"currency_formats":["money","shorter_money"]}; for (key in formatting_options) {window.formatters[key] = formatting_options[key]};}());
+//]]>
+</script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("begin_base.js_tag");}
+  //]]>
+</script>
+<script src="https://d297h9he240fqh.cloudfront.net/assets/packages/base-45cdab84617ddfb8905b7cddc8500c19.js" type="text/javascript"></script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("end_base.js_tag");}
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    document.domain='kickstarter.com';
+  //]]>
+</script>
+
+<iframe height="0" id="api_xdreceiver" src="https://api.kickstarter.com/xdreceiver/85e6.html" style="display: none;" width="0"></iframe>
+
+
+
+<div id="fb-root"></div>
+<script>
+  //<![CDATA[
+    var channelUrl = window.location.protocol + "//" + window.location.host + "/channel.html",
+      skip_autologin = $('body').is('.skip_autologin');
+    
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId: window.fb_app_id,
+        channelUrl: channelUrl,
+        status: true,    // check login status
+        cookie: true,    // enable cookies to allow the server to access the session
+        xfbml: true,     // parse XFBML
+        logging: false   // turn off logging
+      });
+    
+      FB.getLoginStatus(function (response) {
+        if (response.status === 'connected') {
+          if (read_cookie("logout_from_fb")) {
+            FB.logout();
+            destroy_cookie("logout_from_fb");
+          } else if (!skip_autologin) {
+            $.get("/fb/autologin", {'fbsr': response.authResponse.signedRequest});
+          } else if (false && 0 == response.authResponse.userID) {
+            $.get("/fb/refresh", {'fbsr': response.authResponse.signedRequest});
+          }
+        } else {
+          if (read_cookie("logout_from_fb")) {
+            destroy_cookie("logout_from_fb");
+          }
+        }
+      })
+    
+      $(document).trigger('fb:loaded');
+    };
+    
+    
+    // Load the SDK Asynchronously
+    (function(d){
+      var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+      js = d.createElement('script'); js.id = id; js.async = true;
+      js.src = "//connect.facebook.net/en_US/all.js";
+      d.getElementsByTagName('head')[0].appendChild(js);
+    }(document));
+  //]]>
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,1720 @@
+<!DOCTYPE html>
+<html class="projects_show  fontface no-js" lang="en">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# kickstarter: http://ogp.me/ns/fb/kickstarter#">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-5.newrelic.com","errorBeacon":"jserror.newrelic.com","licenseKey":"b04b883ad2","applicationID":"11086","transactionName":"cFteRUULX1wHFhtIEFxeVVJDFxxDCgtD","queueTime":12,"applicationTime":419,"ttGuid":"","agentToken":null,"agent":"js-agent.newrelic.com/nr-411.min.js"}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"Vw4BVEVSCQMIUg=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e){function n(t,e,n){n||(n={});for(var r=o[t],a=r&&r.length||0,s=n[i]||(n[i]={}),u=0;a>u;u++)r[u].apply(s,e);return s}function r(t,e){var n=o[t]||(o[t]=[]);n.push(e)}var o={},i="nr@context";e.exports={on:r,emit:n}},{}],2:[function(t){function e(t,e,n,i,s){return u?u-=1:r("err",[s||new UncaughtException(t,e,n)]),"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t(5),a=window.onerror,s=!1,u=0;t("loader").features.push("err"),window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(d){"stack"in d&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(4),s=!0)}i.on("fn-start",function(){s&&(u+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&u>0&&(u-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:4,3:3,4:6,5:1,6:14,handle:"D5DuLP",loader:"G9z0Bl"}],3:[function(t){function e(t){r.inPlace(t,["addEventListener","removeEventListener"],"-",n)}function n(t){return t[1]}var r=t(1),o=(t(3),t(2));if(e(window),"getPrototypeOf"in Object){for(var i=document;i&&!i.hasOwnProperty("addEventListener");)i=Object.getPrototypeOf(i);i&&e(i);for(var a=XMLHttpRequest.prototype;a&&!a.hasOwnProperty("addEventListener");)a=Object.getPrototypeOf(a);a&&e(a)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&e(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=e["nr@wrapped"]?t[1]=e["nr@wrapped"]:e["nr@wrapped"]=t[1]=r(e,"fn-"):"function"==typeof e.handleEvent&&r.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:15,2:1,3:14}],4:[function(t){var e=(t(3),t(1)),n=t(2);e.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=e(t[0],"fn-")})},{1:15,2:1,3:14}],5:[function(t){function e(t){var e=t[0];"string"==typeof e&&(e=new Function(e)),t[0]=n(e,"fn-")}var n=(t(3),t(1)),r=t(2);n.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",e)},{1:15,2:1,3:14}],6:[function(t){function e(){o.inPlace(this,s,"fn-")}function n(t,e){o.inPlace(e,["onreadystatechange"],"fn-")}function r(t,e){return e}var o=t(1),i=t(2),a=window.XMLHttpRequest,s=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];window.XMLHttpRequest=function(t){var n=new a(t);try{i.emit("new-xhr",[],n),o.inPlace(n,["addEventListener","removeEventListener"],"-",function(t,e){return e}),n.addEventListener("readystatechange",e,!1)}catch(r){try{i.emit("internal-error",r)}catch(s){}}return n},window.XMLHttpRequest.prototype=a.prototype,o.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",r),i.on("send-xhr-start",n),i.on("open-xhr-start",n)},{1:15,2:1}],7:[function(t){function e(){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;u>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,d="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=e(d);if(f&&(r.rxSize=f),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}t("loader").features.push("xhr");var o=t("handle"),i=t(1),a=t(5),s=["load","error","abort","timeout"],u=s.length,d=t(2);t(3),t(4),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var d=e(o);d&&(r.txSize=d)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",e)}catch(r){}}};for(var f=0;u>f;f++)n.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&e()},{1:8,2:11,3:3,4:6,5:1,handle:"D5DuLP",loader:"G9z0Bl"}],8:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e){var n=r[t];return n?n.apply(this,e):(o[t]||(o[t]=[]),void o[t].push(e))}var r={},o={};e.exports=n,n.queues=o,n.handlers=r},{}],11:[function(t,e){function n(t){if(!t||"object"!=typeof t&&"function"!=typeof t)return-1;if(t===window)return 0;if(o.call(t,"__nr"))return t.__nr;try{return Object.defineProperty(t,"__nr",{value:r,writable:!0,enumerable:!1}),r}catch(e){return t.__nr=r,r}finally{r+=1}}var r=1,o=Object.prototype.hasOwnProperty;e.exports=n},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&u&&u.body){p.proto="https"===c.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=u.createElement("script");e.src=p.proto+t.agent,u.body.appendChild(e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,u=s.document,d="addEventListener",f="attachEvent",c=(""+location).split("?")[0],p=e.exports={offset:i(),origin:c,features:[]};u[d]?(u[d]("DOMContentLoaded",o,!1),s[d]("load",n,!1)):(u[f]("onreadystatechange",r),s[f]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],14:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],15:[function(t,e){function n(t,e,r,s){function nrWrapper(){try{var n,a=u(arguments),d=this,f=r&&r(a,d)||{}}catch(c){i([c,"",[a,d,s],f])}o(e+"start",[a,d,s],f);try{return n=t.apply(d,a)}catch(p){throw o(e+"err",[a,d,p],f),p}finally{o(e+"end",[a,d,n],f)}}return a(t)?t:(e||(e=""),nrWrapper[n.flag]=!0,nrWrapper)}function r(t,e,r,o){r||(r="");var i,s,u,d="-"===r.charAt(0);for(u=0;u<e.length;u++)s=e[u],i=t[s],a(i)||(t[s]=n(i,d?s+r:r,o,s,t))}function o(t,e,n){try{s.emit(t,e,n)}catch(r){i([r,t,e,n])}}function i(t){try{s.emit("internal-error",t)}catch(e){}}function a(t){return!(t&&"function"==typeof t&&t.apply&&!t[n.flag])}var s=t(1),u=t(2);e.exports=n,n.inPlace=r,n.flag="nr@wrapper"},{1:1,2:14}]},{},["G9z0Bl",2,7]);</script><script>
+  //<![CDATA[
+    docElement = this.document.documentElement;
+    docElement.className=docElement.className.replace(/\bno-js\b/,'') + 'js';
+  //]]>
+</script>
+<title>The Ballads of Reemus 2 - 2D Point and Click Adventure Game by Jay Ziebarth &mdash; Kickstarter</title><script>
+  //<![CDATA[
+    window.report_errors = true;
+    window.honeybadger_configuration = {
+      api_key : "02ab109335c0dd1a93506d92f22217a7",
+      environment : "production",
+      component : "projects",
+      action : "show",
+      onerror : false
+    };
+  //]]>
+</script>
+
+
+<!--[if lt IE 9]>
+  <script src="//html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta content="telephone=no" name="format-detection">
+
+<!--[if !IE]> -->
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base-9f623ad5d021a188cfb2d68a0cdf7a7b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<!-- <![endif]-->
+<!--[if IE]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base_blessed-2640c72487552f9a2ef9f2620b4af860.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<!--[if lte IE 9]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_nine-a93fe10530f175f96c4078b7e070d7e1.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 8]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_eight-f75aeb274436f94a0d243774456b1c62.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 7]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie-c019c01acd3a96588b346cf577a3504f.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_seven-5a3d2cef660cd281fd844b04b2397dbb.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if IE 6]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_six-e4d3caf76e405fe19aee6ece8bda701b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<link href="https://d297h9he240fqh.cloudfront.net/favicon.png" rel="icon" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-precomposed-7b603dba7cf80e4acc57d94a991bebbd.png" rel="apple-touch-icon-precomposed" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-ipad-precomposed-3176f72977daf43dee3b0d348484dc01.png" rel="apple-touch-icon-precomposed" sizes="72x72" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-iphone4-precomposed-b93b70168cd8492c843d0fea873c7f83.png" rel="apple-touch-icon-precomposed" sizes="114x114" type="image/png">
+<link href="https://www.kickstarter.com/services/oembed?url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2F1311956304%2Fthe-ballads-of-reemus-2-2d-point-and-click-adventu" rel="alternate" title="The Ballads of Reemus 2 - 2D Point and Click Adventure Game Script Tag oEmbed" type="application/json+oembed">
+<link rel="alternate" type="application/atom+xml" title="The Ballads of Reemus 2 - 2D Point and Click Adventure Game : Kickstarter" href="https://www.kickstarter.com/projects/1311956304/the-ballads-of-reemus-2-2d-point-and-click-adventu/posts.atom" />
+<meta property="twitter:app:id:iphone" content="596961532"/>
+<meta property="twitter:app:name:iphone" content="Kickstarter"/>
+<meta property="twitter:app:url:iphone" content="ksr://www.kickstarter.com/projects/1311956304/the-ballads-of-reemus-2-2d-point-and-click-adventu"/>
+<meta name="video_height" content="480"/>
+<meta name="video_width" content="640"/>
+<meta name="video_type" content="application/x-shockwave-flash"/>
+<meta name="title" content="Kickstarter &gt;&gt; The Ballads of Reemus 2 - 2D Point and Click Adventure Game by Jay Ziebarth"/>
+<meta name="description" content="Jay Ziebarth is raising funds for The Ballads of Reemus 2 - 2D Point and Click Adventure Game on Kickstarter! 
+
+ The next chapter in the Reemus series. A classic, Lucas Arts inspired 2D point and click comedy adventure game for PC/Mac/Linux."/>
+<meta property="og:title" content="The Ballads of Reemus 2 - 2D Point and Click Adventure Game"/>
+<meta property="og:type" content="kickstarter:project"/>
+<meta property="og:image" content="https://s3.amazonaws.com/ksr/projects/640005/photo-main.jpg?1397829704"/>
+<meta property="og:url" content="https://www.kickstarter.com/projects/1311956304/the-ballads-of-reemus-2-2d-point-and-click-adventu"/>
+<meta property="og:site_name" content="Kickstarter"/>
+<meta property="fb:app_id" content="69103156693"/>
+<meta property="og:description" content="The next chapter in the Reemus series. A classic, Lucas Arts inspired 2D point and click comedy adventure game for PC/Mac/Linux."/>
+<meta property="kickstarter:creator" content="https://www.kickstarter.com/profile/1311956304"/>
+<meta property="twitter:url:landing_url" content="https://www.kickstarter.com/projects/1311956304/the-ballads-of-reemus-2-2d-point-and-click-adventu"/>
+<meta property="twitter:card" content="2427656750:kickstarter_project"/>
+<meta property="twitter:site" content="@kickstarter"/>
+<meta property="twitter:site:id" content="16186995"/>
+<meta property="twitter:text:title" content="The Ballads of Reemus 2 - 2D Point and Click Adventure Game"/>
+<meta property="twitter:text:artist" content="Jay Ziebarth"/>
+<meta property="twitter:text:backers" content="431"/>
+<meta property="twitter:text:pledged" content="$17,276 CAD"/>
+<meta property="twitter:text:time" content="0 seconds"/>
+<meta property="twitter:text:location" content="Hamilton Mountain, Canada"/>
+<meta property="twitter:image:location_image" content="https://d3mlfyygrfdi2i.cloudfront.net/b40e/pin.png"/>
+<meta property="twitter:text:description" content="The next chapter in the Reemus series. A classic, Lucas Arts inspired 2D point and click comedy adventure game for PC/Mac/Linux."/>
+<meta property="twitter:image:media" content="https://s3.amazonaws.com/ksr/projects/640005/photo-main.jpg?1397829704"/>
+<meta property="twitter:image:width" content="640"/>
+<meta property="twitter:image:height" content="480"/>
+<meta property="twitter:player:stream:url" content="https://d2pq0u4uni88oo.cloudfront.net/projects/640005/video-289217-h264_base.mp4"/>
+<meta property="twitter:player:stream:content" content="video/mp4"/>
+<meta property="twitter:player:url" content="https://www.kickstarter.com/projects/1311956304/the-ballads-of-reemus-2-2d-point-and-click-adventu/widget/video.html"/>
+<meta property="twitter:player:height" content="480"/>
+<meta property="twitter:player:width" content="640"/>
+<meta property="twitter:maxage" content="60"/>
+<meta property="og:video" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F640005%2Fvideo-289217-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F640005%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Jay+Ziebarth&amp;project_title=The+Ballads+of+Reemus+2+-+2D+Point+and+Click+Adventure+Game&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2F1311956304%2Fthe-ballads-of-reemus-2-2d-point-and-click-adventu&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:secure_url" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F640005%2Fvideo-289217-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F640005%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Jay+Ziebarth&amp;project_title=The+Ballads+of+Reemus+2+-+2D+Point+and+Click+Adventure+Game&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2F1311956304%2Fthe-ballads-of-reemus-2-2d-point-and-click-adventu&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:height" content="480"/>
+<meta property="og:video:width" content="640"/>
+<meta property="og:video:type" content="application/x-shockwave-flash"/>
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="CuIPc5HaWPCaUCKq3Yvhj0k5EPRNHWZPHF2mjZm3J/o=" name="csrf-token" />
+<script type="text/javascript">
+  var _sift = _sift || [];
+  _sift.push(['_setAccount', '637102']);
+  _sift.push(['_setUserId', '']);
+  _sift.push(['_trackPageview']);
+
+  (function() {
+    function loadSift() {
+      var sift, s;
+      if (root.visitor_id) {
+        _sift.push(['_setSessionId', root.visitor_id]);
+      }
+      sift = document.createElement('script');
+      sift.type = 'text/javascript';
+      sift.async = true;
+      sift.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dtlilztwypawv.cloudfront.net/s.js';
+      s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(sift, s);
+    }
+    if (window.attachEvent) {
+      window.attachEvent('onload', loadSift);
+    } else {
+      window.addEventListener('load', loadSift, false);
+    }
+  })();
+</script>
+<link href="http://kck.st/1aWvkry" rel="shorturl">
+<link href="https://www.kickstarter.com/projects/1311956304/the-ballads-of-reemus-2-2d-point-and-click-adventu" rel="canonical">
+<link href="https://s3.amazonaws.com/ksr/projects/640005/photo-med.jpg?1397829704" rel="image_src">
+<link href="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F640005%2Fvideo-289217-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F640005%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Jay+Ziebarth&amp;project_title=The+Ballads+of+Reemus+2+-+2D+Point+and+Click+Adventure+Game&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2F1311956304%2Fthe-ballads-of-reemus-2-2d-point-and-click-adventu&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque" rel="video_src">
+<script>
+  //<![CDATA[
+    window.current_checkout = "{&quot;id&quot;:0,&quot;domestic&quot;:null,&quot;amount&quot;:0.0,&quot;updated_at&quot;:0,&quot;created_at&quot;:0}";
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.current_ip = '94.209.101.212';
+    window.current_ip_datacenter = 'false';
+    window.enabled_features = {"elasticsearch":true,"security_history_read":true,"security_history_write":true,"advanced_discovery_es":true,"ios_crashlytics":true,"ios_mixpanel":true,"stories_veronica_mars":true,"veronica_mars_hero":true,"password_reset_banner":true};
+    window.fb_app_id = '69103156693';
+    
+    var _sf_startpt=(new Date()).getTime();
+    
+    window.current_project = "{&quot;id&quot;:1758206835,&quot;name&quot;:&quot;The Ballads of Reemus 2 - 2D Point and Click Adventure Game&quot;,&quot;blurb&quot;:&quot;The next chapter in the Reemus series. A classic, Lucas Arts inspired 2D point and click comedy adventure game for PC/Mac/Linux.&quot;,&quot;goal&quot;:15000.0,&quot;pledged&quot;:17276.0,&quot;state&quot;:&quot;successful&quot;,&quot;slug&quot;:&quot;the-ballads-of-reemus-2-2d-point-and-click-adventu&quot;,&quot;disable_communication&quot;:false,&quot;country&quot;:&quot;CA&quot;,&quot;currency&quot;:&quot;CAD&quot;,&quot;currency_symbol&quot;:&quot;$&quot;,&quot;currency_trailing_code&quot;:true,&quot;deadline&quot;:1382205081,&quot;state_changed_at&quot;:1382205082,&quot;created_at&quot;:1375733988,&quot;launched_at&quot;:1379613081,&quot;backers_count&quot;:431,&quot;photo&quot;:{&quot;full&quot;:&quot;https://s3.amazonaws.com/ksr/projects/640005/photo-full.jpg?1397829704&quot;,&quot;ed&quot;:&quot;https://s3.amazonaws.com/ksr/projects/640005/photo-ed.jpg?1397829704&quot;,&quot;med&quot;:&quot;https://s3.amazonaws.com/ksr/projects/640005/photo-med.jpg?1397829704&quot;,&quot;little&quot;:&quot;https://s3.amazonaws.com/ksr/projects/640005/photo-little.jpg?1397829704&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/projects/640005/photo-small.jpg?1397829704&quot;,&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/projects/640005/photo-thumb.jpg?1397829704&quot;,&quot;1024x768&quot;:&quot;https://s3.amazonaws.com/ksr/projects/640005/photo-1024x768.jpg?1397829704&quot;,&quot;1536x1152&quot;:&quot;https://s3.amazonaws.com/ksr/projects/640005/photo-1536x1152.jpg?1397829704&quot;},&quot;creator&quot;:{&quot;id&quot;:1311956304,&quot;name&quot;:&quot;Jay Ziebarth&quot;,&quot;avatar&quot;:{&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/1959392/jaybio.thumb.jpg?1376684069&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/1959392/jaybio.small.jpg?1376684069&quot;,&quot;medium&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/1959392/jaybio.medium.jpg?1376684069&quot;},&quot;urls&quot;:{&quot;web&quot;:{&quot;user&quot;:&quot;https://www.kickstarter.com/profile/1311956304&quot;},&quot;api&quot;:{&quot;user&quot;:&quot;https://api.kickstarter.com/v1/users/1311956304?signature=1399959720.cf22d0b6b3d039f94b2e5b978e36ba8da7e9359a&quot;}}},&quot;location&quot;:{&quot;id&quot;:56122415,&quot;name&quot;:&quot;Hamilton Mountain&quot;,&quot;slug&quot;:&quot;hamilton-mountain-hamilton-ca&quot;,&quot;short_name&quot;:&quot;Hamilton Mountain, Canada&quot;,&quot;displayable_name&quot;:&quot;Hamilton Mountain, Canada&quot;,&quot;country&quot;:&quot;CA&quot;,&quot;state&quot;:&quot;ON&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/hamilton-mountain-hamilton-ca&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/hamilton-mountain-hamilton-ca&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1399952735.cdc2f03dd4dc2b39ac0899b980f8fed04ed63de4&amp;woe_id=56122415&quot;}}},&quot;category&quot;:{&quot;id&quot;:35,&quot;name&quot;:&quot;Video Games&quot;,&quot;slug&quot;:&quot;games/video games&quot;,&quot;position&quot;:7,&quot;parent_id&quot;:12,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;http://www.kickstarter.com/discover/categories/games/video%20games&quot;}}},&quot;urls&quot;:{&quot;web&quot;:{&quot;project&quot;:&quot;https://www.kickstarter.com/projects/1311956304/the-ballads-of-reemus-2-2d-point-and-click-adventu&quot;,&quot;project_short&quot;:&quot;http://kck.st/1aWvkry&quot;,&quot;updates&quot;:&quot;https://www.kickstarter.com/projects/1311956304/the-ballads-of-reemus-2-2d-point-and-click-adventu/posts&quot;},&quot;api&quot;:{&quot;project&quot;:&quot;https://api.kickstarter.com/v1/projects/1758206835?signature=1399959720.7d86b524c67754c54ff662da70f48804946c2e45&quot;,&quot;comments&quot;:&quot;https://api.kickstarter.com/v1/projects/1758206835/comments?signature=1399959720.85d9735faef0c7abdb442d848566efac3657cfd6&quot;,&quot;updates&quot;:&quot;https://api.kickstarter.com/v1/projects/1758206835/updates?signature=1399959720.a3a0185e19c7040785aba67b7977a92de9f2892b&quot;}},&quot;updated_at&quot;:1397889187,&quot;successful_at&quot;:1382205082,&quot;video&quot;:{&quot;id&quot;:289217,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/640005/video-289217-h264_high.mp4?2013&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/640005/video-289217-h264_base.mp4?2013&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/640005/video-289217-webm.webm?2013&quot;,&quot;width&quot;:640,&quot;height&quot;:480,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/640005/video-289217-h264_base.jpg?2013&quot;},&quot;comments_count&quot;:1410,&quot;updates_count&quot;:19,&quot;rewards&quot;:[{&quot;id&quot;:0,&quot;minimum&quot;:1,&quot;reward&quot;:&quot;No Reward&quot;},{&quot;id&quot;:2018605,&quot;minimum&quot;:10.0,&quot;reward&quot;:&quot;Fancy HD desktop wallpaper and I&#39;ll whisper a silent \\&quot;thank you\\&quot; to you in my head when I go to bed tonight.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1401580800,&quot;project_id&quot;:1758206835,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1382206867},{&quot;id&quot;:1965005,&quot;minimum&quot;:12.0,&quot;reward&quot;:&quot;$11.59 USD - EARLY BIRD GETS THE GAME ABOUT WORMS - A digital download of the final game for your choice of PC, Mac or Linux + Download of both Reemus Soundtracks.&quot;,&quot;limit&quot;:50,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1401580800,&quot;project_id&quot;:1758206835,&quot;remaining&quot;:0,&quot;backers_count&quot;:50,&quot;updated_at&quot;:1382814616},{&quot;id&quot;:1870207,&quot;minimum&quot;:15.0,&quot;reward&quot;:&quot;$14.52 USD - GET THE GAME - A digital download of the final game for your choice of PC, Mac or Linux.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1401580800,&quot;project_id&quot;:1758206835,&quot;backers_count&quot;:195,&quot;updated_at&quot;:1391519729},{&quot;id&quot;:1870208,&quot;minimum&quot;:25.0,&quot;reward&quot;:&quot;$24.22 USD - GET THE GAME, SOUNDTRACK AND BETA TEST - A digital download of game (includes YOUR NAME in the Thank You Credits) + Become a BETA Tester + Download of both Reemus Soundtracks.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1401580800,&quot;project_id&quot;:1758206835,&quot;backers_count&quot;:66,&quot;updated_at&quot;:1382332405},{&quot;id&quot;:1870209,&quot;minimum&quot;:35.0,&quot;reward&quot;:&quot;$33.90 USD - NAME AN NPC CHARACTER - Those characters milling in the background, going about their daily business. Help them step out of obscurity and bless them with a name of their own. Also includes Game Download + BETA Tester + Soundtracks. ** Name must be in good taste and not violate any copyrights.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1401580800,&quot;project_id&quot;:1758206835,&quot;backers_count&quot;:30,&quot;updated_at&quot;:1382354990},{&quot;id&quot;:1870210,&quot;minimum&quot;:45.0,&quot;reward&quot;:&quot;$43.59 USD - MAKE AN NPC TALK  - Name an NPC character AND give them a one sentence (140 characters MAX) line of dialogue. The character will say this line anytime the player talks to them. Also includes Game Download + BETA Tester + Soundtracks. ** Name and Dialogue must be in good taste and not violate any copyrights.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1401580800,&quot;project_id&quot;:1758206835,&quot;backers_count&quot;:14,&quot;updated_at&quot;:1382206877},{&quot;id&quot;:1905719,&quot;minimum&quot;:55.0,&quot;reward&quot;:&quot;$53.18 USD - AUTOGRAPHED COLLECTOR&#39;S EDITION  - A DVD hard copy in a case, personally autographed. Also includes Game Download + BETA Tester  + Soundtracks. ** Name and dialogue must be in good taste and not violate any copyrights.&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;10.0&quot;,&quot;estimated_delivery_on&quot;:1401580800,&quot;project_id&quot;:1758206835,&quot;backers_count&quot;:27,&quot;updated_at&quot;:1382352388},{&quot;id&quot;:1961702,&quot;minimum&quot;:65.0,&quot;reward&quot;:&quot;$62.66 USD - COLLECTOR&#39;S EDITION &amp; CHARACTER - A DVD hard copy in a case, personally autographed. PLUS Name an NPC character AND give them a one sentence (140 characters MAX) line of dialogue. The character will say this line anytime the player talks to them. Also includes Game Download + BETA Tester + Soundtracks. ** Name and dialogue must be in good taste and not violate any copyrights.&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;10.0&quot;,&quot;estimated_delivery_on&quot;:1401580800,&quot;project_id&quot;:1758206835,&quot;backers_count&quot;:5,&quot;updated_at&quot;:1382377513},{&quot;id&quot;:1870211,&quot;minimum&quot;:100.0,&quot;reward&quot;:&quot;$94.99 USD - CREATE AN INVENTORY ITEM -  Create and name your own inventory item in the game. Your item will be usable for all other players and may even end up in a puzzle solution! Also includes Game Download + BETA Tester  + Soundtracks. ** Name must be in good taste and not violate any copyrights.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1401580800,&quot;project_id&quot;:1758206835,&quot;backers_count&quot;:3,&quot;updated_at&quot;:1382814616},{&quot;id&quot;:1932684,&quot;minimum&quot;:120.0,&quot;reward&quot;:&quot;$115.68  USD - COLLECTOR&#39;S &amp; INVENTORY ITEM - A DVD hard copy in a jewel case, personally autographed. PLUS create and name your own inventory item in the game. Your item will be usable for all other players and may even end up in a puzzle solution! Also includes Game Download + BETA Tester  + Soundtracks. ** Name must be in good taste and not violate any copyrights.&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;10.0&quot;,&quot;estimated_delivery_on&quot;:1401580800,&quot;project_id&quot;:1758206835,&quot;backers_count&quot;:2,&quot;updated_at&quot;:1382206879},{&quot;id&quot;:2057342,&quot;minimum&quot;:200.0,&quot;reward&quot;:&quot;TOO MANY KICKSTARTERS! AKA THE BOB TIER: For anyone looking to give massive support without the fear of adding more games to your collection or trinkets to your shelf. This is a strictly \\&quot;Thank you\\&quot; tier. I promise to send you nothing in return, only my gratitude. You get to sleep at night knowing you&#39;ve helped fund a new game but without the guilt of getting a game you&#39;ll never play.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1401580800,&quot;project_id&quot;:1758206835,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1382206865},{&quot;id&quot;:1870212,&quot;minimum&quot;:250.0,&quot;reward&quot;:&quot;$237.48 USD - BECOME A CHARACTER - Send a picture and I&#39;ll create a character with your likeness. Give your character a name and become part of Reemus lore. Also includes Game Download + BETA Tester  + Soundtracks. ** Name must be in good taste and not violate any copyrights.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1401580800,&quot;project_id&quot;:1758206835,&quot;backers_count&quot;:15,&quot;updated_at&quot;:1382532993},{&quot;id&quot;:1932691,&quot;minimum&quot;:270.0,&quot;reward&quot;:&quot;$260.28 USD - COLLECTOR&#39;S &amp; YOU AS A CHARACTER - A DVD hard copy in a jewel case, personally autographed. PLUS Send a picture and I&#39;ll create a character with your likeness. Give your character a name and become part of Reemus lore. Also includes Game Download + BETA Tester  + Soundtracks. ** Name must be in good taste and not violate any copyrights.&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;10.0&quot;,&quot;estimated_delivery_on&quot;:1401580800,&quot;project_id&quot;:1758206835,&quot;backers_count&quot;:8,&quot;updated_at&quot;:1382206873},{&quot;id&quot;:1885865,&quot;minimum&quot;:500.0,&quot;reward&quot;:&quot;$474.97 USD - CREATE YOUR OWN QUEST - Create and name an NPC with your likeness, give your NPC a line of dialogue and create and name your own Inventory items. With your character and items create a small sidequest for Reemus &amp; Liam to embark on. The quest will be in the form of \\&quot;Use X on Y to get Z\\&quot; from there I will connect the quest into the game and may tinker with a few details but the XYZ is all yours to create! Also includes Game Download + BETA Tester  + Soundtracks. ** Name and dialogue must be in good taste and not violate any copyrights.&quot;,&quot;limit&quot;:10,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1401580800,&quot;project_id&quot;:1758206835,&quot;remaining&quot;:10,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1380191640},{&quot;id&quot;:1932692,&quot;minimum&quot;:520.0,&quot;reward&quot;:&quot;$501.28 USD - COLLECTOR&#39;S &amp; YOUR QUEST - A DVD hard copy in a jewel case, personally autographed. PLUS Create and name an NPC with your likeness, give your NPC a line of dialogue and create and name your own Inventory items. With your character and items create a small sidequest for Reemus &amp; Liam to embark on. The quest will be in the form of \\&quot;Use X on Y to get Z\\&quot; from there I will connect the quest into the game and may tinker with a few details but the XYZ is all yours to create! Also includes Game Download + BETA Tester  + Soundtracks. ** Name and dialogue must be in good taste and not violate any copyrights.&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;10.0&quot;,&quot;estimated_delivery_on&quot;:1401580800,&quot;project_id&quot;:1758206835,&quot;backers_count&quot;:2,&quot;updated_at&quot;:1382216902},{&quot;id&quot;:1886883,&quot;minimum&quot;:1000.0,&quot;reward&quot;:&quot;$968.71 USD - CREATE YOUR OWN BALLAD - Write your own 4 line poem that I will turn into a ballad and have one of the in-game bards sing. I will professionally record the song and give you a digital MP3 copy to have as well. Also includes Game Download + Autographed Collector&#39;s Edition (shipping included) + BETA Tester  + Soundtracks. ** Name and song must be in good taste and not violate any copyrights.&quot;,&quot;limit&quot;:10,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1401580800,&quot;project_id&quot;:1758206835,&quot;remaining&quot;:10,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1378844821},{&quot;id&quot;:1886884,&quot;minimum&quot;:1500.0,&quot;reward&quot;:&quot;$1452.99 USD - BECOME A BARD - Create and name your own NPC with your likeness, write your own 4 line poem that I will record as a real song. Your Bard NPC will sing the song whenever someone clicks.   I&#39;ll also send you a digital MP3 copy to have. Also includes Game Download + Autographed Collector&#39;s Edition (shipping included) + BETA Tester  + Soundtracks. ** Name and song must be in good taste and not violate any copyrights.\\r\\n***If you have the ability to record our own voice, you can sing the song yourself and I&#39;ll set it to music.&quot;,&quot;limit&quot;:10,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1401580800,&quot;project_id&quot;:1758206835,&quot;remaining&quot;:10,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1378844821},{&quot;id&quot;:1887025,&quot;minimum&quot;:2500.0,&quot;reward&quot;:&quot;$2421.66 USD - ROCK ME LIAM - Liam the bear will write a heroic ballad about your life and sing it. You supply the details of your life you want included in the song, I will professionally record it and send it to you in MP3 format. Liam will perform the song as an Easter Egg in the game. Have your exploits immortalized in song forever! Also includes Game Download + Autographed Collector&#39;s Edition (shipping included) + BETA Tester  + Soundtracks. ** lyrical content must be in good taste and not violate any copyrights.&quot;,&quot;limit&quot;:5,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1401580800,&quot;project_id&quot;:1758206835,&quot;remaining&quot;:5,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1378844821}]}";
+    
+    
+    
+    
+    
+    
+    
+    
+    window.timeRemaining = function timeRemaining(epochTime){
+    
+      var diff = epochTime - ((new Date()).getTime() / 1000);
+      var num_unit = (diff < 60 && [Math.max(diff, 0), 'seconds']) ||
+        ((diff/=60) < 60 && [diff, 'minutes']) ||
+        ((diff/=60) < 72 && [diff, 'hours']) ||
+        [diff/=24, 'days'];
+    
+      // Round down
+      num_unit[0] = Math.floor(num_unit[0]);
+      // Singularize unit
+      if (num_unit[0] == 1) { num_unit[1] = num_unit[1].replace(/s$/,""); }
+    
+      return num_unit;
+    };
+  //]]>
+</script>
+
+<script>
+  //<![CDATA[
+    window.current_variants = ["discover_link_copy[explore]","rewards_hover[without_hover_text]"];
+  //]]>
+</script>
+
+
+</head>
+
+<body class="project projects not-mobile not-phone not-forces-video-controls not-tablet not-touchable not-native-app-request video_mode" id="projects_show">
+<div class="jGrowl center" id="growl_section"></div>
+<div class="NS_layouts__navigation" id="header">
+<div class="main-nav relative bg-white">
+<h1 class="no-margin ml1 mr2 left">
+<a href="/?ref=nav" class="block p2"><span class="ss-icon green-dark">KICK</span><span class="ss-icon green">STARTER</span>
+</a></h1>
+<ul class="primary-links list no-margin left">
+<li class="left discover-link full-height">
+<a href="/discover?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Explore</a>
+</li>
+<li class="left full-height mr2">
+<a href="/learn?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Start</a>
+</li>
+</ul>
+<ul class="list no-margin right" id="menu-sub">
+<li class="right"><a href="/login?ref=nav" class="block h5 bold p2 full-height border-box">Log in</a></li>
+<li class="right"><a href="/signup?ref=nav" class="block h5 bold p2 full-height border-box">Sign up</a></li>
+</ul>
+<div class="search-link pl2 full-height border-left border-box clip">
+<form accept-charset="UTF-8" action="/projects/search" class="search pt1 pb1 block relative form-simple" method="get"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /></div>
+<div class="field relative pl3">
+<span class="ss-icon ss-search grey-dark ml1 mt1 absolute"></span>
+<input class="input-search header full-width text" data-tracker-name="Header Live Search" id="term" name="term" placeholder="Search projects" type="text" />
+</div>
+</form>
+
+</div>
+<div class="clear"></div>
+</div>
+</div>
+<div class="hide pt4 pb4 bg-grey-light" id="search_results-wrap">
+<div class="relative container" id="search_results">
+<a class="close right grey-dark mr1"><span class="ss-icon ss-delete"></span></a>
+<h3 class="header ml1 clearfix"></h3>
+<div class="clip clearfix" id="search_results_panel"></div>
+<a class="prev arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateleft"></span>
+</a>
+<a class="next arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateright"></span>
+</a>
+</div>
+</div>
+
+
+
+
+<div class="Project-ended-true Project-is_starred- Project-state-successful Project1758206835_cxt border-top" id="main_content">
+<div id="running-board-wrap">
+<div class="container" id="running-board">
+<div id="project-header">
+<div class="NS_projects__running_board ml1 mr1 clearfix">
+<div class="title center py4">
+<h2 class="mb1">
+<a href="/projects/1311956304/the-ballads-of-reemus-2-2d-point-and-click-adventu" class="green-dark">The Ballads of Reemus 2 - 2D Point and Click Adventure Game</a>
+</h2>
+<p class="no-margin">
+<span class="creator">
+by
+<a href="/projects/1311956304/the-ballads-of-reemus-2-2d-point-and-click-adventu/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography" id="name">Jay Ziebarth</a>
+</span>
+</p>
+</div>
+<ul class="project-nav list-inline left h5 bold mb1">
+<li class="mr2">
+<a href="/projects/1311956304/the-ballads-of-reemus-2-2d-point-and-click-adventu" class="grey-dark py1 current" id="home_nav">Home</a>
+</li>
+<li class="mr2">
+<span data-updates-count="19" id="updates_count">
+<a href="/projects/1311956304/the-ballads-of-reemus-2-2d-point-and-click-adventu/posts" class="grey-dark py1" id="updates_nav">Updates
+<span class="count h6 bg-grey-dark white">19</span>
+</a></span>
+</li>
+<li class="mr2">
+<a href="/projects/1311956304/the-ballads-of-reemus-2-2d-point-and-click-adventu/backers" class="grey-dark py1" id="backers_nav">Backers
+<span class="count h6 bg-grey-dark white"><data class="Project1758206835" data-format="number" data-value="431" itemprop="Project[backers_count]">431</data></span>
+</a></li>
+<li>
+<span data-comments-count="1410" id="comments_count">
+<a href="/projects/1311956304/the-ballads-of-reemus-2-2d-point-and-click-adventu/comments" class="grey-dark py1" id="comments_nav">Comments
+<span class="count h6 bg-grey-dark white"><data class="Project1758206835" data-format="number" data-value="1410" itemprop="Project[comments_count]">1,410</data></span>
+</a></span>
+</li>
+</ul>
+<ul class="list-inline right h5 bold mb1">
+<li class="location mr2">
+<a href="/discover/places/hamilton-mountain-hamilton-ca?ref=city" class="grey-dark"><span class="ss-icon ss-location margin-right"></span>
+Hamilton Mountain, Canada
+</a></li>
+<li class="category" data-project-parent-category="Games">
+<a href="/discover/categories/games/video%20games?ref=category" class="grey-dark"><span class="ss-icon ss-tag margin-right"></span>
+Video Games
+</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+</div>
+<div class="bg-grey-light pb4" id="content-wrap">
+<div class="Project1758206835" data-conditions="[{&quot;!state&quot;:&quot;live&quot;}]" data-evaluation="true" data-render="&quot;&lt;div class=\&quot;NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-successful Project1758206835_cxt bg-grey container pb1 pt1\&quot;&gt;\n&lt;div class=\&quot;Project1758206835\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;successful&amp;quot;}]\&quot; data-evaluation=\&quot;true\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;Funded!&amp;lt;/b&amp;gt;\\nThis project was successfully funded &amp;lt;data class=\\&amp;quot;Project1758206835\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2013-10-19T13:51:21-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[deadline]\\&amp;quot;&amp;gt;on October 19, 2013&amp;lt;/data&amp;gt;.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;Funded!&lt;/b&gt;\nThis project was successfully funded &lt;data class=\&quot;Project1758206835\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-10-19T13:51:21-04:00&amp;quot;\&quot; itemprop=\&quot;Project[deadline]\&quot;&gt;on October 19, 2013&lt;/data&gt;.\n&lt;/p&gt;\n&lt;/div&gt;&lt;div class=\&quot;Project1758206835\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:[&amp;quot;started&amp;quot;,&amp;quot;submitted&amp;quot;]}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;THIS PROJECT IS NOT LIVE&amp;lt;/b&amp;gt;\\nThis is only a draft that the creator has chosen to share.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1758206835\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;suspended&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Suspended&amp;lt;/b&amp;gt;\\nFunding for this project was suspended &amp;lt;data class=\\&amp;quot;Project1758206835\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2013-10-19T13:51:22-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on October 19, 2013&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1758206835\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;canceled&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Canceled&amp;lt;/b&amp;gt;\\nFunding for this project was canceled by the project creator &amp;lt;data class=\\&amp;quot;Project1758206835\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2013-10-19T13:51:22-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on October 19, 2013&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1758206835\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;failed&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Unsuccessful&amp;lt;/b&amp;gt;\\nThis project\\u2019s funding goal was not reached on &amp;lt;time class=\\&amp;quot;js-adjust\\&amp;quot; data-format=\\&amp;quot;LL\\&amp;quot; datetime=\\&amp;quot;2013-10-19T13:51:21-04:00\\&amp;quot;&amp;gt;October 19, 2013&amp;lt;/time&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1758206835\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;purged&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;This project is purged and only visible to staff.&amp;lt;/b&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;/div&gt;\n&quot;"><div class="NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-successful Project1758206835_cxt bg-grey container pb1 pt1">
+<div class="Project1758206835" data-conditions="[{&quot;state&quot;:&quot;successful&quot;}]" data-evaluation="true" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;Funded!&lt;/b&gt;\nThis project was successfully funded &lt;data class=\&quot;Project1758206835\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-10-19T13:51:21-04:00&amp;quot;\&quot; itemprop=\&quot;Project[deadline]\&quot;&gt;on October 19, 2013&lt;/data&gt;.\n&lt;/p&gt;\n&quot;"><p class="no-margin">
+<b>Funded!</b>
+This project was successfully funded <data class="Project1758206835" data-format="distance_date" data-value="&quot;2013-10-19T13:51:21-04:00&quot;" itemprop="Project[deadline]">on October 19, 2013</data>.
+</p>
+</div><div class="Project1758206835" data-conditions="[{&quot;state&quot;:[&quot;started&quot;,&quot;submitted&quot;]}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;THIS PROJECT IS NOT LIVE&lt;/b&gt;\nThis is only a draft that the creator has chosen to share.\n&lt;/p&gt;\n&quot;"></div><div class="Project1758206835" data-conditions="[{&quot;state&quot;:&quot;suspended&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Suspended&lt;/b&gt;\nFunding for this project was suspended &lt;data class=\&quot;Project1758206835\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-10-19T13:51:22-04:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on October 19, 2013&lt;/data&gt;.\n&quot;"></div><div class="Project1758206835" data-conditions="[{&quot;state&quot;:&quot;canceled&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Canceled&lt;/b&gt;\nFunding for this project was canceled by the project creator &lt;data class=\&quot;Project1758206835\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-10-19T13:51:22-04:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on October 19, 2013&lt;/data&gt;.\n&quot;"></div><div class="Project1758206835" data-conditions="[{&quot;state&quot;:&quot;failed&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Unsuccessful&lt;/b&gt;\nThis project\u2019s funding goal was not reached on &lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;LL\&quot; datetime=\&quot;2013-10-19T13:51:21-04:00\&quot;&gt;October 19, 2013&lt;/time&gt;.\n&quot;"></div><div class="Project1758206835" data-conditions="[{&quot;state&quot;:&quot;purged&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;This project is purged and only visible to staff.&lt;/b&gt;\n&quot;"></div></div>
+</div>
+<div class="container bg-white border rounded py3 pl2 pr2" id="content">
+<div class="NS-projects-content">
+<div class="grid_11">
+<div data-has-video="true" id="video-section">
+<div class="video-player" data-dimensions="{&quot;width&quot;:640,&quot;height&quot;:480}" data-image="https://s3.amazonaws.com/ksr/projects/640005/photo-main.jpg?1397829704" data-video-tracker-url="https://www.kickstarter.com/projects/1311956304/the-ballads-of-reemus-2-2d-point-and-click-adventu/video/plays" data-video-url="https://d2pq0u4uni88oo.cloudfront.net/projects/640005/video-289217-h264_high.mp4" data-video="{&quot;id&quot;:289217,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/640005/video-289217-h264_high.mp4?2013&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/640005/video-289217-h264_base.mp4?2013&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/640005/video-289217-webm.webm?2013&quot;,&quot;width&quot;:640,&quot;height&quot;:480,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/640005/video-289217-h264_base.jpg?2013&quot;}" id="video_pitch"><video class="has_webm landscape" preload="none">
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/640005/video-289217-h264_high.mp4" type='video/mp4; codecs="avc1.64001E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/640005/video-289217-h264_base.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/640005/video-289217-webm.webm" type="video/webm"></source>
+You'll need an HTML5 capable browser to see this content.
+</video>
+<img alt="Photo-main" class="has_played_hide poster landscape" src="https://s3.amazonaws.com/ksr/projects/640005/photo-main.jpg?1397829704" />
+<div class="play_button_big play_button_dark absolute-center rounded has_played_hide">
+<span class="ss-icon ss-play"></span>
+Play
+</div>
+<div class="player_controls clearfix absolute-bottom mb2 rounded white bg-green-dark forces-video-controls_hide">
+<div class="left">
+<a class="button button_icon button_dark playpause play mr1">
+<span class="play ss-icon ss-play"></span>
+<span class="pause ss-icon ss-pause"></span>
+</a>
+<span class="time current_time h12 left">00:00</span>
+</div>
+<div class="right">
+<span class="time total_time h12 left mr1">00:00</span>
+<a class="left button button_icon button_icon_white volume">
+<span class="ss-icon ss-volume icon_volume_nudge"></span>
+<span class="ss-icon ss-highvolume"></span>
+</a>
+<div class="volume_container left">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+<a class="left button button_icon button_icon_white fullscreen">
+<span class="ss-icon ss-expand"></span>
+<span class="ss-icon ss-contract"></span>
+</a>
+</div>
+<div class="clip">
+<div class="progress_container pr1 pl1">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="buffer progress_bar_buffer"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div data-project-state="successful" id="about">
+<div class="NS_projects__project_share clearfix py2 pl1 pr1">
+<ul class="left list-inline no-margin h5 bold">
+<li class="facebook mr2">
+<a href="https://www.kickstarter.com/projects/1311956304/the-ballads-of-reemus-2-2d-point-and-click-adventu"><span class="ss-icon ss-social ss-facebook color-facebook"></span>
+<span class="color-facebook">Share</span>
+<span class="share_bubble"><div class="triangle grey"></div>
+<div class="triangle white"></div>
+<span class="count"></span></span>
+</a></li>
+<li class="twitter mr2">
+<a  href="https://twitter.com/intent/tweet?text=The%20Ballads%20of%20Reemus%202%20-%202D%20Point%20and%20Click%20Adventure%20Game%20by%20Jay%20Ziebarth&amp;via=kickstarter&amp;url=http://kck.st/1aWvkry" rel="nofollow"><span class="ss-icon ss-social ss-twitter color-twitter"></span>
+<span class="color-twitter">Tweet</span>
+</a></li>
+<li class="embed">
+<a href="/projects/1311956304/the-ballads-of-reemus-2-2d-point-and-click-adventu/widget" class="remote_modal_dialog grey-dark" data-modal-title="Embed a widget on your site" data-tracker-name="Embed"><span class="ss-icon ss-navigateleft"></span>
+<span class="ss-icon ss-navigateright"></span>
+Embed
+</a></li>
+</ul>
+<ul class="right list-inline no-margin h5 bold">
+<li class="curate mr2">
+</li>
+<li class="remind">
+<div class="ajax-container" id="watching-widget">
+<div class="Project1758206835" data-conditions="[{&quot;is_starred&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div id=\&quot;unwatch\&quot;&gt;\n&lt;a href=\&quot;/projects/1311956304/the-ballads-of-reemus-2-2d-point-and-click-adventu/unwatch\&quot; class=\&quot;on\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"></div><div class="Project1758206835" data-conditions="[{&quot;!is_starred&quot;:true}]" data-evaluation="true" data-render="&quot;&lt;div id=\&quot;watch\&quot;&gt;\n&lt;a href=\&quot;/projects/1311956304/the-ballads-of-reemus-2-2d-point-and-click-adventu/watch\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;span class=\&quot;text\&quot;&gt;\n&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"><div id="watch">
+<a href="/projects/1311956304/the-ballads-of-reemus-2-2d-point-and-click-adventu/watch"><span class="ss-icon ss-star"></span>
+<span class="text">
+</span>
+</a></div>
+
+</div></div>
+</li>
+</ul>
+</div>
+
+<div class="short_blurb py2 pl1 pr1">
+<p class="h3">The next chapter in the Reemus series. A classic, Lucas Arts inspired 2D point and click comedy adventure game for PC/Mac/Linux.</p>
+</div>
+<div class="full-description">
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1311956304/the-ballads-of-reemus-2-2d-point-and-click-adventu/assets/836897/edit" data-id="836897">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/836/897/0e781c8a0f4dddc922a254c40c992ac0_large.png?1376710227"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1311956304/the-ballads-of-reemus-2-2d-point-and-click-adventu/assets/836909/edit" data-id="836909">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/836/909/2537cd380f8a0c94047d1205bebd0cdb_large.png?1376710826"></figure>
+</div>
+<p> 2D, hand drawn, comedy-fantasy point and click adventure game in the vein of such classics as "Day of the Tentacle" &amp; "Monkey Island" for PC/Mac/Linux. With future ports to iOS, Android and Blackberry planned.</p>
+<p>The story revolves around Reemus, a medieval exterminator and his loyal sidekick Liam the purple bear as they battle giant insects in a quest to legitimize "extermination" as a heroic career path.<br><br>Sound ridiculous? Well it is, but don't take my word for it. You can try the earlier games for yourself right now, for free! <a href="http://zeebarf.com/the-several-journeys-of-reemus" target="_blank">Just click this link, don't worry I'll be here when you get back.</a></p><div class="template asset" contenteditable="false" data-edit_url="/projects/1311956304/the-ballads-of-reemus-2-2d-point-and-click-adventu/assets/836926/edit" data-id="836926">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/836/926/b514001d77069d80fc411ec2c7ff855d_large.jpg?1376711272"></figure>
+</div><p><b> UPDATE** We're 100% Funded and we've hit every stretch goal!! Take a bow everyone, we did it! If you missed the party, there's still time to get in on the action through Paypal. Thank you for all the support!</b></p><a href="http://zeebarf.com/the-ballads-of-reemus-2" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/1311956304/the-ballads-of-reemus-2-2d-point-and-click-adventu/assets/1211853/edit" data-id="1211853">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/211/853/978f1bcbf36fb301357b81aa23febcf7_large.jpg?1382195747"></figure>
+</div>
+</a><div class="template asset" contenteditable="false" data-edit_url="/projects/1311956304/the-ballads-of-reemus-2-2d-point-and-click-adventu/assets/1211850/edit" data-id="1211850">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/211/850/dc3e90af953b788a7e109dc14a305a6f_large.jpg?1382195682"></figure>
+</div>
+<p>The Art book will contain sketches, backgrounds, character designs along with notes on puzzles. It will chronicle the entire journey through making this game. <br><br>The Comic book will be a one off collectors edition that bridges the gap between the first Ballads of Reemus and this new game. </p><p><b>**UPDATE - NEW CHARACTERS ARRIVE IN FREDRICUS**</b><br>Some brave and generous backers have pledged their support at the "Become a Character" reward tier. To celebrate their arrival into the Reemus universe I've been drawing them early, <a href="http://zeebarf.com/zeebarfed" target="_blank">click here to see all the "Zeebarfed" characters.</a></p><div class="template asset" contenteditable="false" data-edit_url="/projects/1311956304/the-ballads-of-reemus-2-2d-point-and-click-adventu/assets/998791/edit" data-id="998791">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/998/791/c72353d9627abe29c01315a940f91a3e_large.jpg?1381237390"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/1311956304/the-ballads-of-reemus-2-2d-point-and-click-adventu/assets/998781/edit" data-id="998781">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/998/781/53ce912c86fd429c641fe7eea4052797_large.jpg?1381237101"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/1311956304/the-ballads-of-reemus-2-2d-point-and-click-adventu/assets/998782/edit" data-id="998782">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/998/782/4fb777716c6c2344f67076223f03b76e_large.jpg?1381237118"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/1311956304/the-ballads-of-reemus-2-2d-point-and-click-adventu/assets/998784/edit" data-id="998784">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/998/784/eccaba3d15a7ff43387bdd6615e56213_large.jpg?1381237134"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/1311956304/the-ballads-of-reemus-2-2d-point-and-click-adventu/assets/1001767/edit" data-id="1001767">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/001/767/17aeba6733d6689f7ebae17010934aac_large.jpg?1381280858"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/1311956304/the-ballads-of-reemus-2-2d-point-and-click-adventu/assets/1003535/edit" data-id="1003535">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/003/535/741693cb9f1b12b7f18891f8b52e140c_large.jpg?1381330229"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/1311956304/the-ballads-of-reemus-2-2d-point-and-click-adventu/assets/1046371/edit" data-id="1046371">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/046/371/02a1457409230c215bb82a50bfa3e113_large.jpg?1381454017"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/1311956304/the-ballads-of-reemus-2-2d-point-and-click-adventu/assets/1067627/edit" data-id="1067627">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/067/627/f4b1af314e868293e757a655388313b3_large.jpg?1381505606"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/1311956304/the-ballads-of-reemus-2-2d-point-and-click-adventu/assets/1189201/edit" data-id="1189201">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/189/201/371d0601c311750c4379af8d8d70ebb1_large.jpg?1381855472"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/1311956304/the-ballads-of-reemus-2-2d-point-and-click-adventu/assets/1189206/edit" data-id="1189206">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/189/206/0716aadf3672df8af5285a2ef34d6d5e_large.jpg?1381855488"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/1311956304/the-ballads-of-reemus-2-2d-point-and-click-adventu/assets/1189212/edit" data-id="1189212">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/189/212/4f0999467cec9de39b72a4e29770514d_large.jpg?1381855505"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/1311956304/the-ballads-of-reemus-2-2d-point-and-click-adventu/assets/1190358/edit" data-id="1190358">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/190/358/8862b1bb5b0550d2be5f68aa06257a89_large.jpg?1381860773"></figure>
+</div><p>This new game will be the 7th outing for Reemus and Liam and the 2nd in the "Ballads of Reemus" series. If there's one thing I'm good at, it's milking an idea for all it's worth!</p><a href="http://www.clickshakegames.com/reemus/" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/1311956304/the-ballads-of-reemus-2-2d-point-and-click-adventu/assets/832108/edit" data-id="832108">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/832/108/88d7565b63fc192f80fae91d42e6d415_large.jpg?1376563957"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</a>
+<p>The original "The Several Journeys of Reemus" series of point and click adventure games have floated around the internet as free to play browser games since 2008. With five chapters in the series, each garnering an award nomination, they've been played millions of time on sites like <a href="http://www.kongregate.com/games/zeebarf" target="_blank">Kongregate.com</a> and <a href="http://zeebarf.newgrounds.com/" target="_blank">Newgrounds.com</a>. If you still haven't clicked the link to try them, <a href="http://zeebarf.com/the-several-journeys-of-reemus" target="_blank">click and play now! Seriously, they're free to play! </a></p><div class="template asset" contenteditable="false" data-edit_url="/projects/1311956304/the-ballads-of-reemus-2-2d-point-and-click-adventu/assets/872214/edit" data-id="872214">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/872/214/63788acfb738fc97c5c4c815e6f61d1a_large.png?1377794389"></figure>
+</div>
+
+<p>In 2012, Reemus made the leap into a full commercial game with a new title called "The Ballads of Reemus". Featuring a new, longer story, more puzzles and full voice acting. It received an award for "Best Story" at the Casual Connect Indie Prize 2013 last month and just because I like you, I'll let you sample that game for free too, <a href="http://www.clickshakegames.com/reemus/ballads/" target="_blank">here's a link. Click and enjoy, you can thank me later.</a></p><p>So now that you've experienced what the world of Reemus has to offer, I know what you're thinking.</p><p><i>"Jay, that Death Slug storyline was nutty. When are you going to finish it?".</i><br><br>Well my friends, you are in luck! That's what this Kickstarter is all about. I want to finally finish what I started in 2008 and tell the complete saga of the Death Slugs. My plan is to take the first five chapters from the "Several Journeys" series and reboot them, touching on some of the major story elements but with all new puzzles, full voice acting and longer gameplay. The final game will be a shiny stand alone commercial version that tells the full story from beginning to end. <br><br><b>THE STORY SO FAR...</b><br>When Reemus the Exterminator’s main competitor Pest-Go reduces pest control to a skill anyone can do with a squirt bottle, Reemus fears his chances of having a truly heroic ballad written about him are over.That is until he stumbles upon an invasion of killer Death Slugs that has all the makings of the greatest quest of all time, one that can not only restore extermination to its former glory but finally put Reemus on the map as a true hero. Now the only question remains, will Reemus and his sidekick Liam defeat the insidious Death Slugs, or will they be the ones exterminated?</p><p><b>WILL THIS BE A FLASH GAME? </b><br>No, this time around I'm using a brand new engine. The VISIONAIRE adventure engine is tailor made for creating adventure games. The team at Daedalic games used it for "Deponia" and "Whispered World" among others and if it's good enough for them, it's good enough for me! </p><p><b>HOW ARE YOU GOING TO DO THIS BY YOURSELF?</b><br>Can I really juggle that many balls at once? Well I was worried at first, so to set my mind at ease I created a prototype just to make sure the engine could do what I wanted and that I could actually handle programming it. </p><p>Turns out it's really intuitive and because it's focused on adventure games it really has all the tools I need to create the game I want. </p><p>If you're interested in checking out what I made, click the link below. It's super short and missing a lot of key elements, like voice acting and Liam! Hopefully it's enough to whet your appetite for a full game and showcase a bit of what you'll be in store for. <br><br><b>PLAY THE PROTOTYPE!</b><br><i>PLEASE NOTE *This build is PC Only, the Mac and Linux version will have to wait a bit longer until Visionaire officially releases their porting tools. Don't worry, the full game will be available for all three! </i><br><br><a href="https://www.dropbox.com/s/p68428i0rw5zjoy/BOR2-Prototype.zip" target="_blank">Lets keep this free train rolling, click for another free shot of Reemus. This one is just a tiny morsel. Don't worry it won't ruin your appetite.</a></p><div class="template asset" contenteditable="false" data-edit_url="/projects/1311956304/the-ballads-of-reemus-2-2d-point-and-click-adventu/assets/936633/edit" data-id="936633">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/936/633/7e7cfd6330a70cdfd19a467510192677_large.png?1379596433"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1311956304/the-ballads-of-reemus-2-2d-point-and-click-adventu/assets/872191/edit" data-id="872191">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/872/191/77b05008c5cc8c7b0fe1b047eeae98e6_large.png?1377793809"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1311956304/the-ballads-of-reemus-2-2d-point-and-click-adventu/assets/835861/edit" data-id="835861">
+<figure><img alt="Reemus will have to deal with such quests as breaking up a Stag Beetle stag party" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/835/861/844d8f6fb97e2e383e79048174c9f6d5_large.jpg?1376681847"><figcaption>Reemus will have to deal with such quests as breaking up a Stag Beetle stag party</figcaption></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1311956304/the-ballads-of-reemus-2-2d-point-and-click-adventu/assets/836928/edit" data-id="836928">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/836/928/c4b3da2dd2b9904feed1cd4f696a2467_large.png?1376711330"></figure>
+</div>
+<p>$15k you say? That's barely enough for groceries, never mind padding the budget to go on an extravagant trip! Well, that's how I roll. My passion runs deep for this project, so I'm not looking to retire on kickstarter money. I just want enough to cover my living expenses so I can focus all my energy into the game.<br><br>I've also managed to guilt some of my friends into investing into the project, with that I've been able to lay the ground work for the game. Writing, design and art have already begun. So I just need another hot cash injection to pull it over the finish line.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/1311956304/the-ballads-of-reemus-2-2d-point-and-click-adventu/assets/910271/edit" data-id="910271">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/910/271/cf0182e52c5d71efd4cc221cd5f2742c_large.png?1378908116"></figure>
+</div>
+<p>Okay, we both knew this rain of freebies would end. It's time to ask for some money but to ease the pain I've created a bunch of cool rewards for you. Check them out...</p>
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1311956304/the-ballads-of-reemus-2-2d-point-and-click-adventu/assets/904317/edit" data-id="904317">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/904/317/218cc8f676929fa1222b7bdd5afd8ba2_large.png?1378758559"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1311956304/the-ballads-of-reemus-2-2d-point-and-click-adventu/assets/936646/edit" data-id="936646">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/936/646/efd954a9118e31f375176abc8c20f76f_large.png?1379596828"></figure>
+</div>
+<p>If I manage to exceed my goal, all money will be re-invested back into the game in the form of:</p><ul>
+<li>Added Production Value (Extra music &amp; animation)</li>
+<li>Increased Marketing Budget</li>
+<li>FRIGS language translation</li>
+<li>Pizza</li>
+</ul><div><br></div><div class="template asset" contenteditable="false" data-edit_url="/projects/1311956304/the-ballads-of-reemus-2-2d-point-and-click-adventu/assets/936650/edit" data-id="936650">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/936/650/a6c511140d8396359600521b65b24793_large.png?1379596869"></figure>
+</div>
+<p><br>If I completely shatter my goal, I would like to expand on the content by including some new, optional side quests. </p><p>I have some ideas for small Reemus quests that could be expanded into optional bonus stories that don't affect the main storyline.  I've also always wanted to create new content by telling stories with secondary characters. </p><p>For instance if Reemus visits a honey bee in the main storyline, I'd like to add content that involves controlling that same honey bee and telling a bit of the story from his perspective. By doing this I can add new puzzles and story without having to create a whole new set of art assets which, because of the time consuming nature of art production, is what would cause delays in the schedule. Also by telling other stories within the game, the main story line doesn't get padded with filler and the original vision stays intact. </p><p>But for now I'd rather just promise to make the best game I possibly can with my current design document. </p><p><b>WHAT PLATFORMS WILL IT BE FOR?</b><br>Visionaire will support PC, Mac and Linux. I also have plans to port the game to all mobile devices. </p><div class="template asset" contenteditable="false" data-edit_url="/projects/1311956304/the-ballads-of-reemus-2-2d-point-and-click-adventu/assets/836936/edit" data-id="836936">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/836/936/0e781c8a0f4dddc922a254c40c992ac0_large.png?1376711481"></figure>
+</div>
+<p><b>WHEN CAN WE PLAY IT?
+
+</b><br>I'd like to launch the game by June 2014.</p><p><b>WILL IT BE ON STEAM?</b><br>I'm actively working on getting the first "Ballads of Reemus" game on Steam. So we'll see what happens but I'm definitely trying to get it on there. In the meantime you can <a href="http://steamcommunity.com/sharedfiles/filedetails/?id=93093387&amp;tscn=1375789925" target="_blank">vote for the first game on Steam Greenlight </a>right now!<br><br>While you're there, show some love for <a href="http://steamcommunity.com/sharedfiles/filedetails/?id=177865887" target="_blank">The Ballads of Reemus 2 concept page!</a></p><a href="http://steamcommunity.com/sharedfiles/filedetails/?id=93093387&amp;tscn=1375789925" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/1311956304/the-ballads-of-reemus-2-2d-point-and-click-adventu/assets/836940/edit" data-id="836940">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/836/940/7f3f987e951cd701f38524a764bee265_large.png?1376711670"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</a>
+<p><b>HOW WILL IT BE DISTRIBUTED?</b><br>It will be available as a DRM-Free digital download from my site, <a href="http://www.Zeebarf.com" target="_blank">www.Zeebarf.com</a>.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/1311956304/the-ballads-of-reemus-2-2d-point-and-click-adventu/assets/824740/edit" data-id="824740">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/824/740/392594a40bca1b0d2625f501e45ca8dc_large.jpg?1376360335"></figure>
+</div>
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1311956304/the-ballads-of-reemus-2-2d-point-and-click-adventu/assets/836971/edit" data-id="836971">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/836/971/ab4f8c91243e1801a6f1de9b6bd9b481_large.png?1376712860"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1311956304/the-ballads-of-reemus-2-2d-point-and-click-adventu/assets/836950/edit" data-id="836950">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/836/950/91105bd9679e03c71a0a4b255626c72b_large.png?1376712357"></figure>
+</div>
+<p>My name is Jay Ziebarth aka "Zeebarf". I've worn many hats over the years ranging from cartoonist to TV actor/writer. I've been creating games since 2007, with 26 games to my credit, 15 have been adventure games. I have a passion for character and story telling and have loved the adventure genre since playing "Maniac Mansion" on my commodore 64 in the 80's. My goal is to be a part of the adventure renaissance that is currently unfolding, I want to continue to do my part to keep the genre alive and well.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/1311956304/the-ballads-of-reemus-2-2d-point-and-click-adventu/assets/836951/edit" data-id="836951">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/836/951/8adde83a1fd953d4fcc75b4ff8168070_large.png?1376712386"></figure>
+</div>
+
+<p>Sergiu is a music and sound composer for mobile and computer games, film and other visual media. Mixing orchestral tracks with electronica and ethnic elements, Sergiu is known for his powerful musical scores, ambient textures and edgy soundscapes.
+
+<br><br>Sergiu's past collaborations with my games include <i>"The Visitor: Massacre at Camp Happy"</i>, <i>"The Visitor Returns"</i> and <i>"Wentworth".</i></p><div class="template asset" contenteditable="false" data-edit_url="/projects/1311956304/the-ballads-of-reemus-2-2d-point-and-click-adventu/assets/836955/edit" data-id="836955">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/836/955/a03ff620b2dd213a5be3d643aec3ec44_large.png?1376712483"></figure>
+</div>
+<p>Mitch is a music producer and Canadian indie rock musician associated principally with the bands Chore, Don Vail and The Priddle Concern. <br><br>Mitch has contributed original music to all six Reemus games. </p><h1>Articles about The Ballads of Reemus 2</h1><ul>
+<li><a href="http://bit.ly/1b8sRqV" target="_blank">Rock Paper Shotgun</a></li>
+<li><a href="http://jayisgames.com/archives/2013/09/kickstarter_the_ballads_of_reemus_2_jay_ziebarth.php" target="_blank">Jay Is Games</a></li>
+<li><a href="http://www.igameresponsibly.com/2013/09/20/crowdfunding-projects-pay-attention-920/" target="_blank">I Game Responsibly</a></li>
+<li><a href="http://www.kickstartadventure.com/home/currently-kickstarting-the-ballads-of-reemus-2/" target="_blank">Kickstart Adventure</a></li>
+<li><a href="http://geardiary.com/2013/09/24/ballads-of-reemus-2-kicks-off-kickstarter-project/#.UkJLv8ash8E" target="_blank">Gear Diary</a></li>
+<li><a href="http://gamingonlinux.com/articles/the-funding-crowd-19-sep-12th24th.2477" target="_blank">Gaming on Linux</a></li>
+<li><a href="http://www.biogamergirl.com/2013/09/ballads-of-reemus-2-announced-with.html" target="_blank">Bio Gamer Girl</a></li>
+</ul>
+</div>
+<div id="risks">
+<h2 class="title grey-dark mt6 mb4">
+<span>Risks and challenges</span>
+<a href="/help/faq/kickstarter%20basics#Acco" class="right normal h5" target="_blank">Learn about accountability on Kickstarter</a>
+<div class="divider clear"></div>
+</h2>
+<p><p>Keeping a game on time and budget is easily the most challenging aspect of the entire process. The risk is always one aspect of the game will be much harder than anticipated to complete and as such requires more than the allotted time to finish. This usually starts a chain reaction and before you know it your deadline whizzes past you.</p>
+
+<p>Having already tackled a full commercial game as well as a large scale iOS project, I feel I&#39;ve gained enough experience to accurately predict how long each step of the process is going to take and have allocated the appropriate amount of time for each stage.</p>
+
+<p>Using an existing engine will dramatically cut down on development time as most of the heavy lifting has already been worked out. If I do run into any snags, Visionaire has an active community that can help solve any problems I may have.</p>
+
+<p>With my past experience, coupled with a strong work ethic, I feel ready to tackle the challenges ahead.</p>
+
+<p>Okay, that&#39;s it! Nothing more to see here. If you think I&#39;ve missed something, drop me a line. I&#39;m more than happy to answer any of your questions! In the meantime, try my old games. I&#39;ve made 15 adventure games since 2007, all free to play in the browser. Check out the full list at <a href="http://zeebarf.com/games/" rel="nofollow">http://zeebarf.com/games/</a></p></p>
+</div>
+</div>
+<div class="NS-projects-faqs" id="project-faqs">
+<h2 class="title grey-dark mt6 mb4">
+FAQ
+<div class="divider clear"></div>
+</h2>
+<ul class="faqs">
+
+</ul>
+<div class="faq-ask-box">
+<p>
+<strong>Have a question?</strong>
+If the info above doesn't help, you can ask the project creator directly.
+</p>
+<a href="/projects/1311956304/the-ballads-of-reemus-2-2d-point-and-click-adventu/messages/new?message%5Bto%5D=1311956304&amp;mode=FAQ" class="button button_blue remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Ask a question about The Ballads of Reemus 2 - 2D Point and Click Ad...">Ask a question</a>
+
+</div>
+</div>
+
+<div class="mt4 ml1 mr1 mb2" id="report-issue-wrap">
+<a href="/login?then=%2Fprojects%2F1311956304%2Fthe-ballads-of-reemus-2-2d-point-and-click-adventu" class="button button_grey">Report this project to Kickstarter</a>
+</div>
+</div>
+<div class="NS-projects-rightcol grid_5" id="rightcol">
+<div class="NS_projects__ecom">
+<div class="digits_5 pb2 pl2 pt2" id="stats">
+<h5>
+<div class="num h48 no-margin" data-backers-count="431" id="backers_count"><data class="Project1758206835" data-format="number" data-value="431" itemprop="Project[backers_count]">431</data></div>
+<span><data class="Project1758206835" data-attr="backers_count" data-format="pluralize" data-value="431" data-word="Backer">Backers</data></span>
+</h5>
+<h5>
+<div class="num h48 no-margin" data-goal="15000.0" data-percent-raised="1.151733333333333333" data-pledged="17276.0" id="pledged">
+<data class="Project1758206835" data-currency="CAD" data-format="shorter_money" data-precision="0" data-value="17276" data-without_code="true" itemprop="Project[pledged]">$17,276</data>
+<span class="money cad project_currency_code"></span>
+</div>
+pledged of
+<span class="money cad no-code">$15,000</span>
+goal
+</h5>
+<span data-duration="30.0" data-end_time="2013-10-19T13:51:21-04:00" data-hours-remaining="0" id="project_duration_data"></span>
+<div class="Project1758206835" data-conditions="[{&quot;!state&quot;:[&quot;canceled&quot;,&quot;suspended&quot;]}]" data-evaluation="true" data-render="&quot;&lt;h5 class=\&quot;poll \&quot; data-dynamic=\&quot;5\&quot; data-end_time=\&quot;2013-10-19T13:51:21-04:00\&quot; data-poll_url=\&quot;https://d2oher2uhvl0ur.cloudfront.net/projects/1311956304/the-ballads-of-reemus-2-2d-point-and-click-adventu/stats.json\&quot;&gt;\n&lt;div class=\&quot;num h48 no-margin\&quot;&gt;0&lt;/div&gt;\n&lt;span class=\&quot;text\&quot;&gt;seconds to go&lt;/span&gt;\n&lt;/h5&gt;\n&quot;"><h5 class="poll " data-dynamic="5" data-end_time="2013-10-19T13:51:21-04:00" data-poll_url="https://d2oher2uhvl0ur.cloudfront.net/projects/1311956304/the-ballads-of-reemus-2-2d-point-and-click-adventu/stats.json">
+<div class="num h48 no-margin">0</div>
+<span class="text">seconds to go</span>
+</h5>
+</div></div>
+<div class="Project1758206835" data-conditions="[{&quot;state&quot;:&quot;live&quot;},{&quot;!ended?&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;pr2 pl2\&quot; id=\&quot;pledge-wrap\&quot;&gt;\n&lt;a href=\&quot;/projects/1311956304/the-ballads-of-reemus-2-2d-point-and-click-adventu/pledge/new?clicked_reward=false\&quot; class=\&quot;button button_green button_box button_block\&quot; id=\&quot;button-back-this-proj\&quot; title=\&quot;Back this project\&quot;&gt;Back This Project &lt;small class=&#39;h6 normal block green-dark&#39;&gt;&lt;span class=\&quot;money cad \&quot;&gt;$1&lt;/span&gt; minimum pledge&lt;/small&gt;&lt;/a&gt;\n&lt;/div&gt;\n&quot;"></div><div class="Project1758206835" data-conditions="[{&quot;state&quot;:&quot;live&quot;}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;p2\&quot; id=\&quot;banner\&quot;&gt;\n&lt;p class=\&quot;tiny_type no-margin\&quot;&gt;\nThis project will be funded on\n&lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;llll z\&quot; datetime=\&quot;2013-10-19T13:51:21-04:00\&quot;&gt;Sat, Oct 19 2013 1:51 pm EDT&lt;/time&gt;.\n&lt;/p&gt;\n&lt;/div&gt;\n&quot;"></div></div>
+
+<div class="NS_projects__rightcol_projectby bg-blue-light rounded">
+<div class="p2 clearfix">
+<div class="avatar inline-block align-middle">
+<a href="/projects/1311956304/the-ballads-of-reemus-2-2d-point-and-click-adventu/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography"><img alt="Jaybio.small" class="avatar-small" height="80" src="https://s3.amazonaws.com/ksr/avatars/1959392/jaybio.small.jpg?1376684069" width="80" />
+</a></div>
+<div class="creator-name inline-block align-middle ml1">
+<h6 class="mb1">Project by</h6>
+<h5 class="mb1">
+<a href="/projects/1311956304/the-ballads-of-reemus-2-2d-point-and-click-adventu/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">Jay Ziebarth</a>
+</h5>
+<p class="location h6 bold mb1">
+<a href="/discover/places/hamilton-on-ca">Hamilton, Canada</a>
+</p>
+</div>
+</div>
+<div class="creator-details pl2 pr2 pb1">
+<ul class="list-simple h5 mb1">
+<li class="projects">
+<span class="ss-icon ss-kickstarter grey-dark margin-right"></span>
+<span class="text">
+First created
+<span class="divider">&middot;</span>
+<a href="/profile/1311956304/backed" class="green-dark bold more-button remote_modal_dialog" data-modal-title="Projects backed by Jay Ziebarth">28 backed</a>
+</span>
+</li>
+<li class="facebook-connected">
+<span class="ss-icon ss-facebook facebook color-facebook margin-right"></span>
+<span class="text">
+<a href="https://www.facebook.com/734835472" class="popup" target="_blank">Jay Ziebarth</a>
+<span class="number h6">
+911
+friends
+</span>
+</span>
+
+</li>
+<li class="links">
+<span class="ss-icon ss-globe margin-right grey-dark"></span>
+<span class="text">
+<a href="http://www.zeebarf.com" class="popup" rel="nofollow" target="_blank">zeebarf.com</a>
+</span>
+</li>
+</ul>
+</div>
+<div class="footer center h5 bold clearfix rounded-bottom clip">
+<a href="/projects/1311956304/the-ballads-of-reemus-2-2d-point-and-click-adventu/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">See full bio</a>
+<a href="/projects/1311956304/the-ballads-of-reemus-2-2d-point-and-click-adventu/messages/new?message%5Bto%5D=1311956304" class="remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Send a message to Jay Ziebarth">Contact me</a>
+
+</div>
+</div>
+
+<ul class="NS-projects-rightcol-rewards rounded clip list mt2" data-reward-count="18" id="what-you-get">
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money cad ">$10</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Fancy HD desktop wallpaper and I&#39;ll whisper a silent &quot;thank you&quot; to you in my head when I go to bed tonight.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-06-01">Jun 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money cad ">$12</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+50 backers
+</span>
+<span class="bg-grey no-wrap pl1 pr1 sold-out">
+All gone!
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>$11.59 USD - EARLY BIRD GETS THE GAME ABOUT WORMS - A digital download of the final game for your choice of PC, Mac or Linux + Download of both Reemus Soundtracks.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-06-01">Jun 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money cad ">$15</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+195 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>$14.52 USD - GET THE GAME - A digital download of the final game for your choice of PC, Mac or Linux.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-06-01">Jun 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money cad ">$25</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+66 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>$24.22 USD - GET THE GAME, SOUNDTRACK AND BETA TEST - A digital download of game (includes YOUR NAME in the Thank You Credits) + Become a BETA Tester + Download of both Reemus Soundtracks.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-06-01">Jun 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money cad ">$35</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+30 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>$33.90 USD - NAME AN NPC CHARACTER - Those characters milling in the background, going about their daily business. Help them step out of obscurity and bless them with a name of their own. Also includes Game Download + BETA Tester + Soundtracks. ** Name must be in good taste and not violate any copyrights.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-06-01">Jun 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money cad ">$45</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+14 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>$43.59 USD - MAKE AN NPC TALK  - Name an NPC character AND give them a one sentence (140 characters MAX) line of dialogue. The character will say this line anytime the player talks to them. Also includes Game Download + BETA Tester + Soundtracks. ** Name and Dialogue must be in good taste and not violate any copyrights.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-06-01">Jun 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money cad ">$55</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+27 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>$53.18 USD - AUTOGRAPHED COLLECTOR&#39;S EDITION  - A DVD hard copy in a case, personally autographed. Also includes Game Download + BETA Tester  + Soundtracks. ** Name and dialogue must be in good taste and not violate any copyrights.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-06-01">Jun 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $10 CAD to ship outside Canada
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money cad ">$65</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+5 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>$62.66 USD - COLLECTOR&#39;S EDITION &amp; CHARACTER - A DVD hard copy in a case, personally autographed. PLUS Name an NPC character AND give them a one sentence (140 characters MAX) line of dialogue. The character will say this line anytime the player talks to them. Also includes Game Download + BETA Tester + Soundtracks. ** Name and dialogue must be in good taste and not violate any copyrights.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-06-01">Jun 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $10 CAD to ship outside Canada
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money cad ">$100</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+3 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>$94.99 USD - CREATE AN INVENTORY ITEM -  Create and name your own inventory item in the game. Your item will be usable for all other players and may even end up in a puzzle solution! Also includes Game Download + BETA Tester  + Soundtracks. ** Name must be in good taste and not violate any copyrights.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-06-01">Jun 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money cad ">$120</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+2 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>$115.68  USD - COLLECTOR&#39;S &amp; INVENTORY ITEM - A DVD hard copy in a jewel case, personally autographed. PLUS create and name your own inventory item in the game. Your item will be usable for all other players and may even end up in a puzzle solution! Also includes Game Download + BETA Tester  + Soundtracks. ** Name must be in good taste and not violate any copyrights.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-06-01">Jun 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $10 CAD to ship outside Canada
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money cad ">$200</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>TOO MANY KICKSTARTERS! AKA THE BOB TIER: For anyone looking to give massive support without the fear of adding more games to your collection or trinkets to your shelf. This is a strictly &quot;Thank you&quot; tier. I promise to send you nothing in return, only my gratitude. You get to sleep at night knowing you&#39;ve helped fund a new game but without the guilt of getting a game you&#39;ll never play.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-06-01">Jun 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money cad ">$250</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+15 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>$237.48 USD - BECOME A CHARACTER - Send a picture and I&#39;ll create a character with your likeness. Give your character a name and become part of Reemus lore. Also includes Game Download + BETA Tester  + Soundtracks. ** Name must be in good taste and not violate any copyrights.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-06-01">Jun 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money cad ">$270</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+8 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>$260.28 USD - COLLECTOR&#39;S &amp; YOU AS A CHARACTER - A DVD hard copy in a jewel case, personally autographed. PLUS Send a picture and I&#39;ll create a character with your likeness. Give your character a name and become part of Reemus lore. Also includes Game Download + BETA Tester  + Soundtracks. ** Name must be in good taste and not violate any copyrights.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-06-01">Jun 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $10 CAD to ship outside Canada
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money cad ">$500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(10 left of 10)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>$474.97 USD - CREATE YOUR OWN QUEST - Create and name an NPC with your likeness, give your NPC a line of dialogue and create and name your own Inventory items. With your character and items create a small sidequest for Reemus &amp; Liam to embark on. The quest will be in the form of &quot;Use X on Y to get Z&quot; from there I will connect the quest into the game and may tinker with a few details but the XYZ is all yours to create! Also includes Game Download + BETA Tester  + Soundtracks. ** Name and dialogue must be in good taste and not violate any copyrights.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-06-01">Jun 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money cad ">$520</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+2 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>$501.28 USD - COLLECTOR&#39;S &amp; YOUR QUEST - A DVD hard copy in a jewel case, personally autographed. PLUS Create and name an NPC with your likeness, give your NPC a line of dialogue and create and name your own Inventory items. With your character and items create a small sidequest for Reemus &amp; Liam to embark on. The quest will be in the form of &quot;Use X on Y to get Z&quot; from there I will connect the quest into the game and may tinker with a few details but the XYZ is all yours to create! Also includes Game Download + BETA Tester  + Soundtracks. ** Name and dialogue must be in good taste and not violate any copyrights.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-06-01">Jun 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $10 CAD to ship outside Canada
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money cad ">$1,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(10 left of 10)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>$968.71 USD - CREATE YOUR OWN BALLAD - Write your own 4 line poem that I will turn into a ballad and have one of the in-game bards sing. I will professionally record the song and give you a digital MP3 copy to have as well. Also includes Game Download + Autographed Collector&#39;s Edition (shipping included) + BETA Tester  + Soundtracks. ** Name and song must be in good taste and not violate any copyrights.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-06-01">Jun 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money cad ">$1,500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(10 left of 10)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>$1452.99 USD - BECOME A BARD - Create and name your own NPC with your likeness, write your own 4 line poem that I will record as a real song. Your Bard NPC will sing the song whenever someone clicks.   I&#39;ll also send you a digital MP3 copy to have. Also includes Game Download + Autographed Collector&#39;s Edition (shipping included) + BETA Tester  + Soundtracks. ** Name and song must be in good taste and not violate any copyrights.
+***If you have the ability to record our own voice, you can sing the song yourself and I&#39;ll set it to music.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-06-01">Jun 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money cad ">$2,500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(5 left of 5)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>$2421.66 USD - ROCK ME LIAM - Liam the bear will write a heroic ballad about your life and sing it. You supply the details of your life you want included in the song, I will professionally record it and send it to you in MP3 format. Liam will perform the song as an Easter Egg in the game. Have your exploits immortalized in song forever! Also includes Game Download + Autographed Collector&#39;s Edition (shipping included) + BETA Tester  + Soundtracks. ** lyrical content must be in good taste and not violate any copyrights.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-06-01">Jun 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+</ul>
+
+<div class="p2" id="meta">
+<h5>Funding period</h5>
+<p class="tiny_type">
+<time class="js-adjust" data-format="ll" datetime="2013-09-19T13:51:21-04:00">Sep 19, 2013</time> - 
+<time class="js-adjust" data-format="ll" datetime="2013-10-19T13:51:21-04:00">Oct 19, 2013</time>
+(30 days)
+</p>
+</div>
+</div>
+
+</div>
+
+<a href="#" id="video_mode_tab" style="display: none;">
+View in Video Mode
+</a>
+
+</div>
+</div>
+
+
+</div>
+
+<div class="h5 bg-green-dark" id="mega-footer-wrap">
+<div class="bg-green-dark white full-height" id="footer-newsletter-signup">
+<div class="container py4">
+<div class="grid_8 prefix_4 suffix_4 center mt4">
+<h2>
+Eureka! You've found
+<br>
+our little secret.
+</h2>
+<p>Sign up for our Happening email for all the inside info about arts and culture in the Kickstarter universe and beyond.</p>
+<div class="newsletter_signup">
+<form accept-charset="UTF-8" action="/newsletters/happening/signup" class="overlabels" method="post"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /><input class="hidden" name="authenticity_token" type="hidden" value="CuIPc5HaWPCaUCKq3Yvhj0k5EPRNHWZPHF2mjZm3J/o=" /></div><input class="hidden" id="location" name="location" type="hidden" value="footer" />
+<textarea class="hide textarea" id="comment" name="comment">
+</textarea>
+<div class="field newsletter">
+<label class="overlabel z1 overlabel-newsletter">Email address</label>
+<input class="text" id="email" name="email" type="text" />
+</div>
+<input class="button button_green submit" name="commit" type="submit" value="Submit" />
+</form>
+
+</div>
+
+</div>
+</div>
+</div>
+<div class="container relative" id="mega-footer">
+<span class="scissors icon-scissors-1"></span>
+<div class="grid_16 alpha omega pt4 pb2" id="mega-footer-links">
+<div class="grid_4 link-group">
+<h5 class="white">About us</h5>
+<ul class="list">
+<li><a href="/year/2013/?ref=footer">2013 highlights</a></li>
+<li><a href="/year/2012?ref=footer">2012 highlights</a></li>
+<li><a href="/team?ref=footer">Who we are</a></li>
+<li><a href="/jobs?ref=footer">Jobs</a></li>
+<li><a href="/press?ref=footer">Press</a></li>
+<li><a href="/help/stats?ref=footer">Stats</a></li>
+<li><a href="/newsletters/weekly">Projects we love</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group">
+<h5><a href="/help?ref=footer" class="white">Help</a></h5>
+<ul class="list">
+<li><a href="/hello?ref=footer">What is Kickstarter?</a></li>
+<li><a href="/help?ref=footer">FAQ</a></li>
+<li><a href="/contact?ref=footer">Support</a></li>
+<li><a href="/help/school?ref=footer">Kickstarter School</a></li>
+<li><a href="/terms-of-use?ref=footer">Terms of Use</a></li>
+<li><a href="/privacy?ref=footer">Privacy Policy</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group alpha omega suffix_1">
+<h5 class="alpha"><a href="/discover/advanced?ref=footer" class="white">Discover</a></h5>
+<ul class="column column-0 grid_2 list">
+<li><a href="/discover/categories/art?ref=footer">Art</a></li>
+<li><a href="/discover/categories/comics?ref=footer">Comics</a></li>
+<li><a href="/discover/categories/dance?ref=footer">Dance</a></li>
+<li><a href="/discover/categories/design?ref=footer">Design</a></li>
+<li><a href="/discover/categories/fashion?ref=footer">Fashion</a></li>
+<li><a href="/discover/categories/film%20&amp;%20video?ref=footer">Film &amp; Video</a></li>
+<li><a href="/discover/categories/food?ref=footer">Food</a></li>
+</ul>
+<ul class="column column-1 grid_2 list">
+<li><a href="/discover/categories/games?ref=footer">Games</a></li>
+<li><a href="/discover/categories/music?ref=footer">Music</a></li>
+<li><a href="/discover/categories/photography?ref=footer">Photography</a></li>
+<li><a href="/discover/categories/publishing?ref=footer">Publishing</a></li>
+<li><a href="/discover/categories/technology?ref=footer">Technology</a></li>
+<li><a href="/discover/categories/theater?ref=footer">Theater</a></li>
+</ul>
+</div>
+<div class="grid_3 link-group">
+<h5 class="white">Hello</h5>
+<ul class="list">
+<li>
+<a href="https://twitter.com/kickstarter"><span class="ss-icon ss-social-regular ss-twitter"></span>
+Twitter
+</a></li>
+<li>
+<a href="https://www.facebook.com/Kickstarter"><span class="ss-icon ss-social-regular ss-facebook"></span>
+Facebook
+</a></li>
+<li>
+<a href="http://kickstarter.tumblr.com"><span class="ss-icon ss-social-regular ss-tumblr"></span>
+Tumblr
+</a></li>
+<li>
+<a href="http://instagram.com/kickstarter"><span class="ss-icon ss-social-regular ss-instagram"></span>
+Instagram
+</a></li>
+<li>
+<a href="https://vine.co/Kickstarter"><span class="ss-icon ss-social-regular ss-vine"></span>
+Vine
+</a></li>
+<li>
+<a href="/blog?ref=footer">Blog</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="grid_16 py4" id="mega-footer-bottom">
+<div class="logo left">
+<a href="/" class="grey-dark"><span class="ss-icon h3">KICKSTARTER</span>
+</a></div>
+<p class="right h5 grey-dark">
+&copy;
+2014
+Kickstarter, Inc.
+</p>
+</div>
+</div>
+</div>
+
+<script>
+  //<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    var analytics_vars = { google_analytics_id : "UA-7621056-1", logged_in : "false", social_user: "false" }
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.mixpanel_id = '75b1d24a516ecfc955eadfadc4910661';
+    window.mixpanel_debug = false;
+  //]]>
+</script>
+
+
+<noscript>
+<img alt="Quantcast" border="0" height="1" src="//secure.quantserve.com/pixel/p-34IbSpw2K94Sg.gif" style="display:none" width="1" />
+</noscript>
+
+
+<script>
+  //<![CDATA[
+    window.benchmark = (typeof window.performance == 'object' && typeof window.performance.mark == 'function');
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    (function (root) {
+      function instrument_function (original) {
+        return function () {
+          try {
+            return original.apply(this, arguments);
+          } catch (e) {
+            if (e.stack && root.Honeybadger) {
+              Honeybadger.notify(e, {
+                current_project : root.current_project,
+                current_user : root.current_user
+              });
+            }
+            throw(e);
+          }
+        };
+      }
+      root.instrument_function = instrument_function;
+    }(this));
+  //]]>
+</script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+
+<script>
+  //<![CDATA[
+    (function(){function c(a){this.local_start_time=new Date;this.settings={cookie_name:"request_time"};for(var b in a)this.settings[b]=a[b];this.get_remote_offset()}c.prototype.get_remote_offset=function(){this.cookie_value=this.read_cookie();var a=new Date(this.cookie_value);if(!this.cookie_value||"Invalid Date"===a.toString()){if(this.remote_offset=this.read_cookie("local_offset"))this.remote_offset=parseInt(this.remote_offset,10)}else this.remote_offset=a-this.local_start_time;"undefined"!==typeof this.remote_offset&& !isNaN(this.remote_offset)?(document.cookie="local_offset="+this.remote_offset+"; path=/",this.is_set=!0):this.is_set=!1};c.prototype.time_units=[["milliseconds",1],["seconds",1E3],["minutes",6E4],["hours",36E5],["days",864E5]];c.prototype.get_units_in_interval=function(a,b){var d=a.replace(/^\w/,function(d){return"get"+d.toUpperCase()});return b[d]()};c.prototype.milliseconds_in_day=function(a){"undefined"===typeof a&&(a=new Date);for(var b=0,d=this.time_units.length-2;0<=d;d--)b+=this.get_units_in_interval(this.time_units[d][0], a)*this.time_units[d][1];return b};c.prototype.milliseconds_in_interval=function(a,b){return this.milliseconds_in_day(b)%a};c.prototype.milliseconds_to_next_interval=function(a,b){return a-this.milliseconds_in_interval(a,b)};c.prototype.pluralize=function(a,b){1===b&&(a=a.replace(/s$/,""));return a};c.prototype.read_cookie=function(a){for(var b=window.document.cookie.split(";"),a=(a||this.settings.cookie_name)+"=",d=0;d<b.length;d++){for(var e=b[d];" "==e.charAt(0);)e=e.substring(1,e.length);if(0== e.indexOf(a))return b=e.substring(a.length,e.length),decodeURIComponent(b).replace(/\+/g," ")}return null};c.prototype.destroy_cookie=function(a){var b=new Date;a||(a=this.settings.cookie_name);b.setTime(b.getTime()-864E5);window.document.cookie=a+"=; expires="+b.toGMTString()+"; path=/"};c.prototype.get_remote_time=function(){var a=new Date,b=a.getTime()+this.remote_offset;return a=a.setTime(b)};window.ksr_page_clock=new c})(); (function(){function c(d,a,b){if(d){this.options={unit_base:{seconds:119,minutes:119,hours:72,days:0},end_phrase:d.getAttribute("data-word")||"to go",count_down:d.getAttribute("data-dynamic")||!1};for(k in b)this.options[k]=b[k];this.clock=a;this.time_units=this.clock.time_units.slice(1);this.element=d;this.clock.is_set&&this.attach()}}function a(){this.elements=[];this.attach()}var b=function(d,a){var b=a||window.document.body,c=d.split("."),g=c[c.length-1],c=1<c.length&&c[0]?c[0]:"*";if(window.document.getElementsByClassName)return b.getElementsByClassName(g); if(b.querySelectorAll)return b.querySelectorAll(d);for(var c=b.getElementsByTagName(c),h=[],i=0,f;f=c[i];i++)b=RegExp("(^|\\s)"+g+"(\\s|$)"),(""+f.className).match(b)&&h.push(f);return h};c.prototype.get_remaining_time=function(){var d=this.remote_end_time-this.clock.get_remote_time();0>d&&(d=0);return d};c.prototype.get_current_unit=function(){for(var d,a=0;a<this.time_units.length&&!(d=this.time_units[a],this.get_remaining_time()<=this.options.unit_base[d[0]]*d[1]);a++);return d};c.prototype.update_element= function(){var a=this.get_current_unit(),b=Math.floor(this.get_remaining_time()/a[1]);isNaN(b)||(this.number_element.innerHTML=b,this.text_element.innerHTML=this.clock.pluralize(a[0],b)+" "+this.options.end_phrase)};c.prototype.valid=function(){return!(!this.number_element||!this.text_element)};c.prototype.attach=function(){function a(){c.update_element();if(c.options.count_down&&0<c.get_remaining_time()){var b=c.get_current_unit();this.timeout=window.setTimeout(a,c.clock.milliseconds_to_next_interval(b[1]))}} var c=this;if(this.remote_end_time_string=this.element.getAttribute("data-end_time"))this.remote_end_time_string.match(/^\d+$/)?(this.remote_end_time=new Date,this.remote_end_time.setTime(this.remote_end_time_string)):this.remote_end_time=new Date(this.remote_end_time_string),this.number_element=b(".num",this.element)[0],this.text_element=b(".text",this.element)[0],this.element.ksr_page_timer=!0,this.valid()&&a()};c.prototype.cancel=function(){this.timeout&&clearTimeout(this.timeout)};a.prototype.loading= !0;a.prototype.stop_finding=function(){this.attach_timers();this.loading=!1;document.addEventListener?document.removeEventListener("DOMContentLoaded",this.stop_finding,!1):document.attachEvent&&"complete"===document.readyState&&document.detachEvent("onreadystatechange",this.stop_finding)};a.prototype.bind_ready=function(){var a=this,b=function(){a.stop_finding.call(a)};document.addEventListener?(document.addEventListener("DOMContentLoaded",b,!1),window.addEventListener("load",b,!1)):document.attachEvent&& (document.attachEvent("onreadystatechange",b),window.attachEvent("onload",b))};a.prototype.attach_timers=function(){for(var a=b("div.ksr_page_timer"),e=0;e<a.length;e++)a[e].ksr_page_timer||(new c(a[e],window.ksr_page_clock),this.elements.push(a[e]))};a.prototype.attach=function(){var a=this;this.bind_ready();(function(){a.attach_timers();a.loading&&window.setTimeout(function(){a.attach_timers()},200)})()};window.ProjectTimer=c;new a})();
+  //]]>
+</script>
+
+<script class="template" id="template-widgets__video_embed_code" type="text/x-tmpl-mustache"><iframe width="{{width}}" height="{{height}}" src="{{{path}}}" frameborder="0" scrolling="no"> </iframe>
+</script><script class="template" id="template-projects__baseball_card_tall" type="text/x-tmpl-mustache"><div class="project-card-wrap project-card-wrap-tall border bg-white rounded clip">
+  <div class="project-card relative project-live {{#successful?}}successful{{/successful?}}">
+    <div class="project-thumbnail pt1 pl1 pr1">
+      <a href="{{urls.web.project}}" target="">
+        <img alt="Photo-little" class="projectphoto-little" src="{{photo.little}}" class="fit">
+      </a>
+    </div>
+    <div class="project-card-interior p1 h6 grey-dark">
+      <h6 class="project-title">
+        <a href="{{urls.web.project}}" target="" class="green-dark">{{name}}</a>
+      </h6>
+      <p class="mb1 ellipsis">
+        by
+        {{creator.name}}
+      </p>
+      <p class="blurb">
+        {{blurb}}
+      </p>
+    </div>
+    <div class="absolute-bottom bg-white rounded-bottom">
+
+      {{#location}}
+        <ul class="p1 list project-meta no-margin h6">
+          <li class="ellipsis">
+            <a href="{{location.urls.web.discover}}" data-location="{{location_json}}" class="grey-dark">
+              <span class="ss-icon ss-location"></span>
+              <span class="location-name">{{location.displayable_name}}</span>
+            </a>
+          </li>
+        </ul>
+      {{/location}}
+
+      <div class="project-stats-wrap pb1 pl1 pr1">
+
+        {{#failed?}}
+          <div class='project-status project-failed h6'>
+            <strong> Funding Unsuccessful</strong><br />
+            <span class="grey-dark">Project ended on {{formatted_deadline}}</span>
+          </div>
+        {{/failed?}}
+
+        {{#canceled?}}
+          <div class='project-status project-canceled h6'>
+            <strong> Funding Canceled</strong><br />
+            <span class="grey-dark">Project canceled on {{formatted_state_changed_at}}</span>
+          </div>
+        {{/canceled?}}
+
+        {{#successful?}}
+          <div class='project-pledged-successful bg-green white h6 pl1 pr1 mb1'>
+            <strong>Successful!</strong>
+          </div>
+        {{/successful?}}
+
+        {{#live_or_successful?}}
+          {{#live?}}
+            <div class="project-pledged-wrap bg-grey clip mb1">
+              <div class="project-pledged bg-green full-height" style="width: {{percent_raised_to_100}}%"></div>
+            </div>
+          {{/live?}}
+          <ul class="project-stats list no-margin h6 no-wrap">
+            <li class="first funded inline-block mr1">
+              <strong class="block h6">{{percent_raised_rounded}}%</strong>
+              <span class="grey-dark">funded</span>
+            </li>
+            <li class="pledged inline-block mr1">
+              <strong class="block h6">{{currency_symbol}}{{formatted_money}}</strong>
+              <span class="grey-dark">pledged</span>
+            </li>
+            {{#successful?}}
+              <li class="last successful inline-block">
+                <strong class="block h6">Funded</strong>
+                <div class="deadline grey-dark">{{formatted_deadline}}</div>
+              </li>
+            {{/successful?}}
+            {{#live?}}
+              <li class="last ksr_page_timer inline-block" data-end_time="{{javascript_deadline}}">
+                <strong class="block h6">
+                  <div class="num">30</div>
+                </strong>
+                <div class="span text grey-dark" data-word="left">days to go</div>
+              </li>
+            {{/live?}}
+          </ul>
+        {{/live_or_successful?}}
+      </div>
+    </div>
+  </div>
+</div>
+
+{{#friends_backing?}}
+  <div class="friend_project_context">
+    <div class="friend_facepile">
+      {{#truncated_friends}}
+        <img src="{{avatar.thumb}}" class="{{#has_metadata?}}small{{/has_metadata?}}">
+      {{/truncated_friends}}
+    </div>
+    <p class="friend_namepile">
+      {{{escaped_sentence}}}
+    </p>
+  </div>
+{{/friends_backing?}}
+</script><script class="template" id="template-projects__video_mode" type="text/x-tmpl-mustache"><a href='#' id='video_mode_close' class='close_button z2'><span class='ss-icon ss-delete'></span></a>
+
+<div class='title_card z1 {{context_classes}}' style="display:none;">
+  <div class='interior'>
+    <h2 class='project_title normal_weight'>{{name}}</h2>
+    <p class='blurb'>{{blurb}}</p>
+    <nav class='bar'>
+      <a id='play_button' class='left play' href='#'>
+        <span class='play_active'>
+          <span class='ss-icon ss-play'></span>
+          Play
+        </span>
+        <span class='pause_active'>
+          <span class='ss-icon ss-pause'></span>
+          Pause
+        </span>
+      </a>
+      {{#logged_in}}
+        <div class='remind right'>
+          {{#if_not_starred}}
+            <a class='follow' href='{{urls.web.project}}/watch'><span class='ss-icon ss-star'></span></a>
+          {{/if_not_starred}}
+          {{#if_starred}}
+            <a class='unfollow' href='{{urls.web.project}}/unwatch'><span class='ss-icon ss-star active'></span></a>
+          {{/if_starred}}
+        </div>
+      {{/logged_in}}
+      <a class='right explore button button_green small' href='#'>Explore this project</a>
+    </nav>
+  </div>
+</div>
+
+<div class='channel_controls z1'>
+  <a href='#' class='{{#playlist_is_location}}selected {{/playlist_is_location}}location'>Something else near {{location.first_name}} <span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_featured}}selected {{/playlist_is_featured}}featured'>Something different<span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_category}}selected {{/playlist_is_category}}category'>Something else in {{category.name}} <span class='ss-icon ss-navigateright'></span></a>
+</div>
+
+<div class='project_video' style='background-image: url('{{photo.full}}')'>
+  <div class='cover'>
+    <video>
+      <source src='{{video.high}}' type='video/mp4'/>
+      <source src='{{video.webm}}' type='video/webm'/>
+    </video>
+  </div>
+</div>
+</script><script class="template" id="template-site__video_mode_fourohfour" type="text/x-tmpl-mustache"><section class='four_oh_four'>
+  <p class='big_type'>
+    Looks like you've reached the end of the line! <br />Check out <a class="another" href='#'>another channel</a> or <a href='/discover'>browse projects in discover</a>.
+  </p>
+</section>
+</script>
+
+<script id="schwamm_formatting_options" type="text/javascript">
+//<![CDATA[
+(function(){window.formatters = window.formatters || {}; var formatting_options = {"distance_date_intervals":[[5,"just now"],[29,"less than a minute ago"],[89,"1 minute ago"],[2640,"%m minutes ago"],[5340,"about 1 hour ago"],[82800,"about %h hours ago"],[147600,"1 day ago"],[604800,"%d days ago"],[15552000,"on %t"],[0,"on %y"]],"currency_symbol_mappings":{"AFN":"\u060b","ALL":"Lek","ARS":"$","AUD":"$","AWG":"\u0192","AZN":"\u043c\u0430\u043d","BAM":"KM","BBD":"$","BGN":"\u043b\u0432","BMD":"$","BND":"$","BOB":"$b","BRL":"R$","BSD":"$","BWP":"P","BYR":"p.","BZD":"BZ$","CAD":"$","CLP":"$","CNY":"\u00a5","COP":"$","CRC":"\u20a1","CUP":"\u20b1","CZK":"K\u010d","DKK":"kr","DOP":"RD$","EGP":"\u00a3","EUR":"\u20ac","FJD":"$","FKP":"\u00a3","GBP":"\u00a3","GIP":"\u00a3","GTQ":"Q","GYD":"$","HKD":"$","HNL":"L","HRK":"kn","HUF":"Ft","IDR":"Rp","ILS":"\u20aa","IRR":"\ufdfc","ISK":"kr","JMD":"J$","JPY":"\u00a5","KGS":"\u043b\u0432","KHR":"\u17db","KPW":"\u20a9","KRW":"\u20a9","KYD":"$","KZT":"\u043b\u0432","LAK":"\u20ad","LBP":"\u00a3","LKR":"\u20a8","LRD":"$","LTL":"Lt","LVL":"Ls","MKD":"\u0434\u0435\u043d","MNT":"\u20ae","MUR":"\u20a8","MXN":"$","MYR":"RM","MZN":"MT","NAD":"$","NGN":"\u20a6","NIO":"C$","NOK":"kr","NPR":"\u20a8","NZD":"$","OMR":"\ufdfc","PAB":"B/.","PEN":"S/.","PHP":"\u20b1","PKR":"\u20a8","PLN":"z\u0142","PYG":"Gs","QAR":"\ufdfc","RON":"lei","RSD":"\u0414\u0438\u043d.","RUB":"\u0440\u0443\u0431","SAR":"\ufdfc","SBD":"$","SCR":"\u20a8","SEK":"kr","SGD":"$","SHP":"\u00a3","SOS":"S","SRD":"$","SVC":"$","SYP":"\u00a3","THB":"\u0e3f","TRY":"TL","TTD":"TT$","TWD":"NT$","UAH":"\u20b4","USD":"$","UYU":"$U","UZS":"\u043b\u0432","VEF":"Bs","VND":"\u20ab","YER":"\ufdfc","ZAR":"R"},"currency_trailing_code_mappings":{"AUD":true,"CAD":true,"NZD":true,"USD":true},"currency_formats":["money","shorter_money"]}; for (key in formatting_options) {window.formatters[key] = formatting_options[key]};}());
+//]]>
+</script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("begin_base.js_tag");}
+  //]]>
+</script>
+<script src="https://d297h9he240fqh.cloudfront.net/assets/packages/base-45cdab84617ddfb8905b7cddc8500c19.js" type="text/javascript"></script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("end_base.js_tag");}
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    document.domain='kickstarter.com';
+  //]]>
+</script>
+
+<iframe height="0" id="api_xdreceiver" src="https://api.kickstarter.com/xdreceiver/85e6.html" style="display: none;" width="0"></iframe>
+
+
+
+<div id="fb-root"></div>
+<script>
+  //<![CDATA[
+    var channelUrl = window.location.protocol + "//" + window.location.host + "/channel.html",
+      skip_autologin = $('body').is('.skip_autologin');
+    
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId: window.fb_app_id,
+        channelUrl: channelUrl,
+        status: true,    // check login status
+        cookie: true,    // enable cookies to allow the server to access the session
+        xfbml: true,     // parse XFBML
+        logging: false   // turn off logging
+      });
+    
+      FB.getLoginStatus(function (response) {
+        if (response.status === 'connected') {
+          if (read_cookie("logout_from_fb")) {
+            FB.logout();
+            destroy_cookie("logout_from_fb");
+          } else if (!skip_autologin) {
+            $.get("/fb/autologin", {'fbsr': response.authResponse.signedRequest});
+          } else if (false && 0 == response.authResponse.userID) {
+            $.get("/fb/refresh", {'fbsr': response.authResponse.signedRequest});
+          }
+        } else {
+          if (read_cookie("logout_from_fb")) {
+            destroy_cookie("logout_from_fb");
+          }
+        }
+      })
+    
+      $(document).trigger('fb:loaded');
+    };
+    
+    
+    // Load the SDK Asynchronously
+    (function(d){
+      var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+      js = d.createElement('script'); js.id = id; js.async = true;
+      js.src = "//connect.facebook.net/en_US/all.js";
+      d.getElementsByTagName('head')[0].appendChild(js);
+    }(document));
+  //]]>
+</script>
+
+
+</body>
+</html>

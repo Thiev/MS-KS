@@ -1,0 +1,2549 @@
+<!DOCTYPE html>
+<html class="projects_show  fontface no-js" lang="en">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# kickstarter: http://ogp.me/ns/fb/kickstarter#">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-5.newrelic.com","errorBeacon":"jserror.newrelic.com","licenseKey":"b04b883ad2","applicationID":"11086","transactionName":"cFteRUULX1wHFhtIEFxeVVJDFxxDCgtD","queueTime":12,"applicationTime":1338,"ttGuid":"","agentToken":null,"agent":"js-agent.newrelic.com/nr-411.min.js"}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"Vw4BVEVSCQMIUg=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e){function n(t,e,n){n||(n={});for(var r=o[t],a=r&&r.length||0,s=n[i]||(n[i]={}),u=0;a>u;u++)r[u].apply(s,e);return s}function r(t,e){var n=o[t]||(o[t]=[]);n.push(e)}var o={},i="nr@context";e.exports={on:r,emit:n}},{}],2:[function(t){function e(t,e,n,i,s){return u?u-=1:r("err",[s||new UncaughtException(t,e,n)]),"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t(5),a=window.onerror,s=!1,u=0;t("loader").features.push("err"),window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(d){"stack"in d&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(4),s=!0)}i.on("fn-start",function(){s&&(u+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&u>0&&(u-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:4,3:3,4:6,5:1,6:14,handle:"D5DuLP",loader:"G9z0Bl"}],3:[function(t){function e(t){r.inPlace(t,["addEventListener","removeEventListener"],"-",n)}function n(t){return t[1]}var r=t(1),o=(t(3),t(2));if(e(window),"getPrototypeOf"in Object){for(var i=document;i&&!i.hasOwnProperty("addEventListener");)i=Object.getPrototypeOf(i);i&&e(i);for(var a=XMLHttpRequest.prototype;a&&!a.hasOwnProperty("addEventListener");)a=Object.getPrototypeOf(a);a&&e(a)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&e(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=e["nr@wrapped"]?t[1]=e["nr@wrapped"]:e["nr@wrapped"]=t[1]=r(e,"fn-"):"function"==typeof e.handleEvent&&r.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:15,2:1,3:14}],4:[function(t){var e=(t(3),t(1)),n=t(2);e.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=e(t[0],"fn-")})},{1:15,2:1,3:14}],5:[function(t){function e(t){var e=t[0];"string"==typeof e&&(e=new Function(e)),t[0]=n(e,"fn-")}var n=(t(3),t(1)),r=t(2);n.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",e)},{1:15,2:1,3:14}],6:[function(t){function e(){o.inPlace(this,s,"fn-")}function n(t,e){o.inPlace(e,["onreadystatechange"],"fn-")}function r(t,e){return e}var o=t(1),i=t(2),a=window.XMLHttpRequest,s=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];window.XMLHttpRequest=function(t){var n=new a(t);try{i.emit("new-xhr",[],n),o.inPlace(n,["addEventListener","removeEventListener"],"-",function(t,e){return e}),n.addEventListener("readystatechange",e,!1)}catch(r){try{i.emit("internal-error",r)}catch(s){}}return n},window.XMLHttpRequest.prototype=a.prototype,o.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",r),i.on("send-xhr-start",n),i.on("open-xhr-start",n)},{1:15,2:1}],7:[function(t){function e(){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;u>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,d="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=e(d);if(f&&(r.rxSize=f),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}t("loader").features.push("xhr");var o=t("handle"),i=t(1),a=t(5),s=["load","error","abort","timeout"],u=s.length,d=t(2);t(3),t(4),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var d=e(o);d&&(r.txSize=d)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",e)}catch(r){}}};for(var f=0;u>f;f++)n.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&e()},{1:8,2:11,3:3,4:6,5:1,handle:"D5DuLP",loader:"G9z0Bl"}],8:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e){var n=r[t];return n?n.apply(this,e):(o[t]||(o[t]=[]),void o[t].push(e))}var r={},o={};e.exports=n,n.queues=o,n.handlers=r},{}],11:[function(t,e){function n(t){if(!t||"object"!=typeof t&&"function"!=typeof t)return-1;if(t===window)return 0;if(o.call(t,"__nr"))return t.__nr;try{return Object.defineProperty(t,"__nr",{value:r,writable:!0,enumerable:!1}),r}catch(e){return t.__nr=r,r}finally{r+=1}}var r=1,o=Object.prototype.hasOwnProperty;e.exports=n},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&u&&u.body){p.proto="https"===c.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=u.createElement("script");e.src=p.proto+t.agent,u.body.appendChild(e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,u=s.document,d="addEventListener",f="attachEvent",c=(""+location).split("?")[0],p=e.exports={offset:i(),origin:c,features:[]};u[d]?(u[d]("DOMContentLoaded",o,!1),s[d]("load",n,!1)):(u[f]("onreadystatechange",r),s[f]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],14:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],15:[function(t,e){function n(t,e,r,s){function nrWrapper(){try{var n,a=u(arguments),d=this,f=r&&r(a,d)||{}}catch(c){i([c,"",[a,d,s],f])}o(e+"start",[a,d,s],f);try{return n=t.apply(d,a)}catch(p){throw o(e+"err",[a,d,p],f),p}finally{o(e+"end",[a,d,n],f)}}return a(t)?t:(e||(e=""),nrWrapper[n.flag]=!0,nrWrapper)}function r(t,e,r,o){r||(r="");var i,s,u,d="-"===r.charAt(0);for(u=0;u<e.length;u++)s=e[u],i=t[s],a(i)||(t[s]=n(i,d?s+r:r,o,s,t))}function o(t,e,n){try{s.emit(t,e,n)}catch(r){i([r,t,e,n])}}function i(t){try{s.emit("internal-error",t)}catch(e){}}function a(t){return!(t&&"function"==typeof t&&t.apply&&!t[n.flag])}var s=t(1),u=t(2);e.exports=n,n.inPlace=r,n.flag="nr@wrapper"},{1:1,2:14}]},{},["G9z0Bl",2,7]);</script><script>
+  //<![CDATA[
+    docElement = this.document.documentElement;
+    docElement.className=docElement.className.replace(/\bno-js\b/,'') + 'js';
+  //]]>
+</script>
+<title>TUG by Nerd Kingdom &mdash; Kickstarter</title><script>
+  //<![CDATA[
+    window.report_errors = true;
+    window.honeybadger_configuration = {
+      api_key : "02ab109335c0dd1a93506d92f22217a7",
+      environment : "production",
+      component : "projects",
+      action : "show",
+      onerror : false
+    };
+  //]]>
+</script>
+
+
+<!--[if lt IE 9]>
+  <script src="//html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta content="telephone=no" name="format-detection">
+
+<!--[if !IE]> -->
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base-9f623ad5d021a188cfb2d68a0cdf7a7b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<!-- <![endif]-->
+<!--[if IE]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base_blessed-2640c72487552f9a2ef9f2620b4af860.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<!--[if lte IE 9]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_nine-a93fe10530f175f96c4078b7e070d7e1.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 8]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_eight-f75aeb274436f94a0d243774456b1c62.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 7]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie-c019c01acd3a96588b346cf577a3504f.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_seven-5a3d2cef660cd281fd844b04b2397dbb.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if IE 6]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_six-e4d3caf76e405fe19aee6ece8bda701b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<link href="https://d297h9he240fqh.cloudfront.net/favicon.png" rel="icon" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-precomposed-7b603dba7cf80e4acc57d94a991bebbd.png" rel="apple-touch-icon-precomposed" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-ipad-precomposed-3176f72977daf43dee3b0d348484dc01.png" rel="apple-touch-icon-precomposed" sizes="72x72" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-iphone4-precomposed-b93b70168cd8492c843d0fea873c7f83.png" rel="apple-touch-icon-precomposed" sizes="114x114" type="image/png">
+<link href="https://www.kickstarter.com/services/oembed?url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Fnerdkingdom%2Ftug-1" rel="alternate" title="TUG Script Tag oEmbed" type="application/json+oembed">
+<link rel="alternate" type="application/atom+xml" title="TUG : Kickstarter" href="https://www.kickstarter.com/projects/nerdkingdom/tug-1/posts.atom" />
+<meta property="twitter:app:id:iphone" content="596961532"/>
+<meta property="twitter:app:name:iphone" content="Kickstarter"/>
+<meta property="twitter:app:url:iphone" content="ksr://www.kickstarter.com/projects/nerdkingdom/tug-1"/>
+<meta name="video_height" content="360"/>
+<meta name="video_width" content="640"/>
+<meta name="video_type" content="application/x-shockwave-flash"/>
+<meta name="title" content="Kickstarter &gt;&gt; TUG by Nerd Kingdom"/>
+<meta name="description" content="Nerd Kingdom is raising funds for TUG on Kickstarter! 
+
+ TUG is a multiplayer open-world sandbox-RPG using new technology and social sciences to directly involve players in the game’s design."/>
+<meta property="og:title" content="TUG"/>
+<meta property="og:type" content="kickstarter:project"/>
+<meta property="og:image" content="https://s3.amazonaws.com/ksr/projects/482732/photo-main.jpg?1397812789"/>
+<meta property="og:url" content="https://www.kickstarter.com/projects/nerdkingdom/tug-1"/>
+<meta property="og:site_name" content="Kickstarter"/>
+<meta property="fb:app_id" content="69103156693"/>
+<meta property="og:description" content="TUG is a multiplayer open-world sandbox-RPG using new technology and social sciences to directly involve players in the game’s design."/>
+<meta property="kickstarter:creator" content="https://www.kickstarter.com/profile/nerdkingdom"/>
+<meta property="twitter:url:landing_url" content="https://www.kickstarter.com/projects/nerdkingdom/tug-1"/>
+<meta property="twitter:card" content="2427656750:kickstarter_project"/>
+<meta property="twitter:site" content="@kickstarter"/>
+<meta property="twitter:site:id" content="16186995"/>
+<meta property="twitter:text:title" content="TUG"/>
+<meta property="twitter:text:artist" content="Nerd Kingdom"/>
+<meta property="twitter:text:backers" content="7231"/>
+<meta property="twitter:text:pledged" content="$293,184 USD"/>
+<meta property="twitter:text:time" content="0 seconds"/>
+<meta property="twitter:text:location" content="Los Angeles, CA"/>
+<meta property="twitter:image:location_image" content="https://d3mlfyygrfdi2i.cloudfront.net/b40e/pin.png"/>
+<meta property="twitter:text:description" content="TUG is a multiplayer open-world sandbox-RPG using new technology and social sciences to directly involve players in the game’s design."/>
+<meta property="twitter:image:media" content="https://s3.amazonaws.com/ksr/projects/482732/photo-main.jpg?1397812789"/>
+<meta property="twitter:image:width" content="640"/>
+<meta property="twitter:image:height" content="480"/>
+<meta property="twitter:player:stream:url" content="https://d2pq0u4uni88oo.cloudfront.net/projects/482732/video-235833-h264_base.mp4"/>
+<meta property="twitter:player:stream:content" content="video/mp4"/>
+<meta property="twitter:player:url" content="https://www.kickstarter.com/projects/nerdkingdom/tug-1/widget/video.html"/>
+<meta property="twitter:player:height" content="360"/>
+<meta property="twitter:player:width" content="640"/>
+<meta property="twitter:maxage" content="60"/>
+<meta property="og:video" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F482732%2Fvideo-235833-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F482732%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Nerd+Kingdom&amp;project_title=TUG&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Fnerdkingdom%2Ftug-1&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:secure_url" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F482732%2Fvideo-235833-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F482732%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Nerd+Kingdom&amp;project_title=TUG&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Fnerdkingdom%2Ftug-1&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:height" content="360"/>
+<meta property="og:video:width" content="640"/>
+<meta property="og:video:type" content="application/x-shockwave-flash"/>
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="9dymU0OrqTmXyQwzNK1qelw7Gm3j5ThJ4SqurPNGx28=" name="csrf-token" />
+<script type="text/javascript">
+  var _sift = _sift || [];
+  _sift.push(['_setAccount', '637102']);
+  _sift.push(['_setUserId', '']);
+  _sift.push(['_trackPageview']);
+
+  (function() {
+    function loadSift() {
+      var sift, s;
+      if (root.visitor_id) {
+        _sift.push(['_setSessionId', root.visitor_id]);
+      }
+      sift = document.createElement('script');
+      sift.type = 'text/javascript';
+      sift.async = true;
+      sift.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dtlilztwypawv.cloudfront.net/s.js';
+      s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(sift, s);
+    }
+    if (window.attachEvent) {
+      window.attachEvent('onload', loadSift);
+    } else {
+      window.addEventListener('load', loadSift, false);
+    }
+  })();
+</script>
+<link href="http://kck.st/11YcAiK" rel="shorturl">
+<link href="https://www.kickstarter.com/projects/nerdkingdom/tug-1" rel="canonical">
+<link href="https://s3.amazonaws.com/ksr/projects/482732/photo-med.jpg?1397812789" rel="image_src">
+<link href="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F482732%2Fvideo-235833-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F482732%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Nerd+Kingdom&amp;project_title=TUG&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Fnerdkingdom%2Ftug-1&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque" rel="video_src">
+<script>
+  //<![CDATA[
+    window.current_checkout = "{&quot;id&quot;:0,&quot;domestic&quot;:null,&quot;amount&quot;:0.0,&quot;updated_at&quot;:0,&quot;created_at&quot;:0}";
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.current_ip = '94.209.101.212';
+    window.current_ip_datacenter = 'false';
+    window.enabled_features = {"elasticsearch":true,"security_history_read":true,"security_history_write":true,"advanced_discovery_es":true,"ios_crashlytics":true,"ios_mixpanel":true,"stories_veronica_mars":true,"veronica_mars_hero":true,"password_reset_banner":true};
+    window.fb_app_id = '69103156693';
+    
+    var _sf_startpt=(new Date()).getTime();
+    
+    window.current_project = "{&quot;id&quot;:1186359414,&quot;name&quot;:&quot;TUG&quot;,&quot;blurb&quot;:&quot;TUG is a multiplayer open-world sandbox-RPG using new technology and social sciences to directly involve players in the game\\u2019s design.&quot;,&quot;goal&quot;:215000.0,&quot;pledged&quot;:293184.05,&quot;state&quot;:&quot;successful&quot;,&quot;slug&quot;:&quot;tug-1&quot;,&quot;disable_communication&quot;:false,&quot;country&quot;:&quot;US&quot;,&quot;currency&quot;:&quot;USD&quot;,&quot;currency_symbol&quot;:&quot;$&quot;,&quot;currency_trailing_code&quot;:true,&quot;deadline&quot;:1370032008,&quot;state_changed_at&quot;:1370032008,&quot;created_at&quot;:1362689484,&quot;launched_at&quot;:1367440008,&quot;backers_count&quot;:7231,&quot;photo&quot;:{&quot;full&quot;:&quot;https://s3.amazonaws.com/ksr/projects/482732/photo-full.jpg?1397812789&quot;,&quot;ed&quot;:&quot;https://s3.amazonaws.com/ksr/projects/482732/photo-ed.jpg?1397812789&quot;,&quot;med&quot;:&quot;https://s3.amazonaws.com/ksr/projects/482732/photo-med.jpg?1397812789&quot;,&quot;little&quot;:&quot;https://s3.amazonaws.com/ksr/projects/482732/photo-little.jpg?1397812789&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/projects/482732/photo-small.jpg?1397812789&quot;,&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/projects/482732/photo-thumb.jpg?1397812789&quot;,&quot;1024x768&quot;:&quot;https://s3.amazonaws.com/ksr/projects/482732/photo-1024x768.jpg?1397812789&quot;,&quot;1536x1152&quot;:&quot;https://s3.amazonaws.com/ksr/projects/482732/photo-1536x1152.jpg?1397812789&quot;},&quot;creator&quot;:{&quot;id&quot;:1487818257,&quot;name&quot;:&quot;Nerd Kingdom&quot;,&quot;slug&quot;:&quot;nerdkingdom&quot;,&quot;avatar&quot;:{&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/1047274/KSNK.thumb.jpg?1367091719&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/1047274/KSNK.small.jpg?1367091719&quot;,&quot;medium&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/1047274/KSNK.medium.jpg?1367091719&quot;},&quot;urls&quot;:{&quot;web&quot;:{&quot;user&quot;:&quot;https://www.kickstarter.com/profile/nerdkingdom&quot;},&quot;api&quot;:{&quot;user&quot;:&quot;https://api.kickstarter.com/v1/users/1487818257?signature=1399959144.e863a9f19f73c14a7498b2058db419e927067b3e&quot;}}},&quot;location&quot;:{&quot;id&quot;:2442047,&quot;name&quot;:&quot;Los Angeles&quot;,&quot;slug&quot;:&quot;los-angeles-ca&quot;,&quot;short_name&quot;:&quot;Los Angeles, CA&quot;,&quot;displayable_name&quot;:&quot;Los Angeles, CA&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:&quot;CA&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/los-angeles-ca&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/los-angeles-ca&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1399951818.e609e9257aa2bbc4a05b2f5e5d3584cce5ac138e&amp;woe_id=2442047&quot;}}},&quot;category&quot;:{&quot;id&quot;:35,&quot;name&quot;:&quot;Video Games&quot;,&quot;slug&quot;:&quot;games/video games&quot;,&quot;position&quot;:7,&quot;parent_id&quot;:12,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;http://www.kickstarter.com/discover/categories/games/video%20games&quot;}}},&quot;urls&quot;:{&quot;web&quot;:{&quot;project&quot;:&quot;https://www.kickstarter.com/projects/nerdkingdom/tug-1&quot;,&quot;project_short&quot;:&quot;http://kck.st/11YcAiK&quot;,&quot;updates&quot;:&quot;https://www.kickstarter.com/projects/nerdkingdom/tug-1/posts&quot;},&quot;api&quot;:{&quot;project&quot;:&quot;https://api.kickstarter.com/v1/projects/1186359414?signature=1399959144.61111ac0710c2cb61757f95cf690d86e37c7560d&quot;,&quot;comments&quot;:&quot;https://api.kickstarter.com/v1/projects/1186359414/comments?signature=1399959144.441ec4ffb61d5681fb4a97a9d68e9f786126e22e&quot;,&quot;updates&quot;:&quot;https://api.kickstarter.com/v1/projects/1186359414/updates?signature=1399959144.b6659111c7dff0e927aae306e3816a502d45c1dd&quot;}},&quot;updated_at&quot;:1397812797,&quot;successful_at&quot;:1370032008,&quot;video&quot;:{&quot;id&quot;:235833,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/482732/video-235833-h264_high.mp4?2013&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/482732/video-235833-h264_base.mp4?2013&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/482732/video-235833-webm.webm?2013&quot;,&quot;width&quot;:640,&quot;height&quot;:360,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/482732/video-235833-h264_base.jpg?2013&quot;},&quot;comments_count&quot;:2540,&quot;updates_count&quot;:48,&quot;rewards&quot;:[{&quot;id&quot;:0,&quot;minimum&quot;:1,&quot;reward&quot;:&quot;No Reward&quot;},{&quot;id&quot;:1585271,&quot;minimum&quot;:10.0,&quot;reward&quot;:&quot;EARLY BACKERS ONLY!  DIGITAL DOWNLOADABLE COPY OF TUG! This limited pre-order price point is only available for the first backers of TUG.  We will welcome and thank you for your support with an EXCLUSIVE \\&quot;Kickstarter Early Backer\\&quot; credit on Nerd Kingdom&#39;s \\&quot;Wall of Devotus\\&quot; webpage!!!&quot;,&quot;limit&quot;:5000,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1420070400,&quot;project_id&quot;:1186359414,&quot;remaining&quot;:1774,&quot;backers_count&quot;:3226,&quot;updated_at&quot;:1399749348},{&quot;id&quot;:1590374,&quot;minimum&quot;:15.0,&quot;reward&quot;:&quot;DIGITAL DOWNLOADABLE COPY OF TUG!  This price point is only available for those who help fund before the game is released! You also get a \\&quot;Kickstarter Backer\\&quot; credit on Nerd Kingdom&#39;s \\&quot;Wall of Devotus\\&quot; webpage!!!&quot;,&quot;limit&quot;:7500,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1420070400,&quot;project_id&quot;:1186359414,&quot;remaining&quot;:7189,&quot;backers_count&quot;:311,&quot;updated_at&quot;:1399578228},{&quot;id&quot;:1590378,&quot;minimum&quot;:25.0,&quot;reward&quot;:&quot;Previous reward tier, but with a Kickstarter EXCLUSIVE \\&quot;Early Kickstarter Backer\\&quot; TUG forum recognition badge, wallpaper pack, and font pack.&quot;,&quot;limit&quot;:5000,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1420070400,&quot;project_id&quot;:1186359414,&quot;remaining&quot;:4928,&quot;backers_count&quot;:72,&quot;updated_at&quot;:1370035710},{&quot;id&quot;:1590384,&quot;minimum&quot;:30.0,&quot;reward&quot;:&quot;DIGITAL DOWNLOADABLE COPY OF TUG!  You also get a \\&quot;Kickstarter Backer\\&quot; TUG forum recognition badge, wallpaper pack, font pack, and a \\&quot;Kickstarter Backer\\&quot; credit on Nerd Kingdom&#39;s \\&quot;Wall of Devotus\\&quot; webpage!!!&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1420070400,&quot;project_id&quot;:1186359414,&quot;backers_count&quot;:52,&quot;updated_at&quot;:1398298815},{&quot;id&quot;:1627763,&quot;minimum&quot;:30.0,&quot;reward&quot;:&quot;NEW!!! DIGITAL ONLY BETA ACCESS!!!  -- You\\u2019ll have access to the Beta version of TUG with ALL future updates + IN-GAME ASSETS (won\\u2019t affect balancing)!!!   You\\u2019ll receive the \\u201cMARK OF THE CHOSEN,\\u201d a special tattoo on your player\\u2019s avatar EXCLUSIVE TO KICKSTARTER BETA BACKERS ONLY to identify you as a hardcore early Beta backer IN-GAME!!!  You\\u2019ll also receive an EXCLUSIVE \\u201cEarly Kickstarter Backer\\u201d TUG forum recognition badge and credit on Nerd Kingdom\\u2019s \\u201cWall of Devotus\\u201d webpage, digital wallpaper pack, and digital font pack.&quot;,&quot;limit&quot;:2000,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1420070400,&quot;project_id&quot;:1186359414,&quot;remaining&quot;:728,&quot;backers_count&quot;:1272,&quot;updated_at&quot;:1399568377},{&quot;id&quot;:1598319,&quot;minimum&quot;:45.0,&quot;reward&quot;:&quot;BETA FORGE TIER!!! DIGITAL DOWNLOADABLE COPY OF TUG IN BETA WITH ALL FUTURE UPDATES! Playing in the beta phase means that your play contributes to the design of the game!!! You will also get access to Nerd Kingdom&#39;s EXCLUSIVE design forum where your feedback is first in the pipeline!!! You also get an EXCLUSIVE \\&quot;Kickstarter FORGE Backer\\&quot; TUG forum recognition badge, wallpaper pack, font pack, digital concept art, and a \\&quot;Kickstarter FORGE Backer\\&quot; credit on Nerd Kingdom&#39;s \\&quot;Wall of Devotus\\&quot; webpage!!!&quot;,&quot;limit&quot;:10000,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1420070400,&quot;project_id&quot;:1186359414,&quot;remaining&quot;:9759,&quot;backers_count&quot;:241,&quot;updated_at&quot;:1399584420},{&quot;id&quot;:1590388,&quot;minimum&quot;:45.0,&quot;reward&quot;:&quot;BETA FORGE TIER!!!  DIGITAL DOWNLOADABLE COPY OF TUG IN BETA WITH ALL FUTURE UPDATES!  Playing in the beta phase means that your play contributes to the design of the game!!!  You will also get access to Nerd Kingdom&#39;s EXCLUSIVE design forum where your feedback is first in the pipeline!!!  You also get an EXCLUSIVE \\&quot;Kickstarter FORGE Backer\\&quot; TUG forum recognition badge, wallpaper pack, font pack, digital concept art, and a \\&quot;Kickstarter FORGE Backer\\&quot; credit on Nerd Kingdom&#39;s \\&quot;Wall of Devotus\\&quot; webpage!!!&quot;,&quot;limit&quot;:2,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;domestic&quot;,&quot;shipping_amount&quot;:&quot;0.0&quot;,&quot;estimated_delivery_on&quot;:1420070400,&quot;project_id&quot;:1186359414,&quot;remaining&quot;:0,&quot;backers_count&quot;:2,&quot;updated_at&quot;:1370033396},{&quot;id&quot;:1627764,&quot;minimum&quot;:45.0,&quot;reward&quot;:&quot;NEW!!!  DIGITAL ONLY BETA PLUS PACK!!! \\u2013 Includes everything in the DIGITAL ONLY BETA ACCESS TIER + IN-GAME ASSETS (won\\u2019t affect balancing)!!!  You\\u2019ll get a KICKSTARTER EXCLUSIVE BABY SABRE TIGER COMPANION CRITTER to later train and have accompany you on your journey!!!&quot;,&quot;limit&quot;:500,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1420070400,&quot;project_id&quot;:1186359414,&quot;remaining&quot;:112,&quot;backers_count&quot;:388,&quot;updated_at&quot;:1399694504},{&quot;id&quot;:1598320,&quot;minimum&quot;:65.0,&quot;reward&quot;:&quot;ALPHA FORGE TIER!!! Previous reward tier + DIGITAL DOWNLOADABLE COPY OF TUG IN ALPHA WITH ALL FUTURE UPDATES! Playing in the alpha phase means that your play is the FIRST to contribute to the design of the game, so get in on the ground floor while you can!!! You also get a special digital book of concept art used in the making of TUG!!!&quot;,&quot;limit&quot;:1500,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1420070400,&quot;project_id&quot;:1186359414,&quot;remaining&quot;:1121,&quot;backers_count&quot;:379,&quot;updated_at&quot;:1399745807},{&quot;id&quot;:1627765,&quot;minimum&quot;:65.0,&quot;reward&quot;:&quot;$65 NEW!!!  DIGITAL ONLY ALPHA PLUS PACK!!! - Includes everything in the DIGITAL ONLY BETA PLUS PACK + IN-GAME ASSETS (won\\u2019t affect balancing)!!!  You\\u2019ll also get a KICKSTARTER EXCLUSIVE RARE BEAST PELT for your character to wear on the hunt!&quot;,&quot;limit&quot;:500,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1420070400,&quot;project_id&quot;:1186359414,&quot;remaining&quot;:2,&quot;backers_count&quot;:498,&quot;updated_at&quot;:1399066721},{&quot;id&quot;:1590395,&quot;minimum&quot;:65.0,&quot;reward&quot;:&quot;ALPHA FORGE TIER!!!  Previous reward tier + DIGITAL DOWNLOADABLE COPY OF TUG IN ALPHA WITH ALL FUTURE UPDATES! Playing in the alpha phase means that your play is the FIRST to contribute to the design of the game, so get in on the ground floor while you can!!! You also get a special digital book of concept art used in the making of TUG!!!&quot;,&quot;limit&quot;:11,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;domestic&quot;,&quot;shipping_amount&quot;:&quot;0.0&quot;,&quot;estimated_delivery_on&quot;:1420070400,&quot;project_id&quot;:1186359414,&quot;remaining&quot;:0,&quot;backers_count&quot;:11,&quot;updated_at&quot;:1370034110},{&quot;id&quot;:1598321,&quot;minimum&quot;:75.0,&quot;reward&quot;:&quot;Previous reward tier + TUG Poster, a 2x digital gift pack of TUG for two friends, TUG sticker, a \\&quot;TUG Life\\&quot; wristband, and a TUG t-shirt!&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1420070400,&quot;project_id&quot;:1186359414,&quot;backers_count&quot;:290,&quot;updated_at&quot;:1398020858},{&quot;id&quot;:1590397,&quot;minimum&quot;:75.0,&quot;reward&quot;:&quot;Previous reward tier + TUG Poster, a 2x digital gift pack of TUG for two friends, TUG sticker, a \\&quot;TUG Life\\&quot; wristband, and a TUG t-shirt! (Please include an extra $15 for international shipping.)&quot;,&quot;limit&quot;:3,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;domestic&quot;,&quot;shipping_amount&quot;:&quot;0.0&quot;,&quot;estimated_delivery_on&quot;:1420070400,&quot;project_id&quot;:1186359414,&quot;remaining&quot;:0,&quot;backers_count&quot;:3,&quot;updated_at&quot;:1370033393},{&quot;id&quot;:1590404,&quot;minimum&quot;:95.0,&quot;reward&quot;:&quot;Previous reward tier, but your TUG poster will be SIGNED by the Nerd Kingdom Art Team!!!  We&#39;ll also 2x your sticker AND wristband orders for this SPECIAL tier. (Please include an extra $15 for international shipping.)&quot;,&quot;limit&quot;:100,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1420070400,&quot;project_id&quot;:1186359414,&quot;remaining&quot;:75,&quot;backers_count&quot;:25,&quot;updated_at&quot;:1390052752},{&quot;id&quot;:1598322,&quot;minimum&quot;:115.0,&quot;reward&quot;:&quot;CORE BACKER TIER!!! IN-GAME ASSET (won&#39;t affect balancing): A companion WISP will light your way throughout your adventure! You&#39;ll also get everything from the ALPHA FORGE TIER, be recognized as an EXCLUSIVE \\&quot;Kickstarter CORE Backer\\&quot; with a TUG forum badge, receive a credit as a \\&quot;Kickstarter CORE Backer\\&quot; on Nerd Kingdom&#39;s \\&quot;Wall of Devotus\\&quot; webpage, a TUG poster, a 2x digital gift pack of TUG for two friends, TUG sticker, a \\&quot;TUG Life\\&quot; wristband, and a TUG t-shirt!&quot;,&quot;limit&quot;:250,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1420070400,&quot;project_id&quot;:1186359414,&quot;remaining&quot;:160,&quot;backers_count&quot;:90,&quot;updated_at&quot;:1392053483},{&quot;id&quot;:1590459,&quot;minimum&quot;:115.0,&quot;reward&quot;:&quot;CORE BACKER TIER!!!  IN-GAME ASSET (won&#39;t affect balancing):  A companion WISP will light your way throughout your adventure! You&#39;ll also get everything from the ALPHA FORGE TIER,  be recognized as an EXCLUSIVE \\&quot;Kickstarter CORE Backer\\&quot; with a TUG forum badge, receive a credit as a \\&quot;Kickstarter CORE Backer\\&quot; on Nerd Kingdom&#39;s \\&quot;Wall of Devotus\\&quot; webpage, a TUG poster, a 2x digital gift pack of TUG for two friends, TUG sticker, a \\&quot;TUG Life\\&quot; wristband, and a TUG t-shirt! (Please include an extra $15 for international shipping.)&quot;,&quot;limit&quot;:1,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;domestic&quot;,&quot;shipping_amount&quot;:&quot;0.0&quot;,&quot;estimated_delivery_on&quot;:1420070400,&quot;project_id&quot;:1186359414,&quot;remaining&quot;:0,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1370032921},{&quot;id&quot;:1590462,&quot;minimum&quot;:125.0,&quot;reward&quot;:&quot;CORE BACKER TIER!!! IN-GAME ASSET (won&#39;t affect balancing):  A companion MOUNT will carry you onward as you embark on your journey!  You&#39;ll also get everything from the ALPHA FORGE TIER, be recognized as an EXCLUSIVE \\&quot;Kickstarter CORE Backer\\&quot; with a TUG forum badge, receive a credit as a \\&quot;Kickstarter CORE Backer\\&quot; on  Nerd Kingdom&#39;s \\&quot;Wall of Devotus\\&quot; webpage, a TUG poster, a 2x digital gift pack of TUG for two friends, TUG sticker, a \\&quot;TUG Life\\&quot; wristband, and a TUG t-shirt! (Please include an extra $15 for international shipping.)&quot;,&quot;limit&quot;:200,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1420070400,&quot;project_id&quot;:1186359414,&quot;remaining&quot;:157,&quot;backers_count&quot;:43,&quot;updated_at&quot;:1370034179},{&quot;id&quot;:1590477,&quot;minimum&quot;:135.0,&quot;reward&quot;:&quot;CORE BACKER TIER!!! IN-GAME ASSET (won&#39;t affect balancing): A companion GOLEM will join you on your adventure! You&#39;ll also get everything from the ALPHA FORGE TIER, be recognized as an EXCLUSIVE \\&quot;Kickstarter CORE Backer\\&quot; with a TUG forum badge, receive a credit as a \\&quot;Kickstarter CORE Backer\\&quot; on Nerd Kingdom&#39;s \\&quot;Wall of Devotus\\&quot; webpage, a TUG poster, a 2x digital gift pack of TUG for two friends, TUG sticker, a \\&quot;TUG Life\\&quot; wristband, and a TUG t-shirt! (Please include an extra $15 for international shipping.)&quot;,&quot;limit&quot;:150,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1420070400,&quot;project_id&quot;:1186359414,&quot;remaining&quot;:145,&quot;backers_count&quot;:5,&quot;updated_at&quot;:1370966081},{&quot;id&quot;:1590478,&quot;minimum&quot;:150.0,&quot;reward&quot;:&quot;CORE BACKER TIER!!! IN-GAME ASSET (won&#39;t affect balancing): The Kickstarter EXCLUSIVE, RARE  METEOR GOLEM companion will join you on your adventure! You&#39;ll also get everything from the ALPHA FORGE TIER, be recognized as an EXCLUSIVE \\&quot;Kickstarter CORE Backer\\&quot; with a TUG forum badge, receive a credit as a \\&quot;Kickstarter CORE Backer\\&quot; on Nerd Kingdom&#39;s \\&quot;Wall of Devotus\\&quot; webpage, a TUG poster, a 2x digital gift pack of TUG for two friends, TUG sticker, a \\&quot;TUG Life\\&quot; wristband, and a TUG t-shirt! (Please include an extra $15 for international shipping.)&quot;,&quot;limit&quot;:75,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1420070400,&quot;project_id&quot;:1186359414,&quot;remaining&quot;:42,&quot;backers_count&quot;:33,&quot;updated_at&quot;:1397617868},{&quot;id&quot;:1590479,&quot;minimum&quot;:180.0,&quot;reward&quot;:&quot;CORE BACKER COMPANIONS PACK!!! IN-GAME ASSETS (won&#39;t affect balancing): You&#39;ll be joined by a WISP, MOUNT, AND GOLEM to accompany you on your adventure!!!  You&#39;ll also receive everything from the ALPHA FORGE TIER, be recognized as an EXCLUSIVE \\&quot;Kickstarter CORE Backer\\&quot; with a TUG forum badge, receive a credit as a \\&quot;Kickstarter CORE Backer\\&quot; on Nerd Kingdom&#39;s \\&quot;Hall of Fame\\&quot; webpage, a TUG poster, a 2x digital gift pack of TUG for two friends, TUG sticker, a \\&quot;TUG Life\\&quot; wristband, and a TUG t-shirt! (Please include an extra $15 for international shipping.)&quot;,&quot;limit&quot;:100,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1420070400,&quot;project_id&quot;:1186359414,&quot;remaining&quot;:70,&quot;backers_count&quot;:30,&quot;updated_at&quot;:1370034176},{&quot;id&quot;:1590480,&quot;minimum&quot;:195.0,&quot;reward&quot;:&quot;CORE BACKER COMPANIONS PACK!!! IN-GAME ASSETS (won&#39;t affect balancing) : You&#39;ll be joined by a WISP, MOUNT, AND the Kickstarter EXCLUSIVE, SUPER RARE ASTEROID GOLEM to accompany you on your adventure!!! You&#39;ll also receive everything from the ALPHA FORGE TIER, be recognized as an EXCLUSIVE \\&quot;Kickstarter CORE Backer\\&quot; with a TUG forum badge, receive a credit as a \\&quot;Kickstarter CORE Backer\\&quot; on Nerd Kingdom&#39;s \\&quot;Wall of Devotus\\&quot; webpage, a TUG poster, a 2x digital gift pack of TUG for two friends, TUG sticker, a \\&quot;TUG Life\\&quot; wristband, and a TUG t-shirt! (Please include an extra $15 for international shipping.)&quot;,&quot;limit&quot;:50,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1420070400,&quot;project_id&quot;:1186359414,&quot;remaining&quot;:0,&quot;backers_count&quot;:50,&quot;updated_at&quot;:1399108275},{&quot;id&quot;:1643885,&quot;minimum&quot;:225.0,&quot;reward&quot;:&quot;NEW!!!  DIGITAL ONLY CORE GUILD BUNDLE!!!  You\\u2019ll have alpha access with all future updates for yourself, as well as a 2x gift pack for TWO friends (with same level of access and digital goods as your copy).  You\\u2019ll also receive the following in-game assets for each copy of the game:  A KICKSTARTER EXCLUSIVE RARE METEOR GOLEM, a wisp, a mount, a KICKSTARTER EXCLUSIVE RARE BABY SABRE TIGER, the KICKSTARTER EXCLUSIVE \\u201cMARK OF THE CHOSEN,\\u201d and a KICKSTARTER EXCLUSIVE RARE beast pelt.  Finally, as the primary backer, you\\u2019ll personally be recognized with a KICKSTARTER EXCLUSIVE \\u201cCORE GUILD Backer\\u201d forum recognition badge and credit on Nerd Kingdom\\u2019s \\u201cWall of Devotus\\u201d webpage, and receive a TUG digital font pack, a TUG digital wallpaper pack, and a TUG digital concept art book.&quot;,&quot;limit&quot;:200,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1420070400,&quot;project_id&quot;:1186359414,&quot;remaining&quot;:166,&quot;backers_count&quot;:34,&quot;updated_at&quot;:1397651238},{&quot;id&quot;:1590487,&quot;minimum&quot;:275.0,&quot;reward&quot;:&quot;CORE-FORGER EXTRAORDINAIRE!!!  Access special Nerd Kingdom research and design experiment servers and play with the Nerd Kingdom team!!!  Kickstarter EXCLUSIVE EARLY ACCESS to our server data dumps and research project pipeline, perfect for the aspiring researcher!!!  You&#39;ll also be recognized as an EXCLUSIVE \\&quot;Kickstarter CORE-FORGER EXTRAORDINAIRE Backer\\&quot; with a TUG forum badge, receive a credit as a \\&quot;Kickstarter CORE-FORGER EXTRAORDINAIRE Backer\\&quot; on Nerd Kingdom&#39;s \\&quot;Wall of Devotus\\&quot; webpage, a SIGNED TUG poster, a 4x digital gift pack of TUG, 4x TUG stickers, 4x \\&quot;TUG Life\\&quot; wristbands, and 4x TUG t-shirts! You&#39;ll also receive the WISP, MOUNT, AND the Kickstarter EXCLUSIVE, SUPER RARE ASTEROID GOLEM to accompany you on your adventure (won&#39;t affect balancing)!!!  You&#39;ll also be given everything in the ALPHA FORGE TIER!!! (Please include an extra $15 for international shipping.)&quot;,&quot;limit&quot;:100,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1420070400,&quot;project_id&quot;:1186359414,&quot;remaining&quot;:36,&quot;backers_count&quot;:64,&quot;updated_at&quot;:1398136966},{&quot;id&quot;:1643886,&quot;minimum&quot;:375.0,&quot;reward&quot;:&quot;NEW!!!  DIGITAL ONLY CORE-FORGER EXTRAORDINAIRE GUILD BUNDLE!!!  You\\u2019ll have alpha access with all future updates for yourself, in addition to a 6x gift pack for SIX friends (with same level of access and digital goods as your copy).  You\\u2019ll also receive the following in-game assets for each copy of the game:  A KICKSTARTER EXCLUSIVE SUPER RARE ASTEROID GOLEM, WISP, MOUNT, A KICKSTARTER EXCLUSIVE RARE BABY SABRE TIGER, the KICKSTARTER EXCLUSIVE \\u201cMARK OF THE CHOSEN,\\u201d and a KICKSTARTER EXCLUSIVE RARE BEAST PELT, all for your use IN-GAME!!!  You\\u2019ll also have access to the special Nerd Kingdom research and design experiment servers and will be able to play TUG with the Nerd Kingdom team!!!   In addition, you\\u2019ll receive KICKSTARTER EXCLUSIVE EARLY ACCESS to our server data dumps and research project pipeline, perfect for the aspiring researcher!!! You&#39;ll also be recognized as an EXCLUSIVE \\&quot;Kickstarter CORE-FORGER EXTRAORDINAIRE GUILD Backer\\&quot; with a TUG forum badge and credit on Nerd Kingdom&#39;s \\&quot;Wall of Devotus\\&quot; webpage, and receive a TUG digital font pack, a TUG digital wallpaper pack, and a TUG digital concept art book.&quot;,&quot;limit&quot;:75,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1420070400,&quot;project_id&quot;:1186359414,&quot;remaining&quot;:41,&quot;backers_count&quot;:34,&quot;updated_at&quot;:1392736579},{&quot;id&quot;:1590488,&quot;minimum&quot;:500.0,&quot;reward&quot;:&quot;TUG 4 LIFE TIER!!!  IN-GAME CREDIT!!!  Previous reward tier + your name will be forever memorialized in the WELL OF THE ETERNUS to be discovered by any passerby in the world of TUG!!!&quot;,&quot;limit&quot;:100,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1420070400,&quot;project_id&quot;:1186359414,&quot;remaining&quot;:90,&quot;backers_count&quot;:10,&quot;updated_at&quot;:1397790801},{&quot;id&quot;:1590491,&quot;minimum&quot;:1000.0,&quot;reward&quot;:&quot;TUG 4 LIFE TIER!!!  Previous reward tier + DESIGN AN NPC (Non-Player Character)!!!  See your legacy to TUG live on... IN-GAME!!!&quot;,&quot;limit&quot;:30,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1420070400,&quot;project_id&quot;:1186359414,&quot;remaining&quot;:29,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1370033232},{&quot;id&quot;:1643887,&quot;minimum&quot;:1250.0,&quot;reward&quot;:&quot;NEW!!! DIGITAL ONLY TUG 4 LIFE TIER!!!  You\\u2019ll have an avatar-sized statue of your character with your name to be erected in the \\u201cStatue Garden\\u201d to forever memorialize your contribution to TUG at a special location IN-GAME!!!  Leave your legacy alongside those of everyone else who has made a monumental contribution to TUG!!!  You\\u2019ll also get all of the DIGITAL rewards at the lower tiers, INCLUDING:  DESIGN AN NPC (Non-Player Character), alpha access with all future updates in addition to a 6x gift pack for SIX friends (with same level of access and digital goods as your copy), the following in-game assets for each copy of the game:  A KICKSTARTER EXCLUSIVE SUPER RARE ASTEROID GOLEM, WISP, MOUNT, A KICKSTARTER EXCLUSIVE RARE BABY SABRE TIGER, the KICKSTARTER EXCLUSIVE \\u201cMARK OF THE CHOSEN,\\u201d and a KICKSTARTER EXCLUSIVE RARE BEAST PELT; access to the special Nerd Kingdom research and design experiment servers and will be able to play TUG with the Nerd Kingdom team; a KICKSTARTER EXCLUSIVE EARLY ACCESS to our server data dumps and research project pipeline, perfect for the aspiring researcher!!! You&#39;ll also be recognized as an EXCLUSIVE \\&quot;TUG 4 LIFE\\&quot; with a TUG forum badge, receive a credit as a \\&quot;Kickstarter CORE-FORGER EXTRAORDINAIRE GUILD Backer\\&quot; on Nerd Kingdom&#39;s \\&quot;Wall of Devotus\\&quot; webpage, a TUG digital font pack, TUG digital wallpaper pack, and a TUG digital concept art book.&quot;,&quot;limit&quot;:10,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1420070400,&quot;project_id&quot;:1186359414,&quot;remaining&quot;:7,&quot;backers_count&quot;:3,&quot;updated_at&quot;:1370554681},{&quot;id&quot;:1643888,&quot;minimum&quot;:2500.0,&quot;reward&quot;:&quot;NEW!!! DIGITAL ONLY TUG 4 LIFE TIER!!!  Previous reward tier + Work with the Nerd Kingdom team and help create a concept for one of TUG\\u2019s GIANT WORLD MONSTERS (must be appropriate &amp; within the limits of our design approach)!!!  Leave your legacy in TUG by being part of the creation of a truly magnificent creature that everyone can run into in-game!!!&quot;,&quot;limit&quot;:5,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1420070400,&quot;project_id&quot;:1186359414,&quot;remaining&quot;:5,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1368745388},{&quot;id&quot;:1590504,&quot;minimum&quot;:5000.0,&quot;reward&quot;:&quot;TUG 4 LIFE TIER!!!  Previous reward tier + a Kickstarter EXCLUSIVE, MASSIVE STATUE OF YOUR PLAYER AVATAR HIDDEN IN-GAME!!!  Uncover the monument to your hidden past memorializing your contribution to TUG!!!  Additionally,   you and a friend are invited to the Nerd Kingdom TUG launch party in Los Angeles, CA!!!  Come have dinner with the team, party, hang out, and of course...PLAY GAMES!!!  Nerd Kingdom will award you with a plaque with your name and credit as a TUG producer in a special ceremony at dinner!   (Travel expenses not included.)&quot;,&quot;limit&quot;:10,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1420070400,&quot;project_id&quot;:1186359414,&quot;remaining&quot;:9,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1370033218},{&quot;id&quot;:1590505,&quot;minimum&quot;:8000.0,&quot;reward&quot;:&quot;TUG 4 LIFE TIER!!!  Previous reward tier, except now you and THREE of your friends are invited to the Nerd Kingdom TUG launch party in Los Angeles, CA!!! Come have dinner with the team, party, hang out, and of course...PLAY GAMES!!!  Nerd Kingdom will award you with a plaque with your name and credit as a TUG producer in a special ceremony at dinner!   (Travel expenses not included.)&quot;,&quot;limit&quot;:5,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1420070400,&quot;project_id&quot;:1186359414,&quot;remaining&quot;:5,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1367445466}]}";
+    
+    
+    
+    
+    
+    
+    
+    
+    window.timeRemaining = function timeRemaining(epochTime){
+    
+      var diff = epochTime - ((new Date()).getTime() / 1000);
+      var num_unit = (diff < 60 && [Math.max(diff, 0), 'seconds']) ||
+        ((diff/=60) < 60 && [diff, 'minutes']) ||
+        ((diff/=60) < 72 && [diff, 'hours']) ||
+        [diff/=24, 'days'];
+    
+      // Round down
+      num_unit[0] = Math.floor(num_unit[0]);
+      // Singularize unit
+      if (num_unit[0] == 1) { num_unit[1] = num_unit[1].replace(/s$/,""); }
+    
+      return num_unit;
+    };
+  //]]>
+</script>
+
+<script>
+  //<![CDATA[
+    window.current_variants = ["discover_link_copy[explore]","rewards_hover[without_hover_text]"];
+  //]]>
+</script>
+
+
+</head>
+
+<body class="project projects not-mobile not-phone not-forces-video-controls not-tablet not-touchable not-native-app-request video_mode" id="projects_show">
+<div class="jGrowl center" id="growl_section"></div>
+<div class="NS_layouts__navigation" id="header">
+<div class="main-nav relative bg-white">
+<h1 class="no-margin ml1 mr2 left">
+<a href="/?ref=nav" class="block p2"><span class="ss-icon green-dark">KICK</span><span class="ss-icon green">STARTER</span>
+</a></h1>
+<ul class="primary-links list no-margin left">
+<li class="left discover-link full-height">
+<a href="/discover?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Explore</a>
+</li>
+<li class="left full-height mr2">
+<a href="/learn?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Start</a>
+</li>
+</ul>
+<ul class="list no-margin right" id="menu-sub">
+<li class="right"><a href="/login?ref=nav" class="block h5 bold p2 full-height border-box">Log in</a></li>
+<li class="right"><a href="/signup?ref=nav" class="block h5 bold p2 full-height border-box">Sign up</a></li>
+</ul>
+<div class="search-link pl2 full-height border-left border-box clip">
+<form accept-charset="UTF-8" action="/projects/search" class="search pt1 pb1 block relative form-simple" method="get"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /></div>
+<div class="field relative pl3">
+<span class="ss-icon ss-search grey-dark ml1 mt1 absolute"></span>
+<input class="input-search header full-width text" data-tracker-name="Header Live Search" id="term" name="term" placeholder="Search projects" type="text" />
+</div>
+</form>
+
+</div>
+<div class="clear"></div>
+</div>
+</div>
+<div class="hide pt4 pb4 bg-grey-light" id="search_results-wrap">
+<div class="relative container" id="search_results">
+<a class="close right grey-dark mr1"><span class="ss-icon ss-delete"></span></a>
+<h3 class="header ml1 clearfix"></h3>
+<div class="clip clearfix" id="search_results_panel"></div>
+<a class="prev arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateleft"></span>
+</a>
+<a class="next arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateright"></span>
+</a>
+</div>
+</div>
+
+
+
+
+<div class="Project-ended-true Project-is_starred- Project-state-successful Project1186359414_cxt border-top" id="main_content">
+<div id="running-board-wrap">
+<div class="container" id="running-board">
+<div id="project-header">
+<div class="NS_projects__running_board ml1 mr1 clearfix">
+<div class="title center py4">
+<h2 class="mb1">
+<a href="/projects/nerdkingdom/tug-1" class="green-dark">TUG</a>
+</h2>
+<p class="no-margin">
+<span class="creator">
+by
+<a href="/projects/nerdkingdom/tug-1/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography" id="name">Nerd Kingdom</a>
+</span>
+</p>
+</div>
+<ul class="project-nav list-inline left h5 bold mb1">
+<li class="mr2">
+<a href="/projects/nerdkingdom/tug-1" class="grey-dark py1 current" id="home_nav">Home</a>
+</li>
+<li class="mr2">
+<span data-updates-count="48" id="updates_count">
+<a href="/projects/nerdkingdom/tug-1/posts" class="grey-dark py1" id="updates_nav">Updates
+<span class="count h6 bg-grey-dark white">48</span>
+</a></span>
+</li>
+<li class="mr2">
+<a href="/projects/nerdkingdom/tug-1/backers" class="grey-dark py1" id="backers_nav">Backers
+<span class="count h6 bg-grey-dark white"><data class="Project1186359414" data-format="number" data-value="7231" itemprop="Project[backers_count]">7,231</data></span>
+</a></li>
+<li>
+<span data-comments-count="2540" id="comments_count">
+<a href="/projects/nerdkingdom/tug-1/comments" class="grey-dark py1" id="comments_nav">Comments
+<span class="count h6 bg-grey-dark white"><data class="Project1186359414" data-format="number" data-value="2536" itemprop="Project[comments_count]">2,536</data></span>
+</a></span>
+</li>
+</ul>
+<ul class="list-inline right h5 bold mb1">
+<li class="location mr2">
+<a href="/discover/places/los-angeles-ca?ref=city" class="grey-dark"><span class="ss-icon ss-location margin-right"></span>
+Los Angeles, CA
+</a></li>
+<li class="category" data-project-parent-category="Games">
+<a href="/discover/categories/games/video%20games?ref=category" class="grey-dark"><span class="ss-icon ss-tag margin-right"></span>
+Video Games
+</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+</div>
+<div class="bg-grey-light pb4" id="content-wrap">
+<div class="Project1186359414" data-conditions="[{&quot;!state&quot;:&quot;live&quot;}]" data-evaluation="true" data-render="&quot;&lt;div class=\&quot;NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-successful Project1186359414_cxt bg-grey container pb1 pt1\&quot;&gt;\n&lt;div class=\&quot;Project1186359414\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;successful&amp;quot;}]\&quot; data-evaluation=\&quot;true\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;Funded!&amp;lt;/b&amp;gt;\\nThis project was successfully funded &amp;lt;data class=\\&amp;quot;Project1186359414\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2013-05-31T16:26:48-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[deadline]\\&amp;quot;&amp;gt;on May 31, 2013&amp;lt;/data&amp;gt;.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;Funded!&lt;/b&gt;\nThis project was successfully funded &lt;data class=\&quot;Project1186359414\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-05-31T16:26:48-04:00&amp;quot;\&quot; itemprop=\&quot;Project[deadline]\&quot;&gt;on May 31, 2013&lt;/data&gt;.\n&lt;/p&gt;\n&lt;/div&gt;&lt;div class=\&quot;Project1186359414\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:[&amp;quot;started&amp;quot;,&amp;quot;submitted&amp;quot;]}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;THIS PROJECT IS NOT LIVE&amp;lt;/b&amp;gt;\\nThis is only a draft that the creator has chosen to share.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1186359414\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;suspended&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Suspended&amp;lt;/b&amp;gt;\\nFunding for this project was suspended &amp;lt;data class=\\&amp;quot;Project1186359414\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2013-05-31T16:26:48-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on May 31, 2013&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1186359414\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;canceled&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Canceled&amp;lt;/b&amp;gt;\\nFunding for this project was canceled by the project creator &amp;lt;data class=\\&amp;quot;Project1186359414\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2013-05-31T16:26:48-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on May 31, 2013&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1186359414\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;failed&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Unsuccessful&amp;lt;/b&amp;gt;\\nThis project\\u2019s funding goal was not reached on &amp;lt;time class=\\&amp;quot;js-adjust\\&amp;quot; data-format=\\&amp;quot;LL\\&amp;quot; datetime=\\&amp;quot;2013-05-31T16:26:48-04:00\\&amp;quot;&amp;gt;May 31, 2013&amp;lt;/time&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1186359414\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;purged&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;This project is purged and only visible to staff.&amp;lt;/b&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;/div&gt;\n&quot;"><div class="NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-successful Project1186359414_cxt bg-grey container pb1 pt1">
+<div class="Project1186359414" data-conditions="[{&quot;state&quot;:&quot;successful&quot;}]" data-evaluation="true" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;Funded!&lt;/b&gt;\nThis project was successfully funded &lt;data class=\&quot;Project1186359414\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-05-31T16:26:48-04:00&amp;quot;\&quot; itemprop=\&quot;Project[deadline]\&quot;&gt;on May 31, 2013&lt;/data&gt;.\n&lt;/p&gt;\n&quot;"><p class="no-margin">
+<b>Funded!</b>
+This project was successfully funded <data class="Project1186359414" data-format="distance_date" data-value="&quot;2013-05-31T16:26:48-04:00&quot;" itemprop="Project[deadline]">on May 31, 2013</data>.
+</p>
+</div><div class="Project1186359414" data-conditions="[{&quot;state&quot;:[&quot;started&quot;,&quot;submitted&quot;]}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;THIS PROJECT IS NOT LIVE&lt;/b&gt;\nThis is only a draft that the creator has chosen to share.\n&lt;/p&gt;\n&quot;"></div><div class="Project1186359414" data-conditions="[{&quot;state&quot;:&quot;suspended&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Suspended&lt;/b&gt;\nFunding for this project was suspended &lt;data class=\&quot;Project1186359414\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-05-31T16:26:48-04:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on May 31, 2013&lt;/data&gt;.\n&quot;"></div><div class="Project1186359414" data-conditions="[{&quot;state&quot;:&quot;canceled&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Canceled&lt;/b&gt;\nFunding for this project was canceled by the project creator &lt;data class=\&quot;Project1186359414\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-05-31T16:26:48-04:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on May 31, 2013&lt;/data&gt;.\n&quot;"></div><div class="Project1186359414" data-conditions="[{&quot;state&quot;:&quot;failed&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Unsuccessful&lt;/b&gt;\nThis project\u2019s funding goal was not reached on &lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;LL\&quot; datetime=\&quot;2013-05-31T16:26:48-04:00\&quot;&gt;May 31, 2013&lt;/time&gt;.\n&quot;"></div><div class="Project1186359414" data-conditions="[{&quot;state&quot;:&quot;purged&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;This project is purged and only visible to staff.&lt;/b&gt;\n&quot;"></div></div>
+</div>
+<div class="container bg-white border rounded py3 pl2 pr2" id="content">
+<div class="NS-projects-content">
+<div class="grid_11">
+<div data-has-video="true" id="video-section">
+<div class="video-player" data-dimensions="{&quot;width&quot;:640,&quot;height&quot;:480}" data-image="https://s3.amazonaws.com/ksr/projects/482732/photo-main.jpg?1397812789" data-video-tracker-url="https://www.kickstarter.com/projects/nerdkingdom/tug-1/video/plays" data-video-url="https://d2pq0u4uni88oo.cloudfront.net/projects/482732/video-235833-h264_high.mp4" data-video="{&quot;id&quot;:235833,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/482732/video-235833-h264_high.mp4?2013&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/482732/video-235833-h264_base.mp4?2013&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/482732/video-235833-webm.webm?2013&quot;,&quot;width&quot;:640,&quot;height&quot;:360,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/482732/video-235833-h264_base.jpg?2013&quot;}" id="video_pitch"><video class="has_webm landscape" preload="none">
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/482732/video-235833-h264_high.mp4" type='video/mp4; codecs="avc1.64001E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/482732/video-235833-h264_base.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/482732/video-235833-webm.webm" type="video/webm"></source>
+You'll need an HTML5 capable browser to see this content.
+</video>
+<img alt="Photo-main" class="has_played_hide poster landscape" src="https://s3.amazonaws.com/ksr/projects/482732/photo-main.jpg?1397812789" />
+<div class="play_button_big play_button_dark absolute-center rounded has_played_hide">
+<span class="ss-icon ss-play"></span>
+Play
+</div>
+<div class="player_controls clearfix absolute-bottom mb2 rounded white bg-green-dark forces-video-controls_hide">
+<div class="left">
+<a class="button button_icon button_dark playpause play mr1">
+<span class="play ss-icon ss-play"></span>
+<span class="pause ss-icon ss-pause"></span>
+</a>
+<span class="time current_time h12 left">00:00</span>
+</div>
+<div class="right">
+<span class="time total_time h12 left mr1">00:00</span>
+<a class="left button button_icon button_icon_white volume">
+<span class="ss-icon ss-volume icon_volume_nudge"></span>
+<span class="ss-icon ss-highvolume"></span>
+</a>
+<div class="volume_container left">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+<a class="left button button_icon button_icon_white fullscreen">
+<span class="ss-icon ss-expand"></span>
+<span class="ss-icon ss-contract"></span>
+</a>
+</div>
+<div class="clip">
+<div class="progress_container pr1 pl1">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="buffer progress_bar_buffer"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div data-project-state="successful" id="about">
+<div class="NS_projects__project_share clearfix py2 pl1 pr1">
+<ul class="left list-inline no-margin h5 bold">
+<li class="facebook mr2">
+<a href="https://www.kickstarter.com/projects/nerdkingdom/tug-1"><span class="ss-icon ss-social ss-facebook color-facebook"></span>
+<span class="color-facebook">Share</span>
+<span class="share_bubble"><div class="triangle grey"></div>
+<div class="triangle white"></div>
+<span class="count"></span></span>
+</a></li>
+<li class="twitter mr2">
+<a  href="https://twitter.com/intent/tweet?text=TUG%20by%20Nerd%20Kingdom&amp;via=kickstarter&amp;url=http://kck.st/11YcAiK" rel="nofollow"><span class="ss-icon ss-social ss-twitter color-twitter"></span>
+<span class="color-twitter">Tweet</span>
+</a></li>
+<li class="embed">
+<a href="/projects/nerdkingdom/tug-1/widget" class="remote_modal_dialog grey-dark" data-modal-title="Embed a widget on your site" data-tracker-name="Embed"><span class="ss-icon ss-navigateleft"></span>
+<span class="ss-icon ss-navigateright"></span>
+Embed
+</a></li>
+</ul>
+<ul class="right list-inline no-margin h5 bold">
+<li class="curate mr2">
+</li>
+<li class="remind">
+<div class="ajax-container" id="watching-widget">
+<div class="Project1186359414" data-conditions="[{&quot;is_starred&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div id=\&quot;unwatch\&quot;&gt;\n&lt;a href=\&quot;/projects/nerdkingdom/tug-1/unwatch\&quot; class=\&quot;on\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"></div><div class="Project1186359414" data-conditions="[{&quot;!is_starred&quot;:true}]" data-evaluation="true" data-render="&quot;&lt;div id=\&quot;watch\&quot;&gt;\n&lt;a href=\&quot;/projects/nerdkingdom/tug-1/watch\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;span class=\&quot;text\&quot;&gt;\n&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"><div id="watch">
+<a href="/projects/nerdkingdom/tug-1/watch"><span class="ss-icon ss-star"></span>
+<span class="text">
+</span>
+</a></div>
+
+</div></div>
+</li>
+</ul>
+</div>
+
+<div class="short_blurb py2 pl1 pr1">
+<p class="h3">TUG is a multiplayer open-world sandbox-RPG using new technology and social sciences to directly involve players in the game’s design.</p>
+</div>
+<div class="full-description">
+<div class="template asset" contenteditable="false" data-edit_url="/projects/nerdkingdom/tug-1/assets/570461/edit" data-id="570461">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/570/461/12a1a9ff8eb3b744ec226b6af96ee347_large.jpg?1367874405"></figure>
+</div>
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/nerdkingdom/tug-1/assets/629898/edit" data-id="629898">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/629/898/a47411e17bf1ea96ee19e004a8ce5a02_large.jpeg?1369859329"></figure>
+</div>
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/nerdkingdom/tug-1/assets/633679/edit" data-id="633679">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/633/679/fd7313f06050479887bf80c223f30bf1_large.png?1369969817"></figure>
+</div>
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/nerdkingdom/tug-1/assets/633688/edit" data-id="633688">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/633/688/f9f4d56288c900cfac72276d75201850_large.png?1369970024"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/nerdkingdom/tug-1/assets/633689/edit" data-id="633689">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/633/689/cef54c6b5414eaaaf6a00022adef04bb_large.png?1369970047"></figure>
+</div>
+<p>Be sure to check our Updates section every day for more in-depth looks at various aspects of TUG, as well as insights into our design philosophies and development process!</p><ul>
+<li>
+#1 <a href="http://www.kickstarter.com/projects/nerdkingdom/tug-1/posts/469687" target="_blank">WOW! and other such things</a>
+</li>
+<li>
+#2 <a href="http://www.kickstarter.com/projects/nerdkingdom/tug-1/posts/470988" target="_blank">Efficiency in Development</a>
+</li>
+<li>
+#3 <a href="http://www.kickstarter.com/projects/nerdkingdom/tug-1/posts/471785" target="_blank">Narrative Design</a>
+</li>
+<li>
+#4 <a href="http://www.kickstarter.com/projects/nerdkingdom/tug-1/posts/472050" target="_blank">Companions</a>
+</li>
+<li>
+#5 <a href="http://www.kickstarter.com/projects/nerdkingdom/tug-1/posts/473422" target="_blank">Inventory Scale</a>
+</li>
+<li>#6 <a href="http://www.kickstarter.com/projects/nerdkingdom/tug-1/posts/474405" target="_blank">Modular Asset Design</a>
+</li>
+<li>#7 <a href="http://www.kickstarter.com/projects/nerdkingdom/tug-1/posts/475450" target="_blank">A Kingdom of You</a>
+</li>
+<li>#8 <a href="http://www.kickstarter.com/projects/nerdkingdom/tug-1/posts/476429" target="_blank">Features -- and Rewards!</a>
+</li>
+<li>#9 <a href="http://www.kickstarter.com/projects/nerdkingdom/tug-1/posts/477592" target="_blank">Friday News Round-Up and Video Update!</a>
+</li>
+<li>#10 <a href="http://www.kickstarter.com/projects/nerdkingdom/tug-1/posts/478432" target="_blank">NEW reward tiers, more accessible BETA access, and NEW digital goods!!!</a>
+</li>
+<li>#11 <a href="http://www.kickstarter.com/projects/nerdkingdom/tug-1/posts/480089" target="_blank">Data Driven Design</a>
+</li>
+<li>#12 <a href="http://www.kickstarter.com/projects/nerdkingdom/tug-1/posts/480907" target="_blank">A Whole New Sounding World</a>
+</li>
+<li>#13 <a href="http://www.kickstarter.com/projects/nerdkingdom/tug-1/posts/481930" target="_blank">Guilds, Cabals, Societies, Conspiracies, and Other Fun Things</a>
+</li>
+<li>#14 <a href="http://www.kickstarter.com/projects/nerdkingdom/tug-1/posts/482900" target="_blank">EVEN NEWER reward tiers, MORE group packs, and MORE digital goods!</a>
+</li>
+<li>#15 <a href="http://www.kickstarter.com/projects/nerdkingdom/tug-1/posts/484397" target="_blank">Friday News Round-Up and Video Update #2!!!</a>
+</li>
+<li>#16 <a href="http://www.kickstarter.com/projects/nerdkingdom/tug-1/posts/485623" target="_blank">Feeding &amp; Caring For Your New Seed</a>
+</li>
+<li>#17 <a href="http://www.kickstarter.com/projects/nerdkingdom/tug-1/posts/486649" target="_blank">The Art of Crafting</a>
+</li>
+<li>#18 <a href="http://www.kickstarter.com/projects/nerdkingdom/tug-1/posts/487670" target="_blank">Your Own Private (Floating) Island</a>
+</li>
+<li>#19 <a href="http://www.kickstarter.com/projects/nerdkingdom/tug-1/posts/488002" target="_blank">Seeds of All Creeds!</a>
+</li>
+<li>#20 <a href="http://www.kickstarter.com/projects/nerdkingdom/tug-1/posts/489853" target="_blank">Golems and Podlings and Wisps, Oh My!</a>
+</li>
+<li>#21 <a href="http://www.kickstarter.com/projects/nerdkingdom/tug-1/posts/490944" target="_blank">Friday News Round-Up and Video Update #3</a>
+</li>
+<li>#22 <a href="http://www.kickstarter.com/projects/nerdkingdom/tug-1/posts/491524" target="_blank">Critters &amp; Monsters</a>
+</li>
+<li>#23 <a href="http://www.kickstarter.com/projects/nerdkingdom/tug-1/posts/492079" target="_blank">Real Rewards for Real Achievements</a>
+</li>
+<li>#24 <a href="http://www.kickstarter.com/projects/nerdkingdom/tug-1/posts/492824" target="_blank">Final Stretch... New Goodies Coming, and More!</a>
+</li>
+<li>#25 <a href="http://www.kickstarter.com/projects/nerdkingdom/tug-1/posts/493312" target="_blank">We Did It!!!!!</a>
+</li>
+<li>#26 <a href="http://www.kickstarter.com/projects/nerdkingdom/tug-1/posts/494312" target="_blank">Player Death... and Stretch Goals!!!!</a>
+</li>
+<li>#27 <a href="http://www.kickstarter.com/projects/nerdkingdom/tug-1/posts/496020" target="_blank">Weekly News Round-Up and Video Update #4!!!</a>
+</li>
+</ul><p><b>Video Update #4: Spotlight on Art</b></p><div class="template oembed" contenteditable="false" data-href="http://www.youtube.com/watch?v=hV5M7So94r0">
+<iframe width="612" height="344" src="https://www.youtube.com/embed/hV5M7So94r0?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div><p><b>Video Update #3: Spotlight on Science</b></p><div class="template oembed" contenteditable="false" data-href="http://www.youtube.com/watch?feature=player_embedded&amp;v=dLE0ZU9C5dA">
+<iframe width="612" height="344" src="https://www.youtube.com/embed/dLE0ZU9C5dA?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div><p><b>Video Update #2: Spotlight on Tech</b></p><div class="template oembed" contenteditable="false" data-href="http://www.youtube.com/watch?v=ioQZR1KKotw">
+<iframe width="612" height="344" src="https://www.youtube.com/embed/ioQZR1KKotw?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div><p><b>Video Update #1: Spotlight on Design</b></p><div class="template oembed" contenteditable="false" data-href="http://www.youtube.com/watch?feature=player_embedded&amp;v=dd8cN68GYVE">
+<iframe width="612" height="344" src="https://www.youtube.com/embed/dd8cN68GYVE?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div><p>As always, if you like these updates, please share them and help keep the momentum going! Follow <a href="http://www.facebook.com/tugnk" target="_blank">TUG on Facebook</a> as well for press, news, updates, art, and more!</p><div class="template asset" contenteditable="false" data-edit_url="/projects/nerdkingdom/tug-1/assets/570521/edit" data-id="570521">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/570/521/f6a8aa3c54c7c757e745dcd7badd0bc7_large.png?1367875103"></figure>
+</div>
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/nerdkingdom/tug-1/assets/570416/edit" data-id="570416">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/570/416/33fbd503f6d2caac3e4fef630be9827f_large.png?1367873733"></figure>
+</div>
+<p>TUG sits at the crossroads where survival sandbox and multiplayer RPG’s meet, offering both elegant simplicity and a world of complex secrets for those who desire to seek them out.  From freezing snow capped mountains to dark dreary caves, TUG offers a massive procedurally-generated world to explore, full of mystery and danger -- but what makes TUG truly unique is its ability to help us learn what you as players enjoy about the game, and to use your interactions to make an amazing world even better.</p><p>The project draws inspiration from fun, accessible games we love such as Minecraft, Fable, Animal Crossing, and Zelda, as well as games that feature deeply complex worlds, including Eve Online, Monster Hunter, and Dwarf Fortress.
+
+</p><p>What do we think you’ll like about TUG?  Some of the things we’re most excited about include:
+</p><ul>
+<li>
+<b>Integrated modding support</b>: we won’t just have support for modding tools hooked in from the beginning -- we’ll be sharing our tools with modders. </li>
+<li>
+<b>Pets and Companions</b> will join you in your travels and help along the way.</li>
+<li>
+<b>Entire Civilizations</b> lie hidden for you to uncover... or create new ones to conquer the world! </li>
+<li>
+<b>Day, Night, and Seasonal Cycles</b> with perils and opportunities unique to each. </li>
+<li>
+<b>Exotic Wild Beasts</b> to tame, hunt, breed, or ride! </li>
+<li>
+<b>Logic Engineering</b>, from simple trap triggers to reprogramming your golem! </li>
+<li>
+<b>Dark Mysteries</b> to unearth, and ancient powers to unleash! </li>
+<li>
+<b>DRM-Free</b>.  That includes the servers, which we’ll also be sharing with you. </li>
+
+</ul><div class="template oembed" contenteditable="false" data-href="http://www.youtube.com/watch?v=1sDS-MrLVFg">
+<iframe width="612" height="344" src="https://www.youtube.com/embed/1sDS-MrLVFg?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/nerdkingdom/tug-1/assets/557842/edit" data-id="557842">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/557/842/b94d2e6cfbf7f03b577b4fbd1af03eba_large.png?1367425521"></figure>
+</div>
+<ul>
+<li>
+<b>Accessibility &amp; Complexity</b>:  Playing in the world is as simple as interacting with it.  Anyone can dig, build, or fight, but true discoveries await for players who pay attention to the world around them.  That logic and consistency applies to everything -- combat, magic, crafting, building, hunting, exploring -- everything! </li>
+<li>
+<b>Player-Driven Design</b>: The game can identify the kinds of activities everyone enjoys most, and that information will direct developers in creating everything from new weapons and abilities to new worlds and creatures.  The more you play, the more you’ll enjoy TUG! </li>
+<li>
+<b>Modular Development</b>:  From combat to sprinting, from building to crafting, we want all of our players to experience the game in every phase of development to allow for real feedback and discussion about what does and does not work. </li>
+<li>
+<b>Total Freedom</b>: We want you to play the game however you like, whether that’s alone, on a private server with your friends, or on a server we host.  We won’t limit the type of game you want to play, and we’ll find a way for everyone to enjoy the world we’re building, however and with whoever they want.</li>
+</ul><div><br></div><div class="template asset" contenteditable="false" data-edit_url="/projects/nerdkingdom/tug-1/assets/558163/edit" data-id="558163">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/558/163/c919c141fd27bbf58c8097deb812b3c6_large.jpg?1367430739"></figure>
+</div>
+<div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/nerdkingdom/tug-1/assets/557843/edit" data-id="557843">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/557/843/f2aca00214917947f8c92970aaaa01fd_large.png?1367425537"></figure>
+</div>
+
+<p>When you enter the game, you awaken as a newborn Seed: a near-human child without defenses, resources or practical skills.  All you have to survive your first day are your wits, a set of simple clothes and a mysterious glowing gemstone embedded in the back of your right hand.  It's enough -- barely enough -- and it'll be a challenge to live through the night, but it won't be your last challenge.  Deserts, mountains, and forests will impede your progress; crumbled ruins will tempt you into their depths, and the cycles of the moon, the sun, and even the seasons will reveal more opportunities and greater mysteries. </p>
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/nerdkingdom/tug-1/assets/558692/edit" data-id="558692">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/558/692/2b6708b87511199d48b7342c2867d3fe_large.JPG?1367438911"></figure>
+</div>
+<p>Once you’ve begun to understand your world, you’ll have to figure out who you want to be, and your options are as wide open as the world around you.  Maybe you’ll be a tough warrior, proud of your scars and your trusty blade.  Maybe a simpler life, like that of a master craftsman, appeals to you -- trading with adventurers for rare resources and building works of genius and technology.  Maybe the deeper mysteries of the world call to you, and you want to explore the ruins and the deeps, searching out the links between you, the stone on your arm, and the mystical energy that seems to bind everything around you together.  Or maybe your loyalty lies with your fellow Seeds, and building a civilization to bring about even greater security and prosperity is what appeals to you. </p>
+<p>This is when your real adventure starts, because while all of these goals are within your grasp, none are easy to reach.  Ancient civilizations, wild beasts and otherworldly technologies can serve as brilliant discoveries, grave dangers, or both -- and while you strive to master these challenges, a dark presence looms ever greater in the shadows as forgotten powers of old vie with each other for influence.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/nerdkingdom/tug-1/assets/560157/edit" data-id="560157">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/560/157/96dfb59569ec062e86f4e89e45db2778_large.jpg?1367475927"></figure>
+</div>
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/nerdkingdom/tug-1/assets/557844/edit" data-id="557844">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/557/844/78161e471c861407efe45d4df7ddd224_large.png?1367425552"></figure>
+</div>
+
+<p>TUG is a game before it's anything else, and we want people to play it and enjoy the experience without feeling like they have to run spreadsheets, juggle budgets, or crunch numbers. Your immersion in the game is one of the most important things in TUG, so here are some ways we plan to help. </p>
+<p>While there are lots of complex stats and attributes you can gain from both gear and abilities, they won’t be visible to you -- at least not without the proper tools.  Instead, we’ll focus on making every visual cue in the world important. A tiny runed notch in a sword might indicate it's extra sharp, or a glow under the moonlight might be a sure sign that your blade is powerful against certain creatures, but you'll never see "+25 STR" or "UNDEAD SLAYING" in a pop-up window. </p>
+<p>The way you interface with the game world will be completely organic. You won't ever see a nameplate hovering over someone's head or a minimap stuck to the upper-right corner of your screen -- unless you create them in-game with tools. Getting a bird's-eye view of the world around you, seeing detailed information about your opponents, and even global communication can all be enabled by tools you can design and craft in the game. </p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/nerdkingdom/tug-1/assets/558689/edit" data-id="558689">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/558/689/77cc7955e627cac8e5fae4acc0ca6dfb_large.JPG?1367438896"></figure>
+</div>
+
+
+
+
+
+<p>Finally, everything in the world will have heft and weight. You won't have magic backpacks that instantly transform twenty-pound warhammers into a single weightless inventory slot; an item is as big in your pack as it is on the ground or in your hand. This forces you to make important decisions about how to solve problems, whether you're alone or in a group. Do you pack a second blade for when your main sword is too worn to use, or do you pack extra supplies in case of an emergency? Those decisions will be yours to make, and the outcome of your adventures will hinge on them!</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/nerdkingdom/tug-1/assets/557846/edit" data-id="557846">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/557/846/eb6de798ce478e25ca6318b3bb2fb993_large.png?1367425566"></figure>
+</div>
+
+<p>Everything you do, see, create, harvest, or explore may a have huge impact on the world around it. What seems like a unique design on a weapon could be part of a missing puzzle for a gateway to a hidden realm. Your actions may draw the attention of mysterious entities, for better or for worse. The more you understand about the intricacies of the world, the more prepared you will be to expand your play from swinging a sword to developing or manipulating entire civilizations.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/nerdkingdom/tug-1/assets/558167/edit" data-id="558167">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/558/167/d303360f7d98c3b9ab6ccf2a8ff7383f_large.jpg?1367430768"></figure>
+</div>
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/nerdkingdom/tug-1/assets/557848/edit" data-id="557848">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/557/848/afb8a39cdf02f76bfba60f6b1eb631b6_large.png?1367425643"></figure>
+</div>
+
+<p>A lot of RPGs like to take a fast and loose hack-and-slash approach to fighting, but while mindless swinging can always be AN answer, it isn’t always the BEST answer.  Variations of combat based on your weapon type and the skills you’ve learned can lead to a much more rewarding fight -- not to mention a better outcome!  You won’t have room for buckets of swords and armor in your pack, so knowing your skills and your strengths becomes much more important for a successful encounter.  Over time, we want to expand on this idea and utilize real combat physics within TUG, to allow for dynamic and engaging battles.</p>
+<p>And that’s just the start... where we’re at right now.  As we spend more time and layer more complexity into the combat system, we’ll build both fun and skill into play.  Anyone will be able to just swing away, but someone who learns the rhythms and really masters the ins and the outs of their weapon and combat skills will have a clear advantage in a fight. TUG will be using a skill-based system where timing, not mashing, determines the outcome of your battles.  You’ll raise your shield in time to block that killer blow, but don’t hold it too long or you’ll lose your advantage.  You’ll string together quick hits with your dagger and unlock awesome flourish attacks, or maybe you’ll strike slow and true with your massive flamberge and watch your opponents stagger away from the blows. </p>
+<p>But most importantly, in keeping with our philosophy about our players being integral to our design, we’ll learn how and why you enjoy combat best, and then we’ll take that knowledge to build features that will make the parts you like even better! </p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/nerdkingdom/tug-1/assets/558168/edit" data-id="558168">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/558/168/204b5f9575d6b99aa7b36d9aed94fc9d_large.JPG?1367430781"></figure>
+</div>
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/nerdkingdom/tug-1/assets/557850/edit" data-id="557850">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/557/850/c16f811370ee788ab5a6778340be8b8e_large.png?1367425774"></figure>
+</div>
+
+<p>We’re a collective of scientists, researchers, technologists, economists, content creators, artists, modders, and gamers from a variety of disciplines and backgrounds.  With our love of games, and our deep passion for the nerdery of academic sciences, art, and technology, we have joined forces to build the Nerd Kingdom and craft a game that compels our players to explore, discover, create, and conquer! </p>
+<p>To learn more about who we are and all our sciency fiascos, check us out: <a href="http://www.nerdkingdom.com/" target="_blank">http://www.nerdkingdom.com/</a></p>
+<p>Or follow us on <a href="http://www.facebook.com/pages/Nerd-Kingdom/118398948194091" target="_blank">Facebook</a>! And on Twitter, <a href="http://www.twitter.com/NerdKingdom" target="_blank">@NerdKingdom</a>!</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/nerdkingdom/tug-1/assets/557851/edit" data-id="557851">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/557/851/67fbd8cba4a5e0da9da65b43765d7ca4_large.png?1367425790"></figure>
+</div>
+
+<p>With TUG, we want to focus on building a game that’s fun for everyone, and to use the ground-breaking understanding we’re forging between developers and our players as our development roadmap.  We’re building this game world for our players, and we want to build it free of outsiders who think they know better, and who’ll try to tell us what our players “really” want. </p>
+<p>Going through Kickstarter, staying independent, and allowing our community to take ownership of what we’re doing together allows us to stay free of the influence of those other groups.  If we’re not answerable to anyone but you, the community, then we don’t have to worry about meeting someone else’s agenda.  All we have to worry about is making a great game even better! </p>
+<p>And to that, we would like to make a commitment to you: all funds raised, from now until our official launch in 2015, will go directly into the game’s development, and not into anyone’s pockets.  We want the community’s support to show in full with what is being created.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/nerdkingdom/tug-1/assets/557854/edit" data-id="557854">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/557/854/d5d66a1ca291ee15b702f342e81cfeec_large.png?1367425808"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/nerdkingdom/tug-1/assets/620427/edit" data-id="620427">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/620/427/d1ce86bf8ff5e68a56f4889a0c9fe7bd_large.jpg?1369541955"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/nerdkingdom/tug-1/assets/620429/edit" data-id="620429">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/620/429/fbd2609f569d1085d7ba3460bc010cad_large.jpg?1369541993"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/nerdkingdom/tug-1/assets/620432/edit" data-id="620432">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/620/432/e8070bbe038169ebabc982159be8169a_large.jpg?1369542024"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/nerdkingdom/tug-1/assets/620433/edit" data-id="620433">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/620/433/760e7e17e8f0d5706f10b2cd9b77f55a_large.jpg?1369542037"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/nerdkingdom/tug-1/assets/620435/edit" data-id="620435">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/620/435/93b69b5b9268e3dbc0144f7e51309214_large.jpg?1369542072"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/nerdkingdom/tug-1/assets/620436/edit" data-id="620436">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/620/436/3e11933e065499bd8704d66587918aff_large.jpg?1369542100"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/nerdkingdom/tug-1/assets/620437/edit" data-id="620437">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/620/437/8e5b5896184d11df6420ab7489b045a3_large.jpg?1369542130"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/nerdkingdom/tug-1/assets/620439/edit" data-id="620439">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/620/439/4c98b938b6d65de45a8d04ec9bf6f97b_large.jpg?1369542150"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/nerdkingdom/tug-1/assets/620441/edit" data-id="620441">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/620/441/fcec6525e936999a3a97d6c52de59037_large.jpg?1369542169"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/nerdkingdom/tug-1/assets/620443/edit" data-id="620443">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/620/443/a2fc91a13b90119235b3b357c0cdb3f1_large.jpg?1369542197"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/nerdkingdom/tug-1/assets/620445/edit" data-id="620445">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/620/445/100ec8ab6bd1891299f03ce6dbe4916e_large.jpg?1369542218"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/nerdkingdom/tug-1/assets/620447/edit" data-id="620447">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/620/447/1aa1b869b135fb00025960c9d36a732d_large.jpg?1369542252"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/nerdkingdom/tug-1/assets/620449/edit" data-id="620449">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/620/449/41cd6288fe97d3b4085111b76a10b8a7_large.jpg?1369542269"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/nerdkingdom/tug-1/assets/620452/edit" data-id="620452">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/620/452/286bee6d4aaafd28964d35a1fcb55ef8_large.jpg?1369542289"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/nerdkingdom/tug-1/assets/620454/edit" data-id="620454">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/620/454/d46ae775d2e559e84ac85327bf09f186_large.jpg?1369542315"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/nerdkingdom/tug-1/assets/620455/edit" data-id="620455">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/620/455/bcd83f27989f854397076911dd1d1041_large.jpg?1369542333"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/nerdkingdom/tug-1/assets/620459/edit" data-id="620459">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/620/459/8dbd13fac63b6d2af4b660069677c662_large.jpg?1369542355"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/nerdkingdom/tug-1/assets/620461/edit" data-id="620461">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/620/461/12b64429f67805ab5b597ee5f033cb65_large.jpg?1369542412"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/nerdkingdom/tug-1/assets/620463/edit" data-id="620463">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/620/463/073ef56a36c5fa12302b3817b7073000_large.jpg?1369542484"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/nerdkingdom/tug-1/assets/620464/edit" data-id="620464">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/620/464/2ca626b5cbe7fc94c3a1db9cb5f70dc0_large.jpg?1369542520"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/nerdkingdom/tug-1/assets/620467/edit" data-id="620467">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/620/467/2c27eadb46cda49d8121fb423ed4a37d_large.jpg?1369542559"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/nerdkingdom/tug-1/assets/620468/edit" data-id="620468">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/620/468/1e5df2ca8a999dcac3d85bd635224635_large.png?1369542569"></figure>
+</div>
+<p><b>Minimum specifications </b></p>
+<ul>
+<li>
+CPU: Quad-core Intel® or AMD processor </li>
+<li>
+OS: Windows® 7 or 8 </li>
+<li>
+Ram: 4 GB </li>
+<li>
+GPU: DirectX® 11 compatible card with 1 GB of memory, nVidia® 4XX+/AMD 5XXX+</li>
+<li>
+Hard Drive: 10 GB free space</li>
+</ul>
+<div></div>
+<p><b>Release Schedule</b><br>We will make the first Alpha available to backers in that tier in July of 2013. With time to play, share, and interact, we will add more features and reset priority lists based on feedback. Beginning in January of 2014, we will have the Beta phase of the project available to backers in that tier. And by January 2015, we will prepare for an official launch of TUG to the public, and continue to update and refine for as long as the community is enjoying it. All other tier rewards will be sent out as they become available over the course of development (and as soon as possible), but do forgive us if we fall a bit behind.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/nerdkingdom/tug-1/assets/558684/edit" data-id="558684">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/558/684/915501497771af467f65e6fe7a5a4ba2_large.jpg?1367438871"></figure>
+</div>
+
+
+
+</div>
+</div>
+<div id="risks">
+<h2 class="title grey-dark mt6 mb4">
+<span>Risks and challenges</span>
+<a href="/help/faq/kickstarter%20basics#Acco" class="right normal h5" target="_blank">Learn about accountability on Kickstarter</a>
+<div class="divider clear"></div>
+</h2>
+<p><p>This project is an incredibly unique collaboration of minds and practices, and with this comes a great deal of experimentation, iteration and discussions. The development of certain phases in the project may take longer than anticipated, as the primary objective is to make sure that all individual components can stand on their own and be fun. This is also a very new use for this type of technology, so many things are being refined and perfected over time, as there is not a massive community around this area of work, which may also lead to additional time for refinement of base systems.</p></p>
+</div>
+</div>
+<div class="NS-projects-faqs" id="project-faqs">
+<h2 class="title grey-dark mt6 mb4">
+FAQ
+<div class="divider clear"></div>
+</h2>
+<ul class="faqs">
+<li class="faq" id="project_faq_55089">
+<div class="faq-question">
+<a href="#project_faq_55089" name="project_faq_55089">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Will there be a 3rd-person camera option?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Yes! In some gameplay modes, you may have to craft (or discover!) a way to do this, but the option will definitely be available to players who prefer to play this way. You’ll also be able to craft items that will alter your field of view, and even function as periscopes or detachable cameras! </p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-05-13T15:47:11-04:00">Mon, May 13 2013 3:47 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_55090">
+<div class="faq-question">
+<a href="#project_faq_55090" name="project_faq_55090">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Will you really be able to do all the stuff you’re promising with the goal amount and time frame you’re posting here?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>We’ve managed to raise some funds from a few private investors and the additional help of friends and family to get us this far and sustain us for development up through this point. We’ve actually gotten the tech and engine pretty far along, already... a lot of the important systems that nobody sees are in place, and it’s important to remember that we are building a very special engine from scratch, not just slapping it into Unity or something... a one-stop solution just won&#39;t work for this. </p>
+
+<p>But continuing to add more features and support and creating modding tools will take time, resources, and people outside of our budget, so we turned to Kickstarter to see if there was any interest from supporters at this phase of development... and we have been floored by the outpouring of enthusiasm and support we’ve received so far. We really wanted to make the community aware of what we are doing and see if they wanted to be a part of it, and luckily, it seems like they do!</p>
+
+<p>The goal is for us to remain independent, and it’s important to note we are STILL independent even with the backing we’ve got, and will remain free of outside influence or control (even from our investors). Crowd-funding is also a chance for us to live up to our ideals of community involvement and joint ownership of the game with our players and supporters, and make TUG truly a community-driven project.</p>
+
+<p>Credit goes to reddit for this one... thanks falnu &amp; iesvs! ;)</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-05-02T20:21:10-04:00">Thu, May 2 2013 8:21 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_55091">
+<div class="faq-question">
+<a href="#project_faq_55091" name="project_faq_55091">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Will you be on Oculus Rift?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>We would be liar-liar-pants-on-fire if we say we were not drooling over it like the rest of them, and with our whole approach to having an organic non-intrusive UI system it would make TONS of sense... but alas, there really is not enough information out on what it will take to make it work. We do know it has Unreal and Unity for now, but we are using a custom built engine. And if it allows for us to make it happen, we certainly will. But for now, we cannot commit to time frames on it, just know that we are just as geeked out about the possibility as you are.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-05-09T12:15:53-04:00">Thu, May 9 2013 12:15 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_54930">
+<div class="faq-question">
+<a href="#project_faq_54930" name="project_faq_54930">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Will you guys be Mac and/or Linux compatible?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>If we can get the budget to cover it... absolutely! But in our current development path, we need to make sure we focus on Windows and on perfecting the game&#39;s core systems and making sure it&#39;s fun before we start porting it to other platforms. We don&#39;t wanna take any of our team away from perfecting the project at its core just yet. However, we are TOTALLY for getting it to Mac (and Linux!) once we are able!</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-05-23T21:27:29-04:00">Thu, May 23 2013 9:27 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_55092">
+<div class="faq-question">
+<a href="#project_faq_55092" name="project_faq_55092">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Will you be on Steam?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>It’s something we are considering, but there is a lot more to consider here than just the money and exposure, and it’s a rough trade off. On one side, the exposure and the sales would be awesome, totally! But the other side is that we would be stuck with how steam wants us to interact, when we are pushing to create seamless systems that will exist between game and community. Feedback from wikis, or forums (both positive or negative), or even from modding projects should translate into play and reward. And, hooray for science and tech, we have really neat systems already working that will make this stuff a lot of fun! But the fact of the matter is, we really want you guys to own this... the idea of Nerd Kingdom is that it’s supposed to be for all our fellow nerds. We will share all the pros and cons when the decision has to be made and let you guys tell us what your thoughts are.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-05-02T20:11:53-04:00">Thu, May 2 2013 8:11 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_55093">
+<div class="faq-question">
+<a href="#project_faq_55093" name="project_faq_55093">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">What exactly will we be getting in Alpha?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Alpha will be an early single-player build of creative tools, physics, lighting, and a WHOLE lot of stuff to explore, including vast deserts, spooky caves and fantastically unique environments. Obviously, it will be a bit buggy since it’s a brand spanking new new system, but we will be able to make a LOT of rapid fixes with you guys helping us out in this phase.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-05-07T10:46:54-04:00">Tue, May 7 2013 10:46 am EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_55152">
+<div class="faq-question">
+<a href="#project_faq_55152" name="project_faq_55152">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Will the game have a single-player mode?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Yes, absolutely! All of the content available in multiplayer will also be available in singleplayer. This includes crafting, lore, exploration, companions, building, survival, NPCs, etc. There won&#39;t be any kind of &quot;campaign&quot; with a definite ending, but there will definitely be tons of incentives to explore and progress!</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-05-03T18:32:18-04:00">Fri, May 3 2013 6:32 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_55153">
+<div class="faq-question">
+<a href="#project_faq_55153" name="project_faq_55153">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Will I be able to play offline?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Yes! You&#39;ll be able to play single-player offline, or host your own multiplayer server to play with friends. Playing on our servers will always be entirely optional!</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-05-03T19:37:02-04:00">Fri, May 3 2013 7:37 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_55154">
+<div class="faq-question">
+<a href="#project_faq_55154" name="project_faq_55154">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Will TUG have a subscription fee?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Never! This is a promise that we are making to you, as developers. You&#39;ll pay for the game once, and it will be yours forever.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-05-03T15:53:32-04:00">Fri, May 3 2013 3:53 pm EDT</time>
+</div>
+</div>
+</li>
+
+</ul>
+<div class="faq-ask-box">
+<a href="/projects/nerdkingdom/tug-1/messages/new?message%5Bto%5D=nerdkingdom&amp;mode=FAQ" class="button button_blue remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Ask a question about TUG">Ask a question</a>
+
+</div>
+</div>
+
+<div class="mt4 ml1 mr1 mb2" id="report-issue-wrap">
+<a href="/login?then=%2Fprojects%2Fnerdkingdom%2Ftug-1" class="button button_grey">Report this project to Kickstarter</a>
+</div>
+</div>
+<div class="NS-projects-rightcol grid_5" id="rightcol">
+<div class="NS_projects__ecom">
+<div class="digits_6 pb2 pl2 pt2" id="stats">
+<h5>
+<div class="num h48 no-margin" data-backers-count="7231" id="backers_count"><data class="Project1186359414" data-format="number" data-value="7231" itemprop="Project[backers_count]">7,231</data></div>
+<span><data class="Project1186359414" data-attr="backers_count" data-format="pluralize" data-value="7231" data-word="Backer">Backers</data></span>
+</h5>
+<h5>
+<div class="num h48 no-margin" data-goal="215000.0" data-percent-raised="1.363646744186046511627906977" data-pledged="293184.05" id="pledged">
+<data class="Project1186359414" data-currency="USD" data-format="shorter_money" data-precision="0" data-value="293184" data-without_code="true" itemprop="Project[pledged]">$293,184</data>
+<span class="money usd project_currency_code"></span>
+</div>
+pledged of
+<span class="money usd no-code">$215,000</span>
+goal
+</h5>
+<span data-duration="30.0" data-end_time="2013-05-31T16:26:48-04:00" data-hours-remaining="0" id="project_duration_data"></span>
+<div class="Project1186359414" data-conditions="[{&quot;!state&quot;:[&quot;canceled&quot;,&quot;suspended&quot;]}]" data-evaluation="true" data-render="&quot;&lt;h5 class=\&quot;poll \&quot; data-dynamic=\&quot;5\&quot; data-end_time=\&quot;2013-05-31T16:26:48-04:00\&quot; data-poll_url=\&quot;https://d2oher2uhvl0ur.cloudfront.net/projects/nerdkingdom/tug-1/stats.json\&quot;&gt;\n&lt;div class=\&quot;num h48 no-margin\&quot;&gt;0&lt;/div&gt;\n&lt;span class=\&quot;text\&quot;&gt;seconds to go&lt;/span&gt;\n&lt;/h5&gt;\n&quot;"><h5 class="poll " data-dynamic="5" data-end_time="2013-05-31T16:26:48-04:00" data-poll_url="https://d2oher2uhvl0ur.cloudfront.net/projects/nerdkingdom/tug-1/stats.json">
+<div class="num h48 no-margin">0</div>
+<span class="text">seconds to go</span>
+</h5>
+</div></div>
+<div class="Project1186359414" data-conditions="[{&quot;state&quot;:&quot;live&quot;},{&quot;!ended?&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;pr2 pl2\&quot; id=\&quot;pledge-wrap\&quot;&gt;\n&lt;a href=\&quot;/projects/nerdkingdom/tug-1/pledge/new?clicked_reward=false\&quot; class=\&quot;button button_green button_box button_block\&quot; id=\&quot;button-back-this-proj\&quot; title=\&quot;Back this project\&quot;&gt;Back This Project &lt;small class=&#39;h6 normal block green-dark&#39;&gt;&lt;span class=\&quot;money usd \&quot;&gt;$1&lt;/span&gt; minimum pledge&lt;/small&gt;&lt;/a&gt;\n&lt;/div&gt;\n&quot;"></div><div class="Project1186359414" data-conditions="[{&quot;state&quot;:&quot;live&quot;}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;p2\&quot; id=\&quot;banner\&quot;&gt;\n&lt;p class=\&quot;tiny_type no-margin\&quot;&gt;\nThis project will be funded on\n&lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;llll z\&quot; datetime=\&quot;2013-05-31T16:26:48-04:00\&quot;&gt;Fri, May 31 2013 4:26 pm EDT&lt;/time&gt;.\n&lt;/p&gt;\n&lt;/div&gt;\n&quot;"></div></div>
+
+<div class="NS_projects__rightcol_projectby bg-blue-light rounded">
+<div class="p2 clearfix">
+<div class="avatar inline-block align-middle">
+<a href="/projects/nerdkingdom/tug-1/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography"><img alt="Ksnk.small" class="avatar-small" height="80" src="https://s3.amazonaws.com/ksr/avatars/1047274/KSNK.small.jpg?1367091719" width="80" />
+</a></div>
+<div class="creator-name inline-block align-middle ml1">
+<h6 class="mb1">Project by</h6>
+<h5 class="mb1">
+<a href="/projects/nerdkingdom/tug-1/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">Nerd Kingdom</a>
+</h5>
+<p class="location h6 bold mb1">
+<a href="/discover/places/redondo-beach-ca">Redondo Beach, CA</a>
+</p>
+</div>
+</div>
+<div class="creator-details pl2 pr2 pb1">
+<ul class="list-simple h5 mb1">
+<li class="projects">
+<span class="ss-icon ss-kickstarter grey-dark margin-right"></span>
+<span class="text">
+First created
+<span class="divider">&middot;</span>
+<a href="/profile/nerdkingdom/backed" class="green-dark bold more-button remote_modal_dialog" data-modal-title="Projects backed by Nerd Kingdom">27 backed</a>
+</span>
+</li>
+<li>
+<span class="ss-icon ss-facebook margin-right grey-dark"></span>
+<span class="text">
+Has not connected Facebook
+</span>
+</li>
+<li class="links">
+<span class="ss-icon ss-globe margin-right grey-dark"></span>
+<span class="text">
+<a href="http://www.nerdkingdom.com" class="popup" rel="nofollow" target="_blank">nerdkingdom.com</a>
+</span>
+</li>
+</ul>
+</div>
+<div class="footer center h5 bold clearfix rounded-bottom clip">
+<a href="/projects/nerdkingdom/tug-1/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">See full bio</a>
+<a href="/projects/nerdkingdom/tug-1/messages/new?message%5Bto%5D=nerdkingdom" class="remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Send a message to Nerd Kingdom">Contact me</a>
+
+</div>
+</div>
+
+<ul class="NS-projects-rightcol-rewards rounded clip list mt2" data-reward-count="30" id="what-you-get">
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$10</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+3226 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(1774 left of 5000)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>EARLY BACKERS ONLY!  DIGITAL DOWNLOADABLE COPY OF TUG! This limited pre-order price point is only available for the first backers of TUG.  We will welcome and thank you for your support with an EXCLUSIVE &quot;Kickstarter Early Backer&quot; credit on Nerd Kingdom&#39;s &quot;Wall of Devotus&quot; webpage!!!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-01-01">Jan 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$15</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+311 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(7189 left of 7500)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>DIGITAL DOWNLOADABLE COPY OF TUG!  This price point is only available for those who help fund before the game is released! You also get a &quot;Kickstarter Backer&quot; credit on Nerd Kingdom&#39;s &quot;Wall of Devotus&quot; webpage!!!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-01-01">Jan 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$25</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+72 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(4928 left of 5000)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Previous reward tier, but with a Kickstarter EXCLUSIVE &quot;Early Kickstarter Backer&quot; TUG forum recognition badge, wallpaper pack, and font pack.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-01-01">Jan 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$30</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1272 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(728 left of 2000)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>NEW!!! DIGITAL ONLY BETA ACCESS!!!  -- You’ll have access to the Beta version of TUG with ALL future updates + IN-GAME ASSETS (won’t affect balancing)!!!   You’ll receive the “MARK OF THE CHOSEN,” a special tattoo on your player’s avatar EXCLUSIVE TO KICKSTARTER BETA BACKERS ONLY to identify you as a hardcore early Beta backer IN-GAME!!!  You’ll also receive an EXCLUSIVE “Early Kickstarter Backer” TUG forum recognition badge and credit on Nerd Kingdom’s “Wall of Devotus” webpage, digital wallpaper pack, and digital font pack.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-01-01">Jan 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$30</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+52 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>DIGITAL DOWNLOADABLE COPY OF TUG!  You also get a &quot;Kickstarter Backer&quot; TUG forum recognition badge, wallpaper pack, font pack, and a &quot;Kickstarter Backer&quot; credit on Nerd Kingdom&#39;s &quot;Wall of Devotus&quot; webpage!!!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-01-01">Jan 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$45</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+241 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(9759 left of 10000)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>BETA FORGE TIER!!! DIGITAL DOWNLOADABLE COPY OF TUG IN BETA WITH ALL FUTURE UPDATES! Playing in the beta phase means that your play contributes to the design of the game!!! You will also get access to Nerd Kingdom&#39;s EXCLUSIVE design forum where your feedback is first in the pipeline!!! You also get an EXCLUSIVE &quot;Kickstarter FORGE Backer&quot; TUG forum recognition badge, wallpaper pack, font pack, digital concept art, and a &quot;Kickstarter FORGE Backer&quot; credit on Nerd Kingdom&#39;s &quot;Wall of Devotus&quot; webpage!!!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-01-01">Jan 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$45</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+2 backers
+</span>
+<span class="bg-grey no-wrap pl1 pr1 sold-out">
+All gone!
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>BETA FORGE TIER!!!  DIGITAL DOWNLOADABLE COPY OF TUG IN BETA WITH ALL FUTURE UPDATES!  Playing in the beta phase means that your play contributes to the design of the game!!!  You will also get access to Nerd Kingdom&#39;s EXCLUSIVE design forum where your feedback is first in the pipeline!!!  You also get an EXCLUSIVE &quot;Kickstarter FORGE Backer&quot; TUG forum recognition badge, wallpaper pack, font pack, digital concept art, and a &quot;Kickstarter FORGE Backer&quot; credit on Nerd Kingdom&#39;s &quot;Wall of Devotus&quot; webpage!!!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-01-01">Jan 2015</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="domestic">
+Ships within the US only
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$45</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+388 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(112 left of 500)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>NEW!!!  DIGITAL ONLY BETA PLUS PACK!!! – Includes everything in the DIGITAL ONLY BETA ACCESS TIER + IN-GAME ASSETS (won’t affect balancing)!!!  You’ll get a KICKSTARTER EXCLUSIVE BABY SABRE TIGER COMPANION CRITTER to later train and have accompany you on your journey!!!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-01-01">Jan 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$65</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+379 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(1121 left of 1500)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>ALPHA FORGE TIER!!! Previous reward tier + DIGITAL DOWNLOADABLE COPY OF TUG IN ALPHA WITH ALL FUTURE UPDATES! Playing in the alpha phase means that your play is the FIRST to contribute to the design of the game, so get in on the ground floor while you can!!! You also get a special digital book of concept art used in the making of TUG!!!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-01-01">Jan 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$65</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+498 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(2 left of 500)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>$65 NEW!!!  DIGITAL ONLY ALPHA PLUS PACK!!! - Includes everything in the DIGITAL ONLY BETA PLUS PACK + IN-GAME ASSETS (won’t affect balancing)!!!  You’ll also get a KICKSTARTER EXCLUSIVE RARE BEAST PELT for your character to wear on the hunt!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-01-01">Jan 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$65</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+11 backers
+</span>
+<span class="bg-grey no-wrap pl1 pr1 sold-out">
+All gone!
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>ALPHA FORGE TIER!!!  Previous reward tier + DIGITAL DOWNLOADABLE COPY OF TUG IN ALPHA WITH ALL FUTURE UPDATES! Playing in the alpha phase means that your play is the FIRST to contribute to the design of the game, so get in on the ground floor while you can!!! You also get a special digital book of concept art used in the making of TUG!!!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-01-01">Jan 2015</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="domestic">
+Ships within the US only
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$75</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+3 backers
+</span>
+<span class="bg-grey no-wrap pl1 pr1 sold-out">
+All gone!
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Previous reward tier + TUG Poster, a 2x digital gift pack of TUG for two friends, TUG sticker, a &quot;TUG Life&quot; wristband, and a TUG t-shirt! (Please include an extra $15 for international shipping.)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-01-01">Jan 2015</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="domestic">
+Ships within the US only
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$75</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+290 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Previous reward tier + TUG Poster, a 2x digital gift pack of TUG for two friends, TUG sticker, a &quot;TUG Life&quot; wristband, and a TUG t-shirt!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-01-01">Jan 2015</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $15 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$95</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+25 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(75 left of 100)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Previous reward tier, but your TUG poster will be SIGNED by the Nerd Kingdom Art Team!!!  We&#39;ll also 2x your sticker AND wristband orders for this SPECIAL tier. (Please include an extra $15 for international shipping.)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-01-01">Jan 2015</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $15 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$115</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+90 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(160 left of 250)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>CORE BACKER TIER!!! IN-GAME ASSET (won&#39;t affect balancing): A companion WISP will light your way throughout your adventure! You&#39;ll also get everything from the ALPHA FORGE TIER, be recognized as an EXCLUSIVE &quot;Kickstarter CORE Backer&quot; with a TUG forum badge, receive a credit as a &quot;Kickstarter CORE Backer&quot; on Nerd Kingdom&#39;s &quot;Wall of Devotus&quot; webpage, a TUG poster, a 2x digital gift pack of TUG for two friends, TUG sticker, a &quot;TUG Life&quot; wristband, and a TUG t-shirt!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-01-01">Jan 2015</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $15 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$115</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+<span class="bg-grey no-wrap pl1 pr1 sold-out">
+All gone!
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>CORE BACKER TIER!!!  IN-GAME ASSET (won&#39;t affect balancing):  A companion WISP will light your way throughout your adventure! You&#39;ll also get everything from the ALPHA FORGE TIER,  be recognized as an EXCLUSIVE &quot;Kickstarter CORE Backer&quot; with a TUG forum badge, receive a credit as a &quot;Kickstarter CORE Backer&quot; on Nerd Kingdom&#39;s &quot;Wall of Devotus&quot; webpage, a TUG poster, a 2x digital gift pack of TUG for two friends, TUG sticker, a &quot;TUG Life&quot; wristband, and a TUG t-shirt! (Please include an extra $15 for international shipping.)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-01-01">Jan 2015</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="domestic">
+Ships within the US only
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$125</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+43 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(157 left of 200)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>CORE BACKER TIER!!! IN-GAME ASSET (won&#39;t affect balancing):  A companion MOUNT will carry you onward as you embark on your journey!  You&#39;ll also get everything from the ALPHA FORGE TIER, be recognized as an EXCLUSIVE &quot;Kickstarter CORE Backer&quot; with a TUG forum badge, receive a credit as a &quot;Kickstarter CORE Backer&quot; on  Nerd Kingdom&#39;s &quot;Wall of Devotus&quot; webpage, a TUG poster, a 2x digital gift pack of TUG for two friends, TUG sticker, a &quot;TUG Life&quot; wristband, and a TUG t-shirt! (Please include an extra $15 for international shipping.)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-01-01">Jan 2015</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $15 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$135</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+5 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(145 left of 150)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>CORE BACKER TIER!!! IN-GAME ASSET (won&#39;t affect balancing): A companion GOLEM will join you on your adventure! You&#39;ll also get everything from the ALPHA FORGE TIER, be recognized as an EXCLUSIVE &quot;Kickstarter CORE Backer&quot; with a TUG forum badge, receive a credit as a &quot;Kickstarter CORE Backer&quot; on Nerd Kingdom&#39;s &quot;Wall of Devotus&quot; webpage, a TUG poster, a 2x digital gift pack of TUG for two friends, TUG sticker, a &quot;TUG Life&quot; wristband, and a TUG t-shirt! (Please include an extra $15 for international shipping.)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-01-01">Jan 2015</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $15 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$150</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+33 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(42 left of 75)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>CORE BACKER TIER!!! IN-GAME ASSET (won&#39;t affect balancing): The Kickstarter EXCLUSIVE, RARE  METEOR GOLEM companion will join you on your adventure! You&#39;ll also get everything from the ALPHA FORGE TIER, be recognized as an EXCLUSIVE &quot;Kickstarter CORE Backer&quot; with a TUG forum badge, receive a credit as a &quot;Kickstarter CORE Backer&quot; on Nerd Kingdom&#39;s &quot;Wall of Devotus&quot; webpage, a TUG poster, a 2x digital gift pack of TUG for two friends, TUG sticker, a &quot;TUG Life&quot; wristband, and a TUG t-shirt! (Please include an extra $15 for international shipping.)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-01-01">Jan 2015</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $15 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$180</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+30 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(70 left of 100)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>CORE BACKER COMPANIONS PACK!!! IN-GAME ASSETS (won&#39;t affect balancing): You&#39;ll be joined by a WISP, MOUNT, AND GOLEM to accompany you on your adventure!!!  You&#39;ll also receive everything from the ALPHA FORGE TIER, be recognized as an EXCLUSIVE &quot;Kickstarter CORE Backer&quot; with a TUG forum badge, receive a credit as a &quot;Kickstarter CORE Backer&quot; on Nerd Kingdom&#39;s &quot;Hall of Fame&quot; webpage, a TUG poster, a 2x digital gift pack of TUG for two friends, TUG sticker, a &quot;TUG Life&quot; wristband, and a TUG t-shirt! (Please include an extra $15 for international shipping.)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-01-01">Jan 2015</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $15 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$195</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+50 backers
+</span>
+<span class="bg-grey no-wrap pl1 pr1 sold-out">
+All gone!
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>CORE BACKER COMPANIONS PACK!!! IN-GAME ASSETS (won&#39;t affect balancing) : You&#39;ll be joined by a WISP, MOUNT, AND the Kickstarter EXCLUSIVE, SUPER RARE ASTEROID GOLEM to accompany you on your adventure!!! You&#39;ll also receive everything from the ALPHA FORGE TIER, be recognized as an EXCLUSIVE &quot;Kickstarter CORE Backer&quot; with a TUG forum badge, receive a credit as a &quot;Kickstarter CORE Backer&quot; on Nerd Kingdom&#39;s &quot;Wall of Devotus&quot; webpage, a TUG poster, a 2x digital gift pack of TUG for two friends, TUG sticker, a &quot;TUG Life&quot; wristband, and a TUG t-shirt! (Please include an extra $15 for international shipping.)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-01-01">Jan 2015</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $15 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$225</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+34 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(166 left of 200)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>NEW!!!  DIGITAL ONLY CORE GUILD BUNDLE!!!  You’ll have alpha access with all future updates for yourself, as well as a 2x gift pack for TWO friends (with same level of access and digital goods as your copy).  You’ll also receive the following in-game assets for each copy of the game:  A KICKSTARTER EXCLUSIVE RARE METEOR GOLEM, a wisp, a mount, a KICKSTARTER EXCLUSIVE RARE BABY SABRE TIGER, the KICKSTARTER EXCLUSIVE “MARK OF THE CHOSEN,” and a KICKSTARTER EXCLUSIVE RARE beast pelt.  Finally, as the primary backer, you’ll personally be recognized with a KICKSTARTER EXCLUSIVE “CORE GUILD Backer” forum recognition badge and credit on Nerd Kingdom’s “Wall of Devotus” webpage, and receive a TUG digital font pack, a TUG digital wallpaper pack, and a TUG digital concept art book.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-01-01">Jan 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$275</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+64 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(36 left of 100)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>CORE-FORGER EXTRAORDINAIRE!!!  Access special Nerd Kingdom research and design experiment servers and play with the Nerd Kingdom team!!!  Kickstarter EXCLUSIVE EARLY ACCESS to our server data dumps and research project pipeline, perfect for the aspiring researcher!!!  You&#39;ll also be recognized as an EXCLUSIVE &quot;Kickstarter CORE-FORGER EXTRAORDINAIRE Backer&quot; with a TUG forum badge, receive a credit as a &quot;Kickstarter CORE-FORGER EXTRAORDINAIRE Backer&quot; on Nerd Kingdom&#39;s &quot;Wall of Devotus&quot; webpage, a SIGNED TUG poster, a 4x digital gift pack of TUG, 4x TUG stickers, 4x &quot;TUG Life&quot; wristbands, and 4x TUG t-shirts! You&#39;ll also receive the WISP, MOUNT, AND the Kickstarter EXCLUSIVE, SUPER RARE ASTEROID GOLEM to accompany you on your adventure (won&#39;t affect balancing)!!!  You&#39;ll also be given everything in the ALPHA FORGE TIER!!! (Please include an extra $15 for international shipping.)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-01-01">Jan 2015</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $15 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$375</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+34 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(41 left of 75)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>NEW!!!  DIGITAL ONLY CORE-FORGER EXTRAORDINAIRE GUILD BUNDLE!!!  You’ll have alpha access with all future updates for yourself, in addition to a 6x gift pack for SIX friends (with same level of access and digital goods as your copy).  You’ll also receive the following in-game assets for each copy of the game:  A KICKSTARTER EXCLUSIVE SUPER RARE ASTEROID GOLEM, WISP, MOUNT, A KICKSTARTER EXCLUSIVE RARE BABY SABRE TIGER, the KICKSTARTER EXCLUSIVE “MARK OF THE CHOSEN,” and a KICKSTARTER EXCLUSIVE RARE BEAST PELT, all for your use IN-GAME!!!  You’ll also have access to the special Nerd Kingdom research and design experiment servers and will be able to play TUG with the Nerd Kingdom team!!!   In addition, you’ll receive KICKSTARTER EXCLUSIVE EARLY ACCESS to our server data dumps and research project pipeline, perfect for the aspiring researcher!!! You&#39;ll also be recognized as an EXCLUSIVE &quot;Kickstarter CORE-FORGER EXTRAORDINAIRE GUILD Backer&quot; with a TUG forum badge and credit on Nerd Kingdom&#39;s &quot;Wall of Devotus&quot; webpage, and receive a TUG digital font pack, a TUG digital wallpaper pack, and a TUG digital concept art book.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-01-01">Jan 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+10 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(90 left of 100)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>TUG 4 LIFE TIER!!!  IN-GAME CREDIT!!!  Previous reward tier + your name will be forever memorialized in the WELL OF THE ETERNUS to be discovered by any passerby in the world of TUG!!!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-01-01">Jan 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$1,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(29 left of 30)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>TUG 4 LIFE TIER!!!  Previous reward tier + DESIGN AN NPC (Non-Player Character)!!!  See your legacy to TUG live on... IN-GAME!!!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-01-01">Jan 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$1,250</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+3 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(7 left of 10)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>NEW!!! DIGITAL ONLY TUG 4 LIFE TIER!!!  You’ll have an avatar-sized statue of your character with your name to be erected in the “Statue Garden” to forever memorialize your contribution to TUG at a special location IN-GAME!!!  Leave your legacy alongside those of everyone else who has made a monumental contribution to TUG!!!  You’ll also get all of the DIGITAL rewards at the lower tiers, INCLUDING:  DESIGN AN NPC (Non-Player Character), alpha access with all future updates in addition to a 6x gift pack for SIX friends (with same level of access and digital goods as your copy), the following in-game assets for each copy of the game:  A KICKSTARTER EXCLUSIVE SUPER RARE ASTEROID GOLEM, WISP, MOUNT, A KICKSTARTER EXCLUSIVE RARE BABY SABRE TIGER, the KICKSTARTER EXCLUSIVE “MARK OF THE CHOSEN,” and a KICKSTARTER EXCLUSIVE RARE BEAST PELT; access to the special Nerd Kingdom research and design experiment servers and will be able to play TUG with the Nerd Kingdom team; a KICKSTARTER EXCLUSIVE EARLY ACCESS to our server data dumps and research project pipeline, perfect for the aspiring researcher!!! You&#39;ll also be recognized as an EXCLUSIVE &quot;TUG 4 LIFE&quot; with a TUG forum badge, receive a credit as a &quot;Kickstarter CORE-FORGER EXTRAORDINAIRE GUILD Backer&quot; on Nerd Kingdom&#39;s &quot;Wall of Devotus&quot; webpage, a TUG digital font pack, TUG digital wallpaper pack, and a TUG digital concept art book.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-01-01">Jan 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$2,500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(5 left of 5)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>NEW!!! DIGITAL ONLY TUG 4 LIFE TIER!!!  Previous reward tier + Work with the Nerd Kingdom team and help create a concept for one of TUG’s GIANT WORLD MONSTERS (must be appropriate &amp; within the limits of our design approach)!!!  Leave your legacy in TUG by being part of the creation of a truly magnificent creature that everyone can run into in-game!!!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-01-01">Jan 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$5,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(9 left of 10)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>TUG 4 LIFE TIER!!!  Previous reward tier + a Kickstarter EXCLUSIVE, MASSIVE STATUE OF YOUR PLAYER AVATAR HIDDEN IN-GAME!!!  Uncover the monument to your hidden past memorializing your contribution to TUG!!!  Additionally,   you and a friend are invited to the Nerd Kingdom TUG launch party in Los Angeles, CA!!!  Come have dinner with the team, party, hang out, and of course...PLAY GAMES!!!  Nerd Kingdom will award you with a plaque with your name and credit as a TUG producer in a special ceremony at dinner!   (Travel expenses not included.)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-01-01">Jan 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$8,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(5 left of 5)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>TUG 4 LIFE TIER!!!  Previous reward tier, except now you and THREE of your friends are invited to the Nerd Kingdom TUG launch party in Los Angeles, CA!!! Come have dinner with the team, party, hang out, and of course...PLAY GAMES!!!  Nerd Kingdom will award you with a plaque with your name and credit as a TUG producer in a special ceremony at dinner!   (Travel expenses not included.)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-01-01">Jan 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+</ul>
+
+<div class="p2" id="meta">
+<h5>Funding period</h5>
+<p class="tiny_type">
+<time class="js-adjust" data-format="ll" datetime="2013-05-01T16:26:48-04:00">May 1, 2013</time> - 
+<time class="js-adjust" data-format="ll" datetime="2013-05-31T16:26:48-04:00">May 31, 2013</time>
+(30 days)
+</p>
+</div>
+</div>
+
+</div>
+
+<a href="#" id="video_mode_tab" style="display: none;">
+View in Video Mode
+</a>
+
+</div>
+</div>
+
+
+</div>
+
+<div class="h5 bg-green-dark" id="mega-footer-wrap">
+<div class="bg-green-dark white full-height" id="footer-newsletter-signup">
+<div class="container py4">
+<div class="grid_8 prefix_4 suffix_4 center mt4">
+<h2>
+Eureka! You've found
+<br>
+our little secret.
+</h2>
+<p>Sign up for our Happening email for all the inside info about arts and culture in the Kickstarter universe and beyond.</p>
+<div class="newsletter_signup">
+<form accept-charset="UTF-8" action="/newsletters/happening/signup" class="overlabels" method="post"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /><input class="hidden" name="authenticity_token" type="hidden" value="9dymU0OrqTmXyQwzNK1qelw7Gm3j5ThJ4SqurPNGx28=" /></div><input class="hidden" id="location" name="location" type="hidden" value="footer" />
+<textarea class="hide textarea" id="comment" name="comment">
+</textarea>
+<div class="field newsletter">
+<label class="overlabel z1 overlabel-newsletter">Email address</label>
+<input class="text" id="email" name="email" type="text" />
+</div>
+<input class="button button_green submit" name="commit" type="submit" value="Submit" />
+</form>
+
+</div>
+
+</div>
+</div>
+</div>
+<div class="container relative" id="mega-footer">
+<span class="scissors icon-scissors-1"></span>
+<div class="grid_16 alpha omega pt4 pb2" id="mega-footer-links">
+<div class="grid_4 link-group">
+<h5 class="white">About us</h5>
+<ul class="list">
+<li><a href="/year/2013/?ref=footer">2013 highlights</a></li>
+<li><a href="/year/2012?ref=footer">2012 highlights</a></li>
+<li><a href="/team?ref=footer">Who we are</a></li>
+<li><a href="/jobs?ref=footer">Jobs</a></li>
+<li><a href="/press?ref=footer">Press</a></li>
+<li><a href="/help/stats?ref=footer">Stats</a></li>
+<li><a href="/newsletters/weekly">Projects we love</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group">
+<h5><a href="/help?ref=footer" class="white">Help</a></h5>
+<ul class="list">
+<li><a href="/hello?ref=footer">What is Kickstarter?</a></li>
+<li><a href="/help?ref=footer">FAQ</a></li>
+<li><a href="/contact?ref=footer">Support</a></li>
+<li><a href="/help/school?ref=footer">Kickstarter School</a></li>
+<li><a href="/terms-of-use?ref=footer">Terms of Use</a></li>
+<li><a href="/privacy?ref=footer">Privacy Policy</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group alpha omega suffix_1">
+<h5 class="alpha"><a href="/discover/advanced?ref=footer" class="white">Discover</a></h5>
+<ul class="column column-0 grid_2 list">
+<li><a href="/discover/categories/art?ref=footer">Art</a></li>
+<li><a href="/discover/categories/comics?ref=footer">Comics</a></li>
+<li><a href="/discover/categories/dance?ref=footer">Dance</a></li>
+<li><a href="/discover/categories/design?ref=footer">Design</a></li>
+<li><a href="/discover/categories/fashion?ref=footer">Fashion</a></li>
+<li><a href="/discover/categories/film%20&amp;%20video?ref=footer">Film &amp; Video</a></li>
+<li><a href="/discover/categories/food?ref=footer">Food</a></li>
+</ul>
+<ul class="column column-1 grid_2 list">
+<li><a href="/discover/categories/games?ref=footer">Games</a></li>
+<li><a href="/discover/categories/music?ref=footer">Music</a></li>
+<li><a href="/discover/categories/photography?ref=footer">Photography</a></li>
+<li><a href="/discover/categories/publishing?ref=footer">Publishing</a></li>
+<li><a href="/discover/categories/technology?ref=footer">Technology</a></li>
+<li><a href="/discover/categories/theater?ref=footer">Theater</a></li>
+</ul>
+</div>
+<div class="grid_3 link-group">
+<h5 class="white">Hello</h5>
+<ul class="list">
+<li>
+<a href="https://twitter.com/kickstarter"><span class="ss-icon ss-social-regular ss-twitter"></span>
+Twitter
+</a></li>
+<li>
+<a href="https://www.facebook.com/Kickstarter"><span class="ss-icon ss-social-regular ss-facebook"></span>
+Facebook
+</a></li>
+<li>
+<a href="http://kickstarter.tumblr.com"><span class="ss-icon ss-social-regular ss-tumblr"></span>
+Tumblr
+</a></li>
+<li>
+<a href="http://instagram.com/kickstarter"><span class="ss-icon ss-social-regular ss-instagram"></span>
+Instagram
+</a></li>
+<li>
+<a href="https://vine.co/Kickstarter"><span class="ss-icon ss-social-regular ss-vine"></span>
+Vine
+</a></li>
+<li>
+<a href="/blog?ref=footer">Blog</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="grid_16 py4" id="mega-footer-bottom">
+<div class="logo left">
+<a href="/" class="grey-dark"><span class="ss-icon h3">KICKSTARTER</span>
+</a></div>
+<p class="right h5 grey-dark">
+&copy;
+2014
+Kickstarter, Inc.
+</p>
+</div>
+</div>
+</div>
+
+<script>
+  //<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    var analytics_vars = { google_analytics_id : "UA-7621056-1", logged_in : "false", social_user: "false" }
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.mixpanel_id = '75b1d24a516ecfc955eadfadc4910661';
+    window.mixpanel_debug = false;
+  //]]>
+</script>
+
+
+<noscript>
+<img alt="Quantcast" border="0" height="1" src="//secure.quantserve.com/pixel/p-34IbSpw2K94Sg.gif" style="display:none" width="1" />
+</noscript>
+
+
+<script>
+  //<![CDATA[
+    window.benchmark = (typeof window.performance == 'object' && typeof window.performance.mark == 'function');
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    (function (root) {
+      function instrument_function (original) {
+        return function () {
+          try {
+            return original.apply(this, arguments);
+          } catch (e) {
+            if (e.stack && root.Honeybadger) {
+              Honeybadger.notify(e, {
+                current_project : root.current_project,
+                current_user : root.current_user
+              });
+            }
+            throw(e);
+          }
+        };
+      }
+      root.instrument_function = instrument_function;
+    }(this));
+  //]]>
+</script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+
+<script>
+  //<![CDATA[
+    (function(){function c(a){this.local_start_time=new Date;this.settings={cookie_name:"request_time"};for(var b in a)this.settings[b]=a[b];this.get_remote_offset()}c.prototype.get_remote_offset=function(){this.cookie_value=this.read_cookie();var a=new Date(this.cookie_value);if(!this.cookie_value||"Invalid Date"===a.toString()){if(this.remote_offset=this.read_cookie("local_offset"))this.remote_offset=parseInt(this.remote_offset,10)}else this.remote_offset=a-this.local_start_time;"undefined"!==typeof this.remote_offset&& !isNaN(this.remote_offset)?(document.cookie="local_offset="+this.remote_offset+"; path=/",this.is_set=!0):this.is_set=!1};c.prototype.time_units=[["milliseconds",1],["seconds",1E3],["minutes",6E4],["hours",36E5],["days",864E5]];c.prototype.get_units_in_interval=function(a,b){var d=a.replace(/^\w/,function(d){return"get"+d.toUpperCase()});return b[d]()};c.prototype.milliseconds_in_day=function(a){"undefined"===typeof a&&(a=new Date);for(var b=0,d=this.time_units.length-2;0<=d;d--)b+=this.get_units_in_interval(this.time_units[d][0], a)*this.time_units[d][1];return b};c.prototype.milliseconds_in_interval=function(a,b){return this.milliseconds_in_day(b)%a};c.prototype.milliseconds_to_next_interval=function(a,b){return a-this.milliseconds_in_interval(a,b)};c.prototype.pluralize=function(a,b){1===b&&(a=a.replace(/s$/,""));return a};c.prototype.read_cookie=function(a){for(var b=window.document.cookie.split(";"),a=(a||this.settings.cookie_name)+"=",d=0;d<b.length;d++){for(var e=b[d];" "==e.charAt(0);)e=e.substring(1,e.length);if(0== e.indexOf(a))return b=e.substring(a.length,e.length),decodeURIComponent(b).replace(/\+/g," ")}return null};c.prototype.destroy_cookie=function(a){var b=new Date;a||(a=this.settings.cookie_name);b.setTime(b.getTime()-864E5);window.document.cookie=a+"=; expires="+b.toGMTString()+"; path=/"};c.prototype.get_remote_time=function(){var a=new Date,b=a.getTime()+this.remote_offset;return a=a.setTime(b)};window.ksr_page_clock=new c})(); (function(){function c(d,a,b){if(d){this.options={unit_base:{seconds:119,minutes:119,hours:72,days:0},end_phrase:d.getAttribute("data-word")||"to go",count_down:d.getAttribute("data-dynamic")||!1};for(k in b)this.options[k]=b[k];this.clock=a;this.time_units=this.clock.time_units.slice(1);this.element=d;this.clock.is_set&&this.attach()}}function a(){this.elements=[];this.attach()}var b=function(d,a){var b=a||window.document.body,c=d.split("."),g=c[c.length-1],c=1<c.length&&c[0]?c[0]:"*";if(window.document.getElementsByClassName)return b.getElementsByClassName(g); if(b.querySelectorAll)return b.querySelectorAll(d);for(var c=b.getElementsByTagName(c),h=[],i=0,f;f=c[i];i++)b=RegExp("(^|\\s)"+g+"(\\s|$)"),(""+f.className).match(b)&&h.push(f);return h};c.prototype.get_remaining_time=function(){var d=this.remote_end_time-this.clock.get_remote_time();0>d&&(d=0);return d};c.prototype.get_current_unit=function(){for(var d,a=0;a<this.time_units.length&&!(d=this.time_units[a],this.get_remaining_time()<=this.options.unit_base[d[0]]*d[1]);a++);return d};c.prototype.update_element= function(){var a=this.get_current_unit(),b=Math.floor(this.get_remaining_time()/a[1]);isNaN(b)||(this.number_element.innerHTML=b,this.text_element.innerHTML=this.clock.pluralize(a[0],b)+" "+this.options.end_phrase)};c.prototype.valid=function(){return!(!this.number_element||!this.text_element)};c.prototype.attach=function(){function a(){c.update_element();if(c.options.count_down&&0<c.get_remaining_time()){var b=c.get_current_unit();this.timeout=window.setTimeout(a,c.clock.milliseconds_to_next_interval(b[1]))}} var c=this;if(this.remote_end_time_string=this.element.getAttribute("data-end_time"))this.remote_end_time_string.match(/^\d+$/)?(this.remote_end_time=new Date,this.remote_end_time.setTime(this.remote_end_time_string)):this.remote_end_time=new Date(this.remote_end_time_string),this.number_element=b(".num",this.element)[0],this.text_element=b(".text",this.element)[0],this.element.ksr_page_timer=!0,this.valid()&&a()};c.prototype.cancel=function(){this.timeout&&clearTimeout(this.timeout)};a.prototype.loading= !0;a.prototype.stop_finding=function(){this.attach_timers();this.loading=!1;document.addEventListener?document.removeEventListener("DOMContentLoaded",this.stop_finding,!1):document.attachEvent&&"complete"===document.readyState&&document.detachEvent("onreadystatechange",this.stop_finding)};a.prototype.bind_ready=function(){var a=this,b=function(){a.stop_finding.call(a)};document.addEventListener?(document.addEventListener("DOMContentLoaded",b,!1),window.addEventListener("load",b,!1)):document.attachEvent&& (document.attachEvent("onreadystatechange",b),window.attachEvent("onload",b))};a.prototype.attach_timers=function(){for(var a=b("div.ksr_page_timer"),e=0;e<a.length;e++)a[e].ksr_page_timer||(new c(a[e],window.ksr_page_clock),this.elements.push(a[e]))};a.prototype.attach=function(){var a=this;this.bind_ready();(function(){a.attach_timers();a.loading&&window.setTimeout(function(){a.attach_timers()},200)})()};window.ProjectTimer=c;new a})();
+  //]]>
+</script>
+
+<script class="template" id="template-widgets__video_embed_code" type="text/x-tmpl-mustache"><iframe width="{{width}}" height="{{height}}" src="{{{path}}}" frameborder="0" scrolling="no"> </iframe>
+</script><script class="template" id="template-projects__baseball_card_tall" type="text/x-tmpl-mustache"><div class="project-card-wrap project-card-wrap-tall border bg-white rounded clip">
+  <div class="project-card relative project-live {{#successful?}}successful{{/successful?}}">
+    <div class="project-thumbnail pt1 pl1 pr1">
+      <a href="{{urls.web.project}}" target="">
+        <img alt="Photo-little" class="projectphoto-little" src="{{photo.little}}" class="fit">
+      </a>
+    </div>
+    <div class="project-card-interior p1 h6 grey-dark">
+      <h6 class="project-title">
+        <a href="{{urls.web.project}}" target="" class="green-dark">{{name}}</a>
+      </h6>
+      <p class="mb1 ellipsis">
+        by
+        {{creator.name}}
+      </p>
+      <p class="blurb">
+        {{blurb}}
+      </p>
+    </div>
+    <div class="absolute-bottom bg-white rounded-bottom">
+
+      {{#location}}
+        <ul class="p1 list project-meta no-margin h6">
+          <li class="ellipsis">
+            <a href="{{location.urls.web.discover}}" data-location="{{location_json}}" class="grey-dark">
+              <span class="ss-icon ss-location"></span>
+              <span class="location-name">{{location.displayable_name}}</span>
+            </a>
+          </li>
+        </ul>
+      {{/location}}
+
+      <div class="project-stats-wrap pb1 pl1 pr1">
+
+        {{#failed?}}
+          <div class='project-status project-failed h6'>
+            <strong> Funding Unsuccessful</strong><br />
+            <span class="grey-dark">Project ended on {{formatted_deadline}}</span>
+          </div>
+        {{/failed?}}
+
+        {{#canceled?}}
+          <div class='project-status project-canceled h6'>
+            <strong> Funding Canceled</strong><br />
+            <span class="grey-dark">Project canceled on {{formatted_state_changed_at}}</span>
+          </div>
+        {{/canceled?}}
+
+        {{#successful?}}
+          <div class='project-pledged-successful bg-green white h6 pl1 pr1 mb1'>
+            <strong>Successful!</strong>
+          </div>
+        {{/successful?}}
+
+        {{#live_or_successful?}}
+          {{#live?}}
+            <div class="project-pledged-wrap bg-grey clip mb1">
+              <div class="project-pledged bg-green full-height" style="width: {{percent_raised_to_100}}%"></div>
+            </div>
+          {{/live?}}
+          <ul class="project-stats list no-margin h6 no-wrap">
+            <li class="first funded inline-block mr1">
+              <strong class="block h6">{{percent_raised_rounded}}%</strong>
+              <span class="grey-dark">funded</span>
+            </li>
+            <li class="pledged inline-block mr1">
+              <strong class="block h6">{{currency_symbol}}{{formatted_money}}</strong>
+              <span class="grey-dark">pledged</span>
+            </li>
+            {{#successful?}}
+              <li class="last successful inline-block">
+                <strong class="block h6">Funded</strong>
+                <div class="deadline grey-dark">{{formatted_deadline}}</div>
+              </li>
+            {{/successful?}}
+            {{#live?}}
+              <li class="last ksr_page_timer inline-block" data-end_time="{{javascript_deadline}}">
+                <strong class="block h6">
+                  <div class="num">30</div>
+                </strong>
+                <div class="span text grey-dark" data-word="left">days to go</div>
+              </li>
+            {{/live?}}
+          </ul>
+        {{/live_or_successful?}}
+      </div>
+    </div>
+  </div>
+</div>
+
+{{#friends_backing?}}
+  <div class="friend_project_context">
+    <div class="friend_facepile">
+      {{#truncated_friends}}
+        <img src="{{avatar.thumb}}" class="{{#has_metadata?}}small{{/has_metadata?}}">
+      {{/truncated_friends}}
+    </div>
+    <p class="friend_namepile">
+      {{{escaped_sentence}}}
+    </p>
+  </div>
+{{/friends_backing?}}
+</script><script class="template" id="template-projects__video_mode" type="text/x-tmpl-mustache"><a href='#' id='video_mode_close' class='close_button z2'><span class='ss-icon ss-delete'></span></a>
+
+<div class='title_card z1 {{context_classes}}' style="display:none;">
+  <div class='interior'>
+    <h2 class='project_title normal_weight'>{{name}}</h2>
+    <p class='blurb'>{{blurb}}</p>
+    <nav class='bar'>
+      <a id='play_button' class='left play' href='#'>
+        <span class='play_active'>
+          <span class='ss-icon ss-play'></span>
+          Play
+        </span>
+        <span class='pause_active'>
+          <span class='ss-icon ss-pause'></span>
+          Pause
+        </span>
+      </a>
+      {{#logged_in}}
+        <div class='remind right'>
+          {{#if_not_starred}}
+            <a class='follow' href='{{urls.web.project}}/watch'><span class='ss-icon ss-star'></span></a>
+          {{/if_not_starred}}
+          {{#if_starred}}
+            <a class='unfollow' href='{{urls.web.project}}/unwatch'><span class='ss-icon ss-star active'></span></a>
+          {{/if_starred}}
+        </div>
+      {{/logged_in}}
+      <a class='right explore button button_green small' href='#'>Explore this project</a>
+    </nav>
+  </div>
+</div>
+
+<div class='channel_controls z1'>
+  <a href='#' class='{{#playlist_is_location}}selected {{/playlist_is_location}}location'>Something else near {{location.first_name}} <span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_featured}}selected {{/playlist_is_featured}}featured'>Something different<span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_category}}selected {{/playlist_is_category}}category'>Something else in {{category.name}} <span class='ss-icon ss-navigateright'></span></a>
+</div>
+
+<div class='project_video' style='background-image: url('{{photo.full}}')'>
+  <div class='cover'>
+    <video>
+      <source src='{{video.high}}' type='video/mp4'/>
+      <source src='{{video.webm}}' type='video/webm'/>
+    </video>
+  </div>
+</div>
+</script><script class="template" id="template-site__video_mode_fourohfour" type="text/x-tmpl-mustache"><section class='four_oh_four'>
+  <p class='big_type'>
+    Looks like you've reached the end of the line! <br />Check out <a class="another" href='#'>another channel</a> or <a href='/discover'>browse projects in discover</a>.
+  </p>
+</section>
+</script>
+
+<script id="schwamm_formatting_options" type="text/javascript">
+//<![CDATA[
+(function(){window.formatters = window.formatters || {}; var formatting_options = {"distance_date_intervals":[[5,"just now"],[29,"less than a minute ago"],[89,"1 minute ago"],[2640,"%m minutes ago"],[5340,"about 1 hour ago"],[82800,"about %h hours ago"],[147600,"1 day ago"],[604800,"%d days ago"],[15552000,"on %t"],[0,"on %y"]],"currency_symbol_mappings":{"AFN":"\u060b","ALL":"Lek","ARS":"$","AUD":"$","AWG":"\u0192","AZN":"\u043c\u0430\u043d","BAM":"KM","BBD":"$","BGN":"\u043b\u0432","BMD":"$","BND":"$","BOB":"$b","BRL":"R$","BSD":"$","BWP":"P","BYR":"p.","BZD":"BZ$","CAD":"$","CLP":"$","CNY":"\u00a5","COP":"$","CRC":"\u20a1","CUP":"\u20b1","CZK":"K\u010d","DKK":"kr","DOP":"RD$","EGP":"\u00a3","EUR":"\u20ac","FJD":"$","FKP":"\u00a3","GBP":"\u00a3","GIP":"\u00a3","GTQ":"Q","GYD":"$","HKD":"$","HNL":"L","HRK":"kn","HUF":"Ft","IDR":"Rp","ILS":"\u20aa","IRR":"\ufdfc","ISK":"kr","JMD":"J$","JPY":"\u00a5","KGS":"\u043b\u0432","KHR":"\u17db","KPW":"\u20a9","KRW":"\u20a9","KYD":"$","KZT":"\u043b\u0432","LAK":"\u20ad","LBP":"\u00a3","LKR":"\u20a8","LRD":"$","LTL":"Lt","LVL":"Ls","MKD":"\u0434\u0435\u043d","MNT":"\u20ae","MUR":"\u20a8","MXN":"$","MYR":"RM","MZN":"MT","NAD":"$","NGN":"\u20a6","NIO":"C$","NOK":"kr","NPR":"\u20a8","NZD":"$","OMR":"\ufdfc","PAB":"B/.","PEN":"S/.","PHP":"\u20b1","PKR":"\u20a8","PLN":"z\u0142","PYG":"Gs","QAR":"\ufdfc","RON":"lei","RSD":"\u0414\u0438\u043d.","RUB":"\u0440\u0443\u0431","SAR":"\ufdfc","SBD":"$","SCR":"\u20a8","SEK":"kr","SGD":"$","SHP":"\u00a3","SOS":"S","SRD":"$","SVC":"$","SYP":"\u00a3","THB":"\u0e3f","TRY":"TL","TTD":"TT$","TWD":"NT$","UAH":"\u20b4","USD":"$","UYU":"$U","UZS":"\u043b\u0432","VEF":"Bs","VND":"\u20ab","YER":"\ufdfc","ZAR":"R"},"currency_trailing_code_mappings":{"AUD":true,"CAD":true,"NZD":true,"USD":true},"currency_formats":["money","shorter_money"]}; for (key in formatting_options) {window.formatters[key] = formatting_options[key]};}());
+//]]>
+</script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("begin_base.js_tag");}
+  //]]>
+</script>
+<script src="https://d297h9he240fqh.cloudfront.net/assets/packages/base-45cdab84617ddfb8905b7cddc8500c19.js" type="text/javascript"></script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("end_base.js_tag");}
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    document.domain='kickstarter.com';
+  //]]>
+</script>
+
+<iframe height="0" id="api_xdreceiver" src="https://api.kickstarter.com/xdreceiver/85e6.html" style="display: none;" width="0"></iframe>
+
+
+
+<div id="fb-root"></div>
+<script>
+  //<![CDATA[
+    var channelUrl = window.location.protocol + "//" + window.location.host + "/channel.html",
+      skip_autologin = $('body').is('.skip_autologin');
+    
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId: window.fb_app_id,
+        channelUrl: channelUrl,
+        status: true,    // check login status
+        cookie: true,    // enable cookies to allow the server to access the session
+        xfbml: true,     // parse XFBML
+        logging: false   // turn off logging
+      });
+    
+      FB.getLoginStatus(function (response) {
+        if (response.status === 'connected') {
+          if (read_cookie("logout_from_fb")) {
+            FB.logout();
+            destroy_cookie("logout_from_fb");
+          } else if (!skip_autologin) {
+            $.get("/fb/autologin", {'fbsr': response.authResponse.signedRequest});
+          } else if (false && 0 == response.authResponse.userID) {
+            $.get("/fb/refresh", {'fbsr': response.authResponse.signedRequest});
+          }
+        } else {
+          if (read_cookie("logout_from_fb")) {
+            destroy_cookie("logout_from_fb");
+          }
+        }
+      })
+    
+      $(document).trigger('fb:loaded');
+    };
+    
+    
+    // Load the SDK Asynchronously
+    (function(d){
+      var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+      js = d.createElement('script'); js.id = id; js.async = true;
+      js.src = "//connect.facebook.net/en_US/all.js";
+      d.getElementsByTagName('head')[0].appendChild(js);
+    }(document));
+  //]]>
+</script>
+
+
+</body>
+</html>

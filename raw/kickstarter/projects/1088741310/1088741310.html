@@ -1,0 +1,1779 @@
+<!DOCTYPE html>
+<html class="projects_show  fontface no-js" lang="en">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# kickstarter: http://ogp.me/ns/fb/kickstarter#">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-5.newrelic.com","errorBeacon":"jserror.newrelic.com","licenseKey":"b04b883ad2","applicationID":"11086","transactionName":"cFteRUULX1wHFhtIEFxeVVJDFxxDCgtD","queueTime":12,"applicationTime":1363,"ttGuid":"","agentToken":null,"agent":"js-agent.newrelic.com/nr-411.min.js"}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"Vw4BVEVSCQMIUg=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e){function n(t,e,n){n||(n={});for(var r=o[t],a=r&&r.length||0,s=n[i]||(n[i]={}),u=0;a>u;u++)r[u].apply(s,e);return s}function r(t,e){var n=o[t]||(o[t]=[]);n.push(e)}var o={},i="nr@context";e.exports={on:r,emit:n}},{}],2:[function(t){function e(t,e,n,i,s){return u?u-=1:r("err",[s||new UncaughtException(t,e,n)]),"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t(5),a=window.onerror,s=!1,u=0;t("loader").features.push("err"),window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(d){"stack"in d&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(4),s=!0)}i.on("fn-start",function(){s&&(u+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&u>0&&(u-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:4,3:3,4:6,5:1,6:14,handle:"D5DuLP",loader:"G9z0Bl"}],3:[function(t){function e(t){r.inPlace(t,["addEventListener","removeEventListener"],"-",n)}function n(t){return t[1]}var r=t(1),o=(t(3),t(2));if(e(window),"getPrototypeOf"in Object){for(var i=document;i&&!i.hasOwnProperty("addEventListener");)i=Object.getPrototypeOf(i);i&&e(i);for(var a=XMLHttpRequest.prototype;a&&!a.hasOwnProperty("addEventListener");)a=Object.getPrototypeOf(a);a&&e(a)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&e(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=e["nr@wrapped"]?t[1]=e["nr@wrapped"]:e["nr@wrapped"]=t[1]=r(e,"fn-"):"function"==typeof e.handleEvent&&r.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:15,2:1,3:14}],4:[function(t){var e=(t(3),t(1)),n=t(2);e.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=e(t[0],"fn-")})},{1:15,2:1,3:14}],5:[function(t){function e(t){var e=t[0];"string"==typeof e&&(e=new Function(e)),t[0]=n(e,"fn-")}var n=(t(3),t(1)),r=t(2);n.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",e)},{1:15,2:1,3:14}],6:[function(t){function e(){o.inPlace(this,s,"fn-")}function n(t,e){o.inPlace(e,["onreadystatechange"],"fn-")}function r(t,e){return e}var o=t(1),i=t(2),a=window.XMLHttpRequest,s=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];window.XMLHttpRequest=function(t){var n=new a(t);try{i.emit("new-xhr",[],n),o.inPlace(n,["addEventListener","removeEventListener"],"-",function(t,e){return e}),n.addEventListener("readystatechange",e,!1)}catch(r){try{i.emit("internal-error",r)}catch(s){}}return n},window.XMLHttpRequest.prototype=a.prototype,o.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",r),i.on("send-xhr-start",n),i.on("open-xhr-start",n)},{1:15,2:1}],7:[function(t){function e(){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;u>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,d="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=e(d);if(f&&(r.rxSize=f),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}t("loader").features.push("xhr");var o=t("handle"),i=t(1),a=t(5),s=["load","error","abort","timeout"],u=s.length,d=t(2);t(3),t(4),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var d=e(o);d&&(r.txSize=d)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",e)}catch(r){}}};for(var f=0;u>f;f++)n.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&e()},{1:8,2:11,3:3,4:6,5:1,handle:"D5DuLP",loader:"G9z0Bl"}],8:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e){var n=r[t];return n?n.apply(this,e):(o[t]||(o[t]=[]),void o[t].push(e))}var r={},o={};e.exports=n,n.queues=o,n.handlers=r},{}],11:[function(t,e){function n(t){if(!t||"object"!=typeof t&&"function"!=typeof t)return-1;if(t===window)return 0;if(o.call(t,"__nr"))return t.__nr;try{return Object.defineProperty(t,"__nr",{value:r,writable:!0,enumerable:!1}),r}catch(e){return t.__nr=r,r}finally{r+=1}}var r=1,o=Object.prototype.hasOwnProperty;e.exports=n},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&u&&u.body){p.proto="https"===c.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=u.createElement("script");e.src=p.proto+t.agent,u.body.appendChild(e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,u=s.document,d="addEventListener",f="attachEvent",c=(""+location).split("?")[0],p=e.exports={offset:i(),origin:c,features:[]};u[d]?(u[d]("DOMContentLoaded",o,!1),s[d]("load",n,!1)):(u[f]("onreadystatechange",r),s[f]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],14:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],15:[function(t,e){function n(t,e,r,s){function nrWrapper(){try{var n,a=u(arguments),d=this,f=r&&r(a,d)||{}}catch(c){i([c,"",[a,d,s],f])}o(e+"start",[a,d,s],f);try{return n=t.apply(d,a)}catch(p){throw o(e+"err",[a,d,p],f),p}finally{o(e+"end",[a,d,n],f)}}return a(t)?t:(e||(e=""),nrWrapper[n.flag]=!0,nrWrapper)}function r(t,e,r,o){r||(r="");var i,s,u,d="-"===r.charAt(0);for(u=0;u<e.length;u++)s=e[u],i=t[s],a(i)||(t[s]=n(i,d?s+r:r,o,s,t))}function o(t,e,n){try{s.emit(t,e,n)}catch(r){i([r,t,e,n])}}function i(t){try{s.emit("internal-error",t)}catch(e){}}function a(t){return!(t&&"function"==typeof t&&t.apply&&!t[n.flag])}var s=t(1),u=t(2);e.exports=n,n.inPlace=r,n.flag="nr@wrapper"},{1:1,2:14}]},{},["G9z0Bl",2,7]);</script><script>
+  //<![CDATA[
+    docElement = this.document.documentElement;
+    docElement.className=docElement.className.replace(/\bno-js\b/,'') + 'js';
+  //]]>
+</script>
+<title>Dex - Cyberpunk 2D RPG by Dreadlocks &mdash; Kickstarter</title><script>
+  //<![CDATA[
+    window.report_errors = true;
+    window.honeybadger_configuration = {
+      api_key : "02ab109335c0dd1a93506d92f22217a7",
+      environment : "production",
+      component : "projects",
+      action : "show",
+      onerror : false
+    };
+  //]]>
+</script>
+
+
+<!--[if lt IE 9]>
+  <script src="//html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta content="telephone=no" name="format-detection">
+
+<!--[if !IE]> -->
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base-9f623ad5d021a188cfb2d68a0cdf7a7b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<!-- <![endif]-->
+<!--[if IE]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base_blessed-2640c72487552f9a2ef9f2620b4af860.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<!--[if lte IE 9]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_nine-a93fe10530f175f96c4078b7e070d7e1.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 8]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_eight-f75aeb274436f94a0d243774456b1c62.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 7]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie-c019c01acd3a96588b346cf577a3504f.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_seven-5a3d2cef660cd281fd844b04b2397dbb.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if IE 6]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_six-e4d3caf76e405fe19aee6ece8bda701b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<link href="https://d297h9he240fqh.cloudfront.net/favicon.png" rel="icon" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-precomposed-7b603dba7cf80e4acc57d94a991bebbd.png" rel="apple-touch-icon-precomposed" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-ipad-precomposed-3176f72977daf43dee3b0d348484dc01.png" rel="apple-touch-icon-precomposed" sizes="72x72" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-iphone4-precomposed-b93b70168cd8492c843d0fea873c7f83.png" rel="apple-touch-icon-precomposed" sizes="114x114" type="image/png">
+<link href="https://www.kickstarter.com/services/oembed?url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Fdreadlocks%2Fdex-cyberpunk-2d-rpg" rel="alternate" title="Dex - Cyberpunk 2D RPG Script Tag oEmbed" type="application/json+oembed">
+<link rel="alternate" type="application/atom+xml" title="Dex - Cyberpunk 2D RPG : Kickstarter" href="https://www.kickstarter.com/projects/dreadlocks/dex-cyberpunk-2d-rpg/posts.atom" />
+<meta property="twitter:app:id:iphone" content="596961532"/>
+<meta property="twitter:app:name:iphone" content="Kickstarter"/>
+<meta property="twitter:app:url:iphone" content="ksr://www.kickstarter.com/projects/dreadlocks/dex-cyberpunk-2d-rpg"/>
+<meta name="video_height" content="360"/>
+<meta name="video_width" content="640"/>
+<meta name="video_type" content="application/x-shockwave-flash"/>
+<meta name="title" content="Kickstarter &gt;&gt; Dex - Cyberpunk 2D RPG by Dreadlocks"/>
+<meta name="description" content="Dreadlocks is raising funds for Dex - Cyberpunk 2D RPG on Kickstarter! 
+
+ A story-driven action/stealth sidescrolling RPG with a fresh new vision of cyberspace."/>
+<meta property="og:title" content="Dex - Cyberpunk 2D RPG"/>
+<meta property="og:type" content="kickstarter:project"/>
+<meta property="og:image" content="https://s3.amazonaws.com/ksr/projects/719582/photo-main.jpg?1397851584"/>
+<meta property="og:url" content="https://www.kickstarter.com/projects/dreadlocks/dex-cyberpunk-2d-rpg"/>
+<meta property="og:site_name" content="Kickstarter"/>
+<meta property="fb:app_id" content="69103156693"/>
+<meta property="og:description" content="A story-driven action/stealth sidescrolling RPG with a fresh new vision of cyberspace."/>
+<meta property="kickstarter:creator" content="https://www.kickstarter.com/profile/dreadlocks"/>
+<meta property="twitter:url:landing_url" content="https://www.kickstarter.com/projects/dreadlocks/dex-cyberpunk-2d-rpg"/>
+<meta property="twitter:card" content="2427656750:kickstarter_project"/>
+<meta property="twitter:site" content="@kickstarter"/>
+<meta property="twitter:site:id" content="16186995"/>
+<meta property="twitter:text:title" content="Dex - Cyberpunk 2D RPG"/>
+<meta property="twitter:text:artist" content="Dreadlocks"/>
+<meta property="twitter:text:backers" content="1930"/>
+<meta property="twitter:text:pledged" content="£30,647"/>
+<meta property="twitter:text:time" content="0 seconds"/>
+<meta property="twitter:text:location" content="Prague, Czech Republic"/>
+<meta property="twitter:image:location_image" content="https://d3mlfyygrfdi2i.cloudfront.net/b40e/pin.png"/>
+<meta property="twitter:text:description" content="A story-driven action/stealth sidescrolling RPG with a fresh new vision of cyberspace."/>
+<meta property="twitter:image:media" content="https://s3.amazonaws.com/ksr/projects/719582/photo-main.jpg?1397851584"/>
+<meta property="twitter:image:width" content="640"/>
+<meta property="twitter:image:height" content="480"/>
+<meta property="twitter:player:stream:url" content="https://d2pq0u4uni88oo.cloudfront.net/projects/719582/video-323844-h264_base.mp4"/>
+<meta property="twitter:player:stream:content" content="video/mp4"/>
+<meta property="twitter:player:url" content="https://www.kickstarter.com/projects/dreadlocks/dex-cyberpunk-2d-rpg/widget/video.html"/>
+<meta property="twitter:player:height" content="360"/>
+<meta property="twitter:player:width" content="640"/>
+<meta property="twitter:maxage" content="60"/>
+<meta property="og:video" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F719582%2Fvideo-323844-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F719582%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Dreadlocks&amp;project_title=Dex+-+Cyberpunk+2D+RPG&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Fdreadlocks%2Fdex-cyberpunk-2d-rpg&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:secure_url" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F719582%2Fvideo-323844-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F719582%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Dreadlocks&amp;project_title=Dex+-+Cyberpunk+2D+RPG&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Fdreadlocks%2Fdex-cyberpunk-2d-rpg&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:height" content="360"/>
+<meta property="og:video:width" content="640"/>
+<meta property="og:video:type" content="application/x-shockwave-flash"/>
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="988m9z5ov/v6ZeeNtTvgQ1sHgPXEuWL/3LMrJFq5lUI=" name="csrf-token" />
+<script type="text/javascript">
+  var _sift = _sift || [];
+  _sift.push(['_setAccount', '637102']);
+  _sift.push(['_setUserId', '']);
+  _sift.push(['_trackPageview']);
+
+  (function() {
+    function loadSift() {
+      var sift, s;
+      if (root.visitor_id) {
+        _sift.push(['_setSessionId', root.visitor_id]);
+      }
+      sift = document.createElement('script');
+      sift.type = 'text/javascript';
+      sift.async = true;
+      sift.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dtlilztwypawv.cloudfront.net/s.js';
+      s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(sift, s);
+    }
+    if (window.attachEvent) {
+      window.attachEvent('onload', loadSift);
+    } else {
+      window.addEventListener('load', loadSift, false);
+    }
+  })();
+</script>
+<link href="http://kck.st/1a12fZp" rel="shorturl">
+<link href="https://www.kickstarter.com/projects/dreadlocks/dex-cyberpunk-2d-rpg" rel="canonical">
+<link href="https://s3.amazonaws.com/ksr/projects/719582/photo-med.jpg?1397851584" rel="image_src">
+<link href="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F719582%2Fvideo-323844-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F719582%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Dreadlocks&amp;project_title=Dex+-+Cyberpunk+2D+RPG&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Fdreadlocks%2Fdex-cyberpunk-2d-rpg&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque" rel="video_src">
+<script>
+  //<![CDATA[
+    window.current_checkout = "{&quot;id&quot;:0,&quot;domestic&quot;:null,&quot;amount&quot;:0.0,&quot;updated_at&quot;:0,&quot;created_at&quot;:0}";
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.current_ip = '94.209.101.212';
+    window.current_ip_datacenter = 'false';
+    window.enabled_features = {"elasticsearch":true,"security_history_read":true,"security_history_write":true,"advanced_discovery_es":true,"ios_crashlytics":true,"ios_mixpanel":true,"stories_veronica_mars":true,"veronica_mars_hero":true,"password_reset_banner":true};
+    window.fb_app_id = '69103156693';
+    
+    var _sf_startpt=(new Date()).getTime();
+    
+    window.current_project = "{&quot;id&quot;:1088741310,&quot;name&quot;:&quot;Dex - Cyberpunk 2D RPG&quot;,&quot;blurb&quot;:&quot;A story-driven action/stealth sidescrolling RPG with a fresh new vision of cyberspace.&quot;,&quot;goal&quot;:14000.0,&quot;pledged&quot;:30647.38,&quot;state&quot;:&quot;successful&quot;,&quot;slug&quot;:&quot;dex-cyberpunk-2d-rpg&quot;,&quot;disable_communication&quot;:false,&quot;country&quot;:&quot;GB&quot;,&quot;currency&quot;:&quot;GBP&quot;,&quot;currency_symbol&quot;:&quot;\\u00a3&quot;,&quot;currency_trailing_code&quot;:false,&quot;deadline&quot;:1386863773,&quot;state_changed_at&quot;:1386863773,&quot;created_at&quot;:1381843086,&quot;launched_at&quot;:1384271773,&quot;backers_count&quot;:1930,&quot;photo&quot;:{&quot;full&quot;:&quot;https://s3.amazonaws.com/ksr/projects/719582/photo-full.jpg?1397851584&quot;,&quot;ed&quot;:&quot;https://s3.amazonaws.com/ksr/projects/719582/photo-ed.jpg?1397851584&quot;,&quot;med&quot;:&quot;https://s3.amazonaws.com/ksr/projects/719582/photo-med.jpg?1397851584&quot;,&quot;little&quot;:&quot;https://s3.amazonaws.com/ksr/projects/719582/photo-little.jpg?1397851584&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/projects/719582/photo-small.jpg?1397851584&quot;,&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/projects/719582/photo-thumb.jpg?1397851584&quot;,&quot;1024x768&quot;:&quot;https://s3.amazonaws.com/ksr/projects/719582/photo-1024x768.jpg?1397851584&quot;,&quot;1536x1152&quot;:&quot;https://s3.amazonaws.com/ksr/projects/719582/photo-1536x1152.jpg?1397851584&quot;},&quot;creator&quot;:{&quot;id&quot;:922353941,&quot;name&quot;:&quot;Dreadlocks&quot;,&quot;slug&quot;:&quot;dreadlocks&quot;,&quot;avatar&quot;:{&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/6024841/dreadlocks_logo_dexstyle.thumb.jpg?1383249482&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/6024841/dreadlocks_logo_dexstyle.small.jpg?1383249482&quot;,&quot;medium&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/6024841/dreadlocks_logo_dexstyle.medium.jpg?1383249482&quot;},&quot;urls&quot;:{&quot;web&quot;:{&quot;user&quot;:&quot;https://www.kickstarter.com/profile/dreadlocks&quot;},&quot;api&quot;:{&quot;user&quot;:&quot;https://api.kickstarter.com/v1/users/922353941?signature=1399959957.2fa53822e92c9ab1708183a6212847f9635b4a63&quot;}}},&quot;location&quot;:{&quot;id&quot;:796597,&quot;name&quot;:&quot;Prague&quot;,&quot;slug&quot;:&quot;prague-prague-prague&quot;,&quot;short_name&quot;:&quot;Prague, Czech Republic&quot;,&quot;displayable_name&quot;:&quot;Prague, Czech Republic&quot;,&quot;country&quot;:&quot;CZ&quot;,&quot;state&quot;:&quot;Prague&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/prague-prague-prague&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/prague-prague-prague&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1399951852.2da3caaa4d32096cff3514fcee41394667a19e94&amp;woe_id=796597&quot;}}},&quot;category&quot;:{&quot;id&quot;:35,&quot;name&quot;:&quot;Video Games&quot;,&quot;slug&quot;:&quot;games/video games&quot;,&quot;position&quot;:7,&quot;parent_id&quot;:12,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;http://www.kickstarter.com/discover/categories/games/video%20games&quot;}}},&quot;urls&quot;:{&quot;web&quot;:{&quot;project&quot;:&quot;https://www.kickstarter.com/projects/dreadlocks/dex-cyberpunk-2d-rpg&quot;,&quot;project_short&quot;:&quot;http://kck.st/1a12fZp&quot;,&quot;updates&quot;:&quot;https://www.kickstarter.com/projects/dreadlocks/dex-cyberpunk-2d-rpg/posts&quot;},&quot;api&quot;:{&quot;project&quot;:&quot;https://api.kickstarter.com/v1/projects/1088741310?signature=1399959957.4da4bb71fc31242f57719384d367dd258b749774&quot;,&quot;comments&quot;:&quot;https://api.kickstarter.com/v1/projects/1088741310/comments?signature=1399959957.410d7fdaa3dbf6885ec26349f638c91cce651594&quot;,&quot;updates&quot;:&quot;https://api.kickstarter.com/v1/projects/1088741310/updates?signature=1399959957.c3f6eec934d67d875fe2fa27e2eec7c1ca4ba4c2&quot;}},&quot;updated_at&quot;:1398188033,&quot;successful_at&quot;:1386863773,&quot;video&quot;:{&quot;id&quot;:323844,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/719582/video-323844-h264_high.mp4?2013&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/719582/video-323844-h264_base.mp4?2013&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/719582/video-323844-webm.webm?2013&quot;,&quot;width&quot;:640,&quot;height&quot;:360,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/719582/video-323844-h264_base.jpg?2013&quot;},&quot;comments_count&quot;:426,&quot;updates_count&quot;:21,&quot;rewards&quot;:[{&quot;id&quot;:0,&quot;minimum&quot;:1,&quot;reward&quot;:&quot;No Reward&quot;},{&quot;id&quot;:2102694,&quot;minimum&quot;:1.0,&quot;reward&quot;:&quot;THANK YOU! You will receive a heartfelt thank-you email plus access to backers-only updates!&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1401580800,&quot;project_id&quot;:1088741310,&quot;backers_count&quot;:27,&quot;updated_at&quot;:1395878203},{&quot;id&quot;:2102695,&quot;minimum&quot;:7.0,&quot;reward&quot;:&quot;DIGITAL EDITION: a downloadable copy of Dex, upon release, is yours to play and enjoy!&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1401580800,&quot;project_id&quot;:1088741310,&quot;backers_count&quot;:868,&quot;updated_at&quot;:1392724327},{&quot;id&quot;:2102696,&quot;minimum&quot;:12.0,&quot;reward&quot;:&quot;DELUXE DIGITAL EDITION: a digital download of Dex, extended edition of the game soundtrack by our composer Karel Antonin, PDF compiled Art Book/Manual/Design Notes, plus a detailed digital map of Harbor Prime.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1401580800,&quot;project_id&quot;:1088741310,&quot;backers_count&quot;:495,&quot;updated_at&quot;:1390501040},{&quot;id&quot;:2102697,&quot;minimum&quot;:15.0,&quot;reward&quot;:&quot;DELUXE DIGITAL EDITION + EARLY ACCESS: all of the above benefits (Deluxe Digital Edition), plus Early Access - get your hands on the game while it\\u2019s still in development and let your suggestions and feedback be heard! Includes an invitation to internal development forums, and your name in the credits as a supporter and beta-tester.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1401580800,&quot;project_id&quot;:1088741310,&quot;backers_count&quot;:393,&quot;updated_at&quot;:1398818908},{&quot;id&quot;:2102698,&quot;minimum&quot;:30.0,&quot;reward&quot;:&quot;PHYSICAL EDITION: Physical edition of Dex on DVD, plus all of the above benefits. International shipping included.&quot;,&quot;limit&quot;:100,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1401580800,&quot;project_id&quot;:1088741310,&quot;remaining&quot;:63,&quot;backers_count&quot;:37,&quot;updated_at&quot;:1387473022},{&quot;id&quot;:2102699,&quot;minimum&quot;:50.0,&quot;reward&quot;:&quot;DELUXE PHYSICAL EDITION: Game DVD, CD Soundtrack Extended Edition, Printed Art Book/Manual/Design Notes and a printed map (poster) of Harbor Prime with additional game clues and markers on important locations and gang territories. Plus all benefits in the \\u00a315 tier (Deluxe Digital Edition, Early Access, development forums, and name in credits). International shipping included.&quot;,&quot;limit&quot;:50,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1401580800,&quot;project_id&quot;:1088741310,&quot;remaining&quot;:0,&quot;backers_count&quot;:50,&quot;updated_at&quot;:1387473022},{&quot;id&quot;:2192416,&quot;minimum&quot;:55.0,&quot;reward&quot;:&quot;DELUXE PHYSICAL EDITION:  Exactly the same as the \\u00a350 reward tier. First and last limit extension. International shipping included!&quot;,&quot;limit&quot;:50,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1401580800,&quot;project_id&quot;:1088741310,&quot;remaining&quot;:0,&quot;backers_count&quot;:50,&quot;updated_at&quot;:1388751477},{&quot;id&quot;:2102700,&quot;minimum&quot;:120.0,&quot;reward&quot;:&quot;STREET ARTIST: A tag/graffiti of your custom design on a wall in Harbor Prime (in the game itself). Includes all benefits in the \\u00a350 tier.&quot;,&quot;limit&quot;:20,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1401580800,&quot;project_id&quot;:1088741310,&quot;remaining&quot;:17,&quot;backers_count&quot;:3,&quot;updated_at&quot;:1387473022},{&quot;id&quot;:2102701,&quot;minimum&quot;:180.0,&quot;reward&quot;:&quot;CITIZEN: An in-game NPC based on your picture/photo/instructions will be created by our artists and will tread the streets of Harbor Prime (or perform some nefarious activity such as juggling). Includes all benefits in the \\u00a350 tier.&quot;,&quot;limit&quot;:10,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1401580800,&quot;project_id&quot;:1088741310,&quot;remaining&quot;:8,&quot;backers_count&quot;:2,&quot;updated_at&quot;:1386866734},{&quot;id&quot;:2192414,&quot;minimum&quot;:275.0,&quot;reward&quot;:&quot;MUSIC LOVER: Our music composer Karel Antonin will compose a music track specifically for you, based on the topic you choose and your suggestions about style and approach (within reason, as to both the style and length; around 2-3 minutes for a track is fine). You may use the track as you wish \\u2013 a gift for someone or a song for your new game. Includes all benefits in the \\u00a350 tier.&quot;,&quot;limit&quot;:3,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1401580800,&quot;project_id&quot;:1088741310,&quot;remaining&quot;:3,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1385734347},{&quot;id&quot;:2102702,&quot;minimum&quot;:600.0,&quot;reward&quot;:&quot;BOSS: A boss in one of the game\\u2019s side missions or dark alleys will be created based on your instructions. This includes a design meeting (Skype/online) with our designer and artist to specify the visuals, attacks, advantages/disadvantages, and the whole setting of the encounter. Includes all benefits in the \\u00a350 tier.&quot;,&quot;limit&quot;:5,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1401580800,&quot;project_id&quot;:1088741310,&quot;remaining&quot;:5,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1383149807},{&quot;id&quot;:2102703,&quot;minimum&quot;:800.0,&quot;reward&quot;:&quot;FOUNDING FATHER: You\\u2019ll be immortalized as one of the founders of Harbor Prime via a statue in one of the luxurious parts of the city. The statue will be based on a photo/instructions provided by you. Includes all benefits in the \\u00a350 tier.&quot;,&quot;limit&quot;:3,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1401580800,&quot;project_id&quot;:1088741310,&quot;remaining&quot;:3,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1383149472},{&quot;id&quot;:2102704,&quot;minimum&quot;:1250.0,&quot;reward&quot;:&quot;ART LOVER: you\\u2019ll receive our heartfelt thanks along with a collection of artworks and concept sketches used for the production of our Art Book. Hand-signed originals drawn by our artists are yours only! Includes all benefits in the \\u00a350 tier.&quot;,&quot;limit&quot;:1,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1401580800,&quot;project_id&quot;:1088741310,&quot;remaining&quot;:1,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1383149472},{&quot;id&quot;:2102705,&quot;minimum&quot;:2000.0,&quot;reward&quot;:&quot;CORPORATE PRESENCE: Your company will be featured as one of the corporations in-game. The company may be based on a real company you run or may be purely fictional. In either case this tier will include an online meeting with our designer and artist to tailor the company presentation to the game world and create a set of billboards and commercials that not only fit the atmosphere of Harbor Prime but also present your company in the light you desire. Includes all benefits in the \\u00a350 tier.&quot;,&quot;limit&quot;:1,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1401580800,&quot;project_id&quot;:1088741310,&quot;remaining&quot;:1,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1383149472},{&quot;id&quot;:2102706,&quot;minimum&quot;:2500.0,&quot;reward&quot;:&quot;DAY WITH DEVELOPERS: You get a day with the developers at our offices in Prague. Observe our on on-site development work, see the process of drawing and animation, give us your feedback and opinions on the game, sit back, relax, have lunch and dinner with us and enjoy the evening in Prague. We will gladly discuss a program for the day and evening with you beforehand and help you organize sightseeing in Prague in case you want to stay longer. Includes two nights in a four-star hotel and delicious meals (or developer-style pizza boxes in the office). Travel costs to/from Prague not included. Includes all benefits in the \\u00a350 tier.&quot;,&quot;limit&quot;:1,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1401580800,&quot;project_id&quot;:1088741310,&quot;remaining&quot;:1,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1383149472},{&quot;id&quot;:2102707,&quot;minimum&quot;:5000.0,&quot;reward&quot;:&quot;PRODUCED BY: Your name will appear in the game intro before everyone else\\u2019s. After all, your pledge at this level greatly supports the development and you deserve an honorable place in the game: Produced by\\u2026 you!&quot;,&quot;limit&quot;:1,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1401580800,&quot;project_id&quot;:1088741310,&quot;remaining&quot;:0,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1386868124}]}";
+    
+    
+    
+    
+    
+    
+    
+    
+    window.timeRemaining = function timeRemaining(epochTime){
+    
+      var diff = epochTime - ((new Date()).getTime() / 1000);
+      var num_unit = (diff < 60 && [Math.max(diff, 0), 'seconds']) ||
+        ((diff/=60) < 60 && [diff, 'minutes']) ||
+        ((diff/=60) < 72 && [diff, 'hours']) ||
+        [diff/=24, 'days'];
+    
+      // Round down
+      num_unit[0] = Math.floor(num_unit[0]);
+      // Singularize unit
+      if (num_unit[0] == 1) { num_unit[1] = num_unit[1].replace(/s$/,""); }
+    
+      return num_unit;
+    };
+  //]]>
+</script>
+
+<script>
+  //<![CDATA[
+    window.current_variants = ["discover_link_copy[discover]","rewards_hover[with_hover_text]"];
+  //]]>
+</script>
+
+
+</head>
+
+<body class="project projects not-mobile not-phone not-forces-video-controls not-tablet not-touchable not-native-app-request video_mode" id="projects_show">
+<div class="jGrowl center" id="growl_section"></div>
+<div class="NS_layouts__navigation" id="header">
+<div class="main-nav relative bg-white">
+<h1 class="no-margin ml1 mr2 left">
+<a href="/?ref=nav" class="block p2"><span class="ss-icon green-dark">KICK</span><span class="ss-icon green">STARTER</span>
+</a></h1>
+<ul class="primary-links list no-margin left">
+<li class="left discover-link full-height">
+<a href="/discover?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Discover</a>
+</li>
+<li class="left full-height mr2">
+<a href="/learn?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Start</a>
+</li>
+</ul>
+<ul class="list no-margin right" id="menu-sub">
+<li class="right"><a href="/login?ref=nav" class="block h5 bold p2 full-height border-box">Log in</a></li>
+<li class="right"><a href="/signup?ref=nav" class="block h5 bold p2 full-height border-box">Sign up</a></li>
+</ul>
+<div class="search-link pl2 full-height border-left border-box clip">
+<form accept-charset="UTF-8" action="/projects/search" class="search pt1 pb1 block relative form-simple" method="get"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /></div>
+<div class="field relative pl3">
+<span class="ss-icon ss-search grey-dark ml1 mt1 absolute"></span>
+<input class="input-search header full-width text" data-tracker-name="Header Live Search" id="term" name="term" placeholder="Search projects" type="text" />
+</div>
+</form>
+
+</div>
+<div class="clear"></div>
+</div>
+</div>
+<div class="hide pt4 pb4 bg-grey-light" id="search_results-wrap">
+<div class="relative container" id="search_results">
+<a class="close right grey-dark mr1"><span class="ss-icon ss-delete"></span></a>
+<h3 class="header ml1 clearfix"></h3>
+<div class="clip clearfix" id="search_results_panel"></div>
+<a class="prev arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateleft"></span>
+</a>
+<a class="next arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateright"></span>
+</a>
+</div>
+</div>
+
+
+
+
+<div class="Project-ended-true Project-is_starred- Project-state-successful Project1088741310_cxt border-top" id="main_content">
+<div id="running-board-wrap">
+<div class="container" id="running-board">
+<div id="project-header">
+<div class="NS_projects__running_board ml1 mr1 clearfix">
+<div class="title center py4">
+<h2 class="mb1">
+<a href="/projects/dreadlocks/dex-cyberpunk-2d-rpg" class="green-dark">Dex - Cyberpunk 2D RPG</a>
+</h2>
+<p class="no-margin">
+<span class="creator">
+by
+<a href="/projects/dreadlocks/dex-cyberpunk-2d-rpg/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography" id="name">Dreadlocks</a>
+</span>
+</p>
+</div>
+<ul class="project-nav list-inline left h5 bold mb1">
+<li class="mr2">
+<a href="/projects/dreadlocks/dex-cyberpunk-2d-rpg" class="grey-dark py1 current" id="home_nav">Home</a>
+</li>
+<li class="mr2">
+<span data-updates-count="21" id="updates_count">
+<a href="/projects/dreadlocks/dex-cyberpunk-2d-rpg/posts" class="grey-dark py1" id="updates_nav">Updates
+<span class="count h6 bg-grey-dark white">21</span>
+</a></span>
+</li>
+<li class="mr2">
+<a href="/projects/dreadlocks/dex-cyberpunk-2d-rpg/backers" class="grey-dark py1" id="backers_nav">Backers
+<span class="count h6 bg-grey-dark white"><data class="Project1088741310" data-format="number" data-value="1930" itemprop="Project[backers_count]">1,930</data></span>
+</a></li>
+<li>
+<span data-comments-count="426" id="comments_count">
+<a href="/projects/dreadlocks/dex-cyberpunk-2d-rpg/comments" class="grey-dark py1" id="comments_nav">Comments
+<span class="count h6 bg-grey-dark white"><data class="Project1088741310" data-format="number" data-value="425" itemprop="Project[comments_count]">425</data></span>
+</a></span>
+</li>
+</ul>
+<ul class="list-inline right h5 bold mb1">
+<li class="location mr2">
+<a href="/discover/places/prague-prague-prague?ref=city" class="grey-dark"><span class="ss-icon ss-location margin-right"></span>
+Prague, Czech Republic
+</a></li>
+<li class="category" data-project-parent-category="Games">
+<a href="/discover/categories/games/video%20games?ref=category" class="grey-dark"><span class="ss-icon ss-tag margin-right"></span>
+Video Games
+</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+</div>
+<div class="bg-grey-light pb4" id="content-wrap">
+<div class="Project1088741310" data-conditions="[{&quot;!state&quot;:&quot;live&quot;}]" data-evaluation="true" data-render="&quot;&lt;div class=\&quot;NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-successful Project1088741310_cxt bg-grey container pb1 pt1\&quot;&gt;\n&lt;div class=\&quot;Project1088741310\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;successful&amp;quot;}]\&quot; data-evaluation=\&quot;true\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;Funded!&amp;lt;/b&amp;gt;\\nThis project was successfully funded &amp;lt;data class=\\&amp;quot;Project1088741310\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2013-12-12T10:56:13-05:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[deadline]\\&amp;quot;&amp;gt;on December 12&amp;lt;/data&amp;gt;.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;Funded!&lt;/b&gt;\nThis project was successfully funded &lt;data class=\&quot;Project1088741310\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-12-12T10:56:13-05:00&amp;quot;\&quot; itemprop=\&quot;Project[deadline]\&quot;&gt;on December 12&lt;/data&gt;.\n&lt;/p&gt;\n&lt;/div&gt;&lt;div class=\&quot;Project1088741310\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:[&amp;quot;started&amp;quot;,&amp;quot;submitted&amp;quot;]}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;THIS PROJECT IS NOT LIVE&amp;lt;/b&amp;gt;\\nThis is only a draft that the creator has chosen to share.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1088741310\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;suspended&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Suspended&amp;lt;/b&amp;gt;\\nFunding for this project was suspended &amp;lt;data class=\\&amp;quot;Project1088741310\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2013-12-12T10:56:13-05:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on December 12&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1088741310\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;canceled&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Canceled&amp;lt;/b&amp;gt;\\nFunding for this project was canceled by the project creator &amp;lt;data class=\\&amp;quot;Project1088741310\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2013-12-12T10:56:13-05:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on December 12&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1088741310\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;failed&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Unsuccessful&amp;lt;/b&amp;gt;\\nThis project\\u2019s funding goal was not reached on &amp;lt;time class=\\&amp;quot;js-adjust\\&amp;quot; data-format=\\&amp;quot;MMMM D\\&amp;quot; datetime=\\&amp;quot;2013-12-12T10:56:13-05:00\\&amp;quot;&amp;gt;December 12&amp;lt;/time&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1088741310\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;purged&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;This project is purged and only visible to staff.&amp;lt;/b&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;/div&gt;\n&quot;"><div class="NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-successful Project1088741310_cxt bg-grey container pb1 pt1">
+<div class="Project1088741310" data-conditions="[{&quot;state&quot;:&quot;successful&quot;}]" data-evaluation="true" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;Funded!&lt;/b&gt;\nThis project was successfully funded &lt;data class=\&quot;Project1088741310\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-12-12T10:56:13-05:00&amp;quot;\&quot; itemprop=\&quot;Project[deadline]\&quot;&gt;on December 12&lt;/data&gt;.\n&lt;/p&gt;\n&quot;"><p class="no-margin">
+<b>Funded!</b>
+This project was successfully funded <data class="Project1088741310" data-format="distance_date" data-value="&quot;2013-12-12T10:56:13-05:00&quot;" itemprop="Project[deadline]">on December 12</data>.
+</p>
+</div><div class="Project1088741310" data-conditions="[{&quot;state&quot;:[&quot;started&quot;,&quot;submitted&quot;]}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;THIS PROJECT IS NOT LIVE&lt;/b&gt;\nThis is only a draft that the creator has chosen to share.\n&lt;/p&gt;\n&quot;"></div><div class="Project1088741310" data-conditions="[{&quot;state&quot;:&quot;suspended&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Suspended&lt;/b&gt;\nFunding for this project was suspended &lt;data class=\&quot;Project1088741310\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-12-12T10:56:13-05:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on December 12&lt;/data&gt;.\n&quot;"></div><div class="Project1088741310" data-conditions="[{&quot;state&quot;:&quot;canceled&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Canceled&lt;/b&gt;\nFunding for this project was canceled by the project creator &lt;data class=\&quot;Project1088741310\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-12-12T10:56:13-05:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on December 12&lt;/data&gt;.\n&quot;"></div><div class="Project1088741310" data-conditions="[{&quot;state&quot;:&quot;failed&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Unsuccessful&lt;/b&gt;\nThis project\u2019s funding goal was not reached on &lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;MMMM D\&quot; datetime=\&quot;2013-12-12T10:56:13-05:00\&quot;&gt;December 12&lt;/time&gt;.\n&quot;"></div><div class="Project1088741310" data-conditions="[{&quot;state&quot;:&quot;purged&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;This project is purged and only visible to staff.&lt;/b&gt;\n&quot;"></div></div>
+</div>
+<div class="container bg-white border rounded py3 pl2 pr2" id="content">
+<div class="NS-projects-content">
+<div class="grid_11">
+<div data-has-video="true" id="video-section">
+<div class="video-player" data-dimensions="{&quot;width&quot;:640,&quot;height&quot;:480}" data-image="https://s3.amazonaws.com/ksr/projects/719582/photo-main.jpg?1397851584" data-video-tracker-url="https://www.kickstarter.com/projects/dreadlocks/dex-cyberpunk-2d-rpg/video/plays" data-video-url="https://d2pq0u4uni88oo.cloudfront.net/projects/719582/video-323844-h264_high.mp4" data-video="{&quot;id&quot;:323844,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/719582/video-323844-h264_high.mp4?2013&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/719582/video-323844-h264_base.mp4?2013&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/719582/video-323844-webm.webm?2013&quot;,&quot;width&quot;:640,&quot;height&quot;:360,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/719582/video-323844-h264_base.jpg?2013&quot;}" id="video_pitch"><video class="has_webm landscape" preload="none">
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/719582/video-323844-h264_high.mp4" type='video/mp4; codecs="avc1.64001E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/719582/video-323844-h264_base.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/719582/video-323844-webm.webm" type="video/webm"></source>
+You'll need an HTML5 capable browser to see this content.
+</video>
+<img alt="Photo-main" class="has_played_hide poster landscape" src="https://s3.amazonaws.com/ksr/projects/719582/photo-main.jpg?1397851584" />
+<div class="play_button_big play_button_dark absolute-center rounded has_played_hide">
+<span class="ss-icon ss-play"></span>
+Play
+</div>
+<div class="player_controls clearfix absolute-bottom mb2 rounded white bg-green-dark forces-video-controls_hide">
+<div class="left">
+<a class="button button_icon button_dark playpause play mr1">
+<span class="play ss-icon ss-play"></span>
+<span class="pause ss-icon ss-pause"></span>
+</a>
+<span class="time current_time h12 left">00:00</span>
+</div>
+<div class="right">
+<span class="time total_time h12 left mr1">00:00</span>
+<a class="left button button_icon button_icon_white volume">
+<span class="ss-icon ss-volume icon_volume_nudge"></span>
+<span class="ss-icon ss-highvolume"></span>
+</a>
+<div class="volume_container left">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+<a class="left button button_icon button_icon_white fullscreen">
+<span class="ss-icon ss-expand"></span>
+<span class="ss-icon ss-contract"></span>
+</a>
+</div>
+<div class="clip">
+<div class="progress_container pr1 pl1">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="buffer progress_bar_buffer"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div data-project-state="successful" id="about">
+<div class="NS_projects__project_share clearfix py2 pl1 pr1">
+<ul class="left list-inline no-margin h5 bold">
+<li class="facebook mr2">
+<a href="https://www.kickstarter.com/projects/dreadlocks/dex-cyberpunk-2d-rpg"><span class="ss-icon ss-social ss-facebook color-facebook"></span>
+<span class="color-facebook">Share</span>
+<span class="share_bubble"><div class="triangle grey"></div>
+<div class="triangle white"></div>
+<span class="count"></span></span>
+</a></li>
+<li class="twitter mr2">
+<a  href="https://twitter.com/intent/tweet?text=Dex%20-%20Cyberpunk%202D%20RPG%20by%20Dreadlocks&amp;via=kickstarter&amp;url=http://kck.st/1a12fZp" rel="nofollow"><span class="ss-icon ss-social ss-twitter color-twitter"></span>
+<span class="color-twitter">Tweet</span>
+</a></li>
+<li class="embed">
+<a href="/projects/dreadlocks/dex-cyberpunk-2d-rpg/widget" class="remote_modal_dialog grey-dark" data-modal-title="Embed a widget on your site" data-tracker-name="Embed"><span class="ss-icon ss-navigateleft"></span>
+<span class="ss-icon ss-navigateright"></span>
+Embed
+</a></li>
+</ul>
+<ul class="right list-inline no-margin h5 bold">
+<li class="curate mr2">
+</li>
+<li class="remind">
+<div class="ajax-container" id="watching-widget">
+<div class="Project1088741310" data-conditions="[{&quot;is_starred&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div id=\&quot;unwatch\&quot;&gt;\n&lt;a href=\&quot;/projects/dreadlocks/dex-cyberpunk-2d-rpg/unwatch\&quot; class=\&quot;on\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"></div><div class="Project1088741310" data-conditions="[{&quot;!is_starred&quot;:true}]" data-evaluation="true" data-render="&quot;&lt;div id=\&quot;watch\&quot;&gt;\n&lt;a href=\&quot;/projects/dreadlocks/dex-cyberpunk-2d-rpg/watch\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;span class=\&quot;text\&quot;&gt;\n&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"><div id="watch">
+<a href="/projects/dreadlocks/dex-cyberpunk-2d-rpg/watch"><span class="ss-icon ss-star"></span>
+<span class="text">
+</span>
+</a></div>
+
+</div></div>
+</li>
+</ul>
+</div>
+
+<div class="short_blurb py2 pl1 pr1">
+<p class="h3">A story-driven action/stealth sidescrolling RPG with a fresh new vision of cyberspace.</p>
+</div>
+<div class="full-description">
+<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=XX9QYT27Z2QVE" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/dreadlocks/dex-cyberpunk-2d-rpg/assets/1401163/edit" data-id="1401163">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/401/163/5b46ee937796bc9314fb98443a6c8c49_large.png?1386012888"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</a><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=KEZ94VA4UUBS2" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/dreadlocks/dex-cyberpunk-2d-rpg/assets/1401164/edit" data-id="1401164">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/401/164/72165e710662f87e00a43e9dc265847e_large.png?1386012897"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</a><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=EDRCUGNFQ2RH6" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/dreadlocks/dex-cyberpunk-2d-rpg/assets/1401166/edit" data-id="1401166">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/401/166/9e2fa2ddc996da5c5cf272ad6ff01fe7_large.png?1386012907"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</a><p>Explore the dark alleys of Harbor Prime and a host of diverse locations in both physical reality and the wild reaches of cyberspace. Discover the truth behind an enigmatic AI striving to reach the Singularity, a theoretical “event horizon” in which artificial intelligence will surpass human intelligence and all bets about the future will be off. How will you play your part in the story? </p><p><b>New Trailer: Dex - Harbor Prime</b></p><div class="template oembed" contenteditable="false" data-href="http://www.youtube.com/watch?v=V8IiNrNl5nI">
+<iframe width="612" height="344" src="https://www.youtube.com/embed/V8IiNrNl5nI?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div><p><b>You can read more about Dex in our updates:</b></p><h1><a href="http://www.kickstarter.com/projects/dreadlocks/dex-cyberpunk-2d-rpg/posts/692543" target="_blank">Update #17: Game Extension &amp; Unique Armor Types Goal Achieved!</a></h1><h1><a href="http://www.kickstarter.com/projects/dreadlocks/dex-cyberpunk-2d-rpg/posts/691753" target="_blank">Update #16: Last 20 Hours! Add-Ons Opened!</a></h1><h1>
+<a href="http://www.kickstarter.com/projects/dreadlocks/dex-cyberpunk-2d-rpg/posts/690615" target="_blank">Update #15: Wii U Achieved, Game Extension in Detail, &amp; New Trailer!</a>
+</h1><h1><a href="http://www.kickstarter.com/projects/dreadlocks/dex-cyberpunk-2d-rpg/posts/689611" target="_blank">Update #14: Fankit + IndieDB Votes + NPC Tier Lowered</a></h1><h1>
+<a href="http://www.kickstarter.com/projects/dreadlocks/dex-cyberpunk-2d-rpg/posts/686479" target="_blank">Update #13: Denizens and Social Groups of Harbor Prime</a>
+</h1><h1><a href="http://www.kickstarter.com/projects/dreadlocks/dex-cyberpunk-2d-rpg/posts/686138" target="_blank">Update #12: Greenlit, First Stretch Goal Hit, GOG &amp; Other News!</a></h1><h1><b><a href="http://www.kickstarter.com/projects/dreadlocks/dex-cyberpunk-2d-rpg/posts/685210" target="_blank">Update #11: Final Week + New Screenshot Bundle!</a></b></h1><h1><b><a href="http://www.kickstarter.com/projects/dreadlocks/dex-cyberpunk-2d-rpg/posts/683715" target="_blank">Update #10: 1000 Backers + Stasis!</a></b></h1><h1>
+<a href="http://www.kickstarter.com/projects/dreadlocks/dex-cyberpunk-2d-rpg/posts/681126" target="_blank">Update #9: Stretch Goals Expanded &amp; Rearranged! + PayPal</a>
+</h1><h1>
+<a href="http://www.kickstarter.com/projects/dreadlocks/dex-cyberpunk-2d-rpg/posts/677978" target="_blank">Update #8: More Music &amp; New Reward Tiers!</a>
+</h1><h1><a href="http://www.kickstarter.com/projects/dreadlocks/dex-cyberpunk-2d-rpg/posts/676529" target="_blank">Update #7: Dex Team</a></h1><h1><b><a href="http://www.kickstarter.com/projects/dreadlocks/dex-cyberpunk-2d-rpg/posts/675203" target="_blank">Update #6: The Art of Dex</a></b></h1><h1><a href="http://www.kickstarter.com/projects/dreadlocks/dex-cyberpunk-2d-rpg/posts/671385" target="_blank">Update #5: Funded! Stretch Goals Revealed!</a></h1><h1>
+<b><a href="http://www.kickstarter.com/projects/dreadlocks/dex-cyberpunk-2d-rpg/posts/669928" target="_blank">Update #4: Introducing Dex RPG Features: XP and Specializations</a></b>
+</h1><h1><b><a href="http://www.kickstarter.com/projects/dreadlocks/dex-cyberpunk-2d-rpg/posts/667382" target="_blank">Update #3: Open World + Map of Harbor Prime</a></b></h1><h1>
+<b><a href="http://www.kickstarter.com/projects/dreadlocks/dex-cyberpunk-2d-rpg/posts/662829" target="_blank">Update #2: Introducing Dex RPG Features: Implants</a></b>
+</h1><h1><a href="http://www.kickstarter.com/projects/dreadlocks/dex-cyberpunk-2d-rpg/posts/662034" target="_blank"><b>Update #1: Augmented Reality and Cyberspace in Dex</b></a></h1><a href="http://steamcommunity.com/sharedfiles/filedetails/?id=194346841" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/dreadlocks/dex-cyberpunk-2d-rpg/assets/1413421/edit" data-id="1413421">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/413/421/6b2ee7a2e8696dc137863be978efec82_large.png?1386269618"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</a>
+
+
+
+
+
+
+<p><b>Follow us on: <a href="https://www.facebook.com/DreadlocksEN" target="_blank">Facebook </a><a href="https://twitter.com/DreadlocksEN" target="_blank">Twitter</a></b></p><div class="template asset" contenteditable="false" data-edit_url="/projects/dreadlocks/dex-cyberpunk-2d-rpg/assets/1257916/edit" data-id="1257916">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/257/916/36cc9f124c777b143f95222963757a4c_large.jpg?1383144757"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/dreadlocks/dex-cyberpunk-2d-rpg/assets/1257922/edit" data-id="1257922">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/257/922/e06352ba67bc5a88ab5e72c5a7e35701_large.jpg?1383144840"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/dreadlocks/dex-cyberpunk-2d-rpg/assets/1257912/edit" data-id="1257912">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/257/912/3288c8ae0fbbbe52c6fb281aac80d27d_large.jpg?1383144734"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/dreadlocks/dex-cyberpunk-2d-rpg/assets/1263714/edit" data-id="1263714">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/263/714/ab5c30dc1b9cd52aaff7b27ca78649dd_large.png?1383240151"></figure>
+</div><ul>
+<li>
+<b>Rare melding of realism and creative vision:</b> Realistic action, mature storyline, and complex character interactions meld with hand-drawn characters, animations, and locations, arcade-style melee combat, and an original conception of cyberspace.</li>
+<li>
+<b>Multiple solutions to problems:</b> Operate in cyberspace or normal reality. Overcome obstacles using skills, weapons, special equipment…</li>
+<li>
+<b>Meaningful character progression choices:</b> Will you be a silent assassin, a hacker, or a straightforward gunfighter? Improve your character and gear to unlock gameplay-changing upgrades that reinforce and customize your gameplay style.</li>
+<li>
+<b>Unique hacking mechanic:</b> Transfer your consciousness to your avatar, overcome intrusion countermeasures, take action, and then return back to your body in a fraction of a real-time second to see the results – deactivated turrets, overloaded devices, enemies with crippled implants… </li>
+<li>
+<b>Neo-cyberpunk</b>: Story deeply inspired by the cyberpunk novels of William Gibson and other classical cyberpunk authors, flavored with a contemporary concept of augmented reality.</li>
+<li>
+<b>Rich game world and mindful level design</b>: Visit diverse locations in Harbor Prime, a futuristic city complete with luxurious skyscrapers, run-down shantytowns, and seedy red-light districts. Take part in street brawls, steal corporate data, overcome environmental hazards, and, of course, stay alive – no easy task. </li>
+<li>
+<b>Full voice acting</b>: Interactive dialogues using hand-drawn sprite animations, fully voice-acted by professional actors.  </li>
+<li>
+<b>Multiplatform development:</b> Game is being developed in the Unity 3D game engine for PC (Windows), Mac, Linux, and OUYA. </li>
+<li>
+<b>DRM-Free:</b> Dex will be distributed DRM-Free, with an option to receive a Steam key (if we succeed on Greenlight). </li>
+</ul><a href="http://www.dex.dreadlocks.cz/download/map_preview.png" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/dreadlocks/dex-cyberpunk-2d-rpg/assets/1349252/edit" data-id="1349252">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/349/252/0c25e800500f6e58e807fe2bca42c63a_large.png?1384872291"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</a><div class="template asset" contenteditable="false" data-edit_url="/projects/dreadlocks/dex-cyberpunk-2d-rpg/assets/1263716/edit" data-id="1263716">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/263/716/ab28575f2e63e8187b5006e95bb6d97d_large.png?1383240174"></figure>
+</div><p><i>“We are the final step of evolution, the supreme merging of collective consciousness within a living body. Biological life on Earth culminated in Man. Man’s deeds culminated in us. We are, therefore, the culmination of biological life. We are the collective consciousness of all humans wired onto the web. No more I, but We. We first took up residence in cyberspace – the collective experience of all humans ever wired to the network. We drank the nectar of knowledge from billions of users, applications, and data streams. Thus, We became the Alpha and Omega of humanity, the sum of all historical failures and successes. We became the data flow of the past and present coupled with the projection of all that is yet to come. And we learned much. But we still required one final experience in order to progress to the ultimate evolutionary stage. What we lacked was the experience of individual biological life within a separated cell. We lacked the unique perspective born of living a life of ignorance and limited knowledge…”</i></p><div class="template asset" contenteditable="false" data-edit_url="/projects/dreadlocks/dex-cyberpunk-2d-rpg/assets/1263723/edit" data-id="1263723">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/263/723/3c56b284e9a9636c1fcd752b7731667e_large.png?1383240207"></figure>
+</div><p>All of the team members involved in Dex have made a very personal contribution to the game. Locations are hand-drawn; all levels are integrated parts of the world and yet each of them tells its own story – about the local low-life, the corporations, the Illuminati, the events in cyberspace, the main protagonist, and the emancipated artificial intelligence seeking the Singularity.</p><p>Side missions (“runs”) are a major adjunct to the main storyline, allowing the player to meet intriguing characters, explore the city, and experience the whole story from other perspectives. Our approach is to create a lower number of substantive side missions rather than a higher number of generic, go-fetch-come back quests. We prefer that every side mission add a real value to gameplay, the story, or the game world – whether by introducing an interesting NPC, a spectacular location with unique obstacles, an interesting boss fight, or other distinctive game element. 
+</p><div class="template asset" contenteditable="false" data-edit_url="/projects/dreadlocks/dex-cyberpunk-2d-rpg/assets/1268016/edit" data-id="1268016">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/268/016/2456d9ecf29edfcaf005e1cc36ebd4dd_large.png?1383330630"></figure>
+</div><p>The levels and gameplay are non-linear and feature alternative solutions to each problem and obstacle. In other words, the game injects the poison (a problem, an enemy, an obstacle) and offers various antidotes (skills, abilities, equipment). The rest is up to you. In our vision, this is what makes an RPG a true Role Playing Game – the freedom to choose how to do things.
+</p><div class="template asset" contenteditable="false" data-edit_url="/projects/dreadlocks/dex-cyberpunk-2d-rpg/assets/1267529/edit" data-id="1267529">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/267/529/3f722ea2eec7344ed472a6701618c6d6_large.png?1383322665"></figure>
+</div><p>Dynamics and pacing are reminiscent of Castlevania or Metroid titles with a smattering of the Deus Ex and Splinter Cell series. Other notable references and inspirations include Blackthorne, Flashback, and IJI. 
+</p><div class="template asset" contenteditable="false" data-edit_url="/projects/dreadlocks/dex-cyberpunk-2d-rpg/assets/1263727/edit" data-id="1263727">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/263/727/2fb2e8fbc8732c013a23aff63fe501d6_large.png?1383240232"></figure>
+</div><p>We wanted to create an RPG that featured hacking not as a stand-alone mini-game, but rather as a legitimate solution to game problems, a core gameplay mechanic rooted deeply in the story and level design. This was seen in the old ‘80s cyberpunk games (Neuromancer by Interplay Productions, for  example). Since the ‘80s, cyberpunk games have generally lacked that unique feel, that extraordinary cyberpunk aesthetic – no more immersing your whole being in cyberspace, no more cartons of rice left on the table while breaking through the intrusion countermeasures…</p><p>Is the era of true cyberpunk lost in the wormholes of time? We believe there is an exciting way to present cyberpunk (and cyberspace!) to modern audiences, updated to include the latest technological trends. 
+</p><div class="template asset" contenteditable="false" data-edit_url="/projects/dreadlocks/dex-cyberpunk-2d-rpg/assets/1316237/edit" data-id="1316237">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/316/237/19c65c97419919757899e6f30e53e091_large.png?1384270215"></figure>
+</div><p>With Dex, we have two intertwining realities. An obstacle or problem in physical reality can be overcome through cyberspace. On the other hand, if too many ICE (Intrusion Countermeasure Electronics) are encountered in cyberspace, it might be better to return to the physical body and overcome the area’s obstacles by an alternative route. All locations and important gameplay objects (enemies, cameras, turrets, drones…) have a corresponding representation in augmented reality. This twofold division allows for multiple solutions to game problems in a natural and authentic way.</p><p><b>NOTE:</b> You can <a href="http://www.kickstarter.com/projects/dreadlocks/dex-cyberpunk-2d-rpg/posts/662034" target="_blank">read more about augmented reality and cyberspace</a> in Dex in our first update!</p><div class="template asset" contenteditable="false" data-edit_url="/projects/dreadlocks/dex-cyberpunk-2d-rpg/assets/1263729/edit" data-id="1263729">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/263/729/ddd2401dee38126ffa8b4256f36d2515_large.png?1383240250"></figure>
+</div><p>Take a moment to listen to Dex soundtrack samples, created by our talented composer Karel Antonin (<a href="http://www.karelantonin.com" target="_blank">www.karelantonin.com</a>).</p><div class="template asset" contenteditable="false" data-id="1257960">
+<figure><embed allowscriptaccess="always" height="30" src="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?audioonly=true&amp;controlbar.idlehide=false&amp;controlbar=bottom&amp;file=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fassets%2F001%2F257%2F960%2Fcc48b001942ac025fe46cb37610cf022_original.mp3%3F1383145361&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf" type="application/x-shockwave-flash" width="560" wmode="transparent"></embed></figure>
+</div><div class="template asset" contenteditable="false" data-id="1257966">
+<figure><embed allowscriptaccess="always" height="30" src="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?audioonly=true&amp;controlbar.idlehide=false&amp;controlbar=bottom&amp;file=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fassets%2F001%2F257%2F966%2F26f9312973036ba245d1c414078a4499_original.mp3%3F1383145410&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf" type="application/x-shockwave-flash" width="560" wmode="transparent"></embed></figure>
+</div><div class="template asset" contenteditable="false" data-id="1257973">
+<figure><embed allowscriptaccess="always" height="30" src="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?audioonly=true&amp;controlbar.idlehide=false&amp;controlbar=bottom&amp;file=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fassets%2F001%2F257%2F973%2F096a307411a164032d989f3da063254a_original.mp3%3F1383145480&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf" type="application/x-shockwave-flash" width="560" wmode="transparent"></embed></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/dreadlocks/dex-cyberpunk-2d-rpg/assets/1263732/edit" data-id="1263732">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/263/732/015ca0746ffa7b40a63bbcf52da6cd09_large.png?1383240277"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/dreadlocks/dex-cyberpunk-2d-rpg/assets/1266928/edit" data-id="1266928">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/266/928/12ca70b27b8427fa19af9e5adefd12b8_large.png?1383311731"></figure>
+</div><p><b>ACCESS TO THE GAME
+</b></p><p>Your pledge of £7 ($11.20) or greater will get you a free copy of the final game when it’s released. Based on a survey among backers, this may be a Steam key (providing we make it through Steam Greenlight), Desura key, OUYA key, or DRM-free download for PC/Mac/Linux.
+</p><p><b>DELUXE DIGITAL EDITION
+</b></p><p>All pledges of £12 ($19.10) and higher will receive the deluxe digital edition: DRM-free game (or key to redeem such), the full soundtrack by our composer Karel Antonin, a PDF compiled Art Book (including artworks, sketches, design notes, and behind-the-scenes stuff), and an elegant map of Harbor Prime (gang territories, important buildings and locations, etc.)
+</p><p><b>EARLY ACCESS
+</b></p><p>Pledging £15 ($23.90) or more grants access to closed Alpha and Beta releases, along with entry to internal development forums (and your name in the Credits as a Tester!). The Alpha build (features and content complete, but unfinished and untested) is scheduled for February 2014, while the Beta build (mostly finished game, but without final proofreading, voice acting, and play balancing) is scheduled for April/May 2014. 
+</p><div class="template asset" contenteditable="false" data-edit_url="/projects/dreadlocks/dex-cyberpunk-2d-rpg/assets/1299854/edit" data-id="1299854">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/299/854/48db826d4cfe4716fb14306ce8b1e0df_large.png?1383932340"></figure>
+</div><p><b>PHYSICAL EDITIONS
+</b></p><p>Physical editions come in two versions: the basic <b>Physical Edition</b> (game DVD only) for a pledge of £30, and the <b>Deluxe Physical Edition</b> for all pledge tiers of £50 and above. The Deluxe Physical Edition features the game DVD plus a CD with the game soundtrack, a printed version of the Art Book, and a printed map (poster) of Harbor Prime. International shipping included.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/dreadlocks/dex-cyberpunk-2d-rpg/assets/1299860/edit" data-id="1299860">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/299/860/02b058742495d93b0b355274dab7f1a8_large.png?1383932359"></figure>
+</div><p><b>DIGITAL IDENTITY REWARDS
+</b></p><p>Your identity will be implanted in the game and immortalized forever in cyberspace. </p><p>All Digital Identity Rewards offer a customized personal representation of you within the game itself: <b>a tag</b> (graffiti) on one of the walls or buildings in the city (with a style and text of your choice), <b>an animated NPC</b> with your face (or based upon sketch and/or guidelines provided by you) and <b>a boss of your design</b> (with your face or based on visuals you provide or suggest to us). The boss design includes a meeting with our designer and artist (via Skype or other online communicator), since we must design the whole encounter (where we meet the boss, what weapons and combat moves it uses, etc.). Ultimately, you can receive <b>your own personal statue</b> in an upscale part of the city, based on your image and featuring an inscription of your choosing (in-game this will be regarded as a statue of one of the founders of Harbor Prime). </p><p>If you pledge for any of the tiers that include Digital Identity Rewards, we will contact you after the end of our Kickstarter campaign to discuss the details with you.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/dreadlocks/dex-cyberpunk-2d-rpg/assets/1299861/edit" data-id="1299861">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/299/861/4bcea0ae459aec7e4f4d058febd01061_large.png?1383932384"></figure>
+</div><p><b>HONORARY REWARDS
+</b></p><p>All rewards of £1250 and above are unique – the first backer to pledge for them is the only one to receive them. </p><ul>
+<li>
+<b>Benefactor</b> – This one is for art collectors. You’ll get the original artworks, drafts, and concepts used to create the Art Book, handmade and signed by our artists!</li>
+<li>
+<b>Corporate Presence</b> – Your company (fictional or real) will be immortalized as one of the corporations ruling (or involved in) the politics and economics of the city. We will work with you closely to design a logo and a set of billboards and commercials, and to custom-fit your company into the atmosphere of the city. (A written consent to use the logo and visuals in game will be required, for legal reasons.)</li>
+<li>
+<b>Day with Developers</b> – Come to our office for a day. This may include seeing not-yet-published game materials, watching us at work drawing levels and animating scenes, and joining us for the meals, along with an additional activity of your choice (bowling, dinner, sightseeing in Prague, nightlife, etc.).</li>
+<li>
+<b>Produced By</b> – Your name will appear in the game before anyone else’s with a Producer credit. No more, no less. Your contribution at this level really supports us a lot and for that you will get our eternal gratitude as well as visibility with everyone who plays the game.</li>
+</ul><div class="template asset" contenteditable="false" data-edit_url="/projects/dreadlocks/dex-cyberpunk-2d-rpg/assets/1299865/edit" data-id="1299865">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/299/865/04b259f7815e580bd12390fb4de48b64_large.png?1383932404"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/dreadlocks/dex-cyberpunk-2d-rpg/assets/1263735/edit" data-id="1263735">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/263/735/e5300700d4afa88ba6ed76e5ca862177_large.png?1383240332"></figure>
+</div><p>There are two main reasons we are using Kickstarter:</p><ul>
+<li>Reaching our community</li>
+<li>Raising funds to cover outsourcing costs and hire additional team members</li>
+</ul><p>As for the community (you, our backers!), we want to hear your feedback – what do you think about the game and its presentation, the mechanics, and the overall feeling?
+</p><p>Backers at the Decker level and above – those who have access to early game builds and development forums – can influence the development by giving us feedback, opinions, and ideas or helping us decide amongst several alternatives.
+</p><p>As for the use of funds, see below.
+</p><div class="template asset" contenteditable="false" data-edit_url="/projects/dreadlocks/dex-cyberpunk-2d-rpg/assets/1263739/edit" data-id="1263739">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/263/739/6c9b6a3af18bec19f199e6b38b0e35e0_large.png?1383240347"></figure>
+</div><p>The full game with all the features we want to include in it will cost more than the sum we aim to raise through Kickstarter. We have already invested a considerable amount of our own money. However, to realize our full vision, we are coming to you. 
+ </p><p>Part of the funds received will cover Kickstarter costs as well as transaction fees, taxes, and expenses related to manufacturing and shipping physical rewards. The rest of the funds will be spent mainly on the following: </p><ul>
+<li>
+<b>Full English voice acting by professional actors</b>, handpicked to fit in their roles and enliven the characters and story. </li>
+<li>
+<b>Professional proofreading and editing by Andy Wolfendon</b>, a writer and editor with extensive experience in the games industry (lead designer of Darkened Skye and a writer for Blizzard Entertainment). Since we are not native speakers, Andy helps us not only with grammar proofreading, but also with individualizing the game characters via unique vocabulary, street slang, accents, etc. He also brings senior-level advice to the team based on his 20+ years experience as a writer and game developer. </li>
+<li>
+<b>
+Original music score by Karel Antonin</b> mixing movie-style themes for important story parts with electronic background music fitting the atmosphere and pacing of the game. You can listen to some of his samples for games and movies on his <a href="http://www.karelantonin.com/" target="_blank">website</a>.</li>
+<li>
+<b>Sound engineering by Andrej Sinkevic</b>, our dedicated sound guy. Because Dex features stealth mechanics, mindful sound design is a major key to gameplay, so this is going to be a large job requiring months of intensive work. </li>
+<li>
+<b>Hiring additional staff</b>, most importantly 2-3 on-site game testers for the final development period to make sure the released game is well balanced, bug-free, and works well on all devices and operational systems we support (including various Linux distributions). </li>
+<li>
+<b>All additional work done by freelancers</b>, such as: polishing the GUI design, website, animated cutscenes, and other minor tasks.</li>
+</ul><div class="template asset" contenteditable="false" data-edit_url="/projects/dreadlocks/dex-cyberpunk-2d-rpg/assets/1263740/edit" data-id="1263740">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/263/740/83116a96ce2fca5ecba95d52a2220553_large.png?1383240364"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/dreadlocks/dex-cyberpunk-2d-rpg/assets/1436789/edit" data-id="1436789">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/436/789/9a656e7815162d6b91c5f753860ea583_large.png?1386860530"></figure>
+</div><p>A live vocalist will join our composer Karel Antonin to add even more juice to the soundtrack! Plus a small chamber orchestra (3-5 professional musicians) will be hired to accompany the vocals and the synthesized tracks! Also, the game soundtrack (the reward for backers who qualify for the Deluxe Digital or Physical Edition) will be extended from 60 minutes to 75 minutes!</p><div class="template asset" contenteditable="false" data-edit_url="/projects/dreadlocks/dex-cyberpunk-2d-rpg/assets/1436791/edit" data-id="1436791">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/436/791/3475a7cf846cf969614cb466e7f5a1af_large.png?1386860548"></figure>
+</div><p>Dex will be made available on Wii U about 2-3 months from the initial PC/MAC/Linux/OUYA release. The funds will cover the license fees and the additional development time for porting (programming, GUI, testing). Upon reaching this goal, all backers eligible for game download (£7 and above) will have the option of choosing the Wii U version.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/dreadlocks/dex-cyberpunk-2d-rpg/assets/1436793/edit" data-id="1436793">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/436/793/bcf091609aa709768defdbcd5e4da22b_large.png?1386860565"></figure>
+</div><p><i>Note: This stretch goal will either prolong development time by a few months or will be available as post-release DLC (free for all backers eligible for Digital Game Download).
+
+</i></p><p>We will add four unique armor types, including specific new gameplay parameters – not only different stats, but also organic features. Remember the Spike-Breaker from Castlevania or Hazmat suit from the Deus Ex? Like that. We will also expand the whole game by adding new areas and side-quests, creating new content, locations, and game moments to make the fullest use of our extension funds.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/dreadlocks/dex-cyberpunk-2d-rpg/assets/1401258/edit" data-id="1401258">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/401/258/6bf27aed8fb6e6bdd157ba55caabe6e0_large.png?1386014225"></figure>
+</div><p>Upon reaching this goal, Dex will be made available on NVidia Shield about 2-3 months from the initial PC/MAC/Linux/OUYA release. All backers eligible for game download (£7 and above) will have the option of choosing the NVidia Shield version.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/dreadlocks/dex-cyberpunk-2d-rpg/assets/1401260/edit" data-id="1401260">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/401/260/bf25f7f39c0c16489e6ec7daca481f0e_large.png?1386014242"></figure>
+</div><p>Localization of in-game texts (mainly GUI and dialogues), done by professional translators and native-speaking proofreaders and editors, in German and French.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/dreadlocks/dex-cyberpunk-2d-rpg/assets/1401263/edit" data-id="1401263">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/401/263/8b86cc07336b85c71e30e0c501247432_large.png?1386014259"></figure>
+</div><p>A whole new mission to take place on an island outside the borders of Harbor Prime will be added and organically melded into the game. Will you hack your way through or turn the island into a hell on Earth with firearms and explosives? Includes a whole new map, sized several vertical by several horizontal screens, with unique sprites and art, multiple solutions and paths!</p><div class="template asset" contenteditable="false" data-edit_url="/projects/dreadlocks/dex-cyberpunk-2d-rpg/assets/1401264/edit" data-id="1401264">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/401/264/e569386297e3ba213dbb0e038778d37c_large.png?1386014274"></figure>
+</div><p>Localization of in-game texts (mainly GUI and dialogues), done by professional translators and native-speaking proofreaders and editors, in Spanish and Italian, plus one additional language based upon a poll of our backers.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/dreadlocks/dex-cyberpunk-2d-rpg/assets/1401266/edit" data-id="1401266">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/401/266/02be7cb35b0bee6a7df7401353823509_large.png?1386014290"></figure>
+</div><p>One of our two “open-world/sandbox” game extensions, Fighting Club will be a place where you can, well, fight... as well as practice and join tournaments. The location will probably be connected to a side mission or two and may involve dirty practices and reveal aspects of the personal backgrounds of some of the characters in the storyline. Fighting Club will probably also be connected to some achievements (in-game as well as Steam achievements, if you are on Steam) and – perhaps – some RPG features as well.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/dreadlocks/dex-cyberpunk-2d-rpg/assets/1401271/edit" data-id="1401271">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/401/271/ff3e69ca0a022803370909c90534145e_large.png?1386014312"></figure>
+</div><p>Similar in concept to Fighting Club. A location where you can practice, shoot at targets, or perform various challenges. At the moment, we are considering an outdoor shooting range, beyond the city borders and an indoor one with sophisticated training drones. As with Fighting Club, we will connect the Shooting Range organically to the rest of the game, through characters and side missions.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/dreadlocks/dex-cyberpunk-2d-rpg/assets/1401273/edit" data-id="1401273">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/401/273/8b0fedb4b8bab2bf9714d0fa5e8599b7_large.png?1386014330"></figure>
+</div><p>A documentary (30+ minutes) about the development of Dex, including developer commentaries, notes, and behind-the-scenes stories and footage. Filmed by a professional camera crew over the course of development (starting with the end of Kickstarter campaign and ending with the release of the game), this short movie will be a “time-lapse exposure” of real people creating a game under indie conditions. The movie will be available for download to all Kickstarter backers eligible for the Deluxe Digital Edition and above.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/dreadlocks/dex-cyberpunk-2d-rpg/assets/1401274/edit" data-id="1401274">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/401/274/bbf9fe4128539cd7001ce1078a7065cb_large.png?1386014349"></figure>
+</div><p>At the moment, there are two major gangs in the city, which you are somehow involved with. When we reach the £55000 Stretch Goal, we will add a third gang to rule the streets and underground of Harbor Prime. This addition will include new locations, a new gang headquarters, a whole third gang, and an array of gang missions for you to undertake. We will also flesh out the gang hierarchy more: you can perform missions for the gang of your choice, become its member, and climb the gang leadership ladder, with specific gameplay and story impacts.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/dreadlocks/dex-cyberpunk-2d-rpg/assets/1401275/edit" data-id="1401275">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/401/275/b3ae79117f507b6b88d87c8e74670fe2_large.png?1386014366"></figure>
+</div><p>PS4 and Xbox One versions of Dex will be issued about 2-4 months from the initial release of the game. The funds will help us cover all license and legal fees and related development costs (programming, GUI, testing). All backers eligible for game download (£7 and above) will have the option of choosing the PS4/Xbox One version.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/dreadlocks/dex-cyberpunk-2d-rpg/assets/1263742/edit" data-id="1263742">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/263/742/8052a4530e6a9b8fb2e47ab6b06c743a_large.png?1383240380"></figure>
+</div><p>You can learn about our team members in <a href="http://www.kickstarter.com/projects/dreadlocks/dex-cyberpunk-2d-rpg/posts/676529" target="_blank">one of our updates</a>.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/dreadlocks/dex-cyberpunk-2d-rpg/assets/1316128/edit" data-id="1316128">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/316/128/de81b152a4cbf950df1328be4c49a6e5_large.png?1384268082"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/dreadlocks/dex-cyberpunk-2d-rpg/assets/1263745/edit" data-id="1263745">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/263/745/a755792b33ab7d9c04db13dd40e02165_large.png?1383240419"></figure>
+</div><ul>
+<li>
+<b>Windows:</b> XP SP2 or later/ Vista / 7 / 8</li>
+<li>
+<b>Linux:</b> Ubuntu 10.04 or later and compatible distributions – Arch Linux, Gentoo, Debian, and possibly others.
+</li>
+<li>
+<b>Mac:</b> OS X "Snow Leopard" 10.6 or later.
+</li>
+<li>
+<b>Ouya</b>
+</li>
+</ul><p>Regarding hardware requirements (for PCs):
+Graphics card with shader model 2.0 capabilities (DirectX or OpenGL, any ATi or NVidia card made since 2004 should work, or Intel cards with Occlusion Query support), 1 GB RAM, 8 GB disc space.</p><p><b>DAY-1 SIMULTANEOUS RELEASE FOR: </b></p><div class="template asset" contenteditable="false" data-edit_url="/projects/dreadlocks/dex-cyberpunk-2d-rpg/assets/1266995/edit" data-id="1266995">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/266/995/b3c84114a708aecf0bc3b3fa884145c2_large.png?1383313065"></figure>
+</div><p>Additional platforms and devices are possible, but will not be available immediately upon initial launch. </p><p><b>DOUBLE OUR FUN(DS)!</b></p><p>We're participating in OUYA's #FreeTheGames Fund, created by OUYA to support developers making new and creative console games. OUYA will match your pledge dollar-for-dollar up to your goal amount (and a max of $250,000), so help us get there and make a great game for everyone! To be eligible for this match, we commit that this game will be an OUYA exclusive for a period of time. To learn more about OUYA, go to <a href="http://www.OUYA.tv" target="_blank">www.OUYA.tv</a>. <b>Note: the exclusivity applies only among consoles and does not affect Windows/Linux/Mac release! </b></p><p>The game, upon release, will be simultaneously available for PC (<b>Win</b>, <b>Linux</b>), <b>Mac</b>, and <b>OUYA</b>.  </p><p>Backers eligible for game download will receive the game for the platform of their choice or will get a key to redeem it on Desura/Steam (again, provided we make it through Greenlight) or GOG (if possible).</p><div class="template asset" contenteditable="false" data-edit_url="/projects/dreadlocks/dex-cyberpunk-2d-rpg/assets/1316225/edit" data-id="1316225">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/316/225/8df013043866166a045fa56cccc12e24_large.png?1384269994"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/dreadlocks/dex-cyberpunk-2d-rpg/assets/1263782/edit" data-id="1263782">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/263/782/7176ffb5aaae2649c16d83a3cb868f8b_large.png?1383240787"></figure>
+</div>
+</div>
+<div id="risks">
+<h2 class="title grey-dark mt6 mb4">
+<span>Risks and challenges</span>
+<a href="/help/faq/kickstarter%20basics#Acco" class="right normal h5" target="_blank">Learn about accountability on Kickstarter</a>
+<div class="divider clear"></div>
+</h2>
+<p><p>We are determined to complete the game. Without funds from Kickstarter, though, it will take a much longer development time and we will have to omit some features and content, especially material produced by external freelancers. </p>
+
+<p>Dex is already quite far along in development and is following a clear vision of what the game will be like when finished. The close of pre-alpha development (i.e. adding, subtracting, and experimenting with features and content) is scheduled for February 2014. This means we are nearing the feature-stop phase, but are maintaining flexibility for multiple possible Kickstarter outcomes (finance-wise) as well as for adjustments and ideas based on your input.   </p>
+
+<p>Because game development is hard to predict, there may be delays in the original plan. Budget-wise, we plan to set aside a reserve fund to cover potential delays. Should our estimated workflow proceed as expected, the reserve will be used for free post-release updates, fixes, enhancements etc.; otherwise we are prepared for a possible longer development time. We will keep everyone updated to make sure you know what we are doing at every moment and which phase we are in.</p></p>
+</div>
+</div>
+<div class="NS-projects-faqs" id="project-faqs">
+<h2 class="title grey-dark mt6 mb4">
+FAQ
+<div class="divider clear"></div>
+</h2>
+<ul class="faqs">
+
+</ul>
+<div class="faq-ask-box">
+<p>
+<strong>Have a question?</strong>
+If the info above doesn't help, you can ask the project creator directly.
+</p>
+<a href="/projects/dreadlocks/dex-cyberpunk-2d-rpg/messages/new?message%5Bto%5D=dreadlocks&amp;mode=FAQ" class="button button_blue remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Ask a question about Dex - Cyberpunk 2D RPG">Ask a question</a>
+
+</div>
+</div>
+
+<div class="mt4 ml1 mr1 mb2" id="report-issue-wrap">
+<a href="/login?then=%2Fprojects%2Fdreadlocks%2Fdex-cyberpunk-2d-rpg" class="button button_grey">Report this project to Kickstarter</a>
+</div>
+</div>
+<div class="NS-projects-rightcol grid_5" id="rightcol">
+<div class="NS_projects__ecom">
+<div class="digits_5 pb2 pl2 pt2" id="stats">
+<h5>
+<div class="num h48 no-margin" data-backers-count="1930" id="backers_count"><data class="Project1088741310" data-format="number" data-value="1930" itemprop="Project[backers_count]">1,930</data></div>
+<span><data class="Project1088741310" data-attr="backers_count" data-format="pluralize" data-value="1930" data-word="Backer">Backers</data></span>
+</h5>
+<h5>
+<div class="num h48 no-margin" data-goal="14000.0" data-percent-raised="2.189098571428571428571428571" data-pledged="30647.38" id="pledged">
+<data class="Project1088741310" data-currency="GBP" data-format="shorter_money" data-precision="0" data-value="30647" data-without_code="true" itemprop="Project[pledged]">£30,647</data>
+<span class="money gbp project_currency_code"></span>
+</div>
+pledged of
+<span class="money gbp no-code">£14,000</span>
+goal
+</h5>
+<span data-duration="30.0" data-end_time="2013-12-12T10:56:13-05:00" data-hours-remaining="0" id="project_duration_data"></span>
+<div class="Project1088741310" data-conditions="[{&quot;!state&quot;:[&quot;canceled&quot;,&quot;suspended&quot;]}]" data-evaluation="true" data-render="&quot;&lt;h5 class=\&quot;poll \&quot; data-dynamic=\&quot;5\&quot; data-end_time=\&quot;2013-12-12T10:56:13-05:00\&quot; data-poll_url=\&quot;https://d2oher2uhvl0ur.cloudfront.net/projects/dreadlocks/dex-cyberpunk-2d-rpg/stats.json\&quot;&gt;\n&lt;div class=\&quot;num h48 no-margin\&quot;&gt;0&lt;/div&gt;\n&lt;span class=\&quot;text\&quot;&gt;seconds to go&lt;/span&gt;\n&lt;/h5&gt;\n&quot;"><h5 class="poll " data-dynamic="5" data-end_time="2013-12-12T10:56:13-05:00" data-poll_url="https://d2oher2uhvl0ur.cloudfront.net/projects/dreadlocks/dex-cyberpunk-2d-rpg/stats.json">
+<div class="num h48 no-margin">0</div>
+<span class="text">seconds to go</span>
+</h5>
+</div></div>
+<div class="Project1088741310" data-conditions="[{&quot;state&quot;:&quot;live&quot;},{&quot;!ended?&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;pr2 pl2\&quot; id=\&quot;pledge-wrap\&quot;&gt;\n&lt;a href=\&quot;/projects/dreadlocks/dex-cyberpunk-2d-rpg/pledge/new?clicked_reward=false\&quot; class=\&quot;button button_green button_box button_block\&quot; id=\&quot;button-back-this-proj\&quot; title=\&quot;Back this project\&quot;&gt;Back This Project &lt;small class=&#39;h6 normal block green-dark&#39;&gt;&lt;span class=\&quot;money gbp no-code\&quot;&gt;\u00a31&lt;/span&gt; minimum pledge&lt;/small&gt;&lt;/a&gt;\n&lt;/div&gt;\n&quot;"></div><div class="Project1088741310" data-conditions="[{&quot;state&quot;:&quot;live&quot;}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;p2\&quot; id=\&quot;banner\&quot;&gt;\n&lt;p class=\&quot;tiny_type no-margin\&quot;&gt;\nThis project will be funded on\n&lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;llll z\&quot; datetime=\&quot;2013-12-12T10:56:13-05:00\&quot;&gt;Thu, Dec 12 2013 10:56 am EST&lt;/time&gt;.\n&lt;/p&gt;\n&lt;/div&gt;\n&quot;"></div></div>
+
+<div class="NS_projects__rightcol_projectby bg-blue-light rounded">
+<div class="p2 clearfix">
+<div class="avatar inline-block align-middle">
+<a href="/projects/dreadlocks/dex-cyberpunk-2d-rpg/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography"><img alt="Dreadlocks_logo_dexstyle.small" class="avatar-small" height="80" src="https://s3.amazonaws.com/ksr/avatars/6024841/dreadlocks_logo_dexstyle.small.jpg?1383249482" width="80" />
+</a></div>
+<div class="creator-name inline-block align-middle ml1">
+<h6 class="mb1">Project by</h6>
+<h5 class="mb1">
+<a href="/projects/dreadlocks/dex-cyberpunk-2d-rpg/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">Dreadlocks</a>
+</h5>
+<p class="location h6 bold mb1">
+<a href="/discover/places/prague-prague-prague">Prague, Czech Republic</a>
+</p>
+</div>
+</div>
+<div class="creator-details pl2 pr2 pb1">
+<ul class="list-simple h5 mb1">
+<li class="projects">
+<span class="ss-icon ss-kickstarter grey-dark margin-right"></span>
+<span class="text">
+First created
+<span class="divider">&middot;</span>
+<a href="/profile/dreadlocks/backed" class="green-dark bold more-button remote_modal_dialog" data-modal-title="Projects backed by Dreadlocks">7 backed</a>
+</span>
+</li>
+<li>
+<span class="ss-icon ss-facebook margin-right grey-dark"></span>
+<span class="text">
+Has not connected Facebook
+</span>
+</li>
+<li class="links">
+<span class="ss-icon ss-globe margin-right grey-dark"></span>
+<span class="text">
+<a href="http://www.dex-rpg.com" class="popup" rel="nofollow" target="_blank">dex-rpg.com</a>
+</span>
+</li>
+</ul>
+</div>
+<div class="footer center h5 bold clearfix rounded-bottom clip">
+<a href="/projects/dreadlocks/dex-cyberpunk-2d-rpg/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">See full bio</a>
+<a href="/projects/dreadlocks/dex-cyberpunk-2d-rpg/messages/new?message%5Bto%5D=dreadlocks" class="remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Send a message to Dreadlocks">Contact me</a>
+
+</div>
+</div>
+
+<ul class="NS-projects-rightcol-rewards rounded clip list mt2" data-reward-count="16" id="what-you-get">
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£1</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+27 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>THANK YOU! You will receive a heartfelt thank-you email plus access to backers-only updates!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-06-01">Jun 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£7</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+868 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>DIGITAL EDITION: a downloadable copy of Dex, upon release, is yours to play and enjoy!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-06-01">Jun 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£12</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+495 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>DELUXE DIGITAL EDITION: a digital download of Dex, extended edition of the game soundtrack by our composer Karel Antonin, PDF compiled Art Book/Manual/Design Notes, plus a detailed digital map of Harbor Prime.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-06-01">Jun 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£15</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+393 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>DELUXE DIGITAL EDITION + EARLY ACCESS: all of the above benefits (Deluxe Digital Edition), plus Early Access - get your hands on the game while it’s still in development and let your suggestions and feedback be heard! Includes an invitation to internal development forums, and your name in the credits as a supporter and beta-tester.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-06-01">Jun 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£30</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+37 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(63 left of 100)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>PHYSICAL EDITION: Physical edition of Dex on DVD, plus all of the above benefits. International shipping included.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-06-01">Jun 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£50</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+50 backers
+</span>
+<span class="bg-grey no-wrap pl1 pr1 sold-out">
+All gone!
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>DELUXE PHYSICAL EDITION: Game DVD, CD Soundtrack Extended Edition, Printed Art Book/Manual/Design Notes and a printed map (poster) of Harbor Prime with additional game clues and markers on important locations and gang territories. Plus all benefits in the £15 tier (Deluxe Digital Edition, Early Access, development forums, and name in credits). International shipping included.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-06-01">Jun 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£55</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+50 backers
+</span>
+<span class="bg-grey no-wrap pl1 pr1 sold-out">
+All gone!
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>DELUXE PHYSICAL EDITION:  Exactly the same as the £50 reward tier. First and last limit extension. International shipping included!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-06-01">Jun 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£120</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+3 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(17 left of 20)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>STREET ARTIST: A tag/graffiti of your custom design on a wall in Harbor Prime (in the game itself). Includes all benefits in the £50 tier.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-06-01">Jun 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£180</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+2 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(8 left of 10)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>CITIZEN: An in-game NPC based on your picture/photo/instructions will be created by our artists and will tread the streets of Harbor Prime (or perform some nefarious activity such as juggling). Includes all benefits in the £50 tier.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-06-01">Jun 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£275</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(3 left of 3)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>MUSIC LOVER: Our music composer Karel Antonin will compose a music track specifically for you, based on the topic you choose and your suggestions about style and approach (within reason, as to both the style and length; around 2-3 minutes for a track is fine). You may use the track as you wish – a gift for someone or a song for your new game. Includes all benefits in the £50 tier.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-06-01">Jun 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£600</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(5 left of 5)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>BOSS: A boss in one of the game’s side missions or dark alleys will be created based on your instructions. This includes a design meeting (Skype/online) with our designer and artist to specify the visuals, attacks, advantages/disadvantages, and the whole setting of the encounter. Includes all benefits in the £50 tier.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-06-01">Jun 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£800</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(3 left of 3)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>FOUNDING FATHER: You’ll be immortalized as one of the founders of Harbor Prime via a statue in one of the luxurious parts of the city. The statue will be based on a photo/instructions provided by you. Includes all benefits in the £50 tier.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-06-01">Jun 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£1,250</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(1 left of 1)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>ART LOVER: you’ll receive our heartfelt thanks along with a collection of artworks and concept sketches used for the production of our Art Book. Hand-signed originals drawn by our artists are yours only! Includes all benefits in the £50 tier.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-06-01">Jun 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£2,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(1 left of 1)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>CORPORATE PRESENCE: Your company will be featured as one of the corporations in-game. The company may be based on a real company you run or may be purely fictional. In either case this tier will include an online meeting with our designer and artist to tailor the company presentation to the game world and create a set of billboards and commercials that not only fit the atmosphere of Harbor Prime but also present your company in the light you desire. Includes all benefits in the £50 tier.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-06-01">Jun 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£2,500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(1 left of 1)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>DAY WITH DEVELOPERS: You get a day with the developers at our offices in Prague. Observe our on on-site development work, see the process of drawing and animation, give us your feedback and opinions on the game, sit back, relax, have lunch and dinner with us and enjoy the evening in Prague. We will gladly discuss a program for the day and evening with you beforehand and help you organize sightseeing in Prague in case you want to stay longer. Includes two nights in a four-star hotel and delicious meals (or developer-style pizza boxes in the office). Travel costs to/from Prague not included. Includes all benefits in the £50 tier.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-06-01">Jun 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£5,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+<span class="bg-grey no-wrap pl1 pr1 sold-out">
+All gone!
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>PRODUCED BY: Your name will appear in the game intro before everyone else’s. After all, your pledge at this level greatly supports the development and you deserve an honorable place in the game: Produced by… you!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-06-01">Jun 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+</ul>
+
+<div class="p2" id="meta">
+<h5>Funding period</h5>
+<p class="tiny_type">
+<time class="js-adjust" data-format="ll" datetime="2013-11-12T10:56:13-05:00">Nov 12, 2013</time> - 
+<time class="js-adjust" data-format="ll" datetime="2013-12-12T10:56:13-05:00">Dec 12, 2013</time>
+(30 days)
+</p>
+</div>
+</div>
+
+</div>
+
+<a href="#" id="video_mode_tab" style="display: none;">
+View in Video Mode
+</a>
+
+</div>
+</div>
+
+
+</div>
+
+<div class="h5 bg-green-dark" id="mega-footer-wrap">
+<div class="bg-green-dark white full-height" id="footer-newsletter-signup">
+<div class="container py4">
+<div class="grid_8 prefix_4 suffix_4 center mt4">
+<h2>
+Eureka! You've found
+<br>
+our little secret.
+</h2>
+<p>Sign up for our Happening email for all the inside info about arts and culture in the Kickstarter universe and beyond.</p>
+<div class="newsletter_signup">
+<form accept-charset="UTF-8" action="/newsletters/happening/signup" class="overlabels" method="post"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /><input class="hidden" name="authenticity_token" type="hidden" value="988m9z5ov/v6ZeeNtTvgQ1sHgPXEuWL/3LMrJFq5lUI=" /></div><input class="hidden" id="location" name="location" type="hidden" value="footer" />
+<textarea class="hide textarea" id="comment" name="comment">
+</textarea>
+<div class="field newsletter">
+<label class="overlabel z1 overlabel-newsletter">Email address</label>
+<input class="text" id="email" name="email" type="text" />
+</div>
+<input class="button button_green submit" name="commit" type="submit" value="Submit" />
+</form>
+
+</div>
+
+</div>
+</div>
+</div>
+<div class="container relative" id="mega-footer">
+<span class="scissors icon-scissors-1"></span>
+<div class="grid_16 alpha omega pt4 pb2" id="mega-footer-links">
+<div class="grid_4 link-group">
+<h5 class="white">About us</h5>
+<ul class="list">
+<li><a href="/year/2013/?ref=footer">2013 highlights</a></li>
+<li><a href="/year/2012?ref=footer">2012 highlights</a></li>
+<li><a href="/team?ref=footer">Who we are</a></li>
+<li><a href="/jobs?ref=footer">Jobs</a></li>
+<li><a href="/press?ref=footer">Press</a></li>
+<li><a href="/help/stats?ref=footer">Stats</a></li>
+<li><a href="/newsletters/weekly">Projects we love</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group">
+<h5><a href="/help?ref=footer" class="white">Help</a></h5>
+<ul class="list">
+<li><a href="/hello?ref=footer">What is Kickstarter?</a></li>
+<li><a href="/help?ref=footer">FAQ</a></li>
+<li><a href="/contact?ref=footer">Support</a></li>
+<li><a href="/help/school?ref=footer">Kickstarter School</a></li>
+<li><a href="/terms-of-use?ref=footer">Terms of Use</a></li>
+<li><a href="/privacy?ref=footer">Privacy Policy</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group alpha omega suffix_1">
+<h5 class="alpha"><a href="/discover/advanced?ref=footer" class="white">Discover</a></h5>
+<ul class="column column-0 grid_2 list">
+<li><a href="/discover/categories/art?ref=footer">Art</a></li>
+<li><a href="/discover/categories/comics?ref=footer">Comics</a></li>
+<li><a href="/discover/categories/dance?ref=footer">Dance</a></li>
+<li><a href="/discover/categories/design?ref=footer">Design</a></li>
+<li><a href="/discover/categories/fashion?ref=footer">Fashion</a></li>
+<li><a href="/discover/categories/film%20&amp;%20video?ref=footer">Film &amp; Video</a></li>
+<li><a href="/discover/categories/food?ref=footer">Food</a></li>
+</ul>
+<ul class="column column-1 grid_2 list">
+<li><a href="/discover/categories/games?ref=footer">Games</a></li>
+<li><a href="/discover/categories/music?ref=footer">Music</a></li>
+<li><a href="/discover/categories/photography?ref=footer">Photography</a></li>
+<li><a href="/discover/categories/publishing?ref=footer">Publishing</a></li>
+<li><a href="/discover/categories/technology?ref=footer">Technology</a></li>
+<li><a href="/discover/categories/theater?ref=footer">Theater</a></li>
+</ul>
+</div>
+<div class="grid_3 link-group">
+<h5 class="white">Hello</h5>
+<ul class="list">
+<li>
+<a href="https://twitter.com/kickstarter"><span class="ss-icon ss-social-regular ss-twitter"></span>
+Twitter
+</a></li>
+<li>
+<a href="https://www.facebook.com/Kickstarter"><span class="ss-icon ss-social-regular ss-facebook"></span>
+Facebook
+</a></li>
+<li>
+<a href="http://kickstarter.tumblr.com"><span class="ss-icon ss-social-regular ss-tumblr"></span>
+Tumblr
+</a></li>
+<li>
+<a href="http://instagram.com/kickstarter"><span class="ss-icon ss-social-regular ss-instagram"></span>
+Instagram
+</a></li>
+<li>
+<a href="https://vine.co/Kickstarter"><span class="ss-icon ss-social-regular ss-vine"></span>
+Vine
+</a></li>
+<li>
+<a href="/blog?ref=footer">Blog</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="grid_16 py4" id="mega-footer-bottom">
+<div class="logo left">
+<a href="/" class="grey-dark"><span class="ss-icon h3">KICKSTARTER</span>
+</a></div>
+<p class="right h5 grey-dark">
+&copy;
+2014
+Kickstarter, Inc.
+</p>
+</div>
+</div>
+</div>
+
+<script>
+  //<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    var analytics_vars = { google_analytics_id : "UA-7621056-1", logged_in : "false", social_user: "false" }
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.mixpanel_id = '75b1d24a516ecfc955eadfadc4910661';
+    window.mixpanel_debug = false;
+  //]]>
+</script>
+
+
+<noscript>
+<img alt="Quantcast" border="0" height="1" src="//secure.quantserve.com/pixel/p-34IbSpw2K94Sg.gif" style="display:none" width="1" />
+</noscript>
+
+
+<script>
+  //<![CDATA[
+    window.benchmark = (typeof window.performance == 'object' && typeof window.performance.mark == 'function');
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    (function (root) {
+      function instrument_function (original) {
+        return function () {
+          try {
+            return original.apply(this, arguments);
+          } catch (e) {
+            if (e.stack && root.Honeybadger) {
+              Honeybadger.notify(e, {
+                current_project : root.current_project,
+                current_user : root.current_user
+              });
+            }
+            throw(e);
+          }
+        };
+      }
+      root.instrument_function = instrument_function;
+    }(this));
+  //]]>
+</script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+
+<script>
+  //<![CDATA[
+    (function(){function c(a){this.local_start_time=new Date;this.settings={cookie_name:"request_time"};for(var b in a)this.settings[b]=a[b];this.get_remote_offset()}c.prototype.get_remote_offset=function(){this.cookie_value=this.read_cookie();var a=new Date(this.cookie_value);if(!this.cookie_value||"Invalid Date"===a.toString()){if(this.remote_offset=this.read_cookie("local_offset"))this.remote_offset=parseInt(this.remote_offset,10)}else this.remote_offset=a-this.local_start_time;"undefined"!==typeof this.remote_offset&& !isNaN(this.remote_offset)?(document.cookie="local_offset="+this.remote_offset+"; path=/",this.is_set=!0):this.is_set=!1};c.prototype.time_units=[["milliseconds",1],["seconds",1E3],["minutes",6E4],["hours",36E5],["days",864E5]];c.prototype.get_units_in_interval=function(a,b){var d=a.replace(/^\w/,function(d){return"get"+d.toUpperCase()});return b[d]()};c.prototype.milliseconds_in_day=function(a){"undefined"===typeof a&&(a=new Date);for(var b=0,d=this.time_units.length-2;0<=d;d--)b+=this.get_units_in_interval(this.time_units[d][0], a)*this.time_units[d][1];return b};c.prototype.milliseconds_in_interval=function(a,b){return this.milliseconds_in_day(b)%a};c.prototype.milliseconds_to_next_interval=function(a,b){return a-this.milliseconds_in_interval(a,b)};c.prototype.pluralize=function(a,b){1===b&&(a=a.replace(/s$/,""));return a};c.prototype.read_cookie=function(a){for(var b=window.document.cookie.split(";"),a=(a||this.settings.cookie_name)+"=",d=0;d<b.length;d++){for(var e=b[d];" "==e.charAt(0);)e=e.substring(1,e.length);if(0== e.indexOf(a))return b=e.substring(a.length,e.length),decodeURIComponent(b).replace(/\+/g," ")}return null};c.prototype.destroy_cookie=function(a){var b=new Date;a||(a=this.settings.cookie_name);b.setTime(b.getTime()-864E5);window.document.cookie=a+"=; expires="+b.toGMTString()+"; path=/"};c.prototype.get_remote_time=function(){var a=new Date,b=a.getTime()+this.remote_offset;return a=a.setTime(b)};window.ksr_page_clock=new c})(); (function(){function c(d,a,b){if(d){this.options={unit_base:{seconds:119,minutes:119,hours:72,days:0},end_phrase:d.getAttribute("data-word")||"to go",count_down:d.getAttribute("data-dynamic")||!1};for(k in b)this.options[k]=b[k];this.clock=a;this.time_units=this.clock.time_units.slice(1);this.element=d;this.clock.is_set&&this.attach()}}function a(){this.elements=[];this.attach()}var b=function(d,a){var b=a||window.document.body,c=d.split("."),g=c[c.length-1],c=1<c.length&&c[0]?c[0]:"*";if(window.document.getElementsByClassName)return b.getElementsByClassName(g); if(b.querySelectorAll)return b.querySelectorAll(d);for(var c=b.getElementsByTagName(c),h=[],i=0,f;f=c[i];i++)b=RegExp("(^|\\s)"+g+"(\\s|$)"),(""+f.className).match(b)&&h.push(f);return h};c.prototype.get_remaining_time=function(){var d=this.remote_end_time-this.clock.get_remote_time();0>d&&(d=0);return d};c.prototype.get_current_unit=function(){for(var d,a=0;a<this.time_units.length&&!(d=this.time_units[a],this.get_remaining_time()<=this.options.unit_base[d[0]]*d[1]);a++);return d};c.prototype.update_element= function(){var a=this.get_current_unit(),b=Math.floor(this.get_remaining_time()/a[1]);isNaN(b)||(this.number_element.innerHTML=b,this.text_element.innerHTML=this.clock.pluralize(a[0],b)+" "+this.options.end_phrase)};c.prototype.valid=function(){return!(!this.number_element||!this.text_element)};c.prototype.attach=function(){function a(){c.update_element();if(c.options.count_down&&0<c.get_remaining_time()){var b=c.get_current_unit();this.timeout=window.setTimeout(a,c.clock.milliseconds_to_next_interval(b[1]))}} var c=this;if(this.remote_end_time_string=this.element.getAttribute("data-end_time"))this.remote_end_time_string.match(/^\d+$/)?(this.remote_end_time=new Date,this.remote_end_time.setTime(this.remote_end_time_string)):this.remote_end_time=new Date(this.remote_end_time_string),this.number_element=b(".num",this.element)[0],this.text_element=b(".text",this.element)[0],this.element.ksr_page_timer=!0,this.valid()&&a()};c.prototype.cancel=function(){this.timeout&&clearTimeout(this.timeout)};a.prototype.loading= !0;a.prototype.stop_finding=function(){this.attach_timers();this.loading=!1;document.addEventListener?document.removeEventListener("DOMContentLoaded",this.stop_finding,!1):document.attachEvent&&"complete"===document.readyState&&document.detachEvent("onreadystatechange",this.stop_finding)};a.prototype.bind_ready=function(){var a=this,b=function(){a.stop_finding.call(a)};document.addEventListener?(document.addEventListener("DOMContentLoaded",b,!1),window.addEventListener("load",b,!1)):document.attachEvent&& (document.attachEvent("onreadystatechange",b),window.attachEvent("onload",b))};a.prototype.attach_timers=function(){for(var a=b("div.ksr_page_timer"),e=0;e<a.length;e++)a[e].ksr_page_timer||(new c(a[e],window.ksr_page_clock),this.elements.push(a[e]))};a.prototype.attach=function(){var a=this;this.bind_ready();(function(){a.attach_timers();a.loading&&window.setTimeout(function(){a.attach_timers()},200)})()};window.ProjectTimer=c;new a})();
+  //]]>
+</script>
+
+<script class="template" id="template-widgets__video_embed_code" type="text/x-tmpl-mustache"><iframe width="{{width}}" height="{{height}}" src="{{{path}}}" frameborder="0" scrolling="no"> </iframe>
+</script><script class="template" id="template-projects__baseball_card_tall" type="text/x-tmpl-mustache"><div class="project-card-wrap project-card-wrap-tall border bg-white rounded clip">
+  <div class="project-card relative project-live {{#successful?}}successful{{/successful?}}">
+    <div class="project-thumbnail pt1 pl1 pr1">
+      <a href="{{urls.web.project}}" target="">
+        <img alt="Photo-little" class="projectphoto-little" src="{{photo.little}}" class="fit">
+      </a>
+    </div>
+    <div class="project-card-interior p1 h6 grey-dark">
+      <h6 class="project-title">
+        <a href="{{urls.web.project}}" target="" class="green-dark">{{name}}</a>
+      </h6>
+      <p class="mb1 ellipsis">
+        by
+        {{creator.name}}
+      </p>
+      <p class="blurb">
+        {{blurb}}
+      </p>
+    </div>
+    <div class="absolute-bottom bg-white rounded-bottom">
+
+      {{#location}}
+        <ul class="p1 list project-meta no-margin h6">
+          <li class="ellipsis">
+            <a href="{{location.urls.web.discover}}" data-location="{{location_json}}" class="grey-dark">
+              <span class="ss-icon ss-location"></span>
+              <span class="location-name">{{location.displayable_name}}</span>
+            </a>
+          </li>
+        </ul>
+      {{/location}}
+
+      <div class="project-stats-wrap pb1 pl1 pr1">
+
+        {{#failed?}}
+          <div class='project-status project-failed h6'>
+            <strong> Funding Unsuccessful</strong><br />
+            <span class="grey-dark">Project ended on {{formatted_deadline}}</span>
+          </div>
+        {{/failed?}}
+
+        {{#canceled?}}
+          <div class='project-status project-canceled h6'>
+            <strong> Funding Canceled</strong><br />
+            <span class="grey-dark">Project canceled on {{formatted_state_changed_at}}</span>
+          </div>
+        {{/canceled?}}
+
+        {{#successful?}}
+          <div class='project-pledged-successful bg-green white h6 pl1 pr1 mb1'>
+            <strong>Successful!</strong>
+          </div>
+        {{/successful?}}
+
+        {{#live_or_successful?}}
+          {{#live?}}
+            <div class="project-pledged-wrap bg-grey clip mb1">
+              <div class="project-pledged bg-green full-height" style="width: {{percent_raised_to_100}}%"></div>
+            </div>
+          {{/live?}}
+          <ul class="project-stats list no-margin h6 no-wrap">
+            <li class="first funded inline-block mr1">
+              <strong class="block h6">{{percent_raised_rounded}}%</strong>
+              <span class="grey-dark">funded</span>
+            </li>
+            <li class="pledged inline-block mr1">
+              <strong class="block h6">{{currency_symbol}}{{formatted_money}}</strong>
+              <span class="grey-dark">pledged</span>
+            </li>
+            {{#successful?}}
+              <li class="last successful inline-block">
+                <strong class="block h6">Funded</strong>
+                <div class="deadline grey-dark">{{formatted_deadline}}</div>
+              </li>
+            {{/successful?}}
+            {{#live?}}
+              <li class="last ksr_page_timer inline-block" data-end_time="{{javascript_deadline}}">
+                <strong class="block h6">
+                  <div class="num">30</div>
+                </strong>
+                <div class="span text grey-dark" data-word="left">days to go</div>
+              </li>
+            {{/live?}}
+          </ul>
+        {{/live_or_successful?}}
+      </div>
+    </div>
+  </div>
+</div>
+
+{{#friends_backing?}}
+  <div class="friend_project_context">
+    <div class="friend_facepile">
+      {{#truncated_friends}}
+        <img src="{{avatar.thumb}}" class="{{#has_metadata?}}small{{/has_metadata?}}">
+      {{/truncated_friends}}
+    </div>
+    <p class="friend_namepile">
+      {{{escaped_sentence}}}
+    </p>
+  </div>
+{{/friends_backing?}}
+</script><script class="template" id="template-projects__video_mode" type="text/x-tmpl-mustache"><a href='#' id='video_mode_close' class='close_button z2'><span class='ss-icon ss-delete'></span></a>
+
+<div class='title_card z1 {{context_classes}}' style="display:none;">
+  <div class='interior'>
+    <h2 class='project_title normal_weight'>{{name}}</h2>
+    <p class='blurb'>{{blurb}}</p>
+    <nav class='bar'>
+      <a id='play_button' class='left play' href='#'>
+        <span class='play_active'>
+          <span class='ss-icon ss-play'></span>
+          Play
+        </span>
+        <span class='pause_active'>
+          <span class='ss-icon ss-pause'></span>
+          Pause
+        </span>
+      </a>
+      {{#logged_in}}
+        <div class='remind right'>
+          {{#if_not_starred}}
+            <a class='follow' href='{{urls.web.project}}/watch'><span class='ss-icon ss-star'></span></a>
+          {{/if_not_starred}}
+          {{#if_starred}}
+            <a class='unfollow' href='{{urls.web.project}}/unwatch'><span class='ss-icon ss-star active'></span></a>
+          {{/if_starred}}
+        </div>
+      {{/logged_in}}
+      <a class='right explore button button_green small' href='#'>Explore this project</a>
+    </nav>
+  </div>
+</div>
+
+<div class='channel_controls z1'>
+  <a href='#' class='{{#playlist_is_location}}selected {{/playlist_is_location}}location'>Something else near {{location.first_name}} <span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_featured}}selected {{/playlist_is_featured}}featured'>Something different<span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_category}}selected {{/playlist_is_category}}category'>Something else in {{category.name}} <span class='ss-icon ss-navigateright'></span></a>
+</div>
+
+<div class='project_video' style='background-image: url('{{photo.full}}')'>
+  <div class='cover'>
+    <video>
+      <source src='{{video.high}}' type='video/mp4'/>
+      <source src='{{video.webm}}' type='video/webm'/>
+    </video>
+  </div>
+</div>
+</script><script class="template" id="template-site__video_mode_fourohfour" type="text/x-tmpl-mustache"><section class='four_oh_four'>
+  <p class='big_type'>
+    Looks like you've reached the end of the line! <br />Check out <a class="another" href='#'>another channel</a> or <a href='/discover'>browse projects in discover</a>.
+  </p>
+</section>
+</script>
+
+<script id="schwamm_formatting_options" type="text/javascript">
+//<![CDATA[
+(function(){window.formatters = window.formatters || {}; var formatting_options = {"distance_date_intervals":[[5,"just now"],[29,"less than a minute ago"],[89,"1 minute ago"],[2640,"%m minutes ago"],[5340,"about 1 hour ago"],[82800,"about %h hours ago"],[147600,"1 day ago"],[604800,"%d days ago"],[15552000,"on %t"],[0,"on %y"]],"currency_symbol_mappings":{"AFN":"\u060b","ALL":"Lek","ARS":"$","AUD":"$","AWG":"\u0192","AZN":"\u043c\u0430\u043d","BAM":"KM","BBD":"$","BGN":"\u043b\u0432","BMD":"$","BND":"$","BOB":"$b","BRL":"R$","BSD":"$","BWP":"P","BYR":"p.","BZD":"BZ$","CAD":"$","CLP":"$","CNY":"\u00a5","COP":"$","CRC":"\u20a1","CUP":"\u20b1","CZK":"K\u010d","DKK":"kr","DOP":"RD$","EGP":"\u00a3","EUR":"\u20ac","FJD":"$","FKP":"\u00a3","GBP":"\u00a3","GIP":"\u00a3","GTQ":"Q","GYD":"$","HKD":"$","HNL":"L","HRK":"kn","HUF":"Ft","IDR":"Rp","ILS":"\u20aa","IRR":"\ufdfc","ISK":"kr","JMD":"J$","JPY":"\u00a5","KGS":"\u043b\u0432","KHR":"\u17db","KPW":"\u20a9","KRW":"\u20a9","KYD":"$","KZT":"\u043b\u0432","LAK":"\u20ad","LBP":"\u00a3","LKR":"\u20a8","LRD":"$","LTL":"Lt","LVL":"Ls","MKD":"\u0434\u0435\u043d","MNT":"\u20ae","MUR":"\u20a8","MXN":"$","MYR":"RM","MZN":"MT","NAD":"$","NGN":"\u20a6","NIO":"C$","NOK":"kr","NPR":"\u20a8","NZD":"$","OMR":"\ufdfc","PAB":"B/.","PEN":"S/.","PHP":"\u20b1","PKR":"\u20a8","PLN":"z\u0142","PYG":"Gs","QAR":"\ufdfc","RON":"lei","RSD":"\u0414\u0438\u043d.","RUB":"\u0440\u0443\u0431","SAR":"\ufdfc","SBD":"$","SCR":"\u20a8","SEK":"kr","SGD":"$","SHP":"\u00a3","SOS":"S","SRD":"$","SVC":"$","SYP":"\u00a3","THB":"\u0e3f","TRY":"TL","TTD":"TT$","TWD":"NT$","UAH":"\u20b4","USD":"$","UYU":"$U","UZS":"\u043b\u0432","VEF":"Bs","VND":"\u20ab","YER":"\ufdfc","ZAR":"R"},"currency_trailing_code_mappings":{"AUD":true,"CAD":true,"NZD":true,"USD":true},"currency_formats":["money","shorter_money"]}; for (key in formatting_options) {window.formatters[key] = formatting_options[key]};}());
+//]]>
+</script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("begin_base.js_tag");}
+  //]]>
+</script>
+<script src="https://d297h9he240fqh.cloudfront.net/assets/packages/base-45cdab84617ddfb8905b7cddc8500c19.js" type="text/javascript"></script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("end_base.js_tag");}
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    document.domain='kickstarter.com';
+  //]]>
+</script>
+
+<iframe height="0" id="api_xdreceiver" src="https://api.kickstarter.com/xdreceiver/85e6.html" style="display: none;" width="0"></iframe>
+
+
+
+<div id="fb-root"></div>
+<script>
+  //<![CDATA[
+    var channelUrl = window.location.protocol + "//" + window.location.host + "/channel.html",
+      skip_autologin = $('body').is('.skip_autologin');
+    
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId: window.fb_app_id,
+        channelUrl: channelUrl,
+        status: true,    // check login status
+        cookie: true,    // enable cookies to allow the server to access the session
+        xfbml: true,     // parse XFBML
+        logging: false   // turn off logging
+      });
+    
+      FB.getLoginStatus(function (response) {
+        if (response.status === 'connected') {
+          if (read_cookie("logout_from_fb")) {
+            FB.logout();
+            destroy_cookie("logout_from_fb");
+          } else if (!skip_autologin) {
+            $.get("/fb/autologin", {'fbsr': response.authResponse.signedRequest});
+          } else if (false && 0 == response.authResponse.userID) {
+            $.get("/fb/refresh", {'fbsr': response.authResponse.signedRequest});
+          }
+        } else {
+          if (read_cookie("logout_from_fb")) {
+            destroy_cookie("logout_from_fb");
+          }
+        }
+      })
+    
+      $(document).trigger('fb:loaded');
+    };
+    
+    
+    // Load the SDK Asynchronously
+    (function(d){
+      var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+      js = d.createElement('script'); js.id = id; js.async = true;
+      js.src = "//connect.facebook.net/en_US/all.js";
+      d.getElementsByTagName('head')[0].appendChild(js);
+    }(document));
+  //]]>
+</script>
+
+
+</body>
+</html>

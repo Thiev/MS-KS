@@ -1,0 +1,3782 @@
+<!DOCTYPE html>
+<html class="projects_show  fontface no-js" lang="en">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# kickstarter: http://ogp.me/ns/fb/kickstarter#">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-5.newrelic.com","errorBeacon":"jserror.newrelic.com","licenseKey":"b04b883ad2","applicationID":"11086","transactionName":"cFteRUULX1wHFhtIEFxeVVJDFxxDCgtD","queueTime":6,"applicationTime":1638,"ttGuid":"","agentToken":null,"agent":"js-agent.newrelic.com/nr-411.min.js"}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"Vw4BVEVSCQMIUg=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e){function n(t,e,n){n||(n={});for(var r=o[t],a=r&&r.length||0,s=n[i]||(n[i]={}),u=0;a>u;u++)r[u].apply(s,e);return s}function r(t,e){var n=o[t]||(o[t]=[]);n.push(e)}var o={},i="nr@context";e.exports={on:r,emit:n}},{}],2:[function(t){function e(t,e,n,i,s){return u?u-=1:r("err",[s||new UncaughtException(t,e,n)]),"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t(5),a=window.onerror,s=!1,u=0;t("loader").features.push("err"),window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(d){"stack"in d&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(4),s=!0)}i.on("fn-start",function(){s&&(u+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&u>0&&(u-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:4,3:3,4:6,5:1,6:14,handle:"D5DuLP",loader:"G9z0Bl"}],3:[function(t){function e(t){r.inPlace(t,["addEventListener","removeEventListener"],"-",n)}function n(t){return t[1]}var r=t(1),o=(t(3),t(2));if(e(window),"getPrototypeOf"in Object){for(var i=document;i&&!i.hasOwnProperty("addEventListener");)i=Object.getPrototypeOf(i);i&&e(i);for(var a=XMLHttpRequest.prototype;a&&!a.hasOwnProperty("addEventListener");)a=Object.getPrototypeOf(a);a&&e(a)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&e(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=e["nr@wrapped"]?t[1]=e["nr@wrapped"]:e["nr@wrapped"]=t[1]=r(e,"fn-"):"function"==typeof e.handleEvent&&r.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:15,2:1,3:14}],4:[function(t){var e=(t(3),t(1)),n=t(2);e.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=e(t[0],"fn-")})},{1:15,2:1,3:14}],5:[function(t){function e(t){var e=t[0];"string"==typeof e&&(e=new Function(e)),t[0]=n(e,"fn-")}var n=(t(3),t(1)),r=t(2);n.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",e)},{1:15,2:1,3:14}],6:[function(t){function e(){o.inPlace(this,s,"fn-")}function n(t,e){o.inPlace(e,["onreadystatechange"],"fn-")}function r(t,e){return e}var o=t(1),i=t(2),a=window.XMLHttpRequest,s=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];window.XMLHttpRequest=function(t){var n=new a(t);try{i.emit("new-xhr",[],n),o.inPlace(n,["addEventListener","removeEventListener"],"-",function(t,e){return e}),n.addEventListener("readystatechange",e,!1)}catch(r){try{i.emit("internal-error",r)}catch(s){}}return n},window.XMLHttpRequest.prototype=a.prototype,o.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",r),i.on("send-xhr-start",n),i.on("open-xhr-start",n)},{1:15,2:1}],7:[function(t){function e(){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;u>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,d="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=e(d);if(f&&(r.rxSize=f),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}t("loader").features.push("xhr");var o=t("handle"),i=t(1),a=t(5),s=["load","error","abort","timeout"],u=s.length,d=t(2);t(3),t(4),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var d=e(o);d&&(r.txSize=d)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",e)}catch(r){}}};for(var f=0;u>f;f++)n.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&e()},{1:8,2:11,3:3,4:6,5:1,handle:"D5DuLP",loader:"G9z0Bl"}],8:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e){var n=r[t];return n?n.apply(this,e):(o[t]||(o[t]=[]),void o[t].push(e))}var r={},o={};e.exports=n,n.queues=o,n.handlers=r},{}],11:[function(t,e){function n(t){if(!t||"object"!=typeof t&&"function"!=typeof t)return-1;if(t===window)return 0;if(o.call(t,"__nr"))return t.__nr;try{return Object.defineProperty(t,"__nr",{value:r,writable:!0,enumerable:!1}),r}catch(e){return t.__nr=r,r}finally{r+=1}}var r=1,o=Object.prototype.hasOwnProperty;e.exports=n},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&u&&u.body){p.proto="https"===c.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=u.createElement("script");e.src=p.proto+t.agent,u.body.appendChild(e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,u=s.document,d="addEventListener",f="attachEvent",c=(""+location).split("?")[0],p=e.exports={offset:i(),origin:c,features:[]};u[d]?(u[d]("DOMContentLoaded",o,!1),s[d]("load",n,!1)):(u[f]("onreadystatechange",r),s[f]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],14:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],15:[function(t,e){function n(t,e,r,s){function nrWrapper(){try{var n,a=u(arguments),d=this,f=r&&r(a,d)||{}}catch(c){i([c,"",[a,d,s],f])}o(e+"start",[a,d,s],f);try{return n=t.apply(d,a)}catch(p){throw o(e+"err",[a,d,p],f),p}finally{o(e+"end",[a,d,n],f)}}return a(t)?t:(e||(e=""),nrWrapper[n.flag]=!0,nrWrapper)}function r(t,e,r,o){r||(r="");var i,s,u,d="-"===r.charAt(0);for(u=0;u<e.length;u++)s=e[u],i=t[s],a(i)||(t[s]=n(i,d?s+r:r,o,s,t))}function o(t,e,n){try{s.emit(t,e,n)}catch(r){i([r,t,e,n])}}function i(t){try{s.emit("internal-error",t)}catch(e){}}function a(t){return!(t&&"function"==typeof t&&t.apply&&!t[n.flag])}var s=t(1),u=t(2);e.exports=n,n.inPlace=r,n.flag="nr@wrapper"},{1:1,2:14}]},{},["G9z0Bl",2,7]);</script><script>
+  //<![CDATA[
+    docElement = this.document.documentElement;
+    docElement.className=docElement.className.replace(/\bno-js\b/,'') + 'js';
+  //]]>
+</script>
+<title>Earthcore: Shattered Elements (PC, Mac & Mobile) (Canceled) by Lukasz Deszczulka &mdash; Kickstarter</title><script>
+  //<![CDATA[
+    window.report_errors = true;
+    window.honeybadger_configuration = {
+      api_key : "02ab109335c0dd1a93506d92f22217a7",
+      environment : "production",
+      component : "projects",
+      action : "show",
+      onerror : false
+    };
+  //]]>
+</script>
+
+
+<!--[if lt IE 9]>
+  <script src="//html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta content="telephone=no" name="format-detection">
+
+<!--[if !IE]> -->
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base-9f623ad5d021a188cfb2d68a0cdf7a7b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<!-- <![endif]-->
+<!--[if IE]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base_blessed-2640c72487552f9a2ef9f2620b4af860.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<!--[if lte IE 9]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_nine-a93fe10530f175f96c4078b7e070d7e1.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 8]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_eight-f75aeb274436f94a0d243774456b1c62.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 7]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie-c019c01acd3a96588b346cf577a3504f.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_seven-5a3d2cef660cd281fd844b04b2397dbb.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if IE 6]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_six-e4d3caf76e405fe19aee6ece8bda701b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<link href="https://d297h9he240fqh.cloudfront.net/favicon.png" rel="icon" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-precomposed-7b603dba7cf80e4acc57d94a991bebbd.png" rel="apple-touch-icon-precomposed" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-ipad-precomposed-3176f72977daf43dee3b0d348484dc01.png" rel="apple-touch-icon-precomposed" sizes="72x72" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-iphone4-precomposed-b93b70168cd8492c843d0fea873c7f83.png" rel="apple-touch-icon-precomposed" sizes="114x114" type="image/png">
+<link href="https://www.kickstarter.com/services/oembed?url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2F1761646337%2Fearthcore-shattered-elements-the-first-ever-action" rel="alternate" title="Earthcore: Shattered Elements (PC, Mac &amp; Mobile) (Canceled) Script Tag oEmbed" type="application/json+oembed">
+<link rel="alternate" type="application/atom+xml" title="Earthcore: Shattered Elements (PC, Mac &amp; Mobile) (Canceled) : Kickstarter" href="https://www.kickstarter.com/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/posts.atom" />
+<meta property="twitter:app:id:iphone" content="596961532"/>
+<meta property="twitter:app:name:iphone" content="Kickstarter"/>
+<meta property="twitter:app:url:iphone" content="ksr://www.kickstarter.com/projects/1761646337/earthcore-shattered-elements-the-first-ever-action"/>
+<meta name="video_height" content="360"/>
+<meta name="video_width" content="640"/>
+<meta name="video_type" content="application/x-shockwave-flash"/>
+<meta name="title" content="Kickstarter &gt;&gt; Earthcore: Shattered Elements (PC, Mac &amp; Mobile) (Canceled) by Lukasz Deszczulka"/>
+<meta name="description" content="Lukasz Deszczulka is raising funds for Earthcore: Shattered Elements (PC, Mac &amp; Mobile) (Canceled) on Kickstarter! 
+
+ Earthcore could be to TCGs what Diablo was to the RPG genre! It&#39;s deep, dynamic, quick to play - with dramatic PvE &amp; online PvP modes!"/>
+<meta name="robots" content="noindex"/>
+<meta property="og:title" content="Earthcore: Shattered Elements (PC, Mac &amp; Mobile) (Canceled)"/>
+<meta property="og:type" content="kickstarter:project"/>
+<meta property="og:image" content="https://s3.amazonaws.com/ksr/projects/774464/photo-main.jpg?1397857793"/>
+<meta property="og:url" content="https://www.kickstarter.com/projects/1761646337/earthcore-shattered-elements-the-first-ever-action"/>
+<meta property="og:site_name" content="Kickstarter"/>
+<meta property="fb:app_id" content="69103156693"/>
+<meta property="og:description" content="Earthcore could be to TCGs what Diablo was to the RPG genre! It&#39;s deep, dynamic, quick to play - with dramatic PvE &amp; online PvP modes!"/>
+<meta property="kickstarter:creator" content="https://www.kickstarter.com/profile/1761646337"/>
+<meta property="twitter:url:landing_url" content="https://www.kickstarter.com/projects/1761646337/earthcore-shattered-elements-the-first-ever-action"/>
+<meta property="twitter:card" content="2427656750:kickstarter_project"/>
+<meta property="twitter:site" content="@kickstarter"/>
+<meta property="twitter:site:id" content="16186995"/>
+<meta property="twitter:text:title" content="Earthcore: Shattered Elements (PC, Mac &amp; Mobile) (Canceled)"/>
+<meta property="twitter:text:artist" content="Lukasz Deszczulka"/>
+<meta property="twitter:text:backers" content="101"/>
+<meta property="twitter:text:pledged" content="$6,439 USD"/>
+<meta property="twitter:text:time" content="0 seconds"/>
+<meta property="twitter:text:location" content="Wroclaw, Poland"/>
+<meta property="twitter:image:location_image" content="https://d3mlfyygrfdi2i.cloudfront.net/b40e/pin.png"/>
+<meta property="twitter:text:description" content="Earthcore could be to TCGs what Diablo was to the RPG genre! It&#39;s deep, dynamic, quick to play - with dramatic PvE &amp; online PvP modes!"/>
+<meta property="twitter:image:media" content="https://s3.amazonaws.com/ksr/projects/774464/photo-main.jpg?1397857793"/>
+<meta property="twitter:image:width" content="640"/>
+<meta property="twitter:image:height" content="480"/>
+<meta property="twitter:player:stream:url" content="https://d2pq0u4uni88oo.cloudfront.net/projects/774464/video-346941-h264_base.mp4"/>
+<meta property="twitter:player:stream:content" content="video/mp4"/>
+<meta property="twitter:player:url" content="https://www.kickstarter.com/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/widget/video.html"/>
+<meta property="twitter:player:height" content="360"/>
+<meta property="twitter:player:width" content="640"/>
+<meta property="twitter:maxage" content="60"/>
+<meta property="og:video" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F774464%2Fvideo-346941-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F774464%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Lukasz+Deszczulka&amp;project_title=Earthcore%3A+Shattered+Elements+%28PC%2C+Mac+%26+Mobile%29+%28Canceled%29&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2F1761646337%2Fearthcore-shattered-elements-the-first-ever-action&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:secure_url" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F774464%2Fvideo-346941-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F774464%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Lukasz+Deszczulka&amp;project_title=Earthcore%3A+Shattered+Elements+%28PC%2C+Mac+%26+Mobile%29+%28Canceled%29&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2F1761646337%2Fearthcore-shattered-elements-the-first-ever-action&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:height" content="360"/>
+<meta property="og:video:width" content="640"/>
+<meta property="og:video:type" content="application/x-shockwave-flash"/>
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="dVML4yomVDF9VsF2ESvdPNLfu2mm4TXCOpUqxO7Hrh0=" name="csrf-token" />
+<script type="text/javascript">
+  var _sift = _sift || [];
+  _sift.push(['_setAccount', '637102']);
+  _sift.push(['_setUserId', '']);
+  _sift.push(['_trackPageview']);
+
+  (function() {
+    function loadSift() {
+      var sift, s;
+      if (root.visitor_id) {
+        _sift.push(['_setSessionId', root.visitor_id]);
+      }
+      sift = document.createElement('script');
+      sift.type = 'text/javascript';
+      sift.async = true;
+      sift.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dtlilztwypawv.cloudfront.net/s.js';
+      s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(sift, s);
+    }
+    if (window.attachEvent) {
+      window.attachEvent('onload', loadSift);
+    } else {
+      window.addEventListener('load', loadSift, false);
+    }
+  })();
+</script>
+<link href="http://kck.st/MUzXrO" rel="shorturl">
+<link href="https://www.kickstarter.com/projects/1761646337/earthcore-shattered-elements-the-first-ever-action" rel="canonical">
+<link href="https://s3.amazonaws.com/ksr/projects/774464/photo-med.jpg?1397857793" rel="image_src">
+<link href="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F774464%2Fvideo-346941-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F774464%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Lukasz+Deszczulka&amp;project_title=Earthcore%3A+Shattered+Elements+%28PC%2C+Mac+%26+Mobile%29+%28Canceled%29&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2F1761646337%2Fearthcore-shattered-elements-the-first-ever-action&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque" rel="video_src">
+<script>
+  //<![CDATA[
+    window.current_checkout = "{&quot;id&quot;:0,&quot;domestic&quot;:null,&quot;amount&quot;:0.0,&quot;updated_at&quot;:0,&quot;created_at&quot;:0}";
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.current_ip = '94.209.101.212';
+    window.current_ip_datacenter = 'false';
+    window.enabled_features = {"elasticsearch":true,"security_history_read":true,"security_history_write":true,"advanced_discovery_es":true,"ios_crashlytics":true,"ios_mixpanel":true,"stories_veronica_mars":true,"veronica_mars_hero":true,"password_reset_banner":true};
+    window.fb_app_id = '69103156693';
+    
+    var _sf_startpt=(new Date()).getTime();
+    
+    window.current_project = "{&quot;id&quot;:854095920,&quot;name&quot;:&quot;Earthcore: Shattered Elements (PC, Mac &amp; Mobile) (Canceled)&quot;,&quot;blurb&quot;:&quot;Earthcore could be to TCGs what Diablo was to the RPG genre! It&#39;s deep, dynamic, quick to play - with dramatic PvE &amp; online PvP modes!&quot;,&quot;goal&quot;:200000.0,&quot;pledged&quot;:6439.5,&quot;state&quot;:&quot;canceled&quot;,&quot;slug&quot;:&quot;earthcore-shattered-elements-the-first-ever-action&quot;,&quot;disable_communication&quot;:false,&quot;country&quot;:&quot;US&quot;,&quot;currency&quot;:&quot;USD&quot;,&quot;currency_symbol&quot;:&quot;$&quot;,&quot;currency_trailing_code&quot;:true,&quot;deadline&quot;:1395849920,&quot;state_changed_at&quot;:1393864817,&quot;created_at&quot;:1385418729,&quot;launched_at&quot;:1393261520,&quot;backers_count&quot;:101,&quot;photo&quot;:{&quot;full&quot;:&quot;https://s3.amazonaws.com/ksr/projects/774464/photo-full.jpg?1397857793&quot;,&quot;ed&quot;:&quot;https://s3.amazonaws.com/ksr/projects/774464/photo-ed.jpg?1397857793&quot;,&quot;med&quot;:&quot;https://s3.amazonaws.com/ksr/projects/774464/photo-med.jpg?1397857793&quot;,&quot;little&quot;:&quot;https://s3.amazonaws.com/ksr/projects/774464/photo-little.jpg?1397857793&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/projects/774464/photo-small.jpg?1397857793&quot;,&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/projects/774464/photo-thumb.jpg?1397857793&quot;,&quot;1024x768&quot;:&quot;https://s3.amazonaws.com/ksr/projects/774464/photo-1024x768.jpg?1397857793&quot;,&quot;1536x1152&quot;:&quot;https://s3.amazonaws.com/ksr/projects/774464/photo-1536x1152.jpg?1397857793&quot;},&quot;creator&quot;:{&quot;id&quot;:1761646337,&quot;name&quot;:&quot;Lukasz Deszczulka&quot;,&quot;avatar&quot;:{&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/2696019/lukasz-avatar1.thumb.jpg?1393445353&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/2696019/lukasz-avatar1.small.jpg?1393445353&quot;,&quot;medium&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/2696019/lukasz-avatar1.medium.jpg?1393445353&quot;},&quot;urls&quot;:{&quot;web&quot;:{&quot;user&quot;:&quot;https://www.kickstarter.com/profile/1761646337&quot;},&quot;api&quot;:{&quot;user&quot;:&quot;https://api.kickstarter.com/v1/users/1761646337?signature=1399957929.a97c6ed20c37eb885cd8dd11be77957dfdf7d80b&quot;}}},&quot;location&quot;:{&quot;id&quot;:526363,&quot;name&quot;:&quot;Wroclaw&quot;,&quot;slug&quot;:&quot;wroclaw-wroclaw-lower-silesia&quot;,&quot;short_name&quot;:&quot;Wroclaw, Poland&quot;,&quot;displayable_name&quot;:&quot;Wroclaw, Poland&quot;,&quot;country&quot;:&quot;PL&quot;,&quot;state&quot;:&quot;Lower Silesia&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/wroclaw-wroclaw-lower-silesia&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/wroclaw-wroclaw-lower-silesia&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1399953823.b40be0453758e33268b819acd2cbcf6c655e614a&amp;woe_id=526363&quot;}}},&quot;category&quot;:{&quot;id&quot;:35,&quot;name&quot;:&quot;Video Games&quot;,&quot;slug&quot;:&quot;games/video games&quot;,&quot;position&quot;:7,&quot;parent_id&quot;:12,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;http://www.kickstarter.com/discover/categories/games/video%20games&quot;}}},&quot;urls&quot;:{&quot;web&quot;:{&quot;project&quot;:&quot;https://www.kickstarter.com/projects/1761646337/earthcore-shattered-elements-the-first-ever-action&quot;,&quot;project_short&quot;:&quot;http://kck.st/MUzXrO&quot;,&quot;updates&quot;:&quot;https://www.kickstarter.com/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/posts&quot;},&quot;api&quot;:{&quot;project&quot;:&quot;https://api.kickstarter.com/v1/projects/854095920?signature=1399957929.055f0a612f00a14d08805017189bd115a30678de&quot;,&quot;comments&quot;:&quot;https://api.kickstarter.com/v1/projects/854095920/comments?signature=1399957929.0c62fd3bbd29d33506a751e576b0256025bf8d84&quot;,&quot;updates&quot;:&quot;https://api.kickstarter.com/v1/projects/854095920/updates?signature=1399957929.a72625afed0c7f3fc28b9e9a42d0b81be5118ee1&quot;}},&quot;updated_at&quot;:1397857825,&quot;canceled_at&quot;:1393864817,&quot;video&quot;:{&quot;id&quot;:346941,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/774464/video-346941-h264_high.mp4?2014&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/774464/video-346941-h264_base.mp4?2014&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/774464/video-346941-webm.webm?2014&quot;,&quot;width&quot;:640,&quot;height&quot;:360,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/774464/video-346941-h264_base.jpg?2014&quot;},&quot;comments_count&quot;:25,&quot;updates_count&quot;:4,&quot;rewards&quot;:[{&quot;id&quot;:0,&quot;minimum&quot;:1,&quot;reward&quot;:&quot;No Reward&quot;},{&quot;id&quot;:2366682,&quot;minimum&quot;:5.0,&quot;reward&quot;:&quot;CASUAL BACKER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ DIGITAL (Approximately \\u20ac4 / \\u00a33)  ============================= Thank you for your support! You get personalized \\u2018Thank You\\u2019 e-mail, Special Thanks credit on our website and the CASUAL BACKER badge on the Earthcore forum. You can also count on free hugs whenever you meet us.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1417392000,&quot;project_id&quot;:854095920,&quot;backers_count&quot;:6,&quot;updated_at&quot;:1393758842},{&quot;id&quot;:2366685,&quot;minimum&quot;:10.0,&quot;reward&quot;:&quot;BETA BACKER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ DIGITAL (Approx. \\u20ac7 / \\u00a36) ============================= \\r\\nIn addition to everything from the CASUAL BACKER tier, you get a selection of beautiful WALLPAPERS, in-game GOLD worth $15 and BETA ACCESS to the game. Of course, when the BETA period is over, you will be able to play the full version of the game without spending an additional penny.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1417392000,&quot;project_id&quot;:854095920,&quot;backers_count&quot;:15,&quot;updated_at&quot;:1393669774},{&quot;id&quot;:2410721,&quot;minimum&quot;:15.0,&quot;reward&quot;:&quot;THE POSTMAN ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ PHYSICAL (Approx. \\u20ac11 / \\u00a39) ============================= \\r\\nIn addition to everything from the BETA BACKER tier, you get an exclusive Earthcore POSTCARD SIGNED BY THE TEAM! \\u25cf If you live outside the US, EU, UK or CA, please add $5 for int&#39;l shipping&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1417392000,&quot;project_id&quot;:854095920,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1393434348},{&quot;id&quot;:2388526,&quot;minimum&quot;:20.0,&quot;reward&quot;:&quot;CARD RAIDER \\u25cf EARLY BIRD \\u25cf ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ DIGITAL (Approx. \\u20ac15 / \\u00a312)  ============================= In addition to everything from the BETA BACKER tier, you get a digital NOVELLA set in the world of Earthcore and a digital SOUNDTRACK by Jerzy Adam Nowak (MP3/FLAC). Your free in-game GOLD amount will also be upgraded to $30 value, you will get a SPECIAL THANKS credit in the Backers section in-game and the SILVER BACKER forum badge. Best of all, you will receive an EXCLUSIVE CARD for use IN-GAME that will never be available from any other source!&quot;,&quot;limit&quot;:500,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1417392000,&quot;project_id&quot;:854095920,&quot;remaining&quot;:479,&quot;backers_count&quot;:21,&quot;updated_at&quot;:1393759699},{&quot;id&quot;:2410729,&quot;minimum&quot;:25.0,&quot;reward&quot;:&quot;ART LOVER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ PHYSICAL (Approx. \\u20ac29 / \\u00a324) ============================= \\r\\nIn addition to everything from the BETA BACKER tier, you get 3 PRINTED ILLUSTRATIONS straight from the world of Earthcore and a beautiful POSTCARD signed by the team! Your free in-game GOLD amount will also be upgraded to $25. \\u25cf If you live outside the US, EU, UK or CA, please add $5 for int&#39;l shipping&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1417392000,&quot;project_id&quot;:854095920,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1393434382},{&quot;id&quot;:2366712,&quot;minimum&quot;:30.0,&quot;reward&quot;:&quot;CARD RAIDER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ DIGITAL (Approx. \\u20ac22 / \\u00a318) ============================= In addition to everything from the BETA BACKER tier, you get a digital NOVELLA set in the world of Earthcore and a digital SOUNDTRACK by Jerzy Adam Nowak (MP3/FLAC). Your free in-game GOLD amount will also be upgraded to $30 value, you will get a SPECIAL THANKS credit in the Backers section in-game and the SILVER BACKER forum badge. Best of all, you will receive an EXCLUSIVE CARD for use IN-GAME that will never be available from any other source!&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1417392000,&quot;project_id&quot;:854095920,&quot;backers_count&quot;:2,&quot;updated_at&quot;:1393321346},{&quot;id&quot;:2410746,&quot;minimum&quot;:40.0,&quot;reward&quot;:&quot;MAGIC FIGHTER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ PHYSICAL (Approx. \\u20ac29 / \\u00a324) ============================= In addition to everything from the CARD RAIDER tier, you get an exclusive Earthcore POSTER, 3 DIGITAL BOOSTER PACKS for use in-game, 5 PRINTED ILLUSTRATIONS straight from the world of Earthcore and a beautiful POSTCARD signed by the team! Your free in-game GOLD amount will also be upgraded to $40. \\u25cf If you live outside the US, EU, UK or CA, please add $20 for int&#39;l shipping&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1417392000,&quot;project_id&quot;:854095920,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1393434283},{&quot;id&quot;:2366736,&quot;minimum&quot;:50.0,&quot;reward&quot;:&quot;TREASURE HUNTER \\r\\n\\u25cf TIME-LIMITED ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ DIGITAL (Approx. \\u20ac36 / \\u00a330) =============================\\r\\nONLY AVAILABLE FOR THE FIRST 5 DAYS SINCE LAUNCH! This reward contains all the goodies of the CARD RAIDER tier but your in-game GOLD gift is worth $150. Better yet, in addition to the Kickstarter EXCLUSIVE CARD, you also get a super limited SPECIAL CARD that is only available in this tier! This is a one-of-a-kind offer, so if you want the most bang for your buck, the TREASURE HUNTER reward is perfect for you!\\r\\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ \\r\\nNOTE: This pledge reward will be marked as sold out after first 5 days of the campaign. Hurry up!&quot;,&quot;limit&quot;:29,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1417392000,&quot;project_id&quot;:854095920,&quot;remaining&quot;:0,&quot;backers_count&quot;:29,&quot;updated_at&quot;:1393607173},{&quot;id&quot;:2416054,&quot;minimum&quot;:60.0,&quot;reward&quot;:&quot;DECK BUILDER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ DIGITAL (Approx. \\u20ac44 / \\u00a336) ============================= In addition to everything from the CARD RAIDER tier, you get backer-exclusive AVATARS to use in both  single and multiplayer modes, 3 free BOOSTER PACKS to use in-game and a digital download of a wonderful AUDIO BOOK set in the world of Earthcore. Your free in-game GOLD amount will also be upgraded to $60.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1417392000,&quot;project_id&quot;:854095920,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1393582324},{&quot;id&quot;:2388550,&quot;minimum&quot;:70.0,&quot;reward&quot;:&quot;MUSIC MASTER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ PHYSICAL (Approx. \\u20ac51 / \\u00a342) ============================= In addition to everything from the MAGIC FIGHTER tier, you get a physical prestige edition SOUNDTRACK CD that also includes AUDIO BOOK expanding on the story. In addition, you will be granted access to Backer-exclusive AVATARS to use in both  single and multiplayer modes. Your free in-game GOLD amount will also be upgraded to $70. \\u25cf If you live outside the US, EU, UK or CA, please add $20 for int&#39;l shipping&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1417392000,&quot;project_id&quot;:854095920,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1393582532},{&quot;id&quot;:2375272,&quot;minimum&quot;:90.0,&quot;reward&quot;:&quot;EARTH OBSERVER \\u25cf EARLY BIRD \\u25cf ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ DIGITAL (Approx. \\u20ac65 / \\u00a354)  ============================= In addition to everything from the DECK BUILDER tier, you get a beautiful DIGITAL ARTBOOK, GOLD DOUBLER to make your progress faster, 5 GIFT PACKS that you can send to selected friends and THANKS FROM NEAR SPACE - an absolutely revolutionary reward that will allow you to see your name among the stars. Your free in-game GOLD amount will also be upgraded to $120 value, you will get a SPECIAL THANKS credit in the MAIN CREDITS of the game and the GOLD BACKER forum badge.&quot;,&quot;limit&quot;:250,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1417392000,&quot;project_id&quot;:854095920,&quot;remaining&quot;:244,&quot;backers_count&quot;:6,&quot;updated_at&quot;:1393480246},{&quot;id&quot;:2375273,&quot;minimum&quot;:120.0,&quot;reward&quot;:&quot;EARTH OBSERVER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ DIGITAL (Approx. \\u20ac87 / \\u00a372)  ============================= In addition to everything from the DECK BUILDER tier, you get a beautiful DIGITAL ARTBOOK, GOLD DOUBLER to make your progress faster, 5 GIFT PACKS that you can send to selected friends and THANKS FROM NEAR SPACE - an absolutely revolutionary reward that will allow you to see your name among the stars. Your free in-game GOLD amount will also be upgraded to $120 value, you will get a SPECIAL THANKS credit in the MAIN CREDITS of the game and the GOLD BACKER forum badge.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1417392000,&quot;project_id&quot;:854095920,&quot;backers_count&quot;:2,&quot;updated_at&quot;:1393316571},{&quot;id&quot;:2375275,&quot;minimum&quot;:140.0,&quot;reward&quot;:&quot;EARTHCORE ENTHUSIAST ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ DIGITAL (Approx. \\u20ac102 / \\u00a384)  ============================= In addition to everything from the EARTH OBSERVER tier, you get an invitation to a BI-WEEKLY DESIGN CHAT with our team and exclusive access to EARTHCORE: ORIGINS in April! Earthcore: Origins is a fully playable prequel to Shattered Elements that allows you to undertake several single-player missions with a pre-defined deck and familiarize yourself with the gameplay. You will also get a TEAM SUPPORTER credit in the MAIN CREDITS as well as not just one but 3 BACKER-EXCLUSIVE CARDS in-game.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1417392000,&quot;project_id&quot;:854095920,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1393433817},{&quot;id&quot;:2375278,&quot;minimum&quot;:250.0,&quot;reward&quot;:&quot;GOODIE GATHERER \\u25cf EARLY BIRD \\u25cf ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ PHYSICAL (Approx. \\u20ac182 / \\u00a3150)  ============================= You get everything from the EARTHCORE ENTHUSIAST tier but your NOVELLA and ARTBOOK are beautifully printed, your soundtrack comes on a prestige edition CD and you get a limited edition POSTER. We will also send you a thank you POSTCARD personally signed by key members of our team. \\u25cf If you live outside the US, EU, UK or CA, please add $20 for int&#39;l shipping&quot;,&quot;limit&quot;:250,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1417392000,&quot;project_id&quot;:854095920,&quot;remaining&quot;:247,&quot;backers_count&quot;:3,&quot;updated_at&quot;:1393454241},{&quot;id&quot;:2375280,&quot;minimum&quot;:300.0,&quot;reward&quot;:&quot;GOODIE GATHERER  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ PHYSICAL (Approx. \\u20ac218/ \\u00a3180) ============================= You get everything from the EARTHCORE ENTHUSIAST tier but your NOVELLA and ARTBOOK are beautifully printed, your soundtrack comes on a prestige edition CD and you get a limited edition POSTER. We will also send you a thank you POSTCARD personally signed by key members of our team. \\u25cf If you live outside the US, EU, UK or CA, please add $20 for int&#39;l shipping&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1417392000,&quot;project_id&quot;:854095920,&quot;backers_count&quot;:2,&quot;updated_at&quot;:1393317911},{&quot;id&quot;:2375281,&quot;minimum&quot;:500.0,&quot;reward&quot;:&quot;SLICK STRATEGIST  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ DIGITAL (Approx. \\u20ac363 / \\u00a3300)  ============================= In addition to everything from the EARTHCORE ENTHUSIAST tier, you get a digital, print-ready copy of the POSTER, early access to a BONUS CHAPTER in the single-player campaign featuring lots of unique cards as well as a version of the DECK PLANNER software that we use in development. This little tool will allow you to browse through all the cards available in the game and simulate battles between decks of your creation. You will also get an AMBASSADOR badge for use on the official forum as well as 10 BOOSTER PACKS instead of just 5.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1417392000,&quot;project_id&quot;:854095920,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1393843889},{&quot;id&quot;:2375287,&quot;minimum&quot;:680.0,&quot;reward&quot;:&quot;ELEMENTAL BEARER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ PHYSICAL (Approx. \\u20ac495 / \\u00a3408) ============================= In addition to all the physical rewards of the GOODIE GATHERER tier and the digital perks of SLICK STRATEGIST, you get a limited edition, backer-exclusive T-SHIRT that won\\u2019t be available from any other venue and Earthcore: Origins BOARD GAME that will allow you to duel your friends with exquisitely printed physical cards. \\u25cf If you live outside the US, EU, UK or CA, please add $20 for int&#39;l shipping&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1417392000,&quot;project_id&quot;:854095920,&quot;backers_count&quot;:2,&quot;updated_at&quot;:1393266494},{&quot;id&quot;:2375289,&quot;minimum&quot;:800.0,&quot;reward&quot;:&quot;CRAFTY CARTOGRAPHER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ PHYSICAL (Approx. \\u20ac582 / \\u00a3480) ============================= In addition to all the rewards of the ELEMENTAL BEARER tier, you get to NAME A CARD, receive a very limited edition CLOTH MAP of the world of Earthcore and we will grant you EARLY ACCESS to ALL FUTURE TEQUILA GAMES! Your PRINTED ARTBOOK will also be SIGNED by key members of the team and you will get 100.00 worth of BOOSTER PACKS as well as a DESIGN CONSULTANT credit and 5 BACKER-EXCLUSIVE CARDS in-game instead of just 3. At this tier, we will also make sure to set you up with MONTHLY IN-GAME GOODIES for A YEAR, including FREE GOLD and BOOSTER PACKS. \\u25cf If you live outside the US, EU, UK or CA, please add $20 for int&#39;l shipping&quot;,&quot;limit&quot;:40,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1417392000,&quot;project_id&quot;:854095920,&quot;remaining&quot;:40,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1392766414},{&quot;id&quot;:2375300,&quot;minimum&quot;:1000.0,&quot;reward&quot;:&quot;GUEST DESIGNER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ PHYSICAL (Approx. \\u20ac727 / \\u00a3600)  ============================= In addition to all the rewards of the CRAFTY CARTOGRAPHER tier, you get to work with our team and CREATE A CARD by coming up with the concept behind it. You will also have an intimate chat with our CEO and LEAD DESIGNER on SKYPE and receive a limited edition COVER FOR YOUR iOS DEVICE. We will also send you a print of the card that you\\u2019ve created and your ARTBOOK will be offered in exclusive OVERSIZED EDITION. Your in-game credit becomes GUEST DESIGNER, you get $200 worth of BOOSTER PACKS and your forum badge gets upgraded to the EARTHCORE ANGEL level. \\u25cf If you live outside the US, EU, UK or CA, please add $20 for int&#39;l shipping&quot;,&quot;limit&quot;:20,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1417392000,&quot;project_id&quot;:854095920,&quot;remaining&quot;:20,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1392766414},{&quot;id&quot;:2390341,&quot;minimum&quot;:2500.0,&quot;reward&quot;:&quot;GUEST ARTIST ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ PHYSICAL (Approx. \\u20ac1818 / \\u00a31499) ============================= In addition to all the rewards of the GUEST DESIGNER tier, you get to DRAW A CARD. Plus, we will mail you a print of your card, stylishly framed. Your in-game credit will be upgraded to a respectful GUEST ARTIST and you get a GOLDEN ANGEL badge to use on our forum. Finally, you&#39;ll have a chance to MEET US AT GAMESCOM in Cologne later this year at a press day (closed to public) + a follow up GAMES PARTY in the evening. What&#39;s more, our lead artists will create an exclusive Earthcore-theme TATOO DESIGN exclusively for you!  \\u25cf If you live outside the US, EU, UK or CA, please add $20 for int&#39;l shipping \\u25cf Cost of travel to Cologne not included.&quot;,&quot;limit&quot;:10,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1417392000,&quot;project_id&quot;:854095920,&quot;remaining&quot;:10,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1392800970},{&quot;id&quot;:2375302,&quot;minimum&quot;:5000.0,&quot;reward&quot;:&quot;ASSOCIATE PRODUCER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ PHYSICAL (Approx. \\u20ac3635 / \\u00a32997) ============================= In addition to all the rewards of the GUEST ARTIST tier, you get to BECOME A CARD. That\\u2019s right, you will be featured in the game as one of Earthcore\\u2019s valiant heroes or terrifying villains! We will also create a selectable avatar in your likeness and provide you with a custom iPad with the game preloaded. Your credit will be upgraded to a prestigious ASSOCIATE PRODUCER and you get a CRYSTAL ANGEL badge to use on our forum. \\u25cf If you live outside the US, EU, UK or CA, please add $20 for int&#39;l shipping \\u25cf Cost of travel to Cologne not included.&quot;,&quot;limit&quot;:5,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1417392000,&quot;project_id&quot;:854095920,&quot;remaining&quot;:5,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1392766414},{&quot;id&quot;:2375303,&quot;minimum&quot;:10000.0,&quot;reward&quot;:&quot;EXECUTIVE PRODUCER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ PHYSICAL (Approx. \\u20ac7270 / \\u00a36000)   ============================= In addition to all the rewards of the ASSOCIATE PRODUCER tier, you get to BECOME A BOSS. A character based on you will be a major enemy found in the storyline and every player will be forced to face you! We will also invite you and your buddy to meet us in our headquarters in Wroclaw, Poland. We will show you how we work and take you on an adventure-filled tour of the city. Your credit will be upgraded to \\u00fcber-exclusive EXECUTIVE PRODUCER and we will design a CUSTOM BADGE of your choosing to use on our forum. \\u25cf If you live outside the US, EU, UK or CA, please add $20 for int&#39;l shipping \\u25cf Cost of travel to Cologne and/or Wroclaw not included.&quot;,&quot;limit&quot;:2,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1417392000,&quot;project_id&quot;:854095920,&quot;remaining&quot;:2,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1392766414}]}";
+    
+    
+    
+    
+    
+    
+    
+    
+    window.timeRemaining = function timeRemaining(epochTime){
+    
+      var diff = epochTime - ((new Date()).getTime() / 1000);
+      var num_unit = (diff < 60 && [Math.max(diff, 0), 'seconds']) ||
+        ((diff/=60) < 60 && [diff, 'minutes']) ||
+        ((diff/=60) < 72 && [diff, 'hours']) ||
+        [diff/=24, 'days'];
+    
+      // Round down
+      num_unit[0] = Math.floor(num_unit[0]);
+      // Singularize unit
+      if (num_unit[0] == 1) { num_unit[1] = num_unit[1].replace(/s$/,""); }
+    
+      return num_unit;
+    };
+  //]]>
+</script>
+
+<script>
+  //<![CDATA[
+    window.current_variants = ["discover_link_copy[explore]","rewards_hover[without_hover_text]"];
+  //]]>
+</script>
+
+
+</head>
+
+<body class="project projects not-mobile not-phone not-forces-video-controls not-tablet not-touchable not-native-app-request video_mode" id="projects_show">
+<div class="jGrowl center" id="growl_section"></div>
+<div class="NS_layouts__navigation" id="header">
+<div class="main-nav relative bg-white">
+<h1 class="no-margin ml1 mr2 left">
+<a href="/?ref=nav" class="block p2"><span class="ss-icon green-dark">KICK</span><span class="ss-icon green">STARTER</span>
+</a></h1>
+<ul class="primary-links list no-margin left">
+<li class="left discover-link full-height">
+<a href="/discover?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Explore</a>
+</li>
+<li class="left full-height mr2">
+<a href="/learn?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Start</a>
+</li>
+</ul>
+<ul class="list no-margin right" id="menu-sub">
+<li class="right"><a href="/login?ref=nav" class="block h5 bold p2 full-height border-box">Log in</a></li>
+<li class="right"><a href="/signup?ref=nav" class="block h5 bold p2 full-height border-box">Sign up</a></li>
+</ul>
+<div class="search-link pl2 full-height border-left border-box clip">
+<form accept-charset="UTF-8" action="/projects/search" class="search pt1 pb1 block relative form-simple" method="get"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /></div>
+<div class="field relative pl3">
+<span class="ss-icon ss-search grey-dark ml1 mt1 absolute"></span>
+<input class="input-search header full-width text" data-tracker-name="Header Live Search" id="term" name="term" placeholder="Search projects" type="text" />
+</div>
+</form>
+
+</div>
+<div class="clear"></div>
+</div>
+</div>
+<div class="hide pt4 pb4 bg-grey-light" id="search_results-wrap">
+<div class="relative container" id="search_results">
+<a class="close right grey-dark mr1"><span class="ss-icon ss-delete"></span></a>
+<h3 class="header ml1 clearfix"></h3>
+<div class="clip clearfix" id="search_results_panel"></div>
+<a class="prev arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateleft"></span>
+</a>
+<a class="next arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateright"></span>
+</a>
+</div>
+</div>
+
+
+
+
+<div class="Project-ended-true Project-is_starred- Project-state-canceled Project854095920_cxt border-top" id="main_content">
+<div id="running-board-wrap">
+<div class="container" id="running-board">
+<div id="project-header">
+<div class="NS_projects__running_board ml1 mr1 clearfix">
+<div class="title center py4">
+<h2 class="mb1">
+<a href="/projects/1761646337/earthcore-shattered-elements-the-first-ever-action" class="green-dark">Earthcore: Shattered Elements (PC, Mac &amp; Mobile) (Canceled)</a>
+</h2>
+<p class="no-margin">
+<span class="creator">
+by
+<a href="/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography" id="name">Lukasz Deszczulka</a>
+</span>
+</p>
+</div>
+<ul class="project-nav list-inline left h5 bold mb1">
+<li class="mr2">
+<a href="/projects/1761646337/earthcore-shattered-elements-the-first-ever-action" class="grey-dark py1 current" id="home_nav">Home</a>
+</li>
+<li class="mr2">
+<span data-updates-count="4" id="updates_count">
+<a href="/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/posts" class="grey-dark py1" id="updates_nav">Updates
+<span class="count h6 bg-grey-dark white">4</span>
+</a></span>
+</li>
+<li class="mr2">
+<a href="/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/backers" class="grey-dark py1" id="backers_nav">Backers
+<span class="count h6 bg-grey-dark white"><data class="Project854095920" data-format="number" data-value="101" itemprop="Project[backers_count]">101</data></span>
+</a></li>
+<li>
+<span data-comments-count="25" id="comments_count">
+<a href="/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/comments" class="grey-dark py1" id="comments_nav">Comments
+<span class="count h6 bg-grey-dark white"><data class="Project854095920" data-format="number" data-value="25" itemprop="Project[comments_count]">25</data></span>
+</a></span>
+</li>
+</ul>
+<ul class="list-inline right h5 bold mb1">
+<li class="location mr2">
+<a href="/discover/places/wroclaw-wroclaw-lower-silesia?ref=city" class="grey-dark"><span class="ss-icon ss-location margin-right"></span>
+Wroclaw, Poland
+</a></li>
+<li class="category" data-project-parent-category="Games">
+<a href="/discover/categories/games/video%20games?ref=category" class="grey-dark"><span class="ss-icon ss-tag margin-right"></span>
+Video Games
+</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+</div>
+<div class="bg-grey-light pb4" id="content-wrap">
+<div class="Project854095920" data-conditions="[{&quot;!state&quot;:&quot;live&quot;}]" data-evaluation="true" data-render="&quot;&lt;div class=\&quot;NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-canceled Project854095920_cxt bg-grey container pb1 pt1\&quot;&gt;\n&lt;div class=\&quot;Project854095920\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;successful&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;Funded!&amp;lt;/b&amp;gt;\\nThis project was successfully funded &amp;lt;data class=\\&amp;quot;Project854095920\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2014-03-26T12:05:20-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[deadline]\\&amp;quot;&amp;gt;on March 26&amp;lt;/data&amp;gt;.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project854095920\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:[&amp;quot;started&amp;quot;,&amp;quot;submitted&amp;quot;]}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;THIS PROJECT IS NOT LIVE&amp;lt;/b&amp;gt;\\nThis is only a draft that the creator has chosen to share.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project854095920\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;suspended&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Suspended&amp;lt;/b&amp;gt;\\nFunding for this project was suspended &amp;lt;data class=\\&amp;quot;Project854095920\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2014-03-03T11:40:17-05:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on March 3&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project854095920\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;canceled&amp;quot;}]\&quot; data-evaluation=\&quot;true\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Canceled&amp;lt;/b&amp;gt;\\nFunding for this project was canceled by the project creator &amp;lt;data class=\\&amp;quot;Project854095920\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2014-03-03T11:40:17-05:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on March 3&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Canceled&lt;/b&gt;\nFunding for this project was canceled by the project creator &lt;data class=\&quot;Project854095920\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2014-03-03T11:40:17-05:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on March 3&lt;/data&gt;.\n&lt;/div&gt;&lt;div class=\&quot;Project854095920\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;failed&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Unsuccessful&amp;lt;/b&amp;gt;\\nThis project\\u2019s funding goal was not reached on &amp;lt;time class=\\&amp;quot;js-adjust\\&amp;quot; data-format=\\&amp;quot;MMMM D\\&amp;quot; datetime=\\&amp;quot;2014-03-26T12:05:20-04:00\\&amp;quot;&amp;gt;March 26&amp;lt;/time&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project854095920\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;purged&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;This project is purged and only visible to staff.&amp;lt;/b&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;/div&gt;\n&quot;"><div class="NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-canceled Project854095920_cxt bg-grey container pb1 pt1">
+<div class="Project854095920" data-conditions="[{&quot;state&quot;:&quot;successful&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;Funded!&lt;/b&gt;\nThis project was successfully funded &lt;data class=\&quot;Project854095920\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2014-03-26T12:05:20-04:00&amp;quot;\&quot; itemprop=\&quot;Project[deadline]\&quot;&gt;on March 26&lt;/data&gt;.\n&lt;/p&gt;\n&quot;"></div><div class="Project854095920" data-conditions="[{&quot;state&quot;:[&quot;started&quot;,&quot;submitted&quot;]}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;THIS PROJECT IS NOT LIVE&lt;/b&gt;\nThis is only a draft that the creator has chosen to share.\n&lt;/p&gt;\n&quot;"></div><div class="Project854095920" data-conditions="[{&quot;state&quot;:&quot;suspended&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Suspended&lt;/b&gt;\nFunding for this project was suspended &lt;data class=\&quot;Project854095920\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2014-03-03T11:40:17-05:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on March 3&lt;/data&gt;.\n&quot;"></div><div class="Project854095920" data-conditions="[{&quot;state&quot;:&quot;canceled&quot;}]" data-evaluation="true" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Canceled&lt;/b&gt;\nFunding for this project was canceled by the project creator &lt;data class=\&quot;Project854095920\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2014-03-03T11:40:17-05:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on March 3&lt;/data&gt;.\n&quot;"><p class="no-margin"></p>
+<b>Funding Canceled</b>
+Funding for this project was canceled by the project creator <data class="Project854095920" data-format="distance_date" data-value="&quot;2014-03-03T11:40:17-05:00&quot;" itemprop="Project[state_changed_at]">on March 3</data>.
+</div><div class="Project854095920" data-conditions="[{&quot;state&quot;:&quot;failed&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Unsuccessful&lt;/b&gt;\nThis project\u2019s funding goal was not reached on &lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;MMMM D\&quot; datetime=\&quot;2014-03-26T12:05:20-04:00\&quot;&gt;March 26&lt;/time&gt;.\n&quot;"></div><div class="Project854095920" data-conditions="[{&quot;state&quot;:&quot;purged&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;This project is purged and only visible to staff.&lt;/b&gt;\n&quot;"></div></div>
+</div>
+<div class="container bg-white border rounded py3 pl2 pr2" id="content">
+<div class="NS-projects-content">
+<div class="grid_11">
+<div data-has-video="true" id="video-section">
+<div class="video-player" data-dimensions="{&quot;width&quot;:640,&quot;height&quot;:480}" data-image="https://s3.amazonaws.com/ksr/projects/774464/photo-main.jpg?1397857793" data-video-tracker-url="https://www.kickstarter.com/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/video/plays" data-video-url="https://d2pq0u4uni88oo.cloudfront.net/projects/774464/video-346941-h264_high.mp4" data-video="{&quot;id&quot;:346941,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/774464/video-346941-h264_high.mp4?2014&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/774464/video-346941-h264_base.mp4?2014&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/774464/video-346941-webm.webm?2014&quot;,&quot;width&quot;:640,&quot;height&quot;:360,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/774464/video-346941-h264_base.jpg?2014&quot;}" id="video_pitch"><video class="has_webm landscape" preload="none">
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/774464/video-346941-h264_high.mp4" type='video/mp4; codecs="avc1.64001E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/774464/video-346941-h264_base.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/774464/video-346941-webm.webm" type="video/webm"></source>
+You'll need an HTML5 capable browser to see this content.
+</video>
+<img alt="Photo-main" class="has_played_hide poster landscape" src="https://s3.amazonaws.com/ksr/projects/774464/photo-main.jpg?1397857793" />
+<div class="play_button_big play_button_dark absolute-center rounded has_played_hide">
+<span class="ss-icon ss-play"></span>
+Play
+</div>
+<div class="player_controls clearfix absolute-bottom mb2 rounded white bg-green-dark forces-video-controls_hide">
+<div class="left">
+<a class="button button_icon button_dark playpause play mr1">
+<span class="play ss-icon ss-play"></span>
+<span class="pause ss-icon ss-pause"></span>
+</a>
+<span class="time current_time h12 left">00:00</span>
+</div>
+<div class="right">
+<span class="time total_time h12 left mr1">00:00</span>
+<a class="left button button_icon button_icon_white volume">
+<span class="ss-icon ss-volume icon_volume_nudge"></span>
+<span class="ss-icon ss-highvolume"></span>
+</a>
+<div class="volume_container left">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+<a class="left button button_icon button_icon_white fullscreen">
+<span class="ss-icon ss-expand"></span>
+<span class="ss-icon ss-contract"></span>
+</a>
+</div>
+<div class="clip">
+<div class="progress_container pr1 pl1">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="buffer progress_bar_buffer"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div data-project-state="canceled" id="about">
+<div class="NS_projects__project_share clearfix py2 pl1 pr1">
+<ul class="left list-inline no-margin h5 bold">
+<li class="facebook mr2">
+<a href="https://www.kickstarter.com/projects/1761646337/earthcore-shattered-elements-the-first-ever-action"><span class="ss-icon ss-social ss-facebook color-facebook"></span>
+<span class="color-facebook">Share</span>
+<span class="share_bubble"><div class="triangle grey"></div>
+<div class="triangle white"></div>
+<span class="count"></span></span>
+</a></li>
+<li class="twitter mr2">
+<a  href="https://twitter.com/intent/tweet?text=Earthcore%3A%20Shattered%20Elements%20%28PC%2C%20Mac%20%26%20Mobile%29%20%28Canceled%29%20by%20Lukasz%20Deszczulka&amp;via=kickstarter&amp;url=http://kck.st/MUzXrO" rel="nofollow"><span class="ss-icon ss-social ss-twitter color-twitter"></span>
+<span class="color-twitter">Tweet</span>
+</a></li>
+<li class="embed">
+<a href="/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/widget" class="remote_modal_dialog grey-dark" data-modal-title="Embed a widget on your site" data-tracker-name="Embed"><span class="ss-icon ss-navigateleft"></span>
+<span class="ss-icon ss-navigateright"></span>
+Embed
+</a></li>
+</ul>
+<ul class="right list-inline no-margin h5 bold">
+<li class="curate mr2">
+</li>
+<li class="remind">
+<div class="ajax-container" id="watching-widget">
+<div class="Project854095920" data-conditions="[{&quot;is_starred&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div id=\&quot;unwatch\&quot;&gt;\n&lt;a href=\&quot;/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/unwatch\&quot; class=\&quot;on\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"></div><div class="Project854095920" data-conditions="[{&quot;!is_starred&quot;:true}]" data-evaluation="true" data-render="&quot;&lt;div id=\&quot;watch\&quot;&gt;\n&lt;a href=\&quot;/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/watch\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;span class=\&quot;text\&quot;&gt;\n&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"><div id="watch">
+<a href="/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/watch"><span class="ss-icon ss-star"></span>
+<span class="text">
+</span>
+</a></div>
+
+</div></div>
+</li>
+</ul>
+</div>
+
+<div class="short_blurb py2 pl1 pr1">
+<p class="h3">Earthcore could be to TCGs what Diablo was to the RPG genre! It&#39;s deep, dynamic, quick to play - with dramatic PvE &amp; online PvP modes!</p>
+</div>
+<div class="full-description">
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/assets/1684457/edit" data-id="1684457">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/684/457/bb14c7358018b7dccfb0b451a452a084_large.png?1393502483"></figure>
+</div><h1>IMPORTANT NOTE:</h1><p><b>After careful consideration, we have decided to pull the plug and cancel the campaign.</b> <b>We do intend to reboot the Kickstarter for Earthcore in the near future stronger and meaner than ever.</b></p><p><b>For further explanation, please see <a href="https://www.kickstarter.com/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/posts/764815" target="_blank">this update</a> and follow us on <a href="https://www.facebook.com/earthcoregame" target="_blank">Facebook</a> and our <a href="http://www.earthcoregame.com/" target="_blank">official site</a>. Thank you for your support and make sure to stay with us for the promising future ahead!</b></p><p><b><a href="https://www.kickstarter.com/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/posts/764815" target="_blank">UPDATE #3: The Next Chapter</a></b></p><p><b><a href="https://www.kickstarter.com/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/posts/761176" target="_blank">UPDATE #2: Last chance to get the Treasure Hunter reward</a></b></p><p><b><a href="https://www.kickstarter.com/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/posts/759717" target="_blank">UPDATE #1: New Reward Tiers + Gameplay Video + Novella</a></b></p><div class="template asset" contenteditable="false" data-edit_url="/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/assets/1661985/edit" data-id="1661985">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/661/985/0cfb6dfa5fc69843949b61e40b0232a9_large.png?1393008311"></figure>
+</div><p>	Earthcore: Shattered Elements is a dynamic Action Card Game for PC, Mac, iOS and Android that combines card collecting with fast-paced combat and true tactical depth. Should the project be funded, you will be able to enjoy it absolutely for free later this year.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/assets/1684451/edit" data-id="1684451">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/684/451/5429261f745a1eb490e8103c464cd6e2_large.jpg?1393502114"></figure>
+</div><p>We have prepared a gameplay video to show you a sample battle. Check it out below and let us know what you think!</p><div class="template oembed" contenteditable="false" data-href="http://youtu.be/_RKYxKfpIzE">
+<iframe width="612" height="344" src="https://www.youtube.com/embed/_RKYxKfpIzE?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div><p> <b>Key game features:</b></p><div>
+<div>
+<div>
+<ul>
+<li>Single Player (PvE): dramatic story-based campaign with dozens of quests, chapters and missions.</li>
+<li>Multiplayer (PvP): robust online mode with tactical battles, special events, rankings and leagues.</li>
+<li>Gameplay: groundbreaking mechanics, based on three core elements: Water, Nature, Fire. No mindless number crunching is necessary, just pure tactical thought.</li>
+<li>Cross-Platform Experience: start playing on mobile, switch to iPad mid-day and continue playing on PC/MAC in the evening.</li>
+<li>Hand-Painted Cards: over 200 gorgeous cards at launch with more coming to the game on regular basis.</li>
+<li>Amazing Audio: featuring music by a prolific Polish composer Jerzy Adam Nowak.</li>
+<li>Cinematic Experience: magical, mystical and mysterious, making you feel like a star of a fantasy film.</li>
+<li>Deep Metagame: rebuild the city of Elemental Bearers and bring back prosperity to your people. </li>
+</ul>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/assets/1661399/edit" data-id="1661399">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/661/399/b29e8cbc142a349f79b7dd0e25a5613f_large.jpg?1392998366"></figure>
+</div>
+<p><b>We want to change the definition of what a TCG could be. Our goals are:</b></p>
+<div>• To provide a gateway drug into the world of Collectible Card Games for beginners while satisfying TCG veterans with deeply strategic gameplay.</div>
+<div><br></div>
+<div>• To tell an interesting story set in an enchanted world, full of intrigue, mystery and plot twists, starring well developed characters.</div>
+<div><br></div>
+<div>• To create a fully cross-platform, free-to-play experience that allows you to play on any device you own without spending a dime.</div>
+<div><br></div>
+<div>• To give you a way to battle your friends and strangers in lightning-quick online multiplayer matches and advance to progressively more prestigious leagues.</div>
+<div><br></div>
+<div>• To keep you entertained for years to come by constantly updating the number of available cards and selectable story missions.</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/assets/1675402/edit" data-id="1675402">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/675/402/64b79dafc4eed1a1309f5655cb13dbb8_large.jpg?1393323337"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/assets/1675334/edit" data-id="1675334">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/675/334/852bd6cbd3efe5dff9ef06d7d28ae9d9_large.png?1393320868"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/assets/1684458/edit" data-id="1684458">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/684/458/6a6b58c418d4dc72aff5e08c58bda3f0_large.jpg?1393502515"></figure>
+</div>
+
+
+
+<p>Our aim is to trim all the fat of contemporary TCGs and leave just the good parts: building up your deck, exciting combat and tactical challenge. You don't have to take our word alone! Have a listen to some of the feedback we've received during our most recent external playtesting session:</p>
+<div class="template oembed" contenteditable="false" data-href="http://vimeo.com/87478478">
+<iframe src="//player.vimeo.com/video/87478478" width="639" height="359" frameborder="0" title="Earthcore: Shattered Elements - play test!" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+</div>
+
+<p>The basics are easy to grasp but individual card skills add immense strategic depth to the duels. Some cards provide protection to others, some can change their element, some move on the battlefield. Eventually, fights stop being about matching colors and turn into high-stake battles of the wit.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/assets/1675340/edit" data-id="1675340">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/675/340/944268d5200632e3ebd33faa27030704_large.jpg?1393320959"></figure>
+</div>
+<p>Each encounter is divided into two phases: Attack and Defense. One player’s Attack Phase is basically the other’s Defense Phase. There are six slots for cards on the game table, three per player. At the beginning of a round, players draw cards from their decks so that they have as many in their hand as there are free slots on their part of the table, plus one.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/assets/1675343/edit" data-id="1675343">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/675/343/88a464683529461785de04d8619ac5a3_large.jpg?1393321034"></figure>
+</div>
+<p>Once the players put their cards in the desired slots, the battle begins. Cards fight each other from left to right. Defeated cards land in the graveyard. If an empty slot is attacked, the victim loses a card from his deck, and if the deck is depleted, from his hand. If the hand is empty as well, the player loses the battle.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/assets/1675344/edit" data-id="1675344">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/675/344/6e37d4ea041bb15689b230af8891951e_large.jpg?1393321076"></figure>
+</div>
+<p>There are also elementless cards that lose to every element. To make up for it, those cards usually have the most powerful skills.Players may earn in-game Gold by completing story missions, participating in multiplayer battles or finishing quests and getting achievements. In addition, there are special buildings – such as the mines - that the player might construct and manage outside of combat to increase the amount of currency earned. Gold can then be spent on booster packs, traps that catch wild cards and, most importantly, fusion. By fusing together a few weaker cards, players create new, much more powerful units.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/assets/1649008/edit" data-id="1649008">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/649/008/eb2929293a0c7b125ddb5ff1b0694b83_large.png?1392743371"></figure>
+</div>
+
+<p>	Welcome to the world of Earthcore: Shattered Elements, a land of magic, mystery and adventure. When the titular Earthcore shattered millennia ago, its fragments rained upon the planet, each containing an element inside. The land turned into a wasteland, part of it consumed by flames, part frozen, part overgrown with wildlife. The people struggle to rebuild but their efforts will be for naught unless balance is restored to the elements.
+</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/assets/1661872/edit" data-id="1661872">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/661/872/e2a6ce975120a39cd21ace9ba7a3eef5_large.jpg?1393006645"></figure>
+</div>
+<p>You become one of the last <b>Elemental Bearers</b> - an elite gathering
+of individuals sworn to protect the Earthcore, blessed with a unique power to
+command all the elements. For hundreds of years, Elemental Bearers have been
+questing to collect the shards of Earthcore and combine them back into what is
+essentially the heart of the world.</p>
+<p>Guided by the mysterious <b>Spark</b>, you will learn
+to harness the might of the elements and battle the forces of <b>Berak</b>, a fallen
+Elemental Bearer that has been driven insane with lust for power. Along the
+journey, you will encounter dozens of interesting characters and hundreds of
+terrifying monsters.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/assets/1661829/edit" data-id="1661829">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/661/829/6c7abf6a678c8535f9c511a725a376f8_large.jpg?1393005869"></figure>
+</div>
+<p>To give you a better picture of the world of
+Earthcore: Shattered Elements, we have prepared a novella that serves as a
+prequel to the game. Written by Narrative Designer Grzegorz Ciach and read for
+your pleasure by Tobias Queen, it should not be missed under any circumstances.
+We will be publishing chapters weekly starting this week right here on
+Kickstarter!</p>
+<a href="https://www.kickstarter.com/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/posts/759717" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/assets/1681359/edit" data-id="1681359">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/681/359/607923479140f3d798865e55f65924dd_large.png?1393437958"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</a><div class="template asset" contenteditable="false" data-edit_url="/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/assets/1681386/edit" data-id="1681386">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/681/386/c0b4791729f065893613185cf2f13554_large.png?1393438117"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/assets/1649042/edit" data-id="1649042">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/649/042/e381d3dea594f2557bf6d757793c24a9_large.png?1392743666"></figure>
+</div>
+<p>Each card represents a character or creature under your command. By inspecting a card, you can see the element associated with it - fire, water, nature or none. There is also a six-level rarity indicator on every card. Finally, cards may have up to three specific skills and any number of shield points protecting them for damage.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/assets/1649035/edit" data-id="1649035">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/649/035/418d88a63ada8ebd7a62fd80c0e4915e_large.png?1392743614"></figure>
+</div>
+<p>Earthcore: Shattered Elements will feature over 200 hand-painted cards at launch but that’s just the tip of an iceberg! We intend to keep adding new cards for months after going live to make sure that you will never run out of stuff to find and collect.</p>
+<p>In addition to our internal team of illustrators, we have also invited artists from all over the world to help us make Earthcore as gorgeous as it deserves to be. As you read this, they are hard at work bringing dastardly villains, heroic champions and horrifying creatures to life.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/assets/1662095/edit" data-id="1662095">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/662/095/a8195370d6e487beece00d3420e2db04_large.jpg?1393009906"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/assets/1675499/edit" data-id="1675499">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/675/499/dfa9e2110073916955cd1b7f61d5be32_large.png?1393327153"></figure>
+</div>
+<p>TCG or CCG is a card game that is played using unique, non-standard sets of playing cards. Those cards resemble traditional cards in terms of shape and size but allow for strategic gameplay specific to the game they are featured in.
+</p>
+<p>Cards in this kind of games are collectible and used to construct a deck - a player-made combination of cards that, depending on their composition, can have different tactical advantages and disadvantages. While minute-to-minute rules differ between TCGs, the overall goal is most often to collect all the most powerful cards, either by winning them in duels or purchasing booster packs, and constructing an unbeatable deck out of them.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/assets/1675500/edit" data-id="1675500">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/675/500/28773f8c11f1d46e963a10e1427f30bf_large.jpg?1393327204"></figure>
+</div>
+<p>Most TCGs are complicated, difficult to pick up and time consuming. Many of them require an hour or more for a comfortable play session and have steep learning curve. With dozens of cards in play and numerous resources to keep track of, such as Mana or global health, the matches are hard to follow and require long preparations.
+ </p>
+<p>Earthcore: Shattered Elements is the first ever Action TCG because we are not afraid to defy tradition. Our game is dynamic, quick to play and easy to learn. Your only resource are your cards – once your opponent loses all of them, the battle is won.
+</p>
+<p>And yet, depth-wise, we want to go above and beyond other TCGs. While we freely admit that there are less choices to make in a single round of the game than in similar games, we assure you that each choice is interesting and can make the difference between winning or losing.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/assets/1675505/edit" data-id="1675505">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/675/505/8c42b1047f3a2536a6088b284a503494_large.jpg?1393327458"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/assets/1661997/edit" data-id="1661997">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/661/997/f29bdf89afa2bbf70529ec770e4105cb_large.png?1393008494"></figure>
+</div>
+<p>We are a game development studio devoted to creating the best gaming experiences available on any platform. With 10 years of experience, industry veterans among our ranks and field-tested know-how, we are almost all set to make Earthcore a reality. The only thing that is missing is your support.</p>
+<p>Members of our team had the privilege to work on such big-name franchises as <i>The Sims</i>, <i>Tekken</i>, <i>Pac-Man</i>, <i>Sim City</i> and <i>Need for Speed</i>. Together, we have developed such hits as <i>Fantasy Kingdom Defense</i> and the <i>BattleFriends</i> series, winning the prestigious IMGA award in the process.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/assets/1657458/edit" data-id="1657458">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/657/458/5299f60c652a810c185d8f1d58c14d0f_large.png?1392910193"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/assets/1649019/edit" data-id="1649019">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/649/019/437a1f6a922e8baac253a0f2ea8fd855_large.png?1392743446"></figure>
+</div>
+<p>Before going to Kickstarter, we decided to give ourselves a chance to pitch the game to a couple of publishers just to find out that such an ambitious game is unfundable even if we have half project completed. It’s a classic egg-chicken problem: publishers would invest into a game that has proven to be a successful product, ideally a revenue-genrerating blockbuster with a quickly increasing player base. The thing is: you first need to have the product (and release it) before proving to someone that it’s successful. Ironically, who needs a publisher when the self-released product turns out to be successful?</p>
+<p>We have learned a lesson that in today’s market climate, with every publisher chasing the next casual hit making millions of dollars per day, funding a fully featured TCG such as Earthcore through traditional means is nearly impossible. Earthcore is not a mass market game - it is not supposed to be the next Candy Crush, nor is it the next GTA. </p>
+<p>With your help, we will be able to stay faithful to our original vision and finish the game independently, with support of people who really believe into what we want to achieve - YOU!</p>
+
+<p>Earthcore:
+Shattered Elements will not be able to reach its full potential without your
+involvement. We have promised ourselves that we will not compromise the game by
+limiting its scope, cutting the quality of illustrations or simplifying the
+metagame, which adds another layer of depth to the gameplay. There is no way we
+can keep this promise without your backing. This is our ‘now or never’ moment;
+either we make Earthcore the way we have always dreamed of or we postpone it
+again, possibly forever. </p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/assets/1676140/edit" data-id="1676140">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/676/140/22ef1f589a07db4b1db51a71339ff456_large.jpg?1393344064"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/assets/1661999/edit" data-id="1661999">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/661/999/daf203592a15efdd0dd740bb70c371cb_large.png?1393008496"></figure>
+</div>
+
+<p>At this point,
+Earthcore is around 50% done. It cost us over $250 000 to get to the point
+we are at now. We have funded the first part of development with a loan we
+took, revenues from our previous titles and our personal savings. We need you
+to make the remaining 50% happen! Thanks to Kickstarter, we will be able to
+bring you a beautiful game that feels like nothing you have ever played before.
+</p>
+
+<p>Our funding
+goal of $200 000 is a minimum we need to raise in order to finish the
+first version of Earhcore and start releasing it Q4 of this year for PC, MAC,
+iOS and Android. With your help we will not only be able to realize that goal
+but also expand the game with more content, enhanced graphics and other cool
+stuff. We also plan to add support for more platforms if we reach the related
+stretch goals. No worries, we have confirmed the capacity to add more platforms
+while keeping the original release date for the first desktop &amp; mobile
+version.</p>
+<p>The game has been in many iterative playtests and as the base mechanics are now rock-solid, we are moving forward with the development of multiplayer mode and the metagame. New progress is being made on the game daily and we will be sharing that with you regularly throughout the campaign and right up until launch.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/assets/1662001/edit" data-id="1662001">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/662/001/b2d58205ab09ba3907c684a4c342ef21_large.png?1393008500"></figure>
+</div>
+
+
+<p>All Kickstarter
+funds are going into the development of Earthcore. There are no side projects,
+no unnecessary spendings. We keep the budget tight and we are focused solely on
+Earthcore. Tequila Games has a reputation of being honest, upfront,
+and down to earth. We appreciate your investment and will make every effort to
+produce an experience that makes you happy and us proud.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/assets/1661526/edit" data-id="1661526">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/661/526/02ebcad03a4a68c5019fc422b49d80e8_large.jpg?1393000579"></figure>
+</div>
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/assets/1657579/edit" data-id="1657579">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/657/579/f0bf17ceaf077c29a77de66d5f86ee75_large.png?1392912465"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p> Here is a handy list of the goodies you will get for supporting us:</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/assets/1657580/edit" data-id="1657580">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/657/580/c65890eda2aa576306ee25bae16b69a1_large.png?1392912479"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/assets/1662131/edit" data-id="1662131">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/662/131/61c3e120c51b77df975edffb79400d39_large.png?1393010343"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/assets/1662132/edit" data-id="1662132">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/662/132/afc560a4d12e0705a15445d85631636f_large.png?1393010356"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/assets/1681308/edit" data-id="1681308">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/681/308/f175de90d0c099b96e8cf1ea9bfa12f3_large.png?1393437486"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/assets/1681309/edit" data-id="1681309">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/681/309/63962b76a417973983a2623050620c79_large.png?1393437497"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/assets/1681312/edit" data-id="1681312">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/681/312/db5b594714d526cd0a1f5ab603f70e8f_large.png?1393437506"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/assets/1681314/edit" data-id="1681314">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/681/314/012e006f2836d879a73b1104a55f07ea_large.png?1393437520"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/assets/1681316/edit" data-id="1681316">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/681/316/f75a0d53b11ee65e549c5651c93c2b5b_large.png?1393437534"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/assets/1681320/edit" data-id="1681320">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/681/320/e526b6364e9be51c6b924d2cb888e232_large.png?1393437543"></figure>
+</div>
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/assets/1688875/edit" data-id="1688875">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/688/875/8b391b0500bcab6b90393d0eeaedb7a2_large.png?1393582664"></figure>
+</div>
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/assets/1688872/edit" data-id="1688872">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/688/872/79f2aeebbea26fce96022c8e897c9b6f_large.png?1393582585"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/assets/1681323/edit" data-id="1681323">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/681/323/1172e7072a907dacd2e585ddfaaee689_large.png?1393437566"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/assets/1681325/edit" data-id="1681325">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/681/325/92886d00fe5c33c9e2ce32be1e25ef3d_large.png?1393437573"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/assets/1681326/edit" data-id="1681326">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/681/326/fded69006cc43e41381503644e1c0c66_large.png?1393437583"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/assets/1681328/edit" data-id="1681328">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/681/328/4158a2b4869f221cb81c8eb0a07a3386_large.png?1393437594"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/assets/1681330/edit" data-id="1681330">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/681/330/84869ac367594803f5df66ffed87b050_large.png?1393437607"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/assets/1662223/edit" data-id="1662223">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/662/223/23d559a47730500c39c7fdc4bcbc2979_large.png?1393011607"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/assets/1662224/edit" data-id="1662224">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/662/224/f627b3b58c3ced62cedbfe99c4153dd9_large.png?1393011621"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/assets/1662226/edit" data-id="1662226">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/662/226/e51b14150522ef9dd084f7890a7d1efe_large.png?1393011633"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/assets/1662228/edit" data-id="1662228">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/662/228/85cc82f7bcc9ff9bfb752274bb4c8695_large.png?1393011650"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/assets/1662229/edit" data-id="1662229">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/662/229/8e5ff90fd0b4b17ae5bebfaa9597c88a_large.png?1393011661"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/assets/1662231/edit" data-id="1662231">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/662/231/4304286eac28a6cb992474586bcd071d_large.png?1393011682"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/assets/1662233/edit" data-id="1662233">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/662/233/c77fa67cef7226f420a8889da725065a_large.png?1393011692"></figure>
+</div>
+<p>Confused about some of the rewards? We hope this will help:</p>
+<ul>
+<li>
+<b>E-CARD:</b> You will receive personalized thanks from us to your e-mail with beautiful, exclusive artwork.
+
+</li>
+<li>
+<b>CREDIT:</b> You will be included in the credits on our website or in the game itself, depending on your contribution. Your credit might range from Special Thanks to Executive Producer.
+ </li>
+<li>
+<b>FORUM BADGE:</b> You will be marked with a special badge on our official forum, letting all the other posters know that you are an esteemed supporter.</li>
+<li>
+<b>BETA:</b> We will invite you to play the game way ahead of official release. With your feedback you will help us shape Earthcore into the best digital TCG on the market.</li>
+<li>
+<b>WALLPAPER:</b> A beautiful wallpaper created by our artists in a variety of resolutions applicable to your desktop, smartphone and/or tablet.</li>
+<li>
+<b>GOLD PACK:</b> You will receive extra virtual Gold at the beginning of the game. Gold might be used for fusing cards and/or acquiring booster packs among other things.</li>
+<li>
+<b>NOVELLA:</b> A prose introduction to the world and the characters of Earthcore written by Grzegorz Ciach, our Narrative Designer. Comes both as a digital download and a beautifully printed book.</li>
+<li>
+<b>SOUNDTRACK:</b> Full cinematic soundtrack composed by Jerzy Adam Nowak, one of the most prolific Polish musicians. Comes both as downloadable MP3/FLAC files and on an uniquely packaged CD with the addition of the audiobook.</li>
+<li>
+<b>EXCLUSIVE IN-GAME CARD:</b> Depending on your contribution, you will receive up to five cards in-game that will not be available anywhere else. Only Kickstarter Backers will be able to use those beauties in battle! In addition, we also offer a sixth, TIME-LIMITED SPECIAL CARD.</li>
+<li>
+<b>BOOSTER PACKS:</b> At the beginning of the game, you will be given a selected number of free booster packs, allowing you to build up your deck quicker and cheaper than ever.</li>
+<li>
+<b>AVATAR PACK:</b> Avatars are the images that other players see when they play with or against you in the game. Kickstarter backers will have the possibility to choose an unique avatar image, unavailable to non-backers. Your opponents in PvP battles will burn with envy.</li>
+<li>
+<b>EARTHCORE AUDIO BOOK:</b> An extended edition of the Earthcore novella read by an experienced voice artist and delivered as a digital download to listen to on your audio player of choice. Also included on the physical soundtrack CD.</li>
+<li>
+<b>ARTBOOK:</b> An expansive look at the making of the game, including rare behind-the-scenes material, excellent quality reprints of our favorite card illustrations and more unique goodies. Available in regular, signed and oversized exclusive editions or as a digital download.</li>
+<li>
+<b>GOLD DOUBLER:</b> All the Gold you earn in-game during the Single-Player campaign or the PvP Online Battles is doubled, allowing you to expand your deck much faster than usual.</li>
+<li>
+<b>FRIEND GIFT PACK:</b> We will grant you a number of special codes that you will be able to send to your friends, allowing them to get free booster packs and Gold.</li>
+<li>
+<b>CREDITS IN SPACE:</b> We will display your name in near-space! How are we going to do it? Well, here's how:</li>
+</ul>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/assets/1661537/edit" data-id="1661537">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/661/537/f11254fa91c75679493b7ab18da1d07b_large.png?1393000709"></figure>
+</div>
+<div><ul><li>
+<b>DESIGN PARTICIPATION: </b>We will ask your opinion on things ranging from game design to artwork during real-time conversations. Depending on the level of your contribution, this could either take form of a moderated chat or an in-depth discussion with Project Leads over Skype.</li></ul></div>
+<div>
+<ul>
+<li>
+<b>EARTHCORE ORIGINS (DIGITAL):</b> Starting April 2014, you will have backer-exclusive access to a self-contained browser single player game that serves as an introduction to the gameplay and world of Earthcore: Shattered Elements.</li>
+<li>
+<b>EARTHCORE ORIGINS (PHYSICAL):</b> You will receive a beautifully printed, self-contained tabletop card game that servers as an introduction to the mechanics and the world of Earthcore: Shattered Elements. It’s perfect for quick play sessions with your friends and based on our paper prototype.</li>
+<li>
+<b>POSTER:</b> A limited edition poster designed by our artists that will never be available anywhere else. You can receive either a printed version of a printable, digital copy.</li>
+<li>
+<b>BONUS CHAPTER:</b> You will have early backer-only access to a hidden bonus chapter in the campaign that will allow you to get otherwise unobtainable cards.</li>
+<li>
+<b>DECK PLANNER:</b> You will be granted access to a special edition of the software we are using during the development to balance the game. This little tool will allow you to browse through all the cards available in the game and simulate battles between decks of your creation.</li>
+<li>
+<b>T-SHIRT:</b> Carefully designed by our Art Director and available in a variety of sizes, this unique T-Shirt will make you the life of the party.</li>
+<li>
+<b>MONTHLY GIFTS:</b> For 12 months from registering, you will be receiving monthly packs of free Gold and booster packs worth $50 each.</li>
+<li>
+<b>EARLY ACCESS TO FUTURE TQG GAMES:</b> As long as Tequila Games exists, you will be getting early access to all the titles we will be working on following Earthcore.</li>
+<li>
+<b>JOIN THE TEAM:</b> Make Earthcore with us! Depending on your contribution, you can name a card, design a card, draw a card or even become a boss. A character with your likeness will become a major enemy integrated into the storyline. Our artists and designers will work closely with you to make you into a powerful and interesting opponent. 
+</li>
+<li>
+<b>CLOTH MAP:</b> An astonishing cloth map of the world of Earthcore, delivered framed and ready to hang on your wall.</li>
+<li>
+<b>iDEVICE COVER:</b> You will receive a backer-exclusive physical cover for your iPad, iPhone or iPod Touch designed by our artists.</li>
+<li>
+<b>CARD PRINT:</b> If you work on a card, we will send you a beautiful high-quality print of the illustration that decorates it.</li>
+<li>
+<b>TEAM CALL:</b> Have a heart-to-heart video call with Tequila Games’ CEO, our game design ninja Matt Nowak and the excitable Creative Producer.</li>
+<li>
+<b>TEAM MEET:</b> There are two levels of this reward. At the first level, we will meet you at Gamescom in Cologne later this year and spend the entire press day (closed to public) with you. At the second level, we will invite you to our HQ in Wroclaw. You must be able to pay for the travel and will be required to RSVP.</li>
+<li>
+<b>TEAM PARTY:</b> We will throw a party for you in Cologne at Gamescom and – depending on your contribution - another one in our hometown of Wroclaw, Poland. We guarantee unforgettable experience as you tour the magical city with us. You must be able to pay for the travel and will be required to RSVP.</li>
+</ul>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/assets/1649796/edit" data-id="1649796">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/649/796/4802e3ccdf851980c82c9b70ec46fff2_large.png?1392754234"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/assets/1671387/edit" data-id="1671387">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/671/387/8a51cee66111bafb2fa37c01b31ad8eb_large.png?1393258446"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+</div>
+<div id="risks">
+<h2 class="title grey-dark mt6 mb4">
+<span>Risks and challenges</span>
+<a href="/help/faq/kickstarter%20basics#Acco" class="right normal h5" target="_blank">Learn about accountability on Kickstarter</a>
+<div class="divider clear"></div>
+</h2>
+<p><p>Earthcore is a complex cross-platform game and as in every project of this complexity, there are many risks involved in the development.  Most of all, Earthcore requires a sophisticated approach to project management. Being aware of this, we have started preparing ourselves for the project very early. When it comes to planning, scheduling and executing we are risk averse. We make our decisions cautiously, with great consideration and detailed calculation. With our field-tested SCRUM based approach to game development, we’re confident we can deliver Earthcore according to the plan.</p>
+
+<p>With our backers - YOU - onboard as our de facto publisher, we’re putting even greater effort into scheduling and on-time execution of all milestones we have planned for Earthcore. We have chosen a realistic funding goal that will support the required development, and we are committed to a realistic timeline with built-in contingencies should we encounter any unforeseen problems.</p>
+
+<p>One of the challenges ahead is to develop and successfully release (and then maintain) a cross-platform game with a robust PvP mode that is available for both mobile &amp; desktop platforms (plus consoles if stretch goals are met). Having the cross-platform approach in mind, we had decided to develop Earthcore using Unity 4.0 engine which greatly facilitates development across many different platforms. It’s our fifth consecutive project using Unity framework so we can comfortably say that we feel familiar with this environment and our development team is able to get through the development challenges in a smooth way.</p>
+
+<p>As you may expect, building a true online game in which players compete head-to-head, communicate with each other and team up into guilds is a pretty complex thing requiring solid investments and months of development. Many gaming studios seeking funding on Kickstarter often do not realize what it takes to build a reliable solution to enable multiplayer online gaming for a successful title – a solution that does not crash out when thousands of backers and potentially millions of other players jump into the game on day one!  The need to invest into reliable, scalable infrastructure such as game servers, back-end systems, player management and so on adds a completely new level of complexity and a risk to manage.</p>
+
+<p>Fortunately, we are in a comfortable position as we had sorted those challenges and are prepared for a large scale interest. Here’s how: one of the things we are most proud is that over the past two years we have developed and field-tested our entire online gaming backend (all of this while being a relatively small 20 people studio). Our cloud-based infrastructure for online games has been successfully used in our  BattleFriends game series that we had released on iOS and Android. It is the same infrastructure that we will be reusing in Earthcore: Shattered Elements and this is why we are guaranteeing a true multiplayer experience right from the start!</p>
+
+<p>Last but not least, our development team is comprised on seasoned veterans who worked on a large number of different games in the past including major AAA titles. Everything presented on the screen has been painstakingly created by disciplined professionals: designers, graphic artists, programmers and composers. We are certain that with both our enthusiasm and know-how, we will manage to overcome all the potential hurdles.</p></p>
+</div>
+</div>
+<div class="NS-projects-faqs" id="project-faqs">
+<h2 class="title grey-dark mt6 mb4">
+FAQ
+<div class="divider clear"></div>
+</h2>
+<ul class="faqs">
+<li class="faq" id="project_faq_82224">
+<div class="faq-question">
+<a href="#project_faq_82224" name="project_faq_82224">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">What languages will be available in Earthcore: SE?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>The initial release will be in English, French, Italian, German, Spanish and Polish. Russian is also a possibility at launch but we are not able to confirm that at this time due to additional challenges associated with non-Latin alphabet. Afterwards we wish to keep adding more languages so that all our fans may fully enjoy the epic story we are telling.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2014-02-24T13:13:54-05:00">Mon, Feb 24 2014 1:13 pm EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_82225">
+<div class="faq-question">
+<a href="#project_faq_82225" name="project_faq_82225">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">What platforms will Earthcore: SE be available on?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Our initial target platforms are PC, Mac, iOS and Android. Should the first set of stretch goals be met, we are also planning adaptations for Linux and Kindle Fire. In addition, we are currently investigating further platforms, such as PS Vita, Ouya, 3DS and Wii U. Let us know what device you would like to play Earthcore on and watch this space for new information!</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2014-02-24T13:13:54-05:00">Mon, Feb 24 2014 1:13 pm EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_82226">
+<div class="faq-question">
+<a href="#project_faq_82226" name="project_faq_82226">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">What are the differences between desktop &amp; mobile versions?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>We are developing both versions concurrently so no version is a simple port of the other. Naturally, each version has a slightly different interface providing a native experience on each platform. Desktop versions (PC/Mac) will also have better quality graphical assets as we are not as constrained with CPU and memory limitations as is the case for the mobile editions.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2014-02-24T13:13:54-05:00">Mon, Feb 24 2014 1:13 pm EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_82227">
+<div class="faq-question">
+<a href="#project_faq_82227" name="project_faq_82227">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">What does it mean that Earthcore: SE is free to play?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Should our funding goal be met, anyone will be able to download the game after it is released absolutely free of charge. While Earthcore does feature microtransactions – such as booster packs or special avatars – there will be no non-vanity items that cannot be acquired through normal play. Additionally, due to our match-making system, it is impossible for players of wildly different power levels to face each other in ranked matches, so pay-to-win is absolutely out of question.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2014-02-24T13:13:54-05:00">Mon, Feb 24 2014 1:13 pm EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_82228">
+<div class="faq-question">
+<a href="#project_faq_82228" name="project_faq_82228">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">What does it mean that Earthcore: SE is cross-platform?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>All the game data is held in the cloud so you can start playing on your PC, then continue the game on your phone, play a few sessions on your tablet and then finish up on a friend’s Mac. All you need to enjoy this feature is an Internet connection.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2014-02-24T13:13:54-05:00">Mon, Feb 24 2014 1:13 pm EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_82229">
+<div class="faq-question">
+<a href="#project_faq_82229" name="project_faq_82229">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">What platforms will the Beta be available on?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>The initial Beta will be available on PC and Mac.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2014-02-24T13:13:54-05:00">Mon, Feb 24 2014 1:13 pm EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_82230">
+<div class="faq-question">
+<a href="#project_faq_82230" name="project_faq_82230">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">How will I get the in-game rewards?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>You will receive a personalized code that will immediately unlock all the content that you are entitled to. This content will be available to you on all supported platforms without the need to enter the code again, as long as you keep using the same in-game account.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2014-02-24T13:13:54-05:00">Mon, Feb 24 2014 1:13 pm EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_82231">
+<div class="faq-question">
+<a href="#project_faq_82231" name="project_faq_82231">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Will the in-game rewards affect the game balance?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Not to a significant degree as our match-making system prevents players of wildly different power levels to compete with each other in ranked multiplayer matches. Some of the most powerful rewards might make your progression in the Single Player campaign a bit faster but not to the point you will not have a satisfying experience. Our designers worked hard on making the in-game rewards truly valuable but not game-breaking and we are sure you will agree they succeeded.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2014-02-24T13:13:54-05:00">Mon, Feb 24 2014 1:13 pm EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_82232">
+<div class="faq-question">
+<a href="#project_faq_82232" name="project_faq_82232">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">When will Earthcore: SE come out?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>The PC, Mac, iOS and Android versions of Earthcore: Shattered Elements will be released to the public by December 2014. While our current plan is to release the first version way before then, we prefer to give ourselves some room for changes resulting from your feedback and potential additional funding.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2014-02-24T13:13:54-05:00">Mon, Feb 24 2014 1:13 pm EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_82233">
+<div class="faq-question">
+<a href="#project_faq_82233" name="project_faq_82233">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">What are the shipping costs for physicial goods?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Shipping is free to US, EU, UK and Canadian backers. If you live outside of the countries/regions mentioned here, please add $20 (€15 / £12) to help offset shipping costs.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2014-02-24T13:13:54-05:00">Mon, Feb 24 2014 1:13 pm EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_82234">
+<div class="faq-question">
+<a href="#project_faq_82234" name="project_faq_82234">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">When will you ship the rewards?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Digital reward codes will be sent to you in the days leading up to the launch of the first official release. You will receive all the physical rewards by December 2014.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2014-02-24T13:13:54-05:00">Mon, Feb 24 2014 1:13 pm EST</time>
+</div>
+</div>
+</li>
+
+</ul>
+<div class="faq-ask-box">
+<a href="/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/messages/new?message%5Bto%5D=1761646337&amp;mode=FAQ" class="button button_blue remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Ask a question about Earthcore: Shattered Elements (PC, Mac &amp; Mobile...">Ask a question</a>
+
+</div>
+</div>
+
+<div class="mt4 ml1 mr1 mb2" id="report-issue-wrap">
+<a href="/login?then=%2Fprojects%2F1761646337%2Fearthcore-shattered-elements-the-first-ever-action" class="button button_grey">Report this project to Kickstarter</a>
+</div>
+</div>
+<div class="NS-projects-rightcol grid_5" id="rightcol">
+<div class="NS_projects__ecom">
+<div class="digits_4 pb2 pl2 pt2" id="stats">
+<h5>
+<div class="num h48 no-margin" data-backers-count="101" id="backers_count"><data class="Project854095920" data-format="number" data-value="101" itemprop="Project[backers_count]">101</data></div>
+<span><data class="Project854095920" data-attr="backers_count" data-format="pluralize" data-value="101" data-word="Backer">Backers</data></span>
+</h5>
+<h5>
+<div class="num h48 no-margin" data-goal="200000.0" data-percent-raised="0.0321975" data-pledged="6439.5" id="pledged">
+<data class="Project854095920" data-currency="USD" data-format="shorter_money" data-precision="0" data-value="6439" data-without_code="true" itemprop="Project[pledged]">$6,439</data>
+<span class="money usd project_currency_code"></span>
+</div>
+pledged of
+<span class="money usd no-code">$200,000</span>
+goal
+</h5>
+<span data-duration="29.958333333333332" data-end_time="2014-03-26T12:05:20-04:00" data-hours-remaining="0" id="project_duration_data"></span>
+<div class="Project854095920" data-conditions="[{&quot;!state&quot;:[&quot;canceled&quot;,&quot;suspended&quot;]}]" data-evaluation="false" data-render="&quot;&lt;h5 class=\&quot;poll \&quot; data-dynamic=\&quot;5\&quot; data-end_time=\&quot;2014-03-26T12:05:20-04:00\&quot; data-poll_url=\&quot;https://d2oher2uhvl0ur.cloudfront.net/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/stats.json\&quot;&gt;\n&lt;div class=\&quot;num h48 no-margin\&quot;&gt;0&lt;/div&gt;\n&lt;span class=\&quot;text\&quot;&gt;seconds to go&lt;/span&gt;\n&lt;/h5&gt;\n&quot;"></div></div>
+<div class="Project854095920" data-conditions="[{&quot;state&quot;:&quot;live&quot;},{&quot;!ended?&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;pr2 pl2\&quot; id=\&quot;pledge-wrap\&quot;&gt;\n&lt;a href=\&quot;/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/pledge/new?clicked_reward=false\&quot; class=\&quot;button button_green button_box button_block\&quot; id=\&quot;button-back-this-proj\&quot; title=\&quot;Back this project\&quot;&gt;Back This Project &lt;small class=&#39;h6 normal block green-dark&#39;&gt;&lt;span class=\&quot;money usd \&quot;&gt;$1&lt;/span&gt; minimum pledge&lt;/small&gt;&lt;/a&gt;\n&lt;/div&gt;\n&quot;"></div><div class="Project854095920" data-conditions="[{&quot;state&quot;:&quot;live&quot;}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;p2\&quot; id=\&quot;banner\&quot;&gt;\n&lt;p class=\&quot;tiny_type no-margin\&quot;&gt;\nThis project will only be funded if at least\n&lt;span class=\&quot;money usd \&quot;&gt;$200,000&lt;/span&gt;\nis pledged by\n&lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;llll z\&quot; datetime=\&quot;2014-03-26T12:05:20-04:00\&quot;&gt;Wed, Mar 26 2014 12:05 pm EDT&lt;/time&gt;.\n&lt;/p&gt;\n&lt;/div&gt;\n&quot;"></div></div>
+
+<div class="NS_projects__rightcol_projectby bg-blue-light rounded">
+<div class="p2 clearfix">
+<div class="avatar inline-block align-middle">
+<a href="/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography"><img alt="Lukasz-avatar1.small" class="avatar-small" height="80" src="https://s3.amazonaws.com/ksr/avatars/2696019/lukasz-avatar1.small.jpg?1393445353" width="80" />
+</a></div>
+<div class="creator-name inline-block align-middle ml1">
+<h6 class="mb1">Project by</h6>
+<h5 class="mb1">
+<a href="/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">Lukasz Deszczulka</a>
+</h5>
+<p class="location h6 bold mb1">
+<a href="/discover/places/wroclaw-wroclaw-lower-silesia">Wroclaw, Poland</a>
+</p>
+</div>
+</div>
+<div class="creator-details pl2 pr2 pb1">
+<ul class="list-simple h5 mb1">
+<li class="projects">
+<span class="ss-icon ss-kickstarter grey-dark margin-right"></span>
+<span class="text">
+First created
+<span class="divider">&middot;</span>
+<a href="/profile/1761646337/backed" class="green-dark bold more-button remote_modal_dialog" data-modal-title="Projects backed by Lukasz Deszczulka">16 backed</a>
+</span>
+</li>
+<li class="facebook-connected">
+<span class="ss-icon ss-facebook facebook color-facebook margin-right"></span>
+<span class="text">
+<a href="https://www.facebook.com/526791589" class="popup" target="_blank">Lukasz Deszczulka</a>
+<span class="number h6">
+162
+friends
+</span>
+</span>
+
+</li>
+<li class="links">
+<span class="ss-icon ss-globe margin-right grey-dark"></span>
+<span class="text">
+<a href="http://www.tequilagames.com" class="popup" rel="nofollow" target="_blank">tequilagames.com</a>
+</span>
+</li>
+</ul>
+</div>
+<div class="footer center h5 bold clearfix rounded-bottom clip">
+<a href="/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">See full bio</a>
+<a href="/projects/1761646337/earthcore-shattered-elements-the-first-ever-action/messages/new?message%5Bto%5D=1761646337" class="remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Send a message to Lukasz Deszczulka">Contact me</a>
+
+</div>
+</div>
+
+<ul class="NS-projects-rightcol-rewards rounded clip list mt2" data-reward-count="22" id="what-you-get">
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$5</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+6 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>CASUAL BACKER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ DIGITAL (Approximately €4 / £3)  ============================= Thank you for your support! You get personalized ‘Thank You’ e-mail, Special Thanks credit on our website and the CASUAL BACKER badge on the Earthcore forum. You can also count on free hugs whenever you meet us.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-12-01">Dec 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$10</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+15 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>BETA BACKER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ DIGITAL (Approx. €7 / £6) ============================= 
+In addition to everything from the CASUAL BACKER tier, you get a selection of beautiful WALLPAPERS, in-game GOLD worth $15 and BETA ACCESS to the game. Of course, when the BETA period is over, you will be able to play the full version of the game without spending an additional penny.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-12-01">Dec 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$15</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>THE POSTMAN ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ PHYSICAL (Approx. €11 / £9) ============================= 
+In addition to everything from the BETA BACKER tier, you get an exclusive Earthcore POSTCARD SIGNED BY THE TEAM! ● If you live outside the US, EU, UK or CA, please add $5 for int&#39;l shipping</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-12-01">Dec 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$20</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+21 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(479 left of 500)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>CARD RAIDER ● EARLY BIRD ● ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ DIGITAL (Approx. €15 / £12)  ============================= In addition to everything from the BETA BACKER tier, you get a digital NOVELLA set in the world of Earthcore and a digital SOUNDTRACK by Jerzy Adam Nowak (MP3/FLAC). Your free in-game GOLD amount will also be upgraded to $30 value, you will get a SPECIAL THANKS credit in the Backers section in-game and the SILVER BACKER forum badge. Best of all, you will receive an EXCLUSIVE CARD for use IN-GAME that will never be available from any other source!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-12-01">Dec 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$25</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>ART LOVER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ PHYSICAL (Approx. €29 / £24) ============================= 
+In addition to everything from the BETA BACKER tier, you get 3 PRINTED ILLUSTRATIONS straight from the world of Earthcore and a beautiful POSTCARD signed by the team! Your free in-game GOLD amount will also be upgraded to $25. ● If you live outside the US, EU, UK or CA, please add $5 for int&#39;l shipping</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-12-01">Dec 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$30</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+2 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>CARD RAIDER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ DIGITAL (Approx. €22 / £18) ============================= In addition to everything from the BETA BACKER tier, you get a digital NOVELLA set in the world of Earthcore and a digital SOUNDTRACK by Jerzy Adam Nowak (MP3/FLAC). Your free in-game GOLD amount will also be upgraded to $30 value, you will get a SPECIAL THANKS credit in the Backers section in-game and the SILVER BACKER forum badge. Best of all, you will receive an EXCLUSIVE CARD for use IN-GAME that will never be available from any other source!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-12-01">Dec 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$40</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>MAGIC FIGHTER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ PHYSICAL (Approx. €29 / £24) ============================= In addition to everything from the CARD RAIDER tier, you get an exclusive Earthcore POSTER, 3 DIGITAL BOOSTER PACKS for use in-game, 5 PRINTED ILLUSTRATIONS straight from the world of Earthcore and a beautiful POSTCARD signed by the team! Your free in-game GOLD amount will also be upgraded to $40. ● If you live outside the US, EU, UK or CA, please add $20 for int&#39;l shipping</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-12-01">Dec 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$50</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+29 backers
+</span>
+<span class="bg-grey no-wrap pl1 pr1 sold-out">
+All gone!
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>TREASURE HUNTER 
+● TIME-LIMITED ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ DIGITAL (Approx. €36 / £30) =============================
+ONLY AVAILABLE FOR THE FIRST 5 DAYS SINCE LAUNCH! This reward contains all the goodies of the CARD RAIDER tier but your in-game GOLD gift is worth $150. Better yet, in addition to the Kickstarter EXCLUSIVE CARD, you also get a super limited SPECIAL CARD that is only available in this tier! This is a one-of-a-kind offer, so if you want the most bang for your buck, the TREASURE HUNTER reward is perfect for you!
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+NOTE: This pledge reward will be marked as sold out after first 5 days of the campaign. Hurry up!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-12-01">Dec 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$60</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>DECK BUILDER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ DIGITAL (Approx. €44 / £36) ============================= In addition to everything from the CARD RAIDER tier, you get backer-exclusive AVATARS to use in both  single and multiplayer modes, 3 free BOOSTER PACKS to use in-game and a digital download of a wonderful AUDIO BOOK set in the world of Earthcore. Your free in-game GOLD amount will also be upgraded to $60.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-12-01">Dec 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$70</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>MUSIC MASTER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ PHYSICAL (Approx. €51 / £42) ============================= In addition to everything from the MAGIC FIGHTER tier, you get a physical prestige edition SOUNDTRACK CD that also includes AUDIO BOOK expanding on the story. In addition, you will be granted access to Backer-exclusive AVATARS to use in both  single and multiplayer modes. Your free in-game GOLD amount will also be upgraded to $70. ● If you live outside the US, EU, UK or CA, please add $20 for int&#39;l shipping</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-12-01">Dec 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$90</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+6 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(244 left of 250)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>EARTH OBSERVER ● EARLY BIRD ● ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ DIGITAL (Approx. €65 / £54)  ============================= In addition to everything from the DECK BUILDER tier, you get a beautiful DIGITAL ARTBOOK, GOLD DOUBLER to make your progress faster, 5 GIFT PACKS that you can send to selected friends and THANKS FROM NEAR SPACE - an absolutely revolutionary reward that will allow you to see your name among the stars. Your free in-game GOLD amount will also be upgraded to $120 value, you will get a SPECIAL THANKS credit in the MAIN CREDITS of the game and the GOLD BACKER forum badge.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-12-01">Dec 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$120</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+2 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>EARTH OBSERVER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ DIGITAL (Approx. €87 / £72)  ============================= In addition to everything from the DECK BUILDER tier, you get a beautiful DIGITAL ARTBOOK, GOLD DOUBLER to make your progress faster, 5 GIFT PACKS that you can send to selected friends and THANKS FROM NEAR SPACE - an absolutely revolutionary reward that will allow you to see your name among the stars. Your free in-game GOLD amount will also be upgraded to $120 value, you will get a SPECIAL THANKS credit in the MAIN CREDITS of the game and the GOLD BACKER forum badge.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-12-01">Dec 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$140</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>EARTHCORE ENTHUSIAST ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ DIGITAL (Approx. €102 / £84)  ============================= In addition to everything from the EARTH OBSERVER tier, you get an invitation to a BI-WEEKLY DESIGN CHAT with our team and exclusive access to EARTHCORE: ORIGINS in April! Earthcore: Origins is a fully playable prequel to Shattered Elements that allows you to undertake several single-player missions with a pre-defined deck and familiarize yourself with the gameplay. You will also get a TEAM SUPPORTER credit in the MAIN CREDITS as well as not just one but 3 BACKER-EXCLUSIVE CARDS in-game.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-12-01">Dec 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$250</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+3 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(247 left of 250)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>GOODIE GATHERER ● EARLY BIRD ● ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ PHYSICAL (Approx. €182 / £150)  ============================= You get everything from the EARTHCORE ENTHUSIAST tier but your NOVELLA and ARTBOOK are beautifully printed, your soundtrack comes on a prestige edition CD and you get a limited edition POSTER. We will also send you a thank you POSTCARD personally signed by key members of our team. ● If you live outside the US, EU, UK or CA, please add $20 for int&#39;l shipping</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-12-01">Dec 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$300</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+2 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>GOODIE GATHERER  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ PHYSICAL (Approx. €218/ £180) ============================= You get everything from the EARTHCORE ENTHUSIAST tier but your NOVELLA and ARTBOOK are beautifully printed, your soundtrack comes on a prestige edition CD and you get a limited edition POSTER. We will also send you a thank you POSTCARD personally signed by key members of our team. ● If you live outside the US, EU, UK or CA, please add $20 for int&#39;l shipping</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-12-01">Dec 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>SLICK STRATEGIST  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ DIGITAL (Approx. €363 / £300)  ============================= In addition to everything from the EARTHCORE ENTHUSIAST tier, you get a digital, print-ready copy of the POSTER, early access to a BONUS CHAPTER in the single-player campaign featuring lots of unique cards as well as a version of the DECK PLANNER software that we use in development. This little tool will allow you to browse through all the cards available in the game and simulate battles between decks of your creation. You will also get an AMBASSADOR badge for use on the official forum as well as 10 BOOSTER PACKS instead of just 5.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-12-01">Dec 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$680</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+2 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>ELEMENTAL BEARER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ PHYSICAL (Approx. €495 / £408) ============================= In addition to all the physical rewards of the GOODIE GATHERER tier and the digital perks of SLICK STRATEGIST, you get a limited edition, backer-exclusive T-SHIRT that won’t be available from any other venue and Earthcore: Origins BOARD GAME that will allow you to duel your friends with exquisitely printed physical cards. ● If you live outside the US, EU, UK or CA, please add $20 for int&#39;l shipping</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-12-01">Dec 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$800</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(40 left of 40)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>CRAFTY CARTOGRAPHER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ PHYSICAL (Approx. €582 / £480) ============================= In addition to all the rewards of the ELEMENTAL BEARER tier, you get to NAME A CARD, receive a very limited edition CLOTH MAP of the world of Earthcore and we will grant you EARLY ACCESS to ALL FUTURE TEQUILA GAMES! Your PRINTED ARTBOOK will also be SIGNED by key members of the team and you will get 100.00 worth of BOOSTER PACKS as well as a DESIGN CONSULTANT credit and 5 BACKER-EXCLUSIVE CARDS in-game instead of just 3. At this tier, we will also make sure to set you up with MONTHLY IN-GAME GOODIES for A YEAR, including FREE GOLD and BOOSTER PACKS. ● If you live outside the US, EU, UK or CA, please add $20 for int&#39;l shipping</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-12-01">Dec 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$1,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(20 left of 20)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>GUEST DESIGNER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ PHYSICAL (Approx. €727 / £600)  ============================= In addition to all the rewards of the CRAFTY CARTOGRAPHER tier, you get to work with our team and CREATE A CARD by coming up with the concept behind it. You will also have an intimate chat with our CEO and LEAD DESIGNER on SKYPE and receive a limited edition COVER FOR YOUR iOS DEVICE. We will also send you a print of the card that you’ve created and your ARTBOOK will be offered in exclusive OVERSIZED EDITION. Your in-game credit becomes GUEST DESIGNER, you get $200 worth of BOOSTER PACKS and your forum badge gets upgraded to the EARTHCORE ANGEL level. ● If you live outside the US, EU, UK or CA, please add $20 for int&#39;l shipping</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-12-01">Dec 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$2,500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(10 left of 10)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>GUEST ARTIST ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ PHYSICAL (Approx. €1818 / £1499) ============================= In addition to all the rewards of the GUEST DESIGNER tier, you get to DRAW A CARD. Plus, we will mail you a print of your card, stylishly framed. Your in-game credit will be upgraded to a respectful GUEST ARTIST and you get a GOLDEN ANGEL badge to use on our forum. Finally, you&#39;ll have a chance to MEET US AT GAMESCOM in Cologne later this year at a press day (closed to public) + a follow up GAMES PARTY in the evening. What&#39;s more, our lead artists will create an exclusive Earthcore-theme TATOO DESIGN exclusively for you!  ● If you live outside the US, EU, UK or CA, please add $20 for int&#39;l shipping ● Cost of travel to Cologne not included.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-12-01">Dec 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$5,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(5 left of 5)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>ASSOCIATE PRODUCER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ PHYSICAL (Approx. €3635 / £2997) ============================= In addition to all the rewards of the GUEST ARTIST tier, you get to BECOME A CARD. That’s right, you will be featured in the game as one of Earthcore’s valiant heroes or terrifying villains! We will also create a selectable avatar in your likeness and provide you with a custom iPad with the game preloaded. Your credit will be upgraded to a prestigious ASSOCIATE PRODUCER and you get a CRYSTAL ANGEL badge to use on our forum. ● If you live outside the US, EU, UK or CA, please add $20 for int&#39;l shipping ● Cost of travel to Cologne not included.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-12-01">Dec 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$10,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(2 left of 2)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>EXECUTIVE PRODUCER ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ PHYSICAL (Approx. €7270 / £6000)   ============================= In addition to all the rewards of the ASSOCIATE PRODUCER tier, you get to BECOME A BOSS. A character based on you will be a major enemy found in the storyline and every player will be forced to face you! We will also invite you and your buddy to meet us in our headquarters in Wroclaw, Poland. We will show you how we work and take you on an adventure-filled tour of the city. Your credit will be upgraded to über-exclusive EXECUTIVE PRODUCER and we will design a CUSTOM BADGE of your choosing to use on our forum. ● If you live outside the US, EU, UK or CA, please add $20 for int&#39;l shipping ● Cost of travel to Cologne and/or Wroclaw not included.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-12-01">Dec 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+</ul>
+
+<div class="p2" id="meta">
+<h5>Funding period</h5>
+<p class="tiny_type">
+<time class="js-adjust" data-format="ll" datetime="2014-02-24T12:05:20-05:00">Feb 24, 2014</time> - 
+<time class="js-adjust" data-format="ll" datetime="2014-03-26T12:05:20-04:00">Mar 26, 2014</time>
+(30 days)
+</p>
+</div>
+</div>
+
+</div>
+
+<a href="#" id="video_mode_tab" style="display: none;">
+View in Video Mode
+</a>
+
+</div>
+</div>
+
+
+</div>
+
+<div class="h5 bg-green-dark" id="mega-footer-wrap">
+<div class="bg-green-dark white full-height" id="footer-newsletter-signup">
+<div class="container py4">
+<div class="grid_8 prefix_4 suffix_4 center mt4">
+<h2>
+Eureka! You've found
+<br>
+our little secret.
+</h2>
+<p>Sign up for our Happening email for all the inside info about arts and culture in the Kickstarter universe and beyond.</p>
+<div class="newsletter_signup">
+<form accept-charset="UTF-8" action="/newsletters/happening/signup" class="overlabels" method="post"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /><input class="hidden" name="authenticity_token" type="hidden" value="dVML4yomVDF9VsF2ESvdPNLfu2mm4TXCOpUqxO7Hrh0=" /></div><input class="hidden" id="location" name="location" type="hidden" value="footer" />
+<textarea class="hide textarea" id="comment" name="comment">
+</textarea>
+<div class="field newsletter">
+<label class="overlabel z1 overlabel-newsletter">Email address</label>
+<input class="text" id="email" name="email" type="text" />
+</div>
+<input class="button button_green submit" name="commit" type="submit" value="Submit" />
+</form>
+
+</div>
+
+</div>
+</div>
+</div>
+<div class="container relative" id="mega-footer">
+<span class="scissors icon-scissors-1"></span>
+<div class="grid_16 alpha omega pt4 pb2" id="mega-footer-links">
+<div class="grid_4 link-group">
+<h5 class="white">About us</h5>
+<ul class="list">
+<li><a href="/year/2013/?ref=footer">2013 highlights</a></li>
+<li><a href="/year/2012?ref=footer">2012 highlights</a></li>
+<li><a href="/team?ref=footer">Who we are</a></li>
+<li><a href="/jobs?ref=footer">Jobs</a></li>
+<li><a href="/press?ref=footer">Press</a></li>
+<li><a href="/help/stats?ref=footer">Stats</a></li>
+<li><a href="/newsletters/weekly">Projects we love</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group">
+<h5><a href="/help?ref=footer" class="white">Help</a></h5>
+<ul class="list">
+<li><a href="/hello?ref=footer">What is Kickstarter?</a></li>
+<li><a href="/help?ref=footer">FAQ</a></li>
+<li><a href="/contact?ref=footer">Support</a></li>
+<li><a href="/help/school?ref=footer">Kickstarter School</a></li>
+<li><a href="/terms-of-use?ref=footer">Terms of Use</a></li>
+<li><a href="/privacy?ref=footer">Privacy Policy</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group alpha omega suffix_1">
+<h5 class="alpha"><a href="/discover/advanced?ref=footer" class="white">Discover</a></h5>
+<ul class="column column-0 grid_2 list">
+<li><a href="/discover/categories/art?ref=footer">Art</a></li>
+<li><a href="/discover/categories/comics?ref=footer">Comics</a></li>
+<li><a href="/discover/categories/dance?ref=footer">Dance</a></li>
+<li><a href="/discover/categories/design?ref=footer">Design</a></li>
+<li><a href="/discover/categories/fashion?ref=footer">Fashion</a></li>
+<li><a href="/discover/categories/film%20&amp;%20video?ref=footer">Film &amp; Video</a></li>
+<li><a href="/discover/categories/food?ref=footer">Food</a></li>
+</ul>
+<ul class="column column-1 grid_2 list">
+<li><a href="/discover/categories/games?ref=footer">Games</a></li>
+<li><a href="/discover/categories/music?ref=footer">Music</a></li>
+<li><a href="/discover/categories/photography?ref=footer">Photography</a></li>
+<li><a href="/discover/categories/publishing?ref=footer">Publishing</a></li>
+<li><a href="/discover/categories/technology?ref=footer">Technology</a></li>
+<li><a href="/discover/categories/theater?ref=footer">Theater</a></li>
+</ul>
+</div>
+<div class="grid_3 link-group">
+<h5 class="white">Hello</h5>
+<ul class="list">
+<li>
+<a href="https://twitter.com/kickstarter"><span class="ss-icon ss-social-regular ss-twitter"></span>
+Twitter
+</a></li>
+<li>
+<a href="https://www.facebook.com/Kickstarter"><span class="ss-icon ss-social-regular ss-facebook"></span>
+Facebook
+</a></li>
+<li>
+<a href="http://kickstarter.tumblr.com"><span class="ss-icon ss-social-regular ss-tumblr"></span>
+Tumblr
+</a></li>
+<li>
+<a href="http://instagram.com/kickstarter"><span class="ss-icon ss-social-regular ss-instagram"></span>
+Instagram
+</a></li>
+<li>
+<a href="https://vine.co/Kickstarter"><span class="ss-icon ss-social-regular ss-vine"></span>
+Vine
+</a></li>
+<li>
+<a href="/blog?ref=footer">Blog</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="grid_16 py4" id="mega-footer-bottom">
+<div class="logo left">
+<a href="/" class="grey-dark"><span class="ss-icon h3">KICKSTARTER</span>
+</a></div>
+<p class="right h5 grey-dark">
+&copy;
+2014
+Kickstarter, Inc.
+</p>
+</div>
+</div>
+</div>
+
+<script>
+  //<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    var analytics_vars = { google_analytics_id : "UA-7621056-1", logged_in : "false", social_user: "false" }
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.mixpanel_id = '75b1d24a516ecfc955eadfadc4910661';
+    window.mixpanel_debug = false;
+  //]]>
+</script>
+
+
+<noscript>
+<img alt="Quantcast" border="0" height="1" src="//secure.quantserve.com/pixel/p-34IbSpw2K94Sg.gif" style="display:none" width="1" />
+</noscript>
+
+
+<script>
+  //<![CDATA[
+    window.benchmark = (typeof window.performance == 'object' && typeof window.performance.mark == 'function');
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    (function (root) {
+      function instrument_function (original) {
+        return function () {
+          try {
+            return original.apply(this, arguments);
+          } catch (e) {
+            if (e.stack && root.Honeybadger) {
+              Honeybadger.notify(e, {
+                current_project : root.current_project,
+                current_user : root.current_user
+              });
+            }
+            throw(e);
+          }
+        };
+      }
+      root.instrument_function = instrument_function;
+    }(this));
+  //]]>
+</script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+
+<script>
+  //<![CDATA[
+    (function(){function c(a){this.local_start_time=new Date;this.settings={cookie_name:"request_time"};for(var b in a)this.settings[b]=a[b];this.get_remote_offset()}c.prototype.get_remote_offset=function(){this.cookie_value=this.read_cookie();var a=new Date(this.cookie_value);if(!this.cookie_value||"Invalid Date"===a.toString()){if(this.remote_offset=this.read_cookie("local_offset"))this.remote_offset=parseInt(this.remote_offset,10)}else this.remote_offset=a-this.local_start_time;"undefined"!==typeof this.remote_offset&& !isNaN(this.remote_offset)?(document.cookie="local_offset="+this.remote_offset+"; path=/",this.is_set=!0):this.is_set=!1};c.prototype.time_units=[["milliseconds",1],["seconds",1E3],["minutes",6E4],["hours",36E5],["days",864E5]];c.prototype.get_units_in_interval=function(a,b){var d=a.replace(/^\w/,function(d){return"get"+d.toUpperCase()});return b[d]()};c.prototype.milliseconds_in_day=function(a){"undefined"===typeof a&&(a=new Date);for(var b=0,d=this.time_units.length-2;0<=d;d--)b+=this.get_units_in_interval(this.time_units[d][0], a)*this.time_units[d][1];return b};c.prototype.milliseconds_in_interval=function(a,b){return this.milliseconds_in_day(b)%a};c.prototype.milliseconds_to_next_interval=function(a,b){return a-this.milliseconds_in_interval(a,b)};c.prototype.pluralize=function(a,b){1===b&&(a=a.replace(/s$/,""));return a};c.prototype.read_cookie=function(a){for(var b=window.document.cookie.split(";"),a=(a||this.settings.cookie_name)+"=",d=0;d<b.length;d++){for(var e=b[d];" "==e.charAt(0);)e=e.substring(1,e.length);if(0== e.indexOf(a))return b=e.substring(a.length,e.length),decodeURIComponent(b).replace(/\+/g," ")}return null};c.prototype.destroy_cookie=function(a){var b=new Date;a||(a=this.settings.cookie_name);b.setTime(b.getTime()-864E5);window.document.cookie=a+"=; expires="+b.toGMTString()+"; path=/"};c.prototype.get_remote_time=function(){var a=new Date,b=a.getTime()+this.remote_offset;return a=a.setTime(b)};window.ksr_page_clock=new c})(); (function(){function c(d,a,b){if(d){this.options={unit_base:{seconds:119,minutes:119,hours:72,days:0},end_phrase:d.getAttribute("data-word")||"to go",count_down:d.getAttribute("data-dynamic")||!1};for(k in b)this.options[k]=b[k];this.clock=a;this.time_units=this.clock.time_units.slice(1);this.element=d;this.clock.is_set&&this.attach()}}function a(){this.elements=[];this.attach()}var b=function(d,a){var b=a||window.document.body,c=d.split("."),g=c[c.length-1],c=1<c.length&&c[0]?c[0]:"*";if(window.document.getElementsByClassName)return b.getElementsByClassName(g); if(b.querySelectorAll)return b.querySelectorAll(d);for(var c=b.getElementsByTagName(c),h=[],i=0,f;f=c[i];i++)b=RegExp("(^|\\s)"+g+"(\\s|$)"),(""+f.className).match(b)&&h.push(f);return h};c.prototype.get_remaining_time=function(){var d=this.remote_end_time-this.clock.get_remote_time();0>d&&(d=0);return d};c.prototype.get_current_unit=function(){for(var d,a=0;a<this.time_units.length&&!(d=this.time_units[a],this.get_remaining_time()<=this.options.unit_base[d[0]]*d[1]);a++);return d};c.prototype.update_element= function(){var a=this.get_current_unit(),b=Math.floor(this.get_remaining_time()/a[1]);isNaN(b)||(this.number_element.innerHTML=b,this.text_element.innerHTML=this.clock.pluralize(a[0],b)+" "+this.options.end_phrase)};c.prototype.valid=function(){return!(!this.number_element||!this.text_element)};c.prototype.attach=function(){function a(){c.update_element();if(c.options.count_down&&0<c.get_remaining_time()){var b=c.get_current_unit();this.timeout=window.setTimeout(a,c.clock.milliseconds_to_next_interval(b[1]))}} var c=this;if(this.remote_end_time_string=this.element.getAttribute("data-end_time"))this.remote_end_time_string.match(/^\d+$/)?(this.remote_end_time=new Date,this.remote_end_time.setTime(this.remote_end_time_string)):this.remote_end_time=new Date(this.remote_end_time_string),this.number_element=b(".num",this.element)[0],this.text_element=b(".text",this.element)[0],this.element.ksr_page_timer=!0,this.valid()&&a()};c.prototype.cancel=function(){this.timeout&&clearTimeout(this.timeout)};a.prototype.loading= !0;a.prototype.stop_finding=function(){this.attach_timers();this.loading=!1;document.addEventListener?document.removeEventListener("DOMContentLoaded",this.stop_finding,!1):document.attachEvent&&"complete"===document.readyState&&document.detachEvent("onreadystatechange",this.stop_finding)};a.prototype.bind_ready=function(){var a=this,b=function(){a.stop_finding.call(a)};document.addEventListener?(document.addEventListener("DOMContentLoaded",b,!1),window.addEventListener("load",b,!1)):document.attachEvent&& (document.attachEvent("onreadystatechange",b),window.attachEvent("onload",b))};a.prototype.attach_timers=function(){for(var a=b("div.ksr_page_timer"),e=0;e<a.length;e++)a[e].ksr_page_timer||(new c(a[e],window.ksr_page_clock),this.elements.push(a[e]))};a.prototype.attach=function(){var a=this;this.bind_ready();(function(){a.attach_timers();a.loading&&window.setTimeout(function(){a.attach_timers()},200)})()};window.ProjectTimer=c;new a})();
+  //]]>
+</script>
+
+<script class="template" id="template-widgets__video_embed_code" type="text/x-tmpl-mustache"><iframe width="{{width}}" height="{{height}}" src="{{{path}}}" frameborder="0" scrolling="no"> </iframe>
+</script><script class="template" id="template-projects__baseball_card_tall" type="text/x-tmpl-mustache"><div class="project-card-wrap project-card-wrap-tall border bg-white rounded clip">
+  <div class="project-card relative project-live {{#successful?}}successful{{/successful?}}">
+    <div class="project-thumbnail pt1 pl1 pr1">
+      <a href="{{urls.web.project}}" target="">
+        <img alt="Photo-little" class="projectphoto-little" src="{{photo.little}}" class="fit">
+      </a>
+    </div>
+    <div class="project-card-interior p1 h6 grey-dark">
+      <h6 class="project-title">
+        <a href="{{urls.web.project}}" target="" class="green-dark">{{name}}</a>
+      </h6>
+      <p class="mb1 ellipsis">
+        by
+        {{creator.name}}
+      </p>
+      <p class="blurb">
+        {{blurb}}
+      </p>
+    </div>
+    <div class="absolute-bottom bg-white rounded-bottom">
+
+      {{#location}}
+        <ul class="p1 list project-meta no-margin h6">
+          <li class="ellipsis">
+            <a href="{{location.urls.web.discover}}" data-location="{{location_json}}" class="grey-dark">
+              <span class="ss-icon ss-location"></span>
+              <span class="location-name">{{location.displayable_name}}</span>
+            </a>
+          </li>
+        </ul>
+      {{/location}}
+
+      <div class="project-stats-wrap pb1 pl1 pr1">
+
+        {{#failed?}}
+          <div class='project-status project-failed h6'>
+            <strong> Funding Unsuccessful</strong><br />
+            <span class="grey-dark">Project ended on {{formatted_deadline}}</span>
+          </div>
+        {{/failed?}}
+
+        {{#canceled?}}
+          <div class='project-status project-canceled h6'>
+            <strong> Funding Canceled</strong><br />
+            <span class="grey-dark">Project canceled on {{formatted_state_changed_at}}</span>
+          </div>
+        {{/canceled?}}
+
+        {{#successful?}}
+          <div class='project-pledged-successful bg-green white h6 pl1 pr1 mb1'>
+            <strong>Successful!</strong>
+          </div>
+        {{/successful?}}
+
+        {{#live_or_successful?}}
+          {{#live?}}
+            <div class="project-pledged-wrap bg-grey clip mb1">
+              <div class="project-pledged bg-green full-height" style="width: {{percent_raised_to_100}}%"></div>
+            </div>
+          {{/live?}}
+          <ul class="project-stats list no-margin h6 no-wrap">
+            <li class="first funded inline-block mr1">
+              <strong class="block h6">{{percent_raised_rounded}}%</strong>
+              <span class="grey-dark">funded</span>
+            </li>
+            <li class="pledged inline-block mr1">
+              <strong class="block h6">{{currency_symbol}}{{formatted_money}}</strong>
+              <span class="grey-dark">pledged</span>
+            </li>
+            {{#successful?}}
+              <li class="last successful inline-block">
+                <strong class="block h6">Funded</strong>
+                <div class="deadline grey-dark">{{formatted_deadline}}</div>
+              </li>
+            {{/successful?}}
+            {{#live?}}
+              <li class="last ksr_page_timer inline-block" data-end_time="{{javascript_deadline}}">
+                <strong class="block h6">
+                  <div class="num">30</div>
+                </strong>
+                <div class="span text grey-dark" data-word="left">days to go</div>
+              </li>
+            {{/live?}}
+          </ul>
+        {{/live_or_successful?}}
+      </div>
+    </div>
+  </div>
+</div>
+
+{{#friends_backing?}}
+  <div class="friend_project_context">
+    <div class="friend_facepile">
+      {{#truncated_friends}}
+        <img src="{{avatar.thumb}}" class="{{#has_metadata?}}small{{/has_metadata?}}">
+      {{/truncated_friends}}
+    </div>
+    <p class="friend_namepile">
+      {{{escaped_sentence}}}
+    </p>
+  </div>
+{{/friends_backing?}}
+</script><script class="template" id="template-projects__video_mode" type="text/x-tmpl-mustache"><a href='#' id='video_mode_close' class='close_button z2'><span class='ss-icon ss-delete'></span></a>
+
+<div class='title_card z1 {{context_classes}}' style="display:none;">
+  <div class='interior'>
+    <h2 class='project_title normal_weight'>{{name}}</h2>
+    <p class='blurb'>{{blurb}}</p>
+    <nav class='bar'>
+      <a id='play_button' class='left play' href='#'>
+        <span class='play_active'>
+          <span class='ss-icon ss-play'></span>
+          Play
+        </span>
+        <span class='pause_active'>
+          <span class='ss-icon ss-pause'></span>
+          Pause
+        </span>
+      </a>
+      {{#logged_in}}
+        <div class='remind right'>
+          {{#if_not_starred}}
+            <a class='follow' href='{{urls.web.project}}/watch'><span class='ss-icon ss-star'></span></a>
+          {{/if_not_starred}}
+          {{#if_starred}}
+            <a class='unfollow' href='{{urls.web.project}}/unwatch'><span class='ss-icon ss-star active'></span></a>
+          {{/if_starred}}
+        </div>
+      {{/logged_in}}
+      <a class='right explore button button_green small' href='#'>Explore this project</a>
+    </nav>
+  </div>
+</div>
+
+<div class='channel_controls z1'>
+  <a href='#' class='{{#playlist_is_location}}selected {{/playlist_is_location}}location'>Something else near {{location.first_name}} <span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_featured}}selected {{/playlist_is_featured}}featured'>Something different<span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_category}}selected {{/playlist_is_category}}category'>Something else in {{category.name}} <span class='ss-icon ss-navigateright'></span></a>
+</div>
+
+<div class='project_video' style='background-image: url('{{photo.full}}')'>
+  <div class='cover'>
+    <video>
+      <source src='{{video.high}}' type='video/mp4'/>
+      <source src='{{video.webm}}' type='video/webm'/>
+    </video>
+  </div>
+</div>
+</script><script class="template" id="template-site__video_mode_fourohfour" type="text/x-tmpl-mustache"><section class='four_oh_four'>
+  <p class='big_type'>
+    Looks like you've reached the end of the line! <br />Check out <a class="another" href='#'>another channel</a> or <a href='/discover'>browse projects in discover</a>.
+  </p>
+</section>
+</script>
+
+<script id="schwamm_formatting_options" type="text/javascript">
+//<![CDATA[
+(function(){window.formatters = window.formatters || {}; var formatting_options = {"distance_date_intervals":[[5,"just now"],[29,"less than a minute ago"],[89,"1 minute ago"],[2640,"%m minutes ago"],[5340,"about 1 hour ago"],[82800,"about %h hours ago"],[147600,"1 day ago"],[604800,"%d days ago"],[15552000,"on %t"],[0,"on %y"]],"currency_symbol_mappings":{"AFN":"\u060b","ALL":"Lek","ARS":"$","AUD":"$","AWG":"\u0192","AZN":"\u043c\u0430\u043d","BAM":"KM","BBD":"$","BGN":"\u043b\u0432","BMD":"$","BND":"$","BOB":"$b","BRL":"R$","BSD":"$","BWP":"P","BYR":"p.","BZD":"BZ$","CAD":"$","CLP":"$","CNY":"\u00a5","COP":"$","CRC":"\u20a1","CUP":"\u20b1","CZK":"K\u010d","DKK":"kr","DOP":"RD$","EGP":"\u00a3","EUR":"\u20ac","FJD":"$","FKP":"\u00a3","GBP":"\u00a3","GIP":"\u00a3","GTQ":"Q","GYD":"$","HKD":"$","HNL":"L","HRK":"kn","HUF":"Ft","IDR":"Rp","ILS":"\u20aa","IRR":"\ufdfc","ISK":"kr","JMD":"J$","JPY":"\u00a5","KGS":"\u043b\u0432","KHR":"\u17db","KPW":"\u20a9","KRW":"\u20a9","KYD":"$","KZT":"\u043b\u0432","LAK":"\u20ad","LBP":"\u00a3","LKR":"\u20a8","LRD":"$","LTL":"Lt","LVL":"Ls","MKD":"\u0434\u0435\u043d","MNT":"\u20ae","MUR":"\u20a8","MXN":"$","MYR":"RM","MZN":"MT","NAD":"$","NGN":"\u20a6","NIO":"C$","NOK":"kr","NPR":"\u20a8","NZD":"$","OMR":"\ufdfc","PAB":"B/.","PEN":"S/.","PHP":"\u20b1","PKR":"\u20a8","PLN":"z\u0142","PYG":"Gs","QAR":"\ufdfc","RON":"lei","RSD":"\u0414\u0438\u043d.","RUB":"\u0440\u0443\u0431","SAR":"\ufdfc","SBD":"$","SCR":"\u20a8","SEK":"kr","SGD":"$","SHP":"\u00a3","SOS":"S","SRD":"$","SVC":"$","SYP":"\u00a3","THB":"\u0e3f","TRY":"TL","TTD":"TT$","TWD":"NT$","UAH":"\u20b4","USD":"$","UYU":"$U","UZS":"\u043b\u0432","VEF":"Bs","VND":"\u20ab","YER":"\ufdfc","ZAR":"R"},"currency_trailing_code_mappings":{"AUD":true,"CAD":true,"NZD":true,"USD":true},"currency_formats":["money","shorter_money"]}; for (key in formatting_options) {window.formatters[key] = formatting_options[key]};}());
+//]]>
+</script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("begin_base.js_tag");}
+  //]]>
+</script>
+<script src="https://d297h9he240fqh.cloudfront.net/assets/packages/base-45cdab84617ddfb8905b7cddc8500c19.js" type="text/javascript"></script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("end_base.js_tag");}
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    document.domain='kickstarter.com';
+  //]]>
+</script>
+
+<iframe height="0" id="api_xdreceiver" src="https://api.kickstarter.com/xdreceiver/85e6.html" style="display: none;" width="0"></iframe>
+
+
+
+<div id="fb-root"></div>
+<script>
+  //<![CDATA[
+    var channelUrl = window.location.protocol + "//" + window.location.host + "/channel.html",
+      skip_autologin = $('body').is('.skip_autologin');
+    
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId: window.fb_app_id,
+        channelUrl: channelUrl,
+        status: true,    // check login status
+        cookie: true,    // enable cookies to allow the server to access the session
+        xfbml: true,     // parse XFBML
+        logging: false   // turn off logging
+      });
+    
+      FB.getLoginStatus(function (response) {
+        if (response.status === 'connected') {
+          if (read_cookie("logout_from_fb")) {
+            FB.logout();
+            destroy_cookie("logout_from_fb");
+          } else if (!skip_autologin) {
+            $.get("/fb/autologin", {'fbsr': response.authResponse.signedRequest});
+          } else if (false && 0 == response.authResponse.userID) {
+            $.get("/fb/refresh", {'fbsr': response.authResponse.signedRequest});
+          }
+        } else {
+          if (read_cookie("logout_from_fb")) {
+            destroy_cookie("logout_from_fb");
+          }
+        }
+      })
+    
+      $(document).trigger('fb:loaded');
+    };
+    
+    
+    // Load the SDK Asynchronously
+    (function(d){
+      var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+      js = d.createElement('script'); js.id = id; js.async = true;
+      js.src = "//connect.facebook.net/en_US/all.js";
+      d.getElementsByTagName('head')[0].appendChild(js);
+    }(document));
+  //]]>
+</script>
+
+
+</body>
+</html>

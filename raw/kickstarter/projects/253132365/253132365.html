@@ -1,0 +1,3413 @@
+<!DOCTYPE html>
+<html class="projects_show  fontface no-js" lang="en">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# kickstarter: http://ogp.me/ns/fb/kickstarter#">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-5.newrelic.com","errorBeacon":"jserror.newrelic.com","licenseKey":"b04b883ad2","applicationID":"11086","transactionName":"cFteRUULX1wHFhtIEFxeVVJDFxxDCgtD","queueTime":7,"applicationTime":333,"ttGuid":"","agentToken":null,"agent":"js-agent.newrelic.com/nr-411.min.js"}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"Vw4BVEVSCQMIUg=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e){function n(t,e,n){n||(n={});for(var r=o[t],a=r&&r.length||0,s=n[i]||(n[i]={}),u=0;a>u;u++)r[u].apply(s,e);return s}function r(t,e){var n=o[t]||(o[t]=[]);n.push(e)}var o={},i="nr@context";e.exports={on:r,emit:n}},{}],2:[function(t){function e(t,e,n,i,s){return u?u-=1:r("err",[s||new UncaughtException(t,e,n)]),"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t(5),a=window.onerror,s=!1,u=0;t("loader").features.push("err"),window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(d){"stack"in d&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(4),s=!0)}i.on("fn-start",function(){s&&(u+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&u>0&&(u-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:4,3:3,4:6,5:1,6:14,handle:"D5DuLP",loader:"G9z0Bl"}],3:[function(t){function e(t){r.inPlace(t,["addEventListener","removeEventListener"],"-",n)}function n(t){return t[1]}var r=t(1),o=(t(3),t(2));if(e(window),"getPrototypeOf"in Object){for(var i=document;i&&!i.hasOwnProperty("addEventListener");)i=Object.getPrototypeOf(i);i&&e(i);for(var a=XMLHttpRequest.prototype;a&&!a.hasOwnProperty("addEventListener");)a=Object.getPrototypeOf(a);a&&e(a)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&e(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=e["nr@wrapped"]?t[1]=e["nr@wrapped"]:e["nr@wrapped"]=t[1]=r(e,"fn-"):"function"==typeof e.handleEvent&&r.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:15,2:1,3:14}],4:[function(t){var e=(t(3),t(1)),n=t(2);e.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=e(t[0],"fn-")})},{1:15,2:1,3:14}],5:[function(t){function e(t){var e=t[0];"string"==typeof e&&(e=new Function(e)),t[0]=n(e,"fn-")}var n=(t(3),t(1)),r=t(2);n.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",e)},{1:15,2:1,3:14}],6:[function(t){function e(){o.inPlace(this,s,"fn-")}function n(t,e){o.inPlace(e,["onreadystatechange"],"fn-")}function r(t,e){return e}var o=t(1),i=t(2),a=window.XMLHttpRequest,s=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];window.XMLHttpRequest=function(t){var n=new a(t);try{i.emit("new-xhr",[],n),o.inPlace(n,["addEventListener","removeEventListener"],"-",function(t,e){return e}),n.addEventListener("readystatechange",e,!1)}catch(r){try{i.emit("internal-error",r)}catch(s){}}return n},window.XMLHttpRequest.prototype=a.prototype,o.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",r),i.on("send-xhr-start",n),i.on("open-xhr-start",n)},{1:15,2:1}],7:[function(t){function e(){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;u>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,d="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=e(d);if(f&&(r.rxSize=f),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}t("loader").features.push("xhr");var o=t("handle"),i=t(1),a=t(5),s=["load","error","abort","timeout"],u=s.length,d=t(2);t(3),t(4),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var d=e(o);d&&(r.txSize=d)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",e)}catch(r){}}};for(var f=0;u>f;f++)n.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&e()},{1:8,2:11,3:3,4:6,5:1,handle:"D5DuLP",loader:"G9z0Bl"}],8:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e){var n=r[t];return n?n.apply(this,e):(o[t]||(o[t]=[]),void o[t].push(e))}var r={},o={};e.exports=n,n.queues=o,n.handlers=r},{}],11:[function(t,e){function n(t){if(!t||"object"!=typeof t&&"function"!=typeof t)return-1;if(t===window)return 0;if(o.call(t,"__nr"))return t.__nr;try{return Object.defineProperty(t,"__nr",{value:r,writable:!0,enumerable:!1}),r}catch(e){return t.__nr=r,r}finally{r+=1}}var r=1,o=Object.prototype.hasOwnProperty;e.exports=n},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&u&&u.body){p.proto="https"===c.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=u.createElement("script");e.src=p.proto+t.agent,u.body.appendChild(e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,u=s.document,d="addEventListener",f="attachEvent",c=(""+location).split("?")[0],p=e.exports={offset:i(),origin:c,features:[]};u[d]?(u[d]("DOMContentLoaded",o,!1),s[d]("load",n,!1)):(u[f]("onreadystatechange",r),s[f]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],14:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],15:[function(t,e){function n(t,e,r,s){function nrWrapper(){try{var n,a=u(arguments),d=this,f=r&&r(a,d)||{}}catch(c){i([c,"",[a,d,s],f])}o(e+"start",[a,d,s],f);try{return n=t.apply(d,a)}catch(p){throw o(e+"err",[a,d,p],f),p}finally{o(e+"end",[a,d,n],f)}}return a(t)?t:(e||(e=""),nrWrapper[n.flag]=!0,nrWrapper)}function r(t,e,r,o){r||(r="");var i,s,u,d="-"===r.charAt(0);for(u=0;u<e.length;u++)s=e[u],i=t[s],a(i)||(t[s]=n(i,d?s+r:r,o,s,t))}function o(t,e,n){try{s.emit(t,e,n)}catch(r){i([r,t,e,n])}}function i(t){try{s.emit("internal-error",t)}catch(e){}}function a(t){return!(t&&"function"==typeof t&&t.apply&&!t[n.flag])}var s=t(1),u=t(2);e.exports=n,n.inPlace=r,n.flag="nr@wrapper"},{1:1,2:14}]},{},["G9z0Bl",2,7]);</script><script>
+  //<![CDATA[
+    docElement = this.document.documentElement;
+    docElement.className=docElement.className.replace(/\bno-js\b/,'') + 'js';
+  //]]>
+</script>
+<title>The Phoenix Project - City of Titans by Missing Worlds Media &mdash; Kickstarter</title><script>
+  //<![CDATA[
+    window.report_errors = true;
+    window.honeybadger_configuration = {
+      api_key : "02ab109335c0dd1a93506d92f22217a7",
+      environment : "production",
+      component : "projects",
+      action : "show",
+      onerror : false
+    };
+  //]]>
+</script>
+
+
+<!--[if lt IE 9]>
+  <script src="//html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta content="telephone=no" name="format-detection">
+
+<!--[if !IE]> -->
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base-9f623ad5d021a188cfb2d68a0cdf7a7b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<!-- <![endif]-->
+<!--[if IE]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base_blessed-2640c72487552f9a2ef9f2620b4af860.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<!--[if lte IE 9]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_nine-a93fe10530f175f96c4078b7e070d7e1.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 8]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_eight-f75aeb274436f94a0d243774456b1c62.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 7]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie-c019c01acd3a96588b346cf577a3504f.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_seven-5a3d2cef660cd281fd844b04b2397dbb.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if IE 6]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_six-e4d3caf76e405fe19aee6ece8bda701b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<link href="https://d297h9he240fqh.cloudfront.net/favicon.png" rel="icon" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-precomposed-7b603dba7cf80e4acc57d94a991bebbd.png" rel="apple-touch-icon-precomposed" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-ipad-precomposed-3176f72977daf43dee3b0d348484dc01.png" rel="apple-touch-icon-precomposed" sizes="72x72" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-iphone4-precomposed-b93b70168cd8492c843d0fea873c7f83.png" rel="apple-touch-icon-precomposed" sizes="114x114" type="image/png">
+<link href="https://www.kickstarter.com/services/oembed?url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Fmissingworldsmedia%2Fthe-phoenix-project-city-of-titans" rel="alternate" title="The Phoenix Project - City of Titans Script Tag oEmbed" type="application/json+oembed">
+<link rel="alternate" type="application/atom+xml" title="The Phoenix Project - City of Titans : Kickstarter" href="https://www.kickstarter.com/projects/missingworldsmedia/the-phoenix-project-city-of-titans/posts.atom" />
+<meta property="twitter:app:id:iphone" content="596961532"/>
+<meta property="twitter:app:name:iphone" content="Kickstarter"/>
+<meta property="twitter:app:url:iphone" content="ksr://www.kickstarter.com/projects/missingworldsmedia/the-phoenix-project-city-of-titans"/>
+<meta name="video_height" content="360"/>
+<meta name="video_width" content="640"/>
+<meta name="video_type" content="application/x-shockwave-flash"/>
+<meta name="title" content="Kickstarter &gt;&gt; The Phoenix Project - City of Titans by Missing Worlds Media"/>
+<meta name="description" content="Missing Worlds Media is raising funds for The Phoenix Project - City of Titans on Kickstarter! 
+
+ We present City of Titans, a spiritual successor for the superhero MMORPG City of Heroes, being developed by Missing Worlds Media."/>
+<meta property="og:title" content="The Phoenix Project - City of Titans"/>
+<meta property="og:type" content="kickstarter:project"/>
+<meta property="og:image" content="https://s3.amazonaws.com/ksr/projects/672885/photo-main.jpg?1397833497"/>
+<meta property="og:url" content="https://www.kickstarter.com/projects/missingworldsmedia/the-phoenix-project-city-of-titans"/>
+<meta property="og:site_name" content="Kickstarter"/>
+<meta property="fb:app_id" content="69103156693"/>
+<meta property="og:description" content="We present City of Titans, a spiritual successor for the superhero MMORPG City of Heroes, being developed by Missing Worlds Media."/>
+<meta property="kickstarter:creator" content="https://www.kickstarter.com/profile/missingworldsmedia"/>
+<meta property="twitter:url:landing_url" content="https://www.kickstarter.com/projects/missingworldsmedia/the-phoenix-project-city-of-titans"/>
+<meta property="twitter:card" content="2427656750:kickstarter_project"/>
+<meta property="twitter:site" content="@kickstarter"/>
+<meta property="twitter:site:id" content="16186995"/>
+<meta property="twitter:text:title" content="The Phoenix Project - City of Titans"/>
+<meta property="twitter:text:artist" content="Missing Worlds Media"/>
+<meta property="twitter:text:backers" content="5003"/>
+<meta property="twitter:text:pledged" content="$678,189 USD"/>
+<meta property="twitter:text:time" content="0 seconds"/>
+<meta property="twitter:text:location" content="Lynnwood, WA"/>
+<meta property="twitter:image:location_image" content="https://d3mlfyygrfdi2i.cloudfront.net/b40e/pin.png"/>
+<meta property="twitter:text:description" content="We present City of Titans, a spiritual successor for the superhero MMORPG City of Heroes, being developed by Missing Worlds Media."/>
+<meta property="twitter:image:media" content="https://s3.amazonaws.com/ksr/projects/672885/photo-main.jpg?1397833497"/>
+<meta property="twitter:image:width" content="640"/>
+<meta property="twitter:image:height" content="480"/>
+<meta property="twitter:player:stream:url" content="https://d2pq0u4uni88oo.cloudfront.net/projects/672885/video-295057-h264_base.mp4"/>
+<meta property="twitter:player:stream:content" content="video/mp4"/>
+<meta property="twitter:player:url" content="https://www.kickstarter.com/projects/missingworldsmedia/the-phoenix-project-city-of-titans/widget/video.html"/>
+<meta property="twitter:player:height" content="360"/>
+<meta property="twitter:player:width" content="640"/>
+<meta property="twitter:maxage" content="60"/>
+<meta property="og:video" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F672885%2Fvideo-295057-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F672885%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Missing+Worlds+Media&amp;project_title=The+Phoenix+Project+-+City+of+Titans&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Fmissingworldsmedia%2Fthe-phoenix-project-city-of-titans&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:secure_url" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F672885%2Fvideo-295057-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F672885%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Missing+Worlds+Media&amp;project_title=The+Phoenix+Project+-+City+of+Titans&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Fmissingworldsmedia%2Fthe-phoenix-project-city-of-titans&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:height" content="360"/>
+<meta property="og:video:width" content="640"/>
+<meta property="og:video:type" content="application/x-shockwave-flash"/>
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="sPHJ5NOg11iHVqvzc/edvaA2zPSz5/rf+9QHbiUHFJs=" name="csrf-token" />
+<script type="text/javascript">
+  var _sift = _sift || [];
+  _sift.push(['_setAccount', '637102']);
+  _sift.push(['_setUserId', '']);
+  _sift.push(['_trackPageview']);
+
+  (function() {
+    function loadSift() {
+      var sift, s;
+      if (root.visitor_id) {
+        _sift.push(['_setSessionId', root.visitor_id]);
+      }
+      sift = document.createElement('script');
+      sift.type = 'text/javascript';
+      sift.async = true;
+      sift.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dtlilztwypawv.cloudfront.net/s.js';
+      s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(sift, s);
+    }
+    if (window.attachEvent) {
+      window.attachEvent('onload', loadSift);
+    } else {
+      window.addEventListener('load', loadSift, false);
+    }
+  })();
+</script>
+<link href="http://kck.st/16WRge9" rel="shorturl">
+<link href="https://www.kickstarter.com/projects/missingworldsmedia/the-phoenix-project-city-of-titans" rel="canonical">
+<link href="https://s3.amazonaws.com/ksr/projects/672885/photo-med.jpg?1397833497" rel="image_src">
+<link href="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F672885%2Fvideo-295057-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F672885%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Missing+Worlds+Media&amp;project_title=The+Phoenix+Project+-+City+of+Titans&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Fmissingworldsmedia%2Fthe-phoenix-project-city-of-titans&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque" rel="video_src">
+<script>
+  //<![CDATA[
+    window.current_checkout = "{&quot;id&quot;:0,&quot;domestic&quot;:null,&quot;amount&quot;:0.0,&quot;updated_at&quot;:0,&quot;created_at&quot;:0}";
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.current_ip = '94.209.101.212';
+    window.current_ip_datacenter = 'false';
+    window.enabled_features = {"elasticsearch":true,"security_history_read":true,"security_history_write":true,"advanced_discovery_es":true,"ios_crashlytics":true,"ios_mixpanel":true,"stories_veronica_mars":true,"veronica_mars_hero":true,"password_reset_banner":true};
+    window.fb_app_id = '69103156693';
+    
+    var _sf_startpt=(new Date()).getTime();
+    
+    window.current_project = "{&quot;id&quot;:253132365,&quot;name&quot;:&quot;The Phoenix Project - City of Titans&quot;,&quot;blurb&quot;:&quot;We present City of Titans, a spiritual successor for the superhero MMORPG City of Heroes, being developed by Missing Worlds Media.&quot;,&quot;goal&quot;:320000.0,&quot;pledged&quot;:678189.04,&quot;state&quot;:&quot;successful&quot;,&quot;slug&quot;:&quot;the-phoenix-project-city-of-titans&quot;,&quot;disable_communication&quot;:false,&quot;country&quot;:&quot;US&quot;,&quot;currency&quot;:&quot;USD&quot;,&quot;currency_symbol&quot;:&quot;$&quot;,&quot;currency_trailing_code&quot;:true,&quot;deadline&quot;:1383541273,&quot;state_changed_at&quot;:1383541273,&quot;created_at&quot;:1378439036,&quot;launched_at&quot;:1380686473,&quot;backers_count&quot;:5003,&quot;photo&quot;:{&quot;full&quot;:&quot;https://s3.amazonaws.com/ksr/projects/672885/photo-full.jpg?1397833497&quot;,&quot;ed&quot;:&quot;https://s3.amazonaws.com/ksr/projects/672885/photo-ed.jpg?1397833497&quot;,&quot;med&quot;:&quot;https://s3.amazonaws.com/ksr/projects/672885/photo-med.jpg?1397833497&quot;,&quot;little&quot;:&quot;https://s3.amazonaws.com/ksr/projects/672885/photo-little.jpg?1397833497&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/projects/672885/photo-small.jpg?1397833497&quot;,&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/projects/672885/photo-thumb.jpg?1397833497&quot;,&quot;1024x768&quot;:&quot;https://s3.amazonaws.com/ksr/projects/672885/photo-1024x768.jpg?1397833497&quot;,&quot;1536x1152&quot;:&quot;https://s3.amazonaws.com/ksr/projects/672885/photo-1536x1152.jpg?1397833497&quot;},&quot;creator&quot;:{&quot;id&quot;:1399283194,&quot;name&quot;:&quot;Missing Worlds Media&quot;,&quot;slug&quot;:&quot;missingworldsmedia&quot;,&quot;avatar&quot;:{&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/5275851/mwm-logo_square-small.thumb.jpg?1378191270&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/5275851/mwm-logo_square-small.small.jpg?1378191270&quot;,&quot;medium&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/5275851/mwm-logo_square-small.medium.jpg?1378191270&quot;},&quot;urls&quot;:{&quot;web&quot;:{&quot;user&quot;:&quot;https://www.kickstarter.com/profile/missingworldsmedia&quot;},&quot;api&quot;:{&quot;user&quot;:&quot;https://api.kickstarter.com/v1/users/1399283194?signature=1399959757.0a05d2cb83ef83dcc68b65f7bd74e78c46cd9195&quot;}}},&quot;location&quot;:{&quot;id&quot;:2443489,&quot;name&quot;:&quot;Lynnwood&quot;,&quot;slug&quot;:&quot;lynnwood-wa&quot;,&quot;short_name&quot;:&quot;Lynnwood, WA&quot;,&quot;displayable_name&quot;:&quot;Lynnwood, WA&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:&quot;WA&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/lynnwood-wa&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/lynnwood-wa&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1399951843.5b011988de84b674b7aba6211f7aefc28606c980&amp;woe_id=2443489&quot;}}},&quot;category&quot;:{&quot;id&quot;:35,&quot;name&quot;:&quot;Video Games&quot;,&quot;slug&quot;:&quot;games/video games&quot;,&quot;position&quot;:7,&quot;parent_id&quot;:12,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;http://www.kickstarter.com/discover/categories/games/video%20games&quot;}}},&quot;urls&quot;:{&quot;web&quot;:{&quot;project&quot;:&quot;https://www.kickstarter.com/projects/missingworldsmedia/the-phoenix-project-city-of-titans&quot;,&quot;project_short&quot;:&quot;http://kck.st/16WRge9&quot;,&quot;updates&quot;:&quot;https://www.kickstarter.com/projects/missingworldsmedia/the-phoenix-project-city-of-titans/posts&quot;},&quot;api&quot;:{&quot;project&quot;:&quot;https://api.kickstarter.com/v1/projects/253132365?signature=1399959757.fea3e8a550ee499da2c1769fb430308d160dc1db&quot;,&quot;comments&quot;:&quot;https://api.kickstarter.com/v1/projects/253132365/comments?signature=1399959757.311ecce6e35155ba106f37e4aee54c663805f60c&quot;,&quot;updates&quot;:&quot;https://api.kickstarter.com/v1/projects/253132365/updates?signature=1399959757.a122941320f569d3032ed12d676660fcef4a14c6&quot;}},&quot;updated_at&quot;:1399519513,&quot;successful_at&quot;:1383541273,&quot;video&quot;:{&quot;id&quot;:295057,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/672885/video-295057-h264_high.mp4?2013&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/672885/video-295057-h264_base.mp4?2013&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/672885/video-295057-webm.webm?2013&quot;,&quot;width&quot;:640,&quot;height&quot;:360,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/672885/video-295057-h264_base.jpg?2013&quot;},&quot;comments_count&quot;:19108,&quot;updates_count&quot;:82,&quot;rewards&quot;:[{&quot;id&quot;:0,&quot;minimum&quot;:1,&quot;reward&quot;:&quot;No Reward&quot;},{&quot;id&quot;:1953187,&quot;minimum&quot;:5.0,&quot;reward&quot;:&quot;Armchair Hero - We\\u2019re thankful for every bit of support. Everyone who sponsors at the minimum level will receive a set of Wallpapers in common desktop resolutions featuring the work of our talented artists.  Those who join our support forums will also receive the forum title \\u201cKickstarter.\\u201d&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1391212800,&quot;project_id&quot;:253132365,&quot;backers_count&quot;:89,&quot;updated_at&quot;:1384149627},{&quot;id&quot;:1953188,&quot;minimum&quot;:10.0,&quot;reward&quot;:&quot;Construction Crew - This perk engraves your name ( or proxy ) on the sponsor\\u2019s wall in the Atlas Hurricane Memorial Park and confers access in one of the closed beta access waves + All previous rewards.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1430438400,&quot;project_id&quot;:253132365,&quot;backers_count&quot;:221,&quot;updated_at&quot;:1391715894},{&quot;id&quot;:1953189,&quot;minimum&quot;:25.0,&quot;reward&quot;:&quot;Bright Lights Big City - Sponsors at this level receive a handsome bundle of perks. First, you\\u2019ll get the opportunity to reserve your Global Nickname before the general release. Additionally, you\\u2019ll see the following in game rewards: A Kickstarter only badge and title for our founding heroes ( and villains! ), an exclusive costume set that will never be available again, and a prestige travel power + All previous rewards.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1446336000,&quot;project_id&quot;:253132365,&quot;backers_count&quot;:581,&quot;updated_at&quot;:1392959816},{&quot;id&quot;:1953190,&quot;minimum&quot;:50.0,&quot;reward&quot;:&quot;Home Sweet Home - This includes a full copy of the game via digital download, a month of VIP subscription, and advanced account activation during the release weekend giving you a headstart on public play + All previous rewards.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1446336000,&quot;project_id&quot;:253132365,&quot;backers_count&quot;:1308,&quot;updated_at&quot;:1398435985},{&quot;id&quot;:1953191,&quot;minimum&quot;:75.0,&quot;reward&quot;:&quot;Fly Free!  - At this level you\\u2019ll get an additional two months of VIP access and the Kickstarter exclusive Phoenix Travel Aura + All previous rewards.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1446336000,&quot;project_id&quot;:253132365,&quot;backers_count&quot;:1509,&quot;updated_at&quot;:1394894524},{&quot;id&quot;:1953192,&quot;minimum&quot;:125.0,&quot;reward&quot;:&quot;Dynamic Duo - Twice the fun! The level confers an additional set of Fly Free! rewards for a friend or family member, including all additional rewards from earlier tiers for both accounts + All previous rewards.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1446336000,&quot;project_id&quot;:253132365,&quot;backers_count&quot;:790,&quot;updated_at&quot;:1399089638},{&quot;id&quot;:1953193,&quot;minimum&quot;:250.0,&quot;reward&quot;:&quot;Geocacher - Put your mark on the map, literally.  Create your own Exploration Badge on the game map.  We will work with you on the location and text, within design requirements + All previous rewards.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1433116800,&quot;project_id&quot;:253132365,&quot;backers_count&quot;:212,&quot;updated_at&quot;:1391650616},{&quot;id&quot;:1953194,&quot;minimum&quot;:500.0,&quot;reward&quot;:&quot;All Your Base - One of the base features we\\u2019ll be implementing are secret entrances.  At this level you\\u2019ll be able to use an additional set of doors only available to sponsors of this level plus correspondingly themed base decor + All previous rewards.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1446336000,&quot;project_id&quot;:253132365,&quot;backers_count&quot;:90,&quot;updated_at&quot;:1383702775},{&quot;id&quot;:1953195,&quot;minimum&quot;:750.0,&quot;reward&quot;:&quot;I Know A Guy - Help name and design a mission NPC in the game with our talented writers and artists + All previous rewards.&quot;,&quot;limit&quot;:100,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1446336000,&quot;project_id&quot;:253132365,&quot;remaining&quot;:50,&quot;backers_count&quot;:50,&quot;updated_at&quot;:1383660582},{&quot;id&quot;:1958969,&quot;minimum&quot;:1000.0,&quot;reward&quot;:&quot;Registered Lethal Weapon - Design yourself a custom single weapon or prop in partnership with our talented artists. It will be exclusively yours in-game for the first year or first four issues after launch, whichever is longer. You have the option of granting access to this to others of your choosing. + All previous rewards.&quot;,&quot;limit&quot;:50,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1446336000,&quot;project_id&quot;:253132365,&quot;remaining&quot;:14,&quot;backers_count&quot;:36,&quot;updated_at&quot;:1383878933},{&quot;id&quot;:1953197,&quot;minimum&quot;:1500.0,&quot;reward&quot;:&quot;Double Trouble - Create an additional weapon or prop in partnership with our talented artists. It will be exclusively yours in-game for the first year or four issues (whichever is longer) after launch. You have the option of granting access to this to others of your choosing + All previous rewards.&quot;,&quot;limit&quot;:25,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1446336000,&quot;project_id&quot;:253132365,&quot;remaining&quot;:19,&quot;backers_count&quot;:6,&quot;updated_at&quot;:1383583713},{&quot;id&quot;:1953198,&quot;minimum&quot;:3000.0,&quot;reward&quot;:&quot;Fashionista - Design a custom costume texture to your specifications to be available in the game, exclusively for your characters. Costume components includes gloves, boots, belt, pants, shirt, cape, chest logo, and mask, with the addition of a custom weapon or prop which is exclusively yours in-game. It will be exclusively yours in-game for the first year or four issues (whichever is longer) after launch. You have the option of granting access to this to others of your choosing + All previous rewards.&quot;,&quot;limit&quot;:25,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1446336000,&quot;project_id&quot;:253132365,&quot;remaining&quot;:13,&quot;backers_count&quot;:12,&quot;updated_at&quot;:1383615445},{&quot;id&quot;:1953199,&quot;minimum&quot;:5000.0,&quot;reward&quot;:&quot;Big Dog - Your NPC from \\u201cI Know A Guy\\u201d is upgraded to the owner of a major social hub within the game (nightclub, training center, store, etc). Additionally, you\\u2019ll have the *exclusive* use of the base portal within that business + All previous rewards.&quot;,&quot;limit&quot;:10,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1446336000,&quot;project_id&quot;:253132365,&quot;remaining&quot;:8,&quot;backers_count&quot;:2,&quot;updated_at&quot;:1383542940},{&quot;id&quot;:2032576,&quot;minimum&quot;:7500.0,&quot;reward&quot;:&quot;Key to Titan City - Your character is famous throughout the city. Everyone knows your character. Billboards celebrate or condemn your exploits, regular news broadcasts will include your character. You will get an exclusive base location within a city building of your design. Your custom logo will be used on spotlights throughout the city to signal you for early access missions Additionally, the city has erected a statue in your honor, complete with history plaque + All previous rewards.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1446336000,&quot;project_id&quot;:253132365,&quot;backers_count&quot;:6,&quot;updated_at&quot;:1383644463},{&quot;id&quot;:1953200,&quot;minimum&quot;:10000.0,&quot;reward&quot;:&quot;Sanctum Sanctorum - Join us at our launch party at a major convention. We&#39;ll get your badge and room and some grub, but you will have to find your own way there. Conventions and date to be determined + All previous rewards.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1438387200,&quot;project_id&quot;:253132365,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1383841837}]}";
+    
+    
+    
+    
+    
+    
+    
+    
+    window.timeRemaining = function timeRemaining(epochTime){
+    
+      var diff = epochTime - ((new Date()).getTime() / 1000);
+      var num_unit = (diff < 60 && [Math.max(diff, 0), 'seconds']) ||
+        ((diff/=60) < 60 && [diff, 'minutes']) ||
+        ((diff/=60) < 72 && [diff, 'hours']) ||
+        [diff/=24, 'days'];
+    
+      // Round down
+      num_unit[0] = Math.floor(num_unit[0]);
+      // Singularize unit
+      if (num_unit[0] == 1) { num_unit[1] = num_unit[1].replace(/s$/,""); }
+    
+      return num_unit;
+    };
+  //]]>
+</script>
+
+<script>
+  //<![CDATA[
+    window.current_variants = ["discover_link_copy[explore]","rewards_hover[without_hover_text]"];
+  //]]>
+</script>
+
+
+</head>
+
+<body class="project projects not-mobile not-phone not-forces-video-controls not-tablet not-touchable not-native-app-request video_mode" id="projects_show">
+<div class="jGrowl center" id="growl_section"></div>
+<div class="NS_layouts__navigation" id="header">
+<div class="main-nav relative bg-white">
+<h1 class="no-margin ml1 mr2 left">
+<a href="/?ref=nav" class="block p2"><span class="ss-icon green-dark">KICK</span><span class="ss-icon green">STARTER</span>
+</a></h1>
+<ul class="primary-links list no-margin left">
+<li class="left discover-link full-height">
+<a href="/discover?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Explore</a>
+</li>
+<li class="left full-height mr2">
+<a href="/learn?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Start</a>
+</li>
+</ul>
+<ul class="list no-margin right" id="menu-sub">
+<li class="right"><a href="/login?ref=nav" class="block h5 bold p2 full-height border-box">Log in</a></li>
+<li class="right"><a href="/signup?ref=nav" class="block h5 bold p2 full-height border-box">Sign up</a></li>
+</ul>
+<div class="search-link pl2 full-height border-left border-box clip">
+<form accept-charset="UTF-8" action="/projects/search" class="search pt1 pb1 block relative form-simple" method="get"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /></div>
+<div class="field relative pl3">
+<span class="ss-icon ss-search grey-dark ml1 mt1 absolute"></span>
+<input class="input-search header full-width text" data-tracker-name="Header Live Search" id="term" name="term" placeholder="Search projects" type="text" />
+</div>
+</form>
+
+</div>
+<div class="clear"></div>
+</div>
+</div>
+<div class="hide pt4 pb4 bg-grey-light" id="search_results-wrap">
+<div class="relative container" id="search_results">
+<a class="close right grey-dark mr1"><span class="ss-icon ss-delete"></span></a>
+<h3 class="header ml1 clearfix"></h3>
+<div class="clip clearfix" id="search_results_panel"></div>
+<a class="prev arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateleft"></span>
+</a>
+<a class="next arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateright"></span>
+</a>
+</div>
+</div>
+
+
+
+
+<div class="Project-ended-true Project-is_starred- Project-state-successful Project253132365_cxt border-top" id="main_content">
+<div id="running-board-wrap">
+<div class="container" id="running-board">
+<div id="project-header">
+<div class="NS_projects__running_board ml1 mr1 clearfix">
+<div class="title center py4">
+<h2 class="mb1">
+<a href="/projects/missingworldsmedia/the-phoenix-project-city-of-titans" class="green-dark">The Phoenix Project - City of Titans</a>
+</h2>
+<p class="no-margin">
+<span class="creator">
+by
+<a href="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography" id="name">Missing Worlds Media</a>
+</span>
+</p>
+</div>
+<ul class="project-nav list-inline left h5 bold mb1">
+<li class="mr2">
+<a href="/projects/missingworldsmedia/the-phoenix-project-city-of-titans" class="grey-dark py1 current" id="home_nav">Home</a>
+</li>
+<li class="mr2">
+<span data-updates-count="82" id="updates_count">
+<a href="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/posts" class="grey-dark py1" id="updates_nav">Updates
+<span class="count h6 bg-grey-dark white">82</span>
+</a></span>
+</li>
+<li class="mr2">
+<a href="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/backers" class="grey-dark py1" id="backers_nav">Backers
+<span class="count h6 bg-grey-dark white"><data class="Project253132365" data-format="number" data-value="5003" itemprop="Project[backers_count]">5,003</data></span>
+</a></li>
+<li>
+<span data-comments-count="19108" id="comments_count">
+<a href="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/comments" class="grey-dark py1" id="comments_nav">Comments
+<span class="count h6 bg-grey-dark white"><data class="Project253132365" data-format="number" data-value="19090" itemprop="Project[comments_count]">19,090</data></span>
+</a></span>
+</li>
+</ul>
+<ul class="list-inline right h5 bold mb1">
+<li class="location mr2">
+<a href="/discover/places/lynnwood-wa?ref=city" class="grey-dark"><span class="ss-icon ss-location margin-right"></span>
+Lynnwood, WA
+</a></li>
+<li class="category" data-project-parent-category="Games">
+<a href="/discover/categories/games/video%20games?ref=category" class="grey-dark"><span class="ss-icon ss-tag margin-right"></span>
+Video Games
+</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+</div>
+<div class="bg-grey-light pb4" id="content-wrap">
+<div class="Project253132365" data-conditions="[{&quot;!state&quot;:&quot;live&quot;}]" data-evaluation="true" data-render="&quot;&lt;div class=\&quot;NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-successful Project253132365_cxt bg-grey container pb1 pt1\&quot;&gt;\n&lt;div class=\&quot;Project253132365\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;successful&amp;quot;}]\&quot; data-evaluation=\&quot;true\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;Funded!&amp;lt;/b&amp;gt;\\nThis project was successfully funded &amp;lt;data class=\\&amp;quot;Project253132365\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2013-11-04T00:01:13-05:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[deadline]\\&amp;quot;&amp;gt;on November 4, 2013&amp;lt;/data&amp;gt;.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;Funded!&lt;/b&gt;\nThis project was successfully funded &lt;data class=\&quot;Project253132365\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-11-04T00:01:13-05:00&amp;quot;\&quot; itemprop=\&quot;Project[deadline]\&quot;&gt;on November 4, 2013&lt;/data&gt;.\n&lt;/p&gt;\n&lt;/div&gt;&lt;div class=\&quot;Project253132365\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:[&amp;quot;started&amp;quot;,&amp;quot;submitted&amp;quot;]}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;THIS PROJECT IS NOT LIVE&amp;lt;/b&amp;gt;\\nThis is only a draft that the creator has chosen to share.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project253132365\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;suspended&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Suspended&amp;lt;/b&amp;gt;\\nFunding for this project was suspended &amp;lt;data class=\\&amp;quot;Project253132365\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2013-11-04T00:01:13-05:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on November 4, 2013&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project253132365\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;canceled&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Canceled&amp;lt;/b&amp;gt;\\nFunding for this project was canceled by the project creator &amp;lt;data class=\\&amp;quot;Project253132365\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2013-11-04T00:01:13-05:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on November 4, 2013&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project253132365\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;failed&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Unsuccessful&amp;lt;/b&amp;gt;\\nThis project\\u2019s funding goal was not reached on &amp;lt;time class=\\&amp;quot;js-adjust\\&amp;quot; data-format=\\&amp;quot;LL\\&amp;quot; datetime=\\&amp;quot;2013-11-04T00:01:13-05:00\\&amp;quot;&amp;gt;November 4, 2013&amp;lt;/time&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project253132365\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;purged&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;This project is purged and only visible to staff.&amp;lt;/b&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;/div&gt;\n&quot;"><div class="NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-successful Project253132365_cxt bg-grey container pb1 pt1">
+<div class="Project253132365" data-conditions="[{&quot;state&quot;:&quot;successful&quot;}]" data-evaluation="true" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;Funded!&lt;/b&gt;\nThis project was successfully funded &lt;data class=\&quot;Project253132365\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-11-04T00:01:13-05:00&amp;quot;\&quot; itemprop=\&quot;Project[deadline]\&quot;&gt;on November 4, 2013&lt;/data&gt;.\n&lt;/p&gt;\n&quot;"><p class="no-margin">
+<b>Funded!</b>
+This project was successfully funded <data class="Project253132365" data-format="distance_date" data-value="&quot;2013-11-04T00:01:13-05:00&quot;" itemprop="Project[deadline]">on November 4, 2013</data>.
+</p>
+</div><div class="Project253132365" data-conditions="[{&quot;state&quot;:[&quot;started&quot;,&quot;submitted&quot;]}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;THIS PROJECT IS NOT LIVE&lt;/b&gt;\nThis is only a draft that the creator has chosen to share.\n&lt;/p&gt;\n&quot;"></div><div class="Project253132365" data-conditions="[{&quot;state&quot;:&quot;suspended&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Suspended&lt;/b&gt;\nFunding for this project was suspended &lt;data class=\&quot;Project253132365\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-11-04T00:01:13-05:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on November 4, 2013&lt;/data&gt;.\n&quot;"></div><div class="Project253132365" data-conditions="[{&quot;state&quot;:&quot;canceled&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Canceled&lt;/b&gt;\nFunding for this project was canceled by the project creator &lt;data class=\&quot;Project253132365\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-11-04T00:01:13-05:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on November 4, 2013&lt;/data&gt;.\n&quot;"></div><div class="Project253132365" data-conditions="[{&quot;state&quot;:&quot;failed&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Unsuccessful&lt;/b&gt;\nThis project\u2019s funding goal was not reached on &lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;LL\&quot; datetime=\&quot;2013-11-04T00:01:13-05:00\&quot;&gt;November 4, 2013&lt;/time&gt;.\n&quot;"></div><div class="Project253132365" data-conditions="[{&quot;state&quot;:&quot;purged&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;This project is purged and only visible to staff.&lt;/b&gt;\n&quot;"></div></div>
+</div>
+<div class="container bg-white border rounded py3 pl2 pr2" id="content">
+<div class="NS-projects-content">
+<div class="grid_11">
+<div data-has-video="true" id="video-section">
+<div class="video-player" data-dimensions="{&quot;width&quot;:640,&quot;height&quot;:480}" data-image="https://s3.amazonaws.com/ksr/projects/672885/photo-main.jpg?1397833497" data-video-tracker-url="https://www.kickstarter.com/projects/missingworldsmedia/the-phoenix-project-city-of-titans/video/plays" data-video-url="https://d2pq0u4uni88oo.cloudfront.net/projects/672885/video-295057-h264_high.mp4" data-video="{&quot;id&quot;:295057,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/672885/video-295057-h264_high.mp4?2013&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/672885/video-295057-h264_base.mp4?2013&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/672885/video-295057-webm.webm?2013&quot;,&quot;width&quot;:640,&quot;height&quot;:360,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/672885/video-295057-h264_base.jpg?2013&quot;}" id="video_pitch"><video class="has_webm landscape" preload="none">
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/672885/video-295057-h264_high.mp4" type='video/mp4; codecs="avc1.64001E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/672885/video-295057-h264_base.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/672885/video-295057-webm.webm" type="video/webm"></source>
+You'll need an HTML5 capable browser to see this content.
+</video>
+<img alt="Photo-main" class="has_played_hide poster landscape" src="https://s3.amazonaws.com/ksr/projects/672885/photo-main.jpg?1397833497" />
+<div class="play_button_big play_button_dark absolute-center rounded has_played_hide">
+<span class="ss-icon ss-play"></span>
+Play
+</div>
+<div class="player_controls clearfix absolute-bottom mb2 rounded white bg-green-dark forces-video-controls_hide">
+<div class="left">
+<a class="button button_icon button_dark playpause play mr1">
+<span class="play ss-icon ss-play"></span>
+<span class="pause ss-icon ss-pause"></span>
+</a>
+<span class="time current_time h12 left">00:00</span>
+</div>
+<div class="right">
+<span class="time total_time h12 left mr1">00:00</span>
+<a class="left button button_icon button_icon_white volume">
+<span class="ss-icon ss-volume icon_volume_nudge"></span>
+<span class="ss-icon ss-highvolume"></span>
+</a>
+<div class="volume_container left">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+<a class="left button button_icon button_icon_white fullscreen">
+<span class="ss-icon ss-expand"></span>
+<span class="ss-icon ss-contract"></span>
+</a>
+</div>
+<div class="clip">
+<div class="progress_container pr1 pl1">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="buffer progress_bar_buffer"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div data-project-state="successful" id="about">
+<div class="NS_projects__project_share clearfix py2 pl1 pr1">
+<ul class="left list-inline no-margin h5 bold">
+<li class="facebook mr2">
+<a href="https://www.kickstarter.com/projects/missingworldsmedia/the-phoenix-project-city-of-titans"><span class="ss-icon ss-social ss-facebook color-facebook"></span>
+<span class="color-facebook">Share</span>
+<span class="share_bubble"><div class="triangle grey"></div>
+<div class="triangle white"></div>
+<span class="count"></span></span>
+</a></li>
+<li class="twitter mr2">
+<a  href="https://twitter.com/intent/tweet?text=The%20Phoenix%20Project%20-%20City%20of%20Titans%20by%20Missing%20Worlds%20Media&amp;via=kickstarter&amp;url=http://kck.st/16WRge9" rel="nofollow"><span class="ss-icon ss-social ss-twitter color-twitter"></span>
+<span class="color-twitter">Tweet</span>
+</a></li>
+<li class="embed">
+<a href="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/widget" class="remote_modal_dialog grey-dark" data-modal-title="Embed a widget on your site" data-tracker-name="Embed"><span class="ss-icon ss-navigateleft"></span>
+<span class="ss-icon ss-navigateright"></span>
+Embed
+</a></li>
+</ul>
+<ul class="right list-inline no-margin h5 bold">
+<li class="curate mr2">
+</li>
+<li class="remind">
+<div class="ajax-container" id="watching-widget">
+<div class="Project253132365" data-conditions="[{&quot;is_starred&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div id=\&quot;unwatch\&quot;&gt;\n&lt;a href=\&quot;/projects/missingworldsmedia/the-phoenix-project-city-of-titans/unwatch\&quot; class=\&quot;on\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"></div><div class="Project253132365" data-conditions="[{&quot;!is_starred&quot;:true}]" data-evaluation="true" data-render="&quot;&lt;div id=\&quot;watch\&quot;&gt;\n&lt;a href=\&quot;/projects/missingworldsmedia/the-phoenix-project-city-of-titans/watch\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;span class=\&quot;text\&quot;&gt;\n&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"><div id="watch">
+<a href="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/watch"><span class="ss-icon ss-star"></span>
+<span class="text">
+</span>
+</a></div>
+
+</div></div>
+</li>
+</ul>
+</div>
+
+<div class="short_blurb py2 pl1 pr1">
+<p class="h3">We present City of Titans, a spiritual successor for the superhero MMORPG City of Heroes, being developed by Missing Worlds Media.</p>
+</div>
+<div class="full-description">
+<div class="template asset" contenteditable="false" data-edit_url="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/assets/901639/edit" data-id="901639">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/901/639/9a5665c3836c250e0f3e46cbfac6ec36_large.jpg?1378689692"></figure>
+</div>
+
+<p>The Phoenix Project is the effort to bring new life from a world laid waste, the name given to an idea that would not be silenced, an idea whose time has come. The idea that a game is more than just a game or a revenue stream. It is a community, a home. Missing Worlds Media, Inc. was the first element of this idea, founded by the project to provide the foundation, the structure for that effort. </p><p>Missing Worlds Media presents City of Titans, the superhero MMORPG being developed by The Phoenix Project in the spirit of City of Heroes. Our goal is to deliver a unique massively multiplayer online roleplaying game, created from the community of a lost universe, to build a new community for a new world. A brave new world containing a wealth of player choices, from costumes to powers, it continues the traditions found in its spiritual predecessor, daring to reach for new innovations no other game will touch, while standing firmly on the feel and spirit of the old. Players will be able to choose their own adventure, tell their own tales, and have their own agency in a superhuman world. </p><p>City of Titans is set in a world where there is always hope, even in the darkest of times. The tradition of brightly colored costumes, brilliant heroics, and daring struggles to stand against the shadows cast during times of darkness and corruption. New heroes, your heroes, rise to make their mark on the world while their villainous counterparts lurk in the corners of alleys, behind governments, and even in the boardrooms of the wealthiest corporations. Humanity honors the fallen, and takes inspiration from the selfless sacrifices of heroes who have gone before.</p><p>It is an age where heroic ideals stand tall, where words such as "truth," "justice," "freedom," and "honor" have never lost their meaning. And it is an age where a villain may rise to power despite the heroes, where epic clashes of good vs evil are as common as seeing a brilliant costume fly through the sky on the way to save a kitten stuck in a tree. The world stands on the brink of change, at a time when magic, high technology and incredible scientific feats bring out the best and worst in the everyday human being. Individuals with supreme strength of will and training can become forces of good or evil. Heroes with astounding powers patrol the streets and skies alongside those whose only special abilities are the dedication in their hearts. Villains scheme and plot with the help of scoundrels and rogues, caring only for power, wealth or control - their motives are their own and dynamic battles between the two sides are frequent.</p><p>One city has risen above the rest as a place where costumed heroes are welcomed, where devious villains seek to add to their roster of minions. In Titan City, the opening setting, an old guard stands watch on both sides. They have issued calls to action, welcoming new heroes to their ranks and inviting old heroes to return to duty. New villains mask themselves amongst the rich and famous along with the poor and destitute, while experienced evil-doers lure the unsuspecting with words of clever cynicism.</p><p>Do you have what it takes to join the ranks of good? Or will you choose to stand in the shadowed courts of villainy?</p><p>Bring the City of Titans to life. </p><p>They said there was no chance. They said we should find a new home. We have. We just made it ourselves. Because we dare to think the impossible. </p><p>We are heroes. This is what we do.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/assets/901642/edit" data-id="901642">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/901/642/46d41b410953c80443c8497e25a9c505_large.jpg?1378689790"></figure>
+</div>
+<p>Kickstarter offers new opportunities for what would previously have been impossible without the demanding hand of a publishing studio. Thanks to Kickstarter, new ideas, new approaches, and new innovations can be developed, ones which do not fit the traditional model of investment. And, luckily for us, new studios can develop projects that no publisher would take on.</p><p>Through Kickstarter, the customers have direct access to the creative group, allowing new companies with fresh ideas to prove their concepts to their future customers. This in turn results in products which remain true to the vision of the developing studio, and true to the expectations of the players. The chance for a studio to make the game they know is ready to be made, that new and innovative idea, or an old idea which has been forgotten in the publisher push for the latest trend. Star Citizen. Shadowrun Returns. Even Double Fine Adventure. No traditional game funding source would have taken those on. But they’re coming, and so are many, many more.</p><p>If the customer does not want what is being offered, they simply find somewhere else to spend their money. But, as these other offerings have shown, people know what they want. And thanks to Kickstarter, they can speak directly to the studios. Gone are the days of conventions past, when publishers would taunt the audience. “Do you want Megaman? Show us twenty dollars!” And while the audience, their customers, would wave money in the air, it never came.</p><p>Now, it’s simple. Want to prove that your game has an audience? Put it to the test. If the public wants it, it will get funded. Mighty No. 9 is funded at nearly three million dollars, now. All thanks to people like you, who know when something deserves to be built.
+</p><p>When we lost our City, no amount of traditional investment would bring it back. The safe money for MMORPG investment goes to traditional titles, revamped versions of classic fantasy realms, grind-fests featuring pay-to-win, or ones tied to popular role-playing, movie, print or television properties.</p><p>The Phoenix Project is none of these things. It is a new home for the heroic spirit, but not a clone or replica. We have an opportunity here to build a modern game, respectful of the play style, lessons, and fun of the old game, while taking advantage of the more than ten years of industry development since our spiritual predecessor started development.</p><p>City of Titans is a game rising from the death of another, being built by the community for the community. Kickstarter gives the opportunity for such a project, one designed by the people who enjoyed the game, to see the light of day. It enables you to be directly involved with the making of this game, which ultimately is for you in the first place.
+</p><p>After all, a game without players is not much of a game at all.</p><div>
+<div>
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/assets/902054/edit" data-id="902054">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/902/054/ed71726e4821c1d0ab61c29ac7a7024f_large.jpg?1378699518"></figure>
+</div>
+<p>The vibrant, thriving metropolis of Titan City is home to costumed crooks and crimefighters of every imaginable description, and some you won't believe until you see them!  From the shining, sun-washed spires of its skyscrapers to the depths of its desolate slums, this city forms the stage on which these larger-than-life characters play out their adventures.  As you explore Titan City, you’ll encounter beautiful vistas, from glorious Art Deco monuments to villain-dominated broken tenements to ultra-high-tech bio-domes to much more.  Forged in the ashes of a devastating fire and tempered by decades of superpowered danger, Titan City enjoys a rich and engrossing history.  It shines as a beacon of hope and opportunity to those who seek justice, a magnet for those who want to make themselves rich and famous - an irresistible lure to those who would do evil!</p>
+<p>You never know who you might meet around the next corner in Titan City.  It's inhabitants range from heavily armed gangsters to honor-bound dinosaur men to reclusive spell-slingers, not to mention plenty of “ordinary” citizens with their own mysteries for you to solve and stories to explore.  Titan City is more than just a blank game board.  It is a living canvas, rich in history and detail, and you hold the artist’s brush.</p>
+<p>To support this, we needed a solid grasp of how to reach this ambitious goal.</p>
+<p>Players will find their choices built around a flexible framework. Instead of the typical class based system found in some games, or the skill based system found in others, our focus has been on attitudes. How do you want to do, what you want to do? Pick that, and we give you all the powers we can. Players pick a primary power, with that power determining the options available for their secondary powers. Then as you progress, and level up, you grow these powers as well as gain new ones. And even further, we let you customize those powers with a signature style, your Mastery, that enhances and alters how all your powers behave.</p>
+<p>That approach, a flexible framework, is how we approached most design decisions. Powers are split into effect and animation, allowing us to mix and match to offer more to the player. You pick "Fireball." You then pick how you want to throw this fireball, from the hand, mouth, a wand, or a 12-gauge shotgun. Same power, different look, all through the framework designed with our custom Socket System. Even two people with optic blasts can have their own unique look, depending on the powers chosen, the colors selected, the effects added and the animations picked for the power.</p>
+<p>The goal in the end is to give you the ability to create your character. Want to be a vine swinging Amazon warrior who attacks by using her hair as a whip? We're working on that. Want to be the wizard warrior with a pet raven who can spit fire? It’s in the cards.</p>
+<p>But, powers and characters do not an RPG make. There needs to be a story. Unlike a traditional CRPG, MMORPG's are notable for growing over time. What we have done is conceptualize what we want our game to be like at 5-years post-release, and worked backwards to our initial beta release, planned for in mid-to-late 2015. By having that years-in-the-future target, we can design the systems, stories and plotlines now with that in mind.</p>
+<p>To build these plots, we have plans to build the tools necessary. But, our plans for these tools is to make them available for you to create your own stories, plots and schemes as well, and to share them with other players. The era of user generated content is here. Rather than try to integrate a system on top of the system used by the developers, our plan is to create a system which is used by both players and developers. Show us your creativity.</p>
+<p>We will make the framework, you will bring it to life.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/assets/965185/edit" data-id="965185">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/965/185/885bcd03ad5360167e84a001fdd7fdff_large.jpg?1380411496"></figure>
+</div>
+<p>People have asked what the plan for the money raised with this Kickstarter.</p>
+
+<p>We have been working together for over a year now. During this time, various tools have been tested, telling us what works, what doesn’t and what we need. </p>
+
+<p>Our first expense is the cost of the Kickstarter itself. This goes to various companies such as Amazon, to Kickstarter, as well as the cost of the perks and add-ons. This comes to about 10% of the total.</p>
+
+<p>Then there are taxes, which we estimate can run us up to 12% of the total. </p>
+
+<p>So, before anything else, we’re out $70,000.</p>
+
+<p>Since we are developing the game using the Unreal Engine, and the Kickstarter counts as revenue, we owe Epic Games, the company which makes the Unreal Engine royalties. That comes to about $70,000, as well. </p>
+
+<p>We’re rounding up, of course, and estimating based on the best numbers we have available. By rounding up, we buy margin in case an unexpected cost, tax or fee enters the picture.</p>
+
+<p>This cuts $140,000 right off the top, leaving $180,000 to actually build the project.</p>
+
+<p>That $180,000 is mostly going straight to software. </p>
+
+<p>Autodesk's Maya and 3DS Max. They’re not cheap, and we need them to do the work. Each of them has strengths and weaknesses, and we need at least 24 copies for the art and tech teams to be able to do their jobs. There are several different versions, each targeting different levels of needs, and the 24 total copies are split between the various members to their need, based on the tasks they have. </p>
+
+<p>We’ll need multiple copies of a few tools like zbrush, Allegorithmic, 8DIO, Photoshop and Illustrator. </p>
+
+<p>Then we have the costs for the website servers and bandwidth. The more you love us, the more expensive it’s going to get. </p>
+
+<p>And, finally, a little cash to put a tax lawyer, book keeper and legal professional on retainer. Purely fee for service, but they will pay for themselves in troubles solved and money saved.</p>
+
+<p>There are a few smaller items, such as RAM for some rendering, some 3D mice, drawing tablets, depending on individual artist needs. </p>
+
+<p>Anything that makes us produce better and faster. </p>
+
+<p>If we go beyond that with stretch goals? Additional middleware to help us make the game. Purchasing of assets, saving our team the time needed to develop. Licensing premade systems from other game developers. There is a world of options out there, and all of it means we make a better game for you. </p>
+
+<p>But what about the flipside, how do we expect to support this game once it ships?
+</p>
+<p>This game has to pay for itself. As an employee owned and community driven effort, we had a meeting and came to some conclusions. There were a few people that felt the game should be free for all, but the numbers just do not work for it. Once the game ships, it will need people working full time to support it, and it will cost us in hardware, software, and bandwidth. It is unrealistic for any game company being developed and promoted in this way to deliver the option of a free game for everyone, forever. It had to be put aside.</p>
+
+<p>We do not, at this time, have any plans or ambition of putting this game in physical stores. The costs for doing so puts that out of reach of independent game developers. However, a collector's edition is possible down the line. </p>
+
+<p>To support the game, we will be charging for what we call 'the box.' It may be a purchase via an online service such as Steam or through our website, but there will be a fee for the game itself. This fee, however, will effectively cover the first three months of subscription. There's some simple reasons for why. First, it means that people who come into the game to grief or farm gold, are essentially paying us to ban them. And if they want to come back again and again, they're limited by the costs they incur. Secondly, and more pragmatically, it means the people playing the game will, at least in theory, be able to use our cash shop.</p>
+
+
+<p>Yes, we are going to have a cash shop, but we're going to hold very tightly to certain rules. 1: A good value for money. 2: No Pay To Win. 3: Something for Everyone. We're going to want you to use it, but we're going to want you to want to use it, too.</p>
+
+<p>As for Subscriptions, yes, the plan is to offer them, but not require them. Once you have purchased the game, you can play the game. You will get a few months of the VIP Subscription with your game purchase off the bat, and will have the option of continuing to subscribe, or to play as a free player and purchase from the cash shop a la carte. The final details of the VIP Subscription are not hammered down, but some areas are settled: At no time will you lose access to something you had access to and VIP Subscribers will get a stipend for the cash shop of greater value than the cost of the subscription.</p>
+
+<p>One of the ideas we have passed around is that Subscribers get assured access to issue betas. They might get earlier access to new powersets as well. We're going to find the right thing to do, and we're going to make sure it's fair for everyone. </p>
+
+<p>At all points in the budgeting and the post-launch support, the goal is to focus on results, what will give us the most bang for the buck. Autodesk software is expensive, but offers plug-ins, extensions and tools which greatly improve the speed at which we can work. By selling the initial install of the game for the price of a few months subscription we can keep the servers running once we launch without forcing a monthly subscription on to our players. </p>
+
+<p>Because in the end, that is who we are making this for, you, the player.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/assets/902052/edit" data-id="902052">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/902/052/c8dcbc469d8851f9d545f324b2d50fd4_large.jpg?1378699498"></figure>
+</div>
+<p>Missing Worlds Media is a virtual studio, staffed entirely by volunteers. We met online, shortly after it was announced that the doors were to close on the game which we had played and enjoyed for years. When a campaign to prevent the closure was sadly unsuccessful, we turned our efforts to creating a new home, where those heroes, vigilantes and villains left homeless could once again defend – or take-over – an entirely new world.</p>
+<p>We have over 100 developers on our books, working on everything from organisation, business, marketing, artists, modellers, composition, coding and programming, PR, web development, law, social media, forum moderation, community outreach, HR, music, financial planning, gameplay, sponsorship, mini-games, powers and combat, progression and rewards, world-building – including the history of our universe, city districts, factions, and NPCs, graphic design, language translation and localization, accessibility, user interface, props and places.</p>
+<p>We are headed up by S. Quinn, our elected president, the glue who holds us all together. She has 15 years of Process Efficiency experience, and has a passion for making systems work without sacrificing the human element.  She is also a longtime comics and superhero fan, who has been attending fan conventions since she was fifteen years old. </p>
+<p>She is supported by Chris Hare, our lead developer. Chris has a long pedigree of both comic fandom and video games, from working behind a comic shop counter to being involved with a company called InVideo Systems back in the days of Nick Arcade - kinect style gaming back in 1990. Chris’ connections all over the world have helped fill out the studio, as well as the ability and desire to help people work together that resulted in Paragon Studios making Chris a founding member of PERC (Player Events Resource Committee). Chris was a part of City of Heroes(r) from beta to shutdown, and has gone on to embody the vision of the Phoenix Project.</p>
+<p>When dealing with complex systems, it is good to have a rocket scientist onboard, or at least someone who has worked with them. We are lucky enough to have Nate “Doctor Tyche” Downes, our tech lead – one of the founding developers of Gentoo Linux, his technical background includes UI systems, operating system kernels, and yes, he has even worked with rocket scientists, helping to design launch system proposals. This is complemented by work he has done in the the world of film and TV, with several credits to his name including Time and Fate, Phobia and December. His beard has managed to achieve a cult following of it's own amongst our community, even without the help of our PR team.</p>
+<p>Our husband-and-wife team head up our game design and art departments, ensuring a close relationship between both departments at all times. David Bolack is a programmer and systems administrator, which comes coupled with his experience as a role playing game designer. He has worked on titles including Mage: Dark Ages, the Exalted Player's Guide, True20 Adventure Roleplaying, and Nobilis. Jen Bolack has served us beautifully as art lead, as her eye for detail and perfection, based in her experience in set design, heterodynes with her skills with 3D art programs. Her vision, and the talents of those under her command, have helped to give City of Titans a familiar but evolved look that will set it above the other superhero MMOs currently on the market.</p>
+<p>Our composition team is one of our largest, and already they have been prolific enough that we have years of content just waiting to be bought to life. We're very proud to have Kaylan "SithRose" Lyndell-Lees on the team, who spent years as a leader in White Wolf's live action roleplaying organization, the Camarilla, but she's only one among many. We've got more, and they all have their stories to tell – we have published authors, experienced role players, journalists, even college professors, all working together to create a world with a carefully-woven history, populated by unique characters, even before our players get to start creating their own tale in-game.</p>
+<p>Our funding and support team – well, that'd be you. From the outset, Missing Worlds Media have done everything we can to make sure we're building a game that you'd like to play, and a world you want to be a part of. Our community have done everything they can to support us, and to make sure that we're on the right track. They have told us if there's something we haven't got quite right. They have cheered for us when we've hit the nail on the head. Many of them have gone on to become signed-up volunteers on the project, because their advice has just been THAT good.</p>
+<p>We are not legends - we are not rock stars of the gaming world - we are players, coders, writers, artists, technicians, engineers. We come from all walks of life. We are motivated. We have the capabilities, the skills and a growing community behind us. And with your help, we are going to make a new world, and then we’re going to let you save it - or try and take it over.</p>
+<p>The future is in your hands.</p>
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/assets/902055/edit" data-id="902055">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/902/055/5bb3eccce4b417e2d955af6b2a0dab8b_large.jpg?1378699541"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/assets/902217/edit" data-id="902217">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/902/217/87b965e6199771b111b0cd077ba92c46_large.jpg?1378703012"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/assets/902219/edit" data-id="902219">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/902/219/4a6185aab46c0cfadc7991c4d9d77bfe_large.jpg?1378703034"></figure>
+</div>
+<br>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/assets/962409/edit" data-id="962409">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/962/409/b92558565e1621177e434582efe837fe_large.jpg?1380310902"></figure>
+</div>
+<div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/assets/902237/edit" data-id="902237">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/902/237/196b0501f5ff4df45fca71aeb97c987e_large.jpg?1378703405"></figure>
+</div>
+<br><div class="template asset" contenteditable="false" data-edit_url="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/assets/902248/edit" data-id="902248">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/902/248/973717f52dfd0d367529e059c7a11118_large.jpg?1378704038"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/assets/902249/edit" data-id="902249">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/902/249/b2d174505f67243bb298e3e3bfb398d1_large.jpg?1378704058"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/assets/902284/edit" data-id="902284">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/902/284/7343469a613e893dbae7ccb134a0996d_large.jpg?1378705138"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/assets/967418/edit" data-id="967418">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/967/418/9e6ee52fba043848e34aa9377e10dcc7_large.jpg?1380491779"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/assets/902338/edit" data-id="902338">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/902/338/ac4d335b9120f053b4c6600d96ac3957_large.jpg?1378707345"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/assets/902360/edit" data-id="902360">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/902/360/09198e3db85e953529a5efe6d801fdc0_large.jpg?1378707912"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/assets/902369/edit" data-id="902369">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/902/369/6c9fa56045d9a2699ae6e94759c85fca_large.jpg?1378708344"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/assets/902382/edit" data-id="902382">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/902/382/1787cc116e490f91ada823eba5a5e09d_large.jpg?1378708758"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/assets/985110/edit" data-id="985110">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/985/110/f9cc11b74571d0b5f9d4255a15e060af_large.jpg?1380917604"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/assets/986354/edit" data-id="986354">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/986/354/145010fa2c995e038904a1bf389d70b8_large.jpg?1380937893"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/assets/985860/edit" data-id="985860">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/985/860/195bd47bb7c2ce42431f7e9f5c4d3be4_large.jpg?1380929428"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/assets/933597/edit" data-id="933597">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/933/597/8aac2c4a8a115d1693da80e61a5304b0_large.jpg?1379520386"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/assets/975593/edit" data-id="975593">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/975/593/0f137ee07b219e716286f6207aa2b1c9_large.jpg?1380669867"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/assets/975595/edit" data-id="975595">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/975/595/4a415cd90fe22fd79f023d126b2444e8_large.jpg?1380669885"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/assets/975597/edit" data-id="975597">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/975/597/b7e728fd3b82185a7f084126343cf6b7_large.jpg?1380669900"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/assets/944170/edit" data-id="944170">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/944/170/65317ccff24452180157da33e745a5f8_large.jpg?1379805368"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/assets/933802/edit" data-id="933802">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/933/802/50d9c50385d654f61a1a6f8d9775bea3_large.jpg?1379523952"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/assets/937297/edit" data-id="937297">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/937/297/499c4b0ce7acf791e105ab6b6085954c_large.jpg?1379612118"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/assets/962458/edit" data-id="962458">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/962/458/b6374a4325a0db8240dfdc9be5210e62_large.jpg?1380312027"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/assets/933898/edit" data-id="933898">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/933/898/70f8872371b47af0cb853ae10ca7b63f_large.jpg?1379525878"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/assets/944176/edit" data-id="944176">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/944/176/bba2cff30b87224ea1c6c70949f82875_large.jpg?1379805578"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/assets/933774/edit" data-id="933774">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/933/774/49e4b6c26880b372939169c87dfe0c68_large.jpg?1379523657"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/assets/975591/edit" data-id="975591">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/975/591/0aed421ad316aa2b8ca0d14491a1b116_large.jpg?1380669845"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/assets/933905/edit" data-id="933905">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/933/905/87d39c03de7529aad2e915f4c45b1040_large.jpg?1379525958"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/assets/933810/edit" data-id="933810">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/933/810/3246dda01886c2dd5afa2f0c6952a08c_large.jpg?1379524049"></figure>
+</div>
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/assets/1251910/edit" data-id="1251910">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/251/910/01c4f1089bc75902197f7a06d6400fdb_large.jpg?1383026160"></figure>
+</div>
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/assets/1251912/edit" data-id="1251912">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/251/912/23826730c6eb920e28cfc60fc53d8dfd_large.jpg?1383026195"></figure>
+</div>
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/assets/1251913/edit" data-id="1251913">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/251/913/b2be06e86243d9938b8713210a4f1c70_large.jpg?1383026219"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/assets/933811/edit" data-id="933811">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/933/811/46a8996d058c98bbd30317e41bdb9f98_large.jpg?1379524066"></figure>
+</div>
+<a href="https://teelaunch.com/" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/assets/968315/edit" data-id="968315">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/968/315/3774f7adf405a9cea2b58492a089a4c2_large.png?1380508189"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/assets/901706/edit" data-id="901706">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/901/706/b61ae4a67b5f7d4937cebe29eace92af_large.jpg?1378691177"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/assets/997042/edit" data-id="997042">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/997/042/66b756f45e0fb58c0a739c85bb4f068e_large.jpg?1381193469"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/assets/1073366/edit" data-id="1073366">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/073/366/305954d3d8c91782423ecdbeec8911f0_large.jpg?1381518013"></figure>
+</div>
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/assets/1206262/edit" data-id="1206262">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/206/262/3f063b951e9ed8bb2fcb7f3099edba87_large.jpg?1382071219"></figure>
+</div>
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/assets/1246766/edit" data-id="1246766">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/246/766/1b009741b3a3e06eeaedfe6957e6bb3c_large.jpg?1382934572"></figure>
+</div>
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/assets/1266225/edit" data-id="1266225">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/266/225/98ce7f5760eb9e0be2ac4d61dcf909db_large.jpg?1383285273"></figure>
+</div>
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/assets/1273070/edit" data-id="1273070">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/273/070/3517d02c794374f8341f61d3b6f1b0b3_large.jpg?1383445528"></figure>
+</div>
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/assets/1275962/edit" data-id="1275962">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/275/962/0f92196b3570f88bddd859aa0ba5c773_large.jpg?1383523905"></figure>
+</div>
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/assets/1117157/edit" data-id="1117157">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/117/157/63258b2fa325ad394b9b8956434efaf3_large.jpg?1381637384"></figure>
+</div>
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/assets/1117176/edit" data-id="1117176">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/117/176/d050b019ab846f2039e75d6d6fe81c52_large.jpg?1381637431"></figure>
+</div>
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/assets/1117185/edit" data-id="1117185">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/117/185/5c3c67bcaa7251fa98bcb691aacb267e_large.jpg?1381637456"></figure>
+</div>
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/assets/1117198/edit" data-id="1117198">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/117/198/e17b6859aac2c93d31e9bdf505b36b61_large.jpg?1381637484"></figure>
+</div>
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/assets/1117208/edit" data-id="1117208">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/117/208/f953d09ab7a98760693d0449c8e1aaa1_large.jpg?1381637510"></figure>
+</div>
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/assets/1117217/edit" data-id="1117217">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/117/217/be33436521909522e1dbae0507e1b07e_large.jpg?1381637533"></figure>
+</div>
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/assets/1117231/edit" data-id="1117231">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/117/231/5344910af3ebaf6841a3f4981c20d925_large.jpg?1381637565"></figure>
+</div>
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/assets/1117241/edit" data-id="1117241">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/117/241/bb3b05ba65df6f1c400ea5eb407b993c_large.jpg?1381637589"></figure>
+</div>
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/assets/1117252/edit" data-id="1117252">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/117/252/21e8bf173125d0ca7dbb7fd56f426501_large.jpg?1381637615"></figure>
+</div>
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/assets/1117267/edit" data-id="1117267">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/117/267/ec122188c619441dc4ea214bdc055d93_large.jpg?1381637639"></figure>
+</div>
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/assets/1117281/edit" data-id="1117281">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/117/281/5fa7de711f0c035a53c19ee96b4eed83_large.jpg?1381637664"></figure>
+</div>
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/assets/1117294/edit" data-id="1117294">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/117/294/3d1ce4d98604bb31272baac4569c499a_large.jpg?1381637695"></figure>
+</div>
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/assets/1117302/edit" data-id="1117302">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/117/302/ef5a70bf074c71a70b4a04773006bb4e_large.jpg?1381637721"></figure>
+</div>
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/assets/1117314/edit" data-id="1117314">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/117/314/bcc62a8066fa5e5fcaf7ad1d41d7bfa8_large.jpg?1381637747"></figure>
+</div>
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/assets/1117325/edit" data-id="1117325">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/117/325/bc53952820843a165f73cb94c4f75b08_large.jpg?1381637773"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/assets/944322/edit" data-id="944322">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/944/322/6d5d23ebf72bb57702f37f3cdf03dc87_large.jpg?1379810067"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/assets/901645/edit" data-id="901645">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/901/645/66596c325e0be1c8c15fbbef51da2f6d_large.jpg?1378689870"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+</div>
+</div>
+<div id="risks">
+<h2 class="title grey-dark mt6 mb4">
+<span>Risks and challenges</span>
+<a href="/help/faq/kickstarter%20basics#Acco" class="right normal h5" target="_blank">Learn about accountability on Kickstarter</a>
+<div class="divider clear"></div>
+</h2>
+<p><p>As an all-volunteer effort, we have already had our fair share of mishaps. We have had setbacks; from game engine licensing to loss of precious volunteer hours, we have persevered past them each and every time. </p>
+
+<p>From the beginning we&#39;ve worked towards a professional outlook, always keeping in mind that every person involved is doing so at their ability to do so. This does mean that we have to prepare for the eventual loss of availability for any volunteer, from jobs, new responsibilities in their home life, school, etc. As a result we have people able to pick up for any single person at all times. </p>
+
+<p>It also means we have a larger than average group of volunteers, which we have sorted into central volunteers, those who have the time to dedicate dozens of hours per week to the project, and community volunteers who have time to help out every so often or who have talents which we have too many volunteers for, but otherwise are simply more active members of the community. Any single person may move between the two, and many often times do. We have had artists who were able to volunteer heavily in January who then had school pop up in February who became available again in July. We have writers who suffer from writers block for months on end but then inspiration hits and become writing machines. At every point, we have a large pool of people who are available to pick up slack.</p>
+
+<p>To manage this balance, we have a pool of people who act as coordinators, managers of the volunteers. These core people have been with the project for a long time, who understand the goals, and who have the time to dedicate to a full-time volunteer effort. For many, this is a second job, occupying as much time as full-time employment while others have this as their main focus. And they do this not for a paycheck, but for the drive to get this completed. This core group is the heart and soul of the project. While some have had to step back, every one of them works with a second, someone able to step in should the worst case happen. We jokingly call it &quot;Bus insurance&quot; as in, if the person steps in front of a bus, there is someone able to step in at a moments notice. We have only needed to use this a few times, not for anything so drastic as a death, but due to unexpected events in our real lives such as paying jobs taking over free time that had been set aside for the project or an illness in the family.</p>
+
+<p>Delays can happen in any project. We had hoped to be further ahead now, but things happen. We have always been honest when issues arose, such as when we had to change our game engine due to licensing issues. We come from a larger community, and are here for you, the player. Life happens, it stinks when it does, but we understand it, and adapt to it. </p>
+
+<p>We are learning to find a balance without hurting the progress of the project. We learned to roll with the punches, and incorporate the changes in a way which made us better for it. </p>
+
+<p>The key is communication on all levels. It is when communication breaks down that the real problems happen, and that is why we work our hardest to keep up the flow of information. Things happen, everyone knows that. But when something does happen, we figure out why it happened and how to address it. Then we let the community know. We don&#39;t hide when issues happen, we just persevere to make sure it does not happen again. It is how we&#39;ve handled it until now, and how we will continue to handle it going forward. </p>
+
+<p>We are volunteers, driven with a passion to deliver the best game we can for you.</p></p>
+</div>
+</div>
+<div class="NS-projects-faqs" id="project-faqs">
+<h2 class="title grey-dark mt6 mb4">
+FAQ
+<div class="divider clear"></div>
+</h2>
+<ul class="faqs">
+<li class="faq" id="project_faq_70332">
+<div class="faq-question">
+<a href="#project_faq_70332" name="project_faq_70332">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">How do Add-ons work?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Select your pledge. Count the add-ons you want. Pledge for the sum of your pledge and the cost of all the addons you have selected. When the Kickstarter is over, you will be sent a survey which will allow you to explain to us exactly which add-ons you desire.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-10-10T15:37:30-04:00">Thu, Oct 10 2013 3:37 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_70333">
+<div class="faq-question">
+<a href="#project_faq_70333" name="project_faq_70333">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">If we want two @Global names, would we need to donate twice for the kick-starter reservation?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>As a @Global Name is tied to an individual account, there are two options, either to donate twice, or to donate enough for the Dynamic Duo perk, which gives you two copies of the game</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-10-10T15:53:30-04:00">Thu, Oct 10 2013 3:53 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_70334">
+<div class="faq-question">
+<a href="#project_faq_70334" name="project_faq_70334">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Regarding the &quot;I know a guy&quot; pledge level: Does &quot;Help design and name a mission NPC&quot; include helping to design the missions themselves?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>No promises yet. We want it to, but we need to verify other systems work first.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-10-10T15:53:30-04:00">Thu, Oct 10 2013 3:53 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_70335">
+<div class="faq-question">
+<a href="#project_faq_70335" name="project_faq_70335">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Are you accepting additional volunteers?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Of course! You can get ahold of us on the cityoftitans.com forum.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-10-10T15:53:30-04:00">Thu, Oct 10 2013 3:53 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_70336">
+<div class="faq-question">
+<a href="#project_faq_70336" name="project_faq_70336">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Will there be an interactive environment (eg, pick up cars and throw them)?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>That is the plan.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-10-10T15:53:30-04:00">Thu, Oct 10 2013 3:53 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_70337">
+<div class="faq-question">
+<a href="#project_faq_70337" name="project_faq_70337">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Will there be an option for body hair?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>It is our intention for all body types to be available.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-10-10T15:53:30-04:00">Thu, Oct 10 2013 3:53 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_70338">
+<div class="faq-question">
+<a href="#project_faq_70338" name="project_faq_70338">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">I just want to be clear, The Dynamic Duo at $125 comes with TWO copies of the game?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Yes.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-10-10T15:53:30-04:00">Thu, Oct 10 2013 3:53 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_70339">
+<div class="faq-question">
+<a href="#project_faq_70339" name="project_faq_70339">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Do you yet have an idea on monthly subscription prices?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>We have some ballparks, but it is a few years to go. I don’t want to go “yeah $15” to then have the market suddenly drop to $10 or balloon to $20 with inflation. We will have a solid idea as we get closer.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-10-10T15:53:30-04:00">Thu, Oct 10 2013 3:53 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_70340">
+<div class="faq-question">
+<a href="#project_faq_70340" name="project_faq_70340">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Is the naming system going to be similar to Champions Online (i.e. non-unique hero names attached to your global nickname) or is it going to be similar to City of Heroes (where the hero&#39;s name must also be unique)?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>To be determined, which is why we only guaranteed the global at this time. Frankly, we need some solid playtest and feedback, so the final determination will not be for awhile.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-10-10T15:53:30-04:00">Thu, Oct 10 2013 3:53 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_70341">
+<div class="faq-question">
+<a href="#project_faq_70341" name="project_faq_70341">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">What will you do with funds over the requested amount?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Licensing middleware, licensing assets, purchasing hardware for certain development needs (such as Apple systems for the Mac version of the client).</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-10-10T15:53:30-04:00">Thu, Oct 10 2013 3:53 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_70342">
+<div class="faq-question">
+<a href="#project_faq_70342" name="project_faq_70342">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Are you forming a business for this?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Missing Worlds Media, Inc was originally founded as a DBA in late 2012, and the Washington corporation was begun in late July of this year.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-10-10T15:53:30-04:00">Thu, Oct 10 2013 3:53 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_70343">
+<div class="faq-question">
+<a href="#project_faq_70343" name="project_faq_70343">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">In the event of Kickstarter success who does the licenses from the products (Max, Maya, Photoshop, etc) become registered to. (The company, or a person, or individual artists)?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>The company, so that if a volunteer is no longer available another one can take over.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-10-10T15:53:30-04:00">Thu, Oct 10 2013 3:53 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_70344">
+<div class="faq-question">
+<a href="#project_faq_70344" name="project_faq_70344">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Does the $50 &#39;It Must Be A Sign&#39; add-on perk include the creation of the emblem in question, and would it exist in any other form within the game?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>No, it is the marker system, not the creation of the emblem itself. Iconic is the creation of your own emblem.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-10-10T15:53:30-04:00">Thu, Oct 10 2013 3:53 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_70345">
+<div class="faq-question">
+<a href="#project_faq_70345" name="project_faq_70345">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">What will combat be like?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>We are still working out the dynamics. It will be a while before we have a presentation on the look and feel of combat. However the intention is for it to not be a culture shock for experienced superhero game players. We are still working out the kinks and trying to take into account the community&#39;s input.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-10-10T15:53:30-04:00">Thu, Oct 10 2013 3:53 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_70346">
+<div class="faq-question">
+<a href="#project_faq_70346" name="project_faq_70346">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">How much instancing is planned vs open world missions?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>The design will be focusing more on instances. There will still be open world missions.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-10-10T15:53:30-04:00">Thu, Oct 10 2013 3:53 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_70347">
+<div class="faq-question">
+<a href="#project_faq_70347" name="project_faq_70347">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">I think I know the answer to this, but would like confirmation: will appearance be independent of ability, the way CoH was?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Absolutely</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-10-10T15:53:30-04:00">Thu, Oct 10 2013 3:53 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_70348">
+<div class="faq-question">
+<a href="#project_faq_70348" name="project_faq_70348">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">What&#39;s the thinking on loot?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>No fighting over loot, no bind on pickup. There will be an auction house. Beyond that, we’re not ready to reveal the details of the crafting system yet because it is still a lot of “nice ideas” which needs to be prototyped and tested before we can give those answers.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-10-10T15:53:30-04:00">Thu, Oct 10 2013 3:53 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_70349">
+<div class="faq-question">
+<a href="#project_faq_70349" name="project_faq_70349">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Do you plan to release new content for all levels over the life of the game and not just endgame grinds?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Absolutely. We want alts, not just guys parked at the endgame, and that means more early-to-mid game content.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-10-10T15:53:30-04:00">Thu, Oct 10 2013 3:53 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_70350">
+<div class="faq-question">
+<a href="#project_faq_70350" name="project_faq_70350">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Which version of the Unreal engine are you planning on using 3 or 4?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>3, it has the track record and is well documented, which for any group which wants to deliver on a timetable is very important.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-10-10T15:53:30-04:00">Thu, Oct 10 2013 3:53 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_70351">
+<div class="faq-question">
+<a href="#project_faq_70351" name="project_faq_70351">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Why &quot;Titan City&quot;? That&#39;s the same name of the city chosen by Heroes &amp; Villains.</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>The name Titan City was picked by vote in October last year, two months before Heroes and Villains was announced. When Amanda left in order to found Heroes and Villains she chose to use the name for her project as well. While we could have lodged a complaint, or been jerks about it, instead we wish her luck with her project.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-10-10T15:53:30-04:00">Thu, Oct 10 2013 3:53 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_70352">
+<div class="faq-question">
+<a href="#project_faq_70352" name="project_faq_70352">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Are you planning on translating the game into other languages besides english?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Si. Ja. Oui. Да</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-10-10T15:53:30-04:00">Thu, Oct 10 2013 3:53 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_70353">
+<div class="faq-question">
+<a href="#project_faq_70353" name="project_faq_70353">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">What are the limitations on the weapon or prop? 1. would it be limited to being a physical extension or could it be external? 2. could it have an aura/animation? 3) Could it move away from you ie boomerang? 4) could it be a pet?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>1) No, props which are external to the character are options
+<br />2) Absolutely
+<br />3) Yes
+<br />4)  It depends on the complexity, but we’re leaning towards no.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-10-10T15:58:31-04:00">Thu, Oct 10 2013 3:58 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_70354">
+<div class="faq-question">
+<a href="#project_faq_70354" name="project_faq_70354">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Will there be anything playable resembling Masterminds in City of Titans?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>We have a pet classification planned for. It may not be available at launch due to the complexity, but it is planned for. It is one of the planned for stretch goals.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-10-10T15:53:30-04:00">Thu, Oct 10 2013 3:53 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_70355">
+<div class="faq-question">
+<a href="#project_faq_70355" name="project_faq_70355">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Have you looked at Blender/Piixelmaster/GIMP/Wings3D/etc?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Yes</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-10-10T15:53:30-04:00">Thu, Oct 10 2013 3:53 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_70356">
+<div class="faq-question">
+<a href="#project_faq_70356" name="project_faq_70356">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Will men and women have equal access to costume pieces?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Absolutely. If you truly wish to have your men with shoulder pandas and v-cut leotards, have fun. You want your women smoking a cigar, no problem.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-10-10T15:53:30-04:00">Thu, Oct 10 2013 3:53 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_70357">
+<div class="faq-question">
+<a href="#project_faq_70357" name="project_faq_70357">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">With the PS4 and Xbox One geared to run MMO&#39;s, are there any thoughts to bring this to consoles as well?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>There has been talk of what would be needed, but nothing set in stone. We need to get the foundations down first. Steambox and Ouya are also considerations.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-10-10T15:53:30-04:00">Thu, Oct 10 2013 3:53 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_70358">
+<div class="faq-question">
+<a href="#project_faq_70358" name="project_faq_70358">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Is $320,000 really going to be enough to fund the game?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>So long as things maintain as a pure volunteer effort, it is. Most of the cost in MMO development is from the cost of the small army needed to develop them. Now, surpassing stretch goals allows us to address other options as well.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-10-10T15:53:30-04:00">Thu, Oct 10 2013 3:53 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_70359">
+<div class="faq-question">
+<a href="#project_faq_70359" name="project_faq_70359">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Are the months of subscription in the support tiers flat or in addition to the subscription which comes with the box?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>They are in addition to what will be provided with the box set.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-10-10T15:53:30-04:00">Thu, Oct 10 2013 3:53 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_70360">
+<div class="faq-question">
+<a href="#project_faq_70360" name="project_faq_70360">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Will any costumes be tied to group-only encounters such that someone who only plays solo can never get them?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>We will endeavor to make costumes and all the fun stuff available to solo-only players, giving several avenues to the same achievements as much as possible.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-10-10T15:53:30-04:00">Thu, Oct 10 2013 3:53 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_71819">
+<div class="faq-question">
+<a href="#project_faq_71819" name="project_faq_71819">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Does the &quot;Mogul&quot; add-on perk allow you to design the building for your base?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Yes, the Mogul perk does include some input into the building. We&#39;ve had requests for everything from an orphanage to a university building, and we aim to work with the Moguls for what they want their structure to be. Your requests will have to fit within the overall plans for Titan City, of course. Sorry, no giant volcano bases in the middle of downtown.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-10-24T16:58:34-04:00">Thu, Oct 24 2013 4:58 pm EDT</time>
+</div>
+</div>
+</li>
+
+</ul>
+<div class="faq-ask-box">
+<a href="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/messages/new?message%5Bto%5D=missingworldsmedia&amp;mode=FAQ" class="button button_blue remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Ask a question about The Phoenix Project - City of Titans">Ask a question</a>
+
+</div>
+</div>
+
+<div class="mt4 ml1 mr1 mb2" id="report-issue-wrap">
+<a href="/login?then=%2Fprojects%2Fmissingworldsmedia%2Fthe-phoenix-project-city-of-titans" class="button button_grey">Report this project to Kickstarter</a>
+</div>
+</div>
+<div class="NS-projects-rightcol grid_5" id="rightcol">
+<div class="NS_projects__ecom">
+<div class="digits_6 pb2 pl2 pt2" id="stats">
+<h5>
+<div class="num h48 no-margin" data-backers-count="5003" id="backers_count"><data class="Project253132365" data-format="number" data-value="5003" itemprop="Project[backers_count]">5,003</data></div>
+<span><data class="Project253132365" data-attr="backers_count" data-format="pluralize" data-value="5003" data-word="Backer">Backers</data></span>
+</h5>
+<h5>
+<div class="num h48 no-margin" data-goal="320000.0" data-percent-raised="2.11934075" data-pledged="678189.04" id="pledged">
+<data class="Project253132365" data-currency="USD" data-format="shorter_money" data-precision="0" data-value="678189" data-without_code="true" itemprop="Project[pledged]">$678,189</data>
+<span class="money usd project_currency_code"></span>
+</div>
+pledged of
+<span class="money usd no-code">$320,000</span>
+goal
+</h5>
+<span data-duration="33.041666666666664" data-end_time="2013-11-04T00:01:13-05:00" data-hours-remaining="0" id="project_duration_data"></span>
+<div class="Project253132365" data-conditions="[{&quot;!state&quot;:[&quot;canceled&quot;,&quot;suspended&quot;]}]" data-evaluation="true" data-render="&quot;&lt;h5 class=\&quot;poll \&quot; data-dynamic=\&quot;5\&quot; data-end_time=\&quot;2013-11-04T00:01:13-05:00\&quot; data-poll_url=\&quot;https://d2oher2uhvl0ur.cloudfront.net/projects/missingworldsmedia/the-phoenix-project-city-of-titans/stats.json\&quot;&gt;\n&lt;div class=\&quot;num h48 no-margin\&quot;&gt;0&lt;/div&gt;\n&lt;span class=\&quot;text\&quot;&gt;seconds to go&lt;/span&gt;\n&lt;/h5&gt;\n&quot;"><h5 class="poll " data-dynamic="5" data-end_time="2013-11-04T00:01:13-05:00" data-poll_url="https://d2oher2uhvl0ur.cloudfront.net/projects/missingworldsmedia/the-phoenix-project-city-of-titans/stats.json">
+<div class="num h48 no-margin">0</div>
+<span class="text">seconds to go</span>
+</h5>
+</div></div>
+<div class="Project253132365" data-conditions="[{&quot;state&quot;:&quot;live&quot;},{&quot;!ended?&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;pr2 pl2\&quot; id=\&quot;pledge-wrap\&quot;&gt;\n&lt;a href=\&quot;/projects/missingworldsmedia/the-phoenix-project-city-of-titans/pledge/new?clicked_reward=false\&quot; class=\&quot;button button_green button_box button_block\&quot; id=\&quot;button-back-this-proj\&quot; title=\&quot;Back this project\&quot;&gt;Back This Project &lt;small class=&#39;h6 normal block green-dark&#39;&gt;&lt;span class=\&quot;money usd \&quot;&gt;$1&lt;/span&gt; minimum pledge&lt;/small&gt;&lt;/a&gt;\n&lt;/div&gt;\n&quot;"></div><div class="Project253132365" data-conditions="[{&quot;state&quot;:&quot;live&quot;}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;p2\&quot; id=\&quot;banner\&quot;&gt;\n&lt;p class=\&quot;tiny_type no-margin\&quot;&gt;\nThis project will be funded on\n&lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;llll z\&quot; datetime=\&quot;2013-11-04T00:01:13-05:00\&quot;&gt;Mon, Nov 4 2013 12:01 am EST&lt;/time&gt;.\n&lt;/p&gt;\n&lt;/div&gt;\n&quot;"></div></div>
+
+<div class="NS_projects__rightcol_projectby bg-blue-light rounded">
+<div class="p2 clearfix">
+<div class="avatar inline-block align-middle">
+<a href="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography"><img alt="Mwm-logo_square-small.small" class="avatar-small" height="80" src="https://s3.amazonaws.com/ksr/avatars/5275851/mwm-logo_square-small.small.jpg?1378191270" width="80" />
+</a></div>
+<div class="creator-name inline-block align-middle ml1">
+<h6 class="mb1">Project by</h6>
+<h5 class="mb1">
+<a href="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">Missing Worlds Media</a>
+</h5>
+<p class="location h6 bold mb1">
+<a href="/discover/places/lynnwood-wa">Lynnwood, WA</a>
+</p>
+</div>
+</div>
+<div class="creator-details pl2 pr2 pb1">
+<ul class="list-simple h5 mb1">
+<li class="projects">
+<span class="ss-icon ss-kickstarter grey-dark margin-right"></span>
+<span class="text">
+First created
+<span class="divider">&middot;</span>
+0 backed
+</span>
+</li>
+<li class="facebook-connected">
+<span class="ss-icon ss-facebook facebook color-facebook margin-right"></span>
+<span class="text">
+<a href="https://www.facebook.com/730700327" class="popup" target="_blank">Nathaniel Downes</a>
+<span class="number h6">
+697
+friends
+</span>
+</span>
+
+</li>
+<li class="links">
+<span class="ss-icon ss-globe margin-right grey-dark"></span>
+<span class="text">
+<a href="http://www.cityoftitans.com" class="popup" rel="nofollow" target="_blank">cityoftitans.com</a>
+</span>
+</li>
+</ul>
+</div>
+<div class="footer center h5 bold clearfix rounded-bottom clip">
+<a href="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">See full bio</a>
+<a href="/projects/missingworldsmedia/the-phoenix-project-city-of-titans/messages/new?message%5Bto%5D=missingworldsmedia" class="remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Send a message to Missing Worlds Media">Contact me</a>
+
+</div>
+</div>
+
+<ul class="NS-projects-rightcol-rewards rounded clip list mt2" data-reward-count="15" id="what-you-get">
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$5</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+89 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Armchair Hero - We’re thankful for every bit of support. Everyone who sponsors at the minimum level will receive a set of Wallpapers in common desktop resolutions featuring the work of our talented artists.  Those who join our support forums will also receive the forum title “Kickstarter.”</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-02-01">Feb 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$10</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+221 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Construction Crew - This perk engraves your name ( or proxy ) on the sponsor’s wall in the Atlas Hurricane Memorial Park and confers access in one of the closed beta access waves + All previous rewards.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-05-01">May 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$25</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+581 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Bright Lights Big City - Sponsors at this level receive a handsome bundle of perks. First, you’ll get the opportunity to reserve your Global Nickname before the general release. Additionally, you’ll see the following in game rewards: A Kickstarter only badge and title for our founding heroes ( and villains! ), an exclusive costume set that will never be available again, and a prestige travel power + All previous rewards.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-11-01">Nov 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$50</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1308 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Home Sweet Home - This includes a full copy of the game via digital download, a month of VIP subscription, and advanced account activation during the release weekend giving you a headstart on public play + All previous rewards.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-11-01">Nov 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$75</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1509 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Fly Free!  - At this level you’ll get an additional two months of VIP access and the Kickstarter exclusive Phoenix Travel Aura + All previous rewards.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-11-01">Nov 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$125</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+790 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Dynamic Duo - Twice the fun! The level confers an additional set of Fly Free! rewards for a friend or family member, including all additional rewards from earlier tiers for both accounts + All previous rewards.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-11-01">Nov 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$250</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+212 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Geocacher - Put your mark on the map, literally.  Create your own Exploration Badge on the game map.  We will work with you on the location and text, within design requirements + All previous rewards.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-06-01">Jun 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+90 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>All Your Base - One of the base features we’ll be implementing are secret entrances.  At this level you’ll be able to use an additional set of doors only available to sponsors of this level plus correspondingly themed base decor + All previous rewards.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-11-01">Nov 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$750</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+50 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(50 left of 100)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>I Know A Guy - Help name and design a mission NPC in the game with our talented writers and artists + All previous rewards.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-11-01">Nov 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$1,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+36 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(14 left of 50)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Registered Lethal Weapon - Design yourself a custom single weapon or prop in partnership with our talented artists. It will be exclusively yours in-game for the first year or first four issues after launch, whichever is longer. You have the option of granting access to this to others of your choosing. + All previous rewards.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-11-01">Nov 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$1,500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+6 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(19 left of 25)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Double Trouble - Create an additional weapon or prop in partnership with our talented artists. It will be exclusively yours in-game for the first year or four issues (whichever is longer) after launch. You have the option of granting access to this to others of your choosing + All previous rewards.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-11-01">Nov 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$3,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+12 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(13 left of 25)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Fashionista - Design a custom costume texture to your specifications to be available in the game, exclusively for your characters. Costume components includes gloves, boots, belt, pants, shirt, cape, chest logo, and mask, with the addition of a custom weapon or prop which is exclusively yours in-game. It will be exclusively yours in-game for the first year or four issues (whichever is longer) after launch. You have the option of granting access to this to others of your choosing + All previous rewards.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-11-01">Nov 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$5,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+2 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(8 left of 10)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Big Dog - Your NPC from “I Know A Guy” is upgraded to the owner of a major social hub within the game (nightclub, training center, store, etc). Additionally, you’ll have the *exclusive* use of the base portal within that business + All previous rewards.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-11-01">Nov 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$7,500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+6 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Key to Titan City - Your character is famous throughout the city. Everyone knows your character. Billboards celebrate or condemn your exploits, regular news broadcasts will include your character. You will get an exclusive base location within a city building of your design. Your custom logo will be used on spotlights throughout the city to signal you for early access missions Additionally, the city has erected a statue in your honor, complete with history plaque + All previous rewards.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-11-01">Nov 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$10,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Sanctum Sanctorum - Join us at our launch party at a major convention. We&#39;ll get your badge and room and some grub, but you will have to find your own way there. Conventions and date to be determined + All previous rewards.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-08-01">Aug 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+</ul>
+
+<div class="p2" id="meta">
+<h5>Funding period</h5>
+<p class="tiny_type">
+<time class="js-adjust" data-format="ll" datetime="2013-10-02T00:01:13-04:00">Oct 2, 2013</time> - 
+<time class="js-adjust" data-format="ll" datetime="2013-11-04T00:01:13-05:00">Nov 4, 2013</time>
+(33 days)
+</p>
+</div>
+</div>
+
+</div>
+
+<a href="#" id="video_mode_tab" style="display: none;">
+View in Video Mode
+</a>
+
+</div>
+</div>
+
+
+</div>
+
+<div class="h5 bg-green-dark" id="mega-footer-wrap">
+<div class="bg-green-dark white full-height" id="footer-newsletter-signup">
+<div class="container py4">
+<div class="grid_8 prefix_4 suffix_4 center mt4">
+<h2>
+Eureka! You've found
+<br>
+our little secret.
+</h2>
+<p>Sign up for our Happening email for all the inside info about arts and culture in the Kickstarter universe and beyond.</p>
+<div class="newsletter_signup">
+<form accept-charset="UTF-8" action="/newsletters/happening/signup" class="overlabels" method="post"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /><input class="hidden" name="authenticity_token" type="hidden" value="sPHJ5NOg11iHVqvzc/edvaA2zPSz5/rf+9QHbiUHFJs=" /></div><input class="hidden" id="location" name="location" type="hidden" value="footer" />
+<textarea class="hide textarea" id="comment" name="comment">
+</textarea>
+<div class="field newsletter">
+<label class="overlabel z1 overlabel-newsletter">Email address</label>
+<input class="text" id="email" name="email" type="text" />
+</div>
+<input class="button button_green submit" name="commit" type="submit" value="Submit" />
+</form>
+
+</div>
+
+</div>
+</div>
+</div>
+<div class="container relative" id="mega-footer">
+<span class="scissors icon-scissors-1"></span>
+<div class="grid_16 alpha omega pt4 pb2" id="mega-footer-links">
+<div class="grid_4 link-group">
+<h5 class="white">About us</h5>
+<ul class="list">
+<li><a href="/year/2013/?ref=footer">2013 highlights</a></li>
+<li><a href="/year/2012?ref=footer">2012 highlights</a></li>
+<li><a href="/team?ref=footer">Who we are</a></li>
+<li><a href="/jobs?ref=footer">Jobs</a></li>
+<li><a href="/press?ref=footer">Press</a></li>
+<li><a href="/help/stats?ref=footer">Stats</a></li>
+<li><a href="/newsletters/weekly">Projects we love</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group">
+<h5><a href="/help?ref=footer" class="white">Help</a></h5>
+<ul class="list">
+<li><a href="/hello?ref=footer">What is Kickstarter?</a></li>
+<li><a href="/help?ref=footer">FAQ</a></li>
+<li><a href="/contact?ref=footer">Support</a></li>
+<li><a href="/help/school?ref=footer">Kickstarter School</a></li>
+<li><a href="/terms-of-use?ref=footer">Terms of Use</a></li>
+<li><a href="/privacy?ref=footer">Privacy Policy</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group alpha omega suffix_1">
+<h5 class="alpha"><a href="/discover/advanced?ref=footer" class="white">Discover</a></h5>
+<ul class="column column-0 grid_2 list">
+<li><a href="/discover/categories/art?ref=footer">Art</a></li>
+<li><a href="/discover/categories/comics?ref=footer">Comics</a></li>
+<li><a href="/discover/categories/dance?ref=footer">Dance</a></li>
+<li><a href="/discover/categories/design?ref=footer">Design</a></li>
+<li><a href="/discover/categories/fashion?ref=footer">Fashion</a></li>
+<li><a href="/discover/categories/film%20&amp;%20video?ref=footer">Film &amp; Video</a></li>
+<li><a href="/discover/categories/food?ref=footer">Food</a></li>
+</ul>
+<ul class="column column-1 grid_2 list">
+<li><a href="/discover/categories/games?ref=footer">Games</a></li>
+<li><a href="/discover/categories/music?ref=footer">Music</a></li>
+<li><a href="/discover/categories/photography?ref=footer">Photography</a></li>
+<li><a href="/discover/categories/publishing?ref=footer">Publishing</a></li>
+<li><a href="/discover/categories/technology?ref=footer">Technology</a></li>
+<li><a href="/discover/categories/theater?ref=footer">Theater</a></li>
+</ul>
+</div>
+<div class="grid_3 link-group">
+<h5 class="white">Hello</h5>
+<ul class="list">
+<li>
+<a href="https://twitter.com/kickstarter"><span class="ss-icon ss-social-regular ss-twitter"></span>
+Twitter
+</a></li>
+<li>
+<a href="https://www.facebook.com/Kickstarter"><span class="ss-icon ss-social-regular ss-facebook"></span>
+Facebook
+</a></li>
+<li>
+<a href="http://kickstarter.tumblr.com"><span class="ss-icon ss-social-regular ss-tumblr"></span>
+Tumblr
+</a></li>
+<li>
+<a href="http://instagram.com/kickstarter"><span class="ss-icon ss-social-regular ss-instagram"></span>
+Instagram
+</a></li>
+<li>
+<a href="https://vine.co/Kickstarter"><span class="ss-icon ss-social-regular ss-vine"></span>
+Vine
+</a></li>
+<li>
+<a href="/blog?ref=footer">Blog</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="grid_16 py4" id="mega-footer-bottom">
+<div class="logo left">
+<a href="/" class="grey-dark"><span class="ss-icon h3">KICKSTARTER</span>
+</a></div>
+<p class="right h5 grey-dark">
+&copy;
+2014
+Kickstarter, Inc.
+</p>
+</div>
+</div>
+</div>
+
+<script>
+  //<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    var analytics_vars = { google_analytics_id : "UA-7621056-1", logged_in : "false", social_user: "false" }
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.mixpanel_id = '75b1d24a516ecfc955eadfadc4910661';
+    window.mixpanel_debug = false;
+  //]]>
+</script>
+
+
+<noscript>
+<img alt="Quantcast" border="0" height="1" src="//secure.quantserve.com/pixel/p-34IbSpw2K94Sg.gif" style="display:none" width="1" />
+</noscript>
+
+
+<script>
+  //<![CDATA[
+    window.benchmark = (typeof window.performance == 'object' && typeof window.performance.mark == 'function');
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    (function (root) {
+      function instrument_function (original) {
+        return function () {
+          try {
+            return original.apply(this, arguments);
+          } catch (e) {
+            if (e.stack && root.Honeybadger) {
+              Honeybadger.notify(e, {
+                current_project : root.current_project,
+                current_user : root.current_user
+              });
+            }
+            throw(e);
+          }
+        };
+      }
+      root.instrument_function = instrument_function;
+    }(this));
+  //]]>
+</script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+
+<script>
+  //<![CDATA[
+    (function(){function c(a){this.local_start_time=new Date;this.settings={cookie_name:"request_time"};for(var b in a)this.settings[b]=a[b];this.get_remote_offset()}c.prototype.get_remote_offset=function(){this.cookie_value=this.read_cookie();var a=new Date(this.cookie_value);if(!this.cookie_value||"Invalid Date"===a.toString()){if(this.remote_offset=this.read_cookie("local_offset"))this.remote_offset=parseInt(this.remote_offset,10)}else this.remote_offset=a-this.local_start_time;"undefined"!==typeof this.remote_offset&& !isNaN(this.remote_offset)?(document.cookie="local_offset="+this.remote_offset+"; path=/",this.is_set=!0):this.is_set=!1};c.prototype.time_units=[["milliseconds",1],["seconds",1E3],["minutes",6E4],["hours",36E5],["days",864E5]];c.prototype.get_units_in_interval=function(a,b){var d=a.replace(/^\w/,function(d){return"get"+d.toUpperCase()});return b[d]()};c.prototype.milliseconds_in_day=function(a){"undefined"===typeof a&&(a=new Date);for(var b=0,d=this.time_units.length-2;0<=d;d--)b+=this.get_units_in_interval(this.time_units[d][0], a)*this.time_units[d][1];return b};c.prototype.milliseconds_in_interval=function(a,b){return this.milliseconds_in_day(b)%a};c.prototype.milliseconds_to_next_interval=function(a,b){return a-this.milliseconds_in_interval(a,b)};c.prototype.pluralize=function(a,b){1===b&&(a=a.replace(/s$/,""));return a};c.prototype.read_cookie=function(a){for(var b=window.document.cookie.split(";"),a=(a||this.settings.cookie_name)+"=",d=0;d<b.length;d++){for(var e=b[d];" "==e.charAt(0);)e=e.substring(1,e.length);if(0== e.indexOf(a))return b=e.substring(a.length,e.length),decodeURIComponent(b).replace(/\+/g," ")}return null};c.prototype.destroy_cookie=function(a){var b=new Date;a||(a=this.settings.cookie_name);b.setTime(b.getTime()-864E5);window.document.cookie=a+"=; expires="+b.toGMTString()+"; path=/"};c.prototype.get_remote_time=function(){var a=new Date,b=a.getTime()+this.remote_offset;return a=a.setTime(b)};window.ksr_page_clock=new c})(); (function(){function c(d,a,b){if(d){this.options={unit_base:{seconds:119,minutes:119,hours:72,days:0},end_phrase:d.getAttribute("data-word")||"to go",count_down:d.getAttribute("data-dynamic")||!1};for(k in b)this.options[k]=b[k];this.clock=a;this.time_units=this.clock.time_units.slice(1);this.element=d;this.clock.is_set&&this.attach()}}function a(){this.elements=[];this.attach()}var b=function(d,a){var b=a||window.document.body,c=d.split("."),g=c[c.length-1],c=1<c.length&&c[0]?c[0]:"*";if(window.document.getElementsByClassName)return b.getElementsByClassName(g); if(b.querySelectorAll)return b.querySelectorAll(d);for(var c=b.getElementsByTagName(c),h=[],i=0,f;f=c[i];i++)b=RegExp("(^|\\s)"+g+"(\\s|$)"),(""+f.className).match(b)&&h.push(f);return h};c.prototype.get_remaining_time=function(){var d=this.remote_end_time-this.clock.get_remote_time();0>d&&(d=0);return d};c.prototype.get_current_unit=function(){for(var d,a=0;a<this.time_units.length&&!(d=this.time_units[a],this.get_remaining_time()<=this.options.unit_base[d[0]]*d[1]);a++);return d};c.prototype.update_element= function(){var a=this.get_current_unit(),b=Math.floor(this.get_remaining_time()/a[1]);isNaN(b)||(this.number_element.innerHTML=b,this.text_element.innerHTML=this.clock.pluralize(a[0],b)+" "+this.options.end_phrase)};c.prototype.valid=function(){return!(!this.number_element||!this.text_element)};c.prototype.attach=function(){function a(){c.update_element();if(c.options.count_down&&0<c.get_remaining_time()){var b=c.get_current_unit();this.timeout=window.setTimeout(a,c.clock.milliseconds_to_next_interval(b[1]))}} var c=this;if(this.remote_end_time_string=this.element.getAttribute("data-end_time"))this.remote_end_time_string.match(/^\d+$/)?(this.remote_end_time=new Date,this.remote_end_time.setTime(this.remote_end_time_string)):this.remote_end_time=new Date(this.remote_end_time_string),this.number_element=b(".num",this.element)[0],this.text_element=b(".text",this.element)[0],this.element.ksr_page_timer=!0,this.valid()&&a()};c.prototype.cancel=function(){this.timeout&&clearTimeout(this.timeout)};a.prototype.loading= !0;a.prototype.stop_finding=function(){this.attach_timers();this.loading=!1;document.addEventListener?document.removeEventListener("DOMContentLoaded",this.stop_finding,!1):document.attachEvent&&"complete"===document.readyState&&document.detachEvent("onreadystatechange",this.stop_finding)};a.prototype.bind_ready=function(){var a=this,b=function(){a.stop_finding.call(a)};document.addEventListener?(document.addEventListener("DOMContentLoaded",b,!1),window.addEventListener("load",b,!1)):document.attachEvent&& (document.attachEvent("onreadystatechange",b),window.attachEvent("onload",b))};a.prototype.attach_timers=function(){for(var a=b("div.ksr_page_timer"),e=0;e<a.length;e++)a[e].ksr_page_timer||(new c(a[e],window.ksr_page_clock),this.elements.push(a[e]))};a.prototype.attach=function(){var a=this;this.bind_ready();(function(){a.attach_timers();a.loading&&window.setTimeout(function(){a.attach_timers()},200)})()};window.ProjectTimer=c;new a})();
+  //]]>
+</script>
+
+<script class="template" id="template-widgets__video_embed_code" type="text/x-tmpl-mustache"><iframe width="{{width}}" height="{{height}}" src="{{{path}}}" frameborder="0" scrolling="no"> </iframe>
+</script><script class="template" id="template-projects__baseball_card_tall" type="text/x-tmpl-mustache"><div class="project-card-wrap project-card-wrap-tall border bg-white rounded clip">
+  <div class="project-card relative project-live {{#successful?}}successful{{/successful?}}">
+    <div class="project-thumbnail pt1 pl1 pr1">
+      <a href="{{urls.web.project}}" target="">
+        <img alt="Photo-little" class="projectphoto-little" src="{{photo.little}}" class="fit">
+      </a>
+    </div>
+    <div class="project-card-interior p1 h6 grey-dark">
+      <h6 class="project-title">
+        <a href="{{urls.web.project}}" target="" class="green-dark">{{name}}</a>
+      </h6>
+      <p class="mb1 ellipsis">
+        by
+        {{creator.name}}
+      </p>
+      <p class="blurb">
+        {{blurb}}
+      </p>
+    </div>
+    <div class="absolute-bottom bg-white rounded-bottom">
+
+      {{#location}}
+        <ul class="p1 list project-meta no-margin h6">
+          <li class="ellipsis">
+            <a href="{{location.urls.web.discover}}" data-location="{{location_json}}" class="grey-dark">
+              <span class="ss-icon ss-location"></span>
+              <span class="location-name">{{location.displayable_name}}</span>
+            </a>
+          </li>
+        </ul>
+      {{/location}}
+
+      <div class="project-stats-wrap pb1 pl1 pr1">
+
+        {{#failed?}}
+          <div class='project-status project-failed h6'>
+            <strong> Funding Unsuccessful</strong><br />
+            <span class="grey-dark">Project ended on {{formatted_deadline}}</span>
+          </div>
+        {{/failed?}}
+
+        {{#canceled?}}
+          <div class='project-status project-canceled h6'>
+            <strong> Funding Canceled</strong><br />
+            <span class="grey-dark">Project canceled on {{formatted_state_changed_at}}</span>
+          </div>
+        {{/canceled?}}
+
+        {{#successful?}}
+          <div class='project-pledged-successful bg-green white h6 pl1 pr1 mb1'>
+            <strong>Successful!</strong>
+          </div>
+        {{/successful?}}
+
+        {{#live_or_successful?}}
+          {{#live?}}
+            <div class="project-pledged-wrap bg-grey clip mb1">
+              <div class="project-pledged bg-green full-height" style="width: {{percent_raised_to_100}}%"></div>
+            </div>
+          {{/live?}}
+          <ul class="project-stats list no-margin h6 no-wrap">
+            <li class="first funded inline-block mr1">
+              <strong class="block h6">{{percent_raised_rounded}}%</strong>
+              <span class="grey-dark">funded</span>
+            </li>
+            <li class="pledged inline-block mr1">
+              <strong class="block h6">{{currency_symbol}}{{formatted_money}}</strong>
+              <span class="grey-dark">pledged</span>
+            </li>
+            {{#successful?}}
+              <li class="last successful inline-block">
+                <strong class="block h6">Funded</strong>
+                <div class="deadline grey-dark">{{formatted_deadline}}</div>
+              </li>
+            {{/successful?}}
+            {{#live?}}
+              <li class="last ksr_page_timer inline-block" data-end_time="{{javascript_deadline}}">
+                <strong class="block h6">
+                  <div class="num">30</div>
+                </strong>
+                <div class="span text grey-dark" data-word="left">days to go</div>
+              </li>
+            {{/live?}}
+          </ul>
+        {{/live_or_successful?}}
+      </div>
+    </div>
+  </div>
+</div>
+
+{{#friends_backing?}}
+  <div class="friend_project_context">
+    <div class="friend_facepile">
+      {{#truncated_friends}}
+        <img src="{{avatar.thumb}}" class="{{#has_metadata?}}small{{/has_metadata?}}">
+      {{/truncated_friends}}
+    </div>
+    <p class="friend_namepile">
+      {{{escaped_sentence}}}
+    </p>
+  </div>
+{{/friends_backing?}}
+</script><script class="template" id="template-projects__video_mode" type="text/x-tmpl-mustache"><a href='#' id='video_mode_close' class='close_button z2'><span class='ss-icon ss-delete'></span></a>
+
+<div class='title_card z1 {{context_classes}}' style="display:none;">
+  <div class='interior'>
+    <h2 class='project_title normal_weight'>{{name}}</h2>
+    <p class='blurb'>{{blurb}}</p>
+    <nav class='bar'>
+      <a id='play_button' class='left play' href='#'>
+        <span class='play_active'>
+          <span class='ss-icon ss-play'></span>
+          Play
+        </span>
+        <span class='pause_active'>
+          <span class='ss-icon ss-pause'></span>
+          Pause
+        </span>
+      </a>
+      {{#logged_in}}
+        <div class='remind right'>
+          {{#if_not_starred}}
+            <a class='follow' href='{{urls.web.project}}/watch'><span class='ss-icon ss-star'></span></a>
+          {{/if_not_starred}}
+          {{#if_starred}}
+            <a class='unfollow' href='{{urls.web.project}}/unwatch'><span class='ss-icon ss-star active'></span></a>
+          {{/if_starred}}
+        </div>
+      {{/logged_in}}
+      <a class='right explore button button_green small' href='#'>Explore this project</a>
+    </nav>
+  </div>
+</div>
+
+<div class='channel_controls z1'>
+  <a href='#' class='{{#playlist_is_location}}selected {{/playlist_is_location}}location'>Something else near {{location.first_name}} <span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_featured}}selected {{/playlist_is_featured}}featured'>Something different<span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_category}}selected {{/playlist_is_category}}category'>Something else in {{category.name}} <span class='ss-icon ss-navigateright'></span></a>
+</div>
+
+<div class='project_video' style='background-image: url('{{photo.full}}')'>
+  <div class='cover'>
+    <video>
+      <source src='{{video.high}}' type='video/mp4'/>
+      <source src='{{video.webm}}' type='video/webm'/>
+    </video>
+  </div>
+</div>
+</script><script class="template" id="template-site__video_mode_fourohfour" type="text/x-tmpl-mustache"><section class='four_oh_four'>
+  <p class='big_type'>
+    Looks like you've reached the end of the line! <br />Check out <a class="another" href='#'>another channel</a> or <a href='/discover'>browse projects in discover</a>.
+  </p>
+</section>
+</script>
+
+<script id="schwamm_formatting_options" type="text/javascript">
+//<![CDATA[
+(function(){window.formatters = window.formatters || {}; var formatting_options = {"distance_date_intervals":[[5,"just now"],[29,"less than a minute ago"],[89,"1 minute ago"],[2640,"%m minutes ago"],[5340,"about 1 hour ago"],[82800,"about %h hours ago"],[147600,"1 day ago"],[604800,"%d days ago"],[15552000,"on %t"],[0,"on %y"]],"currency_symbol_mappings":{"AFN":"\u060b","ALL":"Lek","ARS":"$","AUD":"$","AWG":"\u0192","AZN":"\u043c\u0430\u043d","BAM":"KM","BBD":"$","BGN":"\u043b\u0432","BMD":"$","BND":"$","BOB":"$b","BRL":"R$","BSD":"$","BWP":"P","BYR":"p.","BZD":"BZ$","CAD":"$","CLP":"$","CNY":"\u00a5","COP":"$","CRC":"\u20a1","CUP":"\u20b1","CZK":"K\u010d","DKK":"kr","DOP":"RD$","EGP":"\u00a3","EUR":"\u20ac","FJD":"$","FKP":"\u00a3","GBP":"\u00a3","GIP":"\u00a3","GTQ":"Q","GYD":"$","HKD":"$","HNL":"L","HRK":"kn","HUF":"Ft","IDR":"Rp","ILS":"\u20aa","IRR":"\ufdfc","ISK":"kr","JMD":"J$","JPY":"\u00a5","KGS":"\u043b\u0432","KHR":"\u17db","KPW":"\u20a9","KRW":"\u20a9","KYD":"$","KZT":"\u043b\u0432","LAK":"\u20ad","LBP":"\u00a3","LKR":"\u20a8","LRD":"$","LTL":"Lt","LVL":"Ls","MKD":"\u0434\u0435\u043d","MNT":"\u20ae","MUR":"\u20a8","MXN":"$","MYR":"RM","MZN":"MT","NAD":"$","NGN":"\u20a6","NIO":"C$","NOK":"kr","NPR":"\u20a8","NZD":"$","OMR":"\ufdfc","PAB":"B/.","PEN":"S/.","PHP":"\u20b1","PKR":"\u20a8","PLN":"z\u0142","PYG":"Gs","QAR":"\ufdfc","RON":"lei","RSD":"\u0414\u0438\u043d.","RUB":"\u0440\u0443\u0431","SAR":"\ufdfc","SBD":"$","SCR":"\u20a8","SEK":"kr","SGD":"$","SHP":"\u00a3","SOS":"S","SRD":"$","SVC":"$","SYP":"\u00a3","THB":"\u0e3f","TRY":"TL","TTD":"TT$","TWD":"NT$","UAH":"\u20b4","USD":"$","UYU":"$U","UZS":"\u043b\u0432","VEF":"Bs","VND":"\u20ab","YER":"\ufdfc","ZAR":"R"},"currency_trailing_code_mappings":{"AUD":true,"CAD":true,"NZD":true,"USD":true},"currency_formats":["money","shorter_money"]}; for (key in formatting_options) {window.formatters[key] = formatting_options[key]};}());
+//]]>
+</script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("begin_base.js_tag");}
+  //]]>
+</script>
+<script src="https://d297h9he240fqh.cloudfront.net/assets/packages/base-45cdab84617ddfb8905b7cddc8500c19.js" type="text/javascript"></script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("end_base.js_tag");}
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    document.domain='kickstarter.com';
+  //]]>
+</script>
+
+<iframe height="0" id="api_xdreceiver" src="https://api.kickstarter.com/xdreceiver/85e6.html" style="display: none;" width="0"></iframe>
+
+
+
+<div id="fb-root"></div>
+<script>
+  //<![CDATA[
+    var channelUrl = window.location.protocol + "//" + window.location.host + "/channel.html",
+      skip_autologin = $('body').is('.skip_autologin');
+    
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId: window.fb_app_id,
+        channelUrl: channelUrl,
+        status: true,    // check login status
+        cookie: true,    // enable cookies to allow the server to access the session
+        xfbml: true,     // parse XFBML
+        logging: false   // turn off logging
+      });
+    
+      FB.getLoginStatus(function (response) {
+        if (response.status === 'connected') {
+          if (read_cookie("logout_from_fb")) {
+            FB.logout();
+            destroy_cookie("logout_from_fb");
+          } else if (!skip_autologin) {
+            $.get("/fb/autologin", {'fbsr': response.authResponse.signedRequest});
+          } else if (false && 0 == response.authResponse.userID) {
+            $.get("/fb/refresh", {'fbsr': response.authResponse.signedRequest});
+          }
+        } else {
+          if (read_cookie("logout_from_fb")) {
+            destroy_cookie("logout_from_fb");
+          }
+        }
+      })
+    
+      $(document).trigger('fb:loaded');
+    };
+    
+    
+    // Load the SDK Asynchronously
+    (function(d){
+      var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+      js = d.createElement('script'); js.id = id; js.async = true;
+      js.src = "//connect.facebook.net/en_US/all.js";
+      d.getElementsByTagName('head')[0].appendChild(js);
+    }(document));
+  //]]>
+</script>
+
+
+</body>
+</html>

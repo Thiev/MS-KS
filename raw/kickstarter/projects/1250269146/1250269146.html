@@ -1,0 +1,1840 @@
+<!DOCTYPE html>
+<html class="projects_show  fontface no-js" lang="en">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# kickstarter: http://ogp.me/ns/fb/kickstarter#">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-5.newrelic.com","errorBeacon":"jserror.newrelic.com","licenseKey":"b04b883ad2","applicationID":"11086","transactionName":"cFteRUULX1wHFhtIEFxeVVJDFxxDCgtD","queueTime":12,"applicationTime":1856,"ttGuid":"","agentToken":null,"agent":"js-agent.newrelic.com/nr-411.min.js"}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"Vw4BVEVSCQMIUg=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e){function n(t,e,n){n||(n={});for(var r=o[t],a=r&&r.length||0,s=n[i]||(n[i]={}),u=0;a>u;u++)r[u].apply(s,e);return s}function r(t,e){var n=o[t]||(o[t]=[]);n.push(e)}var o={},i="nr@context";e.exports={on:r,emit:n}},{}],2:[function(t){function e(t,e,n,i,s){return u?u-=1:r("err",[s||new UncaughtException(t,e,n)]),"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t(5),a=window.onerror,s=!1,u=0;t("loader").features.push("err"),window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(d){"stack"in d&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(4),s=!0)}i.on("fn-start",function(){s&&(u+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&u>0&&(u-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:4,3:3,4:6,5:1,6:14,handle:"D5DuLP",loader:"G9z0Bl"}],3:[function(t){function e(t){r.inPlace(t,["addEventListener","removeEventListener"],"-",n)}function n(t){return t[1]}var r=t(1),o=(t(3),t(2));if(e(window),"getPrototypeOf"in Object){for(var i=document;i&&!i.hasOwnProperty("addEventListener");)i=Object.getPrototypeOf(i);i&&e(i);for(var a=XMLHttpRequest.prototype;a&&!a.hasOwnProperty("addEventListener");)a=Object.getPrototypeOf(a);a&&e(a)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&e(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=e["nr@wrapped"]?t[1]=e["nr@wrapped"]:e["nr@wrapped"]=t[1]=r(e,"fn-"):"function"==typeof e.handleEvent&&r.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:15,2:1,3:14}],4:[function(t){var e=(t(3),t(1)),n=t(2);e.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=e(t[0],"fn-")})},{1:15,2:1,3:14}],5:[function(t){function e(t){var e=t[0];"string"==typeof e&&(e=new Function(e)),t[0]=n(e,"fn-")}var n=(t(3),t(1)),r=t(2);n.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",e)},{1:15,2:1,3:14}],6:[function(t){function e(){o.inPlace(this,s,"fn-")}function n(t,e){o.inPlace(e,["onreadystatechange"],"fn-")}function r(t,e){return e}var o=t(1),i=t(2),a=window.XMLHttpRequest,s=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];window.XMLHttpRequest=function(t){var n=new a(t);try{i.emit("new-xhr",[],n),o.inPlace(n,["addEventListener","removeEventListener"],"-",function(t,e){return e}),n.addEventListener("readystatechange",e,!1)}catch(r){try{i.emit("internal-error",r)}catch(s){}}return n},window.XMLHttpRequest.prototype=a.prototype,o.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",r),i.on("send-xhr-start",n),i.on("open-xhr-start",n)},{1:15,2:1}],7:[function(t){function e(){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;u>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,d="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=e(d);if(f&&(r.rxSize=f),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}t("loader").features.push("xhr");var o=t("handle"),i=t(1),a=t(5),s=["load","error","abort","timeout"],u=s.length,d=t(2);t(3),t(4),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var d=e(o);d&&(r.txSize=d)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",e)}catch(r){}}};for(var f=0;u>f;f++)n.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&e()},{1:8,2:11,3:3,4:6,5:1,handle:"D5DuLP",loader:"G9z0Bl"}],8:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e){var n=r[t];return n?n.apply(this,e):(o[t]||(o[t]=[]),void o[t].push(e))}var r={},o={};e.exports=n,n.queues=o,n.handlers=r},{}],11:[function(t,e){function n(t){if(!t||"object"!=typeof t&&"function"!=typeof t)return-1;if(t===window)return 0;if(o.call(t,"__nr"))return t.__nr;try{return Object.defineProperty(t,"__nr",{value:r,writable:!0,enumerable:!1}),r}catch(e){return t.__nr=r,r}finally{r+=1}}var r=1,o=Object.prototype.hasOwnProperty;e.exports=n},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&u&&u.body){p.proto="https"===c.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=u.createElement("script");e.src=p.proto+t.agent,u.body.appendChild(e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,u=s.document,d="addEventListener",f="attachEvent",c=(""+location).split("?")[0],p=e.exports={offset:i(),origin:c,features:[]};u[d]?(u[d]("DOMContentLoaded",o,!1),s[d]("load",n,!1)):(u[f]("onreadystatechange",r),s[f]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],14:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],15:[function(t,e){function n(t,e,r,s){function nrWrapper(){try{var n,a=u(arguments),d=this,f=r&&r(a,d)||{}}catch(c){i([c,"",[a,d,s],f])}o(e+"start",[a,d,s],f);try{return n=t.apply(d,a)}catch(p){throw o(e+"err",[a,d,p],f),p}finally{o(e+"end",[a,d,n],f)}}return a(t)?t:(e||(e=""),nrWrapper[n.flag]=!0,nrWrapper)}function r(t,e,r,o){r||(r="");var i,s,u,d="-"===r.charAt(0);for(u=0;u<e.length;u++)s=e[u],i=t[s],a(i)||(t[s]=n(i,d?s+r:r,o,s,t))}function o(t,e,n){try{s.emit(t,e,n)}catch(r){i([r,t,e,n])}}function i(t){try{s.emit("internal-error",t)}catch(e){}}function a(t){return!(t&&"function"==typeof t&&t.apply&&!t[n.flag])}var s=t(1),u=t(2);e.exports=n,n.inPlace=r,n.flag="nr@wrapper"},{1:1,2:14}]},{},["G9z0Bl",2,7]);</script><script>
+  //<![CDATA[
+    docElement = this.document.documentElement;
+    docElement.className=docElement.className.replace(/\bno-js\b/,'') + 'js';
+  //]]>
+</script>
+<title>Crystal Arena: a MOBA-like Strategy Game by REVOBEING LTD &mdash; Kickstarter</title><script>
+  //<![CDATA[
+    window.report_errors = true;
+    window.honeybadger_configuration = {
+      api_key : "02ab109335c0dd1a93506d92f22217a7",
+      environment : "production",
+      component : "projects",
+      action : "show",
+      onerror : false
+    };
+  //]]>
+</script>
+
+
+<!--[if lt IE 9]>
+  <script src="//html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta content="telephone=no" name="format-detection">
+
+<!--[if !IE]> -->
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base-9f623ad5d021a188cfb2d68a0cdf7a7b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<!-- <![endif]-->
+<!--[if IE]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base_blessed-2640c72487552f9a2ef9f2620b4af860.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<!--[if lte IE 9]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_nine-a93fe10530f175f96c4078b7e070d7e1.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 8]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_eight-f75aeb274436f94a0d243774456b1c62.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 7]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie-c019c01acd3a96588b346cf577a3504f.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_seven-5a3d2cef660cd281fd844b04b2397dbb.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if IE 6]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_six-e4d3caf76e405fe19aee6ece8bda701b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<link href="https://d297h9he240fqh.cloudfront.net/favicon.png" rel="icon" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-precomposed-7b603dba7cf80e4acc57d94a991bebbd.png" rel="apple-touch-icon-precomposed" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-ipad-precomposed-3176f72977daf43dee3b0d348484dc01.png" rel="apple-touch-icon-precomposed" sizes="72x72" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-iphone4-precomposed-b93b70168cd8492c843d0fea873c7f83.png" rel="apple-touch-icon-precomposed" sizes="114x114" type="image/png">
+<link href="https://www.kickstarter.com/services/oembed?url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Frevobeing%2Fcrystal-arena-a-moba-like-strategy-game-0" rel="alternate" title="Crystal Arena: a MOBA-like Strategy Game Script Tag oEmbed" type="application/json+oembed">
+<link rel="alternate" type="application/atom+xml" title="Crystal Arena: a MOBA-like Strategy Game : Kickstarter" href="https://www.kickstarter.com/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/posts.atom" />
+<meta property="twitter:app:id:iphone" content="596961532"/>
+<meta property="twitter:app:name:iphone" content="Kickstarter"/>
+<meta property="twitter:app:url:iphone" content="ksr://www.kickstarter.com/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0"/>
+<meta name="video_height" content="480"/>
+<meta name="video_width" content="640"/>
+<meta name="video_type" content="application/x-shockwave-flash"/>
+<meta name="title" content="Kickstarter &gt;&gt; Crystal Arena: a MOBA-like Strategy Game by REVOBEING LTD"/>
+<meta name="description" content="REVOBEING LTD is raising funds for Crystal Arena: a MOBA-like Strategy Game on Kickstarter! 
+
+ A DotA and LoL influenced strategy game with legendary bosses and epic adventures!"/>
+<meta property="og:title" content="Crystal Arena: a MOBA-like Strategy Game"/>
+<meta property="og:type" content="kickstarter:project"/>
+<meta property="og:image" content="https://s3.amazonaws.com/ksr/projects/659185/photo-main.jpg?1397831890"/>
+<meta property="og:url" content="https://www.kickstarter.com/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0"/>
+<meta property="og:site_name" content="Kickstarter"/>
+<meta property="fb:app_id" content="69103156693"/>
+<meta property="og:description" content="A DotA and LoL influenced strategy game with legendary bosses and epic adventures!"/>
+<meta property="kickstarter:creator" content="https://www.kickstarter.com/profile/revobeing"/>
+<meta property="twitter:url:landing_url" content="https://www.kickstarter.com/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0"/>
+<meta property="twitter:card" content="2427656750:kickstarter_project"/>
+<meta property="twitter:site" content="@kickstarter"/>
+<meta property="twitter:site:id" content="16186995"/>
+<meta property="twitter:text:title" content="Crystal Arena: a MOBA-like Strategy Game"/>
+<meta property="twitter:text:artist" content="REVOBEING LTD"/>
+<meta property="twitter:text:backers" content="98"/>
+<meta property="twitter:text:pledged" content="$13,155 USD"/>
+<meta property="twitter:text:time" content="0 seconds"/>
+<meta property="twitter:text:location" content="Chengdu, China"/>
+<meta property="twitter:image:location_image" content="https://d3mlfyygrfdi2i.cloudfront.net/b40e/pin.png"/>
+<meta property="twitter:text:description" content="A DotA and LoL influenced strategy game with legendary bosses and epic adventures!"/>
+<meta property="twitter:image:media" content="https://s3.amazonaws.com/ksr/projects/659185/photo-main.jpg?1397831890"/>
+<meta property="twitter:image:width" content="640"/>
+<meta property="twitter:image:height" content="480"/>
+<meta property="twitter:player:stream:url" content="https://d2pq0u4uni88oo.cloudfront.net/projects/659185/video-282224-h264_base.mp4"/>
+<meta property="twitter:player:stream:content" content="video/mp4"/>
+<meta property="twitter:player:url" content="https://www.kickstarter.com/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/widget/video.html"/>
+<meta property="twitter:player:height" content="480"/>
+<meta property="twitter:player:width" content="640"/>
+<meta property="twitter:maxage" content="60"/>
+<meta property="og:video" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F659185%2Fvideo-282224-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F659185%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+REVOBEING+LTD&amp;project_title=Crystal+Arena%3A+a+MOBA-like+Strategy+Game&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Frevobeing%2Fcrystal-arena-a-moba-like-strategy-game-0&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:secure_url" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F659185%2Fvideo-282224-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F659185%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+REVOBEING+LTD&amp;project_title=Crystal+Arena%3A+a+MOBA-like+Strategy+Game&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Frevobeing%2Fcrystal-arena-a-moba-like-strategy-game-0&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:height" content="480"/>
+<meta property="og:video:width" content="640"/>
+<meta property="og:video:type" content="application/x-shockwave-flash"/>
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="05YTdOHYGh9ViXcYdt+U++roqmCyXmKpvnYfELR3roM=" name="csrf-token" />
+<script type="text/javascript">
+  var _sift = _sift || [];
+  _sift.push(['_setAccount', '637102']);
+  _sift.push(['_setUserId', '']);
+  _sift.push(['_trackPageview']);
+
+  (function() {
+    function loadSift() {
+      var sift, s;
+      if (root.visitor_id) {
+        _sift.push(['_setSessionId', root.visitor_id]);
+      }
+      sift = document.createElement('script');
+      sift.type = 'text/javascript';
+      sift.async = true;
+      sift.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dtlilztwypawv.cloudfront.net/s.js';
+      s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(sift, s);
+    }
+    if (window.attachEvent) {
+      window.attachEvent('onload', loadSift);
+    } else {
+      window.addEventListener('load', loadSift, false);
+    }
+  })();
+</script>
+<link href="http://kck.st/12HImmV" rel="shorturl">
+<link href="https://www.kickstarter.com/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0" rel="canonical">
+<link href="https://s3.amazonaws.com/ksr/projects/659185/photo-med.jpg?1397831890" rel="image_src">
+<link href="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F659185%2Fvideo-282224-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F659185%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+REVOBEING+LTD&amp;project_title=Crystal+Arena%3A+a+MOBA-like+Strategy+Game&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Frevobeing%2Fcrystal-arena-a-moba-like-strategy-game-0&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque" rel="video_src">
+<script>
+  //<![CDATA[
+    window.current_checkout = "{&quot;id&quot;:0,&quot;domestic&quot;:null,&quot;amount&quot;:0.0,&quot;updated_at&quot;:0,&quot;created_at&quot;:0}";
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.current_ip = '94.209.101.212';
+    window.current_ip_datacenter = 'false';
+    window.enabled_features = {"elasticsearch":true,"security_history_read":true,"security_history_write":true,"advanced_discovery_es":true,"ios_crashlytics":true,"ios_mixpanel":true,"stories_veronica_mars":true,"veronica_mars_hero":true,"password_reset_banner":true};
+    window.fb_app_id = '69103156693';
+    
+    var _sf_startpt=(new Date()).getTime();
+    
+    window.current_project = "{&quot;id&quot;:1250269146,&quot;name&quot;:&quot;Crystal Arena: a MOBA-like Strategy Game&quot;,&quot;blurb&quot;:&quot;A DotA and LoL influenced strategy game with legendary bosses and epic adventures!&quot;,&quot;goal&quot;:12000.0,&quot;pledged&quot;:13155.0,&quot;state&quot;:&quot;successful&quot;,&quot;slug&quot;:&quot;crystal-arena-a-moba-like-strategy-game-0&quot;,&quot;disable_communication&quot;:false,&quot;country&quot;:&quot;US&quot;,&quot;currency&quot;:&quot;USD&quot;,&quot;currency_symbol&quot;:&quot;$&quot;,&quot;currency_trailing_code&quot;:true,&quot;deadline&quot;:1380205994,&quot;state_changed_at&quot;:1380205994,&quot;created_at&quot;:1377228068,&quot;launched_at&quot;:1377613994,&quot;backers_count&quot;:98,&quot;photo&quot;:{&quot;full&quot;:&quot;https://s3.amazonaws.com/ksr/projects/659185/photo-full.jpg?1397831890&quot;,&quot;ed&quot;:&quot;https://s3.amazonaws.com/ksr/projects/659185/photo-ed.jpg?1397831890&quot;,&quot;med&quot;:&quot;https://s3.amazonaws.com/ksr/projects/659185/photo-med.jpg?1397831890&quot;,&quot;little&quot;:&quot;https://s3.amazonaws.com/ksr/projects/659185/photo-little.jpg?1397831890&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/projects/659185/photo-small.jpg?1397831890&quot;,&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/projects/659185/photo-thumb.jpg?1397831890&quot;,&quot;1024x768&quot;:&quot;https://s3.amazonaws.com/ksr/projects/659185/photo-1024x768.jpg?1397831890&quot;,&quot;1536x1152&quot;:&quot;https://s3.amazonaws.com/ksr/projects/659185/photo-1536x1152.jpg?1397831890&quot;},&quot;creator&quot;:{&quot;id&quot;:1833781536,&quot;name&quot;:&quot;REVOBEING LTD&quot;,&quot;slug&quot;:&quot;revobeing&quot;,&quot;avatar&quot;:{&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/5944003/Logo_new2.thumb.jpg?1373517431&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/5944003/Logo_new2.small.jpg?1373517431&quot;,&quot;medium&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/5944003/Logo_new2.medium.jpg?1373517431&quot;},&quot;urls&quot;:{&quot;web&quot;:{&quot;user&quot;:&quot;https://www.kickstarter.com/profile/revobeing&quot;},&quot;api&quot;:{&quot;user&quot;:&quot;https://api.kickstarter.com/v1/users/1833781536?signature=1399959623.8183dadd2d4450d8bac6a7499baf89fabf0dacbd&quot;}}},&quot;location&quot;:{&quot;id&quot;:2158433,&quot;name&quot;:&quot;Chengdu&quot;,&quot;slug&quot;:&quot;chengdu-chengdu-sichuan&quot;,&quot;short_name&quot;:&quot;Chengdu, China&quot;,&quot;displayable_name&quot;:&quot;Chengdu, China&quot;,&quot;country&quot;:&quot;CN&quot;,&quot;state&quot;:&quot;Sichuan&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/chengdu-chengdu-sichuan&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/chengdu-chengdu-sichuan&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1399952712.ca267868e21ba06e3e4ee957d877653cb96b01b3&amp;woe_id=2158433&quot;}}},&quot;category&quot;:{&quot;id&quot;:35,&quot;name&quot;:&quot;Video Games&quot;,&quot;slug&quot;:&quot;games/video games&quot;,&quot;position&quot;:7,&quot;parent_id&quot;:12,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;http://www.kickstarter.com/discover/categories/games/video%20games&quot;}}},&quot;urls&quot;:{&quot;web&quot;:{&quot;project&quot;:&quot;https://www.kickstarter.com/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0&quot;,&quot;project_short&quot;:&quot;http://kck.st/12HImmV&quot;,&quot;updates&quot;:&quot;https://www.kickstarter.com/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/posts&quot;},&quot;api&quot;:{&quot;project&quot;:&quot;https://api.kickstarter.com/v1/projects/1250269146?signature=1399959623.d83df6e8ceebd1b20c67b771777682fc94c386db&quot;,&quot;comments&quot;:&quot;https://api.kickstarter.com/v1/projects/1250269146/comments?signature=1399959623.d61e866515526d7c18544b55f42b470a76d9d750&quot;,&quot;updates&quot;:&quot;https://api.kickstarter.com/v1/projects/1250269146/updates?signature=1399959623.002182d4a6984d34d6f99c024244036933b04ed3&quot;}},&quot;updated_at&quot;:1399866108,&quot;successful_at&quot;:1380205994,&quot;video&quot;:{&quot;id&quot;:282224,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/659185/video-282224-h264_high.mp4?2013&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/659185/video-282224-h264_base.mp4?2013&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/659185/video-282224-webm.webm?2013&quot;,&quot;width&quot;:640,&quot;height&quot;:480,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/659185/video-282224-h264_base.jpg?2013&quot;},&quot;comments_count&quot;:30,&quot;updates_count&quot;:16,&quot;rewards&quot;:[{&quot;id&quot;:0,&quot;minimum&quot;:1,&quot;reward&quot;:&quot;No Reward&quot;},{&quot;id&quot;:1916048,&quot;minimum&quot;:1.0,&quot;reward&quot;:&quot;Einherjar\\r\\n==============================\\r\\nSpecial Thanks and a digital hug! \\r\\nYou will have access to our secret backer only updates, including the announcement of the new Einherjar. \\r\\nYou will also receive this most voted new Einherjar when the game is released. \\r\\nYour name will be credited in &#39;Special Thanks&#39; on our website.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1393632000,&quot;project_id&quot;:1250269146,&quot;backers_count&quot;:7,&quot;updated_at&quot;:1394081372},{&quot;id&quot;:1916049,&quot;minimum&quot;:15.0,&quot;reward&quot;:&quot;Bronze (Early Bird) ============================== Einherjar tier plus ++++++++++++++++ Pre-order the full version of the game. You will receive a full version of the game with all 10 Einherjar unlocked. (Value: $30)&quot;,&quot;limit&quot;:300,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1393632000,&quot;project_id&quot;:1250269146,&quot;remaining&quot;:286,&quot;backers_count&quot;:14,&quot;updated_at&quot;:1380233022},{&quot;id&quot;:1916050,&quot;minimum&quot;:15.0,&quot;reward&quot;:&quot;Bronze (Early Bird) For PC/Mac ============================== Einherjar tier plus ++++++++++++++++ Pre-order the full version of the game for PC or Mac! You will receive a digital copy of the game with all 10 regular Einherjar unlocked. (Value: $30)\\r\\n============================== \\r\\nThe other $15 early bird tier above is for mobile.&quot;,&quot;limit&quot;:500,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1401580800,&quot;project_id&quot;:1250269146,&quot;remaining&quot;:467,&quot;backers_count&quot;:33,&quot;updated_at&quot;:1380206915},{&quot;id&quot;:1934386,&quot;minimum&quot;:20.0,&quot;reward&quot;:&quot;Bronze \\r\\n============================== Einherjar tier plus ++++++++++++++++ Pre-order the full version of the game for Mobile, PC or Mac! You will receive a digital copy of the game with all 10 regular Einherjar unlocked. (Value: $30)&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1401580800,&quot;project_id&quot;:1250269146,&quot;backers_count&quot;:3,&quot;updated_at&quot;:1380206915},{&quot;id&quot;:1916051,&quot;minimum&quot;:25.0,&quot;reward&quot;:&quot;Silver ============================== Bronze tier plus ++++++++++++++++ HD Wallpapers, Digital OST and Digital Artbook.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1393632000,&quot;project_id&quot;:1250269146,&quot;backers_count&quot;:10,&quot;updated_at&quot;:1380452144},{&quot;id&quot;:1916052,&quot;minimum&quot;:40.0,&quot;reward&quot;:&quot;Gold ============================== Silver tier plus ++++++++++++++++ Access to the early beta test, your voice will be heard and the game will become a better game because of you.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1388534400,&quot;project_id&quot;:1250269146,&quot;backers_count&quot;:2,&quot;updated_at&quot;:1380206911},{&quot;id&quot;:1916053,&quot;minimum&quot;:65.0,&quot;reward&quot;:&quot;Platinum ============================== Silver tier plus ++++++++++++++++ Access to the pre-release beta, you can play the game ahead of other players. Your data will persist when the game is released.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1391212800,&quot;project_id&quot;:1250269146,&quot;backers_count&quot;:3,&quot;updated_at&quot;:1380812448},{&quot;id&quot;:1916150,&quot;minimum&quot;:90.0,&quot;reward&quot;:&quot;Diamond- the Steam Gunner ============================== Platinum tier plus ++++++++++++++++ A Kickstarter Exclusive Einherjar, Gina the Steam Gunner, a legendary Einherjar for Kickstarter only.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1396310400,&quot;project_id&quot;:1250269146,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1377242677},{&quot;id&quot;:1916151,&quot;minimum&quot;:90.0,&quot;reward&quot;:&quot;Diamond- the Wolf Samurai ============================== Platinum tier plus ++++++++++++++++ A Kickstarter Exclusive Einherjar, Arashi the Wolf Samurai, a legendary Einherjar for Kickstarter only.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1396310400,&quot;project_id&quot;:1250269146,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1380812417},{&quot;id&quot;:1916152,&quot;minimum&quot;:90.0,&quot;reward&quot;:&quot;Diamond- the Secret Base ============================== Platinum tier plus ++++++++++++++++ Access to the hidden levels (for Kickstarter only) in the game&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1396310400,&quot;project_id&quot;:1250269146,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1377242677},{&quot;id&quot;:1916153,&quot;minimum&quot;:120.0,&quot;reward&quot;:&quot;Chaos - Kickstarter Exclusive Pack (Early Bird) ============================== Platinum tier plus ++++++++++++++++ Both 2 Exclusive Einherjars and also access to the hidden levels. Your name will be credited in &#39;Special Thanks&#39; in the game.&quot;,&quot;limit&quot;:99,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1396310400,&quot;project_id&quot;:1250269146,&quot;remaining&quot;:92,&quot;backers_count&quot;:7,&quot;updated_at&quot;:1380812424},{&quot;id&quot;:1916154,&quot;minimum&quot;:140.0,&quot;reward&quot;:&quot;Chaos - Kickstarter Exclusive Pack ============================== Platinum tier plus ++++++++++++++++ Both 2 Exclusive Einherjars and also access to the hidden levels. Your name will be credited in &#39;Special Thanks&#39; in the game.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1396310400,&quot;project_id&quot;:1250269146,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1380206904},{&quot;id&quot;:1916155,&quot;minimum&quot;:240.0,&quot;reward&quot;:&quot;Extreme \\u2013 Crystal Arena Physical Pack (Early Bird) ============================== Chaos tier plus +++++++++++++++++ A Crystal Arena T-shirt, A hard cover art book, a CD of the OST and a figure of the minion.&quot;,&quot;limit&quot;:99,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;40.0&quot;,&quot;estimated_delivery_on&quot;:1396310400,&quot;project_id&quot;:1250269146,&quot;remaining&quot;:91,&quot;backers_count&quot;:8,&quot;updated_at&quot;:1380812481},{&quot;id&quot;:1916156,&quot;minimum&quot;:270.0,&quot;reward&quot;:&quot;Extreme \\u2013 Crystal Arena Physical Pack ============================== Chaos tier plus +++++++++++++++++ A Crystal Arena T-shirt, A hard cover art book, a CD of the OST and a figure of the minion.&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;40.0&quot;,&quot;estimated_delivery_on&quot;:1396310400,&quot;project_id&quot;:1250269146,&quot;backers_count&quot;:3,&quot;updated_at&quot;:1380812424},{&quot;id&quot;:1916157,&quot;minimum&quot;:800.0,&quot;reward&quot;:&quot;Ultimate - Customized Enemy ============================== Chaos tier plus ++++++++++++++++ We design an in-game enemy based on your concept. You will be credited as &#39;SPECIAL GUEST&#39; in the game. (*must be within the reasonable range)&quot;,&quot;limit&quot;:10,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;40.0&quot;,&quot;estimated_delivery_on&quot;:1396310400,&quot;project_id&quot;:1250269146,&quot;remaining&quot;:10,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1377609416},{&quot;id&quot;:1916158,&quot;minimum&quot;:1800.0,&quot;reward&quot;:&quot;Ultimate - Customized Level ============================== Chaos tier plus ++++++++++++++++ We design a special in-game level including 3 maps, 3 enemies and 1 boss based on your concept. You will be credited as &#39;SPECIAL GUEST&#39; in the game. (*must be within the reasonable range)&quot;,&quot;limit&quot;:2,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1396310400,&quot;project_id&quot;:1250269146,&quot;remaining&quot;:0,&quot;backers_count&quot;:2,&quot;updated_at&quot;:1380812421},{&quot;id&quot;:1916159,&quot;minimum&quot;:2000.0,&quot;reward&quot;:&quot;Infinity ============================== Chaos tier plus ++++++++++++++++ We design a new Einherjar based on your concept, including name, appearance and skills. Also, you can voice your Einherjar if you have the necessary equipment. You will be credited as &#39;ASSOCIATE PRODUCER&#39; in the game. (*must be within the reasonable range)&quot;,&quot;limit&quot;:10,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1396310400,&quot;project_id&quot;:1250269146,&quot;remaining&quot;:8,&quot;backers_count&quot;:2,&quot;updated_at&quot;:1380812423}]}";
+    
+    
+    
+    
+    
+    
+    
+    
+    window.timeRemaining = function timeRemaining(epochTime){
+    
+      var diff = epochTime - ((new Date()).getTime() / 1000);
+      var num_unit = (diff < 60 && [Math.max(diff, 0), 'seconds']) ||
+        ((diff/=60) < 60 && [diff, 'minutes']) ||
+        ((diff/=60) < 72 && [diff, 'hours']) ||
+        [diff/=24, 'days'];
+    
+      // Round down
+      num_unit[0] = Math.floor(num_unit[0]);
+      // Singularize unit
+      if (num_unit[0] == 1) { num_unit[1] = num_unit[1].replace(/s$/,""); }
+    
+      return num_unit;
+    };
+  //]]>
+</script>
+
+<script>
+  //<![CDATA[
+    window.current_variants = ["discover_link_copy[explore]","rewards_hover[without_hover_text]"];
+  //]]>
+</script>
+
+
+</head>
+
+<body class="project projects not-mobile not-phone not-forces-video-controls not-tablet not-touchable not-native-app-request video_mode" id="projects_show">
+<div class="jGrowl center" id="growl_section"></div>
+<div class="NS_layouts__navigation" id="header">
+<div class="main-nav relative bg-white">
+<h1 class="no-margin ml1 mr2 left">
+<a href="/?ref=nav" class="block p2"><span class="ss-icon green-dark">KICK</span><span class="ss-icon green">STARTER</span>
+</a></h1>
+<ul class="primary-links list no-margin left">
+<li class="left discover-link full-height">
+<a href="/discover?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Explore</a>
+</li>
+<li class="left full-height mr2">
+<a href="/learn?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Start</a>
+</li>
+</ul>
+<ul class="list no-margin right" id="menu-sub">
+<li class="right"><a href="/login?ref=nav" class="block h5 bold p2 full-height border-box">Log in</a></li>
+<li class="right"><a href="/signup?ref=nav" class="block h5 bold p2 full-height border-box">Sign up</a></li>
+</ul>
+<div class="search-link pl2 full-height border-left border-box clip">
+<form accept-charset="UTF-8" action="/projects/search" class="search pt1 pb1 block relative form-simple" method="get"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /></div>
+<div class="field relative pl3">
+<span class="ss-icon ss-search grey-dark ml1 mt1 absolute"></span>
+<input class="input-search header full-width text" data-tracker-name="Header Live Search" id="term" name="term" placeholder="Search projects" type="text" />
+</div>
+</form>
+
+</div>
+<div class="clear"></div>
+</div>
+</div>
+<div class="hide pt4 pb4 bg-grey-light" id="search_results-wrap">
+<div class="relative container" id="search_results">
+<a class="close right grey-dark mr1"><span class="ss-icon ss-delete"></span></a>
+<h3 class="header ml1 clearfix"></h3>
+<div class="clip clearfix" id="search_results_panel"></div>
+<a class="prev arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateleft"></span>
+</a>
+<a class="next arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateright"></span>
+</a>
+</div>
+</div>
+
+
+
+
+<div class="Project-ended-true Project-is_starred- Project-state-successful Project1250269146_cxt border-top" id="main_content">
+<div id="running-board-wrap">
+<div class="container" id="running-board">
+<div id="project-header">
+<div class="NS_projects__running_board ml1 mr1 clearfix">
+<div class="title center py4">
+<h2 class="mb1">
+<a href="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0" class="green-dark">Crystal Arena: a MOBA-like Strategy Game</a>
+</h2>
+<p class="no-margin">
+<span class="creator">
+by
+<a href="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography" id="name">REVOBEING LTD</a>
+</span>
+</p>
+</div>
+<ul class="project-nav list-inline left h5 bold mb1">
+<li class="mr2">
+<a href="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0" class="grey-dark py1 current" id="home_nav">Home</a>
+</li>
+<li class="mr2">
+<span data-updates-count="16" id="updates_count">
+<a href="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/posts" class="grey-dark py1" id="updates_nav">Updates
+<span class="count h6 bg-grey-dark white">16</span>
+</a></span>
+</li>
+<li class="mr2">
+<a href="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/backers" class="grey-dark py1" id="backers_nav">Backers
+<span class="count h6 bg-grey-dark white"><data class="Project1250269146" data-format="number" data-value="98" itemprop="Project[backers_count]">98</data></span>
+</a></li>
+<li>
+<span data-comments-count="30" id="comments_count">
+<a href="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/comments" class="grey-dark py1" id="comments_nav">Comments
+<span class="count h6 bg-grey-dark white"><data class="Project1250269146" data-format="number" data-value="30" itemprop="Project[comments_count]">30</data></span>
+</a></span>
+</li>
+</ul>
+<ul class="list-inline right h5 bold mb1">
+<li class="location mr2">
+<a href="/discover/places/chengdu-chengdu-sichuan?ref=city" class="grey-dark"><span class="ss-icon ss-location margin-right"></span>
+Chengdu, China
+</a></li>
+<li class="category" data-project-parent-category="Games">
+<a href="/discover/categories/games/video%20games?ref=category" class="grey-dark"><span class="ss-icon ss-tag margin-right"></span>
+Video Games
+</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+</div>
+<div class="bg-grey-light pb4" id="content-wrap">
+<div class="Project1250269146" data-conditions="[{&quot;!state&quot;:&quot;live&quot;}]" data-evaluation="true" data-render="&quot;&lt;div class=\&quot;NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-successful Project1250269146_cxt bg-grey container pb1 pt1\&quot;&gt;\n&lt;div class=\&quot;Project1250269146\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;successful&amp;quot;}]\&quot; data-evaluation=\&quot;true\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;Funded!&amp;lt;/b&amp;gt;\\nThis project was successfully funded &amp;lt;data class=\\&amp;quot;Project1250269146\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2013-09-26T10:33:14-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[deadline]\\&amp;quot;&amp;gt;on September 26, 2013&amp;lt;/data&amp;gt;.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;Funded!&lt;/b&gt;\nThis project was successfully funded &lt;data class=\&quot;Project1250269146\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-09-26T10:33:14-04:00&amp;quot;\&quot; itemprop=\&quot;Project[deadline]\&quot;&gt;on September 26, 2013&lt;/data&gt;.\n&lt;/p&gt;\n&lt;/div&gt;&lt;div class=\&quot;Project1250269146\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:[&amp;quot;started&amp;quot;,&amp;quot;submitted&amp;quot;]}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;THIS PROJECT IS NOT LIVE&amp;lt;/b&amp;gt;\\nThis is only a draft that the creator has chosen to share.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1250269146\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;suspended&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Suspended&amp;lt;/b&amp;gt;\\nFunding for this project was suspended &amp;lt;data class=\\&amp;quot;Project1250269146\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2013-09-26T10:33:14-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on September 26, 2013&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1250269146\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;canceled&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Canceled&amp;lt;/b&amp;gt;\\nFunding for this project was canceled by the project creator &amp;lt;data class=\\&amp;quot;Project1250269146\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2013-09-26T10:33:14-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on September 26, 2013&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1250269146\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;failed&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Unsuccessful&amp;lt;/b&amp;gt;\\nThis project\\u2019s funding goal was not reached on &amp;lt;time class=\\&amp;quot;js-adjust\\&amp;quot; data-format=\\&amp;quot;LL\\&amp;quot; datetime=\\&amp;quot;2013-09-26T10:33:14-04:00\\&amp;quot;&amp;gt;September 26, 2013&amp;lt;/time&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1250269146\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;purged&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;This project is purged and only visible to staff.&amp;lt;/b&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;/div&gt;\n&quot;"><div class="NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-successful Project1250269146_cxt bg-grey container pb1 pt1">
+<div class="Project1250269146" data-conditions="[{&quot;state&quot;:&quot;successful&quot;}]" data-evaluation="true" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;Funded!&lt;/b&gt;\nThis project was successfully funded &lt;data class=\&quot;Project1250269146\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-09-26T10:33:14-04:00&amp;quot;\&quot; itemprop=\&quot;Project[deadline]\&quot;&gt;on September 26, 2013&lt;/data&gt;.\n&lt;/p&gt;\n&quot;"><p class="no-margin">
+<b>Funded!</b>
+This project was successfully funded <data class="Project1250269146" data-format="distance_date" data-value="&quot;2013-09-26T10:33:14-04:00&quot;" itemprop="Project[deadline]">on September 26, 2013</data>.
+</p>
+</div><div class="Project1250269146" data-conditions="[{&quot;state&quot;:[&quot;started&quot;,&quot;submitted&quot;]}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;THIS PROJECT IS NOT LIVE&lt;/b&gt;\nThis is only a draft that the creator has chosen to share.\n&lt;/p&gt;\n&quot;"></div><div class="Project1250269146" data-conditions="[{&quot;state&quot;:&quot;suspended&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Suspended&lt;/b&gt;\nFunding for this project was suspended &lt;data class=\&quot;Project1250269146\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-09-26T10:33:14-04:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on September 26, 2013&lt;/data&gt;.\n&quot;"></div><div class="Project1250269146" data-conditions="[{&quot;state&quot;:&quot;canceled&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Canceled&lt;/b&gt;\nFunding for this project was canceled by the project creator &lt;data class=\&quot;Project1250269146\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-09-26T10:33:14-04:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on September 26, 2013&lt;/data&gt;.\n&quot;"></div><div class="Project1250269146" data-conditions="[{&quot;state&quot;:&quot;failed&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Unsuccessful&lt;/b&gt;\nThis project\u2019s funding goal was not reached on &lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;LL\&quot; datetime=\&quot;2013-09-26T10:33:14-04:00\&quot;&gt;September 26, 2013&lt;/time&gt;.\n&quot;"></div><div class="Project1250269146" data-conditions="[{&quot;state&quot;:&quot;purged&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;This project is purged and only visible to staff.&lt;/b&gt;\n&quot;"></div></div>
+</div>
+<div class="container bg-white border rounded py3 pl2 pr2" id="content">
+<div class="NS-projects-content">
+<div class="grid_11">
+<div data-has-video="true" id="video-section">
+<div class="video-player" data-dimensions="{&quot;width&quot;:640,&quot;height&quot;:480}" data-image="https://s3.amazonaws.com/ksr/projects/659185/photo-main.jpg?1397831890" data-video-tracker-url="https://www.kickstarter.com/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/video/plays" data-video-url="https://d2pq0u4uni88oo.cloudfront.net/projects/659185/video-282224-h264_high.mp4" data-video="{&quot;id&quot;:282224,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/659185/video-282224-h264_high.mp4?2013&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/659185/video-282224-h264_base.mp4?2013&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/659185/video-282224-webm.webm?2013&quot;,&quot;width&quot;:640,&quot;height&quot;:480,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/659185/video-282224-h264_base.jpg?2013&quot;}" id="video_pitch"><video class="has_webm landscape" preload="none">
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/659185/video-282224-h264_high.mp4" type='video/mp4; codecs="avc1.64001E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/659185/video-282224-h264_base.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/659185/video-282224-webm.webm" type="video/webm"></source>
+You'll need an HTML5 capable browser to see this content.
+</video>
+<img alt="Photo-main" class="has_played_hide poster landscape" src="https://s3.amazonaws.com/ksr/projects/659185/photo-main.jpg?1397831890" />
+<div class="play_button_big play_button_dark absolute-center rounded has_played_hide">
+<span class="ss-icon ss-play"></span>
+Play
+</div>
+<div class="player_controls clearfix absolute-bottom mb2 rounded white bg-green-dark forces-video-controls_hide">
+<div class="left">
+<a class="button button_icon button_dark playpause play mr1">
+<span class="play ss-icon ss-play"></span>
+<span class="pause ss-icon ss-pause"></span>
+</a>
+<span class="time current_time h12 left">00:00</span>
+</div>
+<div class="right">
+<span class="time total_time h12 left mr1">00:00</span>
+<a class="left button button_icon button_icon_white volume">
+<span class="ss-icon ss-volume icon_volume_nudge"></span>
+<span class="ss-icon ss-highvolume"></span>
+</a>
+<div class="volume_container left">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+<a class="left button button_icon button_icon_white fullscreen">
+<span class="ss-icon ss-expand"></span>
+<span class="ss-icon ss-contract"></span>
+</a>
+</div>
+<div class="clip">
+<div class="progress_container pr1 pl1">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="buffer progress_bar_buffer"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div data-project-state="successful" id="about">
+<div class="NS_projects__project_share clearfix py2 pl1 pr1">
+<ul class="left list-inline no-margin h5 bold">
+<li class="facebook mr2">
+<a href="https://www.kickstarter.com/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0"><span class="ss-icon ss-social ss-facebook color-facebook"></span>
+<span class="color-facebook">Share</span>
+<span class="share_bubble"><div class="triangle grey"></div>
+<div class="triangle white"></div>
+<span class="count"></span></span>
+</a></li>
+<li class="twitter mr2">
+<a  href="https://twitter.com/intent/tweet?text=Crystal%20Arena%3A%20a%20MOBA-like%20Strategy%20Game%20by%20REVOBEING%20LTD&amp;via=kickstarter&amp;url=http://kck.st/12HImmV" rel="nofollow"><span class="ss-icon ss-social ss-twitter color-twitter"></span>
+<span class="color-twitter">Tweet</span>
+</a></li>
+<li class="embed">
+<a href="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/widget" class="remote_modal_dialog grey-dark" data-modal-title="Embed a widget on your site" data-tracker-name="Embed"><span class="ss-icon ss-navigateleft"></span>
+<span class="ss-icon ss-navigateright"></span>
+Embed
+</a></li>
+</ul>
+<ul class="right list-inline no-margin h5 bold">
+<li class="curate mr2">
+</li>
+<li class="remind">
+<div class="ajax-container" id="watching-widget">
+<div class="Project1250269146" data-conditions="[{&quot;is_starred&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div id=\&quot;unwatch\&quot;&gt;\n&lt;a href=\&quot;/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/unwatch\&quot; class=\&quot;on\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"></div><div class="Project1250269146" data-conditions="[{&quot;!is_starred&quot;:true}]" data-evaluation="true" data-render="&quot;&lt;div id=\&quot;watch\&quot;&gt;\n&lt;a href=\&quot;/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/watch\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;span class=\&quot;text\&quot;&gt;\n&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"><div id="watch">
+<a href="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/watch"><span class="ss-icon ss-star"></span>
+<span class="text">
+</span>
+</a></div>
+
+</div></div>
+</li>
+</ul>
+</div>
+
+<div class="short_blurb py2 pl1 pr1">
+<p class="h3">A DotA and LoL influenced strategy game with legendary bosses and epic adventures!</p>
+</div>
+<div class="full-description">
+<div class="template asset" contenteditable="false" data-edit_url="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/assets/874198/edit" data-id="874198">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/874/198/3f1edb54a5ef5bf65b9b66ae504ee4df_large.png?1377834448"></figure>
+</div><p>We've received many requests for a PC and Mac version of Crystal Arena. <b>The backers has spoken! So let's do it!</b> </p><div class="template asset" contenteditable="false" data-edit_url="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/assets/874225/edit" data-id="874225">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/874/225/5aa277ff7ff01ccf3d810487d21e0804_large.jpg?1377835165"></figure>
+</div>
+<p>As for controls, we will make the most use of mouse and keyboard to improve the gameplay on PC and Mac! </p><h1>
+<br>Important Updates:</h1><p>
+<b><a href="http://www.kickstarter.com/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/posts/585004" target="_blank">Crystal Arena on PC and Mac!</a></b></p><p>
+<a href="http://www.kickstarter.com/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/posts/587149" target="_blank"><b>How do the Einherjar Look in the Game? </b></a></p><p><b><a href="http://www.kickstarter.com/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/posts/587591" target="_blank">Gameplay video!</a></b></p><div class="template asset" contenteditable="false" data-edit_url="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/assets/907539/edit" data-id="907539">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/907/539/185237e28d4e0b7cb4e5a556c0deff8a_large.png?1378834710"></figure>
+</div><ul><li>
+<b>Double Story-mode Content - $15,000 </b>
+</li></ul><p><i>Double the single-player content! </i></p><ul><li>
+<b>Tower System - $17,000 </b>
+</li></ul><p><i>Different kinds of towers will help defend your base when you are offline.</i> </p><ul><li>
+<b>Upgraded Art for Upgraded Units - $18,000 </b>
+</li></ul><p>
+<i>The upgrade units will have a stronger look. </i></p><ul><li>
+    <b>??? - $20,000</b>
+</li></ul><ul><li>
+<b>Guild System - $22,000 </b>
+</li></ul><p><i>A place where you can create your own team with your friends. </i></p><ul><li>
+<b>Guild vs Guild - $25,000 </b>
+</li></ul><p><i>Multilayer online battling! Who doesn't like it?! </i></p><ul><li>
+<b>Addtional Maps for PvP and GvG - $27,000 </b>
+</li></ul><p>
+<i>More ways to enjoy the PvP and GvG! </i></p><ul><li>
+<b>One More Exclusive Einherjar for All Backers - $30,000 </b>
+</li></ul><p><i>A Free Exclusive Einherjar for all the backers! </i></p><p><b>??? - $35,000</b></p><div class="template asset" contenteditable="false" data-edit_url="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/assets/853494/edit" data-id="853494">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/853/494/996ce596d43deed811edc874641183cc_large.png?1377232581"></figure>
+</div><p>Crystal Arena is a strategy game coming to iOS, Android, and possibly PC and Mac too, inspired by League of Legends, DotA and Warcraft III. In Crystal Arena you control the Einherjar, powerful champions to fight alongside armies of human, dwarf, elf and mysterious creatures for the mighty Gods in order to save the nine universes from Ragnarok. In order to win an epic war, you need not only legendary heroes and a strong army, but must also devise brilliant strategies and make wise decisions. In Crystal Arena, you must gather resources, train your soldiers, upgrade their combat skills and spells. This is the challenge that sets this game apart from traditional MOBA games, not only must you have mastery over your Einherjar, you must also have full understanding of the units that will assist your Einherjar in battle. Different combination of units will have different effects with different Einherjar. Your real-time commanding on the battlefield is the key to victory in Crystal Arena. </p><div class="template asset" contenteditable="false" data-edit_url="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/assets/853619/edit" data-id="853619">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/853/619/073e80a0e3163f715aa6a6ada658c03e_large.png?1377235521"></figure>
+</div><p>The team has been focused on Crystal Arena’s iOS version so far, but if you show us that you want and you show us your support, we can 
+push it to PC and Mac too. <b>Why on mobile?</b> Imagine a LoL/DotA game with epic stories and legendary bosses from Norse Mythology, and you can play it <b>anywhere</b> at <b>anytime</b> you like!</p><p>People have been misunderstanding mobile games, most of them were just considered as cheap and small games to entertain people in the train or on the toilet. But why are indie heroes like Ironhide (Kingdom Rush) and big companies like EA - who have recently announced a remake of Dungeon Keeper for mobile - all turning to mobile now?  Because there's great potential, the mobile games can be cool and awesome too! Crystal Arena is going to prove it and we need your help to make it happen! </p><div class="template asset" contenteditable="false" data-edit_url="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/assets/853624/edit" data-id="853624">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/853/624/d22309c31ac239aa600489453d4dbdf0_large.png?1377235633"></figure>
+</div><ul><li>Einherjar</li></ul><p>Like the heroes in DotA and champions in LoL, the Einherjar are the 
+souls of Crystal Arena. They come from different parts of the nine 
+universes, each with a unique background and distinguishing personality.
+ Every one of them is blessed with 4 powerful abilities, including 1 
+ultimate skill. Make the best use of the skills and your Einherjar will 
+be unstoppable. At the debut of this game we are planning to start with 
+10 playable Einherjar! And we will keep adding more afterwards! By 
+backing this project we will also develop<b> 2 KICKSTARTER EXCLUSIVE Einherjar </b>just for<b> you</b>! Remember to check them out.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/assets/853626/edit" data-id="853626">
+<figure><img alt="concept art - one of the nine universes" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/853/626/14be7a99d813533d5194f99f06b8e561_large.jpg?1377235706"><figcaption>concept art - one of the nine universes</figcaption></figure>
+</div><p>We really want to make a game that you like! Vote
+ for the Einherjar you would like to see in Crystal Arena and we will 
+make the most popular one a playable Einherjar in the game! Check it out
+ at the bottom of this page!</p><div class="template asset" contenteditable="false" data-edit_url="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/assets/853629/edit" data-id="853629">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/853/629/9eac43c9579b844233584af760d42d74_large.png?1377235767"></figure>
+</div><ul><li>Strategy and Commanding</li></ul><p>In Crystal Arena, you can <b>assemble your own army</b>! You decide the 
+structure and deployment. Yeah, the existence of minions is no longer to feed 
+your enemy but to be under your command and to die for you. Your troops 
+will fight automatically when the battle has begun, and you will be 
+controlling your Einherjar. Make sound strategies and lead your troops 
+to victory!</p><div class="template asset" contenteditable="false" data-edit_url="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/assets/853634/edit" data-id="853634">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/853/634/33a07245560c76ddffc2aa210371c33f_large.png?1377235846"></figure>
+</div>
+<ul><li>Multiplayer</li></ul><p>In story mode you can summon your friends’ Einherjar to aid you on 
+the battlefield, if you had been focused on training a tank type 
+Einherjar who focused on defense, you should consider teaming up with a 
+friend who uses Einherjar who can deal higher damage.</p>
+
+<p>Other than the story mode, players 
+are encouraged to challenge each other in Crystal Arena. By winning PvP battles you can 
+receive rank points, which give you higher ranks and bonus rewards, 
+which you can use to arm yourself even stronger against evil.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/assets/853636/edit" data-id="853636">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/853/636/991d12e8e5bfcc9a8c3d25f6dba50419_large.png?1377235895"></figure>
+</div>
+<p>Crystal Arena is a <b>STRATEGY GAME</b>, players will spend major part of the time building and upgrading, and fewer time on battling. </p>
+<p>The battle part of most strategy games on mobile are fully automatic 
+or even ignored, because controlling is hard to be realized on mobile 
+devices. But we love controlling, who doesn't? We gotta make it happen! Crystal 
+Arena is the<b> first </b>game that makes <b>a perfect combination</b> 
+of automatic controlling and real-time controlling. The units 
+fight automatically but you can decide their structure and deployment, 
+which is also important parts of the strategy. And you can control your 
+Einherjar, something which is easy to pick up but which also offers plenty of depth for hardcore players. If you are fed up with those trolls, feeders or afkers ruining your gameplay, you are gonna love Crystal Arena!</p><div class="template oembed" contenteditable="false" data-href="http://youtu.be/94Qh866xzzY">
+<iframe width="612" height="344" src="https://www.youtube.com/embed/94Qh866xzzY?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div><p>In the video I was controlling Solwyn the Great Mage, apparently I couldn't beat the boss with regular attack so I used the move-attack, a small trick that can often be seen in RTS games.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/assets/853640/edit" data-id="853640">
+<figure><img alt="meet your soldiers" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/853/640/4645cc9ea6b40f3f86490da2c1311c9f_large.png?1377235998"><figcaption>meet your soldiers</figcaption></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/assets/853644/edit" data-id="853644">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/853/644/28b64ebdb37a9745c49dd51680ff566c_large.png?1377236029"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/assets/853645/edit" data-id="853645">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/853/645/060189e61001665c7e8bfb33bdd1c2c7_large.png?1377236050"></figure>
+</div><div class="template oembed" contenteditable="false" data-href="https://soundcloud.com/sirjason/sets/crystal-arena-sound-track">
+<iframe width="639" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?visual=true&amp;url=http%3A%2F%2Fapi.soundcloud.com%2Fplaylists%2F8859726&amp;show_artwork=true&amp;maxwidth=639&amp;scheme=https&amp;width=639"></iframe>
+
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/assets/853655/edit" data-id="853655">
+<figure><img alt="concept art - before the battle" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/853/655/83da03f947c245eaf62b2a0d0df282cf_large.jpg?1377236273"><figcaption>concept art - before the battle</figcaption></figure>
+</div><p>Einherjar, Spirit of warrior or the slain men, are portrayed as 
+legendary heroes in Norse Myth. These warriors have died in battle and 
+are brought to Valhalla by Valkyries. Every day they arm themselves and 
+fight each other in the courtyard of Valhalla, and they fight with their
+ lives. Those who fall will rise again in the evening, not only unharmed
+ but also stronger and wiser, for they will not make the same mistakes. 
+In this way they train themselves for the ultimate battle of Ragnarok. </p>
+<p>I have found the Norse Myth a perfect carrier for a MOBA game, and 
+this is where Crystal Arena was born. Heroes don’t have to be killed to 
+become Einherjar in the world of Crystal Arena, though some indeed are. 
+Although the world is based on Norse Mythology, and this inspiration 
+reflects on our main storyline, we've added a lot of our own twists, so 
+you can expect the game to be much more fascinating beyond the Norse 
+Myth itself.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/assets/853665/edit" data-id="853665">
+<figure><img alt="Rota - one of the Valkyries" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/853/665/6523f373a1287b1c1d0ae5f28f7a4875_large.png?1377236592"><figcaption>Rota - one of the Valkyries</figcaption></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/assets/853670/edit" data-id="853670">
+<figure><img alt="Hel - daughter of Loki and ruler of the dead realm" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/853/670/9f7edfcae6de041a2379f2eef9af40b9_large.png?1377236664"><figcaption>Hel - daughter of Loki and ruler of the dead realm</figcaption></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/assets/853672/edit" data-id="853672">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/853/672/d43d84ed522b5b615d751ac85a4689fb_large.png?1377236733"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/assets/853676/edit" data-id="853676">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/853/676/6e5a58c909a9ef535ef6f0649d40ba75_large.png?1377236770"></figure>
+</div><div class="template asset" contenteditable="false" data-id="853944">
+<figure><embed allowscriptaccess="always" height="30" src="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?audioonly=true&amp;controlbar.idlehide=false&amp;controlbar=bottom&amp;file=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fassets%2F000%2F853%2F944%2Fe0fc6a569de41415710dd11505f749e6_original.mp3%3F1377251753&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf" type="application/x-shockwave-flash" width="560" wmode="transparent"></embed></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/assets/853678/edit" data-id="853678">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/853/678/3159ebde28542026e53c644143664ee9_large.png?1377236826"></figure>
+</div><div class="template asset" contenteditable="false" data-id="853945">
+<figure><embed allowscriptaccess="always" height="30" src="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?audioonly=true&amp;controlbar.idlehide=false&amp;controlbar=bottom&amp;file=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fassets%2F000%2F853%2F945%2Fe9193de2321a5ded4eaf9fd4d803d15a_original.mp3%3F1377251821&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf" type="application/x-shockwave-flash" width="560" wmode="transparent"></embed></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/assets/853681/edit" data-id="853681">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/853/681/c3d6ba259c5a9958e939d7f1c3697481_large.png?1377236865"></figure>
+</div><div class="template asset" contenteditable="false" data-id="853946">
+<figure><embed allowscriptaccess="always" height="30" src="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?audioonly=true&amp;controlbar.idlehide=false&amp;controlbar=bottom&amp;file=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fassets%2F000%2F853%2F946%2Fabb792f4efb092cf8f4169958f02140e_original.mp3%3F1377251889&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf" type="application/x-shockwave-flash" width="560" wmode="transparent"></embed></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/assets/853683/edit" data-id="853683">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/853/683/17f8ff59ca73508db41a1b337c6e30f2_large.png?1377236915"></figure>
+</div><div class="template asset" contenteditable="false" data-id="853947">
+<figure><embed allowscriptaccess="always" height="30" src="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?audioonly=true&amp;controlbar.idlehide=false&amp;controlbar=bottom&amp;file=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fassets%2F000%2F853%2F947%2F1c492c5b7937b4fd298676a03beb2cf5_original.mp3%3F1377251925&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf" type="application/x-shockwave-flash" width="560" wmode="transparent"></embed></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/assets/853685/edit" data-id="853685">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/853/685/a01ccdd4ce033a6bca88758008c08b4d_large.png?1377236951"></figure>
+</div><div class="template asset" contenteditable="false" data-id="853949">
+<figure><embed allowscriptaccess="always" height="30" src="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?audioonly=true&amp;controlbar.idlehide=false&amp;controlbar=bottom&amp;file=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fassets%2F000%2F853%2F949%2F376589e7f494926cb4708cf9d60e2790_original.mp3%3F1377252048&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf" type="application/x-shockwave-flash" width="560" wmode="transparent"></embed></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/assets/853688/edit" data-id="853688">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/853/688/81103ffd387a8554cd2f78212b3bd108_large.png?1377236994"></figure>
+</div><div class="template asset" contenteditable="false" data-id="853950">
+<figure><embed allowscriptaccess="always" height="30" src="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?audioonly=true&amp;controlbar.idlehide=false&amp;controlbar=bottom&amp;file=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fassets%2F000%2F853%2F950%2F6620e121cfcc66bc9ce91509af00d6ac_original.mp3%3F1377252107&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf" type="application/x-shockwave-flash" width="560" wmode="transparent"></embed></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/assets/853689/edit" data-id="853689">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/853/689/a6bc675a86baefdeb54b06c7c062f7e4_large.png?1377237027"></figure>
+</div><div class="template asset" contenteditable="false" data-id="854428">
+<figure><embed allowscriptaccess="always" height="30" src="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?audioonly=true&amp;controlbar.idlehide=false&amp;controlbar=bottom&amp;file=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fassets%2F000%2F854%2F428%2F47308c87ddb9be20b0450d7acc9b85aa_original.mp3%3F1377272885&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf" type="application/x-shockwave-flash" width="560" wmode="transparent"></embed></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/assets/853693/edit" data-id="853693">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/853/693/391930668f89f1d2c52ea4c47ba4067e_large.png?1377237068"></figure>
+</div><div class="template asset" contenteditable="false" data-id="853952">
+<figure><embed allowscriptaccess="always" height="30" src="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?audioonly=true&amp;controlbar.idlehide=false&amp;controlbar=bottom&amp;file=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fassets%2F000%2F853%2F952%2F9c8263150637aaee791b132aa25d7902_original.mp3%3F1377252163&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf" type="application/x-shockwave-flash" width="560" wmode="transparent"></embed></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/assets/853697/edit" data-id="853697">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/853/697/5f64a593b0a6cb1674a28f8a123070fc_large.png?1377237105"></figure>
+</div><div class="template asset" contenteditable="false" data-id="853953">
+<figure><embed allowscriptaccess="always" height="30" src="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?audioonly=true&amp;controlbar.idlehide=false&amp;controlbar=bottom&amp;file=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fassets%2F000%2F853%2F953%2F4bf39ffba872effcd556026ee7fbf697_original.mp3%3F1377252225&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf" type="application/x-shockwave-flash" width="560" wmode="transparent"></embed></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/assets/853699/edit" data-id="853699">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/853/699/60e7a8a30e6e1b45aec3795d04a56618_large.png?1377237150"></figure>
+</div><div class="template asset" contenteditable="false" data-id="853954">
+<figure><embed allowscriptaccess="always" height="30" src="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?audioonly=true&amp;controlbar.idlehide=false&amp;controlbar=bottom&amp;file=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fassets%2F000%2F853%2F954%2F9a38ed1cccef8e7576632453f121c27e_original.mp3%3F1377252277&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf" type="application/x-shockwave-flash" width="560" wmode="transparent"></embed></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/assets/853701/edit" data-id="853701">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/853/701/d5961522df31f3f78a2571054b1f7738_large.png?1377237199"></figure>
+</div><div class="template asset" contenteditable="false" data-id="853955">
+<figure><embed allowscriptaccess="always" height="30" src="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?audioonly=true&amp;controlbar.idlehide=false&amp;controlbar=bottom&amp;file=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fassets%2F000%2F853%2F955%2Fc1a41347d84c162f58cd802c64be87be_original.mp3%3F1377252353&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf" type="application/x-shockwave-flash" width="560" wmode="transparent"></embed></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/assets/853704/edit" data-id="853704">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/853/704/17c301192d1da3b351eec5065b8597c9_large.png?1377237236"></figure>
+</div><div class="template asset" contenteditable="false" data-id="853957">
+<figure><embed allowscriptaccess="always" height="30" src="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?audioonly=true&amp;controlbar.idlehide=false&amp;controlbar=bottom&amp;file=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fassets%2F000%2F853%2F957%2F45b162cf2b7892bb4b67d780b4720d3b_original.mp3%3F1377252401&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf" type="application/x-shockwave-flash" width="560" wmode="transparent"></embed></figure>
+</div><ul><li>
+<b>Meet our Special Guest! </b>
+</li></ul><div class="template asset" contenteditable="false" data-edit_url="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/assets/872257/edit" data-id="872257">
+<figure><img alt="Mithos the Guild Master" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/872/257/5006bc0427ad52227513baef44d08ec7_large.jpg?1377795627"><figcaption>Mithos the Guild Master</figcaption></figure>
+</div><p>We're honored to introduce you our special guest - <b>Mithos</b> from <a href="http://www.kickstarter.com/projects/disastercake/soul-saga-a-j-rpg-inspired-by-playstation-classics?ref=live" target="_blank"><b>Soul Saga</b></a>!</p><p><i>In one of the nine universes exists a world called Oterra. A corruption called Ink spreads across Oterra and has forced the last of humanity to abandon their homeland on the surface to live in the sky island Medonia.  Mithos is a young adventurer whose dream is to become the strongest Guild Master in the world and protect his home from corruption.</i></p><p><i> 
+
+As Mithos traveled through the Tempest Reef, he came across a lost island that contained an ancient dimensional warp to Asgard. Upon inspection of the ruins, he activated them and was teleported to Asgard. The gods in Asgard are desperate for strong warriors, so they explained the threat of Ragnarok. Mithos realized that even Medonia could be endangered by Ragnarok, so he decided to stay and join the Einherjar until the threat was resolved. </i></p><div class="template asset" contenteditable="false" data-edit_url="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/assets/951171/edit" data-id="951171">
+<figure><img alt="Dakura the Paradox Prince" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/951/171/c6bd74cac341f94bc31314caa3dab423_large.png?1380037142"><figcaption>Dakura the Paradox Prince</figcaption></figure>
+</div>
+<p>We have another special guest, <b>Dakura</b> from <a href="http://www.kickstarter.com/projects/projectbc/vacant-sky-awakening-a-pre-apocalyptic-rpg/" target="_blank"><b>Vacant Sky Awakening</b></a>.</p><p><i>Robbed of his honor, his throne, and even his right to die, he now walks the earth, sowing the seeds of destruction in his wake. Dakura, once heralded as the savior of the ages, became the enemy of the people he once swore to protect. Despite his great betrayal, he could not turn his back on the threat of Ragnarok and drew up his sword one last time, to defend a world that no longer wants him.</i></p><div class="template asset" contenteditable="false" data-edit_url="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/assets/853490/edit" data-id="853490">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/853/490/92066059c6b0b33289699c1038e5ab2c_large.png?1377232526"></figure>
+</div><p>We actually started the manga of Crystal Arena last year before we 
+started the game. We've uploaded this manga to Mangafox for the public 
+to read, For Free! Hope you enjoy it. <a href="http://mangafox.me/manga/crystal_arena/" target="_blank">Read the Manga</a></p><a href="http://mangafox.me/manga/crystal_arena/" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/assets/853707/edit" data-id="853707">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/853/707/60f287f3e881b101d5fe0f3be7713370_large.jpg?1377237306"></figure>
+</div></a><a href="http://mangafox.me/manga/crystal_arena/" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/assets/853710/edit" data-id="853710">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/853/710/ce6e6c01de9ace8c5dc22153fc648c5e_large.jpg?1377237350"></figure>
+</div>
+</a><div class="template asset" contenteditable="false" data-edit_url="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/assets/853713/edit" data-id="853713">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/853/713/84c3b400cb2df4f1be54e68bfbecff6e_large.png?1377237414"></figure>
+</div><p>Revobeing is a newly founded indie game company. Before Revobeing, we are <a href="http://robekka.deviantart.com/" target="_blank">Robekka Art Studio</a>,
+ a group of artists dedicated to provide high quality and affordable art
+ support to games and comics. The studio was founded 6 years ago by 
+Jason Chiu, when he was 18. In the past few years Robekka has worked for
+ companies like Blizzard, Gameloft, Marvel (on the game projects), Spin 
+Master, Peak Games and many other companies with big names, as well as 
+assisting countless small companies and individuals. We’ve spent all 
+these years building games for others, and now we have a dream of 
+creating a game of our own, <b>Crystal Arena</b>.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/assets/853717/edit" data-id="853717">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/853/717/71b138dd25e8c8ed144cf5e8370b4d16_large.png?1377237451"></figure>
+</div>
+<p>Crystal Arena has an international team, benefiting from our experience 
+as an art studio, we've built a wide connection with professionals from 
+different areas, all over the world. They've been assisting us in 
+bringing Crystal Arena to life. The major part of Revobeing is based in a
+ small city in China, Chengdu City. You probably haven’t ever heard 
+about this place but it’s actually home of<b> Pandas</b>. Seriously, we got a LOT of<b> Pandas</b> here!</p><div class="template asset" contenteditable="false" data-edit_url="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/assets/853729/edit" data-id="853729">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/853/729/1538b77da0f3189833d39e6aecc6e687_large.png?1377237729"></figure>
+</div>
+<p>Though Robekka has worked for some big names in its client list, most of
+ its clients are still individuals and start-ups with very limited 
+budgets, depending on the situation we charge very little from them. We 
+helped many make their demos and kickstart their projects here! With 
+Robekka’s humble income, the very basic version of Crystal Arena is 
+almost 60% competed, why would we still need your help?</p><div class="template asset" contenteditable="false" data-edit_url="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/assets/853730/edit" data-id="853730">
+<figure><img alt="what has been completed so far" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/853/730/b6925ad675752c517a8d46050f31bd75_large.png?1377237756"><figcaption>what has been completed so far</figcaption></figure>
+</div>
+<p>Making games can be expensive. The fact is that when our 
+artists work on Crystal Arena, they won’t be able to do their commercial
+ works, which means we won't have any income. If we want to focus on the
+ game, hiring more talented and creative people, accelerating the 
+development and adding more content, more Einherjar and more music, we 
+need this project to get funded. Every penny we receive from you will be
+ spent on making the game a better game. </p>
+
+<p>Another reason that brought us here is the great community of Kickstarter, here we can speak directly with<b> you</b>! We really want to know what you think about this game and what we can do to make it a game that <b>you</b> would love to play.</p>
+
+
+<p>Kickstarter is an amazing place that really makes dreams into 
+reality. We are very lucky to have worked on 2 successfully funded 
+projects on Kickstarter already.</p><a href="http://www.kickstarter.com/projects/disastercake/soul-saga-a-j-rpg-inspired-by-playstation-classics" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/assets/853732/edit" data-id="853732">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/853/732/279088b819fea1bff0c9a9c94b8bd072_large.png?1377237823"></figure>
+</div>
+</a><a href="http://www.kickstarter.com/projects/1222485884/empires-of-zidal-deck-building-board-game?ref=live" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/assets/853733/edit" data-id="853733">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/853/733/f97b2da2287678e190c9c1c6d73cadb4_large.png?1377237847"></figure>
+</div>
+</a><p>Their successes have greatly encouraged us and we hope that we can do it too! <b>You are</b> the <b>awesome</b> people that make me believe that we can!</p><div class="template asset" contenteditable="false" data-edit_url="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/assets/853736/edit" data-id="853736">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/853/736/ff4472078aa0375e6649a27ab1998e22_large.png?1377237880"></figure>
+</div>
+<p>Crystal Arena is going to be an online game, not a stand-alone. Being our Kickstarter backer is the only chance to get the very unique exclusive Einherjar, which is going to be <b>one in a million</b>! Think about you playing a unique hero in DotA or LoL that others have absolutely no way to get! It is that special!</p><div class="template asset" contenteditable="false" data-edit_url="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/assets/864764/edit" data-id="864764">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/864/764/084678727d1c3773f98f8acf1e758190_large.png?1377610133"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/assets/853877/edit" data-id="853877">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/853/877/466ec84615f48b2168a9653015e2ab03_large.png?1377246545"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/assets/864762/edit" data-id="864762">
+<figure><img alt="Check out this chart for a better idea of which rewards you are getting!" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/864/762/5c4234fee63151fdd1fde64a6659651b_large.png?1377610088"><figcaption>Check out this chart for a better idea of which rewards you are getting!</figcaption></figure>
+</div><h1>
+Add-on Rewards</h1><p>If you are interested in a specific reward but do not want to order it along with other items, you can consider the add-ons below.</p><ul>
+<li>2 Exclusive Einherjar + Exclusive Levels - $60</li>
+<li>T-Shirt - $30</li>
+<li>Print Artbook - $50</li>
+<li>CD of the OST - $30</li>
+<li>Figurine of the Minion - $80</li>
+</ul><p>You can add the price for the extra items you'd like to order after you have chosen a normal tier. <b>Remember to message me about the add-ons after adjusting your pledge so I can make a record for you.</b></p><p>*For the physical add-ons like T-shirts, artbook or CD, please add an additional $20 for international shipping if you live out side of the U.S. $40 for the figurine. </p><h1>
+<br>Kickstarter Backer Badges!</h1><div class="template asset" contenteditable="false" data-edit_url="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/assets/913544/edit" data-id="913544">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/913/544/6df43258650c040168412c3ca84c61df_large.png?1378998463"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/assets/913553/edit" data-id="913553">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/913/553/42bc3fa683aa87f724a06382b9844012_large.png?1378998516"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/assets/913562/edit" data-id="913562">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/913/562/772f1e60ec4dd203055e68d7c7438731_large.png?1378998719"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/assets/913565/edit" data-id="913565">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/913/565/9b15f06ca2fa93df25ce795bf4d55b1d_large.png?1378998774"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/assets/913575/edit" data-id="913575">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/913/575/0d0d3140b75ca3fff2883b69067038c2_large.png?1378999031"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/assets/913577/edit" data-id="913577">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/913/577/bcdb6769819293e8c2c6c555947cd140_large.png?1378999050"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/assets/913579/edit" data-id="913579">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/913/579/3ebff5bbc635d18c95f5fba58d4b5b13_large.png?1378999071"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/assets/913591/edit" data-id="913591">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/913/591/186d749839504987036f65dd5d0ad184_large.png?1378999425"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/assets/913592/edit" data-id="913592">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/913/592/344ddcde7b3622eeb2e22a751c916598_large.png?1378999457"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/assets/913593/edit" data-id="913593">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/913/593/3970b7df507552950005e46c8c954e38_large.png?1378999477"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/assets/913594/edit" data-id="913594">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/913/594/c8c9aad414ff5248737921291e3db0df_large.png?1378999492"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/assets/913595/edit" data-id="913595">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/913/595/a127f46f90ec993ccabee384817c4b83_large.png?1378999508"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/assets/853759/edit" data-id="853759">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/853/759/6c70acc455f5a8eef448b119235f4c91_large.png?1377238347"></figure>
+</div>
+<p>
+
+Vote for the new Einherjar you'd like to see in Crystal Arena! We will 
+make the Einherjar with the most votes a new playable Einherjar! And<b> Free for ALL Backers</b>!</p><a href="http://www.easypolls.net/poll.html?p=520c531ee4b058f89ad49fa3" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/assets/853761/edit" data-id="853761">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/853/761/4c364972522da6517b9f9e155fdf33f0_large.jpg?1377238376"></figure>
+</div></a><a href="http://www.easypolls.net/poll.html?p=520c531ee4b058f89ad49fa3" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/assets/853773/edit" data-id="853773">
+<figure><img alt="You may vote for multiple Einherjar" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/853/773/84c2afb1518c358a6a348b9e9413cb90_large.png?1377238720"><figcaption>You may vote for multiple Einherjar</figcaption></figure>
+</div></a><p>Anyone can vote, but we will be announcing the result to our<b> Backers Only</b> through the <b>Backer Only</b>
+ update at the last day of this Kickstarter campaign. For a minimum of 
+just $1 you will have access to our secret updates and you will also be 
+rewarded with this new Einherjar when the game is released.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/assets/853776/edit" data-id="853776">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/853/776/5eafa369a1e6eaad914fc4a62e373b18_large.png?1377238825"></figure>
+</div>
+<p>If you would like to see this game completed as much as we do, please 
+make a pledge! Introduce this game to your friends and share this page with everyone! Your social networks, colleagues, school mates, friends, <b>everyone</b>! We can’t make it without your help. If you have any question 
+or suggestion, please leave a comment or send us a message and we'd love
+ to talk with you. </p><a href="http://facebook.com/revobeing" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/assets/853778/edit" data-id="853778">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/853/778/82b993facc74e352ecd5c60eff31fdc5_large.png?1377238846"></figure>
+</div>
+</a><a href="http://twitter.com/revobeing" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/assets/853779/edit" data-id="853779">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/853/779/a6bbd647ad15f0df201c8a983b1ca0e5_large.png?1377238884"></figure>
+</div>
+</a>
+</div>
+<div id="risks">
+<h2 class="title grey-dark mt6 mb4">
+<span>Risks and challenges</span>
+<a href="/help/faq/kickstarter%20basics#Acco" class="right normal h5" target="_blank">Learn about accountability on Kickstarter</a>
+<div class="divider clear"></div>
+</h2>
+<p><p>At the moment we cannot guarantee the release date of the Android, PC or Mac version of Crystal Arena. This is due to being restricted to only one programmer now. If we could get funded, we will be able to hire more professionals to make it solid! We will also keep you up to date by sending you an update.
+<br />However, the biggest risk is that people may not even know about this game or this Kickstarter campaign. We really need your help to spread the word. If you like what you see, please tell your friends and share this page to your social networks.</p></p>
+</div>
+</div>
+<div class="NS-projects-faqs" id="project-faqs">
+<h2 class="title grey-dark mt6 mb4">
+FAQ
+<div class="divider clear"></div>
+</h2>
+<ul class="faqs">
+<li class="faq" id="project_faq_66223">
+<div class="faq-question">
+<a href="#project_faq_66223" name="project_faq_66223">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Who is Gleaming Scythe Publishing?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Gleaming Scythe Publishing is our Partner based in the US. Because only people in the US, UK or Canada are eligible to launch a project on Kickstarter. Gleaming Scythe Publishing will be receiving the pledges on behalf of Reovbeing.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-08-28T00:40:32-04:00">Wed, Aug 28 2013 12:40 am EDT</time>
+</div>
+</div>
+</li>
+
+</ul>
+<div class="faq-ask-box">
+<a href="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/messages/new?message%5Bto%5D=revobeing&amp;mode=FAQ" class="button button_blue remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Ask a question about Crystal Arena: a MOBA-like Strategy Game">Ask a question</a>
+
+</div>
+</div>
+
+<div class="mt4 ml1 mr1 mb2" id="report-issue-wrap">
+<a href="/login?then=%2Fprojects%2Frevobeing%2Fcrystal-arena-a-moba-like-strategy-game-0" class="button button_grey">Report this project to Kickstarter</a>
+</div>
+</div>
+<div class="NS-projects-rightcol grid_5" id="rightcol">
+<div class="NS_projects__ecom">
+<div class="digits_5 pb2 pl2 pt2" id="stats">
+<h5>
+<div class="num h48 no-margin" data-backers-count="98" id="backers_count"><data class="Project1250269146" data-format="number" data-value="98" itemprop="Project[backers_count]">98</data></div>
+<span><data class="Project1250269146" data-attr="backers_count" data-format="pluralize" data-value="98" data-word="Backer">Backers</data></span>
+</h5>
+<h5>
+<div class="num h48 no-margin" data-goal="12000.0" data-percent-raised="1.09625" data-pledged="13155.0" id="pledged">
+<data class="Project1250269146" data-currency="USD" data-format="shorter_money" data-precision="0" data-value="13155" data-without_code="true" itemprop="Project[pledged]">$13,155</data>
+<span class="money usd project_currency_code"></span>
+</div>
+pledged of
+<span class="money usd no-code">$12,000</span>
+goal
+</h5>
+<span data-duration="30.0" data-end_time="2013-09-26T10:33:14-04:00" data-hours-remaining="0" id="project_duration_data"></span>
+<div class="Project1250269146" data-conditions="[{&quot;!state&quot;:[&quot;canceled&quot;,&quot;suspended&quot;]}]" data-evaluation="true" data-render="&quot;&lt;h5 class=\&quot;poll \&quot; data-dynamic=\&quot;5\&quot; data-end_time=\&quot;2013-09-26T10:33:14-04:00\&quot; data-poll_url=\&quot;https://d2oher2uhvl0ur.cloudfront.net/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/stats.json\&quot;&gt;\n&lt;div class=\&quot;num h48 no-margin\&quot;&gt;0&lt;/div&gt;\n&lt;span class=\&quot;text\&quot;&gt;seconds to go&lt;/span&gt;\n&lt;/h5&gt;\n&quot;"><h5 class="poll " data-dynamic="5" data-end_time="2013-09-26T10:33:14-04:00" data-poll_url="https://d2oher2uhvl0ur.cloudfront.net/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/stats.json">
+<div class="num h48 no-margin">0</div>
+<span class="text">seconds to go</span>
+</h5>
+</div></div>
+<div class="Project1250269146" data-conditions="[{&quot;state&quot;:&quot;live&quot;},{&quot;!ended?&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;pr2 pl2\&quot; id=\&quot;pledge-wrap\&quot;&gt;\n&lt;a href=\&quot;/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/pledge/new?clicked_reward=false\&quot; class=\&quot;button button_green button_box button_block\&quot; id=\&quot;button-back-this-proj\&quot; title=\&quot;Back this project\&quot;&gt;Back This Project &lt;small class=&#39;h6 normal block green-dark&#39;&gt;&lt;span class=\&quot;money usd \&quot;&gt;$1&lt;/span&gt; minimum pledge&lt;/small&gt;&lt;/a&gt;\n&lt;/div&gt;\n&quot;"></div><div class="Project1250269146" data-conditions="[{&quot;state&quot;:&quot;live&quot;}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;p2\&quot; id=\&quot;banner\&quot;&gt;\n&lt;p class=\&quot;tiny_type no-margin\&quot;&gt;\nThis project will be funded on\n&lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;llll z\&quot; datetime=\&quot;2013-09-26T10:33:14-04:00\&quot;&gt;Thu, Sep 26 2013 10:33 am EDT&lt;/time&gt;.\n&lt;/p&gt;\n&lt;/div&gt;\n&quot;"></div></div>
+
+<div class="NS_projects__rightcol_projectby bg-blue-light rounded">
+<div class="p2 clearfix">
+<div class="avatar inline-block align-middle">
+<a href="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography"><img alt="Logo_new2.small" class="avatar-small" height="80" src="https://s3.amazonaws.com/ksr/avatars/5944003/Logo_new2.small.jpg?1373517431" width="80" />
+</a></div>
+<div class="creator-name inline-block align-middle ml1">
+<h6 class="mb1">Project by</h6>
+<h5 class="mb1">
+<a href="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">REVOBEING LTD</a>
+</h5>
+<p class="location h6 bold mb1">
+<a href="/discover/places/chengdu-chengdu-sichuan">Chengdu, China</a>
+</p>
+</div>
+</div>
+<div class="creator-details pl2 pr2 pb1">
+<ul class="list-simple h5 mb1">
+<li class="projects-more">
+<span class="ss-icon ss-kickstarter grey-dark margin-right"></span>
+<span class="text">
+<a href="/profile/revobeing/created" class="green-dark bold more-button remote_modal_dialog" data-modal-title="Projects created by REVOBEING LTD">2 created</a>
+<span class="divider">&middot;</span>
+<a href="/profile/revobeing/backed" class="green-dark bold more-button remote_modal_dialog" data-modal-title="Projects backed by REVOBEING LTD">13 backed</a>
+</span>
+</li>
+<li>
+<span class="ss-icon ss-facebook margin-right grey-dark"></span>
+<span class="text">
+Has not connected Facebook
+</span>
+</li>
+<li class="links">
+<span class="ss-icon ss-globe margin-right grey-dark"></span>
+<span class="text">
+<a href="http://Revobeing.com" class="popup" rel="nofollow" target="_blank">Revobeing.com</a>
+</span>
+</li>
+</ul>
+</div>
+<div class="footer center h5 bold clearfix rounded-bottom clip">
+<a href="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">See full bio</a>
+<a href="/projects/revobeing/crystal-arena-a-moba-like-strategy-game-0/messages/new?message%5Bto%5D=revobeing" class="remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Send a message to REVOBEING LTD">Contact me</a>
+
+</div>
+</div>
+
+<ul class="NS-projects-rightcol-rewards rounded clip list mt2" data-reward-count="17" id="what-you-get">
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$1</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+7 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Einherjar
+==============================
+Special Thanks and a digital hug! 
+You will have access to our secret backer only updates, including the announcement of the new Einherjar. 
+You will also receive this most voted new Einherjar when the game is released. 
+Your name will be credited in &#39;Special Thanks&#39; on our website.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-03-01">Mar 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$15</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+14 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(286 left of 300)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Bronze (Early Bird) ============================== Einherjar tier plus ++++++++++++++++ Pre-order the full version of the game. You will receive a full version of the game with all 10 Einherjar unlocked. (Value: $30)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-03-01">Mar 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$15</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+33 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(467 left of 500)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Bronze (Early Bird) For PC/Mac ============================== Einherjar tier plus ++++++++++++++++ Pre-order the full version of the game for PC or Mac! You will receive a digital copy of the game with all 10 regular Einherjar unlocked. (Value: $30)
+============================== 
+The other $15 early bird tier above is for mobile.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-06-01">Jun 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$20</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+3 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Bronze 
+============================== Einherjar tier plus ++++++++++++++++ Pre-order the full version of the game for Mobile, PC or Mac! You will receive a digital copy of the game with all 10 regular Einherjar unlocked. (Value: $30)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-06-01">Jun 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$25</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+10 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Silver ============================== Bronze tier plus ++++++++++++++++ HD Wallpapers, Digital OST and Digital Artbook.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-03-01">Mar 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$40</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+2 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Gold ============================== Silver tier plus ++++++++++++++++ Access to the early beta test, your voice will be heard and the game will become a better game because of you.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-01-01">Jan 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$65</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+3 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Platinum ============================== Silver tier plus ++++++++++++++++ Access to the pre-release beta, you can play the game ahead of other players. Your data will persist when the game is released.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-02-01">Feb 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$90</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Diamond- the Steam Gunner ============================== Platinum tier plus ++++++++++++++++ A Kickstarter Exclusive Einherjar, Gina the Steam Gunner, a legendary Einherjar for Kickstarter only.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-04-01">Apr 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$90</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Diamond- the Secret Base ============================== Platinum tier plus ++++++++++++++++ Access to the hidden levels (for Kickstarter only) in the game</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-04-01">Apr 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$90</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Diamond- the Wolf Samurai ============================== Platinum tier plus ++++++++++++++++ A Kickstarter Exclusive Einherjar, Arashi the Wolf Samurai, a legendary Einherjar for Kickstarter only.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-04-01">Apr 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$120</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+7 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(92 left of 99)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Chaos - Kickstarter Exclusive Pack (Early Bird) ============================== Platinum tier plus ++++++++++++++++ Both 2 Exclusive Einherjars and also access to the hidden levels. Your name will be credited in &#39;Special Thanks&#39; in the game.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-04-01">Apr 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$140</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Chaos - Kickstarter Exclusive Pack ============================== Platinum tier plus ++++++++++++++++ Both 2 Exclusive Einherjars and also access to the hidden levels. Your name will be credited in &#39;Special Thanks&#39; in the game.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-04-01">Apr 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$240</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+8 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(91 left of 99)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Extreme – Crystal Arena Physical Pack (Early Bird) ============================== Chaos tier plus +++++++++++++++++ A Crystal Arena T-shirt, A hard cover art book, a CD of the OST and a figure of the minion.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-04-01">Apr 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $40 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$270</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+3 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Extreme – Crystal Arena Physical Pack ============================== Chaos tier plus +++++++++++++++++ A Crystal Arena T-shirt, A hard cover art book, a CD of the OST and a figure of the minion.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-04-01">Apr 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $40 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$800</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(10 left of 10)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Ultimate - Customized Enemy ============================== Chaos tier plus ++++++++++++++++ We design an in-game enemy based on your concept. You will be credited as &#39;SPECIAL GUEST&#39; in the game. (*must be within the reasonable range)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-04-01">Apr 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $40 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$1,800</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+2 backers
+</span>
+<span class="bg-grey no-wrap pl1 pr1 sold-out">
+All gone!
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Ultimate - Customized Level ============================== Chaos tier plus ++++++++++++++++ We design a special in-game level including 3 maps, 3 enemies and 1 boss based on your concept. You will be credited as &#39;SPECIAL GUEST&#39; in the game. (*must be within the reasonable range)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-04-01">Apr 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$2,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+2 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(8 left of 10)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Infinity ============================== Chaos tier plus ++++++++++++++++ We design a new Einherjar based on your concept, including name, appearance and skills. Also, you can voice your Einherjar if you have the necessary equipment. You will be credited as &#39;ASSOCIATE PRODUCER&#39; in the game. (*must be within the reasonable range)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-04-01">Apr 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+</ul>
+
+<div class="p2" id="meta">
+<h5>Funding period</h5>
+<p class="tiny_type">
+<time class="js-adjust" data-format="ll" datetime="2013-08-27T10:33:14-04:00">Aug 27, 2013</time> - 
+<time class="js-adjust" data-format="ll" datetime="2013-09-26T10:33:14-04:00">Sep 26, 2013</time>
+(30 days)
+</p>
+</div>
+</div>
+
+</div>
+
+<a href="#" id="video_mode_tab" style="display: none;">
+View in Video Mode
+</a>
+
+</div>
+</div>
+
+
+</div>
+
+<div class="h5 bg-green-dark" id="mega-footer-wrap">
+<div class="bg-green-dark white full-height" id="footer-newsletter-signup">
+<div class="container py4">
+<div class="grid_8 prefix_4 suffix_4 center mt4">
+<h2>
+Eureka! You've found
+<br>
+our little secret.
+</h2>
+<p>Sign up for our Happening email for all the inside info about arts and culture in the Kickstarter universe and beyond.</p>
+<div class="newsletter_signup">
+<form accept-charset="UTF-8" action="/newsletters/happening/signup" class="overlabels" method="post"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /><input class="hidden" name="authenticity_token" type="hidden" value="05YTdOHYGh9ViXcYdt+U++roqmCyXmKpvnYfELR3roM=" /></div><input class="hidden" id="location" name="location" type="hidden" value="footer" />
+<textarea class="hide textarea" id="comment" name="comment">
+</textarea>
+<div class="field newsletter">
+<label class="overlabel z1 overlabel-newsletter">Email address</label>
+<input class="text" id="email" name="email" type="text" />
+</div>
+<input class="button button_green submit" name="commit" type="submit" value="Submit" />
+</form>
+
+</div>
+
+</div>
+</div>
+</div>
+<div class="container relative" id="mega-footer">
+<span class="scissors icon-scissors-1"></span>
+<div class="grid_16 alpha omega pt4 pb2" id="mega-footer-links">
+<div class="grid_4 link-group">
+<h5 class="white">About us</h5>
+<ul class="list">
+<li><a href="/year/2013/?ref=footer">2013 highlights</a></li>
+<li><a href="/year/2012?ref=footer">2012 highlights</a></li>
+<li><a href="/team?ref=footer">Who we are</a></li>
+<li><a href="/jobs?ref=footer">Jobs</a></li>
+<li><a href="/press?ref=footer">Press</a></li>
+<li><a href="/help/stats?ref=footer">Stats</a></li>
+<li><a href="/newsletters/weekly">Projects we love</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group">
+<h5><a href="/help?ref=footer" class="white">Help</a></h5>
+<ul class="list">
+<li><a href="/hello?ref=footer">What is Kickstarter?</a></li>
+<li><a href="/help?ref=footer">FAQ</a></li>
+<li><a href="/contact?ref=footer">Support</a></li>
+<li><a href="/help/school?ref=footer">Kickstarter School</a></li>
+<li><a href="/terms-of-use?ref=footer">Terms of Use</a></li>
+<li><a href="/privacy?ref=footer">Privacy Policy</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group alpha omega suffix_1">
+<h5 class="alpha"><a href="/discover/advanced?ref=footer" class="white">Discover</a></h5>
+<ul class="column column-0 grid_2 list">
+<li><a href="/discover/categories/art?ref=footer">Art</a></li>
+<li><a href="/discover/categories/comics?ref=footer">Comics</a></li>
+<li><a href="/discover/categories/dance?ref=footer">Dance</a></li>
+<li><a href="/discover/categories/design?ref=footer">Design</a></li>
+<li><a href="/discover/categories/fashion?ref=footer">Fashion</a></li>
+<li><a href="/discover/categories/film%20&amp;%20video?ref=footer">Film &amp; Video</a></li>
+<li><a href="/discover/categories/food?ref=footer">Food</a></li>
+</ul>
+<ul class="column column-1 grid_2 list">
+<li><a href="/discover/categories/games?ref=footer">Games</a></li>
+<li><a href="/discover/categories/music?ref=footer">Music</a></li>
+<li><a href="/discover/categories/photography?ref=footer">Photography</a></li>
+<li><a href="/discover/categories/publishing?ref=footer">Publishing</a></li>
+<li><a href="/discover/categories/technology?ref=footer">Technology</a></li>
+<li><a href="/discover/categories/theater?ref=footer">Theater</a></li>
+</ul>
+</div>
+<div class="grid_3 link-group">
+<h5 class="white">Hello</h5>
+<ul class="list">
+<li>
+<a href="https://twitter.com/kickstarter"><span class="ss-icon ss-social-regular ss-twitter"></span>
+Twitter
+</a></li>
+<li>
+<a href="https://www.facebook.com/Kickstarter"><span class="ss-icon ss-social-regular ss-facebook"></span>
+Facebook
+</a></li>
+<li>
+<a href="http://kickstarter.tumblr.com"><span class="ss-icon ss-social-regular ss-tumblr"></span>
+Tumblr
+</a></li>
+<li>
+<a href="http://instagram.com/kickstarter"><span class="ss-icon ss-social-regular ss-instagram"></span>
+Instagram
+</a></li>
+<li>
+<a href="https://vine.co/Kickstarter"><span class="ss-icon ss-social-regular ss-vine"></span>
+Vine
+</a></li>
+<li>
+<a href="/blog?ref=footer">Blog</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="grid_16 py4" id="mega-footer-bottom">
+<div class="logo left">
+<a href="/" class="grey-dark"><span class="ss-icon h3">KICKSTARTER</span>
+</a></div>
+<p class="right h5 grey-dark">
+&copy;
+2014
+Kickstarter, Inc.
+</p>
+</div>
+</div>
+</div>
+
+<script>
+  //<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    var analytics_vars = { google_analytics_id : "UA-7621056-1", logged_in : "false", social_user: "false" }
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.mixpanel_id = '75b1d24a516ecfc955eadfadc4910661';
+    window.mixpanel_debug = false;
+  //]]>
+</script>
+
+
+<noscript>
+<img alt="Quantcast" border="0" height="1" src="//secure.quantserve.com/pixel/p-34IbSpw2K94Sg.gif" style="display:none" width="1" />
+</noscript>
+
+
+<script>
+  //<![CDATA[
+    window.benchmark = (typeof window.performance == 'object' && typeof window.performance.mark == 'function');
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    (function (root) {
+      function instrument_function (original) {
+        return function () {
+          try {
+            return original.apply(this, arguments);
+          } catch (e) {
+            if (e.stack && root.Honeybadger) {
+              Honeybadger.notify(e, {
+                current_project : root.current_project,
+                current_user : root.current_user
+              });
+            }
+            throw(e);
+          }
+        };
+      }
+      root.instrument_function = instrument_function;
+    }(this));
+  //]]>
+</script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+
+<script>
+  //<![CDATA[
+    (function(){function c(a){this.local_start_time=new Date;this.settings={cookie_name:"request_time"};for(var b in a)this.settings[b]=a[b];this.get_remote_offset()}c.prototype.get_remote_offset=function(){this.cookie_value=this.read_cookie();var a=new Date(this.cookie_value);if(!this.cookie_value||"Invalid Date"===a.toString()){if(this.remote_offset=this.read_cookie("local_offset"))this.remote_offset=parseInt(this.remote_offset,10)}else this.remote_offset=a-this.local_start_time;"undefined"!==typeof this.remote_offset&& !isNaN(this.remote_offset)?(document.cookie="local_offset="+this.remote_offset+"; path=/",this.is_set=!0):this.is_set=!1};c.prototype.time_units=[["milliseconds",1],["seconds",1E3],["minutes",6E4],["hours",36E5],["days",864E5]];c.prototype.get_units_in_interval=function(a,b){var d=a.replace(/^\w/,function(d){return"get"+d.toUpperCase()});return b[d]()};c.prototype.milliseconds_in_day=function(a){"undefined"===typeof a&&(a=new Date);for(var b=0,d=this.time_units.length-2;0<=d;d--)b+=this.get_units_in_interval(this.time_units[d][0], a)*this.time_units[d][1];return b};c.prototype.milliseconds_in_interval=function(a,b){return this.milliseconds_in_day(b)%a};c.prototype.milliseconds_to_next_interval=function(a,b){return a-this.milliseconds_in_interval(a,b)};c.prototype.pluralize=function(a,b){1===b&&(a=a.replace(/s$/,""));return a};c.prototype.read_cookie=function(a){for(var b=window.document.cookie.split(";"),a=(a||this.settings.cookie_name)+"=",d=0;d<b.length;d++){for(var e=b[d];" "==e.charAt(0);)e=e.substring(1,e.length);if(0== e.indexOf(a))return b=e.substring(a.length,e.length),decodeURIComponent(b).replace(/\+/g," ")}return null};c.prototype.destroy_cookie=function(a){var b=new Date;a||(a=this.settings.cookie_name);b.setTime(b.getTime()-864E5);window.document.cookie=a+"=; expires="+b.toGMTString()+"; path=/"};c.prototype.get_remote_time=function(){var a=new Date,b=a.getTime()+this.remote_offset;return a=a.setTime(b)};window.ksr_page_clock=new c})(); (function(){function c(d,a,b){if(d){this.options={unit_base:{seconds:119,minutes:119,hours:72,days:0},end_phrase:d.getAttribute("data-word")||"to go",count_down:d.getAttribute("data-dynamic")||!1};for(k in b)this.options[k]=b[k];this.clock=a;this.time_units=this.clock.time_units.slice(1);this.element=d;this.clock.is_set&&this.attach()}}function a(){this.elements=[];this.attach()}var b=function(d,a){var b=a||window.document.body,c=d.split("."),g=c[c.length-1],c=1<c.length&&c[0]?c[0]:"*";if(window.document.getElementsByClassName)return b.getElementsByClassName(g); if(b.querySelectorAll)return b.querySelectorAll(d);for(var c=b.getElementsByTagName(c),h=[],i=0,f;f=c[i];i++)b=RegExp("(^|\\s)"+g+"(\\s|$)"),(""+f.className).match(b)&&h.push(f);return h};c.prototype.get_remaining_time=function(){var d=this.remote_end_time-this.clock.get_remote_time();0>d&&(d=0);return d};c.prototype.get_current_unit=function(){for(var d,a=0;a<this.time_units.length&&!(d=this.time_units[a],this.get_remaining_time()<=this.options.unit_base[d[0]]*d[1]);a++);return d};c.prototype.update_element= function(){var a=this.get_current_unit(),b=Math.floor(this.get_remaining_time()/a[1]);isNaN(b)||(this.number_element.innerHTML=b,this.text_element.innerHTML=this.clock.pluralize(a[0],b)+" "+this.options.end_phrase)};c.prototype.valid=function(){return!(!this.number_element||!this.text_element)};c.prototype.attach=function(){function a(){c.update_element();if(c.options.count_down&&0<c.get_remaining_time()){var b=c.get_current_unit();this.timeout=window.setTimeout(a,c.clock.milliseconds_to_next_interval(b[1]))}} var c=this;if(this.remote_end_time_string=this.element.getAttribute("data-end_time"))this.remote_end_time_string.match(/^\d+$/)?(this.remote_end_time=new Date,this.remote_end_time.setTime(this.remote_end_time_string)):this.remote_end_time=new Date(this.remote_end_time_string),this.number_element=b(".num",this.element)[0],this.text_element=b(".text",this.element)[0],this.element.ksr_page_timer=!0,this.valid()&&a()};c.prototype.cancel=function(){this.timeout&&clearTimeout(this.timeout)};a.prototype.loading= !0;a.prototype.stop_finding=function(){this.attach_timers();this.loading=!1;document.addEventListener?document.removeEventListener("DOMContentLoaded",this.stop_finding,!1):document.attachEvent&&"complete"===document.readyState&&document.detachEvent("onreadystatechange",this.stop_finding)};a.prototype.bind_ready=function(){var a=this,b=function(){a.stop_finding.call(a)};document.addEventListener?(document.addEventListener("DOMContentLoaded",b,!1),window.addEventListener("load",b,!1)):document.attachEvent&& (document.attachEvent("onreadystatechange",b),window.attachEvent("onload",b))};a.prototype.attach_timers=function(){for(var a=b("div.ksr_page_timer"),e=0;e<a.length;e++)a[e].ksr_page_timer||(new c(a[e],window.ksr_page_clock),this.elements.push(a[e]))};a.prototype.attach=function(){var a=this;this.bind_ready();(function(){a.attach_timers();a.loading&&window.setTimeout(function(){a.attach_timers()},200)})()};window.ProjectTimer=c;new a})();
+  //]]>
+</script>
+
+<script class="template" id="template-widgets__video_embed_code" type="text/x-tmpl-mustache"><iframe width="{{width}}" height="{{height}}" src="{{{path}}}" frameborder="0" scrolling="no"> </iframe>
+</script><script class="template" id="template-projects__baseball_card_tall" type="text/x-tmpl-mustache"><div class="project-card-wrap project-card-wrap-tall border bg-white rounded clip">
+  <div class="project-card relative project-live {{#successful?}}successful{{/successful?}}">
+    <div class="project-thumbnail pt1 pl1 pr1">
+      <a href="{{urls.web.project}}" target="">
+        <img alt="Photo-little" class="projectphoto-little" src="{{photo.little}}" class="fit">
+      </a>
+    </div>
+    <div class="project-card-interior p1 h6 grey-dark">
+      <h6 class="project-title">
+        <a href="{{urls.web.project}}" target="" class="green-dark">{{name}}</a>
+      </h6>
+      <p class="mb1 ellipsis">
+        by
+        {{creator.name}}
+      </p>
+      <p class="blurb">
+        {{blurb}}
+      </p>
+    </div>
+    <div class="absolute-bottom bg-white rounded-bottom">
+
+      {{#location}}
+        <ul class="p1 list project-meta no-margin h6">
+          <li class="ellipsis">
+            <a href="{{location.urls.web.discover}}" data-location="{{location_json}}" class="grey-dark">
+              <span class="ss-icon ss-location"></span>
+              <span class="location-name">{{location.displayable_name}}</span>
+            </a>
+          </li>
+        </ul>
+      {{/location}}
+
+      <div class="project-stats-wrap pb1 pl1 pr1">
+
+        {{#failed?}}
+          <div class='project-status project-failed h6'>
+            <strong> Funding Unsuccessful</strong><br />
+            <span class="grey-dark">Project ended on {{formatted_deadline}}</span>
+          </div>
+        {{/failed?}}
+
+        {{#canceled?}}
+          <div class='project-status project-canceled h6'>
+            <strong> Funding Canceled</strong><br />
+            <span class="grey-dark">Project canceled on {{formatted_state_changed_at}}</span>
+          </div>
+        {{/canceled?}}
+
+        {{#successful?}}
+          <div class='project-pledged-successful bg-green white h6 pl1 pr1 mb1'>
+            <strong>Successful!</strong>
+          </div>
+        {{/successful?}}
+
+        {{#live_or_successful?}}
+          {{#live?}}
+            <div class="project-pledged-wrap bg-grey clip mb1">
+              <div class="project-pledged bg-green full-height" style="width: {{percent_raised_to_100}}%"></div>
+            </div>
+          {{/live?}}
+          <ul class="project-stats list no-margin h6 no-wrap">
+            <li class="first funded inline-block mr1">
+              <strong class="block h6">{{percent_raised_rounded}}%</strong>
+              <span class="grey-dark">funded</span>
+            </li>
+            <li class="pledged inline-block mr1">
+              <strong class="block h6">{{currency_symbol}}{{formatted_money}}</strong>
+              <span class="grey-dark">pledged</span>
+            </li>
+            {{#successful?}}
+              <li class="last successful inline-block">
+                <strong class="block h6">Funded</strong>
+                <div class="deadline grey-dark">{{formatted_deadline}}</div>
+              </li>
+            {{/successful?}}
+            {{#live?}}
+              <li class="last ksr_page_timer inline-block" data-end_time="{{javascript_deadline}}">
+                <strong class="block h6">
+                  <div class="num">30</div>
+                </strong>
+                <div class="span text grey-dark" data-word="left">days to go</div>
+              </li>
+            {{/live?}}
+          </ul>
+        {{/live_or_successful?}}
+      </div>
+    </div>
+  </div>
+</div>
+
+{{#friends_backing?}}
+  <div class="friend_project_context">
+    <div class="friend_facepile">
+      {{#truncated_friends}}
+        <img src="{{avatar.thumb}}" class="{{#has_metadata?}}small{{/has_metadata?}}">
+      {{/truncated_friends}}
+    </div>
+    <p class="friend_namepile">
+      {{{escaped_sentence}}}
+    </p>
+  </div>
+{{/friends_backing?}}
+</script><script class="template" id="template-projects__video_mode" type="text/x-tmpl-mustache"><a href='#' id='video_mode_close' class='close_button z2'><span class='ss-icon ss-delete'></span></a>
+
+<div class='title_card z1 {{context_classes}}' style="display:none;">
+  <div class='interior'>
+    <h2 class='project_title normal_weight'>{{name}}</h2>
+    <p class='blurb'>{{blurb}}</p>
+    <nav class='bar'>
+      <a id='play_button' class='left play' href='#'>
+        <span class='play_active'>
+          <span class='ss-icon ss-play'></span>
+          Play
+        </span>
+        <span class='pause_active'>
+          <span class='ss-icon ss-pause'></span>
+          Pause
+        </span>
+      </a>
+      {{#logged_in}}
+        <div class='remind right'>
+          {{#if_not_starred}}
+            <a class='follow' href='{{urls.web.project}}/watch'><span class='ss-icon ss-star'></span></a>
+          {{/if_not_starred}}
+          {{#if_starred}}
+            <a class='unfollow' href='{{urls.web.project}}/unwatch'><span class='ss-icon ss-star active'></span></a>
+          {{/if_starred}}
+        </div>
+      {{/logged_in}}
+      <a class='right explore button button_green small' href='#'>Explore this project</a>
+    </nav>
+  </div>
+</div>
+
+<div class='channel_controls z1'>
+  <a href='#' class='{{#playlist_is_location}}selected {{/playlist_is_location}}location'>Something else near {{location.first_name}} <span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_featured}}selected {{/playlist_is_featured}}featured'>Something different<span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_category}}selected {{/playlist_is_category}}category'>Something else in {{category.name}} <span class='ss-icon ss-navigateright'></span></a>
+</div>
+
+<div class='project_video' style='background-image: url('{{photo.full}}')'>
+  <div class='cover'>
+    <video>
+      <source src='{{video.high}}' type='video/mp4'/>
+      <source src='{{video.webm}}' type='video/webm'/>
+    </video>
+  </div>
+</div>
+</script><script class="template" id="template-site__video_mode_fourohfour" type="text/x-tmpl-mustache"><section class='four_oh_four'>
+  <p class='big_type'>
+    Looks like you've reached the end of the line! <br />Check out <a class="another" href='#'>another channel</a> or <a href='/discover'>browse projects in discover</a>.
+  </p>
+</section>
+</script>
+
+<script id="schwamm_formatting_options" type="text/javascript">
+//<![CDATA[
+(function(){window.formatters = window.formatters || {}; var formatting_options = {"distance_date_intervals":[[5,"just now"],[29,"less than a minute ago"],[89,"1 minute ago"],[2640,"%m minutes ago"],[5340,"about 1 hour ago"],[82800,"about %h hours ago"],[147600,"1 day ago"],[604800,"%d days ago"],[15552000,"on %t"],[0,"on %y"]],"currency_symbol_mappings":{"AFN":"\u060b","ALL":"Lek","ARS":"$","AUD":"$","AWG":"\u0192","AZN":"\u043c\u0430\u043d","BAM":"KM","BBD":"$","BGN":"\u043b\u0432","BMD":"$","BND":"$","BOB":"$b","BRL":"R$","BSD":"$","BWP":"P","BYR":"p.","BZD":"BZ$","CAD":"$","CLP":"$","CNY":"\u00a5","COP":"$","CRC":"\u20a1","CUP":"\u20b1","CZK":"K\u010d","DKK":"kr","DOP":"RD$","EGP":"\u00a3","EUR":"\u20ac","FJD":"$","FKP":"\u00a3","GBP":"\u00a3","GIP":"\u00a3","GTQ":"Q","GYD":"$","HKD":"$","HNL":"L","HRK":"kn","HUF":"Ft","IDR":"Rp","ILS":"\u20aa","IRR":"\ufdfc","ISK":"kr","JMD":"J$","JPY":"\u00a5","KGS":"\u043b\u0432","KHR":"\u17db","KPW":"\u20a9","KRW":"\u20a9","KYD":"$","KZT":"\u043b\u0432","LAK":"\u20ad","LBP":"\u00a3","LKR":"\u20a8","LRD":"$","LTL":"Lt","LVL":"Ls","MKD":"\u0434\u0435\u043d","MNT":"\u20ae","MUR":"\u20a8","MXN":"$","MYR":"RM","MZN":"MT","NAD":"$","NGN":"\u20a6","NIO":"C$","NOK":"kr","NPR":"\u20a8","NZD":"$","OMR":"\ufdfc","PAB":"B/.","PEN":"S/.","PHP":"\u20b1","PKR":"\u20a8","PLN":"z\u0142","PYG":"Gs","QAR":"\ufdfc","RON":"lei","RSD":"\u0414\u0438\u043d.","RUB":"\u0440\u0443\u0431","SAR":"\ufdfc","SBD":"$","SCR":"\u20a8","SEK":"kr","SGD":"$","SHP":"\u00a3","SOS":"S","SRD":"$","SVC":"$","SYP":"\u00a3","THB":"\u0e3f","TRY":"TL","TTD":"TT$","TWD":"NT$","UAH":"\u20b4","USD":"$","UYU":"$U","UZS":"\u043b\u0432","VEF":"Bs","VND":"\u20ab","YER":"\ufdfc","ZAR":"R"},"currency_trailing_code_mappings":{"AUD":true,"CAD":true,"NZD":true,"USD":true},"currency_formats":["money","shorter_money"]}; for (key in formatting_options) {window.formatters[key] = formatting_options[key]};}());
+//]]>
+</script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("begin_base.js_tag");}
+  //]]>
+</script>
+<script src="https://d297h9he240fqh.cloudfront.net/assets/packages/base-45cdab84617ddfb8905b7cddc8500c19.js" type="text/javascript"></script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("end_base.js_tag");}
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    document.domain='kickstarter.com';
+  //]]>
+</script>
+
+<iframe height="0" id="api_xdreceiver" src="https://api.kickstarter.com/xdreceiver/85e6.html" style="display: none;" width="0"></iframe>
+
+
+
+<div id="fb-root"></div>
+<script>
+  //<![CDATA[
+    var channelUrl = window.location.protocol + "//" + window.location.host + "/channel.html",
+      skip_autologin = $('body').is('.skip_autologin');
+    
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId: window.fb_app_id,
+        channelUrl: channelUrl,
+        status: true,    // check login status
+        cookie: true,    // enable cookies to allow the server to access the session
+        xfbml: true,     // parse XFBML
+        logging: false   // turn off logging
+      });
+    
+      FB.getLoginStatus(function (response) {
+        if (response.status === 'connected') {
+          if (read_cookie("logout_from_fb")) {
+            FB.logout();
+            destroy_cookie("logout_from_fb");
+          } else if (!skip_autologin) {
+            $.get("/fb/autologin", {'fbsr': response.authResponse.signedRequest});
+          } else if (false && 0 == response.authResponse.userID) {
+            $.get("/fb/refresh", {'fbsr': response.authResponse.signedRequest});
+          }
+        } else {
+          if (read_cookie("logout_from_fb")) {
+            destroy_cookie("logout_from_fb");
+          }
+        }
+      })
+    
+      $(document).trigger('fb:loaded');
+    };
+    
+    
+    // Load the SDK Asynchronously
+    (function(d){
+      var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+      js = d.createElement('script'); js.id = id; js.async = true;
+      js.src = "//connect.facebook.net/en_US/all.js";
+      d.getElementsByTagName('head')[0].appendChild(js);
+    }(document));
+  //]]>
+</script>
+
+
+</body>
+</html>

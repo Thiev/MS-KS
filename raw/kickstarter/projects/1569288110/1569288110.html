@@ -1,0 +1,3068 @@
+<!DOCTYPE html>
+<html class="projects_show  fontface no-js" lang="en">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# kickstarter: http://ogp.me/ns/fb/kickstarter#">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-5.newrelic.com","errorBeacon":"jserror.newrelic.com","licenseKey":"b04b883ad2","applicationID":"11086","transactionName":"cFteRUULX1wHFhtIEFxeVVJDFxxDCgtD","queueTime":8,"applicationTime":1136,"ttGuid":"","agentToken":null,"agent":"js-agent.newrelic.com/nr-411.min.js"}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"Vw4BVEVSCQMIUg=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e){function n(t,e,n){n||(n={});for(var r=o[t],a=r&&r.length||0,s=n[i]||(n[i]={}),u=0;a>u;u++)r[u].apply(s,e);return s}function r(t,e){var n=o[t]||(o[t]=[]);n.push(e)}var o={},i="nr@context";e.exports={on:r,emit:n}},{}],2:[function(t){function e(t,e,n,i,s){return u?u-=1:r("err",[s||new UncaughtException(t,e,n)]),"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t(5),a=window.onerror,s=!1,u=0;t("loader").features.push("err"),window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(d){"stack"in d&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(4),s=!0)}i.on("fn-start",function(){s&&(u+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&u>0&&(u-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:4,3:3,4:6,5:1,6:14,handle:"D5DuLP",loader:"G9z0Bl"}],3:[function(t){function e(t){r.inPlace(t,["addEventListener","removeEventListener"],"-",n)}function n(t){return t[1]}var r=t(1),o=(t(3),t(2));if(e(window),"getPrototypeOf"in Object){for(var i=document;i&&!i.hasOwnProperty("addEventListener");)i=Object.getPrototypeOf(i);i&&e(i);for(var a=XMLHttpRequest.prototype;a&&!a.hasOwnProperty("addEventListener");)a=Object.getPrototypeOf(a);a&&e(a)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&e(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=e["nr@wrapped"]?t[1]=e["nr@wrapped"]:e["nr@wrapped"]=t[1]=r(e,"fn-"):"function"==typeof e.handleEvent&&r.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:15,2:1,3:14}],4:[function(t){var e=(t(3),t(1)),n=t(2);e.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=e(t[0],"fn-")})},{1:15,2:1,3:14}],5:[function(t){function e(t){var e=t[0];"string"==typeof e&&(e=new Function(e)),t[0]=n(e,"fn-")}var n=(t(3),t(1)),r=t(2);n.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",e)},{1:15,2:1,3:14}],6:[function(t){function e(){o.inPlace(this,s,"fn-")}function n(t,e){o.inPlace(e,["onreadystatechange"],"fn-")}function r(t,e){return e}var o=t(1),i=t(2),a=window.XMLHttpRequest,s=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];window.XMLHttpRequest=function(t){var n=new a(t);try{i.emit("new-xhr",[],n),o.inPlace(n,["addEventListener","removeEventListener"],"-",function(t,e){return e}),n.addEventListener("readystatechange",e,!1)}catch(r){try{i.emit("internal-error",r)}catch(s){}}return n},window.XMLHttpRequest.prototype=a.prototype,o.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",r),i.on("send-xhr-start",n),i.on("open-xhr-start",n)},{1:15,2:1}],7:[function(t){function e(){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;u>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,d="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=e(d);if(f&&(r.rxSize=f),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}t("loader").features.push("xhr");var o=t("handle"),i=t(1),a=t(5),s=["load","error","abort","timeout"],u=s.length,d=t(2);t(3),t(4),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var d=e(o);d&&(r.txSize=d)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",e)}catch(r){}}};for(var f=0;u>f;f++)n.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&e()},{1:8,2:11,3:3,4:6,5:1,handle:"D5DuLP",loader:"G9z0Bl"}],8:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e){var n=r[t];return n?n.apply(this,e):(o[t]||(o[t]=[]),void o[t].push(e))}var r={},o={};e.exports=n,n.queues=o,n.handlers=r},{}],11:[function(t,e){function n(t){if(!t||"object"!=typeof t&&"function"!=typeof t)return-1;if(t===window)return 0;if(o.call(t,"__nr"))return t.__nr;try{return Object.defineProperty(t,"__nr",{value:r,writable:!0,enumerable:!1}),r}catch(e){return t.__nr=r,r}finally{r+=1}}var r=1,o=Object.prototype.hasOwnProperty;e.exports=n},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&u&&u.body){p.proto="https"===c.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=u.createElement("script");e.src=p.proto+t.agent,u.body.appendChild(e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,u=s.document,d="addEventListener",f="attachEvent",c=(""+location).split("?")[0],p=e.exports={offset:i(),origin:c,features:[]};u[d]?(u[d]("DOMContentLoaded",o,!1),s[d]("load",n,!1)):(u[f]("onreadystatechange",r),s[f]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],14:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],15:[function(t,e){function n(t,e,r,s){function nrWrapper(){try{var n,a=u(arguments),d=this,f=r&&r(a,d)||{}}catch(c){i([c,"",[a,d,s],f])}o(e+"start",[a,d,s],f);try{return n=t.apply(d,a)}catch(p){throw o(e+"err",[a,d,p],f),p}finally{o(e+"end",[a,d,n],f)}}return a(t)?t:(e||(e=""),nrWrapper[n.flag]=!0,nrWrapper)}function r(t,e,r,o){r||(r="");var i,s,u,d="-"===r.charAt(0);for(u=0;u<e.length;u++)s=e[u],i=t[s],a(i)||(t[s]=n(i,d?s+r:r,o,s,t))}function o(t,e,n){try{s.emit(t,e,n)}catch(r){i([r,t,e,n])}}function i(t){try{s.emit("internal-error",t)}catch(e){}}function a(t){return!(t&&"function"==typeof t&&t.apply&&!t[n.flag])}var s=t(1),u=t(2);e.exports=n,n.inPlace=r,n.flag="nr@wrapper"},{1:1,2:14}]},{},["G9z0Bl",2,7]);</script><script>
+  //<![CDATA[
+    docElement = this.document.documentElement;
+    docElement.className=docElement.className.replace(/\bno-js\b/,'') + 'js';
+  //]]>
+</script>
+<title>NevenTale - A Next-Gen, User-Driven MMORPG Revolution! by Vavel Game Studio &mdash; Kickstarter</title><script>
+  //<![CDATA[
+    window.report_errors = true;
+    window.honeybadger_configuration = {
+      api_key : "02ab109335c0dd1a93506d92f22217a7",
+      environment : "production",
+      component : "projects",
+      action : "show",
+      onerror : false
+    };
+  //]]>
+</script>
+
+
+<!--[if lt IE 9]>
+  <script src="//html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta content="telephone=no" name="format-detection">
+
+<!--[if !IE]> -->
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base-9f623ad5d021a188cfb2d68a0cdf7a7b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<!-- <![endif]-->
+<!--[if IE]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base_blessed-2640c72487552f9a2ef9f2620b4af860.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<!--[if lte IE 9]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_nine-a93fe10530f175f96c4078b7e070d7e1.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 8]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_eight-f75aeb274436f94a0d243774456b1c62.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 7]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie-c019c01acd3a96588b346cf577a3504f.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_seven-5a3d2cef660cd281fd844b04b2397dbb.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if IE 6]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_six-e4d3caf76e405fe19aee6ece8bda701b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<link href="https://d297h9he240fqh.cloudfront.net/favicon.png" rel="icon" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-precomposed-7b603dba7cf80e4acc57d94a991bebbd.png" rel="apple-touch-icon-precomposed" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-ipad-precomposed-3176f72977daf43dee3b0d348484dc01.png" rel="apple-touch-icon-precomposed" sizes="72x72" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-iphone4-precomposed-b93b70168cd8492c843d0fea873c7f83.png" rel="apple-touch-icon-precomposed" sizes="114x114" type="image/png">
+<link href="https://www.kickstarter.com/services/oembed?url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Fvavel%2Fneventale-a-next-gen-user-driven-mmorpg-revolution" rel="alternate" title="NevenTale - A Next-Gen, User-Driven MMORPG Revolution! Script Tag oEmbed" type="application/json+oembed">
+<link rel="alternate" type="application/atom+xml" title="NevenTale - A Next-Gen, User-Driven MMORPG Revolution! : Kickstarter" href="https://www.kickstarter.com/projects/vavel/neventale-a-next-gen-user-driven-mmorpg-revolution/posts.atom" />
+<meta property="twitter:app:id:iphone" content="596961532"/>
+<meta property="twitter:app:name:iphone" content="Kickstarter"/>
+<meta property="twitter:app:url:iphone" content="ksr://www.kickstarter.com/projects/vavel/neventale-a-next-gen-user-driven-mmorpg-revolution"/>
+<meta name="video_height" content="360"/>
+<meta name="video_width" content="640"/>
+<meta name="video_type" content="application/x-shockwave-flash"/>
+<meta name="title" content="Kickstarter &gt;&gt; NevenTale - A Next-Gen, User-Driven MMORPG Revolution! by Vavel Game Studio"/>
+<meta name="description" content="Vavel Game Studio is raising funds for NevenTale - A Next-Gen, User-Driven MMORPG Revolution! on Kickstarter! 
+
+ NevenTale is a next-gen online RPG with story driven, user generated content. The first MMORPG without a grind!"/>
+<meta name="robots" content="noindex"/>
+<meta property="og:title" content="NevenTale - A Next-Gen, User-Driven MMORPG Revolution!"/>
+<meta property="og:type" content="kickstarter:project"/>
+<meta property="og:image" content="https://s3.amazonaws.com/ksr/projects/650484/photo-main.jpg?1397830922"/>
+<meta property="og:url" content="https://www.kickstarter.com/projects/vavel/neventale-a-next-gen-user-driven-mmorpg-revolution"/>
+<meta property="og:site_name" content="Kickstarter"/>
+<meta property="fb:app_id" content="69103156693"/>
+<meta property="og:description" content="NevenTale is a next-gen online RPG with story driven, user generated content. The first MMORPG without a grind!"/>
+<meta property="kickstarter:creator" content="https://www.kickstarter.com/profile/vavel"/>
+<meta property="twitter:url:landing_url" content="https://www.kickstarter.com/projects/vavel/neventale-a-next-gen-user-driven-mmorpg-revolution"/>
+<meta property="twitter:card" content="2427656750:kickstarter_project"/>
+<meta property="twitter:site" content="@kickstarter"/>
+<meta property="twitter:site:id" content="16186995"/>
+<meta property="twitter:text:title" content="NevenTale - A Next-Gen, User-Driven MMORPG Revolution!"/>
+<meta property="twitter:text:artist" content="Vavel Game Studio"/>
+<meta property="twitter:text:backers" content="51"/>
+<meta property="twitter:text:pledged" content="$4,005 USD"/>
+<meta property="twitter:text:time" content="0 seconds"/>
+<meta property="twitter:text:location" content="Chicago, IL"/>
+<meta property="twitter:image:location_image" content="https://d3mlfyygrfdi2i.cloudfront.net/b40e/pin.png"/>
+<meta property="twitter:text:description" content="NevenTale is a next-gen online RPG with story driven, user generated content. The first MMORPG without a grind!"/>
+<meta property="twitter:image:media" content="https://s3.amazonaws.com/ksr/projects/650484/photo-main.jpg?1397830922"/>
+<meta property="twitter:image:width" content="640"/>
+<meta property="twitter:image:height" content="480"/>
+<meta property="twitter:player:stream:url" content="https://d2pq0u4uni88oo.cloudfront.net/projects/650484/video-369338-h264_base.mp4"/>
+<meta property="twitter:player:stream:content" content="video/mp4"/>
+<meta property="twitter:player:url" content="https://www.kickstarter.com/projects/vavel/neventale-a-next-gen-user-driven-mmorpg-revolution/widget/video.html"/>
+<meta property="twitter:player:height" content="360"/>
+<meta property="twitter:player:width" content="640"/>
+<meta property="twitter:maxage" content="60"/>
+<meta property="og:video" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F650484%2Fvideo-369338-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F650484%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Vavel+Game+Studio&amp;project_title=NevenTale+-+A+Next-Gen%2C+User-Driven+MMORPG+Revolution%21&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Fvavel%2Fneventale-a-next-gen-user-driven-mmorpg-revolution&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:secure_url" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F650484%2Fvideo-369338-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F650484%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Vavel+Game+Studio&amp;project_title=NevenTale+-+A+Next-Gen%2C+User-Driven+MMORPG+Revolution%21&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Fvavel%2Fneventale-a-next-gen-user-driven-mmorpg-revolution&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:height" content="360"/>
+<meta property="og:video:width" content="640"/>
+<meta property="og:video:type" content="application/x-shockwave-flash"/>
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="nGU+cGqRm+KFrlKgE3q5IuYOa5v1X2IoQK1UFW2MwPU=" name="csrf-token" />
+<script type="text/javascript">
+  var _sift = _sift || [];
+  _sift.push(['_setAccount', '637102']);
+  _sift.push(['_setUserId', '']);
+  _sift.push(['_trackPageview']);
+
+  (function() {
+    function loadSift() {
+      var sift, s;
+      if (root.visitor_id) {
+        _sift.push(['_setSessionId', root.visitor_id]);
+      }
+      sift = document.createElement('script');
+      sift.type = 'text/javascript';
+      sift.async = true;
+      sift.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dtlilztwypawv.cloudfront.net/s.js';
+      s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(sift, s);
+    }
+    if (window.attachEvent) {
+      window.attachEvent('onload', loadSift);
+    } else {
+      window.addEventListener('load', loadSift, false);
+    }
+  })();
+</script>
+<link href="http://kck.st/O8MhVj" rel="shorturl">
+<link href="https://www.kickstarter.com/projects/vavel/neventale-a-next-gen-user-driven-mmorpg-revolution" rel="canonical">
+<link href="https://s3.amazonaws.com/ksr/projects/650484/photo-med.jpg?1397830922" rel="image_src">
+<link href="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F650484%2Fvideo-369338-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F650484%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Vavel+Game+Studio&amp;project_title=NevenTale+-+A+Next-Gen%2C+User-Driven+MMORPG+Revolution%21&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Fvavel%2Fneventale-a-next-gen-user-driven-mmorpg-revolution&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque" rel="video_src">
+<script>
+  //<![CDATA[
+    window.current_checkout = "{&quot;id&quot;:0,&quot;domestic&quot;:null,&quot;amount&quot;:0.0,&quot;updated_at&quot;:0,&quot;created_at&quot;:0}";
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.current_ip = '94.209.101.212';
+    window.current_ip_datacenter = 'false';
+    window.enabled_features = {"elasticsearch":true,"security_history_read":true,"security_history_write":true,"advanced_discovery_es":true,"ios_crashlytics":true,"ios_mixpanel":true,"stories_veronica_mars":true,"veronica_mars_hero":true,"password_reset_banner":true};
+    window.fb_app_id = '69103156693';
+    
+    var _sf_startpt=(new Date()).getTime();
+    
+    window.current_project = "{&quot;id&quot;:1569288110,&quot;name&quot;:&quot;NevenTale - A Next-Gen, User-Driven MMORPG Revolution!&quot;,&quot;blurb&quot;:&quot;NevenTale is a next-gen online RPG with story driven, user generated content. The first MMORPG without a grind!&quot;,&quot;goal&quot;:2000000.0,&quot;pledged&quot;:4005.0,&quot;state&quot;:&quot;canceled&quot;,&quot;slug&quot;:&quot;neventale-a-next-gen-user-driven-mmorpg-revolution&quot;,&quot;disable_communication&quot;:false,&quot;country&quot;:&quot;US&quot;,&quot;currency&quot;:&quot;USD&quot;,&quot;currency_symbol&quot;:&quot;$&quot;,&quot;currency_trailing_code&quot;:true,&quot;deadline&quot;:1399734882,&quot;state_changed_at&quot;:1399500143,&quot;created_at&quot;:1376511558,&quot;launched_at&quot;:1396278882,&quot;backers_count&quot;:51,&quot;photo&quot;:{&quot;full&quot;:&quot;https://s3.amazonaws.com/ksr/projects/650484/photo-full.jpg?1397830922&quot;,&quot;ed&quot;:&quot;https://s3.amazonaws.com/ksr/projects/650484/photo-ed.jpg?1397830922&quot;,&quot;med&quot;:&quot;https://s3.amazonaws.com/ksr/projects/650484/photo-med.jpg?1397830922&quot;,&quot;little&quot;:&quot;https://s3.amazonaws.com/ksr/projects/650484/photo-little.jpg?1397830922&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/projects/650484/photo-small.jpg?1397830922&quot;,&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/projects/650484/photo-thumb.jpg?1397830922&quot;,&quot;1024x768&quot;:&quot;https://s3.amazonaws.com/ksr/projects/650484/photo-1024x768.jpg?1397830922&quot;,&quot;1536x1152&quot;:&quot;https://s3.amazonaws.com/ksr/projects/650484/photo-1536x1152.jpg?1397830922&quot;},&quot;creator&quot;:{&quot;id&quot;:594065993,&quot;name&quot;:&quot;Vavel Game Studio&quot;,&quot;slug&quot;:&quot;vavel&quot;,&quot;avatar&quot;:{&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/5809490/Vavel_logo.thumb.jpg?1390941283&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/5809490/Vavel_logo.small.jpg?1390941283&quot;,&quot;medium&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/5809490/Vavel_logo.medium.jpg?1390941283&quot;},&quot;urls&quot;:{&quot;web&quot;:{&quot;user&quot;:&quot;https://www.kickstarter.com/profile/vavel&quot;},&quot;api&quot;:{&quot;user&quot;:&quot;https://api.kickstarter.com/v1/users/594065993?signature=1399958129.54e47135a30806d6c762fbe27640efe3198fc39f&quot;}}},&quot;location&quot;:{&quot;id&quot;:2379574,&quot;name&quot;:&quot;Chicago&quot;,&quot;slug&quot;:&quot;chicago-il&quot;,&quot;short_name&quot;:&quot;Chicago, IL&quot;,&quot;displayable_name&quot;:&quot;Chicago, IL&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:&quot;IL&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/chicago-il&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/chicago-il&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1399951820.1e0576189d8f78ecf406381e633172ed8dba9979&amp;woe_id=2379574&quot;}}},&quot;category&quot;:{&quot;id&quot;:35,&quot;name&quot;:&quot;Video Games&quot;,&quot;slug&quot;:&quot;games/video games&quot;,&quot;position&quot;:7,&quot;parent_id&quot;:12,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;http://www.kickstarter.com/discover/categories/games/video%20games&quot;}}},&quot;urls&quot;:{&quot;web&quot;:{&quot;project&quot;:&quot;https://www.kickstarter.com/projects/vavel/neventale-a-next-gen-user-driven-mmorpg-revolution&quot;,&quot;project_short&quot;:&quot;http://kck.st/O8MhVj&quot;,&quot;updates&quot;:&quot;https://www.kickstarter.com/projects/vavel/neventale-a-next-gen-user-driven-mmorpg-revolution/posts&quot;},&quot;api&quot;:{&quot;project&quot;:&quot;https://api.kickstarter.com/v1/projects/1569288110?signature=1399958129.505e09083044541e09d1bcb7815dd055eb5cb0bb&quot;,&quot;comments&quot;:&quot;https://api.kickstarter.com/v1/projects/1569288110/comments?signature=1399958129.9be939d1cadb639fe5e3e4afba2954c5a5701294&quot;,&quot;updates&quot;:&quot;https://api.kickstarter.com/v1/projects/1569288110/updates?signature=1399958129.d91feda3a4dae49370a98a00b94a3739f8a32b6c&quot;}},&quot;updated_at&quot;:1399500151,&quot;canceled_at&quot;:1399500143,&quot;video&quot;:{&quot;id&quot;:369338,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/650484/video-369338-h264_high.mp4?2014&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/650484/video-369338-h264_base.mp4?2014&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/650484/video-369338-webm.webm?2014&quot;,&quot;width&quot;:640,&quot;height&quot;:360,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/650484/video-369338-h264_base.jpg?2014&quot;},&quot;comments_count&quot;:34,&quot;updates_count&quot;:3,&quot;rewards&quot;:[{&quot;id&quot;:0,&quot;minimum&quot;:1,&quot;reward&quot;:&quot;No Reward&quot;},{&quot;id&quot;:2307452,&quot;minimum&quot;:1.0,&quot;reward&quot;:&quot;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;BRONZE TIER&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;\\r\\nTHANKS FOR YOUR SUPPORT! \\r\\n______________________________\\r\\n\\r\\nComment on the Kickstarter page!\\r\\n______________________________\\r\\n\\r\\n\\u201cThe Kickstarter\\u201d Emote\\r\\n\\r\\n______________________________\\r\\n\\r\\n\\&quot;Founder\\&quot; In-Game title\\r\\n______________________________\\r\\n\\r\\nCastle Skin for the Starter House\\r\\n______________________________\\r\\n\\r\\nSteel House Portal Frame\\r\\n______________________________\\r\\n\\r\\nHermes&#39;s Boots  (Kick. excl. Godset)\\r\\n\\r\\n\\r\\n^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\r\\nX||X|X||X||X||X||X||X||X||X||X||X|X||X||X||X||X||X\\r\\n------ BRONZE TIER EXCLUSIVE -------\\r\\nX||X|X||X||X||X||X||X||X||X||X||X|X||X||X||X||X||X\\r\\n______________________________\\r\\n\\r\\nOne Premium Haircut\\r\\n______________________________\\r\\n\\r\\nBronze Tier Nickname Reservation\\r\\n______________________________\\r\\n\\r\\nBronze Forum Badge\\r\\n______________________________\\r\\n\\r\\nYour name on NevenTale&#39;s Kickstarter Hall of Fame (Bronze Tier)&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1446336000,&quot;project_id&quot;:1569288110,&quot;backers_count&quot;:15,&quot;updated_at&quot;:1398357160},{&quot;id&quot;:2307526,&quot;minimum&quot;:5.0,&quot;reward&quot;:&quot;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; IRON TIER &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;\\r\\n---- THANKS FOR YOUR SUPPORT! ----\\r\\n______________________________\\r\\nAll above Non-Tier Exclusive rewards.\\r\\n^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ \\r\\nAir Guitar Emote ______________________________  Gold House Portal Frame ______________________________  Steam Unicorn Mount  ______________________________  Digital Concept Art Book \\r\\nX||X|X||X||X||X||X||X||X||X||X||X|X||X||X||X||X||X\\u00a0\\r\\n----------IRON TIER EXCLUSIVE-----------\\r\\nX||X|X||X||X||X||X||X||X||X||X||X|X||X||X||X||X||X \\r\\n______________________________ Premium Tattoo ______________________________  1X Premium Haircut ______________________________  Iron Tier Nickname Reservation ______________________________  Iron Forum Badge ______________________________ \\r\\nKickstarter Hall of Fame (IRON TIER)&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1446336000,&quot;project_id&quot;:1569288110,&quot;backers_count&quot;:2,&quot;updated_at&quot;:1397662593},{&quot;id&quot;:2307527,&quot;minimum&quot;:10.0,&quot;reward&quot;:&quot;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; STEEL TIER &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;\\r\\n-- THANKS FOR YOUR SUPPORT! --\\r\\n______________________________\\r\\nAll above Non-Tier-Exclusive rewards.\\r\\n^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ \\r\\n\\u201cBeta Gamer\\u201d in-game title\\r\\n\\r\\n______________________________\\r\\nGold Throne - Kick. Excl. Premium Home Deco.\\r\\n______________________________\\r\\n\\u201cMr.\\u201d / \\u201cMrs.\\u201d Title\\r\\n______________________________\\r\\nDigital Soundtrack\\r\\n______________________________\\r\\nThe Epic Belt (Kick. excl. Godset) \\r\\n______________________________\\r\\n\\r\\n^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ X||X|X||X||X||X||X||X||X||X||X||X|X||X||X||X||X||X \\r\\n-------- STEEL TIER EXCLUSIVE -------- X||X|X||X||X||X||X||X||X||X||X||X|X||X||X||X||X||X \\r\\n______________________________\\r\\nCLOSED BETA ACCESS KEY\\r\\n______________________________\\r\\nOne Premium Tatoo\\r\\n______________________________\\r\\nOne Premium Haircut ______________________________\\r\\nSteel Tier Nickname Reservation ______________________________\\r\\nSteel Forum Badge ______________________________\\r\\nYour name on NevenTale&#39;s Kickstarter Hall of Fame (STEEL TIER)&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1441065600,&quot;project_id&quot;:1569288110,&quot;backers_count&quot;:11,&quot;updated_at&quot;:1398793996},{&quot;id&quot;:2307528,&quot;minimum&quot;:20.0,&quot;reward&quot;:&quot;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; TITANIUM TIER &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;\\r\\n--THANKS FOR YOUR SUPPORT! --\\r\\n______________________________\\r\\nAll above Non-Tier-Exclusive rewards.\\r\\n^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ \\r\\n\\r\\n\\u201cBeta Constructor\\u201d In-Game Title\\r\\n______________________________\\r\\nHavana Skirt (Kick. Excl. Tradeable Item)\\r\\n______________________________\\r\\n\\u201cBro\\u201d In-game Title\\r\\n______________________________\\r\\nThe Godly Cape (Kick. excl. Godset) \\r\\n______________________________\\r\\n\\r\\n\\r\\n\\r\\n\\r\\n^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ X||X|X||X||X||X||X||X||X||X||X||X|X||X||X||X||X||X \\r\\n------ TITANIUM TIER EXCLUSIVE ------ X||X|X||X||X||X||X||X||X||X||X||X|X||X||X||X||X||X \\r\\n______________________________\\r\\nBETA NevKit ACCESS KEY\\r\\n______________________________\\r\\nCLOSED BETA ACCESS KEY\\r\\n______________________________\\r\\nOne Premium Tatoo\\r\\n______________________________\\r\\nOne Premium Haircut ______________________________\\r\\nTitanium Tier Nickname Reservation ______________________________\\r\\nTitanium Forum Badge ______________________________\\r\\nYour name on NevenTale&#39;s Kickstarter Hall of Fame (TITANIUM TIER)&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1441065600,&quot;project_id&quot;:1569288110,&quot;backers_count&quot;:6,&quot;updated_at&quot;:1398893951},{&quot;id&quot;:2307529,&quot;minimum&quot;:30.0,&quot;reward&quot;:&quot;&lt;&lt;&lt;&lt;&lt;&lt;&lt; SILVER TIER &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;\\r\\n--THANKS FOR YOUR SUPPORT!--\\r\\n______________________________\\r\\nAll above Non-Tier-Exclusive rewards.\\r\\n^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ \\r\\n______________________________\\r\\n\\u201cGamma Gamer\\u201d in-game title\\r\\n______________________________\\r\\nGolden Bricks - Kickstarter exclusive Premium House Skin\\r\\n______________________________\\r\\nThe Lightning Shade - Kickstarter Exclusive Shade Skin\\r\\n______________________________\\r\\nFlower Havana Wreath \\u2013 A tradeable Discontinued item\\r\\n______________________________\\r\\n\\r\\n^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ X||X|X||X||X||X||X||X||X||X||X||X|X||X||X||X||X||X \\r\\n------ SILVER TIER EXCLUSIVE ------ X||X|X||X||X||X||X||X||X||X||X||X|X||X||X||X||X||X \\r\\n______________________________\\r\\nGamma Version Game Access Key\\r\\n______________________________\\r\\nBETA NevKit ACCESS KEY\\r\\n______________________________\\r\\nCLOSED BETA ACCESS KEY\\r\\n______________________________\\r\\nOne Premium Tatoo\\r\\n______________________________\\r\\nOne Premium Haircut ______________________________\\r\\nSilver Tier Nickname Reservation ______________________________\\r\\nSilver Forum Badge ______________________________\\r\\nYour name on NevenTale&#39;s Kickstarter Hall of Fame (SILVER TIER)&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1441065600,&quot;project_id&quot;:1569288110,&quot;backers_count&quot;:5,&quot;updated_at&quot;:1398552311},{&quot;id&quot;:2307530,&quot;minimum&quot;:50.0,&quot;reward&quot;:&quot;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; GOLD TIER &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;\\r\\n--THANKS FOR YOUR SUPPORT! --\\r\\n______________________________\\r\\nAll above Non-Tier-Exclusive rewards.\\r\\n^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ \\r\\n______________________________\\r\\n\\u201cGamma Constructor\\u201d in-game title\\r\\n______________________________\\r\\nKickstarter Exclusive Fancy Crystal Home Portal\\r\\n______________________________\\r\\n The Frozen Seam - Kickstarter Exclusive Death Marker\\r\\n______________________________\\r\\nFounders Statue \\u2013 Kickstarter Exclusive House Decoration \\r\\n______________________________\\r\\n\\u201cKalinka\\u201d \\u2013 Kickstarter Exclusive War Bear Mount\\r\\n______________________________\\r\\n4th Part of the Kickstarter Exclusive God Set \\u2013 Infinity Gloves\\r\\n______________________________\\r\\n\\r\\n^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ X||X|X||X||X||X||X||X||X||X||X||X|X||X||X||X||X||X \\r\\n------ GOLD TIER EXCLUSIVE ------ X||X|X||X||X||X||X||X||X||X||X||X|X||X||X||X||X||X \\r\\n______________________________\\r\\nGamma Version NevKit Access Key\\r\\n______________________________\\r\\nGamma Version Game Access Key\\r\\n______________________________\\r\\nBETA NevKit Access Key\\r\\n______________________________\\r\\nCLOSED BETA ACCESS KEY\\r\\n______________________________\\r\\nOne Premium Tatoo\\r\\n______________________________\\r\\nOne Premium Haircut ______________________________\\r\\nGold Tier Nickname Reservation ______________________________\\r\\nGold Forum Badge ______________________________\\r\\nYour name on NevenTale&#39;s Kickstarter Hall of Fame (GOLD TIER)&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1441065600,&quot;project_id&quot;:1569288110,&quot;backers_count&quot;:2,&quot;updated_at&quot;:1398733135},{&quot;id&quot;:2307531,&quot;minimum&quot;:75.0,&quot;reward&quot;:&quot;&lt;&lt;&lt;&lt;&lt;&lt;&lt; PLATINUM TIER &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;\\r\\n--THANKS FOR YOUR SUPPORT! --\\r\\n______________________________\\r\\nAll above Non-Tier-Exclusive rewards.\\r\\n^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ \\r\\n______________________________\\r\\n5th Part of the Kickstarter \\u201cExclusive God Set\\u201d - Winged Helmet\\r\\n______________________________\\r\\n\\r\\n\\u201cAlpha Gamer\\u201d In-Game Title\\r\\n______________________________\\r\\n\\r\\nFlower Havana Necklace \\u2013 A Tradeable Discontinued Item\\r\\n\\r\\n______________________________\\r\\nCrystal Stallion Mount\\r\\n\\r\\n______________________________\\r\\n\\r\\n^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ X||X|X||X||X||X||X||X||X||X||X||X|X||X||X||X||X||X \\r\\n----- PLATINUM TIER EXCLUSIVE ----- X||X|X||X||X||X||X||X||X||X||X||X|X||X||X||X||X||X \\r\\n______________________________\\r\\nAlpha Version Game Access Key\\r\\n______________________________\\r\\nGamma Version NevKit Access\\r\\n______________________________\\r\\nGamma Version Game Access Key\\r\\n______________________________\\r\\nBETA NevKit ACCESS KEY\\r\\n______________________________\\r\\nCLOSED BETA ACCESS KEY\\r\\n______________________________\\r\\nOne Pet from the List of Premium Pets\\r\\n______________________________\\r\\nOne Premium Tatoo\\r\\n______________________________\\r\\nOne Premium Haircut ______________________________\\r\\nPlatinum Tier Nickname Reservation ______________________________\\r\\nPlatinum Forum Badge ______________________________\\r\\nYour name on NevenTale&#39;s Kickstarter Hall of Fame (PLATINUM TIER)&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1441065600,&quot;project_id&quot;:1569288110,&quot;backers_count&quot;:4,&quot;updated_at&quot;:1398365362},{&quot;id&quot;:2307532,&quot;minimum&quot;:100.0,&quot;reward&quot;:&quot;&lt;&lt;&lt;&lt;&lt;&lt; ROYAL STEEL TIER &gt;&gt;&gt;&gt;&gt;&gt;&gt;\\r\\n-- THANKS FOR YOUR SUPPORT! --\\r\\n______________________________\\r\\nAll above Non-Tier-Exclusive rewards.\\r\\n^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ \\r\\n______________________________\\r\\n\\r\\nAgent In-game Title\\r\\n______________________________\\r\\nCrystal Throne \\u2013 Kickstarter Exclusive Premium Home Deco.\\r\\n______________________________\\r\\nMr Pug -Kickstarter Exclusive Pet Follower (non-tradeable)\\r\\n______________________________\\r\\nFancy Fountain  \\u2013 Kickstarter Exclusive Premium Home Deco.\\r\\n______________________________\\r\\n6th Part of the Kickstarter Exclusive \\u201cGod Set\\u201d - Ares&#39;s Armor\\r\\n\\r\\n______________________________\\r\\n\\r\\n^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ X||X|X||X||X||X||X||X||X||X||X||X|X||X||X||X||X||X \\r\\n-- ROYAL STEEL TIER EXCLUSIVE -- X||X|X||X||X||X||X||X||X||X||X||X|X||X||X||X||X||X \\r\\n______________________________\\r\\nAlpha Version Game Access Key\\r\\n______________________________\\r\\nGamma Version NevKit Access\\r\\n______________________________\\r\\nGamma Version Game Access Key\\r\\n______________________________\\r\\nBETA NevKit ACCESS KEY\\r\\n______________________________\\r\\n2x CLOSED BETA ACCESS KEY\\r\\n______________________________\\r\\nOne Pet from the List of Premium Pets\\r\\n______________________________\\r\\nOne Premium Tatoo\\r\\n______________________________\\r\\nOne Premium Haircut ______________________________\\r\\nRoyal Steel Tier Nickname Reservation ______________________________\\r\\nRoyal Steel Forum Badge ______________________________\\r\\nYour name on NevenTale&#39;s Kickstarter Hall of Fame (ROYAL STEEL TIER)&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1441065600,&quot;project_id&quot;:1569288110,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1396796890},{&quot;id&quot;:2307533,&quot;minimum&quot;:150.0,&quot;reward&quot;:&quot;&lt;&lt;&lt;&lt;&lt;&lt;&lt; MITHRIL TIER &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;\\r\\n--THANKS FOR YOUR SUPPORT! --\\r\\n______________________________\\r\\nAll above Non-Tier-Exclusive rewards.\\r\\n^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ \\r\\n______________________________\\r\\n\\u201cAlpha Constructor\\u201d In-Game Title\\r\\n\\r\\n______________________________\\r\\nGold Coin Fountain \\u2013 Kickstarter Exclusive Premium Home Deco.\\r\\n______________________________\\r\\nGolden Fire Place \\u2013 Kickstarter Exclusive Premium Home Deco.\\r\\n______________________________\\r\\nGold Coin Swimming Pool \\u2013 Kickstarter Exclusive Premium Home Deco.\\r\\n______________________________\\r\\n\\r\\n7th Part of the Kickstarter Exclusive \\u201cGod Set\\u201d - Athena&#39;s Shield\\r\\n\\r\\n______________________________\\r\\n\\r\\n^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ X||X|X||X||X||X||X||X||X||X||X||X|X||X||X||X||X||X \\r\\n------ MITHRIL TIER EXCLUSIVE ------ X||X|X||X||X||X||X||X||X||X||X||X|X||X||X||X||X||X \\r\\n______________________________\\r\\nAlpha NevKit Access Key\\r\\n______________________________\\r\\nAlpha Version Game Access Key\\r\\n______________________________\\r\\nGamma Version NevKit Access\\r\\n______________________________\\r\\nGamma Version Game Access Key\\r\\n______________________________\\r\\nBETA NevKit ACCESS KEY\\r\\n______________________________\\r\\n2x CLOSED BETA ACCESS KEY\\r\\n______________________________\\r\\nOne Pet from the List of Premium Pets\\r\\n______________________________\\r\\n2x Premium Tatoo\\r\\n______________________________\\r\\n2x Premium Haircut ______________________________\\r\\nMithril Tier Nickname Reservation ______________________________\\r\\nMithril Forum Badge ______________________________\\r\\nYour name on NevenTale&#39;s Kickstarter Hall of Fame (MITHRIL TIER)&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1441065600,&quot;project_id&quot;:1569288110,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1395893758},{&quot;id&quot;:2307534,&quot;minimum&quot;:200.0,&quot;reward&quot;:&quot;&lt;&lt;&lt;&lt;&lt;&lt; PROMETHIUM TIER &gt;&gt;&gt;&gt;&gt;&gt;&gt;\\r\\n-- THANKS FOR YOUR SUPPORT! --\\r\\n______________________________\\r\\nAll above Non-Tier-Exclusive rewards.\\r\\n^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ \\r\\n______________________________\\r\\n\\u201cSir\\u201d / \\u201cLady\\u201d In-game Title\\r\\n______________________________\\r\\nPegasus Mount\\r\\n______________________________\\r\\nGodly Thunderbolt \\u2013 Final Part of the Kickstarter Exclusive \\u201cGod Set\\u201d\\r\\n\\r\\n______________________________\\r\\n\\r\\n^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ X||X|X||X||X||X||X||X||X||X||X||X|X||X||X||X||X||X \\r\\n-- PROMETHIUM TIER EXCLUSIVE -- X||X|X||X||X||X||X||X||X||X||X||X|X||X||X||X||X||X \\r\\n______________________________\\r\\nAccess to special weekly Teamspeak conferences\\r\\n______________________________\\r\\nAlpha NevKit Access Key\\r\\n______________________________\\r\\nAlpha Version Game Access Key\\r\\n______________________________\\r\\nGamma Version NevKit Access\\r\\n______________________________\\r\\nGamma Version Game Access Key\\r\\n______________________________\\r\\n2x BETA NevKit ACCESS KEY\\r\\n______________________________\\r\\n2x CLOSED BETA ACCESS KEY\\r\\n______________________________\\r\\nOne Pet from the List of Premium Pets\\r\\n______________________________\\r\\n2x Premium Tatoo\\r\\n______________________________\\r\\n2x Premium Haircut ______________________________\\r\\nPromethium Tier Nickname Reservation ______________________________\\r\\nPromethium Forum Badge ______________________________\\r\\nYour name on NevenTale&#39;s Kickstarter Hall of Fame (PROMETHIUM TIER)&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1441065600,&quot;project_id&quot;:1569288110,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1397658927},{&quot;id&quot;:2307535,&quot;minimum&quot;:250.0,&quot;reward&quot;:&quot;&lt;&lt;&lt;&lt;&lt;&lt;&lt; AMELINIUM TIER &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;\\r\\n-- THANKS FOR YOUR SUPPORT! --\\r\\n______________________________\\r\\nAll above Non-Tier-Exclusive rewards.\\r\\n^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ \\r\\n______________________________\\r\\nEvening Shade Skin \\u2013 A fancy dress or a tight suit\\r\\n______________________________\\r\\nGolden Laurel Wreath \\u2013 A tradeable Discontinued item\\r\\n\\r\\n______________________________\\r\\n\\r\\n^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ X||X|X||X||X||X||X||X||X||X||X||X|X||X||X||X||X||X \\r\\n---- AMELINIUM TIER EXCLUSIVE ---- X||X|X||X||X||X||X||X||X||X||X||X|X||X||X||X||X||X \\r\\n______________________________\\r\\nAccess to special weekly Teamspeak conferences\\r\\n______________________________\\r\\nAlpha NevKit Access Key\\r\\n______________________________\\r\\n2x Alpha Version Game Access Key\\r\\n______________________________\\r\\nGamma Version NevKit Access\\r\\n______________________________\\r\\n2x Gamma Version Game Access Key\\r\\n______________________________\\r\\n5x BETA NevKit ACCESS KEY\\r\\n______________________________\\r\\n4x CLOSED BETA ACCESS KEY\\r\\n______________________________\\r\\n2x Pet from the List of Premium Pets\\r\\n______________________________\\r\\n2x Premium Tatoo\\r\\n______________________________\\r\\n2x Premium Haircut ______________________________\\r\\nAmelinium Tier Nickname Reservation ______________________________\\r\\nAmelinium Forum Badge ______________________________\\r\\nYour name on NevenTale&#39;s Kickstarter Hall of Fame (AMELINIUM TIER)&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1441065600,&quot;project_id&quot;:1569288110,&quot;backers_count&quot;:2,&quot;updated_at&quot;:1397579286},{&quot;id&quot;:2307536,&quot;minimum&quot;:500.0,&quot;reward&quot;:&quot;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; RUNITE TIER &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;\\r\\n-- THANKS FOR YOUR SUPPORT! --\\r\\n______________________________\\r\\nAll above Non-Tier-Exclusive rewards.\\r\\n^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ \\r\\n______________________________\\r\\nDisco Ball of Death \\u2013 Kickstarter Exclusive Death Marker\\r\\n______________________________\\r\\n\\r\\nYour Name and epitah on a special wall in game\\r\\n______________________________\\r\\n\\r\\nPhysical Rewards: T-shirt + Pack of NevenTale Stickers +  NevenTale Mouse Pad + Poster + Cloth Map + Cloth Patch\\r\\n\\r\\n______________________________\\r\\n\\r\\n^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ X||X|X||X||X||X||X||X||X||X||X||X|X||X||X||X||X||X \\r\\n-------- RUNITE TIER EXCLUSIVE -------- X||X|X||X||X||X||X||X||X||X||X||X|X||X||X||X||X||X \\r\\n______________________________\\r\\nAccess to special weekly Teamspeak conferences\\r\\n______________________________\\r\\nAlpha NevKit Access Key\\r\\n______________________________\\r\\nAlpha Version Game Access Key\\r\\n______________________________\\r\\nGamma Version NevKit Access\\r\\n______________________________\\r\\n2x Gamma Version Game Access Key\\r\\n______________________________\\r\\n5x BETA NevKit ACCESS KEY\\r\\n______________________________\\r\\n4x CLOSED BETA ACCESS KEY\\r\\n______________________________\\r\\n2x Pet from the List of Premium Pets\\r\\n______________________________\\r\\n2x Premium Tatoo\\r\\n______________________________\\r\\n2x Premium Haircut ______________________________\\r\\nRunite Tier Nickname Reservation ______________________________\\r\\nRunite Forum Badge ______________________________\\r\\nYour name on NevenTale&#39;s Kickstarter Hall of Fame (RUNITE TIER)&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1441065600,&quot;project_id&quot;:1569288110,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1396407017},{&quot;id&quot;:2307537,&quot;minimum&quot;:750.0,&quot;reward&quot;:&quot;&lt;&lt;&lt;&lt;&lt;&lt; ADAMANTIUM TIER &gt;&gt;&gt;&gt;&gt;&gt;\\r\\n-- THANKS FOR YOUR SUPPORT! --\\r\\n______________________________\\r\\nAll above Non-Tier-Exclusive rewards.\\r\\n^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ \\r\\n______________________________\\r\\nDesign an item with us!\\r\\n______________________________\\r\\n\\r\\n^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ X||X|X||X||X||X||X||X||X||X||X||X|X||X||X||X||X||X \\r\\n--- ADAMANTIUM TIER EXCLUSIVE ---X||X|X||X||X||X||X||X||X||X||X||X|X||X||X||X||X||X \\r\\n______________________________\\r\\nAccess to special weekly Teamspeak conferences\\r\\n______________________________\\r\\nAlpha NevKit Access Key\\r\\n______________________________\\r\\n2x Alpha Version Game Access Key\\r\\n______________________________\\r\\nGamma Version NevKit Access\\r\\n______________________________\\r\\n3x Gamma Version Game Access Key\\r\\n______________________________\\r\\n2x BETA NevKit ACCESS KEY\\r\\n______________________________\\r\\n5x CLOSED BETA ACCESS KEY\\r\\n______________________________\\r\\n3x Pet from the List of Premium Pets\\r\\n______________________________\\r\\n2x Premium Tatoo\\r\\n______________________________\\r\\n2x Premium Haircut ______________________________\\r\\nAdamantium Tier Nickname Reservation ______________________________\\r\\nAdamantium Forum Badge ______________________________\\r\\nYour name on NevenTale&#39;s Kickstarter Hall of Fame (ADAMANTIUM TIER)&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1441065600,&quot;project_id&quot;:1569288110,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1395891886},{&quot;id&quot;:2307538,&quot;minimum&quot;:1000.0,&quot;reward&quot;:&quot;&lt;&lt;&lt;&lt;&lt;&lt;&lt; SAPPHIRE TIER &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;\\r\\n-- THANKS FOR YOUR SUPPORT! --\\r\\n______________________________\\r\\nAll above Non-Tier-Exclusive rewards.\\r\\n^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ \\r\\n______________________________\\r\\nDesign one of the first NPC&#39;s \\u2013 Send us your picture and we will paint an NPC concept art based on it.\\r\\n______________________________\\r\\nName a street/plaza in Orinheim (the main city)\\r\\n\\r\\n\\r\\n\\r\\n^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ X||X|X||X||X||X||X||X||X||X||X||X|X||X||X||X||X||X \\r\\n---- SAPPHIRE TIER EXCLUSIVE ---- X||X|X||X||X||X||X||X||X||X||X||X|X||X||X||X||X||X \\r\\n______________________________\\r\\nAccess to special weekly Teamspeak conferences\\r\\n______________________________\\r\\nAlpha NevKit Access Key\\r\\n______________________________\\r\\n2x Alpha Version Game Access Key\\r\\n______________________________\\r\\nGamma Version NevKit Access\\r\\n______________________________\\r\\n3x Gamma Version Game Access Key\\r\\n______________________________\\r\\n2x BETA NevKit ACCESS KEY\\r\\n______________________________\\r\\n5x CLOSED BETA ACCESS KEY\\r\\n______________________________\\r\\n3x Pet from the List of Premium Pets\\r\\n______________________________\\r\\n2x Premium Tatoo\\r\\n______________________________\\r\\n2x Premium Haircut ______________________________\\r\\nSapphire Tier Nickname Reservation ______________________________\\r\\nSapphire Forum Badge ______________________________\\r\\nYour name on NevenTale&#39;s Kickstarter Hall of Fame (SAPPHIRE TIER)&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1441065600,&quot;project_id&quot;:1569288110,&quot;backers_count&quot;:2,&quot;updated_at&quot;:1397779127},{&quot;id&quot;:2307539,&quot;minimum&quot;:2500.0,&quot;reward&quot;:&quot;&lt;&lt;&lt;&lt;&lt; EMERALD TIER &gt;&gt;&gt;&gt;&gt;&gt;\\r\\n-- THANKS FOR YOUR SUPPORT! --\\r\\n______________________________\\r\\nAll above Non-Tier-Exclusive rewards.\\r\\n^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ \\r\\n______________________________\\r\\nA private chat with the creator.\\r\\n______________________________\\r\\nSpecial Crystal Frame on the NevenTale&#39;s\\r\\nKickstarter wall of Fame\\r\\n______________________________\\r\\nDesign a monster \\u2013 from, lore and, concept design to weaknesses and gameplay mechanics\\r\\n______________________________\\r\\nName a river, groove, mountain peak and a city on the map of the dual continent.\\r\\n______________________________\\r\\n^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ X||X|X||X||X||X||X||X||X||X||X||X|X||X||X||X||X||X \\r\\n---- EMERALD TIER EXCLUSIVE ---- X||X|X||X||X||X||X||X||X||X||X||X|X||X||X||X||X||X \\r\\n______________________________\\r\\nAccess to special weekly Teamspeak conferences\\r\\n______________________________\\r\\n4x Alpha NevKit Access Key\\r\\n______________________________\\r\\n3x Alpha Version Game Access Key\\r\\n______________________________\\r\\n5x Gamma Version NevKit Access\\r\\n______________________________\\r\\n5x Gamma Version Game Access Key\\r\\n______________________________\\r\\n10x BETA NevKit ACCESS KEY\\r\\n______________________________\\r\\n15x CLOSED BETA ACCESS KEY\\r\\n______________________________\\r\\n5x Pet from the List of Premium Pets\\r\\n______________________________\\r\\n2x Premium Tatoo\\r\\n______________________________\\r\\n2x Premium Haircut ______________________________\\r\\nEmerald Tier Nickname Reservation ______________________________\\r\\nEmerald Forum Badge ______________________________\\r\\nYour name on NevenTale&#39;s Kickstarter Hall of Fame (EMERALD TIER)&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1441065600,&quot;project_id&quot;:1569288110,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1395891886},{&quot;id&quot;:2307540,&quot;minimum&quot;:5000.0,&quot;reward&quot;:&quot;&lt;&lt;&lt;&lt;&lt;&lt;&lt; RUBY TIER &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;\\r\\n-- THANKS FOR YOUR SUPPORT! --\\r\\n______________________________\\r\\nAll above Non-Tier-Exclusive rewards.\\r\\n^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ \\r\\n______________________________\\r\\nYour own statue with your image at the Kickstarter dedicated park in Orinheim\\r\\n______________________________\\r\\nHelp us design one of the first Quests \\u2013 Dialogues, NPC&#39;s, cutscenes everything from scratch.\\r\\n______________________________\\r\\nInvitation to the Launch party\\r\\n______________________________\\r\\n\\u201cGuardian\\u201d in-game Title\\r\\n\\r\\n\\r\\n______________________________\\r\\n^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ X||X|X||X||X||X||X||X||X||X||X||X|X||X||X||X||X||X \\r\\n------- RUBY TIER EXCLUSIVE ------- X||X|X||X||X||X||X||X||X||X||X||X|X||X||X||X||X||X \\r\\n2x Access to special weekly Teamspeak conferences\\r\\n______________________________\\r\\n6x Alpha NevKit Access Key\\r\\n______________________________\\r\\n5x Alpha Version Game Access Key\\r\\n______________________________\\r\\n6x Gamma Version NevKit Access\\r\\n______________________________\\r\\n6x Gamma Version Game Access Key\\r\\n______________________________\\r\\n15x BETA NevKit ACCESS KEY\\r\\n______________________________\\r\\n25x CLOSED BETA ACCESS KEY\\r\\n______________________________\\r\\n5x Pet from the List of Premium Pets\\r\\n______________________________\\r\\n5x Premium Tatoo\\r\\n______________________________\\r\\n5x Premium Haircut ______________________________\\r\\nRuby Tier Nickname Reservation ______________________________\\r\\nRuby Forum Badge ______________________________\\r\\nYour name on NevenTale&#39;s Kickstarter Hall of Fame (RUBY TIER)&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1441065600,&quot;project_id&quot;:1569288110,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1395891886},{&quot;id&quot;:2307541,&quot;minimum&quot;:10000.0,&quot;reward&quot;:&quot;&lt;&lt;&lt;&lt;&lt;&lt; DIAMOND TIER &gt;&gt;&gt;&gt;&gt;&gt;&gt;\\r\\n-- THANKS FOR YOUR SUPPORT! --\\r\\n______________________________\\r\\nAll above Non-Tier-Exclusive rewards.\\r\\n^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ \\r\\n______________________________\\r\\nBased on your photo we will create a conceptual art of one of the most important characters in the NevenTale. Design his/hers background story with the creator.\\r\\n______________________________\\r\\n\\u201cGod\\u201d In-Game Title\\r\\n______________________________\\r\\nWe will add the statue of you (the character you design) in Gilbans temple \\u2013 the most crowded respawn point.\\r\\n______________________________\\r\\nOne day tour around the game studio\\r\\n______________________________\\r\\n\\r\\n\\r\\n\\r\\n\\r\\n^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ X||X|X||X||X||X||X||X||X||X||X||X|X||X||X||X||X||X \\r\\n----- DIAMOND TIER EXCLUSIVE ------ X||X|X||X||X||X||X||X||X||X||X||X|X||X||X||X||X||X \\r\\n______________________________\\r\\n2x Access to special weekly Teamspeak conferences\\r\\n______________________________\\r\\n6x Alpha NevKit Access Key\\r\\n______________________________\\r\\n5x Alpha Version Game Access Key\\r\\n______________________________\\r\\n6x Gamma Version NevKit Access\\r\\n______________________________\\r\\n6x Gamma Version Game Access Key\\r\\n______________________________\\r\\n15x BETA NevKit ACCESS KEY\\r\\n______________________________\\r\\n25x CLOSED BETA ACCESS KEY\\r\\n______________________________\\r\\n5x Pet from the List of Premium Pets\\r\\n______________________________\\r\\n5x Premium Tatoo\\r\\n______________________________\\r\\n5x Premium Haircut ______________________________\\r\\nDiamond Tier Nickname Reservation ______________________________\\r\\nDiamond Forum Badge ______________________________\\r\\nYour name on NevenTale&#39;s Kickstarter Hall of Fame (DIAMOND TIER)&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1441065600,&quot;project_id&quot;:1569288110,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1395891886}]}";
+    
+    
+    
+    
+    
+    
+    
+    
+    window.timeRemaining = function timeRemaining(epochTime){
+    
+      var diff = epochTime - ((new Date()).getTime() / 1000);
+      var num_unit = (diff < 60 && [Math.max(diff, 0), 'seconds']) ||
+        ((diff/=60) < 60 && [diff, 'minutes']) ||
+        ((diff/=60) < 72 && [diff, 'hours']) ||
+        [diff/=24, 'days'];
+    
+      // Round down
+      num_unit[0] = Math.floor(num_unit[0]);
+      // Singularize unit
+      if (num_unit[0] == 1) { num_unit[1] = num_unit[1].replace(/s$/,""); }
+    
+      return num_unit;
+    };
+  //]]>
+</script>
+
+<script>
+  //<![CDATA[
+    window.current_variants = ["discover_link_copy[explore]","rewards_hover[without_hover_text]"];
+  //]]>
+</script>
+
+
+</head>
+
+<body class="project projects not-mobile not-phone not-forces-video-controls not-tablet not-touchable not-native-app-request video_mode" id="projects_show">
+<div class="jGrowl center" id="growl_section"></div>
+<div class="NS_layouts__navigation" id="header">
+<div class="main-nav relative bg-white">
+<h1 class="no-margin ml1 mr2 left">
+<a href="/?ref=nav" class="block p2"><span class="ss-icon green-dark">KICK</span><span class="ss-icon green">STARTER</span>
+</a></h1>
+<ul class="primary-links list no-margin left">
+<li class="left discover-link full-height">
+<a href="/discover?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Explore</a>
+</li>
+<li class="left full-height mr2">
+<a href="/learn?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Start</a>
+</li>
+</ul>
+<ul class="list no-margin right" id="menu-sub">
+<li class="right"><a href="/login?ref=nav" class="block h5 bold p2 full-height border-box">Log in</a></li>
+<li class="right"><a href="/signup?ref=nav" class="block h5 bold p2 full-height border-box">Sign up</a></li>
+</ul>
+<div class="search-link pl2 full-height border-left border-box clip">
+<form accept-charset="UTF-8" action="/projects/search" class="search pt1 pb1 block relative form-simple" method="get"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /></div>
+<div class="field relative pl3">
+<span class="ss-icon ss-search grey-dark ml1 mt1 absolute"></span>
+<input class="input-search header full-width text" data-tracker-name="Header Live Search" id="term" name="term" placeholder="Search projects" type="text" />
+</div>
+</form>
+
+</div>
+<div class="clear"></div>
+</div>
+</div>
+<div class="hide pt4 pb4 bg-grey-light" id="search_results-wrap">
+<div class="relative container" id="search_results">
+<a class="close right grey-dark mr1"><span class="ss-icon ss-delete"></span></a>
+<h3 class="header ml1 clearfix"></h3>
+<div class="clip clearfix" id="search_results_panel"></div>
+<a class="prev arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateleft"></span>
+</a>
+<a class="next arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateright"></span>
+</a>
+</div>
+</div>
+
+
+
+
+<div class="Project-ended-true Project-is_starred- Project-state-canceled Project1569288110_cxt border-top" id="main_content">
+<div id="running-board-wrap">
+<div class="container" id="running-board">
+<div id="project-header">
+<div class="NS_projects__running_board ml1 mr1 clearfix">
+<div class="title center py4">
+<h2 class="mb1">
+<a href="/projects/vavel/neventale-a-next-gen-user-driven-mmorpg-revolution" class="green-dark">NevenTale - A Next-Gen, User-Driven MMORPG Revolution!</a>
+</h2>
+<p class="no-margin">
+<span class="creator">
+by
+<a href="/projects/vavel/neventale-a-next-gen-user-driven-mmorpg-revolution/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography" id="name">Vavel Game Studio</a>
+</span>
+</p>
+</div>
+<ul class="project-nav list-inline left h5 bold mb1">
+<li class="mr2">
+<a href="/projects/vavel/neventale-a-next-gen-user-driven-mmorpg-revolution" class="grey-dark py1 current" id="home_nav">Home</a>
+</li>
+<li class="mr2">
+<span data-updates-count="3" id="updates_count">
+<a href="/projects/vavel/neventale-a-next-gen-user-driven-mmorpg-revolution/posts" class="grey-dark py1" id="updates_nav">Updates
+<span class="count h6 bg-grey-dark white">3</span>
+</a></span>
+</li>
+<li class="mr2">
+<a href="/projects/vavel/neventale-a-next-gen-user-driven-mmorpg-revolution/backers" class="grey-dark py1" id="backers_nav">Backers
+<span class="count h6 bg-grey-dark white"><data class="Project1569288110" data-format="number" data-value="51" itemprop="Project[backers_count]">51</data></span>
+</a></li>
+<li>
+<span data-comments-count="34" id="comments_count">
+<a href="/projects/vavel/neventale-a-next-gen-user-driven-mmorpg-revolution/comments" class="grey-dark py1" id="comments_nav">Comments
+<span class="count h6 bg-grey-dark white"><data class="Project1569288110" data-format="number" data-value="34" itemprop="Project[comments_count]">34</data></span>
+</a></span>
+</li>
+</ul>
+<ul class="list-inline right h5 bold mb1">
+<li class="location mr2">
+<a href="/discover/places/chicago-il?ref=city" class="grey-dark"><span class="ss-icon ss-location margin-right"></span>
+Chicago, IL
+</a></li>
+<li class="category" data-project-parent-category="Games">
+<a href="/discover/categories/games/video%20games?ref=category" class="grey-dark"><span class="ss-icon ss-tag margin-right"></span>
+Video Games
+</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+</div>
+<div class="bg-grey-light pb4" id="content-wrap">
+<div class="Project1569288110" data-conditions="[{&quot;!state&quot;:&quot;live&quot;}]" data-evaluation="true" data-render="&quot;&lt;div class=\&quot;NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-canceled Project1569288110_cxt bg-grey container pb1 pt1\&quot;&gt;\n&lt;div class=\&quot;Project1569288110\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;successful&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;Funded!&amp;lt;/b&amp;gt;\\nThis project was successfully funded &amp;lt;data class=\\&amp;quot;Project1569288110\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2014-05-10T11:14:42-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[deadline]\\&amp;quot;&amp;gt;1 day ago&amp;lt;/data&amp;gt;.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1569288110\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:[&amp;quot;started&amp;quot;,&amp;quot;submitted&amp;quot;]}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;THIS PROJECT IS NOT LIVE&amp;lt;/b&amp;gt;\\nThis is only a draft that the creator has chosen to share.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1569288110\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;suspended&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Suspended&amp;lt;/b&amp;gt;\\nFunding for this project was suspended &amp;lt;data class=\\&amp;quot;Project1569288110\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2014-05-07T18:02:23-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;4 days ago&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1569288110\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;canceled&amp;quot;}]\&quot; data-evaluation=\&quot;true\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Canceled&amp;lt;/b&amp;gt;\\nFunding for this project was canceled by the project creator &amp;lt;data class=\\&amp;quot;Project1569288110\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2014-05-07T18:02:23-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;4 days ago&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Canceled&lt;/b&gt;\nFunding for this project was canceled by the project creator &lt;data class=\&quot;Project1569288110\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2014-05-07T18:02:23-04:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;4 days ago&lt;/data&gt;.\n&lt;/div&gt;&lt;div class=\&quot;Project1569288110\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;failed&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Unsuccessful&amp;lt;/b&amp;gt;\\nThis project\\u2019s funding goal was not reached 1 day ago.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1569288110\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;purged&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;This project is purged and only visible to staff.&amp;lt;/b&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;/div&gt;\n&quot;"><div class="NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-canceled Project1569288110_cxt bg-grey container pb1 pt1">
+<div class="Project1569288110" data-conditions="[{&quot;state&quot;:&quot;successful&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;Funded!&lt;/b&gt;\nThis project was successfully funded &lt;data class=\&quot;Project1569288110\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2014-05-10T11:14:42-04:00&amp;quot;\&quot; itemprop=\&quot;Project[deadline]\&quot;&gt;1 day ago&lt;/data&gt;.\n&lt;/p&gt;\n&quot;"></div><div class="Project1569288110" data-conditions="[{&quot;state&quot;:[&quot;started&quot;,&quot;submitted&quot;]}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;THIS PROJECT IS NOT LIVE&lt;/b&gt;\nThis is only a draft that the creator has chosen to share.\n&lt;/p&gt;\n&quot;"></div><div class="Project1569288110" data-conditions="[{&quot;state&quot;:&quot;suspended&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Suspended&lt;/b&gt;\nFunding for this project was suspended &lt;data class=\&quot;Project1569288110\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2014-05-07T18:02:23-04:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;4 days ago&lt;/data&gt;.\n&quot;"></div><div class="Project1569288110" data-conditions="[{&quot;state&quot;:&quot;canceled&quot;}]" data-evaluation="true" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Canceled&lt;/b&gt;\nFunding for this project was canceled by the project creator &lt;data class=\&quot;Project1569288110\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2014-05-07T18:02:23-04:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;4 days ago&lt;/data&gt;.\n&quot;"><p class="no-margin"></p>
+<b>Funding Canceled</b>
+Funding for this project was canceled by the project creator <data class="Project1569288110" data-format="distance_date" data-value="&quot;2014-05-07T18:02:23-04:00&quot;" itemprop="Project[state_changed_at]">4 days ago</data>.
+</div><div class="Project1569288110" data-conditions="[{&quot;state&quot;:&quot;failed&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Unsuccessful&lt;/b&gt;\nThis project\u2019s funding goal was not reached 1 day ago.\n&quot;"></div><div class="Project1569288110" data-conditions="[{&quot;state&quot;:&quot;purged&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;This project is purged and only visible to staff.&lt;/b&gt;\n&quot;"></div></div>
+</div>
+<div class="container bg-white border rounded py3 pl2 pr2" id="content">
+<div class="NS-projects-content">
+<div class="grid_11">
+<div data-has-video="true" id="video-section">
+<div class="video-player" data-dimensions="{&quot;width&quot;:640,&quot;height&quot;:480}" data-image="https://s3.amazonaws.com/ksr/projects/650484/photo-main.jpg?1397830922" data-video-tracker-url="https://www.kickstarter.com/projects/vavel/neventale-a-next-gen-user-driven-mmorpg-revolution/video/plays" data-video-url="https://d2pq0u4uni88oo.cloudfront.net/projects/650484/video-369338-h264_high.mp4" data-video="{&quot;id&quot;:369338,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/650484/video-369338-h264_high.mp4?2014&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/650484/video-369338-h264_base.mp4?2014&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/650484/video-369338-webm.webm?2014&quot;,&quot;width&quot;:640,&quot;height&quot;:360,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/650484/video-369338-h264_base.jpg?2014&quot;}" id="video_pitch"><video class="has_webm landscape" preload="none">
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/650484/video-369338-h264_high.mp4" type='video/mp4; codecs="avc1.64001E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/650484/video-369338-h264_base.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/650484/video-369338-webm.webm" type="video/webm"></source>
+You'll need an HTML5 capable browser to see this content.
+</video>
+<img alt="Photo-main" class="has_played_hide poster landscape" src="https://s3.amazonaws.com/ksr/projects/650484/photo-main.jpg?1397830922" />
+<div class="play_button_big play_button_dark absolute-center rounded has_played_hide">
+<span class="ss-icon ss-play"></span>
+Play
+</div>
+<div class="player_controls clearfix absolute-bottom mb2 rounded white bg-green-dark forces-video-controls_hide">
+<div class="left">
+<a class="button button_icon button_dark playpause play mr1">
+<span class="play ss-icon ss-play"></span>
+<span class="pause ss-icon ss-pause"></span>
+</a>
+<span class="time current_time h12 left">00:00</span>
+</div>
+<div class="right">
+<span class="time total_time h12 left mr1">00:00</span>
+<a class="left button button_icon button_icon_white volume">
+<span class="ss-icon ss-volume icon_volume_nudge"></span>
+<span class="ss-icon ss-highvolume"></span>
+</a>
+<div class="volume_container left">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+<a class="left button button_icon button_icon_white fullscreen">
+<span class="ss-icon ss-expand"></span>
+<span class="ss-icon ss-contract"></span>
+</a>
+</div>
+<div class="clip">
+<div class="progress_container pr1 pl1">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="buffer progress_bar_buffer"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div data-project-state="canceled" id="about">
+<div class="NS_projects__project_share clearfix py2 pl1 pr1">
+<ul class="left list-inline no-margin h5 bold">
+<li class="facebook mr2">
+<a href="https://www.kickstarter.com/projects/vavel/neventale-a-next-gen-user-driven-mmorpg-revolution"><span class="ss-icon ss-social ss-facebook color-facebook"></span>
+<span class="color-facebook">Share</span>
+<span class="share_bubble"><div class="triangle grey"></div>
+<div class="triangle white"></div>
+<span class="count"></span></span>
+</a></li>
+<li class="twitter mr2">
+<a  href="https://twitter.com/intent/tweet?text=NevenTale%20-%20A%20Next-Gen%2C%20User-Driven%20MMORPG%20Revolution%21%20by%20Vavel%20Game%20Studio&amp;via=kickstarter&amp;url=http://kck.st/O8MhVj" rel="nofollow"><span class="ss-icon ss-social ss-twitter color-twitter"></span>
+<span class="color-twitter">Tweet</span>
+</a></li>
+<li class="embed">
+<a href="/projects/vavel/neventale-a-next-gen-user-driven-mmorpg-revolution/widget" class="remote_modal_dialog grey-dark" data-modal-title="Embed a widget on your site" data-tracker-name="Embed"><span class="ss-icon ss-navigateleft"></span>
+<span class="ss-icon ss-navigateright"></span>
+Embed
+</a></li>
+</ul>
+<ul class="right list-inline no-margin h5 bold">
+<li class="curate mr2">
+</li>
+<li class="remind">
+<div class="ajax-container" id="watching-widget">
+<div class="Project1569288110" data-conditions="[{&quot;is_starred&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div id=\&quot;unwatch\&quot;&gt;\n&lt;a href=\&quot;/projects/vavel/neventale-a-next-gen-user-driven-mmorpg-revolution/unwatch\&quot; class=\&quot;on\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"></div><div class="Project1569288110" data-conditions="[{&quot;!is_starred&quot;:true}]" data-evaluation="true" data-render="&quot;&lt;div id=\&quot;watch\&quot;&gt;\n&lt;a href=\&quot;/projects/vavel/neventale-a-next-gen-user-driven-mmorpg-revolution/watch\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;span class=\&quot;text\&quot;&gt;\n&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"><div id="watch">
+<a href="/projects/vavel/neventale-a-next-gen-user-driven-mmorpg-revolution/watch"><span class="ss-icon ss-star"></span>
+<span class="text">
+</span>
+</a></div>
+
+</div></div>
+</li>
+</ul>
+</div>
+
+<div class="short_blurb py2 pl1 pr1">
+<p class="h3">NevenTale is a next-gen online RPG with story driven, user generated content. The first MMORPG without a grind!</p>
+</div>
+<div class="full-description">
+<div class="template asset" contenteditable="false" data-edit_url="/projects/vavel/neventale-a-next-gen-user-driven-mmorpg-revolution/assets/1818235/edit" data-id="1818235">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/818/235/cc99d1f6e7664d95c4ff491b1dc81ad6_large.png?1396278462"></figure>
+</div><p>Follow us on <a href="https://www.facebook.com/NevenTale" target="_blank">Facebook</a>, <a href="https://twitter.com/NevenTale" target="_blank">Twitter</a>, <a href="http://www.youtube.com/user/NevenTale" target="_blank">Youtube </a>or<a href="http://www.youtube.com/user/NevenTale" target="_blank"> Reddit</a>!</p><h1>
+What is the NevenTale?</h1><div>
+<div>
+<div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/vavel/neventale-a-next-gen-user-driven-mmorpg-revolution/assets/1844911/edit" data-id="1844911">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/844/911/c45bc36873e4d0354689ec56222d314f_large.jpg?1396818771"></figure>
+</div>
+
+<p>Explore the rich and vast world of Neventale, an ever growing world created by both the players and the studio. Imagine experiencing the classic RPG adventure as a social MMO. With the NevenTale, we are going to deliver more high quality gameplay content than the players can ever finish — we will not need to create pointless time sinks. </p>
+<ul>
+<li>A massive, open world that will be constantly expanded on a weekly basis with Self-Moderated, User Generated Content. <b>10% of the entire game profits will be spent on rewarding for expanding the game world.</b>
+</li>
+<li>Time sinks &amp; grinds will be replaced with <b>user generated, story-driven quests and world exploration</b> <b>– the amount of available gameplay content will never end.</b>
+</li>
+<li>Become a powerful hero who is not restricted by a standard MMORPG class system.<b> Instead of having an option to play 12 different characters with 12 different storylines play one that has 12 times richer gameplay experience.</b>
+</li>
+<li>Fully voiced NPC's with over 100,000 pages worth of text. All thanks to an innovative dialogue system that allows an unlimited amount of dialogue lines per NPC while being transparent &amp; readable. <b>Not to mention the fact that players will be able to voice the NPC's!</b>
+</li>
+<li>The Never Ending Tale is <b>Free2Play </b>– Anyone can play, anyone can create!</li>
+</ul>
+<div><br></div>
+<h1>What will I actually do in the NevenTale?</h1>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/vavel/neventale-a-next-gen-user-driven-mmorpg-revolution/assets/1844916/edit" data-id="1844916">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/844/916/2ad62d46720b1320327caec88a209e6c_large.jpg?1396818864"></figure>
+</div>
+<p>There is an ever growing, open world to explore and interact with. The game will be an innovative blend of adventure, exploration, puzzles, and minigames that will prevent stagnation of content that never ends. The content will be so vast and expansive that players will always be exploring new gameplay with weekly updates.
+</p>
+<h1>Who is going to be attracted by the game?</h1>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/vavel/neventale-a-next-gen-user-driven-mmorpg-revolution/assets/1844921/edit" data-id="1844921">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/844/921/e1c78fab12303e1435774c6802e10fa4_large.jpg?1396818999"></figure>
+</div>
+<p>We are going to aim for a massive nitch of PC gamers who buy and play adventure games like Skyrim, Dragon Age, Gothic or The Witcher, and are pushed away from the traditional, “grindish” MMORPG experience. As with all games, we cannot appeal to everyone — the PvP crowd will find somewhat less interest in NevenTale.</p>
+
+<h1>How will the experience of playing NevenTale make me feel?</h1>
+<div>
+<div class="template oembed" contenteditable="false" data-href="http://www.youtube.com/watch?v=DCxxWUKHDJc">
+<iframe width="612" height="344" src="https://www.youtube.com/embed/DCxxWUKHDJc?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div>
+<div>
+NevenTale will make you feel the power of your own decisions as you experience major events that will shape and grow your character to be the most powerful being in the Neventale universe. You will fathom the sense of wonder from the endless adventure in this game.<br>
+</div>
+<div><br></div>
+</div>
+
+<h1>What kind of emotions and choices will it evoke?</h1>
+<div></div>
+<div></div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/vavel/neventale-a-next-gen-user-driven-mmorpg-revolution/assets/1844957/edit" data-id="1844957">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/844/957/18c45fcc8809199c67af0d79962c5261_large.jpg?1396819393"></figure>
+</div>
+<p>Every choice you make reinforces a positive aspect in the game. There are sometimes options to take a chaotic or evil path for the sake of fun, but these will always end in positive and rewarding way. You will never be penalized for bad actions or decisions. </p>
+
+<h1>Does it get any prettier?  </h1>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/vavel/neventale-a-next-gen-user-driven-mmorpg-revolution/assets/1845132/edit" data-id="1845132">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/845/132/b1e1940a1c930322fb1f55aa4821b8eb_large.png?1396822332"></figure>
+</div>
+<p>The artistic style of NevenTale is best featured in a way that tackles the adventure and open world you get from this game and it will appeal most towards the fantasy crowd. The sound and music shall be captivating, engaging in such a way that it will convey
+a sense of immersion between the player and the environment. Every region will have its own theme establishing itself as something never to be forgotten by the player.</p>
+<h1>Updates - More info about the NevenTale!</h1>
+<p><b>Feature Update #1 - <a href="https://www.kickstarter.com/projects/vavel/neventale-a-next-gen-user-driven-mmorpg-revolution/posts/795724" target="_blank">Expanding the Game World</a></b></p>
+<p><b>Lore Update #1</b> - <a href="https://www.kickstarter.com/projects/vavel/neventale-a-next-gen-user-driven-mmorpg-revolution/posts/797549" target="_blank"><b>Hunter Brotherhood</b></a></p>
+<p><b>Lore Update #2 - <a href="https://www.kickstarter.com/projects/vavel/neventale-a-next-gen-user-driven-mmorpg-revolution/posts/803255" target="_blank">Primal Races</a></b></p>
+<p><b>Interview between Brett Norton and <a href="http://www.youtube.com/user/DenUsynlige/about" target="_blank">Rainy</a></b></p>
+
+
+
+<div class="template oembed" contenteditable="false" data-href="http://youtu.be/67rsqBD5vVE">
+<iframe width="612" height="344" src="https://www.youtube.com/embed/67rsqBD5vVE?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div>
+<h1>Technology</h1>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/vavel/neventale-a-next-gen-user-driven-mmorpg-revolution/assets/1845353/edit" data-id="1845353">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/845/353/5edc5737db2645d1ee15d2ae7d9c9376_large.png?1396826737"></figure>
+</div>
+<p>For
+the game engine, it is certain that the best solution to create such
+MMO would be the HeroEngine. The main reasons for us to choose that
+engine are the multiplayer collaboration tool and the fact that the Seamless 2.0 system would allow us to create a
+large and flawless world. The engine was used to create multiple MMO's including Star Wars: The Old Republic. We are also going to incorporate additional plugins that will increase the graphical capabilities of the engine.</p>
+</div>
+<div>
+
+
+
+<p><b>Collaborative World Building</b></p>
+<p>Because
+the HeroEngine is a collaborative world building tool players will be
+able to expand. Think of it as "Skyrim Creation Kit meets
+minecraft". We will supply you with all art, textures, quest &amp;
+character &amp; Map editor. <b>And most of all, you will be able to
+do it without any programming knowledge.</b></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template oembed" contenteditable="false" data-href="https://www.youtube.com/watch?v=ocVvPyEV4VI">
+<iframe width="612" height="344" src="https://www.youtube.com/embed/ocVvPyEV4VI?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div>
+
+
+
+
+
+<div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>
+
+
+
+
+
+
+<h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/vavel/neventale-a-next-gen-user-driven-mmorpg-revolution/assets/1781522/edit" data-id="1781522">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/781/522/bbf49f822e14aa4941b305fa1e62db42_large.png?1395445115"></figure>
+</div>
+</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>We are a collection of independent game developers with over 75 years of combined industry experience, having credits in over 100 shipped game titles of which 14 were AAA. That said, four of our team members have AAA senior/director level experience. As the team has limited resources due to self-funding, there are currently only 10 team members.</p>
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/vavel/neventale-a-next-gen-user-driven-mmorpg-revolution/assets/1840836/edit" data-id="1840836">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/840/836/8e48b575d65da4af06dde668e5224598_large.JPG?1396714126"></figure>
+</div>
+<div><b>Core Team Members:</b></div>
+<ul>
+<li>
+<b>Brett Norton</b> <b>- Lead Gameplay Designer; </b>Lead designer of F.E.A.R.:Extraction Point &amp; Section 8: Prejudice, Former Vice President of Development at Timegate Game Studio.
+</li>
+<li>
+<b>Noah Dudley</b> <b>- Lead Story Designer; </b>A Veteran game Designer/ Producer with credits on over 75 interactive videogames including titles for Disney Interactive and Universal Studios. He has also written over 30 published Novels and stories.</li>
+<li>
+<b>Elic Agler</b> <b>- Lead Environment Artist; </b>Halo 4 (Senior Environment Artist), Need For Speed Most Wanted/Carbon (3D Modeller) and many more.
+</li>
+<li>
+<b>Bob Rissolo - Audio Director; </b>Audio Expert - Uncharted 2, Starhawk 2, Killzone 3 and many more.</li>
+<li>
+<b>Mikołaj Marcisz</b> <b>- Lead Designer/Creator;</b> Former MMO Addon Designer.</li>
+<li>
+<b>Matthew Fahey - Lead Level Designer;</b> Senior Level Designer for Lord of the Rings Online</li>
+</ul>
+<div><br></div>
+<h1>The Never Ending Tale
+</h1>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/vavel/neventale-a-next-gen-user-driven-mmorpg-revolution/assets/1845020/edit" data-id="1845020">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/845/020/46d598d1a04f7309f63945b4ecc2359b_large.jpg?1396820492"></figure>
+</div>
+<p>The biggest strength of NevenTale is the fact that it can be expanded by literally anyone. The official lore will be published on the NevenTale wiki. The first main quests and story arcs in the game will be developed by Vavel. With those foundations, anyone will be able to expand upon the existing content. The community not only up-votes the good ideas, but with the writers it will ensure that what has been created fits the canon of the Never-Ending Tale.
+</p>
+
+<div></div>
+<ul><li>The universe of NevenTale is going to be one of the most diverse and detailed fantasy worlds ever created. The lore explores ideas such as: What sets each region apart from the others? How was the government formed and how does it function? How is the currency backed and minted? These questions and many more will be answered in NevenTale by playing the game.</li></ul>
+<ul><li>The fantasy world of NevenTale could possibly be compared to the Star Wars universe – which started with one movie that evolved into a multi milion dollar franchise, and a universe with over 31,000 novels and stories. Anyone can make an addition to Star Wars as long as it complies with the set of existing rules.</li></ul>
+<div><br></div>
+<div class="template oembed" contenteditable="false" data-href="https://www.youtube.com/watch?v=UE7BFv9HG70&amp;feature=youtu.be">
+<iframe width="612" height="344" src="https://www.youtube.com/embed/UE7BFv9HG70?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div>
+<div><br></div>
+<div></div>
+
+<h1>NevenTale - The story of the Never Ending Realm </h1>
+<div>
+
+<p>There is a multiverse theory—an infinite number of independent universes that comprise of two opposite energies, Saeli and Tyadi, and there are also those who create and manage these worlds called Demiurges. One of the Demiurges, Gilban, decided to create a world that consisted only of the positive energy, Saeli. </p>
+<p>He named his creation “Neven”— meaning “Never Ending”. But to create a pure world, he had to also create a world filled with only evil, or Tyadi. He called this world “Nether”— meaning “does not exist”—for he had to hide this world’s creation from his fellow Demiurges. When he created these worlds, he broke the sacred oath that all Demiurges must take before they are given their powers, that he would always create worlds with an equal balance of Saeli and Tyadi so that the two powers would maintain balance within the world itself as well as the multiverse. </p>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/vavel/neventale-a-next-gen-user-driven-mmorpg-revolution/assets/1783100/edit" data-id="1783100">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/783/100/1aa1cc3e10afed856f83bc98bd74619f_large.jpg?1395492130"></figure>
+</div>
+<div>
+For the first 500 years, Neven thrived. He created five Primal races, and each race was entrusted with a domain of life that they protected. Bergs guarded the Mountains, Elves — The Forests, Aquanites — The Sea, Eolates — The Flying Islands, and Humans — The Steppes. But peace and prosperity could not last. For it was around that time that so much Tyadi had accumulated on Nether that Gilban could no longer control it, and dark energy began bypassing the barrier between worlds, forcing open rifts and allowing evil creatures to escape and for good creatures to become corrupted, and so the forces of Tyadi disrupted many worlds throughout the multiverse. </div>
+<div><br></div>
+<div>The Demiurges held Gilban responsible for disrupting the balance and imprisoned him. The two planets Neven and Nether were discovered by the other demiurges, and the two worlds were to be sealed off from the rest of the multiverse so that they would have time to achieve balance between Saeli and Tyadi.<br>
+</div>
+<div><br></div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/vavel/neventale-a-next-gen-user-driven-mmorpg-revolution/assets/1782177/edit" data-id="1782177">
+<figure><img alt="River Spirit Concept by Justyna Bzdoń" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/782/177/95181305d105c4160695eac500fc8dd5_large.jpg?1395458556"><figcaption>River Spirit Concept by Justyna Bzdoń</figcaption></figure>
+</div>
+
+
+<p>All of the built up Tyadic energy began flowing into Neven, corrupting and transforming the Saeli creatures into evil abominations. Immense and powerful monsters traveled through rifts into the world of Neven, slaying thousands and destroying the countryside. At first, turmoil and chaos reigned upon Neven, but the Primal races allied themselves together to fight, but the massive armies were not able to slay the abominations. Tens of thousands of Primals were killed, but a gleam of hope still remained.</p>
+<div></div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/vavel/neventale-a-next-gen-user-driven-mmorpg-revolution/assets/1782184/edit" data-id="1782184">
+<figure><img alt="Nether Demon Concept by Justyna Bzdoń" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/782/184/34515f253c78ee96ccfccea4ded6bb6b_large.jpg?1395458695"><figcaption>Nether Demon Concept by Justyna Bzdoń</figcaption></figure>
+</div>
+<p>Among the Primals there were those who had been gifted by Gilban with eternal youth, growing stronger over time. These men and women, most of whom hadn’t been warriors, entered the battlefield and slew the monsters. These newly discovered warriors came together and made a pact, dedicating their lives to train and protect their beloved world from the creatures seeking to destroy it. They called this pact the Hunter Brotherhood. During this time of turmoil, many lives were lost, but the brotherhood were finally able to slay the monsters wreaking havoc upon the world and push them back into the recesses of the earth.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/vavel/neventale-a-next-gen-user-driven-mmorpg-revolution/assets/1782185/edit" data-id="1782185">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/782/185/ae14b5cae63199a6722de8f7cacfecd9_large.jpg?1395458735"></figure>
+</div>
+<p>Neven settled into a time of relative security. The population of the Primal races increased. A new government called the Republic of the United States of the Dual Continent was made from dozens of city-states scattered from across the Nevenian Realm. Every city-state recognized the authority of the Brotherhood and relied upon them to protect them from the Tyadic abominations that occasionally crossed over through the great rifts from Nether.</p>
+<div></div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/vavel/neventale-a-next-gen-user-driven-mmorpg-revolution/assets/1782193/edit" data-id="1782193">
+<figure><img alt="The Hunter Monument by Justyna Bzdoń" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/782/193/33f17aaedcec9051661e1e11d2721254_large.png?1395458906"><figcaption>The Hunter Monument by Justyna Bzdoń</figcaption></figure>
+</div>
+<p>In year 3021, a mage performing an experiment upon a soul pillar overloaded it, piercing the barrier between the worlds and destabilizing it. Suddenly, dozens of abominations from Nether began crossing over, and not just nearby, but all over Neven rifts were discovered with new abominations crossing over. Members of the Hunter Brotherhood who had been commissioned to watch over the experiment immediately began slaying them. Among abominations, they discovered that another being had also crossed over, one that they had never seen before. He called himself a Seam.  </p>
+<div></div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/vavel/neventale-a-next-gen-user-driven-mmorpg-revolution/assets/1782194/edit" data-id="1782194">
+<figure><img alt="Gilban's Temple by Dariusz Świąder" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/782/194/f8378aa678b98e42c2df9514e0bf7145_large.jpg?1395458932"><figcaption>Gilban's Temple by Dariusz Świąder</figcaption></figure>
+</div>
+<p>The being said that his people, The People of the Void or The Seam, had been created by Gilban thousands of years ago with a singular purpose, to help bring balance back to Neven and Nether. He said that when the Tyadic energies first began flowing out from Nether, Gilban created a separate realm called The Void and filled it the Seam, but he had been unable to connect The Void with Neven before he was imprisoned by his fellow Demiurges. When the soul pillar overloaded and pierced the barrier between worlds, it finally connected the Void to Neven, allowing Seams to materialize within Neven but only as long as they stayed near a Soul Pillar. The Seam promised the Brotherhood that he and his people would do everything in their power to help bring balance to Neven once and for all.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/vavel/neventale-a-next-gen-user-driven-mmorpg-revolution/assets/1783120/edit" data-id="1783120">
+<figure><img alt="Seam Concept by Dariusz Świąder" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/783/120/2667c7035703e344d9188dd9282ccaaf_large.png?1395492724"><figcaption>Seam Concept by Dariusz Świąder</figcaption></figure>
+</div>
+<div>The Seam, meaning "merge", were created by Gilban thousands of years ago to help aid the colliding worlds achieve balance. Their primary purpose is to bring balance to Neven, which has been overwhelmed with Tyadic energy. These beings are immortal and exist within the Void. They are able to travel to Neven, but only so long as they stay near a Soul Pillar; otherwise, they are sucked back into the Void.</div>
+<div><br></div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/vavel/neventale-a-next-gen-user-driven-mmorpg-revolution/assets/1849165/edit" data-id="1849165">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/849/165/62feb0695b19eccbf7048bd95d6c1074_large.png?1396900757"></figure>
+</div>
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/vavel/neventale-a-next-gen-user-driven-mmorpg-revolution/assets/1972772/edit" data-id="1972772">
+<figure><img alt="Godset Armor Concept by Randy Toroni" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/972/772/2cd868dd8642618bb5243116b9d30449_large.jpg?1399380366"><figcaption>Godset Armor Concept by Randy Toroni</figcaption></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/vavel/neventale-a-next-gen-user-driven-mmorpg-revolution/assets/1849143/edit" data-id="1849143">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/849/143/ab245736c6088409ac79c0c5eb3d43c3_large.png?1396900552"></figure>
+</div>
+<div><br></div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/vavel/neventale-a-next-gen-user-driven-mmorpg-revolution/assets/1849138/edit" data-id="1849138">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/849/138/d4b93b8bde9d2a74104ec8e5e2887843_large.png?1396900521"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/vavel/neventale-a-next-gen-user-driven-mmorpg-revolution/assets/1849136/edit" data-id="1849136">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/849/136/8c6f4cb9cdbb8853171c52c8462c941b_large.png?1396900499"></figure>
+</div>
+<div><br></div>
+
+
+
+<a href="http://neventale.com/website/kickstarter/rewards.html" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/vavel/neventale-a-next-gen-user-driven-mmorpg-revolution/assets/1845435/edit" data-id="1845435">
+<figure><img alt="Pledge over $100 to have Mr. Pug as a pet!" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/845/435/3b957fad55e2f7e4bb01c1f80e4a9586_large.png?1396828873"><figcaption>Pledge over $100 to have Mr. Pug as a pet!</figcaption></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</a><p><b>Please click on any of the links below for more information about each of the individual pledge tiers!</b></p>
+<div></div>
+<div></div>
+</div>
+<div>
+<a href="http://neventale.com/website/kickstarter/bronze.png" target="_blank">$1.00 - Bronze Tier</a>
+</div>
+<div>
+<br><a href="http://neventale.com/website/kickstarter/iron.png" target="_blank">$5.00 - Iron Tier</a><br><br>
+</div>
+<div>
+<a href="http://neventale.com/website/kickstarter/steel.png" target="_blank">$10.00 - Steel Tier</a><div><br></div>
+<div><a href="http://neventale.com/website/kickstarter/titanium.png" target="_blank">$20.00 - Titanium Tier</a></div>
+<div><br></div>
+<div><a href="http://neventale.com/website/kickstarter/Silver.png" target="_blank">$30.00 - Silver Tier</a></div>
+<div><br></div>
+<div><a href="http://neventale.com/website/kickstarter/gold.png" target="_blank">$50.00 - Gold Tier</a></div>
+<div><br></div>
+<div><a href="http://neventale.com/website/kickstarter/platinium.png" target="_blank">$75.00 - Platinum Tier</a></div>
+<div><br></div>
+<div><a href="http://%24100.00%20-%20Royal%20Steel" target="_blank">$100.00 - Royal Steel Tier</a></div>
+<div><br></div>
+<div>
+<a href="http://neventale.com/website/kickstarter/mithril.png" target="_blank">$150.00 - Mithril Tier</a>
+</div>
+<div><br></div>
+<div><a href="http://neventale.com/website/kickstarter/promethium.png" target="_blank">$200.00 - Promethium Tier</a></div>
+<div><br></div>
+<div><a href="http://neventale.com/website/kickstarter/amelinium.png" target="_blank">$250.00 - Amelinium Tier</a></div>
+<div><br></div>
+<div><a href="http://neventale.com/website/kickstarter/runite.png" target="_blank">$500.00 - Runite Tier</a></div>
+<div><br></div>
+<div><a href="http://neventale.com/website/kickstarter/adamantium.png" target="_blank">$750.00 - Adamantium Tier</a></div>
+<div><br></div>
+<div><a href="http://neventale.com/website/kickstarter/sapphire.png" target="_blank">$1,000.00 - Sapphire Tier</a></div>
+<div><br></div>
+<div><a href="http://neventale.com/website/kickstarter/emerald.png" target="_blank">$2,500.00 - Emerald Tier</a></div>
+<div><br></div>
+<div><a href="http://neventale.com/website/kickstarter/ruby.png" target="_blank">$5,000.00 - Ruby Tier</a></div>
+<div><br></div>
+<div><a href="http://neventale.com/website/kickstarter/diamond.png" target="_blank">
+$10,000.00 -   Diamond Tier</a></div>
+<div><br></div>
+<div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+</div>
+</div>
+</div>
+</div>
+<div id="risks">
+<h2 class="title grey-dark mt6 mb4">
+<span>Risks and challenges</span>
+<a href="/help/faq/kickstarter%20basics#Acco" class="right normal h5" target="_blank">Learn about accountability on Kickstarter</a>
+<div class="divider clear"></div>
+</h2>
+<p><p>We have everything needed to create this game. Starting with the concept, a straight vision for the development along the best industry professionals interested in working on the project. The most important thing we lack is the money needed to pay off over 100 full time professionals needed to make such game.</p>
+
+<p>MMO development is the most expensive type of game development you can imagine – an average MMO budget is over $10M. In order for NevenTale to be created it will need to be fueled with over $20 million dollars. Unfortunately for all of us, publishers who have such money would rather invest in something that has proven to be successful; we end up with tens of WoW clones.</p>
+
+<p>Our real goal is to gather over 200,000 backers who would show interest in playing the game. Such player base will prove publishers that there is a real demand for this kind of game. On the other hand, the money from the Kickstarter campaign will keep the projects design safe &amp; independent from decisions of people who have no idea how to make a user-friendly game.</p>
+
+<p>Thanks to Kickstarter, we can have you, the end-user to act as the projects Angel Investor – With the exception that instead of company shares you will receive in-game goodies! This will work out better for the project, because we will make the game the players want, not the game a publisher may (not) want.</p>
+
+<p>NO STRINGS ATTACHED
+<br />If you pledge your money to the project, and we do not reach  our goals, or we do not find an external investor needed to back this project. The project will be canceled and you will get your money back.</p></p>
+</div>
+</div>
+<div class="NS-projects-faqs" id="project-faqs">
+<h2 class="title grey-dark mt6 mb4">
+FAQ
+<div class="divider clear"></div>
+</h2>
+<ul class="faqs">
+<li class="faq" id="project_faq_85650">
+<div class="faq-question">
+<a href="#project_faq_85650" name="project_faq_85650">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Will NevenTale be free2play?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>There is nothing worse than playing a game that is pay to win. The core elements of the game will be completely free. The money will not affect the gameplay but will enhance your experience -- skins, pets, mounts, housing customizations and access to premium worlds.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2014-03-31T21:10:19-04:00">Mon, Mar 31 2014 9:10 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_85651">
+<div class="faq-question">
+<a href="#project_faq_85651" name="project_faq_85651">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">What does the word &quot;Vavel&quot; mean?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>A lot of people mentioned that Vavel is an anagram of the word Valve - it is partially true, but it wasn&#39;t our intention to copy somebody&#39;s company name. We named our company after the name of the polish Royal Castle - Wawel. Although it is spelled with a &quot;W&quot;, it is pronounced as a &quot;V&quot;. Check out the pictures: <a href="http://lmgtfy.com/?q=Wawel" rel="nofollow">http://lmgtfy.com/&hellip;</a></p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2014-03-31T22:26:53-04:00">Mon, Mar 31 2014 10:26 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_85670">
+<div class="faq-question">
+<a href="#project_faq_85670" name="project_faq_85670">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">What’s different about this game?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>The game will have an aim to stop the grind by staying away from timesinks that keep the players plaing and subscribing MMO games. Instead, the goal will be to create a never ending surge of quests, that will occupy the player “forever” – More quests added faster then the players can finish. Aside from that, this will be the first big MMO that will not only give out all the world building tools to the player community, but will also give away 10$ so that they can expand the map and add more quests, making the first statement possible.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2014-03-31T23:08:51-04:00">Mon, Mar 31 2014 11:08 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_85671">
+<div class="faq-question">
+<a href="#project_faq_85671" name="project_faq_85671">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">What will be our target platform?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>WINDOWS - PC Client.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2014-03-31T23:08:51-04:00">Mon, Mar 31 2014 11:08 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_85672">
+<div class="faq-question">
+<a href="#project_faq_85672" name="project_faq_85672">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">What is the game?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>The game is going to be a next generation MMORPG that will focus on breaking the grind that stares the lead role in the MMO&#39;s produced today. It will feature an advanced, enormous and amorphous world that will allow anyone to add their own tale.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2014-03-31T23:08:51-04:00">Mon, Mar 31 2014 11:08 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_85673">
+<div class="faq-question">
+<a href="#project_faq_85673" name="project_faq_85673">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Why will the NevenTale be an MMORPG instead of being a singleplayer RPG</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>There are a 3 reasons. </p>
+
+<p>1) The games of tomorrow should have social aspects.</p>
+
+<p>2) Many players choose to pirate games - you can&#39;t really pirate an MMO; we will be able to constantly expand the game.</p>
+
+<p>3) The community will be in one place and the player generation process organized. Skyrim has over 20,000+ mods but you can only rarely play over 300 at once.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2014-03-31T23:08:51-04:00">Mon, Mar 31 2014 11:08 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_85674">
+<div class="faq-question">
+<a href="#project_faq_85674" name="project_faq_85674">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Isn&#39;t $2,000,000 too ambitious?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>We have a lot of friends from the industry who really like the idea of the NevenTale and would be interested in working on the project. Unfortunately all of them have families so taking up an unpaid job is not an option for them. So far the AAA names we can share with you include Brett Norton, Elic Agler and Bob Rissolo - feel free to look us up on MobyGames.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2014-04-01T03:56:53-04:00">Tue, Apr 1 2014 3:56 am EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_85687">
+<div class="faq-question">
+<a href="#project_faq_85687" name="project_faq_85687">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Isn&#39;t $2,000,000 too little to make an MMORPG?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>As said, we are currently self-funded and we most certainly do not plan on making the game for $2M - that would be almost impossible. The Kickstarter is only going to act as proof that it would be worth investing in such project. There are a lot of investors out there who are putting money into all sorts of projects, but they mostly fund proven business models. NevenTale is something unique and new - not really proven in any form of way. We have already contacted some investors but they aren&#39;t really interested in the project at this point. Hopefully this will change as we progress through the Kickstarter campaign :)</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2014-04-01T03:56:53-04:00">Tue, Apr 1 2014 3:56 am EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_85688">
+<div class="faq-question">
+<a href="#project_faq_85688" name="project_faq_85688">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Why should I pledge to your project, $2,000,000 is impossible?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>If you really like the idea pledge one dollar and you will still be rewarded - $1 isn&#39;t much. If you are sceptic about the project in any form of way, feel free to write a public comment for anyone to see - we will try to answer it ASAP.</p>
+
+<p>If you have any questions about the project; feel free to have a chat with us on our Teamspeak3 server: ts62.gameservers.com:9484</p>
+
+<p>We are online approx. 18h/day</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2014-04-01T03:56:53-04:00">Tue, Apr 1 2014 3:56 am EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_85692">
+<div class="faq-question">
+<a href="#project_faq_85692" name="project_faq_85692">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Will it be a game where you have to work hard on your acc so you can later be proud of?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>The answer is yes - you will have to spend hours to be the best, but you won&#39;t be able to do it through grind. We will make sure that players will have a reason to compete, without the possibility to use bots. There will be hiscores for those categories:</p>
+
+<p>Game completion – the ammount of points the player scored, Story Points with different amount of points given out depending on the quest difficulty , skill levels, achievements, different areas visited - “Orinheim discovered”, achieving things in minigames and activities, Different Raids and activities completed, </p>
+
+<p>Game creation high scores – Split into dialogues written, lines of dialogues voiced, quests created, points received for maps made and anything that can be counted. (some additional restrictions will apply in this section)</p>
+
+<p>Guild High, Clan High, Confederation High scores</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2014-04-01T06:20:07-04:00">Tue, Apr 1 2014 6:20 am EDT</time>
+</div>
+</div>
+</li>
+
+</ul>
+<div class="faq-ask-box">
+<a href="/projects/vavel/neventale-a-next-gen-user-driven-mmorpg-revolution/messages/new?message%5Bto%5D=vavel&amp;mode=FAQ" class="button button_blue remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Ask a question about NevenTale - A Next-Gen, User-Driven MMORPG Revo...">Ask a question</a>
+
+</div>
+</div>
+
+<div class="mt4 ml1 mr1 mb2" id="report-issue-wrap">
+<a href="/login?then=%2Fprojects%2Fvavel%2Fneventale-a-next-gen-user-driven-mmorpg-revolution" class="button button_grey">Report this project to Kickstarter</a>
+</div>
+</div>
+<div class="NS-projects-rightcol grid_5" id="rightcol">
+<div class="NS_projects__ecom">
+<div class="digits_4 pb2 pl2 pt2" id="stats">
+<h5>
+<div class="num h48 no-margin" data-backers-count="51" id="backers_count"><data class="Project1569288110" data-format="number" data-value="51" itemprop="Project[backers_count]">51</data></div>
+<span><data class="Project1569288110" data-attr="backers_count" data-format="pluralize" data-value="51" data-word="Backer">Backers</data></span>
+</h5>
+<h5>
+<div class="num h48 no-margin" data-goal="2000000.0" data-percent-raised="0.0020025" data-pledged="4005.0" id="pledged">
+<data class="Project1569288110" data-currency="USD" data-format="shorter_money" data-precision="0" data-value="4005" data-without_code="true" itemprop="Project[pledged]">$4,005</data>
+<span class="money usd project_currency_code"></span>
+</div>
+pledged of
+<span class="money usd no-code">$2,000,000</span>
+goal
+</h5>
+<span data-duration="40.0" data-end_time="2014-05-10T11:14:42-04:00" data-hours-remaining="0" id="project_duration_data"></span>
+<div class="Project1569288110" data-conditions="[{&quot;!state&quot;:[&quot;canceled&quot;,&quot;suspended&quot;]}]" data-evaluation="false" data-render="&quot;&lt;h5 class=\&quot;poll \&quot; data-dynamic=\&quot;5\&quot; data-end_time=\&quot;2014-05-10T11:14:42-04:00\&quot; data-poll_url=\&quot;https://d2oher2uhvl0ur.cloudfront.net/projects/vavel/neventale-a-next-gen-user-driven-mmorpg-revolution/stats.json\&quot;&gt;\n&lt;div class=\&quot;num h48 no-margin\&quot;&gt;0&lt;/div&gt;\n&lt;span class=\&quot;text\&quot;&gt;seconds to go&lt;/span&gt;\n&lt;/h5&gt;\n&quot;"></div></div>
+<div class="Project1569288110" data-conditions="[{&quot;state&quot;:&quot;live&quot;},{&quot;!ended?&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;pr2 pl2\&quot; id=\&quot;pledge-wrap\&quot;&gt;\n&lt;a href=\&quot;/projects/vavel/neventale-a-next-gen-user-driven-mmorpg-revolution/pledge/new?clicked_reward=false\&quot; class=\&quot;button button_green button_box button_block\&quot; id=\&quot;button-back-this-proj\&quot; title=\&quot;Back this project\&quot;&gt;Back This Project &lt;small class=&#39;h6 normal block green-dark&#39;&gt;&lt;span class=\&quot;money usd \&quot;&gt;$1&lt;/span&gt; minimum pledge&lt;/small&gt;&lt;/a&gt;\n&lt;/div&gt;\n&quot;"></div><div class="Project1569288110" data-conditions="[{&quot;state&quot;:&quot;live&quot;}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;p2\&quot; id=\&quot;banner\&quot;&gt;\n&lt;p class=\&quot;tiny_type no-margin\&quot;&gt;\nThis project will only be funded if at least\n&lt;span class=\&quot;money usd \&quot;&gt;$2,000,000&lt;/span&gt;\nis pledged by\n&lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;llll z\&quot; datetime=\&quot;2014-05-10T11:14:42-04:00\&quot;&gt;Sat, May 10 2014 11:14 am EDT&lt;/time&gt;.\n&lt;/p&gt;\n&lt;/div&gt;\n&quot;"></div></div>
+
+<div class="NS_projects__rightcol_projectby bg-blue-light rounded">
+<div class="p2 clearfix">
+<div class="avatar inline-block align-middle">
+<a href="/projects/vavel/neventale-a-next-gen-user-driven-mmorpg-revolution/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography"><img alt="Vavel_logo.small" class="avatar-small" height="80" src="https://s3.amazonaws.com/ksr/avatars/5809490/Vavel_logo.small.jpg?1390941283" width="80" />
+</a></div>
+<div class="creator-name inline-block align-middle ml1">
+<h6 class="mb1">Project by</h6>
+<h5 class="mb1">
+<a href="/projects/vavel/neventale-a-next-gen-user-driven-mmorpg-revolution/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">Vavel Game Studio</a>
+</h5>
+<p class="location h6 bold mb1">
+<a href="/discover/places/chicago-il">Chicago, IL</a>
+</p>
+</div>
+</div>
+<div class="creator-details pl2 pr2 pb1">
+<ul class="list-simple h5 mb1">
+<li class="projects">
+<span class="ss-icon ss-kickstarter grey-dark margin-right"></span>
+<span class="text">
+First created
+<span class="divider">&middot;</span>
+0 backed
+</span>
+</li>
+<li class="facebook-connected">
+<span class="ss-icon ss-facebook facebook color-facebook margin-right"></span>
+<span class="text">
+<a href="https://www.facebook.com/1347093379" class="popup" target="_blank">Mikolaj Marcisz</a>
+<span class="number h6">
+962
+friends
+</span>
+</span>
+
+</li>
+<li class="links">
+<span class="ss-icon ss-globe margin-right grey-dark"></span>
+<span class="text">
+<a href="http://NevenTale.com" class="popup" rel="nofollow" target="_blank">NevenTale.com</a>
+</span>
+</li>
+</ul>
+</div>
+<div class="footer center h5 bold clearfix rounded-bottom clip">
+<a href="/projects/vavel/neventale-a-next-gen-user-driven-mmorpg-revolution/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">See full bio</a>
+<a href="/projects/vavel/neventale-a-next-gen-user-driven-mmorpg-revolution/messages/new?message%5Bto%5D=vavel" class="remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Send a message to Vavel Game Studio">Contact me</a>
+
+</div>
+</div>
+
+<ul class="NS-projects-rightcol-rewards rounded clip list mt2" data-reward-count="17" id="what-you-get">
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$1</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+15 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;BRONZE TIER&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+THANKS FOR YOUR SUPPORT! 
+______________________________
+
+Comment on the Kickstarter page!
+______________________________
+
+“The Kickstarter” Emote
+
+______________________________
+
+&quot;Founder&quot; In-Game title
+______________________________
+
+Castle Skin for the Starter House
+______________________________
+
+Steel House Portal Frame
+______________________________
+
+Hermes&#39;s Boots  (Kick. excl. Godset)
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+X||X|X||X||X||X||X||X||X||X||X||X|X||X||X||X||X||X
+------ BRONZE TIER EXCLUSIVE -------
+X||X|X||X||X||X||X||X||X||X||X||X|X||X||X||X||X||X
+______________________________
+
+One Premium Haircut
+______________________________
+
+Bronze Tier Nickname Reservation
+______________________________
+
+Bronze Forum Badge
+______________________________
+
+Your name on NevenTale&#39;s Kickstarter Hall of Fame (Bronze Tier)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-11-01">Nov 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$5</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+2 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; IRON TIER &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+---- THANKS FOR YOUR SUPPORT! ----
+______________________________
+All above Non-Tier Exclusive rewards.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+Air Guitar Emote ______________________________  Gold House Portal Frame ______________________________  Steam Unicorn Mount  ______________________________  Digital Concept Art Book 
+X||X|X||X||X||X||X||X||X||X||X||X|X||X||X||X||X||X 
+----------IRON TIER EXCLUSIVE-----------
+X||X|X||X||X||X||X||X||X||X||X||X|X||X||X||X||X||X 
+______________________________ Premium Tattoo ______________________________  1X Premium Haircut ______________________________  Iron Tier Nickname Reservation ______________________________  Iron Forum Badge ______________________________ 
+Kickstarter Hall of Fame (IRON TIER)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-11-01">Nov 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$10</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+11 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; STEEL TIER &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+-- THANKS FOR YOUR SUPPORT! --
+______________________________
+All above Non-Tier-Exclusive rewards.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+“Beta Gamer” in-game title
+
+______________________________
+Gold Throne - Kick. Excl. Premium Home Deco.
+______________________________
+“Mr.” / “Mrs.” Title
+______________________________
+Digital Soundtrack
+______________________________
+The Epic Belt (Kick. excl. Godset) 
+______________________________
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ X||X|X||X||X||X||X||X||X||X||X||X|X||X||X||X||X||X 
+-------- STEEL TIER EXCLUSIVE -------- X||X|X||X||X||X||X||X||X||X||X||X|X||X||X||X||X||X 
+______________________________
+CLOSED BETA ACCESS KEY
+______________________________
+One Premium Tatoo
+______________________________
+One Premium Haircut ______________________________
+Steel Tier Nickname Reservation ______________________________
+Steel Forum Badge ______________________________
+Your name on NevenTale&#39;s Kickstarter Hall of Fame (STEEL TIER)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-09-01">Sep 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$20</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+6 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; TITANIUM TIER &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+--THANKS FOR YOUR SUPPORT! --
+______________________________
+All above Non-Tier-Exclusive rewards.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+
+“Beta Constructor” In-Game Title
+______________________________
+Havana Skirt (Kick. Excl. Tradeable Item)
+______________________________
+“Bro” In-game Title
+______________________________
+The Godly Cape (Kick. excl. Godset) 
+______________________________
+
+
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ X||X|X||X||X||X||X||X||X||X||X||X|X||X||X||X||X||X 
+------ TITANIUM TIER EXCLUSIVE ------ X||X|X||X||X||X||X||X||X||X||X||X|X||X||X||X||X||X 
+______________________________
+BETA NevKit ACCESS KEY
+______________________________
+CLOSED BETA ACCESS KEY
+______________________________
+One Premium Tatoo
+______________________________
+One Premium Haircut ______________________________
+Titanium Tier Nickname Reservation ______________________________
+Titanium Forum Badge ______________________________
+Your name on NevenTale&#39;s Kickstarter Hall of Fame (TITANIUM TIER)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-09-01">Sep 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$30</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+5 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; SILVER TIER &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+--THANKS FOR YOUR SUPPORT!--
+______________________________
+All above Non-Tier-Exclusive rewards.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+______________________________
+“Gamma Gamer” in-game title
+______________________________
+Golden Bricks - Kickstarter exclusive Premium House Skin
+______________________________
+The Lightning Shade - Kickstarter Exclusive Shade Skin
+______________________________
+Flower Havana Wreath – A tradeable Discontinued item
+______________________________
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ X||X|X||X||X||X||X||X||X||X||X||X|X||X||X||X||X||X 
+------ SILVER TIER EXCLUSIVE ------ X||X|X||X||X||X||X||X||X||X||X||X|X||X||X||X||X||X 
+______________________________
+Gamma Version Game Access Key
+______________________________
+BETA NevKit ACCESS KEY
+______________________________
+CLOSED BETA ACCESS KEY
+______________________________
+One Premium Tatoo
+______________________________
+One Premium Haircut ______________________________
+Silver Tier Nickname Reservation ______________________________
+Silver Forum Badge ______________________________
+Your name on NevenTale&#39;s Kickstarter Hall of Fame (SILVER TIER)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-09-01">Sep 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$50</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+2 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; GOLD TIER &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+--THANKS FOR YOUR SUPPORT! --
+______________________________
+All above Non-Tier-Exclusive rewards.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+______________________________
+“Gamma Constructor” in-game title
+______________________________
+Kickstarter Exclusive Fancy Crystal Home Portal
+______________________________
+ The Frozen Seam - Kickstarter Exclusive Death Marker
+______________________________
+Founders Statue – Kickstarter Exclusive House Decoration 
+______________________________
+“Kalinka” – Kickstarter Exclusive War Bear Mount
+______________________________
+4th Part of the Kickstarter Exclusive God Set – Infinity Gloves
+______________________________
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ X||X|X||X||X||X||X||X||X||X||X||X|X||X||X||X||X||X 
+------ GOLD TIER EXCLUSIVE ------ X||X|X||X||X||X||X||X||X||X||X||X|X||X||X||X||X||X 
+______________________________
+Gamma Version NevKit Access Key
+______________________________
+Gamma Version Game Access Key
+______________________________
+BETA NevKit Access Key
+______________________________
+CLOSED BETA ACCESS KEY
+______________________________
+One Premium Tatoo
+______________________________
+One Premium Haircut ______________________________
+Gold Tier Nickname Reservation ______________________________
+Gold Forum Badge ______________________________
+Your name on NevenTale&#39;s Kickstarter Hall of Fame (GOLD TIER)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-09-01">Sep 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$75</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+4 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; PLATINUM TIER &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+--THANKS FOR YOUR SUPPORT! --
+______________________________
+All above Non-Tier-Exclusive rewards.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+______________________________
+5th Part of the Kickstarter “Exclusive God Set” - Winged Helmet
+______________________________
+
+“Alpha Gamer” In-Game Title
+______________________________
+
+Flower Havana Necklace – A Tradeable Discontinued Item
+
+______________________________
+Crystal Stallion Mount
+
+______________________________
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ X||X|X||X||X||X||X||X||X||X||X||X|X||X||X||X||X||X 
+----- PLATINUM TIER EXCLUSIVE ----- X||X|X||X||X||X||X||X||X||X||X||X|X||X||X||X||X||X 
+______________________________
+Alpha Version Game Access Key
+______________________________
+Gamma Version NevKit Access
+______________________________
+Gamma Version Game Access Key
+______________________________
+BETA NevKit ACCESS KEY
+______________________________
+CLOSED BETA ACCESS KEY
+______________________________
+One Pet from the List of Premium Pets
+______________________________
+One Premium Tatoo
+______________________________
+One Premium Haircut ______________________________
+Platinum Tier Nickname Reservation ______________________________
+Platinum Forum Badge ______________________________
+Your name on NevenTale&#39;s Kickstarter Hall of Fame (PLATINUM TIER)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-09-01">Sep 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$100</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>&lt;&lt;&lt;&lt;&lt;&lt; ROYAL STEEL TIER &gt;&gt;&gt;&gt;&gt;&gt;&gt;
+-- THANKS FOR YOUR SUPPORT! --
+______________________________
+All above Non-Tier-Exclusive rewards.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+______________________________
+
+Agent In-game Title
+______________________________
+Crystal Throne – Kickstarter Exclusive Premium Home Deco.
+______________________________
+Mr Pug -Kickstarter Exclusive Pet Follower (non-tradeable)
+______________________________
+Fancy Fountain  – Kickstarter Exclusive Premium Home Deco.
+______________________________
+6th Part of the Kickstarter Exclusive “God Set” - Ares&#39;s Armor
+
+______________________________
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ X||X|X||X||X||X||X||X||X||X||X||X|X||X||X||X||X||X 
+-- ROYAL STEEL TIER EXCLUSIVE -- X||X|X||X||X||X||X||X||X||X||X||X|X||X||X||X||X||X 
+______________________________
+Alpha Version Game Access Key
+______________________________
+Gamma Version NevKit Access
+______________________________
+Gamma Version Game Access Key
+______________________________
+BETA NevKit ACCESS KEY
+______________________________
+2x CLOSED BETA ACCESS KEY
+______________________________
+One Pet from the List of Premium Pets
+______________________________
+One Premium Tatoo
+______________________________
+One Premium Haircut ______________________________
+Royal Steel Tier Nickname Reservation ______________________________
+Royal Steel Forum Badge ______________________________
+Your name on NevenTale&#39;s Kickstarter Hall of Fame (ROYAL STEEL TIER)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-09-01">Sep 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$150</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; MITHRIL TIER &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+--THANKS FOR YOUR SUPPORT! --
+______________________________
+All above Non-Tier-Exclusive rewards.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+______________________________
+“Alpha Constructor” In-Game Title
+
+______________________________
+Gold Coin Fountain – Kickstarter Exclusive Premium Home Deco.
+______________________________
+Golden Fire Place – Kickstarter Exclusive Premium Home Deco.
+______________________________
+Gold Coin Swimming Pool – Kickstarter Exclusive Premium Home Deco.
+______________________________
+
+7th Part of the Kickstarter Exclusive “God Set” - Athena&#39;s Shield
+
+______________________________
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ X||X|X||X||X||X||X||X||X||X||X||X|X||X||X||X||X||X 
+------ MITHRIL TIER EXCLUSIVE ------ X||X|X||X||X||X||X||X||X||X||X||X|X||X||X||X||X||X 
+______________________________
+Alpha NevKit Access Key
+______________________________
+Alpha Version Game Access Key
+______________________________
+Gamma Version NevKit Access
+______________________________
+Gamma Version Game Access Key
+______________________________
+BETA NevKit ACCESS KEY
+______________________________
+2x CLOSED BETA ACCESS KEY
+______________________________
+One Pet from the List of Premium Pets
+______________________________
+2x Premium Tatoo
+______________________________
+2x Premium Haircut ______________________________
+Mithril Tier Nickname Reservation ______________________________
+Mithril Forum Badge ______________________________
+Your name on NevenTale&#39;s Kickstarter Hall of Fame (MITHRIL TIER)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-09-01">Sep 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$200</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>&lt;&lt;&lt;&lt;&lt;&lt; PROMETHIUM TIER &gt;&gt;&gt;&gt;&gt;&gt;&gt;
+-- THANKS FOR YOUR SUPPORT! --
+______________________________
+All above Non-Tier-Exclusive rewards.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+______________________________
+“Sir” / “Lady” In-game Title
+______________________________
+Pegasus Mount
+______________________________
+Godly Thunderbolt – Final Part of the Kickstarter Exclusive “God Set”
+
+______________________________
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ X||X|X||X||X||X||X||X||X||X||X||X|X||X||X||X||X||X 
+-- PROMETHIUM TIER EXCLUSIVE -- X||X|X||X||X||X||X||X||X||X||X||X|X||X||X||X||X||X 
+______________________________
+Access to special weekly Teamspeak conferences
+______________________________
+Alpha NevKit Access Key
+______________________________
+Alpha Version Game Access Key
+______________________________
+Gamma Version NevKit Access
+______________________________
+Gamma Version Game Access Key
+______________________________
+2x BETA NevKit ACCESS KEY
+______________________________
+2x CLOSED BETA ACCESS KEY
+______________________________
+One Pet from the List of Premium Pets
+______________________________
+2x Premium Tatoo
+______________________________
+2x Premium Haircut ______________________________
+Promethium Tier Nickname Reservation ______________________________
+Promethium Forum Badge ______________________________
+Your name on NevenTale&#39;s Kickstarter Hall of Fame (PROMETHIUM TIER)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-09-01">Sep 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$250</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+2 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; AMELINIUM TIER &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+-- THANKS FOR YOUR SUPPORT! --
+______________________________
+All above Non-Tier-Exclusive rewards.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+______________________________
+Evening Shade Skin – A fancy dress or a tight suit
+______________________________
+Golden Laurel Wreath – A tradeable Discontinued item
+
+______________________________
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ X||X|X||X||X||X||X||X||X||X||X||X|X||X||X||X||X||X 
+---- AMELINIUM TIER EXCLUSIVE ---- X||X|X||X||X||X||X||X||X||X||X||X|X||X||X||X||X||X 
+______________________________
+Access to special weekly Teamspeak conferences
+______________________________
+Alpha NevKit Access Key
+______________________________
+2x Alpha Version Game Access Key
+______________________________
+Gamma Version NevKit Access
+______________________________
+2x Gamma Version Game Access Key
+______________________________
+5x BETA NevKit ACCESS KEY
+______________________________
+4x CLOSED BETA ACCESS KEY
+______________________________
+2x Pet from the List of Premium Pets
+______________________________
+2x Premium Tatoo
+______________________________
+2x Premium Haircut ______________________________
+Amelinium Tier Nickname Reservation ______________________________
+Amelinium Forum Badge ______________________________
+Your name on NevenTale&#39;s Kickstarter Hall of Fame (AMELINIUM TIER)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-09-01">Sep 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; RUNITE TIER &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+-- THANKS FOR YOUR SUPPORT! --
+______________________________
+All above Non-Tier-Exclusive rewards.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+______________________________
+Disco Ball of Death – Kickstarter Exclusive Death Marker
+______________________________
+
+Your Name and epitah on a special wall in game
+______________________________
+
+Physical Rewards: T-shirt + Pack of NevenTale Stickers +  NevenTale Mouse Pad + Poster + Cloth Map + Cloth Patch
+
+______________________________
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ X||X|X||X||X||X||X||X||X||X||X||X|X||X||X||X||X||X 
+-------- RUNITE TIER EXCLUSIVE -------- X||X|X||X||X||X||X||X||X||X||X||X|X||X||X||X||X||X 
+______________________________
+Access to special weekly Teamspeak conferences
+______________________________
+Alpha NevKit Access Key
+______________________________
+Alpha Version Game Access Key
+______________________________
+Gamma Version NevKit Access
+______________________________
+2x Gamma Version Game Access Key
+______________________________
+5x BETA NevKit ACCESS KEY
+______________________________
+4x CLOSED BETA ACCESS KEY
+______________________________
+2x Pet from the List of Premium Pets
+______________________________
+2x Premium Tatoo
+______________________________
+2x Premium Haircut ______________________________
+Runite Tier Nickname Reservation ______________________________
+Runite Forum Badge ______________________________
+Your name on NevenTale&#39;s Kickstarter Hall of Fame (RUNITE TIER)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-09-01">Sep 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$750</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>&lt;&lt;&lt;&lt;&lt;&lt; ADAMANTIUM TIER &gt;&gt;&gt;&gt;&gt;&gt;
+-- THANKS FOR YOUR SUPPORT! --
+______________________________
+All above Non-Tier-Exclusive rewards.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+______________________________
+Design an item with us!
+______________________________
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ X||X|X||X||X||X||X||X||X||X||X||X|X||X||X||X||X||X 
+--- ADAMANTIUM TIER EXCLUSIVE ---X||X|X||X||X||X||X||X||X||X||X||X|X||X||X||X||X||X 
+______________________________
+Access to special weekly Teamspeak conferences
+______________________________
+Alpha NevKit Access Key
+______________________________
+2x Alpha Version Game Access Key
+______________________________
+Gamma Version NevKit Access
+______________________________
+3x Gamma Version Game Access Key
+______________________________
+2x BETA NevKit ACCESS KEY
+______________________________
+5x CLOSED BETA ACCESS KEY
+______________________________
+3x Pet from the List of Premium Pets
+______________________________
+2x Premium Tatoo
+______________________________
+2x Premium Haircut ______________________________
+Adamantium Tier Nickname Reservation ______________________________
+Adamantium Forum Badge ______________________________
+Your name on NevenTale&#39;s Kickstarter Hall of Fame (ADAMANTIUM TIER)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-09-01">Sep 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$1,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+2 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; SAPPHIRE TIER &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+-- THANKS FOR YOUR SUPPORT! --
+______________________________
+All above Non-Tier-Exclusive rewards.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+______________________________
+Design one of the first NPC&#39;s – Send us your picture and we will paint an NPC concept art based on it.
+______________________________
+Name a street/plaza in Orinheim (the main city)
+
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ X||X|X||X||X||X||X||X||X||X||X||X|X||X||X||X||X||X 
+---- SAPPHIRE TIER EXCLUSIVE ---- X||X|X||X||X||X||X||X||X||X||X||X|X||X||X||X||X||X 
+______________________________
+Access to special weekly Teamspeak conferences
+______________________________
+Alpha NevKit Access Key
+______________________________
+2x Alpha Version Game Access Key
+______________________________
+Gamma Version NevKit Access
+______________________________
+3x Gamma Version Game Access Key
+______________________________
+2x BETA NevKit ACCESS KEY
+______________________________
+5x CLOSED BETA ACCESS KEY
+______________________________
+3x Pet from the List of Premium Pets
+______________________________
+2x Premium Tatoo
+______________________________
+2x Premium Haircut ______________________________
+Sapphire Tier Nickname Reservation ______________________________
+Sapphire Forum Badge ______________________________
+Your name on NevenTale&#39;s Kickstarter Hall of Fame (SAPPHIRE TIER)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-09-01">Sep 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$2,500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>&lt;&lt;&lt;&lt;&lt; EMERALD TIER &gt;&gt;&gt;&gt;&gt;&gt;
+-- THANKS FOR YOUR SUPPORT! --
+______________________________
+All above Non-Tier-Exclusive rewards.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+______________________________
+A private chat with the creator.
+______________________________
+Special Crystal Frame on the NevenTale&#39;s
+Kickstarter wall of Fame
+______________________________
+Design a monster – from, lore and, concept design to weaknesses and gameplay mechanics
+______________________________
+Name a river, groove, mountain peak and a city on the map of the dual continent.
+______________________________
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ X||X|X||X||X||X||X||X||X||X||X||X|X||X||X||X||X||X 
+---- EMERALD TIER EXCLUSIVE ---- X||X|X||X||X||X||X||X||X||X||X||X|X||X||X||X||X||X 
+______________________________
+Access to special weekly Teamspeak conferences
+______________________________
+4x Alpha NevKit Access Key
+______________________________
+3x Alpha Version Game Access Key
+______________________________
+5x Gamma Version NevKit Access
+______________________________
+5x Gamma Version Game Access Key
+______________________________
+10x BETA NevKit ACCESS KEY
+______________________________
+15x CLOSED BETA ACCESS KEY
+______________________________
+5x Pet from the List of Premium Pets
+______________________________
+2x Premium Tatoo
+______________________________
+2x Premium Haircut ______________________________
+Emerald Tier Nickname Reservation ______________________________
+Emerald Forum Badge ______________________________
+Your name on NevenTale&#39;s Kickstarter Hall of Fame (EMERALD TIER)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-09-01">Sep 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$5,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; RUBY TIER &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+-- THANKS FOR YOUR SUPPORT! --
+______________________________
+All above Non-Tier-Exclusive rewards.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+______________________________
+Your own statue with your image at the Kickstarter dedicated park in Orinheim
+______________________________
+Help us design one of the first Quests – Dialogues, NPC&#39;s, cutscenes everything from scratch.
+______________________________
+Invitation to the Launch party
+______________________________
+“Guardian” in-game Title
+
+
+______________________________
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ X||X|X||X||X||X||X||X||X||X||X||X|X||X||X||X||X||X 
+------- RUBY TIER EXCLUSIVE ------- X||X|X||X||X||X||X||X||X||X||X||X|X||X||X||X||X||X 
+2x Access to special weekly Teamspeak conferences
+______________________________
+6x Alpha NevKit Access Key
+______________________________
+5x Alpha Version Game Access Key
+______________________________
+6x Gamma Version NevKit Access
+______________________________
+6x Gamma Version Game Access Key
+______________________________
+15x BETA NevKit ACCESS KEY
+______________________________
+25x CLOSED BETA ACCESS KEY
+______________________________
+5x Pet from the List of Premium Pets
+______________________________
+5x Premium Tatoo
+______________________________
+5x Premium Haircut ______________________________
+Ruby Tier Nickname Reservation ______________________________
+Ruby Forum Badge ______________________________
+Your name on NevenTale&#39;s Kickstarter Hall of Fame (RUBY TIER)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-09-01">Sep 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$10,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>&lt;&lt;&lt;&lt;&lt;&lt; DIAMOND TIER &gt;&gt;&gt;&gt;&gt;&gt;&gt;
+-- THANKS FOR YOUR SUPPORT! --
+______________________________
+All above Non-Tier-Exclusive rewards.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+______________________________
+Based on your photo we will create a conceptual art of one of the most important characters in the NevenTale. Design his/hers background story with the creator.
+______________________________
+“God” In-Game Title
+______________________________
+We will add the statue of you (the character you design) in Gilbans temple – the most crowded respawn point.
+______________________________
+One day tour around the game studio
+______________________________
+
+
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ X||X|X||X||X||X||X||X||X||X||X||X|X||X||X||X||X||X 
+----- DIAMOND TIER EXCLUSIVE ------ X||X|X||X||X||X||X||X||X||X||X||X|X||X||X||X||X||X 
+______________________________
+2x Access to special weekly Teamspeak conferences
+______________________________
+6x Alpha NevKit Access Key
+______________________________
+5x Alpha Version Game Access Key
+______________________________
+6x Gamma Version NevKit Access
+______________________________
+6x Gamma Version Game Access Key
+______________________________
+15x BETA NevKit ACCESS KEY
+______________________________
+25x CLOSED BETA ACCESS KEY
+______________________________
+5x Pet from the List of Premium Pets
+______________________________
+5x Premium Tatoo
+______________________________
+5x Premium Haircut ______________________________
+Diamond Tier Nickname Reservation ______________________________
+Diamond Forum Badge ______________________________
+Your name on NevenTale&#39;s Kickstarter Hall of Fame (DIAMOND TIER)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-09-01">Sep 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+</ul>
+
+<div class="p2" id="meta">
+<h5>Funding period</h5>
+<p class="tiny_type">
+<time class="js-adjust" data-format="ll" datetime="2014-03-31T11:14:42-04:00">Mar 31, 2014</time> - 
+<time class="js-adjust" data-format="ll" datetime="2014-05-10T11:14:42-04:00">May 10, 2014</time>
+(40 days)
+</p>
+</div>
+</div>
+
+</div>
+
+<a href="#" id="video_mode_tab" style="display: none;">
+View in Video Mode
+</a>
+
+</div>
+</div>
+
+
+</div>
+
+<div class="h5 bg-green-dark" id="mega-footer-wrap">
+<div class="bg-green-dark white full-height" id="footer-newsletter-signup">
+<div class="container py4">
+<div class="grid_8 prefix_4 suffix_4 center mt4">
+<h2>
+Eureka! You've found
+<br>
+our little secret.
+</h2>
+<p>Sign up for our Happening email for all the inside info about arts and culture in the Kickstarter universe and beyond.</p>
+<div class="newsletter_signup">
+<form accept-charset="UTF-8" action="/newsletters/happening/signup" class="overlabels" method="post"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /><input class="hidden" name="authenticity_token" type="hidden" value="nGU+cGqRm+KFrlKgE3q5IuYOa5v1X2IoQK1UFW2MwPU=" /></div><input class="hidden" id="location" name="location" type="hidden" value="footer" />
+<textarea class="hide textarea" id="comment" name="comment">
+</textarea>
+<div class="field newsletter">
+<label class="overlabel z1 overlabel-newsletter">Email address</label>
+<input class="text" id="email" name="email" type="text" />
+</div>
+<input class="button button_green submit" name="commit" type="submit" value="Submit" />
+</form>
+
+</div>
+
+</div>
+</div>
+</div>
+<div class="container relative" id="mega-footer">
+<span class="scissors icon-scissors-1"></span>
+<div class="grid_16 alpha omega pt4 pb2" id="mega-footer-links">
+<div class="grid_4 link-group">
+<h5 class="white">About us</h5>
+<ul class="list">
+<li><a href="/year/2013/?ref=footer">2013 highlights</a></li>
+<li><a href="/year/2012?ref=footer">2012 highlights</a></li>
+<li><a href="/team?ref=footer">Who we are</a></li>
+<li><a href="/jobs?ref=footer">Jobs</a></li>
+<li><a href="/press?ref=footer">Press</a></li>
+<li><a href="/help/stats?ref=footer">Stats</a></li>
+<li><a href="/newsletters/weekly">Projects we love</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group">
+<h5><a href="/help?ref=footer" class="white">Help</a></h5>
+<ul class="list">
+<li><a href="/hello?ref=footer">What is Kickstarter?</a></li>
+<li><a href="/help?ref=footer">FAQ</a></li>
+<li><a href="/contact?ref=footer">Support</a></li>
+<li><a href="/help/school?ref=footer">Kickstarter School</a></li>
+<li><a href="/terms-of-use?ref=footer">Terms of Use</a></li>
+<li><a href="/privacy?ref=footer">Privacy Policy</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group alpha omega suffix_1">
+<h5 class="alpha"><a href="/discover/advanced?ref=footer" class="white">Discover</a></h5>
+<ul class="column column-0 grid_2 list">
+<li><a href="/discover/categories/art?ref=footer">Art</a></li>
+<li><a href="/discover/categories/comics?ref=footer">Comics</a></li>
+<li><a href="/discover/categories/dance?ref=footer">Dance</a></li>
+<li><a href="/discover/categories/design?ref=footer">Design</a></li>
+<li><a href="/discover/categories/fashion?ref=footer">Fashion</a></li>
+<li><a href="/discover/categories/film%20&amp;%20video?ref=footer">Film &amp; Video</a></li>
+<li><a href="/discover/categories/food?ref=footer">Food</a></li>
+</ul>
+<ul class="column column-1 grid_2 list">
+<li><a href="/discover/categories/games?ref=footer">Games</a></li>
+<li><a href="/discover/categories/music?ref=footer">Music</a></li>
+<li><a href="/discover/categories/photography?ref=footer">Photography</a></li>
+<li><a href="/discover/categories/publishing?ref=footer">Publishing</a></li>
+<li><a href="/discover/categories/technology?ref=footer">Technology</a></li>
+<li><a href="/discover/categories/theater?ref=footer">Theater</a></li>
+</ul>
+</div>
+<div class="grid_3 link-group">
+<h5 class="white">Hello</h5>
+<ul class="list">
+<li>
+<a href="https://twitter.com/kickstarter"><span class="ss-icon ss-social-regular ss-twitter"></span>
+Twitter
+</a></li>
+<li>
+<a href="https://www.facebook.com/Kickstarter"><span class="ss-icon ss-social-regular ss-facebook"></span>
+Facebook
+</a></li>
+<li>
+<a href="http://kickstarter.tumblr.com"><span class="ss-icon ss-social-regular ss-tumblr"></span>
+Tumblr
+</a></li>
+<li>
+<a href="http://instagram.com/kickstarter"><span class="ss-icon ss-social-regular ss-instagram"></span>
+Instagram
+</a></li>
+<li>
+<a href="https://vine.co/Kickstarter"><span class="ss-icon ss-social-regular ss-vine"></span>
+Vine
+</a></li>
+<li>
+<a href="/blog?ref=footer">Blog</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="grid_16 py4" id="mega-footer-bottom">
+<div class="logo left">
+<a href="/" class="grey-dark"><span class="ss-icon h3">KICKSTARTER</span>
+</a></div>
+<p class="right h5 grey-dark">
+&copy;
+2014
+Kickstarter, Inc.
+</p>
+</div>
+</div>
+</div>
+
+<script>
+  //<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    var analytics_vars = { google_analytics_id : "UA-7621056-1", logged_in : "false", social_user: "false" }
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.mixpanel_id = '75b1d24a516ecfc955eadfadc4910661';
+    window.mixpanel_debug = false;
+  //]]>
+</script>
+
+
+<noscript>
+<img alt="Quantcast" border="0" height="1" src="//secure.quantserve.com/pixel/p-34IbSpw2K94Sg.gif" style="display:none" width="1" />
+</noscript>
+
+
+<script>
+  //<![CDATA[
+    window.benchmark = (typeof window.performance == 'object' && typeof window.performance.mark == 'function');
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    (function (root) {
+      function instrument_function (original) {
+        return function () {
+          try {
+            return original.apply(this, arguments);
+          } catch (e) {
+            if (e.stack && root.Honeybadger) {
+              Honeybadger.notify(e, {
+                current_project : root.current_project,
+                current_user : root.current_user
+              });
+            }
+            throw(e);
+          }
+        };
+      }
+      root.instrument_function = instrument_function;
+    }(this));
+  //]]>
+</script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+
+<script>
+  //<![CDATA[
+    (function(){function c(a){this.local_start_time=new Date;this.settings={cookie_name:"request_time"};for(var b in a)this.settings[b]=a[b];this.get_remote_offset()}c.prototype.get_remote_offset=function(){this.cookie_value=this.read_cookie();var a=new Date(this.cookie_value);if(!this.cookie_value||"Invalid Date"===a.toString()){if(this.remote_offset=this.read_cookie("local_offset"))this.remote_offset=parseInt(this.remote_offset,10)}else this.remote_offset=a-this.local_start_time;"undefined"!==typeof this.remote_offset&& !isNaN(this.remote_offset)?(document.cookie="local_offset="+this.remote_offset+"; path=/",this.is_set=!0):this.is_set=!1};c.prototype.time_units=[["milliseconds",1],["seconds",1E3],["minutes",6E4],["hours",36E5],["days",864E5]];c.prototype.get_units_in_interval=function(a,b){var d=a.replace(/^\w/,function(d){return"get"+d.toUpperCase()});return b[d]()};c.prototype.milliseconds_in_day=function(a){"undefined"===typeof a&&(a=new Date);for(var b=0,d=this.time_units.length-2;0<=d;d--)b+=this.get_units_in_interval(this.time_units[d][0], a)*this.time_units[d][1];return b};c.prototype.milliseconds_in_interval=function(a,b){return this.milliseconds_in_day(b)%a};c.prototype.milliseconds_to_next_interval=function(a,b){return a-this.milliseconds_in_interval(a,b)};c.prototype.pluralize=function(a,b){1===b&&(a=a.replace(/s$/,""));return a};c.prototype.read_cookie=function(a){for(var b=window.document.cookie.split(";"),a=(a||this.settings.cookie_name)+"=",d=0;d<b.length;d++){for(var e=b[d];" "==e.charAt(0);)e=e.substring(1,e.length);if(0== e.indexOf(a))return b=e.substring(a.length,e.length),decodeURIComponent(b).replace(/\+/g," ")}return null};c.prototype.destroy_cookie=function(a){var b=new Date;a||(a=this.settings.cookie_name);b.setTime(b.getTime()-864E5);window.document.cookie=a+"=; expires="+b.toGMTString()+"; path=/"};c.prototype.get_remote_time=function(){var a=new Date,b=a.getTime()+this.remote_offset;return a=a.setTime(b)};window.ksr_page_clock=new c})(); (function(){function c(d,a,b){if(d){this.options={unit_base:{seconds:119,minutes:119,hours:72,days:0},end_phrase:d.getAttribute("data-word")||"to go",count_down:d.getAttribute("data-dynamic")||!1};for(k in b)this.options[k]=b[k];this.clock=a;this.time_units=this.clock.time_units.slice(1);this.element=d;this.clock.is_set&&this.attach()}}function a(){this.elements=[];this.attach()}var b=function(d,a){var b=a||window.document.body,c=d.split("."),g=c[c.length-1],c=1<c.length&&c[0]?c[0]:"*";if(window.document.getElementsByClassName)return b.getElementsByClassName(g); if(b.querySelectorAll)return b.querySelectorAll(d);for(var c=b.getElementsByTagName(c),h=[],i=0,f;f=c[i];i++)b=RegExp("(^|\\s)"+g+"(\\s|$)"),(""+f.className).match(b)&&h.push(f);return h};c.prototype.get_remaining_time=function(){var d=this.remote_end_time-this.clock.get_remote_time();0>d&&(d=0);return d};c.prototype.get_current_unit=function(){for(var d,a=0;a<this.time_units.length&&!(d=this.time_units[a],this.get_remaining_time()<=this.options.unit_base[d[0]]*d[1]);a++);return d};c.prototype.update_element= function(){var a=this.get_current_unit(),b=Math.floor(this.get_remaining_time()/a[1]);isNaN(b)||(this.number_element.innerHTML=b,this.text_element.innerHTML=this.clock.pluralize(a[0],b)+" "+this.options.end_phrase)};c.prototype.valid=function(){return!(!this.number_element||!this.text_element)};c.prototype.attach=function(){function a(){c.update_element();if(c.options.count_down&&0<c.get_remaining_time()){var b=c.get_current_unit();this.timeout=window.setTimeout(a,c.clock.milliseconds_to_next_interval(b[1]))}} var c=this;if(this.remote_end_time_string=this.element.getAttribute("data-end_time"))this.remote_end_time_string.match(/^\d+$/)?(this.remote_end_time=new Date,this.remote_end_time.setTime(this.remote_end_time_string)):this.remote_end_time=new Date(this.remote_end_time_string),this.number_element=b(".num",this.element)[0],this.text_element=b(".text",this.element)[0],this.element.ksr_page_timer=!0,this.valid()&&a()};c.prototype.cancel=function(){this.timeout&&clearTimeout(this.timeout)};a.prototype.loading= !0;a.prototype.stop_finding=function(){this.attach_timers();this.loading=!1;document.addEventListener?document.removeEventListener("DOMContentLoaded",this.stop_finding,!1):document.attachEvent&&"complete"===document.readyState&&document.detachEvent("onreadystatechange",this.stop_finding)};a.prototype.bind_ready=function(){var a=this,b=function(){a.stop_finding.call(a)};document.addEventListener?(document.addEventListener("DOMContentLoaded",b,!1),window.addEventListener("load",b,!1)):document.attachEvent&& (document.attachEvent("onreadystatechange",b),window.attachEvent("onload",b))};a.prototype.attach_timers=function(){for(var a=b("div.ksr_page_timer"),e=0;e<a.length;e++)a[e].ksr_page_timer||(new c(a[e],window.ksr_page_clock),this.elements.push(a[e]))};a.prototype.attach=function(){var a=this;this.bind_ready();(function(){a.attach_timers();a.loading&&window.setTimeout(function(){a.attach_timers()},200)})()};window.ProjectTimer=c;new a})();
+  //]]>
+</script>
+
+<script class="template" id="template-widgets__video_embed_code" type="text/x-tmpl-mustache"><iframe width="{{width}}" height="{{height}}" src="{{{path}}}" frameborder="0" scrolling="no"> </iframe>
+</script><script class="template" id="template-projects__baseball_card_tall" type="text/x-tmpl-mustache"><div class="project-card-wrap project-card-wrap-tall border bg-white rounded clip">
+  <div class="project-card relative project-live {{#successful?}}successful{{/successful?}}">
+    <div class="project-thumbnail pt1 pl1 pr1">
+      <a href="{{urls.web.project}}" target="">
+        <img alt="Photo-little" class="projectphoto-little" src="{{photo.little}}" class="fit">
+      </a>
+    </div>
+    <div class="project-card-interior p1 h6 grey-dark">
+      <h6 class="project-title">
+        <a href="{{urls.web.project}}" target="" class="green-dark">{{name}}</a>
+      </h6>
+      <p class="mb1 ellipsis">
+        by
+        {{creator.name}}
+      </p>
+      <p class="blurb">
+        {{blurb}}
+      </p>
+    </div>
+    <div class="absolute-bottom bg-white rounded-bottom">
+
+      {{#location}}
+        <ul class="p1 list project-meta no-margin h6">
+          <li class="ellipsis">
+            <a href="{{location.urls.web.discover}}" data-location="{{location_json}}" class="grey-dark">
+              <span class="ss-icon ss-location"></span>
+              <span class="location-name">{{location.displayable_name}}</span>
+            </a>
+          </li>
+        </ul>
+      {{/location}}
+
+      <div class="project-stats-wrap pb1 pl1 pr1">
+
+        {{#failed?}}
+          <div class='project-status project-failed h6'>
+            <strong> Funding Unsuccessful</strong><br />
+            <span class="grey-dark">Project ended on {{formatted_deadline}}</span>
+          </div>
+        {{/failed?}}
+
+        {{#canceled?}}
+          <div class='project-status project-canceled h6'>
+            <strong> Funding Canceled</strong><br />
+            <span class="grey-dark">Project canceled on {{formatted_state_changed_at}}</span>
+          </div>
+        {{/canceled?}}
+
+        {{#successful?}}
+          <div class='project-pledged-successful bg-green white h6 pl1 pr1 mb1'>
+            <strong>Successful!</strong>
+          </div>
+        {{/successful?}}
+
+        {{#live_or_successful?}}
+          {{#live?}}
+            <div class="project-pledged-wrap bg-grey clip mb1">
+              <div class="project-pledged bg-green full-height" style="width: {{percent_raised_to_100}}%"></div>
+            </div>
+          {{/live?}}
+          <ul class="project-stats list no-margin h6 no-wrap">
+            <li class="first funded inline-block mr1">
+              <strong class="block h6">{{percent_raised_rounded}}%</strong>
+              <span class="grey-dark">funded</span>
+            </li>
+            <li class="pledged inline-block mr1">
+              <strong class="block h6">{{currency_symbol}}{{formatted_money}}</strong>
+              <span class="grey-dark">pledged</span>
+            </li>
+            {{#successful?}}
+              <li class="last successful inline-block">
+                <strong class="block h6">Funded</strong>
+                <div class="deadline grey-dark">{{formatted_deadline}}</div>
+              </li>
+            {{/successful?}}
+            {{#live?}}
+              <li class="last ksr_page_timer inline-block" data-end_time="{{javascript_deadline}}">
+                <strong class="block h6">
+                  <div class="num">30</div>
+                </strong>
+                <div class="span text grey-dark" data-word="left">days to go</div>
+              </li>
+            {{/live?}}
+          </ul>
+        {{/live_or_successful?}}
+      </div>
+    </div>
+  </div>
+</div>
+
+{{#friends_backing?}}
+  <div class="friend_project_context">
+    <div class="friend_facepile">
+      {{#truncated_friends}}
+        <img src="{{avatar.thumb}}" class="{{#has_metadata?}}small{{/has_metadata?}}">
+      {{/truncated_friends}}
+    </div>
+    <p class="friend_namepile">
+      {{{escaped_sentence}}}
+    </p>
+  </div>
+{{/friends_backing?}}
+</script><script class="template" id="template-projects__video_mode" type="text/x-tmpl-mustache"><a href='#' id='video_mode_close' class='close_button z2'><span class='ss-icon ss-delete'></span></a>
+
+<div class='title_card z1 {{context_classes}}' style="display:none;">
+  <div class='interior'>
+    <h2 class='project_title normal_weight'>{{name}}</h2>
+    <p class='blurb'>{{blurb}}</p>
+    <nav class='bar'>
+      <a id='play_button' class='left play' href='#'>
+        <span class='play_active'>
+          <span class='ss-icon ss-play'></span>
+          Play
+        </span>
+        <span class='pause_active'>
+          <span class='ss-icon ss-pause'></span>
+          Pause
+        </span>
+      </a>
+      {{#logged_in}}
+        <div class='remind right'>
+          {{#if_not_starred}}
+            <a class='follow' href='{{urls.web.project}}/watch'><span class='ss-icon ss-star'></span></a>
+          {{/if_not_starred}}
+          {{#if_starred}}
+            <a class='unfollow' href='{{urls.web.project}}/unwatch'><span class='ss-icon ss-star active'></span></a>
+          {{/if_starred}}
+        </div>
+      {{/logged_in}}
+      <a class='right explore button button_green small' href='#'>Explore this project</a>
+    </nav>
+  </div>
+</div>
+
+<div class='channel_controls z1'>
+  <a href='#' class='{{#playlist_is_location}}selected {{/playlist_is_location}}location'>Something else near {{location.first_name}} <span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_featured}}selected {{/playlist_is_featured}}featured'>Something different<span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_category}}selected {{/playlist_is_category}}category'>Something else in {{category.name}} <span class='ss-icon ss-navigateright'></span></a>
+</div>
+
+<div class='project_video' style='background-image: url('{{photo.full}}')'>
+  <div class='cover'>
+    <video>
+      <source src='{{video.high}}' type='video/mp4'/>
+      <source src='{{video.webm}}' type='video/webm'/>
+    </video>
+  </div>
+</div>
+</script><script class="template" id="template-site__video_mode_fourohfour" type="text/x-tmpl-mustache"><section class='four_oh_four'>
+  <p class='big_type'>
+    Looks like you've reached the end of the line! <br />Check out <a class="another" href='#'>another channel</a> or <a href='/discover'>browse projects in discover</a>.
+  </p>
+</section>
+</script>
+
+<script id="schwamm_formatting_options" type="text/javascript">
+//<![CDATA[
+(function(){window.formatters = window.formatters || {}; var formatting_options = {"distance_date_intervals":[[5,"just now"],[29,"less than a minute ago"],[89,"1 minute ago"],[2640,"%m minutes ago"],[5340,"about 1 hour ago"],[82800,"about %h hours ago"],[147600,"1 day ago"],[604800,"%d days ago"],[15552000,"on %t"],[0,"on %y"]],"currency_symbol_mappings":{"AFN":"\u060b","ALL":"Lek","ARS":"$","AUD":"$","AWG":"\u0192","AZN":"\u043c\u0430\u043d","BAM":"KM","BBD":"$","BGN":"\u043b\u0432","BMD":"$","BND":"$","BOB":"$b","BRL":"R$","BSD":"$","BWP":"P","BYR":"p.","BZD":"BZ$","CAD":"$","CLP":"$","CNY":"\u00a5","COP":"$","CRC":"\u20a1","CUP":"\u20b1","CZK":"K\u010d","DKK":"kr","DOP":"RD$","EGP":"\u00a3","EUR":"\u20ac","FJD":"$","FKP":"\u00a3","GBP":"\u00a3","GIP":"\u00a3","GTQ":"Q","GYD":"$","HKD":"$","HNL":"L","HRK":"kn","HUF":"Ft","IDR":"Rp","ILS":"\u20aa","IRR":"\ufdfc","ISK":"kr","JMD":"J$","JPY":"\u00a5","KGS":"\u043b\u0432","KHR":"\u17db","KPW":"\u20a9","KRW":"\u20a9","KYD":"$","KZT":"\u043b\u0432","LAK":"\u20ad","LBP":"\u00a3","LKR":"\u20a8","LRD":"$","LTL":"Lt","LVL":"Ls","MKD":"\u0434\u0435\u043d","MNT":"\u20ae","MUR":"\u20a8","MXN":"$","MYR":"RM","MZN":"MT","NAD":"$","NGN":"\u20a6","NIO":"C$","NOK":"kr","NPR":"\u20a8","NZD":"$","OMR":"\ufdfc","PAB":"B/.","PEN":"S/.","PHP":"\u20b1","PKR":"\u20a8","PLN":"z\u0142","PYG":"Gs","QAR":"\ufdfc","RON":"lei","RSD":"\u0414\u0438\u043d.","RUB":"\u0440\u0443\u0431","SAR":"\ufdfc","SBD":"$","SCR":"\u20a8","SEK":"kr","SGD":"$","SHP":"\u00a3","SOS":"S","SRD":"$","SVC":"$","SYP":"\u00a3","THB":"\u0e3f","TRY":"TL","TTD":"TT$","TWD":"NT$","UAH":"\u20b4","USD":"$","UYU":"$U","UZS":"\u043b\u0432","VEF":"Bs","VND":"\u20ab","YER":"\ufdfc","ZAR":"R"},"currency_trailing_code_mappings":{"AUD":true,"CAD":true,"NZD":true,"USD":true},"currency_formats":["money","shorter_money"]}; for (key in formatting_options) {window.formatters[key] = formatting_options[key]};}());
+//]]>
+</script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("begin_base.js_tag");}
+  //]]>
+</script>
+<script src="https://d297h9he240fqh.cloudfront.net/assets/packages/base-45cdab84617ddfb8905b7cddc8500c19.js" type="text/javascript"></script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("end_base.js_tag");}
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    document.domain='kickstarter.com';
+  //]]>
+</script>
+
+<iframe height="0" id="api_xdreceiver" src="https://api.kickstarter.com/xdreceiver/85e6.html" style="display: none;" width="0"></iframe>
+
+
+
+<div id="fb-root"></div>
+<script>
+  //<![CDATA[
+    var channelUrl = window.location.protocol + "//" + window.location.host + "/channel.html",
+      skip_autologin = $('body').is('.skip_autologin');
+    
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId: window.fb_app_id,
+        channelUrl: channelUrl,
+        status: true,    // check login status
+        cookie: true,    // enable cookies to allow the server to access the session
+        xfbml: true,     // parse XFBML
+        logging: false   // turn off logging
+      });
+    
+      FB.getLoginStatus(function (response) {
+        if (response.status === 'connected') {
+          if (read_cookie("logout_from_fb")) {
+            FB.logout();
+            destroy_cookie("logout_from_fb");
+          } else if (!skip_autologin) {
+            $.get("/fb/autologin", {'fbsr': response.authResponse.signedRequest});
+          } else if (false && 0 == response.authResponse.userID) {
+            $.get("/fb/refresh", {'fbsr': response.authResponse.signedRequest});
+          }
+        } else {
+          if (read_cookie("logout_from_fb")) {
+            destroy_cookie("logout_from_fb");
+          }
+        }
+      })
+    
+      $(document).trigger('fb:loaded');
+    };
+    
+    
+    // Load the SDK Asynchronously
+    (function(d){
+      var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+      js = d.createElement('script'); js.id = id; js.async = true;
+      js.src = "//connect.facebook.net/en_US/all.js";
+      d.getElementsByTagName('head')[0].appendChild(js);
+    }(document));
+  //]]>
+</script>
+
+
+</body>
+</html>

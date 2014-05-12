@@ -1,0 +1,1442 @@
+<!DOCTYPE html>
+<html class="projects_show  fontface no-js" lang="en">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# kickstarter: http://ogp.me/ns/fb/kickstarter#">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-5.newrelic.com","errorBeacon":"jserror.newrelic.com","licenseKey":"b04b883ad2","applicationID":"11086","transactionName":"cFteRUULX1wHFhtIEFxeVVJDFxxDCgtD","queueTime":8,"applicationTime":451,"ttGuid":"","agentToken":null,"agent":"js-agent.newrelic.com/nr-411.min.js"}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"Vw4BVEVSCQMIUg=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e){function n(t,e,n){n||(n={});for(var r=o[t],a=r&&r.length||0,s=n[i]||(n[i]={}),u=0;a>u;u++)r[u].apply(s,e);return s}function r(t,e){var n=o[t]||(o[t]=[]);n.push(e)}var o={},i="nr@context";e.exports={on:r,emit:n}},{}],2:[function(t){function e(t,e,n,i,s){return u?u-=1:r("err",[s||new UncaughtException(t,e,n)]),"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t(5),a=window.onerror,s=!1,u=0;t("loader").features.push("err"),window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(d){"stack"in d&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(4),s=!0)}i.on("fn-start",function(){s&&(u+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&u>0&&(u-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:4,3:3,4:6,5:1,6:14,handle:"D5DuLP",loader:"G9z0Bl"}],3:[function(t){function e(t){r.inPlace(t,["addEventListener","removeEventListener"],"-",n)}function n(t){return t[1]}var r=t(1),o=(t(3),t(2));if(e(window),"getPrototypeOf"in Object){for(var i=document;i&&!i.hasOwnProperty("addEventListener");)i=Object.getPrototypeOf(i);i&&e(i);for(var a=XMLHttpRequest.prototype;a&&!a.hasOwnProperty("addEventListener");)a=Object.getPrototypeOf(a);a&&e(a)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&e(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=e["nr@wrapped"]?t[1]=e["nr@wrapped"]:e["nr@wrapped"]=t[1]=r(e,"fn-"):"function"==typeof e.handleEvent&&r.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:15,2:1,3:14}],4:[function(t){var e=(t(3),t(1)),n=t(2);e.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=e(t[0],"fn-")})},{1:15,2:1,3:14}],5:[function(t){function e(t){var e=t[0];"string"==typeof e&&(e=new Function(e)),t[0]=n(e,"fn-")}var n=(t(3),t(1)),r=t(2);n.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",e)},{1:15,2:1,3:14}],6:[function(t){function e(){o.inPlace(this,s,"fn-")}function n(t,e){o.inPlace(e,["onreadystatechange"],"fn-")}function r(t,e){return e}var o=t(1),i=t(2),a=window.XMLHttpRequest,s=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];window.XMLHttpRequest=function(t){var n=new a(t);try{i.emit("new-xhr",[],n),o.inPlace(n,["addEventListener","removeEventListener"],"-",function(t,e){return e}),n.addEventListener("readystatechange",e,!1)}catch(r){try{i.emit("internal-error",r)}catch(s){}}return n},window.XMLHttpRequest.prototype=a.prototype,o.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",r),i.on("send-xhr-start",n),i.on("open-xhr-start",n)},{1:15,2:1}],7:[function(t){function e(){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;u>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,d="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=e(d);if(f&&(r.rxSize=f),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}t("loader").features.push("xhr");var o=t("handle"),i=t(1),a=t(5),s=["load","error","abort","timeout"],u=s.length,d=t(2);t(3),t(4),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var d=e(o);d&&(r.txSize=d)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",e)}catch(r){}}};for(var f=0;u>f;f++)n.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&e()},{1:8,2:11,3:3,4:6,5:1,handle:"D5DuLP",loader:"G9z0Bl"}],8:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e){var n=r[t];return n?n.apply(this,e):(o[t]||(o[t]=[]),void o[t].push(e))}var r={},o={};e.exports=n,n.queues=o,n.handlers=r},{}],11:[function(t,e){function n(t){if(!t||"object"!=typeof t&&"function"!=typeof t)return-1;if(t===window)return 0;if(o.call(t,"__nr"))return t.__nr;try{return Object.defineProperty(t,"__nr",{value:r,writable:!0,enumerable:!1}),r}catch(e){return t.__nr=r,r}finally{r+=1}}var r=1,o=Object.prototype.hasOwnProperty;e.exports=n},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&u&&u.body){p.proto="https"===c.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=u.createElement("script");e.src=p.proto+t.agent,u.body.appendChild(e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,u=s.document,d="addEventListener",f="attachEvent",c=(""+location).split("?")[0],p=e.exports={offset:i(),origin:c,features:[]};u[d]?(u[d]("DOMContentLoaded",o,!1),s[d]("load",n,!1)):(u[f]("onreadystatechange",r),s[f]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],14:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],15:[function(t,e){function n(t,e,r,s){function nrWrapper(){try{var n,a=u(arguments),d=this,f=r&&r(a,d)||{}}catch(c){i([c,"",[a,d,s],f])}o(e+"start",[a,d,s],f);try{return n=t.apply(d,a)}catch(p){throw o(e+"err",[a,d,p],f),p}finally{o(e+"end",[a,d,n],f)}}return a(t)?t:(e||(e=""),nrWrapper[n.flag]=!0,nrWrapper)}function r(t,e,r,o){r||(r="");var i,s,u,d="-"===r.charAt(0);for(u=0;u<e.length;u++)s=e[u],i=t[s],a(i)||(t[s]=n(i,d?s+r:r,o,s,t))}function o(t,e,n){try{s.emit(t,e,n)}catch(r){i([r,t,e,n])}}function i(t){try{s.emit("internal-error",t)}catch(e){}}function a(t){return!(t&&"function"==typeof t&&t.apply&&!t[n.flag])}var s=t(1),u=t(2);e.exports=n,n.inPlace=r,n.flag="nr@wrapper"},{1:1,2:14}]},{},["G9z0Bl",2,7]);</script><script>
+  //<![CDATA[
+    docElement = this.document.documentElement;
+    docElement.className=docElement.className.replace(/\bno-js\b/,'') + 'js';
+  //]]>
+</script>
+<title>Terminus by Ryan Czech &mdash; Kickstarter</title><script>
+  //<![CDATA[
+    window.report_errors = true;
+    window.honeybadger_configuration = {
+      api_key : "02ab109335c0dd1a93506d92f22217a7",
+      environment : "production",
+      component : "projects",
+      action : "show",
+      onerror : false
+    };
+  //]]>
+</script>
+
+
+<!--[if lt IE 9]>
+  <script src="//html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta content="telephone=no" name="format-detection">
+
+<!--[if !IE]> -->
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base-9f623ad5d021a188cfb2d68a0cdf7a7b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<!-- <![endif]-->
+<!--[if IE]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base_blessed-2640c72487552f9a2ef9f2620b4af860.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<!--[if lte IE 9]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_nine-a93fe10530f175f96c4078b7e070d7e1.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 8]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_eight-f75aeb274436f94a0d243774456b1c62.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 7]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie-c019c01acd3a96588b346cf577a3504f.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_seven-5a3d2cef660cd281fd844b04b2397dbb.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if IE 6]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_six-e4d3caf76e405fe19aee6ece8bda701b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<link href="https://d297h9he240fqh.cloudfront.net/favicon.png" rel="icon" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-precomposed-7b603dba7cf80e4acc57d94a991bebbd.png" rel="apple-touch-icon-precomposed" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-ipad-precomposed-3176f72977daf43dee3b0d348484dc01.png" rel="apple-touch-icon-precomposed" sizes="72x72" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-iphone4-precomposed-b93b70168cd8492c843d0fea873c7f83.png" rel="apple-touch-icon-precomposed" sizes="114x114" type="image/png">
+<link href="https://www.kickstarter.com/services/oembed?url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2F976465455%2Fterminus-2" rel="alternate" title="Terminus Script Tag oEmbed" type="application/json+oembed">
+<link rel="alternate" type="application/atom+xml" title="Terminus : Kickstarter" href="https://www.kickstarter.com/projects/976465455/terminus-2/posts.atom" />
+<meta property="twitter:app:id:iphone" content="596961532"/>
+<meta property="twitter:app:name:iphone" content="Kickstarter"/>
+<meta property="twitter:app:url:iphone" content="ksr://www.kickstarter.com/projects/976465455/terminus-2"/>
+<meta name="video_height" content="360"/>
+<meta name="video_width" content="640"/>
+<meta name="video_type" content="application/x-shockwave-flash"/>
+<meta name="title" content="Kickstarter &gt;&gt; Terminus by Ryan Czech"/>
+<meta name="description" content="Ryan Czech is raising funds for Terminus on Kickstarter! 
+
+ Terminus is a classic &#39;city-builder&#39; set on a distant, inhospitable planet where there is only one colony, one chance, one future."/>
+<meta name="robots" content="noindex"/>
+<meta property="og:title" content="Terminus"/>
+<meta property="og:type" content="kickstarter:project"/>
+<meta property="og:image" content="https://s3.amazonaws.com/ksr/projects/639966/photo-main.jpg?1397829696"/>
+<meta property="og:url" content="https://www.kickstarter.com/projects/976465455/terminus-2"/>
+<meta property="og:site_name" content="Kickstarter"/>
+<meta property="fb:app_id" content="69103156693"/>
+<meta property="og:description" content="Terminus is a classic &#39;city-builder&#39; set on a distant, inhospitable planet where there is only one colony, one chance, one future."/>
+<meta property="kickstarter:creator" content="https://www.kickstarter.com/profile/976465455"/>
+<meta property="twitter:url:landing_url" content="https://www.kickstarter.com/projects/976465455/terminus-2"/>
+<meta property="twitter:card" content="2427656750:kickstarter_project"/>
+<meta property="twitter:site" content="@kickstarter"/>
+<meta property="twitter:site:id" content="16186995"/>
+<meta property="twitter:text:title" content="Terminus"/>
+<meta property="twitter:text:artist" content="Ryan Czech"/>
+<meta property="twitter:text:backers" content="724"/>
+<meta property="twitter:text:pledged" content="$10,677 CAD"/>
+<meta property="twitter:text:time" content="0 seconds"/>
+<meta property="twitter:text:location" content="Vancouver, Canada"/>
+<meta property="twitter:image:location_image" content="https://d3mlfyygrfdi2i.cloudfront.net/b40e/pin.png"/>
+<meta property="twitter:text:description" content="Terminus is a classic &#39;city-builder&#39; set on a distant, inhospitable planet where there is only one colony, one chance, one future."/>
+<meta property="twitter:image:media" content="https://s3.amazonaws.com/ksr/projects/639966/photo-main.jpg?1397829696"/>
+<meta property="twitter:image:width" content="640"/>
+<meta property="twitter:image:height" content="480"/>
+<meta property="twitter:player:stream:url" content="https://d2pq0u4uni88oo.cloudfront.net/projects/639966/video-285554-h264_base.mp4"/>
+<meta property="twitter:player:stream:content" content="video/mp4"/>
+<meta property="twitter:player:url" content="https://www.kickstarter.com/projects/976465455/terminus-2/widget/video.html"/>
+<meta property="twitter:player:height" content="360"/>
+<meta property="twitter:player:width" content="640"/>
+<meta property="twitter:maxage" content="60"/>
+<meta property="og:video" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F639966%2Fvideo-285554-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F639966%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Ryan+Czech&amp;project_title=Terminus&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2F976465455%2Fterminus-2&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:secure_url" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F639966%2Fvideo-285554-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F639966%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Ryan+Czech&amp;project_title=Terminus&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2F976465455%2Fterminus-2&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:height" content="360"/>
+<meta property="og:video:width" content="640"/>
+<meta property="og:video:type" content="application/x-shockwave-flash"/>
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="RQPDOfhiTIXp9hoESJyo2EbDqPEay9ogzZieVdXZUNM=" name="csrf-token" />
+<script type="text/javascript">
+  var _sift = _sift || [];
+  _sift.push(['_setAccount', '637102']);
+  _sift.push(['_setUserId', '']);
+  _sift.push(['_trackPageview']);
+
+  (function() {
+    function loadSift() {
+      var sift, s;
+      if (root.visitor_id) {
+        _sift.push(['_setSessionId', root.visitor_id]);
+      }
+      sift = document.createElement('script');
+      sift.type = 'text/javascript';
+      sift.async = true;
+      sift.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dtlilztwypawv.cloudfront.net/s.js';
+      s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(sift, s);
+    }
+    if (window.attachEvent) {
+      window.attachEvent('onload', loadSift);
+    } else {
+      window.addEventListener('load', loadSift, false);
+    }
+  })();
+</script>
+<link href="http://kck.st/15QWV4X" rel="shorturl">
+<link href="https://www.kickstarter.com/projects/976465455/terminus-2" rel="canonical">
+<link href="https://s3.amazonaws.com/ksr/projects/639966/photo-med.jpg?1397829696" rel="image_src">
+<link href="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F639966%2Fvideo-285554-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F639966%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Ryan+Czech&amp;project_title=Terminus&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2F976465455%2Fterminus-2&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque" rel="video_src">
+<script>
+  //<![CDATA[
+    window.current_checkout = "{&quot;id&quot;:0,&quot;domestic&quot;:null,&quot;amount&quot;:0.0,&quot;updated_at&quot;:0,&quot;created_at&quot;:0}";
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.current_ip = '94.209.101.212';
+    window.current_ip_datacenter = 'false';
+    window.enabled_features = {"elasticsearch":true,"security_history_read":true,"security_history_write":true,"advanced_discovery_es":true,"ios_crashlytics":true,"ios_mixpanel":true,"stories_veronica_mars":true,"veronica_mars_hero":true,"password_reset_banner":true};
+    window.fb_app_id = '69103156693';
+    
+    var _sf_startpt=(new Date()).getTime();
+    
+    window.current_project = "{&quot;id&quot;:1667547105,&quot;name&quot;:&quot;Terminus&quot;,&quot;blurb&quot;:&quot;Terminus is a classic &#39;city-builder&#39; set on a distant, inhospitable planet where there is only one colony, one chance, one future.&quot;,&quot;goal&quot;:28000.0,&quot;pledged&quot;:10677.57,&quot;state&quot;:&quot;failed&quot;,&quot;slug&quot;:&quot;terminus-2&quot;,&quot;disable_communication&quot;:false,&quot;country&quot;:&quot;CA&quot;,&quot;currency&quot;:&quot;CAD&quot;,&quot;currency_symbol&quot;:&quot;$&quot;,&quot;currency_trailing_code&quot;:true,&quot;deadline&quot;:1382133600,&quot;state_changed_at&quot;:1382133618,&quot;created_at&quot;:1375732321,&quot;launched_at&quot;:1378754335,&quot;backers_count&quot;:724,&quot;photo&quot;:{&quot;full&quot;:&quot;https://s3.amazonaws.com/ksr/projects/639966/photo-full.jpg?1397829696&quot;,&quot;ed&quot;:&quot;https://s3.amazonaws.com/ksr/projects/639966/photo-ed.jpg?1397829696&quot;,&quot;med&quot;:&quot;https://s3.amazonaws.com/ksr/projects/639966/photo-med.jpg?1397829696&quot;,&quot;little&quot;:&quot;https://s3.amazonaws.com/ksr/projects/639966/photo-little.jpg?1397829696&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/projects/639966/photo-small.jpg?1397829696&quot;,&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/projects/639966/photo-thumb.jpg?1397829696&quot;,&quot;1024x768&quot;:&quot;https://s3.amazonaws.com/ksr/projects/639966/photo-1024x768.jpg?1397829696&quot;,&quot;1536x1152&quot;:&quot;https://s3.amazonaws.com/ksr/projects/639966/photo-1536x1152.jpg?1397829696&quot;},&quot;creator&quot;:{&quot;id&quot;:976465455,&quot;name&quot;:&quot;Ryan Czech&quot;,&quot;avatar&quot;:{&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/7555533/indiegogo3.thumb.jpg?1377547691&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/7555533/indiegogo3.small.jpg?1377547691&quot;,&quot;medium&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/7555533/indiegogo3.medium.jpg?1377547691&quot;},&quot;urls&quot;:{&quot;web&quot;:{&quot;user&quot;:&quot;https://www.kickstarter.com/profile/976465455&quot;},&quot;api&quot;:{&quot;user&quot;:&quot;https://api.kickstarter.com/v1/users/976465455?signature=1399954158.47234ca0747a6ce305b2bd66f169ec269e2e1709&quot;}}},&quot;location&quot;:{&quot;id&quot;:9807,&quot;name&quot;:&quot;Vancouver&quot;,&quot;slug&quot;:&quot;vancouver-ca&quot;,&quot;short_name&quot;:&quot;Vancouver, Canada&quot;,&quot;displayable_name&quot;:&quot;Vancouver, Canada&quot;,&quot;country&quot;:&quot;CA&quot;,&quot;state&quot;:&quot;BC&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/vancouver-ca&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/vancouver-ca&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1399951821.17edcd5cba492b1f5025d67c37acaf63f635bcd5&amp;woe_id=9807&quot;}}},&quot;category&quot;:{&quot;id&quot;:35,&quot;name&quot;:&quot;Video Games&quot;,&quot;slug&quot;:&quot;games/video games&quot;,&quot;position&quot;:7,&quot;parent_id&quot;:12,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;http://www.kickstarter.com/discover/categories/games/video%20games&quot;}}},&quot;urls&quot;:{&quot;web&quot;:{&quot;project&quot;:&quot;https://www.kickstarter.com/projects/976465455/terminus-2&quot;,&quot;project_short&quot;:&quot;http://kck.st/15QWV4X&quot;,&quot;updates&quot;:&quot;https://www.kickstarter.com/projects/976465455/terminus-2/posts&quot;},&quot;api&quot;:{&quot;project&quot;:&quot;https://api.kickstarter.com/v1/projects/1667547105?signature=1399954158.ef4a26eb29cca6cf9d6c8e4956f3ca897a9df1bd&quot;,&quot;comments&quot;:&quot;https://api.kickstarter.com/v1/projects/1667547105/comments?signature=1399954158.5e17abf197f45722382a8333df3a25a8316ab791&quot;,&quot;updates&quot;:&quot;https://api.kickstarter.com/v1/projects/1667547105/updates?signature=1399954158.1691bd8f3ed5e2f24ed81d1a3a48d517c7974fb3&quot;}},&quot;updated_at&quot;:1397829702,&quot;failed_at&quot;:1382133618,&quot;video&quot;:{&quot;id&quot;:285554,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/639966/video-285554-h264_high.mp4?2013&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/639966/video-285554-h264_base.mp4?2013&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/639966/video-285554-webm.webm?2013&quot;,&quot;width&quot;:640,&quot;height&quot;:360,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/639966/video-285554-h264_base.jpg?2013&quot;},&quot;comments_count&quot;:103,&quot;updates_count&quot;:7,&quot;rewards&quot;:[{&quot;id&quot;:0,&quot;minimum&quot;:1,&quot;reward&quot;:&quot;No Reward&quot;},{&quot;id&quot;:1867861,&quot;minimum&quot;:5.0,&quot;reward&quot;:&quot;Survivor Tier: \\&quot;Terminus\\&quot; DRM-free digital download of the full and complete game when it is released.   You&#39;ll also receive news from the frontier of development delivered to your inbox every month!&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1396310400,&quot;project_id&quot;:1667547105,&quot;backers_count&quot;:388,&quot;updated_at&quot;:1382132630},{&quot;id&quot;:1867862,&quot;minimum&quot;:10.0,&quot;reward&quot;:&quot;Refugee Tier:  Early access to developer diaries.  Plus the full, DRM-free game soundtrack composed by Christopher Orgeron in FLAC or MP3 as a digital download. Plus all previous tiers.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1396310400,&quot;project_id&quot;:1667547105,&quot;backers_count&quot;:151,&quot;updated_at&quot;:1382120265},{&quot;id&quot;:1867863,&quot;minimum&quot;:20.0,&quot;reward&quot;:&quot;Colonist Tier: Two digital copies of the game plus high-quality PDF of the \\&quot;Art of Terminus\\&quot; art book containing concept art pieces, sketches, game-assets, commentary and discussion from the designer and the artists. Also the \\&quot;Building Better Worlds\\&quot; PDF containing design and programming discussion from the developers. A must for aspiring designers! Plus all previous tiers.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1396310400,&quot;project_id&quot;:1667547105,&quot;backers_count&quot;:97,&quot;updated_at&quot;:1382091067},{&quot;id&quot;:1867864,&quot;minimum&quot;:30.0,&quot;reward&quot;:&quot;Engineer Tier:  Printable, high-resolution CD-sleeves and printable high-resolution game box art.  Plus all previous tiers.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1396310400,&quot;project_id&quot;:1667547105,&quot;backers_count&quot;:7,&quot;updated_at&quot;:1381565470},{&quot;id&quot;:1867865,&quot;minimum&quot;:40.0,&quot;reward&quot;:&quot;Prospector Tier: Four digital copies of the game plus Beta access to the game as well as the opportunity to add your name in the credits as a supporter.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1396310400,&quot;project_id&quot;:1667547105,&quot;backers_count&quot;:20,&quot;updated_at&quot;:1381883225},{&quot;id&quot;:1867866,&quot;minimum&quot;:50.0,&quot;reward&quot;:&quot;Surveyor Tier: Digital, high-res poster of Terminus art, as well as alpha and beta access to the game. You also receive the opportunity to vote on game features to help guide development.  Plus all previous tiers.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1396310400,&quot;project_id&quot;:1667547105,&quot;backers_count&quot;:38,&quot;updated_at&quot;:1382114861},{&quot;id&quot;:1867867,&quot;minimum&quot;:80.0,&quot;reward&quot;:&quot;Councillor Tier: Physical, printed poster of Terminus art to put on the wall, signed by your choice of design team member if you so choose, as well as six digital download copies. Plus all previous tiers.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1396310400,&quot;project_id&quot;:1667547105,&quot;backers_count&quot;:4,&quot;updated_at&quot;:1382114136},{&quot;id&quot;:1867868,&quot;minimum&quot;:120.0,&quot;reward&quot;:&quot;Architect Tier: A physical disc with Special Edition art on the jewel case.  Jewel case can be signed by your choice of team member. Your name added with \\&quot;Special Support\\&quot; in the credits. Plus all previous tiers.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1396310400,&quot;project_id&quot;:1667547105,&quot;backers_count&quot;:9,&quot;updated_at&quot;:1382064412},{&quot;id&quot;:1867869,&quot;minimum&quot;:400.0,&quot;reward&quot;:&quot;Commissioner Tier: Lithographed concept art, signed (if you choose) by the artist as well as hard-cover book prints of \\&quot;Art of Terminus\\&quot; and \\&quot;Building Better Worlds\\&quot; featuring concept art, game art and developer commentary on the design process. Plus all previous tiers.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1396310400,&quot;project_id&quot;:1667547105,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1377467565},{&quot;id&quot;:1867870,&quot;minimum&quot;:750.0,&quot;reward&quot;:&quot;Administrator Tier: Share a meal or drink with the lead designer anywhere within 200km of Vancouver, Canada plus a 3d printed model of the colony ship or building of your choice.  Plus all previous tiers.&quot;,&quot;limit&quot;:5,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1396310400,&quot;project_id&quot;:1667547105,&quot;remaining&quot;:4,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1379180059},{&quot;id&quot;:1867871,&quot;minimum&quot;:2000.0,&quot;reward&quot;:&quot;Visionary of Earth Tier:  Your name or business name/logo in the opening credits of the game. Plus all previous tiers.&quot;,&quot;limit&quot;:5,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1396310400,&quot;project_id&quot;:1667547105,&quot;remaining&quot;:5,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1377467760}]}";
+    
+    
+    
+    
+    
+    
+    
+    
+    window.timeRemaining = function timeRemaining(epochTime){
+    
+      var diff = epochTime - ((new Date()).getTime() / 1000);
+      var num_unit = (diff < 60 && [Math.max(diff, 0), 'seconds']) ||
+        ((diff/=60) < 60 && [diff, 'minutes']) ||
+        ((diff/=60) < 72 && [diff, 'hours']) ||
+        [diff/=24, 'days'];
+    
+      // Round down
+      num_unit[0] = Math.floor(num_unit[0]);
+      // Singularize unit
+      if (num_unit[0] == 1) { num_unit[1] = num_unit[1].replace(/s$/,""); }
+    
+      return num_unit;
+    };
+  //]]>
+</script>
+
+<script>
+  //<![CDATA[
+    window.current_variants = ["discover_link_copy[explore]","rewards_hover[without_hover_text]"];
+  //]]>
+</script>
+
+
+</head>
+
+<body class="project projects not-mobile not-phone not-forces-video-controls not-tablet not-touchable not-native-app-request video_mode" id="projects_show">
+<div class="jGrowl center" id="growl_section"></div>
+<div class="NS_layouts__navigation" id="header">
+<div class="main-nav relative bg-white">
+<h1 class="no-margin ml1 mr2 left">
+<a href="/?ref=nav" class="block p2"><span class="ss-icon green-dark">KICK</span><span class="ss-icon green">STARTER</span>
+</a></h1>
+<ul class="primary-links list no-margin left">
+<li class="left discover-link full-height">
+<a href="/discover?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Explore</a>
+</li>
+<li class="left full-height mr2">
+<a href="/learn?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Start</a>
+</li>
+</ul>
+<ul class="list no-margin right" id="menu-sub">
+<li class="right"><a href="/login?ref=nav" class="block h5 bold p2 full-height border-box">Log in</a></li>
+<li class="right"><a href="/signup?ref=nav" class="block h5 bold p2 full-height border-box">Sign up</a></li>
+</ul>
+<div class="search-link pl2 full-height border-left border-box clip">
+<form accept-charset="UTF-8" action="/projects/search" class="search pt1 pb1 block relative form-simple" method="get"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /></div>
+<div class="field relative pl3">
+<span class="ss-icon ss-search grey-dark ml1 mt1 absolute"></span>
+<input class="input-search header full-width text" data-tracker-name="Header Live Search" id="term" name="term" placeholder="Search projects" type="text" />
+</div>
+</form>
+
+</div>
+<div class="clear"></div>
+</div>
+</div>
+<div class="hide pt4 pb4 bg-grey-light" id="search_results-wrap">
+<div class="relative container" id="search_results">
+<a class="close right grey-dark mr1"><span class="ss-icon ss-delete"></span></a>
+<h3 class="header ml1 clearfix"></h3>
+<div class="clip clearfix" id="search_results_panel"></div>
+<a class="prev arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateleft"></span>
+</a>
+<a class="next arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateright"></span>
+</a>
+</div>
+</div>
+
+
+
+
+<div class="Project-ended-true Project-is_starred- Project-state-failed Project1667547105_cxt border-top" id="main_content">
+<div id="running-board-wrap">
+<div class="container" id="running-board">
+<div id="project-header">
+<div class="NS_projects__running_board ml1 mr1 clearfix">
+<div class="title center py4">
+<h2 class="mb1">
+<a href="/projects/976465455/terminus-2" class="green-dark">Terminus</a>
+</h2>
+<p class="no-margin">
+<span class="creator">
+by
+<a href="/projects/976465455/terminus-2/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography" id="name">Ryan Czech</a>
+</span>
+</p>
+</div>
+<ul class="project-nav list-inline left h5 bold mb1">
+<li class="mr2">
+<a href="/projects/976465455/terminus-2" class="grey-dark py1 current" id="home_nav">Home</a>
+</li>
+<li class="mr2">
+<span data-updates-count="7" id="updates_count">
+<a href="/projects/976465455/terminus-2/posts" class="grey-dark py1" id="updates_nav">Updates
+<span class="count h6 bg-grey-dark white">7</span>
+</a></span>
+</li>
+<li class="mr2">
+<a href="/projects/976465455/terminus-2/backers" class="grey-dark py1" id="backers_nav">Backers
+<span class="count h6 bg-grey-dark white"><data class="Project1667547105" data-format="number" data-value="724" itemprop="Project[backers_count]">724</data></span>
+</a></li>
+<li>
+<span data-comments-count="103" id="comments_count">
+<a href="/projects/976465455/terminus-2/comments" class="grey-dark py1" id="comments_nav">Comments
+<span class="count h6 bg-grey-dark white"><data class="Project1667547105" data-format="number" data-value="103" itemprop="Project[comments_count]">103</data></span>
+</a></span>
+</li>
+</ul>
+<ul class="list-inline right h5 bold mb1">
+<li class="location mr2">
+<a href="/discover/places/vancouver-ca?ref=city" class="grey-dark"><span class="ss-icon ss-location margin-right"></span>
+Vancouver, Canada
+</a></li>
+<li class="category" data-project-parent-category="Games">
+<a href="/discover/categories/games/video%20games?ref=category" class="grey-dark"><span class="ss-icon ss-tag margin-right"></span>
+Video Games
+</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+</div>
+<div class="bg-grey-light pb4" id="content-wrap">
+<div class="Project1667547105" data-conditions="[{&quot;!state&quot;:&quot;live&quot;}]" data-evaluation="true" data-render="&quot;&lt;div class=\&quot;NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-failed Project1667547105_cxt bg-grey container pb1 pt1\&quot;&gt;\n&lt;div class=\&quot;Project1667547105\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;successful&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;Funded!&amp;lt;/b&amp;gt;\\nThis project was successfully funded &amp;lt;data class=\\&amp;quot;Project1667547105\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2013-10-18T18:00:00-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[deadline]\\&amp;quot;&amp;gt;on October 18, 2013&amp;lt;/data&amp;gt;.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1667547105\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:[&amp;quot;started&amp;quot;,&amp;quot;submitted&amp;quot;]}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;THIS PROJECT IS NOT LIVE&amp;lt;/b&amp;gt;\\nThis is only a draft that the creator has chosen to share.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1667547105\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;suspended&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Suspended&amp;lt;/b&amp;gt;\\nFunding for this project was suspended &amp;lt;data class=\\&amp;quot;Project1667547105\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2013-10-18T18:00:18-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on October 18, 2013&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1667547105\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;canceled&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Canceled&amp;lt;/b&amp;gt;\\nFunding for this project was canceled by the project creator &amp;lt;data class=\\&amp;quot;Project1667547105\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2013-10-18T18:00:18-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on October 18, 2013&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1667547105\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;failed&amp;quot;}]\&quot; data-evaluation=\&quot;true\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Unsuccessful&amp;lt;/b&amp;gt;\\nThis project\\u2019s funding goal was not reached on &amp;lt;time class=\\&amp;quot;js-adjust\\&amp;quot; data-format=\\&amp;quot;LL\\&amp;quot; datetime=\\&amp;quot;2013-10-18T18:00:00-04:00\\&amp;quot;&amp;gt;October 18, 2013&amp;lt;/time&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Unsuccessful&lt;/b&gt;\nThis project\u2019s funding goal was not reached on &lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;LL\&quot; datetime=\&quot;2013-10-18T18:00:00-04:00\&quot;&gt;October 18, 2013&lt;/time&gt;.\n&lt;/div&gt;&lt;div class=\&quot;Project1667547105\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;purged&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;This project is purged and only visible to staff.&amp;lt;/b&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;/div&gt;\n&quot;"><div class="NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-failed Project1667547105_cxt bg-grey container pb1 pt1">
+<div class="Project1667547105" data-conditions="[{&quot;state&quot;:&quot;successful&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;Funded!&lt;/b&gt;\nThis project was successfully funded &lt;data class=\&quot;Project1667547105\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-10-18T18:00:00-04:00&amp;quot;\&quot; itemprop=\&quot;Project[deadline]\&quot;&gt;on October 18, 2013&lt;/data&gt;.\n&lt;/p&gt;\n&quot;"></div><div class="Project1667547105" data-conditions="[{&quot;state&quot;:[&quot;started&quot;,&quot;submitted&quot;]}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;THIS PROJECT IS NOT LIVE&lt;/b&gt;\nThis is only a draft that the creator has chosen to share.\n&lt;/p&gt;\n&quot;"></div><div class="Project1667547105" data-conditions="[{&quot;state&quot;:&quot;suspended&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Suspended&lt;/b&gt;\nFunding for this project was suspended &lt;data class=\&quot;Project1667547105\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-10-18T18:00:18-04:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on October 18, 2013&lt;/data&gt;.\n&quot;"></div><div class="Project1667547105" data-conditions="[{&quot;state&quot;:&quot;canceled&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Canceled&lt;/b&gt;\nFunding for this project was canceled by the project creator &lt;data class=\&quot;Project1667547105\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-10-18T18:00:18-04:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on October 18, 2013&lt;/data&gt;.\n&quot;"></div><div class="Project1667547105" data-conditions="[{&quot;state&quot;:&quot;failed&quot;}]" data-evaluation="true" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Unsuccessful&lt;/b&gt;\nThis project\u2019s funding goal was not reached on &lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;LL\&quot; datetime=\&quot;2013-10-18T18:00:00-04:00\&quot;&gt;October 18, 2013&lt;/time&gt;.\n&quot;"><p class="no-margin"></p>
+<b>Funding Unsuccessful</b>
+This project’s funding goal was not reached on <time class="js-adjust" data-format="LL" datetime="2013-10-18T18:00:00-04:00">October 18, 2013</time>.
+</div><div class="Project1667547105" data-conditions="[{&quot;state&quot;:&quot;purged&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;This project is purged and only visible to staff.&lt;/b&gt;\n&quot;"></div></div>
+</div>
+<div class="container bg-white border rounded py3 pl2 pr2" id="content">
+<div class="NS-projects-content">
+<div class="grid_11">
+<div data-has-video="true" id="video-section">
+<div class="video-player" data-dimensions="{&quot;width&quot;:640,&quot;height&quot;:480}" data-image="https://s3.amazonaws.com/ksr/projects/639966/photo-main.jpg?1397829696" data-video-tracker-url="https://www.kickstarter.com/projects/976465455/terminus-2/video/plays" data-video-url="https://d2pq0u4uni88oo.cloudfront.net/projects/639966/video-285554-h264_high.mp4" data-video="{&quot;id&quot;:285554,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/639966/video-285554-h264_high.mp4?2013&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/639966/video-285554-h264_base.mp4?2013&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/639966/video-285554-webm.webm?2013&quot;,&quot;width&quot;:640,&quot;height&quot;:360,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/639966/video-285554-h264_base.jpg?2013&quot;}" id="video_pitch"><video class="has_webm landscape" preload="none">
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/639966/video-285554-h264_high.mp4" type='video/mp4; codecs="avc1.64001E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/639966/video-285554-h264_base.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/639966/video-285554-webm.webm" type="video/webm"></source>
+You'll need an HTML5 capable browser to see this content.
+</video>
+<img alt="Photo-main" class="has_played_hide poster landscape" src="https://s3.amazonaws.com/ksr/projects/639966/photo-main.jpg?1397829696" />
+<div class="play_button_big play_button_dark absolute-center rounded has_played_hide">
+<span class="ss-icon ss-play"></span>
+Play
+</div>
+<div class="player_controls clearfix absolute-bottom mb2 rounded white bg-green-dark forces-video-controls_hide">
+<div class="left">
+<a class="button button_icon button_dark playpause play mr1">
+<span class="play ss-icon ss-play"></span>
+<span class="pause ss-icon ss-pause"></span>
+</a>
+<span class="time current_time h12 left">00:00</span>
+</div>
+<div class="right">
+<span class="time total_time h12 left mr1">00:00</span>
+<a class="left button button_icon button_icon_white volume">
+<span class="ss-icon ss-volume icon_volume_nudge"></span>
+<span class="ss-icon ss-highvolume"></span>
+</a>
+<div class="volume_container left">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+<a class="left button button_icon button_icon_white fullscreen">
+<span class="ss-icon ss-expand"></span>
+<span class="ss-icon ss-contract"></span>
+</a>
+</div>
+<div class="clip">
+<div class="progress_container pr1 pl1">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="buffer progress_bar_buffer"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div data-project-state="failed" id="about">
+<div class="NS_projects__project_share clearfix py2 pl1 pr1">
+<ul class="left list-inline no-margin h5 bold">
+<li class="facebook mr2">
+<a href="https://www.kickstarter.com/projects/976465455/terminus-2"><span class="ss-icon ss-social ss-facebook color-facebook"></span>
+<span class="color-facebook">Share</span>
+<span class="share_bubble"><div class="triangle grey"></div>
+<div class="triangle white"></div>
+<span class="count"></span></span>
+</a></li>
+<li class="twitter mr2">
+<a  href="https://twitter.com/intent/tweet?text=Terminus%20by%20Ryan%20Czech&amp;via=kickstarter&amp;url=http://kck.st/15QWV4X" rel="nofollow"><span class="ss-icon ss-social ss-twitter color-twitter"></span>
+<span class="color-twitter">Tweet</span>
+</a></li>
+<li class="embed">
+<a href="/projects/976465455/terminus-2/widget" class="remote_modal_dialog grey-dark" data-modal-title="Embed a widget on your site" data-tracker-name="Embed"><span class="ss-icon ss-navigateleft"></span>
+<span class="ss-icon ss-navigateright"></span>
+Embed
+</a></li>
+</ul>
+<ul class="right list-inline no-margin h5 bold">
+<li class="curate mr2">
+</li>
+<li class="remind">
+<div class="ajax-container" id="watching-widget">
+<div class="Project1667547105" data-conditions="[{&quot;is_starred&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div id=\&quot;unwatch\&quot;&gt;\n&lt;a href=\&quot;/projects/976465455/terminus-2/unwatch\&quot; class=\&quot;on\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"></div><div class="Project1667547105" data-conditions="[{&quot;!is_starred&quot;:true}]" data-evaluation="true" data-render="&quot;&lt;div id=\&quot;watch\&quot;&gt;\n&lt;a href=\&quot;/projects/976465455/terminus-2/watch\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;span class=\&quot;text\&quot;&gt;\n&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"><div id="watch">
+<a href="/projects/976465455/terminus-2/watch"><span class="ss-icon ss-star"></span>
+<span class="text">
+</span>
+</a></div>
+
+</div></div>
+</li>
+</ul>
+</div>
+
+<div class="short_blurb py2 pl1 pr1">
+<p class="h3">Terminus is a classic &#39;city-builder&#39; set on a distant, inhospitable planet where there is only one colony, one chance, one future.</p>
+</div>
+<div class="full-description">
+<p><b>“It’s like Oregon Trail meets Alpha Centauri with some slightly depressing Sim City thrown in.” -  Greg @ Cliqist.com</b></p><div class="template oembed" contenteditable="false" data-href="http://youtu.be/I1S9SXVH6dw">
+<iframe width="612" height="344" src="https://www.youtube.com/embed/I1S9SXVH6dw?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div><p>Starting from classic city builders of the genre, Terminus takes the terrifying leap into the frontier of space where every new game and new colonization effort bring a wildly different experience on a new, procedurally generated planet. </p><p>You are the administrator of the colony and it's your mission to keep humanity going by any means possible.  Colonists are mouths to feed, supplies are dwindling and almost everything is non-renewable.</p><a href="http://harbourgames.files.wordpress.com/2013/08/terminus-small-colony-jpeg.jpg" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/976465455/terminus-2/assets/879744/edit" data-id="879744">
+<figure><img alt="WIP Prototype Gameplay Screenshot" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/879/744/0789b5b2196a2f99eac295ebc35f8e0e_large.jpg?1378039591"><figcaption>WIP Prototype Gameplay Screenshot</figcaption></figure>
+</div>
+</a><p>Plan for long term growth while dealing with short-term crises, survey and exploit planet-side resources faster than you can use them up, perform critical research to offset the difficulty of living off-world and issue colony-wide directives to shape the growth of the only home of humanity, keep the old ways of thinking alive or forge a brave new world.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/976465455/terminus-2/assets/860616/edit" data-id="860616">
+<figure><img alt="Organic feedstocks galore, a hazy and caustic planet." class="fit" src="https://s3.amazonaws.com/ksr/assets/000/860/616/9e67b0c0291118555fd7a35d8064cca6_large.JPG?1377492092"><figcaption>Organic feedstocks galore, a hazy and caustic planet.</figcaption></figure>
+</div>
+<h1>The Plot</h1><p>Earth is doomed, we know it, you know it, your neighbour knows it.  In Terminus everybody knows it because astronomers spot tremendous amounts of impact events on the outskirt of the solar system.  First Pluto is pummeled, then we can see the surface of Neptune and Uranus deluged by extrasolar rock.  It's determined by the data that an immense cloud of debris is intersecting our solar system and that every planet, moon and asteroid will be scoured by impact.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/976465455/terminus-2/assets/860618/edit" data-id="860618">
+<figure><img alt="Mars first, Earth next" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/860/618/f6413fa8101bd01db793d1858451a4ff_large.jpg?1377492159"><figcaption>Mars first, Earth next</figcaption></figure>
+</div><p>Knowing the end is coming decades ahead of time allowed the people of Earth plenty of opportunity to panic.  It was only after years of political and social chaos that a plan was hatched, the Terminus Project, the last option for a doomed civilization.<br><br>With the Earth expected to turn slightly molten within the century, mankind no longer felt the need to preserve it and so all restrictions on industry, pollution and most international treaties were dissolved or ignored.  Every industrial effort on the planet was turned towards constructing the components of the starship that would be needed.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/976465455/terminus-2/assets/860624/edit" data-id="860624">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/860/624/20c2381fe7cc84e80e2e7c23989a4c4f_large.jpg?1377492234"></figure>
+</div>
+<p>Entire states and provinces became foundries, Australia became the launching pad for nuclear rockets, little more than a pallet of cargo on-top of a steel plate with a nuclear bomb underneath.  It was enough to get it into orbit and added to the 8,000,000 tonne "Super Orion"-inspired ship that would take as much of humanity as possible to the stars.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/976465455/terminus-2/assets/860626/edit" data-id="860626">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/860/626/9fa8309440b624c62a5969173dfdeb13_large.png?1377492263"></figure>
+</div>
+<h1>Gameplay</h1><p><br>Terminus plays like a city-builder, as administrator you determine what buildings should be built and where, what parts of the planet to survey or clear for development, what research to perform to improve efficiency, and what social decisions to make to guide growth, or stifle chaos.</p><a href="http://harbourgames.files.wordpress.com/2013/09/terminus-riot-mockup.jpg" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/976465455/terminus-2/assets/902734/edit" data-id="902734">
+<figure><img alt="GUI Mock-up Example" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/902/734/bd61cbc1ba1d23e2bc276c9ec8abb5fe_large.jpg?1378720720"><figcaption>GUI Mock-up Example</figcaption></figure>
+</div>
+
+</a><p><br><br>Terminus isn't just a sedate city-builder however, disaster management is a critical and integrated component of its gameplay.  Things go wrong in space and on other planets, and when they go wrong they can turn catastrophic.  You're not just designing a city that operates in the most efficient way possible, every decision made has to be made with "What about if things go wrong?" in the back of your head because things WILL go wrong.</p><a href="http://harbourgames.files.wordpress.com/2013/09/terminus-small-colony-3.jpg" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/976465455/terminus-2/assets/879751/edit" data-id="879751">
+<figure><img alt="WIP Prototype Gameplay Screenshot" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/879/751/59133ae869ab355ed75b0e42d54a3dc6_large.jpg?1378039799"><figcaption>WIP Prototype Gameplay Screenshot</figcaption></figure>
+</div>
+
+</a><p><br><br>Fire is deadly in space and the same is true in the closed environment of a colony, fire can spread from one building to another, killing people inside, damaging the building itself or causing a hull breach.  Fire isn't the only thing that spreads, biological hazards, disease, electrical disturbances, air-loss, every building is linked and you're in charge of the links.  Sometimes you have to seal an area off if you expect to keep the colony as a whole alive, but that building you just sealed off was the agricultural dome and people are starting to ask about food... but depending on the planet you pick, at least there might be plenty of water.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/976465455/terminus-2/assets/860630/edit" data-id="860630">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/860/630/f31806ecabdcfcd6a74b645ca4d203e6_large.JPG?1377492327"></figure>
+</div><h1>Roguelike?</h1><p>Terminus is built on a modern interpretation of the 'roguelike' model: Each new game should result in a different planetary environment which presents new challenges and altered gameplay.  Every game of Terminus will start the same way with the player outfitting their starship 'Oregon Trail' style and picking a planet to attempt to colonize.  If during your playthrough you want to take a break you can save and pick up the same session later, but if all the colonists die... well, that's game over, you'd have to try again on a new planet, or reload the random seed that created the planet you were just on if you want to try a different approach. </p><h1>Significant Choices? </h1><p>As an avid game player I have seen countless awesome games fall totally flat as soon as the 'optimal strategy' is discovered.  I adhere to the Sid Meier' philosophy of games being a series of interesting decisions and so for each and every situation the player finds themselves in we are very careful to make sure that each choice has value and cost and is dependent on the situation in the colony.  Choices such as during crisis events or on the research screen are going to have the most time spent on them for balancing and playtesting since it's so critical to the game's longevity.  We aren't going to muddy things up for the player either, we're going to try to display as much information as possible in tooltips, Europa Universalis style so the player can weigh their choices carefully.  Losing colonists to random accidents sucks and is annoying, but losing colonists because of a choice you made, even if it was for the greater good... that's what we're trying to achieve. </p><h1>Difficulty levels? </h1><p>When I was a young lad playing the original Outpost, I was entranced and mesmerized by the theme and story of the game, even the mechanics were obscure and... non-optimized.  I want to try to maintain that potential for a young boy or girl to pick up Terminus and be able to understand and experience the imagined scenario of space colonization.  That said, Terminus is going to be the game *I* want to play as well, and for that I want a challenge!  The game will be designed and balanced around the idea of a high difficulty, similar to the 'normal' mode of FTL: Faster Than Light.  Most playthroughs should NOT end in victory, the joy after all is often in the fresh slate and starting anew.  I know I enjoy the first few hundred turns of Alpha Centauri better than the last hundred, so Terminus will try to live in that space, that first few hundred turns of try, fail, try, succeed. </p><h1>Real Time Strategy?  What about turns?</h1><p>I don't think there's any complexity lost with a real time game versus a turn based one - anyone who's played Europa Universalis or Hearts of Iron can agree with that!  Terminus will be real time but pausable, after all it's not about how fast you can make your decisions but how intelligently you can make them and how far you can think ahead to the consequences.</p><h1>Music</h1><p>The soundtrack is one of the most important things for any sci-fi, and so special attention is being paid to the quality and theme of Terminus music.  The composition for Terminus is being created by the talented Christopher Orgeron following an Industrial/Mechanical/Synth blend.  Below you can listen to "Cellotrome Branches" a piece composed specifically for Terminus.</p><div class="template asset" contenteditable="false" data-id="979967">
+<figure><embed allowscriptaccess="always" height="30" src="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?audioonly=true&amp;controlbar.idlehide=false&amp;controlbar=bottom&amp;file=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fassets%2F000%2F979%2F967%2Fe8afd6d66d669c105595eb464f6c682e_original.mp3%3F1380781528&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf" type="application/x-shockwave-flash" width="560" wmode="transparent"></embed></figure>
+</div>
+<p>Another piece by Chris is "<a href="https://soundcloud.com/christopher-orgeron/christopher-orgeron-rise-of?in=christopher-orgeron/sets/scoring-samples" target="_blank">Rise of the Robots</a>"  (not composed specifically for Terminus)</p><p>A catalog of Chris' styles and instrumental range can be found in his <a href="https://soundcloud.com/christopher-orgeron/sets/scoring-samples" target="_blank">Scoring Samples</a> Soundcloud page.</p><h1>Buildings</h1><p><br>Buildings are the most vital elements of the colony; buildings consume power, resources and they refine or produce materials in addition to performing some vital function in your colony such as housing or research.  Buildings have more attributes than some RPG characters, with health, resistances to damage types and adjacency bonuses that encourage building your colony intelligently, but don't build too compactly because of...</p><h1>
+<br>Disasters</h1><p><br>Every building in the colony is connected, most buildings have human workers and all of them are vulnerable to one form of disaster or another.  Some buildings are reinforced or naturally durable against fire or earthquake but might be vulnerable to the spread of disease, while other buildings might be resistant to power grid disruption but have incredibly weak skin and are prone to hull breaches, which, depending on the planet you're on, have immediate and dire consequences for any colonists inside.  The list of planned environmental effects are:</p><p><br><b>Fire - </b><i>Does equal damage to buildings and colonists, spreads very rapidly to adjacent buildings (unless sealed) Has a chance of causing hull breaches, requires oxygen to exist, so can put itself out quite rapidly.</i></p><p><br><b>Earthquake -</b> <i>Does significant one-time damage to vulnerable buildings, rarely hurts colonists.  Can cause hull breaches and fires in rare cases.</i></p><p><br><b>Atmospheric Disturbance -</b> <i>Can cause electrical disruption or cause hull breaches or both depending on the atmosphere.</i></p><p><br><b>Electrical Disruption <i>-</i></b><i> Spreads from building to building causing reduced efficiency, does not hurt colonists.</i></p><p><br><b>Biohazard/Biological -</b> <i>Spreads from building to building, kills colonists but doesn't damage buildings</i></p><p><br><b>Meteorite Impact -</b> <i>Causes damage to buildings, may cause hull breach.  Larger impact events can wipe out multiple buildings.</i></p><p><b>Riot &amp; Colonist Events -</b> <i>Escalates resource shortages into crises and reacts to population pressure, policy choices.  The result of populist pressures.</i></p><h1>
+<br>Research</h1><p><br>Technology is the best tool and survival mechanism humanity has on Earth and the same is true off-world.  Research Laboratories and Hazardous Experiment Labs can be constructed and operated by colonists.  You can only one run research project at a time no matter how many labs you build, but the more you have and the more scientists you have inside them the faster your research progresses.<br><br>Research can unlock new buildings, enhancements to existing buildings or divergent building classes, luxury residences compared to reinforced residences.  Research projects allow you to predict disasters or respond to them more effectively, even providing access to the...</p><h1>
+<br>Crisis Response Emergency Workers (CREW)</h1><p><br>An elite team of disaster management professionals, the <b>CREW </b>are rescue workers, engineers and a SWAT team all rolled into one.  Once unlocked from research the <b>CREW</b> can be deployed to any building during a crisis, once there they can attempt to save the building, save the people, or simply try to scavenge as many materials as they can from the structure before it goes up in smoke.  The <b>CREW</b> are a vital and active tool to keep your colony going, no matter if they're sealing a hull breach, cleaning up a toxic waste spill or quelling a riot, the <b>CREW</b> is the first and best option for dealing with a situation going out of control.  But there's a lot you can do before it gets that bad, by using...</p><h1>
+<br>Directives</h1><p><br>Government and centralized control is necessary more than ever when the only thing between humanity and extinction is a steady hand on the airlock control ready to make the decision to sacrifice a few lives to save the species.  Directives shape your colony and allow you to do everything from starting mineral surveys, deploying temporary damage control, instituting temporary rationing measures all the way to colony wide policy decisions.<br><br>Policy decisions are unlocked by research and are mutually exclusive within their own category.  For example when it comes to the "Disaster Response" category you can choose between "Evacuation Procedures" which helps reduce colonist casualties, or you can elect to go with "Facility Inspection" which gives all buildings a better resistance against damage, or maybe you want to reduce the time it takes your CREW to get to the site of a disaster?  It all comes down to your colony design, the nature of the planet and the other choices you've made.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/976465455/terminus-2/assets/860644/edit" data-id="860644">
+<figure><img alt="Ice, Rock, Pressure, Toxic" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/860/644/1cc52c4ca36514c76a363bfce3f3f959_large.png?1377492674"><figcaption>Ice, Rock, Pressure, Toxic</figcaption></figure>
+</div><h1>The Big Picture</h1><p><br>All of these elements taken together create a tight, complex but easily understood game with tonnes of replayability.  Besides the big-picture base building and the fine-focus disaster management the game also offers the reflection and imagination that science fiction provides so well.  The variety of landscapes and design of the growing colony will of course be aesthetically pleasing, but for the curious player there will also be an opportunity to read in-game descriptions for each building and research project, the story of Terminus being told through the historical and fictional quotes added to each description, descriptions which are written with scientific accuracy in mind, following reality as close as possible while allowing for the theoretical.<br><br>The primary audience, the people who would get the most out of Terminus are the enthusiasts, the gamer who loves games for the challenge, because Terminus will be very challenging by default, but Terminus is intended to be a game suitable for anyone to play, of any age who are interested in the kind of setting and science that the game offers and difficulty can scale down for a slower paced game as much as it can scale up to offer a traumatically accurate portrayal of the difficulty of colonizing another planet.</p><a href="http://harbourgames.files.wordpress.com/2013/08/terminus-small-colony-4.png" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/976465455/terminus-2/assets/860650/edit" data-id="860650">
+<figure><img alt="WIP example colony spread" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/860/650/7af112b5742c53e291a4c21a1d0ac855_large.png?1377492798"><figcaption>WIP example colony spread</figcaption></figure>
+</div>
+</a><h1>Why we're crowd-funding</h1>
+
+<p>Terminus is a game we want to make and we
+ think the game is a solid one, so we're bringing it to you so 
+you can get in on the ground floor and help this game exist.</p>
+<p>If we don't reach our funding goals that won't stop us from trying to
+ make the game, but we'll be missing crucial pieces of the puzzle; 
+people, skills, licenses, assets... We're working with a fixed funding 
+model so if we're even a dollar short of what we're asking for, everyone
+ gets their pledge refunded.</p>
+
+<h1>Team Composition:</h1><p>From game industry professionals to 30 year programming veterans to being involved in putting actual, physical man-made objects on other planets, our team is quite diverse and comes from a broad, multidisciplinary background<b>.</b></p><h1><b>Funding Breakdown</b></h1><p>40% Programming </p><p>15% 3d Art Assets (Game Models) </p><p>8% Music Composition and Sound Effects </p><p>7% 2d Art Assets &amp; Concept Art </p><p>10%-12% Backer Rewards </p><p>8% Business Expenses, Licenses, Fees and Taxes </p><p>5% Kickstarter Fee </p><p>3-5% Payment Processor Fee</p><h1>
+<br>Contact Us</h1><p>Reach us on twitter @Harbourgames or email us through Kickstarter!</p><div class="template oembed" contenteditable="false" data-href="http://youtu.be/0yjPoTfU1io">
+<iframe width="612" height="344" src="https://www.youtube.com/embed/0yjPoTfU1io?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div>
+</div>
+<div id="risks">
+<h2 class="title grey-dark mt6 mb4">
+<span>Risks and challenges</span>
+<a href="/help/faq/kickstarter%20basics#Acco" class="right normal h5" target="_blank">Learn about accountability on Kickstarter</a>
+<div class="divider clear"></div>
+</h2>
+<p><p>With all games there is the possibility of delay.  For Terminus development our goal is game quality, and if our release date arrives and the game is not ready to ship, we will use our communication channels to dialogue with our backers and the public, explain the obstacles and challenges we are experiencing, and ultimately produce a more polished game.</p>
+
+<p>Beyond our control there might be delays in shipping physical backer rewards, but we`ll keep on top of it and keep our backers updated every step of the way.</p></p>
+</div>
+</div>
+<div class="NS-projects-faqs" id="project-faqs">
+<h2 class="title grey-dark mt6 mb4">
+FAQ
+<div class="divider clear"></div>
+</h2>
+<ul class="faqs">
+<li class="faq" id="project_faq_67329">
+<div class="faq-question">
+<a href="#project_faq_67329" name="project_faq_67329">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Is this for PC only?  Will there be support for other OS?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Terminus will be available for PC, Mac and Linux!  Never fear, the future of technology is here and it is cross-platform.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-09-09T18:57:45-04:00">Mon, Sep 9 2013 6:57 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_67340">
+<div class="faq-question">
+<a href="#project_faq_67340" name="project_faq_67340">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Have you thought about stretch goals?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>We were planning on keeping our stretch goals fairly modest, since the core of the game is covered by the amount we&#39;re asking for.  But as we move forward we&#39;ll add several stretch goals with details describing how we would like to have more planet variety, more planet types as well as more music.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-09-09T22:03:57-04:00">Mon, Sep 9 2013 10:03 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_67370">
+<div class="faq-question">
+<a href="#project_faq_67370" name="project_faq_67370">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">What the heck is a CAD and how much does it cost me?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Current exchange rates for Canadian Dollars compared to a few popular currencies is as follows:</p>
+
+<p>1 CAD = 0.96 USD (basically par)
+<br />1 CAD = 0.72 Euro
+<br />1 CAD = 0.61 GBP
+<br />1 CAD = 1.04 AUD
+<br />1 CAD = 2.16 Brazilian Real</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-09-25T18:35:54-04:00">Wed, Sep 25 2013 6:35 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_67549">
+<div class="faq-question">
+<a href="#project_faq_67549" name="project_faq_67549">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">What engine are you using?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>We&#39;re taking advantage of the built in shaders, physics and other tech in Unity to produce and iterate quickly, letting us leap over traditional obstacles to game development and get things done fast, with plenty of shine on features.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-09-11T14:50:45-04:00">Wed, Sep 11 2013 2:50 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_67561">
+<div class="faq-question">
+<a href="#project_faq_67561" name="project_faq_67561">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Will this game have any DRM?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>No way, no how.  No DRM in Terminus whatsoever.  Not a chance.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-09-11T15:25:46-04:00">Wed, Sep 11 2013 3:25 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_68802">
+<div class="faq-question">
+<a href="#project_faq_68802" name="project_faq_68802">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Will it be on Steam?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>We&#39;ll do everything we can to get Terminus on Steam, but in the end it isn&#39;t up to us.  Steam is the number one place to be for games these days and it&#39;s the holy grail for any indie game.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-09-24T20:30:18-04:00">Tue, Sep 24 2013 8:30 pm EDT</time>
+</div>
+</div>
+</li>
+
+</ul>
+<div class="faq-ask-box">
+<a href="/projects/976465455/terminus-2/messages/new?message%5Bto%5D=976465455&amp;mode=FAQ" class="button button_blue remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Ask a question about Terminus">Ask a question</a>
+
+</div>
+</div>
+
+<div class="mt4 ml1 mr1 mb2" id="report-issue-wrap">
+<a href="/login?then=%2Fprojects%2F976465455%2Fterminus-2" class="button button_grey">Report this project to Kickstarter</a>
+</div>
+</div>
+<div class="NS-projects-rightcol grid_5" id="rightcol">
+<div class="NS_projects__ecom">
+<div class="digits_5 pb2 pl2 pt2" id="stats">
+<h5>
+<div class="num h48 no-margin" data-backers-count="724" id="backers_count"><data class="Project1667547105" data-format="number" data-value="724" itemprop="Project[backers_count]">724</data></div>
+<span><data class="Project1667547105" data-attr="backers_count" data-format="pluralize" data-value="724" data-word="Backer">Backers</data></span>
+</h5>
+<h5>
+<div class="num h48 no-margin" data-goal="28000.0" data-percent-raised="0.381341785714285714285714286" data-pledged="10677.57" id="pledged">
+<data class="Project1667547105" data-currency="CAD" data-format="shorter_money" data-precision="0" data-value="10677" data-without_code="true" itemprop="Project[pledged]">$10,677</data>
+<span class="money cad project_currency_code"></span>
+</div>
+pledged of
+<span class="money cad no-code">$28,000</span>
+goal
+</h5>
+<span data-duration="39.111863425925925" data-end_time="2013-10-18T18:00:00-04:00" data-hours-remaining="0" id="project_duration_data"></span>
+<div class="Project1667547105" data-conditions="[{&quot;!state&quot;:[&quot;canceled&quot;,&quot;suspended&quot;]}]" data-evaluation="true" data-render="&quot;&lt;h5 class=\&quot;poll \&quot; data-dynamic=\&quot;5\&quot; data-end_time=\&quot;2013-10-18T18:00:00-04:00\&quot; data-poll_url=\&quot;https://d2oher2uhvl0ur.cloudfront.net/projects/976465455/terminus-2/stats.json\&quot;&gt;\n&lt;div class=\&quot;num h48 no-margin\&quot;&gt;0&lt;/div&gt;\n&lt;span class=\&quot;text\&quot;&gt;seconds to go&lt;/span&gt;\n&lt;/h5&gt;\n&quot;"><h5 class="poll " data-dynamic="5" data-end_time="2013-10-18T18:00:00-04:00" data-poll_url="https://d2oher2uhvl0ur.cloudfront.net/projects/976465455/terminus-2/stats.json">
+<div class="num h48 no-margin">0</div>
+<span class="text">seconds to go</span>
+</h5>
+</div></div>
+<div class="Project1667547105" data-conditions="[{&quot;state&quot;:&quot;live&quot;},{&quot;!ended?&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;pr2 pl2\&quot; id=\&quot;pledge-wrap\&quot;&gt;\n&lt;a href=\&quot;/projects/976465455/terminus-2/pledge/new?clicked_reward=false\&quot; class=\&quot;button button_green button_box button_block\&quot; id=\&quot;button-back-this-proj\&quot; title=\&quot;Back this project\&quot;&gt;Back This Project &lt;small class=&#39;h6 normal block green-dark&#39;&gt;&lt;span class=\&quot;money cad \&quot;&gt;$1&lt;/span&gt; minimum pledge&lt;/small&gt;&lt;/a&gt;\n&lt;/div&gt;\n&quot;"></div><div class="Project1667547105" data-conditions="[{&quot;state&quot;:&quot;live&quot;}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;p2\&quot; id=\&quot;banner\&quot;&gt;\n&lt;p class=\&quot;tiny_type no-margin\&quot;&gt;\nThis project will only be funded if at least\n&lt;span class=\&quot;money cad \&quot;&gt;$28,000&lt;/span&gt;\nis pledged by\n&lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;llll z\&quot; datetime=\&quot;2013-10-18T18:00:00-04:00\&quot;&gt;Fri, Oct 18 2013 6:00 pm EDT&lt;/time&gt;.\n&lt;/p&gt;\n&lt;/div&gt;\n&quot;"></div></div>
+
+<div class="NS_projects__rightcol_projectby bg-blue-light rounded">
+<div class="p2 clearfix">
+<div class="avatar inline-block align-middle">
+<a href="/projects/976465455/terminus-2/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography"><img alt="Indiegogo3.small" class="avatar-small" height="80" src="https://s3.amazonaws.com/ksr/avatars/7555533/indiegogo3.small.jpg?1377547691" width="80" />
+</a></div>
+<div class="creator-name inline-block align-middle ml1">
+<h6 class="mb1">Project by</h6>
+<h5 class="mb1">
+<a href="/projects/976465455/terminus-2/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">Ryan Czech</a>
+</h5>
+<p class="location h6 bold mb1">
+<a href="/discover/places/vancouver-ca">Vancouver, Canada</a>
+</p>
+</div>
+</div>
+<div class="creator-details pl2 pr2 pb1">
+<ul class="list-simple h5 mb1">
+<li class="projects">
+<span class="ss-icon ss-kickstarter grey-dark margin-right"></span>
+<span class="text">
+First created
+<span class="divider">&middot;</span>
+0 backed
+</span>
+</li>
+<li>
+<span class="ss-icon ss-facebook margin-right grey-dark"></span>
+<span class="text">
+Has not connected Facebook
+</span>
+</li>
+<li class="links">
+<span class="ss-icon ss-globe margin-right grey-dark"></span>
+<span class="text">
+<a href="http://harbourgames.com" class="popup" rel="nofollow" target="_blank">harbourgames.com</a>
+</span>
+</li>
+</ul>
+</div>
+<div class="footer center h5 bold clearfix rounded-bottom clip">
+<a href="/projects/976465455/terminus-2/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">See full bio</a>
+<a href="/projects/976465455/terminus-2/messages/new?message%5Bto%5D=976465455" class="remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Send a message to Ryan Czech">Contact me</a>
+
+</div>
+</div>
+
+<ul class="NS-projects-rightcol-rewards rounded clip list mt2" data-reward-count="11" id="what-you-get">
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money cad ">$5</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+388 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Survivor Tier: &quot;Terminus&quot; DRM-free digital download of the full and complete game when it is released.   You&#39;ll also receive news from the frontier of development delivered to your inbox every month!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-04-01">Apr 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money cad ">$10</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+151 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Refugee Tier:  Early access to developer diaries.  Plus the full, DRM-free game soundtrack composed by Christopher Orgeron in FLAC or MP3 as a digital download. Plus all previous tiers.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-04-01">Apr 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money cad ">$20</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+97 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Colonist Tier: Two digital copies of the game plus high-quality PDF of the &quot;Art of Terminus&quot; art book containing concept art pieces, sketches, game-assets, commentary and discussion from the designer and the artists. Also the &quot;Building Better Worlds&quot; PDF containing design and programming discussion from the developers. A must for aspiring designers! Plus all previous tiers.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-04-01">Apr 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money cad ">$30</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+7 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Engineer Tier:  Printable, high-resolution CD-sleeves and printable high-resolution game box art.  Plus all previous tiers.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-04-01">Apr 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money cad ">$40</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+20 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Prospector Tier: Four digital copies of the game plus Beta access to the game as well as the opportunity to add your name in the credits as a supporter.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-04-01">Apr 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money cad ">$50</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+38 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Surveyor Tier: Digital, high-res poster of Terminus art, as well as alpha and beta access to the game. You also receive the opportunity to vote on game features to help guide development.  Plus all previous tiers.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-04-01">Apr 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money cad ">$80</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+4 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Councillor Tier: Physical, printed poster of Terminus art to put on the wall, signed by your choice of design team member if you so choose, as well as six digital download copies. Plus all previous tiers.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-04-01">Apr 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money cad ">$120</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+9 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Architect Tier: A physical disc with Special Edition art on the jewel case.  Jewel case can be signed by your choice of team member. Your name added with &quot;Special Support&quot; in the credits. Plus all previous tiers.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-04-01">Apr 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money cad ">$400</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Commissioner Tier: Lithographed concept art, signed (if you choose) by the artist as well as hard-cover book prints of &quot;Art of Terminus&quot; and &quot;Building Better Worlds&quot; featuring concept art, game art and developer commentary on the design process. Plus all previous tiers.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-04-01">Apr 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money cad ">$750</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(4 left of 5)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Administrator Tier: Share a meal or drink with the lead designer anywhere within 200km of Vancouver, Canada plus a 3d printed model of the colony ship or building of your choice.  Plus all previous tiers.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-04-01">Apr 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money cad ">$2,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(5 left of 5)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Visionary of Earth Tier:  Your name or business name/logo in the opening credits of the game. Plus all previous tiers.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-04-01">Apr 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+</ul>
+
+<div class="p2" id="meta">
+<h5>Funding period</h5>
+<p class="tiny_type">
+<time class="js-adjust" data-format="ll" datetime="2013-09-09T15:18:55-04:00">Sep 9, 2013</time> - 
+<time class="js-adjust" data-format="ll" datetime="2013-10-18T18:00:00-04:00">Oct 18, 2013</time>
+(39 days)
+</p>
+</div>
+</div>
+
+</div>
+
+<a href="#" id="video_mode_tab" style="display: none;">
+View in Video Mode
+</a>
+
+</div>
+</div>
+
+
+</div>
+
+<div class="h5 bg-green-dark" id="mega-footer-wrap">
+<div class="bg-green-dark white full-height" id="footer-newsletter-signup">
+<div class="container py4">
+<div class="grid_8 prefix_4 suffix_4 center mt4">
+<h2>
+Eureka! You've found
+<br>
+our little secret.
+</h2>
+<p>Sign up for our Happening email for all the inside info about arts and culture in the Kickstarter universe and beyond.</p>
+<div class="newsletter_signup">
+<form accept-charset="UTF-8" action="/newsletters/happening/signup" class="overlabels" method="post"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /><input class="hidden" name="authenticity_token" type="hidden" value="RQPDOfhiTIXp9hoESJyo2EbDqPEay9ogzZieVdXZUNM=" /></div><input class="hidden" id="location" name="location" type="hidden" value="footer" />
+<textarea class="hide textarea" id="comment" name="comment">
+</textarea>
+<div class="field newsletter">
+<label class="overlabel z1 overlabel-newsletter">Email address</label>
+<input class="text" id="email" name="email" type="text" />
+</div>
+<input class="button button_green submit" name="commit" type="submit" value="Submit" />
+</form>
+
+</div>
+
+</div>
+</div>
+</div>
+<div class="container relative" id="mega-footer">
+<span class="scissors icon-scissors-1"></span>
+<div class="grid_16 alpha omega pt4 pb2" id="mega-footer-links">
+<div class="grid_4 link-group">
+<h5 class="white">About us</h5>
+<ul class="list">
+<li><a href="/year/2013/?ref=footer">2013 highlights</a></li>
+<li><a href="/year/2012?ref=footer">2012 highlights</a></li>
+<li><a href="/team?ref=footer">Who we are</a></li>
+<li><a href="/jobs?ref=footer">Jobs</a></li>
+<li><a href="/press?ref=footer">Press</a></li>
+<li><a href="/help/stats?ref=footer">Stats</a></li>
+<li><a href="/newsletters/weekly">Projects we love</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group">
+<h5><a href="/help?ref=footer" class="white">Help</a></h5>
+<ul class="list">
+<li><a href="/hello?ref=footer">What is Kickstarter?</a></li>
+<li><a href="/help?ref=footer">FAQ</a></li>
+<li><a href="/contact?ref=footer">Support</a></li>
+<li><a href="/help/school?ref=footer">Kickstarter School</a></li>
+<li><a href="/terms-of-use?ref=footer">Terms of Use</a></li>
+<li><a href="/privacy?ref=footer">Privacy Policy</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group alpha omega suffix_1">
+<h5 class="alpha"><a href="/discover/advanced?ref=footer" class="white">Discover</a></h5>
+<ul class="column column-0 grid_2 list">
+<li><a href="/discover/categories/art?ref=footer">Art</a></li>
+<li><a href="/discover/categories/comics?ref=footer">Comics</a></li>
+<li><a href="/discover/categories/dance?ref=footer">Dance</a></li>
+<li><a href="/discover/categories/design?ref=footer">Design</a></li>
+<li><a href="/discover/categories/fashion?ref=footer">Fashion</a></li>
+<li><a href="/discover/categories/film%20&amp;%20video?ref=footer">Film &amp; Video</a></li>
+<li><a href="/discover/categories/food?ref=footer">Food</a></li>
+</ul>
+<ul class="column column-1 grid_2 list">
+<li><a href="/discover/categories/games?ref=footer">Games</a></li>
+<li><a href="/discover/categories/music?ref=footer">Music</a></li>
+<li><a href="/discover/categories/photography?ref=footer">Photography</a></li>
+<li><a href="/discover/categories/publishing?ref=footer">Publishing</a></li>
+<li><a href="/discover/categories/technology?ref=footer">Technology</a></li>
+<li><a href="/discover/categories/theater?ref=footer">Theater</a></li>
+</ul>
+</div>
+<div class="grid_3 link-group">
+<h5 class="white">Hello</h5>
+<ul class="list">
+<li>
+<a href="https://twitter.com/kickstarter"><span class="ss-icon ss-social-regular ss-twitter"></span>
+Twitter
+</a></li>
+<li>
+<a href="https://www.facebook.com/Kickstarter"><span class="ss-icon ss-social-regular ss-facebook"></span>
+Facebook
+</a></li>
+<li>
+<a href="http://kickstarter.tumblr.com"><span class="ss-icon ss-social-regular ss-tumblr"></span>
+Tumblr
+</a></li>
+<li>
+<a href="http://instagram.com/kickstarter"><span class="ss-icon ss-social-regular ss-instagram"></span>
+Instagram
+</a></li>
+<li>
+<a href="https://vine.co/Kickstarter"><span class="ss-icon ss-social-regular ss-vine"></span>
+Vine
+</a></li>
+<li>
+<a href="/blog?ref=footer">Blog</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="grid_16 py4" id="mega-footer-bottom">
+<div class="logo left">
+<a href="/" class="grey-dark"><span class="ss-icon h3">KICKSTARTER</span>
+</a></div>
+<p class="right h5 grey-dark">
+&copy;
+2014
+Kickstarter, Inc.
+</p>
+</div>
+</div>
+</div>
+
+<script>
+  //<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    var analytics_vars = { google_analytics_id : "UA-7621056-1", logged_in : "false", social_user: "false" }
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.mixpanel_id = '75b1d24a516ecfc955eadfadc4910661';
+    window.mixpanel_debug = false;
+  //]]>
+</script>
+
+
+<noscript>
+<img alt="Quantcast" border="0" height="1" src="//secure.quantserve.com/pixel/p-34IbSpw2K94Sg.gif" style="display:none" width="1" />
+</noscript>
+
+
+<script>
+  //<![CDATA[
+    window.benchmark = (typeof window.performance == 'object' && typeof window.performance.mark == 'function');
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    (function (root) {
+      function instrument_function (original) {
+        return function () {
+          try {
+            return original.apply(this, arguments);
+          } catch (e) {
+            if (e.stack && root.Honeybadger) {
+              Honeybadger.notify(e, {
+                current_project : root.current_project,
+                current_user : root.current_user
+              });
+            }
+            throw(e);
+          }
+        };
+      }
+      root.instrument_function = instrument_function;
+    }(this));
+  //]]>
+</script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+
+<script>
+  //<![CDATA[
+    (function(){function c(a){this.local_start_time=new Date;this.settings={cookie_name:"request_time"};for(var b in a)this.settings[b]=a[b];this.get_remote_offset()}c.prototype.get_remote_offset=function(){this.cookie_value=this.read_cookie();var a=new Date(this.cookie_value);if(!this.cookie_value||"Invalid Date"===a.toString()){if(this.remote_offset=this.read_cookie("local_offset"))this.remote_offset=parseInt(this.remote_offset,10)}else this.remote_offset=a-this.local_start_time;"undefined"!==typeof this.remote_offset&& !isNaN(this.remote_offset)?(document.cookie="local_offset="+this.remote_offset+"; path=/",this.is_set=!0):this.is_set=!1};c.prototype.time_units=[["milliseconds",1],["seconds",1E3],["minutes",6E4],["hours",36E5],["days",864E5]];c.prototype.get_units_in_interval=function(a,b){var d=a.replace(/^\w/,function(d){return"get"+d.toUpperCase()});return b[d]()};c.prototype.milliseconds_in_day=function(a){"undefined"===typeof a&&(a=new Date);for(var b=0,d=this.time_units.length-2;0<=d;d--)b+=this.get_units_in_interval(this.time_units[d][0], a)*this.time_units[d][1];return b};c.prototype.milliseconds_in_interval=function(a,b){return this.milliseconds_in_day(b)%a};c.prototype.milliseconds_to_next_interval=function(a,b){return a-this.milliseconds_in_interval(a,b)};c.prototype.pluralize=function(a,b){1===b&&(a=a.replace(/s$/,""));return a};c.prototype.read_cookie=function(a){for(var b=window.document.cookie.split(";"),a=(a||this.settings.cookie_name)+"=",d=0;d<b.length;d++){for(var e=b[d];" "==e.charAt(0);)e=e.substring(1,e.length);if(0== e.indexOf(a))return b=e.substring(a.length,e.length),decodeURIComponent(b).replace(/\+/g," ")}return null};c.prototype.destroy_cookie=function(a){var b=new Date;a||(a=this.settings.cookie_name);b.setTime(b.getTime()-864E5);window.document.cookie=a+"=; expires="+b.toGMTString()+"; path=/"};c.prototype.get_remote_time=function(){var a=new Date,b=a.getTime()+this.remote_offset;return a=a.setTime(b)};window.ksr_page_clock=new c})(); (function(){function c(d,a,b){if(d){this.options={unit_base:{seconds:119,minutes:119,hours:72,days:0},end_phrase:d.getAttribute("data-word")||"to go",count_down:d.getAttribute("data-dynamic")||!1};for(k in b)this.options[k]=b[k];this.clock=a;this.time_units=this.clock.time_units.slice(1);this.element=d;this.clock.is_set&&this.attach()}}function a(){this.elements=[];this.attach()}var b=function(d,a){var b=a||window.document.body,c=d.split("."),g=c[c.length-1],c=1<c.length&&c[0]?c[0]:"*";if(window.document.getElementsByClassName)return b.getElementsByClassName(g); if(b.querySelectorAll)return b.querySelectorAll(d);for(var c=b.getElementsByTagName(c),h=[],i=0,f;f=c[i];i++)b=RegExp("(^|\\s)"+g+"(\\s|$)"),(""+f.className).match(b)&&h.push(f);return h};c.prototype.get_remaining_time=function(){var d=this.remote_end_time-this.clock.get_remote_time();0>d&&(d=0);return d};c.prototype.get_current_unit=function(){for(var d,a=0;a<this.time_units.length&&!(d=this.time_units[a],this.get_remaining_time()<=this.options.unit_base[d[0]]*d[1]);a++);return d};c.prototype.update_element= function(){var a=this.get_current_unit(),b=Math.floor(this.get_remaining_time()/a[1]);isNaN(b)||(this.number_element.innerHTML=b,this.text_element.innerHTML=this.clock.pluralize(a[0],b)+" "+this.options.end_phrase)};c.prototype.valid=function(){return!(!this.number_element||!this.text_element)};c.prototype.attach=function(){function a(){c.update_element();if(c.options.count_down&&0<c.get_remaining_time()){var b=c.get_current_unit();this.timeout=window.setTimeout(a,c.clock.milliseconds_to_next_interval(b[1]))}} var c=this;if(this.remote_end_time_string=this.element.getAttribute("data-end_time"))this.remote_end_time_string.match(/^\d+$/)?(this.remote_end_time=new Date,this.remote_end_time.setTime(this.remote_end_time_string)):this.remote_end_time=new Date(this.remote_end_time_string),this.number_element=b(".num",this.element)[0],this.text_element=b(".text",this.element)[0],this.element.ksr_page_timer=!0,this.valid()&&a()};c.prototype.cancel=function(){this.timeout&&clearTimeout(this.timeout)};a.prototype.loading= !0;a.prototype.stop_finding=function(){this.attach_timers();this.loading=!1;document.addEventListener?document.removeEventListener("DOMContentLoaded",this.stop_finding,!1):document.attachEvent&&"complete"===document.readyState&&document.detachEvent("onreadystatechange",this.stop_finding)};a.prototype.bind_ready=function(){var a=this,b=function(){a.stop_finding.call(a)};document.addEventListener?(document.addEventListener("DOMContentLoaded",b,!1),window.addEventListener("load",b,!1)):document.attachEvent&& (document.attachEvent("onreadystatechange",b),window.attachEvent("onload",b))};a.prototype.attach_timers=function(){for(var a=b("div.ksr_page_timer"),e=0;e<a.length;e++)a[e].ksr_page_timer||(new c(a[e],window.ksr_page_clock),this.elements.push(a[e]))};a.prototype.attach=function(){var a=this;this.bind_ready();(function(){a.attach_timers();a.loading&&window.setTimeout(function(){a.attach_timers()},200)})()};window.ProjectTimer=c;new a})();
+  //]]>
+</script>
+
+<script class="template" id="template-widgets__video_embed_code" type="text/x-tmpl-mustache"><iframe width="{{width}}" height="{{height}}" src="{{{path}}}" frameborder="0" scrolling="no"> </iframe>
+</script><script class="template" id="template-projects__baseball_card_tall" type="text/x-tmpl-mustache"><div class="project-card-wrap project-card-wrap-tall border bg-white rounded clip">
+  <div class="project-card relative project-live {{#successful?}}successful{{/successful?}}">
+    <div class="project-thumbnail pt1 pl1 pr1">
+      <a href="{{urls.web.project}}" target="">
+        <img alt="Photo-little" class="projectphoto-little" src="{{photo.little}}" class="fit">
+      </a>
+    </div>
+    <div class="project-card-interior p1 h6 grey-dark">
+      <h6 class="project-title">
+        <a href="{{urls.web.project}}" target="" class="green-dark">{{name}}</a>
+      </h6>
+      <p class="mb1 ellipsis">
+        by
+        {{creator.name}}
+      </p>
+      <p class="blurb">
+        {{blurb}}
+      </p>
+    </div>
+    <div class="absolute-bottom bg-white rounded-bottom">
+
+      {{#location}}
+        <ul class="p1 list project-meta no-margin h6">
+          <li class="ellipsis">
+            <a href="{{location.urls.web.discover}}" data-location="{{location_json}}" class="grey-dark">
+              <span class="ss-icon ss-location"></span>
+              <span class="location-name">{{location.displayable_name}}</span>
+            </a>
+          </li>
+        </ul>
+      {{/location}}
+
+      <div class="project-stats-wrap pb1 pl1 pr1">
+
+        {{#failed?}}
+          <div class='project-status project-failed h6'>
+            <strong> Funding Unsuccessful</strong><br />
+            <span class="grey-dark">Project ended on {{formatted_deadline}}</span>
+          </div>
+        {{/failed?}}
+
+        {{#canceled?}}
+          <div class='project-status project-canceled h6'>
+            <strong> Funding Canceled</strong><br />
+            <span class="grey-dark">Project canceled on {{formatted_state_changed_at}}</span>
+          </div>
+        {{/canceled?}}
+
+        {{#successful?}}
+          <div class='project-pledged-successful bg-green white h6 pl1 pr1 mb1'>
+            <strong>Successful!</strong>
+          </div>
+        {{/successful?}}
+
+        {{#live_or_successful?}}
+          {{#live?}}
+            <div class="project-pledged-wrap bg-grey clip mb1">
+              <div class="project-pledged bg-green full-height" style="width: {{percent_raised_to_100}}%"></div>
+            </div>
+          {{/live?}}
+          <ul class="project-stats list no-margin h6 no-wrap">
+            <li class="first funded inline-block mr1">
+              <strong class="block h6">{{percent_raised_rounded}}%</strong>
+              <span class="grey-dark">funded</span>
+            </li>
+            <li class="pledged inline-block mr1">
+              <strong class="block h6">{{currency_symbol}}{{formatted_money}}</strong>
+              <span class="grey-dark">pledged</span>
+            </li>
+            {{#successful?}}
+              <li class="last successful inline-block">
+                <strong class="block h6">Funded</strong>
+                <div class="deadline grey-dark">{{formatted_deadline}}</div>
+              </li>
+            {{/successful?}}
+            {{#live?}}
+              <li class="last ksr_page_timer inline-block" data-end_time="{{javascript_deadline}}">
+                <strong class="block h6">
+                  <div class="num">30</div>
+                </strong>
+                <div class="span text grey-dark" data-word="left">days to go</div>
+              </li>
+            {{/live?}}
+          </ul>
+        {{/live_or_successful?}}
+      </div>
+    </div>
+  </div>
+</div>
+
+{{#friends_backing?}}
+  <div class="friend_project_context">
+    <div class="friend_facepile">
+      {{#truncated_friends}}
+        <img src="{{avatar.thumb}}" class="{{#has_metadata?}}small{{/has_metadata?}}">
+      {{/truncated_friends}}
+    </div>
+    <p class="friend_namepile">
+      {{{escaped_sentence}}}
+    </p>
+  </div>
+{{/friends_backing?}}
+</script><script class="template" id="template-projects__video_mode" type="text/x-tmpl-mustache"><a href='#' id='video_mode_close' class='close_button z2'><span class='ss-icon ss-delete'></span></a>
+
+<div class='title_card z1 {{context_classes}}' style="display:none;">
+  <div class='interior'>
+    <h2 class='project_title normal_weight'>{{name}}</h2>
+    <p class='blurb'>{{blurb}}</p>
+    <nav class='bar'>
+      <a id='play_button' class='left play' href='#'>
+        <span class='play_active'>
+          <span class='ss-icon ss-play'></span>
+          Play
+        </span>
+        <span class='pause_active'>
+          <span class='ss-icon ss-pause'></span>
+          Pause
+        </span>
+      </a>
+      {{#logged_in}}
+        <div class='remind right'>
+          {{#if_not_starred}}
+            <a class='follow' href='{{urls.web.project}}/watch'><span class='ss-icon ss-star'></span></a>
+          {{/if_not_starred}}
+          {{#if_starred}}
+            <a class='unfollow' href='{{urls.web.project}}/unwatch'><span class='ss-icon ss-star active'></span></a>
+          {{/if_starred}}
+        </div>
+      {{/logged_in}}
+      <a class='right explore button button_green small' href='#'>Explore this project</a>
+    </nav>
+  </div>
+</div>
+
+<div class='channel_controls z1'>
+  <a href='#' class='{{#playlist_is_location}}selected {{/playlist_is_location}}location'>Something else near {{location.first_name}} <span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_featured}}selected {{/playlist_is_featured}}featured'>Something different<span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_category}}selected {{/playlist_is_category}}category'>Something else in {{category.name}} <span class='ss-icon ss-navigateright'></span></a>
+</div>
+
+<div class='project_video' style='background-image: url('{{photo.full}}')'>
+  <div class='cover'>
+    <video>
+      <source src='{{video.high}}' type='video/mp4'/>
+      <source src='{{video.webm}}' type='video/webm'/>
+    </video>
+  </div>
+</div>
+</script><script class="template" id="template-site__video_mode_fourohfour" type="text/x-tmpl-mustache"><section class='four_oh_four'>
+  <p class='big_type'>
+    Looks like you've reached the end of the line! <br />Check out <a class="another" href='#'>another channel</a> or <a href='/discover'>browse projects in discover</a>.
+  </p>
+</section>
+</script>
+
+<script id="schwamm_formatting_options" type="text/javascript">
+//<![CDATA[
+(function(){window.formatters = window.formatters || {}; var formatting_options = {"distance_date_intervals":[[5,"just now"],[29,"less than a minute ago"],[89,"1 minute ago"],[2640,"%m minutes ago"],[5340,"about 1 hour ago"],[82800,"about %h hours ago"],[147600,"1 day ago"],[604800,"%d days ago"],[15552000,"on %t"],[0,"on %y"]],"currency_symbol_mappings":{"AFN":"\u060b","ALL":"Lek","ARS":"$","AUD":"$","AWG":"\u0192","AZN":"\u043c\u0430\u043d","BAM":"KM","BBD":"$","BGN":"\u043b\u0432","BMD":"$","BND":"$","BOB":"$b","BRL":"R$","BSD":"$","BWP":"P","BYR":"p.","BZD":"BZ$","CAD":"$","CLP":"$","CNY":"\u00a5","COP":"$","CRC":"\u20a1","CUP":"\u20b1","CZK":"K\u010d","DKK":"kr","DOP":"RD$","EGP":"\u00a3","EUR":"\u20ac","FJD":"$","FKP":"\u00a3","GBP":"\u00a3","GIP":"\u00a3","GTQ":"Q","GYD":"$","HKD":"$","HNL":"L","HRK":"kn","HUF":"Ft","IDR":"Rp","ILS":"\u20aa","IRR":"\ufdfc","ISK":"kr","JMD":"J$","JPY":"\u00a5","KGS":"\u043b\u0432","KHR":"\u17db","KPW":"\u20a9","KRW":"\u20a9","KYD":"$","KZT":"\u043b\u0432","LAK":"\u20ad","LBP":"\u00a3","LKR":"\u20a8","LRD":"$","LTL":"Lt","LVL":"Ls","MKD":"\u0434\u0435\u043d","MNT":"\u20ae","MUR":"\u20a8","MXN":"$","MYR":"RM","MZN":"MT","NAD":"$","NGN":"\u20a6","NIO":"C$","NOK":"kr","NPR":"\u20a8","NZD":"$","OMR":"\ufdfc","PAB":"B/.","PEN":"S/.","PHP":"\u20b1","PKR":"\u20a8","PLN":"z\u0142","PYG":"Gs","QAR":"\ufdfc","RON":"lei","RSD":"\u0414\u0438\u043d.","RUB":"\u0440\u0443\u0431","SAR":"\ufdfc","SBD":"$","SCR":"\u20a8","SEK":"kr","SGD":"$","SHP":"\u00a3","SOS":"S","SRD":"$","SVC":"$","SYP":"\u00a3","THB":"\u0e3f","TRY":"TL","TTD":"TT$","TWD":"NT$","UAH":"\u20b4","USD":"$","UYU":"$U","UZS":"\u043b\u0432","VEF":"Bs","VND":"\u20ab","YER":"\ufdfc","ZAR":"R"},"currency_trailing_code_mappings":{"AUD":true,"CAD":true,"NZD":true,"USD":true},"currency_formats":["money","shorter_money"]}; for (key in formatting_options) {window.formatters[key] = formatting_options[key]};}());
+//]]>
+</script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("begin_base.js_tag");}
+  //]]>
+</script>
+<script src="https://d297h9he240fqh.cloudfront.net/assets/packages/base-45cdab84617ddfb8905b7cddc8500c19.js" type="text/javascript"></script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("end_base.js_tag");}
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    document.domain='kickstarter.com';
+  //]]>
+</script>
+
+<iframe height="0" id="api_xdreceiver" src="https://api.kickstarter.com/xdreceiver/85e6.html" style="display: none;" width="0"></iframe>
+
+
+
+<div id="fb-root"></div>
+<script>
+  //<![CDATA[
+    var channelUrl = window.location.protocol + "//" + window.location.host + "/channel.html",
+      skip_autologin = $('body').is('.skip_autologin');
+    
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId: window.fb_app_id,
+        channelUrl: channelUrl,
+        status: true,    // check login status
+        cookie: true,    // enable cookies to allow the server to access the session
+        xfbml: true,     // parse XFBML
+        logging: false   // turn off logging
+      });
+    
+      FB.getLoginStatus(function (response) {
+        if (response.status === 'connected') {
+          if (read_cookie("logout_from_fb")) {
+            FB.logout();
+            destroy_cookie("logout_from_fb");
+          } else if (!skip_autologin) {
+            $.get("/fb/autologin", {'fbsr': response.authResponse.signedRequest});
+          } else if (false && 0 == response.authResponse.userID) {
+            $.get("/fb/refresh", {'fbsr': response.authResponse.signedRequest});
+          }
+        } else {
+          if (read_cookie("logout_from_fb")) {
+            destroy_cookie("logout_from_fb");
+          }
+        }
+      })
+    
+      $(document).trigger('fb:loaded');
+    };
+    
+    
+    // Load the SDK Asynchronously
+    (function(d){
+      var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+      js = d.createElement('script'); js.id = id; js.async = true;
+      js.src = "//connect.facebook.net/en_US/all.js";
+      d.getElementsByTagName('head')[0].appendChild(js);
+    }(document));
+  //]]>
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,2362 @@
+<!DOCTYPE html>
+<html class="projects_show  fontface no-js" lang="en">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# kickstarter: http://ogp.me/ns/fb/kickstarter#">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-5.newrelic.com","errorBeacon":"jserror.newrelic.com","licenseKey":"b04b883ad2","applicationID":"11086","transactionName":"cFteRUULX1wHFhtIEFxeVVJDFxxDCgtD","queueTime":11,"applicationTime":359,"ttGuid":"","agentToken":null,"agent":"js-agent.newrelic.com/nr-411.min.js"}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"Vw4BVEVSCQMIUg=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e){function n(t,e,n){n||(n={});for(var r=o[t],a=r&&r.length||0,s=n[i]||(n[i]={}),u=0;a>u;u++)r[u].apply(s,e);return s}function r(t,e){var n=o[t]||(o[t]=[]);n.push(e)}var o={},i="nr@context";e.exports={on:r,emit:n}},{}],2:[function(t){function e(t,e,n,i,s){return u?u-=1:r("err",[s||new UncaughtException(t,e,n)]),"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t(5),a=window.onerror,s=!1,u=0;t("loader").features.push("err"),window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(d){"stack"in d&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(4),s=!0)}i.on("fn-start",function(){s&&(u+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&u>0&&(u-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:4,3:3,4:6,5:1,6:14,handle:"D5DuLP",loader:"G9z0Bl"}],3:[function(t){function e(t){r.inPlace(t,["addEventListener","removeEventListener"],"-",n)}function n(t){return t[1]}var r=t(1),o=(t(3),t(2));if(e(window),"getPrototypeOf"in Object){for(var i=document;i&&!i.hasOwnProperty("addEventListener");)i=Object.getPrototypeOf(i);i&&e(i);for(var a=XMLHttpRequest.prototype;a&&!a.hasOwnProperty("addEventListener");)a=Object.getPrototypeOf(a);a&&e(a)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&e(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=e["nr@wrapped"]?t[1]=e["nr@wrapped"]:e["nr@wrapped"]=t[1]=r(e,"fn-"):"function"==typeof e.handleEvent&&r.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:15,2:1,3:14}],4:[function(t){var e=(t(3),t(1)),n=t(2);e.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=e(t[0],"fn-")})},{1:15,2:1,3:14}],5:[function(t){function e(t){var e=t[0];"string"==typeof e&&(e=new Function(e)),t[0]=n(e,"fn-")}var n=(t(3),t(1)),r=t(2);n.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",e)},{1:15,2:1,3:14}],6:[function(t){function e(){o.inPlace(this,s,"fn-")}function n(t,e){o.inPlace(e,["onreadystatechange"],"fn-")}function r(t,e){return e}var o=t(1),i=t(2),a=window.XMLHttpRequest,s=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];window.XMLHttpRequest=function(t){var n=new a(t);try{i.emit("new-xhr",[],n),o.inPlace(n,["addEventListener","removeEventListener"],"-",function(t,e){return e}),n.addEventListener("readystatechange",e,!1)}catch(r){try{i.emit("internal-error",r)}catch(s){}}return n},window.XMLHttpRequest.prototype=a.prototype,o.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",r),i.on("send-xhr-start",n),i.on("open-xhr-start",n)},{1:15,2:1}],7:[function(t){function e(){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;u>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,d="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=e(d);if(f&&(r.rxSize=f),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}t("loader").features.push("xhr");var o=t("handle"),i=t(1),a=t(5),s=["load","error","abort","timeout"],u=s.length,d=t(2);t(3),t(4),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var d=e(o);d&&(r.txSize=d)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",e)}catch(r){}}};for(var f=0;u>f;f++)n.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&e()},{1:8,2:11,3:3,4:6,5:1,handle:"D5DuLP",loader:"G9z0Bl"}],8:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e){var n=r[t];return n?n.apply(this,e):(o[t]||(o[t]=[]),void o[t].push(e))}var r={},o={};e.exports=n,n.queues=o,n.handlers=r},{}],11:[function(t,e){function n(t){if(!t||"object"!=typeof t&&"function"!=typeof t)return-1;if(t===window)return 0;if(o.call(t,"__nr"))return t.__nr;try{return Object.defineProperty(t,"__nr",{value:r,writable:!0,enumerable:!1}),r}catch(e){return t.__nr=r,r}finally{r+=1}}var r=1,o=Object.prototype.hasOwnProperty;e.exports=n},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&u&&u.body){p.proto="https"===c.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=u.createElement("script");e.src=p.proto+t.agent,u.body.appendChild(e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,u=s.document,d="addEventListener",f="attachEvent",c=(""+location).split("?")[0],p=e.exports={offset:i(),origin:c,features:[]};u[d]?(u[d]("DOMContentLoaded",o,!1),s[d]("load",n,!1)):(u[f]("onreadystatechange",r),s[f]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],14:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],15:[function(t,e){function n(t,e,r,s){function nrWrapper(){try{var n,a=u(arguments),d=this,f=r&&r(a,d)||{}}catch(c){i([c,"",[a,d,s],f])}o(e+"start",[a,d,s],f);try{return n=t.apply(d,a)}catch(p){throw o(e+"err",[a,d,p],f),p}finally{o(e+"end",[a,d,n],f)}}return a(t)?t:(e||(e=""),nrWrapper[n.flag]=!0,nrWrapper)}function r(t,e,r,o){r||(r="");var i,s,u,d="-"===r.charAt(0);for(u=0;u<e.length;u++)s=e[u],i=t[s],a(i)||(t[s]=n(i,d?s+r:r,o,s,t))}function o(t,e,n){try{s.emit(t,e,n)}catch(r){i([r,t,e,n])}}function i(t){try{s.emit("internal-error",t)}catch(e){}}function a(t){return!(t&&"function"==typeof t&&t.apply&&!t[n.flag])}var s=t(1),u=t(2);e.exports=n,n.inPlace=r,n.flag="nr@wrapper"},{1:1,2:14}]},{},["G9z0Bl",2,7]);</script><script>
+  //<![CDATA[
+    docElement = this.document.documentElement;
+    docElement.className=docElement.className.replace(/\bno-js\b/,'') + 'js';
+  //]]>
+</script>
+<title>Shroud of the Avatar: Forsaken Virtues by Portalarium, Inc. &mdash; Kickstarter</title><script>
+  //<![CDATA[
+    window.report_errors = true;
+    window.honeybadger_configuration = {
+      api_key : "02ab109335c0dd1a93506d92f22217a7",
+      environment : "production",
+      component : "projects",
+      action : "show",
+      onerror : false
+    };
+  //]]>
+</script>
+
+
+<!--[if lt IE 9]>
+  <script src="//html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta content="telephone=no" name="format-detection">
+
+<!--[if !IE]> -->
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base-9f623ad5d021a188cfb2d68a0cdf7a7b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<!-- <![endif]-->
+<!--[if IE]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base_blessed-2640c72487552f9a2ef9f2620b4af860.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<!--[if lte IE 9]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_nine-a93fe10530f175f96c4078b7e070d7e1.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 8]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_eight-f75aeb274436f94a0d243774456b1c62.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 7]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie-c019c01acd3a96588b346cf577a3504f.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_seven-5a3d2cef660cd281fd844b04b2397dbb.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if IE 6]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_six-e4d3caf76e405fe19aee6ece8bda701b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<link href="https://d297h9he240fqh.cloudfront.net/favicon.png" rel="icon" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-precomposed-7b603dba7cf80e4acc57d94a991bebbd.png" rel="apple-touch-icon-precomposed" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-ipad-precomposed-3176f72977daf43dee3b0d348484dc01.png" rel="apple-touch-icon-precomposed" sizes="72x72" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-iphone4-precomposed-b93b70168cd8492c843d0fea873c7f83.png" rel="apple-touch-icon-precomposed" sizes="114x114" type="image/png">
+<link href="https://www.kickstarter.com/services/oembed?url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Fportalarium%2Fshroud-of-the-avatar-forsaken-virtues-0" rel="alternate" title="Shroud of the Avatar: Forsaken Virtues Script Tag oEmbed" type="application/json+oembed">
+<link rel="alternate" type="application/atom+xml" title="Shroud of the Avatar: Forsaken Virtues : Kickstarter" href="https://www.kickstarter.com/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/posts.atom" />
+<meta property="twitter:app:id:iphone" content="596961532"/>
+<meta property="twitter:app:name:iphone" content="Kickstarter"/>
+<meta property="twitter:app:url:iphone" content="ksr://www.kickstarter.com/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0"/>
+<meta name="video_height" content="360"/>
+<meta name="video_width" content="640"/>
+<meta name="video_type" content="application/x-shockwave-flash"/>
+<meta name="title" content="Kickstarter &gt;&gt; Shroud of the Avatar: Forsaken Virtues by Portalarium, Inc."/>
+<meta name="description" content="Portalarium, Inc. is raising funds for Shroud of the Avatar: Forsaken Virtues on Kickstarter! 
+
+ Lord British returns to his fantasy RPG roots with Shroud of the Avatar, hearkening back to his innovative early work."/>
+<meta property="og:title" content="Shroud of the Avatar: Forsaken Virtues"/>
+<meta property="og:type" content="kickstarter:project"/>
+<meta property="og:image" content="https://s3.amazonaws.com/ksr/projects/468235/photo-main.jpg?1397811227"/>
+<meta property="og:url" content="https://www.kickstarter.com/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0"/>
+<meta property="og:site_name" content="Kickstarter"/>
+<meta property="fb:app_id" content="69103156693"/>
+<meta property="og:description" content="Lord British returns to his fantasy RPG roots with Shroud of the Avatar, hearkening back to his innovative early work."/>
+<meta property="kickstarter:creator" content="https://www.kickstarter.com/profile/portalarium"/>
+<meta property="twitter:url:landing_url" content="https://www.kickstarter.com/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0"/>
+<meta property="twitter:card" content="2427656750:kickstarter_project"/>
+<meta property="twitter:site" content="@kickstarter"/>
+<meta property="twitter:site:id" content="16186995"/>
+<meta property="twitter:text:title" content="Shroud of the Avatar: Forsaken Virtues"/>
+<meta property="twitter:text:artist" content="Portalarium, Inc."/>
+<meta property="twitter:text:backers" content="22322"/>
+<meta property="twitter:text:pledged" content="$1,919,275 USD"/>
+<meta property="twitter:text:time" content="0 seconds"/>
+<meta property="twitter:text:location" content="Austin, TX"/>
+<meta property="twitter:image:location_image" content="https://d3mlfyygrfdi2i.cloudfront.net/b40e/pin.png"/>
+<meta property="twitter:text:description" content="Lord British returns to his fantasy RPG roots with Shroud of the Avatar, hearkening back to his innovative early work."/>
+<meta property="twitter:image:media" content="https://s3.amazonaws.com/ksr/projects/468235/photo-main.jpg?1397811227"/>
+<meta property="twitter:image:width" content="640"/>
+<meta property="twitter:image:height" content="480"/>
+<meta property="twitter:player:stream:url" content="https://d2pq0u4uni88oo.cloudfront.net/projects/468235/video-215059-h264_base.mp4"/>
+<meta property="twitter:player:stream:content" content="video/mp4"/>
+<meta property="twitter:player:url" content="https://www.kickstarter.com/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/widget/video.html"/>
+<meta property="twitter:player:height" content="360"/>
+<meta property="twitter:player:width" content="640"/>
+<meta property="twitter:maxage" content="60"/>
+<meta property="og:video" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F468235%2Fvideo-215059-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F468235%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Portalarium%2C+Inc.&amp;project_title=Shroud+of+the+Avatar%3A+Forsaken+Virtues&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Fportalarium%2Fshroud-of-the-avatar-forsaken-virtues-0&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:secure_url" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F468235%2Fvideo-215059-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F468235%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Portalarium%2C+Inc.&amp;project_title=Shroud+of+the+Avatar%3A+Forsaken+Virtues&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Fportalarium%2Fshroud-of-the-avatar-forsaken-virtues-0&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:height" content="360"/>
+<meta property="og:video:width" content="640"/>
+<meta property="og:video:type" content="application/x-shockwave-flash"/>
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="QlUF4LCV9H1KbclOELJzFuxUZYASjg+pT5Ad8TwNavE=" name="csrf-token" />
+<script type="text/javascript">
+  var _sift = _sift || [];
+  _sift.push(['_setAccount', '637102']);
+  _sift.push(['_setUserId', '']);
+  _sift.push(['_trackPageview']);
+
+  (function() {
+    function loadSift() {
+      var sift, s;
+      if (root.visitor_id) {
+        _sift.push(['_setSessionId', root.visitor_id]);
+      }
+      sift = document.createElement('script');
+      sift.type = 'text/javascript';
+      sift.async = true;
+      sift.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dtlilztwypawv.cloudfront.net/s.js';
+      s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(sift, s);
+    }
+    if (window.attachEvent) {
+      window.attachEvent('onload', loadSift);
+    } else {
+      window.addEventListener('load', loadSift, false);
+    }
+  })();
+</script>
+<link href="http://kck.st/WahMzs" rel="shorturl">
+<link href="https://www.kickstarter.com/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0" rel="canonical">
+<link href="https://s3.amazonaws.com/ksr/projects/468235/photo-med.jpg?1397811227" rel="image_src">
+<link href="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F468235%2Fvideo-215059-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F468235%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Portalarium%2C+Inc.&amp;project_title=Shroud+of+the+Avatar%3A+Forsaken+Virtues&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Fportalarium%2Fshroud-of-the-avatar-forsaken-virtues-0&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque" rel="video_src">
+<script>
+  //<![CDATA[
+    window.current_checkout = "{&quot;id&quot;:0,&quot;domestic&quot;:null,&quot;amount&quot;:0.0,&quot;updated_at&quot;:0,&quot;created_at&quot;:0}";
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.current_ip = '94.209.101.212';
+    window.current_ip_datacenter = 'false';
+    window.enabled_features = {"elasticsearch":true,"security_history_read":true,"security_history_write":true,"advanced_discovery_es":true,"ios_crashlytics":true,"ios_mixpanel":true,"stories_veronica_mars":true,"veronica_mars_hero":true,"password_reset_banner":true};
+    window.fb_app_id = '69103156693';
+    
+    var _sf_startpt=(new Date()).getTime();
+    
+    window.current_project = "{&quot;id&quot;:1156271755,&quot;name&quot;:&quot;Shroud of the Avatar: Forsaken Virtues&quot;,&quot;blurb&quot;:&quot;Lord British returns to his fantasy RPG roots with Shroud of the Avatar, hearkening back to his innovative early work.&quot;,&quot;goal&quot;:1000000.0,&quot;pledged&quot;:1919275.99,&quot;state&quot;:&quot;successful&quot;,&quot;slug&quot;:&quot;shroud-of-the-avatar-forsaken-virtues-0&quot;,&quot;disable_communication&quot;:false,&quot;country&quot;:&quot;US&quot;,&quot;currency&quot;:&quot;USD&quot;,&quot;currency_symbol&quot;:&quot;$&quot;,&quot;currency_trailing_code&quot;:true,&quot;deadline&quot;:1365346649,&quot;state_changed_at&quot;:1365346649,&quot;created_at&quot;:1361381202,&quot;launched_at&quot;:1362758249,&quot;backers_count&quot;:22322,&quot;photo&quot;:{&quot;full&quot;:&quot;https://s3.amazonaws.com/ksr/projects/468235/photo-full.jpg?1397811227&quot;,&quot;ed&quot;:&quot;https://s3.amazonaws.com/ksr/projects/468235/photo-ed.jpg?1397811227&quot;,&quot;med&quot;:&quot;https://s3.amazonaws.com/ksr/projects/468235/photo-med.jpg?1397811227&quot;,&quot;little&quot;:&quot;https://s3.amazonaws.com/ksr/projects/468235/photo-little.jpg?1397811227&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/projects/468235/photo-small.jpg?1397811227&quot;,&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/projects/468235/photo-thumb.jpg?1397811227&quot;,&quot;1024x768&quot;:&quot;https://s3.amazonaws.com/ksr/projects/468235/photo-1024x768.jpg?1397811227&quot;,&quot;1536x1152&quot;:&quot;https://s3.amazonaws.com/ksr/projects/468235/photo-1536x1152.jpg?1397811227&quot;},&quot;creator&quot;:{&quot;id&quot;:110612633,&quot;name&quot;:&quot;Portalarium, Inc.&quot;,&quot;slug&quot;:&quot;portalarium&quot;,&quot;avatar&quot;:{&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/5561108/URPG_Crest.thumb.jpg?1361468861&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/5561108/URPG_Crest.small.jpg?1361468861&quot;,&quot;medium&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/5561108/URPG_Crest.medium.jpg?1361468861&quot;},&quot;urls&quot;:{&quot;web&quot;:{&quot;user&quot;:&quot;https://www.kickstarter.com/profile/portalarium&quot;},&quot;api&quot;:{&quot;user&quot;:&quot;https://api.kickstarter.com/v1/users/110612633?signature=1399958966.a91b68d45ab62614935cb6a3c62540d640b82485&quot;}}},&quot;location&quot;:{&quot;id&quot;:2357536,&quot;name&quot;:&quot;Austin&quot;,&quot;slug&quot;:&quot;austin-tx&quot;,&quot;short_name&quot;:&quot;Austin, TX&quot;,&quot;displayable_name&quot;:&quot;Austin, TX&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:&quot;TX&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/austin-tx&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/austin-tx&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1399951821.40b481f638520857e1b4ca887f5449fda5c8328f&amp;woe_id=2357536&quot;}}},&quot;category&quot;:{&quot;id&quot;:35,&quot;name&quot;:&quot;Video Games&quot;,&quot;slug&quot;:&quot;games/video games&quot;,&quot;position&quot;:7,&quot;parent_id&quot;:12,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;http://www.kickstarter.com/discover/categories/games/video%20games&quot;}}},&quot;urls&quot;:{&quot;web&quot;:{&quot;project&quot;:&quot;https://www.kickstarter.com/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0&quot;,&quot;project_short&quot;:&quot;http://kck.st/WahMzs&quot;,&quot;updates&quot;:&quot;https://www.kickstarter.com/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/posts&quot;},&quot;api&quot;:{&quot;project&quot;:&quot;https://api.kickstarter.com/v1/projects/1156271755?signature=1399958966.e5d876aae2e396fbd5977fcfebb9753db6ef3e6a&quot;,&quot;comments&quot;:&quot;https://api.kickstarter.com/v1/projects/1156271755/comments?signature=1399958966.d3588c8ef6074f7fd2bdb1413c33cc5cc7eda655&quot;,&quot;updates&quot;:&quot;https://api.kickstarter.com/v1/projects/1156271755/updates?signature=1399958966.95eb88575ca3fea59498c8c22f42966e86cff715&quot;}},&quot;updated_at&quot;:1398300605,&quot;successful_at&quot;:1365346649,&quot;video&quot;:{&quot;id&quot;:215059,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/468235/video-215059-h264_high.mp4?2013&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/468235/video-215059-h264_base.mp4?2013&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/468235/video-215059-webm.webm?2013&quot;,&quot;width&quot;:640,&quot;height&quot;:360,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/468235/video-215059-h264_base.jpg?2013&quot;},&quot;comments_count&quot;:10909,&quot;updates_count&quot;:48,&quot;rewards&quot;:[{&quot;id&quot;:0,&quot;minimum&quot;:1,&quot;reward&quot;:&quot;No Reward&quot;},{&quot;id&quot;:1438077,&quot;minimum&quot;:10.0,&quot;reward&quot;:&quot;GUILT PLEDGE\\r\\n============================= Thank Lord British and prove your virtue with a $10 donation. If you ever pirated an Ultima game or used an exploit to grief other players in Ultima Online, here\\u2019s your chance to repent! For your $10 donation you will receive a clear conscience and Lord British&#39;s undying gratitude.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1412121600,&quot;project_id&quot;:1156271755,&quot;backers_count&quot;:88,&quot;updated_at&quot;:1397959605},{&quot;id&quot;:1400820,&quot;minimum&quot;:25.0,&quot;reward&quot;:&quot;FIRST RESPONDER\\r\\n=============================\\r\\nBe one of the first 5000 pledges to get First Responder rewards, which includes digital download of the game and exclusive Early Bird Alpha + Beta Access (estimated Alpha delivery in December 2013)!&quot;,&quot;limit&quot;:4994,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1412121600,&quot;project_id&quot;:1156271755,&quot;remaining&quot;:3,&quot;backers_count&quot;:4991,&quot;updated_at&quot;:1399730301},{&quot;id&quot;:1440706,&quot;minimum&quot;:30.0,&quot;reward&quot;:&quot;SECOND RESPONDER ============================= The First Responder level has been so popular we&#39;re adding a Second Responder level! Includes digital download of the game and exclusive Early Bird Alpha + Beta Access (estimated Alpha delivery in December 2013)!&quot;,&quot;limit&quot;:4998,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1412121600,&quot;project_id&quot;:1156271755,&quot;remaining&quot;:5,&quot;backers_count&quot;:4993,&quot;updated_at&quot;:1399864487},{&quot;id&quot;:1452001,&quot;minimum&quot;:33.0,&quot;reward&quot;:&quot;PIONEER ============================= \\r\\nREWARD BONUS: ALL TIERS NOW RECEIVE IN-GAME \\&quot;PIONEER\\&quot; TITLE \\r\\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Only available during Kickstarter, at all reward levels, your in-game avatar will receive the honorific title of \\&quot;Pioneer\\&quot; to be proudly displayed for all to see (title visibility controlled by player). Also includes digital download of the game and exclusive Early Bird Alpha + Beta Access (estimated Alpha delivery in December 2013)!&quot;,&quot;limit&quot;:5000,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1412121600,&quot;project_id&quot;:1156271755,&quot;remaining&quot;:2484,&quot;backers_count&quot;:2516,&quot;updated_at&quot;:1398976151},{&quot;id&quot;:1400934,&quot;minimum&quot;:40.0,&quot;reward&quot;:&quot;ADVENTURER\\r\\n=============================\\r\\nAdventurer level includes digital download of the game and exclusive Early Bird Alpha + Beta Access (estimated Alpha access in December 2013)!&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1412121600,&quot;project_id&quot;:1156271755,&quot;backers_count&quot;:865,&quot;updated_at&quot;:1398598668},{&quot;id&quot;:1495471,&quot;minimum&quot;:50.0,&quot;reward&quot;:&quot;IMMORTAL ADVENTURER ============================= \\r\\nAvailable only to backers, you will receive one Immortality Fruit seed. With the Farming Craft you can plant the Immortality Fruit seed, which will bear a single fruit. When eaten, this fruit will fully heal you, and leave you with a single seed which can be planted and harvested, over and over, for all eternity. The Immortality Fruit seed can be transferred between players. Also, get your last name early! Ordinary adventurers must reach higher levels to display a last name for their character, but not you! Immortal Adventurers will have the right to select and display both a first and last name right from the get-go! Additionally, your in-game avatar will receive the honorific title of \\&quot;Immortal Adventurer\\&quot; to be proudly displayed for all to see (title visibility controlled by player).\\r\\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Includes Adventurer Level Rewards&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1412121600,&quot;project_id&quot;:1156271755,&quot;backers_count&quot;:1063,&quot;updated_at&quot;:1399824503},{&quot;id&quot;:1400826,&quot;minimum&quot;:60.0,&quot;reward&quot;:&quot;FOUNDER\\r\\n=============================\\r\\nOnly available during Kickstarter, at Founder level or above, your in-game avatar will receive the honorific title of \\&quot;Founder\\&quot; to be proudly displayed for all to see (title visibility controlled by player). In addition, you will be privy to the game development progress before it is live! As concepts are created, screenshots are taken, and news is delivered for the game, they will be posted to a private Developer\\u2019s Blog page to which you will have access (estimated blog access in April 2013).\\r\\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\r\\nIncludes Adventurer Level Rewards&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1412121600,&quot;project_id&quot;:1156271755,&quot;backers_count&quot;:1747,&quot;updated_at&quot;:1396869136},{&quot;id&quot;:1495613,&quot;minimum&quot;:80.0,&quot;reward&quot;:&quot;ROYAL ARTISAN ============================= \\r\\nNOTE: Please use this tier instead of the previous Royal Artisan tier which mistakenly required $15 non-US shipping. \\r\\n============================= \\r\\nIn addition to Episode 1, you will receive the full content of the future episodes 2 &amp; 3 (including Beta access to Episodes 2 &amp; 3)! You will also receive 1 starter-level, indestructible, artisan&#39;s tool for the skill of your choice! Also includes 2 starter-level ranged weapons, uniquely identifiable as Founder weapons. One of the range weapons will be a crossbow based on a unique design by David \\&quot;Iolo\\&quot; Watson! Unique ability to tame an elusive monster that an ordinary player could never tame! (dependent upon reaching $1.4 M Taming! stretch goal). Your in-game avatar will receive the honorific title of \\&quot;Royal Artisan\\&quot; to be proudly displayed for all to see (title visibility controlled by player). ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Includes Founder Level Rewards&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1412121600,&quot;project_id&quot;:1156271755,&quot;backers_count&quot;:1576,&quot;updated_at&quot;:1399233125},{&quot;id&quot;:1495437,&quot;minimum&quot;:80.0,&quot;reward&quot;:&quot;ROYAL ARTISAN ============================= \\r\\nIn addition to Episode 1, you will receive the full content of the future episodes 2 &amp; 3 (including Beta access to Episodes 2 &amp; 3)!  You will also receive 1 starter-level, indestructible, artisan&#39;s tool for the skill of your choice! Also includes 2 starter-level ranged weapons, uniquely identifiable as Founder weapons. One of the range weapons will be a crossbow based on a unique design by David \\&quot;Iolo\\&quot; Watson! Unique ability to tame an elusive monster that an ordinary player could never tame! (dependent upon reaching $1.4 M Taming! stretch goal). Your in-game avatar will receive the honorific title of \\&quot;Royal Artisan\\&quot; to be proudly displayed for all to see (title visibility controlled by player).\\r\\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Includes Founder Level Rewards&quot;,&quot;limit&quot;:53,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1412121600,&quot;project_id&quot;:1156271755,&quot;remaining&quot;:0,&quot;backers_count&quot;:53,&quot;updated_at&quot;:1365351497},{&quot;id&quot;:1400924,&quot;minimum&quot;:100.0,&quot;reward&quot;:&quot;VIRTUAL COLLECTOR\\r\\n=============================\\r\\nGet the full virtual experience with the Shroud of the Avatar Digital Collector\\u2019s Edition! Includes digital download copies of the Runic Language Translation Print, PDF Art Book, and Digital Game Soundtrack.\\r\\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\r\\nIncludes Founder Level Rewards&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1412121600,&quot;project_id&quot;:1156271755,&quot;backers_count&quot;:358,&quot;updated_at&quot;:1399338507},{&quot;id&quot;:1519292,&quot;minimum&quot;:120.0,&quot;reward&quot;:&quot;EXPLORER - ALL DIGITAL ============================= In addition to Episodes 1, 2, and 3, you will receive DRM-free, digital download versions of the final TWO, full-length, standalone games, Shroud of the Avatar Episode 4 and Episode 5 (including Beta access to Episodes 4 &amp; 5)! You will also receive the new world map as a digital, uniquely framed, in-game decoration for your house. Plus, your in-game avatar will receive the honorific title of \\&quot;Explorer\\&quot; to be proudly displayed for all to see (title visibility controlled by player).  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Includes Virtual Collector Level Rewards&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1412121600,&quot;project_id&quot;:1156271755,&quot;backers_count&quot;:669,&quot;updated_at&quot;:1398782066},{&quot;id&quot;:1400829,&quot;minimum&quot;:125.0,&quot;reward&quot;:&quot;EXPLORER\\r\\n=============================\\r\\nDigital is awesome but you can&#39;t hang your digital on the wall! Get a full size cloth map of the new world in its original state (estimated map availability in December 2013)!\\r\\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\r\\nIncludes Virtual Collector Level Rewards&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1412121600,&quot;project_id&quot;:1156271755,&quot;backers_count&quot;:805,&quot;updated_at&quot;:1394762210},{&quot;id&quot;:1400839,&quot;minimum&quot;:150.0,&quot;reward&quot;:&quot;COLLECTOR\\r\\n=============================\\r\\nGet the full experience with the Shroud of the Avatar Collector\\u2019s Edition! In addition to the cloth map, you also receive a physical copy of the Runic Language Translation Print and an official Collector\\u2019s Coin.\\r\\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\r\\nIncludes Explorer Level Rewards&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1412121600,&quot;project_id&quot;:1156271755,&quot;backers_count&quot;:1218,&quot;updated_at&quot;:1398869718},{&quot;id&quot;:1400833,&quot;minimum&quot;:200.0,&quot;reward&quot;:&quot;PATRON\\r\\n=============================\\r\\nGet your name permanently listed in a Domesday Book in game as a Patron, visible to all who play the game for all eternity!\\r\\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\r\\nIncludes Collector level rewards&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1412121600,&quot;project_id&quot;:1156271755,&quot;backers_count&quot;:156,&quot;updated_at&quot;:1398272761},{&quot;id&quot;:1400845,&quot;minimum&quot;:250.0,&quot;reward&quot;:&quot;ANCESTOR\\r\\n=============================\\r\\nGet your name or your character\\u2019s name permanently displayed on a tombstone in the game as an ancestor of the old world, visible to all who play the game for all eternity! Lord British would love to include your avatar\\u2019s name from your past adventures!\\r\\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\r\\nIncludes Patron Level Rewards&quot;,&quot;limit&quot;:500,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1412121600,&quot;project_id&quot;:1156271755,&quot;remaining&quot;:367,&quot;backers_count&quot;:133,&quot;updated_at&quot;:1392386979},{&quot;id&quot;:1400846,&quot;minimum&quot;:350.0,&quot;reward&quot;:&quot;NAVIGATOR\\r\\n=============================\\r\\nIncludes all the Collector Level rewards, but your cloth map will be hand signed by Richard \\u201cLord British\\u201d Garriott himself. (If you choose this level, you can take satisfaction in the agony signing tons of maps will cause Richard. Also, look forward to a time lapse video of Richard signing all the maps!)\\r\\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\r\\nIncludes Ancestor Level Rewards&quot;,&quot;limit&quot;:4000,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1412121600,&quot;project_id&quot;:1156271755,&quot;remaining&quot;:3940,&quot;backers_count&quot;:60,&quot;updated_at&quot;:1392500412},{&quot;id&quot;:1400854,&quot;minimum&quot;:400.0,&quot;reward&quot;:&quot;DEVELOPER\\r\\n=============================\\r\\nWant to be a part of the Development process? This is the level for you! Gain access to the private Developer Chat/Forums and help participate in guiding the game (estimated Developer Chat/Forums access in April 2013). You also get to help create a character in the game as well as name them. When everything\\u2019s said and done, we\\u2019ll put together a PDF document of various concepts and design documents.\\r\\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\r\\nIncludes Navigator Level Rewards&quot;,&quot;limit&quot;:1000,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1412121600,&quot;project_id&quot;:1156271755,&quot;remaining&quot;:934,&quot;backers_count&quot;:66,&quot;updated_at&quot;:1398293709},{&quot;id&quot;:1400858,&quot;minimum&quot;:500.0,&quot;reward&quot;:&quot;CITIZEN\\r\\n=============================\\r\\nStake your claim! Gain a Rent Free Village Level House Deed that you can pick up and place on any open Village lot in the game. This Village House proudly displays a special Founder Level plaque for all to see.\\r\\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\r\\nIncludes Developer Level Rewards&quot;,&quot;limit&quot;:1000,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1412121600,&quot;project_id&quot;:1156271755,&quot;remaining&quot;:627,&quot;backers_count&quot;:373,&quot;updated_at&quot;:1395533461},{&quot;id&quot;:1519804,&quot;minimum&quot;:750.0,&quot;reward&quot;:&quot;KNIGHT ============================= As a Knight you will receive an upscale Knight&#39;s home (to place on a Citizen level Village property) + Your very own, unique, Founder&#39;s house servant, appropriate to your stature as a Knight (dependent upon reaching $1.8 M stretch goal) + One Expert level crafting station for your home, uniquely identifiable as a Founder&#39;s crafting station + A unique piece of furniture, fit for a Knight, identifiable as a Founder&#39;s piece, as a digital, in-game decoration for your house (What could it be? A Knight&#39;s Round Table, perchance?) Your Knight House proudly displays a special Founder Level plaque that can be seen by all. In addition, your in-game avatar will receive the honorific title of \\&quot;Knight\\&quot; to be proudly displayed for all to see (title visibility controlled by player). ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Includes Citizen Level Rewards (note: only 1 Village House Deed per Knight pledge)&quot;,&quot;limit&quot;:500,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1412121600,&quot;project_id&quot;:1156271755,&quot;remaining&quot;:293,&quot;backers_count&quot;:207,&quot;updated_at&quot;:1396644573},{&quot;id&quot;:1400864,&quot;minimum&quot;:1500.0,&quot;reward&quot;:&quot;LORD\\r\\n=============================\\r\\nStake your claim! Gain a Rent Free Town Level House Deed that you can pick up and place on any Town lot in the game. This Town House proudly displays a special Founder Level plaque that can be seen by all. In addition, your in-game avatar will receive the honorific title of \\&quot;Lord\\&quot; to be proudly displayed for all to see (title visibility controlled by player).\\r\\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\r\\nIncludes Developer Level Rewards&quot;,&quot;limit&quot;:400,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1412121600,&quot;project_id&quot;:1156271755,&quot;remaining&quot;:332,&quot;backers_count&quot;:68,&quot;updated_at&quot;:1398924150},{&quot;id&quot;:1400869,&quot;minimum&quot;:3000.0,&quot;reward&quot;:&quot;BARON\\r\\n=============================\\r\\nStake your claim! Gain a Rent Free City Level House Deed that you can pick up and place on any City lot in the game. This City House proudly displays a special Founder Level plaque that can be seen by all. In addition, your in-game avatar will receive the honorific title of \\&quot;Lord\\&quot; to be proudly displayed for all to see (title visibility controlled by player).\\r\\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\r\\nIncludes Developer Level Rewards&quot;,&quot;limit&quot;:20,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1412121600,&quot;project_id&quot;:1156271755,&quot;remaining&quot;:0,&quot;backers_count&quot;:20,&quot;updated_at&quot;:1365955227},{&quot;id&quot;:1444311,&quot;minimum&quot;:3500.0,&quot;reward&quot;:&quot;BARON 2 ============================= Stake your claim! Gain a Rent Free City Level House Deed that you can pick up and place on any City lot in the game. This City House proudly displays a special Founder Level plaque that can be seen by all. In addition, your in-game avatar will receive the honorific title of \\&quot;Lord\\&quot; to be proudly displayed for all to see (title visibility controlled by player). ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Includes Developer Level Rewards&quot;,&quot;limit&quot;:20,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1412121600,&quot;project_id&quot;:1156271755,&quot;remaining&quot;:3,&quot;backers_count&quot;:17,&quot;updated_at&quot;:1365460057},{&quot;id&quot;:1400875,&quot;minimum&quot;:5000.0,&quot;reward&quot;:&quot;DUKE\\r\\n=============================\\r\\nBeing involved in developer discussions is great, but joining the team and Lord British is even better! Gain VIP access to special round-table design discussions hosted by Lord British during gaming conventions and events where the game is being showcased. Plus, a full tour of the Portalarium studios in Austin, Texas for a behind the scenes look and personal design discussion with the game team. (Event entry fees and travel expenses not covered; includes at least two round-table discussions to be held at those events occurring no later than twelve months following the delivery of the game).\\r\\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\r\\nIncludes Baron Level Rewards&quot;,&quot;limit&quot;:10,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1412121600,&quot;project_id&quot;:1156271755,&quot;remaining&quot;:5,&quot;backers_count&quot;:5,&quot;updated_at&quot;:1365357978},{&quot;id&quot;:1400887,&quot;minimum&quot;:10000.0,&quot;reward&quot;:&quot;LORD OF THE MANOR\\r\\n=============================\\r\\nWant to be the Lord of the Manor? Join Richard \\u201cLord British\\u201d Garriott in a personal tour of the actual Britannia Manor and its collections. (Choose 1 of 4 offered dates; travel expenses not covered).\\r\\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\r\\nAs a bonus, Richard Garriott will give each Lord of the Manor one of the rarest Ultima collector items imaginable, the game that started it all, Akalabeth. This rare game is in the original packaging that Richard made himself and sold only a dozen copies before it was picked up by a publisher.\\r\\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\r\\nIncludes Duke Level Rewards&quot;,&quot;limit&quot;:20,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1412121600,&quot;project_id&quot;:1156271755,&quot;remaining&quot;:11,&quot;backers_count&quot;:9,&quot;updated_at&quot;:1365349547},{&quot;id&quot;:1453675,&quot;minimum&quot;:10000.0,&quot;reward&quot;:&quot;LORDS OF THE MANOR ============================= Want to be the Lord of the Manor? Join Richard \\u201cLord British\\u201d Garriott in a personal tour of the actual Britannia Manor and its collections. (Choose 1 of 4 offered dates; travel expenses not covered). ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Includes Duke Level Rewards&quot;,&quot;limit&quot;:2,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1412121600,&quot;project_id&quot;:1156271755,&quot;remaining&quot;:0,&quot;backers_count&quot;:2,&quot;updated_at&quot;:1365350236}]}";
+    
+    
+    
+    
+    
+    
+    
+    
+    window.timeRemaining = function timeRemaining(epochTime){
+    
+      var diff = epochTime - ((new Date()).getTime() / 1000);
+      var num_unit = (diff < 60 && [Math.max(diff, 0), 'seconds']) ||
+        ((diff/=60) < 60 && [diff, 'minutes']) ||
+        ((diff/=60) < 72 && [diff, 'hours']) ||
+        [diff/=24, 'days'];
+    
+      // Round down
+      num_unit[0] = Math.floor(num_unit[0]);
+      // Singularize unit
+      if (num_unit[0] == 1) { num_unit[1] = num_unit[1].replace(/s$/,""); }
+    
+      return num_unit;
+    };
+  //]]>
+</script>
+
+<script>
+  //<![CDATA[
+    window.current_variants = ["discover_link_copy[discover]","rewards_hover[with_hover_text]"];
+  //]]>
+</script>
+
+
+</head>
+
+<body class="project projects not-mobile not-phone not-forces-video-controls not-tablet not-touchable not-native-app-request video_mode" id="projects_show">
+<div class="jGrowl center" id="growl_section"></div>
+<div class="NS_layouts__navigation" id="header">
+<div class="main-nav relative bg-white">
+<h1 class="no-margin ml1 mr2 left">
+<a href="/?ref=nav" class="block p2"><span class="ss-icon green-dark">KICK</span><span class="ss-icon green">STARTER</span>
+</a></h1>
+<ul class="primary-links list no-margin left">
+<li class="left discover-link full-height">
+<a href="/discover?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Discover</a>
+</li>
+<li class="left full-height mr2">
+<a href="/learn?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Start</a>
+</li>
+</ul>
+<ul class="list no-margin right" id="menu-sub">
+<li class="right"><a href="/login?ref=nav" class="block h5 bold p2 full-height border-box">Log in</a></li>
+<li class="right"><a href="/signup?ref=nav" class="block h5 bold p2 full-height border-box">Sign up</a></li>
+</ul>
+<div class="search-link pl2 full-height border-left border-box clip">
+<form accept-charset="UTF-8" action="/projects/search" class="search pt1 pb1 block relative form-simple" method="get"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /></div>
+<div class="field relative pl3">
+<span class="ss-icon ss-search grey-dark ml1 mt1 absolute"></span>
+<input class="input-search header full-width text" data-tracker-name="Header Live Search" id="term" name="term" placeholder="Search projects" type="text" />
+</div>
+</form>
+
+</div>
+<div class="clear"></div>
+</div>
+</div>
+<div class="hide pt4 pb4 bg-grey-light" id="search_results-wrap">
+<div class="relative container" id="search_results">
+<a class="close right grey-dark mr1"><span class="ss-icon ss-delete"></span></a>
+<h3 class="header ml1 clearfix"></h3>
+<div class="clip clearfix" id="search_results_panel"></div>
+<a class="prev arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateleft"></span>
+</a>
+<a class="next arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateright"></span>
+</a>
+</div>
+</div>
+
+
+
+
+<div class="Project-ended-true Project-is_starred- Project-state-successful Project1156271755_cxt border-top" id="main_content">
+<div id="running-board-wrap">
+<div class="container" id="running-board">
+<div id="project-header">
+<div class="NS_projects__running_board ml1 mr1 clearfix">
+<div class="title center py4">
+<h2 class="mb1">
+<a href="/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0" class="green-dark">Shroud of the Avatar: Forsaken Virtues</a>
+</h2>
+<p class="no-margin">
+<span class="creator">
+by
+<a href="/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography" id="name">Portalarium, Inc.</a>
+</span>
+</p>
+</div>
+<ul class="project-nav list-inline left h5 bold mb1">
+<li class="mr2">
+<a href="/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0" class="grey-dark py1 current" id="home_nav">Home</a>
+</li>
+<li class="mr2">
+<span data-updates-count="48" id="updates_count">
+<a href="/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/posts" class="grey-dark py1" id="updates_nav">Updates
+<span class="count h6 bg-grey-dark white">48</span>
+</a></span>
+</li>
+<li class="mr2">
+<a href="/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/backers" class="grey-dark py1" id="backers_nav">Backers
+<span class="count h6 bg-grey-dark white"><data class="Project1156271755" data-format="number" data-value="22322" itemprop="Project[backers_count]">22,322</data></span>
+</a></li>
+<li>
+<span data-comments-count="10909" id="comments_count">
+<a href="/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/comments" class="grey-dark py1" id="comments_nav">Comments
+<span class="count h6 bg-grey-dark white"><data class="Project1156271755" data-format="number" data-value="10903" itemprop="Project[comments_count]">10,903</data></span>
+</a></span>
+</li>
+</ul>
+<ul class="list-inline right h5 bold mb1">
+<li class="location mr2">
+<a href="/discover/places/austin-tx?ref=city" class="grey-dark"><span class="ss-icon ss-location margin-right"></span>
+Austin, TX
+</a></li>
+<li class="category" data-project-parent-category="Games">
+<a href="/discover/categories/games/video%20games?ref=category" class="grey-dark"><span class="ss-icon ss-tag margin-right"></span>
+Video Games
+</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+</div>
+<div class="bg-grey-light pb4" id="content-wrap">
+<div class="Project1156271755" data-conditions="[{&quot;!state&quot;:&quot;live&quot;}]" data-evaluation="true" data-render="&quot;&lt;div class=\&quot;NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-successful Project1156271755_cxt bg-grey container pb1 pt1\&quot;&gt;\n&lt;div class=\&quot;Project1156271755\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;successful&amp;quot;}]\&quot; data-evaluation=\&quot;true\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;Funded!&amp;lt;/b&amp;gt;\\nThis project was successfully funded &amp;lt;data class=\\&amp;quot;Project1156271755\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2013-04-07T10:57:29-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[deadline]\\&amp;quot;&amp;gt;on April 7, 2013&amp;lt;/data&amp;gt;.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;Funded!&lt;/b&gt;\nThis project was successfully funded &lt;data class=\&quot;Project1156271755\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-04-07T10:57:29-04:00&amp;quot;\&quot; itemprop=\&quot;Project[deadline]\&quot;&gt;on April 7, 2013&lt;/data&gt;.\n&lt;/p&gt;\n&lt;/div&gt;&lt;div class=\&quot;Project1156271755\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:[&amp;quot;started&amp;quot;,&amp;quot;submitted&amp;quot;]}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;THIS PROJECT IS NOT LIVE&amp;lt;/b&amp;gt;\\nThis is only a draft that the creator has chosen to share.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1156271755\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;suspended&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Suspended&amp;lt;/b&amp;gt;\\nFunding for this project was suspended &amp;lt;data class=\\&amp;quot;Project1156271755\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2013-04-07T10:57:29-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on April 7, 2013&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1156271755\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;canceled&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Canceled&amp;lt;/b&amp;gt;\\nFunding for this project was canceled by the project creator &amp;lt;data class=\\&amp;quot;Project1156271755\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2013-04-07T10:57:29-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on April 7, 2013&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1156271755\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;failed&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Unsuccessful&amp;lt;/b&amp;gt;\\nThis project\\u2019s funding goal was not reached on &amp;lt;time class=\\&amp;quot;js-adjust\\&amp;quot; data-format=\\&amp;quot;LL\\&amp;quot; datetime=\\&amp;quot;2013-04-07T10:57:29-04:00\\&amp;quot;&amp;gt;April 7, 2013&amp;lt;/time&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1156271755\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;purged&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;This project is purged and only visible to staff.&amp;lt;/b&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;/div&gt;\n&quot;"><div class="NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-successful Project1156271755_cxt bg-grey container pb1 pt1">
+<div class="Project1156271755" data-conditions="[{&quot;state&quot;:&quot;successful&quot;}]" data-evaluation="true" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;Funded!&lt;/b&gt;\nThis project was successfully funded &lt;data class=\&quot;Project1156271755\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-04-07T10:57:29-04:00&amp;quot;\&quot; itemprop=\&quot;Project[deadline]\&quot;&gt;on April 7, 2013&lt;/data&gt;.\n&lt;/p&gt;\n&quot;"><p class="no-margin">
+<b>Funded!</b>
+This project was successfully funded <data class="Project1156271755" data-format="distance_date" data-value="&quot;2013-04-07T10:57:29-04:00&quot;" itemprop="Project[deadline]">on April 7, 2013</data>.
+</p>
+</div><div class="Project1156271755" data-conditions="[{&quot;state&quot;:[&quot;started&quot;,&quot;submitted&quot;]}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;THIS PROJECT IS NOT LIVE&lt;/b&gt;\nThis is only a draft that the creator has chosen to share.\n&lt;/p&gt;\n&quot;"></div><div class="Project1156271755" data-conditions="[{&quot;state&quot;:&quot;suspended&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Suspended&lt;/b&gt;\nFunding for this project was suspended &lt;data class=\&quot;Project1156271755\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-04-07T10:57:29-04:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on April 7, 2013&lt;/data&gt;.\n&quot;"></div><div class="Project1156271755" data-conditions="[{&quot;state&quot;:&quot;canceled&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Canceled&lt;/b&gt;\nFunding for this project was canceled by the project creator &lt;data class=\&quot;Project1156271755\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-04-07T10:57:29-04:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on April 7, 2013&lt;/data&gt;.\n&quot;"></div><div class="Project1156271755" data-conditions="[{&quot;state&quot;:&quot;failed&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Unsuccessful&lt;/b&gt;\nThis project\u2019s funding goal was not reached on &lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;LL\&quot; datetime=\&quot;2013-04-07T10:57:29-04:00\&quot;&gt;April 7, 2013&lt;/time&gt;.\n&quot;"></div><div class="Project1156271755" data-conditions="[{&quot;state&quot;:&quot;purged&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;This project is purged and only visible to staff.&lt;/b&gt;\n&quot;"></div></div>
+</div>
+<div class="container bg-white border rounded py3 pl2 pr2" id="content">
+<div class="NS-projects-content">
+<div class="grid_11">
+<div data-has-video="true" id="video-section">
+<div class="video-player" data-dimensions="{&quot;width&quot;:640,&quot;height&quot;:480}" data-image="https://s3.amazonaws.com/ksr/projects/468235/photo-main.jpg?1397811227" data-video-tracker-url="https://www.kickstarter.com/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/video/plays" data-video-url="https://d2pq0u4uni88oo.cloudfront.net/projects/468235/video-215059-h264_high.mp4" data-video="{&quot;id&quot;:215059,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/468235/video-215059-h264_high.mp4?2013&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/468235/video-215059-h264_base.mp4?2013&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/468235/video-215059-webm.webm?2013&quot;,&quot;width&quot;:640,&quot;height&quot;:360,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/468235/video-215059-h264_base.jpg?2013&quot;}" id="video_pitch"><video class="has_webm landscape" preload="none">
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/468235/video-215059-h264_high.mp4" type='video/mp4; codecs="avc1.64001E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/468235/video-215059-h264_base.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/468235/video-215059-webm.webm" type="video/webm"></source>
+You'll need an HTML5 capable browser to see this content.
+</video>
+<img alt="Photo-main" class="has_played_hide poster landscape" src="https://s3.amazonaws.com/ksr/projects/468235/photo-main.jpg?1397811227" />
+<div class="play_button_big play_button_dark absolute-center rounded has_played_hide">
+<span class="ss-icon ss-play"></span>
+Play
+</div>
+<div class="player_controls clearfix absolute-bottom mb2 rounded white bg-green-dark forces-video-controls_hide">
+<div class="left">
+<a class="button button_icon button_dark playpause play mr1">
+<span class="play ss-icon ss-play"></span>
+<span class="pause ss-icon ss-pause"></span>
+</a>
+<span class="time current_time h12 left">00:00</span>
+</div>
+<div class="right">
+<span class="time total_time h12 left mr1">00:00</span>
+<a class="left button button_icon button_icon_white volume">
+<span class="ss-icon ss-volume icon_volume_nudge"></span>
+<span class="ss-icon ss-highvolume"></span>
+</a>
+<div class="volume_container left">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+<a class="left button button_icon button_icon_white fullscreen">
+<span class="ss-icon ss-expand"></span>
+<span class="ss-icon ss-contract"></span>
+</a>
+</div>
+<div class="clip">
+<div class="progress_container pr1 pl1">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="buffer progress_bar_buffer"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div data-project-state="successful" id="about">
+<div class="NS_projects__project_share clearfix py2 pl1 pr1">
+<ul class="left list-inline no-margin h5 bold">
+<li class="facebook mr2">
+<a href="https://www.kickstarter.com/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0"><span class="ss-icon ss-social ss-facebook color-facebook"></span>
+<span class="color-facebook">Share</span>
+<span class="share_bubble"><div class="triangle grey"></div>
+<div class="triangle white"></div>
+<span class="count"></span></span>
+</a></li>
+<li class="twitter mr2">
+<a  href="https://twitter.com/intent/tweet?text=Shroud%20of%20the%20Avatar%3A%20Forsaken%20Virtues%20by%20Portalarium%2C%20Inc.&amp;via=kickstarter&amp;url=http://kck.st/WahMzs" rel="nofollow"><span class="ss-icon ss-social ss-twitter color-twitter"></span>
+<span class="color-twitter">Tweet</span>
+</a></li>
+<li class="embed">
+<a href="/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/widget" class="remote_modal_dialog grey-dark" data-modal-title="Embed a widget on your site" data-tracker-name="Embed"><span class="ss-icon ss-navigateleft"></span>
+<span class="ss-icon ss-navigateright"></span>
+Embed
+</a></li>
+</ul>
+<ul class="right list-inline no-margin h5 bold">
+<li class="curate mr2">
+</li>
+<li class="remind">
+<div class="ajax-container" id="watching-widget">
+<div class="Project1156271755" data-conditions="[{&quot;is_starred&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div id=\&quot;unwatch\&quot;&gt;\n&lt;a href=\&quot;/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/unwatch\&quot; class=\&quot;on\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"></div><div class="Project1156271755" data-conditions="[{&quot;!is_starred&quot;:true}]" data-evaluation="true" data-render="&quot;&lt;div id=\&quot;watch\&quot;&gt;\n&lt;a href=\&quot;/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/watch\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;span class=\&quot;text\&quot;&gt;\n&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"><div id="watch">
+<a href="/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/watch"><span class="ss-icon ss-star"></span>
+<span class="text">
+</span>
+</a></div>
+
+</div></div>
+</li>
+</ul>
+</div>
+
+<div class="short_blurb py2 pl1 pr1">
+<p class="h3">Lord British returns to his fantasy RPG roots with Shroud of the Avatar, hearkening back to his innovative early work.</p>
+</div>
+<div class="full-description">
+<h1>
+<i><a href="https://www.shroudoftheavatar.com/" target="_blank">You can still pledge your support, or manage an existing pledge, on the Shroud of the Avatar Website.</a></i>
+</h1><a href="https://www.shroudoftheavatar.com/" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/assets/498296/edit" data-id="498296">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/498/296/ad05198683cedb2f036b919cb870f78b_large.png?1365343283"></figure>
+</div></a>
+
+<h1>A Heartfelt Thanks from the entire SotA Team!</h1><p>A sincere thank you goes out to all our backers for pledging your support to “Shroud of the Avatar” and helping us raise almost double our Kickstarter goal! This game would not be possible without your dedication and feedback – what a fantastic experience it’s been to interact with all of you, learning what is most important and desired in our new world.</p><p>And we very much look forward to continuing that interaction, so please follow us to our official site at <b><a href="http://www.ShroudOfTheAvatar.com/" target="_blank">ShroudOfTheAvatar.com</a></b> and join us in our continuing discussions and efforts. We’ll have regular updates and information for friends old and new. You can also find us on <b><a href="http://www.facebook.com/ShroudoftheAvatar" target="_blank">Facebook </a></b>and <b><a href="http://www.twitter.com/ShroudofAvatar" target="_blank">Twitter</a></b>, or tweet us with #LBSOTA to keep the conversation alive!</p><h1>What IS Shroud of the Avatar?</h1><div class="template asset" contenteditable="false" data-edit_url="/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/assets/447127/edit" data-id="447127">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/447/127/11c522f7ed6bb46e404e4d5aff289b63_large.jpg?1363362867"></figure>
+</div>
+<p>Shroud of the Avatar is the “spiritual successor” to Richard’s previous work in the FRP genre. Our primary objectives are to tell a story even more compelling than Ultimas IV-VII, create a virtual world more interactive than Ultima VII, develop deep rich multi-player capabilities beyond combat akin to Ultima Online, and offer a bold new approach to integrate them with “Selective Multi-Player”.</p><ul>
+<li>Shroud of the Avatar is infused with rich storylines, deeply integrated into game play, developed by Best Selling Author Tracy Hickman and RPG legend Richard Garriott.</li>
+<li>
+Players will adventure in an interactive world where their choices have consequences, ethical paradoxes give them pause, and they play a vital part in weaving their own story into the immersive world and lore surrounding them.</li>
+<li>
+Shroud of the Avatar is a Selective Multiplayer game, allowing players to choose how they want to play!  Whether in Single-Player Offline mode or any of three online modes, the main quest line will provide greater than 40 hours of focused, story driven content.</li>
+<li>
+Shroud of the Avatar can be played as an offline DRM free solo experience or online, where our servers will enable player to player transactions, group finding, patching, streaming of dynamic content, and exploit prevention.</li>
+<li>
+Built using the Unity Game Engine, Shroud of the Avatar will support Win/Mac/Linux for official launch.</li>
+<li>
+Players can specialize in a wide range of combat and non-combat skills, provided by a robust, classless skill system, and full-featured crafting and housing mechanics.  Play the way you want to play, molding your character into the hero, anti-hero, or artisan you want to be!</li>
+<li>
+Shroud of the Avatar: Forsaken Virtue is the first of a 5 game series of full-length, stand-alone games (each using the same game system), referred to as Episodes 1 through 5. Estimated availability of Episode 1, Forsaken Virtues, is October 2014, with Episodes 2 through 5 estimated for subsequent yearly releases.</li>
+<li>
+Shroud of the Avatar is a “buy-to-play” game that, once purchased, does not require a subscription to play!  </li>
+</ul><div class="template asset" contenteditable="false" data-edit_url="/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/assets/447896/edit" data-id="447896">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/447/896/813bfd99e72b8f9d398afe1eead2fb84_large.jpg?1363380542"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/assets/456162/edit" data-id="456162">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/456/162/f46378a869c99a839495626f7a57ef9b_large.jpg?1363726215"></figure>
+</div>
+<h1>Updates</h1><ul>
+<li>
+<a href="http://www.kickstarter.com/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/posts/447669" target="_blank">#24: The Final Countdown, a Chat with Chris Roberts, and Lord Blackthorn!</a>
+</li>
+<li>
+<a href="http://www.kickstarter.com/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/posts/446984" target="_blank">#23: FINAL DAY BONUS REWARDS: Waterfront Property, Island Castles, Custom Avatars, Collector’s Edition Story of Mondain, &amp; More!</a>
+</li>
+<li>
+<a href="http://www.kickstarter.com/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/posts/445795" target="_blank">#22: BONUS REWARDS: New Knight Tier, Early Skill Access, Crystal Swords, Homeowner's Bounty, Unity Art Packs &amp; More!</a>
+</li>
+<li>
+<a href="http://www.kickstarter.com/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/posts/444641" target="_blank">#21: Art, Unity and Emotes!</a>
+</li>
+<li><a href="http://www.kickstarter.com/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/posts/444093" target="_blank">#20: An Interview with Warren Spector, a Quest and CRAFTING</a></li>
+<li><a href="http://www.kickstarter.com/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/posts/442979" target="_blank">#19: $2.5M Final Week Stretch Goals, Tracy Hickman Novel, 5 Full Games, &amp; More!</a></li>
+<li><a href="http://www.kickstarter.com/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/posts/442077" target="_blank">#18: Tech Talk and Exciting Announcements!</a></li>
+<li><a href="http://www.kickstarter.com/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/posts/440821" target="_blank">#17: Weekly Roundup and NEW Character Concept Art</a></li>
+<li><a href="http://www.kickstarter.com/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/posts/438302" target="_blank">#16: BONUS REWARDS: Future Episodes, New Tiers, Immortality Fruit, Indestructible Artisan Tools, Unique Taming Ability &amp; More!</a></li>
+<li><a href="http://www.kickstarter.com/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/posts/438155" target="_blank">#15: Tuesday 3-for-1!</a></li>
+<li><a href="http://www.kickstarter.com/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/posts/435686" target="_blank">#14: Paypal and a Question of Virtue</a></li>
+<li><a href="http://www.kickstarter.com/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/posts/434752" target="_blank">#13: Housing Update!</a></li>
+<li><a href="http://www.kickstarter.com/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/posts/433901" target="_blank">#12: New Concept Art and Developer Blog</a></li>
+<li><a href="http://www.kickstarter.com/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/posts/431428" target="_blank">#11: Stretch Goals &amp; More Bonus Rewards!</a></li>
+<li><a href="http://www.kickstarter.com/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/posts/429763" target="_blank">#10: Shroud of the Avatar - Selective-Multi-Player Means Multiple Ways to Play!</a></li>
+<li><a href="http://www.kickstarter.com/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/posts/429043" target="_blank">#9: Tracy Hickman, New York Times Best-selling author of Dragonlance and Deathgate series, joins the Shroud of the Avatar team as Lead Story Designer!</a></li>
+<li><a href="http://www.kickstarter.com/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/posts/428416" target="_blank">#8: New Concept Art: The Fallen Keep</a></li>
+<li><a href="http://www.kickstarter.com/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/posts/427432" target="_blank">#7: Shroud of the Avatar - Dual Scale vs Mono Scale Maps</a></li>
+<li><a href="http://www.kickstarter.com/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/posts/426644" target="_blank">#6: BONUS REWARDS: Collectors Box, Recorded Media Game &amp; Soundtrack, Mysterious Artifact, and more!</a></li>
+<li><a href="http://www.kickstarter.com/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/posts/425574" target="_blank">#5: DRM, Offline/Online, and Microtransaction update + swag teaser!</a></li>
+<li><a href="http://www.kickstarter.com/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/posts/424179" target="_blank">#4: Shroud of the Avatar Developer Video Broadcast</a></li>
+<li><a href="http://www.kickstarter.com/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/posts/424158" target="_blank">#3: As Promised! Exclusive Video Interview with Iolo and Lord British!</a></li>
+<li><a href="http://www.kickstarter.com/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/posts/423983" target="_blank">#2: Shroud of the Avatar Developer Video Broadcast</a></li>
+<li><a href="http://www.kickstarter.com/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/posts/423962" target="_blank">#1: Live Developer Video Broadcast!</a></li>
+
+</ul><h1>Tracy Hickman Joins Team as Lead Story Designer!</h1><p>Tracy Hickman, New York Times Best-selling author of Dragonlance and Deathgate series, <a href="http://www.kickstarter.com/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/posts/429043" target="_blank">joins the Shroud of the Avatar team as Lead Story Designer</a>!</p><div><br></div><div class="template oembed" contenteditable="false" data-href="http://www.youtube.com/watch?feature=player_embedded&amp;v=AteG_NXZF2o">
+<iframe width="612" height="344" src="https://www.youtube.com/embed/AteG_NXZF2o?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div><div>
+<b>Shroud of the Avatar Kickstarter Revealed! </b><br>
+</div><div>
+<br>Richard Garriott, the award winning designer and creator of the Ultima 
+franchise, makes his triumphant return to the genre that earned him a 
+place in the Hall of Fame and a Lifetime Achievement Award. Shroud of 
+the Avatar is the first installment of Richard’s new vision and 
+represents the reinvention of the classic, fantasy role-playing which he
+ pioneered. A fantasy role-playing game that will focus more on player 
+choices and discovery than on level grinding.Richard Garriott, the award winning designer and creator of the Ultima franchise, makes his triumphant return to the genre that earned him a place in the Hall of Fame and a Lifetime Achievement Award. Shroud of the Avatar is the first installment of Richard’s new vision and represents the reinvention of the classic, fantasy role-playing which he pioneered. A fantasy role-playing game that will focus more on player choices and discovery than on level grinding.<br><br>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/assets/455628/edit" data-id="455628">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/455/628/80b33a2cd42cb0012eecadf3878e9dfd_large.png?1363715056"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/assets/498318/edit" data-id="498318">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/498/318/0201ce6a8500a4e24a74de94e173f46d_large.jpg?1365345004"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/assets/442422/edit" data-id="442422">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/442/422/4f21356640754bd96f4e673056392478_large.jpg?1363192336"></figure>
+</div>
+
+<p>The Pledge Reward information in the right sidebar is already out of date! We are constantly adding new bonus rewards to our existing pledges, so please review this section regularly for any changes! </p>
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/assets/497529/edit" data-id="497529">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/497/529/5fcd1904e06f2e429174903e7de63b87_large.jpg?1365292126"></figure>
+</div>
+<p>Special thanks to Vamp at <a href="http://forsakenvirtues.com/" target="_blank">http://forsakenvirtues.com/</a> for putting this awesome chart together for us!</p><p><i><b>PLEASE NOTE: Pledge rewards contain ALL of the rewards of lower level pledges (with the exception of houses, which are 1 per pledge)!</b></i></p><div class="template asset" contenteditable="false" data-edit_url="/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/assets/413366/edit" data-id="413366">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/413/366/6045a70d8e0c39d0419202ac885a3a3b_large.png?1362074932"></figure>
+</div>
+
+<p>
+Richard Garriott guided the Ultima Series from its inception in 1980, through the "trilogy-of-trilogies" of solo player games and later, the highly successful Ultima Online. Under his leadership, RPG's evolved from simple dungeon crawls to immersive worlds where you could easily suspend your disbelief. You  cared about the world and its people, and you cared about the actions and deeds you accomplished within that world.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/assets/429474/edit" data-id="429474">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/429/474/670232abc9a7251c55cbf7789427c226_large.png?1362679745"></figure>
+</div>
+<p>
+Since then, most every other RPG has focused more on level grinding than on “role playing”, which has been reduced to a few initial character choices. While advancements in graphics and sound have been phenomenal, in many ways the virtual worlds we play in have become less real. Less open. Less immersive.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/assets/429480/edit" data-id="429480">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/429/480/4a556a4c2b3a633fbb8bb2b233862f57_large.png?1362679786"></figure>
+</div>
+
+
+<div></div><p>With Shroud of the Avatar, Richard and his team will again reinvent the classic fantasy role-playing experience. Using state-of-the-art tools and technology, the game will focus on what made his seminal Ultima Series great. Once players are introduced to the game, they will discover their own story woven into the immersive world and lore surrounding them.  Players may choose to follow the life of the adventurer or, if they prefer, focus on exploration and discovery. Players may even choose the life of a homesteader; either nestled within the safety of the settled lands, or on the dangerous but potentially lucrative frontier. The world is full of opportunities and challenges! </p><div class="template asset" contenteditable="false" data-edit_url="/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/assets/429483/edit" data-id="429483">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/429/483/56de83baf8ce36e7d462908a455bfbca_large.png?1362679870"></figure>
+</div>
+
+
+<p>
+The familiar psychological profiling used to create your character, organically derived game-play responses to player behavior and fundamental virtues and consequence of actions will all play a huge role in Shroud of the Avatar. Players will be free to choose their path, but must then live with the consequences of their actions.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/assets/413378/edit" data-id="413378">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/413/378/5020f88c0f5e9be8d8f0659a996d8c30_large.png?1362075075"></figure>
+</div>
+
+<div>
+<p><b>Shroud of the Avatar general features:</b></p>
+<p>From Lord British's Treatise on "What is an Ultimate RPG?":</p>
+<ul>
+<li>
+Fully interactive virtual world - If it looks usable, it should do something</li>
+<li>
+Deep original fiction - Ethical parables, cultural histories, fully developed alternate language text</li>
+<li>
+Physical game components will be available: Cloth map, fictional manuals, trinkets</li>
+<li>
+Multiplayer Online Game - which can also be played solo player / offline</li>
+</ul>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/assets/480755/edit" data-id="480755">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/480/755/e13dd63c1532ca1c5fd475523de7bf2c_large.jpg?1364672040"></figure>
+</div>
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/assets/429682/edit" data-id="429682">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/429/682/bf94ca574c432692b5e8453851d5d08c_large.png?1362683573"></figure>
+</div>
+
+
+
+<div>
+<b>Classless character system:</b><br>
+</div>
+</div><div>
+<p>Unlike most RPGs, players will not be limited to the class they select at the beginning of the game.  We will be discussing this feature in more detail during an upcoming Developer Blog.</p>
+
+
+
+
+
+
+<p><b>Player housing:</b></p>
+<p>Player housing will live in the persistent shared world, so real estate will have location value. </p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/assets/429734/edit" data-id="429734">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/429/734/bcdb6b09b65869c870801419e9023d6b_large.png?1362685328"></figure>
+</div>
+
+
+
+<p>The least expensive
+housing can be found in Villages, which offer the highest density of low-cost
+housing.  The core of a village will include basic services that will
+encourage players to both visit and settle in the area.  Villages are a
+great place for an ambitious adventurer to hang their hat. (Only a few thousand Village homes will be available to players in-game.)  </p>
+
+<p>Towns on the other hand, offer more protection and amenities than
+Villages. The larger amount of available services will further increase traffic
+flow to your home or business. Plots of land will be larger as well, allowing
+players to build bigger houses. Towns are an excellent place to start a
+business while affording moderate levels of safety. (Only a few hundred Town homes will be available to players in-game.)  </p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/assets/429591/edit" data-id="429591">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/429/591/956e164cdcf93544dd705aa04427ae4e_large.png?1362681996"></figure>
+</div>
+<p>A City provides substantial protection for
+players, with large, vital services to draw players to visit and spend their
+coin. Cities can be protected by large defensive structures like Tesla towers, and
+offer luxuries not found in Towns or Villages. Cities also have the largest and
+most valuable homesteads. Be
+aware though, that the most valuable properties are available to very limited
+number of players and will likely be in high demand! (Only a few dozen City homes will be available to players in-game.)  </p>
+<p>Once a house is purchased, players will need to pay regular taxes on it of course. But as a special thank you to select Kickstarter supporters, all housing obtained by making a Kickstarter pledge of Citizen, Lord, Baron, Duke or Lord of the Manor will be tax free for life!  </p>
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/assets/427335/edit" data-id="427335">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/427/335/d40d89b47f197cf48aa969cc9d1a5151_large.png?1362602217"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+<p><b>Crafting system that avoids busy work:</b></p>
+<p>Craft
+ as a hobby or as a career! The results of all crafting elements have 
+value as consumables and components in the combat system, as well as maintenance and upgrade elements for housing and cities. The crafting system will be a topic of discussion in one of our upcoming Developer Blogs.</p>
+
+
+
+
+
+
+
+
+<p><b>Meaningful PVP that also minimizes griefing:</b></p>
+<p>An incentive-driven system will draw players into the challenge and intrigue of the PVP experience, whether they become the hunter or the hunted!</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/assets/429485/edit" data-id="429485">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/429/485/11485b71960df4f48f8ce5bc475f997a_large.png?1362679911"></figure>
+</div>
+
+
+
+
+
+
+</div><div>
+
+<p><b>Scene based encounters:</b></p>
+<p>In a nod to Garriott's early RPG works, Shroud of the Avatar is split up into a high-level overland map and adventure scenes. Scenes are generally re-playable and can be experienced solo or with others.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/assets/429489/edit" data-id="429489">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/429/489/0694f0e31982404417f9a8f69f1a7df3_large.png?1362679950"></figure>
+</div>
+
+
+<div class="template oembed" contenteditable="false" data-href="http://youtu.be/SEnGd87yE50">
+<iframe width="612" height="344" src="https://www.youtube.com/embed/SEnGd87yE50?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div>
+<p><b>Versions:</b></p>
+<p>Shroud of the Avatar is currently planned for downloadable PC, Mac, and Linux.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/assets/455619/edit" data-id="455619">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/455/619/a6a2fb4204b3d423c217545b73c1f8ac_large.jpg?1363714803"></figure>
+</div>
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/assets/429496/edit" data-id="429496">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/429/496/57cd17c2068a0bc3b2786c08030aa26a_large.png?1362680029"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/assets/429494/edit" data-id="429494">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/429/494/3fb316f388694f3d83445a5c54fc8cfc_large.png?1362679990"></figure>
+</div>
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/assets/413965/edit" data-id="413965">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/413/965/6525497a050c153fae0273e004f41cfe_large.jpg?1362089495"></figure>
+</div>
+
+
+<p>To help Richard build his new masterpiece, a team of proven industry veterans has been assembled.  The average team member has more than 10 years experience and a half-dozen shipped games to their credit. More than 50 titles have been shipped between the team, including almost a dozen games that reached number one on the sales charts.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/assets/416231/edit" data-id="416231">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/416/231/9073da0bd44358990090723edcdb65cc_large.jpg?1362173785"></figure>
+</div>
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/assets/429595/edit" data-id="429595">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/429/595/84f36c683ba09d6ee8e0479cfb0ee9a2_large.jpg?1362682106"></figure>
+</div>
+
+<p>We're not the only ones who are excited about Shroud of the Avatar!  </p>
+<p><i>"As an Ultima fanatic, I'm kind of jittery excited about what's happening here." </i>~ Felicia Day, actress, writer, and producer of the web series The Guild</p>
+<p><i>"Richard was an inspiration for our guild and has been a friend and supporter of ours for years, and us of him.  We will definitely have a SotA presence."</i> ~ Sean, aka Dragon, Guild Leader for The Syndicate</p>
+<div class="template oembed" contenteditable="false" data-href="www.youtube.com/watch?v=Q4SQbJWTjbE">
+<iframe width="612" height="344" src="https://www.youtube.com/embed/Q4SQbJWTjbE?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div>
+<p><i>"So I'm hoping you will join with me in taking Richard up on this offer.  That we should back him in SotA in creating and pioneering a new way of experiencing story in game.  Because after all, Richard knows adventure."</i> ~ Tracy Hickman, best-selling novelist and co-creator of the Dragonlance Novels and Adventure Modules.</p>
+<div class="template oembed" contenteditable="false" data-href="www.youtube.com/watch?v=-S78J6KZIp0">
+<iframe width="612" height="344" src="https://www.youtube.com/embed/-S78J6KZIp0?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div>
+
+<p><i>"I am really excited to see what new innovations are in Shroud of the Avatar.  I can not WAIT to play it!"</i> ~ Ernest Cline, author of New York Times Bestseller, Ready Player One</p>
+<div class="template oembed" contenteditable="false" data-href="http://youtu.be/_n9r_aN1fDI">
+<iframe width="612" height="344" src="https://www.youtube.com/embed/_n9r_aN1fDI?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div>
+
+<p><i>“Richard and I have known each other 26 years when I first joined up with a small little company called Origin Systems. We had a lot fun being the small rebel upstart company and made some games that are still remembered for defining or creating genres even today.  It’s been a long time since I’ve seen Richard this energized about the world and game he is creating. Shroud of The Avatar, feels like the kind of game we would have made in the old days of Origin when we didn’t answer to anyone and just made the best game we could with no interference. That’s what’s great about Crowd funding. I’m backing and looking forward to being part of Lord British’s next great adventure”  </i>~ Chris Roberts, creator of the best-selling Wing Commander game series</p>
+<p><i>"When I read that Lord British was going back to his roots to make "The Shroud of the Avatar"
+ and kickstart it with the community, I was really excited and you 
+should be too! SotA looks like it's going to be an incredible game!  </i>~ Min-Liang Tan, Chief Gamer and CEO of Razer/Edge</p>
+<p><i>"I know how much Richard Garriott respects story, and that will set this game apart from the others. I know Shroud of the Avatar is going to tell a great story! "I guarantee I will play. Try and stop me!" </i>~ Warren Spector, renowned game developer and
+force behind the critically acclaimed and award winning games Ultima
+Underworld, System Shock, Thief, and Deus Ex.  </p>
+
+<p>And from our Friends at <a href="http://sota.ultimacodex.com/" target="_blank">Ultima Codex</a>!</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/assets/460520/edit" data-id="460520">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/460/520/fa9e18f64d45d2d73cb6b9af6a3f178a_large.jpg?1363877234"></figure>
+</div>
+
+
+<p>Be sure to pledge your support today and join our Champions in making Shroud of the Avatar a success!</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/assets/413926/edit" data-id="413926">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/413/926/f31ef0ae300ddc06632ae3b2122154af_large.png?1362088185"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+<div id="risks">
+<h2 class="title grey-dark mt6 mb4">
+<span>Risks and challenges</span>
+<a href="/help/faq/kickstarter%20basics#Acco" class="right normal h5" target="_blank">Learn about accountability on Kickstarter</a>
+<div class="divider clear"></div>
+</h2>
+<p><p>Entertainment software development is always difficult. A successful game must work well feature-by-feature and be compelling and fun at all times to sustain player interest. &quot;Fun&quot; is very hard to define on paper, and is further complicated when tasked with integrating complex features that the players will find fulfilling. This iterative experimental process creates inherent risks in game development.</p>
+
+<p>We are managing this risk with a number of careful processes. First our team is built around a core  of industry experts, who individually have up to 30 years of game development experience. Additionally, we are using powerful, proven tools to mitigate development risks. Finally, we are staging development so that the most important and most risky features are developed first, while carefully containing the scope of the initial release so that feature bloat does not bury the project.</p>
+
+<p>While game development remains inherently risky, this team is qualified and dedicated to drive this project to successful conclusion with skill and passion. We hope to work closely with you, the player, as our partner in completing this challenge.</p></p>
+</div>
+</div>
+<div class="NS-projects-faqs" id="project-faqs">
+<h2 class="title grey-dark mt6 mb4">
+FAQ
+<div class="divider clear"></div>
+</h2>
+<ul class="faqs">
+<li class="faq" id="project_faq_49466">
+<div class="faq-question">
+<a href="#project_faq_49466" name="project_faq_49466">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Why PC?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Some people think that PC is an outdated platform, but to that I say not true!  I have always been a PC developer, and there is something magical about sitting close to a large screen, seeing your world come to life.  And the flexibility of using a keyboard and mouse is unmatched; though if you prefer to play with a gamepad on a PC, you can do that too!</p>
+
+<p>For game development, the PC allows developers tremendous innovation and gives players the most choices as far as how they play.  Although a great RPG can exist in many forms (even paper tape!), I firmly believe that the PC is the best platform for Shroud of the Avatar.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-03-08T23:38:44-05:00">Fri, Mar 8 2013 11:38 pm EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_49467">
+<div class="faq-question">
+<a href="#project_faq_49467" name="project_faq_49467">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Why do you need my money?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Richard has already invested several million dollars in the game and will almost certainly invest more before we ship. We would have to have a record setting campaign to match what Richard already invested in the company. But there is no reason to suggest that we can&#39;t also raise money from the community we are making the game for to get them involved too. 100% of the money raised in the Kickstarter will go to make a better game and the community involvement is a huge bonus for US.</p>
+
+<p>By  supporting this project,  you will be also be able to collaborate with the developers, lending your voice  to what features you would like to see added.  You can be a part of the  creation of the classic fantasy role playing experience you have been  waiting for!</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-03-11T20:31:29-04:00">Mon, Mar 11 2013 8:31 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_49468">
+<div class="faq-question">
+<a href="#project_faq_49468" name="project_faq_49468">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Why Kickstarter?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Kickstarter has really changed the landscape for game developers. It  allows us to connect directly with you, the players, and it keeps us  from being so dependent on the traditional publishing model. It gives us  a direct feedback loop with people who like our game and have decided  to back it. We can hear what you like and don’t like and can make  additions and changes based on that feedback, before the game is  launched. Kickstarter has opened up a new era of game development that  really benefits gamers.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-03-08T13:01:38-05:00">Fri, Mar 8 2013 1:01 pm EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_49469">
+<div class="faq-question">
+<a href="#project_faq_49469" name="project_faq_49469">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Will this be a MMO?  Can I play with my friends?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Yes, you will be able to play with your friends!  Multiplayer games  encourage social bonds that go far beyond what can be accomplished in a  solo player game. I remember the depth of these bonds in players who met  in-game only to get married in real life, how people who died in the  real world were deeply mourned and celebrated by their online friends  whom they may never have met face to face. Though Shroud of the Avatar  won’t be a massively multiplayer online role playing game, it will be a  multiplayer game.  We will be describing this in more detail in our  upcoming community blogs.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-03-08T13:02:52-05:00">Fri, Mar 8 2013 1:02 pm EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_49470">
+<div class="faq-question">
+<a href="#project_faq_49470" name="project_faq_49470">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">I have opinions! How can I be heard?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>You can become a registered user on our <a href="https://www.shroudoftheavatar.com/?page_id=12" rel="nofollow">https://www.shroudoftheavatar.com/&hellip;</a>, where you will have a chance to add your voice to one of the many Community led discussions about Shroud of the Avatar.  LORD BRITISH wants to hear your ideas and suggestions, so be sure to sign up and start posting!</p>
+
+<p>  And if you contribute to our Kickstarter at the Developer level  or above, we will bring you into the inner design circle. In addition  to getting general design ideas from you, you will have the chance to  lend a voice on even the more contentious issues involved in game  design. Some examples would be: PVP – Where, when and under what  conditions? Persistent Housing – How can we make a housing market that  creates opportunity and engaging gameplay? These are just a few of the  design ideas we will be discussing in our Developer Roundtable  discussions.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-03-08T23:38:44-05:00">Fri, Mar 8 2013 11:38 pm EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_49604">
+<div class="faq-question">
+<a href="#project_faq_49604" name="project_faq_49604">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Will this game be DRM-free? Once released, how will it be distributed?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>The offline single player version of the game for those who purchase it through KickStarter will not use any form of DRM. We had been holding off on committing to that because we don’t know what our final distribution system (Steam, GOG, etc) is going to be and some of them use DRM. We may have DRM of some sort on post-KS sales but we’ll commit to keeping KS versions DRM and “phone home” free for the single player version once launched. </p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-03-11T20:23:26-04:00">Mon, Mar 11 2013 8:23 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_49699">
+<div class="faq-question">
+<a href="#project_faq_49699" name="project_faq_49699">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Multiplayer?!  But what if I want to play offline?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>The game can be played offline, no connection required. The character used for the offline version of the game will not be useable in the online version of the game for obvious exploit/hacking reasons. We are going to investigate ways to export your online character to the single player version of the game but the offline character will not be importable into the online version.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-03-11T20:28:50-04:00">Mon, Mar 11 2013 8:28 pm EDT</time>
+</div>
+</div>
+</li>
+
+</ul>
+<div class="faq-ask-box">
+<a href="/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/messages/new?message%5Bto%5D=portalarium&amp;mode=FAQ" class="button button_blue remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Ask a question about Shroud of the Avatar: Forsaken Virtues">Ask a question</a>
+
+</div>
+</div>
+
+<div class="mt4 ml1 mr1 mb2" id="report-issue-wrap">
+<a href="/login?then=%2Fprojects%2Fportalarium%2Fshroud-of-the-avatar-forsaken-virtues-0" class="button button_grey">Report this project to Kickstarter</a>
+</div>
+</div>
+<div class="NS-projects-rightcol grid_5" id="rightcol">
+<div class="NS_projects__ecom">
+<div class="digits_7 pb2 pl2 pt2" id="stats">
+<h5>
+<div class="num h48 no-margin" data-backers-count="22322" id="backers_count"><data class="Project1156271755" data-format="number" data-value="22322" itemprop="Project[backers_count]">22,322</data></div>
+<span><data class="Project1156271755" data-attr="backers_count" data-format="pluralize" data-value="22322" data-word="Backer">Backers</data></span>
+</h5>
+<h5>
+<div class="num h48 no-margin" data-goal="1000000.0" data-percent-raised="1.91927599" data-pledged="1919275.99" id="pledged">
+<data class="Project1156271755" data-currency="USD" data-format="shorter_money" data-precision="0" data-value="1919275" data-without_code="true" itemprop="Project[pledged]">$1,919,275</data>
+<span class="money usd project_currency_code"></span>
+</div>
+pledged of
+<span class="money usd no-code">$1,000,000</span>
+goal
+</h5>
+<span data-duration="29.958333333333332" data-end_time="2013-04-07T10:57:29-04:00" data-hours-remaining="0" id="project_duration_data"></span>
+<div class="Project1156271755" data-conditions="[{&quot;!state&quot;:[&quot;canceled&quot;,&quot;suspended&quot;]}]" data-evaluation="true" data-render="&quot;&lt;h5 class=\&quot;poll \&quot; data-dynamic=\&quot;5\&quot; data-end_time=\&quot;2013-04-07T10:57:29-04:00\&quot; data-poll_url=\&quot;https://d2oher2uhvl0ur.cloudfront.net/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/stats.json\&quot;&gt;\n&lt;div class=\&quot;num h48 no-margin\&quot;&gt;0&lt;/div&gt;\n&lt;span class=\&quot;text\&quot;&gt;seconds to go&lt;/span&gt;\n&lt;/h5&gt;\n&quot;"><h5 class="poll " data-dynamic="5" data-end_time="2013-04-07T10:57:29-04:00" data-poll_url="https://d2oher2uhvl0ur.cloudfront.net/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/stats.json">
+<div class="num h48 no-margin">0</div>
+<span class="text">seconds to go</span>
+</h5>
+</div></div>
+<div class="Project1156271755" data-conditions="[{&quot;state&quot;:&quot;live&quot;},{&quot;!ended?&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;pr2 pl2\&quot; id=\&quot;pledge-wrap\&quot;&gt;\n&lt;a href=\&quot;/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/pledge/new?clicked_reward=false\&quot; class=\&quot;button button_green button_box button_block\&quot; id=\&quot;button-back-this-proj\&quot; title=\&quot;Back this project\&quot;&gt;Back This Project &lt;small class=&#39;h6 normal block green-dark&#39;&gt;&lt;span class=\&quot;money usd \&quot;&gt;$1&lt;/span&gt; minimum pledge&lt;/small&gt;&lt;/a&gt;\n&lt;/div&gt;\n&quot;"></div><div class="Project1156271755" data-conditions="[{&quot;state&quot;:&quot;live&quot;}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;p2\&quot; id=\&quot;banner\&quot;&gt;\n&lt;p class=\&quot;tiny_type no-margin\&quot;&gt;\nThis project will be funded on\n&lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;llll z\&quot; datetime=\&quot;2013-04-07T10:57:29-04:00\&quot;&gt;Sun, Apr 7 2013 10:57 am EDT&lt;/time&gt;.\n&lt;/p&gt;\n&lt;/div&gt;\n&quot;"></div></div>
+
+<div class="NS_projects__rightcol_projectby bg-blue-light rounded">
+<div class="p2 clearfix">
+<div class="avatar inline-block align-middle">
+<a href="/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography"><img alt="Urpg_crest.small" class="avatar-small" height="80" src="https://s3.amazonaws.com/ksr/avatars/5561108/URPG_Crest.small.jpg?1361468861" width="80" />
+</a></div>
+<div class="creator-name inline-block align-middle ml1">
+<h6 class="mb1">Project by</h6>
+<h5 class="mb1">
+<a href="/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">Portalarium, Inc.</a>
+</h5>
+<p class="location h6 bold mb1">
+<a href="/discover/places/austin-tx">Austin, TX</a>
+</p>
+</div>
+</div>
+<div class="creator-details pl2 pr2 pb1">
+<ul class="list-simple h5 mb1">
+<li class="projects">
+<span class="ss-icon ss-kickstarter grey-dark margin-right"></span>
+<span class="text">
+First created
+<span class="divider">&middot;</span>
+<a href="/profile/portalarium/backed" class="green-dark bold more-button remote_modal_dialog" data-modal-title="Projects backed by Portalarium, Inc.">6 backed</a>
+</span>
+</li>
+<li class="facebook-connected">
+<span class="ss-icon ss-facebook facebook color-facebook margin-right"></span>
+<span class="text">
+<a href="https://www.facebook.com/1151906768" class="popup" target="_blank">Richard Garriott de Cayeux</a>
+<span class="number h6">
+4706
+friends
+</span>
+</span>
+
+</li>
+<li class="links">
+<span class="ss-icon ss-globe margin-right grey-dark"></span>
+<span class="text">
+<a href="http://www.shroudoftheavatar.com" class="popup" rel="nofollow" target="_blank">shroudoftheavatar.com</a>
+</span>
+</li>
+</ul>
+</div>
+<div class="footer center h5 bold clearfix rounded-bottom clip">
+<a href="/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">See full bio</a>
+<a href="/projects/portalarium/shroud-of-the-avatar-forsaken-virtues-0/messages/new?message%5Bto%5D=portalarium" class="remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Send a message to Portalarium, Inc.">Contact me</a>
+
+</div>
+</div>
+
+<ul class="NS-projects-rightcol-rewards rounded clip list mt2" data-reward-count="25" id="what-you-get">
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$10</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+88 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>GUILT PLEDGE
+============================= Thank Lord British and prove your virtue with a $10 donation. If you ever pirated an Ultima game or used an exploit to grief other players in Ultima Online, here’s your chance to repent! For your $10 donation you will receive a clear conscience and Lord British&#39;s undying gratitude.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-10-01">Oct 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$25</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+4991 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(3 left of 4994)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>FIRST RESPONDER
+=============================
+Be one of the first 5000 pledges to get First Responder rewards, which includes digital download of the game and exclusive Early Bird Alpha + Beta Access (estimated Alpha delivery in December 2013)!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-10-01">Oct 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$30</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+4993 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(5 left of 4998)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>SECOND RESPONDER ============================= The First Responder level has been so popular we&#39;re adding a Second Responder level! Includes digital download of the game and exclusive Early Bird Alpha + Beta Access (estimated Alpha delivery in December 2013)!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-10-01">Oct 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$33</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+2516 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(2484 left of 5000)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>PIONEER ============================= 
+REWARD BONUS: ALL TIERS NOW RECEIVE IN-GAME &quot;PIONEER&quot; TITLE 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Only available during Kickstarter, at all reward levels, your in-game avatar will receive the honorific title of &quot;Pioneer&quot; to be proudly displayed for all to see (title visibility controlled by player). Also includes digital download of the game and exclusive Early Bird Alpha + Beta Access (estimated Alpha delivery in December 2013)!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-10-01">Oct 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$40</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+865 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>ADVENTURER
+=============================
+Adventurer level includes digital download of the game and exclusive Early Bird Alpha + Beta Access (estimated Alpha access in December 2013)!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-10-01">Oct 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$50</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1063 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>IMMORTAL ADVENTURER ============================= 
+Available only to backers, you will receive one Immortality Fruit seed. With the Farming Craft you can plant the Immortality Fruit seed, which will bear a single fruit. When eaten, this fruit will fully heal you, and leave you with a single seed which can be planted and harvested, over and over, for all eternity. The Immortality Fruit seed can be transferred between players. Also, get your last name early! Ordinary adventurers must reach higher levels to display a last name for their character, but not you! Immortal Adventurers will have the right to select and display both a first and last name right from the get-go! Additionally, your in-game avatar will receive the honorific title of &quot;Immortal Adventurer&quot; to be proudly displayed for all to see (title visibility controlled by player).
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Includes Adventurer Level Rewards</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-10-01">Oct 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$60</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1747 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>FOUNDER
+=============================
+Only available during Kickstarter, at Founder level or above, your in-game avatar will receive the honorific title of &quot;Founder&quot; to be proudly displayed for all to see (title visibility controlled by player). In addition, you will be privy to the game development progress before it is live! As concepts are created, screenshots are taken, and news is delivered for the game, they will be posted to a private Developer’s Blog page to which you will have access (estimated blog access in April 2013).
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Includes Adventurer Level Rewards</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-10-01">Oct 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$80</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1576 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>ROYAL ARTISAN ============================= 
+NOTE: Please use this tier instead of the previous Royal Artisan tier which mistakenly required $15 non-US shipping. 
+============================= 
+In addition to Episode 1, you will receive the full content of the future episodes 2 &amp; 3 (including Beta access to Episodes 2 &amp; 3)! You will also receive 1 starter-level, indestructible, artisan&#39;s tool for the skill of your choice! Also includes 2 starter-level ranged weapons, uniquely identifiable as Founder weapons. One of the range weapons will be a crossbow based on a unique design by David &quot;Iolo&quot; Watson! Unique ability to tame an elusive monster that an ordinary player could never tame! (dependent upon reaching $1.4 M Taming! stretch goal). Your in-game avatar will receive the honorific title of &quot;Royal Artisan&quot; to be proudly displayed for all to see (title visibility controlled by player). ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Includes Founder Level Rewards</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-10-01">Oct 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$80</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+53 backers
+</span>
+<span class="bg-grey no-wrap pl1 pr1 sold-out">
+All gone!
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>ROYAL ARTISAN ============================= 
+In addition to Episode 1, you will receive the full content of the future episodes 2 &amp; 3 (including Beta access to Episodes 2 &amp; 3)!  You will also receive 1 starter-level, indestructible, artisan&#39;s tool for the skill of your choice! Also includes 2 starter-level ranged weapons, uniquely identifiable as Founder weapons. One of the range weapons will be a crossbow based on a unique design by David &quot;Iolo&quot; Watson! Unique ability to tame an elusive monster that an ordinary player could never tame! (dependent upon reaching $1.4 M Taming! stretch goal). Your in-game avatar will receive the honorific title of &quot;Royal Artisan&quot; to be proudly displayed for all to see (title visibility controlled by player).
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Includes Founder Level Rewards</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-10-01">Oct 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $15 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$100</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+358 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>VIRTUAL COLLECTOR
+=============================
+Get the full virtual experience with the Shroud of the Avatar Digital Collector’s Edition! Includes digital download copies of the Runic Language Translation Print, PDF Art Book, and Digital Game Soundtrack.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Includes Founder Level Rewards</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-10-01">Oct 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$120</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+669 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>EXPLORER - ALL DIGITAL ============================= In addition to Episodes 1, 2, and 3, you will receive DRM-free, digital download versions of the final TWO, full-length, standalone games, Shroud of the Avatar Episode 4 and Episode 5 (including Beta access to Episodes 4 &amp; 5)! You will also receive the new world map as a digital, uniquely framed, in-game decoration for your house. Plus, your in-game avatar will receive the honorific title of &quot;Explorer&quot; to be proudly displayed for all to see (title visibility controlled by player).  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Includes Virtual Collector Level Rewards</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-10-01">Oct 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$125</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+805 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>EXPLORER
+=============================
+Digital is awesome but you can&#39;t hang your digital on the wall! Get a full size cloth map of the new world in its original state (estimated map availability in December 2013)!
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Includes Virtual Collector Level Rewards</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-10-01">Oct 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $15 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$150</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1218 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>COLLECTOR
+=============================
+Get the full experience with the Shroud of the Avatar Collector’s Edition! In addition to the cloth map, you also receive a physical copy of the Runic Language Translation Print and an official Collector’s Coin.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Includes Explorer Level Rewards</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-10-01">Oct 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $15 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$200</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+156 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>PATRON
+=============================
+Get your name permanently listed in a Domesday Book in game as a Patron, visible to all who play the game for all eternity!
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Includes Collector level rewards</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-10-01">Oct 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $15 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$250</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+133 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(367 left of 500)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>ANCESTOR
+=============================
+Get your name or your character’s name permanently displayed on a tombstone in the game as an ancestor of the old world, visible to all who play the game for all eternity! Lord British would love to include your avatar’s name from your past adventures!
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Includes Patron Level Rewards</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-10-01">Oct 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $15 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$350</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+60 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(3940 left of 4000)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>NAVIGATOR
+=============================
+Includes all the Collector Level rewards, but your cloth map will be hand signed by Richard “Lord British” Garriott himself. (If you choose this level, you can take satisfaction in the agony signing tons of maps will cause Richard. Also, look forward to a time lapse video of Richard signing all the maps!)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Includes Ancestor Level Rewards</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-10-01">Oct 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $15 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$400</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+66 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(934 left of 1000)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>DEVELOPER
+=============================
+Want to be a part of the Development process? This is the level for you! Gain access to the private Developer Chat/Forums and help participate in guiding the game (estimated Developer Chat/Forums access in April 2013). You also get to help create a character in the game as well as name them. When everything’s said and done, we’ll put together a PDF document of various concepts and design documents.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Includes Navigator Level Rewards</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-10-01">Oct 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $15 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+373 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(627 left of 1000)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>CITIZEN
+=============================
+Stake your claim! Gain a Rent Free Village Level House Deed that you can pick up and place on any open Village lot in the game. This Village House proudly displays a special Founder Level plaque for all to see.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Includes Developer Level Rewards</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-10-01">Oct 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $15 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$750</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+207 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(293 left of 500)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>KNIGHT ============================= As a Knight you will receive an upscale Knight&#39;s home (to place on a Citizen level Village property) + Your very own, unique, Founder&#39;s house servant, appropriate to your stature as a Knight (dependent upon reaching $1.8 M stretch goal) + One Expert level crafting station for your home, uniquely identifiable as a Founder&#39;s crafting station + A unique piece of furniture, fit for a Knight, identifiable as a Founder&#39;s piece, as a digital, in-game decoration for your house (What could it be? A Knight&#39;s Round Table, perchance?) Your Knight House proudly displays a special Founder Level plaque that can be seen by all. In addition, your in-game avatar will receive the honorific title of &quot;Knight&quot; to be proudly displayed for all to see (title visibility controlled by player). ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Includes Citizen Level Rewards (note: only 1 Village House Deed per Knight pledge)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-10-01">Oct 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $15 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$1,500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+68 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(332 left of 400)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>LORD
+=============================
+Stake your claim! Gain a Rent Free Town Level House Deed that you can pick up and place on any Town lot in the game. This Town House proudly displays a special Founder Level plaque that can be seen by all. In addition, your in-game avatar will receive the honorific title of &quot;Lord&quot; to be proudly displayed for all to see (title visibility controlled by player).
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Includes Developer Level Rewards</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-10-01">Oct 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$3,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+20 backers
+</span>
+<span class="bg-grey no-wrap pl1 pr1 sold-out">
+All gone!
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>BARON
+=============================
+Stake your claim! Gain a Rent Free City Level House Deed that you can pick up and place on any City lot in the game. This City House proudly displays a special Founder Level plaque that can be seen by all. In addition, your in-game avatar will receive the honorific title of &quot;Lord&quot; to be proudly displayed for all to see (title visibility controlled by player).
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Includes Developer Level Rewards</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-10-01">Oct 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$3,500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+17 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(3 left of 20)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>BARON 2 ============================= Stake your claim! Gain a Rent Free City Level House Deed that you can pick up and place on any City lot in the game. This City House proudly displays a special Founder Level plaque that can be seen by all. In addition, your in-game avatar will receive the honorific title of &quot;Lord&quot; to be proudly displayed for all to see (title visibility controlled by player). ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Includes Developer Level Rewards</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-10-01">Oct 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$5,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+5 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(5 left of 10)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>DUKE
+=============================
+Being involved in developer discussions is great, but joining the team and Lord British is even better! Gain VIP access to special round-table design discussions hosted by Lord British during gaming conventions and events where the game is being showcased. Plus, a full tour of the Portalarium studios in Austin, Texas for a behind the scenes look and personal design discussion with the game team. (Event entry fees and travel expenses not covered; includes at least two round-table discussions to be held at those events occurring no later than twelve months following the delivery of the game).
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Includes Baron Level Rewards</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-10-01">Oct 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$10,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+9 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(11 left of 20)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>LORD OF THE MANOR
+=============================
+Want to be the Lord of the Manor? Join Richard “Lord British” Garriott in a personal tour of the actual Britannia Manor and its collections. (Choose 1 of 4 offered dates; travel expenses not covered).
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+As a bonus, Richard Garriott will give each Lord of the Manor one of the rarest Ultima collector items imaginable, the game that started it all, Akalabeth. This rare game is in the original packaging that Richard made himself and sold only a dozen copies before it was picked up by a publisher.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Includes Duke Level Rewards</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-10-01">Oct 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$10,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+2 backers
+</span>
+<span class="bg-grey no-wrap pl1 pr1 sold-out">
+All gone!
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>LORDS OF THE MANOR ============================= Want to be the Lord of the Manor? Join Richard “Lord British” Garriott in a personal tour of the actual Britannia Manor and its collections. (Choose 1 of 4 offered dates; travel expenses not covered). ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Includes Duke Level Rewards</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-10-01">Oct 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+</ul>
+
+<div class="p2" id="meta">
+<h5>Funding period</h5>
+<p class="tiny_type">
+<time class="js-adjust" data-format="ll" datetime="2013-03-08T10:57:29-05:00">Mar 8, 2013</time> - 
+<time class="js-adjust" data-format="ll" datetime="2013-04-07T10:57:29-04:00">Apr 7, 2013</time>
+(30 days)
+</p>
+</div>
+</div>
+
+</div>
+
+<a href="#" id="video_mode_tab" style="display: none;">
+View in Video Mode
+</a>
+
+</div>
+</div>
+
+
+</div>
+
+<div class="h5 bg-green-dark" id="mega-footer-wrap">
+<div class="bg-green-dark white full-height" id="footer-newsletter-signup">
+<div class="container py4">
+<div class="grid_8 prefix_4 suffix_4 center mt4">
+<h2>
+Eureka! You've found
+<br>
+our little secret.
+</h2>
+<p>Sign up for our Happening email for all the inside info about arts and culture in the Kickstarter universe and beyond.</p>
+<div class="newsletter_signup">
+<form accept-charset="UTF-8" action="/newsletters/happening/signup" class="overlabels" method="post"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /><input class="hidden" name="authenticity_token" type="hidden" value="QlUF4LCV9H1KbclOELJzFuxUZYASjg+pT5Ad8TwNavE=" /></div><input class="hidden" id="location" name="location" type="hidden" value="footer" />
+<textarea class="hide textarea" id="comment" name="comment">
+</textarea>
+<div class="field newsletter">
+<label class="overlabel z1 overlabel-newsletter">Email address</label>
+<input class="text" id="email" name="email" type="text" />
+</div>
+<input class="button button_green submit" name="commit" type="submit" value="Submit" />
+</form>
+
+</div>
+
+</div>
+</div>
+</div>
+<div class="container relative" id="mega-footer">
+<span class="scissors icon-scissors-1"></span>
+<div class="grid_16 alpha omega pt4 pb2" id="mega-footer-links">
+<div class="grid_4 link-group">
+<h5 class="white">About us</h5>
+<ul class="list">
+<li><a href="/year/2013/?ref=footer">2013 highlights</a></li>
+<li><a href="/year/2012?ref=footer">2012 highlights</a></li>
+<li><a href="/team?ref=footer">Who we are</a></li>
+<li><a href="/jobs?ref=footer">Jobs</a></li>
+<li><a href="/press?ref=footer">Press</a></li>
+<li><a href="/help/stats?ref=footer">Stats</a></li>
+<li><a href="/newsletters/weekly">Projects we love</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group">
+<h5><a href="/help?ref=footer" class="white">Help</a></h5>
+<ul class="list">
+<li><a href="/hello?ref=footer">What is Kickstarter?</a></li>
+<li><a href="/help?ref=footer">FAQ</a></li>
+<li><a href="/contact?ref=footer">Support</a></li>
+<li><a href="/help/school?ref=footer">Kickstarter School</a></li>
+<li><a href="/terms-of-use?ref=footer">Terms of Use</a></li>
+<li><a href="/privacy?ref=footer">Privacy Policy</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group alpha omega suffix_1">
+<h5 class="alpha"><a href="/discover/advanced?ref=footer" class="white">Discover</a></h5>
+<ul class="column column-0 grid_2 list">
+<li><a href="/discover/categories/art?ref=footer">Art</a></li>
+<li><a href="/discover/categories/comics?ref=footer">Comics</a></li>
+<li><a href="/discover/categories/dance?ref=footer">Dance</a></li>
+<li><a href="/discover/categories/design?ref=footer">Design</a></li>
+<li><a href="/discover/categories/fashion?ref=footer">Fashion</a></li>
+<li><a href="/discover/categories/film%20&amp;%20video?ref=footer">Film &amp; Video</a></li>
+<li><a href="/discover/categories/food?ref=footer">Food</a></li>
+</ul>
+<ul class="column column-1 grid_2 list">
+<li><a href="/discover/categories/games?ref=footer">Games</a></li>
+<li><a href="/discover/categories/music?ref=footer">Music</a></li>
+<li><a href="/discover/categories/photography?ref=footer">Photography</a></li>
+<li><a href="/discover/categories/publishing?ref=footer">Publishing</a></li>
+<li><a href="/discover/categories/technology?ref=footer">Technology</a></li>
+<li><a href="/discover/categories/theater?ref=footer">Theater</a></li>
+</ul>
+</div>
+<div class="grid_3 link-group">
+<h5 class="white">Hello</h5>
+<ul class="list">
+<li>
+<a href="https://twitter.com/kickstarter"><span class="ss-icon ss-social-regular ss-twitter"></span>
+Twitter
+</a></li>
+<li>
+<a href="https://www.facebook.com/Kickstarter"><span class="ss-icon ss-social-regular ss-facebook"></span>
+Facebook
+</a></li>
+<li>
+<a href="http://kickstarter.tumblr.com"><span class="ss-icon ss-social-regular ss-tumblr"></span>
+Tumblr
+</a></li>
+<li>
+<a href="http://instagram.com/kickstarter"><span class="ss-icon ss-social-regular ss-instagram"></span>
+Instagram
+</a></li>
+<li>
+<a href="https://vine.co/Kickstarter"><span class="ss-icon ss-social-regular ss-vine"></span>
+Vine
+</a></li>
+<li>
+<a href="/blog?ref=footer">Blog</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="grid_16 py4" id="mega-footer-bottom">
+<div class="logo left">
+<a href="/" class="grey-dark"><span class="ss-icon h3">KICKSTARTER</span>
+</a></div>
+<p class="right h5 grey-dark">
+&copy;
+2014
+Kickstarter, Inc.
+</p>
+</div>
+</div>
+</div>
+
+<script>
+  //<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    var analytics_vars = { google_analytics_id : "UA-7621056-1", logged_in : "false", social_user: "false" }
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.mixpanel_id = '75b1d24a516ecfc955eadfadc4910661';
+    window.mixpanel_debug = false;
+  //]]>
+</script>
+
+
+<noscript>
+<img alt="Quantcast" border="0" height="1" src="//secure.quantserve.com/pixel/p-34IbSpw2K94Sg.gif" style="display:none" width="1" />
+</noscript>
+
+
+<script>
+  //<![CDATA[
+    window.benchmark = (typeof window.performance == 'object' && typeof window.performance.mark == 'function');
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    (function (root) {
+      function instrument_function (original) {
+        return function () {
+          try {
+            return original.apply(this, arguments);
+          } catch (e) {
+            if (e.stack && root.Honeybadger) {
+              Honeybadger.notify(e, {
+                current_project : root.current_project,
+                current_user : root.current_user
+              });
+            }
+            throw(e);
+          }
+        };
+      }
+      root.instrument_function = instrument_function;
+    }(this));
+  //]]>
+</script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+
+<script>
+  //<![CDATA[
+    (function(){function c(a){this.local_start_time=new Date;this.settings={cookie_name:"request_time"};for(var b in a)this.settings[b]=a[b];this.get_remote_offset()}c.prototype.get_remote_offset=function(){this.cookie_value=this.read_cookie();var a=new Date(this.cookie_value);if(!this.cookie_value||"Invalid Date"===a.toString()){if(this.remote_offset=this.read_cookie("local_offset"))this.remote_offset=parseInt(this.remote_offset,10)}else this.remote_offset=a-this.local_start_time;"undefined"!==typeof this.remote_offset&& !isNaN(this.remote_offset)?(document.cookie="local_offset="+this.remote_offset+"; path=/",this.is_set=!0):this.is_set=!1};c.prototype.time_units=[["milliseconds",1],["seconds",1E3],["minutes",6E4],["hours",36E5],["days",864E5]];c.prototype.get_units_in_interval=function(a,b){var d=a.replace(/^\w/,function(d){return"get"+d.toUpperCase()});return b[d]()};c.prototype.milliseconds_in_day=function(a){"undefined"===typeof a&&(a=new Date);for(var b=0,d=this.time_units.length-2;0<=d;d--)b+=this.get_units_in_interval(this.time_units[d][0], a)*this.time_units[d][1];return b};c.prototype.milliseconds_in_interval=function(a,b){return this.milliseconds_in_day(b)%a};c.prototype.milliseconds_to_next_interval=function(a,b){return a-this.milliseconds_in_interval(a,b)};c.prototype.pluralize=function(a,b){1===b&&(a=a.replace(/s$/,""));return a};c.prototype.read_cookie=function(a){for(var b=window.document.cookie.split(";"),a=(a||this.settings.cookie_name)+"=",d=0;d<b.length;d++){for(var e=b[d];" "==e.charAt(0);)e=e.substring(1,e.length);if(0== e.indexOf(a))return b=e.substring(a.length,e.length),decodeURIComponent(b).replace(/\+/g," ")}return null};c.prototype.destroy_cookie=function(a){var b=new Date;a||(a=this.settings.cookie_name);b.setTime(b.getTime()-864E5);window.document.cookie=a+"=; expires="+b.toGMTString()+"; path=/"};c.prototype.get_remote_time=function(){var a=new Date,b=a.getTime()+this.remote_offset;return a=a.setTime(b)};window.ksr_page_clock=new c})(); (function(){function c(d,a,b){if(d){this.options={unit_base:{seconds:119,minutes:119,hours:72,days:0},end_phrase:d.getAttribute("data-word")||"to go",count_down:d.getAttribute("data-dynamic")||!1};for(k in b)this.options[k]=b[k];this.clock=a;this.time_units=this.clock.time_units.slice(1);this.element=d;this.clock.is_set&&this.attach()}}function a(){this.elements=[];this.attach()}var b=function(d,a){var b=a||window.document.body,c=d.split("."),g=c[c.length-1],c=1<c.length&&c[0]?c[0]:"*";if(window.document.getElementsByClassName)return b.getElementsByClassName(g); if(b.querySelectorAll)return b.querySelectorAll(d);for(var c=b.getElementsByTagName(c),h=[],i=0,f;f=c[i];i++)b=RegExp("(^|\\s)"+g+"(\\s|$)"),(""+f.className).match(b)&&h.push(f);return h};c.prototype.get_remaining_time=function(){var d=this.remote_end_time-this.clock.get_remote_time();0>d&&(d=0);return d};c.prototype.get_current_unit=function(){for(var d,a=0;a<this.time_units.length&&!(d=this.time_units[a],this.get_remaining_time()<=this.options.unit_base[d[0]]*d[1]);a++);return d};c.prototype.update_element= function(){var a=this.get_current_unit(),b=Math.floor(this.get_remaining_time()/a[1]);isNaN(b)||(this.number_element.innerHTML=b,this.text_element.innerHTML=this.clock.pluralize(a[0],b)+" "+this.options.end_phrase)};c.prototype.valid=function(){return!(!this.number_element||!this.text_element)};c.prototype.attach=function(){function a(){c.update_element();if(c.options.count_down&&0<c.get_remaining_time()){var b=c.get_current_unit();this.timeout=window.setTimeout(a,c.clock.milliseconds_to_next_interval(b[1]))}} var c=this;if(this.remote_end_time_string=this.element.getAttribute("data-end_time"))this.remote_end_time_string.match(/^\d+$/)?(this.remote_end_time=new Date,this.remote_end_time.setTime(this.remote_end_time_string)):this.remote_end_time=new Date(this.remote_end_time_string),this.number_element=b(".num",this.element)[0],this.text_element=b(".text",this.element)[0],this.element.ksr_page_timer=!0,this.valid()&&a()};c.prototype.cancel=function(){this.timeout&&clearTimeout(this.timeout)};a.prototype.loading= !0;a.prototype.stop_finding=function(){this.attach_timers();this.loading=!1;document.addEventListener?document.removeEventListener("DOMContentLoaded",this.stop_finding,!1):document.attachEvent&&"complete"===document.readyState&&document.detachEvent("onreadystatechange",this.stop_finding)};a.prototype.bind_ready=function(){var a=this,b=function(){a.stop_finding.call(a)};document.addEventListener?(document.addEventListener("DOMContentLoaded",b,!1),window.addEventListener("load",b,!1)):document.attachEvent&& (document.attachEvent("onreadystatechange",b),window.attachEvent("onload",b))};a.prototype.attach_timers=function(){for(var a=b("div.ksr_page_timer"),e=0;e<a.length;e++)a[e].ksr_page_timer||(new c(a[e],window.ksr_page_clock),this.elements.push(a[e]))};a.prototype.attach=function(){var a=this;this.bind_ready();(function(){a.attach_timers();a.loading&&window.setTimeout(function(){a.attach_timers()},200)})()};window.ProjectTimer=c;new a})();
+  //]]>
+</script>
+
+<script class="template" id="template-widgets__video_embed_code" type="text/x-tmpl-mustache"><iframe width="{{width}}" height="{{height}}" src="{{{path}}}" frameborder="0" scrolling="no"> </iframe>
+</script><script class="template" id="template-projects__baseball_card_tall" type="text/x-tmpl-mustache"><div class="project-card-wrap project-card-wrap-tall border bg-white rounded clip">
+  <div class="project-card relative project-live {{#successful?}}successful{{/successful?}}">
+    <div class="project-thumbnail pt1 pl1 pr1">
+      <a href="{{urls.web.project}}" target="">
+        <img alt="Photo-little" class="projectphoto-little" src="{{photo.little}}" class="fit">
+      </a>
+    </div>
+    <div class="project-card-interior p1 h6 grey-dark">
+      <h6 class="project-title">
+        <a href="{{urls.web.project}}" target="" class="green-dark">{{name}}</a>
+      </h6>
+      <p class="mb1 ellipsis">
+        by
+        {{creator.name}}
+      </p>
+      <p class="blurb">
+        {{blurb}}
+      </p>
+    </div>
+    <div class="absolute-bottom bg-white rounded-bottom">
+
+      {{#location}}
+        <ul class="p1 list project-meta no-margin h6">
+          <li class="ellipsis">
+            <a href="{{location.urls.web.discover}}" data-location="{{location_json}}" class="grey-dark">
+              <span class="ss-icon ss-location"></span>
+              <span class="location-name">{{location.displayable_name}}</span>
+            </a>
+          </li>
+        </ul>
+      {{/location}}
+
+      <div class="project-stats-wrap pb1 pl1 pr1">
+
+        {{#failed?}}
+          <div class='project-status project-failed h6'>
+            <strong> Funding Unsuccessful</strong><br />
+            <span class="grey-dark">Project ended on {{formatted_deadline}}</span>
+          </div>
+        {{/failed?}}
+
+        {{#canceled?}}
+          <div class='project-status project-canceled h6'>
+            <strong> Funding Canceled</strong><br />
+            <span class="grey-dark">Project canceled on {{formatted_state_changed_at}}</span>
+          </div>
+        {{/canceled?}}
+
+        {{#successful?}}
+          <div class='project-pledged-successful bg-green white h6 pl1 pr1 mb1'>
+            <strong>Successful!</strong>
+          </div>
+        {{/successful?}}
+
+        {{#live_or_successful?}}
+          {{#live?}}
+            <div class="project-pledged-wrap bg-grey clip mb1">
+              <div class="project-pledged bg-green full-height" style="width: {{percent_raised_to_100}}%"></div>
+            </div>
+          {{/live?}}
+          <ul class="project-stats list no-margin h6 no-wrap">
+            <li class="first funded inline-block mr1">
+              <strong class="block h6">{{percent_raised_rounded}}%</strong>
+              <span class="grey-dark">funded</span>
+            </li>
+            <li class="pledged inline-block mr1">
+              <strong class="block h6">{{currency_symbol}}{{formatted_money}}</strong>
+              <span class="grey-dark">pledged</span>
+            </li>
+            {{#successful?}}
+              <li class="last successful inline-block">
+                <strong class="block h6">Funded</strong>
+                <div class="deadline grey-dark">{{formatted_deadline}}</div>
+              </li>
+            {{/successful?}}
+            {{#live?}}
+              <li class="last ksr_page_timer inline-block" data-end_time="{{javascript_deadline}}">
+                <strong class="block h6">
+                  <div class="num">30</div>
+                </strong>
+                <div class="span text grey-dark" data-word="left">days to go</div>
+              </li>
+            {{/live?}}
+          </ul>
+        {{/live_or_successful?}}
+      </div>
+    </div>
+  </div>
+</div>
+
+{{#friends_backing?}}
+  <div class="friend_project_context">
+    <div class="friend_facepile">
+      {{#truncated_friends}}
+        <img src="{{avatar.thumb}}" class="{{#has_metadata?}}small{{/has_metadata?}}">
+      {{/truncated_friends}}
+    </div>
+    <p class="friend_namepile">
+      {{{escaped_sentence}}}
+    </p>
+  </div>
+{{/friends_backing?}}
+</script><script class="template" id="template-projects__video_mode" type="text/x-tmpl-mustache"><a href='#' id='video_mode_close' class='close_button z2'><span class='ss-icon ss-delete'></span></a>
+
+<div class='title_card z1 {{context_classes}}' style="display:none;">
+  <div class='interior'>
+    <h2 class='project_title normal_weight'>{{name}}</h2>
+    <p class='blurb'>{{blurb}}</p>
+    <nav class='bar'>
+      <a id='play_button' class='left play' href='#'>
+        <span class='play_active'>
+          <span class='ss-icon ss-play'></span>
+          Play
+        </span>
+        <span class='pause_active'>
+          <span class='ss-icon ss-pause'></span>
+          Pause
+        </span>
+      </a>
+      {{#logged_in}}
+        <div class='remind right'>
+          {{#if_not_starred}}
+            <a class='follow' href='{{urls.web.project}}/watch'><span class='ss-icon ss-star'></span></a>
+          {{/if_not_starred}}
+          {{#if_starred}}
+            <a class='unfollow' href='{{urls.web.project}}/unwatch'><span class='ss-icon ss-star active'></span></a>
+          {{/if_starred}}
+        </div>
+      {{/logged_in}}
+      <a class='right explore button button_green small' href='#'>Explore this project</a>
+    </nav>
+  </div>
+</div>
+
+<div class='channel_controls z1'>
+  <a href='#' class='{{#playlist_is_location}}selected {{/playlist_is_location}}location'>Something else near {{location.first_name}} <span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_featured}}selected {{/playlist_is_featured}}featured'>Something different<span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_category}}selected {{/playlist_is_category}}category'>Something else in {{category.name}} <span class='ss-icon ss-navigateright'></span></a>
+</div>
+
+<div class='project_video' style='background-image: url('{{photo.full}}')'>
+  <div class='cover'>
+    <video>
+      <source src='{{video.high}}' type='video/mp4'/>
+      <source src='{{video.webm}}' type='video/webm'/>
+    </video>
+  </div>
+</div>
+</script><script class="template" id="template-site__video_mode_fourohfour" type="text/x-tmpl-mustache"><section class='four_oh_four'>
+  <p class='big_type'>
+    Looks like you've reached the end of the line! <br />Check out <a class="another" href='#'>another channel</a> or <a href='/discover'>browse projects in discover</a>.
+  </p>
+</section>
+</script>
+
+<script id="schwamm_formatting_options" type="text/javascript">
+//<![CDATA[
+(function(){window.formatters = window.formatters || {}; var formatting_options = {"distance_date_intervals":[[5,"just now"],[29,"less than a minute ago"],[89,"1 minute ago"],[2640,"%m minutes ago"],[5340,"about 1 hour ago"],[82800,"about %h hours ago"],[147600,"1 day ago"],[604800,"%d days ago"],[15552000,"on %t"],[0,"on %y"]],"currency_symbol_mappings":{"AFN":"\u060b","ALL":"Lek","ARS":"$","AUD":"$","AWG":"\u0192","AZN":"\u043c\u0430\u043d","BAM":"KM","BBD":"$","BGN":"\u043b\u0432","BMD":"$","BND":"$","BOB":"$b","BRL":"R$","BSD":"$","BWP":"P","BYR":"p.","BZD":"BZ$","CAD":"$","CLP":"$","CNY":"\u00a5","COP":"$","CRC":"\u20a1","CUP":"\u20b1","CZK":"K\u010d","DKK":"kr","DOP":"RD$","EGP":"\u00a3","EUR":"\u20ac","FJD":"$","FKP":"\u00a3","GBP":"\u00a3","GIP":"\u00a3","GTQ":"Q","GYD":"$","HKD":"$","HNL":"L","HRK":"kn","HUF":"Ft","IDR":"Rp","ILS":"\u20aa","IRR":"\ufdfc","ISK":"kr","JMD":"J$","JPY":"\u00a5","KGS":"\u043b\u0432","KHR":"\u17db","KPW":"\u20a9","KRW":"\u20a9","KYD":"$","KZT":"\u043b\u0432","LAK":"\u20ad","LBP":"\u00a3","LKR":"\u20a8","LRD":"$","LTL":"Lt","LVL":"Ls","MKD":"\u0434\u0435\u043d","MNT":"\u20ae","MUR":"\u20a8","MXN":"$","MYR":"RM","MZN":"MT","NAD":"$","NGN":"\u20a6","NIO":"C$","NOK":"kr","NPR":"\u20a8","NZD":"$","OMR":"\ufdfc","PAB":"B/.","PEN":"S/.","PHP":"\u20b1","PKR":"\u20a8","PLN":"z\u0142","PYG":"Gs","QAR":"\ufdfc","RON":"lei","RSD":"\u0414\u0438\u043d.","RUB":"\u0440\u0443\u0431","SAR":"\ufdfc","SBD":"$","SCR":"\u20a8","SEK":"kr","SGD":"$","SHP":"\u00a3","SOS":"S","SRD":"$","SVC":"$","SYP":"\u00a3","THB":"\u0e3f","TRY":"TL","TTD":"TT$","TWD":"NT$","UAH":"\u20b4","USD":"$","UYU":"$U","UZS":"\u043b\u0432","VEF":"Bs","VND":"\u20ab","YER":"\ufdfc","ZAR":"R"},"currency_trailing_code_mappings":{"AUD":true,"CAD":true,"NZD":true,"USD":true},"currency_formats":["money","shorter_money"]}; for (key in formatting_options) {window.formatters[key] = formatting_options[key]};}());
+//]]>
+</script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("begin_base.js_tag");}
+  //]]>
+</script>
+<script src="https://d297h9he240fqh.cloudfront.net/assets/packages/base-45cdab84617ddfb8905b7cddc8500c19.js" type="text/javascript"></script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("end_base.js_tag");}
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    document.domain='kickstarter.com';
+  //]]>
+</script>
+
+<iframe height="0" id="api_xdreceiver" src="https://api.kickstarter.com/xdreceiver/85e6.html" style="display: none;" width="0"></iframe>
+
+
+
+<div id="fb-root"></div>
+<script>
+  //<![CDATA[
+    var channelUrl = window.location.protocol + "//" + window.location.host + "/channel.html",
+      skip_autologin = $('body').is('.skip_autologin');
+    
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId: window.fb_app_id,
+        channelUrl: channelUrl,
+        status: true,    // check login status
+        cookie: true,    // enable cookies to allow the server to access the session
+        xfbml: true,     // parse XFBML
+        logging: false   // turn off logging
+      });
+    
+      FB.getLoginStatus(function (response) {
+        if (response.status === 'connected') {
+          if (read_cookie("logout_from_fb")) {
+            FB.logout();
+            destroy_cookie("logout_from_fb");
+          } else if (!skip_autologin) {
+            $.get("/fb/autologin", {'fbsr': response.authResponse.signedRequest});
+          } else if (false && 0 == response.authResponse.userID) {
+            $.get("/fb/refresh", {'fbsr': response.authResponse.signedRequest});
+          }
+        } else {
+          if (read_cookie("logout_from_fb")) {
+            destroy_cookie("logout_from_fb");
+          }
+        }
+      })
+    
+      $(document).trigger('fb:loaded');
+    };
+    
+    
+    // Load the SDK Asynchronously
+    (function(d){
+      var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+      js = d.createElement('script'); js.id = id; js.async = true;
+      js.src = "//connect.facebook.net/en_US/all.js";
+      d.getElementsByTagName('head')[0].appendChild(js);
+    }(document));
+  //]]>
+</script>
+
+
+</body>
+</html>

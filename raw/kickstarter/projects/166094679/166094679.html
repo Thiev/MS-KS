@@ -1,0 +1,3008 @@
+<!DOCTYPE html>
+<html class="projects_show  fontface no-js" lang="en">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# kickstarter: http://ogp.me/ns/fb/kickstarter#">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-5.newrelic.com","errorBeacon":"jserror.newrelic.com","licenseKey":"b04b883ad2","applicationID":"11086","transactionName":"cFteRUULX1wHFhtIEFxeVVJDFxxDCgtD","queueTime":11,"applicationTime":612,"ttGuid":"","agentToken":null,"agent":"js-agent.newrelic.com/nr-411.min.js"}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"Vw4BVEVSCQMIUg=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e){function n(t,e,n){n||(n={});for(var r=o[t],a=r&&r.length||0,s=n[i]||(n[i]={}),u=0;a>u;u++)r[u].apply(s,e);return s}function r(t,e){var n=o[t]||(o[t]=[]);n.push(e)}var o={},i="nr@context";e.exports={on:r,emit:n}},{}],2:[function(t){function e(t,e,n,i,s){return u?u-=1:r("err",[s||new UncaughtException(t,e,n)]),"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t(5),a=window.onerror,s=!1,u=0;t("loader").features.push("err"),window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(d){"stack"in d&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(4),s=!0)}i.on("fn-start",function(){s&&(u+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&u>0&&(u-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:4,3:3,4:6,5:1,6:14,handle:"D5DuLP",loader:"G9z0Bl"}],3:[function(t){function e(t){r.inPlace(t,["addEventListener","removeEventListener"],"-",n)}function n(t){return t[1]}var r=t(1),o=(t(3),t(2));if(e(window),"getPrototypeOf"in Object){for(var i=document;i&&!i.hasOwnProperty("addEventListener");)i=Object.getPrototypeOf(i);i&&e(i);for(var a=XMLHttpRequest.prototype;a&&!a.hasOwnProperty("addEventListener");)a=Object.getPrototypeOf(a);a&&e(a)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&e(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=e["nr@wrapped"]?t[1]=e["nr@wrapped"]:e["nr@wrapped"]=t[1]=r(e,"fn-"):"function"==typeof e.handleEvent&&r.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:15,2:1,3:14}],4:[function(t){var e=(t(3),t(1)),n=t(2);e.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=e(t[0],"fn-")})},{1:15,2:1,3:14}],5:[function(t){function e(t){var e=t[0];"string"==typeof e&&(e=new Function(e)),t[0]=n(e,"fn-")}var n=(t(3),t(1)),r=t(2);n.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",e)},{1:15,2:1,3:14}],6:[function(t){function e(){o.inPlace(this,s,"fn-")}function n(t,e){o.inPlace(e,["onreadystatechange"],"fn-")}function r(t,e){return e}var o=t(1),i=t(2),a=window.XMLHttpRequest,s=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];window.XMLHttpRequest=function(t){var n=new a(t);try{i.emit("new-xhr",[],n),o.inPlace(n,["addEventListener","removeEventListener"],"-",function(t,e){return e}),n.addEventListener("readystatechange",e,!1)}catch(r){try{i.emit("internal-error",r)}catch(s){}}return n},window.XMLHttpRequest.prototype=a.prototype,o.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",r),i.on("send-xhr-start",n),i.on("open-xhr-start",n)},{1:15,2:1}],7:[function(t){function e(){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;u>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,d="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=e(d);if(f&&(r.rxSize=f),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}t("loader").features.push("xhr");var o=t("handle"),i=t(1),a=t(5),s=["load","error","abort","timeout"],u=s.length,d=t(2);t(3),t(4),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var d=e(o);d&&(r.txSize=d)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",e)}catch(r){}}};for(var f=0;u>f;f++)n.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&e()},{1:8,2:11,3:3,4:6,5:1,handle:"D5DuLP",loader:"G9z0Bl"}],8:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e){var n=r[t];return n?n.apply(this,e):(o[t]||(o[t]=[]),void o[t].push(e))}var r={},o={};e.exports=n,n.queues=o,n.handlers=r},{}],11:[function(t,e){function n(t){if(!t||"object"!=typeof t&&"function"!=typeof t)return-1;if(t===window)return 0;if(o.call(t,"__nr"))return t.__nr;try{return Object.defineProperty(t,"__nr",{value:r,writable:!0,enumerable:!1}),r}catch(e){return t.__nr=r,r}finally{r+=1}}var r=1,o=Object.prototype.hasOwnProperty;e.exports=n},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&u&&u.body){p.proto="https"===c.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=u.createElement("script");e.src=p.proto+t.agent,u.body.appendChild(e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,u=s.document,d="addEventListener",f="attachEvent",c=(""+location).split("?")[0],p=e.exports={offset:i(),origin:c,features:[]};u[d]?(u[d]("DOMContentLoaded",o,!1),s[d]("load",n,!1)):(u[f]("onreadystatechange",r),s[f]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],14:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],15:[function(t,e){function n(t,e,r,s){function nrWrapper(){try{var n,a=u(arguments),d=this,f=r&&r(a,d)||{}}catch(c){i([c,"",[a,d,s],f])}o(e+"start",[a,d,s],f);try{return n=t.apply(d,a)}catch(p){throw o(e+"err",[a,d,p],f),p}finally{o(e+"end",[a,d,n],f)}}return a(t)?t:(e||(e=""),nrWrapper[n.flag]=!0,nrWrapper)}function r(t,e,r,o){r||(r="");var i,s,u,d="-"===r.charAt(0);for(u=0;u<e.length;u++)s=e[u],i=t[s],a(i)||(t[s]=n(i,d?s+r:r,o,s,t))}function o(t,e,n){try{s.emit(t,e,n)}catch(r){i([r,t,e,n])}}function i(t){try{s.emit("internal-error",t)}catch(e){}}function a(t){return!(t&&"function"==typeof t&&t.apply&&!t[n.flag])}var s=t(1),u=t(2);e.exports=n,n.inPlace=r,n.flag="nr@wrapper"},{1:1,2:14}]},{},["G9z0Bl",2,7]);</script><script>
+  //<![CDATA[
+    docElement = this.document.documentElement;
+    docElement.className=docElement.className.replace(/\bno-js\b/,'') + 'js';
+  //]]>
+</script>
+<title>Prodigy the Game by Hanakai Studio &mdash; Kickstarter</title><script>
+  //<![CDATA[
+    window.report_errors = true;
+    window.honeybadger_configuration = {
+      api_key : "02ab109335c0dd1a93506d92f22217a7",
+      environment : "production",
+      component : "projects",
+      action : "show",
+      onerror : false
+    };
+  //]]>
+</script>
+
+
+<!--[if lt IE 9]>
+  <script src="//html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta content="telephone=no" name="format-detection">
+
+<!--[if !IE]> -->
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base-9f623ad5d021a188cfb2d68a0cdf7a7b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<!-- <![endif]-->
+<!--[if IE]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base_blessed-2640c72487552f9a2ef9f2620b4af860.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<!--[if lte IE 9]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_nine-a93fe10530f175f96c4078b7e070d7e1.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 8]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_eight-f75aeb274436f94a0d243774456b1c62.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 7]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie-c019c01acd3a96588b346cf577a3504f.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_seven-5a3d2cef660cd281fd844b04b2397dbb.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if IE 6]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_six-e4d3caf76e405fe19aee6ece8bda701b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<link href="https://d297h9he240fqh.cloudfront.net/favicon.png" rel="icon" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-precomposed-7b603dba7cf80e4acc57d94a991bebbd.png" rel="apple-touch-icon-precomposed" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-ipad-precomposed-3176f72977daf43dee3b0d348484dc01.png" rel="apple-touch-icon-precomposed" sizes="72x72" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-iphone4-precomposed-b93b70168cd8492c843d0fea873c7f83.png" rel="apple-touch-icon-precomposed" sizes="114x114" type="image/png">
+<link href="https://www.kickstarter.com/services/oembed?url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2F121511007%2Fprodigy-the-game" rel="alternate" title="Prodigy the Game Script Tag oEmbed" type="application/json+oembed">
+<link rel="alternate" type="application/atom+xml" title="Prodigy the Game : Kickstarter" href="https://www.kickstarter.com/projects/121511007/prodigy-the-game/posts.atom" />
+<meta property="twitter:app:id:iphone" content="596961532"/>
+<meta property="twitter:app:name:iphone" content="Kickstarter"/>
+<meta property="twitter:app:url:iphone" content="ksr://www.kickstarter.com/projects/121511007/prodigy-the-game"/>
+<meta name="video_height" content="360"/>
+<meta name="video_width" content="640"/>
+<meta name="video_type" content="application/x-shockwave-flash"/>
+<meta name="title" content="Kickstarter &gt;&gt; Prodigy the Game by Hanakai Studio"/>
+<meta name="description" content="Hanakai Studio is raising funds for Prodigy the Game on Kickstarter! 
+
+ Prodigy is a tactical RPG with figurines, a new way to play that we will create with you. Thank you so much for your support!"/>
+<meta property="og:title" content="Prodigy the Game"/>
+<meta property="og:type" content="kickstarter:project"/>
+<meta property="og:image" content="https://s3.amazonaws.com/ksr/projects/927148/photo-main.jpg?1399050048"/>
+<meta property="og:url" content="https://www.kickstarter.com/projects/121511007/prodigy-the-game"/>
+<meta property="og:site_name" content="Kickstarter"/>
+<meta property="fb:app_id" content="69103156693"/>
+<meta property="og:description" content="Prodigy is a tactical RPG with figurines, a new way to play that we will create with you. Thank you so much for your support!"/>
+<meta property="kickstarter:creator" content="https://www.kickstarter.com/profile/121511007"/>
+<meta property="twitter:url:landing_url" content="https://www.kickstarter.com/projects/121511007/prodigy-the-game"/>
+<meta property="twitter:card" content="2427656750:kickstarter_project"/>
+<meta property="twitter:site" content="@kickstarter"/>
+<meta property="twitter:site:id" content="16186995"/>
+<meta property="twitter:text:title" content="Prodigy the Game"/>
+<meta property="twitter:text:artist" content="Hanakai Studio"/>
+<meta property="twitter:text:backers" content="1208"/>
+<meta property="twitter:text:pledged" content="$212,194 USD"/>
+<meta property="twitter:text:time" content="0 seconds"/>
+<meta property="twitter:text:location" content="Paris, France"/>
+<meta property="twitter:image:location_image" content="https://d3mlfyygrfdi2i.cloudfront.net/b40e/pin.png"/>
+<meta property="twitter:text:description" content="Prodigy is a tactical RPG with figurines, a new way to play that we will create with you. Thank you so much for your support!"/>
+<meta property="twitter:image:media" content="https://s3.amazonaws.com/ksr/projects/927148/photo-main.jpg?1399050048"/>
+<meta property="twitter:image:width" content="640"/>
+<meta property="twitter:image:height" content="480"/>
+<meta property="twitter:player:stream:url" content="https://d2pq0u4uni88oo.cloudfront.net/projects/927148/video-370501-h264_base.mp4"/>
+<meta property="twitter:player:stream:content" content="video/mp4"/>
+<meta property="twitter:player:url" content="https://www.kickstarter.com/projects/121511007/prodigy-the-game/widget/video.html"/>
+<meta property="twitter:player:height" content="360"/>
+<meta property="twitter:player:width" content="640"/>
+<meta property="twitter:maxage" content="60"/>
+<meta property="og:video" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F927148%2Fvideo-370501-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F927148%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Hanakai+Studio&amp;project_title=Prodigy+the+Game&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2F121511007%2Fprodigy-the-game&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:secure_url" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F927148%2Fvideo-370501-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F927148%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Hanakai+Studio&amp;project_title=Prodigy+the+Game&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2F121511007%2Fprodigy-the-game&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:height" content="360"/>
+<meta property="og:video:width" content="640"/>
+<meta property="og:video:type" content="application/x-shockwave-flash"/>
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="dVF+rLmvv3bJaLKSjGT3QDGpl47snDXUJpMKx2UuJ8Q=" name="csrf-token" />
+<script type="text/javascript">
+  var _sift = _sift || [];
+  _sift.push(['_setAccount', '637102']);
+  _sift.push(['_setUserId', '']);
+  _sift.push(['_trackPageview']);
+
+  (function() {
+    function loadSift() {
+      var sift, s;
+      if (root.visitor_id) {
+        _sift.push(['_setSessionId', root.visitor_id]);
+      }
+      sift = document.createElement('script');
+      sift.type = 'text/javascript';
+      sift.async = true;
+      sift.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dtlilztwypawv.cloudfront.net/s.js';
+      s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(sift, s);
+    }
+    if (window.attachEvent) {
+      window.attachEvent('onload', loadSift);
+    } else {
+      window.addEventListener('load', loadSift, false);
+    }
+  })();
+</script>
+<link href="http://kck.st/1lnbPdu" rel="shorturl">
+<link href="https://www.kickstarter.com/projects/121511007/prodigy-the-game" rel="canonical">
+<link href="https://s3.amazonaws.com/ksr/projects/927148/photo-med.jpg?1399050048" rel="image_src">
+<link href="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F927148%2Fvideo-370501-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F927148%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Hanakai+Studio&amp;project_title=Prodigy+the+Game&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2F121511007%2Fprodigy-the-game&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque" rel="video_src">
+<script>
+  //<![CDATA[
+    window.current_checkout = "{&quot;id&quot;:0,&quot;domestic&quot;:null,&quot;amount&quot;:0.0,&quot;updated_at&quot;:0,&quot;created_at&quot;:0}";
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.current_ip = '94.209.101.212';
+    window.current_ip_datacenter = 'false';
+    window.enabled_features = {"elasticsearch":true,"security_history_read":true,"security_history_write":true,"advanced_discovery_es":true,"ios_crashlytics":true,"ios_mixpanel":true,"stories_veronica_mars":true,"veronica_mars_hero":true,"password_reset_banner":true};
+    window.fb_app_id = '69103156693';
+    
+    var _sf_startpt=(new Date()).getTime();
+    
+    window.current_project = "{&quot;id&quot;:166094679,&quot;name&quot;:&quot;Prodigy the Game&quot;,&quot;blurb&quot;:&quot;Prodigy is a tactical RPG with figurines, a new way to play that we will create with you. Thank you so much for your support!&quot;,&quot;goal&quot;:100000.0,&quot;pledged&quot;:212194.37,&quot;state&quot;:&quot;successful&quot;,&quot;slug&quot;:&quot;prodigy-the-game&quot;,&quot;disable_communication&quot;:false,&quot;country&quot;:&quot;US&quot;,&quot;currency&quot;:&quot;USD&quot;,&quot;currency_symbol&quot;:&quot;$&quot;,&quot;currency_trailing_code&quot;:true,&quot;deadline&quot;:1399068000,&quot;state_changed_at&quot;:1399068012,&quot;created_at&quot;:1395947501,&quot;launched_at&quot;:1396453156,&quot;backers_count&quot;:1208,&quot;photo&quot;:{&quot;full&quot;:&quot;https://s3.amazonaws.com/ksr/projects/927148/photo-full.jpg?1399050048&quot;,&quot;ed&quot;:&quot;https://s3.amazonaws.com/ksr/projects/927148/photo-ed.jpg?1399050048&quot;,&quot;med&quot;:&quot;https://s3.amazonaws.com/ksr/projects/927148/photo-med.jpg?1399050048&quot;,&quot;little&quot;:&quot;https://s3.amazonaws.com/ksr/projects/927148/photo-little.jpg?1399050048&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/projects/927148/photo-small.jpg?1399050048&quot;,&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/projects/927148/photo-thumb.jpg?1399050048&quot;,&quot;1024x768&quot;:&quot;https://s3.amazonaws.com/ksr/projects/927148/photo-1024x768.jpg?1399050048&quot;,&quot;1536x1152&quot;:&quot;https://s3.amazonaws.com/ksr/projects/927148/photo-1536x1152.jpg?1399050048&quot;},&quot;creator&quot;:{&quot;id&quot;:121511007,&quot;name&quot;:&quot;Hanakai Studio&quot;,&quot;avatar&quot;:{&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/10089152/HANAKAI_logo-titleless-512px.thumb.jpg?1395948429&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/10089152/HANAKAI_logo-titleless-512px.small.jpg?1395948429&quot;,&quot;medium&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/10089152/HANAKAI_logo-titleless-512px.medium.jpg?1395948429&quot;},&quot;urls&quot;:{&quot;web&quot;:{&quot;user&quot;:&quot;https://www.kickstarter.com/profile/121511007&quot;},&quot;api&quot;:{&quot;user&quot;:&quot;https://api.kickstarter.com/v1/users/121511007?signature=1399960385.8923029cec769426f5d74cd35bafbe7db52391b2&quot;}}},&quot;location&quot;:{&quot;id&quot;:615702,&quot;name&quot;:&quot;Paris&quot;,&quot;slug&quot;:&quot;paris-fr&quot;,&quot;short_name&quot;:&quot;Paris, France&quot;,&quot;displayable_name&quot;:&quot;Paris, France&quot;,&quot;country&quot;:&quot;FR&quot;,&quot;state&quot;:&quot;Ile-de-France&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/paris-fr&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/paris-fr&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1399951826.b8409b435a8eefee25162bbc908dcf19e881055c&amp;woe_id=615702&quot;}}},&quot;category&quot;:{&quot;id&quot;:35,&quot;name&quot;:&quot;Video Games&quot;,&quot;slug&quot;:&quot;games/video games&quot;,&quot;position&quot;:7,&quot;parent_id&quot;:12,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;http://www.kickstarter.com/discover/categories/games/video%20games&quot;}}},&quot;urls&quot;:{&quot;web&quot;:{&quot;project&quot;:&quot;https://www.kickstarter.com/projects/121511007/prodigy-the-game&quot;,&quot;project_short&quot;:&quot;http://kck.st/1lnbPdu&quot;,&quot;updates&quot;:&quot;https://www.kickstarter.com/projects/121511007/prodigy-the-game/posts&quot;},&quot;api&quot;:{&quot;project&quot;:&quot;https://api.kickstarter.com/v1/projects/166094679?signature=1399960385.8e76bcb0049d3d1f8f875f6c04022eef51d9b131&quot;,&quot;comments&quot;:&quot;https://api.kickstarter.com/v1/projects/166094679/comments?signature=1399960385.e4a72589c101caebb459bf2bafd5f5cba9b92c3a&quot;,&quot;updates&quot;:&quot;https://api.kickstarter.com/v1/projects/166094679/updates?signature=1399960385.1cbc9b13c93af41c6026174d72372e758f6d5671&quot;}},&quot;updated_at&quot;:1399068941,&quot;successful_at&quot;:1399068012,&quot;video&quot;:{&quot;id&quot;:370501,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/927148/video-370501-h264_high.mp4?2014&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/927148/video-370501-h264_base.mp4?2014&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/927148/video-370501-webm.webm?2014&quot;,&quot;width&quot;:640,&quot;height&quot;:360,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/927148/video-370501-h264_base.jpg?2014&quot;},&quot;comments_count&quot;:1242,&quot;updates_count&quot;:24,&quot;rewards&quot;:[{&quot;id&quot;:0,&quot;minimum&quot;:1,&quot;reward&quot;:&quot;No Reward&quot;},{&quot;id&quot;:2494836,&quot;minimum&quot;:1.0,&quot;reward&quot;:&quot;THANK YOU PACK ============================== Select this option if you wish to support the project and receive a big thank you from the team - every dollar helps!\\r\\n(this reward cannot include add-ons)&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1443657600,&quot;project_id&quot;:166094679,&quot;backers_count&quot;:127,&quot;updated_at&quot;:1399799295},{&quot;id&quot;:2499526,&quot;minimum&quot;:15.0,&quot;reward&quot;:&quot;ART PACK - Artbook + OST\\r\\n==============================\\r\\nChoose your Faction and receive the corresponding digital artbook, as well as the digital soundtrack (this reward is purely digital and cannot include physical add-ons).&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1443657600,&quot;project_id&quot;:166094679,&quot;backers_count&quot;:26,&quot;updated_at&quot;:1399676419},{&quot;id&quot;:2507625,&quot;minimum&quot;:20.0,&quot;reward&quot;:&quot;A LA CARTE PACK - Add-ons only ============================== Select this option if you wish to get add-ons only. Initial pledge covers shipping costs to US. Simply increase your pledge according to the value of the items you wish to get - the end of project survey will allow you to select your rewards. Please add $10 for international shipping.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1443657600,&quot;project_id&quot;:166094679,&quot;backers_count&quot;:15,&quot;updated_at&quot;:1399076526},{&quot;id&quot;:2578099,&quot;minimum&quot;:25.0,&quot;reward&quot;:&quot;TROPHY PACK - Artbook + OST + Warbeast ============================== Choose your Faction and receive an ART PACK, as well as the War Trophy Warbeast in its Kickstarter exclusive paint (this reward has exclusive shipping costs and cannot include physical add-ons). Please add $7 for US shipping, $10 for international shipping.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1443657600,&quot;project_id&quot;:166094679,&quot;backers_count&quot;:5,&quot;updated_at&quot;:1399072837},{&quot;id&quot;:2499537,&quot;minimum&quot;:25.0,&quot;reward&quot;:&quot;DELUXE ART PACK - Deluxe artbook + OST\\r\\n==============================\\r\\nReceive the digital deluxe artbook covering both Factions with exclusive content, as well as the digital soundtrack (this reward is purely digital and cannot include physical add-ons).&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1443657600,&quot;project_id&quot;:166094679,&quot;backers_count&quot;:47,&quot;updated_at&quot;:1399676417},{&quot;id&quot;:2499543,&quot;minimum&quot;:70.0,&quot;reward&quot;:&quot;EARLY THORNS PACK - 1 starter set + the game\\r\\n==============================\\r\\nEarly bird! Receive the Company of Thorns. Includes game pack, starter set of Company of Thorns figurines and exclusive Kickstarter game content: colors for your ingame name, visual effects and Mana, a forum badge and HD wallpapers.\\r\\nPlease add $20 for US shipping, $30 for international shipping.&quot;,&quot;limit&quot;:200,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1443657600,&quot;project_id&quot;:166094679,&quot;remaining&quot;:1,&quot;backers_count&quot;:199,&quot;updated_at&quot;:1399687235},{&quot;id&quot;:2499544,&quot;minimum&quot;:70.0,&quot;reward&quot;:&quot;EARLY STORM PACK - 1 starter set + the game\\r\\n==============================\\r\\nEarly bird! Receive the Company of the Storm. Includes game pack, starter set of Company of the Storm figurines and exclusive Kickstarter game content: colors for your ingame name, visual effects and Mana, a forum badge and HD wallpapers.\\r\\nPlease add $20 for US shipping, $30 for international shipping.&quot;,&quot;limit&quot;:200,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1443657600,&quot;project_id&quot;:166094679,&quot;remaining&quot;:0,&quot;backers_count&quot;:200,&quot;updated_at&quot;:1399676420},{&quot;id&quot;:2499542,&quot;minimum&quot;:80.0,&quot;reward&quot;:&quot;KICKSTARTER PACK - 1 starter set + the game\\r\\n==============================\\r\\nChoose the Company of Thorns or the Company of the Storm. Includes game pack, starter figurine set of your choice and exclusive Kickstarter game content: colors for your ingame name, visual effects and Mana, a forum badge and HD wallpapers.\\r\\nPlease add $20 for US shipping, $30 for international shipping.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1443657600,&quot;project_id&quot;:166094679,&quot;backers_count&quot;:140,&quot;updated_at&quot;:1399651159},{&quot;id&quot;:2499541,&quot;minimum&quot;:130.0,&quot;reward&quot;:&quot;DELUXE PACK - 1 starter set + the game +  deluxe items\\r\\n==============================\\r\\nChoose the Company of Thorns or the Company of the Storm. Includes game pack, starter figurine set of your choice, deluxe artbook, OST, T-shirt and exclusive Kickstarter game content: colors for your ingame name, visual effects and Mana, a forum badge and HD wallpapers.\\r\\nPlease add $20 for US shipping, $30 for international shipping.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1443657600,&quot;project_id&quot;:166094679,&quot;backers_count&quot;:25,&quot;updated_at&quot;:1399676414},{&quot;id&quot;:2499539,&quot;minimum&quot;:145.0,&quot;reward&quot;:&quot;COMPANION TO MANY PACK - 2 starter sets + the game\\r\\n==============================\\r\\nIncludes game pack, 2 different starter figurine sets (6 figurines) and exclusive Kickstarter game content: colors for your ingame name, visual effects and Mana, a forum badge and HD wallpapers.\\r\\nPlease add $20 for US shipping, $30 for international shipping.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1443657600,&quot;project_id&quot;:166094679,&quot;backers_count&quot;:15,&quot;updated_at&quot;:1399474601},{&quot;id&quot;:2499538,&quot;minimum&quot;:150.0,&quot;reward&quot;:&quot;COMPANY PACK - 1 full Company + the game\\r\\n==============================\\r\\nChoose the Company of Thorns or the Company of the Storm. Includes game pack, full Company of your choice (6 figurines), digital artbook of your choice, digital OST and exclusive Kickstarter game content: colors for your ingame name, visual effects and Mana, a forum badge and HD wallpapers.\\r\\nPlease add $20 for US shipping, $30 for international shipping.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1443657600,&quot;project_id&quot;:166094679,&quot;backers_count&quot;:89,&quot;updated_at&quot;:1399676417},{&quot;id&quot;:2578100,&quot;minimum&quot;:160.0,&quot;reward&quot;:&quot;DUO STARTER PACK - 2 starter sets + 2 games ============================== Receive two KICKSTARTER PACKS (one for each Company) for the shipping cost of one. Please add $20 for US shipping, $30 for international shipping.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1443657600,&quot;project_id&quot;:166094679,&quot;backers_count&quot;:22,&quot;updated_at&quot;:1399361053},{&quot;id&quot;:2499584,&quot;minimum&quot;:180.0,&quot;reward&quot;:&quot;BETA PACK - 1 full Company + beta game\\r\\n==============================\\r\\nChoose the Company of Thorns or the Company of the Storm. Receive a COMPANY PACK and beta access to the game.\\r\\nPlease add $20 for US shipping, $30 for international shipping.&quot;,&quot;limit&quot;:250,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1441065600,&quot;project_id&quot;:166094679,&quot;remaining&quot;:218,&quot;backers_count&quot;:32,&quot;updated_at&quot;:1399676417},{&quot;id&quot;:2499545,&quot;minimum&quot;:230.0,&quot;reward&quot;:&quot;DELUXE COMPANY PACK - 1 full Company + beta game + deluxe items\\r\\n==============================\\r\\nChoose the Company of Thorns or the Company of the Storm. Receive a COMPANY PACK, beta access to the game, deluxe artbook, OST and T-shirt.\\r\\nPlease add $20 for US shipping, $30 for international shipping.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1441065600,&quot;project_id&quot;:166094679,&quot;backers_count&quot;:12,&quot;updated_at&quot;:1399553873},{&quot;id&quot;:2499557,&quot;minimum&quot;:330.0,&quot;reward&quot;:&quot;JACK OF ALL TRADES PACK - 2 full Companies + additional figurines + beta game\\r\\n==============================\\r\\nIncludes game pack with beta access to the game, 2 different full companies, 1 Ally and 1 Henchman (14 figurines), 2 different digital artbooks and exclusive Kickstarter game content: colors for your ingame name, visual effects and Mana, a forum badge and HD wallpapers.\\r\\nPlease add $30 for US shipping, $40 for international shipping.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1441065600,&quot;project_id&quot;:166094679,&quot;backers_count&quot;:13,&quot;updated_at&quot;:1399069130},{&quot;id&quot;:2499558,&quot;minimum&quot;:360.0,&quot;reward&quot;:&quot;EARLY ALPHA FOUNDER - 1 full Company + alpha game + beta game + deluxe items\\r\\n==============================\\r\\nEarly bird! Receive an ALPHA FOUNDER PACK.\\r\\nFree shipping!&quot;,&quot;limit&quot;:100,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1417392000,&quot;project_id&quot;:166094679,&quot;remaining&quot;:65,&quot;backers_count&quot;:35,&quot;updated_at&quot;:1399075680},{&quot;id&quot;:2499559,&quot;minimum&quot;:400.0,&quot;reward&quot;:&quot;ALPHA FOUNDER PACK - 1 full Company + alpha game + beta game + deluxe items ============================== Choose the Company of Thorns or the Company of the Storm. Receive a COMPANY PACK, deluxe artbook, soundtrack, and exclusive Alpha Founder T-shirt. Receive alpha and beta access to the game, and an Ally or Henchman figurine depending on the Faction you chose to represent.\\r\\nFree shipping.&quot;,&quot;limit&quot;:400,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1417392000,&quot;project_id&quot;:166094679,&quot;remaining&quot;:394,&quot;backers_count&quot;:6,&quot;updated_at&quot;:1399676418},{&quot;id&quot;:2499560,&quot;minimum&quot;:450.0,&quot;reward&quot;:&quot;SEVENTEEN PACK - 2 full Companies + additional figurines + beta game + deluxe items\\r\\n==============================\\r\\nReceive a JACK OF ALL TRADES pack, as well as 1 Legend and 2 Boss figurines (all 17 first figurines of the game), beta access to the game, deluxe artbook, soundtrack, T-shirt and Kickstarter exclusive visual effects.\\r\\nFree shipping.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1441065600,&quot;project_id&quot;:166094679,&quot;backers_count&quot;:27,&quot;updated_at&quot;:1399089738},{&quot;id&quot;:2499561,&quot;minimum&quot;:500.0,&quot;reward&quot;:&quot;EARLY SEVENTEEN FOUNDER PACK - 2 full Companies + additional figurines + alpha game + beta game + deluxe items\\r\\n==============================\\r\\nBEST VALUE. Early bird! Receive a SEVENTEEN FOUNDER PACK.\\r\\nFree shipping.&quot;,&quot;limit&quot;:100,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1417392000,&quot;project_id&quot;:166094679,&quot;remaining&quot;:0,&quot;backers_count&quot;:100,&quot;updated_at&quot;:1399676417},{&quot;id&quot;:2534162,&quot;minimum&quot;:505.0,&quot;reward&quot;:&quot;STILL QUITE EARLY SEVENTEEN FOUNDER PACK - 2 full Companies + additional figurines + alpha game + beta game + deluxe items ============================== BEST VALUE. Early bird! Receive a SEVENTEEN FOUNDER PACK. Free shipping.&quot;,&quot;limit&quot;:90,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1417392000,&quot;project_id&quot;:166094679,&quot;remaining&quot;:60,&quot;backers_count&quot;:30,&quot;updated_at&quot;:1399676413},{&quot;id&quot;:2499562,&quot;minimum&quot;:550.0,&quot;reward&quot;:&quot;SEVENTEEN FOUNDER PACK - 2 full Companies + additional figurines + alpha game + beta game + deluxe items\\r\\n==============================\\r\\nReceive a SEVENTEEN PACK, as well as alpha and beta access.\\r\\nFree shipping.&quot;,&quot;limit&quot;:200,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1417392000,&quot;project_id&quot;:166094679,&quot;remaining&quot;:199,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1399069101},{&quot;id&quot;:2499563,&quot;minimum&quot;:800.0,&quot;reward&quot;:&quot;ULTIMATE COLLECTOR PACK - 2 full Companies + additional figurines + alpha game + beta game + deluxe items + collector statuette\\r\\n==============================\\r\\nReceive a SEVENTEEN FOUNDER PACK, as well as a 20cm limited edition statuette of Soha cast in white resin and delivered with its numbered and signed certificate of authenticity.\\r\\nFree shipping.&quot;,&quot;limit&quot;:185,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1417392000,&quot;project_id&quot;:166094679,&quot;remaining&quot;:170,&quot;backers_count&quot;:15,&quot;updated_at&quot;:1399112013},{&quot;id&quot;:2499564,&quot;minimum&quot;:2500.0,&quot;reward&quot;:&quot;POWER PACK - 2 full Companies + additional figurines + alpha game + beta game + deluxe items + collector statuette + design your own symbol of power\\r\\n==============================\\r\\nReceive an ULTIMATE COLLECTOR PACK, and design and create your own symbol of power with the team.\\r\\nFree shipping.&quot;,&quot;limit&quot;:7,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1417392000,&quot;project_id&quot;:166094679,&quot;remaining&quot;:6,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1399089774},{&quot;id&quot;:2499565,&quot;minimum&quot;:5000.0,&quot;reward&quot;:&quot;CREATOR PACK - 2 full Companies + additional figurines + alpha game + beta game + deluxe items + collector statuette + design your own Symbol of Power + design your own character\\r\\n==============================\\r\\nReceive a POWER PACK, and design and create your own character and its figurine with the team - and have it included in the game!\\r\\nFree shipping.&quot;,&quot;limit&quot;:5,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1417392000,&quot;project_id&quot;:166094679,&quot;remaining&quot;:3,&quot;backers_count&quot;:2,&quot;updated_at&quot;:1399694729},{&quot;id&quot;:2499566,&quot;minimum&quot;:10000.0,&quot;reward&quot;:&quot;CHOSEN ONE PACK - 2 full Companies + additional figurines + alpha game  + beta game + deluxe items + collector statuette + design your own Symbol of Power + design your own character + meet the team\\r\\n==============================\\r\\nReceive a CREATOR PACK, and meet the creators of Prodigy during a memorable stay in Paris during which you will be able to choose any figurine and see it painted live to your taste.\\r\\nFree shipping.&quot;,&quot;limit&quot;:3,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1417392000,&quot;project_id&quot;:166094679,&quot;remaining&quot;:3,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1396444058}]}";
+    
+    
+    
+    
+    
+    
+    
+    
+    window.timeRemaining = function timeRemaining(epochTime){
+    
+      var diff = epochTime - ((new Date()).getTime() / 1000);
+      var num_unit = (diff < 60 && [Math.max(diff, 0), 'seconds']) ||
+        ((diff/=60) < 60 && [diff, 'minutes']) ||
+        ((diff/=60) < 72 && [diff, 'hours']) ||
+        [diff/=24, 'days'];
+    
+      // Round down
+      num_unit[0] = Math.floor(num_unit[0]);
+      // Singularize unit
+      if (num_unit[0] == 1) { num_unit[1] = num_unit[1].replace(/s$/,""); }
+    
+      return num_unit;
+    };
+  //]]>
+</script>
+
+<script>
+  //<![CDATA[
+    window.current_variants = ["discover_link_copy[explore]","rewards_hover[without_hover_text]"];
+  //]]>
+</script>
+
+
+</head>
+
+<body class="project projects not-mobile not-phone not-forces-video-controls not-tablet not-touchable not-native-app-request video_mode" id="projects_show">
+<div class="jGrowl center" id="growl_section"></div>
+<div class="NS_layouts__navigation" id="header">
+<div class="main-nav relative bg-white">
+<h1 class="no-margin ml1 mr2 left">
+<a href="/?ref=nav" class="block p2"><span class="ss-icon green-dark">KICK</span><span class="ss-icon green">STARTER</span>
+</a></h1>
+<ul class="primary-links list no-margin left">
+<li class="left discover-link full-height">
+<a href="/discover?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Explore</a>
+</li>
+<li class="left full-height mr2">
+<a href="/learn?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Start</a>
+</li>
+</ul>
+<ul class="list no-margin right" id="menu-sub">
+<li class="right"><a href="/login?ref=nav" class="block h5 bold p2 full-height border-box">Log in</a></li>
+<li class="right"><a href="/signup?ref=nav" class="block h5 bold p2 full-height border-box">Sign up</a></li>
+</ul>
+<div class="search-link pl2 full-height border-left border-box clip">
+<form accept-charset="UTF-8" action="/projects/search" class="search pt1 pb1 block relative form-simple" method="get"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /></div>
+<div class="field relative pl3">
+<span class="ss-icon ss-search grey-dark ml1 mt1 absolute"></span>
+<input class="input-search header full-width text" data-tracker-name="Header Live Search" id="term" name="term" placeholder="Search projects" type="text" />
+</div>
+</form>
+
+</div>
+<div class="clear"></div>
+</div>
+</div>
+<div class="hide pt4 pb4 bg-grey-light" id="search_results-wrap">
+<div class="relative container" id="search_results">
+<a class="close right grey-dark mr1"><span class="ss-icon ss-delete"></span></a>
+<h3 class="header ml1 clearfix"></h3>
+<div class="clip clearfix" id="search_results_panel"></div>
+<a class="prev arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateleft"></span>
+</a>
+<a class="next arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateright"></span>
+</a>
+</div>
+</div>
+
+
+
+
+<div class="Project-ended-true Project-is_starred- Project-state-successful Project166094679_cxt border-top" id="main_content">
+<div id="running-board-wrap">
+<div class="container" id="running-board">
+<div id="project-header">
+<div class="NS_projects__running_board ml1 mr1 clearfix">
+<div class="title center py4">
+<h2 class="mb1">
+<a href="/projects/121511007/prodigy-the-game" class="green-dark">Prodigy the Game</a>
+</h2>
+<p class="no-margin">
+<span class="creator">
+by
+<a href="/projects/121511007/prodigy-the-game/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography" id="name">Hanakai Studio</a>
+</span>
+</p>
+</div>
+<ul class="project-nav list-inline left h5 bold mb1">
+<li class="mr2">
+<a href="/projects/121511007/prodigy-the-game" class="grey-dark py1 current" id="home_nav">Home</a>
+</li>
+<li class="mr2">
+<span data-updates-count="24" id="updates_count">
+<a href="/projects/121511007/prodigy-the-game/posts" class="grey-dark py1" id="updates_nav">Updates
+<span class="count h6 bg-grey-dark white">24</span>
+</a></span>
+</li>
+<li class="mr2">
+<a href="/projects/121511007/prodigy-the-game/backers" class="grey-dark py1" id="backers_nav">Backers
+<span class="count h6 bg-grey-dark white"><data class="Project166094679" data-format="number" data-value="1208" itemprop="Project[backers_count]">1,208</data></span>
+</a></li>
+<li>
+<span data-comments-count="1242" id="comments_count">
+<a href="/projects/121511007/prodigy-the-game/comments" class="grey-dark py1" id="comments_nav">Comments
+<span class="count h6 bg-grey-dark white"><data class="Project166094679" data-format="number" data-value="1241" itemprop="Project[comments_count]">1,241</data></span>
+</a></span>
+</li>
+</ul>
+<ul class="list-inline right h5 bold mb1">
+<li class="location mr2">
+<a href="/discover/places/paris-fr?ref=city" class="grey-dark"><span class="ss-icon ss-location margin-right"></span>
+Paris, France
+</a></li>
+<li class="category" data-project-parent-category="Games">
+<a href="/discover/categories/games/video%20games?ref=category" class="grey-dark"><span class="ss-icon ss-tag margin-right"></span>
+Video Games
+</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+</div>
+<div class="bg-grey-light pb4" id="content-wrap">
+<div class="Project166094679" data-conditions="[{&quot;!state&quot;:&quot;live&quot;}]" data-evaluation="true" data-render="&quot;&lt;div class=\&quot;NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-successful Project166094679_cxt bg-grey container pb1 pt1\&quot;&gt;\n&lt;div class=\&quot;Project166094679\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;successful&amp;quot;}]\&quot; data-evaluation=\&quot;true\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;Funded!&amp;lt;/b&amp;gt;\\nThis project was successfully funded &amp;lt;data class=\\&amp;quot;Project166094679\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2014-05-02T18:00:00-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[deadline]\\&amp;quot;&amp;gt;on May 2&amp;lt;/data&amp;gt;.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;Funded!&lt;/b&gt;\nThis project was successfully funded &lt;data class=\&quot;Project166094679\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2014-05-02T18:00:00-04:00&amp;quot;\&quot; itemprop=\&quot;Project[deadline]\&quot;&gt;on May 2&lt;/data&gt;.\n&lt;/p&gt;\n&lt;/div&gt;&lt;div class=\&quot;Project166094679\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:[&amp;quot;started&amp;quot;,&amp;quot;submitted&amp;quot;]}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;THIS PROJECT IS NOT LIVE&amp;lt;/b&amp;gt;\\nThis is only a draft that the creator has chosen to share.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project166094679\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;suspended&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Suspended&amp;lt;/b&amp;gt;\\nFunding for this project was suspended &amp;lt;data class=\\&amp;quot;Project166094679\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2014-05-02T18:00:12-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on May 2&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project166094679\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;canceled&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Canceled&amp;lt;/b&amp;gt;\\nFunding for this project was canceled by the project creator &amp;lt;data class=\\&amp;quot;Project166094679\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2014-05-02T18:00:12-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on May 2&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project166094679\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;failed&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Unsuccessful&amp;lt;/b&amp;gt;\\nThis project\\u2019s funding goal was not reached on &amp;lt;time class=\\&amp;quot;js-adjust\\&amp;quot; data-format=\\&amp;quot;MMMM D\\&amp;quot; datetime=\\&amp;quot;2014-05-02T18:00:00-04:00\\&amp;quot;&amp;gt;May 2&amp;lt;/time&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project166094679\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;purged&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;This project is purged and only visible to staff.&amp;lt;/b&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;/div&gt;\n&quot;"><div class="NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-successful Project166094679_cxt bg-grey container pb1 pt1">
+<div class="Project166094679" data-conditions="[{&quot;state&quot;:&quot;successful&quot;}]" data-evaluation="true" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;Funded!&lt;/b&gt;\nThis project was successfully funded &lt;data class=\&quot;Project166094679\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2014-05-02T18:00:00-04:00&amp;quot;\&quot; itemprop=\&quot;Project[deadline]\&quot;&gt;on May 2&lt;/data&gt;.\n&lt;/p&gt;\n&quot;"><p class="no-margin">
+<b>Funded!</b>
+This project was successfully funded <data class="Project166094679" data-format="distance_date" data-value="&quot;2014-05-02T18:00:00-04:00&quot;" itemprop="Project[deadline]">on May 2</data>.
+</p>
+</div><div class="Project166094679" data-conditions="[{&quot;state&quot;:[&quot;started&quot;,&quot;submitted&quot;]}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;THIS PROJECT IS NOT LIVE&lt;/b&gt;\nThis is only a draft that the creator has chosen to share.\n&lt;/p&gt;\n&quot;"></div><div class="Project166094679" data-conditions="[{&quot;state&quot;:&quot;suspended&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Suspended&lt;/b&gt;\nFunding for this project was suspended &lt;data class=\&quot;Project166094679\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2014-05-02T18:00:12-04:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on May 2&lt;/data&gt;.\n&quot;"></div><div class="Project166094679" data-conditions="[{&quot;state&quot;:&quot;canceled&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Canceled&lt;/b&gt;\nFunding for this project was canceled by the project creator &lt;data class=\&quot;Project166094679\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2014-05-02T18:00:12-04:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on May 2&lt;/data&gt;.\n&quot;"></div><div class="Project166094679" data-conditions="[{&quot;state&quot;:&quot;failed&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Unsuccessful&lt;/b&gt;\nThis project\u2019s funding goal was not reached on &lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;MMMM D\&quot; datetime=\&quot;2014-05-02T18:00:00-04:00\&quot;&gt;May 2&lt;/time&gt;.\n&quot;"></div><div class="Project166094679" data-conditions="[{&quot;state&quot;:&quot;purged&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;This project is purged and only visible to staff.&lt;/b&gt;\n&quot;"></div></div>
+</div>
+<div class="container bg-white border rounded py3 pl2 pr2" id="content">
+<div class="NS-projects-content">
+<div class="grid_11">
+<div data-has-video="true" id="video-section">
+<div class="video-player" data-dimensions="{&quot;width&quot;:640,&quot;height&quot;:480}" data-image="https://s3.amazonaws.com/ksr/projects/927148/photo-main.jpg?1399050048" data-video-tracker-url="https://www.kickstarter.com/projects/121511007/prodigy-the-game/video/plays" data-video-url="https://d2pq0u4uni88oo.cloudfront.net/projects/927148/video-370501-h264_high.mp4" data-video="{&quot;id&quot;:370501,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/927148/video-370501-h264_high.mp4?2014&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/927148/video-370501-h264_base.mp4?2014&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/927148/video-370501-webm.webm?2014&quot;,&quot;width&quot;:640,&quot;height&quot;:360,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/927148/video-370501-h264_base.jpg?2014&quot;}" id="video_pitch"><video class="has_webm landscape" preload="none">
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/927148/video-370501-h264_high.mp4" type='video/mp4; codecs="avc1.64001E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/927148/video-370501-h264_base.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/927148/video-370501-webm.webm" type="video/webm"></source>
+You'll need an HTML5 capable browser to see this content.
+</video>
+<img alt="Photo-main" class="has_played_hide poster landscape" src="https://s3.amazonaws.com/ksr/projects/927148/photo-main.jpg?1399050048" />
+<div class="play_button_big play_button_dark absolute-center rounded has_played_hide">
+<span class="ss-icon ss-play"></span>
+Play
+</div>
+<div class="player_controls clearfix absolute-bottom mb2 rounded white bg-green-dark forces-video-controls_hide">
+<div class="left">
+<a class="button button_icon button_dark playpause play mr1">
+<span class="play ss-icon ss-play"></span>
+<span class="pause ss-icon ss-pause"></span>
+</a>
+<span class="time current_time h12 left">00:00</span>
+</div>
+<div class="right">
+<span class="time total_time h12 left mr1">00:00</span>
+<a class="left button button_icon button_icon_white volume">
+<span class="ss-icon ss-volume icon_volume_nudge"></span>
+<span class="ss-icon ss-highvolume"></span>
+</a>
+<div class="volume_container left">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+<a class="left button button_icon button_icon_white fullscreen">
+<span class="ss-icon ss-expand"></span>
+<span class="ss-icon ss-contract"></span>
+</a>
+</div>
+<div class="clip">
+<div class="progress_container pr1 pl1">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="buffer progress_bar_buffer"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div data-project-state="successful" id="about">
+<div class="NS_projects__project_share clearfix py2 pl1 pr1">
+<ul class="left list-inline no-margin h5 bold">
+<li class="facebook mr2">
+<a href="https://www.kickstarter.com/projects/121511007/prodigy-the-game"><span class="ss-icon ss-social ss-facebook color-facebook"></span>
+<span class="color-facebook">Share</span>
+<span class="share_bubble"><div class="triangle grey"></div>
+<div class="triangle white"></div>
+<span class="count"></span></span>
+</a></li>
+<li class="twitter mr2">
+<a  href="https://twitter.com/intent/tweet?text=Prodigy%20the%20Game%20by%20Hanakai%20Studio&amp;via=kickstarter&amp;url=http://kck.st/1lnbPdu" rel="nofollow"><span class="ss-icon ss-social ss-twitter color-twitter"></span>
+<span class="color-twitter">Tweet</span>
+</a></li>
+<li class="embed">
+<a href="/projects/121511007/prodigy-the-game/widget" class="remote_modal_dialog grey-dark" data-modal-title="Embed a widget on your site" data-tracker-name="Embed"><span class="ss-icon ss-navigateleft"></span>
+<span class="ss-icon ss-navigateright"></span>
+Embed
+</a></li>
+</ul>
+<ul class="right list-inline no-margin h5 bold">
+<li class="curate mr2">
+</li>
+<li class="remind">
+<div class="ajax-container" id="watching-widget">
+<div class="Project166094679" data-conditions="[{&quot;is_starred&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div id=\&quot;unwatch\&quot;&gt;\n&lt;a href=\&quot;/projects/121511007/prodigy-the-game/unwatch\&quot; class=\&quot;on\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"></div><div class="Project166094679" data-conditions="[{&quot;!is_starred&quot;:true}]" data-evaluation="true" data-render="&quot;&lt;div id=\&quot;watch\&quot;&gt;\n&lt;a href=\&quot;/projects/121511007/prodigy-the-game/watch\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;span class=\&quot;text\&quot;&gt;\n&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"><div id="watch">
+<a href="/projects/121511007/prodigy-the-game/watch"><span class="ss-icon ss-star"></span>
+<span class="text">
+</span>
+</a></div>
+
+</div></div>
+</li>
+</ul>
+</div>
+
+<div class="short_blurb py2 pl1 pr1">
+<p class="h3">Prodigy is a tactical RPG with figurines, a new way to play that we will create with you. Thank you so much for your support!</p>
+</div>
+<div class="full-description">
+<a href="http:/prodigythegame.com/shop" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1956874/edit" data-id="1956874">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/956/874/0b1c4318bf4675a50df4edf361aa02a7_large.jpg?1399036642"></figure>
+</div></a><p><a href="http://prodigythegame.com/" target="_blank">Prodigy's official website</a><br><a href="http:/prodigythegame.com/shop" target="_blank">Prodigy's eShop</a><br><a href="http://www.prodigythegame.com/forums" target="_blank">Join us on the Prodigy Forums (EN, FR, ES, DE, IT)</a><br><a href="http://www.facebook.com/prodigythegame" target="_blank">Like us on Facebook</a><br><a href="http://twitter.com/prodigythegame" target="_blank">Follow us on Twitter</a><br><a href="http://www.twitch.tv/hanakai/" target="_blank">Check our Twitch channel</a><br><a href="http://www.prodigythegame.com/devblog" target="_blank">Follow our devblog</a></p><a href="http://www.polygon.com/2014/3/26/5546214/hanakai-studios-prodigy-nfc-marry-the-real-with-the-digital" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1956855/edit" data-id="1956855">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/956/855/1a7f7bb2aac1f12fe253ef0264d5d0ff_large.png?1399035896"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="http://ign.com/articles/2014/03/26/prodigy-takes-figurine-gaming-to-a-new-level" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1837165/edit" data-id="1837165">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/837/165/47f1d31e8deedd58417fb0677a19d5b0_large.png?1396629259"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</a><a href="http://www.gamer.nl/preview/454146/prodigy-its-a-kickstartah-a-tabletwisting-kickstartah" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1836622/edit" data-id="1836622">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/836/622/54e6bc7124cab7fc3566e021272b1a21_large.png?1396620183"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</a><a href="http://www.shacknews.com/article/83715/prodigy-a-strategy-rpg-played-with-real-world-figurines" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1836627/edit" data-id="1836627">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/836/627/b4544594e8e3ffc31dc8ae7413c780c2_large.png?1396620281"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</a><a href="http://www.jeuxvideo.com/articles/0001/00018844-prodigy-preview.htm" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1836630/edit" data-id="1836630">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/836/630/faf3202b88cc4b8f668f1cddc199a43e_large.png?1396620325"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</a><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1925399/edit" data-id="1925399">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/925/399/0f0fcaa94aa6aae98840b0e86555d4cb_large.png?1398439660"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="http://www.mmorpg.com/showFeature.cfm/feature/8418/General-The-PAX-East-2014-Awards.html" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1892821/edit" data-id="1892821">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/892/821/a5bf83f9eef88efd87615f6f37e27a48_large.png?1397756559"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                </a><a href="http://gamerfitnation.com/2014/04/pax-east-best-show/6/" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1925286/edit" data-id="1925286">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/925/286/48151a723a2fb89214700ae451cf9037_large.png?1398437994"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</a><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1836493/edit" data-id="1836493">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/836/493/34229ff4e52ac2f2eb9ba799dc1698b0_large.png?1396617722"></figure>
+</div><p>Prodigy is a <b>turn-based tactical RPG</b> featuring <b>high quality figurines</b> for <b>PC</b>.<br>The player manipulates <b>magical objects</b> to ﬁght epic multiplayer battles and follow a heroic solo campaign.<br>Prodigy's gameplay focuses on squad-based combat on a <b>physical board</b> for deep-thinking and fast paced <b>1v1 fights</b>.<br>Prodigy is a new way to play <b>without any keyboard, mouse or joypad</b>.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1837232/edit" data-id="1837232">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/837/232/b3705384bc1b1f4505d7eec4340acee7_large.png?1396630060"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1837234/edit" data-id="1837234">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/837/234/c44ac343c4be43166388af339e14d9d1_large.png?1396630074"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1836495/edit" data-id="1836495">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/836/495/84e5fdfc86769dcb7880ebce1b34a4cf_large.png?1396617751"></figure>
+</div><p>Through our artistic direction, <b>our figurines and our stories</b>, you will set off on a journey to an original and surprising world - <b>exploring a fantastic storyline </b>and fighting online against many opponents.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1836403/edit" data-id="1836403">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/836/403/1463b3b5590d6e78d7cf51500fa8fbfb_large.png?1396616138"></figure>
+</div><p>You will play with a Company, a group of adventurers devoted to one of the Factions of the world, Thasys. <b>Each character is represented by a figurine of exceptional quality that carries its own characteristics and story</b>, and is dedicated to one Company.</p><p>Your choices, the characters of your Company, their evolution and your tactical thinking will win numerous battles, making you one of the heroes of your Faction.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1836782/edit" data-id="1836782">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/836/782/243f0c457b38d1b00e1f88c85937e37d_large.png?1396622960"></figure>
+</div><p>Prodigy is currently being developed for PC (Windows) with the <b>Unreal 4 engine</b>. We have a prototype of the game that has proven its worth - it includes our first figurines, displays a wide range of NFC (Near Field Communication) interactions and demonstrates the basis of our combat system. It’s been tested multiple times, works really well and we have received lots of good feedback so far from those who have played the prototype.<br>Along the way, we received last year's <b>National Contest for Creation and Development of Innovative Technologies award</b>, a French prize awarded by the minister of higher education and research.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1837842/edit" data-id="1837842">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/837/842/a09395ffe7839b5a59410269e6efa24f_large.png?1396638075"></figure>
+</div><div class="template oembed" contenteditable="false" data-href="http://www.youtube.com/watch?v=ZuNNpv4PemA">
+<iframe width="612" height="344" src="https://www.youtube.com/embed/ZuNNpv4PemA?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div><div class="template oembed" contenteditable="false" data-href="http://www.youtube.com/watch?v=MwWme3VDvQY">
+<iframe width="612" height="344" src="https://www.youtube.com/embed/MwWme3VDvQY?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div><p><b>Basic Interaction</b></p><p>Fights are turn-based and between two opposing teams (PvP or PvE).
+The board is your side of the battlefield, where the figurines of your Company are placed.  The opponent’s side is displayed onscreen. It creates a classic RPG situation, where the two opposing teams face each other.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1837883/edit" data-id="1837883">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/837/883/440627bb4f20c3387811e747392f7775_large.png?1396638678"></figure>
+</div><p>During your turn, you can move your character freely on the board (no Action Points or any other system of that kind; we want it to be fluid and intuitive) and finish your turn by using Arcana cards to perform an action eg. attacking the enemy. The action is validated when you place the card(s) on the board.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1837884/edit" data-id="1837884">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/837/884/e6fa6f3b83fe284d9a66fdc855eb0017_large.png?1396638722"></figure>
+</div><p><b>Special Attacks</b></p><p>Each character has its own special and unique skills.</p><p>You can trigger these special skills with a specific combination of Arcana cards. For example, if you make a combination with Focus and Attack cards, your character will make a piercing attack.
+</p><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1837886/edit" data-id="1837886">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/837/886/7b4531831f67777e4f1889255533920f_large.png?1396638776"></figure>
+</div><p>You need Mana to use your Special Skills. We are currently working on some very cool gameplay for the Mana (<a href="https://www.kickstarter.com/projects/121511007/prodigy-the-game/posts/823878" target="_blank">see here</a>).
+</p><p><b>A Reactive Board </b></p><p>Your board contains a dynamic feedback system, based on colored lights which accompany your skills and indicate the actions of your opponent.</p><p>For example, when a character is targeted by your opponent the square under your character is highlighted in red. If the skill can cause damage to adjacent squares, they will also light up in red.
+</p><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1837888/edit" data-id="1837888">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/837/888/ec2f77aac055240b521560a8d3571b86_large.png?1396638842"></figure>
+</div><p><i>The opponent is now targeting Rota with his special attack.</i></p><p><b>Placement</b></p><p>Your characters’ positions on the board are critical to your strategy.</p><p>For example, when placed on the front line your fighters will get an attack bonus but will take more damage. As most attacks target the first opponent in line with your character, placing a character on the front line will protect the Company members behind it in the same column from direct physical attacks (some special attacks can still get through).</p><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1837891/edit" data-id="1837891">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/837/891/1b7785de52f1782e96e991783b5df63a_large.png?1396638870"></figure>
+</div><p><i>On this image above, Rota is both protecting Elae and threatening Orin.</i></p><p>You can use this front line in a very aggressive way, to increase the damage to your opponent; and you can also place a heavily armored character on this line to help protect the characters behind it. You can also move a wounded character behind another member of the Company on their turn (or to the rear defense line) to reduce damage from additional attacks.
+</p><p><b>Reinforcements</b></p><p>You can reinforce your Company during a fight by placing new characters on the board. We will work to balance this reinforcement system so it does not penalize players with only a few figurines.</p><p>Check our <a href="http://prodigythegame.com/" target="_blank">website</a> and our <a href="http://prodigythegame.com/devblog/" target="_blank">devblog</a> for more info about our gameplay!</p><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1958286/edit" data-id="1958286">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/958/286/a3061799cb89343cc608b64bcd4e6c27_large.jpg?1399057564"></figure>
+</div><p><b>All stretch goals will be carried on for two additional months! </b>They can be reached with our eShop until the end of June 2014 (we are not able to modify the Kickstarter page once the project ends - please check our <a href="http://prodigythegame.com/" target="_blank">website</a> to see which stretch goals are currently unlocked). </p><a href="https://www.kickstarter.com/projects/121511007/prodigy-the-game/posts/803389" target="_blank">More on the Path of Survivors and Kingdom modes</a>.<br><a href="https://www.kickstarter.com/projects/121511007/prodigy-the-game/posts/823090" target="_blank">More on the Duota stretch goal</a>.<br><p><a href="https://www.kickstarter.com/projects/121511007/prodigy-the-game/posts/804706" target="_blank">More on the Factory of Sarul fragment</a>.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1957924/edit" data-id="1957924">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/957/924/26bfed92e9236c7ca884c6823cd038f7_large.jpg?1399052587"></figure>
+</div><p>We did a lot of updates to reveal more about our characters, our universe and our gameplay. Here is a quick overview of the updates posted during the Kickstarter. Find more about..<br>..<a href="https://www.kickstarter.com/projects/121511007/prodigy-the-game/posts/803200" target="_blank">our combat system and the evolution of characters</a><br>..<a href="https://www.kickstarter.com/projects/121511007/prodigy-the-game/posts/803389" target="_blank">our map, dialog and solo quests</a><br>..<a href="https://www.kickstarter.com/projects/121511007/prodigy-the-game/posts/804706" target="_blank">the gameplay of each Company</a><br>..<a href="https://www.kickstarter.com/projects/121511007/prodigy-the-game/posts/811288" target="_blank">our universe and our Lineage gameplay</a><br>..<a href="https://www.kickstarter.com/projects/121511007/prodigy-the-game/posts/813693" target="_blank">our main storyline and the gameplay of Creatures</a><br>..<a href="https://www.kickstarter.com/projects/121511007/prodigy-the-game/posts/819419" target="_blank">the race of the Gerlins and the gameplay</a> <br>..<a href="https://www.kickstarter.com/projects/121511007/prodigy-the-game/posts/823090" target="_blank">the War Trophy figurines</a><br>..<a href="https://www.kickstarter.com/projects/121511007/prodigy-the-game/posts/823878" target="_blank">our future Mana system</a><br>..<a href="https://www.kickstarter.com/projects/121511007/prodigy-the-game/posts/824133" target="_blank">our future Dynamic turn-based system and our voiceover plans</a><br>..<a href="https://www.kickstarter.com/projects/121511007/prodigy-the-game/posts/826729" target="_blank">the Alpha, the Beta and our symbols of power</a><br>..<a href="https://www.kickstarter.com/projects/121511007/prodigy-the-game/posts/827898" target="_blank">our game modes</a><br>..<a href="https://www.kickstarter.com/projects/121511007/prodigy-the-game/posts/829240" target="_blank">the gameplay of Onosani</a></p><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1836503/edit" data-id="1836503">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/836/503/2fc0537c99120b9702acba8a19bf50b1_large.png?1396617873"></figure>
+</div><p>In the world of Thasys, most races rely on Mana to survive. This magical energy is now growing scarce, and wars for survival are devastating the land as magical beings fight over the last scraps of Mana.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1827339/edit" data-id="1827339">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/827/339/e5cd8edc48beb86a8490f2472f1cccd7_large.jpg?1396438564"></figure>
+</div><p>Entire civilizations are destroying each other. The end draws nearer as the All-Mother of Darkness threatens to devour all worlds.</p><p>The Eris comet has flown through the sky, heralding the time for new champions to appear. A few chosen ones, children of the feeble and powerless humans, are rising to save Thasys.</p><p>These prodigies are our last hope.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1836526/edit" data-id="1836526">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/836/526/a315f141eb1d9b4a67a367bc278492ce_large.png?1396618261"></figure>
+</div><p>When Mana was still abundant it transformed men, imbuing them with limitless power. Some of these men, hungry for more power, fought together in a frenzy of creation and destruction, attaining a mastery of magic that few ever achieved. They were the <b>Sorcerer Kings</b>, and their heirs lead the current wars for Mana at the head of the northern kingdoms.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1836527/edit" data-id="1836527">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/836/527/7dabd81e15011ed574f70862fd8fa7f4_large.png?1396618280"></figure>
+</div><p>With the decline of the magical spark, powerful dictators and leaders suddenly lost their magic, left powerless before the people they had once oppressed. Uprisings spread everywhere, taking down those who were once omnipotent. Freed from their tyrants, the former slaves and deserting soldiers named themselves the <b>Free People </b>and took the southern territories as their own.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1836528/edit" data-id="1836528">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/836/528/b57d71edd341523c75c83ae871cd0593_large.png?1396618296"></figure>
+</div><p>The prodigies are chosen ones infused with the power of almighty dragons and bear a heritage that was forced upon them. Feared and shunned by their own people, they possess a will free from the shackles of destiny - the unique ability to bend fate and create reality out of thin air.</p><p>These <b>Watchers </b>share a harmonious bond with <b>Guardians</b>, magical creatures whose powers have no earthly equivalent. The Guardians are the mirror of the prodigies’ souls; raw power and will made flesh.</p><p>These creatures are the only ones still able to create Mana and are the chosen saviors of the world.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1836529/edit" data-id="1836529">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/836/529/de3c02599533d5e4bd20571df8e189fe_large.png?1396618311"></figure>
+</div><p>Each Watcher and his Guardian attract Companions to them: these fighters are enticed by loyalty or sheer bloodlust. The groups they form are called Companies.</p><p><i>Learn more about the gameplay of the Companies in <a href="https://www.kickstarter.com/projects/121511007/prodigy-the-game/posts/804706" target="_blank">this update</a>.</i></p><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1836355/edit" data-id="1836355">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/836/355/4c4ca90e657cc3d4281c7ca79ffe7c26_large.png?1396615527"></figure>
+</div><p>Pledged to the Sorcerer Kings, Orin the Watcher and his Guardian Toboro lead a Company of fearsome wanderers brought together by their bloodlust. Orin’s Companions have strong and solitary personalities, but he skillfully drives them as a coordinated and dreadful ensemble: the <b>Company of Thorns</b>.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1836542/edit" data-id="1836542">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/836/542/611ec875b8dec7382e07dead6fda0090_large.png?1396618515"></figure>
+</div><p>Orin Aki is a Watcher, the leader of the Company of Thorns and the heir of a noble line of Sorcerer Kings. Pragmatic, threatening, and sure of himself, he was raised among the military and political conflicts of the city of Dis and his  thirst for power nourishes a latent and boiling anger.</p><a href="http://www.prodigythegame.com/orin_aki" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1940769/edit" data-id="1940769">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/940/769/314cd92dd2e1382140a99d6e0bc092c4_large.png?1398761548"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</a><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1836553/edit" data-id="1836553">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/836/553/4b4b3263cf21da07ed3253df440a5e8e_large.png?1396618602"></figure>
+</div><p>Toboro, the Guardian of Thorns, is a beast of tremendous powers in service to Orin Aki. He does not have a past, for his existence is linked to Orin’s awakening to his powers as a Watcher. He is an unsettling creature, whose constant agitation and brutal anger is the incarnation of the dark thoughts Orin tries to repress.</p><a href="http://www.prodigythegame.com/toboro" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1837535/edit" data-id="1837535">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/837/535/bf58a2212ec9d6df0af83d8345faf9cc_large.png?1396634272"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</a><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1836539/edit" data-id="1836539">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/836/539/d370f75246314ce78c04b3860cb84898_large.png?1396618472"></figure>
+</div><p>Siren is a hypnotic and beautiful witch with a cruel and cold heart. She will not hesitate to use her victims' blood to feed her dark and inhuman magic. She has no consideration for human life, but cultivates a secret love for her master Orin.<br>See more about Siren's making of on our <a href="http://prodigythegame.com/devblog/?p=133" target="_blank">devblog</a>!</p><a href="http://prodigythegame.com/devblog/?p=133" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1940763/edit" data-id="1940763">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/940/763/c4fcfa8823c8f63445552338618bc909_large.png?1398761448"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</a><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1819660/edit" data-id="1819660">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/819/660/b7bcbeb41f06321c1416d4d48e45cccb_large.png?1396299412"></figure>
+</div><p>Nobody knows who Karan Kar really is. He was once a skilled and respected soldier but his past and memories have been erased by the mighty Sorcerer King Kazim. He became a merciless, brutal, and dreadful fighter.
+</p><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1819661/edit" data-id="1819661">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/819/661/305715a4af96b5fef835c9b50c021383_large.png?1396299418"></figure>
+</div><p>Maelis is a descendant of a family of Sorcerer Kings that recently fell into dishonor. She put her name aside in order to clear it, sold herself to the power of Thorns, and gained a terrible power in exchange for her physical integrity.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1896735/edit" data-id="1896735">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/896/735/7eee852c5d275a0ccb37299491bd83d6_large.png?1397837540"></figure>
+</div><p>Former woman cursed by her betrayed lover, Zotra is a mighty manticore, wearing the parody of a human's face and 
+known for devouring its victims in a single bite. Smart and vicious, 
+she communicates through mental impulses directly put 
+into one's mind.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1827428/edit" data-id="1827428">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/827/428/e41cda6ac3e2d42f7d7a90aeb4a14da8_large.png?1396440998"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1836599/edit" data-id="1836599">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/836/599/c376cd30fafd7a2f10c1a1b7c3522b71_large.png?1396619653"></figure>
+</div><p>Henchmen are characters who can go in any Company of the Sorcerer Kings. Soha can be in the Company of Thorns as well as any future Companies of the Sorcerer Kings.</p><p>Soha was raised by the Sisters of Sorrow, a group of female mercenary assassins. She is deadly, extremely efficient, and will never run before her enemies. Seeing the mask she wears to battle is the promise of a certain death.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1837517/edit" data-id="1837517">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/837/517/a9176e32b019a3bc8f1cea3376bfb4af_large.png?1396634154"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1836353/edit" data-id="1836353">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/836/353/a7a6c7c5b1af3ff0a74c0a1f9e5d12b7_large.png?1396615510"></figure>
+</div><p>The young Elon and his Guardian Rota swore loyalty to the Free People. Elon is a spirited leader whose charisma naturally attracts companions. His <b>Company of the Storm </b>is a group of rather young fighters, hot-headed champions driven by the immortality of youth and their yearning for a grand destiny.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1836602/edit" data-id="1836602">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/836/602/5d53a7272a2a49afb71acccc3afe806d_large.png?1396619669"></figure>
+</div><p>Elon is an undisciplined captain of the Salath Guard, yet he appears to be a born leader. His talent at fighting and leading troops is undeniable and his Watcher gifts give him even more self-confidence. He shaped the Company of the Storm carefully, creating an impressive group of fighters dedicated to bravery and quick action.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1837519/edit" data-id="1837519">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/837/519/d947e0eb6cf0ccff3c1c8cd200c86c66_large.png?1396634164"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1836603/edit" data-id="1836603">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/836/603/694a2af5ae70ffffd551ed58545b67de_large.png?1396619680"></figure>
+</div><p>Rota is the Guardian linked to Elon, a vision of what the young man could be if he disciplined his fiery temper. He is the eternal swashbuckler, a storm of metal made flesh. He moves like the wind, too fast to be perceived by the human eye. Each of his blows is deadly  and destructive.</p><a href="http://www.prodigythegame.com/rota" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1891412/edit" data-id="1891412">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/891/412/87e3247ceaa9bfd79de01e21180d787f_large.png?1397730670"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</a><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1863809/edit" data-id="1863809">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/863/809/29de69e6a0be0cbc8f26c12b60f39ce4_large.png?1397152122"></figure>
+</div><p>Illis is a skilled fencer, able to weave motifs of Mana out of thin air.
+ With cold eyes, Illis perceives reality in a peculiar way: the threads 
+of life fold into links and tie knots between the living, while 
+destinies fray and break.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1819656/edit" data-id="1819656">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/819/656/a93a8abb3a4294ed3e1a27461baa9c0d_large.png?1396299283"></figure>
+</div><p>Isaelle is a winged woman of the Clouds People. She was born during a storm when lightning hit her pregnant mother. She became a strong warrior, a bard whose songs accompany the melodious whistle of her weapon and cast thunder on her enemies.
+</p><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1819657/edit" data-id="1819657">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/819/657/f36fdb2c6058ef157dc485485262cdff_large.png?1396299294"></figure>
+</div><p>Amoa is of the Felys race, a fighter armed with claws and a short spear. She is skilled in the art of ambush, surprise and multiple attacks. Her agility, celerity and acrobatic feats create a storm of lethal blows on her opponents. </p><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1896739/edit" data-id="1896739">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/896/739/6637ec4bc4c032284f7b4d9f8672496d_large.png?1397837580"></figure>
+</div><p>Son of the Wind and a wolf, Onosani is a fabulous and ancient beast. Long ago, he lost a battle to a Sorcerer King and still bears the price of his defeat - the soul of his enemy lurks within him and can seize his mind at any given moment.
+</p><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1827429/edit" data-id="1827429">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/827/429/435a58895e86d9d87cf85bb90703e61e_large.png?1396441024"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1836606/edit" data-id="1836606">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/836/606/b50553e9b696ea0d424f3526ccdca179_large.png?1396619711"></figure>
+</div><p>Allies are characters who can go in any Company of the Free People. Elae
+ can be in the Company of the Storm as well as any future Company
+ of the Free People.</p><p>Elae is a young woman of the People of the Lantern. She doesn’t know her
+ age and cannot remember companions she might have known. She wanders 
+around the world, driven by the feeling that she has retribution to seek
+ against the Sorcerer Kings.</p><a href="http://www.prodigythegame.com/elae" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1837551/edit" data-id="1837551">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/837/551/f362e4dcac46dcd99512eef9b9add418_large.png?1396634400"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</a><a href="http://prodigythegame.com/devblog/?p=65" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1942524/edit" data-id="1942524">
+<figure><img alt="Find out more about the People of the Lanterns, click here!" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/942/524/2fd06d74497fcdd1b334181f5cf066f5_large.png?1398790384"><figcaption>Find out more about the People of the Lanterns, click here!</figcaption></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1827341/edit" data-id="1827341">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/827/341/95f7b3296b8d4ff11962434caf99c665_large.png?1396438605"></figure>
+</div><p>Legends are a level above Allies and Henchmen; they have no affiliation 
+to a Faction and can be a member of any Company. They are mercenaries 
+who will sell their services to anyone - and you won't 
+regret hiring them.<br>Bosses, on the other hand, are huge 
+entities that allow their owner to fight them but also to put them in their Company.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1837479/edit" data-id="1837479">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/837/479/9a0fc581648ff08a553bab0030451cda_large.png?1396633709"></figure>
+</div><p>Crag is a tiny Gerlin mounted on a huge warbeast. He was 
+banished by his people for the prideful murder of his master, thus 
+becoming the enemy of every Gerlin. His size disguises an impressive 
+ability to fight, and he has a strict honor code despite his deep lust 
+for killing.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1837483/edit" data-id="1837483">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/837/483/41a6ae37a8587d8d7163d10b470112a2_large.png?1396633730"></figure>
+</div><p>Pistil is a notorious Gerlin King. He reigns over several tribes, rules a huge Gerlin army and hopes to create a vast empire. He recently discovered an ancient and mysterious artifact which gives him a worrying power.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1836348/edit" data-id="1836348">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/836/348/536fef578456d5dd218e0bca7fce533b_large.png?1396615417"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1942508/edit" data-id="1942508">
+<figure><img alt="Current work in progress sculpt." class="fit" src="https://s3.amazonaws.com/ksr/assets/001/942/508/25395db20bc5fffcf7b8dc679105f1c0_large.png?1398790180"><figcaption>Current work in progress sculpt.</figcaption></figure>
+</div><p>The Hydra is an enormous creature that causes fear with the very evocation of its name. It is always found roaming near a strong power node filled with ancient treasures. Each of its six heads can cast an archaic – and mortal – spell. To fight the Hydra is to face Death itself.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1836506/edit" data-id="1836506">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/836/506/58f970ea82c0b7da7760d94b02dfd4af_large.png?1396617908"></figure>
+</div><p>Choosing the artists to build the universe of Prodigy was no easy task, for we have great expectations for its quality and originality.</p><p>We reached out in particular to <b>Keun Ju Kim</b>, <b>Sung Jae Lee</b> and <b>Minseob Jung</b>. They have created crazy cool artworks, and their work is clearly up to the legendary universe of Prodigy.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1836509/edit" data-id="1836509">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/836/509/d143c7a597b4b787777d58e949f59f2a_large.png?1396617928"></figure>
+</div><div class="template oembed" contenteditable="false" data-href="https://vimeo.com/90674378">
+<iframe src="//player.vimeo.com/video/90674378" width="639" height="359" frameborder="0" title="SOHA Prodigy" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+</div><p>Prodigy's figurines are designed and sculpted by talented artists, led by industry veteran <b>Jean Bey</b>.</p><p>We chose a <b>60mm scale </b>in order to offer you pieces of unparalleled quality and great detail. <b>Our figurines are already assembled and painted</b> so you can start playing straight from the box.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1827161/edit" data-id="1827161">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/827/161/7b2d5b46ba1f4205e7e99326dc7257c5_large.png?1396434139"></figure>
+</div><p>We are considering also offering them unpainted, but we are waiting to see if there is demand before offering this as an option.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1823783/edit" data-id="1823783">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/823/783/4b50eb76ea36dd4a6d4a45a574d7e99d_large.png?1396375726"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1836512/edit" data-id="1836512">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/836/512/829f513c13b870f9e33c70c270176621_large.png?1396617949"></figure>
+</div><p>The objects used to play Prodigy use NFC (Near Field Communication) technology to create a link between real and virtual. We have developed a proprietary firmware which allows our board to work with any given platform through a USB connection.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1827321/edit" data-id="1827321">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/827/321/f9a39590d9e1de84fed5d515c25898c9_large.png?1396438244"></figure>
+</div><p>The figurines, cards and the symbol of power contain NFC tags that are instantly recognized by the board: the combination of these inputs allows you to <b>play the whole game without using any keyboard, mouse or joypad</b>.</p><p>Furthermore, the technology allows us to store and modify data within the figurines themselves, creating <b>unique objects that will evolve with time</b>. Your characters are each unique depending on how you play them and the choices you make in the game.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1836513/edit" data-id="1836513">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/836/513/cbd510f604aeb44be35c79849a214dc7_large.png?1396617964"></figure>
+</div><p><b>Nicolas Neidhardt</b> will compose the original soundtrack of the game. Nicolas will call upon prestigious musicians such as <b>Martin Tillman</b> (the Batman trilogy, Pirates of the Caribbean) and <b>Satnam Ramgotra</b> (Man of Steel, Inception), and a selection of rock bands are currently being considered to work on our project. <b>We aim for epicness</b>.</p><div class="template oembed" contenteditable="false" data-href="https://soundcloud.com/hanakai-studio/sets/prodigy-the-game&amp;show_artwork=false">
+<iframe width="639" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?visual=true&amp;url=http%3A%2F%2Fapi.soundcloud.com%2Fplaylists%2F28978758&amp;show_artwork=false&amp;maxwidth=639&amp;scheme=https&amp;width=639&amp;="></iframe>
+
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1836514/edit" data-id="1836514">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/836/514/82334254eb846f2c39fc50a327a7e453_large.png?1396617992"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1847886/edit" data-id="1847886">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/847/886/d6d1a327195b6db338f93230628055fe_large.png?1396886618"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1847845/edit" data-id="1847845">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/847/845/bfe5db67fb53be3bc07d8ba1a7bf8870_large.png?1396886184"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1847847/edit" data-id="1847847">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/847/847/8f948d2c02af69655b7e6db5f52bc726_large.png?1396886202"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1926523/edit" data-id="1926523">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/926/523/7f7e09d36d3ec9c3d68a7dfd0d4450b5_large.jpg?1398456014"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1926528/edit" data-id="1926528">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/926/528/2dc32ba673ce24bcdf117323908025a8_large.jpg?1398456046"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1926530/edit" data-id="1926530">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/926/530/b1e457ede4d9c84c0aa37d76fe9fad72_large.jpg?1398456060"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1926536/edit" data-id="1926536">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/926/536/75c895864b85f07caca60a27a7a7a63a_large.jpg?1398456098"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1926544/edit" data-id="1926544">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/926/544/869ed4559d21c87145dcc04cd837c5ec_large.jpg?1398456149"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1926546/edit" data-id="1926546">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/926/546/c20a199f66445e9afea2d809e5ffe03f_large.jpg?1398456160"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1926676/edit" data-id="1926676">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/926/676/d0f9eef7a3e0f45d87b84ff62d407f00_large.png?1398457531"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1926549/edit" data-id="1926549">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/926/549/dc5ec01ef2ed5424f2b51a0ff8560e33_large.jpg?1398456188"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1926556/edit" data-id="1926556">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/926/556/3afa4342a6162b3a3d12da3f2586bde4_large.jpg?1398456226"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1926559/edit" data-id="1926559">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/926/559/4cbb7d92c375f9411968f8b5cbcbab13_large.jpg?1398456267"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1926561/edit" data-id="1926561">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/926/561/7542bae3a6bd78bd63b22a036a31305a_large.jpg?1398456281"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1926562/edit" data-id="1926562">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/926/562/8193e2c5d97ec4208a5a5a1ed4707ea1_large.jpg?1398456297"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1926564/edit" data-id="1926564">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/926/564/e4819616c72d766f9d411a8a63baec61_large.jpg?1398456314"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1926565/edit" data-id="1926565">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/926/565/f3c3421ed113e1791993e3afaca91975_large.jpg?1398456327"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1926567/edit" data-id="1926567">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/926/567/796b77fa3a3a78181d81265c30655f96_large.jpg?1398456343"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1926572/edit" data-id="1926572">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/926/572/f622e5f101cfe3409918c0618978b38e_large.jpg?1398456390"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1926681/edit" data-id="1926681">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/926/681/eae51b9eb7d5369ae2b22f920ad883fb_large.png?1398457586"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1847897/edit" data-id="1847897">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/847/897/5f5fdc992f8877e0a838afaa7e1eb073_large.png?1396886895"></figure>
+</div><p>
+ Here are the different items you can get as a backer:</p><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1847910/edit" data-id="1847910">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/847/910/d8aabf1c863b129fe209e380de5e97fb_large.png?1396887075"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1836518/edit" data-id="1836518">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/836/518/174326cab53a34e479e59fd80a65bdbc_large.png?1396618020"></figure>
+</div><p>Here are the options you can add to your initial pledge for extra content. <b>Simply increase your pledge according to the value of the items you wish to get </b>- the end of project survey will allow you to select your rewards.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1926686/edit" data-id="1926686">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/926/686/ad44a10c0f738195272a629828b9d345_large.jpg?1398457618"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1926691/edit" data-id="1926691">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/926/691/fd861766fff002fe40748ef9274e3fd3_large.png?1398457649"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1836267/edit" data-id="1836267">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/836/267/463898c16e5f7e8c78e494c33396d326_large.png?1396614188"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1957910/edit" data-id="1957910">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/957/910/a833deb2d5ab5a8adf5fe324a4f006ce_large.png?1399052354"></figure>
+</div><p> We aren't just creating a game. We're inventing a new way to play - a paradigm shift in the world of video games and tactical RPGs.</p><p>We know that we can make a better game with your help, by directly involving you in the development process as soon as our alpha is available.</p><p>By supporting our Kickstarter, you have <b>the opportunity to become a member of the alpha team</b> and help us improve the game as one of its first players. We want to include you on this adventure. It's with your help that we'll turn Prodigy into a perfectly tailored game.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1836522/edit" data-id="1836522">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/836/522/3961cbde1c295212d5253837fc1d3508_large.png?1396618125"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/121511007/prodigy-the-game/assets/1836306/edit" data-id="1836306">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/836/306/18fb95a9bfdd329364654ad1993cadfe_large.png?1396614672"></figure>
+</div><p>Hanakai Studio is an independent French developer founded in 2012 by Rackham and Confrontation creator and figurine modeler Jean Bey.
+We are based in Paris and have been actively working on Prodigy, our first game, for more than 2 years now. <b>With Prodigy we seek to change the way you play, bridging the worlds of video games and high quality figurines.</b></p>
+</div>
+<div id="risks">
+<h2 class="title grey-dark mt6 mb4">
+<span>Risks and challenges</span>
+<a href="/help/faq/kickstarter%20basics#Acco" class="right normal h5" target="_blank">Learn about accountability on Kickstarter</a>
+<div class="divider clear"></div>
+</h2>
+<p><p>We know that we are facing a huge challenge: delivering all of the figurines, hardware and video game is an ambitious task.</p>
+
+<p>Regarding the production of figurines, Jean Bey has vast experience in manufacturing them and has sold more than 30 millions units worldwide with his previous game Confrontation. He has taken great care in streamlining Prodigy&#39;s production chain. We are confident in our ability to provide you with the figurines requested at the same, if not higher, level of finish we present today.</p>
+
+<p>For hardware and engineering, we have three years of research and development behind us and our technology is solid and patented. We have fully working prototypes and continue working on strengthening them. The further we can go with the board, figurines and cards, the more intense and intuitive our gameplay will be.</p>
+
+<p>The game we are currently developing should be available by the end of 2015. We will try our best to meet this deadline, but we won’t make any compromise on the quality of our product and will take the time needed to enhance it. The core fighting system is done and works well - we know our biggest challenge lies within the creation of the terrific universe we have imagined.</p>
+
+<p>We wish to provide you with Prodigy as soon as possible, and will not hold the delivery of an alpha version with its natural flaws. We hope you will join us in this effort to polish the game and make it incredible.</p></p>
+</div>
+</div>
+<div class="NS-projects-faqs" id="project-faqs">
+<h2 class="title grey-dark mt6 mb4">
+FAQ
+<div class="divider clear"></div>
+</h2>
+<ul class="faqs">
+<li class="faq" id="project_faq_85901">
+<div class="faq-question">
+<a href="#project_faq_85901" name="project_faq_85901">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Wait a second - there is no way you can make this game with just $100k. How will you fund it?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>We have funded Prodigy so far with our own money as well as with the support of financial angels. The purpose of the Kickstarter is not to fund the  entire game, but to fund the alpha hardware and recruit a community to help us build the game. 
+<br />When we asked ourselves &quot;How are we going to recruit Alpha and Beta testers?&quot;, we naturally thought of Kickstarter as an ideal solution.</p>
+
+<p>Of course, all the funds we receive will help us tremendously and will expand our opportunities.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2014-04-02T13:37:49-04:00">Wed, Apr 2 2014 1:37 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_85902">
+<div class="faq-question">
+<a href="#project_faq_85902" name="project_faq_85902">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">What platforms are you targeting?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Beside PC/Windows, we hope to develop Prodigy for Mac, Linux, PS3, xBox360, PS4, xBoxOne and WiiU. Our current focus is on PC, but we are developing with Unreal 4 to make it possible to port to other platforms in the future.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2014-04-02T13:37:49-04:00">Wed, Apr 2 2014 1:37 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_85903">
+<div class="faq-question">
+<a href="#project_faq_85903" name="project_faq_85903">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">What languages will the game be available in?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>We are aiming for at least English, French, Italian, German and Spanish. We are looking into adding more languages depending on our community.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2014-04-02T13:37:49-04:00">Wed, Apr 2 2014 1:37 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_85904">
+<div class="faq-question">
+<a href="#project_faq_85904" name="project_faq_85904">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Will Prodigy be multiplayer or solo?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Prodigy will offer both a solo campaign and a multiplayer mode.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2014-04-02T13:37:49-04:00">Wed, Apr 2 2014 1:37 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_85905">
+<div class="faq-question">
+<a href="#project_faq_85905" name="project_faq_85905">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">When will you release Prodigy?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>The version we are currently working on should be ready by end of 2015.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2014-04-02T13:37:49-04:00">Wed, Apr 2 2014 1:37 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_86518">
+<div class="faq-question">
+<a href="#project_faq_86518" name="project_faq_86518">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">What is the difference between the Alpha and the Beta? Is the Beta hardware different than the final hardware?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Alpha Founders receive a prototype of the game at the end of 2014, and also receive the final game at the same time as the Beta backers in September 2015. Beta players will be playing the beta game on the final hardware.
+<br />Alpha Founders also get a full final Company with an additional figurine. Many backers who want more figurines choose the Seventeen Founder Pack, which gives you all 17 figurines (2 Companies, Soha and Elae, the 2 bosses and the Legend figurine) and the Beta. One of our most popular reward is the Seventeen Founder Pack!</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2014-04-08T14:40:27-04:00">Tue, Apr 8 2014 2:40 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_85906">
+<div class="faq-question">
+<a href="#project_faq_85906" name="project_faq_85906">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Do I need batteries to play the game?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>No, the NFC technology does not require any batteries. The board itself requires a USB cable for power (we provide a cable in all game packs).</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2014-04-02T13:37:49-04:00">Wed, Apr 2 2014 1:37 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_85907">
+<div class="faq-question">
+<a href="#project_faq_85907" name="project_faq_85907">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">How do I get optional items?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>The add-on rewards are available with any pledge, except on the $1, $15 and $25 tiers (which do not cover physical rewards). If you wish to add some options to your current pledge, simply click the green Manage Pledge button on the top right of the Prodigy Kickstarter page and add the value of the items you wish to get.
+<br />When the Kickstarter is finished, you will receive a survey that will let you select the additional items you wish to get.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2014-04-02T13:37:49-04:00">Wed, Apr 2 2014 1:37 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_85908">
+<div class="faq-question">
+<a href="#project_faq_85908" name="project_faq_85908">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">What about shipping costs?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Most of the products will be manufactured and sent from China, so sadly we will have obligatory shipping costs for all. The prices are higher for us if we have to send two shipments (for pledges $330 and above). Apart for the $330 tier itself, we have decided to offer shipment for all these tiers.
+<br />We have set shipping prices for USA, Canada and EU (the shipping prices are specified in the rewards themselves). Shipping to Asia, Russia and South America may result in surtaxes.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2014-04-02T13:37:49-04:00">Wed, Apr 2 2014 1:37 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_86489">
+<div class="faq-question">
+<a href="#project_faq_86489" name="project_faq_86489">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">How do I add the shipping cost to my pledge?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>If you are pledging for the first time, increase the indicated value by the value of the shipping cost. For example: for the $80 Kickstarter Pack, pledge $100 if you live in the United States ($80 + $20 shipping) and $110 if you live in another location ($80 + $30 shipping for international shipping).
+<br />If you need to add shipping costs to an existing pledge, you can manage your pledge. On the Prodigy Kickstarter page, click on the &quot;Manage Your Pledge&quot; button and increase the pledge amount by the cost of the shipping in the reward text. For example: for the $80 Kickstarter Pack, pledge $100 if you live in the United States ($80 + $20 shipping) and $110 if you live in another location ($80 + $30 shipping for international shipping).
+<br />If you’re still confused, please watch this video for an explanation:
+<br /><a href="https://www.kickstarter.com/help/faq/backer+questions#faq_41767" rel="nofollow">https://www.kickstarter.com/help/faq/backer+questions#faq_41767</a></p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2014-04-08T11:40:43-04:00">Tue, Apr 8 2014 11:40 am EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_85909">
+<div class="faq-question">
+<a href="#project_faq_85909" name="project_faq_85909">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Can I mix the figurines of different companies together?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Only with Allies, Henchmen and Legends figurines. Allies can go in any Free People Company, Henchmen in any Sorcerer Kings Company, and Legends can go anywhere.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2014-04-02T13:37:49-04:00">Wed, Apr 2 2014 1:37 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_86516">
+<div class="faq-question">
+<a href="#project_faq_86516" name="project_faq_86516">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">What’s the best way to get both Companies?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>One way to get both Companies is to take the Jack of All Trades Pack ($330), which comes with 2 free additional figurines (Soha and Elae) as well as the 2 digital artbooks. However, with shipping costs added the cost of the Jack of All Trades Pack is $350 ($360 for outside the US), almost or the same price as the discounted $360 Alpha Founder Pack which comes with free shipping. You decide which is the better deal. ;)</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2014-04-08T14:34:52-04:00">Tue, Apr 8 2014 2:34 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_85910">
+<div class="faq-question">
+<a href="#project_faq_85910" name="project_faq_85910">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">How many figurines can I put in my Company?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>You can have a Company of up to 12 figurines. We recommend using 7 to 9 at most - 12 looks impressive but if you occupy all of the spots on the board, you won’t be able to move your characters anymore!</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2014-04-02T13:37:49-04:00">Wed, Apr 2 2014 1:37 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_85911">
+<div class="faq-question">
+<a href="#project_faq_85911" name="project_faq_85911">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Can I build a Company without a Watcher or a Guardian?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>No. The pair created by a Watcher and his Guardian produce Mana, which is used to cast most abilities and special moves. Without them, the Company has no reason to exist and won’t be able to act much.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2014-04-02T13:37:49-04:00">Wed, Apr 2 2014 1:37 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_85912">
+<div class="faq-question">
+<a href="#project_faq_85912" name="project_faq_85912">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Can I have multiple copies of a figurine in my Company?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Watchers, Guardians and Creatures are unique and cannot coexist with copies of themselves. However, you can have multiple copies of a Companion, Henchman or Ally within the same company.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2014-04-02T13:37:49-04:00">Wed, Apr 2 2014 1:37 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_85913">
+<div class="faq-question">
+<a href="#project_faq_85913" name="project_faq_85913">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Are the figurines made of metal or plastic?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>The figurines are cast in plastic, mounted and painted. We are using a mix of PVC and ABS plastic.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2014-04-02T13:37:49-04:00">Wed, Apr 2 2014 1:37 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_85914">
+<div class="faq-question">
+<a href="#project_faq_85914" name="project_faq_85914">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">What scale are the figurines?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Our figurines are at a 60mm scale.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2014-04-02T13:37:49-04:00">Wed, Apr 2 2014 1:37 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_86517">
+<div class="faq-question">
+<a href="#project_faq_86517" name="project_faq_86517">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Can I get unpainted figurines?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>We do not currently offer unpainted figurines in most tiers, but the figurines that our Alpha Founders receive will be assembled, unpainted, and ready to play.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2014-04-08T14:34:52-04:00">Tue, Apr 8 2014 2:34 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_85915">
+<div class="faq-question">
+<a href="#project_faq_85915" name="project_faq_85915">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Will there be any difference between the final paint and the versions you show here on Kickstarter?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>The figurines shown here are hand painted. We are optimizing our sculptures in order to facilitate the painting process and obtain a hand painted-like render. We believe we will be able to get very close.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2014-04-02T13:37:49-04:00">Wed, Apr 2 2014 1:37 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_85916">
+<div class="faq-question">
+<a href="#project_faq_85916" name="project_faq_85916">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Are the photos and images representative of the products I will get?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Our photos of figurines, technology and game extracts are very close to our final products. We will continue to upgrade their quality - the designs themselves will remain untouched.
+<br />Our other images are for illustration purposes only.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2014-04-02T13:37:49-04:00">Wed, Apr 2 2014 1:37 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_85917">
+<div class="faq-question">
+<a href="#project_faq_85917" name="project_faq_85917">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Will the artbooks be in softcover or hardcover?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>The Faction artbooks (Free People artbook and Sorcerer King artbook) will be in softcover. The Deluxe artbook (covering both Factions as well as exclusive content) will be in hardcover.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2014-04-02T13:37:49-04:00">Wed, Apr 2 2014 1:37 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_85918">
+<div class="faq-question">
+<a href="#project_faq_85918" name="project_faq_85918">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">What is the game’s PEGI rating?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>We are aiming for a 12+ rating.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2014-04-02T13:37:49-04:00">Wed, Apr 2 2014 1:37 pm EDT</time>
+</div>
+</div>
+</li>
+
+</ul>
+<div class="faq-ask-box">
+<a href="/projects/121511007/prodigy-the-game/messages/new?message%5Bto%5D=121511007&amp;mode=FAQ" class="button button_blue remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Ask a question about Prodigy the Game">Ask a question</a>
+
+</div>
+</div>
+
+<div class="mt4 ml1 mr1 mb2" id="report-issue-wrap">
+<a href="/login?then=%2Fprojects%2F121511007%2Fprodigy-the-game" class="button button_grey">Report this project to Kickstarter</a>
+</div>
+</div>
+<div class="NS-projects-rightcol grid_5" id="rightcol">
+<div class="NS_projects__ecom">
+<div class="digits_6 pb2 pl2 pt2" id="stats">
+<h5>
+<div class="num h48 no-margin" data-backers-count="1208" id="backers_count"><data class="Project166094679" data-format="number" data-value="1208" itemprop="Project[backers_count]">1,208</data></div>
+<span><data class="Project166094679" data-attr="backers_count" data-format="pluralize" data-value="1208" data-word="Backer">Backers</data></span>
+</h5>
+<h5>
+<div class="num h48 no-margin" data-goal="100000.0" data-percent-raised="2.1219437" data-pledged="212194.37" id="pledged">
+<data class="Project166094679" data-currency="USD" data-format="shorter_money" data-precision="0" data-value="212194" data-without_code="true" itemprop="Project[pledged]">$212,194</data>
+<span class="money usd project_currency_code"></span>
+</div>
+pledged of
+<span class="money usd no-code">$100,000</span>
+goal
+</h5>
+<span data-duration="30.26439814814815" data-end_time="2014-05-02T18:00:00-04:00" data-hours-remaining="0" id="project_duration_data"></span>
+<div class="Project166094679" data-conditions="[{&quot;!state&quot;:[&quot;canceled&quot;,&quot;suspended&quot;]}]" data-evaluation="true" data-render="&quot;&lt;h5 class=\&quot;poll \&quot; data-dynamic=\&quot;5\&quot; data-end_time=\&quot;2014-05-02T18:00:00-04:00\&quot; data-poll_url=\&quot;https://d2oher2uhvl0ur.cloudfront.net/projects/121511007/prodigy-the-game/stats.json\&quot;&gt;\n&lt;div class=\&quot;num h48 no-margin\&quot;&gt;0&lt;/div&gt;\n&lt;span class=\&quot;text\&quot;&gt;seconds to go&lt;/span&gt;\n&lt;/h5&gt;\n&quot;"><h5 class="poll " data-dynamic="5" data-end_time="2014-05-02T18:00:00-04:00" data-poll_url="https://d2oher2uhvl0ur.cloudfront.net/projects/121511007/prodigy-the-game/stats.json">
+<div class="num h48 no-margin">0</div>
+<span class="text">seconds to go</span>
+</h5>
+</div></div>
+<div class="Project166094679" data-conditions="[{&quot;state&quot;:&quot;live&quot;},{&quot;!ended?&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;pr2 pl2\&quot; id=\&quot;pledge-wrap\&quot;&gt;\n&lt;a href=\&quot;/projects/121511007/prodigy-the-game/pledge/new?clicked_reward=false\&quot; class=\&quot;button button_green button_box button_block\&quot; id=\&quot;button-back-this-proj\&quot; title=\&quot;Back this project\&quot;&gt;Back This Project &lt;small class=&#39;h6 normal block green-dark&#39;&gt;&lt;span class=\&quot;money usd \&quot;&gt;$1&lt;/span&gt; minimum pledge&lt;/small&gt;&lt;/a&gt;\n&lt;/div&gt;\n&quot;"></div><div class="Project166094679" data-conditions="[{&quot;state&quot;:&quot;live&quot;}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;p2\&quot; id=\&quot;banner\&quot;&gt;\n&lt;p class=\&quot;tiny_type no-margin\&quot;&gt;\nThis project will be funded on\n&lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;llll z\&quot; datetime=\&quot;2014-05-02T18:00:00-04:00\&quot;&gt;Fri, May 2 2014 6:00 pm EDT&lt;/time&gt;.\n&lt;/p&gt;\n&lt;/div&gt;\n&quot;"></div></div>
+
+<div class="NS_projects__rightcol_projectby bg-blue-light rounded">
+<div class="p2 clearfix">
+<div class="avatar inline-block align-middle">
+<a href="/projects/121511007/prodigy-the-game/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography"><img alt="Hanakai_logo-titleless-512px.small" class="avatar-small" height="80" src="https://s3.amazonaws.com/ksr/avatars/10089152/HANAKAI_logo-titleless-512px.small.jpg?1395948429" width="80" />
+</a></div>
+<div class="creator-name inline-block align-middle ml1">
+<h6 class="mb1">Project by</h6>
+<h5 class="mb1">
+<a href="/projects/121511007/prodigy-the-game/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">Hanakai Studio</a>
+</h5>
+<p class="location h6 bold mb1">
+<a href="/discover/places/paris-fr">Paris, France</a>
+</p>
+</div>
+</div>
+<div class="creator-details pl2 pr2 pb1">
+<ul class="list-simple h5 mb1">
+<li class="projects">
+<span class="ss-icon ss-kickstarter grey-dark margin-right"></span>
+<span class="text">
+First created
+<span class="divider">&middot;</span>
+<a href="/profile/121511007/backed" class="green-dark bold more-button remote_modal_dialog" data-modal-title="Projects backed by Hanakai Studio">3 backed</a>
+</span>
+</li>
+<li class="facebook-connected">
+<span class="ss-icon ss-facebook facebook color-facebook margin-right"></span>
+<span class="text">
+<a href="https://www.facebook.com/100000191605679" class="popup" target="_blank">Jean Bey</a>
+<span class="number h6">
+415
+friends
+</span>
+</span>
+
+</li>
+<li class="links">
+<span class="ss-icon ss-globe margin-right grey-dark"></span>
+<span class="text">
+<a href="http://www.prodigythegame.com" class="popup" rel="nofollow" target="_blank">prodigythegame.com</a>
+</span>
+</li>
+</ul>
+</div>
+<div class="footer center h5 bold clearfix rounded-bottom clip">
+<a href="/projects/121511007/prodigy-the-game/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">See full bio</a>
+<a href="/projects/121511007/prodigy-the-game/messages/new?message%5Bto%5D=121511007" class="remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Send a message to Hanakai Studio">Contact me</a>
+
+</div>
+</div>
+
+<ul class="NS-projects-rightcol-rewards rounded clip list mt2" data-reward-count="25" id="what-you-get">
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$1</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+127 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>THANK YOU PACK ============================== Select this option if you wish to support the project and receive a big thank you from the team - every dollar helps!
+(this reward cannot include add-ons)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-10-01">Oct 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$15</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+26 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>ART PACK - Artbook + OST
+==============================
+Choose your Faction and receive the corresponding digital artbook, as well as the digital soundtrack (this reward is purely digital and cannot include physical add-ons).</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-10-01">Oct 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$20</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+15 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>A LA CARTE PACK - Add-ons only ============================== Select this option if you wish to get add-ons only. Initial pledge covers shipping costs to US. Simply increase your pledge according to the value of the items you wish to get - the end of project survey will allow you to select your rewards. Please add $10 for international shipping.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-10-01">Oct 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$25</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+47 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>DELUXE ART PACK - Deluxe artbook + OST
+==============================
+Receive the digital deluxe artbook covering both Factions with exclusive content, as well as the digital soundtrack (this reward is purely digital and cannot include physical add-ons).</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-10-01">Oct 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$25</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+5 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>TROPHY PACK - Artbook + OST + Warbeast ============================== Choose your Faction and receive an ART PACK, as well as the War Trophy Warbeast in its Kickstarter exclusive paint (this reward has exclusive shipping costs and cannot include physical add-ons). Please add $7 for US shipping, $10 for international shipping.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-10-01">Oct 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$70</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+199 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(1 left of 200)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>EARLY THORNS PACK - 1 starter set + the game
+==============================
+Early bird! Receive the Company of Thorns. Includes game pack, starter set of Company of Thorns figurines and exclusive Kickstarter game content: colors for your ingame name, visual effects and Mana, a forum badge and HD wallpapers.
+Please add $20 for US shipping, $30 for international shipping.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-10-01">Oct 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$70</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+200 backers
+</span>
+<span class="bg-grey no-wrap pl1 pr1 sold-out">
+All gone!
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>EARLY STORM PACK - 1 starter set + the game
+==============================
+Early bird! Receive the Company of the Storm. Includes game pack, starter set of Company of the Storm figurines and exclusive Kickstarter game content: colors for your ingame name, visual effects and Mana, a forum badge and HD wallpapers.
+Please add $20 for US shipping, $30 for international shipping.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-10-01">Oct 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$80</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+140 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>KICKSTARTER PACK - 1 starter set + the game
+==============================
+Choose the Company of Thorns or the Company of the Storm. Includes game pack, starter figurine set of your choice and exclusive Kickstarter game content: colors for your ingame name, visual effects and Mana, a forum badge and HD wallpapers.
+Please add $20 for US shipping, $30 for international shipping.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-10-01">Oct 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$130</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+25 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>DELUXE PACK - 1 starter set + the game +  deluxe items
+==============================
+Choose the Company of Thorns or the Company of the Storm. Includes game pack, starter figurine set of your choice, deluxe artbook, OST, T-shirt and exclusive Kickstarter game content: colors for your ingame name, visual effects and Mana, a forum badge and HD wallpapers.
+Please add $20 for US shipping, $30 for international shipping.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-10-01">Oct 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$145</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+15 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>COMPANION TO MANY PACK - 2 starter sets + the game
+==============================
+Includes game pack, 2 different starter figurine sets (6 figurines) and exclusive Kickstarter game content: colors for your ingame name, visual effects and Mana, a forum badge and HD wallpapers.
+Please add $20 for US shipping, $30 for international shipping.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-10-01">Oct 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$150</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+89 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>COMPANY PACK - 1 full Company + the game
+==============================
+Choose the Company of Thorns or the Company of the Storm. Includes game pack, full Company of your choice (6 figurines), digital artbook of your choice, digital OST and exclusive Kickstarter game content: colors for your ingame name, visual effects and Mana, a forum badge and HD wallpapers.
+Please add $20 for US shipping, $30 for international shipping.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-10-01">Oct 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$160</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+22 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>DUO STARTER PACK - 2 starter sets + 2 games ============================== Receive two KICKSTARTER PACKS (one for each Company) for the shipping cost of one. Please add $20 for US shipping, $30 for international shipping.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-10-01">Oct 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$180</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+32 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(218 left of 250)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>BETA PACK - 1 full Company + beta game
+==============================
+Choose the Company of Thorns or the Company of the Storm. Receive a COMPANY PACK and beta access to the game.
+Please add $20 for US shipping, $30 for international shipping.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-09-01">Sep 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$230</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+12 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>DELUXE COMPANY PACK - 1 full Company + beta game + deluxe items
+==============================
+Choose the Company of Thorns or the Company of the Storm. Receive a COMPANY PACK, beta access to the game, deluxe artbook, OST and T-shirt.
+Please add $20 for US shipping, $30 for international shipping.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-09-01">Sep 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$330</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+13 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>JACK OF ALL TRADES PACK - 2 full Companies + additional figurines + beta game
+==============================
+Includes game pack with beta access to the game, 2 different full companies, 1 Ally and 1 Henchman (14 figurines), 2 different digital artbooks and exclusive Kickstarter game content: colors for your ingame name, visual effects and Mana, a forum badge and HD wallpapers.
+Please add $30 for US shipping, $40 for international shipping.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-09-01">Sep 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$360</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+35 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(65 left of 100)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>EARLY ALPHA FOUNDER - 1 full Company + alpha game + beta game + deluxe items
+==============================
+Early bird! Receive an ALPHA FOUNDER PACK.
+Free shipping!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-12-01">Dec 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$400</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+6 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(394 left of 400)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>ALPHA FOUNDER PACK - 1 full Company + alpha game + beta game + deluxe items ============================== Choose the Company of Thorns or the Company of the Storm. Receive a COMPANY PACK, deluxe artbook, soundtrack, and exclusive Alpha Founder T-shirt. Receive alpha and beta access to the game, and an Ally or Henchman figurine depending on the Faction you chose to represent.
+Free shipping.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-12-01">Dec 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$450</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+27 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>SEVENTEEN PACK - 2 full Companies + additional figurines + beta game + deluxe items
+==============================
+Receive a JACK OF ALL TRADES pack, as well as 1 Legend and 2 Boss figurines (all 17 first figurines of the game), beta access to the game, deluxe artbook, soundtrack, T-shirt and Kickstarter exclusive visual effects.
+Free shipping.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-09-01">Sep 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+100 backers
+</span>
+<span class="bg-grey no-wrap pl1 pr1 sold-out">
+All gone!
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>EARLY SEVENTEEN FOUNDER PACK - 2 full Companies + additional figurines + alpha game + beta game + deluxe items
+==============================
+BEST VALUE. Early bird! Receive a SEVENTEEN FOUNDER PACK.
+Free shipping.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-12-01">Dec 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$505</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+30 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(60 left of 90)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>STILL QUITE EARLY SEVENTEEN FOUNDER PACK - 2 full Companies + additional figurines + alpha game + beta game + deluxe items ============================== BEST VALUE. Early bird! Receive a SEVENTEEN FOUNDER PACK. Free shipping.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-12-01">Dec 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$550</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(199 left of 200)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>SEVENTEEN FOUNDER PACK - 2 full Companies + additional figurines + alpha game + beta game + deluxe items
+==============================
+Receive a SEVENTEEN PACK, as well as alpha and beta access.
+Free shipping.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-12-01">Dec 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$800</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+15 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(170 left of 185)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>ULTIMATE COLLECTOR PACK - 2 full Companies + additional figurines + alpha game + beta game + deluxe items + collector statuette
+==============================
+Receive a SEVENTEEN FOUNDER PACK, as well as a 20cm limited edition statuette of Soha cast in white resin and delivered with its numbered and signed certificate of authenticity.
+Free shipping.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-12-01">Dec 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$2,500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(6 left of 7)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>POWER PACK - 2 full Companies + additional figurines + alpha game + beta game + deluxe items + collector statuette + design your own symbol of power
+==============================
+Receive an ULTIMATE COLLECTOR PACK, and design and create your own symbol of power with the team.
+Free shipping.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-12-01">Dec 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$5,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+2 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(3 left of 5)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>CREATOR PACK - 2 full Companies + additional figurines + alpha game + beta game + deluxe items + collector statuette + design your own Symbol of Power + design your own character
+==============================
+Receive a POWER PACK, and design and create your own character and its figurine with the team - and have it included in the game!
+Free shipping.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-12-01">Dec 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$10,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(3 left of 3)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>CHOSEN ONE PACK - 2 full Companies + additional figurines + alpha game  + beta game + deluxe items + collector statuette + design your own Symbol of Power + design your own character + meet the team
+==============================
+Receive a CREATOR PACK, and meet the creators of Prodigy during a memorable stay in Paris during which you will be able to choose any figurine and see it painted live to your taste.
+Free shipping.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-12-01">Dec 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+</ul>
+
+<div class="p2" id="meta">
+<h5>Funding period</h5>
+<p class="tiny_type">
+<time class="js-adjust" data-format="ll" datetime="2014-04-02T11:39:16-04:00">Apr 2, 2014</time> - 
+<time class="js-adjust" data-format="ll" datetime="2014-05-02T18:00:00-04:00">May 2, 2014</time>
+(30 days)
+</p>
+</div>
+</div>
+
+</div>
+
+<a href="#" id="video_mode_tab" style="display: none;">
+View in Video Mode
+</a>
+
+</div>
+</div>
+
+
+</div>
+
+<div class="h5 bg-green-dark" id="mega-footer-wrap">
+<div class="bg-green-dark white full-height" id="footer-newsletter-signup">
+<div class="container py4">
+<div class="grid_8 prefix_4 suffix_4 center mt4">
+<h2>
+Eureka! You've found
+<br>
+our little secret.
+</h2>
+<p>Sign up for our Happening email for all the inside info about arts and culture in the Kickstarter universe and beyond.</p>
+<div class="newsletter_signup">
+<form accept-charset="UTF-8" action="/newsletters/happening/signup" class="overlabels" method="post"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /><input class="hidden" name="authenticity_token" type="hidden" value="dVF+rLmvv3bJaLKSjGT3QDGpl47snDXUJpMKx2UuJ8Q=" /></div><input class="hidden" id="location" name="location" type="hidden" value="footer" />
+<textarea class="hide textarea" id="comment" name="comment">
+</textarea>
+<div class="field newsletter">
+<label class="overlabel z1 overlabel-newsletter">Email address</label>
+<input class="text" id="email" name="email" type="text" />
+</div>
+<input class="button button_green submit" name="commit" type="submit" value="Submit" />
+</form>
+
+</div>
+
+</div>
+</div>
+</div>
+<div class="container relative" id="mega-footer">
+<span class="scissors icon-scissors-1"></span>
+<div class="grid_16 alpha omega pt4 pb2" id="mega-footer-links">
+<div class="grid_4 link-group">
+<h5 class="white">About us</h5>
+<ul class="list">
+<li><a href="/year/2013/?ref=footer">2013 highlights</a></li>
+<li><a href="/year/2012?ref=footer">2012 highlights</a></li>
+<li><a href="/team?ref=footer">Who we are</a></li>
+<li><a href="/jobs?ref=footer">Jobs</a></li>
+<li><a href="/press?ref=footer">Press</a></li>
+<li><a href="/help/stats?ref=footer">Stats</a></li>
+<li><a href="/newsletters/weekly">Projects we love</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group">
+<h5><a href="/help?ref=footer" class="white">Help</a></h5>
+<ul class="list">
+<li><a href="/hello?ref=footer">What is Kickstarter?</a></li>
+<li><a href="/help?ref=footer">FAQ</a></li>
+<li><a href="/contact?ref=footer">Support</a></li>
+<li><a href="/help/school?ref=footer">Kickstarter School</a></li>
+<li><a href="/terms-of-use?ref=footer">Terms of Use</a></li>
+<li><a href="/privacy?ref=footer">Privacy Policy</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group alpha omega suffix_1">
+<h5 class="alpha"><a href="/discover/advanced?ref=footer" class="white">Discover</a></h5>
+<ul class="column column-0 grid_2 list">
+<li><a href="/discover/categories/art?ref=footer">Art</a></li>
+<li><a href="/discover/categories/comics?ref=footer">Comics</a></li>
+<li><a href="/discover/categories/dance?ref=footer">Dance</a></li>
+<li><a href="/discover/categories/design?ref=footer">Design</a></li>
+<li><a href="/discover/categories/fashion?ref=footer">Fashion</a></li>
+<li><a href="/discover/categories/film%20&amp;%20video?ref=footer">Film &amp; Video</a></li>
+<li><a href="/discover/categories/food?ref=footer">Food</a></li>
+</ul>
+<ul class="column column-1 grid_2 list">
+<li><a href="/discover/categories/games?ref=footer">Games</a></li>
+<li><a href="/discover/categories/music?ref=footer">Music</a></li>
+<li><a href="/discover/categories/photography?ref=footer">Photography</a></li>
+<li><a href="/discover/categories/publishing?ref=footer">Publishing</a></li>
+<li><a href="/discover/categories/technology?ref=footer">Technology</a></li>
+<li><a href="/discover/categories/theater?ref=footer">Theater</a></li>
+</ul>
+</div>
+<div class="grid_3 link-group">
+<h5 class="white">Hello</h5>
+<ul class="list">
+<li>
+<a href="https://twitter.com/kickstarter"><span class="ss-icon ss-social-regular ss-twitter"></span>
+Twitter
+</a></li>
+<li>
+<a href="https://www.facebook.com/Kickstarter"><span class="ss-icon ss-social-regular ss-facebook"></span>
+Facebook
+</a></li>
+<li>
+<a href="http://kickstarter.tumblr.com"><span class="ss-icon ss-social-regular ss-tumblr"></span>
+Tumblr
+</a></li>
+<li>
+<a href="http://instagram.com/kickstarter"><span class="ss-icon ss-social-regular ss-instagram"></span>
+Instagram
+</a></li>
+<li>
+<a href="https://vine.co/Kickstarter"><span class="ss-icon ss-social-regular ss-vine"></span>
+Vine
+</a></li>
+<li>
+<a href="/blog?ref=footer">Blog</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="grid_16 py4" id="mega-footer-bottom">
+<div class="logo left">
+<a href="/" class="grey-dark"><span class="ss-icon h3">KICKSTARTER</span>
+</a></div>
+<p class="right h5 grey-dark">
+&copy;
+2014
+Kickstarter, Inc.
+</p>
+</div>
+</div>
+</div>
+
+<script>
+  //<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    var analytics_vars = { google_analytics_id : "UA-7621056-1", logged_in : "false", social_user: "false" }
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.mixpanel_id = '75b1d24a516ecfc955eadfadc4910661';
+    window.mixpanel_debug = false;
+  //]]>
+</script>
+
+
+<noscript>
+<img alt="Quantcast" border="0" height="1" src="//secure.quantserve.com/pixel/p-34IbSpw2K94Sg.gif" style="display:none" width="1" />
+</noscript>
+
+
+<script>
+  //<![CDATA[
+    window.benchmark = (typeof window.performance == 'object' && typeof window.performance.mark == 'function');
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    (function (root) {
+      function instrument_function (original) {
+        return function () {
+          try {
+            return original.apply(this, arguments);
+          } catch (e) {
+            if (e.stack && root.Honeybadger) {
+              Honeybadger.notify(e, {
+                current_project : root.current_project,
+                current_user : root.current_user
+              });
+            }
+            throw(e);
+          }
+        };
+      }
+      root.instrument_function = instrument_function;
+    }(this));
+  //]]>
+</script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+
+<script>
+  //<![CDATA[
+    (function(){function c(a){this.local_start_time=new Date;this.settings={cookie_name:"request_time"};for(var b in a)this.settings[b]=a[b];this.get_remote_offset()}c.prototype.get_remote_offset=function(){this.cookie_value=this.read_cookie();var a=new Date(this.cookie_value);if(!this.cookie_value||"Invalid Date"===a.toString()){if(this.remote_offset=this.read_cookie("local_offset"))this.remote_offset=parseInt(this.remote_offset,10)}else this.remote_offset=a-this.local_start_time;"undefined"!==typeof this.remote_offset&& !isNaN(this.remote_offset)?(document.cookie="local_offset="+this.remote_offset+"; path=/",this.is_set=!0):this.is_set=!1};c.prototype.time_units=[["milliseconds",1],["seconds",1E3],["minutes",6E4],["hours",36E5],["days",864E5]];c.prototype.get_units_in_interval=function(a,b){var d=a.replace(/^\w/,function(d){return"get"+d.toUpperCase()});return b[d]()};c.prototype.milliseconds_in_day=function(a){"undefined"===typeof a&&(a=new Date);for(var b=0,d=this.time_units.length-2;0<=d;d--)b+=this.get_units_in_interval(this.time_units[d][0], a)*this.time_units[d][1];return b};c.prototype.milliseconds_in_interval=function(a,b){return this.milliseconds_in_day(b)%a};c.prototype.milliseconds_to_next_interval=function(a,b){return a-this.milliseconds_in_interval(a,b)};c.prototype.pluralize=function(a,b){1===b&&(a=a.replace(/s$/,""));return a};c.prototype.read_cookie=function(a){for(var b=window.document.cookie.split(";"),a=(a||this.settings.cookie_name)+"=",d=0;d<b.length;d++){for(var e=b[d];" "==e.charAt(0);)e=e.substring(1,e.length);if(0== e.indexOf(a))return b=e.substring(a.length,e.length),decodeURIComponent(b).replace(/\+/g," ")}return null};c.prototype.destroy_cookie=function(a){var b=new Date;a||(a=this.settings.cookie_name);b.setTime(b.getTime()-864E5);window.document.cookie=a+"=; expires="+b.toGMTString()+"; path=/"};c.prototype.get_remote_time=function(){var a=new Date,b=a.getTime()+this.remote_offset;return a=a.setTime(b)};window.ksr_page_clock=new c})(); (function(){function c(d,a,b){if(d){this.options={unit_base:{seconds:119,minutes:119,hours:72,days:0},end_phrase:d.getAttribute("data-word")||"to go",count_down:d.getAttribute("data-dynamic")||!1};for(k in b)this.options[k]=b[k];this.clock=a;this.time_units=this.clock.time_units.slice(1);this.element=d;this.clock.is_set&&this.attach()}}function a(){this.elements=[];this.attach()}var b=function(d,a){var b=a||window.document.body,c=d.split("."),g=c[c.length-1],c=1<c.length&&c[0]?c[0]:"*";if(window.document.getElementsByClassName)return b.getElementsByClassName(g); if(b.querySelectorAll)return b.querySelectorAll(d);for(var c=b.getElementsByTagName(c),h=[],i=0,f;f=c[i];i++)b=RegExp("(^|\\s)"+g+"(\\s|$)"),(""+f.className).match(b)&&h.push(f);return h};c.prototype.get_remaining_time=function(){var d=this.remote_end_time-this.clock.get_remote_time();0>d&&(d=0);return d};c.prototype.get_current_unit=function(){for(var d,a=0;a<this.time_units.length&&!(d=this.time_units[a],this.get_remaining_time()<=this.options.unit_base[d[0]]*d[1]);a++);return d};c.prototype.update_element= function(){var a=this.get_current_unit(),b=Math.floor(this.get_remaining_time()/a[1]);isNaN(b)||(this.number_element.innerHTML=b,this.text_element.innerHTML=this.clock.pluralize(a[0],b)+" "+this.options.end_phrase)};c.prototype.valid=function(){return!(!this.number_element||!this.text_element)};c.prototype.attach=function(){function a(){c.update_element();if(c.options.count_down&&0<c.get_remaining_time()){var b=c.get_current_unit();this.timeout=window.setTimeout(a,c.clock.milliseconds_to_next_interval(b[1]))}} var c=this;if(this.remote_end_time_string=this.element.getAttribute("data-end_time"))this.remote_end_time_string.match(/^\d+$/)?(this.remote_end_time=new Date,this.remote_end_time.setTime(this.remote_end_time_string)):this.remote_end_time=new Date(this.remote_end_time_string),this.number_element=b(".num",this.element)[0],this.text_element=b(".text",this.element)[0],this.element.ksr_page_timer=!0,this.valid()&&a()};c.prototype.cancel=function(){this.timeout&&clearTimeout(this.timeout)};a.prototype.loading= !0;a.prototype.stop_finding=function(){this.attach_timers();this.loading=!1;document.addEventListener?document.removeEventListener("DOMContentLoaded",this.stop_finding,!1):document.attachEvent&&"complete"===document.readyState&&document.detachEvent("onreadystatechange",this.stop_finding)};a.prototype.bind_ready=function(){var a=this,b=function(){a.stop_finding.call(a)};document.addEventListener?(document.addEventListener("DOMContentLoaded",b,!1),window.addEventListener("load",b,!1)):document.attachEvent&& (document.attachEvent("onreadystatechange",b),window.attachEvent("onload",b))};a.prototype.attach_timers=function(){for(var a=b("div.ksr_page_timer"),e=0;e<a.length;e++)a[e].ksr_page_timer||(new c(a[e],window.ksr_page_clock),this.elements.push(a[e]))};a.prototype.attach=function(){var a=this;this.bind_ready();(function(){a.attach_timers();a.loading&&window.setTimeout(function(){a.attach_timers()},200)})()};window.ProjectTimer=c;new a})();
+  //]]>
+</script>
+
+<script class="template" id="template-widgets__video_embed_code" type="text/x-tmpl-mustache"><iframe width="{{width}}" height="{{height}}" src="{{{path}}}" frameborder="0" scrolling="no"> </iframe>
+</script><script class="template" id="template-projects__baseball_card_tall" type="text/x-tmpl-mustache"><div class="project-card-wrap project-card-wrap-tall border bg-white rounded clip">
+  <div class="project-card relative project-live {{#successful?}}successful{{/successful?}}">
+    <div class="project-thumbnail pt1 pl1 pr1">
+      <a href="{{urls.web.project}}" target="">
+        <img alt="Photo-little" class="projectphoto-little" src="{{photo.little}}" class="fit">
+      </a>
+    </div>
+    <div class="project-card-interior p1 h6 grey-dark">
+      <h6 class="project-title">
+        <a href="{{urls.web.project}}" target="" class="green-dark">{{name}}</a>
+      </h6>
+      <p class="mb1 ellipsis">
+        by
+        {{creator.name}}
+      </p>
+      <p class="blurb">
+        {{blurb}}
+      </p>
+    </div>
+    <div class="absolute-bottom bg-white rounded-bottom">
+
+      {{#location}}
+        <ul class="p1 list project-meta no-margin h6">
+          <li class="ellipsis">
+            <a href="{{location.urls.web.discover}}" data-location="{{location_json}}" class="grey-dark">
+              <span class="ss-icon ss-location"></span>
+              <span class="location-name">{{location.displayable_name}}</span>
+            </a>
+          </li>
+        </ul>
+      {{/location}}
+
+      <div class="project-stats-wrap pb1 pl1 pr1">
+
+        {{#failed?}}
+          <div class='project-status project-failed h6'>
+            <strong> Funding Unsuccessful</strong><br />
+            <span class="grey-dark">Project ended on {{formatted_deadline}}</span>
+          </div>
+        {{/failed?}}
+
+        {{#canceled?}}
+          <div class='project-status project-canceled h6'>
+            <strong> Funding Canceled</strong><br />
+            <span class="grey-dark">Project canceled on {{formatted_state_changed_at}}</span>
+          </div>
+        {{/canceled?}}
+
+        {{#successful?}}
+          <div class='project-pledged-successful bg-green white h6 pl1 pr1 mb1'>
+            <strong>Successful!</strong>
+          </div>
+        {{/successful?}}
+
+        {{#live_or_successful?}}
+          {{#live?}}
+            <div class="project-pledged-wrap bg-grey clip mb1">
+              <div class="project-pledged bg-green full-height" style="width: {{percent_raised_to_100}}%"></div>
+            </div>
+          {{/live?}}
+          <ul class="project-stats list no-margin h6 no-wrap">
+            <li class="first funded inline-block mr1">
+              <strong class="block h6">{{percent_raised_rounded}}%</strong>
+              <span class="grey-dark">funded</span>
+            </li>
+            <li class="pledged inline-block mr1">
+              <strong class="block h6">{{currency_symbol}}{{formatted_money}}</strong>
+              <span class="grey-dark">pledged</span>
+            </li>
+            {{#successful?}}
+              <li class="last successful inline-block">
+                <strong class="block h6">Funded</strong>
+                <div class="deadline grey-dark">{{formatted_deadline}}</div>
+              </li>
+            {{/successful?}}
+            {{#live?}}
+              <li class="last ksr_page_timer inline-block" data-end_time="{{javascript_deadline}}">
+                <strong class="block h6">
+                  <div class="num">30</div>
+                </strong>
+                <div class="span text grey-dark" data-word="left">days to go</div>
+              </li>
+            {{/live?}}
+          </ul>
+        {{/live_or_successful?}}
+      </div>
+    </div>
+  </div>
+</div>
+
+{{#friends_backing?}}
+  <div class="friend_project_context">
+    <div class="friend_facepile">
+      {{#truncated_friends}}
+        <img src="{{avatar.thumb}}" class="{{#has_metadata?}}small{{/has_metadata?}}">
+      {{/truncated_friends}}
+    </div>
+    <p class="friend_namepile">
+      {{{escaped_sentence}}}
+    </p>
+  </div>
+{{/friends_backing?}}
+</script><script class="template" id="template-projects__video_mode" type="text/x-tmpl-mustache"><a href='#' id='video_mode_close' class='close_button z2'><span class='ss-icon ss-delete'></span></a>
+
+<div class='title_card z1 {{context_classes}}' style="display:none;">
+  <div class='interior'>
+    <h2 class='project_title normal_weight'>{{name}}</h2>
+    <p class='blurb'>{{blurb}}</p>
+    <nav class='bar'>
+      <a id='play_button' class='left play' href='#'>
+        <span class='play_active'>
+          <span class='ss-icon ss-play'></span>
+          Play
+        </span>
+        <span class='pause_active'>
+          <span class='ss-icon ss-pause'></span>
+          Pause
+        </span>
+      </a>
+      {{#logged_in}}
+        <div class='remind right'>
+          {{#if_not_starred}}
+            <a class='follow' href='{{urls.web.project}}/watch'><span class='ss-icon ss-star'></span></a>
+          {{/if_not_starred}}
+          {{#if_starred}}
+            <a class='unfollow' href='{{urls.web.project}}/unwatch'><span class='ss-icon ss-star active'></span></a>
+          {{/if_starred}}
+        </div>
+      {{/logged_in}}
+      <a class='right explore button button_green small' href='#'>Explore this project</a>
+    </nav>
+  </div>
+</div>
+
+<div class='channel_controls z1'>
+  <a href='#' class='{{#playlist_is_location}}selected {{/playlist_is_location}}location'>Something else near {{location.first_name}} <span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_featured}}selected {{/playlist_is_featured}}featured'>Something different<span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_category}}selected {{/playlist_is_category}}category'>Something else in {{category.name}} <span class='ss-icon ss-navigateright'></span></a>
+</div>
+
+<div class='project_video' style='background-image: url('{{photo.full}}')'>
+  <div class='cover'>
+    <video>
+      <source src='{{video.high}}' type='video/mp4'/>
+      <source src='{{video.webm}}' type='video/webm'/>
+    </video>
+  </div>
+</div>
+</script><script class="template" id="template-site__video_mode_fourohfour" type="text/x-tmpl-mustache"><section class='four_oh_four'>
+  <p class='big_type'>
+    Looks like you've reached the end of the line! <br />Check out <a class="another" href='#'>another channel</a> or <a href='/discover'>browse projects in discover</a>.
+  </p>
+</section>
+</script>
+
+<script id="schwamm_formatting_options" type="text/javascript">
+//<![CDATA[
+(function(){window.formatters = window.formatters || {}; var formatting_options = {"distance_date_intervals":[[5,"just now"],[29,"less than a minute ago"],[89,"1 minute ago"],[2640,"%m minutes ago"],[5340,"about 1 hour ago"],[82800,"about %h hours ago"],[147600,"1 day ago"],[604800,"%d days ago"],[15552000,"on %t"],[0,"on %y"]],"currency_symbol_mappings":{"AFN":"\u060b","ALL":"Lek","ARS":"$","AUD":"$","AWG":"\u0192","AZN":"\u043c\u0430\u043d","BAM":"KM","BBD":"$","BGN":"\u043b\u0432","BMD":"$","BND":"$","BOB":"$b","BRL":"R$","BSD":"$","BWP":"P","BYR":"p.","BZD":"BZ$","CAD":"$","CLP":"$","CNY":"\u00a5","COP":"$","CRC":"\u20a1","CUP":"\u20b1","CZK":"K\u010d","DKK":"kr","DOP":"RD$","EGP":"\u00a3","EUR":"\u20ac","FJD":"$","FKP":"\u00a3","GBP":"\u00a3","GIP":"\u00a3","GTQ":"Q","GYD":"$","HKD":"$","HNL":"L","HRK":"kn","HUF":"Ft","IDR":"Rp","ILS":"\u20aa","IRR":"\ufdfc","ISK":"kr","JMD":"J$","JPY":"\u00a5","KGS":"\u043b\u0432","KHR":"\u17db","KPW":"\u20a9","KRW":"\u20a9","KYD":"$","KZT":"\u043b\u0432","LAK":"\u20ad","LBP":"\u00a3","LKR":"\u20a8","LRD":"$","LTL":"Lt","LVL":"Ls","MKD":"\u0434\u0435\u043d","MNT":"\u20ae","MUR":"\u20a8","MXN":"$","MYR":"RM","MZN":"MT","NAD":"$","NGN":"\u20a6","NIO":"C$","NOK":"kr","NPR":"\u20a8","NZD":"$","OMR":"\ufdfc","PAB":"B/.","PEN":"S/.","PHP":"\u20b1","PKR":"\u20a8","PLN":"z\u0142","PYG":"Gs","QAR":"\ufdfc","RON":"lei","RSD":"\u0414\u0438\u043d.","RUB":"\u0440\u0443\u0431","SAR":"\ufdfc","SBD":"$","SCR":"\u20a8","SEK":"kr","SGD":"$","SHP":"\u00a3","SOS":"S","SRD":"$","SVC":"$","SYP":"\u00a3","THB":"\u0e3f","TRY":"TL","TTD":"TT$","TWD":"NT$","UAH":"\u20b4","USD":"$","UYU":"$U","UZS":"\u043b\u0432","VEF":"Bs","VND":"\u20ab","YER":"\ufdfc","ZAR":"R"},"currency_trailing_code_mappings":{"AUD":true,"CAD":true,"NZD":true,"USD":true},"currency_formats":["money","shorter_money"]}; for (key in formatting_options) {window.formatters[key] = formatting_options[key]};}());
+//]]>
+</script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("begin_base.js_tag");}
+  //]]>
+</script>
+<script src="https://d297h9he240fqh.cloudfront.net/assets/packages/base-45cdab84617ddfb8905b7cddc8500c19.js" type="text/javascript"></script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("end_base.js_tag");}
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    document.domain='kickstarter.com';
+  //]]>
+</script>
+
+<iframe height="0" id="api_xdreceiver" src="https://api.kickstarter.com/xdreceiver/85e6.html" style="display: none;" width="0"></iframe>
+
+
+
+<div id="fb-root"></div>
+<script>
+  //<![CDATA[
+    var channelUrl = window.location.protocol + "//" + window.location.host + "/channel.html",
+      skip_autologin = $('body').is('.skip_autologin');
+    
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId: window.fb_app_id,
+        channelUrl: channelUrl,
+        status: true,    // check login status
+        cookie: true,    // enable cookies to allow the server to access the session
+        xfbml: true,     // parse XFBML
+        logging: false   // turn off logging
+      });
+    
+      FB.getLoginStatus(function (response) {
+        if (response.status === 'connected') {
+          if (read_cookie("logout_from_fb")) {
+            FB.logout();
+            destroy_cookie("logout_from_fb");
+          } else if (!skip_autologin) {
+            $.get("/fb/autologin", {'fbsr': response.authResponse.signedRequest});
+          } else if (false && 0 == response.authResponse.userID) {
+            $.get("/fb/refresh", {'fbsr': response.authResponse.signedRequest});
+          }
+        } else {
+          if (read_cookie("logout_from_fb")) {
+            destroy_cookie("logout_from_fb");
+          }
+        }
+      })
+    
+      $(document).trigger('fb:loaded');
+    };
+    
+    
+    // Load the SDK Asynchronously
+    (function(d){
+      var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+      js = d.createElement('script'); js.id = id; js.async = true;
+      js.src = "//connect.facebook.net/en_US/all.js";
+      d.getElementsByTagName('head')[0].appendChild(js);
+    }(document));
+  //]]>
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,2112 @@
+<!DOCTYPE html>
+<html class="projects_show  fontface no-js" lang="en">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# kickstarter: http://ogp.me/ns/fb/kickstarter#">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-5.newrelic.com","errorBeacon":"jserror.newrelic.com","licenseKey":"b04b883ad2","applicationID":"11086","transactionName":"cFteRUULX1wHFhtIEFxeVVJDFxxDCgtD","queueTime":8,"applicationTime":410,"ttGuid":"","agentToken":null,"agent":"js-agent.newrelic.com/nr-411.min.js"}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"Vw4BVEVSCQMIUg=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e){function n(t,e,n){n||(n={});for(var r=o[t],a=r&&r.length||0,s=n[i]||(n[i]={}),u=0;a>u;u++)r[u].apply(s,e);return s}function r(t,e){var n=o[t]||(o[t]=[]);n.push(e)}var o={},i="nr@context";e.exports={on:r,emit:n}},{}],2:[function(t){function e(t,e,n,i,s){return u?u-=1:r("err",[s||new UncaughtException(t,e,n)]),"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t(5),a=window.onerror,s=!1,u=0;t("loader").features.push("err"),window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(d){"stack"in d&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(4),s=!0)}i.on("fn-start",function(){s&&(u+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&u>0&&(u-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:4,3:3,4:6,5:1,6:14,handle:"D5DuLP",loader:"G9z0Bl"}],3:[function(t){function e(t){r.inPlace(t,["addEventListener","removeEventListener"],"-",n)}function n(t){return t[1]}var r=t(1),o=(t(3),t(2));if(e(window),"getPrototypeOf"in Object){for(var i=document;i&&!i.hasOwnProperty("addEventListener");)i=Object.getPrototypeOf(i);i&&e(i);for(var a=XMLHttpRequest.prototype;a&&!a.hasOwnProperty("addEventListener");)a=Object.getPrototypeOf(a);a&&e(a)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&e(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=e["nr@wrapped"]?t[1]=e["nr@wrapped"]:e["nr@wrapped"]=t[1]=r(e,"fn-"):"function"==typeof e.handleEvent&&r.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:15,2:1,3:14}],4:[function(t){var e=(t(3),t(1)),n=t(2);e.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=e(t[0],"fn-")})},{1:15,2:1,3:14}],5:[function(t){function e(t){var e=t[0];"string"==typeof e&&(e=new Function(e)),t[0]=n(e,"fn-")}var n=(t(3),t(1)),r=t(2);n.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",e)},{1:15,2:1,3:14}],6:[function(t){function e(){o.inPlace(this,s,"fn-")}function n(t,e){o.inPlace(e,["onreadystatechange"],"fn-")}function r(t,e){return e}var o=t(1),i=t(2),a=window.XMLHttpRequest,s=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];window.XMLHttpRequest=function(t){var n=new a(t);try{i.emit("new-xhr",[],n),o.inPlace(n,["addEventListener","removeEventListener"],"-",function(t,e){return e}),n.addEventListener("readystatechange",e,!1)}catch(r){try{i.emit("internal-error",r)}catch(s){}}return n},window.XMLHttpRequest.prototype=a.prototype,o.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",r),i.on("send-xhr-start",n),i.on("open-xhr-start",n)},{1:15,2:1}],7:[function(t){function e(){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;u>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,d="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=e(d);if(f&&(r.rxSize=f),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}t("loader").features.push("xhr");var o=t("handle"),i=t(1),a=t(5),s=["load","error","abort","timeout"],u=s.length,d=t(2);t(3),t(4),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var d=e(o);d&&(r.txSize=d)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",e)}catch(r){}}};for(var f=0;u>f;f++)n.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&e()},{1:8,2:11,3:3,4:6,5:1,handle:"D5DuLP",loader:"G9z0Bl"}],8:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e){var n=r[t];return n?n.apply(this,e):(o[t]||(o[t]=[]),void o[t].push(e))}var r={},o={};e.exports=n,n.queues=o,n.handlers=r},{}],11:[function(t,e){function n(t){if(!t||"object"!=typeof t&&"function"!=typeof t)return-1;if(t===window)return 0;if(o.call(t,"__nr"))return t.__nr;try{return Object.defineProperty(t,"__nr",{value:r,writable:!0,enumerable:!1}),r}catch(e){return t.__nr=r,r}finally{r+=1}}var r=1,o=Object.prototype.hasOwnProperty;e.exports=n},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&u&&u.body){p.proto="https"===c.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=u.createElement("script");e.src=p.proto+t.agent,u.body.appendChild(e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,u=s.document,d="addEventListener",f="attachEvent",c=(""+location).split("?")[0],p=e.exports={offset:i(),origin:c,features:[]};u[d]?(u[d]("DOMContentLoaded",o,!1),s[d]("load",n,!1)):(u[f]("onreadystatechange",r),s[f]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],14:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],15:[function(t,e){function n(t,e,r,s){function nrWrapper(){try{var n,a=u(arguments),d=this,f=r&&r(a,d)||{}}catch(c){i([c,"",[a,d,s],f])}o(e+"start",[a,d,s],f);try{return n=t.apply(d,a)}catch(p){throw o(e+"err",[a,d,p],f),p}finally{o(e+"end",[a,d,n],f)}}return a(t)?t:(e||(e=""),nrWrapper[n.flag]=!0,nrWrapper)}function r(t,e,r,o){r||(r="");var i,s,u,d="-"===r.charAt(0);for(u=0;u<e.length;u++)s=e[u],i=t[s],a(i)||(t[s]=n(i,d?s+r:r,o,s,t))}function o(t,e,n){try{s.emit(t,e,n)}catch(r){i([r,t,e,n])}}function i(t){try{s.emit("internal-error",t)}catch(e){}}function a(t){return!(t&&"function"==typeof t&&t.apply&&!t[n.flag])}var s=t(1),u=t(2);e.exports=n,n.inPlace=r,n.flag="nr@wrapper"},{1:1,2:14}]},{},["G9z0Bl",2,7]);</script><script>
+  //<![CDATA[
+    docElement = this.document.documentElement;
+    docElement.className=docElement.className.replace(/\bno-js\b/,'') + 'js';
+  //]]>
+</script>
+<title>CRYAMORE! A True, First-Class Take on the Action-RPG Genre by NostalgiCO &mdash; Kickstarter</title><script>
+  //<![CDATA[
+    window.report_errors = true;
+    window.honeybadger_configuration = {
+      api_key : "02ab109335c0dd1a93506d92f22217a7",
+      environment : "production",
+      component : "projects",
+      action : "show",
+      onerror : false
+    };
+  //]]>
+</script>
+
+
+<!--[if lt IE 9]>
+  <script src="//html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta content="telephone=no" name="format-detection">
+
+<!--[if !IE]> -->
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base-9f623ad5d021a188cfb2d68a0cdf7a7b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<!-- <![endif]-->
+<!--[if IE]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base_blessed-2640c72487552f9a2ef9f2620b4af860.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<!--[if lte IE 9]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_nine-a93fe10530f175f96c4078b7e070d7e1.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 8]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_eight-f75aeb274436f94a0d243774456b1c62.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 7]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie-c019c01acd3a96588b346cf577a3504f.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_seven-5a3d2cef660cd281fd844b04b2397dbb.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if IE 6]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_six-e4d3caf76e405fe19aee6ece8bda701b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<link href="https://d297h9he240fqh.cloudfront.net/favicon.png" rel="icon" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-precomposed-7b603dba7cf80e4acc57d94a991bebbd.png" rel="apple-touch-icon-precomposed" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-ipad-precomposed-3176f72977daf43dee3b0d348484dc01.png" rel="apple-touch-icon-precomposed" sizes="72x72" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-iphone4-precomposed-b93b70168cd8492c843d0fea873c7f83.png" rel="apple-touch-icon-precomposed" sizes="114x114" type="image/png">
+<link href="https://www.kickstarter.com/services/oembed?url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Frobaato%2Fcryamore-a-true-first-class-take-on-the-action-rpg" rel="alternate" title="CRYAMORE! A True, First-Class Take on the Action-RPG Genre Script Tag oEmbed" type="application/json+oembed">
+<link rel="alternate" type="application/atom+xml" title="CRYAMORE! A True, First-Class Take on the Action-RPG Genre : Kickstarter" href="https://www.kickstarter.com/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg/posts.atom" />
+<meta property="twitter:app:id:iphone" content="596961532"/>
+<meta property="twitter:app:name:iphone" content="Kickstarter"/>
+<meta property="twitter:app:url:iphone" content="ksr://www.kickstarter.com/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg"/>
+<meta name="video_height" content="360"/>
+<meta name="video_width" content="640"/>
+<meta name="video_type" content="application/x-shockwave-flash"/>
+<meta name="title" content="Kickstarter &gt;&gt; CRYAMORE! A True, First-Class Take on the Action-RPG Genre by NostalgiCO"/>
+<meta name="description" content="NostalgiCO is raising funds for CRYAMORE! A True, First-Class Take on the Action-RPG Genre on Kickstarter! 
+
+ Whaddaya get when you blend obsolete Steampunk with Zelda, Secret of Mana, &amp; Megaman?"/>
+<meta property="og:title" content="CRYAMORE! A True, First-Class Take on the Action-RPG Genre"/>
+<meta property="og:type" content="kickstarter:project"/>
+<meta property="og:image" content="https://s3.amazonaws.com/ksr/projects/369821/photo-main.jpg?1397800718"/>
+<meta property="og:url" content="https://www.kickstarter.com/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg"/>
+<meta property="og:site_name" content="Kickstarter"/>
+<meta property="fb:app_id" content="69103156693"/>
+<meta property="og:description" content="Whaddaya get when you blend obsolete Steampunk with Zelda, Secret of Mana, &amp; Megaman?"/>
+<meta property="kickstarter:creator" content="https://www.kickstarter.com/profile/robaato"/>
+<meta property="twitter:url:landing_url" content="https://www.kickstarter.com/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg"/>
+<meta property="twitter:card" content="2427656750:kickstarter_project"/>
+<meta property="twitter:site" content="@kickstarter"/>
+<meta property="twitter:site:id" content="16186995"/>
+<meta property="twitter:text:title" content="CRYAMORE! A True, First-Class Take on the Action-RPG Genre"/>
+<meta property="twitter:text:artist" content="NostalgiCO"/>
+<meta property="twitter:text:backers" content="5909"/>
+<meta property="twitter:text:pledged" content="$242,309 USD"/>
+<meta property="twitter:text:time" content="0 seconds"/>
+<meta property="twitter:text:location" content="Chicago, IL"/>
+<meta property="twitter:image:location_image" content="https://d3mlfyygrfdi2i.cloudfront.net/b40e/pin.png"/>
+<meta property="twitter:text:description" content="Whaddaya get when you blend obsolete Steampunk with Zelda, Secret of Mana, &amp; Megaman?"/>
+<meta property="twitter:image:media" content="https://s3.amazonaws.com/ksr/projects/369821/photo-main.jpg?1397800718"/>
+<meta property="twitter:image:width" content="640"/>
+<meta property="twitter:image:height" content="480"/>
+<meta property="twitter:player:stream:url" content="https://d2pq0u4uni88oo.cloudfront.net/projects/369821/video-201461-h264_base.mp4"/>
+<meta property="twitter:player:stream:content" content="video/mp4"/>
+<meta property="twitter:player:url" content="https://www.kickstarter.com/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg/widget/video.html"/>
+<meta property="twitter:player:height" content="360"/>
+<meta property="twitter:player:width" content="640"/>
+<meta property="twitter:maxage" content="60"/>
+<meta property="og:video" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F369821%2Fvideo-201461-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F369821%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+NostalgiCO&amp;project_title=CRYAMORE%21+A+True%2C+First-Class+Take+on+the+Action-RPG+Genre&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Frobaato%2Fcryamore-a-true-first-class-take-on-the-action-rpg&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:secure_url" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F369821%2Fvideo-201461-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F369821%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+NostalgiCO&amp;project_title=CRYAMORE%21+A+True%2C+First-Class+Take+on+the+Action-RPG+Genre&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Frobaato%2Fcryamore-a-true-first-class-take-on-the-action-rpg&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:height" content="360"/>
+<meta property="og:video:width" content="640"/>
+<meta property="og:video:type" content="application/x-shockwave-flash"/>
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="483Wn4wp6joGH5MiS6nmORXNspZSbBZA3W32vnIU7HQ=" name="csrf-token" />
+<script type="text/javascript">
+  var _sift = _sift || [];
+  _sift.push(['_setAccount', '637102']);
+  _sift.push(['_setUserId', '']);
+  _sift.push(['_trackPageview']);
+
+  (function() {
+    function loadSift() {
+      var sift, s;
+      if (root.visitor_id) {
+        _sift.push(['_setSessionId', root.visitor_id]);
+      }
+      sift = document.createElement('script');
+      sift.type = 'text/javascript';
+      sift.async = true;
+      sift.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dtlilztwypawv.cloudfront.net/s.js';
+      s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(sift, s);
+    }
+    if (window.attachEvent) {
+      window.attachEvent('onload', loadSift);
+    } else {
+      window.addEventListener('load', loadSift, false);
+    }
+  })();
+</script>
+<link href="http://kck.st/W5R63f" rel="shorturl">
+<link href="https://www.kickstarter.com/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg" rel="canonical">
+<link href="https://s3.amazonaws.com/ksr/projects/369821/photo-med.jpg?1397800718" rel="image_src">
+<link href="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F369821%2Fvideo-201461-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F369821%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+NostalgiCO&amp;project_title=CRYAMORE%21+A+True%2C+First-Class+Take+on+the+Action-RPG+Genre&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Frobaato%2Fcryamore-a-true-first-class-take-on-the-action-rpg&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque" rel="video_src">
+<script>
+  //<![CDATA[
+    window.current_checkout = "{&quot;id&quot;:0,&quot;domestic&quot;:null,&quot;amount&quot;:0.0,&quot;updated_at&quot;:0,&quot;created_at&quot;:0}";
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.current_ip = '94.209.101.212';
+    window.current_ip_datacenter = 'false';
+    window.enabled_features = {"elasticsearch":true,"security_history_read":true,"security_history_write":true,"advanced_discovery_es":true,"ios_crashlytics":true,"ios_mixpanel":true,"stories_veronica_mars":true,"veronica_mars_hero":true,"password_reset_banner":true};
+    window.fb_app_id = '69103156693';
+    
+    var _sf_startpt=(new Date()).getTime();
+    
+    window.current_project = "{&quot;id&quot;:1070635455,&quot;name&quot;:&quot;CRYAMORE! A True, First-Class Take on the Action-RPG Genre&quot;,&quot;blurb&quot;:&quot;Whaddaya get when you blend obsolete Steampunk with Zelda, Secret of Mana, &amp; Megaman?&quot;,&quot;goal&quot;:60000.0,&quot;pledged&quot;:242309.32,&quot;state&quot;:&quot;successful&quot;,&quot;slug&quot;:&quot;cryamore-a-true-first-class-take-on-the-action-rpg&quot;,&quot;disable_communication&quot;:false,&quot;country&quot;:&quot;US&quot;,&quot;currency&quot;:&quot;USD&quot;,&quot;currency_symbol&quot;:&quot;$&quot;,&quot;currency_trailing_code&quot;:true,&quot;deadline&quot;:1361860733,&quot;state_changed_at&quot;:1361860734,&quot;created_at&quot;:1350550078,&quot;launched_at&quot;:1359182333,&quot;backers_count&quot;:5909,&quot;photo&quot;:{&quot;full&quot;:&quot;https://s3.amazonaws.com/ksr/projects/369821/photo-full.jpg?1397800718&quot;,&quot;ed&quot;:&quot;https://s3.amazonaws.com/ksr/projects/369821/photo-ed.jpg?1397800718&quot;,&quot;med&quot;:&quot;https://s3.amazonaws.com/ksr/projects/369821/photo-med.jpg?1397800718&quot;,&quot;little&quot;:&quot;https://s3.amazonaws.com/ksr/projects/369821/photo-little.jpg?1397800718&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/projects/369821/photo-small.jpg?1397800718&quot;,&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/projects/369821/photo-thumb.jpg?1397800718&quot;,&quot;1024x768&quot;:&quot;https://s3.amazonaws.com/ksr/projects/369821/photo-1024x768.jpg?1397800718&quot;,&quot;1536x1152&quot;:&quot;https://s3.amazonaws.com/ksr/projects/369821/photo-1536x1152.jpg?1397800718&quot;},&quot;creator&quot;:{&quot;id&quot;:636263635,&quot;name&quot;:&quot;NostalgiCO&quot;,&quot;slug&quot;:&quot;robaato&quot;,&quot;avatar&quot;:{&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/3075396/NostalgiCO_Logo_2013_2.thumb.jpg?1357655363&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/3075396/NostalgiCO_Logo_2013_2.small.jpg?1357655363&quot;,&quot;medium&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/3075396/NostalgiCO_Logo_2013_2.medium.jpg?1357655363&quot;},&quot;urls&quot;:{&quot;web&quot;:{&quot;user&quot;:&quot;https://www.kickstarter.com/profile/robaato&quot;},&quot;api&quot;:{&quot;user&quot;:&quot;https://api.kickstarter.com/v1/users/636263635?signature=1399958847.939432b7d31e6d03ded4219cd2b4a915b5937ff9&quot;}}},&quot;location&quot;:{&quot;id&quot;:2379574,&quot;name&quot;:&quot;Chicago&quot;,&quot;slug&quot;:&quot;chicago-il&quot;,&quot;short_name&quot;:&quot;Chicago, IL&quot;,&quot;displayable_name&quot;:&quot;Chicago, IL&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:&quot;IL&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/chicago-il&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/chicago-il&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1399951820.1e0576189d8f78ecf406381e633172ed8dba9979&amp;woe_id=2379574&quot;}}},&quot;category&quot;:{&quot;id&quot;:35,&quot;name&quot;:&quot;Video Games&quot;,&quot;slug&quot;:&quot;games/video games&quot;,&quot;position&quot;:7,&quot;parent_id&quot;:12,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;http://www.kickstarter.com/discover/categories/games/video%20games&quot;}}},&quot;urls&quot;:{&quot;web&quot;:{&quot;project&quot;:&quot;https://www.kickstarter.com/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg&quot;,&quot;project_short&quot;:&quot;http://kck.st/W5R63f&quot;,&quot;updates&quot;:&quot;https://www.kickstarter.com/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg/posts&quot;},&quot;api&quot;:{&quot;project&quot;:&quot;https://api.kickstarter.com/v1/projects/1070635455?signature=1399958847.ddec6d947eda4b63fa80c571f46d779e0bfa5d34&quot;,&quot;comments&quot;:&quot;https://api.kickstarter.com/v1/projects/1070635455/comments?signature=1399958847.63911b3f26d67cfeaac3a31c574fc71f22add956&quot;,&quot;updates&quot;:&quot;https://api.kickstarter.com/v1/projects/1070635455/updates?signature=1399958847.8db244da06a3a84bf19a2883c22f0adb1dcbb48b&quot;}},&quot;updated_at&quot;:1397800729,&quot;successful_at&quot;:1361860734,&quot;video&quot;:{&quot;id&quot;:201461,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/369821/video-201461-h264_high.mp4?2013&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/369821/video-201461-h264_base.mp4?2013&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/369821/video-201461-webm.webm?2013&quot;,&quot;width&quot;:640,&quot;height&quot;:360,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/369821/video-201461-h264_base.jpg?2013&quot;},&quot;comments_count&quot;:1409,&quot;updates_count&quot;:39,&quot;rewards&quot;:[{&quot;id&quot;:0,&quot;minimum&quot;:1,&quot;reward&quot;:&quot;No Reward&quot;},{&quot;id&quot;:1261339,&quot;minimum&quot;:10.0,&quot;reward&quot;:&quot;PREEMPTIVE ATTACK: First 500 backers will reserve a Digital Download of the game, Cryamore for $10! (Suggested retail price is $20) And a big, hearty thanks from us for your support!&quot;,&quot;limit&quot;:500,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1393632000,&quot;project_id&quot;:1070635455,&quot;remaining&quot;:0,&quot;backers_count&quot;:500,&quot;updated_at&quot;:1391206254},{&quot;id&quot;:1133171,&quot;minimum&quot;:15.0,&quot;reward&quot;:&quot;ELEMENTALIST&#39;S PLEDGE: It&#39;s Elementary... This will fetch you a reserve for the Digital Download of the game, Cryamore! (Suggested retail price is $20) And a big, hearty thanks from us for your support!&quot;,&quot;limit&quot;:7500,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1393632000,&quot;project_id&quot;:1070635455,&quot;remaining&quot;:4963,&quot;backers_count&quot;:2537,&quot;updated_at&quot;:1397051827},{&quot;id&quot;:1133176,&quot;minimum&quot;:20.0,&quot;reward&quot;:&quot;ARTISAN&#39;S PLEDGE: A Digital Download of the game! PLUS over 20 Backer-Only High-Resolution Wallpapers for you featuring characters, locales, and more!&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1393632000,&quot;project_id&quot;:1070635455,&quot;backers_count&quot;:472,&quot;updated_at&quot;:1393308316},{&quot;id&quot;:1133178,&quot;minimum&quot;:30.0,&quot;reward&quot;:&quot;INSTRUMENTALIST&#39;S PLEDGE: You get the Digital Download of the game, PC or Mac, the wallpaper pack, and a digital copy of the 40+ song Soundtrack by the clever Aivi Tran!&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1393632000,&quot;project_id&quot;:1070635455,&quot;backers_count&quot;:1055,&quot;updated_at&quot;:1397993456},{&quot;id&quot;:1133185,&quot;minimum&quot;:40.0,&quot;reward&quot;:&quot;ADVENTURER&#39;S PLEDGE: You get all previous Rewards, PLUS a Limited Kickstarter Exclusive World Map Poster of Noka Island, where our adventure takes place!&quot;,&quot;limit&quot;:100,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;10.0&quot;,&quot;estimated_delivery_on&quot;:1393632000,&quot;project_id&quot;:1070635455,&quot;remaining&quot;:0,&quot;backers_count&quot;:100,&quot;updated_at&quot;:1362367285},{&quot;id&quot;:1133188,&quot;minimum&quot;:50.0,&quot;reward&quot;:&quot;PIANIST&#39;S PLEDGE: You get all previous Rewards, PLUS a Limited Kickstarter Exclusive Physical Copy of the Game&#39;s 40+ song 2-Disc Soundtrack-- booklet and all, signed by Aivi herself! (Signatures only on this pledge offer.)&quot;,&quot;limit&quot;:300,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;12.0&quot;,&quot;estimated_delivery_on&quot;:1393632000,&quot;project_id&quot;:1070635455,&quot;remaining&quot;:0,&quot;backers_count&quot;:300,&quot;updated_at&quot;:1395880936},{&quot;id&quot;:1340699,&quot;minimum&quot;:70.0,&quot;reward&quot;:&quot;STEAM PUNK&#39;S PLEDGE: You get all previous Rewards, PLUS KICKSTARTER-ONLY Physical Version of the game, including a special Cryamore-Yellow case and 20-page full color instruction booklet (with a special message in each one)! (Physical Version on this pledge only!!!)&quot;,&quot;limit&quot;:468,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1393632000,&quot;project_id&quot;:1070635455,&quot;remaining&quot;:196,&quot;backers_count&quot;:272,&quot;updated_at&quot;:1394165831},{&quot;id&quot;:1133200,&quot;minimum&quot;:100.0,&quot;reward&quot;:&quot;CRYATIST&#39;S PLEDGE: You get all previous Rewards, PLUS a copy of a Limited Kickstarter Exclusive Hardcover Art Book published by UDON Entertainment! It will feature exclusive guest art from top-tier illustrators, TONS of concept &amp; game art, and assets from the game; signed by Rob and Alan! (Signatures only on this pledge offer.)&quot;,&quot;limit&quot;:300,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1393632000,&quot;project_id&quot;:1070635455,&quot;remaining&quot;:98,&quot;backers_count&quot;:202,&quot;updated_at&quot;:1395427519},{&quot;id&quot;:1294500,&quot;minimum&quot;:115.0,&quot;reward&quot;:&quot;PROTAGONIST&#39;S PLEDGE: Digital Copy of Game + Limited Kickstarter Exclusive 9-inch, Resin-casted figurine of the intellectual Esmy, manufactured by the fine folks at Gensen Figure! (Add-On Pledge; doesn&#39;t include previous rewards.)&quot;,&quot;limit&quot;:50,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;20.0&quot;,&quot;estimated_delivery_on&quot;:1393632000,&quot;project_id&quot;:1070635455,&quot;remaining&quot;:16,&quot;backers_count&quot;:34,&quot;updated_at&quot;:1362466822},{&quot;id&quot;:1294501,&quot;minimum&quot;:115.0,&quot;reward&quot;:&quot;FASHIONISTA&#39;S PLEDGE: Limited Kickstarter Exclusive 9-inch, Resin-casted figurine of the darling Bliss, manufactured by the fine folks at Gensen Figure! (Add-On Pledge; doesn&#39;t include previous rewards.)&quot;,&quot;limit&quot;:50,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;20.0&quot;,&quot;estimated_delivery_on&quot;:1393632000,&quot;project_id&quot;:1070635455,&quot;remaining&quot;:36,&quot;backers_count&quot;:14,&quot;updated_at&quot;:1361862476},{&quot;id&quot;:1340698,&quot;minimum&quot;:120.0,&quot;reward&quot;:&quot;PHYSICALIST&#39;S PLEDGE: You get all previous Rewards, PLUS KICKSTARTER-ONLY Physical Version of the game, including a special Cryamore-Yellow case and 20-page full color instruction booklet! (Physical Version on this pledge only!!!)&quot;,&quot;limit&quot;:250,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;18.0&quot;,&quot;estimated_delivery_on&quot;:1393632000,&quot;project_id&quot;:1070635455,&quot;remaining&quot;:89,&quot;backers_count&quot;:161,&quot;updated_at&quot;:1362466827},{&quot;id&quot;:1133222,&quot;minimum&quot;:150.0,&quot;reward&quot;:&quot;TAILOR&#39;S PLEDGE: You get all previous Rewards (not including Protagonist/Fashionista Pledges), PLUS an Original 11x17 in. Marker Illustration of Esmyrelda or Bliss in ANY requested outfit of your choice, signed by Rob himself! (No NSFW requests, please.)&quot;,&quot;limit&quot;:25,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;17.0&quot;,&quot;estimated_delivery_on&quot;:1393632000,&quot;project_id&quot;:1070635455,&quot;remaining&quot;:0,&quot;backers_count&quot;:25,&quot;updated_at&quot;:1361979783},{&quot;id&quot;:1133223,&quot;minimum&quot;:250.0,&quot;reward&quot;:&quot;MASTER CRYATIST&#39;S PLEDGE: You get all previous Rewards (not including Tailor&#39;s Pledge), PLUS BOTH Limited Kickstarter Exclusive 9-inch, Resin-casted figurines of Esmy and Bliss, sculpted by the fine folks at Gensen Figure! BEST-valued pledge offer!&quot;,&quot;limit&quot;:100,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;40.0&quot;,&quot;estimated_delivery_on&quot;:1393632000,&quot;project_id&quot;:1070635455,&quot;remaining&quot;:55,&quot;backers_count&quot;:45,&quot;updated_at&quot;:1387094537},{&quot;id&quot;:1340697,&quot;minimum&quot;:270.0,&quot;reward&quot;:&quot;LEGENDARY CRYATIST&#39;S PLEDGE: You get all previous Rewards (not including Tailor&#39;s Pledge), PLUS KICKSTARTER-ONLY Physical Version of the game, including a special Cryamore-Yellow case and 20-page full color instruction booklet! (Physical Version on this pledge only!!!)&quot;,&quot;limit&quot;:250,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;40.0&quot;,&quot;estimated_delivery_on&quot;:1393632000,&quot;project_id&quot;:1070635455,&quot;remaining&quot;:147,&quot;backers_count&quot;:103,&quot;updated_at&quot;:1362466824},{&quot;id&quot;:1133228,&quot;minimum&quot;:600.0,&quot;reward&quot;:&quot;CREEPER&#39;S PLEDGE: You get ALL previous Rewards, PLUS Design your own rare elemental monster with a basic attack, and we&#39;ll add it in game! Also, bragging rights in the credits.&quot;,&quot;limit&quot;:5,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;40.0&quot;,&quot;estimated_delivery_on&quot;:1393632000,&quot;project_id&quot;:1070635455,&quot;remaining&quot;:1,&quot;backers_count&quot;:4,&quot;updated_at&quot;:1361967412},{&quot;id&quot;:1133224,&quot;minimum&quot;:750.0,&quot;reward&quot;:&quot;EGOTIST&#39;S PLEDGE: You get ALL previous Rewards (not including Creeper&#39;s Pledge), PLUS yourself or original character as an NPC that actually lives in Ghilcrest, you self-obsessed person, you! Also, bragging rights in the credits.&quot;,&quot;limit&quot;:10,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;40.0&quot;,&quot;estimated_delivery_on&quot;:1393632000,&quot;project_id&quot;:1070635455,&quot;remaining&quot;:3,&quot;backers_count&quot;:7,&quot;updated_at&quot;:1361909942},{&quot;id&quot;:1366833,&quot;minimum&quot;:1200.0,&quot;reward&quot;:&quot;FUNDAMENTALIST&#39;S PLEDGE: You get EVERYTHING above (excluding CREEPER, EGOTIST, &amp; QUESTER pledges) PLUS an inclusion of yourself or an original character in the game as a randomly selected Main Shop NPC that Esmy is REQUIRED to work with throughout the course of the game! (The NPC list is Elementalist, Smith, Inventory Clerk, Innkeeper, Information Broker, Linguist, Nutritionist, Cafe Chef, Seamstress, Midway Owner, Contractor, and Instructor!)&quot;,&quot;limit&quot;:12,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;40.0&quot;,&quot;estimated_delivery_on&quot;:1393632000,&quot;project_id&quot;:1070635455,&quot;remaining&quot;:6,&quot;backers_count&quot;:6,&quot;updated_at&quot;:1361910530},{&quot;id&quot;:1210213,&quot;minimum&quot;:1500.0,&quot;reward&quot;:&quot;MASTER QUESTER&#39;S PLEDGE: You get ALL previous Rewards (not including Creeper/Egotist Pledges), PLUS create a small side-quest story, working discreetly with Alan and Rob to make it happen!  Also, bragging rights in the credits. (US Only)&quot;,&quot;limit&quot;:5,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1393632000,&quot;project_id&quot;:1070635455,&quot;remaining&quot;:1,&quot;backers_count&quot;:4,&quot;updated_at&quot;:1361862535}]}";
+    
+    
+    
+    
+    
+    
+    
+    
+    window.timeRemaining = function timeRemaining(epochTime){
+    
+      var diff = epochTime - ((new Date()).getTime() / 1000);
+      var num_unit = (diff < 60 && [Math.max(diff, 0), 'seconds']) ||
+        ((diff/=60) < 60 && [diff, 'minutes']) ||
+        ((diff/=60) < 72 && [diff, 'hours']) ||
+        [diff/=24, 'days'];
+    
+      // Round down
+      num_unit[0] = Math.floor(num_unit[0]);
+      // Singularize unit
+      if (num_unit[0] == 1) { num_unit[1] = num_unit[1].replace(/s$/,""); }
+    
+      return num_unit;
+    };
+  //]]>
+</script>
+
+<script>
+  //<![CDATA[
+    window.current_variants = ["discover_link_copy[discover]","rewards_hover[with_hover_text]"];
+  //]]>
+</script>
+
+
+</head>
+
+<body class="project projects not-mobile not-phone not-forces-video-controls not-tablet not-touchable not-native-app-request video_mode" id="projects_show">
+<div class="jGrowl center" id="growl_section"></div>
+<div class="NS_layouts__navigation" id="header">
+<div class="main-nav relative bg-white">
+<h1 class="no-margin ml1 mr2 left">
+<a href="/?ref=nav" class="block p2"><span class="ss-icon green-dark">KICK</span><span class="ss-icon green">STARTER</span>
+</a></h1>
+<ul class="primary-links list no-margin left">
+<li class="left discover-link full-height">
+<a href="/discover?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Discover</a>
+</li>
+<li class="left full-height mr2">
+<a href="/learn?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Start</a>
+</li>
+</ul>
+<ul class="list no-margin right" id="menu-sub">
+<li class="right"><a href="/login?ref=nav" class="block h5 bold p2 full-height border-box">Log in</a></li>
+<li class="right"><a href="/signup?ref=nav" class="block h5 bold p2 full-height border-box">Sign up</a></li>
+</ul>
+<div class="search-link pl2 full-height border-left border-box clip">
+<form accept-charset="UTF-8" action="/projects/search" class="search pt1 pb1 block relative form-simple" method="get"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /></div>
+<div class="field relative pl3">
+<span class="ss-icon ss-search grey-dark ml1 mt1 absolute"></span>
+<input class="input-search header full-width text" data-tracker-name="Header Live Search" id="term" name="term" placeholder="Search projects" type="text" />
+</div>
+</form>
+
+</div>
+<div class="clear"></div>
+</div>
+</div>
+<div class="hide pt4 pb4 bg-grey-light" id="search_results-wrap">
+<div class="relative container" id="search_results">
+<a class="close right grey-dark mr1"><span class="ss-icon ss-delete"></span></a>
+<h3 class="header ml1 clearfix"></h3>
+<div class="clip clearfix" id="search_results_panel"></div>
+<a class="prev arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateleft"></span>
+</a>
+<a class="next arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateright"></span>
+</a>
+</div>
+</div>
+
+
+
+
+<div class="Project-ended-true Project-is_starred- Project-state-successful Project1070635455_cxt border-top" id="main_content">
+<div id="running-board-wrap">
+<div class="container" id="running-board">
+<div id="project-header">
+<div class="NS_projects__running_board ml1 mr1 clearfix">
+<div class="title center py4">
+<h2 class="mb1">
+<a href="/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg" class="green-dark">CRYAMORE! A True, First-Class Take on the Action-RPG Genre</a>
+</h2>
+<p class="no-margin">
+<span class="creator">
+by
+<a href="/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography" id="name">NostalgiCO</a>
+</span>
+</p>
+</div>
+<ul class="project-nav list-inline left h5 bold mb1">
+<li class="mr2">
+<a href="/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg" class="grey-dark py1 current" id="home_nav">Home</a>
+</li>
+<li class="mr2">
+<span data-updates-count="39" id="updates_count">
+<a href="/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg/posts" class="grey-dark py1" id="updates_nav">Updates
+<span class="count h6 bg-grey-dark white">39</span>
+</a></span>
+</li>
+<li class="mr2">
+<a href="/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg/backers" class="grey-dark py1" id="backers_nav">Backers
+<span class="count h6 bg-grey-dark white"><data class="Project1070635455" data-format="number" data-value="5909" itemprop="Project[backers_count]">5,909</data></span>
+</a></li>
+<li>
+<span data-comments-count="1409" id="comments_count">
+<a href="/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg/comments" class="grey-dark py1" id="comments_nav">Comments
+<span class="count h6 bg-grey-dark white"><data class="Project1070635455" data-format="number" data-value="1408" itemprop="Project[comments_count]">1,408</data></span>
+</a></span>
+</li>
+</ul>
+<ul class="list-inline right h5 bold mb1">
+<li class="location mr2">
+<a href="/discover/places/chicago-il?ref=city" class="grey-dark"><span class="ss-icon ss-location margin-right"></span>
+Chicago, IL
+</a></li>
+<li class="category" data-project-parent-category="Games">
+<a href="/discover/categories/games/video%20games?ref=category" class="grey-dark"><span class="ss-icon ss-tag margin-right"></span>
+Video Games
+</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+</div>
+<div class="bg-grey-light pb4" id="content-wrap">
+<div class="Project1070635455" data-conditions="[{&quot;!state&quot;:&quot;live&quot;}]" data-evaluation="true" data-render="&quot;&lt;div class=\&quot;NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-successful Project1070635455_cxt bg-grey container pb1 pt1\&quot;&gt;\n&lt;div class=\&quot;Project1070635455\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;successful&amp;quot;}]\&quot; data-evaluation=\&quot;true\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;Funded!&amp;lt;/b&amp;gt;\\nThis project was successfully funded &amp;lt;data class=\\&amp;quot;Project1070635455\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2013-02-26T01:38:53-05:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[deadline]\\&amp;quot;&amp;gt;on February 26, 2013&amp;lt;/data&amp;gt;.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;Funded!&lt;/b&gt;\nThis project was successfully funded &lt;data class=\&quot;Project1070635455\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-02-26T01:38:53-05:00&amp;quot;\&quot; itemprop=\&quot;Project[deadline]\&quot;&gt;on February 26, 2013&lt;/data&gt;.\n&lt;/p&gt;\n&lt;/div&gt;&lt;div class=\&quot;Project1070635455\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:[&amp;quot;started&amp;quot;,&amp;quot;submitted&amp;quot;]}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;THIS PROJECT IS NOT LIVE&amp;lt;/b&amp;gt;\\nThis is only a draft that the creator has chosen to share.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1070635455\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;suspended&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Suspended&amp;lt;/b&amp;gt;\\nFunding for this project was suspended &amp;lt;data class=\\&amp;quot;Project1070635455\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2013-02-26T01:38:54-05:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on February 26, 2013&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1070635455\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;canceled&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Canceled&amp;lt;/b&amp;gt;\\nFunding for this project was canceled by the project creator &amp;lt;data class=\\&amp;quot;Project1070635455\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2013-02-26T01:38:54-05:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on February 26, 2013&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1070635455\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;failed&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Unsuccessful&amp;lt;/b&amp;gt;\\nThis project\\u2019s funding goal was not reached on &amp;lt;time class=\\&amp;quot;js-adjust\\&amp;quot; data-format=\\&amp;quot;LL\\&amp;quot; datetime=\\&amp;quot;2013-02-26T01:38:53-05:00\\&amp;quot;&amp;gt;February 26, 2013&amp;lt;/time&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1070635455\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;purged&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;This project is purged and only visible to staff.&amp;lt;/b&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;/div&gt;\n&quot;"><div class="NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-successful Project1070635455_cxt bg-grey container pb1 pt1">
+<div class="Project1070635455" data-conditions="[{&quot;state&quot;:&quot;successful&quot;}]" data-evaluation="true" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;Funded!&lt;/b&gt;\nThis project was successfully funded &lt;data class=\&quot;Project1070635455\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-02-26T01:38:53-05:00&amp;quot;\&quot; itemprop=\&quot;Project[deadline]\&quot;&gt;on February 26, 2013&lt;/data&gt;.\n&lt;/p&gt;\n&quot;"><p class="no-margin">
+<b>Funded!</b>
+This project was successfully funded <data class="Project1070635455" data-format="distance_date" data-value="&quot;2013-02-26T01:38:53-05:00&quot;" itemprop="Project[deadline]">on February 26, 2013</data>.
+</p>
+</div><div class="Project1070635455" data-conditions="[{&quot;state&quot;:[&quot;started&quot;,&quot;submitted&quot;]}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;THIS PROJECT IS NOT LIVE&lt;/b&gt;\nThis is only a draft that the creator has chosen to share.\n&lt;/p&gt;\n&quot;"></div><div class="Project1070635455" data-conditions="[{&quot;state&quot;:&quot;suspended&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Suspended&lt;/b&gt;\nFunding for this project was suspended &lt;data class=\&quot;Project1070635455\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-02-26T01:38:54-05:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on February 26, 2013&lt;/data&gt;.\n&quot;"></div><div class="Project1070635455" data-conditions="[{&quot;state&quot;:&quot;canceled&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Canceled&lt;/b&gt;\nFunding for this project was canceled by the project creator &lt;data class=\&quot;Project1070635455\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-02-26T01:38:54-05:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on February 26, 2013&lt;/data&gt;.\n&quot;"></div><div class="Project1070635455" data-conditions="[{&quot;state&quot;:&quot;failed&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Unsuccessful&lt;/b&gt;\nThis project\u2019s funding goal was not reached on &lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;LL\&quot; datetime=\&quot;2013-02-26T01:38:53-05:00\&quot;&gt;February 26, 2013&lt;/time&gt;.\n&quot;"></div><div class="Project1070635455" data-conditions="[{&quot;state&quot;:&quot;purged&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;This project is purged and only visible to staff.&lt;/b&gt;\n&quot;"></div></div>
+</div>
+<div class="container bg-white border rounded py3 pl2 pr2" id="content">
+<div class="NS-projects-content">
+<div class="grid_11">
+<div data-has-video="true" id="video-section">
+<div class="video-player" data-dimensions="{&quot;width&quot;:640,&quot;height&quot;:480}" data-image="https://s3.amazonaws.com/ksr/projects/369821/photo-main.jpg?1397800718" data-video-tracker-url="https://www.kickstarter.com/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg/video/plays" data-video-url="https://d2pq0u4uni88oo.cloudfront.net/projects/369821/video-201461-h264_high.mp4" data-video="{&quot;id&quot;:201461,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/369821/video-201461-h264_high.mp4?2013&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/369821/video-201461-h264_base.mp4?2013&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/369821/video-201461-webm.webm?2013&quot;,&quot;width&quot;:640,&quot;height&quot;:360,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/369821/video-201461-h264_base.jpg?2013&quot;}" id="video_pitch"><video class="has_webm landscape" preload="none">
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/369821/video-201461-h264_high.mp4" type='video/mp4; codecs="avc1.64001E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/369821/video-201461-h264_base.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/369821/video-201461-webm.webm" type="video/webm"></source>
+You'll need an HTML5 capable browser to see this content.
+</video>
+<img alt="Photo-main" class="has_played_hide poster landscape" src="https://s3.amazonaws.com/ksr/projects/369821/photo-main.jpg?1397800718" />
+<div class="play_button_big play_button_dark absolute-center rounded has_played_hide">
+<span class="ss-icon ss-play"></span>
+Play
+</div>
+<div class="player_controls clearfix absolute-bottom mb2 rounded white bg-green-dark forces-video-controls_hide">
+<div class="left">
+<a class="button button_icon button_dark playpause play mr1">
+<span class="play ss-icon ss-play"></span>
+<span class="pause ss-icon ss-pause"></span>
+</a>
+<span class="time current_time h12 left">00:00</span>
+</div>
+<div class="right">
+<span class="time total_time h12 left mr1">00:00</span>
+<a class="left button button_icon button_icon_white volume">
+<span class="ss-icon ss-volume icon_volume_nudge"></span>
+<span class="ss-icon ss-highvolume"></span>
+</a>
+<div class="volume_container left">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+<a class="left button button_icon button_icon_white fullscreen">
+<span class="ss-icon ss-expand"></span>
+<span class="ss-icon ss-contract"></span>
+</a>
+</div>
+<div class="clip">
+<div class="progress_container pr1 pl1">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="buffer progress_bar_buffer"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div data-project-state="successful" id="about">
+<div class="NS_projects__project_share clearfix py2 pl1 pr1">
+<ul class="left list-inline no-margin h5 bold">
+<li class="facebook mr2">
+<a href="https://www.kickstarter.com/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg"><span class="ss-icon ss-social ss-facebook color-facebook"></span>
+<span class="color-facebook">Share</span>
+<span class="share_bubble"><div class="triangle grey"></div>
+<div class="triangle white"></div>
+<span class="count"></span></span>
+</a></li>
+<li class="twitter mr2">
+<a  href="https://twitter.com/intent/tweet?text=CRYAMORE%21%20A%20True%2C%20First-Class%20Take%20on%20the%20Action-RPG%20Genre%20by%20NostalgiCO&amp;via=kickstarter&amp;url=http://kck.st/W5R63f" rel="nofollow"><span class="ss-icon ss-social ss-twitter color-twitter"></span>
+<span class="color-twitter">Tweet</span>
+</a></li>
+<li class="embed">
+<a href="/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg/widget" class="remote_modal_dialog grey-dark" data-modal-title="Embed a widget on your site" data-tracker-name="Embed"><span class="ss-icon ss-navigateleft"></span>
+<span class="ss-icon ss-navigateright"></span>
+Embed
+</a></li>
+</ul>
+<ul class="right list-inline no-margin h5 bold">
+<li class="curate mr2">
+</li>
+<li class="remind">
+<div class="ajax-container" id="watching-widget">
+<div class="Project1070635455" data-conditions="[{&quot;is_starred&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div id=\&quot;unwatch\&quot;&gt;\n&lt;a href=\&quot;/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg/unwatch\&quot; class=\&quot;on\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"></div><div class="Project1070635455" data-conditions="[{&quot;!is_starred&quot;:true}]" data-evaluation="true" data-render="&quot;&lt;div id=\&quot;watch\&quot;&gt;\n&lt;a href=\&quot;/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg/watch\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;span class=\&quot;text\&quot;&gt;\n&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"><div id="watch">
+<a href="/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg/watch"><span class="ss-icon ss-star"></span>
+<span class="text">
+</span>
+</a></div>
+
+</div></div>
+</li>
+</ul>
+</div>
+
+<div class="short_blurb py2 pl1 pr1">
+<p class="h3">Whaddaya get when you blend obsolete Steampunk with Zelda, Secret of Mana, &amp; Megaman?</p>
+</div>
+<div class="full-description">
+<div class="template asset" contenteditable="false" data-edit_url="/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg/assets/217057/edit" data-id="217057">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/217/057/cc9ca59b82247f7931a90a70704e9d27_large.png?1350657156"></figure>
+</div>
+<ul>
+<li><b><a href="http://www.kickstarter.com/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg/posts" target="_blank">Thinking about backing our adventure? Check all of our Updates Here</a></b></li>
+<li><b><a href="https://www.kickstarter.com/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg/posts/412344" target="_blank">UPDATE #19: 3 Days Left!!!</a></b></li>
+<li><b><a href="https://www.kickstarter.com/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg/posts/413279" target="_blank">UPDATE #20: Refresh on Pledges! - Adding On - Explanation of Digital Copies</a></b></li>
+</ul><h1><a href="http://cryamore.com/btest/Buildtest/Test1-3.html" target="_blank">Backers Will Get Access To Our Many Builds Through Unity's Webplayer! Click here to try it out!</a></h1><div><h1>STRETCH GOAL LIST!!!</h1></div><div><br></div><div class="template asset" contenteditable="false" data-edit_url="/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg/assets/408564/edit" data-id="408564">
+<figure><img alt="All stretch goals completed! Thank you everyone for your support!" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/408/564/ca4b490e1d381646e874917709d58f28_large.gif?1361858889"><figcaption>All stretch goals completed! Thank you everyone for your support!</figcaption></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p><b>     Cryamore</b> is about a spunky bookworm who goes by the name of <i>Esmyrelda Maximus</i>! <i>Cryamore</i> is a mineral discovered by her early settlers on <i>Noka Island</i> to replace the now-ancient steam-powered technology. It was later found out that they could be used as elemental catalysts to power a wide variety of things, even humans. </p><p>     But this is causing an imbalance on the island, causing monsters to appear out of nowhere and sapping the town's resources. Since Esmy (the nickname she prefers to be called) is passionate and a good candidate for <i>Cryamore</i> research, she's commissioned by the Town Council Chief to search for alternate <i>Cryamore</i> resources, which spirals into a much more ominous dilemma.</p><p>     This is an <b>action-adventure game</b> (with a few <b>role playing</b> elements), to be released on Windows, Mac, Linux, iOS, and Android!</p><p>     It takes the best facets out of yesteryear's gaming, like inventive puzzles, well-balanced action gameplay, quirky story, hand-drawn backgrounds, and gorgeous pixel art, and blends it in not only just one yummy nostalgia cake, but a classically fresh take on the genre.</p><h1><b>"From what I've seen and heard, this is shaping up to be a beautiful game." - <a href="http://indiegames.com/2013/01/audio_files_aivi_tran_and_rpg_.html" target="_blank">Indiegames.com</a></b></h1><h1>"Seeing all this stuff is giving me the "Nintendo 64 kid" feeling that I rarely get from the videogame industry anymore." - <a href="http://www.destructoid.com/cryamore-the-stuff-that-2d-action-rpg-dreams-are-made-of-243270.phtml" target="_blank">Destructoid</a>
+</h1><h1>"Just when I was thinking we'd never get another <i>Bastion</i>, in comes <i>Cryamore</i>... taking the genre back to its roots." - <a href="http://www.crunchyroll.com/anime-news/2013/01/27-1/video-cryamore-brings-back-classic-action-rpg-goodness" target="_blank">Crunchyroll</a>
+</h1><p>This game is influenced and inspired by games like: </p><div class="template asset" contenteditable="false" data-edit_url="/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg/assets/307584/edit" data-id="307584">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/307/584/e120ef90f9d59e36183df18b6df4785c_large.png?1355690637"></figure>
+</div>
+<ul>
+<li>
+<b><a href="http://en.wikipedia.org/wiki/The_Legend_of_Zelda" target="_blank">Legend of Zelda</a></b> </li>
+<li>
+<b><a href="http://en.wikipedia.org/wiki/Metroid" target="_blank">Metroid</a></b> </li>
+<li>
+<b><a href="http://en.wikipedia.org/wiki/Secret_of_Mana" target="_blank">Secret of Mana</a>/</b><b><a href="http://en.wikipedia.org/wiki/Legend_of_Mana" target="_blank">Legend of Mana</a></b>
+</li>
+<li>
+<b><a href="http://en.wikipedia.org/wiki/Mega_Man" target="_blank">Megaman</a></b> </li>
+<li>and <b><a href="http://en.wikipedia.org/wiki/Brave_Fencer_Musashi" target="_blank">Brave Fencer Musashi</a></b>. </li>
+</ul><p>     Imagine the barebones gameplay of <i>Zelda</i>, mixed with atmospheric elements from <i>Metroid</i>, action done in the style of <i>Secret of Mana</i>, the excitement of figuring out what element to use like <i>Megaman</i>, hand-drawn storybook backdrops like <i>Legend of Mana</i>, with comedic tones and a thriving in-game clock system like <i>Brave Fencer Musashi; </i>that's <b>Cryamore in a nutshell</b>.<b> <a href="http://cryamore.tumblr.com/post/25470373156/the-few-influences-of-cryamore" target="_blank">For more information on the game's influences, visit here!</a></b></p><div class="template asset" contenteditable="false" data-edit_url="/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg/assets/217012/edit" data-id="217012">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/217/012/72a19dd3cc4bf24f9c7f71db9ea65f8e_large.png?1350653907"></figure>
+</div>
+<p>     Cryamore is being whipped up by a small handful of oversized kids who grew up playing their SNES'es, PSXs, and N64s at nearly every waking moment! Let us introduce ourselves!</p>
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg/assets/365392/edit" data-id="365392">
+<figure><img alt="The Psychologically Imbalanced Individuals Who Are In Charge of Making This Game" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/365/392/3ff05c60104dde5c8b354d4a36e2a7ef_large.png?1359674491"><figcaption>The Psychologically Imbalanced Individuals Who Are In Charge of Making This Game</figcaption></figure>
+</div>
+<p><b>Rob Porter</b> is currently a mercenary illustrator, character &amp; game designer, and comic artist in Chicago, IL, drawing stuff for <a href="http://www.udonentertainment.com/blog/" target="_blank">UDON Entertainment</a> (Capcom, Namco-Bandai) on the side as well as a small handful of other gigs. He also had the privilege of doing clean-up animation for the popular Indie game <a href="http://skullgirls.com" target="_blank">Skullgirls</a>. In addition, he's starting the independent game studio <i>NostalgiCO</i> with his partner Alan.</p><p><b>Alan Wansom</b> is a programmer, game designer, artist, video editor, hailing from Canton, Michigan. He was working on his own project known as <a href="https://www.facebook.com/pages/8-Bit-Bastards-Shooting-Star-Saga/169701909798253" target="_blank"><i>8-Bit Bastards</i></a> before Rob responded to his reply about putting their heads together and actually making an actual effort for a commercial game. Yes, you've clicked on the link for 8-BB, and we know you think it looks awesome. That's next if Cryamore pulls it off!</p><p><b>Aivi Tran</b> is the critically acclaimed "VG Piano Princess" of the group (translation: composer), known as "<a href="http://aivitran.com/about.html" target="_blank">Waltzforluma</a>" amongst her other channels on her <a href="http://youtube.com/waltzforluma" target="_blank">Youtube</a> and <a href="http://twitter.com/waltzforluma" target="_blank">Twitter</a>. She particularly grew up adoring the works of <em>Yasunori Mitsuda (Chrono Trigger), Koji Kondo (Zelda), Akifumi Tada (Bomberman 64),</em> <em>Michiru Oshima (Legend of Legaia)</em>, and you can hear it in her work; but she adds her own playful, personal touch to it. So you know that Cryamore’s music is in good hands.</p><p><b>Steven "Surasshu" Velema</b> is one-half of the awesome <a href="http://yogurtbox.com" target="_blank">Yogurtbox duo</a>, and he will be mainly manning the sound design in Cryamore; having worked for Amaze Entertainment, Capcom, EA, WayForward and more. He's also an <i>exceptional</i> composer/arranger (he scored the Kickstarter pitch video!), and he will be helping Aivi on some of the soundtrack. </p><p><b>Kouki Hirotani</b>, known simply as <b>KOKI</b>, is an experienced pixel animator and artist for <a href="http://www.7thchord.co.jp/page/service.html" target="_blank">7th Chord</a> (<i>Tales of Innocence:R</i>; Namco-Bandai subsidiary), and he worked on the Japanese <i>Kamen Rider</i> DS games as a clean-up animator. His classic, fluid animation style is just what you were looking for in games like these. </p><p><b>Ryan Koons</b>, a former <b><a href="http://www.insomniacgames.com/" target="_blank">Insomniac</a></b> (of Ratchet and Clank fame) programmer and solo game developer, joined our team here at NostalgiCO for the long haul as a Lead Programmer. He was one of the very few programmers on Insomniac's recent social RPG <a href="http://www.insomniacgames.com/games/outernauts/" target="_blank">Outernauts</a>. You can also check out his fun, smaller-scale title <a href="http://www.kongregate.com/games/Seirie/stardrops" target="_blank">Stardrops</a>.</p><p><b>Mariel Cartwright</b>, often goes simply by <b>Kinuko</b>, is a freelance artist, character designer, and animator; working for WayForward and Konami. She's best known from her gig as the Lead Animator of <i><a href="http://skullgirls.com/" target="_blank">Skullgirls</a></i> and working on <i>Scott Pilgrim: The Game </i>(Ubisoft). Her unique animation sense will provide slick action and fluid movements. Also, she really loves monsters and designing characters.</p><p><b>Jordan Chewning</b>, the tour de force behind the art of 2-man Indie developer <a href="http://twindrills.com/#twindrills-home" target="_blank">Twindrills</a>, is an animator, programmer, and pixel artist. He's best known for working on the indie game <a href="http://www.desura.com/games/zombie-grinder" target="_blank"><i>Zombie Grinder</i></a>. He loves working with <a href="http://www.yoroshii.org/" target="_blank">snazzy, particle effects</a> too. </p><p><b>Brandon Cullis</b>, a professional software engineer by day &amp; game dev by night, is also jumping in the fray. He's working on this <a href="http://hazardpaygame.blogspot.com/" target="_blank">huge C#/XNA Level Editor</a> at the moment, but he's going to take some time out to be an Assistant Programmer, help managing a lot of the scripting.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg/assets/216983/edit" data-id="216983">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/216/983/0cfe7b9bc8463eed83b02c77d2c7b35c_large.png?1350652607"></figure>
+</div>
+<p>What do we believe make <i>Cryamore</i> special? Let us break it down for you:</p><div class="template asset" contenteditable="false" data-edit_url="/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg/assets/355444/edit" data-id="355444">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/355/444/e7a23fca899583987e7817a065a2e51e_large.png?1359143362"></figure>
+</div>
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg/assets/355445/edit" data-id="355445">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/355/445/2cb272adf23023ce0e691969f0427bce_large.png?1359143403"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg/assets/355448/edit" data-id="355448">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/355/448/d156dd81b6291e79cc39ede70de48bcd_large.png?1359143436"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg/assets/355449/edit" data-id="355449">
+<figure><img alt="In-Game Screenshots of Current Pre-Alpha Build" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/355/449/7e4f2d35719288317da85314cc81b95f_large.png?1359143461"><figcaption>In-Game Screenshots of Current Pre-Alpha Build</figcaption></figure>
+</div>
+<p><b>     Cryamore</b> will feature a rich, single-player experience, mixing exploration and puzzle solving with strategic, action-based gameplay. There will be little to no handholding. We're not big on the westernized, "accept or decline quest log"-based systems many modern Action-RPGs employ, we want the player to discover things for him/herself. Just like the 80s and 90s.</p><p>     The gameplay will be strongly Ability-based on varying elements. Players can use some of the abilities in battle, but will mainly have to use these abilities to advance through the game. </p><a href="http://cryamore.tumblr.com/post/24661615784/its-elementary" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg/assets/326949/edit" data-id="326949">
+<figure><img alt="The 8 Main Elements in Cryamore" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/326/949/7760f84cc46285e49fd9974b332b98f7_large.png?1357413136"><figcaption>The 8 Main Elements in Cryamore</figcaption></figure>
+</div>
+</a><div class="template asset" contenteditable="false" data-edit_url="/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg/assets/351076/edit" data-id="351076">
+<figure><img alt="Seems like the wisest solution above, yeah? Well, there are 80 other abilities that need to be utilized to get past certain points; higher-level puzzles requiring you to think outside the box." class="fit" src="https://s3.amazonaws.com/ksr/assets/000/351/076/5c7a36fa311ff32bfa3a7c53bc0ca062_large.png?1358922081"><figcaption>Seems like the wisest solution above, yeah? Well, there are 80 other abilities that need to be utilized to get past certain points; higher-level puzzles requiring you to think outside the box.</figcaption></figure>
+</div>
+<p>     Just as <i>Link</i> needs <a href="http://zelda.wikia.com/wiki/Pegasus_Boots" target="_blank">Pegasus Boots</a> to knock the Book of Mudora off the top of a shelf, or <i>Samus</i> her <a href="http://www.metroidwiki.org/wiki/Speed_Booster" target="_blank">Speed Booster</a> to charge through previously inaccessible walls and areas, each element will have various types of abilities for Esmy to figure out which one will do the job for the situation. She can even link up certain abilities to maximize potential. Some will have additional attributes for fighting specific elemental enemies, and there are <b>81 of these different abilities</b>... Even summons. </p><a href="http://cryamore.tumblr.com/post/41265482873/weaponry" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg/assets/351087/edit" data-id="351087">
+<figure><img alt="The Butcherknife will provide balanced gameplay, while the Javelink adds concentrated precision to your attacks. The Pizzaxe is a power-heavy weapon, and the Megadart yields range to your combat." class="fit" src="https://s3.amazonaws.com/ksr/assets/000/351/087/87ef36c9ef2b6dbeb9f121f013925a98_large.png?1358923559"><figcaption>The Butcherknife will provide balanced gameplay, while the Javelink adds concentrated precision to your attacks. The Pizzaxe is a power-heavy weapon, and the Megadart yields range to your combat.</figcaption></figure>
+</div></a>
+
+<p>     Additionally, the player can pick a weapon style in a play-through (from a sword or axe, to spear or crossbow) to change the play-style up and vary the difficulty. Full features include:</p><ul>
+<li>
+<b>Real-time combat system</b> using a combination of player's preferred weaponry and elemental abilities of which can also be used for contextual exploration! Even specific Weapon Special attacks to learn!</li>
+<li>
+<b>81 different elemental abilities</b> spanning over<b> 9 different elements</b>!</li>
+<li>A <b>variety of monsters</b> to find and record in your bestiary, some needing elemental combinations to defeat!</li>
+<li>
+<b>Time is a key component to the game</b>, as the game will have an <b>internal clock</b>. Shops will close at specific times, rare monsters will appear at different times, and even in order to solve some puzzles will require being at specific times in the day to figure out. Esmy can even get tired or <b>alter time</b> with the <i>Time</i> <i>Element</i>!</li>
+<li>
+<b>Puzzles</b> that will utilize specific Elements in order to figure out, as well as your brain!</li>
+<li>A hearty assortment of <b><a href="http://cryamore.tumblr.com/post/34284065286/explorative-expedition" target="_blank">special items to collect</a></b>, like action figures, food and ingredients, weapon skill scrolls, stat increasers, and more!</li>
+<li>
+<b>Full-fledged side-quests</b>, including repairing a town back to a full-functional state, unlocking other stores and venues in the process!</li>
+<li>
+<b>Summon assists</b> that will actually play a huge role in the tale!</li>
+<li>A <b>carefully interwoven story</b> that allows the player to discover things piece-by-piece, all while still having strong character development!</li>
+<li>Gorgeous, <b>(HUGE!)</b>, fluidly animated, <b>pixel-based sprites</b>.</li>
+<li>Every spot in the game will be <b>uniquely hand-drawn,</b> specific to the area!</li>
+</ul><p> <b>    <a href="http://cryamore.tumblr.com/post/39598883189/progress-shiown" target="_blank">For more information on the game mechanics, visit here!</a></b></p><div class="template asset" contenteditable="false" data-edit_url="/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg/assets/330361/edit" data-id="330361">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/330/361/580a9800a06958e0ccd80b9c9e1ea364_large.png?1357630934"></figure>
+</div>
+<p>     We want to make Cryamore's story be an engaging experience, specifically one where the player will make discoveries on their own and piece things together, and we're fans of unexpected plot twists! Having great professional editors to go to for help on call will ensure that we make Cryamore's story a unique experience.</p><p>     A lot of inspiration we borrow from when it comes to thematics are <a href="http://en.wikipedia.org/wiki/Fullmetal_Alchemist" target="_blank">Fullmetal Alchemist</a>, <a href="http://en.wikipedia.org/wiki/Final_Fantasy_6" target="_blank">Final Fantasy 6</a>, <a href="http://en.wikipedia.org/wiki/Terranigma" target="_blank">Terranigma</a>, and <a href="http://en.wikipedia.org/wiki/Chrono_Trigger" target="_blank">Chrono Trigger</a>. <a href="http://cryamore.com/characters/" target="_blank"><b>Read up on the character bios on our site to get a feel for what you'll be getting yourself into!</b></a></p><div class="template asset" contenteditable="false" data-edit_url="/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg/assets/224098/edit" data-id="224098">
+<figure><img alt="Work-In-Progress of Noka Island, where Esmy's adventure takes place." class="fit" src="https://s3.amazonaws.com/ksr/assets/000/224/098/8860b613ed0c5d23470bb4a5202971b0_large.jpg?1351022254"><figcaption>Work-In-Progress of Noka Island, where Esmy's adventure takes place.</figcaption></figure>
+</div>
+<div></div><div class="template asset" contenteditable="false" data-edit_url="/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg/assets/307597/edit" data-id="307597">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/307/597/0b4ffbcddce7561ed9402301a2270b32_large.png?1355690966"></figure>
+</div>
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg/assets/353726/edit" data-id="353726">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/353/726/adc48d3ab95c4e552d69d8c8df41818a_large.png?1359061074"></figure>
+</div>
+<p>    When it comes to the Art Direction for <i>Cryamore</i>, we're inspired by the art from games like <a href="http://www.creativeuncut.com/art_la-pucelle-tactics_a.html" target="_blank"><i>La Pucelle</i></a>, the <a href="http://www.creativeuncut.com/art_wild-arms-5_a.html" target="_blank"><i>Wild Arms</i></a> series, <a href="http://www.creativeuncut.com/art_lime-odyssey-the-chronicles-of-orta_a.html" target="_blank"><i>Lime Odyssey</i></a>, and <a href="http://www.creativeuncut.com/art_atelier-iris-3_a.html" target="_blank"><i>Atelier Iris</i></a>. We feel that for a game like this (and games in general), art should be a <b>HUGE</b> part of it and will give something a bit more extra special in addition to just "playing the game". We're gamers first, and artists second. So we are shooting for a great visual experience to accompany great gameplay.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg/assets/353729/edit" data-id="353729">
+<figure><img alt="Esmy, Braxton, &amp; Bliss" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/353/729/18abcad649a1a701dca6d006d8f348c3_large.png?1359061136"><figcaption>Esmy, Braxton, &amp; Bliss</figcaption></figure>
+</div>
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg/assets/307624/edit" data-id="307624">
+<figure><img alt="Various Mob Concepts" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/307/624/2083559b9db305793ff9684206f3357e_large.png?1355692670"><figcaption>Various Mob Concepts</figcaption></figure>
+</div>
+<p>     Once upon a time, after we would get done with a session of playing the games of yesteryear, we would thumb through the instruction booklets and just gaze at the character art and do our own lil' doodles of them. We want to invoke that sense of passion with <i>Cryamore</i>.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg/assets/288012/edit" data-id="288012">
+<figure><img alt="Building Models" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/288/012/71c6366816983a79e28cfc5d64e5ecc9_large.png?1354387477"><figcaption>Building Models</figcaption></figure>
+</div>
+
+<a href="http://fc06.deviantart.net/fs70/i/2012/338/4/4/ghilcrest_wireframe_mesh_by_robaato-d5n2zie.png" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg/assets/307628/edit" data-id="307628">
+<figure><img alt="Mesh of Ghilcrest, the Main Town (Yes, that little orange dot is Esmy.)" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/307/628/cf1ec912c9dca113e95e1820ec436998_large.png?1355692753"><figcaption>Mesh of Ghilcrest, the Main Town (Yes, that little orange dot is Esmy.)</figcaption></figure>
+</div></a>
+<p>     From the character art, to the in-game art, we want to cover all of our ground. We are drawing practically <i>everything</i>. Each area will be unique, colorful, &amp; lively, having animated aspects to them. <b><a href="http://www.creativeuncut.com/art_cryamore_a.html" target="_blank">You can find more related art on Creative Uncut!</a></b></p><div class="template asset" contenteditable="false" data-edit_url="/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg/assets/319934/edit" data-id="319934">
+<figure><img alt="Esmy's Neutral Sprite" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/319/934/47c87e5a2f7683793cfc1b123499f58b_large.gif?1356847965"><figcaption>Esmy's Neutral Sprite</figcaption></figure>
+</div>
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg/assets/307603/edit" data-id="307603">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/307/603/119c860bfbb3a27d4a1aa90c3bb0808f_large.png?1355691469"></figure>
+</div>
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg/assets/355463/edit" data-id="355463">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/355/463/7a1f9c9c50aa505da26d5024035f57a2_large.gif?1359144141"></figure>
+</div>
+<p>     We picked <b>Aivi</b> out of the many wonderful composers existing today because she has that unique style of composition from games that are now hard to come by these days. Press Play and tell us what you think!</p><div class="template oembed" contenteditable="false" data-href="https://soundcloud.com/waltzforluma/sets/cryamore">
+<iframe width="639" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?visual=true&amp;url=http%3A%2F%2Fapi.soundcloud.com%2Fplaylists%2F3278832&amp;show_artwork=true&amp;maxwidth=639&amp;scheme=https&amp;width=639"></iframe>
+
+</div><p>Be sure to click her <a href="http://soundcloud.com/waltzforluma" target="_blank">SoundCloud page</a> for examples of the rest of her work!</p><div class="template asset" contenteditable="false" data-edit_url="/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg/assets/307613/edit" data-id="307613">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/307/613/512dc20464beea844e88f191072a4136_large.png?1355691995"></figure>
+</div>
+<p><i>     Cryamore</i> will have a LOT of different abilities to use, and we will need a <b>lot</b> of unique and special sounds. Apart from <b>Steven's</b> amazing compositional skills, he tends to have the most fun creating fun sounds. Here are examples of his SFX skills: <a href="http://youtu.be/HaHwVo66vwY" target="_blank">{Demo 1}</a> <a href="http://youtu.be/fYg4veuFS-Y" target="_blank">{Demo 2}</a></p><div class="template asset" contenteditable="false" data-edit_url="/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg/assets/330461/edit" data-id="330461">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/330/461/fa8a85f09a780316a84aad061454a722_large.png?1357642294"></figure>
+</div>
+<p>     If you enjoyed the voice acting on the video, you'll be happy to know that they were voiced by professionally talented voice actresses, with the help and direction of <b>Chris Niosi</b>! Up-and-coming <b>Erica Mendez</b> voices Esmy; she's currently known for her work as Corbin in <i>Dust: An Elysian Tail</i>. <b>Marianne Miller</b> voices Braxton; she worked on <i>Fullmetal Alchemist</i>, <i>Avalon Code</i> as Anwar, and <i>Puella Magi Madoka Magica</i> as Kyosuke Kamijo. <b>Kimlinh Tran</b> voices Bliss; she's most popular for voicing Fidget in <i>Dust: An Elysian Tail</i> and Ms. Fortune in <i>Skullgirls</i>. </p><div class="template asset" contenteditable="false" data-edit_url="/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg/assets/307576/edit" data-id="307576">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/307/576/f91ee2b0220d7743c3666345fca5936c_large.png?1355690092"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg/assets/355387/edit" data-id="355387">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/355/387/6ec19a312baf3b97234c51590fe0298b_large.gif?1359142117"></figure>
+</div>
+<p>     We have some great rewards available for those who will help us make <i>Cryamore</i> happen! Esmy already prepared all the research materials and summarized it <b>just for you</b>, so just read below!</p>
+<h1><b>$10 Reward: PREEMPTIVE ATTACK!</b></h1><p><i>     You have a <b>1:500 chance</b> for this one!</i> First 500 backers will reserve a <b><i>digital copy of the full game</i></b> for <b>$10</b>! Which is <i>$10 off </i>the suggested retail price! (Limited to 500)</p><h1><b>$15 Reward: ELEMENTALIST'S PLEDGE!</b></h1><div class="template asset" contenteditable="false" data-edit_url="/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg/assets/353504/edit" data-id="353504">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/353/504/6bd3cf58e919e682101b4ce35c1069d3_large.png?1359053699"></figure>
+</div>
+<div></div>
+<div></div>
+<div></div><p><i>     For the playful types!</i> The most elementary pledge will fetch backers a reservation for a <i><b>digital copy of the full game</b>! </i>Which is <i>$5 off</i> the suggested retail price! (Limited to 7500)</p><h1>$20 Reward: ARTISAN'S PLEDGE!</h1><div class="template asset" contenteditable="false" data-edit_url="/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg/assets/355486/edit" data-id="355486">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/355/486/f60fcc7bf7827fb8918b38770507c1bf_large.png?1359145149"></figure>
+</div>
+<p><i>     For the art appreciators!</i> We'll land these backers the <b>digital copy of the game + <i>over 20 </i></b><b><i>Backer-Only, Exclusive </i></b><b><i>High-Resolution (and we mean HIGH) Wallpapers</i></b>!</p><h1><b>$30 Reward: INSTRUMENTALIST'S PLEDGE!</b></h1><div class="template asset" contenteditable="false" data-edit_url="/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg/assets/355559/edit" data-id="355559">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/355/559/4e75d12c4cef859ec5a8944b0f105a48_large.png?1359146796"></figure>
+</div>
+<div></div><p><i>     For the music lovers!</i> We'll land these backers the <b>digital copy of the game + over 20 High Resolution Wallpapers + <i>Digital Version of the game's 40+ song soundtrack</i></b>, composed by the charming Aivi Tran! </p><h1>
+<b>$40 Reward: ADVENTURER'S PLEDGE!</b>
+</h1><div class="template asset" contenteditable="false" data-edit_url="/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg/assets/355604/edit" data-id="355604">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/355/604/34676afca189cfe348e7566dd0798196_large.png?1359147713"></figure>
+</div>
+<p><i>     For the real Cryamore hunters! </i>This will fetch you the <b>digital copy of the game + over 20 High Resolution Wallpapers + Digital Version of the game's 40+ song soundtrack + </b><i><b>Special Kickstarter-Only Printed World Map of Noka Island.</b> </i>Now you'll NEVER get lost! (Limited to 100)</p><h1><b>$50 Reward: PIANIST'S PLEDGE!</b></h1><div class="template asset" contenteditable="false" data-edit_url="/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg/assets/355813/edit" data-id="355813">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/355/813/4712140c855216db86f1efb2c238910a_large.png?1359155800"></figure>
+</div>
+<p><i>     For those who like to be in touch with their music!</i> This will land them the <b>digital copy of the game + over 20 High Resolution Wallpapers + Digital Version of the game's 40+ song soundtrack + Special Kickstarter-Only Printed World Map of Noka Island + <i>Limited Edition Physical 2-Disc Copy of the game's 40+ song soundtrack</i>, </b>composed and signed by Aivi Tran and with special exclusive art inside! (Limited to 300; signatures only on this pledge)</p><h1><b>$100 Reward: CRYATIST'S PLEDGE!</b></h1><div class="template asset" contenteditable="false" data-edit_url="/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg/assets/355839/edit" data-id="355839">
+<figure><img alt="(Esmy's copy pictured; backers will get a slightly more incredible copy.)" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/355/839/30433db6d2f6ea95145b9d940422e1c9_large.png?1359156906"><figcaption>(Esmy's copy pictured; backers will get a slightly more incredible copy.)</figcaption></figure>
+</div>
+<p><i>     You wanna be a Cryatist? You'll need to read books, but we'll make it easy on you: colorful books full of pictures! </i>Pledging this will fetch you the<b> digital copy of the game + over 20 High Resolution Wallpapers + Digital Version of the game's 40+ song soundtrack + Special Kickstarter-Only Printed World Map of Noka Island + Limited Edition Physical 2-Disc Copy of the game's 40+ song soundtrack + <i>Limited Edition Hardcover Cryamore Art Book</i></b><b>, </b>signed by Alan and Rob<b>! </b>Full of concept art, game art, and <i>exclusive guest art from today's top artists from all over the world</i> (like <a href="http://adamwarren.deviantart.com/gallery/?sort=popularity&amp;catpath=/&amp;q=" target="_blank">Adam Warren</a> (Empowered), <a href="http://oh8.deviantart.com/gallery/" target="_blank">Alex Ahad</a> (Creator of Skullgirls), <a href="http://bara-chan.deviantart.com/gallery/" target="_blank">Barachan</a>, <a href="http://thechamba.deviantart.com/gallery/?sort=popularity&amp;catpath=/&amp;q=" target="_blank">Chamba</a> (Randomveus, Street Fighter II), <a href="http://crybringer.deviantart.com/gallery/?sort=popularity&amp;catpath=/&amp;q=" target="_blank">Crybringer</a>, <a href="http://omar-dogan.deviantart.com/gallery/?catpath=/" target="_blank">Omar Dogan</a> (Girl 7, Street Fighter Legends), and more <i>top-secret</i> ones!), published by <i>UDON Entertainment</i>! (Limited to 300; signatures only on this pledge)</p><h1>
+<b>$115 Reward: PROTAGONIST'S PLEDGE!</b>
+</h1><p><i>     For those who want Esmy immortalized on top of their furniture!</i> This will get you a <b>digital copy of the game +</b> <b><i>10-inch (originally 9-inch), Resin-casted figure of the smart Esmyrelda Maximus, </i>pre-painted or not by request!</b> So she will stand proud and prestigious on your gaming station or computer desk, cheering you on while you find all the Cryamore!</p><a href="http://25.media.tumblr.com/21198b86e90ac5ca9e33a7be0a559b83/tumblr_mg9wq3U6LM1rxj33co1_r2_1280.png" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg/assets/330164/edit" data-id="330164">
+<figure><img alt="Esmyrelda Maximus Concept Sculpt" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/330/164/80d00ab57c260a4d8d1f70e453394403_large.png?1357617894"><figcaption>Esmyrelda Maximus Concept Sculpt</figcaption></figure>
+</div></a><p>     The adventurous <b>Esmy</b> will come with <b>2 changeable heads</b>, one facing forward with a different expression and one facing to the side like the sculpture pictured. She will also come with <b>4 interchangeable weapon pieces</b>, her Sword, Spear, Crossbow, or Axe, for the weapon you prefer the most! (Limited to 50; <b>no other pledges included with this one</b>.)</p><div class="template oembed" contenteditable="false" data-href="https://vimeo.com/56969599">
+<iframe src="//player.vimeo.com/video/56969599" width="639" height="479" frameborder="0" title="Esmy Concept Sculpt Turnaround" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+</div><h1><b>$115 Reward: FASHIONISTA'S PLEDGE!</b></h1><a href="http://25.media.tumblr.com/12bd3b73ce7a120c61b132aae18cc8a9/tumblr_mgmsdh8wUD1rxj33co1_1280.png" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg/assets/338749/edit" data-id="338749">
+<figure><img alt="Bliss Barson Concept Sculpt" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/338/749/304c7ba45d19ed65813688116e4b23a3_large.png?1358194292"><figcaption>Bliss Barson Concept Sculpt</figcaption></figure>
+</div></a>
+<div></div>
+<div></div><p><i>     For the divas out there! </i>This will get you a<b> digital copy of the game + <i>10-inch (originally 9-inch), Resin-casted figure of the darling Bliss Barson</i>, pre-painted or not by request</b>! So she will stand flirtatiously prim and proper on your gaming station or computer desk, trying to distract you from finding all the Cryamore! (Limited to 50; <b>no other pledges included with this one</b>.)</p><div class="template oembed" contenteditable="false" data-href="https://vimeo.com/57438236">
+<iframe src="//player.vimeo.com/video/57438236" width="639" height="479" frameborder="0" title="Bliss Concept Sculpt Turnaround" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+</div><h1>$150 Reward: TAILOR'S PLEDGE!</h1><p><i>     For the fashionable ones!</i> This will get you the <b>digital copy of the game + over 20 High Resolution Wallpapers + Digital Version of the game's 40+ song soundtrack + Special Kickstarter-Only Printed World Map of Noka Island + Limited Edition Physical 2-Disc Copy of the game's 40+ song soundtrack + Limited Edition Hardcover Cryamore Art Book + <i>an Original Signed Colored Marker Drawing of Esmy or Bliss</i></b> cosplaying as any character or in any costume (no NSFW requests) by Rob! (Limited to 25)</p><h1>$250 Reward: MASTER CRYATIST'S PLEDGE!</h1><p><i>     The real deal!</i> This will get you the <b>digital copy of the game + over 20 High Resolution Wallpapers + Digital Version of the game's 40+ song soundtrack + Special Kickstarter-Only Printed World Map of Noka Island + Limited Edition Physical 2-Disc Copy of the game's 40+ song soundtrack + Limited Edition Hardcover Cryamore Art Book + <i>BOTH Figures</i></b> (which is a value! <i>$75</i> <i>each</i> in comparison to $115 each listed above!) <b><i>of Esmy and Bliss</i></b>! (Limited to 100)</p><h1>$600 Reward: CREEPER'S PLEDGE!</h1><p><i>     For those into disgusting creatures and monsters!</i> This will get you the <b>digital copy of the game + over 20 High Resolution Wallpapers + Digital Version of the game's 40+ song soundtrack + Special Kickstarter-Only Printed World Map of Noka Island + Limited Edition Physical 2-Disc Copy of the game's 40+ song soundtrack + Limited Edition Hardcover Cryamore Art Book + BOTH Figures of Esmy and Bliss + <i>a spot to design your own Rare Monster!</i></b> Work closely with Alan, Rob, and Kinuko to get your ugly beast in the game, plus your name in the credits as a Monster Designer! (Limited to 5)</p><h1>$750 Reward: EGOTIST'S PLEDGE!</h1><p><i>     For those who are full of themselves!</i> This will land you the <b>digital copy of the game + over 20 High Resolution Wallpapers + Digital Version of the game's 40+ song soundtrack + Special Kickstarter-Only Printed World Map of Noka Island + Limited Edition Physical 2-Disc Copy of the game's 40+ song soundtrack + Limited Edition Hardcover Cryamore Art Book + BOTH Figures of Esmy and Bliss + <i>a spot to design your own NPC or yourself as an NPC! </i></b>Work closely with Alan, Rob, and Kinuko to get your persona or original character in the game, plus your name in the credits as a Character Designer! (Limited to 5)</p><h1>$1500 Reward: QUESTER'S PLEDGE!</h1><p><i>     For those who love to pen adventures! </i>This will land you the <b>digital copy of the game + over 20 High Resolution Wallpapers + Digital Version of the game's 40+ song soundtrack + Special Kickstarter-Only Printed World Map of Noka Island + Limited Edition Physical 2-Disc Copy of the game's 40+ song soundtrack + Limited Edition Hardcover Cryamore Art Book + BOTH Figures of Esmy and Bliss + <i>the coveted spot to create and write your own Side Quest!</i> </b>Work closely with Alan and Rob to write a reasonable-length side quest, learning the inner-working story of the game before ANYONE ELSE, and having your name in the credits as a Story Writer! (Limited to 1)</p><p><b><i>ADDITIONAL REWARD:</i></b></p><h1>PHYSICAL VERSION OF CRYAMORE!</h1><div class="template asset" contenteditable="false" data-edit_url="/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg/assets/359097/edit" data-id="359097">
+<figure><img alt="Does not represent look of final product~" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/359/097/2958f235e748b9ccd683da48aaa45d21_large.png?1359398119"><figcaption>Does not represent look of final product~</figcaption></figure>
+</div>
+<p>It's a Limited<b> KICKSTARTER-ONLY Cryamore-Yellow, Physical version of the game on DVD, with a 20-page, full-color instruction booklet to boot</b>. There will only be a <b>thousand</b> of these made, with an additional special message in each one, just to show how much we love you. </p><p><i>Quick important note: the pledges before this reward was introduced DO NOT include the physical version. You would have to choose the direct pledge that has a physical version on it. These pledges are the <b>STEAM PUNK'S PLEDGE, PHYSICALIST'S PLEDGE (Physicalist's Pledge does not include figures), </b>and<b> LEGENDARY CRYATIST'S PLEDGE.</b></i></p><div class="template asset" contenteditable="false" data-edit_url="/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg/assets/331610/edit" data-id="331610">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/331/610/ab46af0f7e1a9708ec80bf945f430d43_large.png?1357700344"></figure>
+</div>
+<p>     We really want to make this game happen, that's why! But it's difficult to do so when we can only devote spare time to it. So far, we've been placing all of our spare time and money into Cryamore ourselves; we're getting good vibes about investing all of our effort into this game. Kickstarter is a valuable tool into helping us reach our goal, and to involve YOU and give YOU a great game!</p><div class="template asset" contenteditable="false" data-edit_url="/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg/assets/331425/edit" data-id="331425">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/331/425/3810364fb4f730a9f8b1fc58d159c021_large.png?1357691413"></figure>
+</div>
+<p>     We initially need <i>$42,000</i> to get us along and start working on the game more often. This is to cover basic costs, like music, sound, assistance on assets and game content, marketing, and reward production. After deductions from Kickstarter, Amazon, and taxes (which is about 35%), this will set us at a total of needing:</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg/assets/331529/edit" data-id="331529">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/331/529/33404ff2107110924689497fc1e46b2a_large.png?1357696755"></figure>
+</div>
+<p>...To get us rolling along here. And that's just the <b>base game</b>. If we can't get funded, the exclusive rewards won't happen and Cryamore will take longer to complete! For a more complete experience that we have planned and outlined for Cryamore, check out our stretch...</p>
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg/assets/326675/edit" data-id="326675">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/326/675/9aa492c35b24cae6a7ad65462fc2b1d2_large.png?1357385077"></figure>
+</div>
+<p>     Now that we hit our base goal of<b> $60,000</b>, we have stretch goals prepared to help make <i>Cryamore</i> a completely polished game. With your help, we can really make the following features a reality! Here are the goodies to look forward to!</p><div class="template asset" contenteditable="false" data-edit_url="/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg/assets/408567/edit" data-id="408567">
+<figure><img alt="Funding past our highest stretch goal will go towards more assistance and getting the game out to more people's hands!" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/408/567/ca4b490e1d381646e874917709d58f28_large.gif?1361858985"><figcaption>Funding past our highest stretch goal will go towards more assistance and getting the game out to more people's hands!</figcaption></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg/assets/326678/edit" data-id="326678">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/326/678/6591ae19f02d61efa276c4c631b81c9b_large.png?1357385502"></figure>
+</div>
+<p>     We're a <i>very</i> talkative bunch of people here. So if you have a question, chances are we most definitely will have an answer! <b>So ask them!</b> We will do our best to answer them quickly. We will also update frequently here on Kickstarter! You can also follow us (or, Esmy) on our Twitter <a href="https://twitter.com/Cryamore" target="_blank">@Cryamore</a> and like us on <a href="https://www.facebook.com/Cryamore" target="_blank">Facebook</a>!</p>
+</div>
+<div id="risks">
+<h2 class="title grey-dark mt6 mb4">
+<span>Risks and challenges</span>
+<a href="/help/faq/kickstarter%20basics#Acco" class="right normal h5" target="_blank">Learn about accountability on Kickstarter</a>
+<div class="divider clear"></div>
+</h2>
+<p><p>This is of course a 5-man team at best. This will be our first commercial game undertaking, and though we have made many small games before for fun, everyone involved have been employed in the gaming industry and digital media. Though with any project (especially game development, even more so with a game like ours), we are bound to run across some snags.</p>
+
+<p>CHALLENGES AND RISKS----------------------------------------------------------------
+<br />The first challenge: Since we&#39;re not utilizing tile-sets (compared to a game of this nature where such assets can be reused), we will be painstakingly hand-drawing and painting EACH 2D background. There will be a LOT of art content. We feel this will make Cryamore special, as each specific spot in the game will BE unique. We have a strong artistic work ethic to make it work due to what we do for a living, and with enough financial backing, can hire the help needed to get it done more efficiently. </p>
+
+<p>Sprite &amp; animation work can also be a potential challenge, as there is a considerable amount of animations for Esmy and quite a handful of simpler unique NPCs/Monsters. Koki &amp; Kinuko&#39;s background will ensure that we can accomplish this, as well as Alan, Rob, and Jordan to back them up. Now that we have dedicated programmers (Ryan &amp; Brandon), coding is definitely not an issue. And again, we can always pull on more help if needed and if we get enough financial assistance. </p>
+
+<p>Music is covered. Sound is covered. The only risk is development time, but with having the ability to keep consistent and steady updates on Kickstarter, we will ensure that all involved will be kept abreast of what&#39;s going on. We will also have Live Development Streams so you can be in on the growth. You can check our track record on our devblog! We update rather frequently.</p>
+
+<p>OUR PLAN TO OVERCOME THEM----------------------------------------------------
+<br />The fact that we&#39;re sticking with somewhat old-school limitations utilizing modern-day potential gives us even more impetus to finish the game.</p>
+
+<p>Since June 2012, we have been investing all our spare time and money into developing Cryamore while carrying full-time jobs. This is definitely a passion project, and we are confident and committed to ensuring this game becomes a reality (although MUCH slower without help). So we would definitely appreciate any help we receive!</p>
+
+<p>Thanks for checking out our Kickstarter page!</p></p>
+</div>
+</div>
+<div class="NS-projects-faqs" id="project-faqs">
+<h2 class="title grey-dark mt6 mb4">
+FAQ
+<div class="divider clear"></div>
+</h2>
+<ul class="faqs">
+<li class="faq" id="project_faq_46103">
+<div class="faq-question">
+<a href="#project_faq_46103" name="project_faq_46103">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">How come the Bliss Figure Standalone pledge doesn&#39;t come with a copy of the game like Esmy&#39;s figure does?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>It actually does. We realized too late that was an error on our part and tried to update the description to show that the game will come with the Bliss figure, but we were too late as someone already had purchased it. With that said, again, the Bliss Figure standalone pledge WILL come with a free copy of the game as well! :)</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-01-26T02:35:04-05:00">Sat, Jan 26 2013 2:35 am EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_46135">
+<div class="faq-question">
+<a href="#project_faq_46135" name="project_faq_46135">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Linux support?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>If we hit all of our Stretch Goals, Linux support will be bundled with every other platform upon release. If we don&#39;t, Linux support will still be just as possible, but development will be much slower.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-02-04T19:35:47-05:00">Mon, Feb 4 2013 7:35 pm EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_46143">
+<div class="faq-question">
+<a href="#project_faq_46143" name="project_faq_46143">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Gamepad/Controller Support?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>We&#39;re aiming for the game to be as close as possible to the 16-bit/32-bit console experience, so we&#39;re definitely testing out and making sure all the kinks are ironed in order to have full controller support. We&#39;ll be updating all this information as the project goes along. </p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-01-27T16:43:34-05:00">Sun, Jan 27 2013 4:43 pm EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_46144">
+<div class="faq-question">
+<a href="#project_faq_46144" name="project_faq_46144">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">iOS Support?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>If we get funded beyond $150,000 we can get to working on a port. The main reason is that we would have to fine-tune the gameplay for touch-based controls, which would take a bit of time to make perfect, as we feel touch-based ports of controller-based gameplay is usually dumbed down. Also, further development costs for getting on iOS itself. If we would do iOS, we want to make it with the same quality as the PC/Mac version.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-02-04T19:35:47-05:00">Mon, Feb 4 2013 7:35 pm EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_46189">
+<div class="faq-question">
+<a href="#project_faq_46189" name="project_faq_46189">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Does the Physicalist&#39;s Pledge include the figures?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>No, it does not. The best way to acquire the figures with the Physical Version would be the Legendary Cryatist&#39;s Pledge. Paying attention to the price amount between each shows that the Physicalist&#39;s Pledge includes the art book and above.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-01-28T14:32:26-05:00">Mon, Jan 28 2013 2:32 pm EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_47154">
+<div class="faq-question">
+<a href="#project_faq_47154" name="project_faq_47154">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Will Cryamore be DRM-free?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>The closest to DRM Cryamore may have would be the use of Steam&#39;s service. We don&#39;t plan on including any methods of DRM in-game. We&#39;ll be looking into having it distributed in other services like GoG (which requires DRM-Free) and Desura too for people who want alternatives to Steam later on.</p>
+
+<p>We&#39;re well aware that DRM never really stops piracy and only hinders people who purchase the game, as well as being a waste of time and money for both parties. So, we&#39;d like to stay away from the annoying methods we often see today like online authentication checks and such as much as possible. Hopefully, with users seeing the passion, effort, and content that is going into the creation of this game, we hope that piracy shouldn&#39;t be too much of an issue. </p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-02-09T15:54:50-05:00">Sat, Feb 9 2013 3:54 pm EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_46333">
+<div class="faq-question">
+<a href="#project_faq_46333" name="project_faq_46333">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Digital art book?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>There will not be a digital art book provided. The only means of digital art that we&#39;re having are the exclusive wallpapers and content we release through ourselves or through <a href="http://www.creativeuncut.com/art_cryamore_a.html" rel="nofollow">http://www.creativeuncut.com/art_cryamore_a.html</a>. This is to ensure the exclusivity of the special hardcover art book and later on, the softcover art book released later. So if you want to see all the special stuff, you&#39;ll have to grab the artbook.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-02-02T16:12:13-05:00">Sat, Feb 2 2013 4:12 pm EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_46334">
+<div class="faq-question">
+<a href="#project_faq_46334" name="project_faq_46334">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">What does &#39;reserve the game&#39; mean?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>You&#39;re getting a reserve for the full game when it releases. Meaning you don&#39;t have to pay anything later. All of the pledges listed include the full digital game. The game will be $20 when it&#39;s released, so you&#39;re getting a discount, basically.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-01-30T13:19:34-05:00">Wed, Jan 30 2013 1:19 pm EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_46335">
+<div class="faq-question">
+<a href="#project_faq_46335" name="project_faq_46335">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Need a Voice Actor?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>We&#39;re not actively looking for further voice actors at this point, as we have a list currently. But if we need more, just send a resume to our email at <a href="mailto:CryamoreDEV@gmail.com" rel="nofollow">CryamoreDEV@gmail.com</a> so you can be in our records. </p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-01-30T13:19:34-05:00">Wed, Jan 30 2013 1:19 pm EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_47311">
+<div class="faq-question">
+<a href="#project_faq_47311" name="project_faq_47311">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">I don&#39;t like voice acting. Can I turn it off?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Yup, you&#39;ll be able to turn voice acting off and play it the old-school way!</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-02-11T23:31:39-05:00">Mon, Feb 11 2013 11:31 pm EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_46336">
+<div class="faq-question">
+<a href="#project_faq_46336" name="project_faq_46336">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">What specs would I need to play Cryamore?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>We&#39;re optimizing the silliness out of Cryamore, in order to get it out to as many people as possible, even people who don&#39;t have big rigs. Regardless, we&#39;ll be updating everyone on required specs as we go along. </p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-01-30T13:19:34-05:00">Wed, Jan 30 2013 1:19 pm EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_46337">
+<div class="faq-question">
+<a href="#project_faq_46337" name="project_faq_46337">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Standalone Digital Soundtrack Pledge?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>We won&#39;t be providing the digital soundtrack by itself as a pledge; everything within the pledges is bundled as is. Since it&#39;s a hefty soundtrack, you show your support with its creation by backing for the particular pledge. :)</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-01-30T13:23:37-05:00">Wed, Jan 30 2013 1:23 pm EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_47310">
+<div class="faq-question">
+<a href="#project_faq_47310" name="project_faq_47310">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Can I reserve multiple digital copies?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Yes, you can! Just add $15 per copy in the amount for your pledge. When we send out the survey, please specify that you have ordered multiple copies, and we will add them in our records.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-02-11T23:31:39-05:00">Mon, Feb 11 2013 11:31 pm EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_46978">
+<div class="faq-question">
+<a href="#project_faq_46978" name="project_faq_46978">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Will we be able to select the digital platform we&#39;d like?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Yeah, our plan is to provide backers with an option of picking the digital platform of choice, depending on if specific platforms are unlocked. We will clarify this when we send out surveys after everything is said and done!</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-02-11T23:30:32-05:00">Mon, Feb 11 2013 11:30 pm EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_47309">
+<div class="faq-question">
+<a href="#project_faq_47309" name="project_faq_47309">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Does the Physical version include multiple platforms on it?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Yup! The Kickstarter-Limited Edition Cryamore Physical Version will have PC, Mac (and Linux, if stretch goal is hit) versions of Cryamore!</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-02-11T23:27:38-05:00">Mon, Feb 11 2013 11:27 pm EST</time>
+</div>
+</div>
+</li>
+
+</ul>
+<div class="faq-ask-box">
+<a href="/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg/messages/new?message%5Bto%5D=robaato&amp;mode=FAQ" class="button button_blue remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Ask a question about CRYAMORE! A True, First-Class Take on the Actio...">Ask a question</a>
+
+</div>
+</div>
+
+<div class="mt4 ml1 mr1 mb2" id="report-issue-wrap">
+<a href="/login?then=%2Fprojects%2Frobaato%2Fcryamore-a-true-first-class-take-on-the-action-rpg" class="button button_grey">Report this project to Kickstarter</a>
+</div>
+</div>
+<div class="NS-projects-rightcol grid_5" id="rightcol">
+<div class="NS_projects__ecom">
+<div class="digits_6 pb2 pl2 pt2" id="stats">
+<h5>
+<div class="num h48 no-margin" data-backers-count="5909" id="backers_count"><data class="Project1070635455" data-format="number" data-value="5909" itemprop="Project[backers_count]">5,909</data></div>
+<span><data class="Project1070635455" data-attr="backers_count" data-format="pluralize" data-value="5909" data-word="Backer">Backers</data></span>
+</h5>
+<h5>
+<div class="num h48 no-margin" data-goal="60000.0" data-percent-raised="4.038488666666666666666666667" data-pledged="242309.32" id="pledged">
+<data class="Project1070635455" data-currency="USD" data-format="shorter_money" data-precision="0" data-value="242309" data-without_code="true" itemprop="Project[pledged]">$242,309</data>
+<span class="money usd project_currency_code"></span>
+</div>
+pledged of
+<span class="money usd no-code">$60,000</span>
+goal
+</h5>
+<span data-duration="31.0" data-end_time="2013-02-26T01:38:53-05:00" data-hours-remaining="0" id="project_duration_data"></span>
+<div class="Project1070635455" data-conditions="[{&quot;!state&quot;:[&quot;canceled&quot;,&quot;suspended&quot;]}]" data-evaluation="true" data-render="&quot;&lt;h5 class=\&quot;poll \&quot; data-dynamic=\&quot;5\&quot; data-end_time=\&quot;2013-02-26T01:38:53-05:00\&quot; data-poll_url=\&quot;https://d2oher2uhvl0ur.cloudfront.net/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg/stats.json\&quot;&gt;\n&lt;div class=\&quot;num h48 no-margin\&quot;&gt;0&lt;/div&gt;\n&lt;span class=\&quot;text\&quot;&gt;seconds to go&lt;/span&gt;\n&lt;/h5&gt;\n&quot;"><h5 class="poll " data-dynamic="5" data-end_time="2013-02-26T01:38:53-05:00" data-poll_url="https://d2oher2uhvl0ur.cloudfront.net/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg/stats.json">
+<div class="num h48 no-margin">0</div>
+<span class="text">seconds to go</span>
+</h5>
+</div></div>
+<div class="Project1070635455" data-conditions="[{&quot;state&quot;:&quot;live&quot;},{&quot;!ended?&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;pr2 pl2\&quot; id=\&quot;pledge-wrap\&quot;&gt;\n&lt;a href=\&quot;/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg/pledge/new?clicked_reward=false\&quot; class=\&quot;button button_green button_box button_block\&quot; id=\&quot;button-back-this-proj\&quot; title=\&quot;Back this project\&quot;&gt;Back This Project &lt;small class=&#39;h6 normal block green-dark&#39;&gt;&lt;span class=\&quot;money usd \&quot;&gt;$1&lt;/span&gt; minimum pledge&lt;/small&gt;&lt;/a&gt;\n&lt;/div&gt;\n&quot;"></div><div class="Project1070635455" data-conditions="[{&quot;state&quot;:&quot;live&quot;}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;p2\&quot; id=\&quot;banner\&quot;&gt;\n&lt;p class=\&quot;tiny_type no-margin\&quot;&gt;\nThis project will be funded on\n&lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;llll z\&quot; datetime=\&quot;2013-02-26T01:38:53-05:00\&quot;&gt;Tue, Feb 26 2013 1:38 am EST&lt;/time&gt;.\n&lt;/p&gt;\n&lt;/div&gt;\n&quot;"></div></div>
+
+<div class="NS_projects__rightcol_projectby bg-blue-light rounded">
+<div class="p2 clearfix">
+<div class="avatar inline-block align-middle">
+<a href="/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography"><img alt="Nostalgico_logo_2013_2.small" class="avatar-small" height="80" src="https://s3.amazonaws.com/ksr/avatars/3075396/NostalgiCO_Logo_2013_2.small.jpg?1357655363" width="80" />
+</a></div>
+<div class="creator-name inline-block align-middle ml1">
+<h6 class="mb1">Project by</h6>
+<h5 class="mb1">
+<a href="/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">NostalgiCO</a>
+</h5>
+<p class="location h6 bold mb1">
+<a href="/discover/places/chicago-il">Chicago, IL</a>
+</p>
+</div>
+</div>
+<div class="creator-details pl2 pr2 pb1">
+<ul class="list-simple h5 mb1">
+<li class="projects">
+<span class="ss-icon ss-kickstarter grey-dark margin-right"></span>
+<span class="text">
+First created
+<span class="divider">&middot;</span>
+<a href="/profile/robaato/backed" class="green-dark bold more-button remote_modal_dialog" data-modal-title="Projects backed by NostalgiCO">9 backed</a>
+</span>
+</li>
+<li>
+<span class="ss-icon ss-facebook margin-right grey-dark"></span>
+<span class="text">
+Has not connected Facebook
+</span>
+</li>
+<li class="links">
+<span class="ss-icon ss-globe margin-right grey-dark"></span>
+<span class="text">
+<a href="http://cryamore.tumblr.com" class="popup" rel="nofollow" target="_blank">cryamore.tumblr.com</a>
+</span>
+</li>
+</ul>
+</div>
+<div class="footer center h5 bold clearfix rounded-bottom clip">
+<a href="/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">See full bio</a>
+<a href="/projects/robaato/cryamore-a-true-first-class-take-on-the-action-rpg/messages/new?message%5Bto%5D=robaato" class="remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Send a message to NostalgiCO">Contact me</a>
+
+</div>
+</div>
+
+<ul class="NS-projects-rightcol-rewards rounded clip list mt2" data-reward-count="18" id="what-you-get">
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$10</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+500 backers
+</span>
+<span class="bg-grey no-wrap pl1 pr1 sold-out">
+All gone!
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>PREEMPTIVE ATTACK: First 500 backers will reserve a Digital Download of the game, Cryamore for $10! (Suggested retail price is $20) And a big, hearty thanks from us for your support!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-03-01">Mar 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$15</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+2537 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(4963 left of 7500)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>ELEMENTALIST&#39;S PLEDGE: It&#39;s Elementary... This will fetch you a reserve for the Digital Download of the game, Cryamore! (Suggested retail price is $20) And a big, hearty thanks from us for your support!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-03-01">Mar 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$20</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+472 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>ARTISAN&#39;S PLEDGE: A Digital Download of the game! PLUS over 20 Backer-Only High-Resolution Wallpapers for you featuring characters, locales, and more!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-03-01">Mar 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$30</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1055 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>INSTRUMENTALIST&#39;S PLEDGE: You get the Digital Download of the game, PC or Mac, the wallpaper pack, and a digital copy of the 40+ song Soundtrack by the clever Aivi Tran!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-03-01">Mar 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$40</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+100 backers
+</span>
+<span class="bg-grey no-wrap pl1 pr1 sold-out">
+All gone!
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>ADVENTURER&#39;S PLEDGE: You get all previous Rewards, PLUS a Limited Kickstarter Exclusive World Map Poster of Noka Island, where our adventure takes place!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-03-01">Mar 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $10 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$50</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+300 backers
+</span>
+<span class="bg-grey no-wrap pl1 pr1 sold-out">
+All gone!
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>PIANIST&#39;S PLEDGE: You get all previous Rewards, PLUS a Limited Kickstarter Exclusive Physical Copy of the Game&#39;s 40+ song 2-Disc Soundtrack-- booklet and all, signed by Aivi herself! (Signatures only on this pledge offer.)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-03-01">Mar 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $12 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$70</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+272 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(196 left of 468)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>STEAM PUNK&#39;S PLEDGE: You get all previous Rewards, PLUS KICKSTARTER-ONLY Physical Version of the game, including a special Cryamore-Yellow case and 20-page full color instruction booklet (with a special message in each one)! (Physical Version on this pledge only!!!)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-03-01">Mar 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $15 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$100</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+202 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(98 left of 300)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>CRYATIST&#39;S PLEDGE: You get all previous Rewards, PLUS a copy of a Limited Kickstarter Exclusive Hardcover Art Book published by UDON Entertainment! It will feature exclusive guest art from top-tier illustrators, TONS of concept &amp; game art, and assets from the game; signed by Rob and Alan! (Signatures only on this pledge offer.)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-03-01">Mar 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $15 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$115</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+34 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(16 left of 50)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>PROTAGONIST&#39;S PLEDGE: Digital Copy of Game + Limited Kickstarter Exclusive 9-inch, Resin-casted figurine of the intellectual Esmy, manufactured by the fine folks at Gensen Figure! (Add-On Pledge; doesn&#39;t include previous rewards.)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-03-01">Mar 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $20 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$115</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+14 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(36 left of 50)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>FASHIONISTA&#39;S PLEDGE: Limited Kickstarter Exclusive 9-inch, Resin-casted figurine of the darling Bliss, manufactured by the fine folks at Gensen Figure! (Add-On Pledge; doesn&#39;t include previous rewards.)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-03-01">Mar 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $20 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$120</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+161 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(89 left of 250)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>PHYSICALIST&#39;S PLEDGE: You get all previous Rewards, PLUS KICKSTARTER-ONLY Physical Version of the game, including a special Cryamore-Yellow case and 20-page full color instruction booklet! (Physical Version on this pledge only!!!)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-03-01">Mar 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $18 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$150</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+25 backers
+</span>
+<span class="bg-grey no-wrap pl1 pr1 sold-out">
+All gone!
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>TAILOR&#39;S PLEDGE: You get all previous Rewards (not including Protagonist/Fashionista Pledges), PLUS an Original 11x17 in. Marker Illustration of Esmyrelda or Bliss in ANY requested outfit of your choice, signed by Rob himself! (No NSFW requests, please.)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-03-01">Mar 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $17 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$250</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+45 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(55 left of 100)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>MASTER CRYATIST&#39;S PLEDGE: You get all previous Rewards (not including Tailor&#39;s Pledge), PLUS BOTH Limited Kickstarter Exclusive 9-inch, Resin-casted figurines of Esmy and Bliss, sculpted by the fine folks at Gensen Figure! BEST-valued pledge offer!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-03-01">Mar 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $40 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$270</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+103 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(147 left of 250)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>LEGENDARY CRYATIST&#39;S PLEDGE: You get all previous Rewards (not including Tailor&#39;s Pledge), PLUS KICKSTARTER-ONLY Physical Version of the game, including a special Cryamore-Yellow case and 20-page full color instruction booklet! (Physical Version on this pledge only!!!)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-03-01">Mar 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $40 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$600</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+4 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(1 left of 5)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>CREEPER&#39;S PLEDGE: You get ALL previous Rewards, PLUS Design your own rare elemental monster with a basic attack, and we&#39;ll add it in game! Also, bragging rights in the credits.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-03-01">Mar 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $40 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$750</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+7 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(3 left of 10)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>EGOTIST&#39;S PLEDGE: You get ALL previous Rewards (not including Creeper&#39;s Pledge), PLUS yourself or original character as an NPC that actually lives in Ghilcrest, you self-obsessed person, you! Also, bragging rights in the credits.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-03-01">Mar 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $40 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$1,200</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+6 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(6 left of 12)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>FUNDAMENTALIST&#39;S PLEDGE: You get EVERYTHING above (excluding CREEPER, EGOTIST, &amp; QUESTER pledges) PLUS an inclusion of yourself or an original character in the game as a randomly selected Main Shop NPC that Esmy is REQUIRED to work with throughout the course of the game! (The NPC list is Elementalist, Smith, Inventory Clerk, Innkeeper, Information Broker, Linguist, Nutritionist, Cafe Chef, Seamstress, Midway Owner, Contractor, and Instructor!)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-03-01">Mar 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $40 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$1,500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+4 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(1 left of 5)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>MASTER QUESTER&#39;S PLEDGE: You get ALL previous Rewards (not including Creeper/Egotist Pledges), PLUS create a small side-quest story, working discreetly with Alan and Rob to make it happen!  Also, bragging rights in the credits. (US Only)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-03-01">Mar 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+</ul>
+
+<div class="p2" id="meta">
+<h5>Funding period</h5>
+<p class="tiny_type">
+<time class="js-adjust" data-format="ll" datetime="2013-01-26T01:38:53-05:00">Jan 26, 2013</time> - 
+<time class="js-adjust" data-format="ll" datetime="2013-02-26T01:38:53-05:00">Feb 26, 2013</time>
+(31 days)
+</p>
+</div>
+</div>
+
+</div>
+
+<a href="#" id="video_mode_tab" style="display: none;">
+View in Video Mode
+</a>
+
+</div>
+</div>
+
+
+</div>
+
+<div class="h5 bg-green-dark" id="mega-footer-wrap">
+<div class="bg-green-dark white full-height" id="footer-newsletter-signup">
+<div class="container py4">
+<div class="grid_8 prefix_4 suffix_4 center mt4">
+<h2>
+Eureka! You've found
+<br>
+our little secret.
+</h2>
+<p>Sign up for our Happening email for all the inside info about arts and culture in the Kickstarter universe and beyond.</p>
+<div class="newsletter_signup">
+<form accept-charset="UTF-8" action="/newsletters/happening/signup" class="overlabels" method="post"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /><input class="hidden" name="authenticity_token" type="hidden" value="483Wn4wp6joGH5MiS6nmORXNspZSbBZA3W32vnIU7HQ=" /></div><input class="hidden" id="location" name="location" type="hidden" value="footer" />
+<textarea class="hide textarea" id="comment" name="comment">
+</textarea>
+<div class="field newsletter">
+<label class="overlabel z1 overlabel-newsletter">Email address</label>
+<input class="text" id="email" name="email" type="text" />
+</div>
+<input class="button button_green submit" name="commit" type="submit" value="Submit" />
+</form>
+
+</div>
+
+</div>
+</div>
+</div>
+<div class="container relative" id="mega-footer">
+<span class="scissors icon-scissors-1"></span>
+<div class="grid_16 alpha omega pt4 pb2" id="mega-footer-links">
+<div class="grid_4 link-group">
+<h5 class="white">About us</h5>
+<ul class="list">
+<li><a href="/year/2013/?ref=footer">2013 highlights</a></li>
+<li><a href="/year/2012?ref=footer">2012 highlights</a></li>
+<li><a href="/team?ref=footer">Who we are</a></li>
+<li><a href="/jobs?ref=footer">Jobs</a></li>
+<li><a href="/press?ref=footer">Press</a></li>
+<li><a href="/help/stats?ref=footer">Stats</a></li>
+<li><a href="/newsletters/weekly">Projects we love</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group">
+<h5><a href="/help?ref=footer" class="white">Help</a></h5>
+<ul class="list">
+<li><a href="/hello?ref=footer">What is Kickstarter?</a></li>
+<li><a href="/help?ref=footer">FAQ</a></li>
+<li><a href="/contact?ref=footer">Support</a></li>
+<li><a href="/help/school?ref=footer">Kickstarter School</a></li>
+<li><a href="/terms-of-use?ref=footer">Terms of Use</a></li>
+<li><a href="/privacy?ref=footer">Privacy Policy</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group alpha omega suffix_1">
+<h5 class="alpha"><a href="/discover/advanced?ref=footer" class="white">Discover</a></h5>
+<ul class="column column-0 grid_2 list">
+<li><a href="/discover/categories/art?ref=footer">Art</a></li>
+<li><a href="/discover/categories/comics?ref=footer">Comics</a></li>
+<li><a href="/discover/categories/dance?ref=footer">Dance</a></li>
+<li><a href="/discover/categories/design?ref=footer">Design</a></li>
+<li><a href="/discover/categories/fashion?ref=footer">Fashion</a></li>
+<li><a href="/discover/categories/film%20&amp;%20video?ref=footer">Film &amp; Video</a></li>
+<li><a href="/discover/categories/food?ref=footer">Food</a></li>
+</ul>
+<ul class="column column-1 grid_2 list">
+<li><a href="/discover/categories/games?ref=footer">Games</a></li>
+<li><a href="/discover/categories/music?ref=footer">Music</a></li>
+<li><a href="/discover/categories/photography?ref=footer">Photography</a></li>
+<li><a href="/discover/categories/publishing?ref=footer">Publishing</a></li>
+<li><a href="/discover/categories/technology?ref=footer">Technology</a></li>
+<li><a href="/discover/categories/theater?ref=footer">Theater</a></li>
+</ul>
+</div>
+<div class="grid_3 link-group">
+<h5 class="white">Hello</h5>
+<ul class="list">
+<li>
+<a href="https://twitter.com/kickstarter"><span class="ss-icon ss-social-regular ss-twitter"></span>
+Twitter
+</a></li>
+<li>
+<a href="https://www.facebook.com/Kickstarter"><span class="ss-icon ss-social-regular ss-facebook"></span>
+Facebook
+</a></li>
+<li>
+<a href="http://kickstarter.tumblr.com"><span class="ss-icon ss-social-regular ss-tumblr"></span>
+Tumblr
+</a></li>
+<li>
+<a href="http://instagram.com/kickstarter"><span class="ss-icon ss-social-regular ss-instagram"></span>
+Instagram
+</a></li>
+<li>
+<a href="https://vine.co/Kickstarter"><span class="ss-icon ss-social-regular ss-vine"></span>
+Vine
+</a></li>
+<li>
+<a href="/blog?ref=footer">Blog</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="grid_16 py4" id="mega-footer-bottom">
+<div class="logo left">
+<a href="/" class="grey-dark"><span class="ss-icon h3">KICKSTARTER</span>
+</a></div>
+<p class="right h5 grey-dark">
+&copy;
+2014
+Kickstarter, Inc.
+</p>
+</div>
+</div>
+</div>
+
+<script>
+  //<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    var analytics_vars = { google_analytics_id : "UA-7621056-1", logged_in : "false", social_user: "false" }
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.mixpanel_id = '75b1d24a516ecfc955eadfadc4910661';
+    window.mixpanel_debug = false;
+  //]]>
+</script>
+
+
+<noscript>
+<img alt="Quantcast" border="0" height="1" src="//secure.quantserve.com/pixel/p-34IbSpw2K94Sg.gif" style="display:none" width="1" />
+</noscript>
+
+
+<script>
+  //<![CDATA[
+    window.benchmark = (typeof window.performance == 'object' && typeof window.performance.mark == 'function');
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    (function (root) {
+      function instrument_function (original) {
+        return function () {
+          try {
+            return original.apply(this, arguments);
+          } catch (e) {
+            if (e.stack && root.Honeybadger) {
+              Honeybadger.notify(e, {
+                current_project : root.current_project,
+                current_user : root.current_user
+              });
+            }
+            throw(e);
+          }
+        };
+      }
+      root.instrument_function = instrument_function;
+    }(this));
+  //]]>
+</script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+
+<script>
+  //<![CDATA[
+    (function(){function c(a){this.local_start_time=new Date;this.settings={cookie_name:"request_time"};for(var b in a)this.settings[b]=a[b];this.get_remote_offset()}c.prototype.get_remote_offset=function(){this.cookie_value=this.read_cookie();var a=new Date(this.cookie_value);if(!this.cookie_value||"Invalid Date"===a.toString()){if(this.remote_offset=this.read_cookie("local_offset"))this.remote_offset=parseInt(this.remote_offset,10)}else this.remote_offset=a-this.local_start_time;"undefined"!==typeof this.remote_offset&& !isNaN(this.remote_offset)?(document.cookie="local_offset="+this.remote_offset+"; path=/",this.is_set=!0):this.is_set=!1};c.prototype.time_units=[["milliseconds",1],["seconds",1E3],["minutes",6E4],["hours",36E5],["days",864E5]];c.prototype.get_units_in_interval=function(a,b){var d=a.replace(/^\w/,function(d){return"get"+d.toUpperCase()});return b[d]()};c.prototype.milliseconds_in_day=function(a){"undefined"===typeof a&&(a=new Date);for(var b=0,d=this.time_units.length-2;0<=d;d--)b+=this.get_units_in_interval(this.time_units[d][0], a)*this.time_units[d][1];return b};c.prototype.milliseconds_in_interval=function(a,b){return this.milliseconds_in_day(b)%a};c.prototype.milliseconds_to_next_interval=function(a,b){return a-this.milliseconds_in_interval(a,b)};c.prototype.pluralize=function(a,b){1===b&&(a=a.replace(/s$/,""));return a};c.prototype.read_cookie=function(a){for(var b=window.document.cookie.split(";"),a=(a||this.settings.cookie_name)+"=",d=0;d<b.length;d++){for(var e=b[d];" "==e.charAt(0);)e=e.substring(1,e.length);if(0== e.indexOf(a))return b=e.substring(a.length,e.length),decodeURIComponent(b).replace(/\+/g," ")}return null};c.prototype.destroy_cookie=function(a){var b=new Date;a||(a=this.settings.cookie_name);b.setTime(b.getTime()-864E5);window.document.cookie=a+"=; expires="+b.toGMTString()+"; path=/"};c.prototype.get_remote_time=function(){var a=new Date,b=a.getTime()+this.remote_offset;return a=a.setTime(b)};window.ksr_page_clock=new c})(); (function(){function c(d,a,b){if(d){this.options={unit_base:{seconds:119,minutes:119,hours:72,days:0},end_phrase:d.getAttribute("data-word")||"to go",count_down:d.getAttribute("data-dynamic")||!1};for(k in b)this.options[k]=b[k];this.clock=a;this.time_units=this.clock.time_units.slice(1);this.element=d;this.clock.is_set&&this.attach()}}function a(){this.elements=[];this.attach()}var b=function(d,a){var b=a||window.document.body,c=d.split("."),g=c[c.length-1],c=1<c.length&&c[0]?c[0]:"*";if(window.document.getElementsByClassName)return b.getElementsByClassName(g); if(b.querySelectorAll)return b.querySelectorAll(d);for(var c=b.getElementsByTagName(c),h=[],i=0,f;f=c[i];i++)b=RegExp("(^|\\s)"+g+"(\\s|$)"),(""+f.className).match(b)&&h.push(f);return h};c.prototype.get_remaining_time=function(){var d=this.remote_end_time-this.clock.get_remote_time();0>d&&(d=0);return d};c.prototype.get_current_unit=function(){for(var d,a=0;a<this.time_units.length&&!(d=this.time_units[a],this.get_remaining_time()<=this.options.unit_base[d[0]]*d[1]);a++);return d};c.prototype.update_element= function(){var a=this.get_current_unit(),b=Math.floor(this.get_remaining_time()/a[1]);isNaN(b)||(this.number_element.innerHTML=b,this.text_element.innerHTML=this.clock.pluralize(a[0],b)+" "+this.options.end_phrase)};c.prototype.valid=function(){return!(!this.number_element||!this.text_element)};c.prototype.attach=function(){function a(){c.update_element();if(c.options.count_down&&0<c.get_remaining_time()){var b=c.get_current_unit();this.timeout=window.setTimeout(a,c.clock.milliseconds_to_next_interval(b[1]))}} var c=this;if(this.remote_end_time_string=this.element.getAttribute("data-end_time"))this.remote_end_time_string.match(/^\d+$/)?(this.remote_end_time=new Date,this.remote_end_time.setTime(this.remote_end_time_string)):this.remote_end_time=new Date(this.remote_end_time_string),this.number_element=b(".num",this.element)[0],this.text_element=b(".text",this.element)[0],this.element.ksr_page_timer=!0,this.valid()&&a()};c.prototype.cancel=function(){this.timeout&&clearTimeout(this.timeout)};a.prototype.loading= !0;a.prototype.stop_finding=function(){this.attach_timers();this.loading=!1;document.addEventListener?document.removeEventListener("DOMContentLoaded",this.stop_finding,!1):document.attachEvent&&"complete"===document.readyState&&document.detachEvent("onreadystatechange",this.stop_finding)};a.prototype.bind_ready=function(){var a=this,b=function(){a.stop_finding.call(a)};document.addEventListener?(document.addEventListener("DOMContentLoaded",b,!1),window.addEventListener("load",b,!1)):document.attachEvent&& (document.attachEvent("onreadystatechange",b),window.attachEvent("onload",b))};a.prototype.attach_timers=function(){for(var a=b("div.ksr_page_timer"),e=0;e<a.length;e++)a[e].ksr_page_timer||(new c(a[e],window.ksr_page_clock),this.elements.push(a[e]))};a.prototype.attach=function(){var a=this;this.bind_ready();(function(){a.attach_timers();a.loading&&window.setTimeout(function(){a.attach_timers()},200)})()};window.ProjectTimer=c;new a})();
+  //]]>
+</script>
+
+<script class="template" id="template-widgets__video_embed_code" type="text/x-tmpl-mustache"><iframe width="{{width}}" height="{{height}}" src="{{{path}}}" frameborder="0" scrolling="no"> </iframe>
+</script><script class="template" id="template-projects__baseball_card_tall" type="text/x-tmpl-mustache"><div class="project-card-wrap project-card-wrap-tall border bg-white rounded clip">
+  <div class="project-card relative project-live {{#successful?}}successful{{/successful?}}">
+    <div class="project-thumbnail pt1 pl1 pr1">
+      <a href="{{urls.web.project}}" target="">
+        <img alt="Photo-little" class="projectphoto-little" src="{{photo.little}}" class="fit">
+      </a>
+    </div>
+    <div class="project-card-interior p1 h6 grey-dark">
+      <h6 class="project-title">
+        <a href="{{urls.web.project}}" target="" class="green-dark">{{name}}</a>
+      </h6>
+      <p class="mb1 ellipsis">
+        by
+        {{creator.name}}
+      </p>
+      <p class="blurb">
+        {{blurb}}
+      </p>
+    </div>
+    <div class="absolute-bottom bg-white rounded-bottom">
+
+      {{#location}}
+        <ul class="p1 list project-meta no-margin h6">
+          <li class="ellipsis">
+            <a href="{{location.urls.web.discover}}" data-location="{{location_json}}" class="grey-dark">
+              <span class="ss-icon ss-location"></span>
+              <span class="location-name">{{location.displayable_name}}</span>
+            </a>
+          </li>
+        </ul>
+      {{/location}}
+
+      <div class="project-stats-wrap pb1 pl1 pr1">
+
+        {{#failed?}}
+          <div class='project-status project-failed h6'>
+            <strong> Funding Unsuccessful</strong><br />
+            <span class="grey-dark">Project ended on {{formatted_deadline}}</span>
+          </div>
+        {{/failed?}}
+
+        {{#canceled?}}
+          <div class='project-status project-canceled h6'>
+            <strong> Funding Canceled</strong><br />
+            <span class="grey-dark">Project canceled on {{formatted_state_changed_at}}</span>
+          </div>
+        {{/canceled?}}
+
+        {{#successful?}}
+          <div class='project-pledged-successful bg-green white h6 pl1 pr1 mb1'>
+            <strong>Successful!</strong>
+          </div>
+        {{/successful?}}
+
+        {{#live_or_successful?}}
+          {{#live?}}
+            <div class="project-pledged-wrap bg-grey clip mb1">
+              <div class="project-pledged bg-green full-height" style="width: {{percent_raised_to_100}}%"></div>
+            </div>
+          {{/live?}}
+          <ul class="project-stats list no-margin h6 no-wrap">
+            <li class="first funded inline-block mr1">
+              <strong class="block h6">{{percent_raised_rounded}}%</strong>
+              <span class="grey-dark">funded</span>
+            </li>
+            <li class="pledged inline-block mr1">
+              <strong class="block h6">{{currency_symbol}}{{formatted_money}}</strong>
+              <span class="grey-dark">pledged</span>
+            </li>
+            {{#successful?}}
+              <li class="last successful inline-block">
+                <strong class="block h6">Funded</strong>
+                <div class="deadline grey-dark">{{formatted_deadline}}</div>
+              </li>
+            {{/successful?}}
+            {{#live?}}
+              <li class="last ksr_page_timer inline-block" data-end_time="{{javascript_deadline}}">
+                <strong class="block h6">
+                  <div class="num">30</div>
+                </strong>
+                <div class="span text grey-dark" data-word="left">days to go</div>
+              </li>
+            {{/live?}}
+          </ul>
+        {{/live_or_successful?}}
+      </div>
+    </div>
+  </div>
+</div>
+
+{{#friends_backing?}}
+  <div class="friend_project_context">
+    <div class="friend_facepile">
+      {{#truncated_friends}}
+        <img src="{{avatar.thumb}}" class="{{#has_metadata?}}small{{/has_metadata?}}">
+      {{/truncated_friends}}
+    </div>
+    <p class="friend_namepile">
+      {{{escaped_sentence}}}
+    </p>
+  </div>
+{{/friends_backing?}}
+</script><script class="template" id="template-projects__video_mode" type="text/x-tmpl-mustache"><a href='#' id='video_mode_close' class='close_button z2'><span class='ss-icon ss-delete'></span></a>
+
+<div class='title_card z1 {{context_classes}}' style="display:none;">
+  <div class='interior'>
+    <h2 class='project_title normal_weight'>{{name}}</h2>
+    <p class='blurb'>{{blurb}}</p>
+    <nav class='bar'>
+      <a id='play_button' class='left play' href='#'>
+        <span class='play_active'>
+          <span class='ss-icon ss-play'></span>
+          Play
+        </span>
+        <span class='pause_active'>
+          <span class='ss-icon ss-pause'></span>
+          Pause
+        </span>
+      </a>
+      {{#logged_in}}
+        <div class='remind right'>
+          {{#if_not_starred}}
+            <a class='follow' href='{{urls.web.project}}/watch'><span class='ss-icon ss-star'></span></a>
+          {{/if_not_starred}}
+          {{#if_starred}}
+            <a class='unfollow' href='{{urls.web.project}}/unwatch'><span class='ss-icon ss-star active'></span></a>
+          {{/if_starred}}
+        </div>
+      {{/logged_in}}
+      <a class='right explore button button_green small' href='#'>Explore this project</a>
+    </nav>
+  </div>
+</div>
+
+<div class='channel_controls z1'>
+  <a href='#' class='{{#playlist_is_location}}selected {{/playlist_is_location}}location'>Something else near {{location.first_name}} <span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_featured}}selected {{/playlist_is_featured}}featured'>Something different<span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_category}}selected {{/playlist_is_category}}category'>Something else in {{category.name}} <span class='ss-icon ss-navigateright'></span></a>
+</div>
+
+<div class='project_video' style='background-image: url('{{photo.full}}')'>
+  <div class='cover'>
+    <video>
+      <source src='{{video.high}}' type='video/mp4'/>
+      <source src='{{video.webm}}' type='video/webm'/>
+    </video>
+  </div>
+</div>
+</script><script class="template" id="template-site__video_mode_fourohfour" type="text/x-tmpl-mustache"><section class='four_oh_four'>
+  <p class='big_type'>
+    Looks like you've reached the end of the line! <br />Check out <a class="another" href='#'>another channel</a> or <a href='/discover'>browse projects in discover</a>.
+  </p>
+</section>
+</script>
+
+<script id="schwamm_formatting_options" type="text/javascript">
+//<![CDATA[
+(function(){window.formatters = window.formatters || {}; var formatting_options = {"distance_date_intervals":[[5,"just now"],[29,"less than a minute ago"],[89,"1 minute ago"],[2640,"%m minutes ago"],[5340,"about 1 hour ago"],[82800,"about %h hours ago"],[147600,"1 day ago"],[604800,"%d days ago"],[15552000,"on %t"],[0,"on %y"]],"currency_symbol_mappings":{"AFN":"\u060b","ALL":"Lek","ARS":"$","AUD":"$","AWG":"\u0192","AZN":"\u043c\u0430\u043d","BAM":"KM","BBD":"$","BGN":"\u043b\u0432","BMD":"$","BND":"$","BOB":"$b","BRL":"R$","BSD":"$","BWP":"P","BYR":"p.","BZD":"BZ$","CAD":"$","CLP":"$","CNY":"\u00a5","COP":"$","CRC":"\u20a1","CUP":"\u20b1","CZK":"K\u010d","DKK":"kr","DOP":"RD$","EGP":"\u00a3","EUR":"\u20ac","FJD":"$","FKP":"\u00a3","GBP":"\u00a3","GIP":"\u00a3","GTQ":"Q","GYD":"$","HKD":"$","HNL":"L","HRK":"kn","HUF":"Ft","IDR":"Rp","ILS":"\u20aa","IRR":"\ufdfc","ISK":"kr","JMD":"J$","JPY":"\u00a5","KGS":"\u043b\u0432","KHR":"\u17db","KPW":"\u20a9","KRW":"\u20a9","KYD":"$","KZT":"\u043b\u0432","LAK":"\u20ad","LBP":"\u00a3","LKR":"\u20a8","LRD":"$","LTL":"Lt","LVL":"Ls","MKD":"\u0434\u0435\u043d","MNT":"\u20ae","MUR":"\u20a8","MXN":"$","MYR":"RM","MZN":"MT","NAD":"$","NGN":"\u20a6","NIO":"C$","NOK":"kr","NPR":"\u20a8","NZD":"$","OMR":"\ufdfc","PAB":"B/.","PEN":"S/.","PHP":"\u20b1","PKR":"\u20a8","PLN":"z\u0142","PYG":"Gs","QAR":"\ufdfc","RON":"lei","RSD":"\u0414\u0438\u043d.","RUB":"\u0440\u0443\u0431","SAR":"\ufdfc","SBD":"$","SCR":"\u20a8","SEK":"kr","SGD":"$","SHP":"\u00a3","SOS":"S","SRD":"$","SVC":"$","SYP":"\u00a3","THB":"\u0e3f","TRY":"TL","TTD":"TT$","TWD":"NT$","UAH":"\u20b4","USD":"$","UYU":"$U","UZS":"\u043b\u0432","VEF":"Bs","VND":"\u20ab","YER":"\ufdfc","ZAR":"R"},"currency_trailing_code_mappings":{"AUD":true,"CAD":true,"NZD":true,"USD":true},"currency_formats":["money","shorter_money"]}; for (key in formatting_options) {window.formatters[key] = formatting_options[key]};}());
+//]]>
+</script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("begin_base.js_tag");}
+  //]]>
+</script>
+<script src="https://d297h9he240fqh.cloudfront.net/assets/packages/base-45cdab84617ddfb8905b7cddc8500c19.js" type="text/javascript"></script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("end_base.js_tag");}
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    document.domain='kickstarter.com';
+  //]]>
+</script>
+
+<iframe height="0" id="api_xdreceiver" src="https://api.kickstarter.com/xdreceiver/85e6.html" style="display: none;" width="0"></iframe>
+
+
+
+<div id="fb-root"></div>
+<script>
+  //<![CDATA[
+    var channelUrl = window.location.protocol + "//" + window.location.host + "/channel.html",
+      skip_autologin = $('body').is('.skip_autologin');
+    
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId: window.fb_app_id,
+        channelUrl: channelUrl,
+        status: true,    // check login status
+        cookie: true,    // enable cookies to allow the server to access the session
+        xfbml: true,     // parse XFBML
+        logging: false   // turn off logging
+      });
+    
+      FB.getLoginStatus(function (response) {
+        if (response.status === 'connected') {
+          if (read_cookie("logout_from_fb")) {
+            FB.logout();
+            destroy_cookie("logout_from_fb");
+          } else if (!skip_autologin) {
+            $.get("/fb/autologin", {'fbsr': response.authResponse.signedRequest});
+          } else if (false && 0 == response.authResponse.userID) {
+            $.get("/fb/refresh", {'fbsr': response.authResponse.signedRequest});
+          }
+        } else {
+          if (read_cookie("logout_from_fb")) {
+            destroy_cookie("logout_from_fb");
+          }
+        }
+      })
+    
+      $(document).trigger('fb:loaded');
+    };
+    
+    
+    // Load the SDK Asynchronously
+    (function(d){
+      var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+      js = d.createElement('script'); js.id = id; js.async = true;
+      js.src = "//connect.facebook.net/en_US/all.js";
+      d.getElementsByTagName('head')[0].appendChild(js);
+    }(document));
+  //]]>
+</script>
+
+
+</body>
+</html>

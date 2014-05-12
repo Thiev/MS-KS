@@ -1,0 +1,217 @@
+Data Analysis Paper
+========================================================
+
+Hierarchy of information
+------------------------
+- Title / Author list
+- Abstract
+- Body / Results
+- Supplementary Materials (the gory details)
+- Code/Data (really gory details)
+
+Steps in a data analysis
+------------------------
+1. Deﬁne the question
+
+-  Do past Kickstarter projects' successes/failures influence future successes/ 
+failures Kickstarter projects?
+
+- (more generic) predicting of Kickstarter project success
+
+2. Deﬁne the ideal data set
+
+Ideally, we have information about all video game projects ever crowd-funded, including economical and sociological characteristics, such as: total amount raised, number of backers, project timeframe, interconnections between backers (are they know each other? have they influenced each other decision about project contribution?), also every news/tweet ever made concerning video game projects or project owners. 
+
+3. Determine what data you can access
+
+- Kickstarter (projects+videos+webpages, aggregates about backers and funds, 
+  backers (+facebok link)), 
+
+- Kicktraq (daily numbers: backers, funds), 
+
+- Facebook (for network analysis of backers and project fanpages), 
+
+- Youtube (for associated videos: comments, number of views)
+
+4. Obtain the data
+
+All ***Video Game*** finished projects are in scope: successful, unsuccessful and cancelled. We shall navigate to a corresponding result page using Kickstarter. Due to pagination, we have to download page by page. The last page will have no results.
+```{r}
+require(jsonlite)
+
+# retrieve and merge until gives no more results
+rawprojectsdir <- "./raw/kickstarter/projects/"
+if (!file.exists(rawprojectsdir)) {
+    dir.create(rawprojectsdir,recursive=TRUE,showWarnings=FALSE)
+    doBreak <- FALSE
+    i <- 1
+    while(!doBreak) {
+        download.file(
+            paste0("https://www.kickstarter.com/discover/advanced?page=",i,"&category_id=35&sort=launch_date"), 
+            paste0("./raw/kickstarter/projects/page",i,".json"),
+            method = "curl", extra = c("--header","accept:application/json"))
+        # parse to JSON
+        thisPage <- fromJSON(paste0("./raw/kickstarter/projects/page",i,".json"))
+        doBreak <- length(thisPage$projects) == 0
+        inc(i) <- 1
+    }
+}
+```
+
+Having all relevant projects downloaded, we may proceed with the next step, which is the retrieval of main pages of each project. We will create a subdirectory for each project and store main page file there. We will fetch raw html format and extract a JSON representation from an embedded script element.  
+
+```{r}
+require(jsonlite)
+require(stringr)
+
+downloadKickstarterProjectPage <- function(pid,url,rootdir) {
+    message(paste("Processing project",pid,"(",url,")"))
+    projectdir = paste0(rawprojectsdir,'/',pid,'/')
+    if (!file.exists(projectdir)) {
+        dir.create(projectdir, recursive=TRUE, showWarnings=FALSE)
+    }
+    htmlfile <- paste0(projectdir,pid,'.html')
+    jsonfile <- paste0(projectdir,pid,'.json')
+    download.file(url,htmlfile,method="curl")
+    html <- htmlTreeParse(htmlfile,useInternalNodes=T)
+    script <- xpathSApply(html, "//script[contains(./text(),'window.current_project')]" ,xmlValue)
+    matcher <- str_match(script,"window.current_project.*\"(\\{.*\\})\"")
+    if (!is.na(matcher[,2])) {
+        json <- gsub('&quot;','"',matcher[,2])
+        json <- gsub('\\\\\"','\\"',json)
+        cat(prettify(toJSON(fromJSON(json))),file = jsonfile)        
+    }
+}
+
+rawprojectsdir <- "./raw/kickstarter/projects"
+pagefiles <- list.files(rawprojectsdir,pattern="page.*.json", full.names=T)
+for(pagefile in pagefiles) {
+    message(paste("Processing page file",pagefile))
+    json <- fromJSON(pagefile)
+    pid <- json$projects$id
+    url <- json$projects$urls$web$project
+    mapply(downloadKickstarterProjectPage,
+           pid,url,MoreArgs = list(rootdir = rawprojectsdir))
+}
+```
+
+Kickstarter - fetching projects metadata
+
+All ***Video Game*** finished projects are in scope: successful, unsuccessful 
+and cancelled. There were 4613 video game projects created till 
+11/05/2014 21:44 CET. Due to lack of public Kickstarter API, the procedure of 
+obtaining raw data cannot be fully automated and requries browser with ability 
+to browse DOM structure of a web page (for example Chrome)
+- Click 'Discover' button in the top right corner
+- Select 'Games' from Catgories menu on the right
+- Click again on 'Games' behind the Show me label on top of your results (which
+  are NOT ones we need)
+- Narrow down the results by selecting 'Video Games' on the right
+- Proceed to the bottom of the page and click 'Load more'. That will trigger 
+  the inifity scroll component which will start feeding page with data. 
+- Continue scrolling down until you reach the bottom and no new projects are 
+  added.
+- (Chrome) Select 'Inspect element' from the context menu to eopn DevTools
+- Navigate through DOM structure of the web page, look for the element with 
+  xpath //*[@id="projects"]/div and select 'Copy as HTML' from its context menu.
+- Save HTML structure to a file
+
+
+
+Kickstarter - 
+
+5. Clean the data
+
+The project Kickstarter metadata comes as saved DOM root ul element which contains all relevant projects, each one embedded within a single lu element. The following example reveals the strucure of a successful project ***39 Days to Mars***. The following information about the project can be easily extracted:
+- a title
+- an owner
+- a blurb (a short description)
+- an owner location  - city and country
+- if project was succesful
+- the total amuount of pledged
+- the above target percentage
+
+
+```{html}
+<li class="project grid_4 mb2">
+<div class="project-card-wrap project-card-wrap-tall border bg-white rounded clip">
+  <div class="project-card relative project-live successful">
+    <div class="project-thumbnail pt1 pl1 pr1">
+      <a href="https://www.kickstarter.com/projects/inxile/torment-tides-of-numenera?ref=discovery" target="">
+        <img alt="Photo-little" class="projectphoto-little" src="https://s3.amazonaws.com/ksr/projects/444692/photo-little.jpg?1397808737">
+      </a>
+    </div>
+    <div class="project-card-interior p1 h6 grey-dark">
+      <h6 class="project-title">
+        <a href="https://www.kickstarter.com/projects/inxile/torment-tides-of-numenera?ref=discovery" target="" class="green-dark">Torment: Tides of Numenera</a>
+      </h6>
+      <p class="mb1 ellipsis">
+        by
+        inXile entertainment
+      </p>
+      <p class="blurb">
+        A story-driven CRPG set in the world of Monte Cook's Numenera.  We are deeply appreciative to all of you who made this possible.
+      </p>
+    </div>
+    <div class="absolute-bottom bg-white rounded-bottom">
+
+        <ul class="p1 list project-meta no-margin h6">
+          <li class="ellipsis">
+            <a href="https://www.kickstarter.com/discover/places/newport-beach-ca" data-location="{&quot;id&quot;:23417205,&quot;name&quot;:&quot;Newport Beach&quot;,&quot;slug&quot;:&quot;newport-beach-ca&quot;,&quot;short_name&quot;:&quot;Newport Beach, CA&quot;,&quot;displayable_name&quot;:&quot;Newport Beach, CA&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:&quot;CA&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/newport-beach-ca&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/newport-beach-ca&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1399865433.7e4eebce02439cea3d284961d002b8e62be5236b&amp;woe_id=23417205&quot;}}}" class="grey-dark">
+              <span class="ss-icon ss-location"></span>
+              <span class="location-name">Newport Beach, CA</span>
+            </a>
+          </li>
+        </ul>
+
+      <div class="project-stats-wrap pb1 pl1 pr1">
+
+
+
+          <div class="project-pledged-successful bg-green white h6 pl1 pr1 mb1">
+            <strong>Successful!</strong>
+          </div>
+
+          <ul class="project-stats list no-margin h6 no-wrap">
+            <li class="first funded inline-block mr1">
+              <strong class="block h6">465%</strong>
+              <span class="grey-dark">funded</span>
+            </li>
+            <li class="pledged inline-block mr1">
+              <strong class="block h6">$4,188,927</strong>
+              <span class="grey-dark">pledged</span>
+            </li>
+              <li class="last successful inline-block">
+                <strong class="block h6">Funded</strong>
+                <div class="deadline grey-dark">Apr 6, 2013</div>
+              </li>
+          </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+</li>
+```
+
+6. Exploratory data analysis
+
+7. Statistical prediction/modeling
+
+8. Interpret results
+
+9. Challenge results
+
+10. Synthesize/write up results
+
+11. Create reproducible code
+```{r}
+summary(cars)
+```
+
+You can also embed plots, for example:
+
+```{r fig.width=7, fig.height=6}
+plot(cars)
+```
+

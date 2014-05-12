@@ -1,0 +1,2027 @@
+<!DOCTYPE html>
+<html class="projects_show  fontface no-js" lang="en">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# kickstarter: http://ogp.me/ns/fb/kickstarter#">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-5.newrelic.com","errorBeacon":"jserror.newrelic.com","licenseKey":"b04b883ad2","applicationID":"11086","transactionName":"cFteRUULX1wHFhtIEFxeVVJDFxxDCgtD","queueTime":5,"applicationTime":720,"ttGuid":"","agentToken":null,"agent":"js-agent.newrelic.com/nr-411.min.js"}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"Vw4BVEVSCQMIUg=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e){function n(t,e,n){n||(n={});for(var r=o[t],a=r&&r.length||0,s=n[i]||(n[i]={}),u=0;a>u;u++)r[u].apply(s,e);return s}function r(t,e){var n=o[t]||(o[t]=[]);n.push(e)}var o={},i="nr@context";e.exports={on:r,emit:n}},{}],2:[function(t){function e(t,e,n,i,s){return u?u-=1:r("err",[s||new UncaughtException(t,e,n)]),"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t(5),a=window.onerror,s=!1,u=0;t("loader").features.push("err"),window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(d){"stack"in d&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(4),s=!0)}i.on("fn-start",function(){s&&(u+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&u>0&&(u-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:4,3:3,4:6,5:1,6:14,handle:"D5DuLP",loader:"G9z0Bl"}],3:[function(t){function e(t){r.inPlace(t,["addEventListener","removeEventListener"],"-",n)}function n(t){return t[1]}var r=t(1),o=(t(3),t(2));if(e(window),"getPrototypeOf"in Object){for(var i=document;i&&!i.hasOwnProperty("addEventListener");)i=Object.getPrototypeOf(i);i&&e(i);for(var a=XMLHttpRequest.prototype;a&&!a.hasOwnProperty("addEventListener");)a=Object.getPrototypeOf(a);a&&e(a)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&e(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=e["nr@wrapped"]?t[1]=e["nr@wrapped"]:e["nr@wrapped"]=t[1]=r(e,"fn-"):"function"==typeof e.handleEvent&&r.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:15,2:1,3:14}],4:[function(t){var e=(t(3),t(1)),n=t(2);e.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=e(t[0],"fn-")})},{1:15,2:1,3:14}],5:[function(t){function e(t){var e=t[0];"string"==typeof e&&(e=new Function(e)),t[0]=n(e,"fn-")}var n=(t(3),t(1)),r=t(2);n.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",e)},{1:15,2:1,3:14}],6:[function(t){function e(){o.inPlace(this,s,"fn-")}function n(t,e){o.inPlace(e,["onreadystatechange"],"fn-")}function r(t,e){return e}var o=t(1),i=t(2),a=window.XMLHttpRequest,s=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];window.XMLHttpRequest=function(t){var n=new a(t);try{i.emit("new-xhr",[],n),o.inPlace(n,["addEventListener","removeEventListener"],"-",function(t,e){return e}),n.addEventListener("readystatechange",e,!1)}catch(r){try{i.emit("internal-error",r)}catch(s){}}return n},window.XMLHttpRequest.prototype=a.prototype,o.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",r),i.on("send-xhr-start",n),i.on("open-xhr-start",n)},{1:15,2:1}],7:[function(t){function e(){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;u>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,d="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=e(d);if(f&&(r.rxSize=f),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}t("loader").features.push("xhr");var o=t("handle"),i=t(1),a=t(5),s=["load","error","abort","timeout"],u=s.length,d=t(2);t(3),t(4),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var d=e(o);d&&(r.txSize=d)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",e)}catch(r){}}};for(var f=0;u>f;f++)n.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&e()},{1:8,2:11,3:3,4:6,5:1,handle:"D5DuLP",loader:"G9z0Bl"}],8:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e){var n=r[t];return n?n.apply(this,e):(o[t]||(o[t]=[]),void o[t].push(e))}var r={},o={};e.exports=n,n.queues=o,n.handlers=r},{}],11:[function(t,e){function n(t){if(!t||"object"!=typeof t&&"function"!=typeof t)return-1;if(t===window)return 0;if(o.call(t,"__nr"))return t.__nr;try{return Object.defineProperty(t,"__nr",{value:r,writable:!0,enumerable:!1}),r}catch(e){return t.__nr=r,r}finally{r+=1}}var r=1,o=Object.prototype.hasOwnProperty;e.exports=n},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&u&&u.body){p.proto="https"===c.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=u.createElement("script");e.src=p.proto+t.agent,u.body.appendChild(e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,u=s.document,d="addEventListener",f="attachEvent",c=(""+location).split("?")[0],p=e.exports={offset:i(),origin:c,features:[]};u[d]?(u[d]("DOMContentLoaded",o,!1),s[d]("load",n,!1)):(u[f]("onreadystatechange",r),s[f]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],14:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],15:[function(t,e){function n(t,e,r,s){function nrWrapper(){try{var n,a=u(arguments),d=this,f=r&&r(a,d)||{}}catch(c){i([c,"",[a,d,s],f])}o(e+"start",[a,d,s],f);try{return n=t.apply(d,a)}catch(p){throw o(e+"err",[a,d,p],f),p}finally{o(e+"end",[a,d,n],f)}}return a(t)?t:(e||(e=""),nrWrapper[n.flag]=!0,nrWrapper)}function r(t,e,r,o){r||(r="");var i,s,u,d="-"===r.charAt(0);for(u=0;u<e.length;u++)s=e[u],i=t[s],a(i)||(t[s]=n(i,d?s+r:r,o,s,t))}function o(t,e,n){try{s.emit(t,e,n)}catch(r){i([r,t,e,n])}}function i(t){try{s.emit("internal-error",t)}catch(e){}}function a(t){return!(t&&"function"==typeof t&&t.apply&&!t[n.flag])}var s=t(1),u=t(2);e.exports=n,n.inPlace=r,n.flag="nr@wrapper"},{1:1,2:14}]},{},["G9z0Bl",2,7]);</script><script>
+  //<![CDATA[
+    docElement = this.document.documentElement;
+    docElement.className=docElement.className.replace(/\bno-js\b/,'') + 'js';
+  //]]>
+</script>
+<title>9 Year Old Builds Her First RPG...  TRUTH & TROLLS! by Susan Wilson &mdash; Kickstarter</title><script>
+  //<![CDATA[
+    window.report_errors = true;
+    window.honeybadger_configuration = {
+      api_key : "02ab109335c0dd1a93506d92f22217a7",
+      environment : "production",
+      component : "projects",
+      action : "show",
+      onerror : false
+    };
+  //]]>
+</script>
+
+
+<!--[if lt IE 9]>
+  <script src="//html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta content="telephone=no" name="format-detection">
+
+<!--[if !IE]> -->
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base-9f623ad5d021a188cfb2d68a0cdf7a7b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<!-- <![endif]-->
+<!--[if IE]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base_blessed-2640c72487552f9a2ef9f2620b4af860.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<!--[if lte IE 9]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_nine-a93fe10530f175f96c4078b7e070d7e1.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 8]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_eight-f75aeb274436f94a0d243774456b1c62.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 7]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie-c019c01acd3a96588b346cf577a3504f.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_seven-5a3d2cef660cd281fd844b04b2397dbb.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if IE 6]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_six-e4d3caf76e405fe19aee6ece8bda701b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<link href="https://d297h9he240fqh.cloudfront.net/favicon.png" rel="icon" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-precomposed-7b603dba7cf80e4acc57d94a991bebbd.png" rel="apple-touch-icon-precomposed" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-ipad-precomposed-3176f72977daf43dee3b0d348484dc01.png" rel="apple-touch-icon-precomposed" sizes="72x72" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-iphone4-precomposed-b93b70168cd8492c843d0fea873c7f83.png" rel="apple-touch-icon-precomposed" sizes="114x114" type="image/png">
+<link href="https://www.kickstarter.com/services/oembed?url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Fsusanwilson%2F9-year-old-building-an-rpg-to-prove-her-brothers-w" rel="alternate" title="9 Year Old Builds Her First RPG...  TRUTH &amp; TROLLS! Script Tag oEmbed" type="application/json+oembed">
+<link rel="alternate" type="application/atom+xml" title="9 Year Old Builds Her First RPG...  TRUTH &amp; TROLLS! : Kickstarter" href="https://www.kickstarter.com/projects/susanwilson/9-year-old-building-an-rpg-to-prove-her-brothers-w/posts.atom" />
+<meta property="twitter:app:id:iphone" content="596961532"/>
+<meta property="twitter:app:name:iphone" content="Kickstarter"/>
+<meta property="twitter:app:url:iphone" content="ksr://www.kickstarter.com/projects/susanwilson/9-year-old-building-an-rpg-to-prove-her-brothers-w"/>
+<meta name="video_height" content="360"/>
+<meta name="video_width" content="640"/>
+<meta name="video_type" content="application/x-shockwave-flash"/>
+<meta name="title" content="Kickstarter &gt;&gt; 9 Year Old Builds Her First RPG...  TRUTH &amp; TROLLS! by Susan Wilson"/>
+<meta name="description" content="Susan Wilson is raising funds for 9 Year Old Builds Her First RPG...  TRUTH &amp; TROLLS! on Kickstarter! 
+
+ They’re mean and vicious and they just might come after you next. You’ve got to help!"/>
+<meta property="og:title" content="9 Year Old Builds Her First RPG...  TRUTH &amp; TROLLS!"/>
+<meta property="og:type" content="kickstarter:project"/>
+<meta property="og:image" content="https://s3.amazonaws.com/ksr/projects/490759/photo-main.jpg?1397813658"/>
+<meta property="og:url" content="https://www.kickstarter.com/projects/susanwilson/9-year-old-building-an-rpg-to-prove-her-brothers-w"/>
+<meta property="og:site_name" content="Kickstarter"/>
+<meta property="fb:app_id" content="69103156693"/>
+<meta property="og:description" content="They’re mean and vicious and they just might come after you next. You’ve got to help!"/>
+<meta property="kickstarter:creator" content="https://www.kickstarter.com/profile/susanwilson"/>
+<meta property="twitter:url:landing_url" content="https://www.kickstarter.com/projects/susanwilson/9-year-old-building-an-rpg-to-prove-her-brothers-w"/>
+<meta property="twitter:card" content="2427656750:kickstarter_project"/>
+<meta property="twitter:site" content="@kickstarter"/>
+<meta property="twitter:site:id" content="16186995"/>
+<meta property="twitter:text:title" content="9 Year Old Builds Her First RPG...  TRUTH &amp; TROLLS!"/>
+<meta property="twitter:text:artist" content="Susan Wilson"/>
+<meta property="twitter:text:backers" content="1442"/>
+<meta property="twitter:text:pledged" content="$24,534 USD"/>
+<meta property="twitter:text:time" content="0 seconds"/>
+<meta property="twitter:text:location" content="Stevensville, MD"/>
+<meta property="twitter:image:location_image" content="https://d3mlfyygrfdi2i.cloudfront.net/b40e/pin.png"/>
+<meta property="twitter:text:description" content="They’re mean and vicious and they just might come after you next. You’ve got to help!"/>
+<meta property="twitter:image:media" content="https://s3.amazonaws.com/ksr/projects/490759/photo-main.jpg?1397813658"/>
+<meta property="twitter:image:width" content="640"/>
+<meta property="twitter:image:height" content="480"/>
+<meta property="twitter:player:stream:url" content="https://d2pq0u4uni88oo.cloudfront.net/projects/490759/video-220172-h264_base.mp4"/>
+<meta property="twitter:player:stream:content" content="video/mp4"/>
+<meta property="twitter:player:url" content="https://www.kickstarter.com/projects/susanwilson/9-year-old-building-an-rpg-to-prove-her-brothers-w/widget/video.html"/>
+<meta property="twitter:player:height" content="360"/>
+<meta property="twitter:player:width" content="640"/>
+<meta property="twitter:maxage" content="60"/>
+<meta property="og:video" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F490759%2Fvideo-220172-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F490759%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Susan+Wilson&amp;project_title=9+Year+Old+Builds+Her+First+RPG...++TRUTH+%26+TROLLS%21&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Fsusanwilson%2F9-year-old-building-an-rpg-to-prove-her-brothers-w&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:secure_url" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F490759%2Fvideo-220172-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F490759%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Susan+Wilson&amp;project_title=9+Year+Old+Builds+Her+First+RPG...++TRUTH+%26+TROLLS%21&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Fsusanwilson%2F9-year-old-building-an-rpg-to-prove-her-brothers-w&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:height" content="360"/>
+<meta property="og:video:width" content="640"/>
+<meta property="og:video:type" content="application/x-shockwave-flash"/>
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="ZVfZV1wKLE/2zEIkYgoTZRwzRve0xplrpdqFW/C4b3Q=" name="csrf-token" />
+<script type="text/javascript">
+  var _sift = _sift || [];
+  _sift.push(['_setAccount', '637102']);
+  _sift.push(['_setUserId', '']);
+  _sift.push(['_trackPageview']);
+
+  (function() {
+    function loadSift() {
+      var sift, s;
+      if (root.visitor_id) {
+        _sift.push(['_setSessionId', root.visitor_id]);
+      }
+      sift = document.createElement('script');
+      sift.type = 'text/javascript';
+      sift.async = true;
+      sift.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dtlilztwypawv.cloudfront.net/s.js';
+      s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(sift, s);
+    }
+    if (window.attachEvent) {
+      window.attachEvent('onload', loadSift);
+    } else {
+      window.addEventListener('load', loadSift, false);
+    }
+  })();
+</script>
+<link href="http://kck.st/WF0Cua" rel="shorturl">
+<link href="https://www.kickstarter.com/projects/susanwilson/9-year-old-building-an-rpg-to-prove-her-brothers-w" rel="canonical">
+<link href="https://s3.amazonaws.com/ksr/projects/490759/photo-med.jpg?1397813658" rel="image_src">
+<link href="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F490759%2Fvideo-220172-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F490759%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Susan+Wilson&amp;project_title=9+Year+Old+Builds+Her+First+RPG...++TRUTH+%26+TROLLS%21&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Fsusanwilson%2F9-year-old-building-an-rpg-to-prove-her-brothers-w&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque" rel="video_src">
+<script>
+  //<![CDATA[
+    window.current_checkout = "{&quot;id&quot;:0,&quot;domestic&quot;:null,&quot;amount&quot;:0.0,&quot;updated_at&quot;:0,&quot;created_at&quot;:0}";
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.current_ip = '94.209.101.212';
+    window.current_ip_datacenter = 'false';
+    window.enabled_features = {"elasticsearch":true,"security_history_read":true,"security_history_write":true,"advanced_discovery_es":true,"ios_crashlytics":true,"ios_mixpanel":true,"stories_veronica_mars":true,"veronica_mars_hero":true,"password_reset_banner":true};
+    window.fb_app_id = '69103156693';
+    
+    var _sf_startpt=(new Date()).getTime();
+    
+    window.current_project = "{&quot;id&quot;:182609858,&quot;name&quot;:&quot;9 Year Old Builds Her First RPG...  TRUTH &amp; TROLLS!&quot;,&quot;blurb&quot;:&quot;They\\u2019re mean and vicious and they just might come after you next. You\\u2019ve got to help!&quot;,&quot;goal&quot;:829.0,&quot;pledged&quot;:24534.39,&quot;state&quot;:&quot;successful&quot;,&quot;slug&quot;:&quot;9-year-old-building-an-rpg-to-prove-her-brothers-w&quot;,&quot;disable_communication&quot;:false,&quot;country&quot;:&quot;US&quot;,&quot;currency&quot;:&quot;USD&quot;,&quot;currency_symbol&quot;:&quot;$&quot;,&quot;currency_trailing_code&quot;:true,&quot;deadline&quot;:1366420226,&quot;state_changed_at&quot;:1366420226,&quot;created_at&quot;:1363358319,&quot;launched_at&quot;:1363828226,&quot;backers_count&quot;:1442,&quot;photo&quot;:{&quot;full&quot;:&quot;https://s3.amazonaws.com/ksr/projects/490759/photo-full.jpg?1397813658&quot;,&quot;ed&quot;:&quot;https://s3.amazonaws.com/ksr/projects/490759/photo-ed.jpg?1397813658&quot;,&quot;med&quot;:&quot;https://s3.amazonaws.com/ksr/projects/490759/photo-med.jpg?1397813658&quot;,&quot;little&quot;:&quot;https://s3.amazonaws.com/ksr/projects/490759/photo-little.jpg?1397813658&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/projects/490759/photo-small.jpg?1397813658&quot;,&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/projects/490759/photo-thumb.jpg?1397813658&quot;,&quot;1024x768&quot;:&quot;https://s3.amazonaws.com/ksr/projects/490759/photo-1024x768.jpg?1397813658&quot;,&quot;1536x1152&quot;:&quot;https://s3.amazonaws.com/ksr/projects/490759/photo-1536x1152.jpg?1397813658&quot;},&quot;creator&quot;:{&quot;id&quot;:1920272214,&quot;name&quot;:&quot;Susan Wilson&quot;,&quot;slug&quot;:&quot;susanwilson&quot;,&quot;avatar&quot;:{&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/219766/kenziecropped.thumb.jpg?1367453295&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/219766/kenziecropped.small.jpg?1367453295&quot;,&quot;medium&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/219766/kenziecropped.medium.jpg?1367453295&quot;},&quot;urls&quot;:{&quot;web&quot;:{&quot;user&quot;:&quot;https://www.kickstarter.com/profile/susanwilson&quot;},&quot;api&quot;:{&quot;user&quot;:&quot;https://api.kickstarter.com/v1/users/1920272214?signature=1399959013.8102dcf07d81857f63db9e40b7cae172db0caefd&quot;}}},&quot;location&quot;:{&quot;id&quot;:2499775,&quot;name&quot;:&quot;Stevensville&quot;,&quot;slug&quot;:&quot;stevensville-md&quot;,&quot;short_name&quot;:&quot;Stevensville, MD&quot;,&quot;displayable_name&quot;:&quot;Stevensville, MD&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:&quot;MD&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/stevensville-md&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/stevensville-md&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1399952029.55e88792cf1445dba47eb34b6695a66ea37906e5&amp;woe_id=2499775&quot;}}},&quot;category&quot;:{&quot;id&quot;:35,&quot;name&quot;:&quot;Video Games&quot;,&quot;slug&quot;:&quot;games/video games&quot;,&quot;position&quot;:7,&quot;parent_id&quot;:12,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;http://www.kickstarter.com/discover/categories/games/video%20games&quot;}}},&quot;urls&quot;:{&quot;web&quot;:{&quot;project&quot;:&quot;https://www.kickstarter.com/projects/susanwilson/9-year-old-building-an-rpg-to-prove-her-brothers-w&quot;,&quot;project_short&quot;:&quot;http://kck.st/WF0Cua&quot;,&quot;updates&quot;:&quot;https://www.kickstarter.com/projects/susanwilson/9-year-old-building-an-rpg-to-prove-her-brothers-w/posts&quot;},&quot;api&quot;:{&quot;project&quot;:&quot;https://api.kickstarter.com/v1/projects/182609858?signature=1399959013.b656f0f5d499d27e667860b8de50aa2672cab27b&quot;,&quot;comments&quot;:&quot;https://api.kickstarter.com/v1/projects/182609858/comments?signature=1399959013.37d7c773208a34a742ad9a56a0c9d047d9d64132&quot;,&quot;updates&quot;:&quot;https://api.kickstarter.com/v1/projects/182609858/updates?signature=1399959013.018b2606efd6f7b32f82866cd54d73a93cbe3961&quot;}},&quot;updated_at&quot;:1399097523,&quot;successful_at&quot;:1366420226,&quot;video&quot;:{&quot;id&quot;:220172,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/490759/video-220172-h264_high.mp4?2013&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/490759/video-220172-h264_base.mp4?2013&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/490759/video-220172-webm.webm?2013&quot;,&quot;width&quot;:640,&quot;height&quot;:360,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/490759/video-220172-h264_base.jpg?2013&quot;},&quot;comments_count&quot;:1975,&quot;updates_count&quot;:24,&quot;rewards&quot;:[{&quot;id&quot;:0,&quot;minimum&quot;:1,&quot;reward&quot;:&quot;No Reward&quot;},{&quot;id&quot;:1459880,&quot;minimum&quot;:5.0,&quot;reward&quot;:&quot;Your name will appear in the \\&quot;SPECIAL THANKS\\&quot; section of the game&#39;s credits.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1372636800,&quot;project_id&quot;:182609858,&quot;backers_count&quot;:143,&quot;updated_at&quot;:1397790355},{&quot;id&quot;:1459889,&quot;minimum&quot;:10.0,&quot;reward&quot;:&quot;THE GAME!  You will receive a copy of the RPG via digital distribution when it is completed in July 2013.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1372636800,&quot;project_id&quot;:182609858,&quot;backers_count&quot;:795,&quot;updated_at&quot;:1399851660},{&quot;id&quot;:1459911,&quot;minimum&quot;:15.0,&quot;reward&quot;:&quot;Koozie: I drink like a girl...Keep Up! + THE GAME via digital distribution when it&#39;s completed July 2013.&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;5.0&quot;,&quot;estimated_delivery_on&quot;:1364774400,&quot;project_id&quot;:182609858,&quot;backers_count&quot;:135,&quot;updated_at&quot;:1399495092},{&quot;id&quot;:1558325,&quot;minimum&quot;:20.0,&quot;reward&quot;:&quot;Truth &amp; Trolls: The Pen and Paper Companion: An RPG sourcebook for people who enjoy the game and want to keep the experience going. The book will cover the locations, characters and items of the game (highlighting those named by backers) and provide material for both the Fate and Pathfinder systems under the OGL. In addition to more information about the world and a short adventure, the Pen and Paper Companion will include material aimed at helping young gamers and creators of all stripes develop stories and characters to share with their friends and family. And maybe a few adults can enjoy it too. Current estimate is at 96 pages but the length may increase depending on the size of the source game. The book will be made available through PDF to backers and then available for sale on DriveThruRPG.\\r\\n\\r\\nThe book will be developed by Rain Pletcher, a longtime gamer with a background in film and theater. A veteran of child and teen educational camps in storytelling, writing and character development, these experiences with children will be leveraged to create material to help inspire children to tell their own stories. This will be the first RPG writing project for the author.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1375315200,&quot;project_id&quot;:182609858,&quot;backers_count&quot;:19,&quot;updated_at&quot;:1398305743},{&quot;id&quot;:1459940,&quot;minimum&quot;:25.0,&quot;reward&quot;:&quot;Deluxe Mousepad + THE GAME via digital distribution when it&#39;s completed July 2013.&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;5.0&quot;,&quot;estimated_delivery_on&quot;:1364774400,&quot;project_id&quot;:182609858,&quot;backers_count&quot;:59,&quot;updated_at&quot;:1392829260},{&quot;id&quot;:1459949,&quot;minimum&quot;:30.0,&quot;reward&quot;:&quot;2-SIDED PRINTED WHITE T-SHIRT \\r\\n(Adult: S, M, L, XL, XXL &amp; Kids: S, M, L, XL)\\r\\n+ THE GAME via digital distribution in July.&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;5.0&quot;,&quot;estimated_delivery_on&quot;:1364774400,&quot;project_id&quot;:182609858,&quot;backers_count&quot;:69,&quot;updated_at&quot;:1395264792},{&quot;id&quot;:1476265,&quot;minimum&quot;:40.0,&quot;reward&quot;:&quot;2-SIDED WOMEN&#39;S FITTED WHITE T-SHIRT (XS, S, M, L, XL) + THE GAME via digital distribution when it&#39;s completed 7/13&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;5.0&quot;,&quot;estimated_delivery_on&quot;:1364774400,&quot;project_id&quot;:182609858,&quot;backers_count&quot;:44,&quot;updated_at&quot;:1397687218},{&quot;id&quot;:1459958,&quot;minimum&quot;:50.0,&quot;reward&quot;:&quot;Keep Up! Embroidered Hat + THE GAME via digital distribution when it&#39;s completed in July.&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;5.0&quot;,&quot;estimated_delivery_on&quot;:1364774400,&quot;project_id&quot;:182609858,&quot;backers_count&quot;:8,&quot;updated_at&quot;:1367590978},{&quot;id&quot;:1459960,&quot;minimum&quot;:75.0,&quot;reward&quot;:&quot;Deluxe White Hoodie (great for men and women).  Front of the sweatshirt is blank and the back is beautifully embroidered with \\&quot;Keep Up!\\&quot; in black. Personal favorite because if someone can read \\&quot;Keep Up!\\&quot; it means (by definition) they are BEHIND you! + THE GAME via digital distribution when it&#39;s completed July 2013.&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;5.0&quot;,&quot;estimated_delivery_on&quot;:1364774400,&quot;project_id&quot;:182609858,&quot;backers_count&quot;:13,&quot;updated_at&quot;:1366433641},{&quot;id&quot;:1472103,&quot;minimum&quot;:100.0,&quot;reward&quot;:&quot;Name a character in the game (age appropriate names only) along with a copy of the game. Imagine the joy in your child&#39;s eyes when they play a game with a character named after them! Of course, that means you also get THE GAME via digital distribution when it&#39;s completed July 2013.&quot;,&quot;limit&quot;:20,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;5.0&quot;,&quot;estimated_delivery_on&quot;:1372636800,&quot;project_id&quot;:182609858,&quot;remaining&quot;:5,&quot;backers_count&quot;:15,&quot;updated_at&quot;:1367591011},{&quot;id&quot;:1547253,&quot;minimum&quot;:200.0,&quot;reward&quot;:&quot;Weapon Master:  Your name/nickname as the name a Powerful Weapon plus an 8 x 10 color print of YOUR POWERFUL WEAPON along with its name and description, hand-signed by Mackenzie and the artist. Also makes a great gift when you choose to name it after someone special. Plus a DRM-FREE copy of the game when it&#39;s released.&quot;,&quot;limit&quot;:2,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;10.0&quot;,&quot;estimated_delivery_on&quot;:1372636800,&quot;project_id&quot;:182609858,&quot;remaining&quot;:2,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1365983755},{&quot;id&quot;:1547254,&quot;minimum&quot;:200.0,&quot;reward&quot;:&quot;Armor Master:  Your name/nickname as the name of Powerful Armor plus an 8 x 10 color print of YOUR POWERFUL ARMOR along with its name and description, hand-signed by Mackenzie and the artist.  Also makes a great gift when you choose to name it after someone special. Plus a DRM-FREE copy of the game when it&#39;s released.&quot;,&quot;limit&quot;:2,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;10.0&quot;,&quot;estimated_delivery_on&quot;:1372636800,&quot;project_id&quot;:182609858,&quot;remaining&quot;:2,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1365983755},{&quot;id&quot;:1547255,&quot;minimum&quot;:200.0,&quot;reward&quot;:&quot;Spell Master:  Your name/nickname is the name of a Powerful Spell plus an 8 x 10 color print of YOUR POWERFUL SPELL along with its name and description, hand-signed by Mackenzie and the artist.  Also makes a great gift when you choose to name it after someone special. Plus a DRM-FREE copy of the game when it&#39;s released.&quot;,&quot;limit&quot;:2,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;10.0&quot;,&quot;estimated_delivery_on&quot;:1372636800,&quot;project_id&quot;:182609858,&quot;remaining&quot;:2,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1365983755},{&quot;id&quot;:1547256,&quot;minimum&quot;:200.0,&quot;reward&quot;:&quot;Potion Master:  Your name/nickname is the name of a Powerful Potion plus an 8 x 10 color print of YOUR POWERFUL POTION along with its name and description, hand-signed by Mackenzie and the artist.  Also makes a great gift when you choose to name it after someone special. Plus a DRM-FREE copy of the game when it&#39;s released.&quot;,&quot;limit&quot;:2,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;10.0&quot;,&quot;estimated_delivery_on&quot;:1372636800,&quot;project_id&quot;:182609858,&quot;remaining&quot;:2,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1365983755},{&quot;id&quot;:1547257,&quot;minimum&quot;:200.0,&quot;reward&quot;:&quot;Artifact Master:  Your name/nickname as the name of a Major Artifact plus an 8 x 10 color print of YOUR MAJOR ARTIFACT along with its name and description, hand-signed by Mackenzie and the artist.  Also makes a great gift when you choose to name it after someone special. Plus a DRM-FREE copy of the game when it&#39;s released.&quot;,&quot;limit&quot;:2,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;10.0&quot;,&quot;estimated_delivery_on&quot;:1372636800,&quot;project_id&quot;:182609858,&quot;remaining&quot;:2,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1365983755},{&quot;id&quot;:1547258,&quot;minimum&quot;:200.0,&quot;reward&quot;:&quot;Ring Master:  Your name/nickname as the name of a Magic Ring plus an 8 x 10 color print of YOUR MAGIC RING along with its name and description, hand-signed by Mackenzie and the artist.  Also makes a great gift when you choose to name it after someone special. Plus a DRM-FREE copy of the game when it&#39;s released.&quot;,&quot;limit&quot;:2,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;10.0&quot;,&quot;estimated_delivery_on&quot;:1372636800,&quot;project_id&quot;:182609858,&quot;remaining&quot;:2,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1365983755},{&quot;id&quot;:1547259,&quot;minimum&quot;:200.0,&quot;reward&quot;:&quot;Scroll Master:  Your name/nickname as the name of a Magic Scroll plus an 8 x 10 color print of YOUR MAGIC SCROLL along with its name and description, hand-signed by Mackenzie and the artist.  Also makes a great gift when you choose to name it after someone special. Plus a DRM-FREE copy of the game when it&#39;s released.&quot;,&quot;limit&quot;:2,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;10.0&quot;,&quot;estimated_delivery_on&quot;:1372636800,&quot;project_id&quot;:182609858,&quot;remaining&quot;:2,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1365983755},{&quot;id&quot;:1479054,&quot;minimum&quot;:250.0,&quot;reward&quot;:&quot;PRODUCERS ROCK!  Be a Producer with your name listed in the credits as \\&quot;Producer\\&quot; plus THE GAME via digital distribution when it&#39;s completed in July 2013 along with a personal thank you letter from Mackenzie.&quot;,&quot;limit&quot;:25,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;5.0&quot;,&quot;estimated_delivery_on&quot;:1372636800,&quot;project_id&quot;:182609858,&quot;remaining&quot;:18,&quot;backers_count&quot;:7,&quot;updated_at&quot;:1367028324},{&quot;id&quot;:1479055,&quot;minimum&quot;:300.0,&quot;reward&quot;:&quot;Be an NPC!  You get to name an NPC plus THE GAME via digital distribution when it&#39;s completed in July 2013&quot;,&quot;limit&quot;:10,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1372636800,&quot;project_id&quot;:182609858,&quot;remaining&quot;:8,&quot;backers_count&quot;:2,&quot;updated_at&quot;:1366523384},{&quot;id&quot;:1479056,&quot;minimum&quot;:500.0,&quot;reward&quot;:&quot;Executive Producer + Signed Cover Art + THE GAME:  Get signed cover art with a personalized thank you from Mackenzie as well as your name listed with Executive Producer Credit plus THE GAME via digital distribution when it&#39;s completed in July 2013 along with a handwritten (&amp; heartfelt) thank you note from Mackenzie.&quot;,&quot;limit&quot;:5,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;10.0&quot;,&quot;estimated_delivery_on&quot;:1372636800,&quot;project_id&quot;:182609858,&quot;remaining&quot;:3,&quot;backers_count&quot;:2,&quot;updated_at&quot;:1366421345}]}";
+    
+    
+    
+    
+    
+    
+    
+    
+    window.timeRemaining = function timeRemaining(epochTime){
+    
+      var diff = epochTime - ((new Date()).getTime() / 1000);
+      var num_unit = (diff < 60 && [Math.max(diff, 0), 'seconds']) ||
+        ((diff/=60) < 60 && [diff, 'minutes']) ||
+        ((diff/=60) < 72 && [diff, 'hours']) ||
+        [diff/=24, 'days'];
+    
+      // Round down
+      num_unit[0] = Math.floor(num_unit[0]);
+      // Singularize unit
+      if (num_unit[0] == 1) { num_unit[1] = num_unit[1].replace(/s$/,""); }
+    
+      return num_unit;
+    };
+  //]]>
+</script>
+
+<script>
+  //<![CDATA[
+    window.current_variants = ["discover_link_copy[explore]","rewards_hover[without_hover_text]"];
+  //]]>
+</script>
+
+
+</head>
+
+<body class="project projects not-mobile not-phone not-forces-video-controls not-tablet not-touchable not-native-app-request video_mode" id="projects_show">
+<div class="jGrowl center" id="growl_section"></div>
+<div class="NS_layouts__navigation" id="header">
+<div class="main-nav relative bg-white">
+<h1 class="no-margin ml1 mr2 left">
+<a href="/?ref=nav" class="block p2"><span class="ss-icon green-dark">KICK</span><span class="ss-icon green">STARTER</span>
+</a></h1>
+<ul class="primary-links list no-margin left">
+<li class="left discover-link full-height">
+<a href="/discover?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Explore</a>
+</li>
+<li class="left full-height mr2">
+<a href="/learn?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Start</a>
+</li>
+</ul>
+<ul class="list no-margin right" id="menu-sub">
+<li class="right"><a href="/login?ref=nav" class="block h5 bold p2 full-height border-box">Log in</a></li>
+<li class="right"><a href="/signup?ref=nav" class="block h5 bold p2 full-height border-box">Sign up</a></li>
+</ul>
+<div class="search-link pl2 full-height border-left border-box clip">
+<form accept-charset="UTF-8" action="/projects/search" class="search pt1 pb1 block relative form-simple" method="get"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /></div>
+<div class="field relative pl3">
+<span class="ss-icon ss-search grey-dark ml1 mt1 absolute"></span>
+<input class="input-search header full-width text" data-tracker-name="Header Live Search" id="term" name="term" placeholder="Search projects" type="text" />
+</div>
+</form>
+
+</div>
+<div class="clear"></div>
+</div>
+</div>
+<div class="hide pt4 pb4 bg-grey-light" id="search_results-wrap">
+<div class="relative container" id="search_results">
+<a class="close right grey-dark mr1"><span class="ss-icon ss-delete"></span></a>
+<h3 class="header ml1 clearfix"></h3>
+<div class="clip clearfix" id="search_results_panel"></div>
+<a class="prev arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateleft"></span>
+</a>
+<a class="next arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateright"></span>
+</a>
+</div>
+</div>
+
+
+
+
+<div class="Project-ended-true Project-is_starred- Project-state-successful Project182609858_cxt border-top" id="main_content">
+<div id="running-board-wrap">
+<div class="container" id="running-board">
+<div id="project-header">
+<div class="NS_projects__running_board ml1 mr1 clearfix">
+<div class="title center py4">
+<h2 class="mb1">
+<a href="/projects/susanwilson/9-year-old-building-an-rpg-to-prove-her-brothers-w" class="green-dark">9 Year Old Builds Her First RPG...  TRUTH &amp; TROLLS!</a>
+</h2>
+<p class="no-margin">
+<span class="creator">
+by
+<a href="/projects/susanwilson/9-year-old-building-an-rpg-to-prove-her-brothers-w/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography" id="name">Susan Wilson</a>
+</span>
+</p>
+</div>
+<ul class="project-nav list-inline left h5 bold mb1">
+<li class="mr2">
+<a href="/projects/susanwilson/9-year-old-building-an-rpg-to-prove-her-brothers-w" class="grey-dark py1 current" id="home_nav">Home</a>
+</li>
+<li class="mr2">
+<span data-updates-count="24" id="updates_count">
+<a href="/projects/susanwilson/9-year-old-building-an-rpg-to-prove-her-brothers-w/posts" class="grey-dark py1" id="updates_nav">Updates
+<span class="count h6 bg-grey-dark white">24</span>
+</a></span>
+</li>
+<li class="mr2">
+<a href="/projects/susanwilson/9-year-old-building-an-rpg-to-prove-her-brothers-w/backers" class="grey-dark py1" id="backers_nav">Backers
+<span class="count h6 bg-grey-dark white"><data class="Project182609858" data-format="number" data-value="1442" itemprop="Project[backers_count]">1,442</data></span>
+</a></li>
+<li>
+<span data-comments-count="1975" id="comments_count">
+<a href="/projects/susanwilson/9-year-old-building-an-rpg-to-prove-her-brothers-w/comments" class="grey-dark py1" id="comments_nav">Comments
+<span class="count h6 bg-grey-dark white"><data class="Project182609858" data-format="number" data-value="1849" itemprop="Project[comments_count]">1,849</data></span>
+</a></span>
+</li>
+</ul>
+<ul class="list-inline right h5 bold mb1">
+<li class="location mr2">
+<a href="/discover/places/stevensville-md?ref=city" class="grey-dark"><span class="ss-icon ss-location margin-right"></span>
+Stevensville, MD
+</a></li>
+<li class="category" data-project-parent-category="Games">
+<a href="/discover/categories/games/video%20games?ref=category" class="grey-dark"><span class="ss-icon ss-tag margin-right"></span>
+Video Games
+</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+</div>
+<div class="bg-grey-light pb4" id="content-wrap">
+<div class="Project182609858" data-conditions="[{&quot;!state&quot;:&quot;live&quot;}]" data-evaluation="true" data-render="&quot;&lt;div class=\&quot;NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-successful Project182609858_cxt bg-grey container pb1 pt1\&quot;&gt;\n&lt;div class=\&quot;Project182609858\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;successful&amp;quot;}]\&quot; data-evaluation=\&quot;true\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;Funded!&amp;lt;/b&amp;gt;\\nThis project was successfully funded &amp;lt;data class=\\&amp;quot;Project182609858\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2013-04-19T21:10:26-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[deadline]\\&amp;quot;&amp;gt;on April 19, 2013&amp;lt;/data&amp;gt;.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;Funded!&lt;/b&gt;\nThis project was successfully funded &lt;data class=\&quot;Project182609858\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-04-19T21:10:26-04:00&amp;quot;\&quot; itemprop=\&quot;Project[deadline]\&quot;&gt;on April 19, 2013&lt;/data&gt;.\n&lt;/p&gt;\n&lt;/div&gt;&lt;div class=\&quot;Project182609858\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:[&amp;quot;started&amp;quot;,&amp;quot;submitted&amp;quot;]}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;THIS PROJECT IS NOT LIVE&amp;lt;/b&amp;gt;\\nThis is only a draft that the creator has chosen to share.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project182609858\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;suspended&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Suspended&amp;lt;/b&amp;gt;\\nFunding for this project was suspended &amp;lt;data class=\\&amp;quot;Project182609858\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2013-04-19T21:10:26-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on April 19, 2013&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project182609858\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;canceled&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Canceled&amp;lt;/b&amp;gt;\\nFunding for this project was canceled by the project creator &amp;lt;data class=\\&amp;quot;Project182609858\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2013-04-19T21:10:26-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on April 19, 2013&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project182609858\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;failed&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Unsuccessful&amp;lt;/b&amp;gt;\\nThis project\\u2019s funding goal was not reached on &amp;lt;time class=\\&amp;quot;js-adjust\\&amp;quot; data-format=\\&amp;quot;LL\\&amp;quot; datetime=\\&amp;quot;2013-04-19T21:10:26-04:00\\&amp;quot;&amp;gt;April 19, 2013&amp;lt;/time&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project182609858\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;purged&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;This project is purged and only visible to staff.&amp;lt;/b&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;/div&gt;\n&quot;"><div class="NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-successful Project182609858_cxt bg-grey container pb1 pt1">
+<div class="Project182609858" data-conditions="[{&quot;state&quot;:&quot;successful&quot;}]" data-evaluation="true" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;Funded!&lt;/b&gt;\nThis project was successfully funded &lt;data class=\&quot;Project182609858\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-04-19T21:10:26-04:00&amp;quot;\&quot; itemprop=\&quot;Project[deadline]\&quot;&gt;on April 19, 2013&lt;/data&gt;.\n&lt;/p&gt;\n&quot;"><p class="no-margin">
+<b>Funded!</b>
+This project was successfully funded <data class="Project182609858" data-format="distance_date" data-value="&quot;2013-04-19T21:10:26-04:00&quot;" itemprop="Project[deadline]">on April 19, 2013</data>.
+</p>
+</div><div class="Project182609858" data-conditions="[{&quot;state&quot;:[&quot;started&quot;,&quot;submitted&quot;]}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;THIS PROJECT IS NOT LIVE&lt;/b&gt;\nThis is only a draft that the creator has chosen to share.\n&lt;/p&gt;\n&quot;"></div><div class="Project182609858" data-conditions="[{&quot;state&quot;:&quot;suspended&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Suspended&lt;/b&gt;\nFunding for this project was suspended &lt;data class=\&quot;Project182609858\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-04-19T21:10:26-04:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on April 19, 2013&lt;/data&gt;.\n&quot;"></div><div class="Project182609858" data-conditions="[{&quot;state&quot;:&quot;canceled&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Canceled&lt;/b&gt;\nFunding for this project was canceled by the project creator &lt;data class=\&quot;Project182609858\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-04-19T21:10:26-04:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on April 19, 2013&lt;/data&gt;.\n&quot;"></div><div class="Project182609858" data-conditions="[{&quot;state&quot;:&quot;failed&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Unsuccessful&lt;/b&gt;\nThis project\u2019s funding goal was not reached on &lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;LL\&quot; datetime=\&quot;2013-04-19T21:10:26-04:00\&quot;&gt;April 19, 2013&lt;/time&gt;.\n&quot;"></div><div class="Project182609858" data-conditions="[{&quot;state&quot;:&quot;purged&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;This project is purged and only visible to staff.&lt;/b&gt;\n&quot;"></div></div>
+</div>
+<div class="container bg-white border rounded py3 pl2 pr2" id="content">
+<div class="NS-projects-content">
+<div class="grid_11">
+<div data-has-video="true" id="video-section">
+<div class="video-player" data-dimensions="{&quot;width&quot;:640,&quot;height&quot;:480}" data-image="https://s3.amazonaws.com/ksr/projects/490759/photo-main.jpg?1397813658" data-video-tracker-url="https://www.kickstarter.com/projects/susanwilson/9-year-old-building-an-rpg-to-prove-her-brothers-w/video/plays" data-video-url="https://d2pq0u4uni88oo.cloudfront.net/projects/490759/video-220172-h264_high.mp4" data-video="{&quot;id&quot;:220172,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/490759/video-220172-h264_high.mp4?2013&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/490759/video-220172-h264_base.mp4?2013&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/490759/video-220172-webm.webm?2013&quot;,&quot;width&quot;:640,&quot;height&quot;:360,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/490759/video-220172-h264_base.jpg?2013&quot;}" id="video_pitch"><video class="has_webm landscape" preload="none">
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/490759/video-220172-h264_high.mp4" type='video/mp4; codecs="avc1.64001E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/490759/video-220172-h264_base.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/490759/video-220172-webm.webm" type="video/webm"></source>
+You'll need an HTML5 capable browser to see this content.
+</video>
+<img alt="Photo-main" class="has_played_hide poster landscape" src="https://s3.amazonaws.com/ksr/projects/490759/photo-main.jpg?1397813658" />
+<div class="play_button_big play_button_dark absolute-center rounded has_played_hide">
+<span class="ss-icon ss-play"></span>
+Play
+</div>
+<div class="player_controls clearfix absolute-bottom mb2 rounded white bg-green-dark forces-video-controls_hide">
+<div class="left">
+<a class="button button_icon button_dark playpause play mr1">
+<span class="play ss-icon ss-play"></span>
+<span class="pause ss-icon ss-pause"></span>
+</a>
+<span class="time current_time h12 left">00:00</span>
+</div>
+<div class="right">
+<span class="time total_time h12 left mr1">00:00</span>
+<a class="left button button_icon button_icon_white volume">
+<span class="ss-icon ss-volume icon_volume_nudge"></span>
+<span class="ss-icon ss-highvolume"></span>
+</a>
+<div class="volume_container left">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+<a class="left button button_icon button_icon_white fullscreen">
+<span class="ss-icon ss-expand"></span>
+<span class="ss-icon ss-contract"></span>
+</a>
+</div>
+<div class="clip">
+<div class="progress_container pr1 pl1">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="buffer progress_bar_buffer"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div data-project-state="successful" id="about">
+<div class="NS_projects__project_share clearfix py2 pl1 pr1">
+<ul class="left list-inline no-margin h5 bold">
+<li class="facebook mr2">
+<a href="https://www.kickstarter.com/projects/susanwilson/9-year-old-building-an-rpg-to-prove-her-brothers-w"><span class="ss-icon ss-social ss-facebook color-facebook"></span>
+<span class="color-facebook">Share</span>
+<span class="share_bubble"><div class="triangle grey"></div>
+<div class="triangle white"></div>
+<span class="count"></span></span>
+</a></li>
+<li class="twitter mr2">
+<a  href="https://twitter.com/intent/tweet?text=9%20Year%20Old%20Builds%20Her%20First%20RPG...%20%20TRUTH%20%26%20TROLLS%21%20by%20Susan%20Wilson&amp;via=kickstarter&amp;url=http://kck.st/WF0Cua" rel="nofollow"><span class="ss-icon ss-social ss-twitter color-twitter"></span>
+<span class="color-twitter">Tweet</span>
+</a></li>
+<li class="embed">
+<a href="/projects/susanwilson/9-year-old-building-an-rpg-to-prove-her-brothers-w/widget" class="remote_modal_dialog grey-dark" data-modal-title="Embed a widget on your site" data-tracker-name="Embed"><span class="ss-icon ss-navigateleft"></span>
+<span class="ss-icon ss-navigateright"></span>
+Embed
+</a></li>
+</ul>
+<ul class="right list-inline no-margin h5 bold">
+<li class="curate mr2">
+</li>
+<li class="remind">
+<div class="ajax-container" id="watching-widget">
+<div class="Project182609858" data-conditions="[{&quot;is_starred&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div id=\&quot;unwatch\&quot;&gt;\n&lt;a href=\&quot;/projects/susanwilson/9-year-old-building-an-rpg-to-prove-her-brothers-w/unwatch\&quot; class=\&quot;on\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"></div><div class="Project182609858" data-conditions="[{&quot;!is_starred&quot;:true}]" data-evaluation="true" data-render="&quot;&lt;div id=\&quot;watch\&quot;&gt;\n&lt;a href=\&quot;/projects/susanwilson/9-year-old-building-an-rpg-to-prove-her-brothers-w/watch\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;span class=\&quot;text\&quot;&gt;\n&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"><div id="watch">
+<a href="/projects/susanwilson/9-year-old-building-an-rpg-to-prove-her-brothers-w/watch"><span class="ss-icon ss-star"></span>
+<span class="text">
+</span>
+</a></div>
+
+</div></div>
+</li>
+</ul>
+</div>
+
+<div class="short_blurb py2 pl1 pr1">
+<p class="h3">They’re mean and vicious and they just might come after you next. You’ve got to help!</p>
+</div>
+<div class="full-description">
+<h1><b>Last Day: LET’S NAME SOME TROLLS! </b></h1><p>UPDATE:  Whether it’s someone you love, someone you hate or someone you love to hate, check out the latest update and help us name at least five trolls.</p><h1><i>The Beginning...</i></h1><p><i>They’re mean and vicious
+and they just might come after you next. 
+You’ve got to help!  They have to
+be stopped.  They have to be
+exposed.  Alex didn’t ask for this.  All she wanted was a chance to chase her
+dream.  She didn’t even know they
+existed…until they turned her mother to stone. 
+Without warning, her 9 year old world has been turned upside down.  Though they’d been there moments before, Alex
+no longer saw her father or brothers. 
+They weren’t stone but they were gone. Where were they? What happened to
+them?</i></p>
+
+<p><i>For the first time in her
+life, Alex was alone – and she was terrified! 
+But she knew her surroundings. She knew the Isle of Kent like the back of
+her hand.  What she didn’t know was who
+the creatures were that wreaked suck havoc and why?  What do they want?  And why did they choose her family?  Over the past few weeks, Alex sensed
+something was happening. Her parents’ homeland, the land of her birth, once
+filled with goodness and pure potential, was changing.  Hoping for answers, she’d tiptoe to her
+parents’ bedroom when she should have been sleeping.  She could swear she heard her parents
+whispering of families that had disappeared, but the hushed conversations ceased
+the moment she was spotted. And just yesterday, her brothers swore they’d seen
+their mother crying. But Alex didn’t believe them. Her mother was strong and her
+father hung the moon so she was certain he’d never let anything upset her to
+the point of tears.  She decided her
+brothers were teasing and she was tired of falling for their tricks so she
+ignored them.  </i></p>
+
+<p><i>But now…now she was all
+alone and desperately wished she’d demanded to know what was happening.  If only she’d asked her parents what they
+were whispering about.  If only she’d
+believed her brothers.  Maybe things
+would be different.  But she’d been
+afraid. She loved being a little girl. 
+And though she sometimes fought with her brothers, she was happy and she
+knew she was loved. So she pretended – something a child does best.  At 9, ignorance is bliss and bliss is the
+fairy dust of which dreams and childhood days are made.</i></p>
+
+<p><i>With no other choice, Alex
+put one foot in front of the other and went in search of answers.  She looked around at the beauty that
+surrounded her and for a moment pretended it was all a dream.  That none of it had happened.  Suddenly she heard a strange noise –
+something foreign she’d never heard on this land she knew so well.  Shivers ran down her spine and her gut told
+her to run.  Without looking back, she
+ran as fast as she could to the Town Square. 
+She had scratches and cuts but she’d made it and she was no longer
+alone.  The Square was packed and people
+were everywhere.  She’d chosen not to ask
+her parents and she wouldn’t make that mistake again.  Certainly someone in town had to know what
+was happening.</i></p>
+
+<p><i>Her heart raced as she
+climbed the looming, 50-foot-tall molten lava rock anchored in the center of
+the Town Square.  The rock was a monument
+– revered by all – though she never understood why.  Even touching it was forbidden. Alex took a
+deep breath and stood as tall and still as possible.  Sensing danger, many people ran home.  But a few saw courage and a little girl that
+needed help.  They approached
+cautiously.  Unburdened by life’s
+disappointments, Alex told of her story. 
+In the middle of town, on top of that rock, Alex’s spoke the truth and asked
+the questions others had only dared to whisper.</i></p>
+
+<p><i>A group of strangers
+surrounded her.  And though the crowd was
+small, they quickly realized if they each shared what they knew and did what
+they could, together they were powerful. 
+Within minutes the truth was revealed as they knew it.  Several town leaders said they <b>may</b>
+have <b>glimpsed</b>
+an unusual creature but not one was certain. 
+Alex pushed them and demanded answers. 
+One by one, each told a version of history they’d convinced themselves
+was true.  And once all had spoken, the
+truth was revealed – they’d all made the choice to look away because it was
+easier pretending nothing was wrong than to confront what had stood right
+before their eyes.</i></p>
+
+<p><i>Annoyed by the men’s
+cowardice and the ease with which the town’s leaders were able to lie (even to
+themselves), Alex scanned the crowd looking for clues.  Most refused to make eye contact, but Alex
+was desperate.  She demanded they look at
+her.  She’d expected the grownups to
+help, but they were useless.  Some were
+even cowards.  And then it happened.  She found what she’d been searching for – a glimmer
+of hope in the eyes of the two teenagers she’d dismissed earlier.  After all, they were friends of her
+brothers.  She smiled and they
+acknowledged the longing in her eyes signaling they’d wait while she quickly descended
+the rock.  </i></p>
+
+<p><i>It was done on a dare that
+only a teenager would consider a binding agreement.  And while they both admitted they’d seen a
+strange creature, only one had agreed to a double dare and actually talked to
+the creature who claimed to be a Troll in search of truth.  But Alex knew better.  She’d seen what they could do.  She needed a plan and she needed a team.  Somehow she had to find a way to get her
+family back….</i></p><p><b>UPDATE</b></p>
+
+<p>It’s been a crazy
+Kickstarter ride but what a great story it’s become. The original $829 project
+had Kenzie creating her RPG in July at RPG Camp. But within two days, her
+campaign raised over $20,000 and she made history as the youngest Kickstarter
+to raise that much money that fast.  It
+didn’t take long to realize something bigger was happening.  With over 1000 backers came a few concerned
+naysayers demanding answers to questions a 9 year old hadn’t anticipated
+answering for months.  She knew she
+wanted to make a game but had no idea what it would be about.</p>
+
+<p>She’d asked for $829 on a
+whim but with $20,000 in play, several anonymous netizens concerned a 9 year
+old would destroy Kickstarter for them, they demanded instant
+transparency.  How frustrating it must
+have been seeing a 9 year old girl with zero experience and no idea what her
+RPG would be about be handed $20,000 within hours to do something they’d only
+dreamed of – and she’d done it with almost zero effort which made any
+misdirected resentment understandable.</p>
+
+<p>Since then, the entire
+Wilson family has worked feverishly to make every backer proud.  Kenzie’s worked hard learning RPG Maker,
+developing the characters, story and plot line along with the land, scenes,
+adventures, enemies, armors, and weapons. 
+And with 6 days left, Kenzie’s RPG finally has a name – <b><i>Truth
+&amp; Trolls.</i></b>  </p>
+
+<p>With just as much ease, <a href="http://TruthAndTrolls.com" target="_blank">TruthAndTrolls.com</a>
+was purchased for less than $10 and a trademark search revealed the name was
+available.  So several hundred dollars and
+30 minutes later, Kenzie’s trademark application for Truth &amp; Trolls was
+electronically filed.</p>
+
+<p>Though not part of the
+original project, after we realized there was a need for a safe place for kids
+to learn, share, create, play and test one another’s games (with some help from
+experts will to pay it back and pay it forward), <a href="http://PinkieSquare.com" target="_blank">PinkieSquare.com</a> has evolved
+into a real website.  It’s still a work
+in process and we’re still looking for experts to volunteer to host live Skype,
+Twitter and Facebook Q&amp;A sessions. 
+Check it out and see for yourself – <a href="http://www.pinkiesquare.com/" target="_blank">PinkieSquare.com</a>: 
+Indie Gaming. For Kids. By Kids.</p>
+
+<p><b>BONUS CONTENT to THANK YOU THE BACKERS!</b></p>
+
+<p>Given the campaign’s
+success, Kenzie wants to thank every backer with bonus content at no additional
+cost!  All existing backers will receive
+a bonus PDF supplement called <b><i>The Making of Truth &amp; Trolls</i></b>.  It’s really a gesture of thank you, but not
+just for simply backing this project.  It’s
+a thank you for seeing what this campaign is really about and supporting
+Mackenzie in making her dreams come true. 
+In short, thanks for being a good person.</p>
+
+<p>Given the excess funding,
+Kenzie’s excited to deliver a high quality final product in July. But remember
+this is still about a 9 year old making her first RPG so it’s important to
+manage expectations.  But Kenzie’s
+already working with to young ladies (ages 13 &amp; 16) who are busy creating
+custom art for the game.</p>
+
+<p><b>ABOUT THE GAME</b></p>
+
+<p>Kenzie’s declared there
+will be no guns and the most powerful weapon in the game will be a Rainbow
+Sword (imagine a blade similar to Damascus steel that changes color as it
+reflects light).  You can see Kenzie’s
+drafts of weapons below.  No spoiler
+alert needed, but Kenzie &amp; Company (a.k.a. her brothers &amp; Dad) are busy
+creating characters with personality, depth and just enough quirks to be both entertaining,
+intriguing and potentially annoying along with an engaging story line filled with
+challenging adventures and interesting experiences that allow you to explore
+the legends and mysteries of the Isle of Kent.</p>
+
+<p>Truth &amp; Trolls is a
+single player RPG where you play Alex and your team of NPCs includes a Warrior,
+a Mage, a Cleric and a Ranger (whose gender, race and age you’ll be able to
+dictate).  Your team must defeat the
+trolls by turning them into stone as you work to free Alex’s family (as well as
+the others the trolls have turned to stone or made disappear).   </p>
+
+<p>The game is turn-based.  When a battle is entered a cut scene will
+start and the character will enter into a battle screen where the character
+will fight the enemy that has engaged. Once the enemy is defeated, you’ll learn
+whether or not you reap any rewards from the win (e.g., currency, experience
+points, and/or items (magical or otherwise) which includes potions, elixirs,
+weapons, armor and information.</p>
+
+<p>The trolls, having mysteriously
+and suddenly arrived on the Isle of Kent, are turning women to stone and making
+their families disappear.  There are
+several troll clans including Forest Trolls, Swamp Trolls, Cave Trolls, Mountain Trolls, and Aqua Trolls.</p>
+
+<p>Each has a Clan Leader who
+oversees an army of trolls.  Clan Leaders
+report to the Royal Family which includes both a King and Queen.  If you’re successful in defeating the Royal
+Family you’ll go on to face the Troll Deity. 
+Note that the decisions and choices you make in the game will determine
+future scenarios including whether you fight the King or the Queen and whether
+the Deity is a God, Goddess or Unisex.</p>
+
+<p><b>INDIE GAMING. FOR KIDS. BY KIDS.</b></p>
+
+<p>Once we realized there was
+a need for a safe place for kids to learn, share, create, play and test one
+another’s games (with some help from experts willing to pay it back and/or pay
+it forward), we launched <a href="http://PinkieSquare.com" target="_blank">PinkieSquare.com</a>. 
+A work in process, we’re looking for experts to volunteer their time to
+host live Skype, Twitter and Facebook Q&amp;A sessions with kids eager to learn
+from YOU!  We’ll handle the technology
+and the details.  You just sign on, and
+help the kids by answering their questions and sharing your personal
+experiences. </p>
+
+<p><b>$50,000 STRETCH GOAL: <i>Creative
+Commons Custom Asset Library Available for Free to the Indie Gaming Community</i></b></p>
+
+<p>You asked about a stretch
+goal and so did we but there was only one logical choice that complied with
+Kickstarter and benefits as many in the indie gaming community as possible. Young
+game designers and indie game developers find it difficult to secure
+inexpensive, legal artwork, content, music and sounds for their games –
+especially when the goal is to sell the finished game.  It turns out custom assets are typically the
+biggest expense and often limit the quality, success and profitability of the
+final product.  So let’s push hard in
+these final days to raise as much money as possible to fund an extensive <i>Creative Commons Custom Asset Library.</i></p>
+
+<p><b>WHAT CAN YOU DO?</b></p>
+
+<p>Promote the project and the
+link: <a href="http://kck.st/WF0Cua" target="_blank">http://kck.st/WF0Cua</a>.  Tell everyone you haven’t told AND tell
+everyone you have told!  Like, share,
+post, pin, tumble, tweet, text, email and even CALL.  Do whatever you can to spread the word. </p>
+
+<p><b>SPECIAL THANKS</b></p>
+
+<p>In the interest of
+transparency, there are a few key supporters we’d like to acknowledge and thank:</p>
+
+<p>·Dell
+has invited Mackenzie and me to be their guests at the <b>Dell Women’s Entrepreneur Network,</b> June 2-4th in
+Istanbul, Turkey.  This year’s theme, <i>Pay it Forward</i>, reflects Dell &amp;
+Intel’s commitment to support the next generation of women entrepreneurs and
+girls.  Kenzie will join a group of
+Turkish girls in a conversation with Elizabeth Gore, Entrepreneur-in-Residence
+to the United Nations, and Rina Onur, co-founder of Peake Games, one of the Top 3 Social Gaming companies in the
+world. </p>
+
+<p>·Philip
+Tan, Creative Director for the MIT Game Lab, is volunteering 1 week of his
+personal time in the Summer for in-person 1-on-1 mentorship sessions on game
+production and design with Mackenzie Wilson to help her produce her game. This
+volunteer time will be given whether or not the Kickstarter succeeds as it is
+in the spirit of replacing the RPG camp she can no longer attend.</p>
+
+<p>·The
+MIT Game Lab frequently hosts game jams both online and on-site at MIT. We are
+in planning talks to host one for parents and kids, but the details have not
+yet been finalized. This is a regular occurrence at the Game Lab and is not
+tied to the success of this Kickstarter, but rather in the spirit of this and
+many other projects where kids make their own games.</p>
+
+<p>·And
+we just learned Dell is seeding Kenzie’s project with a portable Alienware unit
+so she can take it with her to Istanbul, MIT, and anywhere else she’ll be
+working to make her dreams come true.</p><h1>Visit PinkieSquare.com and click on Kickstart Kids to see other kids' Kickstarter projects that need support.</h1><h1>THE ORIGINAL KICKSTARTER PROJECT:</h1><p>My name is Mackenzie Wilson and I'm 9 but because you have to be 18 to have a project on Kickstarter, I'm partnering with my mom, Susan Wilson who told me to say she's 29 but I made her a birthday cake last week so I know she's 43.</p><h1>ABOUT ME:</h1><p>Most people call me Kenzie. I'm 9, in 3rd grade, and I'm getting straight A's. I've always been the tallest person in my class and this year I'm actually taller than my teacher. I love computers, video games, apps, and role playing games - especially Magic the Gathering and Borderlands 2 that I get to play with my Dad (because my 15 &amp; 16 year old brothers are too mean to play with me). But we do have D&amp;D tournaments on the weekends which is cool. My favorite PS3 game right now is Dragon Age II.</p><p>In case it's not already clear, I'm not a girlie girl. I have friends that are which is fine, but I hate wearing dresses (so I don't) and I do lots of stuff my brothers do. Maybe if I sisters it would be different, but I really love my family (even when my brothers are mean to me) so I guess this is the way my life is supposed to be.</p><p>Here are some pix of my MTG and D&amp;D stuff along with my RPG diary (I colored the cover).  My diary's usually hidden because my thoughts, ideas, and game notes are top secret (and my brothers are brats):</p><div class="template asset" contenteditable="false" data-edit_url="/projects/susanwilson/9-year-old-building-an-rpg-to-prove-her-brothers-w/assets/456019/edit" data-id="456019">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/456/019/8b459420ef6671408d6305f0a3f32f4a_large.png?1363722729"></figure>
+</div>
+<p>My Mom told me to be careful about what information to include because there are some weird people out there so I tried to create a video that was cool and showed a bit about me and the project but wasn't actually me on video. </p><p>I have a Mac desktop that used to be my Dad's. It works fine but I really want my very own laptop. I got a KindleHD for my birthday and I take it with me everywhere.  I know I can read books on it and sometimes I do, but I mostly watch TV and play games on my Kindle.</p><p>At home, I like playing with Scratch (the programming game created at M.I.T.).  My Mom explained to me that more and more games are going to be created because they're fun and people actually learn better when it feels like play. So instead of having to sit through boring classes, people are starting to play games to learn new stuff. The weekend codecademy launched, my Mom had my whole family competing with each other. She calls it "the gamification of education" (which I literally had to make her spell out for me because I honestly think she's making it up)! </p><h1>My Project:</h1><p>I'm raising $829 to cover the cost of attending this RPG STEM Camp for kids 9-12 years old for a week (it'll be my first overnight camping trip by myself and I can't wait):</p><div class="template asset" contenteditable="false" data-edit_url="/projects/susanwilson/9-year-old-building-an-rpg-to-prove-her-brothers-w/assets/461752/edit" data-id="461752">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/461/752/d10c0c5025274e04e6b9971bc8152842_large.png?1363910337"></figure>
+</div>
+<p>I play games on my computer, PS3 and KindleHD all the time and it's fun but I REALLY WANT to create my own games to play.  Ultimately I want to learn to program really cool stuff, but since I'm 9 I'm starting with RPG Maker because it lets me create something awesome without having to know how to actually program everything. I'll learn to program more as I get older, but right now, RPG Maker's drag &amp; drop functionality makes it pretty easy for me to create working RPG games quickly. And each time, my games get better &amp; better. I'm having fun playing with the software now and learning how it works.  It's given me lots more ideas about how to make the game I'm going to build at RPG Camp even AWESOMER!  </p><p>Right now, I know for sure that my game will be more age appropriate than the games I'm stuck playing. Sadly there just aren't many cool RPGs out there for kids my age that aren't stupid or silly.  </p><p>As I said in the video, I want to create an RPG that isn't too violent and isn't filled with bad words, still has a good story line &amp; cool graphics, but has shorter cut scenes, less menus &amp; fewer controls.  And most importantly, I want a game that allows team members to face danger together and get hurt but doesn't kill team mates off &amp; eliminate them from battle.</p><p>It's no secret there aren't enough females in STEM professions so part of my Kickstarter campaign is aimed at raising awareness and getting girls thinking about careers in technology at an early age. I want to be a role model for kids - but especially to girls so there are more girls in tech because I don't want to be the only girl in the room.  My Mom and I created fun messaging about things girls can do followed by "KEEP UP!" which implies that the person who's supporting the campaign is ahead of others and a leader.  Both of these items will be built in the game.</p><p>Here's the original concept/design that will appear in the game and is intended to get more girls in STEM (especially technology):</p><div class="template asset" contenteditable="false" data-edit_url="/projects/susanwilson/9-year-old-building-an-rpg-to-prove-her-brothers-w/assets/456375/edit" data-id="456375">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/456/375/2ce4107050303e36287287f6d4af1294_large.png?1363733635"></figure>
+</div>
+<p>And to ensure both males and females support the concept of women in technology, we created this custom designed KEEP UP! logo that will appear in the game (notice all of the built-in arrows pointing up):</p><div class="template asset" contenteditable="false" data-edit_url="/projects/susanwilson/9-year-old-building-an-rpg-to-prove-her-brothers-w/assets/456386/edit" data-id="456386">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/456/386/0232ecf37eba1d9d68553bbfab48dae9_large.png?1363733864"></figure>
+</div>
+<p>My parents are into technology as users but my Mom has to hire programmers and developers sometimes for her work. She's really glad I like computers and programming because she says as a business person she feels like she's held hostage by developers. She's the one that got me interested in creating my own stuff on my computer instead of just playing with stuff other people create. She tried with my brothers but they weren't interested.  I think they're stupid when I get to be their age, I don't want to be stuck playing games smart people imagine and create. I want to be able to create whatever I can imagine. </p><p>Right now, I'm working with RPG Maker VXAce because my Mom and I looked around and it seemed to be the best option for a 9 year old. But if anyone reading this knows something better, please let me know.:</p><div class="template asset" contenteditable="false" data-edit_url="/projects/susanwilson/9-year-old-building-an-rpg-to-prove-her-brothers-w/assets/455421/edit" data-id="455421">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/455/421/02b6815500bde11ec9ed31a7ae330d22_large.png?1363710412"></figure>
+</div>
+<h1>Where's the Money Going?</h1><p>I really want a new laptop but my Mom said I should start small since I've never done a crowdfunding project before. So the $829 will be used to cover the basic cost of RPG Camp (not the overnight fees and extras). Here's a copy of my registration confirmation so you can see the details:</p><div class="template asset" contenteditable="false" data-edit_url="/projects/susanwilson/9-year-old-building-an-rpg-to-prove-her-brothers-w/assets/462832/edit" data-id="462832">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/462/832/1297984d6eb358f2dd502e4478661b1f_large.png?1363963878"></figure>
+</div>
+<p>My goal is to raise $829 to cover the cost of RPG Camp. But my Mom just told me about the Veronica Mars campaign so now I'm secretly hoping to raise more. My Mom said I can put any extra toward a laptop. I asked her if I raised even more than that, would she let me spend another week away at RPG camp. She said if I raised the money, she'd send me to RPG Camp all summer (which would be amazing because my friends at home are great but they're not really gamers like me so it'll awesome to hang out with hardcore gamers like me that are my age).</p><h1>The Rewards:</h1><p>Because part of this campaign is about getting more girls in tech, we have a few cool rewards. My favorite is the Hoodie with "Keep Up!" embroidered on the back because (by definition) if someone can read it, that means they're BEHIND you and need to catch up or keep up!</p><p>$5 gets your name listed in the SPECIAL THANKS credit section of the game.</p><p>$10 gets you THE GAME via digital distribution when it's completed in July 2013.</p><p>$15 gets you this Can Koozie + THE GAME via digital distribution when it's completed in July 2013:</p><div class="template asset" contenteditable="false" data-edit_url="/projects/susanwilson/9-year-old-building-an-rpg-to-prove-her-brothers-w/assets/447323/edit" data-id="447323">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/447/323/d7d4bbb200835b9aaa0d5c80b3920e11_large.png?1363370161"></figure>
+</div>
+<p>$25 gets you this Deluxe Mousepad + THE GAME via digital distribution when it's completed in July 2013:</p><div class="template asset" contenteditable="false" data-edit_url="/projects/susanwilson/9-year-old-building-an-rpg-to-prove-her-brothers-w/assets/456341/edit" data-id="456341">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/456/341/59a7f636e05ddd9ce45f90931003dce2_large.png?1363732780"></figure>
+</div>
+<p>$30 gets you this white unisex t-shirt + THE GAME via digital distribution when it's completed in July 2013:</p><div class="template asset" contenteditable="false" data-edit_url="/projects/susanwilson/9-year-old-building-an-rpg-to-prove-her-brothers-w/assets/456342/edit" data-id="456342">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/456/342/23b0073c4364bcd06937925d00a39533_large.png?1363732808"></figure>
+</div>
+<p>$40 gets you this fitted women's white t-shirt + THE GAME via digital distribution when it's completed in July 2013:</p><div class="template asset" contenteditable="false" data-edit_url="/projects/susanwilson/9-year-old-building-an-rpg-to-prove-her-brothers-w/assets/456348/edit" data-id="456348">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/456/348/34cc4925c42109d13698c555674516db_large.png?1363732902"></figure>
+</div>
+<p>$50 gets you this awesome hat embroidered with KEEP UP! + THE GAME via digital distribution when it's completed in July 2013:</p><div class="template asset" contenteditable="false" data-edit_url="/projects/susanwilson/9-year-old-building-an-rpg-to-prove-her-brothers-w/assets/447343/edit" data-id="447343">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/447/343/5d2e841cff2f76c602a2ed2f20ec076c_large.png?1363370733"></figure>
+</div>
+<p>$75 gets you a Deluxe White Hoodie with KEEP UP! embroidered on the back in black stitching:</p><div class="template asset" contenteditable="false" data-edit_url="/projects/susanwilson/9-year-old-building-an-rpg-to-prove-her-brothers-w/assets/447381/edit" data-id="447381">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/447/381/a124468dd95907c57d7234ca2f68278c_large.png?1363371704"></figure>
+</div><p>And for $100 you get to name a character AND a copy of THE GAME via digital distribution when it's completed in July 2013.</p>
+</div>
+<div id="risks">
+<h2 class="title grey-dark mt6 mb4">
+<span>Risks and challenges</span>
+<a href="/help/faq/kickstarter%20basics#Acco" class="right normal h5" target="_blank">Learn about accountability on Kickstarter</a>
+<div class="divider clear"></div>
+</h2>
+<p><p>There aren&#39;t really any risks involved in this project because the goal of RPG Camp is to spend the week creating my very own custom RPG game and to leave camp with a copy of the game I can take home and play with my friends.</p>
+
+<p>I&#39;ll be attending the World&#39;s #1 Tech Camp (<a href="http://www.InternalDrive.com" rel="nofollow">www.InternalDrive.com</a>) with &quot;ridiculously small ratios&quot; which means personalized instructions with just 8 kids per adult instructor. I&#39;ll be using using RPG Maker®, a massively popular RPG (role-playing game) development tool–user-friendly for beginners, but powerful enough for advanced game developers. The camp says &quot;an intuitive drag-and-drop interface, RPG Maker®’s extensive library of characters and tile-based environments will have you creating fantastic RPG worlds, maps and awesome heroes. Take home your custom role-playing game for you and your friends to put to the test!  Students will be introduced to the concepts of tiling, pixel art and conditional statements in creating their own top-down 2D RPG. This unique tool allows beginners to create a polished game that includes story dialogue boxes, custom items, and weapons, as well as battles with enemies and bosses.&quot;</p></p>
+</div>
+</div>
+<div class="NS-projects-faqs" id="project-faqs">
+<h2 class="title grey-dark mt6 mb4">
+FAQ
+<div class="divider clear"></div>
+</h2>
+<ul class="faqs">
+<li class="faq" id="project_faq_52014">
+<div class="faq-question">
+<a href="#project_faq_52014" name="project_faq_52014">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Independent news agencies, reporters, &amp; bloggers cover questions regarding Susan Wilson (i.e., me) and the overall project:</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>1.  CNET&#39;s coverage by Eric Mack:  Most articles were in typical story format, but the CNET coverage did a great job breaking down each concern/allegation and addressing them one by one so I&#39;m posting this first:  <a href="http://news.cnet.com/8301-17938_105-57576194-1/trolls-take-on-9-year-old-girls-kickstarter-project...and-lose/http://news.cnet.com/8301-17938_105-57576194-1/trolls-take-on-9-year-old-girls-kickstarter-project...and-lose/" rel="nofollow">http://news.cnet.com/8301-17938_105-57576194-1/trolls-take-on-9-year-old-girls-kickstarter-project...and-lose/http://news.cnet.com/8301-17938_105-57576194-1/trolls-take-on-9-year-old-girls-kickstarter-project...and-lose/</a></p>
+
+<p>2.  Kotaku story by Mike Fahey:  <a href="http://kotaku.com/internet-rallies-against-kickstarter-for-nine-year-old-459542190" rel="nofollow">http://kotaku.com/internet-rallies-against-kickstarter-for-nine-year-old-459542190</a></p>
+
+<p>3.  BeefJack&#39;s coverage by Joe Donnelly:  <a href="http://beefjack.com/features/the-best-and-worst-of-kickstarter-an-interview-with-susan-wilson/" rel="nofollow">http://beefjack.com/features/the-best-and-worst-of-kickstarter-an-interview-with-susan-wilson/</a></p>
+
+<p>4.  The Huffington Post&#39;s coverage by Katie Bindley: <a href="http://www.huffingtonpost.com/2013/03/26/9-year-old-kickstarter-campaign_n_2949294.html" rel="nofollow">http://www.huffingtonpost.com/2013/03/26/9-year-old-kickstarter-campaign_n_2949294.html</a></p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-04-05T08:26:10-04:00">Fri, Apr 5 2013 8:26 am EDT</time>
+</div>
+</div>
+</li>
+
+</ul>
+<div class="faq-ask-box">
+<a href="/projects/susanwilson/9-year-old-building-an-rpg-to-prove-her-brothers-w/messages/new?message%5Bto%5D=susanwilson&amp;mode=FAQ" class="button button_blue remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Ask a question about 9 Year Old Builds Her First RPG...  TRUTH &amp; TRO...">Ask a question</a>
+
+</div>
+</div>
+
+<div class="mt4 ml1 mr1 mb2" id="report-issue-wrap">
+<a href="/login?then=%2Fprojects%2Fsusanwilson%2F9-year-old-building-an-rpg-to-prove-her-brothers-w" class="button button_grey">Report this project to Kickstarter</a>
+</div>
+</div>
+<div class="NS-projects-rightcol grid_5" id="rightcol">
+<div class="NS_projects__ecom">
+<div class="digits_5 pb2 pl2 pt2" id="stats">
+<h5>
+<div class="num h48 no-margin" data-backers-count="1442" id="backers_count"><data class="Project182609858" data-format="number" data-value="1442" itemprop="Project[backers_count]">1,442</data></div>
+<span><data class="Project182609858" data-attr="backers_count" data-format="pluralize" data-value="1442" data-word="Backer">Backers</data></span>
+</h5>
+<h5>
+<div class="num h48 no-margin" data-goal="829.0" data-percent-raised="29.595162846803377563329312425" data-pledged="24534.39" id="pledged">
+<data class="Project182609858" data-currency="USD" data-format="shorter_money" data-precision="0" data-value="24534" data-without_code="true" itemprop="Project[pledged]">$24,534</data>
+<span class="money usd project_currency_code"></span>
+</div>
+pledged of
+<span class="money usd no-code">$829</span>
+goal
+</h5>
+<span data-duration="30.0" data-end_time="2013-04-19T21:10:26-04:00" data-hours-remaining="0" id="project_duration_data"></span>
+<div class="Project182609858" data-conditions="[{&quot;!state&quot;:[&quot;canceled&quot;,&quot;suspended&quot;]}]" data-evaluation="true" data-render="&quot;&lt;h5 class=\&quot;poll \&quot; data-dynamic=\&quot;5\&quot; data-end_time=\&quot;2013-04-19T21:10:26-04:00\&quot; data-poll_url=\&quot;https://d2oher2uhvl0ur.cloudfront.net/projects/susanwilson/9-year-old-building-an-rpg-to-prove-her-brothers-w/stats.json\&quot;&gt;\n&lt;div class=\&quot;num h48 no-margin\&quot;&gt;0&lt;/div&gt;\n&lt;span class=\&quot;text\&quot;&gt;seconds to go&lt;/span&gt;\n&lt;/h5&gt;\n&quot;"><h5 class="poll " data-dynamic="5" data-end_time="2013-04-19T21:10:26-04:00" data-poll_url="https://d2oher2uhvl0ur.cloudfront.net/projects/susanwilson/9-year-old-building-an-rpg-to-prove-her-brothers-w/stats.json">
+<div class="num h48 no-margin">0</div>
+<span class="text">seconds to go</span>
+</h5>
+</div></div>
+<div class="Project182609858" data-conditions="[{&quot;state&quot;:&quot;live&quot;},{&quot;!ended?&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;pr2 pl2\&quot; id=\&quot;pledge-wrap\&quot;&gt;\n&lt;a href=\&quot;/projects/susanwilson/9-year-old-building-an-rpg-to-prove-her-brothers-w/pledge/new?clicked_reward=false\&quot; class=\&quot;button button_green button_box button_block\&quot; id=\&quot;button-back-this-proj\&quot; title=\&quot;Back this project\&quot;&gt;Back This Project &lt;small class=&#39;h6 normal block green-dark&#39;&gt;&lt;span class=\&quot;money usd \&quot;&gt;$1&lt;/span&gt; minimum pledge&lt;/small&gt;&lt;/a&gt;\n&lt;/div&gt;\n&quot;"></div><div class="Project182609858" data-conditions="[{&quot;state&quot;:&quot;live&quot;}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;p2\&quot; id=\&quot;banner\&quot;&gt;\n&lt;p class=\&quot;tiny_type no-margin\&quot;&gt;\nThis project will be funded on\n&lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;llll z\&quot; datetime=\&quot;2013-04-19T21:10:26-04:00\&quot;&gt;Fri, Apr 19 2013 9:10 pm EDT&lt;/time&gt;.\n&lt;/p&gt;\n&lt;/div&gt;\n&quot;"></div></div>
+
+<div class="NS_projects__rightcol_projectby bg-blue-light rounded">
+<div class="p2 clearfix">
+<div class="avatar inline-block align-middle">
+<a href="/projects/susanwilson/9-year-old-building-an-rpg-to-prove-her-brothers-w/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography"><img alt="Kenziecropped.small" class="avatar-small" height="80" src="https://s3.amazonaws.com/ksr/avatars/219766/kenziecropped.small.jpg?1367453295" width="80" />
+</a></div>
+<div class="creator-name inline-block align-middle ml1">
+<h6 class="mb1">Project by</h6>
+<h5 class="mb1">
+<a href="/projects/susanwilson/9-year-old-building-an-rpg-to-prove-her-brothers-w/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">Susan Wilson</a>
+</h5>
+<p class="location h6 bold mb1">
+<a href="/discover/places/stevensville-md">Stevensville, MD</a>
+</p>
+</div>
+</div>
+<div class="creator-details pl2 pr2 pb1">
+<ul class="list-simple h5 mb1">
+<li class="projects-more">
+<span class="ss-icon ss-kickstarter grey-dark margin-right"></span>
+<span class="text">
+<a href="/profile/susanwilson/created" class="green-dark bold more-button remote_modal_dialog" data-modal-title="Projects created by Susan Wilson">2 created</a>
+<span class="divider">&middot;</span>
+<a href="/profile/susanwilson/backed" class="green-dark bold more-button remote_modal_dialog" data-modal-title="Projects backed by Susan Wilson">13 backed</a>
+</span>
+</li>
+<li class="facebook-connected">
+<span class="ss-icon ss-facebook facebook color-facebook margin-right"></span>
+<span class="text">
+<a href="https://www.facebook.com/1524699227" class="popup" target="_blank">Susan Aldridge Wilson</a>
+<span class="number h6">
+427
+friends
+</span>
+</span>
+
+</li>
+<li class="links">
+<span class="ss-icon ss-globe margin-right grey-dark"></span>
+<span class="text">
+<a href="http://TruthAndTrolls.com" class="popup" rel="nofollow" target="_blank">TruthAndTrolls.com</a>
+</span>
+</li>
+</ul>
+</div>
+<div class="footer center h5 bold clearfix rounded-bottom clip">
+<a href="/projects/susanwilson/9-year-old-building-an-rpg-to-prove-her-brothers-w/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">See full bio</a>
+<a href="/projects/susanwilson/9-year-old-building-an-rpg-to-prove-her-brothers-w/messages/new?message%5Bto%5D=susanwilson" class="remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Send a message to Susan Wilson">Contact me</a>
+
+</div>
+</div>
+
+<ul class="NS-projects-rightcol-rewards rounded clip list mt2" data-reward-count="20" id="what-you-get">
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$5</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+143 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Your name will appear in the &quot;SPECIAL THANKS&quot; section of the game&#39;s credits.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-07-01">Jul 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$10</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+795 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>THE GAME!  You will receive a copy of the RPG via digital distribution when it is completed in July 2013.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-07-01">Jul 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$15</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+135 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Koozie: I drink like a girl...Keep Up! + THE GAME via digital distribution when it&#39;s completed July 2013.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-04-01">Apr 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $5 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$20</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+19 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Truth &amp; Trolls: The Pen and Paper Companion: An RPG sourcebook for people who enjoy the game and want to keep the experience going. The book will cover the locations, characters and items of the game (highlighting those named by backers) and provide material for both the Fate and Pathfinder systems under the OGL. In addition to more information about the world and a short adventure, the Pen and Paper Companion will include material aimed at helping young gamers and creators of all stripes develop stories and characters to share with their friends and family. And maybe a few adults can enjoy it too. Current estimate is at 96 pages but the length may increase depending on the size of the source game. The book will be made available through PDF to backers and then available for sale on DriveThruRPG.
+
+The book will be developed by Rain Pletcher, a longtime gamer with a background in film and theater. A veteran of child and teen educational camps in storytelling, writing and character development, these experiences with children will be leveraged to create material to help inspire children to tell their own stories. This will be the first RPG writing project for the author.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-08-01">Aug 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$25</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+59 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Deluxe Mousepad + THE GAME via digital distribution when it&#39;s completed July 2013.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-04-01">Apr 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $5 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$30</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+69 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>2-SIDED PRINTED WHITE T-SHIRT 
+(Adult: S, M, L, XL, XXL &amp; Kids: S, M, L, XL)
++ THE GAME via digital distribution in July.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-04-01">Apr 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $5 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$40</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+44 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>2-SIDED WOMEN&#39;S FITTED WHITE T-SHIRT (XS, S, M, L, XL) + THE GAME via digital distribution when it&#39;s completed 7/13</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-04-01">Apr 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $5 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$50</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+8 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Keep Up! Embroidered Hat + THE GAME via digital distribution when it&#39;s completed in July.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-04-01">Apr 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $5 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$75</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+13 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Deluxe White Hoodie (great for men and women).  Front of the sweatshirt is blank and the back is beautifully embroidered with &quot;Keep Up!&quot; in black. Personal favorite because if someone can read &quot;Keep Up!&quot; it means (by definition) they are BEHIND you! + THE GAME via digital distribution when it&#39;s completed July 2013.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-04-01">Apr 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $5 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$100</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+15 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(5 left of 20)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Name a character in the game (age appropriate names only) along with a copy of the game. Imagine the joy in your child&#39;s eyes when they play a game with a character named after them! Of course, that means you also get THE GAME via digital distribution when it&#39;s completed July 2013.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-07-01">Jul 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $5 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$200</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(2 left of 2)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Spell Master:  Your name/nickname is the name of a Powerful Spell plus an 8 x 10 color print of YOUR POWERFUL SPELL along with its name and description, hand-signed by Mackenzie and the artist.  Also makes a great gift when you choose to name it after someone special. Plus a DRM-FREE copy of the game when it&#39;s released.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-07-01">Jul 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $10 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$200</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(2 left of 2)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Armor Master:  Your name/nickname as the name of Powerful Armor plus an 8 x 10 color print of YOUR POWERFUL ARMOR along with its name and description, hand-signed by Mackenzie and the artist.  Also makes a great gift when you choose to name it after someone special. Plus a DRM-FREE copy of the game when it&#39;s released.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-07-01">Jul 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $10 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$200</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(2 left of 2)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Scroll Master:  Your name/nickname as the name of a Magic Scroll plus an 8 x 10 color print of YOUR MAGIC SCROLL along with its name and description, hand-signed by Mackenzie and the artist.  Also makes a great gift when you choose to name it after someone special. Plus a DRM-FREE copy of the game when it&#39;s released.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-07-01">Jul 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $10 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$200</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(2 left of 2)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Potion Master:  Your name/nickname is the name of a Powerful Potion plus an 8 x 10 color print of YOUR POWERFUL POTION along with its name and description, hand-signed by Mackenzie and the artist.  Also makes a great gift when you choose to name it after someone special. Plus a DRM-FREE copy of the game when it&#39;s released.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-07-01">Jul 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $10 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$200</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(2 left of 2)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Artifact Master:  Your name/nickname as the name of a Major Artifact plus an 8 x 10 color print of YOUR MAJOR ARTIFACT along with its name and description, hand-signed by Mackenzie and the artist.  Also makes a great gift when you choose to name it after someone special. Plus a DRM-FREE copy of the game when it&#39;s released.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-07-01">Jul 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $10 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$200</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(2 left of 2)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Ring Master:  Your name/nickname as the name of a Magic Ring plus an 8 x 10 color print of YOUR MAGIC RING along with its name and description, hand-signed by Mackenzie and the artist.  Also makes a great gift when you choose to name it after someone special. Plus a DRM-FREE copy of the game when it&#39;s released.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-07-01">Jul 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $10 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$200</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(2 left of 2)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Weapon Master:  Your name/nickname as the name a Powerful Weapon plus an 8 x 10 color print of YOUR POWERFUL WEAPON along with its name and description, hand-signed by Mackenzie and the artist. Also makes a great gift when you choose to name it after someone special. Plus a DRM-FREE copy of the game when it&#39;s released.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-07-01">Jul 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $10 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$250</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+7 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(18 left of 25)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>PRODUCERS ROCK!  Be a Producer with your name listed in the credits as &quot;Producer&quot; plus THE GAME via digital distribution when it&#39;s completed in July 2013 along with a personal thank you letter from Mackenzie.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-07-01">Jul 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $5 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$300</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+2 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(8 left of 10)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Be an NPC!  You get to name an NPC plus THE GAME via digital distribution when it&#39;s completed in July 2013</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-07-01">Jul 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+2 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(3 left of 5)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Executive Producer + Signed Cover Art + THE GAME:  Get signed cover art with a personalized thank you from Mackenzie as well as your name listed with Executive Producer Credit plus THE GAME via digital distribution when it&#39;s completed in July 2013 along with a handwritten (&amp; heartfelt) thank you note from Mackenzie.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-07-01">Jul 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $10 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+</ul>
+
+<div class="p2" id="meta">
+<h5>Funding period</h5>
+<p class="tiny_type">
+<time class="js-adjust" data-format="ll" datetime="2013-03-20T21:10:26-04:00">Mar 20, 2013</time> - 
+<time class="js-adjust" data-format="ll" datetime="2013-04-19T21:10:26-04:00">Apr 19, 2013</time>
+(30 days)
+</p>
+</div>
+</div>
+
+</div>
+
+<a href="#" id="video_mode_tab" style="display: none;">
+View in Video Mode
+</a>
+
+</div>
+</div>
+
+
+</div>
+
+<div class="h5 bg-green-dark" id="mega-footer-wrap">
+<div class="bg-green-dark white full-height" id="footer-newsletter-signup">
+<div class="container py4">
+<div class="grid_8 prefix_4 suffix_4 center mt4">
+<h2>
+Eureka! You've found
+<br>
+our little secret.
+</h2>
+<p>Sign up for our Happening email for all the inside info about arts and culture in the Kickstarter universe and beyond.</p>
+<div class="newsletter_signup">
+<form accept-charset="UTF-8" action="/newsletters/happening/signup" class="overlabels" method="post"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /><input class="hidden" name="authenticity_token" type="hidden" value="ZVfZV1wKLE/2zEIkYgoTZRwzRve0xplrpdqFW/C4b3Q=" /></div><input class="hidden" id="location" name="location" type="hidden" value="footer" />
+<textarea class="hide textarea" id="comment" name="comment">
+</textarea>
+<div class="field newsletter">
+<label class="overlabel z1 overlabel-newsletter">Email address</label>
+<input class="text" id="email" name="email" type="text" />
+</div>
+<input class="button button_green submit" name="commit" type="submit" value="Submit" />
+</form>
+
+</div>
+
+</div>
+</div>
+</div>
+<div class="container relative" id="mega-footer">
+<span class="scissors icon-scissors-1"></span>
+<div class="grid_16 alpha omega pt4 pb2" id="mega-footer-links">
+<div class="grid_4 link-group">
+<h5 class="white">About us</h5>
+<ul class="list">
+<li><a href="/year/2013/?ref=footer">2013 highlights</a></li>
+<li><a href="/year/2012?ref=footer">2012 highlights</a></li>
+<li><a href="/team?ref=footer">Who we are</a></li>
+<li><a href="/jobs?ref=footer">Jobs</a></li>
+<li><a href="/press?ref=footer">Press</a></li>
+<li><a href="/help/stats?ref=footer">Stats</a></li>
+<li><a href="/newsletters/weekly">Projects we love</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group">
+<h5><a href="/help?ref=footer" class="white">Help</a></h5>
+<ul class="list">
+<li><a href="/hello?ref=footer">What is Kickstarter?</a></li>
+<li><a href="/help?ref=footer">FAQ</a></li>
+<li><a href="/contact?ref=footer">Support</a></li>
+<li><a href="/help/school?ref=footer">Kickstarter School</a></li>
+<li><a href="/terms-of-use?ref=footer">Terms of Use</a></li>
+<li><a href="/privacy?ref=footer">Privacy Policy</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group alpha omega suffix_1">
+<h5 class="alpha"><a href="/discover/advanced?ref=footer" class="white">Discover</a></h5>
+<ul class="column column-0 grid_2 list">
+<li><a href="/discover/categories/art?ref=footer">Art</a></li>
+<li><a href="/discover/categories/comics?ref=footer">Comics</a></li>
+<li><a href="/discover/categories/dance?ref=footer">Dance</a></li>
+<li><a href="/discover/categories/design?ref=footer">Design</a></li>
+<li><a href="/discover/categories/fashion?ref=footer">Fashion</a></li>
+<li><a href="/discover/categories/film%20&amp;%20video?ref=footer">Film &amp; Video</a></li>
+<li><a href="/discover/categories/food?ref=footer">Food</a></li>
+</ul>
+<ul class="column column-1 grid_2 list">
+<li><a href="/discover/categories/games?ref=footer">Games</a></li>
+<li><a href="/discover/categories/music?ref=footer">Music</a></li>
+<li><a href="/discover/categories/photography?ref=footer">Photography</a></li>
+<li><a href="/discover/categories/publishing?ref=footer">Publishing</a></li>
+<li><a href="/discover/categories/technology?ref=footer">Technology</a></li>
+<li><a href="/discover/categories/theater?ref=footer">Theater</a></li>
+</ul>
+</div>
+<div class="grid_3 link-group">
+<h5 class="white">Hello</h5>
+<ul class="list">
+<li>
+<a href="https://twitter.com/kickstarter"><span class="ss-icon ss-social-regular ss-twitter"></span>
+Twitter
+</a></li>
+<li>
+<a href="https://www.facebook.com/Kickstarter"><span class="ss-icon ss-social-regular ss-facebook"></span>
+Facebook
+</a></li>
+<li>
+<a href="http://kickstarter.tumblr.com"><span class="ss-icon ss-social-regular ss-tumblr"></span>
+Tumblr
+</a></li>
+<li>
+<a href="http://instagram.com/kickstarter"><span class="ss-icon ss-social-regular ss-instagram"></span>
+Instagram
+</a></li>
+<li>
+<a href="https://vine.co/Kickstarter"><span class="ss-icon ss-social-regular ss-vine"></span>
+Vine
+</a></li>
+<li>
+<a href="/blog?ref=footer">Blog</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="grid_16 py4" id="mega-footer-bottom">
+<div class="logo left">
+<a href="/" class="grey-dark"><span class="ss-icon h3">KICKSTARTER</span>
+</a></div>
+<p class="right h5 grey-dark">
+&copy;
+2014
+Kickstarter, Inc.
+</p>
+</div>
+</div>
+</div>
+
+<script>
+  //<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    var analytics_vars = { google_analytics_id : "UA-7621056-1", logged_in : "false", social_user: "false" }
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.mixpanel_id = '75b1d24a516ecfc955eadfadc4910661';
+    window.mixpanel_debug = false;
+  //]]>
+</script>
+
+
+<noscript>
+<img alt="Quantcast" border="0" height="1" src="//secure.quantserve.com/pixel/p-34IbSpw2K94Sg.gif" style="display:none" width="1" />
+</noscript>
+
+
+<script>
+  //<![CDATA[
+    window.benchmark = (typeof window.performance == 'object' && typeof window.performance.mark == 'function');
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    (function (root) {
+      function instrument_function (original) {
+        return function () {
+          try {
+            return original.apply(this, arguments);
+          } catch (e) {
+            if (e.stack && root.Honeybadger) {
+              Honeybadger.notify(e, {
+                current_project : root.current_project,
+                current_user : root.current_user
+              });
+            }
+            throw(e);
+          }
+        };
+      }
+      root.instrument_function = instrument_function;
+    }(this));
+  //]]>
+</script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+
+<script>
+  //<![CDATA[
+    (function(){function c(a){this.local_start_time=new Date;this.settings={cookie_name:"request_time"};for(var b in a)this.settings[b]=a[b];this.get_remote_offset()}c.prototype.get_remote_offset=function(){this.cookie_value=this.read_cookie();var a=new Date(this.cookie_value);if(!this.cookie_value||"Invalid Date"===a.toString()){if(this.remote_offset=this.read_cookie("local_offset"))this.remote_offset=parseInt(this.remote_offset,10)}else this.remote_offset=a-this.local_start_time;"undefined"!==typeof this.remote_offset&& !isNaN(this.remote_offset)?(document.cookie="local_offset="+this.remote_offset+"; path=/",this.is_set=!0):this.is_set=!1};c.prototype.time_units=[["milliseconds",1],["seconds",1E3],["minutes",6E4],["hours",36E5],["days",864E5]];c.prototype.get_units_in_interval=function(a,b){var d=a.replace(/^\w/,function(d){return"get"+d.toUpperCase()});return b[d]()};c.prototype.milliseconds_in_day=function(a){"undefined"===typeof a&&(a=new Date);for(var b=0,d=this.time_units.length-2;0<=d;d--)b+=this.get_units_in_interval(this.time_units[d][0], a)*this.time_units[d][1];return b};c.prototype.milliseconds_in_interval=function(a,b){return this.milliseconds_in_day(b)%a};c.prototype.milliseconds_to_next_interval=function(a,b){return a-this.milliseconds_in_interval(a,b)};c.prototype.pluralize=function(a,b){1===b&&(a=a.replace(/s$/,""));return a};c.prototype.read_cookie=function(a){for(var b=window.document.cookie.split(";"),a=(a||this.settings.cookie_name)+"=",d=0;d<b.length;d++){for(var e=b[d];" "==e.charAt(0);)e=e.substring(1,e.length);if(0== e.indexOf(a))return b=e.substring(a.length,e.length),decodeURIComponent(b).replace(/\+/g," ")}return null};c.prototype.destroy_cookie=function(a){var b=new Date;a||(a=this.settings.cookie_name);b.setTime(b.getTime()-864E5);window.document.cookie=a+"=; expires="+b.toGMTString()+"; path=/"};c.prototype.get_remote_time=function(){var a=new Date,b=a.getTime()+this.remote_offset;return a=a.setTime(b)};window.ksr_page_clock=new c})(); (function(){function c(d,a,b){if(d){this.options={unit_base:{seconds:119,minutes:119,hours:72,days:0},end_phrase:d.getAttribute("data-word")||"to go",count_down:d.getAttribute("data-dynamic")||!1};for(k in b)this.options[k]=b[k];this.clock=a;this.time_units=this.clock.time_units.slice(1);this.element=d;this.clock.is_set&&this.attach()}}function a(){this.elements=[];this.attach()}var b=function(d,a){var b=a||window.document.body,c=d.split("."),g=c[c.length-1],c=1<c.length&&c[0]?c[0]:"*";if(window.document.getElementsByClassName)return b.getElementsByClassName(g); if(b.querySelectorAll)return b.querySelectorAll(d);for(var c=b.getElementsByTagName(c),h=[],i=0,f;f=c[i];i++)b=RegExp("(^|\\s)"+g+"(\\s|$)"),(""+f.className).match(b)&&h.push(f);return h};c.prototype.get_remaining_time=function(){var d=this.remote_end_time-this.clock.get_remote_time();0>d&&(d=0);return d};c.prototype.get_current_unit=function(){for(var d,a=0;a<this.time_units.length&&!(d=this.time_units[a],this.get_remaining_time()<=this.options.unit_base[d[0]]*d[1]);a++);return d};c.prototype.update_element= function(){var a=this.get_current_unit(),b=Math.floor(this.get_remaining_time()/a[1]);isNaN(b)||(this.number_element.innerHTML=b,this.text_element.innerHTML=this.clock.pluralize(a[0],b)+" "+this.options.end_phrase)};c.prototype.valid=function(){return!(!this.number_element||!this.text_element)};c.prototype.attach=function(){function a(){c.update_element();if(c.options.count_down&&0<c.get_remaining_time()){var b=c.get_current_unit();this.timeout=window.setTimeout(a,c.clock.milliseconds_to_next_interval(b[1]))}} var c=this;if(this.remote_end_time_string=this.element.getAttribute("data-end_time"))this.remote_end_time_string.match(/^\d+$/)?(this.remote_end_time=new Date,this.remote_end_time.setTime(this.remote_end_time_string)):this.remote_end_time=new Date(this.remote_end_time_string),this.number_element=b(".num",this.element)[0],this.text_element=b(".text",this.element)[0],this.element.ksr_page_timer=!0,this.valid()&&a()};c.prototype.cancel=function(){this.timeout&&clearTimeout(this.timeout)};a.prototype.loading= !0;a.prototype.stop_finding=function(){this.attach_timers();this.loading=!1;document.addEventListener?document.removeEventListener("DOMContentLoaded",this.stop_finding,!1):document.attachEvent&&"complete"===document.readyState&&document.detachEvent("onreadystatechange",this.stop_finding)};a.prototype.bind_ready=function(){var a=this,b=function(){a.stop_finding.call(a)};document.addEventListener?(document.addEventListener("DOMContentLoaded",b,!1),window.addEventListener("load",b,!1)):document.attachEvent&& (document.attachEvent("onreadystatechange",b),window.attachEvent("onload",b))};a.prototype.attach_timers=function(){for(var a=b("div.ksr_page_timer"),e=0;e<a.length;e++)a[e].ksr_page_timer||(new c(a[e],window.ksr_page_clock),this.elements.push(a[e]))};a.prototype.attach=function(){var a=this;this.bind_ready();(function(){a.attach_timers();a.loading&&window.setTimeout(function(){a.attach_timers()},200)})()};window.ProjectTimer=c;new a})();
+  //]]>
+</script>
+
+<script class="template" id="template-widgets__video_embed_code" type="text/x-tmpl-mustache"><iframe width="{{width}}" height="{{height}}" src="{{{path}}}" frameborder="0" scrolling="no"> </iframe>
+</script><script class="template" id="template-projects__baseball_card_tall" type="text/x-tmpl-mustache"><div class="project-card-wrap project-card-wrap-tall border bg-white rounded clip">
+  <div class="project-card relative project-live {{#successful?}}successful{{/successful?}}">
+    <div class="project-thumbnail pt1 pl1 pr1">
+      <a href="{{urls.web.project}}" target="">
+        <img alt="Photo-little" class="projectphoto-little" src="{{photo.little}}" class="fit">
+      </a>
+    </div>
+    <div class="project-card-interior p1 h6 grey-dark">
+      <h6 class="project-title">
+        <a href="{{urls.web.project}}" target="" class="green-dark">{{name}}</a>
+      </h6>
+      <p class="mb1 ellipsis">
+        by
+        {{creator.name}}
+      </p>
+      <p class="blurb">
+        {{blurb}}
+      </p>
+    </div>
+    <div class="absolute-bottom bg-white rounded-bottom">
+
+      {{#location}}
+        <ul class="p1 list project-meta no-margin h6">
+          <li class="ellipsis">
+            <a href="{{location.urls.web.discover}}" data-location="{{location_json}}" class="grey-dark">
+              <span class="ss-icon ss-location"></span>
+              <span class="location-name">{{location.displayable_name}}</span>
+            </a>
+          </li>
+        </ul>
+      {{/location}}
+
+      <div class="project-stats-wrap pb1 pl1 pr1">
+
+        {{#failed?}}
+          <div class='project-status project-failed h6'>
+            <strong> Funding Unsuccessful</strong><br />
+            <span class="grey-dark">Project ended on {{formatted_deadline}}</span>
+          </div>
+        {{/failed?}}
+
+        {{#canceled?}}
+          <div class='project-status project-canceled h6'>
+            <strong> Funding Canceled</strong><br />
+            <span class="grey-dark">Project canceled on {{formatted_state_changed_at}}</span>
+          </div>
+        {{/canceled?}}
+
+        {{#successful?}}
+          <div class='project-pledged-successful bg-green white h6 pl1 pr1 mb1'>
+            <strong>Successful!</strong>
+          </div>
+        {{/successful?}}
+
+        {{#live_or_successful?}}
+          {{#live?}}
+            <div class="project-pledged-wrap bg-grey clip mb1">
+              <div class="project-pledged bg-green full-height" style="width: {{percent_raised_to_100}}%"></div>
+            </div>
+          {{/live?}}
+          <ul class="project-stats list no-margin h6 no-wrap">
+            <li class="first funded inline-block mr1">
+              <strong class="block h6">{{percent_raised_rounded}}%</strong>
+              <span class="grey-dark">funded</span>
+            </li>
+            <li class="pledged inline-block mr1">
+              <strong class="block h6">{{currency_symbol}}{{formatted_money}}</strong>
+              <span class="grey-dark">pledged</span>
+            </li>
+            {{#successful?}}
+              <li class="last successful inline-block">
+                <strong class="block h6">Funded</strong>
+                <div class="deadline grey-dark">{{formatted_deadline}}</div>
+              </li>
+            {{/successful?}}
+            {{#live?}}
+              <li class="last ksr_page_timer inline-block" data-end_time="{{javascript_deadline}}">
+                <strong class="block h6">
+                  <div class="num">30</div>
+                </strong>
+                <div class="span text grey-dark" data-word="left">days to go</div>
+              </li>
+            {{/live?}}
+          </ul>
+        {{/live_or_successful?}}
+      </div>
+    </div>
+  </div>
+</div>
+
+{{#friends_backing?}}
+  <div class="friend_project_context">
+    <div class="friend_facepile">
+      {{#truncated_friends}}
+        <img src="{{avatar.thumb}}" class="{{#has_metadata?}}small{{/has_metadata?}}">
+      {{/truncated_friends}}
+    </div>
+    <p class="friend_namepile">
+      {{{escaped_sentence}}}
+    </p>
+  </div>
+{{/friends_backing?}}
+</script><script class="template" id="template-projects__video_mode" type="text/x-tmpl-mustache"><a href='#' id='video_mode_close' class='close_button z2'><span class='ss-icon ss-delete'></span></a>
+
+<div class='title_card z1 {{context_classes}}' style="display:none;">
+  <div class='interior'>
+    <h2 class='project_title normal_weight'>{{name}}</h2>
+    <p class='blurb'>{{blurb}}</p>
+    <nav class='bar'>
+      <a id='play_button' class='left play' href='#'>
+        <span class='play_active'>
+          <span class='ss-icon ss-play'></span>
+          Play
+        </span>
+        <span class='pause_active'>
+          <span class='ss-icon ss-pause'></span>
+          Pause
+        </span>
+      </a>
+      {{#logged_in}}
+        <div class='remind right'>
+          {{#if_not_starred}}
+            <a class='follow' href='{{urls.web.project}}/watch'><span class='ss-icon ss-star'></span></a>
+          {{/if_not_starred}}
+          {{#if_starred}}
+            <a class='unfollow' href='{{urls.web.project}}/unwatch'><span class='ss-icon ss-star active'></span></a>
+          {{/if_starred}}
+        </div>
+      {{/logged_in}}
+      <a class='right explore button button_green small' href='#'>Explore this project</a>
+    </nav>
+  </div>
+</div>
+
+<div class='channel_controls z1'>
+  <a href='#' class='{{#playlist_is_location}}selected {{/playlist_is_location}}location'>Something else near {{location.first_name}} <span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_featured}}selected {{/playlist_is_featured}}featured'>Something different<span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_category}}selected {{/playlist_is_category}}category'>Something else in {{category.name}} <span class='ss-icon ss-navigateright'></span></a>
+</div>
+
+<div class='project_video' style='background-image: url('{{photo.full}}')'>
+  <div class='cover'>
+    <video>
+      <source src='{{video.high}}' type='video/mp4'/>
+      <source src='{{video.webm}}' type='video/webm'/>
+    </video>
+  </div>
+</div>
+</script><script class="template" id="template-site__video_mode_fourohfour" type="text/x-tmpl-mustache"><section class='four_oh_four'>
+  <p class='big_type'>
+    Looks like you've reached the end of the line! <br />Check out <a class="another" href='#'>another channel</a> or <a href='/discover'>browse projects in discover</a>.
+  </p>
+</section>
+</script>
+
+<script id="schwamm_formatting_options" type="text/javascript">
+//<![CDATA[
+(function(){window.formatters = window.formatters || {}; var formatting_options = {"distance_date_intervals":[[5,"just now"],[29,"less than a minute ago"],[89,"1 minute ago"],[2640,"%m minutes ago"],[5340,"about 1 hour ago"],[82800,"about %h hours ago"],[147600,"1 day ago"],[604800,"%d days ago"],[15552000,"on %t"],[0,"on %y"]],"currency_symbol_mappings":{"AFN":"\u060b","ALL":"Lek","ARS":"$","AUD":"$","AWG":"\u0192","AZN":"\u043c\u0430\u043d","BAM":"KM","BBD":"$","BGN":"\u043b\u0432","BMD":"$","BND":"$","BOB":"$b","BRL":"R$","BSD":"$","BWP":"P","BYR":"p.","BZD":"BZ$","CAD":"$","CLP":"$","CNY":"\u00a5","COP":"$","CRC":"\u20a1","CUP":"\u20b1","CZK":"K\u010d","DKK":"kr","DOP":"RD$","EGP":"\u00a3","EUR":"\u20ac","FJD":"$","FKP":"\u00a3","GBP":"\u00a3","GIP":"\u00a3","GTQ":"Q","GYD":"$","HKD":"$","HNL":"L","HRK":"kn","HUF":"Ft","IDR":"Rp","ILS":"\u20aa","IRR":"\ufdfc","ISK":"kr","JMD":"J$","JPY":"\u00a5","KGS":"\u043b\u0432","KHR":"\u17db","KPW":"\u20a9","KRW":"\u20a9","KYD":"$","KZT":"\u043b\u0432","LAK":"\u20ad","LBP":"\u00a3","LKR":"\u20a8","LRD":"$","LTL":"Lt","LVL":"Ls","MKD":"\u0434\u0435\u043d","MNT":"\u20ae","MUR":"\u20a8","MXN":"$","MYR":"RM","MZN":"MT","NAD":"$","NGN":"\u20a6","NIO":"C$","NOK":"kr","NPR":"\u20a8","NZD":"$","OMR":"\ufdfc","PAB":"B/.","PEN":"S/.","PHP":"\u20b1","PKR":"\u20a8","PLN":"z\u0142","PYG":"Gs","QAR":"\ufdfc","RON":"lei","RSD":"\u0414\u0438\u043d.","RUB":"\u0440\u0443\u0431","SAR":"\ufdfc","SBD":"$","SCR":"\u20a8","SEK":"kr","SGD":"$","SHP":"\u00a3","SOS":"S","SRD":"$","SVC":"$","SYP":"\u00a3","THB":"\u0e3f","TRY":"TL","TTD":"TT$","TWD":"NT$","UAH":"\u20b4","USD":"$","UYU":"$U","UZS":"\u043b\u0432","VEF":"Bs","VND":"\u20ab","YER":"\ufdfc","ZAR":"R"},"currency_trailing_code_mappings":{"AUD":true,"CAD":true,"NZD":true,"USD":true},"currency_formats":["money","shorter_money"]}; for (key in formatting_options) {window.formatters[key] = formatting_options[key]};}());
+//]]>
+</script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("begin_base.js_tag");}
+  //]]>
+</script>
+<script src="https://d297h9he240fqh.cloudfront.net/assets/packages/base-45cdab84617ddfb8905b7cddc8500c19.js" type="text/javascript"></script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("end_base.js_tag");}
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    document.domain='kickstarter.com';
+  //]]>
+</script>
+
+<iframe height="0" id="api_xdreceiver" src="https://api.kickstarter.com/xdreceiver/85e6.html" style="display: none;" width="0"></iframe>
+
+
+
+<div id="fb-root"></div>
+<script>
+  //<![CDATA[
+    var channelUrl = window.location.protocol + "//" + window.location.host + "/channel.html",
+      skip_autologin = $('body').is('.skip_autologin');
+    
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId: window.fb_app_id,
+        channelUrl: channelUrl,
+        status: true,    // check login status
+        cookie: true,    // enable cookies to allow the server to access the session
+        xfbml: true,     // parse XFBML
+        logging: false   // turn off logging
+      });
+    
+      FB.getLoginStatus(function (response) {
+        if (response.status === 'connected') {
+          if (read_cookie("logout_from_fb")) {
+            FB.logout();
+            destroy_cookie("logout_from_fb");
+          } else if (!skip_autologin) {
+            $.get("/fb/autologin", {'fbsr': response.authResponse.signedRequest});
+          } else if (false && 0 == response.authResponse.userID) {
+            $.get("/fb/refresh", {'fbsr': response.authResponse.signedRequest});
+          }
+        } else {
+          if (read_cookie("logout_from_fb")) {
+            destroy_cookie("logout_from_fb");
+          }
+        }
+      })
+    
+      $(document).trigger('fb:loaded');
+    };
+    
+    
+    // Load the SDK Asynchronously
+    (function(d){
+      var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+      js = d.createElement('script'); js.id = id; js.async = true;
+      js.src = "//connect.facebook.net/en_US/all.js";
+      d.getElementsByTagName('head')[0].appendChild(js);
+    }(document));
+  //]]>
+</script>
+
+
+</body>
+</html>

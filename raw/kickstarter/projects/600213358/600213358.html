@@ -1,0 +1,1973 @@
+<!DOCTYPE html>
+<html class="projects_show  fontface no-js" lang="en">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# kickstarter: http://ogp.me/ns/fb/kickstarter#">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-5.newrelic.com","errorBeacon":"jserror.newrelic.com","licenseKey":"b04b883ad2","applicationID":"11086","transactionName":"cFteRUULX1wHFhtIEFxeVVJDFxxDCgtD","queueTime":6,"applicationTime":316,"ttGuid":"","agentToken":null,"agent":"js-agent.newrelic.com/nr-411.min.js"}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"Vw4BVEVSCQMIUg=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e){function n(t,e,n){n||(n={});for(var r=o[t],a=r&&r.length||0,s=n[i]||(n[i]={}),u=0;a>u;u++)r[u].apply(s,e);return s}function r(t,e){var n=o[t]||(o[t]=[]);n.push(e)}var o={},i="nr@context";e.exports={on:r,emit:n}},{}],2:[function(t){function e(t,e,n,i,s){return u?u-=1:r("err",[s||new UncaughtException(t,e,n)]),"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t(5),a=window.onerror,s=!1,u=0;t("loader").features.push("err"),window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(d){"stack"in d&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(4),s=!0)}i.on("fn-start",function(){s&&(u+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&u>0&&(u-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:4,3:3,4:6,5:1,6:14,handle:"D5DuLP",loader:"G9z0Bl"}],3:[function(t){function e(t){r.inPlace(t,["addEventListener","removeEventListener"],"-",n)}function n(t){return t[1]}var r=t(1),o=(t(3),t(2));if(e(window),"getPrototypeOf"in Object){for(var i=document;i&&!i.hasOwnProperty("addEventListener");)i=Object.getPrototypeOf(i);i&&e(i);for(var a=XMLHttpRequest.prototype;a&&!a.hasOwnProperty("addEventListener");)a=Object.getPrototypeOf(a);a&&e(a)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&e(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=e["nr@wrapped"]?t[1]=e["nr@wrapped"]:e["nr@wrapped"]=t[1]=r(e,"fn-"):"function"==typeof e.handleEvent&&r.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:15,2:1,3:14}],4:[function(t){var e=(t(3),t(1)),n=t(2);e.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=e(t[0],"fn-")})},{1:15,2:1,3:14}],5:[function(t){function e(t){var e=t[0];"string"==typeof e&&(e=new Function(e)),t[0]=n(e,"fn-")}var n=(t(3),t(1)),r=t(2);n.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",e)},{1:15,2:1,3:14}],6:[function(t){function e(){o.inPlace(this,s,"fn-")}function n(t,e){o.inPlace(e,["onreadystatechange"],"fn-")}function r(t,e){return e}var o=t(1),i=t(2),a=window.XMLHttpRequest,s=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];window.XMLHttpRequest=function(t){var n=new a(t);try{i.emit("new-xhr",[],n),o.inPlace(n,["addEventListener","removeEventListener"],"-",function(t,e){return e}),n.addEventListener("readystatechange",e,!1)}catch(r){try{i.emit("internal-error",r)}catch(s){}}return n},window.XMLHttpRequest.prototype=a.prototype,o.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",r),i.on("send-xhr-start",n),i.on("open-xhr-start",n)},{1:15,2:1}],7:[function(t){function e(){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;u>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,d="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=e(d);if(f&&(r.rxSize=f),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}t("loader").features.push("xhr");var o=t("handle"),i=t(1),a=t(5),s=["load","error","abort","timeout"],u=s.length,d=t(2);t(3),t(4),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var d=e(o);d&&(r.txSize=d)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",e)}catch(r){}}};for(var f=0;u>f;f++)n.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&e()},{1:8,2:11,3:3,4:6,5:1,handle:"D5DuLP",loader:"G9z0Bl"}],8:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e){var n=r[t];return n?n.apply(this,e):(o[t]||(o[t]=[]),void o[t].push(e))}var r={},o={};e.exports=n,n.queues=o,n.handlers=r},{}],11:[function(t,e){function n(t){if(!t||"object"!=typeof t&&"function"!=typeof t)return-1;if(t===window)return 0;if(o.call(t,"__nr"))return t.__nr;try{return Object.defineProperty(t,"__nr",{value:r,writable:!0,enumerable:!1}),r}catch(e){return t.__nr=r,r}finally{r+=1}}var r=1,o=Object.prototype.hasOwnProperty;e.exports=n},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&u&&u.body){p.proto="https"===c.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=u.createElement("script");e.src=p.proto+t.agent,u.body.appendChild(e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,u=s.document,d="addEventListener",f="attachEvent",c=(""+location).split("?")[0],p=e.exports={offset:i(),origin:c,features:[]};u[d]?(u[d]("DOMContentLoaded",o,!1),s[d]("load",n,!1)):(u[f]("onreadystatechange",r),s[f]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],14:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],15:[function(t,e){function n(t,e,r,s){function nrWrapper(){try{var n,a=u(arguments),d=this,f=r&&r(a,d)||{}}catch(c){i([c,"",[a,d,s],f])}o(e+"start",[a,d,s],f);try{return n=t.apply(d,a)}catch(p){throw o(e+"err",[a,d,p],f),p}finally{o(e+"end",[a,d,n],f)}}return a(t)?t:(e||(e=""),nrWrapper[n.flag]=!0,nrWrapper)}function r(t,e,r,o){r||(r="");var i,s,u,d="-"===r.charAt(0);for(u=0;u<e.length;u++)s=e[u],i=t[s],a(i)||(t[s]=n(i,d?s+r:r,o,s,t))}function o(t,e,n){try{s.emit(t,e,n)}catch(r){i([r,t,e,n])}}function i(t){try{s.emit("internal-error",t)}catch(e){}}function a(t){return!(t&&"function"==typeof t&&t.apply&&!t[n.flag])}var s=t(1),u=t(2);e.exports=n,n.inPlace=r,n.flag="nr@wrapper"},{1:1,2:14}]},{},["G9z0Bl",2,7]);</script><script>
+  //<![CDATA[
+    docElement = this.document.documentElement;
+    docElement.className=docElement.className.replace(/\bno-js\b/,'') + 'js';
+  //]]>
+</script>
+<title>Next Car Game: A Motorsport With Attitude! (Canceled) by Bugbear Inc. &mdash; Kickstarter</title><script>
+  //<![CDATA[
+    window.report_errors = true;
+    window.honeybadger_configuration = {
+      api_key : "02ab109335c0dd1a93506d92f22217a7",
+      environment : "production",
+      component : "projects",
+      action : "show",
+      onerror : false
+    };
+  //]]>
+</script>
+
+
+<!--[if lt IE 9]>
+  <script src="//html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta content="telephone=no" name="format-detection">
+
+<!--[if !IE]> -->
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base-9f623ad5d021a188cfb2d68a0cdf7a7b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<!-- <![endif]-->
+<!--[if IE]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base_blessed-2640c72487552f9a2ef9f2620b4af860.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<!--[if lte IE 9]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_nine-a93fe10530f175f96c4078b7e070d7e1.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 8]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_eight-f75aeb274436f94a0d243774456b1c62.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 7]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie-c019c01acd3a96588b346cf577a3504f.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_seven-5a3d2cef660cd281fd844b04b2397dbb.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if IE 6]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_six-e4d3caf76e405fe19aee6ece8bda701b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<link href="https://d297h9he240fqh.cloudfront.net/favicon.png" rel="icon" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-precomposed-7b603dba7cf80e4acc57d94a991bebbd.png" rel="apple-touch-icon-precomposed" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-ipad-precomposed-3176f72977daf43dee3b0d348484dc01.png" rel="apple-touch-icon-precomposed" sizes="72x72" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-iphone4-precomposed-b93b70168cd8492c843d0fea873c7f83.png" rel="apple-touch-icon-precomposed" sizes="114x114" type="image/png">
+<link href="https://www.kickstarter.com/services/oembed?url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2F1470493497%2Fnext-car-game-a-motorsport-with-attitude" rel="alternate" title="Next Car Game: A Motorsport With Attitude! (Canceled) Script Tag oEmbed" type="application/json+oembed">
+<link rel="alternate" type="application/atom+xml" title="Next Car Game: A Motorsport With Attitude! (Canceled) : Kickstarter" href="https://www.kickstarter.com/projects/1470493497/next-car-game-a-motorsport-with-attitude/posts.atom" />
+<meta property="twitter:app:id:iphone" content="596961532"/>
+<meta property="twitter:app:name:iphone" content="Kickstarter"/>
+<meta property="twitter:app:url:iphone" content="ksr://www.kickstarter.com/projects/1470493497/next-car-game-a-motorsport-with-attitude"/>
+<meta name="video_height" content="360"/>
+<meta name="video_width" content="640"/>
+<meta name="video_type" content="application/x-shockwave-flash"/>
+<meta name="title" content="Kickstarter &gt;&gt; Next Car Game: A Motorsport With Attitude! (Canceled) by Bugbear Inc."/>
+<meta name="description" content="Bugbear Inc. is raising funds for Next Car Game: A Motorsport With Attitude! (Canceled) on Kickstarter! 
+
+ A demolition racing game with spectacular crashes, realistic driving physics and intense car building from the makers of FlatOut!"/>
+<meta name="robots" content="noindex"/>
+<meta property="og:title" content="Next Car Game: A Motorsport With Attitude! (Canceled)"/>
+<meta property="og:type" content="kickstarter:project"/>
+<meta property="og:image" content="https://s3.amazonaws.com/ksr/projects/605932/photo-main.jpg?1397825924"/>
+<meta property="og:url" content="https://www.kickstarter.com/projects/1470493497/next-car-game-a-motorsport-with-attitude"/>
+<meta property="og:site_name" content="Kickstarter"/>
+<meta property="fb:app_id" content="69103156693"/>
+<meta property="og:description" content="A demolition racing game with spectacular crashes, realistic driving physics and intense car building from the makers of FlatOut!"/>
+<meta property="kickstarter:creator" content="https://www.kickstarter.com/profile/1470493497"/>
+<meta property="twitter:url:landing_url" content="https://www.kickstarter.com/projects/1470493497/next-car-game-a-motorsport-with-attitude"/>
+<meta property="twitter:card" content="2427656750:kickstarter_project"/>
+<meta property="twitter:site" content="@kickstarter"/>
+<meta property="twitter:site:id" content="16186995"/>
+<meta property="twitter:text:title" content="Next Car Game: A Motorsport With Attitude! (Canceled)"/>
+<meta property="twitter:text:artist" content="Bugbear Inc."/>
+<meta property="twitter:text:backers" content="2487"/>
+<meta property="twitter:text:pledged" content="$81,772 USD"/>
+<meta property="twitter:text:time" content="0 seconds"/>
+<meta property="twitter:text:location" content="Helsinki, Finland"/>
+<meta property="twitter:image:location_image" content="https://d3mlfyygrfdi2i.cloudfront.net/b40e/pin.png"/>
+<meta property="twitter:text:description" content="A demolition racing game with spectacular crashes, realistic driving physics and intense car building from the makers of FlatOut!"/>
+<meta property="twitter:image:media" content="https://s3.amazonaws.com/ksr/projects/605932/photo-main.jpg?1397825924"/>
+<meta property="twitter:image:width" content="640"/>
+<meta property="twitter:image:height" content="480"/>
+<meta property="twitter:player:stream:url" content="https://d2pq0u4uni88oo.cloudfront.net/projects/605932/video-306235-h264_base.mp4"/>
+<meta property="twitter:player:stream:content" content="video/mp4"/>
+<meta property="twitter:player:url" content="https://www.kickstarter.com/projects/1470493497/next-car-game-a-motorsport-with-attitude/widget/video.html"/>
+<meta property="twitter:player:height" content="360"/>
+<meta property="twitter:player:width" content="640"/>
+<meta property="twitter:maxage" content="60"/>
+<meta property="og:video" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F605932%2Fvideo-306235-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F605932%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Bugbear+Inc.&amp;project_title=Next+Car+Game%3A+A+Motorsport+With+Attitude%21+%28Canceled%29&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2F1470493497%2Fnext-car-game-a-motorsport-with-attitude&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:secure_url" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F605932%2Fvideo-306235-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F605932%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Bugbear+Inc.&amp;project_title=Next+Car+Game%3A+A+Motorsport+With+Attitude%21+%28Canceled%29&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2F1470493497%2Fnext-car-game-a-motorsport-with-attitude&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:height" content="360"/>
+<meta property="og:video:width" content="640"/>
+<meta property="og:video:type" content="application/x-shockwave-flash"/>
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="tC5+Ufoc6NPRc1ZV/v2RP2BDhTjCq3hUSBcxy9i/c6Y=" name="csrf-token" />
+<script type="text/javascript">
+  var _sift = _sift || [];
+  _sift.push(['_setAccount', '637102']);
+  _sift.push(['_setUserId', '']);
+  _sift.push(['_trackPageview']);
+
+  (function() {
+    function loadSift() {
+      var sift, s;
+      if (root.visitor_id) {
+        _sift.push(['_setSessionId', root.visitor_id]);
+      }
+      sift = document.createElement('script');
+      sift.type = 'text/javascript';
+      sift.async = true;
+      sift.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dtlilztwypawv.cloudfront.net/s.js';
+      s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(sift, s);
+    }
+    if (window.attachEvent) {
+      window.attachEvent('onload', loadSift);
+    } else {
+      window.addEventListener('load', loadSift, false);
+    }
+  })();
+</script>
+<link href="http://kck.st/18KixkM" rel="shorturl">
+<link href="https://www.kickstarter.com/projects/1470493497/next-car-game-a-motorsport-with-attitude" rel="canonical">
+<link href="https://s3.amazonaws.com/ksr/projects/605932/photo-med.jpg?1397825924" rel="image_src">
+<link href="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F605932%2Fvideo-306235-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F605932%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Bugbear+Inc.&amp;project_title=Next+Car+Game%3A+A+Motorsport+With+Attitude%21+%28Canceled%29&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2F1470493497%2Fnext-car-game-a-motorsport-with-attitude&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque" rel="video_src">
+<script>
+  //<![CDATA[
+    window.current_checkout = "{&quot;id&quot;:0,&quot;domestic&quot;:null,&quot;amount&quot;:0.0,&quot;updated_at&quot;:0,&quot;created_at&quot;:0}";
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.current_ip = '94.209.101.212';
+    window.current_ip_datacenter = 'false';
+    window.enabled_features = {"elasticsearch":true,"security_history_read":true,"security_history_write":true,"advanced_discovery_es":true,"ios_crashlytics":true,"ios_mixpanel":true,"stories_veronica_mars":true,"veronica_mars_hero":true,"password_reset_banner":true};
+    window.fb_app_id = '69103156693';
+    
+    var _sf_startpt=(new Date()).getTime();
+    
+    window.current_project = "{&quot;id&quot;:600213358,&quot;name&quot;:&quot;Next Car Game: A Motorsport With Attitude! (Canceled)&quot;,&quot;blurb&quot;:&quot;A demolition racing game with spectacular crashes, realistic driving physics and intense car building from the\\u00a0makers of FlatOut!&quot;,&quot;goal&quot;:350000.0,&quot;pledged&quot;:81772.77,&quot;state&quot;:&quot;canceled&quot;,&quot;slug&quot;:&quot;next-car-game-a-motorsport-with-attitude&quot;,&quot;disable_communication&quot;:false,&quot;country&quot;:&quot;US&quot;,&quot;currency&quot;:&quot;USD&quot;,&quot;currency_symbol&quot;:&quot;$&quot;,&quot;currency_trailing_code&quot;:true,&quot;deadline&quot;:1385923317,&quot;state_changed_at&quot;:1385127689,&quot;created_at&quot;:1372677990,&quot;launched_at&quot;:1383327717,&quot;backers_count&quot;:2487,&quot;photo&quot;:{&quot;full&quot;:&quot;https://s3.amazonaws.com/ksr/projects/605932/photo-full.jpg?1397825924&quot;,&quot;ed&quot;:&quot;https://s3.amazonaws.com/ksr/projects/605932/photo-ed.jpg?1397825924&quot;,&quot;med&quot;:&quot;https://s3.amazonaws.com/ksr/projects/605932/photo-med.jpg?1397825924&quot;,&quot;little&quot;:&quot;https://s3.amazonaws.com/ksr/projects/605932/photo-little.jpg?1397825924&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/projects/605932/photo-small.jpg?1397825924&quot;,&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/projects/605932/photo-thumb.jpg?1397825924&quot;,&quot;1024x768&quot;:&quot;https://s3.amazonaws.com/ksr/projects/605932/photo-1024x768.jpg?1397825924&quot;,&quot;1536x1152&quot;:&quot;https://s3.amazonaws.com/ksr/projects/605932/photo-1536x1152.jpg?1397825924&quot;},&quot;creator&quot;:{&quot;id&quot;:1470493497,&quot;name&quot;:&quot;Bugbear Inc.&quot;,&quot;avatar&quot;:{&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/7161276/bugbear_logo.thumb.jpg?1381844873&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/7161276/bugbear_logo.small.jpg?1381844873&quot;,&quot;medium&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/7161276/bugbear_logo.medium.jpg?1381844873&quot;},&quot;urls&quot;:{&quot;web&quot;:{&quot;user&quot;:&quot;https://www.kickstarter.com/profile/1470493497&quot;},&quot;api&quot;:{&quot;user&quot;:&quot;https://api.kickstarter.com/v1/users/1470493497?signature=1399957666.67afd0521f0ddd43c5100ca84fff4ab31f52d64e&quot;}}},&quot;location&quot;:{&quot;id&quot;:565346,&quot;name&quot;:&quot;Helsinki&quot;,&quot;slug&quot;:&quot;helsinki-helsinki-fi&quot;,&quot;short_name&quot;:&quot;Helsinki, Finland&quot;,&quot;displayable_name&quot;:&quot;Helsinki, Finland&quot;,&quot;country&quot;:&quot;FI&quot;,&quot;state&quot;:&quot;Uusimaa&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/helsinki-helsinki-fi&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/helsinki-helsinki-fi&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1399952034.3f406a6f3eaed9ae3de4161a6a70a8162dd40145&amp;woe_id=565346&quot;}}},&quot;category&quot;:{&quot;id&quot;:35,&quot;name&quot;:&quot;Video Games&quot;,&quot;slug&quot;:&quot;games/video games&quot;,&quot;position&quot;:7,&quot;parent_id&quot;:12,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;http://www.kickstarter.com/discover/categories/games/video%20games&quot;}}},&quot;urls&quot;:{&quot;web&quot;:{&quot;project&quot;:&quot;https://www.kickstarter.com/projects/1470493497/next-car-game-a-motorsport-with-attitude&quot;,&quot;project_short&quot;:&quot;http://kck.st/18KixkM&quot;,&quot;updates&quot;:&quot;https://www.kickstarter.com/projects/1470493497/next-car-game-a-motorsport-with-attitude/posts&quot;},&quot;api&quot;:{&quot;project&quot;:&quot;https://api.kickstarter.com/v1/projects/600213358?signature=1399957666.29574d48a0947476d703510be3b9037244700cc1&quot;,&quot;comments&quot;:&quot;https://api.kickstarter.com/v1/projects/600213358/comments?signature=1399957666.8e6357c9effc55d90adddc603bf28c49203f2ccc&quot;,&quot;updates&quot;:&quot;https://api.kickstarter.com/v1/projects/600213358/updates?signature=1399957666.f6dfc8eb842d69ff8c7e2f0a8c2ca7e6becdc858&quot;}},&quot;updated_at&quot;:1397825933,&quot;canceled_at&quot;:1385127689,&quot;video&quot;:{&quot;id&quot;:306235,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/605932/video-306235-h264_high.mp4?2013&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/605932/video-306235-h264_base.mp4?2013&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/605932/video-306235-webm.webm?2013&quot;,&quot;width&quot;:640,&quot;height&quot;:360,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/605932/video-306235-h264_base.jpg?2013&quot;},&quot;comments_count&quot;:252,&quot;updates_count&quot;:8,&quot;rewards&quot;:[{&quot;id&quot;:0,&quot;minimum&quot;:1,&quot;reward&quot;:&quot;No Reward&quot;},{&quot;id&quot;:2112098,&quot;minimum&quot;:1.0,&quot;reward&quot;:&quot;DIGITAL CHRISTMAS CARD\\r\\n==============================\\r\\nEvery little bit counts! We sincerely appreciate your support, and as our thank-you, we will send you a digital Christmas card from the whole Bugbear Team!&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1385856000,&quot;project_id&quot;:600213358,&quot;backers_count&quot;:99,&quot;updated_at&quot;:1384969204},{&quot;id&quot;:2085890,&quot;minimum&quot;:20.0,&quot;reward&quot;:&quot;\\u201cKICKSTARTER SPECIAL\\u201d \\u2022 PC DIGITAL GAME + SNEAK PEEK ==============================\\r\\nDigital download of the game for PC and a playable sneak peek technology demo, released right after our Kickstarter campaign.  Please see the rewards chart for full contents.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1398902400,&quot;project_id&quot;:600213358,&quot;backers_count&quot;:1358,&quot;updated_at&quot;:1385125366},{&quot;id&quot;:2085891,&quot;minimum&quot;:30.0,&quot;reward&quot;:&quot;\\&quot;WEEKEND SMASHER\\&quot; \\u2022 EARLY ACCESS + EXCLUSIVE WALLPAPERS\\r\\n==============================\\r\\nCatch a head start with Early Access and a pack of mood-setting, exclusive wallpapers! You\\u2019ll also get a digital download of the game for PC and a playable sneak peek technology demo. Please see the rewards chart for full contents.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1398902400,&quot;project_id&quot;:600213358,&quot;backers_count&quot;:410,&quot;updated_at&quot;:1385091420},{&quot;id&quot;:2085892,&quot;minimum&quot;:40.0,&quot;reward&quot;:&quot;\\&quot;FULL-TIME WRECKER\\&quot; \\u2022 SPECIAL BACKER CAR, EXCLUSIVE DIGITAL SOUNDTRACK + FULL-TIME WRECKER COMMUNITY BADGE\\r\\n============================== \\r\\nYou want the full experience, including the special Backer race car only available for limited time? Sure thing! You\\u2019ll also get the exclusive digital soundtrack, Full-Time Wrecker badge on the community forum and a lot of other awesome content.  Please see the rewards chart for full contents.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1398902400,&quot;project_id&quot;:600213358,&quot;backers_count&quot;:214,&quot;updated_at&quot;:1385120520},{&quot;id&quot;:2085894,&quot;minimum&quot;:60.0,&quot;reward&quot;:&quot;\\u201cMASTER BLASTER\\&quot; COLLECTOR&#39;S EDITION \\u2022 EXCLUSIVE DERBY CAR, NAME IN THE GAME, DIGITAL MAKING-OF BOOK + MASTER BLASTER COMMUNITY BADGE\\r\\n============================== \\r\\nBe a Master Blaster and get a super exclusive derby car that the community will decide what it will be \\u2013 how about a school bus? A hearse? Maybe an excavator! Sounds crazy, but you decide! Your name will also be featured in the in-game classified ads for the whole world to see, PLUS you\\u2019ll get a gorgeous digital making-of book and a rocking Master Blaster badge on the community forum, not to mention the whole lot of other goodies!  Please see the rewards chart for full contents.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1398902400,&quot;project_id&quot;:600213358,&quot;backers_count&quot;:197,&quot;updated_at&quot;:1385126176},{&quot;id&quot;:2108800,&quot;minimum&quot;:60.0,&quot;reward&quot;:&quot;\\&quot;FULL-TIME WRECKER\\&quot; BOXED\\r\\n============================== The full experience in a physical form! You\\u2019ll get the whole Full-Time Wrecker experience AND a physical boxed copy of the game for PC. Please see the rewards chart for full contents.&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1398902400,&quot;project_id&quot;:600213358,&quot;backers_count&quot;:20,&quot;updated_at&quot;:1385081989},{&quot;id&quot;:2085895,&quot;minimum&quot;:80.0,&quot;reward&quot;:&quot;\\u201cMASTER BLASTER\\&quot; BOXED\\r\\n============================== Master Blaster Collector&#39;s Edition \\u2013 BOXED! You\\u2019ll get all the great stuff included in the Master Blaster Collector\\u2019s Edition PLUS a physical boxed copy of the game for PC. How cool is that?  Please see the rewards chart for full contents.&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1398902400,&quot;project_id&quot;:600213358,&quot;backers_count&quot;:27,&quot;updated_at&quot;:1385032153},{&quot;id&quot;:2085896,&quot;minimum&quot;:80.0,&quot;reward&quot;:&quot;\\u201cTEAM BUGBEAR MEMBER\\u201d SPECIAL EDITION \\u2022 YOUR NAME IN THE CREDITS UNDER HONORARY TEAM MEMBERS, EXCLUSIVE TEAM BUGBEAR PAINT JOB + TEAM BUGBEAR MEMBER COMMUNITY BADGE\\r\\n============================== Become a Bugbearian! You\\u2019ll receive a seriously exclusive Team Bugbear car paint job and Team Bugbear member community badge to show everyone that you\\u2019re rolling with the Bugbear guys. You&#39;ll also get your name listed in the game\\u2019s credits under honorary team members, not to mention a bunch of other digital goodness!  Please see the rewards chart for full contents.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1398902400,&quot;project_id&quot;:600213358,&quot;backers_count&quot;:60,&quot;updated_at&quot;:1384786538},{&quot;id&quot;:2085897,&quot;minimum&quot;:99.0,&quot;reward&quot;:&quot;\\u201cTEAM BUGBEAR MEMBER\\&quot; BOXED SPECIAL EDITION \\u2022 BOXED GAME + EXCLUSIVE T-SHIRT.\\r\\n==============================\\r\\nYou\\u2019ll get all the Team Bugbear Member goodies and a really, really exclusive t-shirt only available for limited time as well as a physical boxed copy of the PC game, not to mention a whole lot of other cool stuff!  Please see the rewards chart for full contents.&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;20.0&quot;,&quot;estimated_delivery_on&quot;:1398902400,&quot;project_id&quot;:600213358,&quot;backers_count&quot;:37,&quot;updated_at&quot;:1385120551},{&quot;id&quot;:2085899,&quot;minimum&quot;:120.0,&quot;reward&quot;:&quot;\\u201cSCREWDRIVER\\u201d PACK \\u2022 EXCLUSIVE POSTER, SCREWDRIVER COMMUNITY BADGE + BOXED GAME\\r\\n==============================\\r\\nMake wrecks, not war! You\\u2019ll get to spread wrecking love with an exclusive poster, a t-shirt, a super hot Screwdriver badge on the community forum, a physical boxed copy of the PC game and a bundle of other lovely things.  Please see the rewards chart for full contents.&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;20.0&quot;,&quot;estimated_delivery_on&quot;:1398902400,&quot;project_id&quot;:600213358,&quot;backers_count&quot;:6,&quot;updated_at&quot;:1384618340},{&quot;id&quot;:2085900,&quot;minimum&quot;:160.0,&quot;reward&quot;:&quot;\\u201cCRASH CHAMPION\\u201d EDITION \\u2022 EXCLUSIVE 3D PRINTED AMERICAN RACING CAR, CRASH CHAMPION COMMUNITY BADGE + BOXED GAME\\r\\n==============================\\r\\nAre you a Crash Champion? If you are, this stuff is for you! You\\u2019ll get to race like a champ with a very exclusive 3D printed plastic American racing car and show your undisputed awesomeness with a Crash Champion badge on the community forum. Naturally you\\u2019ll also get a load of other neat stuff, including a physical boxed copy of the PC game!  Please see the rewards chart for full contents.&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;20.0&quot;,&quot;estimated_delivery_on&quot;:1398902400,&quot;project_id&quot;:600213358,&quot;backers_count&quot;:24,&quot;updated_at&quot;:1384693984},{&quot;id&quot;:2085903,&quot;minimum&quot;:1000.0,&quot;reward&quot;:&quot;\\u201cBUGBEAR VEHICLE ARTIST\\u201d \\u2022 GET TO DESIGN A PAINT JOB, VEHICLE ARTIST COMMUNITY BADGE, EXCLUSIVE SIGNED PRINTED MAKING-OF BOOK + SIGNED POSTER\\r\\n============================== \\r\\nDesign a car paint job with us that EVERYONE will get to see in the game! If you know how to  design a sketch or have a sweet idea, we know how to put it in-game. You\\u2019ll also get the printed making-of book and the poster, both signed by the Bugbear team, an exclusive Track Designer badge on the community forum, a physical boxed copy of the PC game as well as a wealth of other goodies!  Please see the rewards chart for full contents.&quot;,&quot;limit&quot;:19,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1398902400,&quot;project_id&quot;:600213358,&quot;remaining&quot;:16,&quot;backers_count&quot;:3,&quot;updated_at&quot;:1383843007},{&quot;id&quot;:2085904,&quot;minimum&quot;:5000.0,&quot;reward&quot;:&quot;\\u201cBUGBEAR TRACK DESIGNER\\u201d \\u2022 GET TO DESIGN A TRACK + TRACK DESIGNER COMMUNITY BADGE\\r\\n==============================\\r\\nKnow how to design a killer derby or race track? Awesome, let\\u2019s put it in the game! You\\u2019ll first submit a sketch or an idea to us, after which you&#39;ll get to work closely with our Level Design team to recreate it in the game. You\\u2019ll also get the printed making-of book and the poster, both signed by the Bugbear team, as well as a very exclusive Track Designer badge on the community forum, a boxed copy of the PC game and a load of other nice stuff!  Please see the rewards chart for full contents.&quot;,&quot;limit&quot;:3,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1398902400,&quot;project_id&quot;:600213358,&quot;remaining&quot;:3,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1383309789},{&quot;id&quot;:2085905,&quot;minimum&quot;:7500.0,&quot;reward&quot;:&quot;\\u201cSAUNA + SPEED DAY\\u201d \\u2022 A DAY AT THE RACE TRACK AND SAUNA WITH THE TEAM\\r\\n==============================\\r\\nTake it to the track with the Bugbear guys! Fly to Finland and get down to the race track, where you can either challenge one of the Bugbear guys yourself in rallycross or simply enjoy the thrill of speed by riding shotgun to a professional driving. Should you want to attack the track yourself, professional coaching at the track is arranged. We will finish off the speed day in a traditional Finnish way of having a sauna and a nice meal with a choice selection of fitting drinks. One hotel night at a hotel in Helsinki is included in the price. Needless to say, you\\u2019ll also get all the goodies! Flights to and from Finland are not included. Note that dates may vary depending on availability. Please see the rewards chart for full contents.&quot;,&quot;limit&quot;:5,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1398902400,&quot;project_id&quot;:600213358,&quot;remaining&quot;:5,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1383562445},{&quot;id&quot;:2102294,&quot;minimum&quot;:10000.0,&quot;reward&quot;:&quot;\\u201cMEET SANTA!\\u201d \\u2022 GET TO MEET SANTA CLAUS IN LAPLAND\\r\\n==============================\\r\\nFOR TWO PERSONS! Bring your best friend or significant other with you and spend a weekend in snowy Arctic Circle, Lapland of Northern Finland. Experience the breathtaking Finnish nature in winter, enjoy skiing or take a ride in reindeer sleigh, see the famous northern lights, and of course, get to meet the one and only Santa! Includes one night in Helsinki, two nights in a cosy Lapland resort in the Rovaniemi region and return flight from Helsinki to Lapland. Needless to say, you\\u2019ll also get all the other goodies to bring back with you as Christmas presents! Flights to and from Finland are not included. Note that dates may vary depending on availability. Please see the rewards chart for full contents.&quot;,&quot;limit&quot;:5,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1398902400,&quot;project_id&quot;:600213358,&quot;remaining&quot;:5,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1383325814}]}";
+    
+    
+    
+    
+    
+    
+    
+    
+    window.timeRemaining = function timeRemaining(epochTime){
+    
+      var diff = epochTime - ((new Date()).getTime() / 1000);
+      var num_unit = (diff < 60 && [Math.max(diff, 0), 'seconds']) ||
+        ((diff/=60) < 60 && [diff, 'minutes']) ||
+        ((diff/=60) < 72 && [diff, 'hours']) ||
+        [diff/=24, 'days'];
+    
+      // Round down
+      num_unit[0] = Math.floor(num_unit[0]);
+      // Singularize unit
+      if (num_unit[0] == 1) { num_unit[1] = num_unit[1].replace(/s$/,""); }
+    
+      return num_unit;
+    };
+  //]]>
+</script>
+
+<script>
+  //<![CDATA[
+    window.current_variants = ["discover_link_copy[discover]","rewards_hover[with_hover_text]"];
+  //]]>
+</script>
+
+
+</head>
+
+<body class="project projects not-mobile not-phone not-forces-video-controls not-tablet not-touchable not-native-app-request video_mode" id="projects_show">
+<div class="jGrowl center" id="growl_section"></div>
+<div class="NS_layouts__navigation" id="header">
+<div class="main-nav relative bg-white">
+<h1 class="no-margin ml1 mr2 left">
+<a href="/?ref=nav" class="block p2"><span class="ss-icon green-dark">KICK</span><span class="ss-icon green">STARTER</span>
+</a></h1>
+<ul class="primary-links list no-margin left">
+<li class="left discover-link full-height">
+<a href="/discover?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Discover</a>
+</li>
+<li class="left full-height mr2">
+<a href="/learn?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Start</a>
+</li>
+</ul>
+<ul class="list no-margin right" id="menu-sub">
+<li class="right"><a href="/login?ref=nav" class="block h5 bold p2 full-height border-box">Log in</a></li>
+<li class="right"><a href="/signup?ref=nav" class="block h5 bold p2 full-height border-box">Sign up</a></li>
+</ul>
+<div class="search-link pl2 full-height border-left border-box clip">
+<form accept-charset="UTF-8" action="/projects/search" class="search pt1 pb1 block relative form-simple" method="get"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /></div>
+<div class="field relative pl3">
+<span class="ss-icon ss-search grey-dark ml1 mt1 absolute"></span>
+<input class="input-search header full-width text" data-tracker-name="Header Live Search" id="term" name="term" placeholder="Search projects" type="text" />
+</div>
+</form>
+
+</div>
+<div class="clear"></div>
+</div>
+</div>
+<div class="hide pt4 pb4 bg-grey-light" id="search_results-wrap">
+<div class="relative container" id="search_results">
+<a class="close right grey-dark mr1"><span class="ss-icon ss-delete"></span></a>
+<h3 class="header ml1 clearfix"></h3>
+<div class="clip clearfix" id="search_results_panel"></div>
+<a class="prev arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateleft"></span>
+</a>
+<a class="next arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateright"></span>
+</a>
+</div>
+</div>
+
+
+
+
+<div class="Project-ended-true Project-is_starred- Project-state-canceled Project600213358_cxt border-top" id="main_content">
+<div id="running-board-wrap">
+<div class="container" id="running-board">
+<div id="project-header">
+<div class="NS_projects__running_board ml1 mr1 clearfix">
+<div class="title center py4">
+<h2 class="mb1">
+<a href="/projects/1470493497/next-car-game-a-motorsport-with-attitude" class="green-dark">Next Car Game: A Motorsport With Attitude! (Canceled)</a>
+</h2>
+<p class="no-margin">
+<span class="creator">
+by
+<a href="/projects/1470493497/next-car-game-a-motorsport-with-attitude/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography" id="name">Bugbear Inc.</a>
+</span>
+</p>
+</div>
+<ul class="project-nav list-inline left h5 bold mb1">
+<li class="mr2">
+<a href="/projects/1470493497/next-car-game-a-motorsport-with-attitude" class="grey-dark py1 current" id="home_nav">Home</a>
+</li>
+<li class="mr2">
+<span data-updates-count="8" id="updates_count">
+<a href="/projects/1470493497/next-car-game-a-motorsport-with-attitude/posts" class="grey-dark py1" id="updates_nav">Updates
+<span class="count h6 bg-grey-dark white">8</span>
+</a></span>
+</li>
+<li class="mr2">
+<a href="/projects/1470493497/next-car-game-a-motorsport-with-attitude/backers" class="grey-dark py1" id="backers_nav">Backers
+<span class="count h6 bg-grey-dark white"><data class="Project600213358" data-format="number" data-value="2487" itemprop="Project[backers_count]">2,487</data></span>
+</a></li>
+<li>
+<span data-comments-count="252" id="comments_count">
+<a href="/projects/1470493497/next-car-game-a-motorsport-with-attitude/comments" class="grey-dark py1" id="comments_nav">Comments
+<span class="count h6 bg-grey-dark white"><data class="Project600213358" data-format="number" data-value="252" itemprop="Project[comments_count]">252</data></span>
+</a></span>
+</li>
+</ul>
+<ul class="list-inline right h5 bold mb1">
+<li class="location mr2">
+<a href="/discover/places/helsinki-helsinki-fi?ref=city" class="grey-dark"><span class="ss-icon ss-location margin-right"></span>
+Helsinki, Finland
+</a></li>
+<li class="category" data-project-parent-category="Games">
+<a href="/discover/categories/games/video%20games?ref=category" class="grey-dark"><span class="ss-icon ss-tag margin-right"></span>
+Video Games
+</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+</div>
+<div class="bg-grey-light pb4" id="content-wrap">
+<div class="Project600213358" data-conditions="[{&quot;!state&quot;:&quot;live&quot;}]" data-evaluation="true" data-render="&quot;&lt;div class=\&quot;NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-canceled Project600213358_cxt bg-grey container pb1 pt1\&quot;&gt;\n&lt;div class=\&quot;Project600213358\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;successful&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;Funded!&amp;lt;/b&amp;gt;\\nThis project was successfully funded &amp;lt;data class=\\&amp;quot;Project600213358\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2013-12-01T13:41:57-05:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[deadline]\\&amp;quot;&amp;gt;on December 1&amp;lt;/data&amp;gt;.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project600213358\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:[&amp;quot;started&amp;quot;,&amp;quot;submitted&amp;quot;]}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;THIS PROJECT IS NOT LIVE&amp;lt;/b&amp;gt;\\nThis is only a draft that the creator has chosen to share.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project600213358\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;suspended&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Suspended&amp;lt;/b&amp;gt;\\nFunding for this project was suspended &amp;lt;data class=\\&amp;quot;Project600213358\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2013-11-22T08:41:29-05:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on November 22&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project600213358\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;canceled&amp;quot;}]\&quot; data-evaluation=\&quot;true\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Canceled&amp;lt;/b&amp;gt;\\nFunding for this project was canceled by the project creator &amp;lt;data class=\\&amp;quot;Project600213358\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2013-11-22T08:41:29-05:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on November 22&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Canceled&lt;/b&gt;\nFunding for this project was canceled by the project creator &lt;data class=\&quot;Project600213358\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-11-22T08:41:29-05:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on November 22&lt;/data&gt;.\n&lt;/div&gt;&lt;div class=\&quot;Project600213358\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;failed&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Unsuccessful&amp;lt;/b&amp;gt;\\nThis project\\u2019s funding goal was not reached on &amp;lt;time class=\\&amp;quot;js-adjust\\&amp;quot; data-format=\\&amp;quot;MMMM D\\&amp;quot; datetime=\\&amp;quot;2013-12-01T13:41:57-05:00\\&amp;quot;&amp;gt;December 1&amp;lt;/time&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project600213358\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;purged&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;This project is purged and only visible to staff.&amp;lt;/b&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;/div&gt;\n&quot;"><div class="NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-canceled Project600213358_cxt bg-grey container pb1 pt1">
+<div class="Project600213358" data-conditions="[{&quot;state&quot;:&quot;successful&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;Funded!&lt;/b&gt;\nThis project was successfully funded &lt;data class=\&quot;Project600213358\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-12-01T13:41:57-05:00&amp;quot;\&quot; itemprop=\&quot;Project[deadline]\&quot;&gt;on December 1&lt;/data&gt;.\n&lt;/p&gt;\n&quot;"></div><div class="Project600213358" data-conditions="[{&quot;state&quot;:[&quot;started&quot;,&quot;submitted&quot;]}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;THIS PROJECT IS NOT LIVE&lt;/b&gt;\nThis is only a draft that the creator has chosen to share.\n&lt;/p&gt;\n&quot;"></div><div class="Project600213358" data-conditions="[{&quot;state&quot;:&quot;suspended&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Suspended&lt;/b&gt;\nFunding for this project was suspended &lt;data class=\&quot;Project600213358\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-11-22T08:41:29-05:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on November 22&lt;/data&gt;.\n&quot;"></div><div class="Project600213358" data-conditions="[{&quot;state&quot;:&quot;canceled&quot;}]" data-evaluation="true" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Canceled&lt;/b&gt;\nFunding for this project was canceled by the project creator &lt;data class=\&quot;Project600213358\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-11-22T08:41:29-05:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on November 22&lt;/data&gt;.\n&quot;"><p class="no-margin"></p>
+<b>Funding Canceled</b>
+Funding for this project was canceled by the project creator <data class="Project600213358" data-format="distance_date" data-value="&quot;2013-11-22T08:41:29-05:00&quot;" itemprop="Project[state_changed_at]">on November 22</data>.
+</div><div class="Project600213358" data-conditions="[{&quot;state&quot;:&quot;failed&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Unsuccessful&lt;/b&gt;\nThis project\u2019s funding goal was not reached on &lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;MMMM D\&quot; datetime=\&quot;2013-12-01T13:41:57-05:00\&quot;&gt;December 1&lt;/time&gt;.\n&quot;"></div><div class="Project600213358" data-conditions="[{&quot;state&quot;:&quot;purged&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;This project is purged and only visible to staff.&lt;/b&gt;\n&quot;"></div></div>
+</div>
+<div class="container bg-white border rounded py3 pl2 pr2" id="content">
+<div class="NS-projects-content">
+<div class="grid_11">
+<div data-has-video="true" id="video-section">
+<div class="video-player" data-dimensions="{&quot;width&quot;:640,&quot;height&quot;:480}" data-image="https://s3.amazonaws.com/ksr/projects/605932/photo-main.jpg?1397825924" data-video-tracker-url="https://www.kickstarter.com/projects/1470493497/next-car-game-a-motorsport-with-attitude/video/plays" data-video-url="https://d2pq0u4uni88oo.cloudfront.net/projects/605932/video-306235-h264_high.mp4" data-video="{&quot;id&quot;:306235,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/605932/video-306235-h264_high.mp4?2013&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/605932/video-306235-h264_base.mp4?2013&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/605932/video-306235-webm.webm?2013&quot;,&quot;width&quot;:640,&quot;height&quot;:360,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/605932/video-306235-h264_base.jpg?2013&quot;}" id="video_pitch"><video class="has_webm landscape" preload="none">
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/605932/video-306235-h264_high.mp4" type='video/mp4; codecs="avc1.64001E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/605932/video-306235-h264_base.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/605932/video-306235-webm.webm" type="video/webm"></source>
+You'll need an HTML5 capable browser to see this content.
+</video>
+<img alt="Photo-main" class="has_played_hide poster landscape" src="https://s3.amazonaws.com/ksr/projects/605932/photo-main.jpg?1397825924" />
+<div class="play_button_big play_button_dark absolute-center rounded has_played_hide">
+<span class="ss-icon ss-play"></span>
+Play
+</div>
+<div class="player_controls clearfix absolute-bottom mb2 rounded white bg-green-dark forces-video-controls_hide">
+<div class="left">
+<a class="button button_icon button_dark playpause play mr1">
+<span class="play ss-icon ss-play"></span>
+<span class="pause ss-icon ss-pause"></span>
+</a>
+<span class="time current_time h12 left">00:00</span>
+</div>
+<div class="right">
+<span class="time total_time h12 left mr1">00:00</span>
+<a class="left button button_icon button_icon_white volume">
+<span class="ss-icon ss-volume icon_volume_nudge"></span>
+<span class="ss-icon ss-highvolume"></span>
+</a>
+<div class="volume_container left">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+<a class="left button button_icon button_icon_white fullscreen">
+<span class="ss-icon ss-expand"></span>
+<span class="ss-icon ss-contract"></span>
+</a>
+</div>
+<div class="clip">
+<div class="progress_container pr1 pl1">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="buffer progress_bar_buffer"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div data-project-state="canceled" id="about">
+<div class="NS_projects__project_share clearfix py2 pl1 pr1">
+<ul class="left list-inline no-margin h5 bold">
+<li class="facebook mr2">
+<a href="https://www.kickstarter.com/projects/1470493497/next-car-game-a-motorsport-with-attitude"><span class="ss-icon ss-social ss-facebook color-facebook"></span>
+<span class="color-facebook">Share</span>
+<span class="share_bubble"><div class="triangle grey"></div>
+<div class="triangle white"></div>
+<span class="count"></span></span>
+</a></li>
+<li class="twitter mr2">
+<a  href="https://twitter.com/intent/tweet?text=Next%20Car%20Game%3A%20A%20Motorsport%20With%20Attitude%21%20%28Canceled%29%20by%20Bugbear%20Inc.&amp;via=kickstarter&amp;url=http://kck.st/18KixkM" rel="nofollow"><span class="ss-icon ss-social ss-twitter color-twitter"></span>
+<span class="color-twitter">Tweet</span>
+</a></li>
+<li class="embed">
+<a href="/projects/1470493497/next-car-game-a-motorsport-with-attitude/widget" class="remote_modal_dialog grey-dark" data-modal-title="Embed a widget on your site" data-tracker-name="Embed"><span class="ss-icon ss-navigateleft"></span>
+<span class="ss-icon ss-navigateright"></span>
+Embed
+</a></li>
+</ul>
+<ul class="right list-inline no-margin h5 bold">
+<li class="curate mr2">
+</li>
+<li class="remind">
+<div class="ajax-container" id="watching-widget">
+<div class="Project600213358" data-conditions="[{&quot;is_starred&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div id=\&quot;unwatch\&quot;&gt;\n&lt;a href=\&quot;/projects/1470493497/next-car-game-a-motorsport-with-attitude/unwatch\&quot; class=\&quot;on\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"></div><div class="Project600213358" data-conditions="[{&quot;!is_starred&quot;:true}]" data-evaluation="true" data-render="&quot;&lt;div id=\&quot;watch\&quot;&gt;\n&lt;a href=\&quot;/projects/1470493497/next-car-game-a-motorsport-with-attitude/watch\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;span class=\&quot;text\&quot;&gt;\n&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"><div id="watch">
+<a href="/projects/1470493497/next-car-game-a-motorsport-with-attitude/watch"><span class="ss-icon ss-star"></span>
+<span class="text">
+</span>
+</a></div>
+
+</div></div>
+</li>
+</ul>
+</div>
+
+<div class="short_blurb py2 pl1 pr1">
+<p class="h3">A demolition racing game with spectacular crashes, realistic driving physics and intense car building from the makers of FlatOut!</p>
+</div>
+<div class="full-description">
+<div class="template oembed" contenteditable="false" data-href="http://www.youtube.com/watch?v=dnDQ_tlA_zw">
+<iframe width="612" height="344" src="https://www.youtube.com/embed/dnDQ_tlA_zw?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div><br><a href="http://bugbearfi.kamppis.nebula.fi/Bugbear%20Retro%20Demo%202002.exe" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/1470493497/next-car-game-a-motorsport-with-attitude/assets/1295078/edit" data-id="1295078">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/295/078/da769da90f19c8aeb519cafe2eb7e500_large.png?1383850217"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+</a><p><b>As a special giveaway we're giving out a very early playable prototype created over 10 years ago. It's got tracks, it's got cars and a wee bit of FUN! Download the prototype and read more about it in our latest update. Enjoy!</b></p><a href="http://bugbearfi.kamppis.nebula.fi/Bugbear%20Retro%20Demo%202002.exe" target="_blank">
+<div class="template oembed" contenteditable="false" data-href="https://www.youtube.com/watch?v=5XxMGIlAnqs">
+<iframe width="612" height="344" src="https://www.youtube.com/embed/5XxMGIlAnqs?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div>
+
+
+
+
+</a><h1>
+<a href="http://www.kickstarter.com/projects/1470493497/next-car-game-a-motorsport-with-attitude/posts/664777" target="_blank">Update #7: Racing on a dirt track with the Oculus Rift</a>
+</h1><h1>
+<a href="http://www.kickstarter.com/projects/1470493497/next-car-game-a-motorsport-with-attitude/posts/662122" target="_blank">Update #6: First gameplay video!</a>
+</h1>
+
+
+
+
+
+<h1>
+<a href="http://www.kickstarter.com/projects/1470493497/next-car-game-a-motorsport-with-attitude/posts/654899" target="_blank">Update #5: Bugbear goes "retro flat-out"</a>
+</h1>
+<h1><a href="http://www.kickstarter.com/projects/1470493497/next-car-game-a-motorsport-with-attitude/posts/653336" target="_blank"><b>Update #4: Got multiplayer?</b></a></h1>
+<h1><a href="http://www.kickstarter.com/projects/1470493497/next-car-game-a-motorsport-with-attitude/posts/653332" target="_blank"><b>Update #3: Autumn vibes</b></a></h1>
+<h1><a href="http://www.kickstarter.com/projects/1470493497/next-car-game-a-motorsport-with-attitude/posts/651929" target="_blank"><b>Update #2: Interview with the first preorderer</b></a></h1><h1>
+<a href="http://www.kickstarter.com/projects/1470493497/next-car-game-a-motorsport-with-attitude/posts" target="_blank">Update #1: Upgrading upgraded!</a>
+</h1><div class="template asset" contenteditable="false" data-edit_url="/projects/1470493497/next-car-game-a-motorsport-with-attitude/assets/1283321/edit" data-id="1283321">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/283/321/7d2cf8fb1e954330373cb68f4b482c90_large.png?1383665047"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/1470493497/next-car-game-a-motorsport-with-attitude/assets/1262328/edit" data-id="1262328">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/262/328/f0fa4ecc1fbfaee26f2e0d54214e00a3_large.png?1383211006"></figure>
+</div><div class="template oembed" contenteditable="false" data-href="https://www.youtube.com/watch?v=bmQbUJiEax8">
+<iframe width="612" height="344" src="https://www.youtube.com/embed/bmQbUJiEax8?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/1470493497/next-car-game-a-motorsport-with-attitude/assets/1343098/edit" data-id="1343098">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/343/098/d979f183a886b81010ee7dc9fe2d0202_large.png?1384766777"></figure>
+</div><a href="http://steamcommunity.com/sharedfiles/filedetails/?id=176123360" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/1470493497/next-car-game-a-motorsport-with-attitude/assets/1260325/edit" data-id="1260325">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/260/325/6f74ad989108e4f7dfe0391631004f8e_large.png?1383171475"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                              </a><div class="template asset" contenteditable="false" data-edit_url="/projects/1470493497/next-car-game-a-motorsport-with-attitude/assets/1260338/edit" data-id="1260338">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/260/338/32807eb362cdc8fec5101b4e160e2f12_large.png?1383171656"></figure>
+</div><p>We're developing the game PC first. Based on your support we're also prepared to develop it for both or either of the next-gen consoles Xbox One and PS4. We're also ready to consider other platforms such as Mac or current-gen consoles. <b>It's really up to you!</b></p><div class="template asset" contenteditable="false" data-edit_url="/projects/1470493497/next-car-game-a-motorsport-with-attitude/assets/1262614/edit" data-id="1262614">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/262/614/5d80cf705c4471bf2a32f16a3284fac1_large.png?1383222990"></figure>
+</div><p>Did you love the over-the-top, reckless racing action of the <i><b>FlatOut</b></i> series? Or the ferocious wrecking fests of the <i><b>Destruction Derby</b></i> games? We did too! What if you could somehow relive those glorious moments, mixed with some serious <i><b>Street Rod</b></i> inspired vehicle upgrading and spiced up with fierce online races where players can battle it out with their tricked out bangers?</p><p>Now <b>THAT</b> would be something.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/1470493497/next-car-game-a-motorsport-with-attitude/assets/1267574/edit" data-id="1267574">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/267/574/0999edc0cf94eccf334cf39456e5ab75_large.jpg?1383323594"></figure>
+</div><p>Over the years, we’ve been thinking about going back to our roots, and 
+creating another high-octane racing game that would capture the spirit 
+of over-the-top action and reckless racing as the legendary games of the
+ past. For years, both <i>Destruction Derby</i> and <i>FlatOut</i> fans have been screaming for a comeback.</p><p>Now it’s the time, and we have some pretty exciting news for 
+you. Our next racing game is going to bring those unforgettable moments 
+up-to-date, and the best part of it all is that <b>we want to make it with 
+YOU!</b></p><div class="template asset" contenteditable="false" data-edit_url="/projects/1470493497/next-car-game-a-motorsport-with-attitude/assets/1262329/edit" data-id="1262329">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/262/329/468f494e1a19d6d7f02f580efaf5c9ed_large.png?1383211047"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/1470493497/next-car-game-a-motorsport-with-attitude/assets/1267524/edit" data-id="1267524">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/267/524/1d908efbea9ea97c76e0ce082f7ae521_large.jpg?1383322617"></figure>
+</div><div>
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1470493497/next-car-game-a-motorsport-with-attitude/assets/1262613/edit" data-id="1262613">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/262/613/7195a9044bfed6458246c3dc825dcda0_large.png?1383222960"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>We're developing a new AAA quality demolition derby themed racing game with special attention paid to soft-body damage modeling, sophisticated driving dynamics and in-depth vehicle upgrading, featuring both demolition derbies and more traditional track races.</p>
+<p>If you’re familiar with the original <i>FlatOut </i>experience, you already 
+know what we’re aiming at, only this time we’re upping the ante on 
+almost every front. It’s all about the stuff that really matters: cool 
+cars, varied tracks and the signature once-in-the-lifetime moments that 
+can be achieved only with true-to-life physics simulation. </p>
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1470493497/next-car-game-a-motorsport-with-attitude/assets/1267411/edit" data-id="1267411">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/267/411/96aa1429cb94e1f6ec306f2681eac154_large.jpg?1383320768"></figure>
+</div>
+<p>We've invested a lot of time into the development, and the game is already playable with many of the features implemented. Now we just need to take the game to the finish line, with all the experience and knowledge we have, with 
+you guys at the wheel!</p>
+
+<p>We've envisioned the game not being something that we get the funding for, finish and then just move on. We would rather keep on updating it, adding new features based on your feedback and and build it into an ultimate race experience.</p>
+<p>We have already laid down some of the core features, such as:</p>
+</div><ul><li><b>Race in both demolition derbies and traditional track races.</b></li></ul><ul><li><b>Build your dream rides by buying bangers and their parts.</b></li></ul><ul><li><b>Have your own garage where you work with your rides.</b></li></ul><ul><li><b>Challenge the world in wide variety of multiplayer modes.</b></li></ul><div class="template asset" contenteditable="false" data-edit_url="/projects/1470493497/next-car-game-a-motorsport-with-attitude/assets/1267416/edit" data-id="1267416">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/267/416/d4ea7b6aa5db99f73b9ad681db3e9ea3_large.jpg?1383320860"></figure>
+</div><p>Multiplayer will be an integral part of Next Car Game, and we’re committed to implement it the way it should be done, of course listening to your feedback. Multiplayer will be available for both derbies and track races, our starting point being that derbies will always offer you a chance to have a fun, quick match to let go of steam by bending some sheet metal, while track races are a perfect way to test your upgraded ride and skills against other players.</p><p>We will go through the above features more thoroughly during our campaign and reveal some more we've already got cooking, but that is some of the core gameplay stuff that we thought would be cool in a game like this – we believe we're already in the ballpark, but now it's your turn to tell us what kind of awesome features YOU would like to see!</p><p>Mind you, <i>Next Car Game</i> is just a working title for us. As a matter of fact, our every game is referred internally as 'Next Car Game' or 'NCG' for short when we're developing the game. Since our efforts in coming up with a credible name were pretty rotten we will give you as a backer a unique chance to participate in choosing the final name for the game!</p><div class="template asset" contenteditable="false" data-edit_url="/projects/1470493497/next-car-game-a-motorsport-with-attitude/assets/1262612/edit" data-id="1262612">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/262/612/e6e8032717bcf20ea20d8cf12b33acd9_large.png?1383222945"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/1470493497/next-car-game-a-motorsport-with-attitude/assets/1267356/edit" data-id="1267356">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/267/356/31b2ff398f0ad7a7468f42270756349a_large.jpg?1383320049"></figure>
+</div><p>Our cars are old, cheap, banged up, patched together, rusty… just awesome! In short, our cars ooze with style, and you won’t find anything like them in other racing games. But it's not all rust and falling off paint, either! You will get a chance to upgrade your banger ride into a formidable track weapon.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/1470493497/next-car-game-a-motorsport-with-attitude/assets/1262639/edit" data-id="1262639">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/262/639/4dba97971da09a75677a9daf1c6cd0d5_large.png?1383223777"></figure>
+</div><p>The cars will be inspired by real cars, and we’re going to have a whole lot of variety as well: everyone loves the old American heavy-hitters from the muscle car era, but we’re not neglecting the fun little European cars from the long-gone decades either. Since variation is the spice of life and our game, we'd also very much like to add a third region, but what could it be? <b>YOU DECIDE!</b></p><p>Below you can find examples of the car models of American and European regions. Note that both models, while rendered offline here, are exactly the same we are using in-game, so you can get some idea of the level of detail we're going for. </p><div class="template asset" contenteditable="false" data-edit_url="/projects/1470493497/next-car-game-a-motorsport-with-attitude/assets/1265716/edit" data-id="1265716">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/265/716/d356a9113f45291080b092395863c917_large.jpg?1383271505"></figure>
+</div><p>We’re not going be satisfied with the cars having only visual differences - that would be quite a party-pooper, wouldn't it? Thanks to our sophisticated vehicle physics engine, we can faithfully replicate each car’s signature characteristics.</p><p>As a result, a peppery European rear-wheel drive hatchback with a rear-mounted engine will drive completely different to a heavy American sedan equipped with a powerful front-mounted engine, meaning that there’ll be a lot of room for different play styles and always plenty to discover.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/1470493497/next-car-game-a-motorsport-with-attitude/assets/1266475/edit" data-id="1266475">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/266/475/79fc6221921c76a6f545b1ef9685593a_large.jpg?1383292076"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/1470493497/next-car-game-a-motorsport-with-attitude/assets/1262611/edit" data-id="1262611">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/262/611/df4c1ca6b7044be66d9a131415846d01_large.png?1383222913"></figure>
+</div><p>And it gets even better: we have already implemented fully deformable soft body car damage, meaning that the cars will react to damage in a very tangible, convincing way. </p><p>We’ve paid a lot of attention on how real cars behave in collisions, and trust us, when the going gets tough, the metal will bend, twist and break like never before – imagine all this with a total of twelve cars fighting it out on the same derby track, with full soft body damage! And thanks to some clever optimization, all this is possible without a super computer.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/1470493497/next-car-game-a-motorsport-with-attitude/assets/1263694/edit" data-id="1263694">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/263/694/89b276db9251ccc48137c666bf9ad020_large.png?1383239954"></figure>
+</div><p>To top everything off, the damage is not simply a visual gimmick: as a result the driving dynamics will change in a realistic fashion. What’s also neat is that damage is completely location-based – for example a high-speed collision at the front might cause one of the front wheels being dislocated, resulting in pretty hairy maneuverability. Imagine the sort of tactical element all this adds especially to the demolition derbies!</p><div class="template asset" contenteditable="false" data-edit_url="/projects/1470493497/next-car-game-a-motorsport-with-attitude/assets/1267362/edit" data-id="1267362">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/267/362/27fec63eb46d95cca7ea569e7c3f03f2_large.jpg?1383320132"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/1470493497/next-car-game-a-motorsport-with-attitude/assets/1262610/edit" data-id="1262610">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/262/610/7b52c1cf74da2cf47fd2ac5fe88780b8_large.png?1383222900"></figure>
+</div><p>Perhaps the best part is that you’ll be spending a lot of time taking your dream rides apart and building them back up again in your garage. The garage will be your home base very much like in games such as <i>World of Tanks</i> or <i>Warthunder.  </i>We’ve also been inspired by <i>Street Rod</i>,
+ a legendary racing game from the gone era that did a wonderful job of 
+making you feel like your dream car that you worked on in your garage 
+was something unique.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/1470493497/next-car-game-a-motorsport-with-attitude/assets/1260697/edit" data-id="1260697">
+<figure><img alt="Playing classic Street Rod game." class="fit" src="https://s3.amazonaws.com/ksr/assets/001/260/697/74d03e960a19dae24c5ebf75b61b44a1_large.jpg?1383176729"><figcaption>Playing classic Street Rod game.</figcaption></figure>
+</div><p>When you start out in the game, you’re on a pretty tight budget and have
+ to settle for an old beater as your first ride. By winning races and 
+earning money you get to upgrade the car and start building it into a track monster of your dreams. You can spend your money freely on whatever you want to and swap out 
+engine parts, transmission or suspension, even transplant the whole 
+engine if you want to!</p><p>Eventually you will have money to buy another car, in which case you could have one completely tricked-out race beast and another one for derbies that you've put together from leftover junk parts!</p><div class="template asset" contenteditable="false" data-edit_url="/projects/1470493497/next-car-game-a-motorsport-with-attitude/assets/1252838/edit" data-id="1252838">
+<figure><img alt="View of our garage." class="fit" src="https://s3.amazonaws.com/ksr/assets/001/252/838/fca3576ad007f9c1eabf72aace0ffd0e_large.png?1383056354"><figcaption>View of our garage.</figcaption></figure>
+</div><p> Being car guys ourselves, we aren’t going to be satisfied with just any kind of upgrading, we want to do it properly. Mechanical parts will have an effect mimicking their real-life counterparts, but we’re paying special attention to making sure you’ll get a grip of the wrench even if you’re not too much into car tinkering – we’ll turn you into a gearhead in no time! </p><p>And if you’d prefer to keep your hands nice and clean, that’s alright as well, since we’ll put in pre-designed upgrade sets to make upgrading a breeze.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/1470493497/next-car-game-a-motorsport-with-attitude/assets/1230335/edit" data-id="1230335">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/230/335/9fa01d9834ca85cc11190ab188e14b98_large.png?1382562774"></figure>
+</div><p>In the classic <i>Street Rod</i> style you’ll be buying parts from the classifieds, the in-game store where you can buy and sell cars and their parts. Need more horsepower on a budget? No problem, scour the classifieds for a bargain supercharger – just remember that a cheap bargain find might not withstand too much punishment.</p><p>We’re also thinking about neat little surprises for the classifieds, such as limited time specials, blowout offers or collectible super rare parts that might just give you bragging rights and an edge on the track!</p><div class="template asset" contenteditable="false" data-edit_url="/projects/1470493497/next-car-game-a-motorsport-with-attitude/assets/1260718/edit" data-id="1260718">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/260/718/496ae35691c661ae4f42ae71c5eea82d_large.jpg?1383177086"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/1470493497/next-car-game-a-motorsport-with-attitude/assets/1262609/edit" data-id="1262609">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/262/609/0ff1cd11a4740384a0831ef80e018216_large.png?1383222875"></figure>
+</div><p>A cool car game needs cool tracks, and we’re poised to deliver. We've spent a lot of time to make sure we can deliver an immersive derby and racing experience, and we use a lot of effort to design the tracks to ensure maximum impact throughout the track. We're also constantly constantly working on new track ideas, and now we just need your ideas - <b>w</b><b>here would YOU like to race?</b></p><div class="template asset" contenteditable="false" data-edit_url="/projects/1470493497/next-car-game-a-motorsport-with-attitude/assets/1266533/edit" data-id="1266533">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/266/533/44502c76c226f2e521b1d733ecad0abb_large.jpg?1383294991"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/1470493497/next-car-game-a-motorsport-with-attitude/assets/1267472/edit" data-id="1267472">
+<figure><img alt="Sandpit environment - in-game!" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/267/472/43d8e8aba8a9bbd76fb9a2d1b374ec60_large.jpg?1383321759"><figcaption>Sandpit environment - in-game!</figcaption></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/1470493497/next-car-game-a-motorsport-with-attitude/assets/1262634/edit" data-id="1262634">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/262/634/480e9fa64b79e79f7a2c98ca2c587891_large.png?1383223614"></figure>
+</div><p>Derbies will mostly take place on closed arenas that will encourage 
+close quarter car-to-car combat with not too many spots to hide in. We 
+already have a few types of derby arenas completed and we're always thinking about new ones: how about a large, open multiplayer battle arena that would bring a more tactical combat element into the game? Sounds awesome to us, but <b>let us know what you think!</b></p><div class="template asset" contenteditable="false" data-edit_url="/projects/1470493497/next-car-game-a-motorsport-with-attitude/assets/1266549/edit" data-id="1266549">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/266/549/6ac7b7982f1df4362b5bc346043b20dc_large.jpg?1383295559"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/1470493497/next-car-game-a-motorsport-with-attitude/assets/1265301/edit" data-id="1265301">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/265/301/ca3dae3d61f1c5c92121fc0864deb60d_large.png?1383263619"></figure>
+</div><p>Track races will take place on a wide variety of environments: run-down 
+racing tracks and sun-drenched sandpits are some of the 
+locations that we have already planned. Our tracks will reflect the nature of the game, so they will have a plenty of bumps, fast and tight corners as well as specific choke points to make sure there's almost always someone near you that you can ram.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/1470493497/next-car-game-a-motorsport-with-attitude/assets/1266543/edit" data-id="1266543">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/266/543/3b911eaf39e84dcb7fe32500bb057d47_large.jpg?1383295359"></figure>
+</div><p>Also, the environments will be more dynamic than ever before, meaning 
+that barrels, stacks of tires and splinters of wood will be flying 
+through the air when you battle it out for the mastery of the track.</p><p>To 
+be honest, we can't wait to show you what we can do with today's 
+hardware – in our previous games we’ve put thousands of dynamic objects 
+on the track, but now we can put a ton of flying metal and dirt in 
+the air at any given time, and we certainly will!</p><div class="template asset" contenteditable="false" data-edit_url="/projects/1470493497/next-car-game-a-motorsport-with-attitude/assets/1267590/edit" data-id="1267590">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/267/590/42fd137ec19b0007c0e15801555da83b_large.jpg?1383323907"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/1470493497/next-car-game-a-motorsport-with-attitude/assets/1262602/edit" data-id="1262602">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/262/602/e1fb1b8c53d530f2fed1918b6eb6914b_large.png?1383222732"></figure>
+</div><p>Our in-house ROMU engine is a hell-bent beast that's precision-engineered for high-speed, breakneck racing. It’s all about heavy metal going way too fast, crashing into stuff, and getting all trashed up just because it’s fun. </p><p>While we're focused on action, we also want to reach the level of motorsporting authenticity of games like <i>Forza Motorsport</i> and <i>Gran Turismo</i>. To that end our engine is simulating vehicle dynamics in a very sophisticated fashion. Rolling resistances, casters and slip angles are definitely not ancient Greek to us, and you as the player will be the one benefiting from our expertise. </p><div class="template asset" contenteditable="false" data-edit_url="/projects/1470493497/next-car-game-a-motorsport-with-attitude/assets/1265633/edit" data-id="1265633">
+<figure><img alt="Serious car tuning in progress – both hands on the wheel!" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/265/633/d896a53798ad36a356e345aaf4b6a103_large.jpg?1383270010"><figcaption>Serious car tuning in progress – both hands on the wheel!</figcaption></figure>
+</div><p>While we care about physics, we sure haven't forgotten that the game should be first and foremost fun. The game is easy to get to grips with even if you're not a hardcore gamer, while it will offer a lot of depth to those wanting to experience the most authentic racing experience.</p><p>Thanks to precise vehicle physics, you’ll always receive plausible 
+feedback on what your car is doing. You’ll feel the little bumps on the 
+track, the weight of your car transferring when you go over them – and 
+most certainly you’ll feel it when you’re being dealt some damage!</p><p>Even though we know our physics, we don't know what kind of gameplay you'd prefer, and to that end we're making sure you get to say your word on vehicle tuning as well. Are the driving dynamics too arcade? Or too realistic? <b>Let us hear your opinion and make it count!</b></p><div class="template asset" contenteditable="false" data-edit_url="/projects/1470493497/next-car-game-a-motorsport-with-attitude/assets/1267419/edit" data-id="1267419">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/267/419/e160485c512d431f666614d0b6accc70_large.png?1383320934"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/1470493497/next-car-game-a-motorsport-with-attitude/assets/1262605/edit" data-id="1262605">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/262/605/749731309611501bca515fb24b86d334_large.png?1383222757"></figure>
+</div><p>It’s actually very simple. This is not going to be a small game, and we have a lot of ambition on what Next Car Game could become. We’ve invested over one million dollars into the game already, and this would normally be the time when we go looking for a publisher to take us the rest of the way. </p><p>This time, however, we want to make the game that we want – <b>the game that you want</b> – not the game that a publisher wants. Making games costs some serious money, but if everything goes well, we’ll have a great, tight-knit community that’s going to support a lot of awesome content over the years.</p><p>The game will be released whatever the outcome of the Kickstarter campaign, but if the campaign is a success, we will get more people onboard and have a chance to create an even better game. Like said, we have pretty big plans, and the fans have already submitted a lot of requests that we'd love to make reality.</p><p>You might be also wondering why we’re launching a Kickstarter campaign since we already have our pre-order site open at <a href="http://nextcargame.com" target="_blank">nextcargame.com</a>. The thing is that many of our fans have asked us for a Kickstarter, and we always wanted to do it. However, it turned out to be difficult for a Finnish studio, and it was only during our pre-order campaign that we finally found a way to make it a reality. So here we are, launching our campaign, largely thanks to our fans!</p><div class="template asset" contenteditable="false" data-edit_url="/projects/1470493497/next-car-game-a-motorsport-with-attitude/assets/1265653/edit" data-id="1265653">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/265/653/d7b0cc84cdbc2e75be3e6da36b4c7a5c_large.jpg?1383270314"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/1470493497/next-car-game-a-motorsport-with-attitude/assets/1263476/edit" data-id="1263476">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/263/476/1b7a8868b42945e4caef41f32e24ecb4_large.png?1383237484"></figure>
+</div><p><b>GET TO MAKE THIS GAME WITH US!</b> We need <b>YOUR</b> help to create best possible 
+demolition derby racing game, so we're planning on releasing the game 
+step-by-step. </p><div class="template asset" contenteditable="false" data-edit_url="/projects/1470493497/next-car-game-a-motorsport-with-attitude/assets/1267425/edit" data-id="1267425">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/267/425/c76ded99e3c1319c3f0bd2971dbec573_large.jpg?1383321011"></figure>
+</div>
+<p><b>Play it. </b>We will release a sneak peak technology demo right after our 
+Kickstarter campaign so that you can see what we've been working on. The game is currently scheduled to be released spring 2014, but we’re 
+going to release an early version of the game, and that’s going to be 
+available to our early supporters only. You as an Early Access backer will take the wheel and help us shape
+ the game into what you want. This gives you a unique opportunity to 
+take part in the game development process and help develop a game that 
+you want to play. </p><p><b>Support Us.  
+</b>By backing the game you help us make the game you deserve. Make no mistake about it, your support is absolutely vital to this game! We have decided to make this game without a publisher, but to do that we need to find the money elsewhere.</p><p>Doing the game with the fans gives us a lot more creative freedom, and you get to communicate DIRECTLY with the development team to make sure we’re making the all-out racing game that you want. By backing us now, you get to say your word on the design. Want a specific game mode? Don’t think your favorite car model is included? Let’s hear it!
+No compromises made for appealing to the mainstream – this one is for our dedicated fans. </p><p><b>A Great Deal.
+</b>It’s a great deal that we want to give to our fans. By backing us you will get a chance to have a go at many neat options that are not going to be available later – custom cars and paint jobs, a chance to be featured in the game or listed in the credits. There are also digital extras like the soundtrack and exclusive wallpapers, some of which will not be available later.</p><p>Furthermore, we expect to build a great community around Next Car Game. Our early supporters are going to be its stars, and we’re going to make sure they’re recognized with special community badges.</p><p><b>Don't miss out your chance to create the game that you want!</b></p><div class="template asset" contenteditable="false" data-edit_url="/projects/1470493497/next-car-game-a-motorsport-with-attitude/assets/1267426/edit" data-id="1267426">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/267/426/a8850c32f0a651694e73f5646baf6896_large.jpg?1383321027"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/1470493497/next-car-game-a-motorsport-with-attitude/assets/1266977/edit" data-id="1266977">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/266/977/13e99bf921eeb6ef40cf4edc661439ed_large.png?1383312853"></figure>
+</div><p>We have a whole lot of really great rewards in store for our supporters, ranging from just the digital game and the sneak peak demo to a once-in-a-lifetime trip to Finland to meet Santa Claus! Please see here for the complete breakdown of the rewards:</p><div class="template asset" contenteditable="false" data-edit_url="/projects/1470493497/next-car-game-a-motorsport-with-attitude/assets/1267717/edit" data-id="1267717">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/267/717/e0f5d9c273c8a99ee2ef83a2fbc9a5de_large.png?1383325773"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/1470493497/next-car-game-a-motorsport-with-attitude/assets/1266912/edit" data-id="1266912">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/266/912/3da711f2553d6bebdc6364f0298efd72_large.png?1383311465"></figure>
+</div><p>We are going to deliver a complete game with a fully satisfying destruction racing experience even if we only meet our initial funding goal. However, given enough support from you, we are prepared to add new awesome content and features to the game, even develop the game for additional platforms. It’s all really up to you! Needless to say, all funding will be used toward developing the game.</p><p>Please see below for our current stretch goals. More stretch goals will be revealed during the campaign – we already have some pretty neat stuff planned out for you! </p><div class="template asset" contenteditable="false" data-edit_url="/projects/1470493497/next-car-game-a-motorsport-with-attitude/assets/1266915/edit" data-id="1266915">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/266/915/f9521604c807148fed9186ff4f67e89c_large.png?1383311485"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/1470493497/next-car-game-a-motorsport-with-attitude/assets/1262608/edit" data-id="1262608">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/262/608/8f9e5973858fbb44177f39c40e62e7fc_large.png?1383222834"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/1470493497/next-car-game-a-motorsport-with-attitude/assets/1264909/edit" data-id="1264909">
+<figure><img alt="Nice to meet you!" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/264/909/717d10caadacd9a1351f429e6c94a76c_large.jpg?1383255987"><figcaption>Nice to meet you!</figcaption></figure>
+</div><p>Bugbear Entertainment Ltd. is a game studio specializing in action driving. We come from Finland, the country that has given the gaming world the big daddies like Remedy, the developer of many highly acclaimed titles like <i>Max Payne</i> and <i>Alan Wake</i>; Rovio, the hatchery of beloved <i>Angry Birds</i>; and most recently Supercell, the creator of mobile sensations <i>Clash of Clans</i> and <i>Hayday</i>. Finland is also the home of Santa Claus, sauna and northern lights!</p><div class="template oembed" contenteditable="false" data-href="https://www.youtube.com/watch?v=Lc3FxNXjBs0&amp;rel=0">
+<iframe width="612" height="344" src="https://www.youtube.com/embed/Lc3FxNXjBs0?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div><p>We’ve been making car games for thirteen years, starting with <i>Rally Trophy</i>
+ (2001, PC). With over a decade of development under its belt, Bugbear 
+Entertainment Ltd. has successfully redefined the genre of action 
+racing. We are best known for the critically acclaimed demolition derby racing series <i>FlatOut</i> (2004-2007, PC, PS2, Xbox, Xbox 360) and street racing title <i>Ridge Racer Unbounded</i> (2013, PC, PS3, Xbox 360).</p><div class="template asset" contenteditable="false" data-edit_url="/projects/1470493497/next-car-game-a-motorsport-with-attitude/assets/1259880/edit" data-id="1259880">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/259/880/91aa0ab4a41c323df04442374c27b8f6_large.png?1383166713"></figure>
+</div>
+</div>
+<div id="risks">
+<h2 class="title grey-dark mt6 mb4">
+<span>Risks and challenges</span>
+<a href="/help/faq/kickstarter%20basics#Acco" class="right normal h5" target="_blank">Learn about accountability on Kickstarter</a>
+<div class="divider clear"></div>
+</h2>
+<p><p>We at Bugbear have a long track-record of making high-octane racing games, and we know that we can pull it through with your support. We’ve been making racing games for over 13 years, and this is our tenth game. We’re recreating a type of experience we&#39;ve already shipped three times on four different platforms, so we do know what we’re doing.</p></p>
+</div>
+</div>
+<div class="NS-projects-faqs" id="project-faqs">
+<h2 class="title grey-dark mt6 mb4">
+FAQ
+<div class="divider clear"></div>
+</h2>
+<ul class="faqs">
+<li class="faq" id="project_faq_72757">
+<div class="faq-question">
+<a href="#project_faq_72757" name="project_faq_72757">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Will those who preordered get the same perks as the Kickstarter backers?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Absolutely! Our early supporters will receive the same playable sneak peak demo as our Kickstarter backers as well as any extra content that might have been added to the corresponding reward tier. We&#39;ll do our best to make sure you&#39;ll have access to other goodies as well, please stay tuned for more information.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-11-02T14:53:46-04:00">Sat, Nov 2 2013 2:53 pm EDT</time>
+</div>
+</div>
+</li>
+
+</ul>
+<div class="faq-ask-box">
+<a href="/projects/1470493497/next-car-game-a-motorsport-with-attitude/messages/new?message%5Bto%5D=1470493497&amp;mode=FAQ" class="button button_blue remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Ask a question about Next Car Game: A Motorsport With Attitude! (Can...">Ask a question</a>
+
+</div>
+</div>
+
+<div class="mt4 ml1 mr1 mb2" id="report-issue-wrap">
+<a href="/login?then=%2Fprojects%2F1470493497%2Fnext-car-game-a-motorsport-with-attitude" class="button button_grey">Report this project to Kickstarter</a>
+</div>
+</div>
+<div class="NS-projects-rightcol grid_5" id="rightcol">
+<div class="NS_projects__ecom">
+<div class="digits_5 pb2 pl2 pt2" id="stats">
+<h5>
+<div class="num h48 no-margin" data-backers-count="2487" id="backers_count"><data class="Project600213358" data-format="number" data-value="2487" itemprop="Project[backers_count]">2,487</data></div>
+<span><data class="Project600213358" data-attr="backers_count" data-format="pluralize" data-value="2487" data-word="Backer">Backers</data></span>
+</h5>
+<h5>
+<div class="num h48 no-margin" data-goal="350000.0" data-percent-raised="0.233636485714285714285714286" data-pledged="81772.77" id="pledged">
+<data class="Project600213358" data-currency="USD" data-format="shorter_money" data-precision="0" data-value="81772" data-without_code="true" itemprop="Project[pledged]">$81,772</data>
+<span class="money usd project_currency_code"></span>
+</div>
+pledged of
+<span class="money usd no-code">$350,000</span>
+goal
+</h5>
+<span data-duration="30.041666666666668" data-end_time="2013-12-01T13:41:57-05:00" data-hours-remaining="0" id="project_duration_data"></span>
+<div class="Project600213358" data-conditions="[{&quot;!state&quot;:[&quot;canceled&quot;,&quot;suspended&quot;]}]" data-evaluation="false" data-render="&quot;&lt;h5 class=\&quot;poll \&quot; data-dynamic=\&quot;5\&quot; data-end_time=\&quot;2013-12-01T13:41:57-05:00\&quot; data-poll_url=\&quot;https://d2oher2uhvl0ur.cloudfront.net/projects/1470493497/next-car-game-a-motorsport-with-attitude/stats.json\&quot;&gt;\n&lt;div class=\&quot;num h48 no-margin\&quot;&gt;0&lt;/div&gt;\n&lt;span class=\&quot;text\&quot;&gt;seconds to go&lt;/span&gt;\n&lt;/h5&gt;\n&quot;"></div></div>
+<div class="Project600213358" data-conditions="[{&quot;state&quot;:&quot;live&quot;},{&quot;!ended?&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;pr2 pl2\&quot; id=\&quot;pledge-wrap\&quot;&gt;\n&lt;a href=\&quot;/projects/1470493497/next-car-game-a-motorsport-with-attitude/pledge/new?clicked_reward=false\&quot; class=\&quot;button button_green button_box button_block\&quot; id=\&quot;button-back-this-proj\&quot; title=\&quot;Back this project\&quot;&gt;Back This Project &lt;small class=&#39;h6 normal block green-dark&#39;&gt;&lt;span class=\&quot;money usd \&quot;&gt;$1&lt;/span&gt; minimum pledge&lt;/small&gt;&lt;/a&gt;\n&lt;/div&gt;\n&quot;"></div><div class="Project600213358" data-conditions="[{&quot;state&quot;:&quot;live&quot;}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;p2\&quot; id=\&quot;banner\&quot;&gt;\n&lt;p class=\&quot;tiny_type no-margin\&quot;&gt;\nThis project will only be funded if at least\n&lt;span class=\&quot;money usd \&quot;&gt;$350,000&lt;/span&gt;\nis pledged by\n&lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;llll z\&quot; datetime=\&quot;2013-12-01T13:41:57-05:00\&quot;&gt;Sun, Dec 1 2013 1:41 pm EST&lt;/time&gt;.\n&lt;/p&gt;\n&lt;/div&gt;\n&quot;"></div></div>
+
+<div class="NS_projects__rightcol_projectby bg-blue-light rounded">
+<div class="p2 clearfix">
+<div class="avatar inline-block align-middle">
+<a href="/projects/1470493497/next-car-game-a-motorsport-with-attitude/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography"><img alt="Bugbear_logo.small" class="avatar-small" height="80" src="https://s3.amazonaws.com/ksr/avatars/7161276/bugbear_logo.small.jpg?1381844873" width="80" />
+</a></div>
+<div class="creator-name inline-block align-middle ml1">
+<h6 class="mb1">Project by</h6>
+<h5 class="mb1">
+<a href="/projects/1470493497/next-car-game-a-motorsport-with-attitude/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">Bugbear Inc.</a>
+</h5>
+<p class="location h6 bold mb1">
+<a href="/discover/places/helsinki-helsinki-fi">Helsinki, Finland</a>
+</p>
+</div>
+</div>
+<div class="creator-details pl2 pr2 pb1">
+<ul class="list-simple h5 mb1">
+<li class="projects">
+<span class="ss-icon ss-kickstarter grey-dark margin-right"></span>
+<span class="text">
+First created
+<span class="divider">&middot;</span>
+0 backed
+</span>
+</li>
+<li>
+<span class="ss-icon ss-facebook margin-right grey-dark"></span>
+<span class="text">
+Has not connected Facebook
+</span>
+</li>
+<li class="links">
+<span class="ss-icon ss-globe margin-right grey-dark"></span>
+<span class="text">
+<a href="http://www.nextcargame.com" class="popup" rel="nofollow" target="_blank">nextcargame.com</a>
+</span>
+</li>
+</ul>
+</div>
+<div class="footer center h5 bold clearfix rounded-bottom clip">
+<a href="/projects/1470493497/next-car-game-a-motorsport-with-attitude/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">See full bio</a>
+<a href="/projects/1470493497/next-car-game-a-motorsport-with-attitude/messages/new?message%5Bto%5D=1470493497" class="remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Send a message to Bugbear Inc.">Contact me</a>
+
+</div>
+</div>
+
+<ul class="NS-projects-rightcol-rewards rounded clip list mt2" data-reward-count="15" id="what-you-get">
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$1</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+99 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>DIGITAL CHRISTMAS CARD
+==============================
+Every little bit counts! We sincerely appreciate your support, and as our thank-you, we will send you a digital Christmas card from the whole Bugbear Team!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-12-01">Dec 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$20</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1358 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>“KICKSTARTER SPECIAL” • PC DIGITAL GAME + SNEAK PEEK ==============================
+Digital download of the game for PC and a playable sneak peek technology demo, released right after our Kickstarter campaign.  Please see the rewards chart for full contents.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-05-01">May 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$30</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+410 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>&quot;WEEKEND SMASHER&quot; • EARLY ACCESS + EXCLUSIVE WALLPAPERS
+==============================
+Catch a head start with Early Access and a pack of mood-setting, exclusive wallpapers! You’ll also get a digital download of the game for PC and a playable sneak peek technology demo. Please see the rewards chart for full contents.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-05-01">May 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$40</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+214 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>&quot;FULL-TIME WRECKER&quot; • SPECIAL BACKER CAR, EXCLUSIVE DIGITAL SOUNDTRACK + FULL-TIME WRECKER COMMUNITY BADGE
+============================== 
+You want the full experience, including the special Backer race car only available for limited time? Sure thing! You’ll also get the exclusive digital soundtrack, Full-Time Wrecker badge on the community forum and a lot of other awesome content.  Please see the rewards chart for full contents.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-05-01">May 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$60</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+197 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>“MASTER BLASTER&quot; COLLECTOR&#39;S EDITION • EXCLUSIVE DERBY CAR, NAME IN THE GAME, DIGITAL MAKING-OF BOOK + MASTER BLASTER COMMUNITY BADGE
+============================== 
+Be a Master Blaster and get a super exclusive derby car that the community will decide what it will be – how about a school bus? A hearse? Maybe an excavator! Sounds crazy, but you decide! Your name will also be featured in the in-game classified ads for the whole world to see, PLUS you’ll get a gorgeous digital making-of book and a rocking Master Blaster badge on the community forum, not to mention the whole lot of other goodies!  Please see the rewards chart for full contents.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-05-01">May 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$60</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+20 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>&quot;FULL-TIME WRECKER&quot; BOXED
+============================== The full experience in a physical form! You’ll get the whole Full-Time Wrecker experience AND a physical boxed copy of the game for PC. Please see the rewards chart for full contents.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-05-01">May 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $15 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$80</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+27 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>“MASTER BLASTER&quot; BOXED
+============================== Master Blaster Collector&#39;s Edition – BOXED! You’ll get all the great stuff included in the Master Blaster Collector’s Edition PLUS a physical boxed copy of the game for PC. How cool is that?  Please see the rewards chart for full contents.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-05-01">May 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $15 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$80</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+60 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>“TEAM BUGBEAR MEMBER” SPECIAL EDITION • YOUR NAME IN THE CREDITS UNDER HONORARY TEAM MEMBERS, EXCLUSIVE TEAM BUGBEAR PAINT JOB + TEAM BUGBEAR MEMBER COMMUNITY BADGE
+============================== Become a Bugbearian! You’ll receive a seriously exclusive Team Bugbear car paint job and Team Bugbear member community badge to show everyone that you’re rolling with the Bugbear guys. You&#39;ll also get your name listed in the game’s credits under honorary team members, not to mention a bunch of other digital goodness!  Please see the rewards chart for full contents.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-05-01">May 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$99</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+37 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>“TEAM BUGBEAR MEMBER&quot; BOXED SPECIAL EDITION • BOXED GAME + EXCLUSIVE T-SHIRT.
+==============================
+You’ll get all the Team Bugbear Member goodies and a really, really exclusive t-shirt only available for limited time as well as a physical boxed copy of the PC game, not to mention a whole lot of other cool stuff!  Please see the rewards chart for full contents.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-05-01">May 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $20 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$120</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+6 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>“SCREWDRIVER” PACK • EXCLUSIVE POSTER, SCREWDRIVER COMMUNITY BADGE + BOXED GAME
+==============================
+Make wrecks, not war! You’ll get to spread wrecking love with an exclusive poster, a t-shirt, a super hot Screwdriver badge on the community forum, a physical boxed copy of the PC game and a bundle of other lovely things.  Please see the rewards chart for full contents.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-05-01">May 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $20 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$160</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+24 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>“CRASH CHAMPION” EDITION • EXCLUSIVE 3D PRINTED AMERICAN RACING CAR, CRASH CHAMPION COMMUNITY BADGE + BOXED GAME
+==============================
+Are you a Crash Champion? If you are, this stuff is for you! You’ll get to race like a champ with a very exclusive 3D printed plastic American racing car and show your undisputed awesomeness with a Crash Champion badge on the community forum. Naturally you’ll also get a load of other neat stuff, including a physical boxed copy of the PC game!  Please see the rewards chart for full contents.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-05-01">May 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $20 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$1,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+3 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(16 left of 19)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>“BUGBEAR VEHICLE ARTIST” • GET TO DESIGN A PAINT JOB, VEHICLE ARTIST COMMUNITY BADGE, EXCLUSIVE SIGNED PRINTED MAKING-OF BOOK + SIGNED POSTER
+============================== 
+Design a car paint job with us that EVERYONE will get to see in the game! If you know how to  design a sketch or have a sweet idea, we know how to put it in-game. You’ll also get the printed making-of book and the poster, both signed by the Bugbear team, an exclusive Track Designer badge on the community forum, a physical boxed copy of the PC game as well as a wealth of other goodies!  Please see the rewards chart for full contents.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-05-01">May 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$5,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(3 left of 3)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>“BUGBEAR TRACK DESIGNER” • GET TO DESIGN A TRACK + TRACK DESIGNER COMMUNITY BADGE
+==============================
+Know how to design a killer derby or race track? Awesome, let’s put it in the game! You’ll first submit a sketch or an idea to us, after which you&#39;ll get to work closely with our Level Design team to recreate it in the game. You’ll also get the printed making-of book and the poster, both signed by the Bugbear team, as well as a very exclusive Track Designer badge on the community forum, a boxed copy of the PC game and a load of other nice stuff!  Please see the rewards chart for full contents.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-05-01">May 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$7,500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(5 left of 5)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>“SAUNA + SPEED DAY” • A DAY AT THE RACE TRACK AND SAUNA WITH THE TEAM
+==============================
+Take it to the track with the Bugbear guys! Fly to Finland and get down to the race track, where you can either challenge one of the Bugbear guys yourself in rallycross or simply enjoy the thrill of speed by riding shotgun to a professional driving. Should you want to attack the track yourself, professional coaching at the track is arranged. We will finish off the speed day in a traditional Finnish way of having a sauna and a nice meal with a choice selection of fitting drinks. One hotel night at a hotel in Helsinki is included in the price. Needless to say, you’ll also get all the goodies! Flights to and from Finland are not included. Note that dates may vary depending on availability. Please see the rewards chart for full contents.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-05-01">May 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$10,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(5 left of 5)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>“MEET SANTA!” • GET TO MEET SANTA CLAUS IN LAPLAND
+==============================
+FOR TWO PERSONS! Bring your best friend or significant other with you and spend a weekend in snowy Arctic Circle, Lapland of Northern Finland. Experience the breathtaking Finnish nature in winter, enjoy skiing or take a ride in reindeer sleigh, see the famous northern lights, and of course, get to meet the one and only Santa! Includes one night in Helsinki, two nights in a cosy Lapland resort in the Rovaniemi region and return flight from Helsinki to Lapland. Needless to say, you’ll also get all the other goodies to bring back with you as Christmas presents! Flights to and from Finland are not included. Note that dates may vary depending on availability. Please see the rewards chart for full contents.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-05-01">May 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+</ul>
+
+<div class="p2" id="meta">
+<h5>Funding period</h5>
+<p class="tiny_type">
+<time class="js-adjust" data-format="ll" datetime="2013-11-01T13:41:57-04:00">Nov 1, 2013</time> - 
+<time class="js-adjust" data-format="ll" datetime="2013-12-01T13:41:57-05:00">Dec 1, 2013</time>
+(30 days)
+</p>
+</div>
+</div>
+
+</div>
+
+<a href="#" id="video_mode_tab" style="display: none;">
+View in Video Mode
+</a>
+
+</div>
+</div>
+
+
+</div>
+
+<div class="h5 bg-green-dark" id="mega-footer-wrap">
+<div class="bg-green-dark white full-height" id="footer-newsletter-signup">
+<div class="container py4">
+<div class="grid_8 prefix_4 suffix_4 center mt4">
+<h2>
+Eureka! You've found
+<br>
+our little secret.
+</h2>
+<p>Sign up for our Happening email for all the inside info about arts and culture in the Kickstarter universe and beyond.</p>
+<div class="newsletter_signup">
+<form accept-charset="UTF-8" action="/newsletters/happening/signup" class="overlabels" method="post"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /><input class="hidden" name="authenticity_token" type="hidden" value="tC5+Ufoc6NPRc1ZV/v2RP2BDhTjCq3hUSBcxy9i/c6Y=" /></div><input class="hidden" id="location" name="location" type="hidden" value="footer" />
+<textarea class="hide textarea" id="comment" name="comment">
+</textarea>
+<div class="field newsletter">
+<label class="overlabel z1 overlabel-newsletter">Email address</label>
+<input class="text" id="email" name="email" type="text" />
+</div>
+<input class="button button_green submit" name="commit" type="submit" value="Submit" />
+</form>
+
+</div>
+
+</div>
+</div>
+</div>
+<div class="container relative" id="mega-footer">
+<span class="scissors icon-scissors-1"></span>
+<div class="grid_16 alpha omega pt4 pb2" id="mega-footer-links">
+<div class="grid_4 link-group">
+<h5 class="white">About us</h5>
+<ul class="list">
+<li><a href="/year/2013/?ref=footer">2013 highlights</a></li>
+<li><a href="/year/2012?ref=footer">2012 highlights</a></li>
+<li><a href="/team?ref=footer">Who we are</a></li>
+<li><a href="/jobs?ref=footer">Jobs</a></li>
+<li><a href="/press?ref=footer">Press</a></li>
+<li><a href="/help/stats?ref=footer">Stats</a></li>
+<li><a href="/newsletters/weekly">Projects we love</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group">
+<h5><a href="/help?ref=footer" class="white">Help</a></h5>
+<ul class="list">
+<li><a href="/hello?ref=footer">What is Kickstarter?</a></li>
+<li><a href="/help?ref=footer">FAQ</a></li>
+<li><a href="/contact?ref=footer">Support</a></li>
+<li><a href="/help/school?ref=footer">Kickstarter School</a></li>
+<li><a href="/terms-of-use?ref=footer">Terms of Use</a></li>
+<li><a href="/privacy?ref=footer">Privacy Policy</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group alpha omega suffix_1">
+<h5 class="alpha"><a href="/discover/advanced?ref=footer" class="white">Discover</a></h5>
+<ul class="column column-0 grid_2 list">
+<li><a href="/discover/categories/art?ref=footer">Art</a></li>
+<li><a href="/discover/categories/comics?ref=footer">Comics</a></li>
+<li><a href="/discover/categories/dance?ref=footer">Dance</a></li>
+<li><a href="/discover/categories/design?ref=footer">Design</a></li>
+<li><a href="/discover/categories/fashion?ref=footer">Fashion</a></li>
+<li><a href="/discover/categories/film%20&amp;%20video?ref=footer">Film &amp; Video</a></li>
+<li><a href="/discover/categories/food?ref=footer">Food</a></li>
+</ul>
+<ul class="column column-1 grid_2 list">
+<li><a href="/discover/categories/games?ref=footer">Games</a></li>
+<li><a href="/discover/categories/music?ref=footer">Music</a></li>
+<li><a href="/discover/categories/photography?ref=footer">Photography</a></li>
+<li><a href="/discover/categories/publishing?ref=footer">Publishing</a></li>
+<li><a href="/discover/categories/technology?ref=footer">Technology</a></li>
+<li><a href="/discover/categories/theater?ref=footer">Theater</a></li>
+</ul>
+</div>
+<div class="grid_3 link-group">
+<h5 class="white">Hello</h5>
+<ul class="list">
+<li>
+<a href="https://twitter.com/kickstarter"><span class="ss-icon ss-social-regular ss-twitter"></span>
+Twitter
+</a></li>
+<li>
+<a href="https://www.facebook.com/Kickstarter"><span class="ss-icon ss-social-regular ss-facebook"></span>
+Facebook
+</a></li>
+<li>
+<a href="http://kickstarter.tumblr.com"><span class="ss-icon ss-social-regular ss-tumblr"></span>
+Tumblr
+</a></li>
+<li>
+<a href="http://instagram.com/kickstarter"><span class="ss-icon ss-social-regular ss-instagram"></span>
+Instagram
+</a></li>
+<li>
+<a href="https://vine.co/Kickstarter"><span class="ss-icon ss-social-regular ss-vine"></span>
+Vine
+</a></li>
+<li>
+<a href="/blog?ref=footer">Blog</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="grid_16 py4" id="mega-footer-bottom">
+<div class="logo left">
+<a href="/" class="grey-dark"><span class="ss-icon h3">KICKSTARTER</span>
+</a></div>
+<p class="right h5 grey-dark">
+&copy;
+2014
+Kickstarter, Inc.
+</p>
+</div>
+</div>
+</div>
+
+<script>
+  //<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    var analytics_vars = { google_analytics_id : "UA-7621056-1", logged_in : "false", social_user: "false" }
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.mixpanel_id = '75b1d24a516ecfc955eadfadc4910661';
+    window.mixpanel_debug = false;
+  //]]>
+</script>
+
+
+<noscript>
+<img alt="Quantcast" border="0" height="1" src="//secure.quantserve.com/pixel/p-34IbSpw2K94Sg.gif" style="display:none" width="1" />
+</noscript>
+
+
+<script>
+  //<![CDATA[
+    window.benchmark = (typeof window.performance == 'object' && typeof window.performance.mark == 'function');
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    (function (root) {
+      function instrument_function (original) {
+        return function () {
+          try {
+            return original.apply(this, arguments);
+          } catch (e) {
+            if (e.stack && root.Honeybadger) {
+              Honeybadger.notify(e, {
+                current_project : root.current_project,
+                current_user : root.current_user
+              });
+            }
+            throw(e);
+          }
+        };
+      }
+      root.instrument_function = instrument_function;
+    }(this));
+  //]]>
+</script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+
+<script>
+  //<![CDATA[
+    (function(){function c(a){this.local_start_time=new Date;this.settings={cookie_name:"request_time"};for(var b in a)this.settings[b]=a[b];this.get_remote_offset()}c.prototype.get_remote_offset=function(){this.cookie_value=this.read_cookie();var a=new Date(this.cookie_value);if(!this.cookie_value||"Invalid Date"===a.toString()){if(this.remote_offset=this.read_cookie("local_offset"))this.remote_offset=parseInt(this.remote_offset,10)}else this.remote_offset=a-this.local_start_time;"undefined"!==typeof this.remote_offset&& !isNaN(this.remote_offset)?(document.cookie="local_offset="+this.remote_offset+"; path=/",this.is_set=!0):this.is_set=!1};c.prototype.time_units=[["milliseconds",1],["seconds",1E3],["minutes",6E4],["hours",36E5],["days",864E5]];c.prototype.get_units_in_interval=function(a,b){var d=a.replace(/^\w/,function(d){return"get"+d.toUpperCase()});return b[d]()};c.prototype.milliseconds_in_day=function(a){"undefined"===typeof a&&(a=new Date);for(var b=0,d=this.time_units.length-2;0<=d;d--)b+=this.get_units_in_interval(this.time_units[d][0], a)*this.time_units[d][1];return b};c.prototype.milliseconds_in_interval=function(a,b){return this.milliseconds_in_day(b)%a};c.prototype.milliseconds_to_next_interval=function(a,b){return a-this.milliseconds_in_interval(a,b)};c.prototype.pluralize=function(a,b){1===b&&(a=a.replace(/s$/,""));return a};c.prototype.read_cookie=function(a){for(var b=window.document.cookie.split(";"),a=(a||this.settings.cookie_name)+"=",d=0;d<b.length;d++){for(var e=b[d];" "==e.charAt(0);)e=e.substring(1,e.length);if(0== e.indexOf(a))return b=e.substring(a.length,e.length),decodeURIComponent(b).replace(/\+/g," ")}return null};c.prototype.destroy_cookie=function(a){var b=new Date;a||(a=this.settings.cookie_name);b.setTime(b.getTime()-864E5);window.document.cookie=a+"=; expires="+b.toGMTString()+"; path=/"};c.prototype.get_remote_time=function(){var a=new Date,b=a.getTime()+this.remote_offset;return a=a.setTime(b)};window.ksr_page_clock=new c})(); (function(){function c(d,a,b){if(d){this.options={unit_base:{seconds:119,minutes:119,hours:72,days:0},end_phrase:d.getAttribute("data-word")||"to go",count_down:d.getAttribute("data-dynamic")||!1};for(k in b)this.options[k]=b[k];this.clock=a;this.time_units=this.clock.time_units.slice(1);this.element=d;this.clock.is_set&&this.attach()}}function a(){this.elements=[];this.attach()}var b=function(d,a){var b=a||window.document.body,c=d.split("."),g=c[c.length-1],c=1<c.length&&c[0]?c[0]:"*";if(window.document.getElementsByClassName)return b.getElementsByClassName(g); if(b.querySelectorAll)return b.querySelectorAll(d);for(var c=b.getElementsByTagName(c),h=[],i=0,f;f=c[i];i++)b=RegExp("(^|\\s)"+g+"(\\s|$)"),(""+f.className).match(b)&&h.push(f);return h};c.prototype.get_remaining_time=function(){var d=this.remote_end_time-this.clock.get_remote_time();0>d&&(d=0);return d};c.prototype.get_current_unit=function(){for(var d,a=0;a<this.time_units.length&&!(d=this.time_units[a],this.get_remaining_time()<=this.options.unit_base[d[0]]*d[1]);a++);return d};c.prototype.update_element= function(){var a=this.get_current_unit(),b=Math.floor(this.get_remaining_time()/a[1]);isNaN(b)||(this.number_element.innerHTML=b,this.text_element.innerHTML=this.clock.pluralize(a[0],b)+" "+this.options.end_phrase)};c.prototype.valid=function(){return!(!this.number_element||!this.text_element)};c.prototype.attach=function(){function a(){c.update_element();if(c.options.count_down&&0<c.get_remaining_time()){var b=c.get_current_unit();this.timeout=window.setTimeout(a,c.clock.milliseconds_to_next_interval(b[1]))}} var c=this;if(this.remote_end_time_string=this.element.getAttribute("data-end_time"))this.remote_end_time_string.match(/^\d+$/)?(this.remote_end_time=new Date,this.remote_end_time.setTime(this.remote_end_time_string)):this.remote_end_time=new Date(this.remote_end_time_string),this.number_element=b(".num",this.element)[0],this.text_element=b(".text",this.element)[0],this.element.ksr_page_timer=!0,this.valid()&&a()};c.prototype.cancel=function(){this.timeout&&clearTimeout(this.timeout)};a.prototype.loading= !0;a.prototype.stop_finding=function(){this.attach_timers();this.loading=!1;document.addEventListener?document.removeEventListener("DOMContentLoaded",this.stop_finding,!1):document.attachEvent&&"complete"===document.readyState&&document.detachEvent("onreadystatechange",this.stop_finding)};a.prototype.bind_ready=function(){var a=this,b=function(){a.stop_finding.call(a)};document.addEventListener?(document.addEventListener("DOMContentLoaded",b,!1),window.addEventListener("load",b,!1)):document.attachEvent&& (document.attachEvent("onreadystatechange",b),window.attachEvent("onload",b))};a.prototype.attach_timers=function(){for(var a=b("div.ksr_page_timer"),e=0;e<a.length;e++)a[e].ksr_page_timer||(new c(a[e],window.ksr_page_clock),this.elements.push(a[e]))};a.prototype.attach=function(){var a=this;this.bind_ready();(function(){a.attach_timers();a.loading&&window.setTimeout(function(){a.attach_timers()},200)})()};window.ProjectTimer=c;new a})();
+  //]]>
+</script>
+
+<script class="template" id="template-widgets__video_embed_code" type="text/x-tmpl-mustache"><iframe width="{{width}}" height="{{height}}" src="{{{path}}}" frameborder="0" scrolling="no"> </iframe>
+</script><script class="template" id="template-projects__baseball_card_tall" type="text/x-tmpl-mustache"><div class="project-card-wrap project-card-wrap-tall border bg-white rounded clip">
+  <div class="project-card relative project-live {{#successful?}}successful{{/successful?}}">
+    <div class="project-thumbnail pt1 pl1 pr1">
+      <a href="{{urls.web.project}}" target="">
+        <img alt="Photo-little" class="projectphoto-little" src="{{photo.little}}" class="fit">
+      </a>
+    </div>
+    <div class="project-card-interior p1 h6 grey-dark">
+      <h6 class="project-title">
+        <a href="{{urls.web.project}}" target="" class="green-dark">{{name}}</a>
+      </h6>
+      <p class="mb1 ellipsis">
+        by
+        {{creator.name}}
+      </p>
+      <p class="blurb">
+        {{blurb}}
+      </p>
+    </div>
+    <div class="absolute-bottom bg-white rounded-bottom">
+
+      {{#location}}
+        <ul class="p1 list project-meta no-margin h6">
+          <li class="ellipsis">
+            <a href="{{location.urls.web.discover}}" data-location="{{location_json}}" class="grey-dark">
+              <span class="ss-icon ss-location"></span>
+              <span class="location-name">{{location.displayable_name}}</span>
+            </a>
+          </li>
+        </ul>
+      {{/location}}
+
+      <div class="project-stats-wrap pb1 pl1 pr1">
+
+        {{#failed?}}
+          <div class='project-status project-failed h6'>
+            <strong> Funding Unsuccessful</strong><br />
+            <span class="grey-dark">Project ended on {{formatted_deadline}}</span>
+          </div>
+        {{/failed?}}
+
+        {{#canceled?}}
+          <div class='project-status project-canceled h6'>
+            <strong> Funding Canceled</strong><br />
+            <span class="grey-dark">Project canceled on {{formatted_state_changed_at}}</span>
+          </div>
+        {{/canceled?}}
+
+        {{#successful?}}
+          <div class='project-pledged-successful bg-green white h6 pl1 pr1 mb1'>
+            <strong>Successful!</strong>
+          </div>
+        {{/successful?}}
+
+        {{#live_or_successful?}}
+          {{#live?}}
+            <div class="project-pledged-wrap bg-grey clip mb1">
+              <div class="project-pledged bg-green full-height" style="width: {{percent_raised_to_100}}%"></div>
+            </div>
+          {{/live?}}
+          <ul class="project-stats list no-margin h6 no-wrap">
+            <li class="first funded inline-block mr1">
+              <strong class="block h6">{{percent_raised_rounded}}%</strong>
+              <span class="grey-dark">funded</span>
+            </li>
+            <li class="pledged inline-block mr1">
+              <strong class="block h6">{{currency_symbol}}{{formatted_money}}</strong>
+              <span class="grey-dark">pledged</span>
+            </li>
+            {{#successful?}}
+              <li class="last successful inline-block">
+                <strong class="block h6">Funded</strong>
+                <div class="deadline grey-dark">{{formatted_deadline}}</div>
+              </li>
+            {{/successful?}}
+            {{#live?}}
+              <li class="last ksr_page_timer inline-block" data-end_time="{{javascript_deadline}}">
+                <strong class="block h6">
+                  <div class="num">30</div>
+                </strong>
+                <div class="span text grey-dark" data-word="left">days to go</div>
+              </li>
+            {{/live?}}
+          </ul>
+        {{/live_or_successful?}}
+      </div>
+    </div>
+  </div>
+</div>
+
+{{#friends_backing?}}
+  <div class="friend_project_context">
+    <div class="friend_facepile">
+      {{#truncated_friends}}
+        <img src="{{avatar.thumb}}" class="{{#has_metadata?}}small{{/has_metadata?}}">
+      {{/truncated_friends}}
+    </div>
+    <p class="friend_namepile">
+      {{{escaped_sentence}}}
+    </p>
+  </div>
+{{/friends_backing?}}
+</script><script class="template" id="template-projects__video_mode" type="text/x-tmpl-mustache"><a href='#' id='video_mode_close' class='close_button z2'><span class='ss-icon ss-delete'></span></a>
+
+<div class='title_card z1 {{context_classes}}' style="display:none;">
+  <div class='interior'>
+    <h2 class='project_title normal_weight'>{{name}}</h2>
+    <p class='blurb'>{{blurb}}</p>
+    <nav class='bar'>
+      <a id='play_button' class='left play' href='#'>
+        <span class='play_active'>
+          <span class='ss-icon ss-play'></span>
+          Play
+        </span>
+        <span class='pause_active'>
+          <span class='ss-icon ss-pause'></span>
+          Pause
+        </span>
+      </a>
+      {{#logged_in}}
+        <div class='remind right'>
+          {{#if_not_starred}}
+            <a class='follow' href='{{urls.web.project}}/watch'><span class='ss-icon ss-star'></span></a>
+          {{/if_not_starred}}
+          {{#if_starred}}
+            <a class='unfollow' href='{{urls.web.project}}/unwatch'><span class='ss-icon ss-star active'></span></a>
+          {{/if_starred}}
+        </div>
+      {{/logged_in}}
+      <a class='right explore button button_green small' href='#'>Explore this project</a>
+    </nav>
+  </div>
+</div>
+
+<div class='channel_controls z1'>
+  <a href='#' class='{{#playlist_is_location}}selected {{/playlist_is_location}}location'>Something else near {{location.first_name}} <span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_featured}}selected {{/playlist_is_featured}}featured'>Something different<span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_category}}selected {{/playlist_is_category}}category'>Something else in {{category.name}} <span class='ss-icon ss-navigateright'></span></a>
+</div>
+
+<div class='project_video' style='background-image: url('{{photo.full}}')'>
+  <div class='cover'>
+    <video>
+      <source src='{{video.high}}' type='video/mp4'/>
+      <source src='{{video.webm}}' type='video/webm'/>
+    </video>
+  </div>
+</div>
+</script><script class="template" id="template-site__video_mode_fourohfour" type="text/x-tmpl-mustache"><section class='four_oh_four'>
+  <p class='big_type'>
+    Looks like you've reached the end of the line! <br />Check out <a class="another" href='#'>another channel</a> or <a href='/discover'>browse projects in discover</a>.
+  </p>
+</section>
+</script>
+
+<script id="schwamm_formatting_options" type="text/javascript">
+//<![CDATA[
+(function(){window.formatters = window.formatters || {}; var formatting_options = {"distance_date_intervals":[[5,"just now"],[29,"less than a minute ago"],[89,"1 minute ago"],[2640,"%m minutes ago"],[5340,"about 1 hour ago"],[82800,"about %h hours ago"],[147600,"1 day ago"],[604800,"%d days ago"],[15552000,"on %t"],[0,"on %y"]],"currency_symbol_mappings":{"AFN":"\u060b","ALL":"Lek","ARS":"$","AUD":"$","AWG":"\u0192","AZN":"\u043c\u0430\u043d","BAM":"KM","BBD":"$","BGN":"\u043b\u0432","BMD":"$","BND":"$","BOB":"$b","BRL":"R$","BSD":"$","BWP":"P","BYR":"p.","BZD":"BZ$","CAD":"$","CLP":"$","CNY":"\u00a5","COP":"$","CRC":"\u20a1","CUP":"\u20b1","CZK":"K\u010d","DKK":"kr","DOP":"RD$","EGP":"\u00a3","EUR":"\u20ac","FJD":"$","FKP":"\u00a3","GBP":"\u00a3","GIP":"\u00a3","GTQ":"Q","GYD":"$","HKD":"$","HNL":"L","HRK":"kn","HUF":"Ft","IDR":"Rp","ILS":"\u20aa","IRR":"\ufdfc","ISK":"kr","JMD":"J$","JPY":"\u00a5","KGS":"\u043b\u0432","KHR":"\u17db","KPW":"\u20a9","KRW":"\u20a9","KYD":"$","KZT":"\u043b\u0432","LAK":"\u20ad","LBP":"\u00a3","LKR":"\u20a8","LRD":"$","LTL":"Lt","LVL":"Ls","MKD":"\u0434\u0435\u043d","MNT":"\u20ae","MUR":"\u20a8","MXN":"$","MYR":"RM","MZN":"MT","NAD":"$","NGN":"\u20a6","NIO":"C$","NOK":"kr","NPR":"\u20a8","NZD":"$","OMR":"\ufdfc","PAB":"B/.","PEN":"S/.","PHP":"\u20b1","PKR":"\u20a8","PLN":"z\u0142","PYG":"Gs","QAR":"\ufdfc","RON":"lei","RSD":"\u0414\u0438\u043d.","RUB":"\u0440\u0443\u0431","SAR":"\ufdfc","SBD":"$","SCR":"\u20a8","SEK":"kr","SGD":"$","SHP":"\u00a3","SOS":"S","SRD":"$","SVC":"$","SYP":"\u00a3","THB":"\u0e3f","TRY":"TL","TTD":"TT$","TWD":"NT$","UAH":"\u20b4","USD":"$","UYU":"$U","UZS":"\u043b\u0432","VEF":"Bs","VND":"\u20ab","YER":"\ufdfc","ZAR":"R"},"currency_trailing_code_mappings":{"AUD":true,"CAD":true,"NZD":true,"USD":true},"currency_formats":["money","shorter_money"]}; for (key in formatting_options) {window.formatters[key] = formatting_options[key]};}());
+//]]>
+</script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("begin_base.js_tag");}
+  //]]>
+</script>
+<script src="https://d297h9he240fqh.cloudfront.net/assets/packages/base-45cdab84617ddfb8905b7cddc8500c19.js" type="text/javascript"></script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("end_base.js_tag");}
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    document.domain='kickstarter.com';
+  //]]>
+</script>
+
+<iframe height="0" id="api_xdreceiver" src="https://api.kickstarter.com/xdreceiver/85e6.html" style="display: none;" width="0"></iframe>
+
+
+
+<div id="fb-root"></div>
+<script>
+  //<![CDATA[
+    var channelUrl = window.location.protocol + "//" + window.location.host + "/channel.html",
+      skip_autologin = $('body').is('.skip_autologin');
+    
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId: window.fb_app_id,
+        channelUrl: channelUrl,
+        status: true,    // check login status
+        cookie: true,    // enable cookies to allow the server to access the session
+        xfbml: true,     // parse XFBML
+        logging: false   // turn off logging
+      });
+    
+      FB.getLoginStatus(function (response) {
+        if (response.status === 'connected') {
+          if (read_cookie("logout_from_fb")) {
+            FB.logout();
+            destroy_cookie("logout_from_fb");
+          } else if (!skip_autologin) {
+            $.get("/fb/autologin", {'fbsr': response.authResponse.signedRequest});
+          } else if (false && 0 == response.authResponse.userID) {
+            $.get("/fb/refresh", {'fbsr': response.authResponse.signedRequest});
+          }
+        } else {
+          if (read_cookie("logout_from_fb")) {
+            destroy_cookie("logout_from_fb");
+          }
+        }
+      })
+    
+      $(document).trigger('fb:loaded');
+    };
+    
+    
+    // Load the SDK Asynchronously
+    (function(d){
+      var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+      js = d.createElement('script'); js.id = id; js.async = true;
+      js.src = "//connect.facebook.net/en_US/all.js";
+      d.getElementsByTagName('head')[0].appendChild(js);
+    }(document));
+  //]]>
+</script>
+
+
+</body>
+</html>

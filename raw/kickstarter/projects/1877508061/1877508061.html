@@ -1,0 +1,2253 @@
+<!DOCTYPE html>
+<html class="projects_show  fontface no-js" lang="en">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# kickstarter: http://ogp.me/ns/fb/kickstarter#">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-5.newrelic.com","errorBeacon":"jserror.newrelic.com","licenseKey":"b04b883ad2","applicationID":"11086","transactionName":"cFteRUULX1wHFhtIEFxeVVJDFxxDCgtD","queueTime":17,"applicationTime":1480,"ttGuid":"","agentToken":null,"agent":"js-agent.newrelic.com/nr-411.min.js"}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"Vw4BVEVSCQMIUg=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e){function n(t,e,n){n||(n={});for(var r=o[t],a=r&&r.length||0,s=n[i]||(n[i]={}),u=0;a>u;u++)r[u].apply(s,e);return s}function r(t,e){var n=o[t]||(o[t]=[]);n.push(e)}var o={},i="nr@context";e.exports={on:r,emit:n}},{}],2:[function(t){function e(t,e,n,i,s){return u?u-=1:r("err",[s||new UncaughtException(t,e,n)]),"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t(5),a=window.onerror,s=!1,u=0;t("loader").features.push("err"),window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(d){"stack"in d&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(4),s=!0)}i.on("fn-start",function(){s&&(u+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&u>0&&(u-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:4,3:3,4:6,5:1,6:14,handle:"D5DuLP",loader:"G9z0Bl"}],3:[function(t){function e(t){r.inPlace(t,["addEventListener","removeEventListener"],"-",n)}function n(t){return t[1]}var r=t(1),o=(t(3),t(2));if(e(window),"getPrototypeOf"in Object){for(var i=document;i&&!i.hasOwnProperty("addEventListener");)i=Object.getPrototypeOf(i);i&&e(i);for(var a=XMLHttpRequest.prototype;a&&!a.hasOwnProperty("addEventListener");)a=Object.getPrototypeOf(a);a&&e(a)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&e(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=e["nr@wrapped"]?t[1]=e["nr@wrapped"]:e["nr@wrapped"]=t[1]=r(e,"fn-"):"function"==typeof e.handleEvent&&r.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:15,2:1,3:14}],4:[function(t){var e=(t(3),t(1)),n=t(2);e.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=e(t[0],"fn-")})},{1:15,2:1,3:14}],5:[function(t){function e(t){var e=t[0];"string"==typeof e&&(e=new Function(e)),t[0]=n(e,"fn-")}var n=(t(3),t(1)),r=t(2);n.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",e)},{1:15,2:1,3:14}],6:[function(t){function e(){o.inPlace(this,s,"fn-")}function n(t,e){o.inPlace(e,["onreadystatechange"],"fn-")}function r(t,e){return e}var o=t(1),i=t(2),a=window.XMLHttpRequest,s=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];window.XMLHttpRequest=function(t){var n=new a(t);try{i.emit("new-xhr",[],n),o.inPlace(n,["addEventListener","removeEventListener"],"-",function(t,e){return e}),n.addEventListener("readystatechange",e,!1)}catch(r){try{i.emit("internal-error",r)}catch(s){}}return n},window.XMLHttpRequest.prototype=a.prototype,o.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",r),i.on("send-xhr-start",n),i.on("open-xhr-start",n)},{1:15,2:1}],7:[function(t){function e(){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;u>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,d="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=e(d);if(f&&(r.rxSize=f),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}t("loader").features.push("xhr");var o=t("handle"),i=t(1),a=t(5),s=["load","error","abort","timeout"],u=s.length,d=t(2);t(3),t(4),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var d=e(o);d&&(r.txSize=d)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",e)}catch(r){}}};for(var f=0;u>f;f++)n.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&e()},{1:8,2:11,3:3,4:6,5:1,handle:"D5DuLP",loader:"G9z0Bl"}],8:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e){var n=r[t];return n?n.apply(this,e):(o[t]||(o[t]=[]),void o[t].push(e))}var r={},o={};e.exports=n,n.queues=o,n.handlers=r},{}],11:[function(t,e){function n(t){if(!t||"object"!=typeof t&&"function"!=typeof t)return-1;if(t===window)return 0;if(o.call(t,"__nr"))return t.__nr;try{return Object.defineProperty(t,"__nr",{value:r,writable:!0,enumerable:!1}),r}catch(e){return t.__nr=r,r}finally{r+=1}}var r=1,o=Object.prototype.hasOwnProperty;e.exports=n},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&u&&u.body){p.proto="https"===c.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=u.createElement("script");e.src=p.proto+t.agent,u.body.appendChild(e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,u=s.document,d="addEventListener",f="attachEvent",c=(""+location).split("?")[0],p=e.exports={offset:i(),origin:c,features:[]};u[d]?(u[d]("DOMContentLoaded",o,!1),s[d]("load",n,!1)):(u[f]("onreadystatechange",r),s[f]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],14:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],15:[function(t,e){function n(t,e,r,s){function nrWrapper(){try{var n,a=u(arguments),d=this,f=r&&r(a,d)||{}}catch(c){i([c,"",[a,d,s],f])}o(e+"start",[a,d,s],f);try{return n=t.apply(d,a)}catch(p){throw o(e+"err",[a,d,p],f),p}finally{o(e+"end",[a,d,n],f)}}return a(t)?t:(e||(e=""),nrWrapper[n.flag]=!0,nrWrapper)}function r(t,e,r,o){r||(r="");var i,s,u,d="-"===r.charAt(0);for(u=0;u<e.length;u++)s=e[u],i=t[s],a(i)||(t[s]=n(i,d?s+r:r,o,s,t))}function o(t,e,n){try{s.emit(t,e,n)}catch(r){i([r,t,e,n])}}function i(t){try{s.emit("internal-error",t)}catch(e){}}function a(t){return!(t&&"function"==typeof t&&t.apply&&!t[n.flag])}var s=t(1),u=t(2);e.exports=n,n.inPlace=r,n.flag="nr@wrapper"},{1:1,2:14}]},{},["G9z0Bl",2,7]);</script><script>
+  //<![CDATA[
+    docElement = this.document.documentElement;
+    docElement.className=docElement.className.replace(/\bno-js\b/,'') + 'js';
+  //]]>
+</script>
+<title>Divine Space, Unique Sci-Fi Action-RPG (Canceled) by Dodo Games &mdash; Kickstarter</title><script>
+  //<![CDATA[
+    window.report_errors = true;
+    window.honeybadger_configuration = {
+      api_key : "02ab109335c0dd1a93506d92f22217a7",
+      environment : "production",
+      component : "projects",
+      action : "show",
+      onerror : false
+    };
+  //]]>
+</script>
+
+
+<!--[if lt IE 9]>
+  <script src="//html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta content="telephone=no" name="format-detection">
+
+<!--[if !IE]> -->
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base-9f623ad5d021a188cfb2d68a0cdf7a7b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<!-- <![endif]-->
+<!--[if IE]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base_blessed-2640c72487552f9a2ef9f2620b4af860.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<!--[if lte IE 9]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_nine-a93fe10530f175f96c4078b7e070d7e1.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 8]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_eight-f75aeb274436f94a0d243774456b1c62.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 7]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie-c019c01acd3a96588b346cf577a3504f.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_seven-5a3d2cef660cd281fd844b04b2397dbb.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if IE 6]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_six-e4d3caf76e405fe19aee6ece8bda701b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<link href="https://d297h9he240fqh.cloudfront.net/favicon.png" rel="icon" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-precomposed-7b603dba7cf80e4acc57d94a991bebbd.png" rel="apple-touch-icon-precomposed" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-ipad-precomposed-3176f72977daf43dee3b0d348484dc01.png" rel="apple-touch-icon-precomposed" sizes="72x72" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-iphone4-precomposed-b93b70168cd8492c843d0fea873c7f83.png" rel="apple-touch-icon-precomposed" sizes="114x114" type="image/png">
+<link href="https://www.kickstarter.com/services/oembed?url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Fdodogames%2Fdivine-space-sci-fi-space-arpg" rel="alternate" title="Divine Space, Unique Sci-Fi Action-RPG (Canceled) Script Tag oEmbed" type="application/json+oembed">
+<link rel="alternate" type="application/atom+xml" title="Divine Space, Unique Sci-Fi Action-RPG (Canceled) : Kickstarter" href="https://www.kickstarter.com/projects/dodogames/divine-space-sci-fi-space-arpg/posts.atom" />
+<meta property="twitter:app:id:iphone" content="596961532"/>
+<meta property="twitter:app:name:iphone" content="Kickstarter"/>
+<meta property="twitter:app:url:iphone" content="ksr://www.kickstarter.com/projects/dodogames/divine-space-sci-fi-space-arpg"/>
+<meta name="video_height" content="360"/>
+<meta name="video_width" content="640"/>
+<meta name="video_type" content="application/x-shockwave-flash"/>
+<meta name="title" content="Kickstarter &gt;&gt; Divine Space, Unique Sci-Fi Action-RPG (Canceled) by Dodo Games"/>
+<meta name="description" content="Dodo Games is raising funds for Divine Space, Unique Sci-Fi Action-RPG (Canceled) on Kickstarter! 
+
+ Immersive universe of this sci-fi game is built based on real astronomical data. Build your ship to travel between real stars!"/>
+<meta name="robots" content="noindex"/>
+<meta property="og:title" content="Divine Space, Unique Sci-Fi Action-RPG (Canceled)"/>
+<meta property="og:type" content="kickstarter:project"/>
+<meta property="og:image" content="https://s3.amazonaws.com/ksr/projects/194729/photo-main.jpg?1397783540"/>
+<meta property="og:url" content="https://www.kickstarter.com/projects/dodogames/divine-space-sci-fi-space-arpg"/>
+<meta property="og:site_name" content="Kickstarter"/>
+<meta property="fb:app_id" content="69103156693"/>
+<meta property="og:description" content="Immersive universe of this sci-fi game is built based on real astronomical data. Build your ship to travel between real stars!"/>
+<meta property="kickstarter:creator" content="https://www.kickstarter.com/profile/dodogames"/>
+<meta property="twitter:url:landing_url" content="https://www.kickstarter.com/projects/dodogames/divine-space-sci-fi-space-arpg"/>
+<meta property="twitter:card" content="2427656750:kickstarter_project"/>
+<meta property="twitter:site" content="@kickstarter"/>
+<meta property="twitter:site:id" content="16186995"/>
+<meta property="twitter:text:title" content="Divine Space, Unique Sci-Fi Action-RPG (Canceled)"/>
+<meta property="twitter:text:artist" content="Dodo Games"/>
+<meta property="twitter:text:backers" content="530"/>
+<meta property="twitter:text:pledged" content="$28,057 USD"/>
+<meta property="twitter:text:time" content="0 seconds"/>
+<meta property="twitter:text:location" content="Moscow, Russia"/>
+<meta property="twitter:image:location_image" content="https://d3mlfyygrfdi2i.cloudfront.net/b40e/pin.png"/>
+<meta property="twitter:text:description" content="Immersive universe of this sci-fi game is built based on real astronomical data. Build your ship to travel between real stars!"/>
+<meta property="twitter:image:media" content="https://s3.amazonaws.com/ksr/projects/194729/photo-main.jpg?1397783540"/>
+<meta property="twitter:image:width" content="640"/>
+<meta property="twitter:image:height" content="480"/>
+<meta property="twitter:player:stream:url" content="https://d2pq0u4uni88oo.cloudfront.net/projects/194729/video-175306-h264_base.mp4"/>
+<meta property="twitter:player:stream:content" content="video/mp4"/>
+<meta property="twitter:player:url" content="https://www.kickstarter.com/projects/dodogames/divine-space-sci-fi-space-arpg/widget/video.html"/>
+<meta property="twitter:player:height" content="360"/>
+<meta property="twitter:player:width" content="640"/>
+<meta property="twitter:maxage" content="60"/>
+<meta property="og:video" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F194729%2Fvideo-175306-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F194729%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Dodo+Games&amp;project_title=Divine+Space%2C+Unique+Sci-Fi+Action-RPG+%28Canceled%29&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Fdodogames%2Fdivine-space-sci-fi-space-arpg&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:secure_url" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F194729%2Fvideo-175306-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F194729%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Dodo+Games&amp;project_title=Divine+Space%2C+Unique+Sci-Fi+Action-RPG+%28Canceled%29&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Fdodogames%2Fdivine-space-sci-fi-space-arpg&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:height" content="360"/>
+<meta property="og:video:width" content="640"/>
+<meta property="og:video:type" content="application/x-shockwave-flash"/>
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="2sOiUB2kcQfi+amz5+sNW1WefNZZIuSXByfBiK0eT/c=" name="csrf-token" />
+<script type="text/javascript">
+  var _sift = _sift || [];
+  _sift.push(['_setAccount', '637102']);
+  _sift.push(['_setUserId', '']);
+  _sift.push(['_trackPageview']);
+
+  (function() {
+    function loadSift() {
+      var sift, s;
+      if (root.visitor_id) {
+        _sift.push(['_setSessionId', root.visitor_id]);
+      }
+      sift = document.createElement('script');
+      sift.type = 'text/javascript';
+      sift.async = true;
+      sift.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dtlilztwypawv.cloudfront.net/s.js';
+      s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(sift, s);
+    }
+    if (window.attachEvent) {
+      window.attachEvent('onload', loadSift);
+    } else {
+      window.addEventListener('load', loadSift, false);
+    }
+  })();
+</script>
+<link href="http://kck.st/Qi6MuO" rel="shorturl">
+<link href="https://www.kickstarter.com/projects/dodogames/divine-space-sci-fi-space-arpg" rel="canonical">
+<link href="https://s3.amazonaws.com/ksr/projects/194729/photo-med.jpg?1397783540" rel="image_src">
+<link href="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F194729%2Fvideo-175306-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F194729%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Dodo+Games&amp;project_title=Divine+Space%2C+Unique+Sci-Fi+Action-RPG+%28Canceled%29&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Fdodogames%2Fdivine-space-sci-fi-space-arpg&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque" rel="video_src">
+<script>
+  //<![CDATA[
+    window.current_checkout = "{&quot;id&quot;:0,&quot;domestic&quot;:null,&quot;amount&quot;:0.0,&quot;updated_at&quot;:0,&quot;created_at&quot;:0}";
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.current_ip = '94.209.101.212';
+    window.current_ip_datacenter = 'false';
+    window.enabled_features = {"elasticsearch":true,"security_history_read":true,"security_history_write":true,"advanced_discovery_es":true,"ios_crashlytics":true,"ios_mixpanel":true,"stories_veronica_mars":true,"veronica_mars_hero":true,"password_reset_banner":true};
+    window.fb_app_id = '69103156693';
+    
+    var _sf_startpt=(new Date()).getTime();
+    
+    window.current_project = "{&quot;id&quot;:1877508061,&quot;name&quot;:&quot;Divine Space, Unique Sci-Fi Action-RPG (Canceled)&quot;,&quot;blurb&quot;:&quot;Immersive universe of this sci-fi game is built based on real astronomical data. Build your ship to travel between real stars!&quot;,&quot;goal&quot;:100000.0,&quot;pledged&quot;:28057.0,&quot;state&quot;:&quot;canceled&quot;,&quot;slug&quot;:&quot;divine-space-sci-fi-space-arpg&quot;,&quot;disable_communication&quot;:false,&quot;country&quot;:&quot;US&quot;,&quot;currency&quot;:&quot;USD&quot;,&quot;currency_symbol&quot;:&quot;$&quot;,&quot;currency_trailing_code&quot;:true,&quot;deadline&quot;:1353679200,&quot;state_changed_at&quot;:1353665220,&quot;created_at&quot;:1337763622,&quot;launched_at&quot;:1349892117,&quot;backers_count&quot;:530,&quot;photo&quot;:{&quot;full&quot;:&quot;https://s3.amazonaws.com/ksr/projects/194729/photo-full.jpg?1397783540&quot;,&quot;ed&quot;:&quot;https://s3.amazonaws.com/ksr/projects/194729/photo-ed.jpg?1397783540&quot;,&quot;med&quot;:&quot;https://s3.amazonaws.com/ksr/projects/194729/photo-med.jpg?1397783540&quot;,&quot;little&quot;:&quot;https://s3.amazonaws.com/ksr/projects/194729/photo-little.jpg?1397783540&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/projects/194729/photo-small.jpg?1397783540&quot;,&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/projects/194729/photo-thumb.jpg?1397783540&quot;,&quot;1024x768&quot;:&quot;https://s3.amazonaws.com/ksr/projects/194729/photo-1024x768.jpg?1397783540&quot;,&quot;1536x1152&quot;:&quot;https://s3.amazonaws.com/ksr/projects/194729/photo-1536x1152.jpg?1397783540&quot;},&quot;creator&quot;:{&quot;id&quot;:872077572,&quot;name&quot;:&quot;Dodo Games&quot;,&quot;slug&quot;:&quot;dodogames&quot;,&quot;avatar&quot;:{&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/2870481/dodo_logo_220x220.thumb.jpg?1349168404&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/2870481/dodo_logo_220x220.small.jpg?1349168404&quot;,&quot;medium&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/2870481/dodo_logo_220x220.medium.jpg?1349168404&quot;},&quot;urls&quot;:{&quot;web&quot;:{&quot;user&quot;:&quot;https://www.kickstarter.com/profile/dodogames&quot;},&quot;api&quot;:{&quot;user&quot;:&quot;https://api.kickstarter.com/v1/users/872077572?signature=1399956596.6dd95fcf04441c8edf7fed89a4dadaf767b40257&quot;}}},&quot;location&quot;:{&quot;id&quot;:2122265,&quot;name&quot;:&quot;Moscow&quot;,&quot;slug&quot;:&quot;moscow-ru&quot;,&quot;short_name&quot;:&quot;Moscow, Russia&quot;,&quot;displayable_name&quot;:&quot;Moscow, Russia&quot;,&quot;country&quot;:&quot;RU&quot;,&quot;state&quot;:&quot;Moscow Federal City&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/moscow-ru&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/moscow-ru&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1399951841.77303ecfcaccae1cd156f3fa1e22cf0746cab256&amp;woe_id=2122265&quot;}}},&quot;category&quot;:{&quot;id&quot;:35,&quot;name&quot;:&quot;Video Games&quot;,&quot;slug&quot;:&quot;games/video games&quot;,&quot;position&quot;:7,&quot;parent_id&quot;:12,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;http://www.kickstarter.com/discover/categories/games/video%20games&quot;}}},&quot;urls&quot;:{&quot;web&quot;:{&quot;project&quot;:&quot;https://www.kickstarter.com/projects/dodogames/divine-space-sci-fi-space-arpg&quot;,&quot;project_short&quot;:&quot;http://kck.st/Qi6MuO&quot;,&quot;updates&quot;:&quot;https://www.kickstarter.com/projects/dodogames/divine-space-sci-fi-space-arpg/posts&quot;},&quot;api&quot;:{&quot;project&quot;:&quot;https://api.kickstarter.com/v1/projects/1877508061?signature=1399956596.69c2f5305749bed5a99ce3206c01869290a29db2&quot;,&quot;comments&quot;:&quot;https://api.kickstarter.com/v1/projects/1877508061/comments?signature=1399956596.9d19fba02677daee95910724d12320f297e01e9d&quot;,&quot;updates&quot;:&quot;https://api.kickstarter.com/v1/projects/1877508061/updates?signature=1399956597.a2b5103cecdf41d7216abb22a6e2a5423f77b2ec&quot;}},&quot;updated_at&quot;:1397783551,&quot;canceled_at&quot;:1353665220,&quot;video&quot;:{&quot;id&quot;:175306,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/194729/video-175306-h264_high.mp4?2012&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/194729/video-175306-h264_base.mp4?2012&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/194729/video-175306-webm.webm?2012&quot;,&quot;width&quot;:640,&quot;height&quot;:360,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/194729/video-175306-h264_base.jpg?2012&quot;},&quot;comments_count&quot;:122,&quot;updates_count&quot;:14,&quot;rewards&quot;:[{&quot;id&quot;:0,&quot;minimum&quot;:1,&quot;reward&quot;:&quot;No Reward&quot;},{&quot;id&quot;:1111247,&quot;minimum&quot;:1.0,&quot;reward&quot;:&quot;For early backers only: Divine Space Ringtone Pack and wallpapers. Also, get +100 to your karma and tonns of our love and gratitude by pressing &#39;like&#39; button, share our project on FB or tweeting about us!&quot;,&quot;limit&quot;:100,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1354320000,&quot;project_id&quot;:1877508061,&quot;remaining&quot;:0,&quot;backers_count&quot;:100,&quot;updated_at&quot;:1353646264},{&quot;id&quot;:1111248,&quot;minimum&quot;:10.0,&quot;reward&quot;:&quot;Previous reward tier + BACKER STATUS + THANKS IN CREDITS. On the forums, everyone will recognize you as a backer, thanks to whom Divine Space exists.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1354320000,&quot;project_id&quot;:1877508061,&quot;backers_count&quot;:63,&quot;updated_at&quot;:1353640505},{&quot;id&quot;:1002954,&quot;minimum&quot;:20.0,&quot;reward&quot;:&quot;Previous reward tier + SATELLITE-ALLY + 3 MONTHS PREMIUM + RARE IN-GAME MONEY EQUAL TO $60. Satellite Ally is a unique in-game item that is exclusive for backers only. It will always be with you, fighting with your enemies.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1372636800,&quot;project_id&quot;:1877508061,&quot;backers_count&quot;:206,&quot;updated_at&quot;:1353654584},{&quot;id&quot;:1126771,&quot;minimum&quot;:35.0,&quot;reward&quot;:&quot;Previous reward tier + SOUNDTRACK MINIPACK. This reward includes 5 soundtracks form the game in different styles, from techno to ambient. Please notice that soundtrack pack in $74 and $75 rewards is improved to whole 15 soundtracks!&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1372636800,&quot;project_id&quot;:1877508061,&quot;backers_count&quot;:12,&quot;updated_at&quot;:1353586697},{&quot;id&quot;:1002955,&quot;minimum&quot;:50.0,&quot;reward&quot;:&quot;Previous reward tier + SATELLITE-ALLY TIER 2 + 6 MONTHS OF PREMIUM + DIGITAL ARTBOOK + RARE IN-GAME MONEY EQUAL TO $150. The ally from previous reward tier upgraded to tier 2 that can also repair your ship from time to time. The artbook contains concepts, interesting stories about game universe and characters, and behind the scene materials.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1372636800,&quot;project_id&quot;:1877508061,&quot;backers_count&quot;:39,&quot;updated_at&quot;:1353519766},{&quot;id&quot;:1126772,&quot;minimum&quot;:74.0,&quot;reward&quot;:&quot;(INSERTED DIGITAL REWARD) Previous reward tier but INSTEAD OF PHYSICAL GOODS, YOU GET IN-GAME MONEY ON YOUR ACCOUNT. This reward for those who aren\\u2019t interested in physical candies, but want more shiny coins on their in-game accounts and at the lesser price. Here, instead of money equal to $150, you will get $200! Please keep in mind that next reward tier - $75 - refers to previous (old) reward tier, $50.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1372636800,&quot;project_id&quot;:1877508061,&quot;backers_count&quot;:6,&quot;updated_at&quot;:1353600710},{&quot;id&quot;:1002956,&quot;minimum&quot;:75.0,&quot;reward&quot;:&quot;$50 reward tier + AN EXCELLENT PRINT VERSION OF ARTBOOK + SOUNDTRACKS PACK + ACCESS TO DEVELPERS FORUM! The soundtrack pack contains 10 high-quality beautiful soundtracks in different genres. On the closed developers\\u2019 forum, your ideas or questions will be always answered. Please add $15 for shipping outside of the US.&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1372636800,&quot;project_id&quot;:1877508061,&quot;backers_count&quot;:2,&quot;updated_at&quot;:1353615319},{&quot;id&quot;:1002957,&quot;minimum&quot;:100.0,&quot;reward&quot;:&quot;Previous reward tier + LIFELONG PREMIUM ACCOUNT + SATELLITE-ALLY TIER 3 + A MAGNIFICENT CRYSTAL + RARE IN-GAME MONEY EQUAL TO $300. The satellite from previous reward will be upgraded to tier 3 and will become twice as powerful as the previous one, both in combat and repairing. Crystal is a paperweight (or just a table decoration) with beautiful laser engraving inside, looking at which everyone surely will get excited.&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1372636800,&quot;project_id&quot;:1877508061,&quot;backers_count&quot;:45,&quot;updated_at&quot;:1353644532},{&quot;id&quot;:1111253,&quot;minimum&quot;:101.0,&quot;reward&quot;:&quot;Previous reward tier + IPAD BACK COVER instead of a crystal. Our artists designed a wonderful space view to turn your iPad into something special. If you don&#39;t want a crystal and have iPad, this option is for you! If you want a crystal too, add $35 and you will have both!&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1372636800,&quot;project_id&quot;:1877508061,&quot;backers_count&quot;:5,&quot;updated_at&quot;:1353592565},{&quot;id&quot;:1126773,&quot;minimum&quot;:139.0,&quot;reward&quot;:&quot;(INSERTED DIGITAL REWARD) Previous reward tier, tier but INSTEAD OF PHYSICAL GOODS, YOU GET IN-GAME MONEY ON YOUR ACCOUNT. This reward for those who aren\\u2019t interested in physical things: instead of cover or crystal, box and artbook, you will get additional in-game money to your account in sum, equal to $400! Please keep in mind that next reward tier - $140 - refers to previous (old) reward tiers, $100 or $101.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1372636800,&quot;project_id&quot;:1877508061,&quot;backers_count&quot;:4,&quot;updated_at&quot;:1353078975},{&quot;id&quot;:1002958,&quot;minimum&quot;:140.0,&quot;reward&quot;:&quot;One of the previous reward tiers of your choice + BOXED EDITION + EARLY BETA KEY! You will be able to play our game on a special super secret server and see how the game is being developed and improved. You will have a chance to take part in the development, send suggestions and feedbacks and, sometimes, notice YOUR fixes and corrections in it! To make this tier even sweeter, your rewards and copy of the game will be sent to you packed into a splendid collection game box, exclusively for our backers only!&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1372636800,&quot;project_id&quot;:1877508061,&quot;backers_count&quot;:20,&quot;updated_at&quot;:1353643463},{&quot;id&quot;:1002959,&quot;minimum&quot;:200.0,&quot;reward&quot;:&quot;Previous reward tier + STAR WILL BE NAMED IN YOUR HONOR! Hurry up to be the first, the quantity is limited. Who knows, maybe in a couple of centuries, this star will indeed be so named, as it has already happened? Also, you will be able to test the game in its early development on special browser-based platform!&quot;,&quot;limit&quot;:250,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1372636800,&quot;project_id&quot;:1877508061,&quot;remaining&quot;:245,&quot;backers_count&quot;:5,&quot;updated_at&quot;:1352679781},{&quot;id&quot;:1002960,&quot;minimum&quot;:250.0,&quot;reward&quot;:&quot;Previous reward tier + WEAPON OR DEVICE WILL BE NAMED IN YOUR HONOR. Instead of the star, WEAPON or DEVICE will be named after you and you will be included in the history of its creation. Please notice that star naming is not included due to limited amount of the stars in the first version that can be renamed&quot;,&quot;limit&quot;:50,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1372636800,&quot;project_id&quot;:1877508061,&quot;remaining&quot;:49,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1350567962},{&quot;id&quot;:1002961,&quot;minimum&quot;:350.0,&quot;reward&quot;:&quot;Previous reward tier + PLANET WILL BE NAMED IN YOUR HONOR. Instead of a star or equipment, a whole PLANET will be named after you and you will be included in its history as a historical figure - and become part of the game universe.&quot;,&quot;limit&quot;:30,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1372636800,&quot;project_id&quot;:1877508061,&quot;remaining&quot;:30,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1349892089},{&quot;id&quot;:1002962,&quot;minimum&quot;:500.0,&quot;reward&quot;:&quot;Previous reward tier + MINI-PORTRAIT OF YOU AS A PILOT! Instead of becoming a planet, you will become a CHARACTER in the game. You will be painted by our amazing artist (your photo is required) and become a living part of the game! Beside that, in the MMO version this portrait will be available only to you (as your avatar picture). Also, we will send this picture to you in higher resolution so you will be able to use it as an avatar for social networks, forums and any other sites you wish.&quot;,&quot;limit&quot;:50,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1372636800,&quot;project_id&quot;:1877508061,&quot;remaining&quot;:47,&quot;backers_count&quot;:3,&quot;updated_at&quot;:1352455862},{&quot;id&quot;:1002963,&quot;minimum&quot;:600.0,&quot;reward&quot;:&quot;Previous reward tier + MINI-PORTRAIT OF YOU AS A PIRATE! Instead of a simple pilot, your alter ego will be a terror of common pilots and wretched merchants! Of course, you&#39;ll get this picture in higher resolution for use as your personal avatar to imbue horror into your friends at any site you wish - and especially in the MMO version!&quot;,&quot;limit&quot;:13,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1372636800,&quot;project_id&quot;:1877508061,&quot;remaining&quot;:13,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1350939526},{&quot;id&quot;:1002965,&quot;minimum&quot;:700.0,&quot;reward&quot;:&quot;Previous reward tier + MINI-PORTRAIT OF YOU AS A CAPTAIN OF A SPACE BASE. Warning: VERY EXCLUSIVE! You will become a part of one of the story lines and will have lifelong privileges at this base (which is especially valuable for the MMO version). Impress everyone by your power and authority!&quot;,&quot;limit&quot;:20,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1372636800,&quot;project_id&quot;:1877508061,&quot;remaining&quot;:17,&quot;backers_count&quot;:3,&quot;updated_at&quot;:1353522721},{&quot;id&quot;:1002966,&quot;minimum&quot;:1000.0,&quot;reward&quot;:&quot;Previous reward tier + MINI-PORTRAIT OF YOU AS A SCIENTIST. Warning: SUPER EXCLUSIVE! There are two scientists and they are super important characters of the global storyline. All the players will necessarily meet them. In the MMO version, you will have super secret abilities (not affecting game balance) that will be revealed only to you.&quot;,&quot;limit&quot;:2,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1372636800,&quot;project_id&quot;:1877508061,&quot;remaining&quot;:2,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1350939614},{&quot;id&quot;:1002967,&quot;minimum&quot;:1500.0,&quot;reward&quot;:&quot;Previous reward tier + MINI-PORTRAIT OF YOU AS A CHIEF &#39;VILLAIN&#39; OR COMMANDER. Warning: EXTREMELY EXCLUSIVE! Those are the main heroes of the game. The choice is given to the first one to get this reward, but both of them are simply stunning. In the MMO version, you will have exclusive political powers that will affect the whole universe.&quot;,&quot;limit&quot;:2,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1372636800,&quot;project_id&quot;:1877508061,&quot;remaining&quot;:2,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1350939614},{&quot;id&quot;:1002968,&quot;minimum&quot;:5000.0,&quot;reward&quot;:&quot;Previous reward tier + SHIP OF YOUR OWN DESIGN + MINI-PORTRAIT OF YOU AS A CONSTRUCTOR. Instead of a Commander or chief &#39;villain&#39;, you will be a constructor, but you will be able to participate in designing a ship. This means you will tightly work together with us and our artists to make a constructor of your dreams. Of course, you will be included in the history of the ship too. In the MMO version, everyone who will buy parts of this ship will pay you taxes in game money!&quot;,&quot;limit&quot;:3,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1372636800,&quot;project_id&quot;:1877508061,&quot;remaining&quot;:2,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1351751664},{&quot;id&quot;:1002969,&quot;minimum&quot;:10000.0,&quot;reward&quot;:&quot;A special offer for the real fans of space exploration and science who may be not particularly interested in games but space per se. We will give... No, not a reception in your honour. We&#39;ll give you a unique opportunity to go on a four-day visit to one of the most mysterious objects - the Baikonur space launching site where you will be able to watch a real launch of a spacecraft (of course, along with the game designer of &#39;Divine Space&#39;). An unforgettable experience is guaranteed. That&#39;s it! And, in addition, you&#39;ll get the $2,000 reward level&quot;,&quot;limit&quot;:7,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1372636800,&quot;project_id&quot;:1877508061,&quot;remaining&quot;:7,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1349892090}]}";
+    
+    
+    
+    
+    
+    
+    
+    
+    window.timeRemaining = function timeRemaining(epochTime){
+    
+      var diff = epochTime - ((new Date()).getTime() / 1000);
+      var num_unit = (diff < 60 && [Math.max(diff, 0), 'seconds']) ||
+        ((diff/=60) < 60 && [diff, 'minutes']) ||
+        ((diff/=60) < 72 && [diff, 'hours']) ||
+        [diff/=24, 'days'];
+    
+      // Round down
+      num_unit[0] = Math.floor(num_unit[0]);
+      // Singularize unit
+      if (num_unit[0] == 1) { num_unit[1] = num_unit[1].replace(/s$/,""); }
+    
+      return num_unit;
+    };
+  //]]>
+</script>
+
+<script>
+  //<![CDATA[
+    window.current_variants = ["discover_link_copy[explore]","rewards_hover[without_hover_text]"];
+  //]]>
+</script>
+
+
+</head>
+
+<body class="project projects not-mobile not-phone not-forces-video-controls not-tablet not-touchable not-native-app-request video_mode" id="projects_show">
+<div class="jGrowl center" id="growl_section"></div>
+<div class="NS_layouts__navigation" id="header">
+<div class="main-nav relative bg-white">
+<h1 class="no-margin ml1 mr2 left">
+<a href="/?ref=nav" class="block p2"><span class="ss-icon green-dark">KICK</span><span class="ss-icon green">STARTER</span>
+</a></h1>
+<ul class="primary-links list no-margin left">
+<li class="left discover-link full-height">
+<a href="/discover?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Explore</a>
+</li>
+<li class="left full-height mr2">
+<a href="/learn?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Start</a>
+</li>
+</ul>
+<ul class="list no-margin right" id="menu-sub">
+<li class="right"><a href="/login?ref=nav" class="block h5 bold p2 full-height border-box">Log in</a></li>
+<li class="right"><a href="/signup?ref=nav" class="block h5 bold p2 full-height border-box">Sign up</a></li>
+</ul>
+<div class="search-link pl2 full-height border-left border-box clip">
+<form accept-charset="UTF-8" action="/projects/search" class="search pt1 pb1 block relative form-simple" method="get"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /></div>
+<div class="field relative pl3">
+<span class="ss-icon ss-search grey-dark ml1 mt1 absolute"></span>
+<input class="input-search header full-width text" data-tracker-name="Header Live Search" id="term" name="term" placeholder="Search projects" type="text" />
+</div>
+</form>
+
+</div>
+<div class="clear"></div>
+</div>
+</div>
+<div class="hide pt4 pb4 bg-grey-light" id="search_results-wrap">
+<div class="relative container" id="search_results">
+<a class="close right grey-dark mr1"><span class="ss-icon ss-delete"></span></a>
+<h3 class="header ml1 clearfix"></h3>
+<div class="clip clearfix" id="search_results_panel"></div>
+<a class="prev arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateleft"></span>
+</a>
+<a class="next arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateright"></span>
+</a>
+</div>
+</div>
+
+
+
+
+<div class="Project-ended-true Project-is_starred- Project-state-canceled Project1877508061_cxt border-top" id="main_content">
+<div id="running-board-wrap">
+<div class="container" id="running-board">
+<div id="project-header">
+<div class="NS_projects__running_board ml1 mr1 clearfix">
+<div class="title center py4">
+<h2 class="mb1">
+<a href="/projects/dodogames/divine-space-sci-fi-space-arpg" class="green-dark">Divine Space, Unique Sci-Fi Action-RPG (Canceled)</a>
+</h2>
+<p class="no-margin">
+<span class="creator">
+by
+<a href="/projects/dodogames/divine-space-sci-fi-space-arpg/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography" id="name">Dodo Games</a>
+</span>
+</p>
+</div>
+<ul class="project-nav list-inline left h5 bold mb1">
+<li class="mr2">
+<a href="/projects/dodogames/divine-space-sci-fi-space-arpg" class="grey-dark py1 current" id="home_nav">Home</a>
+</li>
+<li class="mr2">
+<span data-updates-count="14" id="updates_count">
+<a href="/projects/dodogames/divine-space-sci-fi-space-arpg/posts" class="grey-dark py1" id="updates_nav">Updates
+<span class="count h6 bg-grey-dark white">14</span>
+</a></span>
+</li>
+<li class="mr2">
+<a href="/projects/dodogames/divine-space-sci-fi-space-arpg/backers" class="grey-dark py1" id="backers_nav">Backers
+<span class="count h6 bg-grey-dark white"><data class="Project1877508061" data-format="number" data-value="530" itemprop="Project[backers_count]">530</data></span>
+</a></li>
+<li>
+<span data-comments-count="122" id="comments_count">
+<a href="/projects/dodogames/divine-space-sci-fi-space-arpg/comments" class="grey-dark py1" id="comments_nav">Comments
+<span class="count h6 bg-grey-dark white"><data class="Project1877508061" data-format="number" data-value="121" itemprop="Project[comments_count]">121</data></span>
+</a></span>
+</li>
+</ul>
+<ul class="list-inline right h5 bold mb1">
+<li class="location mr2">
+<a href="/discover/places/moscow-ru?ref=city" class="grey-dark"><span class="ss-icon ss-location margin-right"></span>
+Moscow, Russia
+</a></li>
+<li class="category" data-project-parent-category="Games">
+<a href="/discover/categories/games/video%20games?ref=category" class="grey-dark"><span class="ss-icon ss-tag margin-right"></span>
+Video Games
+</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+</div>
+<div class="bg-grey-light pb4" id="content-wrap">
+<div class="Project1877508061" data-conditions="[{&quot;!state&quot;:&quot;live&quot;}]" data-evaluation="true" data-render="&quot;&lt;div class=\&quot;NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-canceled Project1877508061_cxt bg-grey container pb1 pt1\&quot;&gt;\n&lt;div class=\&quot;Project1877508061\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;successful&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;Funded!&amp;lt;/b&amp;gt;\\nThis project was successfully funded &amp;lt;data class=\\&amp;quot;Project1877508061\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2012-11-23T09:00:00-05:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[deadline]\\&amp;quot;&amp;gt;on November 23, 2012&amp;lt;/data&amp;gt;.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1877508061\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:[&amp;quot;started&amp;quot;,&amp;quot;submitted&amp;quot;]}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;THIS PROJECT IS NOT LIVE&amp;lt;/b&amp;gt;\\nThis is only a draft that the creator has chosen to share.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1877508061\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;suspended&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Suspended&amp;lt;/b&amp;gt;\\nFunding for this project was suspended &amp;lt;data class=\\&amp;quot;Project1877508061\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2012-11-23T05:07:00-05:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on November 23, 2012&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1877508061\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;canceled&amp;quot;}]\&quot; data-evaluation=\&quot;true\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Canceled&amp;lt;/b&amp;gt;\\nFunding for this project was canceled by the project creator &amp;lt;data class=\\&amp;quot;Project1877508061\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2012-11-23T05:07:00-05:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on November 23, 2012&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Canceled&lt;/b&gt;\nFunding for this project was canceled by the project creator &lt;data class=\&quot;Project1877508061\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2012-11-23T05:07:00-05:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on November 23, 2012&lt;/data&gt;.\n&lt;/div&gt;&lt;div class=\&quot;Project1877508061\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;failed&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Unsuccessful&amp;lt;/b&amp;gt;\\nThis project\\u2019s funding goal was not reached on &amp;lt;time class=\\&amp;quot;js-adjust\\&amp;quot; data-format=\\&amp;quot;LL\\&amp;quot; datetime=\\&amp;quot;2012-11-23T09:00:00-05:00\\&amp;quot;&amp;gt;November 23, 2012&amp;lt;/time&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1877508061\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;purged&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;This project is purged and only visible to staff.&amp;lt;/b&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;/div&gt;\n&quot;"><div class="NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-canceled Project1877508061_cxt bg-grey container pb1 pt1">
+<div class="Project1877508061" data-conditions="[{&quot;state&quot;:&quot;successful&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;Funded!&lt;/b&gt;\nThis project was successfully funded &lt;data class=\&quot;Project1877508061\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2012-11-23T09:00:00-05:00&amp;quot;\&quot; itemprop=\&quot;Project[deadline]\&quot;&gt;on November 23, 2012&lt;/data&gt;.\n&lt;/p&gt;\n&quot;"></div><div class="Project1877508061" data-conditions="[{&quot;state&quot;:[&quot;started&quot;,&quot;submitted&quot;]}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;THIS PROJECT IS NOT LIVE&lt;/b&gt;\nThis is only a draft that the creator has chosen to share.\n&lt;/p&gt;\n&quot;"></div><div class="Project1877508061" data-conditions="[{&quot;state&quot;:&quot;suspended&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Suspended&lt;/b&gt;\nFunding for this project was suspended &lt;data class=\&quot;Project1877508061\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2012-11-23T05:07:00-05:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on November 23, 2012&lt;/data&gt;.\n&quot;"></div><div class="Project1877508061" data-conditions="[{&quot;state&quot;:&quot;canceled&quot;}]" data-evaluation="true" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Canceled&lt;/b&gt;\nFunding for this project was canceled by the project creator &lt;data class=\&quot;Project1877508061\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2012-11-23T05:07:00-05:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on November 23, 2012&lt;/data&gt;.\n&quot;"><p class="no-margin"></p>
+<b>Funding Canceled</b>
+Funding for this project was canceled by the project creator <data class="Project1877508061" data-format="distance_date" data-value="&quot;2012-11-23T05:07:00-05:00&quot;" itemprop="Project[state_changed_at]">on November 23, 2012</data>.
+</div><div class="Project1877508061" data-conditions="[{&quot;state&quot;:&quot;failed&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Unsuccessful&lt;/b&gt;\nThis project\u2019s funding goal was not reached on &lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;LL\&quot; datetime=\&quot;2012-11-23T09:00:00-05:00\&quot;&gt;November 23, 2012&lt;/time&gt;.\n&quot;"></div><div class="Project1877508061" data-conditions="[{&quot;state&quot;:&quot;purged&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;This project is purged and only visible to staff.&lt;/b&gt;\n&quot;"></div></div>
+</div>
+<div class="container bg-white border rounded py3 pl2 pr2" id="content">
+<div class="NS-projects-content">
+<div class="grid_11">
+<div data-has-video="true" id="video-section">
+<div class="video-player" data-dimensions="{&quot;width&quot;:640,&quot;height&quot;:480}" data-image="https://s3.amazonaws.com/ksr/projects/194729/photo-main.jpg?1397783540" data-video-tracker-url="https://www.kickstarter.com/projects/dodogames/divine-space-sci-fi-space-arpg/video/plays" data-video-url="https://d2pq0u4uni88oo.cloudfront.net/projects/194729/video-175306-h264_high.mp4" data-video="{&quot;id&quot;:175306,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/194729/video-175306-h264_high.mp4?2012&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/194729/video-175306-h264_base.mp4?2012&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/194729/video-175306-webm.webm?2012&quot;,&quot;width&quot;:640,&quot;height&quot;:360,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/194729/video-175306-h264_base.jpg?2012&quot;}" id="video_pitch"><video class="has_webm landscape" preload="none">
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/194729/video-175306-h264_high.mp4" type='video/mp4; codecs="avc1.64001E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/194729/video-175306-h264_base.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/194729/video-175306-webm.webm" type="video/webm"></source>
+You'll need an HTML5 capable browser to see this content.
+</video>
+<img alt="Photo-main" class="has_played_hide poster landscape" src="https://s3.amazonaws.com/ksr/projects/194729/photo-main.jpg?1397783540" />
+<div class="play_button_big play_button_dark absolute-center rounded has_played_hide">
+<span class="ss-icon ss-play"></span>
+Play
+</div>
+<div class="player_controls clearfix absolute-bottom mb2 rounded white bg-green-dark forces-video-controls_hide">
+<div class="left">
+<a class="button button_icon button_dark playpause play mr1">
+<span class="play ss-icon ss-play"></span>
+<span class="pause ss-icon ss-pause"></span>
+</a>
+<span class="time current_time h12 left">00:00</span>
+</div>
+<div class="right">
+<span class="time total_time h12 left mr1">00:00</span>
+<a class="left button button_icon button_icon_white volume">
+<span class="ss-icon ss-volume icon_volume_nudge"></span>
+<span class="ss-icon ss-highvolume"></span>
+</a>
+<div class="volume_container left">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+<a class="left button button_icon button_icon_white fullscreen">
+<span class="ss-icon ss-expand"></span>
+<span class="ss-icon ss-contract"></span>
+</a>
+</div>
+<div class="clip">
+<div class="progress_container pr1 pl1">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="buffer progress_bar_buffer"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div data-project-state="canceled" id="about">
+<div class="NS_projects__project_share clearfix py2 pl1 pr1">
+<ul class="left list-inline no-margin h5 bold">
+<li class="facebook mr2">
+<a href="https://www.kickstarter.com/projects/dodogames/divine-space-sci-fi-space-arpg"><span class="ss-icon ss-social ss-facebook color-facebook"></span>
+<span class="color-facebook">Share</span>
+<span class="share_bubble"><div class="triangle grey"></div>
+<div class="triangle white"></div>
+<span class="count"></span></span>
+</a></li>
+<li class="twitter mr2">
+<a  href="https://twitter.com/intent/tweet?text=Divine%20Space%2C%20Unique%20Sci-Fi%20Action-RPG%20%28Canceled%29%20by%20Dodo%20Games&amp;via=kickstarter&amp;url=http://kck.st/Qi6MuO" rel="nofollow"><span class="ss-icon ss-social ss-twitter color-twitter"></span>
+<span class="color-twitter">Tweet</span>
+</a></li>
+<li class="embed">
+<a href="/projects/dodogames/divine-space-sci-fi-space-arpg/widget" class="remote_modal_dialog grey-dark" data-modal-title="Embed a widget on your site" data-tracker-name="Embed"><span class="ss-icon ss-navigateleft"></span>
+<span class="ss-icon ss-navigateright"></span>
+Embed
+</a></li>
+</ul>
+<ul class="right list-inline no-margin h5 bold">
+<li class="curate mr2">
+</li>
+<li class="remind">
+<div class="ajax-container" id="watching-widget">
+<div class="Project1877508061" data-conditions="[{&quot;is_starred&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div id=\&quot;unwatch\&quot;&gt;\n&lt;a href=\&quot;/projects/dodogames/divine-space-sci-fi-space-arpg/unwatch\&quot; class=\&quot;on\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"></div><div class="Project1877508061" data-conditions="[{&quot;!is_starred&quot;:true}]" data-evaluation="true" data-render="&quot;&lt;div id=\&quot;watch\&quot;&gt;\n&lt;a href=\&quot;/projects/dodogames/divine-space-sci-fi-space-arpg/watch\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;span class=\&quot;text\&quot;&gt;\n&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"><div id="watch">
+<a href="/projects/dodogames/divine-space-sci-fi-space-arpg/watch"><span class="ss-icon ss-star"></span>
+<span class="text">
+</span>
+</a></div>
+
+</div></div>
+</li>
+</ul>
+</div>
+
+<div class="short_blurb py2 pl1 pr1">
+<p class="h3">Immersive universe of this sci-fi game is built based on real astronomical data. Build your ship to travel between real stars!</p>
+</div>
+<div class="full-description">
+<p><b>Divine Space</b> is a <b>3D action role-playing game</b> and <b>adventure</b>, focused precisely on hard science fiction. It has third person view, very simple controls and real-time combat system. </p><p><i>Click Play, listen to our in-game music and feel the spirit of Divine Space!</i></p><div class="template oembed" contenteditable="false" data-href="http://snd.sc/WtL4Ye">
+<iframe width="639" height="400" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?visual=true&amp;url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F49039804&amp;show_artwork=true&amp;maxwidth=639&amp;scheme=https&amp;width=639"></iframe>
+
+</div>
+<p>Mankind has populated the nearest stars as planets were colonized by land bases. Three opposing factions controlled space and suddenly, this delicate balance is disrupted. A human race, without realizing it, was on the verge of death or even something more terrible. What started as an accident soon developed into a terrible chain of events with an unknown source.</p><a href="http://divinespace.org/wp-content/uploads/2012/07/steelmoon_image_02.jpg" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/dodogames/divine-space-sci-fi-space-arpg/assets/230344/edit" data-id="230344">
+<figure><img alt="Steel Moon base: first colonial starbase in history of human expansion" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/230/344/3b910677d25d7533718aebbeae34a7a4_large.jpg?1351327158"><figcaption>Steel Moon base: first colonial starbase in history of human expansion</figcaption></figure>
+</div>
+</a><p>You will be involved in dramatic events of the global storyline from the very beginning. You will participate in emergency missions and then in close operations near the base. Going through it, you will be traveling between planets and different stars, meeting the most interesting and unusual characters and solving riddles to the plot. You will have to find origins of the danger and find a way to save mankind and the whole universe as we know it.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/dodogames/divine-space-sci-fi-space-arpg/assets/223436/edit" data-id="223436">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/223/436/7f700d667beb4473d72bd7a216661f88_large.jpg?1350990975"></figure>
+</div>
+<p>From start, you have a ship that is called 'Core'. Gradually, you will improve it and it's parts, weapons, engines and many other devices.</p><a href="http://divinespace.org/wp-content/uploads/2012/07/shipconstructing.jpg" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/dodogames/divine-space-sci-fi-space-arpg/assets/218484/edit" data-id="218484">
+<figure><img alt="In-game Fardwellers constructor: one of millions of ways that they can be assembled into a ship" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/218/484/5f2e80ca085924a0a8c49ca9f6ca92f4_large.jpg?1350729009"><figcaption>In-game Fardwellers constructor: one of millions of ways that they can be assembled into a ship</figcaption></figure>
+</div></a>
+<p>During construction, you can make your unique design. All the equipment affects the parameters of the ship, which will allow you to create your own type of ship. For example, it can be fast and maneuverable fighter or a deliberate, well-armored tank. In contrast to the other games, in Divine Space it's very simple and very fun to do!</p><a href="http://divinespace.org/wp-content/uploads/2012/07/ship_info_type_b.jpg" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/dodogames/divine-space-sci-fi-space-arpg/assets/230345/edit" data-id="230345">
+<figure><img alt="One of the ways to assemble Fardwellers ship" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/230/345/eda6e52d4f8b1e3f1846b3c600bce5d7_large.jpg?1351327299"><figcaption>One of the ways to assemble Fardwellers ship</figcaption></figure>
+</div>
+</a><p>Your character will grow, constantly gathering experience and moving through the ranks. He will have unique parameters such as spirit and tactics, and usual intelligence, reaction, charisma. Every parameter affects gameplay in its own way. Levels are giving access to quests, new ship parts, and other items.</p><a href="http://divinespace.org/wp-content/uploads/2012/07/concept_briefing.jpg" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/dodogames/divine-space-sci-fi-space-arpg/assets/228914/edit" data-id="228914">
+<figure><img alt="Briefing Hall concept-art. Place to meet other pilots and achieve quests." class="fit" src="https://s3.amazonaws.com/ksr/assets/000/228/914/97432e7b550e255c750f3e85b48cb5af_large.jpg?1351247164"><figcaption>Briefing Hall concept-art. Place to meet other pilots and achieve quests.</figcaption></figure>
+</div></a>
+
+
+<p>During your adventures, you will encounter enemies, pirates, or just fans of easy money. You'll have to fight, where you will see how well you have gathered and equipped your ship. </p><a href="http://divinespace.org/wp-content/uploads/2012/09/site_picture_940x450_04_fix2.jpg" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/dodogames/divine-space-sci-fi-space-arpg/assets/218485/edit" data-id="218485">
+<figure><img alt="Shu-Yown motherbase. Who are they? You'll find out in game." class="fit" src="https://s3.amazonaws.com/ksr/assets/000/218/485/7f15a30266968dcef35ab8f94dd5b16e_large.jpg?1350729046"><figcaption>Shu-Yown motherbase. Who are they? You'll find out in game.</figcaption></figure>
+</div></a>
+
+<p>In combat you can use a variety of devices, called 'spec'. Specs can repair your ship, set up energy shields, increase acceleration and maneuverability or boost your weapons on damage or shooting rate. They can be utilitarian, from invisibility and stealth mode and even offensive, hitting enemies in a lot of different destructive ways.</p><a href="http://divinespace.org/wp-content/uploads/2012/07/SpaceWatchers1.png" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/dodogames/divine-space-sci-fi-space-arpg/assets/230347/edit" data-id="230347">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/230/347/305881fa07bd275ff5fa6f0f33354d21_large.png?1351327588"></figure>
+</div>
+</a><p>In order to gain advantage against others and to upgrade your ship, you'll need money. You will have numerous ways on how to obtain money such as trading and buying goods at low prices on the bases, planets or moons and selling them to other locations more profitable. Economy of the universe responds to changes in its balance such as a deficit or a surplus in goods. Fans of interplanetary trade will not be bored, that's for sure. </p><div class="template asset" contenteditable="false" data-edit_url="/projects/dodogames/divine-space-sci-fi-space-arpg/assets/230346/edit" data-id="230346">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/230/346/b239854b24e311e4d7c57bff2fa391a3_large.jpg?1351327509"></figure>
+</div>
+<p>You can search and gather resources, some of which are rare and very expensive. If you do not like the peaceful existence, then you can become a pirate or a robber and collect tribute from the miserable diggers and traders, fighting the rangers or mercenaries.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/dodogames/divine-space-sci-fi-space-arpg/assets/218477/edit" data-id="218477">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/218/477/fdc579996f597b441efd5fe42156715f_large.jpg?1350728161"></figure>
+</div>
+<p>After the battles, the ships can be repaired at the bases or special repair stations. You can sell things that you took via looting defeated enemies, refuel your ship, and rearm specs. On starbases, you can reconfigure the shape of your ship while the equipment and weapons can be installed or moved directly into space.
+</p><div class="template asset" contenteditable="false" data-edit_url="/projects/dodogames/divine-space-sci-fi-space-arpg/assets/218482/edit" data-id="218482">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/218/482/0667d5c4ca11aab5eb6f075a8cef46c4_large.jpg?1350728923"></figure>
+</div>
+<p>What adventure will you choose as our universe expands over time?  Space will be filled with hundreds of stars. Majestic planets will orbit around them next to which will be different bases and stations. Ships, great and small, will travel between them. On the way, pilots will talk to each other, and of course to you too. Somewhere conflicts will erupt and calls for help will be heard - you will be able to respond and give a hand... or finish the poor loser.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/dodogames/divine-space-sci-fi-space-arpg/assets/230352/edit" data-id="230352">
+<figure><img alt="You will meet different characters in the game and even have the chance to become one of them!" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/230/352/8118916105b57ca8fcb30c056c4f740d_large.png?1351328980"><figcaption>You will meet different characters in the game and even have the chance to become one of them!</figcaption></figure>
+</div>
+<p>Someone will be collecting resources and zealously defend his property from outsiders. Others will tell you where to sell water for the best price. Someone will demand a payoff or will blow your ship to the pieces. Rangers will hunt down pirates. Pirates will hunt traders. Traders will hunt for money and high profits. </p><p>Some areas will be safe while others will require you to not go alone. The beautiful universe of Divine Space is full of energy and teems with life, a life of which you can become.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/dodogames/divine-space-sci-fi-space-arpg/assets/218486/edit" data-id="218486">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/218/486/101375974383d36cecd9f33744696f36_large.jpg?1350729126"></figure>
+</div>
+<h1>Soundtrack pack demo ($75 reward tier)</h1><div class="template oembed" contenteditable="false" data-href="http://soundcloud.com/anti-danilevski/divine-space-soundtrack-pack">
+<iframe width="639" height="400" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?visual=true&amp;url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F64405470&amp;show_artwork=true&amp;maxwidth=639&amp;scheme=https&amp;width=639"></iframe>
+
+</div><h1>About Divine Space universe</h1><p>Using our unique system, we are able to create thousands of stars and planets. <b>All stars are as in the real world</b>. The plot of the game begins at one of those stars - <b>Gliese 581</b>, which is very important for modern research programs: scientists have discovered exoplanets there, where alien life is possible. </p><a href="http://divinespace.org/wp-content/uploads/2012/07/starmap_01.jpg" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/dodogames/divine-space-sci-fi-space-arpg/assets/200771/edit" data-id="200771">
+<figure><img alt="Universe map: full 3D map that is built on real astronomical data" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/200/771/22e8573433cd4009f3fcba5bf7d65b43_large.jpg?1349857033"><figcaption>Universe map: full 3D map that is built on real astronomical data</figcaption></figure>
+</div>
+</a><p>DARPA, NASA, ESA, Roscosmos - all are looking for ways to colonize such planets. We anticipate that by 2045 the solution will be found, since now, in the world where we live, the rate of technological change doubles every decade. This is where the story of Divine Space begins.</p>
+
+
+<p>In order not to spoil your fun, we won't talk here about the plot too much (although we really want to share with you all its wonders and mysteries). Suffice it to say, together we will look at how humanity might evolve after the establishment of the US colonial base near the exoplanet <b>Gliese 581 g</b>. </p><a href="http://www.divinespace.org/images/screenshots.jpg" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/dodogames/divine-space-sci-fi-space-arpg/assets/200790/edit" data-id="200790">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/200/790/970cd369fb7ae62112d3a0cc8cdec070_large.jpg?1349858037"></figure>
+</div></a>
+
+<p>You will participate in the dramatic events that will develop from the very first moments of the game, first around nearby planets and stars, then on the borders of the settled part of the universe and even farther. You will take part in plots between the three major factions and five minor ones that link them. During your travels you will see great many interesting things, places and characters such as secret settlements, pirate hideouts and abandoned remains of unknown spaceships, smugglers, traders and miners, soldiers, diplomats and many others.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/dodogames/divine-space-sci-fi-space-arpg/assets/218487/edit" data-id="218487">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/218/487/78d1691edb99020dab22bd53725fa995_large.jpg?1350729233"></figure>
+</div>
+<p>You will investigate origins of the unexpected conflict that brought the whole humanity to the edge of termination... or even something that is far worse. You will find a way to protect our world from the ultimate danger and to save the whole universe.. or, instead, you will change it forever.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/dodogames/divine-space-sci-fi-space-arpg/assets/188364/edit" data-id="188364">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/188/364/e36a7502b72c6fc6a6827ccd1280884f_large.jpg?1349188406"></figure>
+</div>
+<p>We believe <b>gamers are intelligent</b> and we respect them. We believe
+<b>profound games are necessary</b>. Those games where the plot, characters
+and their relations, and the game world are not only a mere adjunct
+to special effects and graphics.</p>
+<h1>Our mission is to create a game
+whose plot and universe are its essence. </h1><p>We believe that only in this
+way the game comes into being and only in this case you will say,
+having finished its first part: "<i>Wow! That's awesome</i>!"</p><a href="http://divinespace.org/wp-content/uploads/2012/10/sketch_routegate.jpg" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/dodogames/divine-space-sci-fi-space-arpg/assets/190045/edit" data-id="190045">
+<figure><img alt="Route Gate. With them, you won't get lost in space... and time" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/190/045/09ac55defb48d114162deed0fc2f4264_large.jpg?1349270386"><figcaption>Route Gate. With them, you won't get lost in space... and time</figcaption></figure>
+</div></a>
+
+<p>We want you to keep coming back to 'Divine Space' as to a magnificent film or book. We would like you to return, more than once, to the solution of its mystery and the difficult decision that lies ahead. We wish to astound you, and the plot that is written will completely favor this task.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/dodogames/divine-space-sci-fi-space-arpg/assets/188385/edit" data-id="188385">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/188/385/cea63594893751268fe6ced9108dd09c_large.jpg?1349189624"></figure>
+</div>
+
+<p>Our goal is to create first-rate hard science fiction based on the real world we live in. This is a game about us, about our probable future, and about what is very likely to happen after the beginning of space travels. We look forward and ask a question: "What will humanity become after several centuries?" It's a game of choice, about questioning what is good and what is evil. Is this so unambiguous as may seem? Creating 'Divine Space' we create a game with sense and deep narrative.</p><a href="http://divinespace.org/wp-content/uploads/2012/07/blackhole_011.jpg" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/dodogames/divine-space-sci-fi-space-arpg/assets/189956/edit" data-id="189956">
+<figure><img alt="Black Hole. They might be ways to other dimensions, but you don’t want to check if it’s true" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/189/956/cd41bf944f3b23eb54ce430aaa305d73_large.jpg?1349254331"><figcaption>Black Hole. They might be ways to other dimensions, but you don’t want to check if it’s true</figcaption></figure>
+</div></a>
+<p>The scientific character of the game is particularly displayed in the fact that the stars are located in accordance with real astronomical data; they have spectral classes and other parameters corresponding to the real ones. While traveling over the game universe you (and perhaps your children) will get acquainted with some peculiarities of our part of the Galaxy. You will remember forever the location of the Sun, the names of the stars surrounding us, and which of them are the nearest, types of planets, and a great deal of other information.</p><p>We remember, love, and respect old games such as '<i>Star Control</i>',
+'<i>Elite</i>', '<i>Master of Orion</i>', '<i>Homeworld</i>', '<i>Space Rangers</i>'. These games
+were made in the era of lack of complicated special effects or
+impressive graphics, but they are at least as entertaining as the
+most up-to-date ones. </p><h1>
+<b>Why do we nostalgically remember our "old
+favorites" and constantly become disenchanted with the new
+games?</b> </h1><p>Because then, at the time when there was no opportunity to
+make magnificent graphics, emphasis was put on the gameplay and fun. </p><div class="template asset" contenteditable="false" data-edit_url="/projects/dodogames/divine-space-sci-fi-space-arpg/assets/200802/edit" data-id="200802">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/200/802/e4d434edab505b38ab002162a9cc26cc_large.jpg?1349859061"></figure>
+</div>
+<h1>
+<b>'Divine Space' revives the spirit of the good old games and yet it
+doesn't clone any of them.</b> </h1><p>This is an absolutely new explosive
+mixture of former games and modern technologies. But we understand:
+though a breathtaking plot and an endless, detailed game world must
+complement each other, they must not replace the art of visual
+effects. For this reason, we work together with brilliant artists and
+designers who create a stunning universe.</p><div class="template oembed" contenteditable="false" data-href="http://youtu.be/T85xDvc64Uo">
+<iframe width="612" height="344" src="https://www.youtube.com/embed/T85xDvc64Uo?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div>
+<p>Target platform for the first, single-player version, is <b>iPad</b>. Afterwards, we will work on tuning it for <b>Android</b> (which, together with testing, will take just a few months), followed by development for the <b>PC</b>, <b>Mac</b> and <b>Linux</b> (from 3 to 6 months). </p><a href="http://www.kickstarter.com/projects/dodogames/divine-space-sci-fi-space-arpg/posts/332476" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/dodogames/divine-space-sci-fi-space-arpg/assets/230350/edit" data-id="230350">
+<figure><img alt="Thanks to Unity3D, cross-platform development is simple and relatively fast (click to read more)" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/230/350/9eee782f87d6f6e35fd39ac6878c03bf_large.jpg?1351328674"><figcaption>Thanks to Unity3D, cross-platform development is simple and relatively fast (click to read more)</figcaption></figure>
+</div></a>
+<p>Once all those single-player versions have been developed, we will begin work on a multiplayer version (which will be an MMO), but also will keep developing single-player versions. Read more about our plans here. </p><p>And last but not least, 'Divine Space' is a<b> free game. </b></p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/dodogames/divine-space-sci-fi-space-arpg/assets/201050/edit" data-id="201050">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/201/050/5cff003182201fb61798421a8a5eb184_large.jpg?1349877578"></figure>
+</div>
+<h1>
+Divine Space is a FREE GAME<b>. </b>No
+downloads, nor any updates, nor any version will be chargeable. Premium is NOT REQUIRED to play - it just sweetens your life. 
+</h1><p>It's
+possible to complete the game from start to finish without spending a
+dime. This means that <b>absolutely everyone</b>, even those who are not
+able to afford games (children or people from those countries and
+regions where it is impossible to use bank cards) <b>can play Divine Space</b>. </p><p>You can buy 90% of things for play money and only status (social) items and social abilities and speed-ups are not included into those 90%.
+
+</p>
+<p>For
+those who wish, we have prepared premium-content and premium-account
+(that will never become something necessary and obligatory, imposed
+on the players). We make a game entertaining to play for everybody,
+and the acquisition of premium-content is an expression of gratitude
+and support for the developers.</p><div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/dodogames/divine-space-sci-fi-space-arpg/assets/188339/edit" data-id="188339">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/188/339/fc8006639c7ad6a1c98eee5c216417b0_large.png?1349187058"></figure>
+</div>
+
+<div>
+
+
+
+
+<h1>What is a "Rare Money"? </h1>
+<p>This is the in-game currency, which you can buy for $, as usual in free-to-pay games. It is needed to maintain the atmosphere of a game; Those money are called Gal (Galactic Money). The amounts shown in the award of$, backers will get Gals in their in-game accounts in the appropriate amounts.</p>
+<p>Backers, depending on their investments into our project, will have sums deposited into their game accounts exceeding their initial contribution and some other bonuses - up to life premium-account for all versions (exclusive only for backers!).</p>
+<p>Read more about our F2P system in <a href="http://www.kickstarter.com/projects/dodogames/divine-space-sci-fi-space-arpg/posts/331287" target="_blank">this update</a>.</p>
+<div> 
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/dodogames/divine-space-sci-fi-space-arpg/assets/142292/edit" data-id="142292">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/142/292/05b3ba342cb1dbfd310647b47c9c901f_large.jpg?1346684576"></figure>
+</div>
+
+
+<p>We are amazed at the opportunities Kickstarter opens for small
+talented teams. We have our own investments up to the alpha version
+(which is almost ready), after which we thought to look for a
+publisher and go the usual way. </p>
+<p>Then we came across Kickstarter and
+realized: this is a chance for us to stay independent and make a game
+of the sort that we originally designed. Working with the publisher
+usually changes the game - not necessarily for the worse, often - for
+the better, but it does change. But now, thanks to you, terrific
+backers, things have changed.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/dodogames/divine-space-sci-fi-space-arpg/assets/188384/edit" data-id="188384">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/188/384/4e5822a83286e3149dc77ece12c84f4a_large.jpg?1349189588"></figure>
+</div>
+
+
+<p>Another important reason why we have chosen Kickstarter, and not
+other similar portals, is that your contribution goes to the
+developer only after the campaign has finished. If it does not
+collect the necessary funds your money does not even leave your
+account.</p>
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/dodogames/divine-space-sci-fi-space-arpg/assets/142293/edit" data-id="142293">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/142/293/6a6fa4cd72066be047ebc2e27b3b8ff8_large.jpg?1346684592"></figure>
+</div>
+
+
+<p>Many good projects at <a href="http://Kickstarter.com" target="_blank">Kickstarter.com</a> don't collect the necessary
+funds simply because their authors are unknown indie teams. They have
+no long-standing community that can immediately form a crowd of
+supporters of their favorite authors or a well-known brand.
+Therefore, the most important help you can provide for us is
+<b>spreading the word about our project</b>.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/dodogames/divine-space-sci-fi-space-arpg/assets/193330/edit" data-id="193330">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/193/330/6669b989ea7cdbe54ac0ec9e974181f4_large.png?1349450702"></figure>
+</div>
+
+
+
+
+
+
+<p>Simply pressing <b>like</b>, <b>sharing on Facebook</b> or
+<b>tweeting</b>, you will render <b>invaluable assistance</b>. </p>
+<p>Tell
+your friends about 'Divine Space' over a cup of coffee, or at break
+between lectures or lessons; send a link to your colleagues - and you
+will greatly increase our chances of success.</p>
+
+<p>We believe in your support and<b> thank you in advance for it</b>,
+whether you are a backer, or simply have shared the news of our game
+with your friends. Together we will make a game that many players
+have long dreamed to create. One where you, having torn
+yourself from it, could look around and ask: "What the hell
+system am I in now?!"</p>
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/dodogames/divine-space-sci-fi-space-arpg/assets/189957/edit" data-id="189957">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/189/957/843f7e391c959211473b04f7cc254b7c_large.jpg?1349254445"></figure>
+</div>
+<p>
+
+
+  We highly appreciate that you are here! We will do our best, and
+	even more, so that you will be satisfied and will be able to proudly
+	say: "<b>This game is there because of me!</b>" </p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/dodogames/divine-space-sci-fi-space-arpg/assets/188187/edit" data-id="188187">
+<figure><img alt="Dodo Games team thanks you for your contribution and &lt;3 you!" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/188/187/e5a341f73b6472fea2c5415d175e220b_large.JPG?1349168094"><figcaption>Dodo Games team thanks you for your contribution and &lt;3 you!</figcaption></figure>
+</div>
+<p><b>We welcome your comments, fan-art, discussions, questions and
+	anything else you wish to share!</b></p>
+<h1><b>Bonus soundtrack</b></h1>
+<div class="template oembed" contenteditable="false" data-href="http://snd.sc/WGgpHg">
+<iframe width="639" height="400" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?visual=true&amp;url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F62631682&amp;show_artwork=true&amp;maxwidth=639&amp;scheme=https&amp;width=639"></iframe>
+
+</div>
+
+
+
+
+<h1>Links - join our community!</h1>
+<p>Check out our site at <a href="http://www.divinespace.org/" target="_blank">www.divinespace.org</a><br>Join and like our FB page at <a href="https://www.facebook.com/divinespacegame" target="_blank">https://www.facebook.com/divinespacegame</a><br>Follow us on Twitter at <a href="https://twitter.com/AntiDanilevski" target="_blank">https://twitter.com/AntiDanilevski</a><br>Join discussions at our forum: <a href="http://forum.divinespace.org" target="_blank">http://forum.divinespace.org</a></p>
+<h1>Special thanks for help, tips and co-creation</h1>
+<p>Brian Fargo (<a href="http://www.kickstarter.com/projects/inxile/wasteland-2?ref=live" target="_blank">Wasteland 2</a> and many other great games), Ryan Payton (Camouflaj, <a href="http://www.kickstarter.com/projects/486250632/republique-by-camouflaj-logan?ref=live" target="_blank">Republique</a>), Chris Avellone (Obsidian, <a href="http://www.kickstarter.com/projects/obsidian/project-eternity?ref=live" target="_blank">Eternity</a> and lot others), Eugene Zhukov (<a href="http://www.kickstarter.com/projects/digitilus/al-skyjacker/?ref=kicktraq" target="_blank">al-Skyjacker</a>), Alexander Dergay (<a href="http://www.kickstarter.com/projects/1684781151/legends-of-eisenwald?ref=live" target="_blank">Legends of Eisenwald</a>), Vic Wertz (Paizo, <a href="http://www.kickstarter.com/projects/1675907842/pathfinder-online-technology-demo?ref=live" target="_blank">Pathfinder Online</a>), Arthur Bruno (Crate Entertainment, <a href="http://www.kickstarter.com/projects/crateentertainment/grim-dawn?ref=live" target="_blank">Grim Dawn</a>), Mike Zawacki, Heather Jane. We &lt;3 you, you are wonderful and most kind people on the Earth!
+</p>
+<p>Also, huge thanks to our partners and co-workers - Alexander Ronin for <a href="https://www.facebook.com/roninalexx" target="_blank">great music</a>, Pablo Isidro for soundtracks, <a href="https://www.facebook.com/tiziano.baracchi?fref=ts" target="_blank">Tiziano Baracchi</a> for amazing characters, Alexander Neskromnyak (<a href="http://www.samigraphics.com" target="_blank">Sami Group Studio</a>) and many many others - it’s great to work with you all!</p>
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/dodogames/divine-space-sci-fi-space-arpg/assets/223701/edit" data-id="223701">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/223/701/7367fa3968f1aa719e9bebd338915c5a_large.jpg?1351009640"></figure>
+</div>
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/dodogames/divine-space-sci-fi-space-arpg/assets/197010/edit" data-id="197010">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/197/010/eb60784fbc36ee5c879b586829aade12_large.png?1349698489"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/dodogames/divine-space-sci-fi-space-arpg/assets/197011/edit" data-id="197011">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/197/011/686edbdf00c5204e12a93b35daeb51be_large.png?1349698510"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/dodogames/divine-space-sci-fi-space-arpg/assets/197012/edit" data-id="197012">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/197/012/00a485c903898de975a17c244592bf05_large.png?1349698551"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/dodogames/divine-space-sci-fi-space-arpg/assets/197013/edit" data-id="197013">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/197/013/35b61314aa3e5f955c8d9483c8f4cc77_large.png?1349698575"></figure>
+</div>
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/dodogames/divine-space-sci-fi-space-arpg/assets/197014/edit" data-id="197014">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/197/014/13db8873145aef74bba6de20ae9bce68_large.png?1349698648"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/dodogames/divine-space-sci-fi-space-arpg/assets/197015/edit" data-id="197015">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/197/015/d2196f205ba4e071bd2ee191c11de798_large.png?1349698675"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/dodogames/divine-space-sci-fi-space-arpg/assets/197016/edit" data-id="197016">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/197/016/dc242b636765bda8fc7bccad4be517cf_large.png?1349698689"></figure>
+</div>
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/dodogames/divine-space-sci-fi-space-arpg/assets/197017/edit" data-id="197017">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/197/017/fb8bbccfe2af7d06b48276db255f416a_large.png?1349698700"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/dodogames/divine-space-sci-fi-space-arpg/assets/197018/edit" data-id="197018">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/197/018/d33b0b5b289ca54658e36d23ae9c8723_large.png?1349698713"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/dodogames/divine-space-sci-fi-space-arpg/assets/197135/edit" data-id="197135">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/197/135/ef19539299fa92a73dca9b7d25437d5a_large.png?1349705215"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/dodogames/divine-space-sci-fi-space-arpg/assets/197137/edit" data-id="197137">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/197/137/9ff15f12c33717a016b76e940258f596_large.png?1349705246"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/dodogames/divine-space-sci-fi-space-arpg/assets/197138/edit" data-id="197138">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/197/138/6d6e8787ae10fc435ebb29dd2cbf66c1_large.png?1349705263"></figure>
+</div>
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/dodogames/divine-space-sci-fi-space-arpg/assets/222303/edit" data-id="222303">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/222/303/602b6bb2ab83e5562ae86541f79f6218_large.png?1350942897"></figure>
+</div>
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/dodogames/divine-space-sci-fi-space-arpg/assets/222313/edit" data-id="222313">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/222/313/ebda6bdd3aef33460961b2cf7a106517_large.png?1350942978"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/dodogames/divine-space-sci-fi-space-arpg/assets/222314/edit" data-id="222314">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/222/314/d1afa90b523f2a9f247ee791d06bcd69_large.png?1350943001"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/dodogames/divine-space-sci-fi-space-arpg/assets/222317/edit" data-id="222317">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/222/317/dd26c0947aa04e5d4f475c2e354ccd7c_large.png?1350943028"></figure>
+</div>
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/dodogames/divine-space-sci-fi-space-arpg/assets/222339/edit" data-id="222339">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/222/339/d7b641dcf6e01000d26658e086573403_large.png?1350943392"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/dodogames/divine-space-sci-fi-space-arpg/assets/222340/edit" data-id="222340">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/222/340/8458d64fcdfcba2306128c57374c16ae_large.png?1350943409"></figure>
+</div>
+<p>♥</p>
+
+
+
+
+
+
+
+
+
+
+
+<div>
+</div>
+</div>
+</div>
+</div>
+<div id="risks">
+<h2 class="title grey-dark mt6 mb4">
+<span>Risks and challenges</span>
+<a href="/help/faq/kickstarter%20basics#Acco" class="right normal h5" target="_blank">Learn about accountability on Kickstarter</a>
+<div class="divider clear"></div>
+</h2>
+<p><p>There are risks in any development, especially at the early stage of a project.  We understand that it is impossible to avoid them entirely—but we can minimize them and we’re doing everything possible (and sometimes even some impossible things) toward that end.</p>
+
+<p>The biggest risk is when a team does not reckon with the complexity of a project and it’s closed down, not having managed to grow to the point of release.  In our case, the most difficult stage—the creation of the game&#39;s core (playable alpha-version)—has been successfully completed. Thus, the highest risk is already past. </p>
+
+<p>Furthermore, we have paid special attention to the architecture of the project—as much from the point of view of design and documentation as from the code point of view.  When testing of the prototype was completed and we were satisfied with the results of the playtests, we completely rewrote the early prototype.  We’re now in the stage of completing the construction of a powerful, stable architecture that will be easily understood and supported by new programmers and designers who will join our team.</p>
+
+<p>We are satisfied with the current results and are quickly moving toward our goal, which is already pretty close. We hope that with your help we will be able to release the first version by the summer of 2013.</p>
+
+<p>A second basic risk is the absence of necessary financing.  This risk is the scariest part for us, which is why we’re here.  We need additional financing in order to make this brainchild of ours, in which we have invested so much effort, energy, and time.  This campaign, if it’s successful, will reduce that risk as much as possible.</p>
+
+<p>A third risk is deadlines.  We’ve estimated that the necessary development will take 10 months, starting now.  We feel that that is an adequate timeline, since we’ve already been working as a team since January, 2012 and we know how fast we work (we measure the speed of our team by the “agile speed factor” methodology as 1.58 at the present time).  We know how to evaluate tasks, plan our work, and set realistic deadlines, without excessive optimism or fanaticism.</p>
+
+<p>Are we serious?  Many teams think that with the appearance of Kickstarter anyone can make a game.  But we know that that is not so: the team is important; a serious relationship to the project and understanding of the complexities and processes is important.  Having shot such a video, having prepared our game so that you can see it now, we want to show you: we understand what we’re doing and we understand that the game, as well as the campaign on Kickstarter, requires work.  Lots of work, which we love.</p>
+
+<p>Our project is more complex.  That basically has to do with two features:  The flight model, which we want to make as similar as possible to how vehicles are maneuvered in space; and the creation of a world consisting of a multitude of stars and planets (which must be constructed according to data obtained from the observatories); and all that has to be optimized to the extent possible so it will quickly work on tablets.  We’ve successfully dealt with the two tasks and we’re now finalizing a new flight model.  We hope to be able to show it to you soon, probably before the conclusion of the campaign on Kickstarter.</p>
+
+<p>In this way we’re fully aware of the complexity of our task, all existing risks, and the responsibility that falls on us when we are successful on Kickstarter.  And we’ve fulfilled our obligations; indeed, as Sun Tzu said, he who knows the enemy and knows himself will not fall into danger even in a hundred battles.</p></p>
+</div>
+</div>
+<div class="NS-projects-faqs" id="project-faqs">
+<h2 class="title grey-dark mt6 mb4">
+FAQ
+<div class="divider clear"></div>
+</h2>
+<ul class="faqs">
+<li class="faq" id="project_faq_40193">
+<div class="faq-question">
+<a href="#project_faq_40193" name="project_faq_40193">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">What&#39;s the timetable for the various platforms?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>The plan is to release the iPad version in July 2013. The Android version will be released about 3 months after that and the PC/Mac/Linux shortly after that. The exact dates depend on many factors, including the sum we will gather.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-10-14T08:44:57-04:00">Sun, Oct 14 2012 8:44 am EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_40023">
+<div class="faq-question">
+<a href="#project_faq_40023" name="project_faq_40023">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Why are you making the first version of the game for the iPad and Android tablets?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>The development of these platforms requires a much greater accuracy and quality of the code. The game that works fast and well on iPads, of course, will run without any problems on any modern computer even with weak video cards (such as an office machine). This means that the game will work almost anywhere - and everywhere will look great.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-10-11T08:53:40-04:00">Thu, Oct 11 2012 8:53 am EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_40024">
+<div class="faq-question">
+<a href="#project_faq_40024" name="project_faq_40024">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">AAA quality? Are you sure that tablets can handle this level of quality?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>We&#39;ve developed and tested controls for months specifically for tablets. After all, the quality of the game does not necessarily mean complicated controls. We are absolutely confident that tablets and touch controls will be fully supported.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-10-11T08:53:40-04:00">Thu, Oct 11 2012 8:53 am EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_40026">
+<div class="faq-question">
+<a href="#project_faq_40026" name="project_faq_40026">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">If you do not raise enough money for the MMO version, but it would be enough for the version for mobile devices, will you then make the MMO version?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>We&#39;ll do everything possible to make the MMO version. The question is when we can start - it will depend on the commercial success of &#39;Divine Space&#39; and the amount raised on Kickstarter.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-10-11T08:53:40-04:00">Thu, Oct 11 2012 8:53 am EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_40025">
+<div class="faq-question">
+<a href="#project_faq_40025" name="project_faq_40025">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Is it the HD version?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>That is correct. By the time we release our game, non-HD versions won’t be current on pads.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-10-12T11:24:28-04:00">Fri, Oct 12 2012 11:24 am EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_40027">
+<div class="faq-question">
+<a href="#project_faq_40027" name="project_faq_40027">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Why is the game free of charge and is it really free? Are there any hidden fees?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>There are no hidden fees and never will be. We have chosen the democratic payback model: only those who are willing will pay. We know that many players either cannot afford to buy games or simply have no bank cards (e.g. people from faraway places or children). Such a model is more risky for us, but this encourages us to create a really good game, seeing as no one will play bad ones, and what is more, pay for them.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-10-11T08:53:40-04:00">Thu, Oct 11 2012 8:53 am EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_40028">
+<div class="faq-question">
+<a href="#project_faq_40028" name="project_faq_40028">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">I’ve heard about Pay-to-Play and Pay-to-Win models, Which one are you going to use?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Neither, since both of them are evil. We are developing a Pay-to-Thank model, where payment is an expression of gratitude for our efforts and work.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-10-11T09:01:04-04:00">Thu, Oct 11 2012 9:01 am EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_40029">
+<div class="faq-question">
+<a href="#project_faq_40029" name="project_faq_40029">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Will there be more spacecraft designs in the MMO version?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Yes, absolutely. Also, we will try to add more of them, even to the first version.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-10-11T08:53:40-04:00">Thu, Oct 11 2012 8:53 am EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_40030">
+<div class="faq-question">
+<a href="#project_faq_40030" name="project_faq_40030">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">How will a custom-designed ship be developed, from the higher reward tier?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>You will work directly with the designer as tightly as you wish. The only limitation is that the ship must be made in the style of the game, it must correspond to the dimensions of other ships, and it must be technically feasible.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-10-11T08:53:40-04:00">Thu, Oct 11 2012 8:53 am EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_40031">
+<div class="faq-question">
+<a href="#project_faq_40031" name="project_faq_40031">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">You are developing a 3D game in which a player can freely change the altitude. What is it for?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>In the single-player game it is just for fun - the game itself changes its height when needed (but you cna do it manually too). But in the MMO version, it will be very helpful in team battles; e.g. if the team members spread properly within striking distance of some weapons they will avoid unnecessary damage. MMO will be a very interesting aspect of the game where a single-player arcade will turn into multi-player tactics during team battles.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-10-11T08:53:40-04:00">Thu, Oct 11 2012 8:53 am EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_40032">
+<div class="faq-question">
+<a href="#project_faq_40032" name="project_faq_40032">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">We have not seen your cinematic trailer. Are you going to make it?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Yes, we are, but only on our own income from the release of the game, not from money of our backers. All the resources collected on Kickstarter will be used only for the development of the game,; they won&#39;t be used for advertising, marketing, or anything else, not so important for the game itself. Our main goal is to create the game; everything related - in due course.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-10-11T08:53:40-04:00">Thu, Oct 11 2012 8:53 am EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_40033">
+<div class="faq-question">
+<a href="#project_faq_40033" name="project_faq_40033">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Why have you chosen such controls, but not as usual - the view from the cockpit?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>For many reasons. First of all, we want to make a game intended for the maximum number of players, including girls. These magical creatures do not like simulators. It&#39;s a fact! But quite a lot of girls, for instance, play &#39;Dark Orbit&#39;, and so that game becomes much more enjoyable. What&#39;s more, simulators and arcade games do not allow the implementation of truly massive battles (due to the limitations of modern communication channels). With the system we have chosen we hope to be able to implement even 500x500 (or more) fights for MMO version. It will be difficult but possible, and we are striving for it.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-10-11T08:53:40-04:00">Thu, Oct 11 2012 8:53 am EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_40034">
+<div class="faq-question">
+<a href="#project_faq_40034" name="project_faq_40034">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">The trip to Baikonur? Seriously? What&#39;s the program?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Yes, quite seriously. We arrange all necessary permits, accommodations, excursions, and most importantly - our presence at the launch of a real spaceship! With any luck, it will be a launch of manned spacecraft. This is a very rare event but, nevertheless, such a possibility exists.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-10-11T08:53:40-04:00">Thu, Oct 11 2012 8:53 am EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_40316">
+<div class="faq-question">
+<a href="#project_faq_40316" name="project_faq_40316">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Is there DRM?  I don&#39;t use steam. Will I be able to download a drm free digital copy of the game somewhere other than steam?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Of course!</p>
+
+<p>DRM, free DLC and very likely - browser-based version.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-10-16T02:02:19-04:00">Tue, Oct 16 2012 2:02 am EDT</time>
+</div>
+</div>
+</li>
+
+</ul>
+<div class="faq-ask-box">
+<a href="/projects/dodogames/divine-space-sci-fi-space-arpg/messages/new?message%5Bto%5D=dodogames&amp;mode=FAQ" class="button button_blue remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Ask a question about Divine Space, Unique Sci-Fi Action-RPG (Canceled)">Ask a question</a>
+
+</div>
+</div>
+
+<div class="mt4 ml1 mr1 mb2" id="report-issue-wrap">
+<a href="/login?then=%2Fprojects%2Fdodogames%2Fdivine-space-sci-fi-space-arpg" class="button button_grey">Report this project to Kickstarter</a>
+</div>
+</div>
+<div class="NS-projects-rightcol grid_5" id="rightcol">
+<div class="NS_projects__ecom">
+<div class="digits_5 pb2 pl2 pt2" id="stats">
+<h5>
+<div class="num h48 no-margin" data-backers-count="530" id="backers_count"><data class="Project1877508061" data-format="number" data-value="530" itemprop="Project[backers_count]">530</data></div>
+<span><data class="Project1877508061" data-attr="backers_count" data-format="pluralize" data-value="530" data-word="Backer">Backers</data></span>
+</h5>
+<h5>
+<div class="num h48 no-margin" data-goal="100000.0" data-percent-raised="0.28057" data-pledged="28057.0" id="pledged">
+<data class="Project1877508061" data-currency="USD" data-format="shorter_money" data-precision="0" data-value="28057" data-without_code="true" itemprop="Project[pledged]">$28,057</data>
+<span class="money usd project_currency_code"></span>
+</div>
+pledged of
+<span class="money usd no-code">$100,000</span>
+goal
+</h5>
+<span data-duration="43.83197916666666" data-end_time="2012-11-23T09:00:00-05:00" data-hours-remaining="0" id="project_duration_data"></span>
+<div class="Project1877508061" data-conditions="[{&quot;!state&quot;:[&quot;canceled&quot;,&quot;suspended&quot;]}]" data-evaluation="false" data-render="&quot;&lt;h5 class=\&quot;poll \&quot; data-dynamic=\&quot;5\&quot; data-end_time=\&quot;2012-11-23T09:00:00-05:00\&quot; data-poll_url=\&quot;https://d2oher2uhvl0ur.cloudfront.net/projects/dodogames/divine-space-sci-fi-space-arpg/stats.json\&quot;&gt;\n&lt;div class=\&quot;num h48 no-margin\&quot;&gt;0&lt;/div&gt;\n&lt;span class=\&quot;text\&quot;&gt;seconds to go&lt;/span&gt;\n&lt;/h5&gt;\n&quot;"></div></div>
+<div class="Project1877508061" data-conditions="[{&quot;state&quot;:&quot;live&quot;},{&quot;!ended?&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;pr2 pl2\&quot; id=\&quot;pledge-wrap\&quot;&gt;\n&lt;a href=\&quot;/projects/dodogames/divine-space-sci-fi-space-arpg/pledge/new?clicked_reward=false\&quot; class=\&quot;button button_green button_box button_block\&quot; id=\&quot;button-back-this-proj\&quot; title=\&quot;Back this project\&quot;&gt;Back This Project &lt;small class=&#39;h6 normal block green-dark&#39;&gt;&lt;span class=\&quot;money usd \&quot;&gt;$1&lt;/span&gt; minimum pledge&lt;/small&gt;&lt;/a&gt;\n&lt;/div&gt;\n&quot;"></div><div class="Project1877508061" data-conditions="[{&quot;state&quot;:&quot;live&quot;}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;p2\&quot; id=\&quot;banner\&quot;&gt;\n&lt;p class=\&quot;tiny_type no-margin\&quot;&gt;\nThis project will only be funded if at least\n&lt;span class=\&quot;money usd \&quot;&gt;$100,000&lt;/span&gt;\nis pledged by\n&lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;llll z\&quot; datetime=\&quot;2012-11-23T09:00:00-05:00\&quot;&gt;Fri, Nov 23 2012 9:00 am EST&lt;/time&gt;.\n&lt;/p&gt;\n&lt;/div&gt;\n&quot;"></div></div>
+
+<div class="NS_projects__rightcol_projectby bg-blue-light rounded">
+<div class="p2 clearfix">
+<div class="avatar inline-block align-middle">
+<a href="/projects/dodogames/divine-space-sci-fi-space-arpg/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography"><img alt="Dodo_logo_220x220.small" class="avatar-small" height="80" src="https://s3.amazonaws.com/ksr/avatars/2870481/dodo_logo_220x220.small.jpg?1349168404" width="80" />
+</a></div>
+<div class="creator-name inline-block align-middle ml1">
+<h6 class="mb1">Project by</h6>
+<h5 class="mb1">
+<a href="/projects/dodogames/divine-space-sci-fi-space-arpg/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">Dodo Games</a>
+</h5>
+<p class="location h6 bold mb1">
+<a href="/discover/places/moscow-ru">Moscow, Russia</a>
+</p>
+</div>
+</div>
+<div class="creator-details pl2 pr2 pb1">
+<ul class="list-simple h5 mb1">
+<li class="projects">
+<span class="ss-icon ss-kickstarter grey-dark margin-right"></span>
+<span class="text">
+First created
+<span class="divider">&middot;</span>
+<a href="/profile/dodogames/backed" class="green-dark bold more-button remote_modal_dialog" data-modal-title="Projects backed by Dodo Games">12 backed</a>
+</span>
+</li>
+<li>
+<span class="ss-icon ss-facebook margin-right grey-dark"></span>
+<span class="text">
+Has not connected Facebook
+</span>
+</li>
+<li class="links">
+<span class="ss-icon ss-globe margin-right grey-dark"></span>
+<span class="text">
+<a href="http://divinespace.org" class="popup" rel="nofollow" target="_blank">divinespace.org</a>
+</span>
+</li>
+</ul>
+</div>
+<div class="footer center h5 bold clearfix rounded-bottom clip">
+<a href="/projects/dodogames/divine-space-sci-fi-space-arpg/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">See full bio</a>
+<a href="/projects/dodogames/divine-space-sci-fi-space-arpg/messages/new?message%5Bto%5D=dodogames" class="remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Send a message to Dodo Games">Contact me</a>
+
+</div>
+</div>
+
+<ul class="NS-projects-rightcol-rewards rounded clip list mt2" data-reward-count="21" id="what-you-get">
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$1</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+100 backers
+</span>
+<span class="bg-grey no-wrap pl1 pr1 sold-out">
+All gone!
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>For early backers only: Divine Space Ringtone Pack and wallpapers. Also, get +100 to your karma and tonns of our love and gratitude by pressing &#39;like&#39; button, share our project on FB or tweeting about us!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2012-12-01">Dec 2012</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$10</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+63 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Previous reward tier + BACKER STATUS + THANKS IN CREDITS. On the forums, everyone will recognize you as a backer, thanks to whom Divine Space exists.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2012-12-01">Dec 2012</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$20</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+206 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Previous reward tier + SATELLITE-ALLY + 3 MONTHS PREMIUM + RARE IN-GAME MONEY EQUAL TO $60. Satellite Ally is a unique in-game item that is exclusive for backers only. It will always be with you, fighting with your enemies.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-07-01">Jul 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$35</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+12 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Previous reward tier + SOUNDTRACK MINIPACK. This reward includes 5 soundtracks form the game in different styles, from techno to ambient. Please notice that soundtrack pack in $74 and $75 rewards is improved to whole 15 soundtracks!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-07-01">Jul 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$50</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+39 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Previous reward tier + SATELLITE-ALLY TIER 2 + 6 MONTHS OF PREMIUM + DIGITAL ARTBOOK + RARE IN-GAME MONEY EQUAL TO $150. The ally from previous reward tier upgraded to tier 2 that can also repair your ship from time to time. The artbook contains concepts, interesting stories about game universe and characters, and behind the scene materials.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-07-01">Jul 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$74</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+6 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>(INSERTED DIGITAL REWARD) Previous reward tier but INSTEAD OF PHYSICAL GOODS, YOU GET IN-GAME MONEY ON YOUR ACCOUNT. This reward for those who aren’t interested in physical candies, but want more shiny coins on their in-game accounts and at the lesser price. Here, instead of money equal to $150, you will get $200! Please keep in mind that next reward tier - $75 - refers to previous (old) reward tier, $50.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-07-01">Jul 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$75</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+2 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>$50 reward tier + AN EXCELLENT PRINT VERSION OF ARTBOOK + SOUNDTRACKS PACK + ACCESS TO DEVELPERS FORUM! The soundtrack pack contains 10 high-quality beautiful soundtracks in different genres. On the closed developers’ forum, your ideas or questions will be always answered. Please add $15 for shipping outside of the US.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-07-01">Jul 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $15 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$100</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+45 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Previous reward tier + LIFELONG PREMIUM ACCOUNT + SATELLITE-ALLY TIER 3 + A MAGNIFICENT CRYSTAL + RARE IN-GAME MONEY EQUAL TO $300. The satellite from previous reward will be upgraded to tier 3 and will become twice as powerful as the previous one, both in combat and repairing. Crystal is a paperweight (or just a table decoration) with beautiful laser engraving inside, looking at which everyone surely will get excited.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-07-01">Jul 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $15 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$101</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+5 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Previous reward tier + IPAD BACK COVER instead of a crystal. Our artists designed a wonderful space view to turn your iPad into something special. If you don&#39;t want a crystal and have iPad, this option is for you! If you want a crystal too, add $35 and you will have both!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-07-01">Jul 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $15 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$139</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+4 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>(INSERTED DIGITAL REWARD) Previous reward tier, tier but INSTEAD OF PHYSICAL GOODS, YOU GET IN-GAME MONEY ON YOUR ACCOUNT. This reward for those who aren’t interested in physical things: instead of cover or crystal, box and artbook, you will get additional in-game money to your account in sum, equal to $400! Please keep in mind that next reward tier - $140 - refers to previous (old) reward tiers, $100 or $101.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-07-01">Jul 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$140</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+20 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>One of the previous reward tiers of your choice + BOXED EDITION + EARLY BETA KEY! You will be able to play our game on a special super secret server and see how the game is being developed and improved. You will have a chance to take part in the development, send suggestions and feedbacks and, sometimes, notice YOUR fixes and corrections in it! To make this tier even sweeter, your rewards and copy of the game will be sent to you packed into a splendid collection game box, exclusively for our backers only!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-07-01">Jul 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $15 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$200</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+5 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(245 left of 250)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Previous reward tier + STAR WILL BE NAMED IN YOUR HONOR! Hurry up to be the first, the quantity is limited. Who knows, maybe in a couple of centuries, this star will indeed be so named, as it has already happened? Also, you will be able to test the game in its early development on special browser-based platform!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-07-01">Jul 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $15 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$250</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(49 left of 50)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Previous reward tier + WEAPON OR DEVICE WILL BE NAMED IN YOUR HONOR. Instead of the star, WEAPON or DEVICE will be named after you and you will be included in the history of its creation. Please notice that star naming is not included due to limited amount of the stars in the first version that can be renamed</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-07-01">Jul 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $15 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$350</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(30 left of 30)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Previous reward tier + PLANET WILL BE NAMED IN YOUR HONOR. Instead of a star or equipment, a whole PLANET will be named after you and you will be included in its history as a historical figure - and become part of the game universe.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-07-01">Jul 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $15 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+3 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(47 left of 50)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Previous reward tier + MINI-PORTRAIT OF YOU AS A PILOT! Instead of becoming a planet, you will become a CHARACTER in the game. You will be painted by our amazing artist (your photo is required) and become a living part of the game! Beside that, in the MMO version this portrait will be available only to you (as your avatar picture). Also, we will send this picture to you in higher resolution so you will be able to use it as an avatar for social networks, forums and any other sites you wish.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-07-01">Jul 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $15 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$600</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(13 left of 13)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Previous reward tier + MINI-PORTRAIT OF YOU AS A PIRATE! Instead of a simple pilot, your alter ego will be a terror of common pilots and wretched merchants! Of course, you&#39;ll get this picture in higher resolution for use as your personal avatar to imbue horror into your friends at any site you wish - and especially in the MMO version!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-07-01">Jul 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $15 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$700</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+3 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(17 left of 20)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Previous reward tier + MINI-PORTRAIT OF YOU AS A CAPTAIN OF A SPACE BASE. Warning: VERY EXCLUSIVE! You will become a part of one of the story lines and will have lifelong privileges at this base (which is especially valuable for the MMO version). Impress everyone by your power and authority!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-07-01">Jul 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$1,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(2 left of 2)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Previous reward tier + MINI-PORTRAIT OF YOU AS A SCIENTIST. Warning: SUPER EXCLUSIVE! There are two scientists and they are super important characters of the global storyline. All the players will necessarily meet them. In the MMO version, you will have super secret abilities (not affecting game balance) that will be revealed only to you.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-07-01">Jul 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$1,500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(2 left of 2)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Previous reward tier + MINI-PORTRAIT OF YOU AS A CHIEF &#39;VILLAIN&#39; OR COMMANDER. Warning: EXTREMELY EXCLUSIVE! Those are the main heroes of the game. The choice is given to the first one to get this reward, but both of them are simply stunning. In the MMO version, you will have exclusive political powers that will affect the whole universe.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-07-01">Jul 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$5,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(2 left of 3)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Previous reward tier + SHIP OF YOUR OWN DESIGN + MINI-PORTRAIT OF YOU AS A CONSTRUCTOR. Instead of a Commander or chief &#39;villain&#39;, you will be a constructor, but you will be able to participate in designing a ship. This means you will tightly work together with us and our artists to make a constructor of your dreams. Of course, you will be included in the history of the ship too. In the MMO version, everyone who will buy parts of this ship will pay you taxes in game money!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-07-01">Jul 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$10,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(7 left of 7)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>A special offer for the real fans of space exploration and science who may be not particularly interested in games but space per se. We will give... No, not a reception in your honour. We&#39;ll give you a unique opportunity to go on a four-day visit to one of the most mysterious objects - the Baikonur space launching site where you will be able to watch a real launch of a spacecraft (of course, along with the game designer of &#39;Divine Space&#39;). An unforgettable experience is guaranteed. That&#39;s it! And, in addition, you&#39;ll get the $2,000 reward level</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-07-01">Jul 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+</ul>
+
+<div class="p2" id="meta">
+<h5>Funding period</h5>
+<p class="tiny_type">
+<time class="js-adjust" data-format="ll" datetime="2012-10-10T14:01:57-04:00">Oct 10, 2012</time> - 
+<time class="js-adjust" data-format="ll" datetime="2012-11-23T09:00:00-05:00">Nov 23, 2012</time>
+(43 days)
+</p>
+</div>
+</div>
+
+</div>
+
+<a href="#" id="video_mode_tab" style="display: none;">
+View in Video Mode
+</a>
+
+</div>
+</div>
+
+
+</div>
+
+<div class="h5 bg-green-dark" id="mega-footer-wrap">
+<div class="bg-green-dark white full-height" id="footer-newsletter-signup">
+<div class="container py4">
+<div class="grid_8 prefix_4 suffix_4 center mt4">
+<h2>
+Eureka! You've found
+<br>
+our little secret.
+</h2>
+<p>Sign up for our Happening email for all the inside info about arts and culture in the Kickstarter universe and beyond.</p>
+<div class="newsletter_signup">
+<form accept-charset="UTF-8" action="/newsletters/happening/signup" class="overlabels" method="post"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /><input class="hidden" name="authenticity_token" type="hidden" value="2sOiUB2kcQfi+amz5+sNW1WefNZZIuSXByfBiK0eT/c=" /></div><input class="hidden" id="location" name="location" type="hidden" value="footer" />
+<textarea class="hide textarea" id="comment" name="comment">
+</textarea>
+<div class="field newsletter">
+<label class="overlabel z1 overlabel-newsletter">Email address</label>
+<input class="text" id="email" name="email" type="text" />
+</div>
+<input class="button button_green submit" name="commit" type="submit" value="Submit" />
+</form>
+
+</div>
+
+</div>
+</div>
+</div>
+<div class="container relative" id="mega-footer">
+<span class="scissors icon-scissors-1"></span>
+<div class="grid_16 alpha omega pt4 pb2" id="mega-footer-links">
+<div class="grid_4 link-group">
+<h5 class="white">About us</h5>
+<ul class="list">
+<li><a href="/year/2013/?ref=footer">2013 highlights</a></li>
+<li><a href="/year/2012?ref=footer">2012 highlights</a></li>
+<li><a href="/team?ref=footer">Who we are</a></li>
+<li><a href="/jobs?ref=footer">Jobs</a></li>
+<li><a href="/press?ref=footer">Press</a></li>
+<li><a href="/help/stats?ref=footer">Stats</a></li>
+<li><a href="/newsletters/weekly">Projects we love</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group">
+<h5><a href="/help?ref=footer" class="white">Help</a></h5>
+<ul class="list">
+<li><a href="/hello?ref=footer">What is Kickstarter?</a></li>
+<li><a href="/help?ref=footer">FAQ</a></li>
+<li><a href="/contact?ref=footer">Support</a></li>
+<li><a href="/help/school?ref=footer">Kickstarter School</a></li>
+<li><a href="/terms-of-use?ref=footer">Terms of Use</a></li>
+<li><a href="/privacy?ref=footer">Privacy Policy</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group alpha omega suffix_1">
+<h5 class="alpha"><a href="/discover/advanced?ref=footer" class="white">Discover</a></h5>
+<ul class="column column-0 grid_2 list">
+<li><a href="/discover/categories/art?ref=footer">Art</a></li>
+<li><a href="/discover/categories/comics?ref=footer">Comics</a></li>
+<li><a href="/discover/categories/dance?ref=footer">Dance</a></li>
+<li><a href="/discover/categories/design?ref=footer">Design</a></li>
+<li><a href="/discover/categories/fashion?ref=footer">Fashion</a></li>
+<li><a href="/discover/categories/film%20&amp;%20video?ref=footer">Film &amp; Video</a></li>
+<li><a href="/discover/categories/food?ref=footer">Food</a></li>
+</ul>
+<ul class="column column-1 grid_2 list">
+<li><a href="/discover/categories/games?ref=footer">Games</a></li>
+<li><a href="/discover/categories/music?ref=footer">Music</a></li>
+<li><a href="/discover/categories/photography?ref=footer">Photography</a></li>
+<li><a href="/discover/categories/publishing?ref=footer">Publishing</a></li>
+<li><a href="/discover/categories/technology?ref=footer">Technology</a></li>
+<li><a href="/discover/categories/theater?ref=footer">Theater</a></li>
+</ul>
+</div>
+<div class="grid_3 link-group">
+<h5 class="white">Hello</h5>
+<ul class="list">
+<li>
+<a href="https://twitter.com/kickstarter"><span class="ss-icon ss-social-regular ss-twitter"></span>
+Twitter
+</a></li>
+<li>
+<a href="https://www.facebook.com/Kickstarter"><span class="ss-icon ss-social-regular ss-facebook"></span>
+Facebook
+</a></li>
+<li>
+<a href="http://kickstarter.tumblr.com"><span class="ss-icon ss-social-regular ss-tumblr"></span>
+Tumblr
+</a></li>
+<li>
+<a href="http://instagram.com/kickstarter"><span class="ss-icon ss-social-regular ss-instagram"></span>
+Instagram
+</a></li>
+<li>
+<a href="https://vine.co/Kickstarter"><span class="ss-icon ss-social-regular ss-vine"></span>
+Vine
+</a></li>
+<li>
+<a href="/blog?ref=footer">Blog</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="grid_16 py4" id="mega-footer-bottom">
+<div class="logo left">
+<a href="/" class="grey-dark"><span class="ss-icon h3">KICKSTARTER</span>
+</a></div>
+<p class="right h5 grey-dark">
+&copy;
+2014
+Kickstarter, Inc.
+</p>
+</div>
+</div>
+</div>
+
+<script>
+  //<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    var analytics_vars = { google_analytics_id : "UA-7621056-1", logged_in : "false", social_user: "false" }
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.mixpanel_id = '75b1d24a516ecfc955eadfadc4910661';
+    window.mixpanel_debug = false;
+  //]]>
+</script>
+
+
+<noscript>
+<img alt="Quantcast" border="0" height="1" src="//secure.quantserve.com/pixel/p-34IbSpw2K94Sg.gif" style="display:none" width="1" />
+</noscript>
+
+
+<script>
+  //<![CDATA[
+    window.benchmark = (typeof window.performance == 'object' && typeof window.performance.mark == 'function');
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    (function (root) {
+      function instrument_function (original) {
+        return function () {
+          try {
+            return original.apply(this, arguments);
+          } catch (e) {
+            if (e.stack && root.Honeybadger) {
+              Honeybadger.notify(e, {
+                current_project : root.current_project,
+                current_user : root.current_user
+              });
+            }
+            throw(e);
+          }
+        };
+      }
+      root.instrument_function = instrument_function;
+    }(this));
+  //]]>
+</script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+
+<script>
+  //<![CDATA[
+    (function(){function c(a){this.local_start_time=new Date;this.settings={cookie_name:"request_time"};for(var b in a)this.settings[b]=a[b];this.get_remote_offset()}c.prototype.get_remote_offset=function(){this.cookie_value=this.read_cookie();var a=new Date(this.cookie_value);if(!this.cookie_value||"Invalid Date"===a.toString()){if(this.remote_offset=this.read_cookie("local_offset"))this.remote_offset=parseInt(this.remote_offset,10)}else this.remote_offset=a-this.local_start_time;"undefined"!==typeof this.remote_offset&& !isNaN(this.remote_offset)?(document.cookie="local_offset="+this.remote_offset+"; path=/",this.is_set=!0):this.is_set=!1};c.prototype.time_units=[["milliseconds",1],["seconds",1E3],["minutes",6E4],["hours",36E5],["days",864E5]];c.prototype.get_units_in_interval=function(a,b){var d=a.replace(/^\w/,function(d){return"get"+d.toUpperCase()});return b[d]()};c.prototype.milliseconds_in_day=function(a){"undefined"===typeof a&&(a=new Date);for(var b=0,d=this.time_units.length-2;0<=d;d--)b+=this.get_units_in_interval(this.time_units[d][0], a)*this.time_units[d][1];return b};c.prototype.milliseconds_in_interval=function(a,b){return this.milliseconds_in_day(b)%a};c.prototype.milliseconds_to_next_interval=function(a,b){return a-this.milliseconds_in_interval(a,b)};c.prototype.pluralize=function(a,b){1===b&&(a=a.replace(/s$/,""));return a};c.prototype.read_cookie=function(a){for(var b=window.document.cookie.split(";"),a=(a||this.settings.cookie_name)+"=",d=0;d<b.length;d++){for(var e=b[d];" "==e.charAt(0);)e=e.substring(1,e.length);if(0== e.indexOf(a))return b=e.substring(a.length,e.length),decodeURIComponent(b).replace(/\+/g," ")}return null};c.prototype.destroy_cookie=function(a){var b=new Date;a||(a=this.settings.cookie_name);b.setTime(b.getTime()-864E5);window.document.cookie=a+"=; expires="+b.toGMTString()+"; path=/"};c.prototype.get_remote_time=function(){var a=new Date,b=a.getTime()+this.remote_offset;return a=a.setTime(b)};window.ksr_page_clock=new c})(); (function(){function c(d,a,b){if(d){this.options={unit_base:{seconds:119,minutes:119,hours:72,days:0},end_phrase:d.getAttribute("data-word")||"to go",count_down:d.getAttribute("data-dynamic")||!1};for(k in b)this.options[k]=b[k];this.clock=a;this.time_units=this.clock.time_units.slice(1);this.element=d;this.clock.is_set&&this.attach()}}function a(){this.elements=[];this.attach()}var b=function(d,a){var b=a||window.document.body,c=d.split("."),g=c[c.length-1],c=1<c.length&&c[0]?c[0]:"*";if(window.document.getElementsByClassName)return b.getElementsByClassName(g); if(b.querySelectorAll)return b.querySelectorAll(d);for(var c=b.getElementsByTagName(c),h=[],i=0,f;f=c[i];i++)b=RegExp("(^|\\s)"+g+"(\\s|$)"),(""+f.className).match(b)&&h.push(f);return h};c.prototype.get_remaining_time=function(){var d=this.remote_end_time-this.clock.get_remote_time();0>d&&(d=0);return d};c.prototype.get_current_unit=function(){for(var d,a=0;a<this.time_units.length&&!(d=this.time_units[a],this.get_remaining_time()<=this.options.unit_base[d[0]]*d[1]);a++);return d};c.prototype.update_element= function(){var a=this.get_current_unit(),b=Math.floor(this.get_remaining_time()/a[1]);isNaN(b)||(this.number_element.innerHTML=b,this.text_element.innerHTML=this.clock.pluralize(a[0],b)+" "+this.options.end_phrase)};c.prototype.valid=function(){return!(!this.number_element||!this.text_element)};c.prototype.attach=function(){function a(){c.update_element();if(c.options.count_down&&0<c.get_remaining_time()){var b=c.get_current_unit();this.timeout=window.setTimeout(a,c.clock.milliseconds_to_next_interval(b[1]))}} var c=this;if(this.remote_end_time_string=this.element.getAttribute("data-end_time"))this.remote_end_time_string.match(/^\d+$/)?(this.remote_end_time=new Date,this.remote_end_time.setTime(this.remote_end_time_string)):this.remote_end_time=new Date(this.remote_end_time_string),this.number_element=b(".num",this.element)[0],this.text_element=b(".text",this.element)[0],this.element.ksr_page_timer=!0,this.valid()&&a()};c.prototype.cancel=function(){this.timeout&&clearTimeout(this.timeout)};a.prototype.loading= !0;a.prototype.stop_finding=function(){this.attach_timers();this.loading=!1;document.addEventListener?document.removeEventListener("DOMContentLoaded",this.stop_finding,!1):document.attachEvent&&"complete"===document.readyState&&document.detachEvent("onreadystatechange",this.stop_finding)};a.prototype.bind_ready=function(){var a=this,b=function(){a.stop_finding.call(a)};document.addEventListener?(document.addEventListener("DOMContentLoaded",b,!1),window.addEventListener("load",b,!1)):document.attachEvent&& (document.attachEvent("onreadystatechange",b),window.attachEvent("onload",b))};a.prototype.attach_timers=function(){for(var a=b("div.ksr_page_timer"),e=0;e<a.length;e++)a[e].ksr_page_timer||(new c(a[e],window.ksr_page_clock),this.elements.push(a[e]))};a.prototype.attach=function(){var a=this;this.bind_ready();(function(){a.attach_timers();a.loading&&window.setTimeout(function(){a.attach_timers()},200)})()};window.ProjectTimer=c;new a})();
+  //]]>
+</script>
+
+<script class="template" id="template-widgets__video_embed_code" type="text/x-tmpl-mustache"><iframe width="{{width}}" height="{{height}}" src="{{{path}}}" frameborder="0" scrolling="no"> </iframe>
+</script><script class="template" id="template-projects__baseball_card_tall" type="text/x-tmpl-mustache"><div class="project-card-wrap project-card-wrap-tall border bg-white rounded clip">
+  <div class="project-card relative project-live {{#successful?}}successful{{/successful?}}">
+    <div class="project-thumbnail pt1 pl1 pr1">
+      <a href="{{urls.web.project}}" target="">
+        <img alt="Photo-little" class="projectphoto-little" src="{{photo.little}}" class="fit">
+      </a>
+    </div>
+    <div class="project-card-interior p1 h6 grey-dark">
+      <h6 class="project-title">
+        <a href="{{urls.web.project}}" target="" class="green-dark">{{name}}</a>
+      </h6>
+      <p class="mb1 ellipsis">
+        by
+        {{creator.name}}
+      </p>
+      <p class="blurb">
+        {{blurb}}
+      </p>
+    </div>
+    <div class="absolute-bottom bg-white rounded-bottom">
+
+      {{#location}}
+        <ul class="p1 list project-meta no-margin h6">
+          <li class="ellipsis">
+            <a href="{{location.urls.web.discover}}" data-location="{{location_json}}" class="grey-dark">
+              <span class="ss-icon ss-location"></span>
+              <span class="location-name">{{location.displayable_name}}</span>
+            </a>
+          </li>
+        </ul>
+      {{/location}}
+
+      <div class="project-stats-wrap pb1 pl1 pr1">
+
+        {{#failed?}}
+          <div class='project-status project-failed h6'>
+            <strong> Funding Unsuccessful</strong><br />
+            <span class="grey-dark">Project ended on {{formatted_deadline}}</span>
+          </div>
+        {{/failed?}}
+
+        {{#canceled?}}
+          <div class='project-status project-canceled h6'>
+            <strong> Funding Canceled</strong><br />
+            <span class="grey-dark">Project canceled on {{formatted_state_changed_at}}</span>
+          </div>
+        {{/canceled?}}
+
+        {{#successful?}}
+          <div class='project-pledged-successful bg-green white h6 pl1 pr1 mb1'>
+            <strong>Successful!</strong>
+          </div>
+        {{/successful?}}
+
+        {{#live_or_successful?}}
+          {{#live?}}
+            <div class="project-pledged-wrap bg-grey clip mb1">
+              <div class="project-pledged bg-green full-height" style="width: {{percent_raised_to_100}}%"></div>
+            </div>
+          {{/live?}}
+          <ul class="project-stats list no-margin h6 no-wrap">
+            <li class="first funded inline-block mr1">
+              <strong class="block h6">{{percent_raised_rounded}}%</strong>
+              <span class="grey-dark">funded</span>
+            </li>
+            <li class="pledged inline-block mr1">
+              <strong class="block h6">{{currency_symbol}}{{formatted_money}}</strong>
+              <span class="grey-dark">pledged</span>
+            </li>
+            {{#successful?}}
+              <li class="last successful inline-block">
+                <strong class="block h6">Funded</strong>
+                <div class="deadline grey-dark">{{formatted_deadline}}</div>
+              </li>
+            {{/successful?}}
+            {{#live?}}
+              <li class="last ksr_page_timer inline-block" data-end_time="{{javascript_deadline}}">
+                <strong class="block h6">
+                  <div class="num">30</div>
+                </strong>
+                <div class="span text grey-dark" data-word="left">days to go</div>
+              </li>
+            {{/live?}}
+          </ul>
+        {{/live_or_successful?}}
+      </div>
+    </div>
+  </div>
+</div>
+
+{{#friends_backing?}}
+  <div class="friend_project_context">
+    <div class="friend_facepile">
+      {{#truncated_friends}}
+        <img src="{{avatar.thumb}}" class="{{#has_metadata?}}small{{/has_metadata?}}">
+      {{/truncated_friends}}
+    </div>
+    <p class="friend_namepile">
+      {{{escaped_sentence}}}
+    </p>
+  </div>
+{{/friends_backing?}}
+</script><script class="template" id="template-projects__video_mode" type="text/x-tmpl-mustache"><a href='#' id='video_mode_close' class='close_button z2'><span class='ss-icon ss-delete'></span></a>
+
+<div class='title_card z1 {{context_classes}}' style="display:none;">
+  <div class='interior'>
+    <h2 class='project_title normal_weight'>{{name}}</h2>
+    <p class='blurb'>{{blurb}}</p>
+    <nav class='bar'>
+      <a id='play_button' class='left play' href='#'>
+        <span class='play_active'>
+          <span class='ss-icon ss-play'></span>
+          Play
+        </span>
+        <span class='pause_active'>
+          <span class='ss-icon ss-pause'></span>
+          Pause
+        </span>
+      </a>
+      {{#logged_in}}
+        <div class='remind right'>
+          {{#if_not_starred}}
+            <a class='follow' href='{{urls.web.project}}/watch'><span class='ss-icon ss-star'></span></a>
+          {{/if_not_starred}}
+          {{#if_starred}}
+            <a class='unfollow' href='{{urls.web.project}}/unwatch'><span class='ss-icon ss-star active'></span></a>
+          {{/if_starred}}
+        </div>
+      {{/logged_in}}
+      <a class='right explore button button_green small' href='#'>Explore this project</a>
+    </nav>
+  </div>
+</div>
+
+<div class='channel_controls z1'>
+  <a href='#' class='{{#playlist_is_location}}selected {{/playlist_is_location}}location'>Something else near {{location.first_name}} <span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_featured}}selected {{/playlist_is_featured}}featured'>Something different<span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_category}}selected {{/playlist_is_category}}category'>Something else in {{category.name}} <span class='ss-icon ss-navigateright'></span></a>
+</div>
+
+<div class='project_video' style='background-image: url('{{photo.full}}')'>
+  <div class='cover'>
+    <video>
+      <source src='{{video.high}}' type='video/mp4'/>
+      <source src='{{video.webm}}' type='video/webm'/>
+    </video>
+  </div>
+</div>
+</script><script class="template" id="template-site__video_mode_fourohfour" type="text/x-tmpl-mustache"><section class='four_oh_four'>
+  <p class='big_type'>
+    Looks like you've reached the end of the line! <br />Check out <a class="another" href='#'>another channel</a> or <a href='/discover'>browse projects in discover</a>.
+  </p>
+</section>
+</script>
+
+<script id="schwamm_formatting_options" type="text/javascript">
+//<![CDATA[
+(function(){window.formatters = window.formatters || {}; var formatting_options = {"distance_date_intervals":[[5,"just now"],[29,"less than a minute ago"],[89,"1 minute ago"],[2640,"%m minutes ago"],[5340,"about 1 hour ago"],[82800,"about %h hours ago"],[147600,"1 day ago"],[604800,"%d days ago"],[15552000,"on %t"],[0,"on %y"]],"currency_symbol_mappings":{"AFN":"\u060b","ALL":"Lek","ARS":"$","AUD":"$","AWG":"\u0192","AZN":"\u043c\u0430\u043d","BAM":"KM","BBD":"$","BGN":"\u043b\u0432","BMD":"$","BND":"$","BOB":"$b","BRL":"R$","BSD":"$","BWP":"P","BYR":"p.","BZD":"BZ$","CAD":"$","CLP":"$","CNY":"\u00a5","COP":"$","CRC":"\u20a1","CUP":"\u20b1","CZK":"K\u010d","DKK":"kr","DOP":"RD$","EGP":"\u00a3","EUR":"\u20ac","FJD":"$","FKP":"\u00a3","GBP":"\u00a3","GIP":"\u00a3","GTQ":"Q","GYD":"$","HKD":"$","HNL":"L","HRK":"kn","HUF":"Ft","IDR":"Rp","ILS":"\u20aa","IRR":"\ufdfc","ISK":"kr","JMD":"J$","JPY":"\u00a5","KGS":"\u043b\u0432","KHR":"\u17db","KPW":"\u20a9","KRW":"\u20a9","KYD":"$","KZT":"\u043b\u0432","LAK":"\u20ad","LBP":"\u00a3","LKR":"\u20a8","LRD":"$","LTL":"Lt","LVL":"Ls","MKD":"\u0434\u0435\u043d","MNT":"\u20ae","MUR":"\u20a8","MXN":"$","MYR":"RM","MZN":"MT","NAD":"$","NGN":"\u20a6","NIO":"C$","NOK":"kr","NPR":"\u20a8","NZD":"$","OMR":"\ufdfc","PAB":"B/.","PEN":"S/.","PHP":"\u20b1","PKR":"\u20a8","PLN":"z\u0142","PYG":"Gs","QAR":"\ufdfc","RON":"lei","RSD":"\u0414\u0438\u043d.","RUB":"\u0440\u0443\u0431","SAR":"\ufdfc","SBD":"$","SCR":"\u20a8","SEK":"kr","SGD":"$","SHP":"\u00a3","SOS":"S","SRD":"$","SVC":"$","SYP":"\u00a3","THB":"\u0e3f","TRY":"TL","TTD":"TT$","TWD":"NT$","UAH":"\u20b4","USD":"$","UYU":"$U","UZS":"\u043b\u0432","VEF":"Bs","VND":"\u20ab","YER":"\ufdfc","ZAR":"R"},"currency_trailing_code_mappings":{"AUD":true,"CAD":true,"NZD":true,"USD":true},"currency_formats":["money","shorter_money"]}; for (key in formatting_options) {window.formatters[key] = formatting_options[key]};}());
+//]]>
+</script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("begin_base.js_tag");}
+  //]]>
+</script>
+<script src="https://d297h9he240fqh.cloudfront.net/assets/packages/base-45cdab84617ddfb8905b7cddc8500c19.js" type="text/javascript"></script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("end_base.js_tag");}
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    document.domain='kickstarter.com';
+  //]]>
+</script>
+
+<iframe height="0" id="api_xdreceiver" src="https://api.kickstarter.com/xdreceiver/85e6.html" style="display: none;" width="0"></iframe>
+
+
+
+<div id="fb-root"></div>
+<script>
+  //<![CDATA[
+    var channelUrl = window.location.protocol + "//" + window.location.host + "/channel.html",
+      skip_autologin = $('body').is('.skip_autologin');
+    
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId: window.fb_app_id,
+        channelUrl: channelUrl,
+        status: true,    // check login status
+        cookie: true,    // enable cookies to allow the server to access the session
+        xfbml: true,     // parse XFBML
+        logging: false   // turn off logging
+      });
+    
+      FB.getLoginStatus(function (response) {
+        if (response.status === 'connected') {
+          if (read_cookie("logout_from_fb")) {
+            FB.logout();
+            destroy_cookie("logout_from_fb");
+          } else if (!skip_autologin) {
+            $.get("/fb/autologin", {'fbsr': response.authResponse.signedRequest});
+          } else if (false && 0 == response.authResponse.userID) {
+            $.get("/fb/refresh", {'fbsr': response.authResponse.signedRequest});
+          }
+        } else {
+          if (read_cookie("logout_from_fb")) {
+            destroy_cookie("logout_from_fb");
+          }
+        }
+      })
+    
+      $(document).trigger('fb:loaded');
+    };
+    
+    
+    // Load the SDK Asynchronously
+    (function(d){
+      var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+      js = d.createElement('script'); js.id = id; js.async = true;
+      js.src = "//connect.facebook.net/en_US/all.js";
+      d.getElementsByTagName('head')[0].appendChild(js);
+    }(document));
+  //]]>
+</script>
+
+
+</body>
+</html>

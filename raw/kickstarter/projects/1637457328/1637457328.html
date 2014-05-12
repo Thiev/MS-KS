@@ -1,0 +1,4523 @@
+<!DOCTYPE html>
+<html class="projects_show  fontface no-js" lang="en">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# kickstarter: http://ogp.me/ns/fb/kickstarter#">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-5.newrelic.com","errorBeacon":"jserror.newrelic.com","licenseKey":"b04b883ad2","applicationID":"11086","transactionName":"cFteRUULX1wHFhtIEFxeVVJDFxxDCgtD","queueTime":12,"applicationTime":319,"ttGuid":"","agentToken":null,"agent":"js-agent.newrelic.com/nr-411.min.js"}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"Vw4BVEVSCQMIUg=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e){function n(t,e,n){n||(n={});for(var r=o[t],a=r&&r.length||0,s=n[i]||(n[i]={}),u=0;a>u;u++)r[u].apply(s,e);return s}function r(t,e){var n=o[t]||(o[t]=[]);n.push(e)}var o={},i="nr@context";e.exports={on:r,emit:n}},{}],2:[function(t){function e(t,e,n,i,s){return u?u-=1:r("err",[s||new UncaughtException(t,e,n)]),"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t(5),a=window.onerror,s=!1,u=0;t("loader").features.push("err"),window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(d){"stack"in d&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(4),s=!0)}i.on("fn-start",function(){s&&(u+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&u>0&&(u-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:4,3:3,4:6,5:1,6:14,handle:"D5DuLP",loader:"G9z0Bl"}],3:[function(t){function e(t){r.inPlace(t,["addEventListener","removeEventListener"],"-",n)}function n(t){return t[1]}var r=t(1),o=(t(3),t(2));if(e(window),"getPrototypeOf"in Object){for(var i=document;i&&!i.hasOwnProperty("addEventListener");)i=Object.getPrototypeOf(i);i&&e(i);for(var a=XMLHttpRequest.prototype;a&&!a.hasOwnProperty("addEventListener");)a=Object.getPrototypeOf(a);a&&e(a)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&e(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=e["nr@wrapped"]?t[1]=e["nr@wrapped"]:e["nr@wrapped"]=t[1]=r(e,"fn-"):"function"==typeof e.handleEvent&&r.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:15,2:1,3:14}],4:[function(t){var e=(t(3),t(1)),n=t(2);e.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=e(t[0],"fn-")})},{1:15,2:1,3:14}],5:[function(t){function e(t){var e=t[0];"string"==typeof e&&(e=new Function(e)),t[0]=n(e,"fn-")}var n=(t(3),t(1)),r=t(2);n.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",e)},{1:15,2:1,3:14}],6:[function(t){function e(){o.inPlace(this,s,"fn-")}function n(t,e){o.inPlace(e,["onreadystatechange"],"fn-")}function r(t,e){return e}var o=t(1),i=t(2),a=window.XMLHttpRequest,s=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];window.XMLHttpRequest=function(t){var n=new a(t);try{i.emit("new-xhr",[],n),o.inPlace(n,["addEventListener","removeEventListener"],"-",function(t,e){return e}),n.addEventListener("readystatechange",e,!1)}catch(r){try{i.emit("internal-error",r)}catch(s){}}return n},window.XMLHttpRequest.prototype=a.prototype,o.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",r),i.on("send-xhr-start",n),i.on("open-xhr-start",n)},{1:15,2:1}],7:[function(t){function e(){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;u>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,d="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=e(d);if(f&&(r.rxSize=f),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}t("loader").features.push("xhr");var o=t("handle"),i=t(1),a=t(5),s=["load","error","abort","timeout"],u=s.length,d=t(2);t(3),t(4),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var d=e(o);d&&(r.txSize=d)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",e)}catch(r){}}};for(var f=0;u>f;f++)n.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&e()},{1:8,2:11,3:3,4:6,5:1,handle:"D5DuLP",loader:"G9z0Bl"}],8:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e){var n=r[t];return n?n.apply(this,e):(o[t]||(o[t]=[]),void o[t].push(e))}var r={},o={};e.exports=n,n.queues=o,n.handlers=r},{}],11:[function(t,e){function n(t){if(!t||"object"!=typeof t&&"function"!=typeof t)return-1;if(t===window)return 0;if(o.call(t,"__nr"))return t.__nr;try{return Object.defineProperty(t,"__nr",{value:r,writable:!0,enumerable:!1}),r}catch(e){return t.__nr=r,r}finally{r+=1}}var r=1,o=Object.prototype.hasOwnProperty;e.exports=n},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&u&&u.body){p.proto="https"===c.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=u.createElement("script");e.src=p.proto+t.agent,u.body.appendChild(e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,u=s.document,d="addEventListener",f="attachEvent",c=(""+location).split("?")[0],p=e.exports={offset:i(),origin:c,features:[]};u[d]?(u[d]("DOMContentLoaded",o,!1),s[d]("load",n,!1)):(u[f]("onreadystatechange",r),s[f]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],14:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],15:[function(t,e){function n(t,e,r,s){function nrWrapper(){try{var n,a=u(arguments),d=this,f=r&&r(a,d)||{}}catch(c){i([c,"",[a,d,s],f])}o(e+"start",[a,d,s],f);try{return n=t.apply(d,a)}catch(p){throw o(e+"err",[a,d,p],f),p}finally{o(e+"end",[a,d,n],f)}}return a(t)?t:(e||(e=""),nrWrapper[n.flag]=!0,nrWrapper)}function r(t,e,r,o){r||(r="");var i,s,u,d="-"===r.charAt(0);for(u=0;u<e.length;u++)s=e[u],i=t[s],a(i)||(t[s]=n(i,d?s+r:r,o,s,t))}function o(t,e,n){try{s.emit(t,e,n)}catch(r){i([r,t,e,n])}}function i(t){try{s.emit("internal-error",t)}catch(e){}}function a(t){return!(t&&"function"==typeof t&&t.apply&&!t[n.flag])}var s=t(1),u=t(2);e.exports=n,n.inPlace=r,n.flag="nr@wrapper"},{1:1,2:14}]},{},["G9z0Bl",2,7]);</script><script>
+  //<![CDATA[
+    docElement = this.document.documentElement;
+    docElement.className=docElement.className.replace(/\bno-js\b/,'') + 'js';
+  //]]>
+</script>
+<title>Darkest Dungeon by Red Hook Studios by Tyler Sigman &mdash; Kickstarter</title><script>
+  //<![CDATA[
+    window.report_errors = true;
+    window.honeybadger_configuration = {
+      api_key : "02ab109335c0dd1a93506d92f22217a7",
+      environment : "production",
+      component : "projects",
+      action : "show",
+      onerror : false
+    };
+  //]]>
+</script>
+
+
+<!--[if lt IE 9]>
+  <script src="//html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta content="telephone=no" name="format-detection">
+
+<!--[if !IE]> -->
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base-9f623ad5d021a188cfb2d68a0cdf7a7b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<!-- <![endif]-->
+<!--[if IE]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base_blessed-2640c72487552f9a2ef9f2620b4af860.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<!--[if lte IE 9]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_nine-a93fe10530f175f96c4078b7e070d7e1.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 8]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_eight-f75aeb274436f94a0d243774456b1c62.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 7]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie-c019c01acd3a96588b346cf577a3504f.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_seven-5a3d2cef660cd281fd844b04b2397dbb.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if IE 6]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_six-e4d3caf76e405fe19aee6ece8bda701b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<link href="https://d297h9he240fqh.cloudfront.net/favicon.png" rel="icon" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-precomposed-7b603dba7cf80e4acc57d94a991bebbd.png" rel="apple-touch-icon-precomposed" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-ipad-precomposed-3176f72977daf43dee3b0d348484dc01.png" rel="apple-touch-icon-precomposed" sizes="72x72" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-iphone4-precomposed-b93b70168cd8492c843d0fea873c7f83.png" rel="apple-touch-icon-precomposed" sizes="114x114" type="image/png">
+<link href="https://www.kickstarter.com/services/oembed?url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2F1460250988%2Fdarkest-dungeon-by-red-hook-studios" rel="alternate" title="Darkest Dungeon by Red Hook Studios Script Tag oEmbed" type="application/json+oembed">
+<link rel="alternate" type="application/atom+xml" title="Darkest Dungeon by Red Hook Studios : Kickstarter" href="https://www.kickstarter.com/projects/1460250988/darkest-dungeon-by-red-hook-studios/posts.atom" />
+<meta property="twitter:app:id:iphone" content="596961532"/>
+<meta property="twitter:app:name:iphone" content="Kickstarter"/>
+<meta property="twitter:app:url:iphone" content="ksr://www.kickstarter.com/projects/1460250988/darkest-dungeon-by-red-hook-studios"/>
+<meta name="video_height" content="350"/>
+<meta name="video_width" content="640"/>
+<meta name="video_type" content="application/x-shockwave-flash"/>
+<meta name="title" content="Kickstarter &gt;&gt; Darkest Dungeon by Red Hook Studios by Tyler Sigman"/>
+<meta name="description" content="Tyler Sigman is raising funds for Darkest Dungeon by Red Hook Studios on Kickstarter! 
+
+ Darkest Dungeon is a challenging gothic roguelike RPG about the psychological stresses of adventuring. Descend at your peril!"/>
+<meta property="og:title" content="Darkest Dungeon by Red Hook Studios"/>
+<meta property="og:type" content="kickstarter:project"/>
+<meta property="og:image" content="https://s3.amazonaws.com/ksr/projects/803257/photo-main.jpg?1397860945"/>
+<meta property="og:url" content="https://www.kickstarter.com/projects/1460250988/darkest-dungeon-by-red-hook-studios"/>
+<meta property="og:site_name" content="Kickstarter"/>
+<meta property="fb:app_id" content="69103156693"/>
+<meta property="og:description" content="Darkest Dungeon is a challenging gothic roguelike RPG about the psychological stresses of adventuring. Descend at your peril!"/>
+<meta property="kickstarter:creator" content="https://www.kickstarter.com/profile/1460250988"/>
+<meta property="twitter:url:landing_url" content="https://www.kickstarter.com/projects/1460250988/darkest-dungeon-by-red-hook-studios"/>
+<meta property="twitter:card" content="2427656750:kickstarter_project"/>
+<meta property="twitter:site" content="@kickstarter"/>
+<meta property="twitter:site:id" content="16186995"/>
+<meta property="twitter:text:title" content="Darkest Dungeon by Red Hook Studios"/>
+<meta property="twitter:text:artist" content="Tyler Sigman"/>
+<meta property="twitter:text:backers" content="9639"/>
+<meta property="twitter:text:pledged" content="$313,337 USD"/>
+<meta property="twitter:text:time" content="0 seconds"/>
+<meta property="twitter:text:location" content="Vancouver, Canada"/>
+<meta property="twitter:image:location_image" content="https://d3mlfyygrfdi2i.cloudfront.net/b40e/pin.png"/>
+<meta property="twitter:text:description" content="Darkest Dungeon is a challenging gothic roguelike RPG about the psychological stresses of adventuring. Descend at your peril!"/>
+<meta property="twitter:image:media" content="https://s3.amazonaws.com/ksr/projects/803257/photo-main.jpg?1397860945"/>
+<meta property="twitter:image:width" content="640"/>
+<meta property="twitter:image:height" content="480"/>
+<meta property="twitter:player:stream:url" content="https://d2pq0u4uni88oo.cloudfront.net/projects/803257/video-341397-h264_base.mp4"/>
+<meta property="twitter:player:stream:content" content="video/mp4"/>
+<meta property="twitter:player:url" content="https://www.kickstarter.com/projects/1460250988/darkest-dungeon-by-red-hook-studios/widget/video.html"/>
+<meta property="twitter:player:height" content="350"/>
+<meta property="twitter:player:width" content="640"/>
+<meta property="twitter:maxage" content="60"/>
+<meta property="og:video" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F803257%2Fvideo-341397-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F803257%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Tyler+Sigman&amp;project_title=Darkest+Dungeon+by+Red+Hook+Studios&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2F1460250988%2Fdarkest-dungeon-by-red-hook-studios&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:secure_url" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F803257%2Fvideo-341397-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F803257%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Tyler+Sigman&amp;project_title=Darkest+Dungeon+by+Red+Hook+Studios&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2F1460250988%2Fdarkest-dungeon-by-red-hook-studios&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:height" content="350"/>
+<meta property="og:video:width" content="640"/>
+<meta property="og:video:type" content="application/x-shockwave-flash"/>
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="+Ljs26aQ/BNX0YsR6cjBN1UqvLKnN5jsIgJWxlf8slk=" name="csrf-token" />
+<script type="text/javascript">
+  var _sift = _sift || [];
+  _sift.push(['_setAccount', '637102']);
+  _sift.push(['_setUserId', '']);
+  _sift.push(['_trackPageview']);
+
+  (function() {
+    function loadSift() {
+      var sift, s;
+      if (root.visitor_id) {
+        _sift.push(['_setSessionId', root.visitor_id]);
+      }
+      sift = document.createElement('script');
+      sift.type = 'text/javascript';
+      sift.async = true;
+      sift.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dtlilztwypawv.cloudfront.net/s.js';
+      s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(sift, s);
+    }
+    if (window.attachEvent) {
+      window.attachEvent('onload', loadSift);
+    } else {
+      window.addEventListener('load', loadSift, false);
+    }
+  })();
+</script>
+<link href="http://kck.st/1gmsiey" rel="shorturl">
+<link href="https://www.kickstarter.com/projects/1460250988/darkest-dungeon-by-red-hook-studios" rel="canonical">
+<link href="https://s3.amazonaws.com/ksr/projects/803257/photo-med.jpg?1397860945" rel="image_src">
+<link href="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F803257%2Fvideo-341397-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F803257%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Tyler+Sigman&amp;project_title=Darkest+Dungeon+by+Red+Hook+Studios&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2F1460250988%2Fdarkest-dungeon-by-red-hook-studios&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque" rel="video_src">
+<script>
+  //<![CDATA[
+    window.current_checkout = "{&quot;id&quot;:0,&quot;domestic&quot;:null,&quot;amount&quot;:0.0,&quot;updated_at&quot;:0,&quot;created_at&quot;:0}";
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.current_ip = '94.209.101.212';
+    window.current_ip_datacenter = 'false';
+    window.enabled_features = {"elasticsearch":true,"security_history_read":true,"security_history_write":true,"advanced_discovery_es":true,"ios_crashlytics":true,"ios_mixpanel":true,"stories_veronica_mars":true,"veronica_mars_hero":true,"password_reset_banner":true};
+    window.fb_app_id = '69103156693';
+    
+    var _sf_startpt=(new Date()).getTime();
+    
+    window.current_project = "{&quot;id&quot;:1637457328,&quot;name&quot;:&quot;Darkest Dungeon by Red Hook Studios&quot;,&quot;blurb&quot;:&quot;Darkest Dungeon is a challenging gothic roguelike RPG about the psychological stresses of adventuring. Descend at your peril!&quot;,&quot;goal&quot;:75000.0,&quot;pledged&quot;:313337.29,&quot;state&quot;:&quot;successful&quot;,&quot;slug&quot;:&quot;darkest-dungeon-by-red-hook-studios&quot;,&quot;disable_communication&quot;:false,&quot;country&quot;:&quot;US&quot;,&quot;currency&quot;:&quot;USD&quot;,&quot;currency_symbol&quot;:&quot;$&quot;,&quot;currency_trailing_code&quot;:true,&quot;deadline&quot;:1394780340,&quot;state_changed_at&quot;:1394780340,&quot;created_at&quot;:1387566705,&quot;launched_at&quot;:1392049183,&quot;backers_count&quot;:9639,&quot;photo&quot;:{&quot;full&quot;:&quot;https://s3.amazonaws.com/ksr/projects/803257/photo-full.jpg?1397860945&quot;,&quot;ed&quot;:&quot;https://s3.amazonaws.com/ksr/projects/803257/photo-ed.jpg?1397860945&quot;,&quot;med&quot;:&quot;https://s3.amazonaws.com/ksr/projects/803257/photo-med.jpg?1397860945&quot;,&quot;little&quot;:&quot;https://s3.amazonaws.com/ksr/projects/803257/photo-little.jpg?1397860945&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/projects/803257/photo-small.jpg?1397860945&quot;,&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/projects/803257/photo-thumb.jpg?1397860945&quot;,&quot;1024x768&quot;:&quot;https://s3.amazonaws.com/ksr/projects/803257/photo-1024x768.jpg?1397860945&quot;,&quot;1536x1152&quot;:&quot;https://s3.amazonaws.com/ksr/projects/803257/photo-1536x1152.jpg?1397860945&quot;},&quot;creator&quot;:{&quot;id&quot;:1460250988,&quot;name&quot;:&quot;Tyler Sigman&quot;,&quot;avatar&quot;:{&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/4164948/RedHookLogo_final_whiteBG_640x480test.thumb.jpg?1390782542&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/4164948/RedHookLogo_final_whiteBG_640x480test.small.jpg?1390782542&quot;,&quot;medium&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/4164948/RedHookLogo_final_whiteBG_640x480test.medium.jpg?1390782542&quot;},&quot;urls&quot;:{&quot;web&quot;:{&quot;user&quot;:&quot;https://www.kickstarter.com/profile/1460250988&quot;},&quot;api&quot;:{&quot;user&quot;:&quot;https://api.kickstarter.com/v1/users/1460250988?signature=1399960190.182f7826adb9054c96192343bb34a605bda4f500&quot;}}},&quot;location&quot;:{&quot;id&quot;:9807,&quot;name&quot;:&quot;Vancouver&quot;,&quot;slug&quot;:&quot;vancouver-ca&quot;,&quot;short_name&quot;:&quot;Vancouver, Canada&quot;,&quot;displayable_name&quot;:&quot;Vancouver, Canada&quot;,&quot;country&quot;:&quot;CA&quot;,&quot;state&quot;:&quot;BC&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/vancouver-ca&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/vancouver-ca&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1399951821.17edcd5cba492b1f5025d67c37acaf63f635bcd5&amp;woe_id=9807&quot;}}},&quot;category&quot;:{&quot;id&quot;:35,&quot;name&quot;:&quot;Video Games&quot;,&quot;slug&quot;:&quot;games/video games&quot;,&quot;position&quot;:7,&quot;parent_id&quot;:12,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;http://www.kickstarter.com/discover/categories/games/video%20games&quot;}}},&quot;urls&quot;:{&quot;web&quot;:{&quot;project&quot;:&quot;https://www.kickstarter.com/projects/1460250988/darkest-dungeon-by-red-hook-studios&quot;,&quot;project_short&quot;:&quot;http://kck.st/1gmsiey&quot;,&quot;updates&quot;:&quot;https://www.kickstarter.com/projects/1460250988/darkest-dungeon-by-red-hook-studios/posts&quot;},&quot;api&quot;:{&quot;project&quot;:&quot;https://api.kickstarter.com/v1/projects/1637457328?signature=1399960190.11f0636703544354bc2dc0a7e0d8d2afb8ef5538&quot;,&quot;comments&quot;:&quot;https://api.kickstarter.com/v1/projects/1637457328/comments?signature=1399960190.ad7d85cbb426ef5a269a5a26a32065aa222caea4&quot;,&quot;updates&quot;:&quot;https://api.kickstarter.com/v1/projects/1637457328/updates?signature=1399960190.354ca3b2eda81ae7ac618605b8de84a9a5d79ede&quot;}},&quot;updated_at&quot;:1398888645,&quot;successful_at&quot;:1394780340,&quot;video&quot;:{&quot;id&quot;:341397,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/803257/video-341397-h264_high.mp4?2014&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/803257/video-341397-h264_base.mp4?2014&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/803257/video-341397-webm.webm?2014&quot;,&quot;width&quot;:640,&quot;height&quot;:350,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/803257/video-341397-h264_base.jpg?2014&quot;},&quot;comments_count&quot;:6678,&quot;updates_count&quot;:20,&quot;rewards&quot;:[{&quot;id&quot;:0,&quot;minimum&quot;:1,&quot;reward&quot;:&quot;No Reward&quot;},{&quot;id&quot;:2357683,&quot;minimum&quot;:15.0,&quot;reward&quot;:&quot;NOMAD\\r\\n=============================\\r\\nTHE GAME\\r\\n=============================\\r\\nDigital downloadable copy of Darkest Dungeon on Steam when it releases. (PC / Mac) \\u25cf (Approximately \\u20ac11 / \\u00a39)&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1420070400,&quot;project_id&quot;:1637457328,&quot;backers_count&quot;:3186,&quot;updated_at&quot;:1399436705},{&quot;id&quot;:2264018,&quot;minimum&quot;:20.0,&quot;reward&quot;:&quot;WANDERER\\r\\n=============================\\r\\nTHE GAME + EARLY ACCESS + DEVELOPMENT POLLS\\r\\n=============================\\r\\nGet EARLY ACCESS to the game when it goes live on Steam later this year. You will be amongst the first to play the game and access new features and content right as they are implemented! \\u25cf Plus, you will see concept art and be given the chance to take part in polls during development to help choose some character classes, monsters, and environments that will get put into the game. \\u25cf (Approximately \\u20ac15 / \\u00a312)&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1420070400,&quot;project_id&quot;:1637457328,&quot;backers_count&quot;:2526,&quot;updated_at&quot;:1398927773},{&quot;id&quot;:2273172,&quot;minimum&quot;:24.0,&quot;reward&quot;:&quot;EARLY BIRD - SEEKER\\r\\n=============================\\r\\nYou get all rewards of the $29 tier below! You save $$ by jumping in early! \\u25cf (Approximately \\u20ac18 / \\u00a315)&quot;,&quot;limit&quot;:250,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1420070400,&quot;project_id&quot;:1637457328,&quot;remaining&quot;:0,&quot;backers_count&quot;:250,&quot;updated_at&quot;:1397669180},{&quot;id&quot;:2264043,&quot;minimum&quot;:29.0,&quot;reward&quot;:&quot;SEEKER\\r\\n=============================\\r\\n+PDF ADVENTURING MANUAL + DIGITAL ESTATE MAP + EXCLUSIVE WALLPAPER PACK + CREDIT\\r\\n=============================\\r\\nINCLUDES ALL PREVIOUS REWARDS \\u25cf Really excited about Darkest Dungeon? Back us at this level and you will be handsomely rewarded with a PDF Adventuring Manual filled with lore, tips, and sketches to assist you in planning your quests. \\u25cf Also, get a digital map of your inherited Estate, complete with scrawled hints which will help you in your early adventurers. \\u25cf You&#39;ll also get an exclusive BACKERS ONLY digital wallpaper pack to adorn your favorite computer(s) \\u25cf Finally, in recognition of your pledging at this level and helping Darkest Dungeon get made, you&#39;ll receive a \\&quot;Founders\\&quot; CREDIT in the game! \\u25cf (Approximately \\u20ac21 / \\u00a318)&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1420070400,&quot;project_id&quot;:1637457328,&quot;backers_count&quot;:932,&quot;updated_at&quot;:1395388835},{&quot;id&quot;:2273178,&quot;minimum&quot;:40.0,&quot;reward&quot;:&quot;EARLY BIRD - ADVENTURER ============================= All rewards of the $49 tier below. Save $$ by jumping in early! (Approximately \\u20ac29 / \\u00a324)&quot;,&quot;limit&quot;:225,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1420070400,&quot;project_id&quot;:1637457328,&quot;remaining&quot;:0,&quot;backers_count&quot;:225,&quot;updated_at&quot;:1395388816},{&quot;id&quot;:2367081,&quot;minimum&quot;:44.0,&quot;reward&quot;:&quot;EARLY BIRD ROUND 2 - ADVENTURER ============================= Due to overwhelming demand, we&#39;d decided to open some more Early Bird slots for ADVENTURER. This includes all rewards of the $49 tier below. Save $$ by jumping in early! (Approximately \\u20ac32 / \\u00a327)&quot;,&quot;limit&quot;:250,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1420070400,&quot;project_id&quot;:1637457328,&quot;remaining&quot;:0,&quot;backers_count&quot;:250,&quot;updated_at&quot;:1395388817},{&quot;id&quot;:2264071,&quot;minimum&quot;:49.0,&quot;reward&quot;:&quot;ADVENTURER\\r\\n=============================\\r\\nDELUXE DIGITAL EDITION: EXCLUSIVE CHARACTER CLASS + PDF ART BOOK + ORIGINAL SOUNDTRACK BY STUART CHATWOOD + ADVENTURER CREDIT\\r\\n============================= \\r\\nINCLUDES ALL PREVIOUS REWARDS \\u25cf Exclusive playable Backers Only character class which will be voted upon by backers (you!) after the campaign closes. \\u25cf Feast your eyes upon a digital ART BOOK containing extensive concept work and finished illustrations from Darkest Dungeons&#39; artists! \\u25cf Treat your ears to a digital downloadable copy of the Darkest Dungeon Original Soundtrack by Stuart Chatwood. Stuart has composed music for 8 Prince of Persia games on top of his work in a platinum-selling rock band. \\u25cf AND, for helping us at this deluxe level, earn eternal recognition with an ADVENTURER credit in the game! \\u25cf (Approximately \\u20ac36 / \\u00a329)&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1420070400,&quot;project_id&quot;:1637457328,&quot;backers_count&quot;:1551,&quot;updated_at&quot;:1396677169},{&quot;id&quot;:2266427,&quot;minimum&quot;:74.0,&quot;reward&quot;:&quot;ARTIST\\r\\n=============================\\r\\n+PRINTED ART BOOK (DISCOUNTED)\\r\\n============================= INCLUDES ALL PREVIOUS REWARDS \\u25cf Beautiful printed copy of the Darkest Dungeon Art Book to handle and gaze at. Save $ versus Adding On separately. \\u25cf Shipping to US and Canada included. Please add $20 for other countries. \\u25cf (Approximately \\u20ac69 / \\u00a357 including shipping.)&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1420070400,&quot;project_id&quot;:1637457328,&quot;backers_count&quot;:184,&quot;updated_at&quot;:1395388826},{&quot;id&quot;:2273192,&quot;minimum&quot;:95.0,&quot;reward&quot;:&quot;DIGITAL PATRON\\r\\n=============================\\r\\nALL DIGITAL! (NO PHYSICAL ITEMS) GREAT FOR INTERNATIONAL SUPPORTERS!\\r\\n============================= Want the most Darkest Dungeon you can get, including Personalizing a Hero and Designing an Item, but don&#39;t want to deal with physical items and shipping costs? Back us at this level and get some  of the rewards from higher tiers. \\u25cf INCLUDES ALL REWARDS FROM ADVENTURER TIER (DIGITAL DELUXE EDITION) \\u25cf Plus PDF DIORAMA (print your own diorama!) \\u25cf Plus PERSONALIZE A HERO (see \\&quot;Patron\\&quot; tier) \\u25cf Plus DESIGN AN IN GAME EQUIPPABLE ITEM (see \\&quot;Grand Patron\\&quot; tier) \\u25cf And get listed as a \\&quot;PATRON\\&quot; in the credits! \\u25cf (Approximately \\u20ac69 / \\u00a357 - no shipping required.)&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1420070400,&quot;project_id&quot;:1637457328,&quot;backers_count&quot;:212,&quot;updated_at&quot;:1397133830},{&quot;id&quot;:2264149,&quot;minimum&quot;:99.0,&quot;reward&quot;:&quot;PATRON\\r\\n=============================\\r\\n+PAPER DIORAMA + PERSONALIZE A HERO + PATRON CREDIT\\r\\n=============================\\r\\nINCLUDES ALL [ARTIST] REWARDS (Digital Deluxe Pack + Printed Art Book) PLUS: \\u25cf Make your own Darkest Dungeon diorama! You get a set of character, hallway, and monster sheets. Just cut and assemble for a desktop dungeon delving display! \\u25cf PLUS, get involved in game creation by personalizing a recruitable hero for the game. After the campaign, we&#39;ll send you a survey where you can select a name (subject to style approval to fit the game), character class, and some starting traits. This character can show up as a recruit in town, for any players to hire. \\u25cf Get listed as a PATRON in the credits and know you were a huge part of making DD happen. \\u25cf Shipping to US and Canada included. Please add $20 for other countries. \\u25cf (Approximately \\u20ac87/ \\u00a373 including shipping.)&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1420070400,&quot;project_id&quot;:1637457328,&quot;backers_count&quot;:94,&quot;updated_at&quot;:1395388823},{&quot;id&quot;:2264150,&quot;minimum&quot;:149.0,&quot;reward&quot;:&quot;GRAND PATRON\\r\\n=============================\\r\\n+SIGNED ART PRINT + DESIGN AN IN-GAME EQUPPABLE ITEM\\r\\n=============================\\r\\nINCLUDES ALL PREVIOUS REWARDS \\u25cf Get a beautiful signed numbered limited edition 18\\&quot; x 24\\&quot; print by Darkest Dungeon artist Chris Bourassa. \\u25cf Design an in-game item that is equippable by heroes: during development, we will send you a survey where you can assemble an item by choosing a form, giving it powers, and naming it (subject to thematic approval). Your item becomes loot in the game! \\u25cf Shipping to US and Canada included. Please add $20 for other countries. \\u25cf (Approximately \\u20ac123 / \\u00a3103 including shipping.)&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1420070400,&quot;project_id&quot;:1637457328,&quot;backers_count&quot;:107,&quot;updated_at&quot;:1398909244},{&quot;id&quot;:2264151,&quot;minimum&quot;:249.0,&quot;reward&quot;:&quot;HEIR\\r\\n=============================\\r\\n+YOUR FACE DRAWN IN THE DARKEST DUNGEON STYLE + THE DARKEST DUNGEON NARRATOR READS A LINE FOR YOU!\\r\\n=============================\\r\\nINCLUDES ALL PREVIOUS REWARDS \\u25cf Get your face drawn in the Darkest Dungeon style similar to what you see under the TEAM section...a great avatar for Twitter, Facebook, etc.! \\u25cf ALSO, the velvet-voiced baritone Narrator of Darkest Dungeon, Wayne June, will read a line of your choice for you and you will get the digital recording to use as you wish. (Lines are subject to decency/political restrictions--we&#39;ll work with you to make sure it&#39;s acceptable.) \\u25cf Get credited as a HEIR in the game WITH YOUR AVATAR PICTURE shown! \\u25cf Shipping to US and Canada included. Please add $20 for other countries. \\u25cf (Approximately \\u20ac196 / \\u00a3164 including shipping)&quot;,&quot;limit&quot;:20,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1420070400,&quot;project_id&quot;:1637457328,&quot;remaining&quot;:0,&quot;backers_count&quot;:20,&quot;updated_at&quot;:1394782873},{&quot;id&quot;:2264169,&quot;minimum&quot;:499.0,&quot;reward&quot;:&quot;NOBLE HEIR\\r\\n=============================\\r\\n+JOURNAL OF YOUR EXPEDITION AND DOOM ============================= INCLUDES ALL PREVIOUS REWARDS \\u25cf Be immortalized in Darkest Dungeon! We will work with you to come up with a simple story about your fictional adventure down into the dungeons in which you met an untimely end. While adventuring, players can happen across journal pages which tell of your fate. \\u25cf Finally, be listed as \\&quot;NOBLE HEIR\\&quot; in the credits. \\u25cf Worldwide shipping included. \\u25cf (Approximately \\u20ac364 / \\u00a3299)&quot;,&quot;limit&quot;:5,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1420070400,&quot;project_id&quot;:1637457328,&quot;remaining&quot;:0,&quot;backers_count&quot;:5,&quot;updated_at&quot;:1394782645},{&quot;id&quot;:2264168,&quot;minimum&quot;:999.0,&quot;reward&quot;:&quot;HEIR APPARENT\\r\\n=============================\\r\\n+EXCLUSIVE 1 of 1 SIGNED CLASS DRAWING\\r\\n============================= INCLUDES ALL PREVIOUS REWARDS \\u25cf Work with Darkest Dungeon artist Chris Bourassa to select your favorite hero class and discuss a pose. Chris will paint this pose and we will print a SINGLE COPY ONLY of this print, sign it, and ship it to you. \\u25cf You will also get the digital wallpaper version to share as you decide. \\u25cf Finally, be listed as \\&quot;HEIR APPARENT\\&quot; in the credits. \\u25cf Worldwide shipping included. \\u25cf (Approximately \\u20ac729 / \\u00a3599)&quot;,&quot;limit&quot;:5,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1420070400,&quot;project_id&quot;:1637457328,&quot;remaining&quot;:0,&quot;backers_count&quot;:5,&quot;updated_at&quot;:1394782744},{&quot;id&quot;:2273152,&quot;minimum&quot;:2500.0,&quot;reward&quot;:&quot;BARON\\r\\n=============================\\r\\n+DESIGN A MONSTER! ============================= INCLUDES ALL PREVIOUS REWARDS \\u25cf Work with our design team to design a monster that will appear in the game! We&#39;ll collaborate to pick a monster type, name, and combat abilities. \\u25cf Then, receive a print of the monster, signed by the dev team. \\u25cf And you&#39;ll be credited under \\&quot;ADDITIONAL MONSTER DESIGN\\&quot; in the credits! \\u25cf Worldwide shipping included. \\u25cf (Approximately \\u20ac1825 / \\u00a31500)&quot;,&quot;limit&quot;:5,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1420070400,&quot;project_id&quot;:1637457328,&quot;remaining&quot;:4,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1394800287},{&quot;id&quot;:2281998,&quot;minimum&quot;:5000.0,&quot;reward&quot;:&quot;LORD\\r\\n=============================\\r\\n+DESIGN A CHARACTER CLASS ============================= INCLUDES ALL PREVIOUS REWARDS \\u25cf You will have an effect in shaping the game for every player. Work with our design and art team to create and design a character class that players can recruit and use in their party. We&#39;ll collaborate to create the visual and gameplay elements of the class, including combat abilities, camping abilities, and weapons and armor. \\u25cf Receive credit in the game as \\&quot;ADDITIONAL CLASS DESIGN.\\&quot; \\u25cf We&#39;ll also give you a signed 1/1 print of the class. \\u25cf Worldwide shipping included. \\u25cf (Approximately \\u20ac3650 / \\u00a33000)&quot;,&quot;limit&quot;:1,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1420070400,&quot;project_id&quot;:1637457328,&quot;remaining&quot;:0,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1394802371}]}";
+    
+    
+    
+    
+    
+    
+    
+    
+    window.timeRemaining = function timeRemaining(epochTime){
+    
+      var diff = epochTime - ((new Date()).getTime() / 1000);
+      var num_unit = (diff < 60 && [Math.max(diff, 0), 'seconds']) ||
+        ((diff/=60) < 60 && [diff, 'minutes']) ||
+        ((diff/=60) < 72 && [diff, 'hours']) ||
+        [diff/=24, 'days'];
+    
+      // Round down
+      num_unit[0] = Math.floor(num_unit[0]);
+      // Singularize unit
+      if (num_unit[0] == 1) { num_unit[1] = num_unit[1].replace(/s$/,""); }
+    
+      return num_unit;
+    };
+  //]]>
+</script>
+
+<script>
+  //<![CDATA[
+    window.current_variants = ["discover_link_copy[explore]","rewards_hover[without_hover_text]"];
+  //]]>
+</script>
+
+
+</head>
+
+<body class="project projects not-mobile not-phone not-forces-video-controls not-tablet not-touchable not-native-app-request video_mode" id="projects_show">
+<div class="jGrowl center" id="growl_section"></div>
+<div class="NS_layouts__navigation" id="header">
+<div class="main-nav relative bg-white">
+<h1 class="no-margin ml1 mr2 left">
+<a href="/?ref=nav" class="block p2"><span class="ss-icon green-dark">KICK</span><span class="ss-icon green">STARTER</span>
+</a></h1>
+<ul class="primary-links list no-margin left">
+<li class="left discover-link full-height">
+<a href="/discover?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Explore</a>
+</li>
+<li class="left full-height mr2">
+<a href="/learn?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Start</a>
+</li>
+</ul>
+<ul class="list no-margin right" id="menu-sub">
+<li class="right"><a href="/login?ref=nav" class="block h5 bold p2 full-height border-box">Log in</a></li>
+<li class="right"><a href="/signup?ref=nav" class="block h5 bold p2 full-height border-box">Sign up</a></li>
+</ul>
+<div class="search-link pl2 full-height border-left border-box clip">
+<form accept-charset="UTF-8" action="/projects/search" class="search pt1 pb1 block relative form-simple" method="get"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /></div>
+<div class="field relative pl3">
+<span class="ss-icon ss-search grey-dark ml1 mt1 absolute"></span>
+<input class="input-search header full-width text" data-tracker-name="Header Live Search" id="term" name="term" placeholder="Search projects" type="text" />
+</div>
+</form>
+
+</div>
+<div class="clear"></div>
+</div>
+</div>
+<div class="hide pt4 pb4 bg-grey-light" id="search_results-wrap">
+<div class="relative container" id="search_results">
+<a class="close right grey-dark mr1"><span class="ss-icon ss-delete"></span></a>
+<h3 class="header ml1 clearfix"></h3>
+<div class="clip clearfix" id="search_results_panel"></div>
+<a class="prev arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateleft"></span>
+</a>
+<a class="next arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateright"></span>
+</a>
+</div>
+</div>
+
+
+
+
+<div class="Project-ended-true Project-is_starred- Project-state-successful Project1637457328_cxt border-top" id="main_content">
+<div id="running-board-wrap">
+<div class="container" id="running-board">
+<div id="project-header">
+<div class="NS_projects__running_board ml1 mr1 clearfix">
+<div class="title center py4">
+<h2 class="mb1">
+<a href="/projects/1460250988/darkest-dungeon-by-red-hook-studios" class="green-dark">Darkest Dungeon by Red Hook Studios</a>
+</h2>
+<p class="no-margin">
+<span class="creator">
+by
+<a href="/projects/1460250988/darkest-dungeon-by-red-hook-studios/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography" id="name">Tyler Sigman</a>
+</span>
+</p>
+</div>
+<ul class="project-nav list-inline left h5 bold mb1">
+<li class="mr2">
+<a href="/projects/1460250988/darkest-dungeon-by-red-hook-studios" class="grey-dark py1 current" id="home_nav">Home</a>
+</li>
+<li class="mr2">
+<span data-updates-count="20" id="updates_count">
+<a href="/projects/1460250988/darkest-dungeon-by-red-hook-studios/posts" class="grey-dark py1" id="updates_nav">Updates
+<span class="count h6 bg-grey-dark white">20</span>
+</a></span>
+</li>
+<li class="mr2">
+<a href="/projects/1460250988/darkest-dungeon-by-red-hook-studios/backers" class="grey-dark py1" id="backers_nav">Backers
+<span class="count h6 bg-grey-dark white"><data class="Project1637457328" data-format="number" data-value="9639" itemprop="Project[backers_count]">9,639</data></span>
+</a></li>
+<li>
+<span data-comments-count="6678" id="comments_count">
+<a href="/projects/1460250988/darkest-dungeon-by-red-hook-studios/comments" class="grey-dark py1" id="comments_nav">Comments
+<span class="count h6 bg-grey-dark white"><data class="Project1637457328" data-format="number" data-value="6677" itemprop="Project[comments_count]">6,677</data></span>
+</a></span>
+</li>
+</ul>
+<ul class="list-inline right h5 bold mb1">
+<li class="location mr2">
+<a href="/discover/places/vancouver-ca?ref=city" class="grey-dark"><span class="ss-icon ss-location margin-right"></span>
+Vancouver, Canada
+</a></li>
+<li class="category" data-project-parent-category="Games">
+<a href="/discover/categories/games/video%20games?ref=category" class="grey-dark"><span class="ss-icon ss-tag margin-right"></span>
+Video Games
+</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+</div>
+<div class="bg-grey-light pb4" id="content-wrap">
+<div class="Project1637457328" data-conditions="[{&quot;!state&quot;:&quot;live&quot;}]" data-evaluation="true" data-render="&quot;&lt;div class=\&quot;NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-successful Project1637457328_cxt bg-grey container pb1 pt1\&quot;&gt;\n&lt;div class=\&quot;Project1637457328\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;successful&amp;quot;}]\&quot; data-evaluation=\&quot;true\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;Funded!&amp;lt;/b&amp;gt;\\nThis project was successfully funded &amp;lt;data class=\\&amp;quot;Project1637457328\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2014-03-14T02:59:00-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[deadline]\\&amp;quot;&amp;gt;on March 14&amp;lt;/data&amp;gt;.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;Funded!&lt;/b&gt;\nThis project was successfully funded &lt;data class=\&quot;Project1637457328\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2014-03-14T02:59:00-04:00&amp;quot;\&quot; itemprop=\&quot;Project[deadline]\&quot;&gt;on March 14&lt;/data&gt;.\n&lt;/p&gt;\n&lt;/div&gt;&lt;div class=\&quot;Project1637457328\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:[&amp;quot;started&amp;quot;,&amp;quot;submitted&amp;quot;]}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;THIS PROJECT IS NOT LIVE&amp;lt;/b&amp;gt;\\nThis is only a draft that the creator has chosen to share.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1637457328\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;suspended&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Suspended&amp;lt;/b&amp;gt;\\nFunding for this project was suspended &amp;lt;data class=\\&amp;quot;Project1637457328\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2014-03-14T02:59:00-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on March 14&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1637457328\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;canceled&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Canceled&amp;lt;/b&amp;gt;\\nFunding for this project was canceled by the project creator &amp;lt;data class=\\&amp;quot;Project1637457328\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2014-03-14T02:59:00-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on March 14&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1637457328\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;failed&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Unsuccessful&amp;lt;/b&amp;gt;\\nThis project\\u2019s funding goal was not reached on &amp;lt;time class=\\&amp;quot;js-adjust\\&amp;quot; data-format=\\&amp;quot;MMMM D\\&amp;quot; datetime=\\&amp;quot;2014-03-14T02:59:00-04:00\\&amp;quot;&amp;gt;March 14&amp;lt;/time&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1637457328\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;purged&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;This project is purged and only visible to staff.&amp;lt;/b&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;/div&gt;\n&quot;"><div class="NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-successful Project1637457328_cxt bg-grey container pb1 pt1">
+<div class="Project1637457328" data-conditions="[{&quot;state&quot;:&quot;successful&quot;}]" data-evaluation="true" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;Funded!&lt;/b&gt;\nThis project was successfully funded &lt;data class=\&quot;Project1637457328\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2014-03-14T02:59:00-04:00&amp;quot;\&quot; itemprop=\&quot;Project[deadline]\&quot;&gt;on March 14&lt;/data&gt;.\n&lt;/p&gt;\n&quot;"><p class="no-margin">
+<b>Funded!</b>
+This project was successfully funded <data class="Project1637457328" data-format="distance_date" data-value="&quot;2014-03-14T02:59:00-04:00&quot;" itemprop="Project[deadline]">on March 14</data>.
+</p>
+</div><div class="Project1637457328" data-conditions="[{&quot;state&quot;:[&quot;started&quot;,&quot;submitted&quot;]}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;THIS PROJECT IS NOT LIVE&lt;/b&gt;\nThis is only a draft that the creator has chosen to share.\n&lt;/p&gt;\n&quot;"></div><div class="Project1637457328" data-conditions="[{&quot;state&quot;:&quot;suspended&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Suspended&lt;/b&gt;\nFunding for this project was suspended &lt;data class=\&quot;Project1637457328\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2014-03-14T02:59:00-04:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on March 14&lt;/data&gt;.\n&quot;"></div><div class="Project1637457328" data-conditions="[{&quot;state&quot;:&quot;canceled&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Canceled&lt;/b&gt;\nFunding for this project was canceled by the project creator &lt;data class=\&quot;Project1637457328\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2014-03-14T02:59:00-04:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on March 14&lt;/data&gt;.\n&quot;"></div><div class="Project1637457328" data-conditions="[{&quot;state&quot;:&quot;failed&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Unsuccessful&lt;/b&gt;\nThis project\u2019s funding goal was not reached on &lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;MMMM D\&quot; datetime=\&quot;2014-03-14T02:59:00-04:00\&quot;&gt;March 14&lt;/time&gt;.\n&quot;"></div><div class="Project1637457328" data-conditions="[{&quot;state&quot;:&quot;purged&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;This project is purged and only visible to staff.&lt;/b&gt;\n&quot;"></div></div>
+</div>
+<div class="container bg-white border rounded py3 pl2 pr2" id="content">
+<div class="NS-projects-content">
+<div class="grid_11">
+<div data-has-video="true" id="video-section">
+<div class="video-player" data-dimensions="{&quot;width&quot;:640,&quot;height&quot;:480}" data-image="https://s3.amazonaws.com/ksr/projects/803257/photo-main.jpg?1397860945" data-video-tracker-url="https://www.kickstarter.com/projects/1460250988/darkest-dungeon-by-red-hook-studios/video/plays" data-video-url="https://d2pq0u4uni88oo.cloudfront.net/projects/803257/video-341397-h264_high.mp4" data-video="{&quot;id&quot;:341397,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/803257/video-341397-h264_high.mp4?2014&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/803257/video-341397-h264_base.mp4?2014&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/803257/video-341397-webm.webm?2014&quot;,&quot;width&quot;:640,&quot;height&quot;:350,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/803257/video-341397-h264_base.jpg?2014&quot;}" id="video_pitch"><video class="has_webm landscape" preload="none">
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/803257/video-341397-h264_high.mp4" type='video/mp4; codecs="avc1.64001E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/803257/video-341397-h264_base.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/803257/video-341397-webm.webm" type="video/webm"></source>
+You'll need an HTML5 capable browser to see this content.
+</video>
+<img alt="Photo-main" class="has_played_hide poster landscape" src="https://s3.amazonaws.com/ksr/projects/803257/photo-main.jpg?1397860945" />
+<div class="play_button_big play_button_dark absolute-center rounded has_played_hide">
+<span class="ss-icon ss-play"></span>
+Play
+</div>
+<div class="player_controls clearfix absolute-bottom mb2 rounded white bg-green-dark forces-video-controls_hide">
+<div class="left">
+<a class="button button_icon button_dark playpause play mr1">
+<span class="play ss-icon ss-play"></span>
+<span class="pause ss-icon ss-pause"></span>
+</a>
+<span class="time current_time h12 left">00:00</span>
+</div>
+<div class="right">
+<span class="time total_time h12 left mr1">00:00</span>
+<a class="left button button_icon button_icon_white volume">
+<span class="ss-icon ss-volume icon_volume_nudge"></span>
+<span class="ss-icon ss-highvolume"></span>
+</a>
+<div class="volume_container left">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+<a class="left button button_icon button_icon_white fullscreen">
+<span class="ss-icon ss-expand"></span>
+<span class="ss-icon ss-contract"></span>
+</a>
+</div>
+<div class="clip">
+<div class="progress_container pr1 pl1">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="buffer progress_bar_buffer"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div data-project-state="successful" id="about">
+<div class="NS_projects__project_share clearfix py2 pl1 pr1">
+<ul class="left list-inline no-margin h5 bold">
+<li class="facebook mr2">
+<a href="https://www.kickstarter.com/projects/1460250988/darkest-dungeon-by-red-hook-studios"><span class="ss-icon ss-social ss-facebook color-facebook"></span>
+<span class="color-facebook">Share</span>
+<span class="share_bubble"><div class="triangle grey"></div>
+<div class="triangle white"></div>
+<span class="count"></span></span>
+</a></li>
+<li class="twitter mr2">
+<a  href="https://twitter.com/intent/tweet?text=Darkest%20Dungeon%20by%20Red%20Hook%20Studios%20by%20Tyler%20Sigman&amp;via=kickstarter&amp;url=http://kck.st/1gmsiey" rel="nofollow"><span class="ss-icon ss-social ss-twitter color-twitter"></span>
+<span class="color-twitter">Tweet</span>
+</a></li>
+<li class="embed">
+<a href="/projects/1460250988/darkest-dungeon-by-red-hook-studios/widget" class="remote_modal_dialog grey-dark" data-modal-title="Embed a widget on your site" data-tracker-name="Embed"><span class="ss-icon ss-navigateleft"></span>
+<span class="ss-icon ss-navigateright"></span>
+Embed
+</a></li>
+</ul>
+<ul class="right list-inline no-margin h5 bold">
+<li class="curate mr2">
+</li>
+<li class="remind">
+<div class="ajax-container" id="watching-widget">
+<div class="Project1637457328" data-conditions="[{&quot;is_starred&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div id=\&quot;unwatch\&quot;&gt;\n&lt;a href=\&quot;/projects/1460250988/darkest-dungeon-by-red-hook-studios/unwatch\&quot; class=\&quot;on\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"></div><div class="Project1637457328" data-conditions="[{&quot;!is_starred&quot;:true}]" data-evaluation="true" data-render="&quot;&lt;div id=\&quot;watch\&quot;&gt;\n&lt;a href=\&quot;/projects/1460250988/darkest-dungeon-by-red-hook-studios/watch\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;span class=\&quot;text\&quot;&gt;\n&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"><div id="watch">
+<a href="/projects/1460250988/darkest-dungeon-by-red-hook-studios/watch"><span class="ss-icon ss-star"></span>
+<span class="text">
+</span>
+</a></div>
+
+</div></div>
+</li>
+</ul>
+</div>
+
+<div class="short_blurb py2 pl1 pr1">
+<p class="h3">Darkest Dungeon is a challenging gothic roguelike RPG about the psychological stresses of adventuring. Descend at your peril!</p>
+</div>
+<div class="full-description">
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1460250988/darkest-dungeon-by-red-hook-studios/assets/1652236/edit" data-id="1652236">
+<figure><img alt="Fight for survival in the Darkest Dungeon!" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/652/236/249f90316c8b14316f12b442201105fe_large.gif?1392789799"><figcaption>Fight for survival in the Darkest Dungeon!</figcaption></figure>
+</div><div> </div><h1><a href="http://www.darkestdungeon.com/buy/" target="_blank">Missed the Kickstarter? You can still BUY HERE.</a></h1><a href="http://www.darkestdungeon.com/buy" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/1460250988/darkest-dungeon-by-red-hook-studios/assets/1747720/edit" data-id="1747720">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/747/720/06fb57ee86b6537a3992669dccec5440_large.png?1394774178"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+</a><h1>QUICK REFERENCE:</h1><h1><a href="http://www.darkestdungeon.com/" target="_blank">www.darkestdungeon.com</a></h1><h1><a href="http://eepurl.com/F-fo1" target="_blank">Join Our Mailing List</a></h1><h1><a href="https://www.facebook.com/DarkestDungeon" target="_blank">Facebook Page</a></h1><h1><a href="https://twitter.com/DarkestDungeon" target="_blank">Twitter</a></h1><h1>
+<a href="http://www.youtube.com/channel/UC51CmbiyiwP90ipUWBPOqhA" target="_blank">Red Hook YouTube Channel</a>
+</h1><h1><a href="http://www.darkestdungeon.com/media/" target="_blank">Character Class Wallpapers and Avatars</a></h1><div></div><div class="template asset" contenteditable="false" data-edit_url="/projects/1460250988/darkest-dungeon-by-red-hook-studios/assets/1623476/edit" data-id="1623476">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/623/476/d4bd934f25d87a7fc88e8735f31a2e72_large.jpg?1392146078"></figure>
+</div><p><b>Welcome to the Darkest Dungeon.</b></p><a href="http://www.redhookgames.com/media/screenshots/1_GetBack.jpg" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/1460250988/darkest-dungeon-by-red-hook-studios/assets/1610715/edit" data-id="1610715">
+<figure><img alt="Fame, fortune, and the ever-encroaching dark." class="fit" src="https://s3.amazonaws.com/ksr/assets/001/610/715/0930bd2ab5d556de05beadeeaaf54283_large.gif?1391825044"><figcaption>Fame, fortune, and the ever-encroaching dark.</figcaption></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p><b>Uncompromising, unforgiving, and unconventional, we present a fresh take on the dungeon crawler that elevates the importance of sound tactics and a character's mental state over their gear.</b></p><p>You will recruit, train, and lead a team of flawed heroes through twisted forests, forgotten warrens, ruined crypts and beyond. You'll battle not only unimaginable foes, but stress, famine, disease, and the ever-encroaching dark. Uncover strange mysteries, and pit the heroes against an array of fearsome monsters with an innovative strategic turn-based combat system.</p><a href="http://www.redhookgames.com/media/HeroesOfDD.jpg" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/1460250988/darkest-dungeon-by-red-hook-studios/assets/1747896/edit" data-id="1747896">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/747/896/430cc3f97697a66e8418bf5d021b1e48_large.jpg?1394778085"></figure>
+</div>
+
+
+
+
+
+</a><p>You will have to tend to characters’ spirits as much as you do to their Hit Points. But in these grim situations, you'll find opportunities for true heroism!</p><p>Darkest Dungeon is not a game where every hero wins the day with shiny armor and a smile. It is a game about hard trade-offs, nearly certain demise, and heroic reversals. </p><p>Do you have what it takes to survive in the forgotten corners of the Darkest Dungeon?</p><p><b>FEATURES</b>:</p><div>
+<div>
+<div></div>
+<ul>
+<li>
+<b>The Affliction System</b> – heroes' personalities are paramount! Contend with paranoia, abusiveness, fear, irrationality, and a host of gameplay-meaningful quirks</li>
+<li>Striking <b>hand-drawn gothic crowquill art style</b>
+</li>
+<li>
+<b>Innovative turn-based combat</b> pits you against a host of diabolical monsters
+</li>
+<li>
+<b>Classic CRPG and roguelike features,</b> including meaningful permadeath, procedural dungeons, and incredible replay</li>
+<li>
+A distinctive game world featuring over a dozen unique playable character classes such as the <b>Plague Doctor, the Highwayman, </b>and even<b> the Leper!</b>
+</li>
+<li>
+<b>
+Town meta-game</b> – tend to your heroes wounds, both corporeal and cerebral</li>
+<li>
+<b>Loot!</b>  Gold, jewels, heirlooms, and mystical trinkets.  Not to mention upgradable armor, weapons, and consumable supplies.</li>
+<li>
+Things That Once Seen <b>Can Never Be Unseen</b>...
+</li>
+</ul>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1460250988/darkest-dungeon-by-red-hook-studios/assets/1602389/edit" data-id="1602389">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/602/389/91f34f5bf08c585806095dd2738803b5_large.jpg?1391641046"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1460250988/darkest-dungeon-by-red-hook-studios/assets/1576479/edit" data-id="1576479">
+<figure><img alt="The Leper: One of the many unique character classes playable in Darkest Dungeon." class="fit" src="https://s3.amazonaws.com/ksr/assets/001/576/479/be881f2c60f06cf6a80d00fad6533cff_large.jpg?1391020362"><figcaption>The Leper: One of the many unique character classes playable in Darkest Dungeon.</figcaption></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1460250988/darkest-dungeon-by-red-hook-studios/assets/1574028/edit" data-id="1574028">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/574/028/e6fb4532288fcdc7d6bc08a6d90391ec_large.jpg?1390955590"></figure>
+</div>
+<div><br></div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1460250988/darkest-dungeon-by-red-hook-studios/assets/1550044/edit" data-id="1550044">
+<figure><img alt="Darkest Dungeon will be distributed on Steam! We are also looking into other awesome distribution partners." class="fit" src="https://s3.amazonaws.com/ksr/assets/001/550/044/e3875fe3d97d187166c0b21403027335_large.jpg?1390353803"><figcaption>Darkest Dungeon will be distributed on Steam! We are also looking into other awesome distribution partners.</figcaption></figure>
+</div>
+<div><b>Full Release</b></div>
+<div>Darkest Dungeon full release will be available for Windows, Mac, and Linux.  Win and Mac version will be released first, with Linux following.  The full release will be distributed on Steam as well as DRM-free download.</div>
+<div><br></div>
+<div><div><b>Early Access</b></div></div>
+<div>EARLY ACCESS will be released on Steam only. Early Access will be available for Win initially, and Mac will be added later. We are considering Linux for Early Access but cannot confirm it at this point.</div>
+<div><br></div>
+<div>
+<b>DRM FREE Option Confirmed!</b>
+</div>
+<div>When the FULL GAME releases, all backers will have the option to choose between a STEAM key or a DRM-Free download. (However, EARLY ACCESS WILL BE STEAM ONLY!)</div>
+<div> 
+</div>
+<div></div>
+<div><b>Other Platforms</b></div>
+<div><div>We are also very interested in consoles, handhelds (PSVita, 3DS), tablet, etc. and will make decisions about those versions based upon success of this campaign, interest and opportunity.</div></div>
+<div><br></div>
+<div></div>
+<div> </div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1460250988/darkest-dungeon-by-red-hook-studios/assets/1573902/edit" data-id="1573902">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/573/902/e92decedb033eaf608a51a14fb450058_large.jpg?1390953646"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template oembed" contenteditable="false" data-href="http://www.youtube.com/watch?v=wjiBB3nBR-w">
+<iframe width="612" height="344" src="https://www.youtube.com/embed/wjiBB3nBR-w?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div>
+<p>A supernatural tale of greed, ruin and redemption sets the stage for your adventures!  Return to the poisoned remains of your ancestral estate and wrestle it free from the grip of a timeless evil unwittingly unleashed by your long-lost patriarch.  Throughout your adventures, you will learn about the lands your family once called home, and uncover the awful truths that lurk in forbidden places.</p>
+
+</div>
+<div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1460250988/darkest-dungeon-by-red-hook-studios/assets/1603064/edit" data-id="1603064">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/603/064/de68e9cdc0bcc64e5b575cbb27cbe57e_large.jpg?1391651829"></figure>
+</div>
+<p><b>Every dungeon event affects your heroes' stress levels. What will happen when they reach their breaking point?</b></p>
+<a href="http://www.redhookgames.com/media/screenshots/3_ResolveTested.jpg" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/1460250988/darkest-dungeon-by-red-hook-studios/assets/1603060/edit" data-id="1603060">
+<figure><img alt="Pushed to the limits at every turn." class="fit" src="https://s3.amazonaws.com/ksr/assets/001/603/060/0690c48f51aaefeff9c68153a613dfcc_large.png?1391651781"><figcaption>Pushed to the limits at every turn.</figcaption></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</a><p>Be warned: characters in Darkest Dungeon are not the unwavering heroes of high fantasy to which you are accustomed. While they are certainly tough and capable fighters, they are also very human: they will respond emotionally to the horrors they encounter.  They get stressed, develop phobias, proclivities, and other emotional baggage.  Their abilities evolve based on their experiences in the dungeons, and you must learn to lead them to victory in spite of their flaws.</p>
+<a href="http://www.redhookgames.com/media/screenshots/2_Fearful.jpg" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/1460250988/darkest-dungeon-by-red-hook-studios/assets/1610742/edit" data-id="1610742">
+<figure><img alt="Even heroes get scared...and angry...and greedy. Will defeat come from within the party?" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/610/742/adab773cb5d5e363adbe6dd3f6821ef1_large.gif?1391825434"><figcaption>Even heroes get scared...and angry...and greedy. Will defeat come from within the party?</figcaption></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</a><p>Characters' stress levels respond dynamically to dungeon events. Coming across a rotting corpse may unnerve the Highwayman, or may fuel the Crusader's determination. If the pressures become too overwhelming, their resolve is broken, and they will become Afflicted with a range of psychological conditions including paranoia, panic, greed, or even sadism.</p>
+<a href="http://www.redhookgames.com/media/screenshots/4_NewQuirk.jpg" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/1460250988/darkest-dungeon-by-red-hook-studios/assets/1610482/edit" data-id="1610482">
+<figure><img alt="Nobody's perfect." class="fit" src="https://s3.amazonaws.com/ksr/assets/001/610/482/2f25379fb45088c2a73d2927d9c72bb4_large.png?1391820080"><figcaption>Nobody's perfect.</figcaption></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</a>
+</div>
+<div>
+<p>Afflicted party members will act out in a variety of ways that impact the play experience during combat, exploration, camping, and even in town. Like weary soldiers who have seen too much, your heroes will develop permanent quirks and emotional baggage based on their experiences.</p>
+<ul>
+<li>
+<b>The Jester </b>has seen one too many party members die in combat, and is prone to nihilistic rants, stressing the other party members! Do you send him carousing in town to blow off some steam?</li>
+<li>
+<b>The Man-at-Arms</b> has begun relying on the bottle as much as his battleaxe. His inebriated fury is a welcome damage boost for the party, but he has grown increasingly unpredictable and erratic. Do you bench him in town, or simply lash more liquor to his pack?</li>
+<li>At camp, <b>the Plague Doctor's </b>methods unnerve the Highwayman, and he refuses her treatments. Maybe you should rethink the idea of combining them in the same party again.</li>
+<li>A critical hit from a skeleton sends <b>the Vestal</b> reeling, and instills in her a crippling fear of the Undead. She can fight well enough against other foes, but if you expect her to keep her head through the Crypts, you'll first need to send her to the Abbey to do some serious prayer and contemplation.</li>
+</ul>
+<a href="http://www.redhookgames.com/media/screenshots/5_ItSpies.jpg" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/1460250988/darkest-dungeon-by-red-hook-studios/assets/1594502/edit" data-id="1594502">
+<figure><img alt="Fear is the mind killer." class="fit" src="https://s3.amazonaws.com/ksr/assets/001/594/502/e21cd531875484e07d4c88815fccc679_large.png?1391466064"><figcaption>Fear is the mind killer.</figcaption></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</a>
+<p>You will be challenged to think as a tactician, a coach, and a ruler.  Consider the needs of your adventurers carefully before sending them on expeditions – the consequences of your actions are severe, and permanent.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1460250988/darkest-dungeon-by-red-hook-studios/assets/1573906/edit" data-id="1573906">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/573/906/d6779241bd8eb1aaf1d9b5215fab34df_large.jpg?1390953707"></figure>
+</div>
+
+<p><b><i>Strategize with party order, party composition, and hero abilities against a huge variety of dangerous creatures.</i></b></p>
+
+
+<div class="template oembed" contenteditable="false" data-href="http://www.youtube.com/watch?v=aQe1QXjISNQ">
+<iframe width="612" height="344" src="https://www.youtube.com/embed/aQe1QXjISNQ?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div>
+
+<a href="http://www.redhookgames.com/media/screenshots/6_Grapeshot.jpg" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/1460250988/darkest-dungeon-by-red-hook-studios/assets/1594525/edit" data-id="1594525">
+<figure><img alt="Tactical positioning and clever skill use will win the day." class="fit" src="https://s3.amazonaws.com/ksr/assets/001/594/525/9ca67dfded319bdd86089decd2630d1d_large.png?1391466384"><figcaption>Tactical positioning and clever skill use will win the day.</figcaption></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                         </a>
+<p>Tactical, strategic, and deceptively deep, combat in Darkest Dungeon combines nostalgia with the elegance of modern design.  Party order is crucial for setting up attacks, and every move matters.   At all times, you must juggle the need to do damage with the importance of protecting the health and minds of your party members. </p>
+<p>Hallways are cramped and claustrophobic, and consequently, the party and monsters are organized in sideview ranks.  Each combat ability has a rank requirement associated with its execution and targeting. "Zealous Cleave" (a sword strike) can only be launched from position 1 or 2 and will only hit monsters in the front row, whereas "Pistol Shot" must be triggered from the back rows but can hit anywhere. Learn to construct and manage the right combination of characters and abilities to become a dangerous fighting force!</p>
+<a href="http://www.redhookgames.com/media/screenshots/7_ReadThis.jpg" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/1460250988/darkest-dungeon-by-red-hook-studios/assets/1610299/edit" data-id="1610299">
+<figure><img alt="Each class has its own strengths and abilities." class="fit" src="https://s3.amazonaws.com/ksr/assets/001/610/299/b1d8937051b7b6b9dda41814503dcd36_large.gif?1391815820"><figcaption>Each class has its own strengths and abilities.</figcaption></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</a><p>On top of this structure, we've added in modern RPG concepts such as AOE, DOTs, HOTs, grapples, pushbacks and combos, creating a tactical sandbox full of opportunity and challenge. Be prepared to use a mixture of planning and quick thinking to overcome a huge variety of tough opponents ranging from minions &amp; mini-bosses to massive deadly eldritch abominations! </p>
+<p>Permadeath gives extra weight to each decision, and makes sacrifices matter.</p>
+<a href="http://www.redhookgames.com/media/screenshots/8_CrushingBlow.jpg" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/1460250988/darkest-dungeon-by-red-hook-studios/assets/1594536/edit" data-id="1594536">
+<figure><img alt="Face horrific enemies." class="fit" src="https://s3.amazonaws.com/ksr/assets/001/594/536/a060dd3e83e572f6b354016cff9761de_large.png?1391466459"><figcaption>Face horrific enemies.</figcaption></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</a><div class="template asset" contenteditable="false" data-edit_url="/projects/1460250988/darkest-dungeon-by-red-hook-studios/assets/1582290/edit" data-id="1582290">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/582/290/668dc29adbef1eb604c73428a5fd4941_large.jpg?1391136533"></figure>
+</div>
+<p><b><i>Creep through the dark, investigate mysterious items, avoid deadly traps, and pursue your goal...</i></b></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="http://www.redhookgames.com/media/screenshots/9_VotiveTable.jpg" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/1460250988/darkest-dungeon-by-red-hook-studios/assets/1594545/edit" data-id="1594545">
+<figure><img alt="Dozens of interactive items." class="fit" src="https://s3.amazonaws.com/ksr/assets/001/594/545/72675b4b9792651fda28dd0fccd10455_large.png?1391466545"><figcaption>Dozens of interactive items.</figcaption></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</a>
+<p>Monsters aren't your only adversary. The dungeon itself is an antagonist, rife with twisting corridors, hazards, traps, random events and of course, treasure and trinkets!</p>
+</div>
+<div>
+<div></div>
+<p>Inspired by classic Roguelikes, you'll wind your way through a maze of rooms and halls in pursuit of your goal. But with Darkest Dungeon, party order remains a crucial consideration! Put your Grave Robber in front to help disarm traps? Or keep your meat shield Crusader up there in case of ambush? As always, your choices matter.</p>
+<a href="http://www.redhookgames.com/media/screenshots/10_Pickaxe.jpg" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/1460250988/darkest-dungeon-by-red-hook-studios/assets/1594549/edit" data-id="1594549">
+<figure><img alt="Come prepared and the journey will be easier." class="fit" src="https://s3.amazonaws.com/ksr/assets/001/594/549/37d5467158660bdfd4868dd347cec0af_large.png?1391466613"><figcaption>Come prepared and the journey will be easier.</figcaption></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</a>
+<p>Some of the biggest hazards come from your own party. Infighting, affliction act outs, and unpredictable behavior driven by stress and obsession will color your adventures. Dark curiosity may cause your Vestal to abandon the group in search of relics, or a selfish fear of starvation may drive your Leper to gorge on the remaining rations...</p>
+<a href="http://www.redhookgames.com/media/screenshots/15_Loot.jpg" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/1460250988/darkest-dungeon-by-red-hook-studios/assets/1598771/edit" data-id="1598771">
+<figure><img alt="Are the rewards worth it?" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/598/771/c594fcc37fe1f74f06f56a4592165246_large.png?1391558897"><figcaption>Are the rewards worth it?</figcaption></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</a>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1460250988/darkest-dungeon-by-red-hook-studios/assets/1603069/edit" data-id="1603069">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/603/069/7bee1c1f5d7d076a2b170578430f1962_large.jpg?1391651974"></figure>
+</div>
+
+<b>Risk and reward go hand in hand.</b>
+</div>
+<div>
+<br><a href="http://www.redhookgames.com/media/screenshots/11_DimLight.jpg" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/1460250988/darkest-dungeon-by-red-hook-studios/assets/1594557/edit" data-id="1594557">
+<figure><img alt="Safety and security in the light, risk and riches in the dark!" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/594/557/e1741144284345f3c3b187ef98cf58ef_large.png?1391466775"><figcaption>Safety and security in the light, risk and riches in the dark!</figcaption></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                           </a>
+<p>Make no mistake, there is terror and madness in the dark. But there is also wealth beyond measure!</p>
+<p>Each step you take into the depths will cause your torch to flicker and fade. As the darkness encroaches, monsters become stronger, and hazards more frequent and severe. Perhaps most importantly, your heroes become increasingly susceptible to stress. But the most valuable loot and trinkets are hidden in the darkest shadows, and searching carefully in the blackness can unearth huge rewards.</p>
+</div>
+<div>
+<p>Since the profitability of your expedition is certainly an important measure of its success, the question is: how much of a risk-taker are you?</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1460250988/darkest-dungeon-by-red-hook-studios/assets/1602354/edit" data-id="1602354">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/602/354/00fd10429eab6765e0f40942a4f6dfd8_large.jpg?1391640587"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1460250988/darkest-dungeon-by-red-hook-studios/assets/1573918/edit" data-id="1573918">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/573/918/41df61e6507ae4789292dc54517e709b_large.jpg?1390953946"></figure>
+</div>
+
+<p><b><i>Use special character camping skills to keep your party in fighting shape and bolster your defenses. </i></b></p>
+<a href="http://www.redhookgames.com/media/screenshots/12_Feast.jpg" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/1460250988/darkest-dungeon-by-red-hook-studios/assets/1594562/edit" data-id="1594562">
+<figure><img alt="Ration your provisions wisely." class="fit" src="https://s3.amazonaws.com/ksr/assets/001/594/562/8d51adb64eda9c9683512ee4c340e28b_large.png?1391466872"><figcaption>Ration your provisions wisely.</figcaption></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</a>
+<p>Expeditions in Darkest Dungeon are gruelling, arduous affairs, and one of the most important decisions you can make is when and where to make camp. Breaking out the firewood and provisions will allow you to make use of your characters' <b>Camping Skills</b> – critical abilities that allow you to mitigate the damage done to your party's bodies and minds. When the bard plays his lute, the highwayman cleans his guns, or the crusader gives an inspirational speech, this isn't just flavor--they are all tied to gameplay!</p>
+
+<p>There are so many helpful things you can do with character Camping Skills, the real question is "which do you choose?" Will you calm the Plague Doctor down after a harrowing combat? Will you direct the Highwayman to forego his rest in order to scout ahead?  Will you set up a defensive perimeter to keep the group safe from ambush? Or do you hunker down, conserving provisions for later, despite the fact that going without food will increase the stress of an already strained party?</p>
+
+<a href="http://www.redhookgames.com/media/screenshots/13_CalmThyself.jpg" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/1460250988/darkest-dungeon-by-red-hook-studios/assets/1610236/edit" data-id="1610236">
+<figure><img alt="Tactical. Camping." class="fit" src="https://s3.amazonaws.com/ksr/assets/001/610/236/54d946e8d2823ab4613771c309b872ec_large.gif?1391815264"><figcaption>Tactical. Camping.</figcaption></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</a>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1460250988/darkest-dungeon-by-red-hook-studios/assets/1573922/edit" data-id="1573922">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/573/922/0318539bf719422eafffbd438caac5ae_large.jpg?1390953956"></figure>
+</div>
+
+<p><b><i>Recruit, train, and equip heroes, and attend to their psychological needs and baggage.</i></b></p>
+<a href="http://www.redhookgames.com/media/screenshots/Town.jpg" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/1460250988/darkest-dungeon-by-red-hook-studios/assets/1594578/edit" data-id="1594578">
+<figure><img alt="The Hamlet is much more than simply a place to shop." class="fit" src="https://s3.amazonaws.com/ksr/assets/001/594/578/18672ca6c25578ba7b103fa467b46812_large.jpg?1391467089"><figcaption>The Hamlet is much more than simply a place to shop.</figcaption></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</a>
+<p>When you first arrive, the ramshackle hamlet has little more than a run-down tavern and a leaky church. As you lead your heroes on successful expeditions, you will earn gold, and recover ancient family heirlooms which can be invested to restore the village to its former glory. Doing so will not only yield gameplay benefits, but will allow you to recruit new classes of heroes, upgrade your roster's skills, and improve their equipment.  </p>
+<p>Town is also where you can interact with your heroes on a more personal level, reducing their stress and removing some of the negative quirks they may have developed as a result of their (mis)adventures.   Whether it's by means of rest and prayer, or alcohol and debauchery, depends not only on your preferences, but on their personalities!</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1460250988/darkest-dungeon-by-red-hook-studios/assets/1576492/edit" data-id="1576492">
+<figure><img alt="The Plague Doctor can hurl toxic plague grenades to sicken enemies." class="fit" src="https://s3.amazonaws.com/ksr/assets/001/576/492/81487fe67b1d13b7e629e1e69c332006_large.jpg?1391020704"><figcaption>The Plague Doctor can hurl toxic plague grenades to sicken enemies.</figcaption></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1460250988/darkest-dungeon-by-red-hook-studios/assets/1594808/edit" data-id="1594808">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/594/808/b61570b3f7bc3915f1bf4d85496aec74_large.jpg?1391470796"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1460250988/darkest-dungeon-by-red-hook-studios/assets/1573929/edit" data-id="1573929">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/573/929/d47f773704ee6cb96a063ad6e9d401b1_large.jpg?1390954009"></figure>
+</div>
+<p>Darkest Dungeon is being developed by Red Hook Studios in Vancouver. Our team is composed entirely of game industry veterans who share an intense obsession of gaming both on and off the computer.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1460250988/darkest-dungeon-by-red-hook-studios/assets/1576386/edit" data-id="1576386">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/576/386/a7dd578927bb957b80c23a3a16a5f5ef_large.jpg?1391019019"></figure>
+</div>
+<div><br></div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1460250988/darkest-dungeon-by-red-hook-studios/assets/1573931/edit" data-id="1573931">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/573/931/33d80084cf5086b0f2fe7af6a6421aee_large.jpg?1390954034"></figure>
+</div>
+<p>We have already substantially invested in Darkest Dungeon. We believe in the game and are putting our own money where are mouths are. We've gone without pay for 9 months of full-time development so far, and covered out-of-pocket costs ourselves. </p>
+<p>We need your support to be able to make Darkest Dungeon great. Money raised will enable us to cover expenses relating directly to game development: paying our partners, hiring additional help for key areas of the game, buying equipment, and so on.</p>
+<p>Should we raise funds above our target, it will allow us to develop some of the stretch goal features that we think will enhance the core game. Finally, if we raise *a lot* more than our goal, then we'd be in a position to pay ourselves a living allowance during development, vastly improving our quality of life, and reducing our party's stress levels significantly!</p>
+
+
+
+<p> <img alt="" src="https://s3.amazonaws.com/ksr/assets/001/573/926/eecb0df8d4c5a42ba88fb9687ee4d1cb_large.jpg?1390953988"></p>
+<p>We've gone to great lengths to create rewards that enhance your Darkest Dungeon experience, whether it be a deeper look into the gameworld via the art book and adventuring manual, or increasing your participation in the game's development by contributing hero, monster and playable class designs! Also, we've made sure that every tier starting at only $20 (Wanderer) gets both Early Access (if you wish to take part) and a voice in the development of the game.</p>
+<p>These rewards are our way of thanking you for your interest in the game, and your support in this campaign!</p>
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1460250988/darkest-dungeon-by-red-hook-studios/assets/1585272/edit" data-id="1585272">
+<figure><img alt="Incredible, glittering, valuable rewards!" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/585/272/2b73121e20321a827cea4c5c91bc90e7_large.jpg?1391206272"><figcaption>Incredible, glittering, valuable rewards!</figcaption></figure>
+</div>
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1460250988/darkest-dungeon-by-red-hook-studios/assets/1747932/edit" data-id="1747932">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/747/932/561cee523dde5651d6040681e129ea52_large.jpg?1394779510"></figure>
+</div>
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1460250988/darkest-dungeon-by-red-hook-studios/assets/1747934/edit" data-id="1747934">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/747/934/d9bede997c548d8419d4da81f93a94f1_large.jpg?1394779552"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1460250988/darkest-dungeon-by-red-hook-studios/assets/1576427/edit" data-id="1576427">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/576/427/9d9a66c7b7ec58a4392e5118177abdfa_large.jpg?1391019488"></figure>
+</div>
+<p>To add on one of the items below, just increase the amount of your pledge--but don't change your tier! We'll send you a survey after the campaign and double-check which add-ons you want.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1460250988/darkest-dungeon-by-red-hook-studios/assets/1732401/edit" data-id="1732401">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/732/401/eca324f074f436ed565e3d82309adcc1_large.png?1394497958"></figure>
+</div>
+
+
+<div> </div>
+<a href="http://www.redhookgames.com/media/Diorama.jpg" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/1460250988/darkest-dungeon-by-red-hook-studios/assets/1732405/edit" data-id="1732405">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/732/405/ca97917bfb227069313362193905c140_large.jpg?1394497995"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</a><div class="template asset" contenteditable="false" data-edit_url="/projects/1460250988/darkest-dungeon-by-red-hook-studios/assets/1732408/edit" data-id="1732408">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/732/408/55d1bc0c30e785e61b540d9c09eacfea_large.png?1394498062"></figure>
+</div>
+<a href="http://www.redhookgames.com/media/Artbook.jpg" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/1460250988/darkest-dungeon-by-red-hook-studios/assets/1732409/edit" data-id="1732409">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/732/409/b323efb4543e388ef02893a512b0e0ff_large.jpg?1394498107"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                           </a><div class="template asset" contenteditable="false" data-edit_url="/projects/1460250988/darkest-dungeon-by-red-hook-studios/assets/1732412/edit" data-id="1732412">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/732/412/f5d184a1ce6e0457c027fe894eafa5d0_large.png?1394498141"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1460250988/darkest-dungeon-by-red-hook-studios/assets/1732413/edit" data-id="1732413">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/732/413/52f7c2747eefb8c1ed7bcc825f7b64e3_large.png?1394498153"></figure>
+</div>
+<div><br></div>
+<div><b>MUSIC SAMPLE - FROM "HOUSE OF RUIN" Trailer</b></div>
+<div class="template oembed" contenteditable="false" data-href="http://www.youtube.com/watch?v=BvKI-UxJTCQ">
+<iframe width="612" height="344" src="https://www.youtube.com/embed/BvKI-UxJTCQ?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div>
+
+
+
+<p>Check out more about our composer, Stuart Chatwood, here:</p>
+<p><a href="https://www.kickstarter.com/projects/1460250988/darkest-dungeon-by-red-hook-studios/posts/758210" target="_blank">https://www.kickstarter.com/projects/1460250988/darkest-dungeon-by-red-hook-studios/posts/758210</a></p>
+
+<h1>ADD ON EXTRA COPIES OF THE GAME!</h1>
+<p>Want to buy a copy of the game for a friend as a gift or because they don't have a Kickstarter account? No problem! You have two options to choose from.</p>
+<p>Just pledge the total amount, but make sure not to change your desired reward tier selection. After the campaign, you'll get a survey where you will indicate what your extra $ credit should be used for. If you've purchased multiple copies, you'll receive extra Steam Keys when the game releases.</p>
+<ul>
+<li>
+<b>ADD ON The Game: $15 per extra copy</b> </li>
+<li><b>ADD ON The Game plus Early Access: $20 per extra copy </b></li>
+</ul>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1460250988/darkest-dungeon-by-red-hook-studios/assets/1576397/edit" data-id="1576397">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/576/397/e0e2ae45c408aeaf2e94585023c717a2_large.jpg?1391019239"></figure>
+</div>
+<p>Your support will profoundly affect the development this game. We welcome your involvement, and hope you'll join our growing community of gamers who are looking for a fresh new take on the dungeon crawler – something challenging, rewarding, and profoundly human.</p>
+<p>So back us, tell your friends, and add your screams to the deafening cacophony... in the Darkest Dungeon!</p>
+<a href="http://www.redhookgames.com/media/screenshots/14_HighwayCrit.jpg" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/1460250988/darkest-dungeon-by-red-hook-studios/assets/1610258/edit" data-id="1610258">
+<figure><img alt="The only way out is forward." class="fit" src="https://s3.amazonaws.com/ksr/assets/001/610/258/cd68c7f1788d285578709a5cb055aa93_large.gif?1391815431"><figcaption>The only way out is forward.</figcaption></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</a>
+
+
+
+</div>
+</div>
+</div>
+<div id="risks">
+<h2 class="title grey-dark mt6 mb4">
+<span>Risks and challenges</span>
+<a href="/help/faq/kickstarter%20basics#Acco" class="right normal h5" target="_blank">Learn about accountability on Kickstarter</a>
+<div class="divider clear"></div>
+</h2>
+<p><p>Making a game is never an easy undertaking, and developers have to deal with a variety of risks. Here&#39;s how we are dealing with each of them:</p>
+
+<p>FINANCIAL RISK: We have invested in Darkest Dungeon ourselves, and are fully prepared to do whatever is necessary to reach completion.  We saved prior to starting development so we could have the chance to make the game that we wanted to make. We wouldn&#39;t be asking for your support if we didn&#39;t already have our own skin in the game. We can do it with your help!</p>
+
+<p>SCHEDULE RISK: The completion date for the game is an estimate based upon our experience running similar game projects in the past. Should some features take longer than expected to implement, there is a chance that the completion date will slip. If we feel this is necessary for the good of the game, we promise to be transparent about any date changes and keep you, the backers, informed along the way. Even better: we plan to release the game on Early Access part way through development, so even if final completion date moves, you&#39;ll get hands-on with the game before then.</p>
+
+<p>FUN RISK: Sometimes, features end up being less fun than anticipated. This is why we have invested so much time and effort in Darkest Dungeon *prior* to ever bringing it to Kickstarter, and also why we assembled an experienced team. We wanted to make sure we had something that could be great before asking for your hard-earned money. Your support will help give us the resources to make the game achieve its potential.</p>
+
+<p>Thank you for backing and helping make our dream game great.  We hope you&#39;ll join us in the depths!</p></p>
+</div>
+</div>
+<div class="NS-projects-faqs" id="project-faqs">
+<h2 class="title grey-dark mt6 mb4">
+FAQ
+<div class="divider clear"></div>
+</h2>
+<ul class="faqs">
+<li class="faq" id="project_faq_81206">
+<div class="faq-question">
+<a href="#project_faq_81206" name="project_faq_81206">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Can I pay with another method, such as PayPal?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Yes! If you&#39;ve come to this campaign late and wish to back the game, visit us at:
+<br /><a href="http://darkestdungeon.com/buy/" rel="nofollow">http://darkestdungeon.com/buy/</a></p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2014-03-13T16:51:26-04:00">Thu, Mar 13 2014 4:51 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_83956">
+<div class="faq-question">
+<a href="#project_faq_83956" name="project_faq_83956">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">When will my Diorama / Art Book / Art Print / Soundtrack / Estate Map / Journal / etc. be delivered?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Some items, such as the Art Book and Soundtrack definitely won&#39;t be available until the game releases. This is for obvious reasons--the content needs created before we can deliver it!</p>
+
+<p>For other items such as the diorama and art print, we are considering releasing those at some point during development. However, we may decide to wait until release so we can group shipping up with the other items.</p>
+
+<p>In any case, we will keep backers updated via Backer Updates as development progresses!</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2014-03-13T17:02:16-04:00">Thu, Mar 13 2014 5:02 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_81208">
+<div class="faq-question">
+<a href="#project_faq_81208" name="project_faq_81208">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">How many characters do I manage? Can I have more than four?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Each time you journey into the dungeons on a quest, you bring a party of four characters. However, in the Hamlet (town), you will recruit and manage a roster of approximately 15 heroes.  At any given time, some heroes will be recovering from stress, wounds, sickness, or personal quirks.  The condition of those heroes, along with their various strengths and weaknesses, will influence your decision of how to group up a party.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2014-03-13T16:51:26-04:00">Thu, Mar 13 2014 4:51 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_81395">
+<div class="faq-question">
+<a href="#project_faq_81395" name="project_faq_81395">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Will heroes come with names? Can I rename them?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>When new heroes are recruited in town, they will come with a name and sometimes some starting traits. In fact, the PERSONALIZE A HERO rewards allow backers to name a recruitable hero which will be added into the recruit pool.</p>
+
+<p>However, you may always change a hero&#39;s name when you recruit him. So it is your option whether to keep the name that they came with, or make it something you prefer! (Name after your friends, coworkers, pets, family, or favorite book characters!)</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2014-03-13T16:51:26-04:00">Thu, Mar 13 2014 4:51 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_81055">
+<div class="faq-question">
+<a href="#project_faq_81055" name="project_faq_81055">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Will Darkest Dungeon be translated into other languages?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>We hope to translate eventually into whichever languages have a strong demand. At this point we are hoping to do German, Spanish, French, Polish, Czech, and Russian. Be sure to let us know if your language is not on this list. The exact language list may change after we see how many backers we have from each area.</p>
+
+<p>Early Access is planned for English only. We hope to add some other languages during Early Access but cannot guarantee it yet.</p>
+
+<p>We also can&#39;t guarantee that the translations will be available immediately upon Final Release.  But it is fully our intent to translate into different languages after release.  </p>
+
+<p>We value and support our fans from different countries and will do our best to make this available for as many other languages as possible over time.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2014-02-15T15:07:25-05:00">Sat, Feb 15 2014 3:07 pm EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_81093">
+<div class="faq-question">
+<a href="#project_faq_81093" name="project_faq_81093">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">What are the hardware and software requirements for Darkest Dungeon?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Generally speaking, the game is not very technically demanding from a hardware perspective.</p>
+
+<p>CURRENT REQUIREMENTS (may change during development):
+<br />PC (Windows):
+<br />+ Windows Vista, 7, 8, 8.1
+<br />+ OpenGL 3+ compatible GPU (Intel HD, Radeon HD 2000 series, GeForce 8 series)
+<br />+ 2GB RAM</p>
+
+<p>Mac:
+<br />+ iMac (Mid-2007 or later)
+<br />+ MacBook (13-inch Aluminum, Late 2008), (13-inch, Early 2009 or later)
+<br />+ MacBook Pro (13-inch, Mid-2009 or later),
+<br />+ MacBook Pro (15-inch or 17-inch, Mid/Late 2007 or later)
+<br />+ MacBook Air (Late 2008 or later)
+<br />+ Mac mini (Early 2009 or later)
+<br />+ Mac Pro (Early 2008 or later)</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2014-02-10T20:22:39-05:00">Mon, Feb 10 2014 8:22 pm EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_81205">
+<div class="faq-question">
+<a href="#project_faq_81205" name="project_faq_81205">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Will Darkest Dungeon be on PS4/PS3, Xbox, 3DS, WiiU, PSVita, iPad, and Commodore 64?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>We are definitely interested in bringing Darkest Dungeon to as many platforms as possible over time. Thanks to your support in this Kickstarter, pursuing those opportunities will get easier and easier and we have little doubt that the game will eventually come to some of them.</p>
+
+<p>However, for the purposes of this Kickstarter, we can only promise that the game is coming to PC/Mac.  When you pledge, that is what you are buying (in addition to the rewards). The other platforms will probably take some time to sort out, and we won&#39;t have any definitive news until later.</p>
+
+<p>The best way to stay up to date with potential news about other platforms is to join our mailing list:
+<br /><a href="http://eepurl.com/F-fo1" rel="nofollow">http://eepurl.com/F-fo1</a></p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2014-03-13T16:51:26-04:00">Thu, Mar 13 2014 4:51 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_82532">
+<div class="faq-question">
+<a href="#project_faq_82532" name="project_faq_82532">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Will there be a DRM-Free Option?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Yes! For the Full Game release, backers will have an option to choose between a Steam Key and a DRM Free build.</p>
+
+<p>However, EARLY ACCESS WILL BE AVAILABLE on STEAM ONLY.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2014-03-13T16:51:26-04:00">Thu, Mar 13 2014 4:51 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_83955">
+<div class="faq-question">
+<a href="#project_faq_83955" name="project_faq_83955">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">When will Early Access be available?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>We are currently targeting the Fall for Early Access release on Steam. This date may change based upon development progress. We promise to keep all backers informed on progress and schedule through Backer Updates.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2014-03-13T16:51:26-04:00">Thu, Mar 13 2014 4:51 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_83958">
+<div class="faq-question">
+<a href="#project_faq_83958" name="project_faq_83958">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">What order will Windows / Mac / Linux releases be made in?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Early Access will be available for Windows initially and then Mac partway through.  We may also add Linux to Early Access but cannot promise it.</p>
+
+<p>Full release will be Windows and Mac initially with Linux to follow.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2014-03-13T17:02:16-04:00">Thu, Mar 13 2014 5:02 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_81212">
+<div class="faq-question">
+<a href="#project_faq_81212" name="project_faq_81212">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Will Darkest Dungeon have multiplayer features?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Darkest Dungeon is being designed from the ground up to be a single player game.</p>
+
+<p>That being said, the $450,000 stretch goal involves some asynchronous multiplayer features focused on loaning and sharing heroes. But the core gameplay is still single player.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2014-02-12T02:20:41-05:00">Wed, Feb 12 2014 2:20 am EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_83957">
+<div class="faq-question">
+<a href="#project_faq_83957" name="project_faq_83957">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">I have a question that wasn&#39;t answered here!</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>That&#39;s ok! Email us:
+<br />feedback at redhookgames dot com</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2014-03-13T17:02:16-04:00">Thu, Mar 13 2014 5:02 pm EDT</time>
+</div>
+</div>
+</li>
+
+</ul>
+<div class="faq-ask-box">
+<a href="/projects/1460250988/darkest-dungeon-by-red-hook-studios/messages/new?message%5Bto%5D=1460250988&amp;mode=FAQ" class="button button_blue remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Ask a question about Darkest Dungeon by Red Hook Studios">Ask a question</a>
+
+</div>
+</div>
+
+<div class="mt4 ml1 mr1 mb2" id="report-issue-wrap">
+<a href="/login?then=%2Fprojects%2F1460250988%2Fdarkest-dungeon-by-red-hook-studios" class="button button_grey">Report this project to Kickstarter</a>
+</div>
+</div>
+<div class="NS-projects-rightcol grid_5" id="rightcol">
+<div class="NS_projects__ecom">
+<div class="digits_6 pb2 pl2 pt2" id="stats">
+<h5>
+<div class="num h48 no-margin" data-backers-count="9639" id="backers_count"><data class="Project1637457328" data-format="number" data-value="9639" itemprop="Project[backers_count]">9,639</data></div>
+<span><data class="Project1637457328" data-attr="backers_count" data-format="pluralize" data-value="9639" data-word="Backer">Backers</data></span>
+</h5>
+<h5>
+<div class="num h48 no-margin" data-goal="75000.0" data-percent-raised="4.177830533333333333333333333" data-pledged="313337.29" id="pledged">
+<data class="Project1637457328" data-currency="USD" data-format="shorter_money" data-precision="0" data-value="313337" data-without_code="true" itemprop="Project[pledged]">$313,337</data>
+<span class="money usd project_currency_code"></span>
+</div>
+pledged of
+<span class="money usd no-code">$75,000</span>
+goal
+</h5>
+<span data-duration="31.610613425925926" data-end_time="2014-03-14T02:59:00-04:00" data-hours-remaining="0" id="project_duration_data"></span>
+<div class="Project1637457328" data-conditions="[{&quot;!state&quot;:[&quot;canceled&quot;,&quot;suspended&quot;]}]" data-evaluation="true" data-render="&quot;&lt;h5 class=\&quot;poll \&quot; data-dynamic=\&quot;5\&quot; data-end_time=\&quot;2014-03-14T02:59:00-04:00\&quot; data-poll_url=\&quot;https://d2oher2uhvl0ur.cloudfront.net/projects/1460250988/darkest-dungeon-by-red-hook-studios/stats.json\&quot;&gt;\n&lt;div class=\&quot;num h48 no-margin\&quot;&gt;0&lt;/div&gt;\n&lt;span class=\&quot;text\&quot;&gt;seconds to go&lt;/span&gt;\n&lt;/h5&gt;\n&quot;"><h5 class="poll " data-dynamic="5" data-end_time="2014-03-14T02:59:00-04:00" data-poll_url="https://d2oher2uhvl0ur.cloudfront.net/projects/1460250988/darkest-dungeon-by-red-hook-studios/stats.json">
+<div class="num h48 no-margin">0</div>
+<span class="text">seconds to go</span>
+</h5>
+</div></div>
+<div class="Project1637457328" data-conditions="[{&quot;state&quot;:&quot;live&quot;},{&quot;!ended?&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;pr2 pl2\&quot; id=\&quot;pledge-wrap\&quot;&gt;\n&lt;a href=\&quot;/projects/1460250988/darkest-dungeon-by-red-hook-studios/pledge/new?clicked_reward=false\&quot; class=\&quot;button button_green button_box button_block\&quot; id=\&quot;button-back-this-proj\&quot; title=\&quot;Back this project\&quot;&gt;Back This Project &lt;small class=&#39;h6 normal block green-dark&#39;&gt;&lt;span class=\&quot;money usd \&quot;&gt;$1&lt;/span&gt; minimum pledge&lt;/small&gt;&lt;/a&gt;\n&lt;/div&gt;\n&quot;"></div><div class="Project1637457328" data-conditions="[{&quot;state&quot;:&quot;live&quot;}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;p2\&quot; id=\&quot;banner\&quot;&gt;\n&lt;p class=\&quot;tiny_type no-margin\&quot;&gt;\nThis project will be funded on\n&lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;llll z\&quot; datetime=\&quot;2014-03-14T02:59:00-04:00\&quot;&gt;Fri, Mar 14 2014 2:59 am EDT&lt;/time&gt;.\n&lt;/p&gt;\n&lt;/div&gt;\n&quot;"></div></div>
+
+<div class="NS_projects__rightcol_projectby bg-blue-light rounded">
+<div class="p2 clearfix">
+<div class="avatar inline-block align-middle">
+<a href="/projects/1460250988/darkest-dungeon-by-red-hook-studios/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography"><img alt="Redhooklogo_final_whitebg_640x480test.small" class="avatar-small" height="80" src="https://s3.amazonaws.com/ksr/avatars/4164948/RedHookLogo_final_whiteBG_640x480test.small.jpg?1390782542" width="80" />
+</a></div>
+<div class="creator-name inline-block align-middle ml1">
+<h6 class="mb1">Project by</h6>
+<h5 class="mb1">
+<a href="/projects/1460250988/darkest-dungeon-by-red-hook-studios/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">Tyler Sigman</a>
+</h5>
+<p class="location h6 bold mb1">
+<a href="/discover/places/bellingham-wa">Bellingham, WA</a>
+</p>
+</div>
+</div>
+<div class="creator-details pl2 pr2 pb1">
+<ul class="list-simple h5 mb1">
+<li class="projects">
+<span class="ss-icon ss-kickstarter grey-dark margin-right"></span>
+<span class="text">
+First created
+<span class="divider">&middot;</span>
+<a href="/profile/1460250988/backed" class="green-dark bold more-button remote_modal_dialog" data-modal-title="Projects backed by Tyler Sigman">30 backed</a>
+</span>
+</li>
+<li>
+<span class="ss-icon ss-facebook margin-right grey-dark"></span>
+<span class="text">
+Has not connected Facebook
+</span>
+</li>
+<li class="links">
+<span class="ss-icon ss-globe margin-right grey-dark"></span>
+<span class="text">
+<a href="http://darkestdungeon.com" class="popup" rel="nofollow" target="_blank">darkestdungeon.com</a>
+</span>
+</li>
+</ul>
+</div>
+<div class="footer center h5 bold clearfix rounded-bottom clip">
+<a href="/projects/1460250988/darkest-dungeon-by-red-hook-studios/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">See full bio</a>
+<a href="/projects/1460250988/darkest-dungeon-by-red-hook-studios/messages/new?message%5Bto%5D=1460250988" class="remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Send a message to Tyler Sigman">Contact me</a>
+
+</div>
+</div>
+
+<ul class="NS-projects-rightcol-rewards rounded clip list mt2" data-reward-count="16" id="what-you-get">
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$15</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+3186 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>NOMAD
+=============================
+THE GAME
+=============================
+Digital downloadable copy of Darkest Dungeon on Steam when it releases. (PC / Mac) ● (Approximately €11 / £9)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-01-01">Jan 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$20</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+2526 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>WANDERER
+=============================
+THE GAME + EARLY ACCESS + DEVELOPMENT POLLS
+=============================
+Get EARLY ACCESS to the game when it goes live on Steam later this year. You will be amongst the first to play the game and access new features and content right as they are implemented! ● Plus, you will see concept art and be given the chance to take part in polls during development to help choose some character classes, monsters, and environments that will get put into the game. ● (Approximately €15 / £12)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-01-01">Jan 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$24</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+250 backers
+</span>
+<span class="bg-grey no-wrap pl1 pr1 sold-out">
+All gone!
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>EARLY BIRD - SEEKER
+=============================
+You get all rewards of the $29 tier below! You save $$ by jumping in early! ● (Approximately €18 / £15)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-01-01">Jan 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$29</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+932 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>SEEKER
+=============================
++PDF ADVENTURING MANUAL + DIGITAL ESTATE MAP + EXCLUSIVE WALLPAPER PACK + CREDIT
+=============================
+INCLUDES ALL PREVIOUS REWARDS ● Really excited about Darkest Dungeon? Back us at this level and you will be handsomely rewarded with a PDF Adventuring Manual filled with lore, tips, and sketches to assist you in planning your quests. ● Also, get a digital map of your inherited Estate, complete with scrawled hints which will help you in your early adventurers. ● You&#39;ll also get an exclusive BACKERS ONLY digital wallpaper pack to adorn your favorite computer(s) ● Finally, in recognition of your pledging at this level and helping Darkest Dungeon get made, you&#39;ll receive a &quot;Founders&quot; CREDIT in the game! ● (Approximately €21 / £18)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-01-01">Jan 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$40</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+225 backers
+</span>
+<span class="bg-grey no-wrap pl1 pr1 sold-out">
+All gone!
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>EARLY BIRD - ADVENTURER ============================= All rewards of the $49 tier below. Save $$ by jumping in early! (Approximately €29 / £24)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-01-01">Jan 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$44</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+250 backers
+</span>
+<span class="bg-grey no-wrap pl1 pr1 sold-out">
+All gone!
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>EARLY BIRD ROUND 2 - ADVENTURER ============================= Due to overwhelming demand, we&#39;d decided to open some more Early Bird slots for ADVENTURER. This includes all rewards of the $49 tier below. Save $$ by jumping in early! (Approximately €32 / £27)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-01-01">Jan 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$49</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1551 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>ADVENTURER
+=============================
+DELUXE DIGITAL EDITION: EXCLUSIVE CHARACTER CLASS + PDF ART BOOK + ORIGINAL SOUNDTRACK BY STUART CHATWOOD + ADVENTURER CREDIT
+============================= 
+INCLUDES ALL PREVIOUS REWARDS ● Exclusive playable Backers Only character class which will be voted upon by backers (you!) after the campaign closes. ● Feast your eyes upon a digital ART BOOK containing extensive concept work and finished illustrations from Darkest Dungeons&#39; artists! ● Treat your ears to a digital downloadable copy of the Darkest Dungeon Original Soundtrack by Stuart Chatwood. Stuart has composed music for 8 Prince of Persia games on top of his work in a platinum-selling rock band. ● AND, for helping us at this deluxe level, earn eternal recognition with an ADVENTURER credit in the game! ● (Approximately €36 / £29)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-01-01">Jan 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$74</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+184 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>ARTIST
+=============================
++PRINTED ART BOOK (DISCOUNTED)
+============================= INCLUDES ALL PREVIOUS REWARDS ● Beautiful printed copy of the Darkest Dungeon Art Book to handle and gaze at. Save $ versus Adding On separately. ● Shipping to US and Canada included. Please add $20 for other countries. ● (Approximately €69 / £57 including shipping.)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-01-01">Jan 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$95</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+212 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>DIGITAL PATRON
+=============================
+ALL DIGITAL! (NO PHYSICAL ITEMS) GREAT FOR INTERNATIONAL SUPPORTERS!
+============================= Want the most Darkest Dungeon you can get, including Personalizing a Hero and Designing an Item, but don&#39;t want to deal with physical items and shipping costs? Back us at this level and get some  of the rewards from higher tiers. ● INCLUDES ALL REWARDS FROM ADVENTURER TIER (DIGITAL DELUXE EDITION) ● Plus PDF DIORAMA (print your own diorama!) ● Plus PERSONALIZE A HERO (see &quot;Patron&quot; tier) ● Plus DESIGN AN IN GAME EQUIPPABLE ITEM (see &quot;Grand Patron&quot; tier) ● And get listed as a &quot;PATRON&quot; in the credits! ● (Approximately €69 / £57 - no shipping required.)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-01-01">Jan 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$99</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+94 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>PATRON
+=============================
++PAPER DIORAMA + PERSONALIZE A HERO + PATRON CREDIT
+=============================
+INCLUDES ALL [ARTIST] REWARDS (Digital Deluxe Pack + Printed Art Book) PLUS: ● Make your own Darkest Dungeon diorama! You get a set of character, hallway, and monster sheets. Just cut and assemble for a desktop dungeon delving display! ● PLUS, get involved in game creation by personalizing a recruitable hero for the game. After the campaign, we&#39;ll send you a survey where you can select a name (subject to style approval to fit the game), character class, and some starting traits. This character can show up as a recruit in town, for any players to hire. ● Get listed as a PATRON in the credits and know you were a huge part of making DD happen. ● Shipping to US and Canada included. Please add $20 for other countries. ● (Approximately €87/ £73 including shipping.)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-01-01">Jan 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$149</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+107 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>GRAND PATRON
+=============================
++SIGNED ART PRINT + DESIGN AN IN-GAME EQUPPABLE ITEM
+=============================
+INCLUDES ALL PREVIOUS REWARDS ● Get a beautiful signed numbered limited edition 18&quot; x 24&quot; print by Darkest Dungeon artist Chris Bourassa. ● Design an in-game item that is equippable by heroes: during development, we will send you a survey where you can assemble an item by choosing a form, giving it powers, and naming it (subject to thematic approval). Your item becomes loot in the game! ● Shipping to US and Canada included. Please add $20 for other countries. ● (Approximately €123 / £103 including shipping.)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-01-01">Jan 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$249</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+20 backers
+</span>
+<span class="bg-grey no-wrap pl1 pr1 sold-out">
+All gone!
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>HEIR
+=============================
++YOUR FACE DRAWN IN THE DARKEST DUNGEON STYLE + THE DARKEST DUNGEON NARRATOR READS A LINE FOR YOU!
+=============================
+INCLUDES ALL PREVIOUS REWARDS ● Get your face drawn in the Darkest Dungeon style similar to what you see under the TEAM section...a great avatar for Twitter, Facebook, etc.! ● ALSO, the velvet-voiced baritone Narrator of Darkest Dungeon, Wayne June, will read a line of your choice for you and you will get the digital recording to use as you wish. (Lines are subject to decency/political restrictions--we&#39;ll work with you to make sure it&#39;s acceptable.) ● Get credited as a HEIR in the game WITH YOUR AVATAR PICTURE shown! ● Shipping to US and Canada included. Please add $20 for other countries. ● (Approximately €196 / £164 including shipping)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-01-01">Jan 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$499</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+5 backers
+</span>
+<span class="bg-grey no-wrap pl1 pr1 sold-out">
+All gone!
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>NOBLE HEIR
+=============================
++JOURNAL OF YOUR EXPEDITION AND DOOM ============================= INCLUDES ALL PREVIOUS REWARDS ● Be immortalized in Darkest Dungeon! We will work with you to come up with a simple story about your fictional adventure down into the dungeons in which you met an untimely end. While adventuring, players can happen across journal pages which tell of your fate. ● Finally, be listed as &quot;NOBLE HEIR&quot; in the credits. ● Worldwide shipping included. ● (Approximately €364 / £299)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-01-01">Jan 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$999</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+5 backers
+</span>
+<span class="bg-grey no-wrap pl1 pr1 sold-out">
+All gone!
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>HEIR APPARENT
+=============================
++EXCLUSIVE 1 of 1 SIGNED CLASS DRAWING
+============================= INCLUDES ALL PREVIOUS REWARDS ● Work with Darkest Dungeon artist Chris Bourassa to select your favorite hero class and discuss a pose. Chris will paint this pose and we will print a SINGLE COPY ONLY of this print, sign it, and ship it to you. ● You will also get the digital wallpaper version to share as you decide. ● Finally, be listed as &quot;HEIR APPARENT&quot; in the credits. ● Worldwide shipping included. ● (Approximately €729 / £599)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-01-01">Jan 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$2,500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(4 left of 5)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>BARON
+=============================
++DESIGN A MONSTER! ============================= INCLUDES ALL PREVIOUS REWARDS ● Work with our design team to design a monster that will appear in the game! We&#39;ll collaborate to pick a monster type, name, and combat abilities. ● Then, receive a print of the monster, signed by the dev team. ● And you&#39;ll be credited under &quot;ADDITIONAL MONSTER DESIGN&quot; in the credits! ● Worldwide shipping included. ● (Approximately €1825 / £1500)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-01-01">Jan 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$5,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+<span class="bg-grey no-wrap pl1 pr1 sold-out">
+All gone!
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>LORD
+=============================
++DESIGN A CHARACTER CLASS ============================= INCLUDES ALL PREVIOUS REWARDS ● You will have an effect in shaping the game for every player. Work with our design and art team to create and design a character class that players can recruit and use in their party. We&#39;ll collaborate to create the visual and gameplay elements of the class, including combat abilities, camping abilities, and weapons and armor. ● Receive credit in the game as &quot;ADDITIONAL CLASS DESIGN.&quot; ● We&#39;ll also give you a signed 1/1 print of the class. ● Worldwide shipping included. ● (Approximately €3650 / £3000)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-01-01">Jan 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+</ul>
+
+<div class="p2" id="meta">
+<h5>Funding period</h5>
+<p class="tiny_type">
+<time class="js-adjust" data-format="ll" datetime="2014-02-10T11:19:43-05:00">Feb 10, 2014</time> - 
+<time class="js-adjust" data-format="ll" datetime="2014-03-14T02:59:00-04:00">Mar 14, 2014</time>
+(31 days)
+</p>
+</div>
+</div>
+
+</div>
+
+<a href="#" id="video_mode_tab" style="display: none;">
+View in Video Mode
+</a>
+
+</div>
+</div>
+
+
+</div>
+
+<div class="h5 bg-green-dark" id="mega-footer-wrap">
+<div class="bg-green-dark white full-height" id="footer-newsletter-signup">
+<div class="container py4">
+<div class="grid_8 prefix_4 suffix_4 center mt4">
+<h2>
+Eureka! You've found
+<br>
+our little secret.
+</h2>
+<p>Sign up for our Happening email for all the inside info about arts and culture in the Kickstarter universe and beyond.</p>
+<div class="newsletter_signup">
+<form accept-charset="UTF-8" action="/newsletters/happening/signup" class="overlabels" method="post"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /><input class="hidden" name="authenticity_token" type="hidden" value="+Ljs26aQ/BNX0YsR6cjBN1UqvLKnN5jsIgJWxlf8slk=" /></div><input class="hidden" id="location" name="location" type="hidden" value="footer" />
+<textarea class="hide textarea" id="comment" name="comment">
+</textarea>
+<div class="field newsletter">
+<label class="overlabel z1 overlabel-newsletter">Email address</label>
+<input class="text" id="email" name="email" type="text" />
+</div>
+<input class="button button_green submit" name="commit" type="submit" value="Submit" />
+</form>
+
+</div>
+
+</div>
+</div>
+</div>
+<div class="container relative" id="mega-footer">
+<span class="scissors icon-scissors-1"></span>
+<div class="grid_16 alpha omega pt4 pb2" id="mega-footer-links">
+<div class="grid_4 link-group">
+<h5 class="white">About us</h5>
+<ul class="list">
+<li><a href="/year/2013/?ref=footer">2013 highlights</a></li>
+<li><a href="/year/2012?ref=footer">2012 highlights</a></li>
+<li><a href="/team?ref=footer">Who we are</a></li>
+<li><a href="/jobs?ref=footer">Jobs</a></li>
+<li><a href="/press?ref=footer">Press</a></li>
+<li><a href="/help/stats?ref=footer">Stats</a></li>
+<li><a href="/newsletters/weekly">Projects we love</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group">
+<h5><a href="/help?ref=footer" class="white">Help</a></h5>
+<ul class="list">
+<li><a href="/hello?ref=footer">What is Kickstarter?</a></li>
+<li><a href="/help?ref=footer">FAQ</a></li>
+<li><a href="/contact?ref=footer">Support</a></li>
+<li><a href="/help/school?ref=footer">Kickstarter School</a></li>
+<li><a href="/terms-of-use?ref=footer">Terms of Use</a></li>
+<li><a href="/privacy?ref=footer">Privacy Policy</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group alpha omega suffix_1">
+<h5 class="alpha"><a href="/discover/advanced?ref=footer" class="white">Discover</a></h5>
+<ul class="column column-0 grid_2 list">
+<li><a href="/discover/categories/art?ref=footer">Art</a></li>
+<li><a href="/discover/categories/comics?ref=footer">Comics</a></li>
+<li><a href="/discover/categories/dance?ref=footer">Dance</a></li>
+<li><a href="/discover/categories/design?ref=footer">Design</a></li>
+<li><a href="/discover/categories/fashion?ref=footer">Fashion</a></li>
+<li><a href="/discover/categories/film%20&amp;%20video?ref=footer">Film &amp; Video</a></li>
+<li><a href="/discover/categories/food?ref=footer">Food</a></li>
+</ul>
+<ul class="column column-1 grid_2 list">
+<li><a href="/discover/categories/games?ref=footer">Games</a></li>
+<li><a href="/discover/categories/music?ref=footer">Music</a></li>
+<li><a href="/discover/categories/photography?ref=footer">Photography</a></li>
+<li><a href="/discover/categories/publishing?ref=footer">Publishing</a></li>
+<li><a href="/discover/categories/technology?ref=footer">Technology</a></li>
+<li><a href="/discover/categories/theater?ref=footer">Theater</a></li>
+</ul>
+</div>
+<div class="grid_3 link-group">
+<h5 class="white">Hello</h5>
+<ul class="list">
+<li>
+<a href="https://twitter.com/kickstarter"><span class="ss-icon ss-social-regular ss-twitter"></span>
+Twitter
+</a></li>
+<li>
+<a href="https://www.facebook.com/Kickstarter"><span class="ss-icon ss-social-regular ss-facebook"></span>
+Facebook
+</a></li>
+<li>
+<a href="http://kickstarter.tumblr.com"><span class="ss-icon ss-social-regular ss-tumblr"></span>
+Tumblr
+</a></li>
+<li>
+<a href="http://instagram.com/kickstarter"><span class="ss-icon ss-social-regular ss-instagram"></span>
+Instagram
+</a></li>
+<li>
+<a href="https://vine.co/Kickstarter"><span class="ss-icon ss-social-regular ss-vine"></span>
+Vine
+</a></li>
+<li>
+<a href="/blog?ref=footer">Blog</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="grid_16 py4" id="mega-footer-bottom">
+<div class="logo left">
+<a href="/" class="grey-dark"><span class="ss-icon h3">KICKSTARTER</span>
+</a></div>
+<p class="right h5 grey-dark">
+&copy;
+2014
+Kickstarter, Inc.
+</p>
+</div>
+</div>
+</div>
+
+<script>
+  //<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    var analytics_vars = { google_analytics_id : "UA-7621056-1", logged_in : "false", social_user: "false" }
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.mixpanel_id = '75b1d24a516ecfc955eadfadc4910661';
+    window.mixpanel_debug = false;
+  //]]>
+</script>
+
+
+<noscript>
+<img alt="Quantcast" border="0" height="1" src="//secure.quantserve.com/pixel/p-34IbSpw2K94Sg.gif" style="display:none" width="1" />
+</noscript>
+
+
+<script>
+  //<![CDATA[
+    window.benchmark = (typeof window.performance == 'object' && typeof window.performance.mark == 'function');
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    (function (root) {
+      function instrument_function (original) {
+        return function () {
+          try {
+            return original.apply(this, arguments);
+          } catch (e) {
+            if (e.stack && root.Honeybadger) {
+              Honeybadger.notify(e, {
+                current_project : root.current_project,
+                current_user : root.current_user
+              });
+            }
+            throw(e);
+          }
+        };
+      }
+      root.instrument_function = instrument_function;
+    }(this));
+  //]]>
+</script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+
+<script>
+  //<![CDATA[
+    (function(){function c(a){this.local_start_time=new Date;this.settings={cookie_name:"request_time"};for(var b in a)this.settings[b]=a[b];this.get_remote_offset()}c.prototype.get_remote_offset=function(){this.cookie_value=this.read_cookie();var a=new Date(this.cookie_value);if(!this.cookie_value||"Invalid Date"===a.toString()){if(this.remote_offset=this.read_cookie("local_offset"))this.remote_offset=parseInt(this.remote_offset,10)}else this.remote_offset=a-this.local_start_time;"undefined"!==typeof this.remote_offset&& !isNaN(this.remote_offset)?(document.cookie="local_offset="+this.remote_offset+"; path=/",this.is_set=!0):this.is_set=!1};c.prototype.time_units=[["milliseconds",1],["seconds",1E3],["minutes",6E4],["hours",36E5],["days",864E5]];c.prototype.get_units_in_interval=function(a,b){var d=a.replace(/^\w/,function(d){return"get"+d.toUpperCase()});return b[d]()};c.prototype.milliseconds_in_day=function(a){"undefined"===typeof a&&(a=new Date);for(var b=0,d=this.time_units.length-2;0<=d;d--)b+=this.get_units_in_interval(this.time_units[d][0], a)*this.time_units[d][1];return b};c.prototype.milliseconds_in_interval=function(a,b){return this.milliseconds_in_day(b)%a};c.prototype.milliseconds_to_next_interval=function(a,b){return a-this.milliseconds_in_interval(a,b)};c.prototype.pluralize=function(a,b){1===b&&(a=a.replace(/s$/,""));return a};c.prototype.read_cookie=function(a){for(var b=window.document.cookie.split(";"),a=(a||this.settings.cookie_name)+"=",d=0;d<b.length;d++){for(var e=b[d];" "==e.charAt(0);)e=e.substring(1,e.length);if(0== e.indexOf(a))return b=e.substring(a.length,e.length),decodeURIComponent(b).replace(/\+/g," ")}return null};c.prototype.destroy_cookie=function(a){var b=new Date;a||(a=this.settings.cookie_name);b.setTime(b.getTime()-864E5);window.document.cookie=a+"=; expires="+b.toGMTString()+"; path=/"};c.prototype.get_remote_time=function(){var a=new Date,b=a.getTime()+this.remote_offset;return a=a.setTime(b)};window.ksr_page_clock=new c})(); (function(){function c(d,a,b){if(d){this.options={unit_base:{seconds:119,minutes:119,hours:72,days:0},end_phrase:d.getAttribute("data-word")||"to go",count_down:d.getAttribute("data-dynamic")||!1};for(k in b)this.options[k]=b[k];this.clock=a;this.time_units=this.clock.time_units.slice(1);this.element=d;this.clock.is_set&&this.attach()}}function a(){this.elements=[];this.attach()}var b=function(d,a){var b=a||window.document.body,c=d.split("."),g=c[c.length-1],c=1<c.length&&c[0]?c[0]:"*";if(window.document.getElementsByClassName)return b.getElementsByClassName(g); if(b.querySelectorAll)return b.querySelectorAll(d);for(var c=b.getElementsByTagName(c),h=[],i=0,f;f=c[i];i++)b=RegExp("(^|\\s)"+g+"(\\s|$)"),(""+f.className).match(b)&&h.push(f);return h};c.prototype.get_remaining_time=function(){var d=this.remote_end_time-this.clock.get_remote_time();0>d&&(d=0);return d};c.prototype.get_current_unit=function(){for(var d,a=0;a<this.time_units.length&&!(d=this.time_units[a],this.get_remaining_time()<=this.options.unit_base[d[0]]*d[1]);a++);return d};c.prototype.update_element= function(){var a=this.get_current_unit(),b=Math.floor(this.get_remaining_time()/a[1]);isNaN(b)||(this.number_element.innerHTML=b,this.text_element.innerHTML=this.clock.pluralize(a[0],b)+" "+this.options.end_phrase)};c.prototype.valid=function(){return!(!this.number_element||!this.text_element)};c.prototype.attach=function(){function a(){c.update_element();if(c.options.count_down&&0<c.get_remaining_time()){var b=c.get_current_unit();this.timeout=window.setTimeout(a,c.clock.milliseconds_to_next_interval(b[1]))}} var c=this;if(this.remote_end_time_string=this.element.getAttribute("data-end_time"))this.remote_end_time_string.match(/^\d+$/)?(this.remote_end_time=new Date,this.remote_end_time.setTime(this.remote_end_time_string)):this.remote_end_time=new Date(this.remote_end_time_string),this.number_element=b(".num",this.element)[0],this.text_element=b(".text",this.element)[0],this.element.ksr_page_timer=!0,this.valid()&&a()};c.prototype.cancel=function(){this.timeout&&clearTimeout(this.timeout)};a.prototype.loading= !0;a.prototype.stop_finding=function(){this.attach_timers();this.loading=!1;document.addEventListener?document.removeEventListener("DOMContentLoaded",this.stop_finding,!1):document.attachEvent&&"complete"===document.readyState&&document.detachEvent("onreadystatechange",this.stop_finding)};a.prototype.bind_ready=function(){var a=this,b=function(){a.stop_finding.call(a)};document.addEventListener?(document.addEventListener("DOMContentLoaded",b,!1),window.addEventListener("load",b,!1)):document.attachEvent&& (document.attachEvent("onreadystatechange",b),window.attachEvent("onload",b))};a.prototype.attach_timers=function(){for(var a=b("div.ksr_page_timer"),e=0;e<a.length;e++)a[e].ksr_page_timer||(new c(a[e],window.ksr_page_clock),this.elements.push(a[e]))};a.prototype.attach=function(){var a=this;this.bind_ready();(function(){a.attach_timers();a.loading&&window.setTimeout(function(){a.attach_timers()},200)})()};window.ProjectTimer=c;new a})();
+  //]]>
+</script>
+
+<script class="template" id="template-widgets__video_embed_code" type="text/x-tmpl-mustache"><iframe width="{{width}}" height="{{height}}" src="{{{path}}}" frameborder="0" scrolling="no"> </iframe>
+</script><script class="template" id="template-projects__baseball_card_tall" type="text/x-tmpl-mustache"><div class="project-card-wrap project-card-wrap-tall border bg-white rounded clip">
+  <div class="project-card relative project-live {{#successful?}}successful{{/successful?}}">
+    <div class="project-thumbnail pt1 pl1 pr1">
+      <a href="{{urls.web.project}}" target="">
+        <img alt="Photo-little" class="projectphoto-little" src="{{photo.little}}" class="fit">
+      </a>
+    </div>
+    <div class="project-card-interior p1 h6 grey-dark">
+      <h6 class="project-title">
+        <a href="{{urls.web.project}}" target="" class="green-dark">{{name}}</a>
+      </h6>
+      <p class="mb1 ellipsis">
+        by
+        {{creator.name}}
+      </p>
+      <p class="blurb">
+        {{blurb}}
+      </p>
+    </div>
+    <div class="absolute-bottom bg-white rounded-bottom">
+
+      {{#location}}
+        <ul class="p1 list project-meta no-margin h6">
+          <li class="ellipsis">
+            <a href="{{location.urls.web.discover}}" data-location="{{location_json}}" class="grey-dark">
+              <span class="ss-icon ss-location"></span>
+              <span class="location-name">{{location.displayable_name}}</span>
+            </a>
+          </li>
+        </ul>
+      {{/location}}
+
+      <div class="project-stats-wrap pb1 pl1 pr1">
+
+        {{#failed?}}
+          <div class='project-status project-failed h6'>
+            <strong> Funding Unsuccessful</strong><br />
+            <span class="grey-dark">Project ended on {{formatted_deadline}}</span>
+          </div>
+        {{/failed?}}
+
+        {{#canceled?}}
+          <div class='project-status project-canceled h6'>
+            <strong> Funding Canceled</strong><br />
+            <span class="grey-dark">Project canceled on {{formatted_state_changed_at}}</span>
+          </div>
+        {{/canceled?}}
+
+        {{#successful?}}
+          <div class='project-pledged-successful bg-green white h6 pl1 pr1 mb1'>
+            <strong>Successful!</strong>
+          </div>
+        {{/successful?}}
+
+        {{#live_or_successful?}}
+          {{#live?}}
+            <div class="project-pledged-wrap bg-grey clip mb1">
+              <div class="project-pledged bg-green full-height" style="width: {{percent_raised_to_100}}%"></div>
+            </div>
+          {{/live?}}
+          <ul class="project-stats list no-margin h6 no-wrap">
+            <li class="first funded inline-block mr1">
+              <strong class="block h6">{{percent_raised_rounded}}%</strong>
+              <span class="grey-dark">funded</span>
+            </li>
+            <li class="pledged inline-block mr1">
+              <strong class="block h6">{{currency_symbol}}{{formatted_money}}</strong>
+              <span class="grey-dark">pledged</span>
+            </li>
+            {{#successful?}}
+              <li class="last successful inline-block">
+                <strong class="block h6">Funded</strong>
+                <div class="deadline grey-dark">{{formatted_deadline}}</div>
+              </li>
+            {{/successful?}}
+            {{#live?}}
+              <li class="last ksr_page_timer inline-block" data-end_time="{{javascript_deadline}}">
+                <strong class="block h6">
+                  <div class="num">30</div>
+                </strong>
+                <div class="span text grey-dark" data-word="left">days to go</div>
+              </li>
+            {{/live?}}
+          </ul>
+        {{/live_or_successful?}}
+      </div>
+    </div>
+  </div>
+</div>
+
+{{#friends_backing?}}
+  <div class="friend_project_context">
+    <div class="friend_facepile">
+      {{#truncated_friends}}
+        <img src="{{avatar.thumb}}" class="{{#has_metadata?}}small{{/has_metadata?}}">
+      {{/truncated_friends}}
+    </div>
+    <p class="friend_namepile">
+      {{{escaped_sentence}}}
+    </p>
+  </div>
+{{/friends_backing?}}
+</script><script class="template" id="template-projects__video_mode" type="text/x-tmpl-mustache"><a href='#' id='video_mode_close' class='close_button z2'><span class='ss-icon ss-delete'></span></a>
+
+<div class='title_card z1 {{context_classes}}' style="display:none;">
+  <div class='interior'>
+    <h2 class='project_title normal_weight'>{{name}}</h2>
+    <p class='blurb'>{{blurb}}</p>
+    <nav class='bar'>
+      <a id='play_button' class='left play' href='#'>
+        <span class='play_active'>
+          <span class='ss-icon ss-play'></span>
+          Play
+        </span>
+        <span class='pause_active'>
+          <span class='ss-icon ss-pause'></span>
+          Pause
+        </span>
+      </a>
+      {{#logged_in}}
+        <div class='remind right'>
+          {{#if_not_starred}}
+            <a class='follow' href='{{urls.web.project}}/watch'><span class='ss-icon ss-star'></span></a>
+          {{/if_not_starred}}
+          {{#if_starred}}
+            <a class='unfollow' href='{{urls.web.project}}/unwatch'><span class='ss-icon ss-star active'></span></a>
+          {{/if_starred}}
+        </div>
+      {{/logged_in}}
+      <a class='right explore button button_green small' href='#'>Explore this project</a>
+    </nav>
+  </div>
+</div>
+
+<div class='channel_controls z1'>
+  <a href='#' class='{{#playlist_is_location}}selected {{/playlist_is_location}}location'>Something else near {{location.first_name}} <span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_featured}}selected {{/playlist_is_featured}}featured'>Something different<span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_category}}selected {{/playlist_is_category}}category'>Something else in {{category.name}} <span class='ss-icon ss-navigateright'></span></a>
+</div>
+
+<div class='project_video' style='background-image: url('{{photo.full}}')'>
+  <div class='cover'>
+    <video>
+      <source src='{{video.high}}' type='video/mp4'/>
+      <source src='{{video.webm}}' type='video/webm'/>
+    </video>
+  </div>
+</div>
+</script><script class="template" id="template-site__video_mode_fourohfour" type="text/x-tmpl-mustache"><section class='four_oh_four'>
+  <p class='big_type'>
+    Looks like you've reached the end of the line! <br />Check out <a class="another" href='#'>another channel</a> or <a href='/discover'>browse projects in discover</a>.
+  </p>
+</section>
+</script>
+
+<script id="schwamm_formatting_options" type="text/javascript">
+//<![CDATA[
+(function(){window.formatters = window.formatters || {}; var formatting_options = {"distance_date_intervals":[[5,"just now"],[29,"less than a minute ago"],[89,"1 minute ago"],[2640,"%m minutes ago"],[5340,"about 1 hour ago"],[82800,"about %h hours ago"],[147600,"1 day ago"],[604800,"%d days ago"],[15552000,"on %t"],[0,"on %y"]],"currency_symbol_mappings":{"AFN":"\u060b","ALL":"Lek","ARS":"$","AUD":"$","AWG":"\u0192","AZN":"\u043c\u0430\u043d","BAM":"KM","BBD":"$","BGN":"\u043b\u0432","BMD":"$","BND":"$","BOB":"$b","BRL":"R$","BSD":"$","BWP":"P","BYR":"p.","BZD":"BZ$","CAD":"$","CLP":"$","CNY":"\u00a5","COP":"$","CRC":"\u20a1","CUP":"\u20b1","CZK":"K\u010d","DKK":"kr","DOP":"RD$","EGP":"\u00a3","EUR":"\u20ac","FJD":"$","FKP":"\u00a3","GBP":"\u00a3","GIP":"\u00a3","GTQ":"Q","GYD":"$","HKD":"$","HNL":"L","HRK":"kn","HUF":"Ft","IDR":"Rp","ILS":"\u20aa","IRR":"\ufdfc","ISK":"kr","JMD":"J$","JPY":"\u00a5","KGS":"\u043b\u0432","KHR":"\u17db","KPW":"\u20a9","KRW":"\u20a9","KYD":"$","KZT":"\u043b\u0432","LAK":"\u20ad","LBP":"\u00a3","LKR":"\u20a8","LRD":"$","LTL":"Lt","LVL":"Ls","MKD":"\u0434\u0435\u043d","MNT":"\u20ae","MUR":"\u20a8","MXN":"$","MYR":"RM","MZN":"MT","NAD":"$","NGN":"\u20a6","NIO":"C$","NOK":"kr","NPR":"\u20a8","NZD":"$","OMR":"\ufdfc","PAB":"B/.","PEN":"S/.","PHP":"\u20b1","PKR":"\u20a8","PLN":"z\u0142","PYG":"Gs","QAR":"\ufdfc","RON":"lei","RSD":"\u0414\u0438\u043d.","RUB":"\u0440\u0443\u0431","SAR":"\ufdfc","SBD":"$","SCR":"\u20a8","SEK":"kr","SGD":"$","SHP":"\u00a3","SOS":"S","SRD":"$","SVC":"$","SYP":"\u00a3","THB":"\u0e3f","TRY":"TL","TTD":"TT$","TWD":"NT$","UAH":"\u20b4","USD":"$","UYU":"$U","UZS":"\u043b\u0432","VEF":"Bs","VND":"\u20ab","YER":"\ufdfc","ZAR":"R"},"currency_trailing_code_mappings":{"AUD":true,"CAD":true,"NZD":true,"USD":true},"currency_formats":["money","shorter_money"]}; for (key in formatting_options) {window.formatters[key] = formatting_options[key]};}());
+//]]>
+</script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("begin_base.js_tag");}
+  //]]>
+</script>
+<script src="https://d297h9he240fqh.cloudfront.net/assets/packages/base-45cdab84617ddfb8905b7cddc8500c19.js" type="text/javascript"></script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("end_base.js_tag");}
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    document.domain='kickstarter.com';
+  //]]>
+</script>
+
+<iframe height="0" id="api_xdreceiver" src="https://api.kickstarter.com/xdreceiver/85e6.html" style="display: none;" width="0"></iframe>
+
+
+
+<div id="fb-root"></div>
+<script>
+  //<![CDATA[
+    var channelUrl = window.location.protocol + "//" + window.location.host + "/channel.html",
+      skip_autologin = $('body').is('.skip_autologin');
+    
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId: window.fb_app_id,
+        channelUrl: channelUrl,
+        status: true,    // check login status
+        cookie: true,    // enable cookies to allow the server to access the session
+        xfbml: true,     // parse XFBML
+        logging: false   // turn off logging
+      });
+    
+      FB.getLoginStatus(function (response) {
+        if (response.status === 'connected') {
+          if (read_cookie("logout_from_fb")) {
+            FB.logout();
+            destroy_cookie("logout_from_fb");
+          } else if (!skip_autologin) {
+            $.get("/fb/autologin", {'fbsr': response.authResponse.signedRequest});
+          } else if (false && 0 == response.authResponse.userID) {
+            $.get("/fb/refresh", {'fbsr': response.authResponse.signedRequest});
+          }
+        } else {
+          if (read_cookie("logout_from_fb")) {
+            destroy_cookie("logout_from_fb");
+          }
+        }
+      })
+    
+      $(document).trigger('fb:loaded');
+    };
+    
+    
+    // Load the SDK Asynchronously
+    (function(d){
+      var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+      js = d.createElement('script'); js.id = id; js.async = true;
+      js.src = "//connect.facebook.net/en_US/all.js";
+      d.getElementsByTagName('head')[0].appendChild(js);
+    }(document));
+  //]]>
+</script>
+
+
+</body>
+</html>

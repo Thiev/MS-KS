@@ -1,0 +1,1773 @@
+<!DOCTYPE html>
+<html class="projects_show  fontface no-js" lang="en">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# kickstarter: http://ogp.me/ns/fb/kickstarter#">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-5.newrelic.com","errorBeacon":"jserror.newrelic.com","licenseKey":"b04b883ad2","applicationID":"11086","transactionName":"cFteRUULX1wHFhtIEFxeVVJDFxxDCgtD","queueTime":12,"applicationTime":1101,"ttGuid":"","agentToken":null,"agent":"js-agent.newrelic.com/nr-411.min.js"}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"Vw4BVEVSCQMIUg=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e){function n(t,e,n){n||(n={});for(var r=o[t],a=r&&r.length||0,s=n[i]||(n[i]={}),u=0;a>u;u++)r[u].apply(s,e);return s}function r(t,e){var n=o[t]||(o[t]=[]);n.push(e)}var o={},i="nr@context";e.exports={on:r,emit:n}},{}],2:[function(t){function e(t,e,n,i,s){return u?u-=1:r("err",[s||new UncaughtException(t,e,n)]),"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t(5),a=window.onerror,s=!1,u=0;t("loader").features.push("err"),window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(d){"stack"in d&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(4),s=!0)}i.on("fn-start",function(){s&&(u+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&u>0&&(u-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:4,3:3,4:6,5:1,6:14,handle:"D5DuLP",loader:"G9z0Bl"}],3:[function(t){function e(t){r.inPlace(t,["addEventListener","removeEventListener"],"-",n)}function n(t){return t[1]}var r=t(1),o=(t(3),t(2));if(e(window),"getPrototypeOf"in Object){for(var i=document;i&&!i.hasOwnProperty("addEventListener");)i=Object.getPrototypeOf(i);i&&e(i);for(var a=XMLHttpRequest.prototype;a&&!a.hasOwnProperty("addEventListener");)a=Object.getPrototypeOf(a);a&&e(a)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&e(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=e["nr@wrapped"]?t[1]=e["nr@wrapped"]:e["nr@wrapped"]=t[1]=r(e,"fn-"):"function"==typeof e.handleEvent&&r.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:15,2:1,3:14}],4:[function(t){var e=(t(3),t(1)),n=t(2);e.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=e(t[0],"fn-")})},{1:15,2:1,3:14}],5:[function(t){function e(t){var e=t[0];"string"==typeof e&&(e=new Function(e)),t[0]=n(e,"fn-")}var n=(t(3),t(1)),r=t(2);n.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",e)},{1:15,2:1,3:14}],6:[function(t){function e(){o.inPlace(this,s,"fn-")}function n(t,e){o.inPlace(e,["onreadystatechange"],"fn-")}function r(t,e){return e}var o=t(1),i=t(2),a=window.XMLHttpRequest,s=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];window.XMLHttpRequest=function(t){var n=new a(t);try{i.emit("new-xhr",[],n),o.inPlace(n,["addEventListener","removeEventListener"],"-",function(t,e){return e}),n.addEventListener("readystatechange",e,!1)}catch(r){try{i.emit("internal-error",r)}catch(s){}}return n},window.XMLHttpRequest.prototype=a.prototype,o.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",r),i.on("send-xhr-start",n),i.on("open-xhr-start",n)},{1:15,2:1}],7:[function(t){function e(){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;u>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,d="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=e(d);if(f&&(r.rxSize=f),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}t("loader").features.push("xhr");var o=t("handle"),i=t(1),a=t(5),s=["load","error","abort","timeout"],u=s.length,d=t(2);t(3),t(4),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var d=e(o);d&&(r.txSize=d)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",e)}catch(r){}}};for(var f=0;u>f;f++)n.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&e()},{1:8,2:11,3:3,4:6,5:1,handle:"D5DuLP",loader:"G9z0Bl"}],8:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e){var n=r[t];return n?n.apply(this,e):(o[t]||(o[t]=[]),void o[t].push(e))}var r={},o={};e.exports=n,n.queues=o,n.handlers=r},{}],11:[function(t,e){function n(t){if(!t||"object"!=typeof t&&"function"!=typeof t)return-1;if(t===window)return 0;if(o.call(t,"__nr"))return t.__nr;try{return Object.defineProperty(t,"__nr",{value:r,writable:!0,enumerable:!1}),r}catch(e){return t.__nr=r,r}finally{r+=1}}var r=1,o=Object.prototype.hasOwnProperty;e.exports=n},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&u&&u.body){p.proto="https"===c.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=u.createElement("script");e.src=p.proto+t.agent,u.body.appendChild(e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,u=s.document,d="addEventListener",f="attachEvent",c=(""+location).split("?")[0],p=e.exports={offset:i(),origin:c,features:[]};u[d]?(u[d]("DOMContentLoaded",o,!1),s[d]("load",n,!1)):(u[f]("onreadystatechange",r),s[f]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],14:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],15:[function(t,e){function n(t,e,r,s){function nrWrapper(){try{var n,a=u(arguments),d=this,f=r&&r(a,d)||{}}catch(c){i([c,"",[a,d,s],f])}o(e+"start",[a,d,s],f);try{return n=t.apply(d,a)}catch(p){throw o(e+"err",[a,d,p],f),p}finally{o(e+"end",[a,d,n],f)}}return a(t)?t:(e||(e=""),nrWrapper[n.flag]=!0,nrWrapper)}function r(t,e,r,o){r||(r="");var i,s,u,d="-"===r.charAt(0);for(u=0;u<e.length;u++)s=e[u],i=t[s],a(i)||(t[s]=n(i,d?s+r:r,o,s,t))}function o(t,e,n){try{s.emit(t,e,n)}catch(r){i([r,t,e,n])}}function i(t){try{s.emit("internal-error",t)}catch(e){}}function a(t){return!(t&&"function"==typeof t&&t.apply&&!t[n.flag])}var s=t(1),u=t(2);e.exports=n,n.inPlace=r,n.flag="nr@wrapper"},{1:1,2:14}]},{},["G9z0Bl",2,7]);</script><script>
+  //<![CDATA[
+    docElement = this.document.documentElement;
+    docElement.className=docElement.className.replace(/\bno-js\b/,'') + 'js';
+  //]]>
+</script>
+<title>Niftymancer by Thomas Sitch &mdash; Kickstarter</title><script>
+  //<![CDATA[
+    window.report_errors = true;
+    window.honeybadger_configuration = {
+      api_key : "02ab109335c0dd1a93506d92f22217a7",
+      environment : "production",
+      component : "projects",
+      action : "show",
+      onerror : false
+    };
+  //]]>
+</script>
+
+
+<!--[if lt IE 9]>
+  <script src="//html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta content="telephone=no" name="format-detection">
+
+<!--[if !IE]> -->
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base-9f623ad5d021a188cfb2d68a0cdf7a7b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<!-- <![endif]-->
+<!--[if IE]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base_blessed-2640c72487552f9a2ef9f2620b4af860.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<!--[if lte IE 9]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_nine-a93fe10530f175f96c4078b7e070d7e1.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 8]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_eight-f75aeb274436f94a0d243774456b1c62.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 7]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie-c019c01acd3a96588b346cf577a3504f.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_seven-5a3d2cef660cd281fd844b04b2397dbb.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if IE 6]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_six-e4d3caf76e405fe19aee6ece8bda701b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<link href="https://d297h9he240fqh.cloudfront.net/favicon.png" rel="icon" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-precomposed-7b603dba7cf80e4acc57d94a991bebbd.png" rel="apple-touch-icon-precomposed" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-ipad-precomposed-3176f72977daf43dee3b0d348484dc01.png" rel="apple-touch-icon-precomposed" sizes="72x72" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-iphone4-precomposed-b93b70168cd8492c843d0fea873c7f83.png" rel="apple-touch-icon-precomposed" sizes="114x114" type="image/png">
+<link href="https://www.kickstarter.com/services/oembed?url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2F375726835%2Fniftymancer" rel="alternate" title="Niftymancer Script Tag oEmbed" type="application/json+oembed">
+<link rel="alternate" type="application/atom+xml" title="Niftymancer : Kickstarter" href="https://www.kickstarter.com/projects/375726835/niftymancer/posts.atom" />
+<meta property="twitter:app:id:iphone" content="596961532"/>
+<meta property="twitter:app:name:iphone" content="Kickstarter"/>
+<meta property="twitter:app:url:iphone" content="ksr://www.kickstarter.com/projects/375726835/niftymancer"/>
+<meta name="video_height" content="480"/>
+<meta name="video_width" content="640"/>
+<meta name="video_type" content="application/x-shockwave-flash"/>
+<meta name="title" content="Kickstarter &gt;&gt; Niftymancer by Thomas Sitch"/>
+<meta name="description" content="Thomas Sitch is raising funds for Niftymancer on Kickstarter! 
+
+ A fun, gothic, lane defense RPG where you summon ghosts and zombies to protect yourself from “evil” pixies and forest creatures."/>
+<meta name="robots" content="noindex"/>
+<meta property="og:title" content="Niftymancer"/>
+<meta property="og:type" content="kickstarter:project"/>
+<meta property="og:image" content="https://s3.amazonaws.com/ksr/projects/438506/photo-main.jpg?1397808044"/>
+<meta property="og:url" content="https://www.kickstarter.com/projects/375726835/niftymancer"/>
+<meta property="og:site_name" content="Kickstarter"/>
+<meta property="fb:app_id" content="69103156693"/>
+<meta property="og:description" content="A fun, gothic, lane defense RPG where you summon ghosts and zombies to protect yourself from “evil” pixies and forest creatures."/>
+<meta property="kickstarter:creator" content="https://www.kickstarter.com/profile/375726835"/>
+<meta property="twitter:url:landing_url" content="https://www.kickstarter.com/projects/375726835/niftymancer"/>
+<meta property="twitter:card" content="2427656750:kickstarter_project"/>
+<meta property="twitter:site" content="@kickstarter"/>
+<meta property="twitter:site:id" content="16186995"/>
+<meta property="twitter:text:title" content="Niftymancer"/>
+<meta property="twitter:text:artist" content="Thomas Sitch"/>
+<meta property="twitter:text:backers" content="93"/>
+<meta property="twitter:text:pledged" content="$23,793 USD"/>
+<meta property="twitter:text:time" content="0 seconds"/>
+<meta property="twitter:text:location" content="Seattle, WA"/>
+<meta property="twitter:image:location_image" content="https://d3mlfyygrfdi2i.cloudfront.net/b40e/pin.png"/>
+<meta property="twitter:text:description" content="A fun, gothic, lane defense RPG where you summon ghosts and zombies to protect yourself from “evil” pixies and forest creatures."/>
+<meta property="twitter:image:media" content="https://s3.amazonaws.com/ksr/projects/438506/photo-main.jpg?1397808044"/>
+<meta property="twitter:image:width" content="640"/>
+<meta property="twitter:image:height" content="480"/>
+<meta property="twitter:player:stream:url" content="https://d2pq0u4uni88oo.cloudfront.net/projects/438506/video-211599-h264_base.mp4"/>
+<meta property="twitter:player:stream:content" content="video/mp4"/>
+<meta property="twitter:player:url" content="https://www.kickstarter.com/projects/375726835/niftymancer/widget/video.html"/>
+<meta property="twitter:player:height" content="480"/>
+<meta property="twitter:player:width" content="640"/>
+<meta property="twitter:maxage" content="60"/>
+<meta property="og:video" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F438506%2Fvideo-211599-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F438506%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Thomas+Sitch&amp;project_title=Niftymancer&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2F375726835%2Fniftymancer&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:secure_url" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F438506%2Fvideo-211599-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F438506%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Thomas+Sitch&amp;project_title=Niftymancer&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2F375726835%2Fniftymancer&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:height" content="480"/>
+<meta property="og:video:width" content="640"/>
+<meta property="og:video:type" content="application/x-shockwave-flash"/>
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="PbDwr8id51Gcd78U182Dmtk91RqA13hh/ItkVjagP94=" name="csrf-token" />
+<script type="text/javascript">
+  var _sift = _sift || [];
+  _sift.push(['_setAccount', '637102']);
+  _sift.push(['_setUserId', '']);
+  _sift.push(['_trackPageview']);
+
+  (function() {
+    function loadSift() {
+      var sift, s;
+      if (root.visitor_id) {
+        _sift.push(['_setSessionId', root.visitor_id]);
+      }
+      sift = document.createElement('script');
+      sift.type = 'text/javascript';
+      sift.async = true;
+      sift.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dtlilztwypawv.cloudfront.net/s.js';
+      s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(sift, s);
+    }
+    if (window.attachEvent) {
+      window.attachEvent('onload', loadSift);
+    } else {
+      window.addEventListener('load', loadSift, false);
+    }
+  })();
+</script>
+<link href="http://kck.st/Z0BCdQ" rel="shorturl">
+<link href="https://www.kickstarter.com/projects/375726835/niftymancer" rel="canonical">
+<link href="https://s3.amazonaws.com/ksr/projects/438506/photo-med.jpg?1397808044" rel="image_src">
+<link href="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F438506%2Fvideo-211599-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F438506%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Thomas+Sitch&amp;project_title=Niftymancer&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2F375726835%2Fniftymancer&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque" rel="video_src">
+<script>
+  //<![CDATA[
+    window.current_checkout = "{&quot;id&quot;:0,&quot;domestic&quot;:null,&quot;amount&quot;:0.0,&quot;updated_at&quot;:0,&quot;created_at&quot;:0}";
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.current_ip = '94.209.101.212';
+    window.current_ip_datacenter = 'false';
+    window.enabled_features = {"elasticsearch":true,"security_history_read":true,"security_history_write":true,"advanced_discovery_es":true,"ios_crashlytics":true,"ios_mixpanel":true,"stories_veronica_mars":true,"veronica_mars_hero":true,"password_reset_banner":true};
+    window.fb_app_id = '69103156693';
+    
+    var _sf_startpt=(new Date()).getTime();
+    
+    window.current_project = "{&quot;id&quot;:979417512,&quot;name&quot;:&quot;Niftymancer&quot;,&quot;blurb&quot;:&quot;A fun, gothic, lane defense RPG where you summon ghosts and zombies to protect yourself from \\u201cevil\\u201d pixies and forest creatures.&quot;,&quot;goal&quot;:40000.0,&quot;pledged&quot;:23793.77,&quot;state&quot;:&quot;failed&quot;,&quot;slug&quot;:&quot;niftymancer&quot;,&quot;disable_communication&quot;:false,&quot;country&quot;:&quot;US&quot;,&quot;currency&quot;:&quot;USD&quot;,&quot;currency_symbol&quot;:&quot;$&quot;,&quot;currency_trailing_code&quot;:true,&quot;deadline&quot;:1365536682,&quot;state_changed_at&quot;:1365536732,&quot;created_at&quot;:1358525899,&quot;launched_at&quot;:1362084282,&quot;backers_count&quot;:93,&quot;photo&quot;:{&quot;full&quot;:&quot;https://s3.amazonaws.com/ksr/projects/438506/photo-full.jpg?1397808044&quot;,&quot;ed&quot;:&quot;https://s3.amazonaws.com/ksr/projects/438506/photo-ed.jpg?1397808044&quot;,&quot;med&quot;:&quot;https://s3.amazonaws.com/ksr/projects/438506/photo-med.jpg?1397808044&quot;,&quot;little&quot;:&quot;https://s3.amazonaws.com/ksr/projects/438506/photo-little.jpg?1397808044&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/projects/438506/photo-small.jpg?1397808044&quot;,&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/projects/438506/photo-thumb.jpg?1397808044&quot;,&quot;1024x768&quot;:&quot;https://s3.amazonaws.com/ksr/projects/438506/photo-1024x768.jpg?1397808044&quot;,&quot;1536x1152&quot;:&quot;https://s3.amazonaws.com/ksr/projects/438506/photo-1536x1152.jpg?1397808044&quot;},&quot;creator&quot;:{&quot;id&quot;:375726835,&quot;name&quot;:&quot;Thomas Sitch&quot;,&quot;avatar&quot;:{&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/708034/DrHorrible01a.thumb.jpg?1361943689&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/708034/DrHorrible01a.small.jpg?1361943689&quot;,&quot;medium&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/708034/DrHorrible01a.medium.jpg?1361943689&quot;},&quot;urls&quot;:{&quot;web&quot;:{&quot;user&quot;:&quot;https://www.kickstarter.com/profile/375726835&quot;},&quot;api&quot;:{&quot;user&quot;:&quot;https://api.kickstarter.com/v1/users/375726835?signature=1399952721.a32bcc46cde4ff284068303793a88295fcea03e4&quot;}}},&quot;location&quot;:{&quot;id&quot;:2490383,&quot;name&quot;:&quot;Seattle&quot;,&quot;slug&quot;:&quot;seattle-wa&quot;,&quot;short_name&quot;:&quot;Seattle, WA&quot;,&quot;displayable_name&quot;:&quot;Seattle, WA&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:&quot;WA&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/seattle-wa&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/seattle-wa&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1399951821.195076c84f9e27cd1d7979916c7ba772fe796e9c&amp;woe_id=2490383&quot;}}},&quot;category&quot;:{&quot;id&quot;:35,&quot;name&quot;:&quot;Video Games&quot;,&quot;slug&quot;:&quot;games/video games&quot;,&quot;position&quot;:7,&quot;parent_id&quot;:12,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;http://www.kickstarter.com/discover/categories/games/video%20games&quot;}}},&quot;urls&quot;:{&quot;web&quot;:{&quot;project&quot;:&quot;https://www.kickstarter.com/projects/375726835/niftymancer&quot;,&quot;project_short&quot;:&quot;http://kck.st/Z0BCdQ&quot;,&quot;updates&quot;:&quot;https://www.kickstarter.com/projects/375726835/niftymancer/posts&quot;},&quot;api&quot;:{&quot;project&quot;:&quot;https://api.kickstarter.com/v1/projects/979417512?signature=1399952721.314f04c83d7e6f646ba34391ede2b424c220c99d&quot;,&quot;comments&quot;:&quot;https://api.kickstarter.com/v1/projects/979417512/comments?signature=1399952721.a8bac426471f545c619300f13bca68f9640de93b&quot;,&quot;updates&quot;:&quot;https://api.kickstarter.com/v1/projects/979417512/updates?signature=1399952722.37d028e245b4b056b91cb95f7ddb304cbbc7d84d&quot;}},&quot;updated_at&quot;:1397808050,&quot;failed_at&quot;:1365536732,&quot;video&quot;:{&quot;id&quot;:211599,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/438506/video-211599-h264_high.mp4?2013&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/438506/video-211599-h264_base.mp4?2013&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/438506/video-211599-webm.webm?2013&quot;,&quot;width&quot;:640,&quot;height&quot;:480,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/438506/video-211599-h264_base.jpg?2013&quot;},&quot;comments_count&quot;:0,&quot;updates_count&quot;:5,&quot;rewards&quot;:[{&quot;id&quot;:0,&quot;minimum&quot;:1,&quot;reward&quot;:&quot;No Reward&quot;},{&quot;id&quot;:1410197,&quot;minimum&quot;:5.0,&quot;reward&quot;:&quot;Haunting Help --\\r\\nIn appreciation for helping us get started, you get an exclusive Niftymancer WALLPAPER,\\r\\nfeaturing the work of the Niftymancer art team and Justin Hillgrove.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1370044800,&quot;project_id&quot;:979417512,&quot;backers_count&quot;:7,&quot;updated_at&quot;:1365142103},{&quot;id&quot;:1410198,&quot;minimum&quot;:10.0,&quot;reward&quot;:&quot;Baleful Benefactor --\\r\\nSpecial INFINITE ENERGY and a random useful MAGIC ITEM when Niftymancer opens its\\r\\ndoors! Also includes the wallpaper.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1375315200,&quot;project_id&quot;:979417512,&quot;backers_count&quot;:17,&quot;updated_at&quot;:1365503108},{&quot;id&quot;:1410200,&quot;minimum&quot;:25.0,&quot;reward&quot;:&quot;Awesome Acolyte --\\r\\nReceive THREE random magic items, including one legendary (PURPLE) when you begin\\r\\nplaying Niftymancer. Additionally, you&#39;ll be listed in the OFFICIAL CREDITS as a benefactor\\r\\nof the game. Includes all previous awards.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1375315200,&quot;project_id&quot;:979417512,&quot;backers_count&quot;:14,&quot;updated_at&quot;:1365527945},{&quot;id&quot;:1410219,&quot;minimum&quot;:30.0,&quot;reward&quot;:&quot;Friendly Phantom --\\r\\nImpress your friends with the Niftymancer COLORING BOOK, featuring the work of the\\r\\nentire art team! Includes all previous awards&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;20.0&quot;,&quot;estimated_delivery_on&quot;:1375315200,&quot;project_id&quot;:979417512,&quot;backers_count&quot;:15,&quot;updated_at&quot;:1365277863},{&quot;id&quot;:1410221,&quot;minimum&quot;:50.0,&quot;reward&quot;:&quot;Thoughtful Thaumaturgist --\\r\\nIn addition to the coloring book and other prior awards, you get the special BLACK CAT pet\\r\\nin-game. Like all pets in game, it can be used to help you and to be lent to your friends to\\r\\nhelp them, and will be superior to any of the cats available in the first several regions.&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;20.0&quot;,&quot;estimated_delivery_on&quot;:1375315200,&quot;project_id&quot;:979417512,&quot;backers_count&quot;:11,&quot;updated_at&quot;:1365532877},{&quot;id&quot;:1410222,&quot;minimum&quot;:75.0,&quot;reward&quot;:&quot;Curious Conjurer --\\r\\nReceive an official glossy Niftymancer POSTER! Includes all previous awards.&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;20.0&quot;,&quot;estimated_delivery_on&quot;:1375315200,&quot;project_id&quot;:979417512,&quot;backers_count&quot;:2,&quot;updated_at&quot;:1365209073},{&quot;id&quot;:1410223,&quot;minimum&quot;:100.0,&quot;reward&quot;:&quot;Welcome Wizard --\\r\\nReceive the NIFTYMANCER poster, but this one will be signed by the whole team at\\r\\nTrilabrys Interactive. Includes all previous awards.&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;20.0&quot;,&quot;estimated_delivery_on&quot;:1375315200,&quot;project_id&quot;:979417512,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1362166541},{&quot;id&quot;:1410227,&quot;minimum&quot;:150.0,&quot;reward&quot;:&quot;Spiffy Sorcerer --\\r\\nYour generous donation gets you not just the poster, but a tee shirt of the wickedly\\r\\ncool \\u201cBetter Living Through Spells and Hexes\\u201d, illustrated by Justin Hillgrove. (Male\\r\\nNecromancer version)&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;20.0&quot;,&quot;estimated_delivery_on&quot;:1375315200,&quot;project_id&quot;:979417512,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1361824329},{&quot;id&quot;:1410229,&quot;minimum&quot;:150.0,&quot;reward&quot;:&quot;Spiffy Sorceress --\\r\\nYour generous donation gets you not just the poster, but a tee shirt of the wickedly\\r\\ncool \\u201cBetter Living Through Spells and Hexes\\u201d, illustrated by Justin Hillgrove. (Female\\r\\nNecromancer version)&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;20.0&quot;,&quot;estimated_delivery_on&quot;:1375315200,&quot;project_id&quot;:979417512,&quot;backers_count&quot;:3,&quot;updated_at&quot;:1365502951},{&quot;id&quot;:1410230,&quot;minimum&quot;:200.0,&quot;reward&quot;:&quot;Splendid Spellbinder --\\r\\nYour outstanding assistance will get you the tee shirt, poster, and other previous swag,\\r\\nalong with a limited edition BLUE FAERIE DRAGON pet. Like all pets in game, it can be\\r\\nused to help you and to be lent to your friends to help them. The Blue Faerie Dragon will\\r\\nonly be given to people who help with the Kickstarter campaign, so it will give you extra\\r\\n\\r\\nbragging rights!&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;20.0&quot;,&quot;estimated_delivery_on&quot;:1375315200,&quot;project_id&quot;:979417512,&quot;backers_count&quot;:4,&quot;updated_at&quot;:1365533718},{&quot;id&quot;:1410232,&quot;minimum&quot;:350.0,&quot;reward&quot;:&quot;Notorious Nazgul --\\r\\nIn addition to the tee-shirt and all the previous awesome goodies, our designers will work with you to build a QUEST within the Niftymancer game world!  Other players will see and play your quest, for a cool magic item in one of the many realms of the game world.  Includes all of the digital items, pets, coloring book, poster, and tee shirt.&quot;,&quot;limit&quot;:20,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;20.0&quot;,&quot;estimated_delivery_on&quot;:1375315200,&quot;project_id&quot;:979417512,&quot;remaining&quot;:19,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1362879790},{&quot;id&quot;:1410242,&quot;minimum&quot;:500.0,&quot;reward&quot;:&quot;Magnificent Magician --\\r\\nYou get to design a magical item that will be adapted by our team and integrated into the game.  You will be able to gift this item to your friends, and all other players will have the ability to find the item in-game, and learn the lore about it.  Includes all of the digital items, pets, coloring book, poster, and tee shirt.&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;20.0&quot;,&quot;estimated_delivery_on&quot;:1375315200,&quot;project_id&quot;:979417512,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1362731257},{&quot;id&quot;:1410245,&quot;minimum&quot;:800.0,&quot;reward&quot;:&quot;Enlightened Evoker --\\r\\nThis one is sweet.  You get a limited edition, high quality Niftymancer print of an original work done by Justin Hillgrove, specially numbered and signed, and rendered on watercolor paper.  Ideal for framing and putting above your desk! (Autographed by the team, if you so desire).  Includes all of the digital items, pets, coloring book, poster, and tee shirt.&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;20.0&quot;,&quot;estimated_delivery_on&quot;:1375315200,&quot;project_id&quot;:979417512,&quot;backers_count&quot;:2,&quot;updated_at&quot;:1362181392},{&quot;id&quot;:1410255,&quot;minimum&quot;:1000.0,&quot;reward&quot;:&quot;Malificent Magister --\\r\\nA monster you design will be adapted by our team and integrated into the game!  What will it be?  A wonderous dryad queen?  An imp or elemental?  Some sort of undead horror?  Editorial discretion applies.  Includes all of the digital items, pets, coloring book, poster, and tee shirt.&quot;,&quot;limit&quot;:10,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;20.0&quot;,&quot;estimated_delivery_on&quot;:1375315200,&quot;project_id&quot;:979417512,&quot;remaining&quot;:9,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1362597807},{&quot;id&quot;:1410256,&quot;minimum&quot;:1500.0,&quot;reward&quot;:&quot;Luminous Lich --\\r\\nYou get to design a monster that our team will render (editorial discretion applies), and you will automatically get a pet version of that monster that helps you AND can be lent to friends to help them!  There are few better ways to show off... Includes all of the digital items, pets, coloring book, poster, and tee shirt.&quot;,&quot;limit&quot;:10,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;20.0&quot;,&quot;estimated_delivery_on&quot;:1375315200,&quot;project_id&quot;:979417512,&quot;remaining&quot;:10,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1361912929},{&quot;id&quot;:1410260,&quot;minimum&quot;:5000.0,&quot;reward&quot;:&quot;Nifty Necromancer --\\r\\nYou get to be a FAIRY or NECROMANCER god or goddess (you can be a BAD FAIRY deity if you wish).  You get to work with our design team and Justin to envision a boss monster and boss fight that involves your persona.  All other players will encounter your character visage at some point in the game, and you will get a magical item related to it that can be gifted to any of your friends (but only by you).  You&#39;ll also receive an autographed print on canvas of your character from Justin.  Includes all of the digital items, pets, coloring book, poster, and tee shirt.&quot;,&quot;limit&quot;:5,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;20.0&quot;,&quot;estimated_delivery_on&quot;:1375315200,&quot;project_id&quot;:979417512,&quot;remaining&quot;:4,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1364926871},{&quot;id&quot;:1410261,&quot;minimum&quot;:10000.0,&quot;reward&quot;:&quot;Amazing Archlich --\\r\\nThis is it.  The MEGAPRIZE; a veritable dragon hoard, which celebrates YOU as one of the major patrons of Niftymancer!  This prize combines all prior awards, including the tee shirt, custom magic item, custom monster, custom monster pet, limited edition print, and necromancer/fairy deification and grants a \\u201cVery Special Thanks To\\u201d in the credits and on the main canvas page.&quot;,&quot;limit&quot;:5,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1375315200,&quot;project_id&quot;:979417512,&quot;remaining&quot;:5,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1361912987}]}";
+    
+    
+    
+    
+    
+    
+    
+    
+    window.timeRemaining = function timeRemaining(epochTime){
+    
+      var diff = epochTime - ((new Date()).getTime() / 1000);
+      var num_unit = (diff < 60 && [Math.max(diff, 0), 'seconds']) ||
+        ((diff/=60) < 60 && [diff, 'minutes']) ||
+        ((diff/=60) < 72 && [diff, 'hours']) ||
+        [diff/=24, 'days'];
+    
+      // Round down
+      num_unit[0] = Math.floor(num_unit[0]);
+      // Singularize unit
+      if (num_unit[0] == 1) { num_unit[1] = num_unit[1].replace(/s$/,""); }
+    
+      return num_unit;
+    };
+  //]]>
+</script>
+
+<script>
+  //<![CDATA[
+    window.current_variants = ["discover_link_copy[discover]","rewards_hover[with_hover_text]"];
+  //]]>
+</script>
+
+
+</head>
+
+<body class="project projects not-mobile not-phone not-forces-video-controls not-tablet not-touchable not-native-app-request video_mode" id="projects_show">
+<div class="jGrowl center" id="growl_section"></div>
+<div class="NS_layouts__navigation" id="header">
+<div class="main-nav relative bg-white">
+<h1 class="no-margin ml1 mr2 left">
+<a href="/?ref=nav" class="block p2"><span class="ss-icon green-dark">KICK</span><span class="ss-icon green">STARTER</span>
+</a></h1>
+<ul class="primary-links list no-margin left">
+<li class="left discover-link full-height">
+<a href="/discover?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Discover</a>
+</li>
+<li class="left full-height mr2">
+<a href="/learn?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Start</a>
+</li>
+</ul>
+<ul class="list no-margin right" id="menu-sub">
+<li class="right"><a href="/login?ref=nav" class="block h5 bold p2 full-height border-box">Log in</a></li>
+<li class="right"><a href="/signup?ref=nav" class="block h5 bold p2 full-height border-box">Sign up</a></li>
+</ul>
+<div class="search-link pl2 full-height border-left border-box clip">
+<form accept-charset="UTF-8" action="/projects/search" class="search pt1 pb1 block relative form-simple" method="get"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /></div>
+<div class="field relative pl3">
+<span class="ss-icon ss-search grey-dark ml1 mt1 absolute"></span>
+<input class="input-search header full-width text" data-tracker-name="Header Live Search" id="term" name="term" placeholder="Search projects" type="text" />
+</div>
+</form>
+
+</div>
+<div class="clear"></div>
+</div>
+</div>
+<div class="hide pt4 pb4 bg-grey-light" id="search_results-wrap">
+<div class="relative container" id="search_results">
+<a class="close right grey-dark mr1"><span class="ss-icon ss-delete"></span></a>
+<h3 class="header ml1 clearfix"></h3>
+<div class="clip clearfix" id="search_results_panel"></div>
+<a class="prev arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateleft"></span>
+</a>
+<a class="next arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateright"></span>
+</a>
+</div>
+</div>
+
+
+
+
+<div class="Project-ended-true Project-is_starred- Project-state-failed Project979417512_cxt border-top" id="main_content">
+<div id="running-board-wrap">
+<div class="container" id="running-board">
+<div id="project-header">
+<div class="NS_projects__running_board ml1 mr1 clearfix">
+<div class="title center py4">
+<h2 class="mb1">
+<a href="/projects/375726835/niftymancer" class="green-dark">Niftymancer</a>
+</h2>
+<p class="no-margin">
+<span class="creator">
+by
+<a href="/projects/375726835/niftymancer/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography" id="name">Thomas Sitch</a>
+</span>
+</p>
+</div>
+<ul class="project-nav list-inline left h5 bold mb1">
+<li class="mr2">
+<a href="/projects/375726835/niftymancer" class="grey-dark py1 current" id="home_nav">Home</a>
+</li>
+<li class="mr2">
+<span data-updates-count="5" id="updates_count">
+<a href="/projects/375726835/niftymancer/posts" class="grey-dark py1" id="updates_nav">Updates
+<span class="count h6 bg-grey-dark white">5</span>
+</a></span>
+</li>
+<li class="mr2">
+<a href="/projects/375726835/niftymancer/backers" class="grey-dark py1" id="backers_nav">Backers
+<span class="count h6 bg-grey-dark white"><data class="Project979417512" data-format="number" data-value="93" itemprop="Project[backers_count]">93</data></span>
+</a></li>
+<li>
+<span data-comments-count="0" id="comments_count">
+<a href="/projects/375726835/niftymancer/comments" class="grey-dark py1" id="comments_nav">Comments
+<span class="count h6 bg-grey-dark white"><data class="Project979417512" data-format="number" data-value="0" itemprop="Project[comments_count]">0</data></span>
+</a></span>
+</li>
+</ul>
+<ul class="list-inline right h5 bold mb1">
+<li class="location mr2">
+<a href="/discover/places/seattle-wa?ref=city" class="grey-dark"><span class="ss-icon ss-location margin-right"></span>
+Seattle, WA
+</a></li>
+<li class="category" data-project-parent-category="Games">
+<a href="/discover/categories/games/video%20games?ref=category" class="grey-dark"><span class="ss-icon ss-tag margin-right"></span>
+Video Games
+</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+</div>
+<div class="bg-grey-light pb4" id="content-wrap">
+<div class="Project979417512" data-conditions="[{&quot;!state&quot;:&quot;live&quot;}]" data-evaluation="true" data-render="&quot;&lt;div class=\&quot;NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-failed Project979417512_cxt bg-grey container pb1 pt1\&quot;&gt;\n&lt;div class=\&quot;Project979417512\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;successful&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;Funded!&amp;lt;/b&amp;gt;\\nThis project was successfully funded &amp;lt;data class=\\&amp;quot;Project979417512\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2013-04-09T15:44:42-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[deadline]\\&amp;quot;&amp;gt;on April 9, 2013&amp;lt;/data&amp;gt;.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project979417512\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:[&amp;quot;started&amp;quot;,&amp;quot;submitted&amp;quot;]}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;THIS PROJECT IS NOT LIVE&amp;lt;/b&amp;gt;\\nThis is only a draft that the creator has chosen to share.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project979417512\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;suspended&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Suspended&amp;lt;/b&amp;gt;\\nFunding for this project was suspended &amp;lt;data class=\\&amp;quot;Project979417512\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2013-04-09T15:45:32-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on April 9, 2013&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project979417512\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;canceled&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Canceled&amp;lt;/b&amp;gt;\\nFunding for this project was canceled by the project creator &amp;lt;data class=\\&amp;quot;Project979417512\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2013-04-09T15:45:32-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on April 9, 2013&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project979417512\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;failed&amp;quot;}]\&quot; data-evaluation=\&quot;true\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Unsuccessful&amp;lt;/b&amp;gt;\\nThis project\\u2019s funding goal was not reached on &amp;lt;time class=\\&amp;quot;js-adjust\\&amp;quot; data-format=\\&amp;quot;LL\\&amp;quot; datetime=\\&amp;quot;2013-04-09T15:44:42-04:00\\&amp;quot;&amp;gt;April 9, 2013&amp;lt;/time&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Unsuccessful&lt;/b&gt;\nThis project\u2019s funding goal was not reached on &lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;LL\&quot; datetime=\&quot;2013-04-09T15:44:42-04:00\&quot;&gt;April 9, 2013&lt;/time&gt;.\n&lt;/div&gt;&lt;div class=\&quot;Project979417512\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;purged&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;This project is purged and only visible to staff.&amp;lt;/b&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;/div&gt;\n&quot;"><div class="NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-failed Project979417512_cxt bg-grey container pb1 pt1">
+<div class="Project979417512" data-conditions="[{&quot;state&quot;:&quot;successful&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;Funded!&lt;/b&gt;\nThis project was successfully funded &lt;data class=\&quot;Project979417512\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-04-09T15:44:42-04:00&amp;quot;\&quot; itemprop=\&quot;Project[deadline]\&quot;&gt;on April 9, 2013&lt;/data&gt;.\n&lt;/p&gt;\n&quot;"></div><div class="Project979417512" data-conditions="[{&quot;state&quot;:[&quot;started&quot;,&quot;submitted&quot;]}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;THIS PROJECT IS NOT LIVE&lt;/b&gt;\nThis is only a draft that the creator has chosen to share.\n&lt;/p&gt;\n&quot;"></div><div class="Project979417512" data-conditions="[{&quot;state&quot;:&quot;suspended&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Suspended&lt;/b&gt;\nFunding for this project was suspended &lt;data class=\&quot;Project979417512\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-04-09T15:45:32-04:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on April 9, 2013&lt;/data&gt;.\n&quot;"></div><div class="Project979417512" data-conditions="[{&quot;state&quot;:&quot;canceled&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Canceled&lt;/b&gt;\nFunding for this project was canceled by the project creator &lt;data class=\&quot;Project979417512\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-04-09T15:45:32-04:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on April 9, 2013&lt;/data&gt;.\n&quot;"></div><div class="Project979417512" data-conditions="[{&quot;state&quot;:&quot;failed&quot;}]" data-evaluation="true" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Unsuccessful&lt;/b&gt;\nThis project\u2019s funding goal was not reached on &lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;LL\&quot; datetime=\&quot;2013-04-09T15:44:42-04:00\&quot;&gt;April 9, 2013&lt;/time&gt;.\n&quot;"><p class="no-margin"></p>
+<b>Funding Unsuccessful</b>
+This project’s funding goal was not reached on <time class="js-adjust" data-format="LL" datetime="2013-04-09T15:44:42-04:00">April 9, 2013</time>.
+</div><div class="Project979417512" data-conditions="[{&quot;state&quot;:&quot;purged&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;This project is purged and only visible to staff.&lt;/b&gt;\n&quot;"></div></div>
+</div>
+<div class="container bg-white border rounded py3 pl2 pr2" id="content">
+<div class="NS-projects-content">
+<div class="grid_11">
+<div data-has-video="true" id="video-section">
+<div class="video-player" data-dimensions="{&quot;width&quot;:640,&quot;height&quot;:480}" data-image="https://s3.amazonaws.com/ksr/projects/438506/photo-main.jpg?1397808044" data-video-tracker-url="https://www.kickstarter.com/projects/375726835/niftymancer/video/plays" data-video-url="https://d2pq0u4uni88oo.cloudfront.net/projects/438506/video-211599-h264_high.mp4" data-video="{&quot;id&quot;:211599,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/438506/video-211599-h264_high.mp4?2013&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/438506/video-211599-h264_base.mp4?2013&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/438506/video-211599-webm.webm?2013&quot;,&quot;width&quot;:640,&quot;height&quot;:480,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/438506/video-211599-h264_base.jpg?2013&quot;}" id="video_pitch"><video class="has_webm landscape" preload="none">
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/438506/video-211599-h264_high.mp4" type='video/mp4; codecs="avc1.64001E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/438506/video-211599-h264_base.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/438506/video-211599-webm.webm" type="video/webm"></source>
+You'll need an HTML5 capable browser to see this content.
+</video>
+<img alt="Photo-main" class="has_played_hide poster landscape" src="https://s3.amazonaws.com/ksr/projects/438506/photo-main.jpg?1397808044" />
+<div class="play_button_big play_button_dark absolute-center rounded has_played_hide">
+<span class="ss-icon ss-play"></span>
+Play
+</div>
+<div class="player_controls clearfix absolute-bottom mb2 rounded white bg-green-dark forces-video-controls_hide">
+<div class="left">
+<a class="button button_icon button_dark playpause play mr1">
+<span class="play ss-icon ss-play"></span>
+<span class="pause ss-icon ss-pause"></span>
+</a>
+<span class="time current_time h12 left">00:00</span>
+</div>
+<div class="right">
+<span class="time total_time h12 left mr1">00:00</span>
+<a class="left button button_icon button_icon_white volume">
+<span class="ss-icon ss-volume icon_volume_nudge"></span>
+<span class="ss-icon ss-highvolume"></span>
+</a>
+<div class="volume_container left">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+<a class="left button button_icon button_icon_white fullscreen">
+<span class="ss-icon ss-expand"></span>
+<span class="ss-icon ss-contract"></span>
+</a>
+</div>
+<div class="clip">
+<div class="progress_container pr1 pl1">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="buffer progress_bar_buffer"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div data-project-state="failed" id="about">
+<div class="NS_projects__project_share clearfix py2 pl1 pr1">
+<ul class="left list-inline no-margin h5 bold">
+<li class="facebook mr2">
+<a href="https://www.kickstarter.com/projects/375726835/niftymancer"><span class="ss-icon ss-social ss-facebook color-facebook"></span>
+<span class="color-facebook">Share</span>
+<span class="share_bubble"><div class="triangle grey"></div>
+<div class="triangle white"></div>
+<span class="count"></span></span>
+</a></li>
+<li class="twitter mr2">
+<a  href="https://twitter.com/intent/tweet?text=Niftymancer%20by%20Thomas%20Sitch&amp;via=kickstarter&amp;url=http://kck.st/Z0BCdQ" rel="nofollow"><span class="ss-icon ss-social ss-twitter color-twitter"></span>
+<span class="color-twitter">Tweet</span>
+</a></li>
+<li class="embed">
+<a href="/projects/375726835/niftymancer/widget" class="remote_modal_dialog grey-dark" data-modal-title="Embed a widget on your site" data-tracker-name="Embed"><span class="ss-icon ss-navigateleft"></span>
+<span class="ss-icon ss-navigateright"></span>
+Embed
+</a></li>
+</ul>
+<ul class="right list-inline no-margin h5 bold">
+<li class="curate mr2">
+</li>
+<li class="remind">
+<div class="ajax-container" id="watching-widget">
+<div class="Project979417512" data-conditions="[{&quot;is_starred&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div id=\&quot;unwatch\&quot;&gt;\n&lt;a href=\&quot;/projects/375726835/niftymancer/unwatch\&quot; class=\&quot;on\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"></div><div class="Project979417512" data-conditions="[{&quot;!is_starred&quot;:true}]" data-evaluation="true" data-render="&quot;&lt;div id=\&quot;watch\&quot;&gt;\n&lt;a href=\&quot;/projects/375726835/niftymancer/watch\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;span class=\&quot;text\&quot;&gt;\n&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"><div id="watch">
+<a href="/projects/375726835/niftymancer/watch"><span class="ss-icon ss-star"></span>
+<span class="text">
+</span>
+</a></div>
+
+</div></div>
+</li>
+</ul>
+</div>
+
+<div class="short_blurb py2 pl1 pr1">
+<p class="h3">A fun, gothic, lane defense RPG where you summon ghosts and zombies to protect yourself from “evil” pixies and forest creatures.</p>
+</div>
+<div class="full-description">
+<div class="template asset" contenteditable="false" data-edit_url="/projects/375726835/niftymancer/assets/347624/edit" data-id="347624">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/347/624/8c9f2f13f6349be684138050dca7bb34_large.png?1358746263"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/375726835/niftymancer/assets/446263/edit" data-id="446263">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/446/263/18284431266ddfafbd5dc9aa0ee8f099_large.jpg?1363318854"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/375726835/niftymancer/assets/446265/edit" data-id="446265">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/446/265/1726f03eccbb2d2ce9b0fbe082fe2fef_large.jpg?1363318873"></figure>
+</div>
+<p><b>Now with PLAYABLE prototype demo:</b></p><p>Check it out at:</p><p><a href="http://www.niftymancer.com/NiftyDemo.html" target="_blank">http://www.niftymancer.com/NiftyDemo.html</a></p><p><b>TIME FOR ZOMBIES TO
+OVERRUN THE FARM…</b></p><p><b><i>Niftymancer </i></b>combines a lane defense with a match three game (think “Plants versus Zombies” meets “Triple Town”), tied together with an RPG-style setting with quests, magic items, and boss fights.  The whimsical, sinister, and curious creatures of Niftymancer give life to the creative work of artist/cartoonist JUSTIN HILLGROVE, of <a href="http://impsandmonsters.com" target="_blank">impsandmonsters.com</a> fame! </p><p>Niftymancer is being
+initially released on the web in flash, and (with your help!) on iPad.</p>
+
+
+
+<p>The game casts you as a
+misunderstood Necromancer, trying to do your experiments in peace.  However, the mean, wicked forest creatures
+and fairies are “upset” that you’re summoning ghosts and zombies in <b>their</b>
+forest, and are out to smash your laboratory.  It draws a lot of inspiration from dark fantasies like “Coraline” and “The Nightmare Before Christmas.”</p><p><b>…BUT ONLY WITH YOUR HELP!</b></p><p>We’ve taken <b><i>Niftymancer</i></b>
+from spark of imagination to prototype, but there are a lot of expenses
+associated with building the art, worlds, levels, music, and iOS version of the
+game.  Our minimum target gives us enough
+to cover the basics and realize the game; we’d like to do that and carry it
+further to be truly fantastic.  You can make
+that possible!</p><p>Your support is deeply
+appreciated, and we have some cool rewards in the form of special art from
+Justin Hillgrove and the art team, as well as special powers, pets, and
+benefits with which you may smite those troublesome pixies.
+
+</p>
+
+
+
+<p>Read on, fellow practitioner
+of the Dark Arts…</p><div class="template asset" contenteditable="false" data-edit_url="/projects/375726835/niftymancer/assets/413755/edit" data-id="413755">
+<figure><img alt="Tee-shirt art (Female Niftymancer)" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/413/755/84f47e2b6b4855bdc8986abca40c8178_large.jpg?1362083495"><figcaption>Tee-shirt art (Female Niftymancer)</figcaption></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/375726835/niftymancer/assets/347632/edit" data-id="347632">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/347/632/bf63c88a08793b9de48bb19a20faaf58_large.jpg?1358746663"></figure>
+</div><p>We’re taking what you expect from a fantasy game and flipping it on its head.  And giving it a dark, creepy, fun soul.</p>
+
+
+
+<p>Niftymancer creates a great “mid-core” game by combining fast, fun mechanics (what some might call “casual”, although that’s a bad word in some quarters) with compelling, in-depth, RPG-style world map and setting. We want
+the basic gameplay to be addictive and fun, and the progression map to actually
+tie things together with a light fantasy RPG, enhanced by multiplayer elements
+that let you help out your friends, brag, and collaborate on quests.</p>
+
+
+
+<ul>
+<li>Available on the web and (hopefully) the iPad.</li>
+<li>Not some obnoxious farm game.You play a Necromancer destroying the
+     pixie’s forest.  Three cheers for
+     wanton destruction!</li>
+<li>Cute, but in a creepy kind of way.  The style of Niftymancer is heavily
+     influenced by Tim Burton, <i>Coraline</i>, and other dark fantasies.</li>
+<li>Engaging lane defense.  Summoning your zombies and building your
+     laboratory is strategic, compelling, and fast paced.</li>
+<li>Fun fantasy narrative.  You explore your story as the
+     Necromancer makes his or her way deeper into the world.</li>
+<li>Help your friends.  Brag to your friends.  You can send your pets out to help your
+     buddies as they try to solve difficult gameboards or defeat boss monsters.</li>
+<li>Quest system.  The game world is tied together with questing, story, and
+     exploration.</li>
+<li>The art of Justin Hillgrove!</li>
+<li>The music of Midnight Syndicate!</li>
+</ul><div class="template asset" contenteditable="false" data-edit_url="/projects/375726835/niftymancer/assets/348034/edit" data-id="348034">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/348/034/f090db0a68f7b195cb083fc96951e84d_large.jpg?1358782923"></figure>
+</div><p>This project isn’t in the
+“dream on” phase.  We’re leveraging a
+strong multiplayer server backend, core technology, and a fun game prototype.We’ve been playing with the core gameplay to the
+point that we know it’s fun, and we have a vision we want to take to the world.</p>
+
+
+
+<p>We need your help to bring
+something fresh and new and wicked to the game space.  Your assistance makes it possible for us to
+build the creatures, design the levels, animate the world, create the music,
+and add more exciting RPG game systems.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/375726835/niftymancer/assets/348040/edit" data-id="348040">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/348/040/83a399a2e2c4b788294e9607bc44c464_large.jpg?1358783192"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/375726835/niftymancer/assets/410477/edit" data-id="410477">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/410/477/956b24fefccd5e7b6d0227f44d0c6a8c_large.png?1361942750"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/375726835/niftymancer/assets/410478/edit" data-id="410478">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/410/478/b612bca7760cebdf0d64e1864d207e90_large.png?1361942782"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/375726835/niftymancer/assets/410479/edit" data-id="410479">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/410/479/ef0650cd385aefcc0cdb4d8d303275fa_large.png?1361942808"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/375726835/niftymancer/assets/410485/edit" data-id="410485">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/410/485/cfc823586eac744f51ee38edd3eec061_large.png?1361942947"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/375726835/niftymancer/assets/410486/edit" data-id="410486">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/410/486/6eb20bfc4eab5413d28eba012ebc4850_large.png?1361942974"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/375726835/niftymancer/assets/410487/edit" data-id="410487">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/410/487/580ea107158c197e127d8531ecfd0ed3_large.png?1361942994"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/375726835/niftymancer/assets/410488/edit" data-id="410488">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/410/488/25bbe1ab98565d312fca31999c1089f0_large.png?1361943018"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/375726835/niftymancer/assets/410490/edit" data-id="410490">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/410/490/20a7a7856ca192e6b4c0c98accf8e30c_large.png?1361943041"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/375726835/niftymancer/assets/410491/edit" data-id="410491">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/410/491/4a7a608acff5e99d67759614c26a8135_large.png?1361943063"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/375726835/niftymancer/assets/410492/edit" data-id="410492">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/410/492/b1ddd72af31aecf0d0c81d99f7ce9025_large.png?1361943088"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/375726835/niftymancer/assets/410495/edit" data-id="410495">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/410/495/03aa2749ffc7d54615fb52209a621106_large.png?1361943107"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/375726835/niftymancer/assets/410496/edit" data-id="410496">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/410/496/2e3bc7d22a1c7fbf0ecbb78884d51641_large.png?1361943128"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/375726835/niftymancer/assets/410497/edit" data-id="410497">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/410/497/e4a9a37a182cb8c1c38f948ce809fc26_large.png?1361943150"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/375726835/niftymancer/assets/410498/edit" data-id="410498">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/410/498/ee7ccd1a97523fa44459c44ce1b570c7_large.png?1361943171"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/375726835/niftymancer/assets/410502/edit" data-id="410502">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/410/502/2783ea3b8d1c4e9bf0fc15d34c49d240_large.png?1361943245"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/375726835/niftymancer/assets/410505/edit" data-id="410505">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/410/505/5d6de54f48eaa3959a3fdd3fbc37f9da_large.png?1361943275"></figure>
+</div>
+<p><b>“WHO ARE YOU GUYS?More importantly, are you some dude in his
+basement or are you experienced game developers?”</b></p>
+
+
+
+<p>The <b><i>Niftymancer</i></b>
+team has an extensive bench of game developer talent spanning more than a
+decade of Massively Multiplayer, Social and Action games.</p>
+
+
+
+<p><b><i>Thomas Sitch</i></b> spent ten years making MMOs over such titles as <b><i>Shadowbane</i></b>,
+<b><i>Pirates of the Burning Sea</i></b>, and <b><i>Wizard-101</i></b>, before
+striking out on his own to be an independent game developer.  He brings a wide range of skill in
+engineering, design, and leadership to the team.</p>
+
+
+
+<p><b><i>Justin Hillgrove</i></b> and his work have been rapidly gaining fame and
+notoriety in the Pacific Northwest and
+beyond.  Justin’s work (documented at <a href="http://www.impsandmonsters.com/" target="_blank">www.impsandmonsters.com</a>), ranges
+from the silly to the truly magical.</p>
+
+
+
+<p><b><i>Morgan Lavigne</i></b> is a programmer with a long list of social games
+under his belt, including <b><i>Collapse! Blast</i></b> and <b><i>Bayou Blast</i></b>.  When not hammering out code into pretty
+shapes, Morgan terrorizes the greater Seattle
+area with his band, Steel Tigers of Death.</p>
+
+
+
+<p><b><i>Robb Sanchez</i></b> is a veteran artist animator, with over 15 years in the game industry.  An avid surfer and mountain biker, Robb also teaches digital media at the college level. </p><p><i><b>Lindsey Krassin</b></i> graduated from the Art Institute of Seattle in 2006 with a degree in Media Art and Animation and subsequently worked for six years in the video game industry as a character animator. She then made the leap to children's book artist, animating and illustrating two digital titles: <i>Alice in Wonderland</i> and <i>Hansel and Gretel</i>, before returning to the game industry and taking a faculty position at the Art Institute.<br><br><i><b>Joowon Kim</b></i> graduated from Guildhall at SMU with Masters in Interactive Technology in Digital Game Development specializing in Art Creation and went on to spent two years doing MMO development at KingsIsle Entertainment. Her undergraduate study in computer science helped her work flawlessly with programmers, and she also enjoys brainstorming new game ideas with other creative people. When not wrapped in game development, she enjoys yoga, running, and concept sketching.<br><br><i><b>Beth Hammer</b></i> is a Seattle based Graphic Designer and Illustrator, with an undying love of zombies and kids cartoons.<br><br><i><b>Lucy Bellwood</b></i> is a freelance illustrator and cartoonist operating out of Periscope Studio in Portland, OR. When not glued to her drawing board, she can be found sailing traditional tall ships up and down the West coast and dancing the Blues. You can follow her adventures online at <a href="http://lucybellwood.com" target="_blank">lucybellwood.com</a>.<br><br><i><b>Milo Hayden</b></i> is a composer and sound designer from Portland, OR. It's been his life-long dream to work on a video game. He is an avid fan of monster sounds.</p><h1>MUSIC</h1><p><br>We are excited to be working with the Midnight Syndicate for Niftymancer’s music! </p><p><a href="http://www.midnightsyndicate.com/" target="_blank">http://www.midnightsyndicate.com</a></p><div class="template asset" contenteditable="false" data-edit_url="/projects/375726835/niftymancer/assets/410467/edit" data-id="410467">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/410/467/e0e90f70b6ec1a91cafbad5dbb3ca10a_large.jpg?1361942296"></figure>
+</div><h1>STRETCH GOALS</h1><p>We’ve budgeted Niftymancer for the minimum we need (after deducting Amazon fees, Kickstarter fees, and pledge awards) to realize the vision and core spirit of the game.  That said, there are a lot of awesome things we want to be able to do, and we hope that with your support and the support of the community, we can expand the game’s release into many of these cool areas.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/375726835/niftymancer/assets/410472/edit" data-id="410472">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/410/472/5f7048cd9be1a7efe551ff8404676c14_large.jpg?1361942469"></figure>
+</div><p>$50,000 – Boss Fights &amp; the Realm of Flame<br>We have an excellent boss fight system that lets friends collaborate with each other to take down the big bad adversaries, and if we hit the 50k mark, that system will get the coding and art it needs!  Also, the fire elementals, fire mephits, and fyre-fae will also get the art they need, along with cool fire-based loot!<br><br>$60,000 – More content and additional Midnight Syndicate Music<br>This stretch goal lets us get a lot of additional magic items and customization options and, most importantly, additional musical tracks composed by Midnight Syndicate!<br><br>$70,000 – Support from fans at this level will be incredibly exciting, because it will give us the coding and licensing budget we need to get Niftymancer out on the iPad!<br><br>$80,000 – This is an awesome content goal, because it gives us the Frozen Realm, yeti pets, frost-fae, and ice themed magic items.  Levels here involve freeing ghosts from icy prisons and the occasional snowball fight.<br><br>$90,000 – Reaching this goal gives us the support to add additional Midnight Syndicate music (to give full diversity to the elemental realms), and also unlocks the Halls of the Cavern King and its subterranean denizens, sverfneblin, and earth elementals.<br><br>$100,000 – The cloud realm, ruled by the sky-fae monarch, Peralda, Queen of the Sylphs!  This is a gorgeous place of floating castles, misty islands, and other lovely things just waiting to be despoiled by a Necromancer in need of (very important) spell components.
+</p><div class="template asset" contenteditable="false" data-edit_url="/projects/375726835/niftymancer/assets/348074/edit" data-id="348074">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/348/074/265dba8f5ce4f2299de7f7ffcc3e0965_large.jpg?1358783750"></figure>
+</div>
+<p>We live in an extraordinary
+time, when a few people with a dream can tap the energy and support of people
+like you!We feel deeply honored to have
+this opportunity, and to create something fun and extraordinary.</p>
+
+
+
+<p>Your support makes it
+possible to bring a dream like this to life; not some marketing driven carbon
+copy cranked out by one of the big publishers, but a dream realized through hard
+work, passion, and a little luck… and, of course, YOU!</p>
+
+
+
+<p>Thank you!</p>
+</div>
+<div id="risks">
+<h2 class="title grey-dark mt6 mb4">
+<span>Risks and challenges</span>
+<a href="/help/faq/kickstarter%20basics#Acco" class="right normal h5" target="_blank">Learn about accountability on Kickstarter</a>
+<div class="divider clear"></div>
+</h2>
+<p><p>We’ve worked to mitigate the technological risk by leveraging Trilabrys core technology, but all game projects entail a large amount of work.  In general, software is difficult to finish, and unexpected hurdles or technical difficulties may arise, even for industry veterans. </p>
+
+<p>Enough of the game framework is in place for us to be confident that the game will ship this year, but there is also the possibility that we may slip from our August target date.</p>
+
+<p>There are challenges in doing the iOS port, and in other Apple compatibility and performance issues.  Here, as with the rest of the software, there could be delays, and we will also be at the mercy of the App Store (for the iOS version, not the web).</p></p>
+</div>
+</div>
+<div class="NS-projects-faqs" id="project-faqs">
+<h2 class="title grey-dark mt6 mb4">
+FAQ
+<div class="divider clear"></div>
+</h2>
+<ul class="faqs">
+
+</ul>
+<div class="faq-ask-box">
+<p>
+<strong>Have a question?</strong>
+If the info above doesn't help, you can ask the project creator directly.
+</p>
+<a href="/projects/375726835/niftymancer/messages/new?message%5Bto%5D=375726835&amp;mode=FAQ" class="button button_blue remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Ask a question about Niftymancer">Ask a question</a>
+
+</div>
+</div>
+
+<div class="mt4 ml1 mr1 mb2" id="report-issue-wrap">
+<a href="/login?then=%2Fprojects%2F375726835%2Fniftymancer" class="button button_grey">Report this project to Kickstarter</a>
+</div>
+</div>
+<div class="NS-projects-rightcol grid_5" id="rightcol">
+<div class="NS_projects__ecom">
+<div class="digits_5 pb2 pl2 pt2" id="stats">
+<h5>
+<div class="num h48 no-margin" data-backers-count="93" id="backers_count"><data class="Project979417512" data-format="number" data-value="93" itemprop="Project[backers_count]">93</data></div>
+<span><data class="Project979417512" data-attr="backers_count" data-format="pluralize" data-value="93" data-word="Backer">Backers</data></span>
+</h5>
+<h5>
+<div class="num h48 no-margin" data-goal="40000.0" data-percent-raised="0.59484425" data-pledged="23793.77" id="pledged">
+<data class="Project979417512" data-currency="USD" data-format="shorter_money" data-precision="0" data-value="23793" data-without_code="true" itemprop="Project[pledged]">$23,793</data>
+<span class="money usd project_currency_code"></span>
+</div>
+pledged of
+<span class="money usd no-code">$40,000</span>
+goal
+</h5>
+<span data-duration="39.958333333333336" data-end_time="2013-04-09T15:44:42-04:00" data-hours-remaining="0" id="project_duration_data"></span>
+<div class="Project979417512" data-conditions="[{&quot;!state&quot;:[&quot;canceled&quot;,&quot;suspended&quot;]}]" data-evaluation="true" data-render="&quot;&lt;h5 class=\&quot;poll \&quot; data-dynamic=\&quot;5\&quot; data-end_time=\&quot;2013-04-09T15:44:42-04:00\&quot; data-poll_url=\&quot;https://d2oher2uhvl0ur.cloudfront.net/projects/375726835/niftymancer/stats.json\&quot;&gt;\n&lt;div class=\&quot;num h48 no-margin\&quot;&gt;0&lt;/div&gt;\n&lt;span class=\&quot;text\&quot;&gt;seconds to go&lt;/span&gt;\n&lt;/h5&gt;\n&quot;"><h5 class="poll " data-dynamic="5" data-end_time="2013-04-09T15:44:42-04:00" data-poll_url="https://d2oher2uhvl0ur.cloudfront.net/projects/375726835/niftymancer/stats.json">
+<div class="num h48 no-margin">0</div>
+<span class="text">seconds to go</span>
+</h5>
+</div></div>
+<div class="Project979417512" data-conditions="[{&quot;state&quot;:&quot;live&quot;},{&quot;!ended?&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;pr2 pl2\&quot; id=\&quot;pledge-wrap\&quot;&gt;\n&lt;a href=\&quot;/projects/375726835/niftymancer/pledge/new?clicked_reward=false\&quot; class=\&quot;button button_green button_box button_block\&quot; id=\&quot;button-back-this-proj\&quot; title=\&quot;Back this project\&quot;&gt;Back This Project &lt;small class=&#39;h6 normal block green-dark&#39;&gt;&lt;span class=\&quot;money usd \&quot;&gt;$1&lt;/span&gt; minimum pledge&lt;/small&gt;&lt;/a&gt;\n&lt;/div&gt;\n&quot;"></div><div class="Project979417512" data-conditions="[{&quot;state&quot;:&quot;live&quot;}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;p2\&quot; id=\&quot;banner\&quot;&gt;\n&lt;p class=\&quot;tiny_type no-margin\&quot;&gt;\nThis project will only be funded if at least\n&lt;span class=\&quot;money usd \&quot;&gt;$40,000&lt;/span&gt;\nis pledged by\n&lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;llll z\&quot; datetime=\&quot;2013-04-09T15:44:42-04:00\&quot;&gt;Tue, Apr 9 2013 3:44 pm EDT&lt;/time&gt;.\n&lt;/p&gt;\n&lt;/div&gt;\n&quot;"></div></div>
+
+<div class="NS_projects__rightcol_projectby bg-blue-light rounded">
+<div class="p2 clearfix">
+<div class="avatar inline-block align-middle">
+<a href="/projects/375726835/niftymancer/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography"><img alt="Drhorrible01a.small" class="avatar-small" height="80" src="https://s3.amazonaws.com/ksr/avatars/708034/DrHorrible01a.small.jpg?1361943689" width="80" />
+</a></div>
+<div class="creator-name inline-block align-middle ml1">
+<h6 class="mb1">Project by</h6>
+<h5 class="mb1">
+<a href="/projects/375726835/niftymancer/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">Thomas Sitch</a>
+</h5>
+<p class="location h6 bold mb1">
+<a href="/discover/places/seattle-wa">Seattle, WA</a>
+</p>
+</div>
+</div>
+<div class="creator-details pl2 pr2 pb1">
+<ul class="list-simple h5 mb1">
+<li class="projects">
+<span class="ss-icon ss-kickstarter grey-dark margin-right"></span>
+<span class="text">
+First created
+<span class="divider">&middot;</span>
+<a href="/profile/375726835/backed" class="green-dark bold more-button remote_modal_dialog" data-modal-title="Projects backed by Thomas Sitch">12 backed</a>
+</span>
+</li>
+<li class="facebook-connected">
+<span class="ss-icon ss-facebook facebook color-facebook margin-right"></span>
+<span class="text">
+<a href="https://www.facebook.com/1069801314" class="popup" target="_blank">Thomas Sitch</a>
+<span class="number h6">
+1194
+friends
+</span>
+</span>
+
+</li>
+</ul>
+</div>
+<div class="footer center h5 bold clearfix rounded-bottom clip">
+<a href="/projects/375726835/niftymancer/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">See full bio</a>
+<a href="/projects/375726835/niftymancer/messages/new?message%5Bto%5D=375726835" class="remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Send a message to Thomas Sitch">Contact me</a>
+
+</div>
+</div>
+
+<ul class="NS-projects-rightcol-rewards rounded clip list mt2" data-reward-count="17" id="what-you-get">
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$5</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+7 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Haunting Help --
+In appreciation for helping us get started, you get an exclusive Niftymancer WALLPAPER,
+featuring the work of the Niftymancer art team and Justin Hillgrove.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-06-01">Jun 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$10</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+17 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Baleful Benefactor --
+Special INFINITE ENERGY and a random useful MAGIC ITEM when Niftymancer opens its
+doors! Also includes the wallpaper.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-08-01">Aug 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$25</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+14 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Awesome Acolyte --
+Receive THREE random magic items, including one legendary (PURPLE) when you begin
+playing Niftymancer. Additionally, you&#39;ll be listed in the OFFICIAL CREDITS as a benefactor
+of the game. Includes all previous awards.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-08-01">Aug 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$30</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+15 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Friendly Phantom --
+Impress your friends with the Niftymancer COLORING BOOK, featuring the work of the
+entire art team! Includes all previous awards</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-08-01">Aug 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $20 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$50</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+11 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Thoughtful Thaumaturgist --
+In addition to the coloring book and other prior awards, you get the special BLACK CAT pet
+in-game. Like all pets in game, it can be used to help you and to be lent to your friends to
+help them, and will be superior to any of the cats available in the first several regions.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-08-01">Aug 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $20 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$75</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+2 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Curious Conjurer --
+Receive an official glossy Niftymancer POSTER! Includes all previous awards.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-08-01">Aug 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $20 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$100</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Welcome Wizard --
+Receive the NIFTYMANCER poster, but this one will be signed by the whole team at
+Trilabrys Interactive. Includes all previous awards.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-08-01">Aug 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $20 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$150</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Spiffy Sorcerer --
+Your generous donation gets you not just the poster, but a tee shirt of the wickedly
+cool “Better Living Through Spells and Hexes”, illustrated by Justin Hillgrove. (Male
+Necromancer version)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-08-01">Aug 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $20 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$150</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+3 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Spiffy Sorceress --
+Your generous donation gets you not just the poster, but a tee shirt of the wickedly
+cool “Better Living Through Spells and Hexes”, illustrated by Justin Hillgrove. (Female
+Necromancer version)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-08-01">Aug 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $20 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$200</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+4 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Splendid Spellbinder --
+Your outstanding assistance will get you the tee shirt, poster, and other previous swag,
+along with a limited edition BLUE FAERIE DRAGON pet. Like all pets in game, it can be
+used to help you and to be lent to your friends to help them. The Blue Faerie Dragon will
+only be given to people who help with the Kickstarter campaign, so it will give you extra
+
+bragging rights!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-08-01">Aug 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $20 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$350</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(19 left of 20)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Notorious Nazgul --
+In addition to the tee-shirt and all the previous awesome goodies, our designers will work with you to build a QUEST within the Niftymancer game world!  Other players will see and play your quest, for a cool magic item in one of the many realms of the game world.  Includes all of the digital items, pets, coloring book, poster, and tee shirt.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-08-01">Aug 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $20 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Magnificent Magician --
+You get to design a magical item that will be adapted by our team and integrated into the game.  You will be able to gift this item to your friends, and all other players will have the ability to find the item in-game, and learn the lore about it.  Includes all of the digital items, pets, coloring book, poster, and tee shirt.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-08-01">Aug 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $20 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$800</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+2 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Enlightened Evoker --
+This one is sweet.  You get a limited edition, high quality Niftymancer print of an original work done by Justin Hillgrove, specially numbered and signed, and rendered on watercolor paper.  Ideal for framing and putting above your desk! (Autographed by the team, if you so desire).  Includes all of the digital items, pets, coloring book, poster, and tee shirt.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-08-01">Aug 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $20 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$1,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(9 left of 10)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Malificent Magister --
+A monster you design will be adapted by our team and integrated into the game!  What will it be?  A wonderous dryad queen?  An imp or elemental?  Some sort of undead horror?  Editorial discretion applies.  Includes all of the digital items, pets, coloring book, poster, and tee shirt.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-08-01">Aug 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $20 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$1,500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(10 left of 10)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Luminous Lich --
+You get to design a monster that our team will render (editorial discretion applies), and you will automatically get a pet version of that monster that helps you AND can be lent to friends to help them!  There are few better ways to show off... Includes all of the digital items, pets, coloring book, poster, and tee shirt.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-08-01">Aug 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $20 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$5,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(4 left of 5)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Nifty Necromancer --
+You get to be a FAIRY or NECROMANCER god or goddess (you can be a BAD FAIRY deity if you wish).  You get to work with our design team and Justin to envision a boss monster and boss fight that involves your persona.  All other players will encounter your character visage at some point in the game, and you will get a magical item related to it that can be gifted to any of your friends (but only by you).  You&#39;ll also receive an autographed print on canvas of your character from Justin.  Includes all of the digital items, pets, coloring book, poster, and tee shirt.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-08-01">Aug 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $20 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$10,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(5 left of 5)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Amazing Archlich --
+This is it.  The MEGAPRIZE; a veritable dragon hoard, which celebrates YOU as one of the major patrons of Niftymancer!  This prize combines all prior awards, including the tee shirt, custom magic item, custom monster, custom monster pet, limited edition print, and necromancer/fairy deification and grants a “Very Special Thanks To” in the credits and on the main canvas page.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-08-01">Aug 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+</ul>
+
+<div class="p2" id="meta">
+<h5>Funding period</h5>
+<p class="tiny_type">
+<time class="js-adjust" data-format="ll" datetime="2013-02-28T15:44:42-05:00">Feb 28, 2013</time> - 
+<time class="js-adjust" data-format="ll" datetime="2013-04-09T15:44:42-04:00">Apr 9, 2013</time>
+(40 days)
+</p>
+</div>
+</div>
+
+</div>
+
+<a href="#" id="video_mode_tab" style="display: none;">
+View in Video Mode
+</a>
+
+</div>
+</div>
+
+
+</div>
+
+<div class="h5 bg-green-dark" id="mega-footer-wrap">
+<div class="bg-green-dark white full-height" id="footer-newsletter-signup">
+<div class="container py4">
+<div class="grid_8 prefix_4 suffix_4 center mt4">
+<h2>
+Eureka! You've found
+<br>
+our little secret.
+</h2>
+<p>Sign up for our Happening email for all the inside info about arts and culture in the Kickstarter universe and beyond.</p>
+<div class="newsletter_signup">
+<form accept-charset="UTF-8" action="/newsletters/happening/signup" class="overlabels" method="post"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /><input class="hidden" name="authenticity_token" type="hidden" value="PbDwr8id51Gcd78U182Dmtk91RqA13hh/ItkVjagP94=" /></div><input class="hidden" id="location" name="location" type="hidden" value="footer" />
+<textarea class="hide textarea" id="comment" name="comment">
+</textarea>
+<div class="field newsletter">
+<label class="overlabel z1 overlabel-newsletter">Email address</label>
+<input class="text" id="email" name="email" type="text" />
+</div>
+<input class="button button_green submit" name="commit" type="submit" value="Submit" />
+</form>
+
+</div>
+
+</div>
+</div>
+</div>
+<div class="container relative" id="mega-footer">
+<span class="scissors icon-scissors-1"></span>
+<div class="grid_16 alpha omega pt4 pb2" id="mega-footer-links">
+<div class="grid_4 link-group">
+<h5 class="white">About us</h5>
+<ul class="list">
+<li><a href="/year/2013/?ref=footer">2013 highlights</a></li>
+<li><a href="/year/2012?ref=footer">2012 highlights</a></li>
+<li><a href="/team?ref=footer">Who we are</a></li>
+<li><a href="/jobs?ref=footer">Jobs</a></li>
+<li><a href="/press?ref=footer">Press</a></li>
+<li><a href="/help/stats?ref=footer">Stats</a></li>
+<li><a href="/newsletters/weekly">Projects we love</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group">
+<h5><a href="/help?ref=footer" class="white">Help</a></h5>
+<ul class="list">
+<li><a href="/hello?ref=footer">What is Kickstarter?</a></li>
+<li><a href="/help?ref=footer">FAQ</a></li>
+<li><a href="/contact?ref=footer">Support</a></li>
+<li><a href="/help/school?ref=footer">Kickstarter School</a></li>
+<li><a href="/terms-of-use?ref=footer">Terms of Use</a></li>
+<li><a href="/privacy?ref=footer">Privacy Policy</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group alpha omega suffix_1">
+<h5 class="alpha"><a href="/discover/advanced?ref=footer" class="white">Discover</a></h5>
+<ul class="column column-0 grid_2 list">
+<li><a href="/discover/categories/art?ref=footer">Art</a></li>
+<li><a href="/discover/categories/comics?ref=footer">Comics</a></li>
+<li><a href="/discover/categories/dance?ref=footer">Dance</a></li>
+<li><a href="/discover/categories/design?ref=footer">Design</a></li>
+<li><a href="/discover/categories/fashion?ref=footer">Fashion</a></li>
+<li><a href="/discover/categories/film%20&amp;%20video?ref=footer">Film &amp; Video</a></li>
+<li><a href="/discover/categories/food?ref=footer">Food</a></li>
+</ul>
+<ul class="column column-1 grid_2 list">
+<li><a href="/discover/categories/games?ref=footer">Games</a></li>
+<li><a href="/discover/categories/music?ref=footer">Music</a></li>
+<li><a href="/discover/categories/photography?ref=footer">Photography</a></li>
+<li><a href="/discover/categories/publishing?ref=footer">Publishing</a></li>
+<li><a href="/discover/categories/technology?ref=footer">Technology</a></li>
+<li><a href="/discover/categories/theater?ref=footer">Theater</a></li>
+</ul>
+</div>
+<div class="grid_3 link-group">
+<h5 class="white">Hello</h5>
+<ul class="list">
+<li>
+<a href="https://twitter.com/kickstarter"><span class="ss-icon ss-social-regular ss-twitter"></span>
+Twitter
+</a></li>
+<li>
+<a href="https://www.facebook.com/Kickstarter"><span class="ss-icon ss-social-regular ss-facebook"></span>
+Facebook
+</a></li>
+<li>
+<a href="http://kickstarter.tumblr.com"><span class="ss-icon ss-social-regular ss-tumblr"></span>
+Tumblr
+</a></li>
+<li>
+<a href="http://instagram.com/kickstarter"><span class="ss-icon ss-social-regular ss-instagram"></span>
+Instagram
+</a></li>
+<li>
+<a href="https://vine.co/Kickstarter"><span class="ss-icon ss-social-regular ss-vine"></span>
+Vine
+</a></li>
+<li>
+<a href="/blog?ref=footer">Blog</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="grid_16 py4" id="mega-footer-bottom">
+<div class="logo left">
+<a href="/" class="grey-dark"><span class="ss-icon h3">KICKSTARTER</span>
+</a></div>
+<p class="right h5 grey-dark">
+&copy;
+2014
+Kickstarter, Inc.
+</p>
+</div>
+</div>
+</div>
+
+<script>
+  //<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    var analytics_vars = { google_analytics_id : "UA-7621056-1", logged_in : "false", social_user: "false" }
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.mixpanel_id = '75b1d24a516ecfc955eadfadc4910661';
+    window.mixpanel_debug = false;
+  //]]>
+</script>
+
+
+<noscript>
+<img alt="Quantcast" border="0" height="1" src="//secure.quantserve.com/pixel/p-34IbSpw2K94Sg.gif" style="display:none" width="1" />
+</noscript>
+
+
+<script>
+  //<![CDATA[
+    window.benchmark = (typeof window.performance == 'object' && typeof window.performance.mark == 'function');
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    (function (root) {
+      function instrument_function (original) {
+        return function () {
+          try {
+            return original.apply(this, arguments);
+          } catch (e) {
+            if (e.stack && root.Honeybadger) {
+              Honeybadger.notify(e, {
+                current_project : root.current_project,
+                current_user : root.current_user
+              });
+            }
+            throw(e);
+          }
+        };
+      }
+      root.instrument_function = instrument_function;
+    }(this));
+  //]]>
+</script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+
+<script>
+  //<![CDATA[
+    (function(){function c(a){this.local_start_time=new Date;this.settings={cookie_name:"request_time"};for(var b in a)this.settings[b]=a[b];this.get_remote_offset()}c.prototype.get_remote_offset=function(){this.cookie_value=this.read_cookie();var a=new Date(this.cookie_value);if(!this.cookie_value||"Invalid Date"===a.toString()){if(this.remote_offset=this.read_cookie("local_offset"))this.remote_offset=parseInt(this.remote_offset,10)}else this.remote_offset=a-this.local_start_time;"undefined"!==typeof this.remote_offset&& !isNaN(this.remote_offset)?(document.cookie="local_offset="+this.remote_offset+"; path=/",this.is_set=!0):this.is_set=!1};c.prototype.time_units=[["milliseconds",1],["seconds",1E3],["minutes",6E4],["hours",36E5],["days",864E5]];c.prototype.get_units_in_interval=function(a,b){var d=a.replace(/^\w/,function(d){return"get"+d.toUpperCase()});return b[d]()};c.prototype.milliseconds_in_day=function(a){"undefined"===typeof a&&(a=new Date);for(var b=0,d=this.time_units.length-2;0<=d;d--)b+=this.get_units_in_interval(this.time_units[d][0], a)*this.time_units[d][1];return b};c.prototype.milliseconds_in_interval=function(a,b){return this.milliseconds_in_day(b)%a};c.prototype.milliseconds_to_next_interval=function(a,b){return a-this.milliseconds_in_interval(a,b)};c.prototype.pluralize=function(a,b){1===b&&(a=a.replace(/s$/,""));return a};c.prototype.read_cookie=function(a){for(var b=window.document.cookie.split(";"),a=(a||this.settings.cookie_name)+"=",d=0;d<b.length;d++){for(var e=b[d];" "==e.charAt(0);)e=e.substring(1,e.length);if(0== e.indexOf(a))return b=e.substring(a.length,e.length),decodeURIComponent(b).replace(/\+/g," ")}return null};c.prototype.destroy_cookie=function(a){var b=new Date;a||(a=this.settings.cookie_name);b.setTime(b.getTime()-864E5);window.document.cookie=a+"=; expires="+b.toGMTString()+"; path=/"};c.prototype.get_remote_time=function(){var a=new Date,b=a.getTime()+this.remote_offset;return a=a.setTime(b)};window.ksr_page_clock=new c})(); (function(){function c(d,a,b){if(d){this.options={unit_base:{seconds:119,minutes:119,hours:72,days:0},end_phrase:d.getAttribute("data-word")||"to go",count_down:d.getAttribute("data-dynamic")||!1};for(k in b)this.options[k]=b[k];this.clock=a;this.time_units=this.clock.time_units.slice(1);this.element=d;this.clock.is_set&&this.attach()}}function a(){this.elements=[];this.attach()}var b=function(d,a){var b=a||window.document.body,c=d.split("."),g=c[c.length-1],c=1<c.length&&c[0]?c[0]:"*";if(window.document.getElementsByClassName)return b.getElementsByClassName(g); if(b.querySelectorAll)return b.querySelectorAll(d);for(var c=b.getElementsByTagName(c),h=[],i=0,f;f=c[i];i++)b=RegExp("(^|\\s)"+g+"(\\s|$)"),(""+f.className).match(b)&&h.push(f);return h};c.prototype.get_remaining_time=function(){var d=this.remote_end_time-this.clock.get_remote_time();0>d&&(d=0);return d};c.prototype.get_current_unit=function(){for(var d,a=0;a<this.time_units.length&&!(d=this.time_units[a],this.get_remaining_time()<=this.options.unit_base[d[0]]*d[1]);a++);return d};c.prototype.update_element= function(){var a=this.get_current_unit(),b=Math.floor(this.get_remaining_time()/a[1]);isNaN(b)||(this.number_element.innerHTML=b,this.text_element.innerHTML=this.clock.pluralize(a[0],b)+" "+this.options.end_phrase)};c.prototype.valid=function(){return!(!this.number_element||!this.text_element)};c.prototype.attach=function(){function a(){c.update_element();if(c.options.count_down&&0<c.get_remaining_time()){var b=c.get_current_unit();this.timeout=window.setTimeout(a,c.clock.milliseconds_to_next_interval(b[1]))}} var c=this;if(this.remote_end_time_string=this.element.getAttribute("data-end_time"))this.remote_end_time_string.match(/^\d+$/)?(this.remote_end_time=new Date,this.remote_end_time.setTime(this.remote_end_time_string)):this.remote_end_time=new Date(this.remote_end_time_string),this.number_element=b(".num",this.element)[0],this.text_element=b(".text",this.element)[0],this.element.ksr_page_timer=!0,this.valid()&&a()};c.prototype.cancel=function(){this.timeout&&clearTimeout(this.timeout)};a.prototype.loading= !0;a.prototype.stop_finding=function(){this.attach_timers();this.loading=!1;document.addEventListener?document.removeEventListener("DOMContentLoaded",this.stop_finding,!1):document.attachEvent&&"complete"===document.readyState&&document.detachEvent("onreadystatechange",this.stop_finding)};a.prototype.bind_ready=function(){var a=this,b=function(){a.stop_finding.call(a)};document.addEventListener?(document.addEventListener("DOMContentLoaded",b,!1),window.addEventListener("load",b,!1)):document.attachEvent&& (document.attachEvent("onreadystatechange",b),window.attachEvent("onload",b))};a.prototype.attach_timers=function(){for(var a=b("div.ksr_page_timer"),e=0;e<a.length;e++)a[e].ksr_page_timer||(new c(a[e],window.ksr_page_clock),this.elements.push(a[e]))};a.prototype.attach=function(){var a=this;this.bind_ready();(function(){a.attach_timers();a.loading&&window.setTimeout(function(){a.attach_timers()},200)})()};window.ProjectTimer=c;new a})();
+  //]]>
+</script>
+
+<script class="template" id="template-widgets__video_embed_code" type="text/x-tmpl-mustache"><iframe width="{{width}}" height="{{height}}" src="{{{path}}}" frameborder="0" scrolling="no"> </iframe>
+</script><script class="template" id="template-projects__baseball_card_tall" type="text/x-tmpl-mustache"><div class="project-card-wrap project-card-wrap-tall border bg-white rounded clip">
+  <div class="project-card relative project-live {{#successful?}}successful{{/successful?}}">
+    <div class="project-thumbnail pt1 pl1 pr1">
+      <a href="{{urls.web.project}}" target="">
+        <img alt="Photo-little" class="projectphoto-little" src="{{photo.little}}" class="fit">
+      </a>
+    </div>
+    <div class="project-card-interior p1 h6 grey-dark">
+      <h6 class="project-title">
+        <a href="{{urls.web.project}}" target="" class="green-dark">{{name}}</a>
+      </h6>
+      <p class="mb1 ellipsis">
+        by
+        {{creator.name}}
+      </p>
+      <p class="blurb">
+        {{blurb}}
+      </p>
+    </div>
+    <div class="absolute-bottom bg-white rounded-bottom">
+
+      {{#location}}
+        <ul class="p1 list project-meta no-margin h6">
+          <li class="ellipsis">
+            <a href="{{location.urls.web.discover}}" data-location="{{location_json}}" class="grey-dark">
+              <span class="ss-icon ss-location"></span>
+              <span class="location-name">{{location.displayable_name}}</span>
+            </a>
+          </li>
+        </ul>
+      {{/location}}
+
+      <div class="project-stats-wrap pb1 pl1 pr1">
+
+        {{#failed?}}
+          <div class='project-status project-failed h6'>
+            <strong> Funding Unsuccessful</strong><br />
+            <span class="grey-dark">Project ended on {{formatted_deadline}}</span>
+          </div>
+        {{/failed?}}
+
+        {{#canceled?}}
+          <div class='project-status project-canceled h6'>
+            <strong> Funding Canceled</strong><br />
+            <span class="grey-dark">Project canceled on {{formatted_state_changed_at}}</span>
+          </div>
+        {{/canceled?}}
+
+        {{#successful?}}
+          <div class='project-pledged-successful bg-green white h6 pl1 pr1 mb1'>
+            <strong>Successful!</strong>
+          </div>
+        {{/successful?}}
+
+        {{#live_or_successful?}}
+          {{#live?}}
+            <div class="project-pledged-wrap bg-grey clip mb1">
+              <div class="project-pledged bg-green full-height" style="width: {{percent_raised_to_100}}%"></div>
+            </div>
+          {{/live?}}
+          <ul class="project-stats list no-margin h6 no-wrap">
+            <li class="first funded inline-block mr1">
+              <strong class="block h6">{{percent_raised_rounded}}%</strong>
+              <span class="grey-dark">funded</span>
+            </li>
+            <li class="pledged inline-block mr1">
+              <strong class="block h6">{{currency_symbol}}{{formatted_money}}</strong>
+              <span class="grey-dark">pledged</span>
+            </li>
+            {{#successful?}}
+              <li class="last successful inline-block">
+                <strong class="block h6">Funded</strong>
+                <div class="deadline grey-dark">{{formatted_deadline}}</div>
+              </li>
+            {{/successful?}}
+            {{#live?}}
+              <li class="last ksr_page_timer inline-block" data-end_time="{{javascript_deadline}}">
+                <strong class="block h6">
+                  <div class="num">30</div>
+                </strong>
+                <div class="span text grey-dark" data-word="left">days to go</div>
+              </li>
+            {{/live?}}
+          </ul>
+        {{/live_or_successful?}}
+      </div>
+    </div>
+  </div>
+</div>
+
+{{#friends_backing?}}
+  <div class="friend_project_context">
+    <div class="friend_facepile">
+      {{#truncated_friends}}
+        <img src="{{avatar.thumb}}" class="{{#has_metadata?}}small{{/has_metadata?}}">
+      {{/truncated_friends}}
+    </div>
+    <p class="friend_namepile">
+      {{{escaped_sentence}}}
+    </p>
+  </div>
+{{/friends_backing?}}
+</script><script class="template" id="template-projects__video_mode" type="text/x-tmpl-mustache"><a href='#' id='video_mode_close' class='close_button z2'><span class='ss-icon ss-delete'></span></a>
+
+<div class='title_card z1 {{context_classes}}' style="display:none;">
+  <div class='interior'>
+    <h2 class='project_title normal_weight'>{{name}}</h2>
+    <p class='blurb'>{{blurb}}</p>
+    <nav class='bar'>
+      <a id='play_button' class='left play' href='#'>
+        <span class='play_active'>
+          <span class='ss-icon ss-play'></span>
+          Play
+        </span>
+        <span class='pause_active'>
+          <span class='ss-icon ss-pause'></span>
+          Pause
+        </span>
+      </a>
+      {{#logged_in}}
+        <div class='remind right'>
+          {{#if_not_starred}}
+            <a class='follow' href='{{urls.web.project}}/watch'><span class='ss-icon ss-star'></span></a>
+          {{/if_not_starred}}
+          {{#if_starred}}
+            <a class='unfollow' href='{{urls.web.project}}/unwatch'><span class='ss-icon ss-star active'></span></a>
+          {{/if_starred}}
+        </div>
+      {{/logged_in}}
+      <a class='right explore button button_green small' href='#'>Explore this project</a>
+    </nav>
+  </div>
+</div>
+
+<div class='channel_controls z1'>
+  <a href='#' class='{{#playlist_is_location}}selected {{/playlist_is_location}}location'>Something else near {{location.first_name}} <span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_featured}}selected {{/playlist_is_featured}}featured'>Something different<span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_category}}selected {{/playlist_is_category}}category'>Something else in {{category.name}} <span class='ss-icon ss-navigateright'></span></a>
+</div>
+
+<div class='project_video' style='background-image: url('{{photo.full}}')'>
+  <div class='cover'>
+    <video>
+      <source src='{{video.high}}' type='video/mp4'/>
+      <source src='{{video.webm}}' type='video/webm'/>
+    </video>
+  </div>
+</div>
+</script><script class="template" id="template-site__video_mode_fourohfour" type="text/x-tmpl-mustache"><section class='four_oh_four'>
+  <p class='big_type'>
+    Looks like you've reached the end of the line! <br />Check out <a class="another" href='#'>another channel</a> or <a href='/discover'>browse projects in discover</a>.
+  </p>
+</section>
+</script>
+
+<script id="schwamm_formatting_options" type="text/javascript">
+//<![CDATA[
+(function(){window.formatters = window.formatters || {}; var formatting_options = {"distance_date_intervals":[[5,"just now"],[29,"less than a minute ago"],[89,"1 minute ago"],[2640,"%m minutes ago"],[5340,"about 1 hour ago"],[82800,"about %h hours ago"],[147600,"1 day ago"],[604800,"%d days ago"],[15552000,"on %t"],[0,"on %y"]],"currency_symbol_mappings":{"AFN":"\u060b","ALL":"Lek","ARS":"$","AUD":"$","AWG":"\u0192","AZN":"\u043c\u0430\u043d","BAM":"KM","BBD":"$","BGN":"\u043b\u0432","BMD":"$","BND":"$","BOB":"$b","BRL":"R$","BSD":"$","BWP":"P","BYR":"p.","BZD":"BZ$","CAD":"$","CLP":"$","CNY":"\u00a5","COP":"$","CRC":"\u20a1","CUP":"\u20b1","CZK":"K\u010d","DKK":"kr","DOP":"RD$","EGP":"\u00a3","EUR":"\u20ac","FJD":"$","FKP":"\u00a3","GBP":"\u00a3","GIP":"\u00a3","GTQ":"Q","GYD":"$","HKD":"$","HNL":"L","HRK":"kn","HUF":"Ft","IDR":"Rp","ILS":"\u20aa","IRR":"\ufdfc","ISK":"kr","JMD":"J$","JPY":"\u00a5","KGS":"\u043b\u0432","KHR":"\u17db","KPW":"\u20a9","KRW":"\u20a9","KYD":"$","KZT":"\u043b\u0432","LAK":"\u20ad","LBP":"\u00a3","LKR":"\u20a8","LRD":"$","LTL":"Lt","LVL":"Ls","MKD":"\u0434\u0435\u043d","MNT":"\u20ae","MUR":"\u20a8","MXN":"$","MYR":"RM","MZN":"MT","NAD":"$","NGN":"\u20a6","NIO":"C$","NOK":"kr","NPR":"\u20a8","NZD":"$","OMR":"\ufdfc","PAB":"B/.","PEN":"S/.","PHP":"\u20b1","PKR":"\u20a8","PLN":"z\u0142","PYG":"Gs","QAR":"\ufdfc","RON":"lei","RSD":"\u0414\u0438\u043d.","RUB":"\u0440\u0443\u0431","SAR":"\ufdfc","SBD":"$","SCR":"\u20a8","SEK":"kr","SGD":"$","SHP":"\u00a3","SOS":"S","SRD":"$","SVC":"$","SYP":"\u00a3","THB":"\u0e3f","TRY":"TL","TTD":"TT$","TWD":"NT$","UAH":"\u20b4","USD":"$","UYU":"$U","UZS":"\u043b\u0432","VEF":"Bs","VND":"\u20ab","YER":"\ufdfc","ZAR":"R"},"currency_trailing_code_mappings":{"AUD":true,"CAD":true,"NZD":true,"USD":true},"currency_formats":["money","shorter_money"]}; for (key in formatting_options) {window.formatters[key] = formatting_options[key]};}());
+//]]>
+</script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("begin_base.js_tag");}
+  //]]>
+</script>
+<script src="https://d297h9he240fqh.cloudfront.net/assets/packages/base-45cdab84617ddfb8905b7cddc8500c19.js" type="text/javascript"></script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("end_base.js_tag");}
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    document.domain='kickstarter.com';
+  //]]>
+</script>
+
+<iframe height="0" id="api_xdreceiver" src="https://api.kickstarter.com/xdreceiver/85e6.html" style="display: none;" width="0"></iframe>
+
+
+
+<div id="fb-root"></div>
+<script>
+  //<![CDATA[
+    var channelUrl = window.location.protocol + "//" + window.location.host + "/channel.html",
+      skip_autologin = $('body').is('.skip_autologin');
+    
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId: window.fb_app_id,
+        channelUrl: channelUrl,
+        status: true,    // check login status
+        cookie: true,    // enable cookies to allow the server to access the session
+        xfbml: true,     // parse XFBML
+        logging: false   // turn off logging
+      });
+    
+      FB.getLoginStatus(function (response) {
+        if (response.status === 'connected') {
+          if (read_cookie("logout_from_fb")) {
+            FB.logout();
+            destroy_cookie("logout_from_fb");
+          } else if (!skip_autologin) {
+            $.get("/fb/autologin", {'fbsr': response.authResponse.signedRequest});
+          } else if (false && 0 == response.authResponse.userID) {
+            $.get("/fb/refresh", {'fbsr': response.authResponse.signedRequest});
+          }
+        } else {
+          if (read_cookie("logout_from_fb")) {
+            destroy_cookie("logout_from_fb");
+          }
+        }
+      })
+    
+      $(document).trigger('fb:loaded');
+    };
+    
+    
+    // Load the SDK Asynchronously
+    (function(d){
+      var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+      js = d.createElement('script'); js.id = id; js.async = true;
+      js.src = "//connect.facebook.net/en_US/all.js";
+      d.getElementsByTagName('head')[0].appendChild(js);
+    }(document));
+  //]]>
+</script>
+
+
+</body>
+</html>

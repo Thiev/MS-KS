@@ -1,0 +1,4062 @@
+<!DOCTYPE html>
+<html class="projects_show  fontface no-js" lang="en">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# kickstarter: http://ogp.me/ns/fb/kickstarter#">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-5.newrelic.com","errorBeacon":"jserror.newrelic.com","licenseKey":"b04b883ad2","applicationID":"11086","transactionName":"cFteRUULX1wHFhtIEFxeVVJDFxxDCgtD","queueTime":13,"applicationTime":324,"ttGuid":"","agentToken":null,"agent":"js-agent.newrelic.com/nr-411.min.js"}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"Vw4BVEVSCQMIUg=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e){function n(t,e,n){n||(n={});for(var r=o[t],a=r&&r.length||0,s=n[i]||(n[i]={}),u=0;a>u;u++)r[u].apply(s,e);return s}function r(t,e){var n=o[t]||(o[t]=[]);n.push(e)}var o={},i="nr@context";e.exports={on:r,emit:n}},{}],2:[function(t){function e(t,e,n,i,s){return u?u-=1:r("err",[s||new UncaughtException(t,e,n)]),"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t(5),a=window.onerror,s=!1,u=0;t("loader").features.push("err"),window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(d){"stack"in d&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(4),s=!0)}i.on("fn-start",function(){s&&(u+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&u>0&&(u-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:4,3:3,4:6,5:1,6:14,handle:"D5DuLP",loader:"G9z0Bl"}],3:[function(t){function e(t){r.inPlace(t,["addEventListener","removeEventListener"],"-",n)}function n(t){return t[1]}var r=t(1),o=(t(3),t(2));if(e(window),"getPrototypeOf"in Object){for(var i=document;i&&!i.hasOwnProperty("addEventListener");)i=Object.getPrototypeOf(i);i&&e(i);for(var a=XMLHttpRequest.prototype;a&&!a.hasOwnProperty("addEventListener");)a=Object.getPrototypeOf(a);a&&e(a)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&e(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=e["nr@wrapped"]?t[1]=e["nr@wrapped"]:e["nr@wrapped"]=t[1]=r(e,"fn-"):"function"==typeof e.handleEvent&&r.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:15,2:1,3:14}],4:[function(t){var e=(t(3),t(1)),n=t(2);e.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=e(t[0],"fn-")})},{1:15,2:1,3:14}],5:[function(t){function e(t){var e=t[0];"string"==typeof e&&(e=new Function(e)),t[0]=n(e,"fn-")}var n=(t(3),t(1)),r=t(2);n.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",e)},{1:15,2:1,3:14}],6:[function(t){function e(){o.inPlace(this,s,"fn-")}function n(t,e){o.inPlace(e,["onreadystatechange"],"fn-")}function r(t,e){return e}var o=t(1),i=t(2),a=window.XMLHttpRequest,s=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];window.XMLHttpRequest=function(t){var n=new a(t);try{i.emit("new-xhr",[],n),o.inPlace(n,["addEventListener","removeEventListener"],"-",function(t,e){return e}),n.addEventListener("readystatechange",e,!1)}catch(r){try{i.emit("internal-error",r)}catch(s){}}return n},window.XMLHttpRequest.prototype=a.prototype,o.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",r),i.on("send-xhr-start",n),i.on("open-xhr-start",n)},{1:15,2:1}],7:[function(t){function e(){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;u>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,d="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=e(d);if(f&&(r.rxSize=f),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}t("loader").features.push("xhr");var o=t("handle"),i=t(1),a=t(5),s=["load","error","abort","timeout"],u=s.length,d=t(2);t(3),t(4),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var d=e(o);d&&(r.txSize=d)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",e)}catch(r){}}};for(var f=0;u>f;f++)n.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&e()},{1:8,2:11,3:3,4:6,5:1,handle:"D5DuLP",loader:"G9z0Bl"}],8:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e){var n=r[t];return n?n.apply(this,e):(o[t]||(o[t]=[]),void o[t].push(e))}var r={},o={};e.exports=n,n.queues=o,n.handlers=r},{}],11:[function(t,e){function n(t){if(!t||"object"!=typeof t&&"function"!=typeof t)return-1;if(t===window)return 0;if(o.call(t,"__nr"))return t.__nr;try{return Object.defineProperty(t,"__nr",{value:r,writable:!0,enumerable:!1}),r}catch(e){return t.__nr=r,r}finally{r+=1}}var r=1,o=Object.prototype.hasOwnProperty;e.exports=n},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&u&&u.body){p.proto="https"===c.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=u.createElement("script");e.src=p.proto+t.agent,u.body.appendChild(e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,u=s.document,d="addEventListener",f="attachEvent",c=(""+location).split("?")[0],p=e.exports={offset:i(),origin:c,features:[]};u[d]?(u[d]("DOMContentLoaded",o,!1),s[d]("load",n,!1)):(u[f]("onreadystatechange",r),s[f]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],14:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],15:[function(t,e){function n(t,e,r,s){function nrWrapper(){try{var n,a=u(arguments),d=this,f=r&&r(a,d)||{}}catch(c){i([c,"",[a,d,s],f])}o(e+"start",[a,d,s],f);try{return n=t.apply(d,a)}catch(p){throw o(e+"err",[a,d,p],f),p}finally{o(e+"end",[a,d,n],f)}}return a(t)?t:(e||(e=""),nrWrapper[n.flag]=!0,nrWrapper)}function r(t,e,r,o){r||(r="");var i,s,u,d="-"===r.charAt(0);for(u=0;u<e.length;u++)s=e[u],i=t[s],a(i)||(t[s]=n(i,d?s+r:r,o,s,t))}function o(t,e,n){try{s.emit(t,e,n)}catch(r){i([r,t,e,n])}}function i(t){try{s.emit("internal-error",t)}catch(e){}}function a(t){return!(t&&"function"==typeof t&&t.apply&&!t[n.flag])}var s=t(1),u=t(2);e.exports=n,n.inPlace=r,n.flag="nr@wrapper"},{1:1,2:14}]},{},["G9z0Bl",2,7]);</script><script>
+  //<![CDATA[
+    docElement = this.document.documentElement;
+    docElement.className=docElement.className.replace(/\bno-js\b/,'') + 'js';
+  //]]>
+</script>
+<title>Realms of Goldesia - Player-Driven Virtual Reality MMORPG by Aarianna Publishing, Inc. &mdash; Kickstarter</title><script>
+  //<![CDATA[
+    window.report_errors = true;
+    window.honeybadger_configuration = {
+      api_key : "02ab109335c0dd1a93506d92f22217a7",
+      environment : "production",
+      component : "projects",
+      action : "show",
+      onerror : false
+    };
+  //]]>
+</script>
+
+
+<!--[if lt IE 9]>
+  <script src="//html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta content="telephone=no" name="format-detection">
+
+<!--[if !IE]> -->
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base-9f623ad5d021a188cfb2d68a0cdf7a7b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<!-- <![endif]-->
+<!--[if IE]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base_blessed-2640c72487552f9a2ef9f2620b4af860.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<!--[if lte IE 9]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_nine-a93fe10530f175f96c4078b7e070d7e1.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 8]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_eight-f75aeb274436f94a0d243774456b1c62.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 7]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie-c019c01acd3a96588b346cf577a3504f.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_seven-5a3d2cef660cd281fd844b04b2397dbb.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if IE 6]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_six-e4d3caf76e405fe19aee6ece8bda701b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<link href="https://d297h9he240fqh.cloudfront.net/favicon.png" rel="icon" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-precomposed-7b603dba7cf80e4acc57d94a991bebbd.png" rel="apple-touch-icon-precomposed" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-ipad-precomposed-3176f72977daf43dee3b0d348484dc01.png" rel="apple-touch-icon-precomposed" sizes="72x72" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-iphone4-precomposed-b93b70168cd8492c843d0fea873c7f83.png" rel="apple-touch-icon-precomposed" sizes="114x114" type="image/png">
+<link href="https://www.kickstarter.com/services/oembed?url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Faarianna%2Frealms-of-goldesia-rog-aaa-level-mmorpg" rel="alternate" title="Realms of Goldesia - Player-Driven Virtual Reality MMORPG Script Tag oEmbed" type="application/json+oembed">
+<link rel="alternate" type="application/atom+xml" title="Realms of Goldesia - Player-Driven Virtual Reality MMORPG : Kickstarter" href="https://www.kickstarter.com/projects/aarianna/realms-of-goldesia-rog-aaa-level-mmorpg/posts.atom" />
+<meta property="twitter:app:id:iphone" content="596961532"/>
+<meta property="twitter:app:name:iphone" content="Kickstarter"/>
+<meta property="twitter:app:url:iphone" content="ksr://www.kickstarter.com/projects/aarianna/realms-of-goldesia-rog-aaa-level-mmorpg"/>
+<meta name="video_height" content="480"/>
+<meta name="video_width" content="640"/>
+<meta name="video_type" content="application/x-shockwave-flash"/>
+<meta name="title" content="Kickstarter &gt;&gt; Realms of Goldesia - Player-Driven Virtual Reality MMORPG by Aarianna Publishing, Inc."/>
+<meta name="description" content="Aarianna Publishing, Inc. is raising funds for Realms of Goldesia - Player-Driven Virtual Reality MMORPG on Kickstarter! 
+
+ An MMORPG that allows for total immersion through its skill-based class system, player-driven world &amp; support for Oculus Rift!"/>
+<meta name="robots" content="noindex"/>
+<meta property="og:title" content="Realms of Goldesia - Player-Driven Virtual Reality MMORPG"/>
+<meta property="og:type" content="kickstarter:project"/>
+<meta property="og:image" content="https://s3.amazonaws.com/ksr/projects/677498/photo-main.jpg?1397834047"/>
+<meta property="og:url" content="https://www.kickstarter.com/projects/aarianna/realms-of-goldesia-rog-aaa-level-mmorpg"/>
+<meta property="og:site_name" content="Kickstarter"/>
+<meta property="fb:app_id" content="69103156693"/>
+<meta property="og:description" content="An MMORPG that allows for total immersion through its skill-based class system, player-driven world &amp; support for Oculus Rift!"/>
+<meta property="kickstarter:creator" content="https://www.kickstarter.com/profile/aarianna"/>
+<meta property="twitter:url:landing_url" content="https://www.kickstarter.com/projects/aarianna/realms-of-goldesia-rog-aaa-level-mmorpg"/>
+<meta property="twitter:card" content="2427656750:kickstarter_project"/>
+<meta property="twitter:site" content="@kickstarter"/>
+<meta property="twitter:site:id" content="16186995"/>
+<meta property="twitter:text:title" content="Realms of Goldesia - Player-Driven Virtual Reality MMORPG"/>
+<meta property="twitter:text:artist" content="Aarianna Publishing, Inc."/>
+<meta property="twitter:text:backers" content="114"/>
+<meta property="twitter:text:pledged" content="$23,763 USD"/>
+<meta property="twitter:text:time" content="0 seconds"/>
+<meta property="twitter:text:location" content="Atlanta, GA"/>
+<meta property="twitter:image:location_image" content="https://d3mlfyygrfdi2i.cloudfront.net/b40e/pin.png"/>
+<meta property="twitter:text:description" content="An MMORPG that allows for total immersion through its skill-based class system, player-driven world &amp; support for Oculus Rift!"/>
+<meta property="twitter:image:media" content="https://s3.amazonaws.com/ksr/projects/677498/photo-main.jpg?1397834047"/>
+<meta property="twitter:image:width" content="640"/>
+<meta property="twitter:image:height" content="480"/>
+<meta property="twitter:player:stream:url" content="https://d2pq0u4uni88oo.cloudfront.net/projects/677498/video-303726-h264_base.mp4"/>
+<meta property="twitter:player:stream:content" content="video/mp4"/>
+<meta property="twitter:player:url" content="https://www.kickstarter.com/projects/aarianna/realms-of-goldesia-rog-aaa-level-mmorpg/widget/video.html"/>
+<meta property="twitter:player:height" content="480"/>
+<meta property="twitter:player:width" content="640"/>
+<meta property="twitter:maxage" content="60"/>
+<meta property="og:video" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F677498%2Fvideo-303726-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F677498%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Aarianna+Publishing%2C+Inc.&amp;project_title=Realms+of+Goldesia+-+Player-Driven+Virtual+Reality+MMORPG&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Faarianna%2Frealms-of-goldesia-rog-aaa-level-mmorpg&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:secure_url" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F677498%2Fvideo-303726-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F677498%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Aarianna+Publishing%2C+Inc.&amp;project_title=Realms+of+Goldesia+-+Player-Driven+Virtual+Reality+MMORPG&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Faarianna%2Frealms-of-goldesia-rog-aaa-level-mmorpg&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:height" content="480"/>
+<meta property="og:video:width" content="640"/>
+<meta property="og:video:type" content="application/x-shockwave-flash"/>
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="B8FC6kw0KcAt5xa1AEJMvClC+OMRw3tjGuLHas65WSg=" name="csrf-token" />
+<script type="text/javascript">
+  var _sift = _sift || [];
+  _sift.push(['_setAccount', '637102']);
+  _sift.push(['_setUserId', '']);
+  _sift.push(['_trackPageview']);
+
+  (function() {
+    function loadSift() {
+      var sift, s;
+      if (root.visitor_id) {
+        _sift.push(['_setSessionId', root.visitor_id]);
+      }
+      sift = document.createElement('script');
+      sift.type = 'text/javascript';
+      sift.async = true;
+      sift.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dtlilztwypawv.cloudfront.net/s.js';
+      s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(sift, s);
+    }
+    if (window.attachEvent) {
+      window.attachEvent('onload', loadSift);
+    } else {
+      window.addEventListener('load', loadSift, false);
+    }
+  })();
+</script>
+<link href="http://kck.st/161rT0O" rel="shorturl">
+<link href="https://www.kickstarter.com/projects/aarianna/realms-of-goldesia-rog-aaa-level-mmorpg" rel="canonical">
+<link href="https://s3.amazonaws.com/ksr/projects/677498/photo-med.jpg?1397834047" rel="image_src">
+<link href="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F677498%2Fvideo-303726-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F677498%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Aarianna+Publishing%2C+Inc.&amp;project_title=Realms+of+Goldesia+-+Player-Driven+Virtual+Reality+MMORPG&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Faarianna%2Frealms-of-goldesia-rog-aaa-level-mmorpg&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque" rel="video_src">
+<script>
+  //<![CDATA[
+    window.current_checkout = "{&quot;id&quot;:0,&quot;domestic&quot;:null,&quot;amount&quot;:0.0,&quot;updated_at&quot;:0,&quot;created_at&quot;:0}";
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.current_ip = '94.209.101.212';
+    window.current_ip_datacenter = 'false';
+    window.enabled_features = {"elasticsearch":true,"security_history_read":true,"security_history_write":true,"advanced_discovery_es":true,"ios_crashlytics":true,"ios_mixpanel":true,"stories_veronica_mars":true,"veronica_mars_hero":true,"password_reset_banner":true};
+    window.fb_app_id = '69103156693';
+    
+    var _sf_startpt=(new Date()).getTime();
+    
+    window.current_project = "{&quot;id&quot;:1065736492,&quot;name&quot;:&quot;Realms of Goldesia - Player-Driven Virtual Reality MMORPG&quot;,&quot;blurb&quot;:&quot;An MMORPG that allows for total immersion through its skill-based class system, player-driven world &amp; support for Oculus Rift!&quot;,&quot;goal&quot;:900000.0,&quot;pledged&quot;:23763.0,&quot;state&quot;:&quot;suspended&quot;,&quot;slug&quot;:&quot;realms-of-goldesia-rog-aaa-level-mmorpg&quot;,&quot;disable_communication&quot;:true,&quot;country&quot;:&quot;US&quot;,&quot;currency&quot;:&quot;USD&quot;,&quot;currency_symbol&quot;:&quot;$&quot;,&quot;currency_trailing_code&quot;:true,&quot;deadline&quot;:1384437622,&quot;state_changed_at&quot;:1382034795,&quot;created_at&quot;:1378856086,&quot;launched_at&quot;:1381323622,&quot;backers_count&quot;:114,&quot;photo&quot;:{&quot;full&quot;:&quot;https://s3.amazonaws.com/ksr/projects/677498/photo-full.jpg?1397834047&quot;,&quot;ed&quot;:&quot;https://s3.amazonaws.com/ksr/projects/677498/photo-ed.jpg?1397834047&quot;,&quot;med&quot;:&quot;https://s3.amazonaws.com/ksr/projects/677498/photo-med.jpg?1397834047&quot;,&quot;little&quot;:&quot;https://s3.amazonaws.com/ksr/projects/677498/photo-little.jpg?1397834047&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/projects/677498/photo-small.jpg?1397834047&quot;,&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/projects/677498/photo-thumb.jpg?1397834047&quot;,&quot;1024x768&quot;:&quot;https://s3.amazonaws.com/ksr/projects/677498/photo-1024x768.jpg?1397834047&quot;,&quot;1536x1152&quot;:&quot;https://s3.amazonaws.com/ksr/projects/677498/photo-1536x1152.jpg?1397834047&quot;},&quot;creator&quot;:{&quot;id&quot;:1895563242,&quot;name&quot;:&quot;Aarianna Publishing, Inc.&quot;,&quot;slug&quot;:&quot;aarianna&quot;,&quot;avatar&quot;:{&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/7951261/Aarianna-Publishing-Icon.thumb.jpg?1381084234&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/7951261/Aarianna-Publishing-Icon.small.jpg?1381084234&quot;,&quot;medium&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/7951261/Aarianna-Publishing-Icon.medium.jpg?1381084234&quot;},&quot;urls&quot;:{&quot;web&quot;:{&quot;user&quot;:&quot;https://www.kickstarter.com/profile/aarianna&quot;},&quot;api&quot;:{&quot;user&quot;:&quot;https://api.kickstarter.com/v1/users/1895563242?signature=1399958332.a5fdd20ce17d23fe0f63c2676c5a81ca08e3bb02&quot;}}},&quot;location&quot;:{&quot;id&quot;:2357024,&quot;name&quot;:&quot;Atlanta&quot;,&quot;slug&quot;:&quot;atlanta-ga&quot;,&quot;short_name&quot;:&quot;Atlanta, GA&quot;,&quot;displayable_name&quot;:&quot;Atlanta, GA&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:&quot;GA&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/atlanta-ga&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/atlanta-ga&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1399951822.fc0da4cfab5316b4dc5f23d6c01842ddf2003117&amp;woe_id=2357024&quot;}}},&quot;category&quot;:{&quot;id&quot;:35,&quot;name&quot;:&quot;Video Games&quot;,&quot;slug&quot;:&quot;games/video games&quot;,&quot;position&quot;:7,&quot;parent_id&quot;:12,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;http://www.kickstarter.com/discover/categories/games/video%20games&quot;}}},&quot;urls&quot;:{&quot;web&quot;:{&quot;project&quot;:&quot;https://www.kickstarter.com/projects/aarianna/realms-of-goldesia-rog-aaa-level-mmorpg&quot;,&quot;project_short&quot;:&quot;http://kck.st/161rT0O&quot;,&quot;updates&quot;:&quot;https://www.kickstarter.com/projects/aarianna/realms-of-goldesia-rog-aaa-level-mmorpg/posts&quot;},&quot;api&quot;:{&quot;project&quot;:&quot;https://api.kickstarter.com/v1/projects/1065736492?signature=1399958332.55375b8ca61d06928a502b57bc32802dd5719aa9&quot;,&quot;comments&quot;:&quot;https://api.kickstarter.com/v1/projects/1065736492/comments?signature=1399958332.6fee07cec44c0efa3d6de59561db5cfb8217ed81&quot;,&quot;updates&quot;:&quot;https://api.kickstarter.com/v1/projects/1065736492/updates?signature=1399958332.b0825db57ecc745aa7f3b0fe71f831119f62c69f&quot;}},&quot;updated_at&quot;:1397834052,&quot;suspended_at&quot;:1382034795,&quot;video&quot;:{&quot;id&quot;:303726,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/677498/video-303726-h264_high.mp4?2013&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/677498/video-303726-h264_base.mp4?2013&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/677498/video-303726-webm.webm?2013&quot;,&quot;width&quot;:640,&quot;height&quot;:480,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/677498/video-303726-h264_base.jpg?2013&quot;},&quot;comments_count&quot;:100,&quot;updates_count&quot;:1,&quot;rewards&quot;:[{&quot;id&quot;:0,&quot;minimum&quot;:1,&quot;reward&quot;:&quot;No Reward&quot;},{&quot;id&quot;:2032292,&quot;minimum&quot;:5.0,&quot;reward&quot;:&quot;***SAGE***\\r\\nYour prophecy of Goldesia\\u2019s thriving future will be closer to fulfillment. You\\u2019ll receive an official thank you and Community Access to our forums.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1383264000,&quot;project_id&quot;:1065736492,&quot;backers_count&quot;:18,&quot;updated_at&quot;:1381806591},{&quot;id&quot;:2032309,&quot;minimum&quot;:10.0,&quot;reward&quot;:&quot;AVENGER:\\r\\nRevenge is sweet. Your contribution will help Goldesia stick it to the underlord, and in return, you\\u2019ll get an official thank you, Community Access to our forums, and a digital wallpaper of Goldesia.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1385856000,&quot;project_id&quot;:1065736492,&quot;backers_count&quot;:10,&quot;updated_at&quot;:1381778779},{&quot;id&quot;:2032312,&quot;minimum&quot;:15.0,&quot;reward&quot;:&quot;BARBARIAN:\\r\\nShare the fruit of your reavings, and you\\u2019ll get plenty of plunder. You\\u2019ll receive an Official Thank You, Community Access to our forums, a digital wallpaper of Goldesia, and 75 Power Points.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1385856000,&quot;project_id&quot;:1065736492,&quot;backers_count&quot;:10,&quot;updated_at&quot;:1381782457},{&quot;id&quot;:2032314,&quot;minimum&quot;:20.0,&quot;reward&quot;:&quot;MAGICIAN:\\r\\nMage donations are what make the magic happen at our studios. In return, you\\u2019ll get all the rewards of \\u201cAvenger\\u201d, plus 100 Power Points and a digital game manual (PDF).&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1391212800,&quot;project_id&quot;:1065736492,&quot;backers_count&quot;:5,&quot;updated_at&quot;:1381848412},{&quot;id&quot;:2032316,&quot;minimum&quot;:25.0,&quot;reward&quot;:&quot;ASSASSIN:\\r\\nYour donation will be applied to our development with deadly precision. Rewards include all offered in the \\u201cMagician\\u201d pack, the Realms of Goldesia Game (DRM free), and 125 Power Points.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1414800000,&quot;project_id&quot;:1065736492,&quot;backers_count&quot;:12,&quot;updated_at&quot;:1381782590},{&quot;id&quot;:2032317,&quot;minimum&quot;:35.0,&quot;reward&quot;:&quot;SORCERER:\\r\\nSorcerer pledges will go toward the spells and bindings that bring the magical realms to life. This comes with everything from the \\u201cAssassin\\u201d pack, plus a Development Retrospect PDF, and 50 additional Power Points (175 Total).&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1414800000,&quot;project_id&quot;:1065736492,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1381931339},{&quot;id&quot;:2032318,&quot;minimum&quot;:40.0,&quot;reward&quot;:&quot;SAMURAI:\\r\\nYour pledge will go toward honoring the old warrior ways, making legendary in-game battle and weapons. Rewards include everything from \\u201cSorcerer\\u201d, plus digital high-res concept art, and 200 Power Points total. **Lifetime free-to-play access**&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1417392000,&quot;project_id&quot;:1065736492,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1382014324},{&quot;id&quot;:2032319,&quot;minimum&quot;:50.0,&quot;reward&quot;:&quot;KNIGHT:\\r\\nYour chivalry will be well known among the realms. Get everything from \\u201cSamurai\\u201d, along with Royal Throne Access, access to pre-sale store items, and 250 Power Points total. **BETA ACCESS**&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1414800000,&quot;project_id&quot;:1065736492,&quot;backers_count&quot;:10,&quot;updated_at&quot;:1381816678},{&quot;id&quot;:2032320,&quot;minimum&quot;:65.0,&quot;reward&quot;:&quot;CONTROLLER: \\r\\nThe mighty Orbs of the Soul are under your command. You\\u2019ll be bestowed with everything from our \\u201cKnight\\u201d tier, as well as a digital map of the Rivaled Realms and a total of 325 Power Points.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1414800000,&quot;project_id&quot;:1065736492,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1381111614},{&quot;id&quot;:2032328,&quot;minimum&quot;:75.0,&quot;reward&quot;:&quot;SNIPER:\\r\\nThanks to your sharpshooting, we\\u2019ll be able to make the game weapons even more deadly. Get everything from the \\u201cController\\u201d tier, plus a ROG poster, The Imperial Access, 375 Power Points (total) and a special starter weapon of your very own.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1417392000,&quot;project_id&quot;:1065736492,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1381482212},{&quot;id&quot;:2032331,&quot;minimum&quot;:80.0,&quot;reward&quot;:&quot;DECEPTIONIST:\\r\\nYour cunning ways will influence the twists and turns of our epic plot line. Everything from the \\u201cSniper\\u201d pack will be yours, in addition to a Digital Strategy Guide and 400 Power Points (total).&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1417392000,&quot;project_id&quot;:1065736492,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1381111614},{&quot;id&quot;:2032332,&quot;minimum&quot;:90.0,&quot;reward&quot;:&quot;GANGSTER:\\r\\nBecome a famed name among ROG\\u2019s gangs of marauders, mercenaries, and rogues by donating. Your payoff will be everything from the \\u201cDeceptionist\\u201d tier, along with a Digital Concept Art book and 450 Power Points in total.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1417392000,&quot;project_id&quot;:1065736492,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1381111614},{&quot;id&quot;:2032333,&quot;minimum&quot;:100.0,&quot;reward&quot;:&quot;ILLUSIONIST: \\r\\nYour donation will make our game success no illusion at all. Get all rewards from the \\u201cGangster\\u201d pack, plus receive PHYSICAL rewards such as printed game manual, boxed copy of the game, 500 Power Points (total), and a special thank you in the game credits.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1417392000,&quot;project_id&quot;:1065736492,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1381111614},{&quot;id&quot;:2032334,&quot;minimum&quot;:120.0,&quot;reward&quot;:&quot;MASTERMIND: \\r\\nThanks to your evil genius, our bad guys will be even bigger and badder. Everything from the \\u201cIllustionist\\u201d pack will be paid to you in tribute, plus a digital storyboard of the game and 600 Power Points (total).&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1417392000,&quot;project_id&quot;:1065736492,&quot;backers_count&quot;:5,&quot;updated_at&quot;:1381978768},{&quot;id&quot;:2032335,&quot;minimum&quot;:125.0,&quot;reward&quot;:&quot;MANIPULATOR:\\r\\nYour silver-tongued deceptions deserve to be put to music, so in addition to 625 Power Points (total) and everything from the \\u201cMastermind\\u201d tier, you\\u2019ll get the Digital Game Soundtrack.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1417392000,&quot;project_id&quot;:1065736492,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1381111614},{&quot;id&quot;:2032336,&quot;minimum&quot;:250.0,&quot;reward&quot;:&quot;SEDUCER:\\r\\nWith a donation like that, we just can\\u2019t resist you. Your charms will be rewarded with all of the \\u201cManipulator\\u201d rewards, 1000 Power Points (total) plus the rare privilege to name an in-game item and write its description. **ALPHA ACCESS**&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1417392000,&quot;project_id&quot;:1065736492,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1381696991},{&quot;id&quot;:2044395,&quot;minimum&quot;:250.0,&quot;reward&quot;:&quot;***SEDUCER with OCULUS RIFT***\\r\\nFirst 75 backers will receive free Oculus Rift Virtual Reality Headset. \\r\\nWith a donation like that, we just can\\u2019t resist you. Your charms will be rewarded with all of the \\u201cManipulator\\u201d rewards, 1000 Power Points (total) plus the rare privilege to name an in-game item and write its description.&quot;,&quot;limit&quot;:75,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1417392000,&quot;project_id&quot;:1065736492,&quot;remaining&quot;:50,&quot;backers_count&quot;:25,&quot;updated_at&quot;:1382030805},{&quot;id&quot;:2032337,&quot;minimum&quot;:350.0,&quot;reward&quot;:&quot;CONQUEROR:\\r\\nClearly, you\\u2019re already out to conquer the Rivaled Realms. We\\u2019ll help you on your way by giving you everything from the \\u201cSeducer\\u201d pack, a sneak peek of our Official Game Launch Trailer, and a Printed Strategy Guide.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1417392000,&quot;project_id&quot;:1065736492,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1381696991},{&quot;id&quot;:2032342,&quot;minimum&quot;:500.0,&quot;reward&quot;:&quot;ROGUE:\\r\\nFor a rogue, you\\u2019re awfully generous. You\\u2019ll be thought of as ROG\\u2019s own Robin Hood. We\\u2019ll reward you with everything from the \\u201cConqueror\\u201d pack, plus a printed Concept Art book, physical Cloth Map, and digital images/page-images of before and after character design.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1417392000,&quot;project_id&quot;:1065736492,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1381556205},{&quot;id&quot;:2032344,&quot;minimum&quot;:725.0,&quot;reward&quot;:&quot;CAPTAIN:\\r\\nAs a captain, you\\u2019ll get a chance to steer the direction of ROG\\u2019s fauna by designing a creature of your own. In addition to that, you\\u2019ll get everything from the \\u201cRogue\\u201d tier, plus a limited edition signed print.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1417392000,&quot;project_id&quot;:1065736492,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1381111614},{&quot;id&quot;:2051789,&quot;minimum&quot;:1000.0,&quot;reward&quot;:&quot;GENERAL: You\\u2019ve risen up in the ranks, and for that, you deserve respect. You\\u2019ll be granted your own special in-game title, plus a ROG mouse pad, the CD game soundtrack, and everything from the \\u201cCaptain\\u201d pack.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1417392000,&quot;project_id&quot;:1065736492,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1381529551},{&quot;id&quot;:2032346,&quot;minimum&quot;:1500.0,&quot;reward&quot;:&quot;COMMANDER:\\r\\nFulfill your commander duties by collaborating with us on the in-game background music. You\\u2019ll also get all of the privileges and rewards of the \\u201cGeneral\\u201d tier, in addition to a ROG T-Shirt.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1417392000,&quot;project_id&quot;:1065736492,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1381111614},{&quot;id&quot;:2032352,&quot;minimum&quot;:2500.0,&quot;reward&quot;:&quot;CHIEF:\\r\\nAs some of the most respected figures in the Rivaled Realms, chiefs will get a chance to chat with the owners and creators of ROG, as well as an exclusive signed T-shirt. Everything from the \\u201cCommander\\u201d pack is also included.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1417392000,&quot;project_id&quot;:1065736492,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1381111614},{&quot;id&quot;:2032353,&quot;minimum&quot;:5000.0,&quot;reward&quot;:&quot;MAJESTY:\\r\\nYou have a lord\\u2019s generosity! Be treated like royalty at our private release party, to which you\\u2019ll get an exclusive invitation. You\\u2019ll also get everything from the \\u201cChief\\u201d tier rewards.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1417392000,&quot;project_id&quot;:1065736492,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1381521174},{&quot;id&quot;:2032355,&quot;minimum&quot;:10000.0,&quot;reward&quot;:&quot;DUKE:\\r\\nYou\\u2019re bound to be one of the Goldesian bank\\u2019s most cherished allies. Or maybe you are the bank? To thank you for your incredible donation, we\\u2019ll grant you everything from the \\u201cMajesty\\u201d tier, plus a plaque of gratitude, collaboration on both character and level design, and ALL Aarianna publishing digital games until 2020.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1417392000,&quot;project_id&quot;:1065736492,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1381519950}]}";
+    
+    
+    
+    
+    
+    
+    
+    
+    window.timeRemaining = function timeRemaining(epochTime){
+    
+      var diff = epochTime - ((new Date()).getTime() / 1000);
+      var num_unit = (diff < 60 && [Math.max(diff, 0), 'seconds']) ||
+        ((diff/=60) < 60 && [diff, 'minutes']) ||
+        ((diff/=60) < 72 && [diff, 'hours']) ||
+        [diff/=24, 'days'];
+    
+      // Round down
+      num_unit[0] = Math.floor(num_unit[0]);
+      // Singularize unit
+      if (num_unit[0] == 1) { num_unit[1] = num_unit[1].replace(/s$/,""); }
+    
+      return num_unit;
+    };
+  //]]>
+</script>
+
+<script>
+  //<![CDATA[
+    window.current_variants = ["discover_link_copy[explore]","rewards_hover[without_hover_text]"];
+  //]]>
+</script>
+
+
+</head>
+
+<body class="project projects not-mobile not-phone not-forces-video-controls not-tablet not-touchable not-native-app-request video_mode" id="projects_show">
+<div class="jGrowl center" id="growl_section"></div>
+<div class="NS_layouts__navigation" id="header">
+<div class="main-nav relative bg-white">
+<h1 class="no-margin ml1 mr2 left">
+<a href="/?ref=nav" class="block p2"><span class="ss-icon green-dark">KICK</span><span class="ss-icon green">STARTER</span>
+</a></h1>
+<ul class="primary-links list no-margin left">
+<li class="left discover-link full-height">
+<a href="/discover?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Explore</a>
+</li>
+<li class="left full-height mr2">
+<a href="/learn?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Start</a>
+</li>
+</ul>
+<ul class="list no-margin right" id="menu-sub">
+<li class="right"><a href="/login?ref=nav" class="block h5 bold p2 full-height border-box">Log in</a></li>
+<li class="right"><a href="/signup?ref=nav" class="block h5 bold p2 full-height border-box">Sign up</a></li>
+</ul>
+<div class="search-link pl2 full-height border-left border-box clip">
+<form accept-charset="UTF-8" action="/projects/search" class="search pt1 pb1 block relative form-simple" method="get"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /></div>
+<div class="field relative pl3">
+<span class="ss-icon ss-search grey-dark ml1 mt1 absolute"></span>
+<input class="input-search header full-width text" data-tracker-name="Header Live Search" id="term" name="term" placeholder="Search projects" type="text" />
+</div>
+</form>
+
+</div>
+<div class="clear"></div>
+</div>
+</div>
+<div class="hide pt4 pb4 bg-grey-light" id="search_results-wrap">
+<div class="relative container" id="search_results">
+<a class="close right grey-dark mr1"><span class="ss-icon ss-delete"></span></a>
+<h3 class="header ml1 clearfix"></h3>
+<div class="clip clearfix" id="search_results_panel"></div>
+<a class="prev arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateleft"></span>
+</a>
+<a class="next arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateright"></span>
+</a>
+</div>
+</div>
+
+
+
+
+<div class="Project-ended-true Project-is_starred- Project-state-suspended Project1065736492_cxt border-top" id="main_content">
+<div id="running-board-wrap">
+<div class="container" id="running-board">
+<div id="project-header">
+<div class="NS_projects__running_board ml1 mr1 clearfix">
+<div class="title center py4">
+<h2 class="mb1">
+<a href="/projects/aarianna/realms-of-goldesia-rog-aaa-level-mmorpg" class="green-dark">Realms of Goldesia - Player-Driven Virtual Reality MMORPG</a>
+</h2>
+<p class="no-margin">
+<span class="creator">
+by
+<a href="/projects/aarianna/realms-of-goldesia-rog-aaa-level-mmorpg/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography" id="name">Aarianna Publishing, Inc.</a>
+</span>
+</p>
+</div>
+<ul class="project-nav list-inline left h5 bold mb1">
+<li class="mr2">
+<a href="/projects/aarianna/realms-of-goldesia-rog-aaa-level-mmorpg" class="grey-dark py1 current" id="home_nav">Home</a>
+</li>
+<li class="mr2">
+<span data-updates-count="1" id="updates_count">
+<a href="/projects/aarianna/realms-of-goldesia-rog-aaa-level-mmorpg/posts" class="grey-dark py1" id="updates_nav">Updates
+<span class="count h6 bg-grey-dark white">1</span>
+</a></span>
+</li>
+<li class="mr2">
+<a href="/projects/aarianna/realms-of-goldesia-rog-aaa-level-mmorpg/backers" class="grey-dark py1" id="backers_nav">Backers
+<span class="count h6 bg-grey-dark white"><data class="Project1065736492" data-format="number" data-value="114" itemprop="Project[backers_count]">114</data></span>
+</a></li>
+<li>
+<span data-comments-count="100" id="comments_count">
+<a href="/projects/aarianna/realms-of-goldesia-rog-aaa-level-mmorpg/comments" class="grey-dark py1" id="comments_nav">Comments
+<span class="count h6 bg-grey-dark white"><data class="Project1065736492" data-format="number" data-value="100" itemprop="Project[comments_count]">100</data></span>
+</a></span>
+</li>
+</ul>
+<ul class="list-inline right h5 bold mb1">
+<li class="location mr2">
+<a href="/discover/places/atlanta-ga?ref=city" class="grey-dark"><span class="ss-icon ss-location margin-right"></span>
+Atlanta, GA
+</a></li>
+<li class="category" data-project-parent-category="Games">
+<a href="/discover/categories/games/video%20games?ref=category" class="grey-dark"><span class="ss-icon ss-tag margin-right"></span>
+Video Games
+</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+</div>
+<div class="bg-grey-light pb4" id="content-wrap">
+<div class="Project1065736492" data-conditions="[{&quot;!state&quot;:&quot;live&quot;}]" data-evaluation="true" data-render="&quot;&lt;div class=\&quot;NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-suspended Project1065736492_cxt bg-grey container pb1 pt1\&quot;&gt;\n&lt;div class=\&quot;Project1065736492\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;successful&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;Funded!&amp;lt;/b&amp;gt;\\nThis project was successfully funded &amp;lt;data class=\\&amp;quot;Project1065736492\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2013-11-14T09:00:22-05:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[deadline]\\&amp;quot;&amp;gt;on November 14&amp;lt;/data&amp;gt;.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1065736492\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:[&amp;quot;started&amp;quot;,&amp;quot;submitted&amp;quot;]}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;THIS PROJECT IS NOT LIVE&amp;lt;/b&amp;gt;\\nThis is only a draft that the creator has chosen to share.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1065736492\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;suspended&amp;quot;}]\&quot; data-evaluation=\&quot;true\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Suspended&amp;lt;/b&amp;gt;\\nFunding for this project was suspended &amp;lt;data class=\\&amp;quot;Project1065736492\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2013-10-17T14:33:15-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on October 17, 2013&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Suspended&lt;/b&gt;\nFunding for this project was suspended &lt;data class=\&quot;Project1065736492\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-10-17T14:33:15-04:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on October 17, 2013&lt;/data&gt;.\n&lt;/div&gt;&lt;div class=\&quot;Project1065736492\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;canceled&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Canceled&amp;lt;/b&amp;gt;\\nFunding for this project was canceled by the project creator &amp;lt;data class=\\&amp;quot;Project1065736492\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2013-10-17T14:33:15-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on October 17, 2013&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1065736492\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;failed&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Unsuccessful&amp;lt;/b&amp;gt;\\nThis project\\u2019s funding goal was not reached on &amp;lt;time class=\\&amp;quot;js-adjust\\&amp;quot; data-format=\\&amp;quot;MMMM D\\&amp;quot; datetime=\\&amp;quot;2013-11-14T09:00:22-05:00\\&amp;quot;&amp;gt;November 14&amp;lt;/time&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1065736492\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;purged&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;This project is purged and only visible to staff.&amp;lt;/b&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;/div&gt;\n&quot;"><div class="NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-suspended Project1065736492_cxt bg-grey container pb1 pt1">
+<div class="Project1065736492" data-conditions="[{&quot;state&quot;:&quot;successful&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;Funded!&lt;/b&gt;\nThis project was successfully funded &lt;data class=\&quot;Project1065736492\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-11-14T09:00:22-05:00&amp;quot;\&quot; itemprop=\&quot;Project[deadline]\&quot;&gt;on November 14&lt;/data&gt;.\n&lt;/p&gt;\n&quot;"></div><div class="Project1065736492" data-conditions="[{&quot;state&quot;:[&quot;started&quot;,&quot;submitted&quot;]}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;THIS PROJECT IS NOT LIVE&lt;/b&gt;\nThis is only a draft that the creator has chosen to share.\n&lt;/p&gt;\n&quot;"></div><div class="Project1065736492" data-conditions="[{&quot;state&quot;:&quot;suspended&quot;}]" data-evaluation="true" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Suspended&lt;/b&gt;\nFunding for this project was suspended &lt;data class=\&quot;Project1065736492\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-10-17T14:33:15-04:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on October 17, 2013&lt;/data&gt;.\n&quot;"><p class="no-margin"></p>
+<b>Funding Suspended</b>
+Funding for this project was suspended <data class="Project1065736492" data-format="distance_date" data-value="&quot;2013-10-17T14:33:15-04:00&quot;" itemprop="Project[state_changed_at]">on October 17, 2013</data>.
+</div><div class="Project1065736492" data-conditions="[{&quot;state&quot;:&quot;canceled&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Canceled&lt;/b&gt;\nFunding for this project was canceled by the project creator &lt;data class=\&quot;Project1065736492\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-10-17T14:33:15-04:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on October 17, 2013&lt;/data&gt;.\n&quot;"></div><div class="Project1065736492" data-conditions="[{&quot;state&quot;:&quot;failed&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Unsuccessful&lt;/b&gt;\nThis project\u2019s funding goal was not reached on &lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;MMMM D\&quot; datetime=\&quot;2013-11-14T09:00:22-05:00\&quot;&gt;November 14&lt;/time&gt;.\n&quot;"></div><div class="Project1065736492" data-conditions="[{&quot;state&quot;:&quot;purged&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;This project is purged and only visible to staff.&lt;/b&gt;\n&quot;"></div></div>
+</div>
+<div class="container bg-white border rounded py3 pl2 pr2" id="content">
+<div class="NS-projects-content">
+<div class="grid_11">
+<div data-has-video="true" id="video-section">
+<div class="video-player" data-dimensions="{&quot;width&quot;:640,&quot;height&quot;:480}" data-image="https://s3.amazonaws.com/ksr/projects/677498/photo-main.jpg?1397834047" data-video-tracker-url="https://www.kickstarter.com/projects/aarianna/realms-of-goldesia-rog-aaa-level-mmorpg/video/plays" data-video-url="https://d2pq0u4uni88oo.cloudfront.net/projects/677498/video-303726-h264_high.mp4" data-video="{&quot;id&quot;:303726,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/677498/video-303726-h264_high.mp4?2013&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/677498/video-303726-h264_base.mp4?2013&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/677498/video-303726-webm.webm?2013&quot;,&quot;width&quot;:640,&quot;height&quot;:480,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/677498/video-303726-h264_base.jpg?2013&quot;}" id="video_pitch"><video class="has_webm landscape" preload="none">
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/677498/video-303726-h264_high.mp4" type='video/mp4; codecs="avc1.64001E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/677498/video-303726-h264_base.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/677498/video-303726-webm.webm" type="video/webm"></source>
+You'll need an HTML5 capable browser to see this content.
+</video>
+<img alt="Photo-main" class="has_played_hide poster landscape" src="https://s3.amazonaws.com/ksr/projects/677498/photo-main.jpg?1397834047" />
+<div class="play_button_big play_button_dark absolute-center rounded has_played_hide">
+<span class="ss-icon ss-play"></span>
+Play
+</div>
+<div class="player_controls clearfix absolute-bottom mb2 rounded white bg-green-dark forces-video-controls_hide">
+<div class="left">
+<a class="button button_icon button_dark playpause play mr1">
+<span class="play ss-icon ss-play"></span>
+<span class="pause ss-icon ss-pause"></span>
+</a>
+<span class="time current_time h12 left">00:00</span>
+</div>
+<div class="right">
+<span class="time total_time h12 left mr1">00:00</span>
+<a class="left button button_icon button_icon_white volume">
+<span class="ss-icon ss-volume icon_volume_nudge"></span>
+<span class="ss-icon ss-highvolume"></span>
+</a>
+<div class="volume_container left">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+<a class="left button button_icon button_icon_white fullscreen">
+<span class="ss-icon ss-expand"></span>
+<span class="ss-icon ss-contract"></span>
+</a>
+</div>
+<div class="clip">
+<div class="progress_container pr1 pl1">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="buffer progress_bar_buffer"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div data-project-state="suspended" id="about">
+<div class="NS_projects__project_share clearfix py2 pl1 pr1">
+<ul class="left list-inline no-margin h5 bold">
+<li class="facebook mr2">
+<a href="https://www.kickstarter.com/projects/aarianna/realms-of-goldesia-rog-aaa-level-mmorpg"><span class="ss-icon ss-social ss-facebook color-facebook"></span>
+<span class="color-facebook">Share</span>
+<span class="share_bubble"><div class="triangle grey"></div>
+<div class="triangle white"></div>
+<span class="count"></span></span>
+</a></li>
+<li class="twitter mr2">
+<a  href="https://twitter.com/intent/tweet?text=Realms%20of%20Goldesia%20-%20Player-Driven%20Virtual%20Reality%20MMORPG%20by%20Aarianna%20Publishing%2C%20Inc.&amp;via=kickstarter&amp;url=http://kck.st/161rT0O" rel="nofollow"><span class="ss-icon ss-social ss-twitter color-twitter"></span>
+<span class="color-twitter">Tweet</span>
+</a></li>
+<li class="embed">
+<a href="/projects/aarianna/realms-of-goldesia-rog-aaa-level-mmorpg/widget" class="remote_modal_dialog grey-dark" data-modal-title="Embed a widget on your site" data-tracker-name="Embed"><span class="ss-icon ss-navigateleft"></span>
+<span class="ss-icon ss-navigateright"></span>
+Embed
+</a></li>
+</ul>
+<ul class="right list-inline no-margin h5 bold">
+<li class="curate mr2">
+</li>
+<li class="remind">
+<div class="ajax-container" id="watching-widget">
+<div class="Project1065736492" data-conditions="[{&quot;is_starred&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div id=\&quot;unwatch\&quot;&gt;\n&lt;a href=\&quot;/projects/aarianna/realms-of-goldesia-rog-aaa-level-mmorpg/unwatch\&quot; class=\&quot;on\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"></div><div class="Project1065736492" data-conditions="[{&quot;!is_starred&quot;:true}]" data-evaluation="true" data-render="&quot;&lt;div id=\&quot;watch\&quot;&gt;\n&lt;a href=\&quot;/projects/aarianna/realms-of-goldesia-rog-aaa-level-mmorpg/watch\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;span class=\&quot;text\&quot;&gt;\n&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"><div id="watch">
+<a href="/projects/aarianna/realms-of-goldesia-rog-aaa-level-mmorpg/watch"><span class="ss-icon ss-star"></span>
+<span class="text">
+</span>
+</a></div>
+
+</div></div>
+</li>
+</ul>
+</div>
+
+<div class="short_blurb py2 pl1 pr1">
+<p class="h3">An MMORPG that allows for total immersion through its skill-based class system, player-driven world &amp; support for Oculus Rift!</p>
+</div>
+<div class="full-description">
+<div class="template asset" contenteditable="false" data-edit_url="/projects/aarianna/realms-of-goldesia-rog-aaa-level-mmorpg/assets/1188609/edit" data-id="1188609">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/188/609/754649503a966b4b2aeb9113a14f8dfd_large.png?1381853659"></figure>
+</div><p><a href="http://www.twitter.com/GoldesiaRPG" target="_blank">Follow RoG on Twitter</a> | <a href="http://www.facebook.com/realmsofgoldesia" target="_blank">Like RoG on Facebook</a> | <a href="http://www.youtube.com/channel/UCZv5A1h5uzcLL4fl99F7mdw" target="_blank">See RoG videos on Youtube</a></p><div class="template asset" contenteditable="false" data-edit_url="/projects/aarianna/realms-of-goldesia-rog-aaa-level-mmorpg/assets/1179640/edit" data-id="1179640">
+<figure><img alt="Lang: EN, FR, GR &amp; SP Platforms: Windows, Mac &amp; Linux Engine: Unity 3D" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/179/640/146137a4cf89752a4534931df90966e5_large.jpg?1381825527"><figcaption>Lang: EN, FR, GR &amp; SP Platforms: Windows, Mac &amp; Linux Engine: Unity 3D</figcaption></figure>
+</div><p>The four realms are plagued by a primeval darkness, unleashed after a clash of deities. Alone in the universe, god created a companion of light. However, this being’s radiance was dimmed by a heart of shadow. The destruction of this corrupted entity led to the destruction of god himself, seeding the creation of the four realms, but leaving behind a force of pure evil: the Shadow Demon. With God’s power embedded in all of the universe, the four realms were destined to continue his battle and control their own fate.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/aarianna/realms-of-goldesia-rog-aaa-level-mmorpg/assets/1188717/edit" data-id="1188717">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/188/717/6a5f182de1759878210eebfc0d22074a_large.png?1381853931"></figure>
+</div><p>Ask yourself, what’s next in MMORPGs? What hasn't been done? Who says it can’t be done? How will we do it? These are the precise questions we asked ourselves when starting Realms of Goldesia. We decided to take on 3 major challenges: </p><p><b>1. Immersion: </b><i>Lose yourself in the world</i>.<br><br>Incorporating virtual reality into our game was a tough challenge. We knew we had to use the latest and greatest of technologies to pull it off. Having obtained Oculus Rift’s developer headset to test, we were immediately overwhelmed and convinced. Our developers began working away at how to best integrate the system into our own development. Its high definition 3D engines immediately add a level of immersion unrivaled by games currently on the market. <br><br><b>2. Choice</b><i>: Be who and what you want to be</i>.</p><p>To achieve this we knew we had to create character customization of a high level. Not only for the look, but for the whole player experience. We came up with a class system that minimally restricts player choice, and is in essence almost entirely skill-based. Players can pick any set of skills to create unique characters. Skills are increased through use, rather than by gaining experience. Players live their choices.</p><p><b>3. Control</b><i>: Govern all of the world's dynamics</i><br><br>This third challenge meant we had to make everything controllable by players: cities, economies, trade, buildings, events &amp; stories. So we did. Players, not NPCs, make quests. Players create their own stories, ones that would shape the events on realms. We merely provide an epic setting filled with catalysts for adventure. No grinding, no questing, no predetermined destinies - a realistic &amp; dynamic world shaped by players.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/aarianna/realms-of-goldesia-rog-aaa-level-mmorpg/assets/1188838/edit" data-id="1188838">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/188/838/f89c20270aad36b9250bf2311298b0d9_large.png?1381854424"></figure>
+</div><h1><b>Origin of the four realms</b></h1><p>In the beginning of time, the universe was nothing but a hollow void. Seeking solace in this emptiness, God used part of himself to form a companion. He chose four of his many virtues to bestow upon the being: Valor, Cunning, Loyalty, and Perseverance. Though God intended this entity to be a pure deity of light, it was not long before it showed glimpses of corruption. This luminous companion had a darkness within. </p><p>A dormant part of God, his own evil, had accidentally slipped into this being during its making, and in this being it was dormant no more. God knew that the only way to kill the corruption was to kill the companion. In a celestial cataclysm God attempted this killing, and in his attempt he shattered the being into four shards, destroying himself in the process.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/aarianna/realms-of-goldesia-rog-aaa-level-mmorpg/assets/1181592/edit" data-id="1181592">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/181/592/cde8163e37c39d999bad8eb910c270cf_large.jpg?1381832124"></figure>
+</div><p>The four shards became the four new realms of the universe, each represented by one of the original four virtues. Goldesia (Valor), Platinumor (Cunning), Gemzeon (Persistence), and Pearline (Loyalty). God’s power dispersed, imbuing all of the universe with his divine energy. All that was left of his companion was its evil. Now, uninhibited by virtues, it exploded in size and power. The colossal Shadow Demon was born.</p><p>Now, the four realms, each augmented with one of the virtues, together harness the divine power that is in all the universe to war against the ultimate evil, continuing God’s battle even after his death. With that power, they manage to hold off the Shadow Demon and his armies. Resources from each of the realms are the fuel for great war machines all realms have built. Will it be enough? Their destiny is upon them.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/aarianna/realms-of-goldesia-rog-aaa-level-mmorpg/assets/1188944/edit" data-id="1188944">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/188/944/0d4e3b8e4ca671b52cc2be291137a27c_large.png?1381854694"></figure>
+</div><h1><b>Goldesia</b></h1><p>The realm rich with deep mines that glisten with gold. It is the most peaceful of all realms, a place where all of nature seems to radiate with a golden glow. </p><div class="template asset" contenteditable="false" data-edit_url="/projects/aarianna/realms-of-goldesia-rog-aaa-level-mmorpg/assets/1181660/edit" data-id="1181660">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/181/660/66856183c3ad9f3114f86f0929a82853_large.jpeg?1381832323"></figure>
+</div><p>Goldesia's flora and fauna are much like that of the earth you know. Lush forests, green and golden, filled with deer, bears and wolves. Its architecture is reminiscent of medieval times on earth.</p><h1><b>Platinumor</b></h1><p>In the darkest corner of the Rivaled Realms looms Platinumor. It sees little of the sun’s warming rays. As gloomy as Platinumor is, its damp caves are even gloomier.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/aarianna/realms-of-goldesia-rog-aaa-level-mmorpg/assets/1181666/edit" data-id="1181666">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/181/666/4d130cec95ffd243dfd5d36e333bcf13_large.jpg?1381832342"></figure>
+</div><p>To survive, life on Platinumor has been forced to adapt in curious ways, ways that seem gruesome to the other inhabitants of the cosmos. Creatures and people of this outcast planet have evolved forms that suit a life in the shadows.</p><h1><b><br>Gemzeon</b></h1><p>As the planet closest to the sun, Gemzeon swelters with heat. Many die each year from the scorching temperatures alone. </p><div class="template asset" contenteditable="false" data-edit_url="/projects/aarianna/realms-of-goldesia-rog-aaa-level-mmorpg/assets/1181673/edit" data-id="1181673">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/181/673/96c0b84b03d3640671ef7dbdd7d96b1f_large.jpg?1381832357"></figure>
+</div><p>Life is full of adversity on this struggling planet. The mobs only grow angrier, the harvests smaller, and the capital city is now under constant attack by savage beasts known as the blind howlers. </p><div></div><h1><b>Pearline</b></h1><p>Pearline is surrounded by immense moons that have engaged in a never-ending war over the realm’s great oceans.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/aarianna/realms-of-goldesia-rog-aaa-level-mmorpg/assets/1181677/edit" data-id="1181677">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/181/677/dbbf96aaf770f1ca178729fb3c379027_large.jpg?1381832373"></figure>
+</div><p>Massive shadows of sea serpents slide through towering waves. Mammoth clams nest in the shallows of shoreside caverns, birthing pearls of a size found nowhere else in the Rivaled Realms.</p><h1><b>Shadow Dungeon</b></h1><p>Filled with some of the most dangerous shadow beings and horrors, the Shadow Dungeon is one of the most dangerous places for mortals. Not only is this the largest dungeon there is to traverse, almost all its structure is ever-changing, save for its entrances. Its variability and sheer size make it impossible for explorers to map.</p><p>Its liquid, fuming walls flow with an evil that pulls in those who walk too closely to it. In fact, you can walk right through them, but at your own peril. The more you walk through them, the slower you move, the more trapped you become. Get pulled in too deep, and you will wake up somewhere, in some realm, with dark eyes and a shadow cloud above your shoulder: evil will have consumed you.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/aarianna/realms-of-goldesia-rog-aaa-level-mmorpg/assets/1188952/edit" data-id="1188952">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/188/952/911a8af5899c519ec49f1d130d0809df_large.png?1381854713"></figure>
+</div><p>Have you ever gamed so hard that you lost yourself and all track of time? Well, that's likely to happen a lot more when you couple Realms of Goldesia with the critically acclaimed Oculus Rift Virtual Reality headset. Be the first to experience the future of gaming in MMORPGs, see the line between virtual and reality blur.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/aarianna/realms-of-goldesia-rog-aaa-level-mmorpg/assets/1118458/edit" data-id="1118458">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/118/458/28a33f395cf02ef9670e07e6fa2c18c1_large.jpg?1381640740"></figure>
+</div><p><b>Note: </b><i>Nothing in our content or message should be taken to mean that we partnered up with Oculus Rift. Our game merely supports the Oculus Rift. We are providing 75 Oculus Rift kits for the first 75 backers that back us for $250 or more. This giveaway is to thank our earliest and strongest supporters, and enable them to experience RoG in the best way possible!</i></p><h1><b>Realism &amp; PVP</b></h1><p>We want RoG to be a realistic place where everyone can influence each other. For PVP, this means we are opting for almost open PVP. While in towns aggressors will be attacked on sight, outside towns any can attack players of another faction. Whether people of another realm can enter towns peacefully, is up to the elected player official.</p><h1><b>Evil players</b></h1><p>Players will be able to attack players of their own faction or realm. This will have severe consequences, but also interesting benefits. A player who kills too many other good players becomes evil. Darkness consumes him, and all races have their eyes turn into darkness of the shadow demon. Hovering above their shoulder will be a dark shadow, a demon cloud. They will no longer be able to enter towns, as guards will kill them on sight. But, by becoming evil, they enter a pact with the shadow demon. Through that they're be able to retrieve resources and other goods that are normally retrieved through participation in town economies, as the shadow demon acquires these resources from the defense systems of realms and through his armies. </p><h1><b>Conversion</b></h1><p>Any evil character can convert back to being good, but this also has severe repercussions. A penalty to all skills is applied when a character turns good again, and if a player becomes evil three times in a row, the player is evil forever. When forever evil, dying comes with strong penalties. The evil life is not an easy one!</p><div class="template asset" contenteditable="false" data-edit_url="/projects/aarianna/realms-of-goldesia-rog-aaa-level-mmorpg/assets/1188868/edit" data-id="1188868">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/188/868/f691bbe00faacca7a29e9bbd77ee0de3_large.png?1381854499"></figure>
+</div><p>RoG has four realms and four races, with each their own appearance and attributes. Goldesia’s inhabitants have an almost glowing complexion, never pale, and most of them are blond or light brunettes. They look most like the humans we know. The people of the dark realm Platinumor are thin and ghastly looking. Darkness around the eyes and paleness reveals that they have adapted to life in the shadows. Survival on Pearline is easier with gills and some webbed fingers and toes, all of which Pearline’s natives have. They are a tall people with a dark blue complexion and quite dark eyes eyes, though nowhere near as dark as those who have turned evil. The dark-skinned people of Gemzeon are rugged, but not very tall or large. </p><p><b>The four races of the four realms all come with their own virtue:</b></p><p><i>Goldesia:</i> Valor, which greatly reduces susceptibility to fear effects &amp; confusion in battle. </p><p><i>Platinumor:</i> Cunning, which is a boost toward intelligence and agility. </p><p><i>Pearline:</i> Loyalty, gives a boost towards beneficial spells &amp; effects to chosen friendlies. </p><p><i>Gemzeon:</i> Perseverance provides a boost to stamina and ability to go below 0 on stamina. Also, a  boost on toughness.</p><p>There are more advantages and disadvantages to the starting virtues that we will explore during development!</p><p><b>Customization </b></p><p>Character customization will have all expected features: adjustment of physical features and a small selection of clothes. All the realms will have a registry that automatically updates once a new citizen is born. You will be able to write about the background of your character and choose for this to be recorded in the registry. Read below how we aim to give maximum flexibility in building your own character (our skill-based char. advancement system). Customization is not only what you do at character creation in RoG, it’s how you grow and develop as you experience the world. For example, you can further customize and express yourself through our in-game music and art creation features!</p><h1><b>Hybrid character development system</b></h1><p>RoG has a hybrid character development system. At character creation, you can choose one of the four races, after
+which you can select a class. Races give virtues with stat boosts, and classes give you stat boosts as well as skill boosts. Next, you select one more virtue out of four that gives you another stat and skill boost. Then, you select your skills. Selecting skills will give you a higher starting value for them. The skills with the highest starting value are those boosted by the
+virtues and class you choose. All skills start on 1, the highest you can start with is 200 (by selecting the right class and virtues).</p><p><b>Classes:</b> Artisan, Warrior, Mage, Ranger, Merchant, Politician</p><p><b>Some of our skills</b>: Carpentry, Smithery, Magic, Magic Absorption, Light Weapons, Heavy Weapons, Ranged Weapons, Taming, Stealth, Provocation, Music, Air Harnessing, Anatomy, Tinkering, Music, Lock Picking, Healing, Chemistry</p><p>Skill points go from 0 to a 1000. 1000 is absolute mastery. We will have 6 classes and 24 skills. Each character can have 8 skills,
+or 8000 skill points. So in theory, you can have 250 points in each skill, but that will be quite useless! 
+</p><h1><b>Character Advancement &amp; Experience
+</b></h1><p>Experience in RoG is not what you're used to from most MMORPGs. In RoG, experience is gained through: experiencing the world.
+Much like in real life, the more novel things you do, the more experience you get. Since we have a skill based character advancement system, experience does not grant you new abilities in the traditional sense. It grants you status, which puts you higher on the roster for elections, for example. The higher your experience,
+the higher office you can apply for in politics. More experience also gives you the ability to tutor other players or give bigger quests to other players.</p><p>So, experience is gained through killing monsters, adventuring (discovering places), using skills successfully, being elected, running towns, defeating
+players of other factions, and more.  The more novel the action, the more experience you earn. And the higher your experience, the more options you have to influence the world.<br><br><b>Experience cap</b><br> Experience cap? There is none! You always keep gaining experience,
+but the more you have, the slower you gain. At the extremely high levels, gains are very slow. But there are always more rewards waiting.
+</p><div class="template asset" contenteditable="false" data-edit_url="/projects/aarianna/realms-of-goldesia-rog-aaa-level-mmorpg/assets/1188876/edit" data-id="1188876">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/188/876/fb209bd2475c150206235855e053c94e_large.png?1381854514"></figure>
+</div><p>RoG is truly player-driven. That's not just a catchy line we used. There are very many aspects of the world influenced by the choices and actions of players. They will hold the destiny of the realms in their hands.</p><h1><b>Events</b></h1><p>RoG will always have new events that we add and create to keep the game fresh. These will be ongoing. Some will be unique, in the sense that they will never happen again in that time and place in that way. The most exciting part, is that players will largely influence and control the events that unfold.</p><p>As an example, the shadow demon perpetually attacks all the realms: resources have to be sent into each of the realm's defense systems to keep his armies at bay. When the realms or particular towns fail this, they can expect bigger waves of shadow armies and more unique attack events to occur. Failing this drastically can mean the shadow demon himself chooses to attack. A towering shadow colossus that can only be held off by a vast army of players.  </p><h1><b>Quests</b></h1><p>Static and boring quests that seem to belong in RPGs rather than in MMORPGs? We don't have those. We don't have quests. Not in the traditional sense. What we do have, is players being able to give each other quests. The way that works is, that the more experience a player has, the more elaborate quests they can give out. And for doing that, both the quest giver and quest taker gain experience. There will be restrictions in place to avoid exploitation of this system. Quests are put on a special quest bulletin board. Some of the types of quests are retrieval, destruction, bounty, mining, protection and taming. Some of the quests, like destruction, will be more like quests you've come to know, others will be work orders for professions or assignments for players with special skills, such as tamers.</p><p><i>A crafting quest</i>: armor can be bought namelessly, but a piece of armor that has been made for you as part of a quest will bear your name, be more durable, and have better stats.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/aarianna/realms-of-goldesia-rog-aaa-level-mmorpg/assets/1195765/edit" data-id="1195765">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/195/765/f1ecc67802831497f0e3c4d751c4992f_large.jpg?1381892040"></figure>
+</div><p><i>A mining quest</i>: Player A would like 1000 units of a particular resource. Instead of buying it on the market, player A can gain both experience and spend less by putting up a quest. The quest menu will include only places, creatures, items, and resources that the player has actually been in contact with. You cannot give out quests regarding things or for areas you don't know.</p><h1><b>Housing &amp; Ownership</b></h1><p>You will start by selecting and customizing your character, and then the realm in which you will begin. Once your realm is selected, you will be provided with your own space. 
+ 
+Players are given the equivalent of “forty acres”. The “forty acres” will comprise a chunk of terrain on the Planet they chose during their Avatar customization and Tradecraft choosing based on a lottery system. They will own the mineral rights below this terrain they have Deed to. The player would then have the ability to mine from their own land, hire miners to mine for them, sell their land, plant and grow crops, and build structures as they collect inventory, money, gems, contract their skills, and trade.</p><p>We will have housing in towns  and also plan to introduce custom housing.</p><h1>Politics, Factions, Guilds</h1><div></div><p>Players rule the world in RoG. All towns have mayors, officials with roles, and all of them are elected based on their campaigns and experience points. Ultimately, players elect other players for these positions. These extensive features mean that players who don’t like combat are welcome in RoG and can have a rich experience!</p><p>When aspects of a town's economy are dwindling, elected officials stand to lose their position. Any elected official can be voted out at any time. Elected officials, for the duration of their term, cannot receive any coin from other players and are prohibited from selling goods. They will receive compensation for this, based on their performance. This is to avoid bribery. Officials will have power over the economy, but also be able to make choices (if sufficient votes are cast in addition to their heavy-weighing one) to prohibit entry of people from other realms into town.</p><p>Factions and guilds will have their own stat boosts, and players will be able to join any faction or guild. Though in both, the leaders and members can ban a particular guild or faction. A player can make a guild, for example, that prohibits players of a particular faction, due to conflicting interests or ideologies.</p><h1>Economy, Trade, Crafting</h1><p>The player-controlled economy will be supported by extensive player crafting. Craft skills are like any other skills, they have a 1000 point cap. Crafters are able to not only craft items but also craft their abilities within a given skill. They can work toward particular enhancements for weapons they craft, for example, and apply those to the weapons. On request of other players, they can custom-fit their items, which results in the weapon being marked with the name of the player who ordered it, giving them a stat boost.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/aarianna/realms-of-goldesia-rog-aaa-level-mmorpg/assets/1195644/edit" data-id="1195644">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/195/644/189ce1302bf149b21f3bb422c3356bb8_large.jpg?1381889869"></figure>
+</div><p>There will be market, auction house and town-level, as well as realm-level trading.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/aarianna/realms-of-goldesia-rog-aaa-level-mmorpg/assets/1188882/edit" data-id="1188882">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/188/882/30da9a74ed338ca9f51300bbe9cac2ba_large.png?1381854531"></figure>
+</div><h1><b>Creatures &amp; Horrors</b></h1><p>All realms have many dangerous places filled with monsters. While Goldesia is the most peaceful one, like all realms, it is perpetually under attack by the shadow demon's forces. Frequency and intensity of attacks depends on how well the realms are run and how well the defense systems are stocked with resources.</p><div>
+
+
+
+
+
+
+<p>The monsters in RoG will not supposedly be scary. They will be truly scary. The demon's shadowy forces are dark, evil, and bloodthirsty creatures of the underworld. They'll teleport to you, snap at you, surround and attempt to consume you. Our goal is to make our monsters inspire real fear.</p>
+<p><b>Haagenti</b></p>
+<div>
+This demonic being is one of <b>the most nefarious fiends in Goldesia</b>, and the shadow demon's greatest weapon. Haagenti smolders with evil as the shadow demons' right hand, leading attacks of armies into the realms, setting aflame all vegetation, creatures and people in his way.
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/aarianna/realms-of-goldesia-rog-aaa-level-mmorpg/assets/991044/edit" data-id="991044">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/991/044/ba044cebabbaed2534f5f48b9590d7e8_large.jpg?1381087188"></figure>
+</div>
+
+<p>Not only does Haagenti attack the realms, some report that he wanders the shadow dungeon. No adventurer should hope to ever find out if this is true.</p>
+<h1>
+Endgame
+</h1>
+
+<p>If you read about our features, you surely came across the many ways very experienced players will be able to enjoy the game indefinitely. For your convenience, here's a list of some of those features: Monthly new events, player-influenced and caused events, no experience cap, factions, elections, Open PvP, evil players, and more that will be revealed later. Instead of having an experience cap and no quests to grind, the world will constantly be changing and offer new things for you to do.</p>
+
+<h1><b>Book of History</b></h1>
+
+<p>The book of history is a self-writing book that records events in Realms of Goldesia. Anybody will be able to access and read this. Among the events that will be recorded: elections, attacks, actions of the shadow demon, war declarations, player-caused events, and unique monthly events. Since players' actions will heavily influence the outcome of events, this book won't be the same on different shards.</p>
+<h1><b>Travel</b></h1>
+<p>With four planets, there will be a lot of ground to cover. There will be portal gates at fixed locations throughout the realms that can be used by anyone. Traveling through a portal weakens the traveler for 30 seconds. They can go back in, but then they are weakened for 90 seconds. After the third time, which means 180 seconds of portal transition wear, one cannot go back into gates. Fans of Ultima Online may rejoice, as we will have a similar system for personal travel. With enough magic skill, bind stones can be marked with a location, to which you can teleport at any time. Buildings, dungeons, certain hunting grounds, and special locations will be restricted.</p>
+<h1><b>Magic</b></h1>
+<p>When God’s companion showed signs of evil, God knew that more than the four virtues he put in his companion were present. In attempt to destroy his companion, he destroyed himself and shattered the very four virtues he put in him. These four virtues became the planets and the virtues of their respective inhabitants. God’s virtues, however, spread throughout the whole universe. Divine power ready to be harnessed for those who know how. Mages draw their spells from this celestial energy. Heavy armor disrupts this harnessing, therefore mages cannot wear anything but clothes or leather armor. </p>
+<h1>Armor &amp; Attire</h1>
+
+<p>Armor will be crafted by players and enhanced in numerous ways. Natural resources from each planet will have their special armor: enhanced and encrusted with gold, platinum, gems and pearls.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/aarianna/realms-of-goldesia-rog-aaa-level-mmorpg/assets/1195752/edit" data-id="1195752">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/195/752/69c99007265009bf3186bf78e4f705af_large.jpg?1381891791"></figure>
+</div>
+
+<p>While we will support all sorts of clothing for self-expression, it will not be possible to wear heavy armor, yet choose to look like you’re half-naked or wearing light clothes. This is to maintain a level of realism. We will however support instant attire change (from armor to casual).</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/aarianna/realms-of-goldesia-rog-aaa-level-mmorpg/assets/1188893/edit" data-id="1188893">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/188/893/e7f0f00a2e9bf5045fe1edac13e89386_large.png?1381854548"></figure>
+</div>
+
+
+
+
+<div>
+
+<p>We are committed to bringing our full vision of RoG to life, so no matter what, you’ll see all of the realms and features listed on this Kickstarter. However, without enough funding, we will have to wait until after launch to bring some of these elements to life. We don’t want to make you wait. To ensure that RoG is as rich as can be at launch, we need your help achieving the following goals:</p>
+<ul>
+<li><p><b>$  900,000 -</b> RoG will be released with 18 skills and 2 realms: Goldesia &amp; Platinumor</p></li>
+<li><p><b>$ 1,300,000 -</b> Gemzeon realm ready at launch, along with more events.</p></li>
+<li><p><b>$ 1,700,000 -</b> Pearline realm ready at launch, plus even more events.</p></li>
+<li><p><b>$ 2,000,000 -</b> Mounts and 6 additional skills ready at launch.</p></li>
+<li><p><b>$ 2,200,000 -</b> 6 more creatures added to the realms.</p></li>
+<li><p><b>$ 2,300,000 -</b> An underground city on Platinumor for evil players, plus dynamic event mechanisms. </p></li>
+<li><p><b>$ 2,800,000 -</b> All war machines will have 8 different turrets for players to use. </p></li>
+<li><p><b>$ 3,100,000 -</b> 4 new creatures and 5 dynamic event mechanisms added.</p></li>
+<li><p><b>$ 3,500,000 -</b> Creation of an underwater merchant city on Pearline.</p></li>
+<li><p><b>$ 4,000,000 -</b> A massive hunting valley added to Gemzeon, including 9 new creatures.</p></li>
+<li><p><b>$ 4,250,000 -</b> Enrichment of player quest creation feature: more types of quests, richer controls &amp; mechanics. </p></li>
+<li><p><b>$ 4,500,000 -</b> Enrichment of crafting benches and features in factions &amp; politics.</p></li>
+<li><p><b>$ 4,800,000 -</b> 2 major dynamic events involving the Shadow Demon and Haagenti!</p></li>
+</ul>
+<ul><li>
+<b>
+$ 5,000,000 -</b> This will help us make all described features as rich as we’d like them to be at launch. </li></ul>
+<div>Thank you so much for helping us realize our vision. We can't express our gratitude! To support RoG and other Kickstarter projects, go to: <a href="http://www.crowdfundingforum.com" target="_blank">www.crowdfundingforum.com</a>
+</div>
+<div><br></div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/aarianna/realms-of-goldesia-rog-aaa-level-mmorpg/assets/989122/edit" data-id="989122">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/989/122/b5909253a7296f9b867334dfe4f733a2_large.jpg?1381026210"></figure>
+</div>
+<p>Not only do we want to reward all of our backers, we also want to kick forward indie game development via <a href="http://kickingitforward.org/" target="_blank">http://kickingitforward.org</a></p>
+<p><b>Note: </b>Our reward graphics are in the process of being updated to reflect the following:<br><br><b>$40</b> - Lifetime free-to-play access.<br><b>$50</b> - Beta access.<br><b>$250 </b>- Alpha access. </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/aarianna/realms-of-goldesia-rog-aaa-level-mmorpg/assets/989179/edit" data-id="989179">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/989/179/6130cf318cec2b1ee04ddacdf428c519_large.jpg?1381027275"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/aarianna/realms-of-goldesia-rog-aaa-level-mmorpg/assets/1002487/edit" data-id="1002487">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/002/487/28cdce5a85dd51f90acf41f4fbe706d6_large.jpg?1381292799"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/aarianna/realms-of-goldesia-rog-aaa-level-mmorpg/assets/1002490/edit" data-id="1002490">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/002/490/a1be3c0844e7ea595087455f6dce6ffb_large.jpg?1381292835"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/aarianna/realms-of-goldesia-rog-aaa-level-mmorpg/assets/1002491/edit" data-id="1002491">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/002/491/84ce24f03e4a7e2580ed420459001d56_large.jpg?1381292859"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/aarianna/realms-of-goldesia-rog-aaa-level-mmorpg/assets/1002492/edit" data-id="1002492">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/002/492/8a9e8aaa3eb9ca8b9ddfc0801d2276fd_large.jpg?1381292885"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/aarianna/realms-of-goldesia-rog-aaa-level-mmorpg/assets/1002496/edit" data-id="1002496">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/002/496/66bba1fa984ab0efc803ee11c6e7927d_large.jpg?1381292936"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/aarianna/realms-of-goldesia-rog-aaa-level-mmorpg/assets/1002497/edit" data-id="1002497">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/002/497/671d8662055081f28812bb1bbb17a6dc_large.jpg?1381292965"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/aarianna/realms-of-goldesia-rog-aaa-level-mmorpg/assets/1002500/edit" data-id="1002500">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/002/500/3cbca48f6df865ec69ab1ddd8aa80fe8_large.jpg?1381293016"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/aarianna/realms-of-goldesia-rog-aaa-level-mmorpg/assets/1002514/edit" data-id="1002514">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/002/514/0c1716e12969c43aabd2851e48c0d768_large.jpg?1381293199"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/aarianna/realms-of-goldesia-rog-aaa-level-mmorpg/assets/1002479/edit" data-id="1002479">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/002/479/94451ce94ed696e2c4cf994677bda662_large.jpg?1381292563"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br><br>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+<div id="risks">
+<h2 class="title grey-dark mt6 mb4">
+<span>Risks and challenges</span>
+<a href="/help/faq/kickstarter%20basics#Acco" class="right normal h5" target="_blank">Learn about accountability on Kickstarter</a>
+<div class="divider clear"></div>
+</h2>
+<p><p>All MMORPGs are inherently risky due to the high cost of production, the long development cycles, and the in-depth, comprehensive effort required to make a truly genre-defining title. Our unique challenge with RoG is not at all in the category of creativity (an area where many other titles simply fall short), but the challenge of execution. It will require meticulous programming, designing, and implementation. Quality Assurance (QA) for the game and developing a world-class team will be essential. We’re incredibly proud of the talent we’ve assembled so far and are confident this team will meet and exceed all expectations!</p></p>
+</div>
+</div>
+<div class="NS-projects-faqs" id="project-faqs">
+<h2 class="title grey-dark mt6 mb4">
+FAQ
+<div class="divider clear"></div>
+</h2>
+<ul class="faqs">
+
+</ul>
+</div>
+
+<div class="mt4 ml1 mr1 mb2" id="report-issue-wrap">
+<a href="/login?then=%2Fprojects%2Faarianna%2Frealms-of-goldesia-rog-aaa-level-mmorpg" class="button button_grey">Report this project to Kickstarter</a>
+</div>
+</div>
+<div class="NS-projects-rightcol grid_5" id="rightcol">
+<div class="NS_projects__ecom">
+<div class="digits_5 pb2 pl2 pt2" id="stats">
+<h5>
+<div class="num h48 no-margin" data-backers-count="114" id="backers_count"><data class="Project1065736492" data-format="number" data-value="114" itemprop="Project[backers_count]">114</data></div>
+<span><data class="Project1065736492" data-attr="backers_count" data-format="pluralize" data-value="114" data-word="Backer">Backers</data></span>
+</h5>
+<h5>
+<div class="num h48 no-margin" data-goal="900000.0" data-percent-raised="0.026403333333333333" data-pledged="23763.0" id="pledged">
+<data class="Project1065736492" data-currency="USD" data-format="shorter_money" data-precision="0" data-value="23763" data-without_code="true" itemprop="Project[pledged]">$23,763</data>
+<span class="money usd project_currency_code"></span>
+</div>
+pledged of
+<span class="money usd no-code">$900,000</span>
+goal
+</h5>
+<span data-duration="36.041666666666664" data-end_time="2013-11-14T09:00:22-05:00" data-hours-remaining="0" id="project_duration_data"></span>
+<div class="Project1065736492" data-conditions="[{&quot;!state&quot;:[&quot;canceled&quot;,&quot;suspended&quot;]}]" data-evaluation="false" data-render="&quot;&lt;h5 class=\&quot;poll \&quot; data-dynamic=\&quot;5\&quot; data-end_time=\&quot;2013-11-14T09:00:22-05:00\&quot; data-poll_url=\&quot;https://d2oher2uhvl0ur.cloudfront.net/projects/aarianna/realms-of-goldesia-rog-aaa-level-mmorpg/stats.json\&quot;&gt;\n&lt;div class=\&quot;num h48 no-margin\&quot;&gt;0&lt;/div&gt;\n&lt;span class=\&quot;text\&quot;&gt;seconds to go&lt;/span&gt;\n&lt;/h5&gt;\n&quot;"></div></div>
+<div class="Project1065736492" data-conditions="[{&quot;state&quot;:&quot;live&quot;},{&quot;!ended?&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;pr2 pl2\&quot; id=\&quot;pledge-wrap\&quot;&gt;\n&lt;a href=\&quot;/projects/aarianna/realms-of-goldesia-rog-aaa-level-mmorpg/pledge/new?clicked_reward=false\&quot; class=\&quot;button button_green button_box button_block\&quot; id=\&quot;button-back-this-proj\&quot; title=\&quot;Back this project\&quot;&gt;Back This Project &lt;small class=&#39;h6 normal block green-dark&#39;&gt;&lt;span class=\&quot;money usd \&quot;&gt;$1&lt;/span&gt; minimum pledge&lt;/small&gt;&lt;/a&gt;\n&lt;/div&gt;\n&quot;"></div><div class="Project1065736492" data-conditions="[{&quot;state&quot;:&quot;live&quot;}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;p2\&quot; id=\&quot;banner\&quot;&gt;\n&lt;p class=\&quot;tiny_type no-margin\&quot;&gt;\nThis project will only be funded if at least\n&lt;span class=\&quot;money usd \&quot;&gt;$900,000&lt;/span&gt;\nis pledged by\n&lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;llll z\&quot; datetime=\&quot;2013-11-14T09:00:22-05:00\&quot;&gt;Thu, Nov 14 2013 9:00 am EST&lt;/time&gt;.\n&lt;/p&gt;\n&lt;/div&gt;\n&quot;"></div></div>
+
+<div class="NS_projects__rightcol_projectby bg-blue-light rounded">
+<div class="p2 clearfix">
+<div class="avatar inline-block align-middle">
+<a href="/projects/aarianna/realms-of-goldesia-rog-aaa-level-mmorpg/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography"><img alt="Aarianna-publishing-icon.small" class="avatar-small" height="80" src="https://s3.amazonaws.com/ksr/avatars/7951261/Aarianna-Publishing-Icon.small.jpg?1381084234" width="80" />
+</a></div>
+<div class="creator-name inline-block align-middle ml1">
+<h6 class="mb1">Project by</h6>
+<h5 class="mb1">
+<a href="/projects/aarianna/realms-of-goldesia-rog-aaa-level-mmorpg/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">Aarianna Publishing, Inc.</a>
+</h5>
+<p class="location h6 bold mb1">
+<a href="/discover/places/atlanta-ga">Atlanta, GA</a>
+</p>
+</div>
+</div>
+<div class="creator-details pl2 pr2 pb1">
+<ul class="list-simple h5 mb1">
+<li class="projects">
+<span class="ss-icon ss-kickstarter grey-dark margin-right"></span>
+<span class="text">
+First created
+<span class="divider">&middot;</span>
+<a href="/profile/aarianna/backed" class="green-dark bold more-button remote_modal_dialog" data-modal-title="Projects backed by Aarianna Publishing, Inc.">3 backed</a>
+</span>
+</li>
+<li>
+<span class="ss-icon ss-facebook margin-right grey-dark"></span>
+<span class="text">
+Has not connected Facebook
+</span>
+</li>
+</ul>
+</div>
+<div class="footer center h5 bold clearfix rounded-bottom clip">
+<a href="/projects/aarianna/realms-of-goldesia-rog-aaa-level-mmorpg/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">See full bio</a>
+<a href="/projects/aarianna/realms-of-goldesia-rog-aaa-level-mmorpg/messages/new?message%5Bto%5D=aarianna" class="remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Send a message to Aarianna Publishing, Inc.">Contact me</a>
+
+</div>
+</div>
+
+<ul class="NS-projects-rightcol-rewards rounded clip list mt2" data-reward-count="25" id="what-you-get">
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$5</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+18 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>***SAGE***
+Your prophecy of Goldesia’s thriving future will be closer to fulfillment. You’ll receive an official thank you and Community Access to our forums.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-11-01">Nov 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$10</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+10 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>AVENGER:
+Revenge is sweet. Your contribution will help Goldesia stick it to the underlord, and in return, you’ll get an official thank you, Community Access to our forums, and a digital wallpaper of Goldesia.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-12-01">Dec 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$15</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+10 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>BARBARIAN:
+Share the fruit of your reavings, and you’ll get plenty of plunder. You’ll receive an Official Thank You, Community Access to our forums, a digital wallpaper of Goldesia, and 75 Power Points.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-12-01">Dec 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$20</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+5 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>MAGICIAN:
+Mage donations are what make the magic happen at our studios. In return, you’ll get all the rewards of “Avenger”, plus 100 Power Points and a digital game manual (PDF).</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-02-01">Feb 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$25</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+12 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>ASSASSIN:
+Your donation will be applied to our development with deadly precision. Rewards include all offered in the “Magician” pack, the Realms of Goldesia Game (DRM free), and 125 Power Points.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-11-01">Nov 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$35</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>SORCERER:
+Sorcerer pledges will go toward the spells and bindings that bring the magical realms to life. This comes with everything from the “Assassin” pack, plus a Development Retrospect PDF, and 50 additional Power Points (175 Total).</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-11-01">Nov 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$40</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>SAMURAI:
+Your pledge will go toward honoring the old warrior ways, making legendary in-game battle and weapons. Rewards include everything from “Sorcerer”, plus digital high-res concept art, and 200 Power Points total. **Lifetime free-to-play access**</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-12-01">Dec 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$50</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+10 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>KNIGHT:
+Your chivalry will be well known among the realms. Get everything from “Samurai”, along with Royal Throne Access, access to pre-sale store items, and 250 Power Points total. **BETA ACCESS**</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-11-01">Nov 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$65</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>CONTROLLER: 
+The mighty Orbs of the Soul are under your command. You’ll be bestowed with everything from our “Knight” tier, as well as a digital map of the Rivaled Realms and a total of 325 Power Points.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-11-01">Nov 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$75</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>SNIPER:
+Thanks to your sharpshooting, we’ll be able to make the game weapons even more deadly. Get everything from the “Controller” tier, plus a ROG poster, The Imperial Access, 375 Power Points (total) and a special starter weapon of your very own.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-12-01">Dec 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$80</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>DECEPTIONIST:
+Your cunning ways will influence the twists and turns of our epic plot line. Everything from the “Sniper” pack will be yours, in addition to a Digital Strategy Guide and 400 Power Points (total).</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-12-01">Dec 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$90</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>GANGSTER:
+Become a famed name among ROG’s gangs of marauders, mercenaries, and rogues by donating. Your payoff will be everything from the “Deceptionist” tier, along with a Digital Concept Art book and 450 Power Points in total.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-12-01">Dec 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$100</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>ILLUSIONIST: 
+Your donation will make our game success no illusion at all. Get all rewards from the “Gangster” pack, plus receive PHYSICAL rewards such as printed game manual, boxed copy of the game, 500 Power Points (total), and a special thank you in the game credits.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-12-01">Dec 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$120</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+5 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>MASTERMIND: 
+Thanks to your evil genius, our bad guys will be even bigger and badder. Everything from the “Illustionist” pack will be paid to you in tribute, plus a digital storyboard of the game and 600 Power Points (total).</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-12-01">Dec 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$125</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>MANIPULATOR:
+Your silver-tongued deceptions deserve to be put to music, so in addition to 625 Power Points (total) and everything from the “Mastermind” tier, you’ll get the Digital Game Soundtrack.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-12-01">Dec 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$250</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>SEDUCER:
+With a donation like that, we just can’t resist you. Your charms will be rewarded with all of the “Manipulator” rewards, 1000 Power Points (total) plus the rare privilege to name an in-game item and write its description. **ALPHA ACCESS**</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-12-01">Dec 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$250</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+25 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(50 left of 75)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>***SEDUCER with OCULUS RIFT***
+First 75 backers will receive free Oculus Rift Virtual Reality Headset. 
+With a donation like that, we just can’t resist you. Your charms will be rewarded with all of the “Manipulator” rewards, 1000 Power Points (total) plus the rare privilege to name an in-game item and write its description.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-12-01">Dec 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$350</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>CONQUEROR:
+Clearly, you’re already out to conquer the Rivaled Realms. We’ll help you on your way by giving you everything from the “Seducer” pack, a sneak peek of our Official Game Launch Trailer, and a Printed Strategy Guide.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-12-01">Dec 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>ROGUE:
+For a rogue, you’re awfully generous. You’ll be thought of as ROG’s own Robin Hood. We’ll reward you with everything from the “Conqueror” pack, plus a printed Concept Art book, physical Cloth Map, and digital images/page-images of before and after character design.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-12-01">Dec 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$725</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>CAPTAIN:
+As a captain, you’ll get a chance to steer the direction of ROG’s fauna by designing a creature of your own. In addition to that, you’ll get everything from the “Rogue” tier, plus a limited edition signed print.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-12-01">Dec 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$1,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>GENERAL: You’ve risen up in the ranks, and for that, you deserve respect. You’ll be granted your own special in-game title, plus a ROG mouse pad, the CD game soundtrack, and everything from the “Captain” pack.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-12-01">Dec 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$1,500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>COMMANDER:
+Fulfill your commander duties by collaborating with us on the in-game background music. You’ll also get all of the privileges and rewards of the “General” tier, in addition to a ROG T-Shirt.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-12-01">Dec 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$2,500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>CHIEF:
+As some of the most respected figures in the Rivaled Realms, chiefs will get a chance to chat with the owners and creators of ROG, as well as an exclusive signed T-shirt. Everything from the “Commander” pack is also included.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-12-01">Dec 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$5,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>MAJESTY:
+You have a lord’s generosity! Be treated like royalty at our private release party, to which you’ll get an exclusive invitation. You’ll also get everything from the “Chief” tier rewards.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-12-01">Dec 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$10,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>DUKE:
+You’re bound to be one of the Goldesian bank’s most cherished allies. Or maybe you are the bank? To thank you for your incredible donation, we’ll grant you everything from the “Majesty” tier, plus a plaque of gratitude, collaboration on both character and level design, and ALL Aarianna publishing digital games until 2020.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-12-01">Dec 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+</ul>
+
+<div class="p2" id="meta">
+<h5>Funding period</h5>
+<p class="tiny_type">
+<time class="js-adjust" data-format="ll" datetime="2013-10-09T09:00:22-04:00">Oct 9, 2013</time> - 
+<time class="js-adjust" data-format="ll" datetime="2013-11-14T09:00:22-05:00">Nov 14, 2013</time>
+(36 days)
+</p>
+</div>
+</div>
+
+</div>
+
+<a href="#" id="video_mode_tab" style="display: none;">
+View in Video Mode
+</a>
+
+</div>
+</div>
+
+
+</div>
+
+<div class="h5 bg-green-dark" id="mega-footer-wrap">
+<div class="bg-green-dark white full-height" id="footer-newsletter-signup">
+<div class="container py4">
+<div class="grid_8 prefix_4 suffix_4 center mt4">
+<h2>
+Eureka! You've found
+<br>
+our little secret.
+</h2>
+<p>Sign up for our Happening email for all the inside info about arts and culture in the Kickstarter universe and beyond.</p>
+<div class="newsletter_signup">
+<form accept-charset="UTF-8" action="/newsletters/happening/signup" class="overlabels" method="post"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /><input class="hidden" name="authenticity_token" type="hidden" value="B8FC6kw0KcAt5xa1AEJMvClC+OMRw3tjGuLHas65WSg=" /></div><input class="hidden" id="location" name="location" type="hidden" value="footer" />
+<textarea class="hide textarea" id="comment" name="comment">
+</textarea>
+<div class="field newsletter">
+<label class="overlabel z1 overlabel-newsletter">Email address</label>
+<input class="text" id="email" name="email" type="text" />
+</div>
+<input class="button button_green submit" name="commit" type="submit" value="Submit" />
+</form>
+
+</div>
+
+</div>
+</div>
+</div>
+<div class="container relative" id="mega-footer">
+<span class="scissors icon-scissors-1"></span>
+<div class="grid_16 alpha omega pt4 pb2" id="mega-footer-links">
+<div class="grid_4 link-group">
+<h5 class="white">About us</h5>
+<ul class="list">
+<li><a href="/year/2013/?ref=footer">2013 highlights</a></li>
+<li><a href="/year/2012?ref=footer">2012 highlights</a></li>
+<li><a href="/team?ref=footer">Who we are</a></li>
+<li><a href="/jobs?ref=footer">Jobs</a></li>
+<li><a href="/press?ref=footer">Press</a></li>
+<li><a href="/help/stats?ref=footer">Stats</a></li>
+<li><a href="/newsletters/weekly">Projects we love</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group">
+<h5><a href="/help?ref=footer" class="white">Help</a></h5>
+<ul class="list">
+<li><a href="/hello?ref=footer">What is Kickstarter?</a></li>
+<li><a href="/help?ref=footer">FAQ</a></li>
+<li><a href="/contact?ref=footer">Support</a></li>
+<li><a href="/help/school?ref=footer">Kickstarter School</a></li>
+<li><a href="/terms-of-use?ref=footer">Terms of Use</a></li>
+<li><a href="/privacy?ref=footer">Privacy Policy</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group alpha omega suffix_1">
+<h5 class="alpha"><a href="/discover/advanced?ref=footer" class="white">Discover</a></h5>
+<ul class="column column-0 grid_2 list">
+<li><a href="/discover/categories/art?ref=footer">Art</a></li>
+<li><a href="/discover/categories/comics?ref=footer">Comics</a></li>
+<li><a href="/discover/categories/dance?ref=footer">Dance</a></li>
+<li><a href="/discover/categories/design?ref=footer">Design</a></li>
+<li><a href="/discover/categories/fashion?ref=footer">Fashion</a></li>
+<li><a href="/discover/categories/film%20&amp;%20video?ref=footer">Film &amp; Video</a></li>
+<li><a href="/discover/categories/food?ref=footer">Food</a></li>
+</ul>
+<ul class="column column-1 grid_2 list">
+<li><a href="/discover/categories/games?ref=footer">Games</a></li>
+<li><a href="/discover/categories/music?ref=footer">Music</a></li>
+<li><a href="/discover/categories/photography?ref=footer">Photography</a></li>
+<li><a href="/discover/categories/publishing?ref=footer">Publishing</a></li>
+<li><a href="/discover/categories/technology?ref=footer">Technology</a></li>
+<li><a href="/discover/categories/theater?ref=footer">Theater</a></li>
+</ul>
+</div>
+<div class="grid_3 link-group">
+<h5 class="white">Hello</h5>
+<ul class="list">
+<li>
+<a href="https://twitter.com/kickstarter"><span class="ss-icon ss-social-regular ss-twitter"></span>
+Twitter
+</a></li>
+<li>
+<a href="https://www.facebook.com/Kickstarter"><span class="ss-icon ss-social-regular ss-facebook"></span>
+Facebook
+</a></li>
+<li>
+<a href="http://kickstarter.tumblr.com"><span class="ss-icon ss-social-regular ss-tumblr"></span>
+Tumblr
+</a></li>
+<li>
+<a href="http://instagram.com/kickstarter"><span class="ss-icon ss-social-regular ss-instagram"></span>
+Instagram
+</a></li>
+<li>
+<a href="https://vine.co/Kickstarter"><span class="ss-icon ss-social-regular ss-vine"></span>
+Vine
+</a></li>
+<li>
+<a href="/blog?ref=footer">Blog</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="grid_16 py4" id="mega-footer-bottom">
+<div class="logo left">
+<a href="/" class="grey-dark"><span class="ss-icon h3">KICKSTARTER</span>
+</a></div>
+<p class="right h5 grey-dark">
+&copy;
+2014
+Kickstarter, Inc.
+</p>
+</div>
+</div>
+</div>
+
+<script>
+  //<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    var analytics_vars = { google_analytics_id : "UA-7621056-1", logged_in : "false", social_user: "false" }
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.mixpanel_id = '75b1d24a516ecfc955eadfadc4910661';
+    window.mixpanel_debug = false;
+  //]]>
+</script>
+
+
+<noscript>
+<img alt="Quantcast" border="0" height="1" src="//secure.quantserve.com/pixel/p-34IbSpw2K94Sg.gif" style="display:none" width="1" />
+</noscript>
+
+
+<script>
+  //<![CDATA[
+    window.benchmark = (typeof window.performance == 'object' && typeof window.performance.mark == 'function');
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    (function (root) {
+      function instrument_function (original) {
+        return function () {
+          try {
+            return original.apply(this, arguments);
+          } catch (e) {
+            if (e.stack && root.Honeybadger) {
+              Honeybadger.notify(e, {
+                current_project : root.current_project,
+                current_user : root.current_user
+              });
+            }
+            throw(e);
+          }
+        };
+      }
+      root.instrument_function = instrument_function;
+    }(this));
+  //]]>
+</script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+
+<script>
+  //<![CDATA[
+    (function(){function c(a){this.local_start_time=new Date;this.settings={cookie_name:"request_time"};for(var b in a)this.settings[b]=a[b];this.get_remote_offset()}c.prototype.get_remote_offset=function(){this.cookie_value=this.read_cookie();var a=new Date(this.cookie_value);if(!this.cookie_value||"Invalid Date"===a.toString()){if(this.remote_offset=this.read_cookie("local_offset"))this.remote_offset=parseInt(this.remote_offset,10)}else this.remote_offset=a-this.local_start_time;"undefined"!==typeof this.remote_offset&& !isNaN(this.remote_offset)?(document.cookie="local_offset="+this.remote_offset+"; path=/",this.is_set=!0):this.is_set=!1};c.prototype.time_units=[["milliseconds",1],["seconds",1E3],["minutes",6E4],["hours",36E5],["days",864E5]];c.prototype.get_units_in_interval=function(a,b){var d=a.replace(/^\w/,function(d){return"get"+d.toUpperCase()});return b[d]()};c.prototype.milliseconds_in_day=function(a){"undefined"===typeof a&&(a=new Date);for(var b=0,d=this.time_units.length-2;0<=d;d--)b+=this.get_units_in_interval(this.time_units[d][0], a)*this.time_units[d][1];return b};c.prototype.milliseconds_in_interval=function(a,b){return this.milliseconds_in_day(b)%a};c.prototype.milliseconds_to_next_interval=function(a,b){return a-this.milliseconds_in_interval(a,b)};c.prototype.pluralize=function(a,b){1===b&&(a=a.replace(/s$/,""));return a};c.prototype.read_cookie=function(a){for(var b=window.document.cookie.split(";"),a=(a||this.settings.cookie_name)+"=",d=0;d<b.length;d++){for(var e=b[d];" "==e.charAt(0);)e=e.substring(1,e.length);if(0== e.indexOf(a))return b=e.substring(a.length,e.length),decodeURIComponent(b).replace(/\+/g," ")}return null};c.prototype.destroy_cookie=function(a){var b=new Date;a||(a=this.settings.cookie_name);b.setTime(b.getTime()-864E5);window.document.cookie=a+"=; expires="+b.toGMTString()+"; path=/"};c.prototype.get_remote_time=function(){var a=new Date,b=a.getTime()+this.remote_offset;return a=a.setTime(b)};window.ksr_page_clock=new c})(); (function(){function c(d,a,b){if(d){this.options={unit_base:{seconds:119,minutes:119,hours:72,days:0},end_phrase:d.getAttribute("data-word")||"to go",count_down:d.getAttribute("data-dynamic")||!1};for(k in b)this.options[k]=b[k];this.clock=a;this.time_units=this.clock.time_units.slice(1);this.element=d;this.clock.is_set&&this.attach()}}function a(){this.elements=[];this.attach()}var b=function(d,a){var b=a||window.document.body,c=d.split("."),g=c[c.length-1],c=1<c.length&&c[0]?c[0]:"*";if(window.document.getElementsByClassName)return b.getElementsByClassName(g); if(b.querySelectorAll)return b.querySelectorAll(d);for(var c=b.getElementsByTagName(c),h=[],i=0,f;f=c[i];i++)b=RegExp("(^|\\s)"+g+"(\\s|$)"),(""+f.className).match(b)&&h.push(f);return h};c.prototype.get_remaining_time=function(){var d=this.remote_end_time-this.clock.get_remote_time();0>d&&(d=0);return d};c.prototype.get_current_unit=function(){for(var d,a=0;a<this.time_units.length&&!(d=this.time_units[a],this.get_remaining_time()<=this.options.unit_base[d[0]]*d[1]);a++);return d};c.prototype.update_element= function(){var a=this.get_current_unit(),b=Math.floor(this.get_remaining_time()/a[1]);isNaN(b)||(this.number_element.innerHTML=b,this.text_element.innerHTML=this.clock.pluralize(a[0],b)+" "+this.options.end_phrase)};c.prototype.valid=function(){return!(!this.number_element||!this.text_element)};c.prototype.attach=function(){function a(){c.update_element();if(c.options.count_down&&0<c.get_remaining_time()){var b=c.get_current_unit();this.timeout=window.setTimeout(a,c.clock.milliseconds_to_next_interval(b[1]))}} var c=this;if(this.remote_end_time_string=this.element.getAttribute("data-end_time"))this.remote_end_time_string.match(/^\d+$/)?(this.remote_end_time=new Date,this.remote_end_time.setTime(this.remote_end_time_string)):this.remote_end_time=new Date(this.remote_end_time_string),this.number_element=b(".num",this.element)[0],this.text_element=b(".text",this.element)[0],this.element.ksr_page_timer=!0,this.valid()&&a()};c.prototype.cancel=function(){this.timeout&&clearTimeout(this.timeout)};a.prototype.loading= !0;a.prototype.stop_finding=function(){this.attach_timers();this.loading=!1;document.addEventListener?document.removeEventListener("DOMContentLoaded",this.stop_finding,!1):document.attachEvent&&"complete"===document.readyState&&document.detachEvent("onreadystatechange",this.stop_finding)};a.prototype.bind_ready=function(){var a=this,b=function(){a.stop_finding.call(a)};document.addEventListener?(document.addEventListener("DOMContentLoaded",b,!1),window.addEventListener("load",b,!1)):document.attachEvent&& (document.attachEvent("onreadystatechange",b),window.attachEvent("onload",b))};a.prototype.attach_timers=function(){for(var a=b("div.ksr_page_timer"),e=0;e<a.length;e++)a[e].ksr_page_timer||(new c(a[e],window.ksr_page_clock),this.elements.push(a[e]))};a.prototype.attach=function(){var a=this;this.bind_ready();(function(){a.attach_timers();a.loading&&window.setTimeout(function(){a.attach_timers()},200)})()};window.ProjectTimer=c;new a})();
+  //]]>
+</script>
+
+<script class="template" id="template-widgets__video_embed_code" type="text/x-tmpl-mustache"><iframe width="{{width}}" height="{{height}}" src="{{{path}}}" frameborder="0" scrolling="no"> </iframe>
+</script><script class="template" id="template-projects__baseball_card_tall" type="text/x-tmpl-mustache"><div class="project-card-wrap project-card-wrap-tall border bg-white rounded clip">
+  <div class="project-card relative project-live {{#successful?}}successful{{/successful?}}">
+    <div class="project-thumbnail pt1 pl1 pr1">
+      <a href="{{urls.web.project}}" target="">
+        <img alt="Photo-little" class="projectphoto-little" src="{{photo.little}}" class="fit">
+      </a>
+    </div>
+    <div class="project-card-interior p1 h6 grey-dark">
+      <h6 class="project-title">
+        <a href="{{urls.web.project}}" target="" class="green-dark">{{name}}</a>
+      </h6>
+      <p class="mb1 ellipsis">
+        by
+        {{creator.name}}
+      </p>
+      <p class="blurb">
+        {{blurb}}
+      </p>
+    </div>
+    <div class="absolute-bottom bg-white rounded-bottom">
+
+      {{#location}}
+        <ul class="p1 list project-meta no-margin h6">
+          <li class="ellipsis">
+            <a href="{{location.urls.web.discover}}" data-location="{{location_json}}" class="grey-dark">
+              <span class="ss-icon ss-location"></span>
+              <span class="location-name">{{location.displayable_name}}</span>
+            </a>
+          </li>
+        </ul>
+      {{/location}}
+
+      <div class="project-stats-wrap pb1 pl1 pr1">
+
+        {{#failed?}}
+          <div class='project-status project-failed h6'>
+            <strong> Funding Unsuccessful</strong><br />
+            <span class="grey-dark">Project ended on {{formatted_deadline}}</span>
+          </div>
+        {{/failed?}}
+
+        {{#canceled?}}
+          <div class='project-status project-canceled h6'>
+            <strong> Funding Canceled</strong><br />
+            <span class="grey-dark">Project canceled on {{formatted_state_changed_at}}</span>
+          </div>
+        {{/canceled?}}
+
+        {{#successful?}}
+          <div class='project-pledged-successful bg-green white h6 pl1 pr1 mb1'>
+            <strong>Successful!</strong>
+          </div>
+        {{/successful?}}
+
+        {{#live_or_successful?}}
+          {{#live?}}
+            <div class="project-pledged-wrap bg-grey clip mb1">
+              <div class="project-pledged bg-green full-height" style="width: {{percent_raised_to_100}}%"></div>
+            </div>
+          {{/live?}}
+          <ul class="project-stats list no-margin h6 no-wrap">
+            <li class="first funded inline-block mr1">
+              <strong class="block h6">{{percent_raised_rounded}}%</strong>
+              <span class="grey-dark">funded</span>
+            </li>
+            <li class="pledged inline-block mr1">
+              <strong class="block h6">{{currency_symbol}}{{formatted_money}}</strong>
+              <span class="grey-dark">pledged</span>
+            </li>
+            {{#successful?}}
+              <li class="last successful inline-block">
+                <strong class="block h6">Funded</strong>
+                <div class="deadline grey-dark">{{formatted_deadline}}</div>
+              </li>
+            {{/successful?}}
+            {{#live?}}
+              <li class="last ksr_page_timer inline-block" data-end_time="{{javascript_deadline}}">
+                <strong class="block h6">
+                  <div class="num">30</div>
+                </strong>
+                <div class="span text grey-dark" data-word="left">days to go</div>
+              </li>
+            {{/live?}}
+          </ul>
+        {{/live_or_successful?}}
+      </div>
+    </div>
+  </div>
+</div>
+
+{{#friends_backing?}}
+  <div class="friend_project_context">
+    <div class="friend_facepile">
+      {{#truncated_friends}}
+        <img src="{{avatar.thumb}}" class="{{#has_metadata?}}small{{/has_metadata?}}">
+      {{/truncated_friends}}
+    </div>
+    <p class="friend_namepile">
+      {{{escaped_sentence}}}
+    </p>
+  </div>
+{{/friends_backing?}}
+</script><script class="template" id="template-projects__video_mode" type="text/x-tmpl-mustache"><a href='#' id='video_mode_close' class='close_button z2'><span class='ss-icon ss-delete'></span></a>
+
+<div class='title_card z1 {{context_classes}}' style="display:none;">
+  <div class='interior'>
+    <h2 class='project_title normal_weight'>{{name}}</h2>
+    <p class='blurb'>{{blurb}}</p>
+    <nav class='bar'>
+      <a id='play_button' class='left play' href='#'>
+        <span class='play_active'>
+          <span class='ss-icon ss-play'></span>
+          Play
+        </span>
+        <span class='pause_active'>
+          <span class='ss-icon ss-pause'></span>
+          Pause
+        </span>
+      </a>
+      {{#logged_in}}
+        <div class='remind right'>
+          {{#if_not_starred}}
+            <a class='follow' href='{{urls.web.project}}/watch'><span class='ss-icon ss-star'></span></a>
+          {{/if_not_starred}}
+          {{#if_starred}}
+            <a class='unfollow' href='{{urls.web.project}}/unwatch'><span class='ss-icon ss-star active'></span></a>
+          {{/if_starred}}
+        </div>
+      {{/logged_in}}
+      <a class='right explore button button_green small' href='#'>Explore this project</a>
+    </nav>
+  </div>
+</div>
+
+<div class='channel_controls z1'>
+  <a href='#' class='{{#playlist_is_location}}selected {{/playlist_is_location}}location'>Something else near {{location.first_name}} <span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_featured}}selected {{/playlist_is_featured}}featured'>Something different<span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_category}}selected {{/playlist_is_category}}category'>Something else in {{category.name}} <span class='ss-icon ss-navigateright'></span></a>
+</div>
+
+<div class='project_video' style='background-image: url('{{photo.full}}')'>
+  <div class='cover'>
+    <video>
+      <source src='{{video.high}}' type='video/mp4'/>
+      <source src='{{video.webm}}' type='video/webm'/>
+    </video>
+  </div>
+</div>
+</script><script class="template" id="template-site__video_mode_fourohfour" type="text/x-tmpl-mustache"><section class='four_oh_four'>
+  <p class='big_type'>
+    Looks like you've reached the end of the line! <br />Check out <a class="another" href='#'>another channel</a> or <a href='/discover'>browse projects in discover</a>.
+  </p>
+</section>
+</script>
+
+<script id="schwamm_formatting_options" type="text/javascript">
+//<![CDATA[
+(function(){window.formatters = window.formatters || {}; var formatting_options = {"distance_date_intervals":[[5,"just now"],[29,"less than a minute ago"],[89,"1 minute ago"],[2640,"%m minutes ago"],[5340,"about 1 hour ago"],[82800,"about %h hours ago"],[147600,"1 day ago"],[604800,"%d days ago"],[15552000,"on %t"],[0,"on %y"]],"currency_symbol_mappings":{"AFN":"\u060b","ALL":"Lek","ARS":"$","AUD":"$","AWG":"\u0192","AZN":"\u043c\u0430\u043d","BAM":"KM","BBD":"$","BGN":"\u043b\u0432","BMD":"$","BND":"$","BOB":"$b","BRL":"R$","BSD":"$","BWP":"P","BYR":"p.","BZD":"BZ$","CAD":"$","CLP":"$","CNY":"\u00a5","COP":"$","CRC":"\u20a1","CUP":"\u20b1","CZK":"K\u010d","DKK":"kr","DOP":"RD$","EGP":"\u00a3","EUR":"\u20ac","FJD":"$","FKP":"\u00a3","GBP":"\u00a3","GIP":"\u00a3","GTQ":"Q","GYD":"$","HKD":"$","HNL":"L","HRK":"kn","HUF":"Ft","IDR":"Rp","ILS":"\u20aa","IRR":"\ufdfc","ISK":"kr","JMD":"J$","JPY":"\u00a5","KGS":"\u043b\u0432","KHR":"\u17db","KPW":"\u20a9","KRW":"\u20a9","KYD":"$","KZT":"\u043b\u0432","LAK":"\u20ad","LBP":"\u00a3","LKR":"\u20a8","LRD":"$","LTL":"Lt","LVL":"Ls","MKD":"\u0434\u0435\u043d","MNT":"\u20ae","MUR":"\u20a8","MXN":"$","MYR":"RM","MZN":"MT","NAD":"$","NGN":"\u20a6","NIO":"C$","NOK":"kr","NPR":"\u20a8","NZD":"$","OMR":"\ufdfc","PAB":"B/.","PEN":"S/.","PHP":"\u20b1","PKR":"\u20a8","PLN":"z\u0142","PYG":"Gs","QAR":"\ufdfc","RON":"lei","RSD":"\u0414\u0438\u043d.","RUB":"\u0440\u0443\u0431","SAR":"\ufdfc","SBD":"$","SCR":"\u20a8","SEK":"kr","SGD":"$","SHP":"\u00a3","SOS":"S","SRD":"$","SVC":"$","SYP":"\u00a3","THB":"\u0e3f","TRY":"TL","TTD":"TT$","TWD":"NT$","UAH":"\u20b4","USD":"$","UYU":"$U","UZS":"\u043b\u0432","VEF":"Bs","VND":"\u20ab","YER":"\ufdfc","ZAR":"R"},"currency_trailing_code_mappings":{"AUD":true,"CAD":true,"NZD":true,"USD":true},"currency_formats":["money","shorter_money"]}; for (key in formatting_options) {window.formatters[key] = formatting_options[key]};}());
+//]]>
+</script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("begin_base.js_tag");}
+  //]]>
+</script>
+<script src="https://d297h9he240fqh.cloudfront.net/assets/packages/base-45cdab84617ddfb8905b7cddc8500c19.js" type="text/javascript"></script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("end_base.js_tag");}
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    document.domain='kickstarter.com';
+  //]]>
+</script>
+
+<iframe height="0" id="api_xdreceiver" src="https://api.kickstarter.com/xdreceiver/85e6.html" style="display: none;" width="0"></iframe>
+
+
+
+<div id="fb-root"></div>
+<script>
+  //<![CDATA[
+    var channelUrl = window.location.protocol + "//" + window.location.host + "/channel.html",
+      skip_autologin = $('body').is('.skip_autologin');
+    
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId: window.fb_app_id,
+        channelUrl: channelUrl,
+        status: true,    // check login status
+        cookie: true,    // enable cookies to allow the server to access the session
+        xfbml: true,     // parse XFBML
+        logging: false   // turn off logging
+      });
+    
+      FB.getLoginStatus(function (response) {
+        if (response.status === 'connected') {
+          if (read_cookie("logout_from_fb")) {
+            FB.logout();
+            destroy_cookie("logout_from_fb");
+          } else if (!skip_autologin) {
+            $.get("/fb/autologin", {'fbsr': response.authResponse.signedRequest});
+          } else if (false && 0 == response.authResponse.userID) {
+            $.get("/fb/refresh", {'fbsr': response.authResponse.signedRequest});
+          }
+        } else {
+          if (read_cookie("logout_from_fb")) {
+            destroy_cookie("logout_from_fb");
+          }
+        }
+      })
+    
+      $(document).trigger('fb:loaded');
+    };
+    
+    
+    // Load the SDK Asynchronously
+    (function(d){
+      var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+      js = d.createElement('script'); js.id = id; js.async = true;
+      js.src = "//connect.facebook.net/en_US/all.js";
+      d.getElementsByTagName('head')[0].appendChild(js);
+    }(document));
+  //]]>
+</script>
+
+
+</body>
+</html>

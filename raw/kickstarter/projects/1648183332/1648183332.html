@@ -1,0 +1,1790 @@
+<!DOCTYPE html>
+<html class="projects_show  fontface no-js" lang="en">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# kickstarter: http://ogp.me/ns/fb/kickstarter#">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-5.newrelic.com","errorBeacon":"jserror.newrelic.com","licenseKey":"b04b883ad2","applicationID":"11086","transactionName":"cFteRUULX1wHFhtIEFxeVVJDFxxDCgtD","queueTime":14,"applicationTime":540,"ttGuid":"","agentToken":null,"agent":"js-agent.newrelic.com/nr-411.min.js"}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"Vw4BVEVSCQMIUg=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e){function n(t,e,n){n||(n={});for(var r=o[t],a=r&&r.length||0,s=n[i]||(n[i]={}),u=0;a>u;u++)r[u].apply(s,e);return s}function r(t,e){var n=o[t]||(o[t]=[]);n.push(e)}var o={},i="nr@context";e.exports={on:r,emit:n}},{}],2:[function(t){function e(t,e,n,i,s){return u?u-=1:r("err",[s||new UncaughtException(t,e,n)]),"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t(5),a=window.onerror,s=!1,u=0;t("loader").features.push("err"),window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(d){"stack"in d&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(4),s=!0)}i.on("fn-start",function(){s&&(u+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&u>0&&(u-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:4,3:3,4:6,5:1,6:14,handle:"D5DuLP",loader:"G9z0Bl"}],3:[function(t){function e(t){r.inPlace(t,["addEventListener","removeEventListener"],"-",n)}function n(t){return t[1]}var r=t(1),o=(t(3),t(2));if(e(window),"getPrototypeOf"in Object){for(var i=document;i&&!i.hasOwnProperty("addEventListener");)i=Object.getPrototypeOf(i);i&&e(i);for(var a=XMLHttpRequest.prototype;a&&!a.hasOwnProperty("addEventListener");)a=Object.getPrototypeOf(a);a&&e(a)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&e(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=e["nr@wrapped"]?t[1]=e["nr@wrapped"]:e["nr@wrapped"]=t[1]=r(e,"fn-"):"function"==typeof e.handleEvent&&r.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:15,2:1,3:14}],4:[function(t){var e=(t(3),t(1)),n=t(2);e.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=e(t[0],"fn-")})},{1:15,2:1,3:14}],5:[function(t){function e(t){var e=t[0];"string"==typeof e&&(e=new Function(e)),t[0]=n(e,"fn-")}var n=(t(3),t(1)),r=t(2);n.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",e)},{1:15,2:1,3:14}],6:[function(t){function e(){o.inPlace(this,s,"fn-")}function n(t,e){o.inPlace(e,["onreadystatechange"],"fn-")}function r(t,e){return e}var o=t(1),i=t(2),a=window.XMLHttpRequest,s=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];window.XMLHttpRequest=function(t){var n=new a(t);try{i.emit("new-xhr",[],n),o.inPlace(n,["addEventListener","removeEventListener"],"-",function(t,e){return e}),n.addEventListener("readystatechange",e,!1)}catch(r){try{i.emit("internal-error",r)}catch(s){}}return n},window.XMLHttpRequest.prototype=a.prototype,o.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",r),i.on("send-xhr-start",n),i.on("open-xhr-start",n)},{1:15,2:1}],7:[function(t){function e(){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;u>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,d="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=e(d);if(f&&(r.rxSize=f),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}t("loader").features.push("xhr");var o=t("handle"),i=t(1),a=t(5),s=["load","error","abort","timeout"],u=s.length,d=t(2);t(3),t(4),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var d=e(o);d&&(r.txSize=d)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",e)}catch(r){}}};for(var f=0;u>f;f++)n.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&e()},{1:8,2:11,3:3,4:6,5:1,handle:"D5DuLP",loader:"G9z0Bl"}],8:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e){var n=r[t];return n?n.apply(this,e):(o[t]||(o[t]=[]),void o[t].push(e))}var r={},o={};e.exports=n,n.queues=o,n.handlers=r},{}],11:[function(t,e){function n(t){if(!t||"object"!=typeof t&&"function"!=typeof t)return-1;if(t===window)return 0;if(o.call(t,"__nr"))return t.__nr;try{return Object.defineProperty(t,"__nr",{value:r,writable:!0,enumerable:!1}),r}catch(e){return t.__nr=r,r}finally{r+=1}}var r=1,o=Object.prototype.hasOwnProperty;e.exports=n},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&u&&u.body){p.proto="https"===c.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=u.createElement("script");e.src=p.proto+t.agent,u.body.appendChild(e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,u=s.document,d="addEventListener",f="attachEvent",c=(""+location).split("?")[0],p=e.exports={offset:i(),origin:c,features:[]};u[d]?(u[d]("DOMContentLoaded",o,!1),s[d]("load",n,!1)):(u[f]("onreadystatechange",r),s[f]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],14:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],15:[function(t,e){function n(t,e,r,s){function nrWrapper(){try{var n,a=u(arguments),d=this,f=r&&r(a,d)||{}}catch(c){i([c,"",[a,d,s],f])}o(e+"start",[a,d,s],f);try{return n=t.apply(d,a)}catch(p){throw o(e+"err",[a,d,p],f),p}finally{o(e+"end",[a,d,n],f)}}return a(t)?t:(e||(e=""),nrWrapper[n.flag]=!0,nrWrapper)}function r(t,e,r,o){r||(r="");var i,s,u,d="-"===r.charAt(0);for(u=0;u<e.length;u++)s=e[u],i=t[s],a(i)||(t[s]=n(i,d?s+r:r,o,s,t))}function o(t,e,n){try{s.emit(t,e,n)}catch(r){i([r,t,e,n])}}function i(t){try{s.emit("internal-error",t)}catch(e){}}function a(t){return!(t&&"function"==typeof t&&t.apply&&!t[n.flag])}var s=t(1),u=t(2);e.exports=n,n.inPlace=r,n.flag="nr@wrapper"},{1:1,2:14}]},{},["G9z0Bl",2,7]);</script><script>
+  //<![CDATA[
+    docElement = this.document.documentElement;
+    docElement.className=docElement.className.replace(/\bno-js\b/,'') + 'js';
+  //]]>
+</script>
+<title>Run Kitty Run game for the iPhone / iPad (Canceled) by WhiteWidget Inc. &mdash; Kickstarter</title><script>
+  //<![CDATA[
+    window.report_errors = true;
+    window.honeybadger_configuration = {
+      api_key : "02ab109335c0dd1a93506d92f22217a7",
+      environment : "production",
+      component : "projects",
+      action : "show",
+      onerror : false
+    };
+  //]]>
+</script>
+
+
+<!--[if lt IE 9]>
+  <script src="//html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta content="telephone=no" name="format-detection">
+
+<!--[if !IE]> -->
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base-9f623ad5d021a188cfb2d68a0cdf7a7b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<!-- <![endif]-->
+<!--[if IE]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base_blessed-2640c72487552f9a2ef9f2620b4af860.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<!--[if lte IE 9]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_nine-a93fe10530f175f96c4078b7e070d7e1.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 8]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_eight-f75aeb274436f94a0d243774456b1c62.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 7]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie-c019c01acd3a96588b346cf577a3504f.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_seven-5a3d2cef660cd281fd844b04b2397dbb.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if IE 6]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_six-e4d3caf76e405fe19aee6ece8bda701b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<link href="https://d297h9he240fqh.cloudfront.net/favicon.png" rel="icon" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-precomposed-7b603dba7cf80e4acc57d94a991bebbd.png" rel="apple-touch-icon-precomposed" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-ipad-precomposed-3176f72977daf43dee3b0d348484dc01.png" rel="apple-touch-icon-precomposed" sizes="72x72" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-iphone4-precomposed-b93b70168cd8492c843d0fea873c7f83.png" rel="apple-touch-icon-precomposed" sizes="114x114" type="image/png">
+<link href="https://www.kickstarter.com/services/oembed?url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2F992452399%2Frun-kitty-run-game-for-the-iphone-ipad" rel="alternate" title="Run Kitty Run game for the iPhone / iPad (Canceled) Script Tag oEmbed" type="application/json+oembed">
+<link rel="alternate" type="application/atom+xml" title="Run Kitty Run game for the iPhone / iPad (Canceled) : Kickstarter" href="https://www.kickstarter.com/projects/992452399/run-kitty-run-game-for-the-iphone-ipad/posts.atom" />
+<meta property="twitter:app:id:iphone" content="596961532"/>
+<meta property="twitter:app:name:iphone" content="Kickstarter"/>
+<meta property="twitter:app:url:iphone" content="ksr://www.kickstarter.com/projects/992452399/run-kitty-run-game-for-the-iphone-ipad"/>
+<meta name="video_height" content="314"/>
+<meta name="video_width" content="560"/>
+<meta name="video_type" content="application/x-shockwave-flash"/>
+<meta name="title" content="Kickstarter &gt;&gt; Run Kitty Run game for the iPhone / iPad (Canceled) by WhiteWidget Inc."/>
+<meta name="description" content="WhiteWidget Inc. is raising funds for Run Kitty Run game for the iPhone / iPad (Canceled) on Kickstarter! 
+
+ Run to the end of each level and dodge the dogs along the way. Play alone or together in this cute re-imagining of an old concept!"/>
+<meta name="robots" content="noindex"/>
+<meta property="og:title" content="Run Kitty Run game for the iPhone / iPad (Canceled)"/>
+<meta property="og:type" content="kickstarter:project"/>
+<meta property="og:image" content="https://s3.amazonaws.com/ksr/projects/56042/photo-main.jpg?1397767454"/>
+<meta property="og:url" content="https://www.kickstarter.com/projects/992452399/run-kitty-run-game-for-the-iphone-ipad"/>
+<meta property="og:site_name" content="Kickstarter"/>
+<meta property="fb:app_id" content="69103156693"/>
+<meta property="og:description" content="Run to the end of each level and dodge the dogs along the way. Play alone or together in this cute re-imagining of an old concept!"/>
+<meta property="kickstarter:creator" content="https://www.kickstarter.com/profile/992452399"/>
+<meta property="twitter:url:landing_url" content="https://www.kickstarter.com/projects/992452399/run-kitty-run-game-for-the-iphone-ipad"/>
+<meta property="twitter:card" content="2427656750:kickstarter_project"/>
+<meta property="twitter:site" content="@kickstarter"/>
+<meta property="twitter:site:id" content="16186995"/>
+<meta property="twitter:text:title" content="Run Kitty Run game for the iPhone / iPad (Canceled)"/>
+<meta property="twitter:text:artist" content="WhiteWidget Inc."/>
+<meta property="twitter:text:backers" content="15"/>
+<meta property="twitter:text:pledged" content="$1,431 USD"/>
+<meta property="twitter:text:time" content="0 seconds"/>
+<meta property="twitter:text:location" content="Manila, Philippines"/>
+<meta property="twitter:image:location_image" content="https://d3mlfyygrfdi2i.cloudfront.net/b40e/pin.png"/>
+<meta property="twitter:text:description" content="Run to the end of each level and dodge the dogs along the way. Play alone or together in this cute re-imagining of an old concept!"/>
+<meta property="twitter:image:media" content="https://s3.amazonaws.com/ksr/projects/56042/photo-main.jpg?1397767454"/>
+<meta property="twitter:image:width" content="640"/>
+<meta property="twitter:image:height" content="480"/>
+<meta property="twitter:player:stream:url" content="https://d2pq0u4uni88oo.cloudfront.net/projects/56042/video-63559-h264_base.mp4"/>
+<meta property="twitter:player:stream:content" content="video/mp4"/>
+<meta property="twitter:player:url" content="https://www.kickstarter.com/projects/992452399/run-kitty-run-game-for-the-iphone-ipad/widget/video.html"/>
+<meta property="twitter:player:height" content="314"/>
+<meta property="twitter:player:width" content="560"/>
+<meta property="twitter:maxage" content="60"/>
+<meta property="og:video" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F56042%2Fvideo-63559-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F56042%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+WhiteWidget+Inc.&amp;project_title=Run+Kitty+Run+game+for+the+iPhone+%2F+iPad+%28Canceled%29&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2F992452399%2Frun-kitty-run-game-for-the-iphone-ipad&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:secure_url" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F56042%2Fvideo-63559-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F56042%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+WhiteWidget+Inc.&amp;project_title=Run+Kitty+Run+game+for+the+iPhone+%2F+iPad+%28Canceled%29&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2F992452399%2Frun-kitty-run-game-for-the-iphone-ipad&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:height" content="314"/>
+<meta property="og:video:width" content="560"/>
+<meta property="og:video:type" content="application/x-shockwave-flash"/>
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="KRNmNJ0NR8vEWCCz3j8C3i2zmF3GIvMmhzakW5+BB3E=" name="csrf-token" />
+<script type="text/javascript">
+  var _sift = _sift || [];
+  _sift.push(['_setAccount', '637102']);
+  _sift.push(['_setUserId', '']);
+  _sift.push(['_trackPageview']);
+
+  (function() {
+    function loadSift() {
+      var sift, s;
+      if (root.visitor_id) {
+        _sift.push(['_setSessionId', root.visitor_id]);
+      }
+      sift = document.createElement('script');
+      sift.type = 'text/javascript';
+      sift.async = true;
+      sift.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dtlilztwypawv.cloudfront.net/s.js';
+      s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(sift, s);
+    }
+    if (window.attachEvent) {
+      window.attachEvent('onload', loadSift);
+    } else {
+      window.addEventListener('load', loadSift, false);
+    }
+  })();
+</script>
+<link href="http://kck.st/rYXabz" rel="shorturl">
+<link href="https://www.kickstarter.com/projects/992452399/run-kitty-run-game-for-the-iphone-ipad" rel="canonical">
+<link href="https://s3.amazonaws.com/ksr/projects/56042/photo-med.jpg?1397767454" rel="image_src">
+<link href="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F56042%2Fvideo-63559-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F56042%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+WhiteWidget+Inc.&amp;project_title=Run+Kitty+Run+game+for+the+iPhone+%2F+iPad+%28Canceled%29&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2F992452399%2Frun-kitty-run-game-for-the-iphone-ipad&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque" rel="video_src">
+<script>
+  //<![CDATA[
+    window.current_checkout = "{&quot;id&quot;:0,&quot;domestic&quot;:null,&quot;amount&quot;:0.0,&quot;updated_at&quot;:0,&quot;created_at&quot;:0}";
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.current_ip = '94.209.101.212';
+    window.current_ip_datacenter = 'false';
+    window.enabled_features = {"elasticsearch":true,"security_history_read":true,"security_history_write":true,"advanced_discovery_es":true,"ios_crashlytics":true,"ios_mixpanel":true,"stories_veronica_mars":true,"veronica_mars_hero":true,"password_reset_banner":true};
+    window.fb_app_id = '69103156693';
+    
+    var _sf_startpt=(new Date()).getTime();
+    
+    window.current_project = "{&quot;id&quot;:1648183332,&quot;name&quot;:&quot;Run Kitty Run game for the iPhone / iPad (Canceled)&quot;,&quot;blurb&quot;:&quot;Run to the end of each level and dodge the dogs along the way. Play alone or together in this cute re-imagining of an old concept!&quot;,&quot;goal&quot;:7500.0,&quot;pledged&quot;:1431.0,&quot;state&quot;:&quot;canceled&quot;,&quot;slug&quot;:&quot;run-kitty-run-game-for-the-iphone-ipad&quot;,&quot;disable_communication&quot;:false,&quot;country&quot;:&quot;US&quot;,&quot;currency&quot;:&quot;USD&quot;,&quot;currency_symbol&quot;:&quot;$&quot;,&quot;currency_trailing_code&quot;:true,&quot;deadline&quot;:1325268297,&quot;state_changed_at&quot;:1324345372,&quot;created_at&quot;:1320316446,&quot;launched_at&quot;:1321380297,&quot;backers_count&quot;:15,&quot;photo&quot;:{&quot;full&quot;:&quot;https://s3.amazonaws.com/ksr/projects/56042/photo-full.jpg?1397767454&quot;,&quot;ed&quot;:&quot;https://s3.amazonaws.com/ksr/projects/56042/photo-ed.jpg?1397767454&quot;,&quot;med&quot;:&quot;https://s3.amazonaws.com/ksr/projects/56042/photo-med.jpg?1397767454&quot;,&quot;little&quot;:&quot;https://s3.amazonaws.com/ksr/projects/56042/photo-little.jpg?1397767454&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/projects/56042/photo-small.jpg?1397767454&quot;,&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/projects/56042/photo-thumb.jpg?1397767454&quot;,&quot;1024x768&quot;:&quot;https://s3.amazonaws.com/ksr/projects/56042/photo-1024x768.jpg?1397767454&quot;,&quot;1536x1152&quot;:&quot;https://s3.amazonaws.com/ksr/projects/56042/photo-1536x1152.jpg?1397767454&quot;},&quot;creator&quot;:{&quot;id&quot;:992452399,&quot;name&quot;:&quot;WhiteWidget Inc.&quot;,&quot;avatar&quot;:{&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/1509290/whitewidget.thumb.jpg?1322587412&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/1509290/whitewidget.small.jpg?1322587412&quot;,&quot;medium&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/1509290/whitewidget.medium.jpg?1322587412&quot;},&quot;urls&quot;:{&quot;web&quot;:{&quot;user&quot;:&quot;https://www.kickstarter.com/profile/992452399&quot;},&quot;api&quot;:{&quot;user&quot;:&quot;https://api.kickstarter.com/v1/users/992452399?signature=1399956112.afe837431c2eaee23ab5ac904a0c2866d0c206a2&quot;}}},&quot;location&quot;:{&quot;id&quot;:1199477,&quot;name&quot;:&quot;Manila&quot;,&quot;slug&quot;:&quot;manila-ph&quot;,&quot;short_name&quot;:&quot;Manila, Philippines&quot;,&quot;displayable_name&quot;:&quot;Manila, Philippines&quot;,&quot;country&quot;:&quot;PH&quot;,&quot;state&quot;:&quot;National Capital Region&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/manila-ph&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/manila-ph&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1399951934.b8c2b827de4e382e3939cbd31d48a06e24b6398b&amp;woe_id=1199477&quot;}}},&quot;category&quot;:{&quot;id&quot;:35,&quot;name&quot;:&quot;Video Games&quot;,&quot;slug&quot;:&quot;games/video games&quot;,&quot;position&quot;:7,&quot;parent_id&quot;:12,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;http://www.kickstarter.com/discover/categories/games/video%20games&quot;}}},&quot;urls&quot;:{&quot;web&quot;:{&quot;project&quot;:&quot;https://www.kickstarter.com/projects/992452399/run-kitty-run-game-for-the-iphone-ipad&quot;,&quot;project_short&quot;:&quot;http://kck.st/rYXabz&quot;,&quot;updates&quot;:&quot;https://www.kickstarter.com/projects/992452399/run-kitty-run-game-for-the-iphone-ipad/posts&quot;},&quot;api&quot;:{&quot;project&quot;:&quot;https://api.kickstarter.com/v1/projects/1648183332?signature=1399956112.78adf2b888ea4d0e60582dc9c9518505fee1ffa6&quot;,&quot;comments&quot;:&quot;https://api.kickstarter.com/v1/projects/1648183332/comments?signature=1399956112.c736e1410c85d3cd8c3e1b2dfcffccf64ed60672&quot;,&quot;updates&quot;:&quot;https://api.kickstarter.com/v1/projects/1648183332/updates?signature=1399956112.d0b01b3c2d28d8e40e93df22840ee420378bb20d&quot;}},&quot;updated_at&quot;:1397767462,&quot;canceled_at&quot;:1324345372,&quot;video&quot;:{&quot;id&quot;:63559,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/56042/video-63559-h264_high.mp4?2011&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/56042/video-63559-h264_base.mp4?2011&quot;,&quot;width&quot;:560,&quot;height&quot;:314,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/56042/video-63559-h264_base.jpg?2011&quot;},&quot;comments_count&quot;:2,&quot;updates_count&quot;:3,&quot;rewards&quot;:[{&quot;id&quot;:0,&quot;minimum&quot;:1,&quot;reward&quot;:&quot;No Reward&quot;},{&quot;id&quot;:339344,&quot;minimum&quot;:1.0,&quot;reward&quot;:&quot;Show your support and get access to backers-only updates + an open ear to listen to your suggestions &amp; opinions for the game. I&#39;d love to hear you out. It&#39;s the least I can do to show you my appreciation. Drop me an e-mail and I promise to find time to respond. Any ideas I use will be properly credited to you. You also already have voting rights for any decisions/designs that need community ideas&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1322697600,&quot;project_id&quot;:1648183332,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1321378456},{&quot;id&quot;:339356,&quot;minimum&quot;:5.0,&quot;reward&quot;:&quot;The above + a special in-game character not available to regular players + a free copy of the game upon release.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1325376000,&quot;project_id&quot;:1648183332,&quot;backers_count&quot;:4,&quot;updated_at&quot;:1320752946},{&quot;id&quot;:339357,&quot;minimum&quot;:10.0,&quot;reward&quot;:&quot;All of the above + hi-res wallpapers for iPad, iPhone, and Desktop + a souvineer Run Kitty Run Thank You post card.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1325376000,&quot;project_id&quot;:1648183332,&quot;backers_count&quot;:3,&quot;updated_at&quot;:1320553760},{&quot;id&quot;:339358,&quot;minimum&quot;:25.0,&quot;reward&quot;:&quot;All of the above + (more) special 2-character pack only available to pledgers from this level and above + a copy of the Run Kitty Run soundtrack&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1325376000,&quot;project_id&quot;:1648183332,&quot;backers_count&quot;:3,&quot;updated_at&quot;:1320833564},{&quot;id&quot;:339359,&quot;minimum&quot;:60.0,&quot;reward&quot;:&quot;All of the above + Run Kitty Run clay figurine + special in-game item not available to regular players + free access to all upcoming downloadable content + credit on the website&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1325376000,&quot;project_id&quot;:1648183332,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1320833564},{&quot;id&quot;:339360,&quot;minimum&quot;:80.0,&quot;reward&quot;:&quot;All of the above + 1 more free copy (2 total) for a friend + Run Kitty Run cap&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1325376000,&quot;project_id&quot;:1648183332,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1321353283},{&quot;id&quot;:339361,&quot;minimum&quot;:100.0,&quot;reward&quot;:&quot;All of the above + 2 more free copies (4 total) for friends + (more) special in-game character only available to pledgers from this level and above + Run Kitty Run T-shirt + Run Kitty Run Poster&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1325376000,&quot;project_id&quot;:1648183332,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1320833564},{&quot;id&quot;:339362,&quot;minimum&quot;:250.0,&quot;reward&quot;:&quot;All of the above + in-game credit as a major supporter + (more) special in-game character and item only available to pledgers from this level and above + early beta access to the game + a Run Kitty Run Drinking Mug&quot;,&quot;limit&quot;:70,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1325376000,&quot;project_id&quot;:1648183332,&quot;remaining&quot;:70,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1321353581},{&quot;id&quot;:339363,&quot;minimum&quot;:600.0,&quot;reward&quot;:&quot;All of the above + Make your Mark on the game (we will put a hand-drawn version of you or a character and name of your choosing as a unique playable character/a skin of an existing character/an item/an environment artifact in the game. It can be for personal use or if you want to use it as a means of advertisement for a brand or company. If its a character or item, its your choice if it is to be available only to you, or its available to the public). This one is very flexible, contact us to make arrangements.&quot;,&quot;limit&quot;:20,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1325376000,&quot;project_id&quot;:1648183332,&quot;remaining&quot;:20,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1320853939},{&quot;id&quot;:352624,&quot;minimum&quot;:1000.0,&quot;reward&quot;:&quot;All of the above + Sponsor a Level: a level in the game (classic or campaign) themed after you, your work/company/product, or whatever you want (as long as it is legal and non-vulgar)&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1325376000,&quot;project_id&quot;:1648183332,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1321629541},{&quot;id&quot;:339364,&quot;minimum&quot;:2500.0,&quot;reward&quot;:&quot;All of the above + a choice between 64GB latest generation iPod touch or 16GB WiFi iPad (engraved with our sincere gratitude or whatever you want) + in-depth access: copies of all art work used in the game (not for commercial use) + some guides on how parts of the game were made&quot;,&quot;limit&quot;:3,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1325376000,&quot;project_id&quot;:1648183332,&quot;remaining&quot;:3,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1321629541},{&quot;id&quot;:339365,&quot;minimum&quot;:5000.0,&quot;reward&quot;:&quot;Wow....I don&#39;t think anyone will choose this, but if so, you get all of the above + (chances are...it will be far) I would surely want to personally fly to meet you so that I&#39;m able to shake your hand, treat you to some good food, and hand you all the above gifts in person + I&#39;d even give you a complete copy of the documented code for Run Kitty Run (but like the art, you can&#39;t re-distribute it, or use it commercially in the sense that you just change some things and re-sell the game, but I don&#39;t mind if you use my code for reference for parts of your own project).&quot;,&quot;limit&quot;:1,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1330560000,&quot;project_id&quot;:1648183332,&quot;remaining&quot;:1,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1321353445}]}";
+    
+    
+    
+    
+    
+    
+    
+    
+    window.timeRemaining = function timeRemaining(epochTime){
+    
+      var diff = epochTime - ((new Date()).getTime() / 1000);
+      var num_unit = (diff < 60 && [Math.max(diff, 0), 'seconds']) ||
+        ((diff/=60) < 60 && [diff, 'minutes']) ||
+        ((diff/=60) < 72 && [diff, 'hours']) ||
+        [diff/=24, 'days'];
+    
+      // Round down
+      num_unit[0] = Math.floor(num_unit[0]);
+      // Singularize unit
+      if (num_unit[0] == 1) { num_unit[1] = num_unit[1].replace(/s$/,""); }
+    
+      return num_unit;
+    };
+  //]]>
+</script>
+
+<script>
+  //<![CDATA[
+    window.current_variants = ["discover_link_copy[explore]","rewards_hover[without_hover_text]"];
+  //]]>
+</script>
+
+
+</head>
+
+<body class="project projects not-mobile not-phone not-forces-video-controls not-tablet not-touchable not-native-app-request video_mode" id="projects_show">
+<div class="jGrowl center" id="growl_section"></div>
+<div class="NS_layouts__navigation" id="header">
+<div class="main-nav relative bg-white">
+<h1 class="no-margin ml1 mr2 left">
+<a href="/?ref=nav" class="block p2"><span class="ss-icon green-dark">KICK</span><span class="ss-icon green">STARTER</span>
+</a></h1>
+<ul class="primary-links list no-margin left">
+<li class="left discover-link full-height">
+<a href="/discover?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Explore</a>
+</li>
+<li class="left full-height mr2">
+<a href="/learn?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Start</a>
+</li>
+</ul>
+<ul class="list no-margin right" id="menu-sub">
+<li class="right"><a href="/login?ref=nav" class="block h5 bold p2 full-height border-box">Log in</a></li>
+<li class="right"><a href="/signup?ref=nav" class="block h5 bold p2 full-height border-box">Sign up</a></li>
+</ul>
+<div class="search-link pl2 full-height border-left border-box clip">
+<form accept-charset="UTF-8" action="/projects/search" class="search pt1 pb1 block relative form-simple" method="get"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /></div>
+<div class="field relative pl3">
+<span class="ss-icon ss-search grey-dark ml1 mt1 absolute"></span>
+<input class="input-search header full-width text" data-tracker-name="Header Live Search" id="term" name="term" placeholder="Search projects" type="text" />
+</div>
+</form>
+
+</div>
+<div class="clear"></div>
+</div>
+</div>
+<div class="hide pt4 pb4 bg-grey-light" id="search_results-wrap">
+<div class="relative container" id="search_results">
+<a class="close right grey-dark mr1"><span class="ss-icon ss-delete"></span></a>
+<h3 class="header ml1 clearfix"></h3>
+<div class="clip clearfix" id="search_results_panel"></div>
+<a class="prev arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateleft"></span>
+</a>
+<a class="next arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateright"></span>
+</a>
+</div>
+</div>
+
+
+
+
+<div class="Project-ended-true Project-is_starred- Project-state-canceled Project1648183332_cxt border-top" id="main_content">
+<div id="running-board-wrap">
+<div class="container" id="running-board">
+<div id="project-header">
+<div class="NS_projects__running_board ml1 mr1 clearfix">
+<div class="title center py4">
+<h2 class="mb1">
+<a href="/projects/992452399/run-kitty-run-game-for-the-iphone-ipad" class="green-dark">Run Kitty Run game for the iPhone / iPad (Canceled)</a>
+</h2>
+<p class="no-margin">
+<span class="creator">
+by
+<a href="/projects/992452399/run-kitty-run-game-for-the-iphone-ipad/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography" id="name">WhiteWidget Inc.</a>
+</span>
+</p>
+</div>
+<ul class="project-nav list-inline left h5 bold mb1">
+<li class="mr2">
+<a href="/projects/992452399/run-kitty-run-game-for-the-iphone-ipad" class="grey-dark py1 current" id="home_nav">Home</a>
+</li>
+<li class="mr2">
+<span data-updates-count="3" id="updates_count">
+<a href="/projects/992452399/run-kitty-run-game-for-the-iphone-ipad/posts" class="grey-dark py1" id="updates_nav">Updates
+<span class="count h6 bg-grey-dark white">3</span>
+</a></span>
+</li>
+<li class="mr2">
+<a href="/projects/992452399/run-kitty-run-game-for-the-iphone-ipad/backers" class="grey-dark py1" id="backers_nav">Backers
+<span class="count h6 bg-grey-dark white"><data class="Project1648183332" data-format="number" data-value="15" itemprop="Project[backers_count]">15</data></span>
+</a></li>
+<li>
+<span data-comments-count="2" id="comments_count">
+<a href="/projects/992452399/run-kitty-run-game-for-the-iphone-ipad/comments" class="grey-dark py1" id="comments_nav">Comments
+<span class="count h6 bg-grey-dark white"><data class="Project1648183332" data-format="number" data-value="2" itemprop="Project[comments_count]">2</data></span>
+</a></span>
+</li>
+</ul>
+<ul class="list-inline right h5 bold mb1">
+<li class="location mr2">
+<a href="/discover/places/manila-ph?ref=city" class="grey-dark"><span class="ss-icon ss-location margin-right"></span>
+Manila, Philippines
+</a></li>
+<li class="category" data-project-parent-category="Games">
+<a href="/discover/categories/games/video%20games?ref=category" class="grey-dark"><span class="ss-icon ss-tag margin-right"></span>
+Video Games
+</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+</div>
+<div class="bg-grey-light pb4" id="content-wrap">
+<div class="Project1648183332" data-conditions="[{&quot;!state&quot;:&quot;live&quot;}]" data-evaluation="true" data-render="&quot;&lt;div class=\&quot;NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-canceled Project1648183332_cxt bg-grey container pb1 pt1\&quot;&gt;\n&lt;div class=\&quot;Project1648183332\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;successful&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;Funded!&amp;lt;/b&amp;gt;\\nThis project was successfully funded &amp;lt;data class=\\&amp;quot;Project1648183332\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2011-12-30T13:04:57-05:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[deadline]\\&amp;quot;&amp;gt;on December 30, 2011&amp;lt;/data&amp;gt;.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1648183332\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:[&amp;quot;started&amp;quot;,&amp;quot;submitted&amp;quot;]}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;THIS PROJECT IS NOT LIVE&amp;lt;/b&amp;gt;\\nThis is only a draft that the creator has chosen to share.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1648183332\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;suspended&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Suspended&amp;lt;/b&amp;gt;\\nFunding for this project was suspended &amp;lt;data class=\\&amp;quot;Project1648183332\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2011-12-19T20:42:52-05:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on December 19, 2011&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1648183332\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;canceled&amp;quot;}]\&quot; data-evaluation=\&quot;true\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Canceled&amp;lt;/b&amp;gt;\\nFunding for this project was canceled by the project creator &amp;lt;data class=\\&amp;quot;Project1648183332\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2011-12-19T20:42:52-05:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on December 19, 2011&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Canceled&lt;/b&gt;\nFunding for this project was canceled by the project creator &lt;data class=\&quot;Project1648183332\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2011-12-19T20:42:52-05:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on December 19, 2011&lt;/data&gt;.\n&lt;/div&gt;&lt;div class=\&quot;Project1648183332\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;failed&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Unsuccessful&amp;lt;/b&amp;gt;\\nThis project\\u2019s funding goal was not reached on &amp;lt;time class=\\&amp;quot;js-adjust\\&amp;quot; data-format=\\&amp;quot;LL\\&amp;quot; datetime=\\&amp;quot;2011-12-30T13:04:57-05:00\\&amp;quot;&amp;gt;December 30, 2011&amp;lt;/time&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1648183332\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;purged&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;This project is purged and only visible to staff.&amp;lt;/b&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;/div&gt;\n&quot;"><div class="NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-canceled Project1648183332_cxt bg-grey container pb1 pt1">
+<div class="Project1648183332" data-conditions="[{&quot;state&quot;:&quot;successful&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;Funded!&lt;/b&gt;\nThis project was successfully funded &lt;data class=\&quot;Project1648183332\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2011-12-30T13:04:57-05:00&amp;quot;\&quot; itemprop=\&quot;Project[deadline]\&quot;&gt;on December 30, 2011&lt;/data&gt;.\n&lt;/p&gt;\n&quot;"></div><div class="Project1648183332" data-conditions="[{&quot;state&quot;:[&quot;started&quot;,&quot;submitted&quot;]}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;THIS PROJECT IS NOT LIVE&lt;/b&gt;\nThis is only a draft that the creator has chosen to share.\n&lt;/p&gt;\n&quot;"></div><div class="Project1648183332" data-conditions="[{&quot;state&quot;:&quot;suspended&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Suspended&lt;/b&gt;\nFunding for this project was suspended &lt;data class=\&quot;Project1648183332\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2011-12-19T20:42:52-05:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on December 19, 2011&lt;/data&gt;.\n&quot;"></div><div class="Project1648183332" data-conditions="[{&quot;state&quot;:&quot;canceled&quot;}]" data-evaluation="true" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Canceled&lt;/b&gt;\nFunding for this project was canceled by the project creator &lt;data class=\&quot;Project1648183332\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2011-12-19T20:42:52-05:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on December 19, 2011&lt;/data&gt;.\n&quot;"><p class="no-margin"></p>
+<b>Funding Canceled</b>
+Funding for this project was canceled by the project creator <data class="Project1648183332" data-format="distance_date" data-value="&quot;2011-12-19T20:42:52-05:00&quot;" itemprop="Project[state_changed_at]">on December 19, 2011</data>.
+</div><div class="Project1648183332" data-conditions="[{&quot;state&quot;:&quot;failed&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Unsuccessful&lt;/b&gt;\nThis project\u2019s funding goal was not reached on &lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;LL\&quot; datetime=\&quot;2011-12-30T13:04:57-05:00\&quot;&gt;December 30, 2011&lt;/time&gt;.\n&quot;"></div><div class="Project1648183332" data-conditions="[{&quot;state&quot;:&quot;purged&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;This project is purged and only visible to staff.&lt;/b&gt;\n&quot;"></div></div>
+</div>
+<div class="container bg-white border rounded py3 pl2 pr2" id="content">
+<div class="NS-projects-content">
+<div class="grid_11">
+<div data-has-video="true" id="video-section">
+<div class="video-player" data-dimensions="{&quot;width&quot;:560,&quot;height&quot;:480}" data-image="https://s3.amazonaws.com/ksr/projects/56042/photo-main.jpg?1397767454" data-video-tracker-url="https://www.kickstarter.com/projects/992452399/run-kitty-run-game-for-the-iphone-ipad/video/plays" data-video-url="https://d2pq0u4uni88oo.cloudfront.net/projects/56042/video-63559-h264_high.mp4" data-video="{&quot;id&quot;:63559,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/56042/video-63559-h264_high.mp4?2011&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/56042/video-63559-h264_base.mp4?2011&quot;,&quot;width&quot;:560,&quot;height&quot;:314,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/56042/video-63559-h264_base.jpg?2011&quot;}" id="video_pitch"><video class="landscape" preload="none">
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/56042/video-63559-h264_high.mp4" type='video/mp4; codecs="avc1.64001E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/56042/video-63559-h264_base.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></source>
+You'll need an HTML5 capable browser to see this content.
+</video>
+<img alt="Photo-main" class="has_played_hide poster landscape" src="https://s3.amazonaws.com/ksr/projects/56042/photo-main.jpg?1397767454" />
+<div class="play_button_big play_button_dark absolute-center rounded has_played_hide">
+<span class="ss-icon ss-play"></span>
+Play
+</div>
+<div class="player_controls clearfix absolute-bottom mb2 rounded white bg-green-dark forces-video-controls_hide">
+<div class="left">
+<a class="button button_icon button_dark playpause play mr1">
+<span class="play ss-icon ss-play"></span>
+<span class="pause ss-icon ss-pause"></span>
+</a>
+<span class="time current_time h12 left">00:00</span>
+</div>
+<div class="right">
+<span class="time total_time h12 left mr1">00:00</span>
+<a class="left button button_icon button_icon_white volume">
+<span class="ss-icon ss-volume icon_volume_nudge"></span>
+<span class="ss-icon ss-highvolume"></span>
+</a>
+<div class="volume_container left">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+<a class="left button button_icon button_icon_white fullscreen">
+<span class="ss-icon ss-expand"></span>
+<span class="ss-icon ss-contract"></span>
+</a>
+</div>
+<div class="clip">
+<div class="progress_container pr1 pl1">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="buffer progress_bar_buffer"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div data-project-state="canceled" id="about">
+<div class="NS_projects__project_share clearfix py2 pl1 pr1">
+<ul class="left list-inline no-margin h5 bold">
+<li class="facebook mr2">
+<a href="https://www.kickstarter.com/projects/992452399/run-kitty-run-game-for-the-iphone-ipad"><span class="ss-icon ss-social ss-facebook color-facebook"></span>
+<span class="color-facebook">Share</span>
+<span class="share_bubble"><div class="triangle grey"></div>
+<div class="triangle white"></div>
+<span class="count"></span></span>
+</a></li>
+<li class="twitter mr2">
+<a  href="https://twitter.com/intent/tweet?text=Run%20Kitty%20Run%20game%20for%20the%20iPhone%20%2F%20iPad%20%28Canceled%29%20by%20WhiteWidget%20Inc.&amp;via=kickstarter&amp;url=http://kck.st/rYXabz" rel="nofollow"><span class="ss-icon ss-social ss-twitter color-twitter"></span>
+<span class="color-twitter">Tweet</span>
+</a></li>
+<li class="embed">
+<a href="/projects/992452399/run-kitty-run-game-for-the-iphone-ipad/widget" class="remote_modal_dialog grey-dark" data-modal-title="Embed a widget on your site" data-tracker-name="Embed"><span class="ss-icon ss-navigateleft"></span>
+<span class="ss-icon ss-navigateright"></span>
+Embed
+</a></li>
+</ul>
+<ul class="right list-inline no-margin h5 bold">
+<li class="curate mr2">
+</li>
+<li class="remind">
+<div class="ajax-container" id="watching-widget">
+<div class="Project1648183332" data-conditions="[{&quot;is_starred&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div id=\&quot;unwatch\&quot;&gt;\n&lt;a href=\&quot;/projects/992452399/run-kitty-run-game-for-the-iphone-ipad/unwatch\&quot; class=\&quot;on\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"></div><div class="Project1648183332" data-conditions="[{&quot;!is_starred&quot;:true}]" data-evaluation="true" data-render="&quot;&lt;div id=\&quot;watch\&quot;&gt;\n&lt;a href=\&quot;/projects/992452399/run-kitty-run-game-for-the-iphone-ipad/watch\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;span class=\&quot;text\&quot;&gt;\n&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"><div id="watch">
+<a href="/projects/992452399/run-kitty-run-game-for-the-iphone-ipad/watch"><span class="ss-icon ss-star"></span>
+<span class="text">
+</span>
+</a></div>
+
+</div></div>
+</li>
+</ul>
+</div>
+
+<div class="short_blurb py2 pl1 pr1">
+<p class="h3">Run to the end of each level and dodge the dogs along the way. Play alone or together in this cute re-imagining of an old concept!</p>
+</div>
+<div class="full-description">
+<p><br>Hi there! Thanks for taking the time to check out my Kickstarter page! Kindly check the FAQ as well because it answers a lot of questions this part doesn't and it is more detailed.</p><div class="template" data-href="http://runkittyrun.whitewidget.com/images/kickstarter-progress.png"></div><h1>*UPDATE 11-27-2011*</h1><p>I'm pleased to announce that we now have a game artist on board! <a href="http://www.tiffanyminsal.com/" target="_blank">Tiffany Minsal</a>, a very talented concept artist. I'm very excited to work with her and see what kind of drawings she can come up with :). As a taste of what's to come, here is a demo reel of her work:</p><div class="template oembed" contenteditable="false" data-href="http://vimeo.com/24774952">
+<iframe src="//player.vimeo.com/video/24774952" width="639" height="423" frameborder="0" title="Demo Reel" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+</div><h1>WHAT IS RUN KITTY RUN?</h1><p>Loosely based on a fast-paced <a href="http://www.youtube.com/watch?v=MG8IFfQZZjs&amp;feature=related" target="_blank">Warcraft III custom game scenario</a> of
+the same name, Run Kitty Run is an independent Cocos2D game, currently in
+development for the iPhone and iPad.</p>
+
+<p>As a semi-top-down 2D running game, where speed and reaction time
+matters, the basic premise of the game is simple: Kittens must run to the end
+of each level's maze and dodge the dogs along the way. Use items, scare dogs, turn invisible or better yet, turn into a flaming fur ball! Do what it takes to save time and accomplish each level's goals..for as you progress, paths get tighter, and the dogs get nastier. </p><p>Run Kitty Run will be characterized by cute hand-drawn art, colorful environments, playful music and fast-paced singleplayer &amp; multiplayer action that will keep each player on their toes as they work together, or work against each other to reach the goal. It will take queues from some inspirations such as The Legend of Zelda: 4 Swords, <a href="http://www.onemanleft.com/tilttolive/" target="_blank">Tilt to Live</a> , and Mario Kart.</p><div class="template" data-href="http://runkittyrun.whitewidget.com/images/rkr-showcase-big.png"></div><div><div>
+<div>
+<p><i>In-game prototype (meaning non-final graphic. All graphics found here are original creations. Please check the FAQ to learn more about how these graphics came about :) ) Please note that a big part of this Kickstarter campaign is for improving the visual design and animation so all the art isn't final.</i></p>
+<h1><b>HOW DO I ENJOY THE GAME?</b></h1>
+<p><b>CHOOSE YOUR KITTEN</b></p>
+<p>Choose from a number of different kittens with their own special traits and abilities. Traverse the map through a mix of tilt-controls inspired by (and based on) <a href="http://www.onemanleft.com/tilttolive/" target="_blank">Tilt to Live</a> and quick-access buttons for items and abilities. Watch out as a simple touch from a dog could leave your poor kitten unconscious.</p>
+<div class="template" data-href="http://runkittyrun.whitewidget.com/images/rkr-character-showcase.png"></div>
+
+
+<div class="template" data-href="runkittyrun.whitewidget.com/images/rkr-character-showcase.png"></div>
+
+
+<div class="template" data-href=""></div>
+<i>Initial set of hand-drawn sprites. They are fully animated (may lack frames to smoothen out the animation though). Design and names are not final! If you noticed that those last 2 kittens look familiar, please check the FAQ</i><br><br><b>AVOID THE DOGS</b><br>Different kinds of dogs mean different kinds of danger! Run, dodge, and evade through the dozens of patrolling dogs, escape from aggressive dogs who chase you, and pass-by unnoticed through sensor dogs. Dogs will be in varied breeds and behavior through different areas!<br><br><p><b>UTILIZE ITEMS</b></p>
+<p>Pick up items, visible or hidden, through each level and use them to your advantage. Throw balls, get a burst of speed, be invincible, turn into a ghost, anything can happen!</p>
+<div class="template" data-href="http://runkittyrun.whitewidget.com/images/shadow_form.png"></div>
+
+<p><b>PLAY ALONE</b></p>
+<p>Play alone and complete the goals in all 50 levels of the <b><i>C</i></b><i><b>ampaign Mode</b>,</i> or play through 10 <b><i>Classic Mode</i></b> levels and be the fastest kitten in the Leader Boards. Achievements enthusiasts won't be disappointed as there are lots to collect. (note: amount of levels are subject to change based on project success and app store game updates).</p>
+<p><b>PLAY WITH OTHERS</b></p>
+<p>Get a persistent character, level-up and upgrade your traits and abilities and play with others through three different modes. Play together in <b><i>Cooperative Mode</i> </b>and help each other reach the goal. Save unconscious kittens, or continue to the goal with 1 less kitten. Play in <i>Competitive Mode</i> and use your abilities and items against each other. Be the first to complete the level's goal in <b>Competitive Race</b> or be the last kitten standing in <b>Competitive Arena</b>.</p>
+<div class="template" data-href="http://runkittyrun.whitewidget.com/images/rkr-coop-showcase.png"></div>
+<p><br><i>Illustration of save &amp; be-saved mechanic in Cooperative mode. Kittens who save others in need will be rewarded in their play through.</i></p>
+<h1>WHY MAKE IT?</h1>
+
+<p>I thoroughly enjoyed my time playing this type of game when I came 
+across it in WC3. Play with a bunch of friends, run through a maze and 
+avoid the dogs, get speed boosts, and if someone goes down by hitting a 
+dog, you choose to risk go back saving him, or just gun for the end 
+without him. </p>
+<p>It was good simple fun, certainly worth a few laughs, but I always 
+felt that it could have been better. As much fun as I had back then, it 
+had its down-sides: the visuals weren't suitable, music could be better,
+ too much set up was needed to arrange a game between friends, and there
+ simply wasn't enough features to make people play it again and again.</p>
+
+<p>I believe bringing this type of arcade gameplay from PC to handheld 
+and expanding on it would make for a really fun &amp; entertaining experience. There's a lot that can be done, if time permits, I also want to include a Pac-Man mode in the game since the engine would be perfectly built for it. I hope to make this worth everyone's time; I 
+certainly wouldn't make something I don't wish to enjoy myself, nor make
+ something I wouldn't be proud of making. With all that's mentioned 
+above, I hope to bring this game to life, and in its complete form to 
+the iOS platform.</p>
+<div class="template" data-href="http://runkittyrun.whitewidget.com/images/hi-res-prototypes.png"></div>
+<p><i>Prototype of dog and cat in high resolution. Please check the FAQ regarding type of art (hand-drawn sprite-art vs hi-res)</i></p>
+
+<h1>WHY KICKSTARTER?</h1>
+
+
+
+<p><b>Prototype Demo</b></p>
+
+<div class="template oembed" contenteditable="false" data-href="http://www.youtube.com/watch?v=Jvf-SpgMTVU">
+<iframe width="612" height="344" src="https://www.youtube.com/embed/Jvf-SpgMTVU?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div>
+<p><b>Preface. </b>Growing up, I have always been interested in 
+being able to make something that people could enjoy. I used to make 
+games on pen and paper and let other kids play them. I want to be able 
+to do the same on the mobile platform and this game will set the 
+pace for it. It's my first game for the iOS and with it, I'm striving to
+ bring the whole experience of the game I planned into the platform. Not
+ a feature less.<br><br><b>Obstacles.</b> I'm a developer with 
+so-so drawing skills and no experience with composing music. I 
+self-funded as much as I can and bought all the development and 
+production tools I needed and decided to start developing the game a few
+ months back. With no money to get someone else on board, I figured that
+ I would just wing it with the art and music when the time came, 
+thinking that I'd be able to provide good art and music with enough hard
+ work and effort.<br><br>Alas, working alone on it for 4 months now, I 
+have to face reality and admit that I won't be able to achieve it in a 
+timely manner and with quality, or even not at all. I was drawing at a 
+turtle's pace and it's been taking time better spent on completing the 
+code.</p>
+
+<p>Truthfully, I'm scared of leaving things unfinished and losing all my
+ work when the time comes that I can't support it anymore. I'm very 
+tired, and admittedly, even just a show of community support can help 
+lift my spirits and make me push forward.</p>
+<b>Enter Kickstarter.</b> Kickstarter allows me to be free of my own limits in my vision for the game.  Funds from Kickstarter will be used to pay for the proper creative 
+professionals I need (mainly a graphics artist and a sound 
+engineer/musician), and possibly fund more production tools to enable 
+the game to reach the planned level of quality.<br><br><p>I need to get a professional who can draw and animate well, to either "fix" or replace my current set of drawings. As you can see throughout the Kickstarter campaign, I am definitely quite lacking in the art department. Other similar campaigns have the luxury of showing beautiful illustrations...having beautiful videos...both of which I can't do so I made do with what I can muster up..but I know its not enough in today's standards. It's really important to me that the game is not only fun to play, but also looks and sounds amazing, but I need your support to achieve this goal.</p>
+<p>I've been working with a very talented game music composer, <a href="http://www.myspace.com/misfitchrismuzik" target="_blank">MisfitChris</a>, who will compose tunes for the soundtrack of the game. Along with him, 2 other composers, <a href="http://www.oxygenstarpower.com/" target="_blank">Oxygenstar</a> and <a href="http://disasterpeace.com/" target="_blank">Disasterpeace</a> could be included in the project as well. I urge you to check out their work, they're simply amazing. Your support will make sure that the soundtrack is of the best quality upon release.</p>
+<p>Any funds raised over the goal will allow me to get another developer
+ on board and be able to increase the production value of the game 
+beyond initially planned (more levels, more items, more characters, and 
+hopefully even an android port) and to polish and optimize the code (I want it to perform well during times the screen is filled with players and enemies)</p>
+<p>I hope that as a (potential) supporter, you're as excited for this as I am! Huge thanks for reading until the end! Please read the FAQ for more detailed information. I purposely didn't cover everything in detail as it might be too long. If you still have some questions, feel free to ask them below :)</p>
+<p>Cheers!</p>
+<p>Allen</p>
+<div class="template" data-href="http://runkittyrun.whitewidget.com/images/hi-terrain.png"></div>
+
+</div>
+
+
+</div></div>
+</div>
+</div>
+<div class="NS-projects-faqs" id="project-faqs">
+<h2 class="title grey-dark mt6 mb4">
+FAQ
+<div class="divider clear"></div>
+</h2>
+<ul class="faqs">
+<li class="faq" id="project_faq_15922">
+<div class="faq-question">
+<a href="#project_faq_15922" name="project_faq_15922">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Where can I download the Run Kitty Run promo song?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Over here.  Right-click then save as.</p>
+
+<p>  <a href="http://runkittyrun.whitewidget.com/Run%20Kitty%20Run%20Promo%20Music.mp3" rel="nofollow">http://runkittyrun.whitewidget.com/Run%20Kitty%20Run%20Promo%20Music.mp3</a></p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2011-11-17T12:09:25-05:00">Thu, Nov 17 2011 12:09 pm EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_15923">
+<div class="faq-question">
+<a href="#project_faq_15923" name="project_faq_15923">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">What are the Kickstarter funds for?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Main use is for graphics designers and animators. My video and the art work I have presented in this campaign really shows I need help in this department. There&#39;s a lot of environment sets, a lot of characters and power-ups, so drawing will be a big part of the work. I’ve also made arrangements with music composers so Kickstarter funds are also used for that. Finally, I would get additional developers involved as programming for Multiplayer is proving to be challenging. Optimizing for network performance is quite hard, and I also definitely can’t play as multiple players at once when I want to test out the multiplayer aspects of the game.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2011-11-17T12:09:25-05:00">Thu, Nov 17 2011 12:09 pm EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_15924">
+<div class="faq-question">
+<a href="#project_faq_15924" name="project_faq_15924">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Is the Kickstarter target enough to meet your needs?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>I have set it really at the bare minimum. I think it’s enough for me to work on, but the real target should be higher for the needs of this game. It’s quite hard to build the multiplayer portion of the game, and would take a lot of hours of work. Setting the target this way is not only safe, but also acts as a way for me to measure interest in the game too. I believe the worth of the project is not limited by the target. If the community sees fit to give more, then I know I have something that’s worth working on, if I hit the minimum, then I know it at least has an audience, both would keep me working on it nonetheless. Please pledge not based on project need (like if target is not yet reached or it is already reached), but rather, pledge based on your own interest in the project and its rewards :)</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2011-11-17T12:09:25-05:00">Thu, Nov 17 2011 12:09 pm EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_15925">
+<div class="faq-question">
+<a href="#project_faq_15925" name="project_faq_15925">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">How much will the game cost?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>The game will be sold at the minimum price: $0.99, with constant updates and downloadable content. I’d like to give the game as a $1 pledger reward but then I figure it would be nothing special. Instead, I decided to give it away in the $5 reward because I want to package it with the first special in-game character, which will be only available here in Kickstarter.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2011-11-17T12:09:25-05:00">Thu, Nov 17 2011 12:09 pm EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_15926">
+<div class="faq-question">
+<a href="#project_faq_15926" name="project_faq_15926">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">How about updates and downloadable content for the game?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Updates will be in the form of fixes, balance changes, new levels, and new scenarios. These will always be free.  Downloadable content will be in the form of freemiums; things that you don’t really need to enjoy the full experience, but will also benefit your experience some way, such as extra characters. I plan to release both regularly.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2011-11-17T12:09:25-05:00">Thu, Nov 17 2011 12:09 pm EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_15927">
+<div class="faq-question">
+<a href="#project_faq_15927" name="project_faq_15927">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">What’s the deal with special characters/items?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Kickstarter rewards come bundled with special characters or items depending on the tier. These in-game stuff will never be available to players who buy the game from the app-store as I want them to only be available here in Kickstarter for the pledgers.  I want regular players in the game to recognize Kickstarter supporters as something special when they use characters not available to regular players. I want them to be asking “Whoa?? How do I get that character/item?” and you would be saying “Sorry, you can’t get it :P”. These special characters also give a level of distinction between Kickstarter pledgers. I spread some of the obtainable Kickstarter exclusive things through different levels of pledges so at least the higher pledgers have something more to be proud of.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2011-11-17T12:09:25-05:00">Thu, Nov 17 2011 12:09 pm EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_15928">
+<div class="faq-question">
+<a href="#project_faq_15928" name="project_faq_15928">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">How about custom characters/items? What’s the difference with special characters/items?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Special characters/items are the one I put in the game as content exclusive to Kickstarter supporters. Custom characters/items are designed and decided on by the pledgers themselves in the proper tier. It means they can decide the look of the character (make it look like them perhaps), the theme of the ability &amp; trait, and lastly, they can decide if this character would only be available in their own copy, or they want to make it available for everyone (so that everyone can see your design…or its some sort of advertising tool for you, you’re the boss of it)</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2011-11-17T12:09:25-05:00">Thu, Nov 17 2011 12:09 pm EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_15929">
+<div class="faq-question">
+<a href="#project_faq_15929" name="project_faq_15929">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Hey...Isn’t that Tom Cat and Hobbes the tiger?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>For all intents and purposes, they are absolutely not Tom Cat and Hobbes the tiger! I want the game to spoof certain famous characters as I think it contributes a lot to the fun factor so these 2 are the first of those set. They are merely look-alikes, as you see the names are different, and their dimensions certainly are different as well. If I am asked to change more of their features, I will.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2011-11-17T12:09:25-05:00">Thu, Nov 17 2011 12:09 pm EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_15930">
+<div class="faq-question">
+<a href="#project_faq_15930" name="project_faq_15930">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">What other characters do you have in mind?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>I’m still open to ideas from the community. For now I have Shuffle Cat, the kitten who doesn’t run…but shuffles to the music, and an unnamed Spider-man striped Tiger, who.. you know…can sense danger &amp; shoots webs, but is definitely not Spiderman. I also want to get the infamous Nyan cat (who spews rainbows as it walks) in the game somehow but I have to get into contact with the creator. </p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2011-11-17T12:09:25-05:00">Thu, Nov 17 2011 12:09 pm EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_15931">
+<div class="faq-question">
+<a href="#project_faq_15931" name="project_faq_15931">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">To which games can I compare this to?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Ah…this is quite hard to answer. It does take to the Run Kitty Run game in WC3, but only in mechanic, and only in cooperative mode. The visuals, sounds, controls, and other game modes are totally different. It is influenced by different games as well: Zelda: 4 Swords in the way that it is about multiple players who are in “coopetition” (cooperative competition), Tilt to Live wherein you have to react fast in order to survive and last longer, Mario Kart wherein you race with others, with boxes that give you random power-ups (getting a box starts a roulette for selecting the power-up, and possibility is affected by commonness: more common power-ups appear more often).</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2011-11-17T12:09:25-05:00">Thu, Nov 17 2011 12:09 pm EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_15932">
+<div class="faq-question">
+<a href="#project_faq_15932" name="project_faq_15932">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Can you explain the game modes (more) clearly?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>2 Singleplayer modes:</p>
+
+<p>  Campaign mode – composed of mini-objectives and goals per level that you have to achieve with efficiency in order to get the best possible score. It’s for people who want something to complete, like getting a perfect score in each level in games such as Cut the Rope. Most of the achievements can be unlocked in this mode, and some achievements unlock in-game content as well, so finishing the campaign mode is a must.</p>
+
+<p>    Classic mode – composed of big levels &amp; mazes where you have to reach the end as fast as you can without dying too much. You have to get through the maze in a couple of passes, and each pass gives you harder and varied enemies. It’s for people who like time trials and don’t mind playing alone. Players can compare best times through online leaderboards per maze. </p>
+
+<p>    3 Multiplayer modes:</p>
+
+<p>Cooperative mode – It’s basically classic mode with other people. Completing levels in this mode means that you have to cooperate to survive. Hitting a dog leaves you unconscious, while touching an unconscious kitten revives them. </p>
+
+<p>    Competitive race – Almost same as cooperative mode, but with friendly-fire turned on, and there’s no need to save other kittens, but rather, it would be to your advantage to cause them to faint somehow. Push them towards enemies or use power-ups directly against them. This is a race to the finish.</p>
+
+<p>Competitive arena – This is a death-match arena where you use your abilities and random power-ups to cause each other to faint. Point-based or life-based last-man-standing.</p>
+
+<p>In all multiplayer modes, you get a persistent version of each character you use. Participating in game mode objectives and completing the game modes earn you points that help you improve your character so they are naturally better, or their ability is better.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2011-11-17T12:09:25-05:00">Thu, Nov 17 2011 12:09 pm EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_15933">
+<div class="faq-question">
+<a href="#project_faq_15933" name="project_faq_15933">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">What are the controls for the game?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>For now, you control the game with Tilt and Buttons. The tilt controls are similar to the very tight tilt controls of Tilt to Live and is calibrate-able so the player has full control of their movement. Tilt gives full reflex control to the player, and this is very crucial to the game. It also allows you to see more of the game; you wouldn&#39;t want to die because your finger was blocking your view of a dog right? Buttons would be for interacting with the environment and using items &amp; abilitie and are designed for quick-tap access   </p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2011-11-17T12:09:25-05:00">Thu, Nov 17 2011 12:09 pm EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_15955">
+<div class="faq-question">
+<a href="#project_faq_15955" name="project_faq_15955">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Who drew all the art you currently use? (sprites, terrains, etc)</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Though I used the term prototype art, I didn&#39;t mean it was art taken for free from somewhere. These are actually still original creations from me &amp; some of my friends. I asked a favor from my good friend Gene, who gave me a tree, the orange cat (except the dying animation), and the non-moving dog. The hi-res kitten is from a friend of Gene who I never met. The main project image with the 3 hi-res kittens and the big Paw and label is from my friend Dedy. I wouldn&#39;t be at this point without their help! Thanks guys! (even to my friend&#39;s friend who I never met, thank you). All the rest are from me. The other kittens, the terrain, the dying animations, some modifications to the trees, etc). Now I need a proper artist to take on this work because I&#39;ve been doing it via trial-and-error style. Just put dots &amp; erase dots until it looks good hehe..</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2011-11-17T12:09:25-05:00">Thu, Nov 17 2011 12:09 pm EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_15934">
+<div class="faq-question">
+<a href="#project_faq_15934" name="project_faq_15934">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">How about graphics? What art style is used?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>             For now, graphics are set to be hand-drawn pixel art as I think it inspires more nostalgia to the old days, and as painstakingly hard it is to do this kind of art, it does look good. I do understand though that some people are used to the hi-res graphics of the current generation so I’d be deciding on this by vote. 1) use sprite-art 2) use hi-res art 3) use both and include an option to switch graphics. Personally I like the 3rd choice, but this means more work for the graphics guy hehe   </p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2011-11-17T12:09:25-05:00">Thu, Nov 17 2011 12:09 pm EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_15935">
+<div class="faq-question">
+<a href="#project_faq_15935" name="project_faq_15935">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">How many people are working on this?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Right now, it’s just me and MisfitChris (the composer of the nice promo music we have).  2 more composers, Oxygenstar and Disasterpeace, are set to be involved in the project in some way too.  It all depends on what happens with the Kickstarter campaign.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2011-11-17T12:09:25-05:00">Thu, Nov 17 2011 12:09 pm EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_15936">
+<div class="faq-question">
+<a href="#project_faq_15936" name="project_faq_15936">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Do you need help? How can I help?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>I do I do! Definitely! That’s the whole reason I am here! You can help in 1 or more of 3 ways. First is the straight contribution, which is here in Kickstarter, second is more indirect: by spreading it to other people, and last, if you’re interested in the project and think you can really help out in the art department, I’d be interested in looking at your works.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2011-11-17T12:09:26-05:00">Thu, Nov 17 2011 12:09 pm EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_15937">
+<div class="faq-question">
+<a href="#project_faq_15937" name="project_faq_15937">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">When will it be available?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>My target is first quarter of 2012. This also highly depends on the result of the Kickstarter campaign. I want the game finished as soon as possible, but I want it to reach the best level of quality first, so really getting talented people involved is a must. While it’s not good enough, it won’t be released.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2011-11-17T12:09:26-05:00">Thu, Nov 17 2011 12:09 pm EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_15938">
+<div class="faq-question">
+<a href="#project_faq_15938" name="project_faq_15938">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Can we vote on decisions &amp; designs?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Backers/Pledgers of any amount already have the right to vote. You don’t need to be a major backer to have a say, simply pledging, no matter how small, already shows me you want what’s best for this game so I know you vote with the best intention in mind.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2011-11-17T12:09:26-05:00">Thu, Nov 17 2011 12:09 pm EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_15939">
+<div class="faq-question">
+<a href="#project_faq_15939" name="project_faq_15939">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">You’re not from US, where’s the shipping cost for freebies? It’s not mentioned anywhere.</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>             The shipping cost is inclusive of the reward. I know it’s going to be harder…or even more expensive for me to ship. Right now I just hope it all balances out as I would surely send everyone their rewards when they’re available no matter what the price is.   </p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2011-11-17T12:09:26-05:00">Thu, Nov 17 2011 12:09 pm EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_15940">
+<div class="faq-question">
+<a href="#project_faq_15940" name="project_faq_15940">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">What do the freebies (shirts, mugs, figurines, caps) look like?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>These are yet to be designed. Remember that the main thing I need is a graphics artist, so I’m waiting until I can get Kickstarter funds to hire one and finalize character and game design so I can also work on the freebie designs.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2011-11-17T12:09:26-05:00">Thu, Nov 17 2011 12:09 pm EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_15941">
+<div class="faq-question">
+<a href="#project_faq_15941" name="project_faq_15941">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Is there an Android version?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>It’s hard to answer for certain. I would say it depends on the success of the Kickstarter campaign, and of the game itself. If it is worth making for Android, then why not? I certainly want it available to as much people as possible. If I do have spare enough from the campaign, I&#39;ll start work on the Android port. The framework I&#39;m using also has an android version, so a port is really close to possible but I can&#39;t make promises at the moment</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2011-11-17T12:09:26-05:00">Thu, Nov 17 2011 12:09 pm EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_15942">
+<div class="faq-question">
+<a href="#project_faq_15942" name="project_faq_15942">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">What is WhiteWidget Inc?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>WhiteWidget Inc is a studio I set up based in Philippines. Currently, I’m the only member, but I have big plans for it. Unlike other countries, it’s uncommon in Philippines to have software studios working on their own projects, as the country is where most firms outsource work to, but I want this studio to be different. I want it to spur creativity within members, and as such, it should be able to decide on what it wants to make and not be limited to what a client wants.</p>
+
+<p>  I’m interested in gathering a group of creative professionals with the same thing in mind. I’m sure there are a lot, just not too much places to gather them. WhiteWidget Inc. is one such place. Members needn’t be from the Philippines per se, but can be anywhere in the world, and I hope to be able to find such individuals some day…maybe even meeting some because of this Kickstarter campaign. Big plans need to start somewhere, and WhiteWidget Inc. needs to start with its first project. This is it.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2011-11-17T12:09:26-05:00">Thu, Nov 17 2011 12:09 pm EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_15943">
+<div class="faq-question">
+<a href="#project_faq_15943" name="project_faq_15943">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">How does Kickstarter work?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>It’s an all-or-nothing scheme. If you pledge and the project isn’t successful, you don’t pay anything. It’s safe for both of us. If you’re not familiar with it, please read the Kickstarter faq, it explains everything better than I do :)</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2011-11-17T12:09:26-05:00">Thu, Nov 17 2011 12:09 pm EST</time>
+</div>
+</div>
+</li>
+
+</ul>
+<div class="faq-ask-box">
+<a href="/projects/992452399/run-kitty-run-game-for-the-iphone-ipad/messages/new?message%5Bto%5D=992452399&amp;mode=FAQ" class="button button_blue remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Ask a question about Run Kitty Run game for the iPhone / iPad (Cance...">Ask a question</a>
+
+</div>
+</div>
+
+<div class="mt4 ml1 mr1 mb2" id="report-issue-wrap">
+<a href="/login?then=%2Fprojects%2F992452399%2Frun-kitty-run-game-for-the-iphone-ipad" class="button button_grey">Report this project to Kickstarter</a>
+</div>
+</div>
+<div class="NS-projects-rightcol grid_5" id="rightcol">
+<div class="NS_projects__ecom">
+<div class="digits_4 pb2 pl2 pt2" id="stats">
+<h5>
+<div class="num h48 no-margin" data-backers-count="15" id="backers_count"><data class="Project1648183332" data-format="number" data-value="15" itemprop="Project[backers_count]">15</data></div>
+<span><data class="Project1648183332" data-attr="backers_count" data-format="pluralize" data-value="15" data-word="Backer">Backers</data></span>
+</h5>
+<h5>
+<div class="num h48 no-margin" data-goal="7500.0" data-percent-raised="0.1908" data-pledged="1431.0" id="pledged">
+<data class="Project1648183332" data-currency="USD" data-format="shorter_money" data-precision="0" data-value="1431" data-without_code="true" itemprop="Project[pledged]">$1,431</data>
+<span class="money usd project_currency_code"></span>
+</div>
+pledged of
+<span class="money usd no-code">$7,500</span>
+goal
+</h5>
+<span data-duration="45.0" data-end_time="2011-12-30T13:04:57-05:00" data-hours-remaining="0" id="project_duration_data"></span>
+<div class="Project1648183332" data-conditions="[{&quot;!state&quot;:[&quot;canceled&quot;,&quot;suspended&quot;]}]" data-evaluation="false" data-render="&quot;&lt;h5 class=\&quot;poll \&quot; data-dynamic=\&quot;5\&quot; data-end_time=\&quot;2011-12-30T13:04:57-05:00\&quot; data-poll_url=\&quot;https://d2oher2uhvl0ur.cloudfront.net/projects/992452399/run-kitty-run-game-for-the-iphone-ipad/stats.json\&quot;&gt;\n&lt;div class=\&quot;num h48 no-margin\&quot;&gt;0&lt;/div&gt;\n&lt;span class=\&quot;text\&quot;&gt;seconds to go&lt;/span&gt;\n&lt;/h5&gt;\n&quot;"></div></div>
+<div class="Project1648183332" data-conditions="[{&quot;state&quot;:&quot;live&quot;},{&quot;!ended?&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;pr2 pl2\&quot; id=\&quot;pledge-wrap\&quot;&gt;\n&lt;a href=\&quot;/projects/992452399/run-kitty-run-game-for-the-iphone-ipad/pledge/new?clicked_reward=false\&quot; class=\&quot;button button_green button_box button_block\&quot; id=\&quot;button-back-this-proj\&quot; title=\&quot;Back this project\&quot;&gt;Back This Project &lt;small class=&#39;h6 normal block green-dark&#39;&gt;&lt;span class=\&quot;money usd \&quot;&gt;$1&lt;/span&gt; minimum pledge&lt;/small&gt;&lt;/a&gt;\n&lt;/div&gt;\n&quot;"></div><div class="Project1648183332" data-conditions="[{&quot;state&quot;:&quot;live&quot;}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;p2\&quot; id=\&quot;banner\&quot;&gt;\n&lt;p class=\&quot;tiny_type no-margin\&quot;&gt;\nThis project will only be funded if at least\n&lt;span class=\&quot;money usd \&quot;&gt;$7,500&lt;/span&gt;\nis pledged by\n&lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;llll z\&quot; datetime=\&quot;2011-12-30T13:04:57-05:00\&quot;&gt;Fri, Dec 30 2011 1:04 pm EST&lt;/time&gt;.\n&lt;/p&gt;\n&lt;/div&gt;\n&quot;"></div></div>
+
+<div class="NS_projects__rightcol_projectby bg-blue-light rounded">
+<div class="p2 clearfix">
+<div class="avatar inline-block align-middle">
+<a href="/projects/992452399/run-kitty-run-game-for-the-iphone-ipad/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography"><img alt="Whitewidget.small" class="avatar-small" height="80" src="https://s3.amazonaws.com/ksr/avatars/1509290/whitewidget.small.jpg?1322587412" width="80" />
+</a></div>
+<div class="creator-name inline-block align-middle ml1">
+<h6 class="mb1">Project by</h6>
+<h5 class="mb1">
+<a href="/projects/992452399/run-kitty-run-game-for-the-iphone-ipad/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">WhiteWidget Inc.</a>
+</h5>
+<p class="location h6 bold mb1">
+<a href="/discover/places/manila-ph">Manila, Philippines</a>
+</p>
+</div>
+</div>
+<div class="creator-details pl2 pr2 pb1">
+<ul class="list-simple h5 mb1">
+<li class="projects">
+<span class="ss-icon ss-kickstarter grey-dark margin-right"></span>
+<span class="text">
+First created
+<span class="divider">&middot;</span>
+<a href="/profile/992452399/backed" class="green-dark bold more-button remote_modal_dialog" data-modal-title="Projects backed by WhiteWidget Inc.">1 backed</a>
+</span>
+</li>
+<li class="facebook-connected">
+<span class="ss-icon ss-facebook facebook color-facebook margin-right"></span>
+<span class="text">
+<a href="https://www.facebook.com/1415627237" class="popup" target="_blank">Allen Tan</a>
+<span class="number h6">
+522
+friends
+</span>
+</span>
+
+</li>
+<li class="links">
+<span class="ss-icon ss-globe margin-right grey-dark"></span>
+<span class="text">
+<a href="http://whitewidget.com" class="popup" rel="nofollow" target="_blank">whitewidget.com</a>
+</span>
+</li>
+</ul>
+</div>
+<div class="footer center h5 bold clearfix rounded-bottom clip">
+<a href="/projects/992452399/run-kitty-run-game-for-the-iphone-ipad/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">See full bio</a>
+<a href="/projects/992452399/run-kitty-run-game-for-the-iphone-ipad/messages/new?message%5Bto%5D=992452399" class="remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Send a message to WhiteWidget Inc.">Contact me</a>
+
+</div>
+</div>
+
+<ul class="NS-projects-rightcol-rewards rounded clip list mt2" data-reward-count="12" id="what-you-get">
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$1</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Show your support and get access to backers-only updates + an open ear to listen to your suggestions &amp; opinions for the game. I&#39;d love to hear you out. It&#39;s the least I can do to show you my appreciation. Drop me an e-mail and I promise to find time to respond. Any ideas I use will be properly credited to you. You also already have voting rights for any decisions/designs that need community ideas</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2011-12-01">Dec 2011</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$5</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+4 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>The above + a special in-game character not available to regular players + a free copy of the game upon release.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2012-01-01">Jan 2012</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$10</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+3 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>All of the above + hi-res wallpapers for iPad, iPhone, and Desktop + a souvineer Run Kitty Run Thank You post card.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2012-01-01">Jan 2012</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$25</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+3 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>All of the above + (more) special 2-character pack only available to pledgers from this level and above + a copy of the Run Kitty Run soundtrack</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2012-01-01">Jan 2012</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$60</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>All of the above + Run Kitty Run clay figurine + special in-game item not available to regular players + free access to all upcoming downloadable content + credit on the website</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2012-01-01">Jan 2012</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$80</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>All of the above + 1 more free copy (2 total) for a friend + Run Kitty Run cap</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2012-01-01">Jan 2012</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$100</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>All of the above + 2 more free copies (4 total) for friends + (more) special in-game character only available to pledgers from this level and above + Run Kitty Run T-shirt + Run Kitty Run Poster</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2012-01-01">Jan 2012</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$250</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(70 left of 70)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>All of the above + in-game credit as a major supporter + (more) special in-game character and item only available to pledgers from this level and above + early beta access to the game + a Run Kitty Run Drinking Mug</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2012-01-01">Jan 2012</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$600</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(20 left of 20)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>All of the above + Make your Mark on the game (we will put a hand-drawn version of you or a character and name of your choosing as a unique playable character/a skin of an existing character/an item/an environment artifact in the game. It can be for personal use or if you want to use it as a means of advertisement for a brand or company. If its a character or item, its your choice if it is to be available only to you, or its available to the public). This one is very flexible, contact us to make arrangements.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2012-01-01">Jan 2012</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$1,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>All of the above + Sponsor a Level: a level in the game (classic or campaign) themed after you, your work/company/product, or whatever you want (as long as it is legal and non-vulgar)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2012-01-01">Jan 2012</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$2,500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(3 left of 3)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>All of the above + a choice between 64GB latest generation iPod touch or 16GB WiFi iPad (engraved with our sincere gratitude or whatever you want) + in-depth access: copies of all art work used in the game (not for commercial use) + some guides on how parts of the game were made</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2012-01-01">Jan 2012</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$5,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(1 left of 1)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Wow....I don&#39;t think anyone will choose this, but if so, you get all of the above + (chances are...it will be far) I would surely want to personally fly to meet you so that I&#39;m able to shake your hand, treat you to some good food, and hand you all the above gifts in person + I&#39;d even give you a complete copy of the documented code for Run Kitty Run (but like the art, you can&#39;t re-distribute it, or use it commercially in the sense that you just change some things and re-sell the game, but I don&#39;t mind if you use my code for reference for parts of your own project).</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2012-03-01">Mar 2012</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+</ul>
+
+<div class="p2" id="meta">
+<h5>Funding period</h5>
+<p class="tiny_type">
+<time class="js-adjust" data-format="ll" datetime="2011-11-15T13:04:57-05:00">Nov 15, 2011</time> - 
+<time class="js-adjust" data-format="ll" datetime="2011-12-30T13:04:57-05:00">Dec 30, 2011</time>
+(45 days)
+</p>
+</div>
+</div>
+
+</div>
+
+<a href="#" id="video_mode_tab" style="display: none;">
+View in Video Mode
+</a>
+
+</div>
+</div>
+
+
+</div>
+
+<div class="h5 bg-green-dark" id="mega-footer-wrap">
+<div class="bg-green-dark white full-height" id="footer-newsletter-signup">
+<div class="container py4">
+<div class="grid_8 prefix_4 suffix_4 center mt4">
+<h2>
+Eureka! You've found
+<br>
+our little secret.
+</h2>
+<p>Sign up for our Happening email for all the inside info about arts and culture in the Kickstarter universe and beyond.</p>
+<div class="newsletter_signup">
+<form accept-charset="UTF-8" action="/newsletters/happening/signup" class="overlabels" method="post"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /><input class="hidden" name="authenticity_token" type="hidden" value="KRNmNJ0NR8vEWCCz3j8C3i2zmF3GIvMmhzakW5+BB3E=" /></div><input class="hidden" id="location" name="location" type="hidden" value="footer" />
+<textarea class="hide textarea" id="comment" name="comment">
+</textarea>
+<div class="field newsletter">
+<label class="overlabel z1 overlabel-newsletter">Email address</label>
+<input class="text" id="email" name="email" type="text" />
+</div>
+<input class="button button_green submit" name="commit" type="submit" value="Submit" />
+</form>
+
+</div>
+
+</div>
+</div>
+</div>
+<div class="container relative" id="mega-footer">
+<span class="scissors icon-scissors-1"></span>
+<div class="grid_16 alpha omega pt4 pb2" id="mega-footer-links">
+<div class="grid_4 link-group">
+<h5 class="white">About us</h5>
+<ul class="list">
+<li><a href="/year/2013/?ref=footer">2013 highlights</a></li>
+<li><a href="/year/2012?ref=footer">2012 highlights</a></li>
+<li><a href="/team?ref=footer">Who we are</a></li>
+<li><a href="/jobs?ref=footer">Jobs</a></li>
+<li><a href="/press?ref=footer">Press</a></li>
+<li><a href="/help/stats?ref=footer">Stats</a></li>
+<li><a href="/newsletters/weekly">Projects we love</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group">
+<h5><a href="/help?ref=footer" class="white">Help</a></h5>
+<ul class="list">
+<li><a href="/hello?ref=footer">What is Kickstarter?</a></li>
+<li><a href="/help?ref=footer">FAQ</a></li>
+<li><a href="/contact?ref=footer">Support</a></li>
+<li><a href="/help/school?ref=footer">Kickstarter School</a></li>
+<li><a href="/terms-of-use?ref=footer">Terms of Use</a></li>
+<li><a href="/privacy?ref=footer">Privacy Policy</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group alpha omega suffix_1">
+<h5 class="alpha"><a href="/discover/advanced?ref=footer" class="white">Discover</a></h5>
+<ul class="column column-0 grid_2 list">
+<li><a href="/discover/categories/art?ref=footer">Art</a></li>
+<li><a href="/discover/categories/comics?ref=footer">Comics</a></li>
+<li><a href="/discover/categories/dance?ref=footer">Dance</a></li>
+<li><a href="/discover/categories/design?ref=footer">Design</a></li>
+<li><a href="/discover/categories/fashion?ref=footer">Fashion</a></li>
+<li><a href="/discover/categories/film%20&amp;%20video?ref=footer">Film &amp; Video</a></li>
+<li><a href="/discover/categories/food?ref=footer">Food</a></li>
+</ul>
+<ul class="column column-1 grid_2 list">
+<li><a href="/discover/categories/games?ref=footer">Games</a></li>
+<li><a href="/discover/categories/music?ref=footer">Music</a></li>
+<li><a href="/discover/categories/photography?ref=footer">Photography</a></li>
+<li><a href="/discover/categories/publishing?ref=footer">Publishing</a></li>
+<li><a href="/discover/categories/technology?ref=footer">Technology</a></li>
+<li><a href="/discover/categories/theater?ref=footer">Theater</a></li>
+</ul>
+</div>
+<div class="grid_3 link-group">
+<h5 class="white">Hello</h5>
+<ul class="list">
+<li>
+<a href="https://twitter.com/kickstarter"><span class="ss-icon ss-social-regular ss-twitter"></span>
+Twitter
+</a></li>
+<li>
+<a href="https://www.facebook.com/Kickstarter"><span class="ss-icon ss-social-regular ss-facebook"></span>
+Facebook
+</a></li>
+<li>
+<a href="http://kickstarter.tumblr.com"><span class="ss-icon ss-social-regular ss-tumblr"></span>
+Tumblr
+</a></li>
+<li>
+<a href="http://instagram.com/kickstarter"><span class="ss-icon ss-social-regular ss-instagram"></span>
+Instagram
+</a></li>
+<li>
+<a href="https://vine.co/Kickstarter"><span class="ss-icon ss-social-regular ss-vine"></span>
+Vine
+</a></li>
+<li>
+<a href="/blog?ref=footer">Blog</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="grid_16 py4" id="mega-footer-bottom">
+<div class="logo left">
+<a href="/" class="grey-dark"><span class="ss-icon h3">KICKSTARTER</span>
+</a></div>
+<p class="right h5 grey-dark">
+&copy;
+2014
+Kickstarter, Inc.
+</p>
+</div>
+</div>
+</div>
+
+<script>
+  //<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    var analytics_vars = { google_analytics_id : "UA-7621056-1", logged_in : "false", social_user: "false" }
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.mixpanel_id = '75b1d24a516ecfc955eadfadc4910661';
+    window.mixpanel_debug = false;
+  //]]>
+</script>
+
+
+<noscript>
+<img alt="Quantcast" border="0" height="1" src="//secure.quantserve.com/pixel/p-34IbSpw2K94Sg.gif" style="display:none" width="1" />
+</noscript>
+
+
+<script>
+  //<![CDATA[
+    window.benchmark = (typeof window.performance == 'object' && typeof window.performance.mark == 'function');
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    (function (root) {
+      function instrument_function (original) {
+        return function () {
+          try {
+            return original.apply(this, arguments);
+          } catch (e) {
+            if (e.stack && root.Honeybadger) {
+              Honeybadger.notify(e, {
+                current_project : root.current_project,
+                current_user : root.current_user
+              });
+            }
+            throw(e);
+          }
+        };
+      }
+      root.instrument_function = instrument_function;
+    }(this));
+  //]]>
+</script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+
+<script>
+  //<![CDATA[
+    (function(){function c(a){this.local_start_time=new Date;this.settings={cookie_name:"request_time"};for(var b in a)this.settings[b]=a[b];this.get_remote_offset()}c.prototype.get_remote_offset=function(){this.cookie_value=this.read_cookie();var a=new Date(this.cookie_value);if(!this.cookie_value||"Invalid Date"===a.toString()){if(this.remote_offset=this.read_cookie("local_offset"))this.remote_offset=parseInt(this.remote_offset,10)}else this.remote_offset=a-this.local_start_time;"undefined"!==typeof this.remote_offset&& !isNaN(this.remote_offset)?(document.cookie="local_offset="+this.remote_offset+"; path=/",this.is_set=!0):this.is_set=!1};c.prototype.time_units=[["milliseconds",1],["seconds",1E3],["minutes",6E4],["hours",36E5],["days",864E5]];c.prototype.get_units_in_interval=function(a,b){var d=a.replace(/^\w/,function(d){return"get"+d.toUpperCase()});return b[d]()};c.prototype.milliseconds_in_day=function(a){"undefined"===typeof a&&(a=new Date);for(var b=0,d=this.time_units.length-2;0<=d;d--)b+=this.get_units_in_interval(this.time_units[d][0], a)*this.time_units[d][1];return b};c.prototype.milliseconds_in_interval=function(a,b){return this.milliseconds_in_day(b)%a};c.prototype.milliseconds_to_next_interval=function(a,b){return a-this.milliseconds_in_interval(a,b)};c.prototype.pluralize=function(a,b){1===b&&(a=a.replace(/s$/,""));return a};c.prototype.read_cookie=function(a){for(var b=window.document.cookie.split(";"),a=(a||this.settings.cookie_name)+"=",d=0;d<b.length;d++){for(var e=b[d];" "==e.charAt(0);)e=e.substring(1,e.length);if(0== e.indexOf(a))return b=e.substring(a.length,e.length),decodeURIComponent(b).replace(/\+/g," ")}return null};c.prototype.destroy_cookie=function(a){var b=new Date;a||(a=this.settings.cookie_name);b.setTime(b.getTime()-864E5);window.document.cookie=a+"=; expires="+b.toGMTString()+"; path=/"};c.prototype.get_remote_time=function(){var a=new Date,b=a.getTime()+this.remote_offset;return a=a.setTime(b)};window.ksr_page_clock=new c})(); (function(){function c(d,a,b){if(d){this.options={unit_base:{seconds:119,minutes:119,hours:72,days:0},end_phrase:d.getAttribute("data-word")||"to go",count_down:d.getAttribute("data-dynamic")||!1};for(k in b)this.options[k]=b[k];this.clock=a;this.time_units=this.clock.time_units.slice(1);this.element=d;this.clock.is_set&&this.attach()}}function a(){this.elements=[];this.attach()}var b=function(d,a){var b=a||window.document.body,c=d.split("."),g=c[c.length-1],c=1<c.length&&c[0]?c[0]:"*";if(window.document.getElementsByClassName)return b.getElementsByClassName(g); if(b.querySelectorAll)return b.querySelectorAll(d);for(var c=b.getElementsByTagName(c),h=[],i=0,f;f=c[i];i++)b=RegExp("(^|\\s)"+g+"(\\s|$)"),(""+f.className).match(b)&&h.push(f);return h};c.prototype.get_remaining_time=function(){var d=this.remote_end_time-this.clock.get_remote_time();0>d&&(d=0);return d};c.prototype.get_current_unit=function(){for(var d,a=0;a<this.time_units.length&&!(d=this.time_units[a],this.get_remaining_time()<=this.options.unit_base[d[0]]*d[1]);a++);return d};c.prototype.update_element= function(){var a=this.get_current_unit(),b=Math.floor(this.get_remaining_time()/a[1]);isNaN(b)||(this.number_element.innerHTML=b,this.text_element.innerHTML=this.clock.pluralize(a[0],b)+" "+this.options.end_phrase)};c.prototype.valid=function(){return!(!this.number_element||!this.text_element)};c.prototype.attach=function(){function a(){c.update_element();if(c.options.count_down&&0<c.get_remaining_time()){var b=c.get_current_unit();this.timeout=window.setTimeout(a,c.clock.milliseconds_to_next_interval(b[1]))}} var c=this;if(this.remote_end_time_string=this.element.getAttribute("data-end_time"))this.remote_end_time_string.match(/^\d+$/)?(this.remote_end_time=new Date,this.remote_end_time.setTime(this.remote_end_time_string)):this.remote_end_time=new Date(this.remote_end_time_string),this.number_element=b(".num",this.element)[0],this.text_element=b(".text",this.element)[0],this.element.ksr_page_timer=!0,this.valid()&&a()};c.prototype.cancel=function(){this.timeout&&clearTimeout(this.timeout)};a.prototype.loading= !0;a.prototype.stop_finding=function(){this.attach_timers();this.loading=!1;document.addEventListener?document.removeEventListener("DOMContentLoaded",this.stop_finding,!1):document.attachEvent&&"complete"===document.readyState&&document.detachEvent("onreadystatechange",this.stop_finding)};a.prototype.bind_ready=function(){var a=this,b=function(){a.stop_finding.call(a)};document.addEventListener?(document.addEventListener("DOMContentLoaded",b,!1),window.addEventListener("load",b,!1)):document.attachEvent&& (document.attachEvent("onreadystatechange",b),window.attachEvent("onload",b))};a.prototype.attach_timers=function(){for(var a=b("div.ksr_page_timer"),e=0;e<a.length;e++)a[e].ksr_page_timer||(new c(a[e],window.ksr_page_clock),this.elements.push(a[e]))};a.prototype.attach=function(){var a=this;this.bind_ready();(function(){a.attach_timers();a.loading&&window.setTimeout(function(){a.attach_timers()},200)})()};window.ProjectTimer=c;new a})();
+  //]]>
+</script>
+
+<script class="template" id="template-widgets__video_embed_code" type="text/x-tmpl-mustache"><iframe width="{{width}}" height="{{height}}" src="{{{path}}}" frameborder="0" scrolling="no"> </iframe>
+</script><script class="template" id="template-projects__baseball_card_tall" type="text/x-tmpl-mustache"><div class="project-card-wrap project-card-wrap-tall border bg-white rounded clip">
+  <div class="project-card relative project-live {{#successful?}}successful{{/successful?}}">
+    <div class="project-thumbnail pt1 pl1 pr1">
+      <a href="{{urls.web.project}}" target="">
+        <img alt="Photo-little" class="projectphoto-little" src="{{photo.little}}" class="fit">
+      </a>
+    </div>
+    <div class="project-card-interior p1 h6 grey-dark">
+      <h6 class="project-title">
+        <a href="{{urls.web.project}}" target="" class="green-dark">{{name}}</a>
+      </h6>
+      <p class="mb1 ellipsis">
+        by
+        {{creator.name}}
+      </p>
+      <p class="blurb">
+        {{blurb}}
+      </p>
+    </div>
+    <div class="absolute-bottom bg-white rounded-bottom">
+
+      {{#location}}
+        <ul class="p1 list project-meta no-margin h6">
+          <li class="ellipsis">
+            <a href="{{location.urls.web.discover}}" data-location="{{location_json}}" class="grey-dark">
+              <span class="ss-icon ss-location"></span>
+              <span class="location-name">{{location.displayable_name}}</span>
+            </a>
+          </li>
+        </ul>
+      {{/location}}
+
+      <div class="project-stats-wrap pb1 pl1 pr1">
+
+        {{#failed?}}
+          <div class='project-status project-failed h6'>
+            <strong> Funding Unsuccessful</strong><br />
+            <span class="grey-dark">Project ended on {{formatted_deadline}}</span>
+          </div>
+        {{/failed?}}
+
+        {{#canceled?}}
+          <div class='project-status project-canceled h6'>
+            <strong> Funding Canceled</strong><br />
+            <span class="grey-dark">Project canceled on {{formatted_state_changed_at}}</span>
+          </div>
+        {{/canceled?}}
+
+        {{#successful?}}
+          <div class='project-pledged-successful bg-green white h6 pl1 pr1 mb1'>
+            <strong>Successful!</strong>
+          </div>
+        {{/successful?}}
+
+        {{#live_or_successful?}}
+          {{#live?}}
+            <div class="project-pledged-wrap bg-grey clip mb1">
+              <div class="project-pledged bg-green full-height" style="width: {{percent_raised_to_100}}%"></div>
+            </div>
+          {{/live?}}
+          <ul class="project-stats list no-margin h6 no-wrap">
+            <li class="first funded inline-block mr1">
+              <strong class="block h6">{{percent_raised_rounded}}%</strong>
+              <span class="grey-dark">funded</span>
+            </li>
+            <li class="pledged inline-block mr1">
+              <strong class="block h6">{{currency_symbol}}{{formatted_money}}</strong>
+              <span class="grey-dark">pledged</span>
+            </li>
+            {{#successful?}}
+              <li class="last successful inline-block">
+                <strong class="block h6">Funded</strong>
+                <div class="deadline grey-dark">{{formatted_deadline}}</div>
+              </li>
+            {{/successful?}}
+            {{#live?}}
+              <li class="last ksr_page_timer inline-block" data-end_time="{{javascript_deadline}}">
+                <strong class="block h6">
+                  <div class="num">30</div>
+                </strong>
+                <div class="span text grey-dark" data-word="left">days to go</div>
+              </li>
+            {{/live?}}
+          </ul>
+        {{/live_or_successful?}}
+      </div>
+    </div>
+  </div>
+</div>
+
+{{#friends_backing?}}
+  <div class="friend_project_context">
+    <div class="friend_facepile">
+      {{#truncated_friends}}
+        <img src="{{avatar.thumb}}" class="{{#has_metadata?}}small{{/has_metadata?}}">
+      {{/truncated_friends}}
+    </div>
+    <p class="friend_namepile">
+      {{{escaped_sentence}}}
+    </p>
+  </div>
+{{/friends_backing?}}
+</script><script class="template" id="template-projects__video_mode" type="text/x-tmpl-mustache"><a href='#' id='video_mode_close' class='close_button z2'><span class='ss-icon ss-delete'></span></a>
+
+<div class='title_card z1 {{context_classes}}' style="display:none;">
+  <div class='interior'>
+    <h2 class='project_title normal_weight'>{{name}}</h2>
+    <p class='blurb'>{{blurb}}</p>
+    <nav class='bar'>
+      <a id='play_button' class='left play' href='#'>
+        <span class='play_active'>
+          <span class='ss-icon ss-play'></span>
+          Play
+        </span>
+        <span class='pause_active'>
+          <span class='ss-icon ss-pause'></span>
+          Pause
+        </span>
+      </a>
+      {{#logged_in}}
+        <div class='remind right'>
+          {{#if_not_starred}}
+            <a class='follow' href='{{urls.web.project}}/watch'><span class='ss-icon ss-star'></span></a>
+          {{/if_not_starred}}
+          {{#if_starred}}
+            <a class='unfollow' href='{{urls.web.project}}/unwatch'><span class='ss-icon ss-star active'></span></a>
+          {{/if_starred}}
+        </div>
+      {{/logged_in}}
+      <a class='right explore button button_green small' href='#'>Explore this project</a>
+    </nav>
+  </div>
+</div>
+
+<div class='channel_controls z1'>
+  <a href='#' class='{{#playlist_is_location}}selected {{/playlist_is_location}}location'>Something else near {{location.first_name}} <span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_featured}}selected {{/playlist_is_featured}}featured'>Something different<span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_category}}selected {{/playlist_is_category}}category'>Something else in {{category.name}} <span class='ss-icon ss-navigateright'></span></a>
+</div>
+
+<div class='project_video' style='background-image: url('{{photo.full}}')'>
+  <div class='cover'>
+    <video>
+      <source src='{{video.high}}' type='video/mp4'/>
+      <source src='{{video.webm}}' type='video/webm'/>
+    </video>
+  </div>
+</div>
+</script><script class="template" id="template-site__video_mode_fourohfour" type="text/x-tmpl-mustache"><section class='four_oh_four'>
+  <p class='big_type'>
+    Looks like you've reached the end of the line! <br />Check out <a class="another" href='#'>another channel</a> or <a href='/discover'>browse projects in discover</a>.
+  </p>
+</section>
+</script>
+
+<script id="schwamm_formatting_options" type="text/javascript">
+//<![CDATA[
+(function(){window.formatters = window.formatters || {}; var formatting_options = {"distance_date_intervals":[[5,"just now"],[29,"less than a minute ago"],[89,"1 minute ago"],[2640,"%m minutes ago"],[5340,"about 1 hour ago"],[82800,"about %h hours ago"],[147600,"1 day ago"],[604800,"%d days ago"],[15552000,"on %t"],[0,"on %y"]],"currency_symbol_mappings":{"AFN":"\u060b","ALL":"Lek","ARS":"$","AUD":"$","AWG":"\u0192","AZN":"\u043c\u0430\u043d","BAM":"KM","BBD":"$","BGN":"\u043b\u0432","BMD":"$","BND":"$","BOB":"$b","BRL":"R$","BSD":"$","BWP":"P","BYR":"p.","BZD":"BZ$","CAD":"$","CLP":"$","CNY":"\u00a5","COP":"$","CRC":"\u20a1","CUP":"\u20b1","CZK":"K\u010d","DKK":"kr","DOP":"RD$","EGP":"\u00a3","EUR":"\u20ac","FJD":"$","FKP":"\u00a3","GBP":"\u00a3","GIP":"\u00a3","GTQ":"Q","GYD":"$","HKD":"$","HNL":"L","HRK":"kn","HUF":"Ft","IDR":"Rp","ILS":"\u20aa","IRR":"\ufdfc","ISK":"kr","JMD":"J$","JPY":"\u00a5","KGS":"\u043b\u0432","KHR":"\u17db","KPW":"\u20a9","KRW":"\u20a9","KYD":"$","KZT":"\u043b\u0432","LAK":"\u20ad","LBP":"\u00a3","LKR":"\u20a8","LRD":"$","LTL":"Lt","LVL":"Ls","MKD":"\u0434\u0435\u043d","MNT":"\u20ae","MUR":"\u20a8","MXN":"$","MYR":"RM","MZN":"MT","NAD":"$","NGN":"\u20a6","NIO":"C$","NOK":"kr","NPR":"\u20a8","NZD":"$","OMR":"\ufdfc","PAB":"B/.","PEN":"S/.","PHP":"\u20b1","PKR":"\u20a8","PLN":"z\u0142","PYG":"Gs","QAR":"\ufdfc","RON":"lei","RSD":"\u0414\u0438\u043d.","RUB":"\u0440\u0443\u0431","SAR":"\ufdfc","SBD":"$","SCR":"\u20a8","SEK":"kr","SGD":"$","SHP":"\u00a3","SOS":"S","SRD":"$","SVC":"$","SYP":"\u00a3","THB":"\u0e3f","TRY":"TL","TTD":"TT$","TWD":"NT$","UAH":"\u20b4","USD":"$","UYU":"$U","UZS":"\u043b\u0432","VEF":"Bs","VND":"\u20ab","YER":"\ufdfc","ZAR":"R"},"currency_trailing_code_mappings":{"AUD":true,"CAD":true,"NZD":true,"USD":true},"currency_formats":["money","shorter_money"]}; for (key in formatting_options) {window.formatters[key] = formatting_options[key]};}());
+//]]>
+</script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("begin_base.js_tag");}
+  //]]>
+</script>
+<script src="https://d297h9he240fqh.cloudfront.net/assets/packages/base-45cdab84617ddfb8905b7cddc8500c19.js" type="text/javascript"></script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("end_base.js_tag");}
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    document.domain='kickstarter.com';
+  //]]>
+</script>
+
+<iframe height="0" id="api_xdreceiver" src="https://api.kickstarter.com/xdreceiver/85e6.html" style="display: none;" width="0"></iframe>
+
+
+
+<div id="fb-root"></div>
+<script>
+  //<![CDATA[
+    var channelUrl = window.location.protocol + "//" + window.location.host + "/channel.html",
+      skip_autologin = $('body').is('.skip_autologin');
+    
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId: window.fb_app_id,
+        channelUrl: channelUrl,
+        status: true,    // check login status
+        cookie: true,    // enable cookies to allow the server to access the session
+        xfbml: true,     // parse XFBML
+        logging: false   // turn off logging
+      });
+    
+      FB.getLoginStatus(function (response) {
+        if (response.status === 'connected') {
+          if (read_cookie("logout_from_fb")) {
+            FB.logout();
+            destroy_cookie("logout_from_fb");
+          } else if (!skip_autologin) {
+            $.get("/fb/autologin", {'fbsr': response.authResponse.signedRequest});
+          } else if (false && 0 == response.authResponse.userID) {
+            $.get("/fb/refresh", {'fbsr': response.authResponse.signedRequest});
+          }
+        } else {
+          if (read_cookie("logout_from_fb")) {
+            destroy_cookie("logout_from_fb");
+          }
+        }
+      })
+    
+      $(document).trigger('fb:loaded');
+    };
+    
+    
+    // Load the SDK Asynchronously
+    (function(d){
+      var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+      js = d.createElement('script'); js.id = id; js.async = true;
+      js.src = "//connect.facebook.net/en_US/all.js";
+      d.getElementsByTagName('head')[0].appendChild(js);
+    }(document));
+  //]]>
+</script>
+
+
+</body>
+</html>

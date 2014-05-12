@@ -1,0 +1,2020 @@
+<!DOCTYPE html>
+<html class="projects_show  fontface no-js" lang="en">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# kickstarter: http://ogp.me/ns/fb/kickstarter#">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-5.newrelic.com","errorBeacon":"jserror.newrelic.com","licenseKey":"b04b883ad2","applicationID":"11086","transactionName":"cFteRUULX1wHFhtIEFxeVVJDFxxDCgtD","queueTime":7,"applicationTime":950,"ttGuid":"","agentToken":null,"agent":"js-agent.newrelic.com/nr-411.min.js"}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"Vw4BVEVSCQMIUg=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e){function n(t,e,n){n||(n={});for(var r=o[t],a=r&&r.length||0,s=n[i]||(n[i]={}),u=0;a>u;u++)r[u].apply(s,e);return s}function r(t,e){var n=o[t]||(o[t]=[]);n.push(e)}var o={},i="nr@context";e.exports={on:r,emit:n}},{}],2:[function(t){function e(t,e,n,i,s){return u?u-=1:r("err",[s||new UncaughtException(t,e,n)]),"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t(5),a=window.onerror,s=!1,u=0;t("loader").features.push("err"),window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(d){"stack"in d&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(4),s=!0)}i.on("fn-start",function(){s&&(u+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&u>0&&(u-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:4,3:3,4:6,5:1,6:14,handle:"D5DuLP",loader:"G9z0Bl"}],3:[function(t){function e(t){r.inPlace(t,["addEventListener","removeEventListener"],"-",n)}function n(t){return t[1]}var r=t(1),o=(t(3),t(2));if(e(window),"getPrototypeOf"in Object){for(var i=document;i&&!i.hasOwnProperty("addEventListener");)i=Object.getPrototypeOf(i);i&&e(i);for(var a=XMLHttpRequest.prototype;a&&!a.hasOwnProperty("addEventListener");)a=Object.getPrototypeOf(a);a&&e(a)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&e(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=e["nr@wrapped"]?t[1]=e["nr@wrapped"]:e["nr@wrapped"]=t[1]=r(e,"fn-"):"function"==typeof e.handleEvent&&r.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:15,2:1,3:14}],4:[function(t){var e=(t(3),t(1)),n=t(2);e.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=e(t[0],"fn-")})},{1:15,2:1,3:14}],5:[function(t){function e(t){var e=t[0];"string"==typeof e&&(e=new Function(e)),t[0]=n(e,"fn-")}var n=(t(3),t(1)),r=t(2);n.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",e)},{1:15,2:1,3:14}],6:[function(t){function e(){o.inPlace(this,s,"fn-")}function n(t,e){o.inPlace(e,["onreadystatechange"],"fn-")}function r(t,e){return e}var o=t(1),i=t(2),a=window.XMLHttpRequest,s=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];window.XMLHttpRequest=function(t){var n=new a(t);try{i.emit("new-xhr",[],n),o.inPlace(n,["addEventListener","removeEventListener"],"-",function(t,e){return e}),n.addEventListener("readystatechange",e,!1)}catch(r){try{i.emit("internal-error",r)}catch(s){}}return n},window.XMLHttpRequest.prototype=a.prototype,o.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",r),i.on("send-xhr-start",n),i.on("open-xhr-start",n)},{1:15,2:1}],7:[function(t){function e(){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;u>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,d="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=e(d);if(f&&(r.rxSize=f),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}t("loader").features.push("xhr");var o=t("handle"),i=t(1),a=t(5),s=["load","error","abort","timeout"],u=s.length,d=t(2);t(3),t(4),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var d=e(o);d&&(r.txSize=d)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",e)}catch(r){}}};for(var f=0;u>f;f++)n.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&e()},{1:8,2:11,3:3,4:6,5:1,handle:"D5DuLP",loader:"G9z0Bl"}],8:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e){var n=r[t];return n?n.apply(this,e):(o[t]||(o[t]=[]),void o[t].push(e))}var r={},o={};e.exports=n,n.queues=o,n.handlers=r},{}],11:[function(t,e){function n(t){if(!t||"object"!=typeof t&&"function"!=typeof t)return-1;if(t===window)return 0;if(o.call(t,"__nr"))return t.__nr;try{return Object.defineProperty(t,"__nr",{value:r,writable:!0,enumerable:!1}),r}catch(e){return t.__nr=r,r}finally{r+=1}}var r=1,o=Object.prototype.hasOwnProperty;e.exports=n},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&u&&u.body){p.proto="https"===c.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=u.createElement("script");e.src=p.proto+t.agent,u.body.appendChild(e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,u=s.document,d="addEventListener",f="attachEvent",c=(""+location).split("?")[0],p=e.exports={offset:i(),origin:c,features:[]};u[d]?(u[d]("DOMContentLoaded",o,!1),s[d]("load",n,!1)):(u[f]("onreadystatechange",r),s[f]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],14:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],15:[function(t,e){function n(t,e,r,s){function nrWrapper(){try{var n,a=u(arguments),d=this,f=r&&r(a,d)||{}}catch(c){i([c,"",[a,d,s],f])}o(e+"start",[a,d,s],f);try{return n=t.apply(d,a)}catch(p){throw o(e+"err",[a,d,p],f),p}finally{o(e+"end",[a,d,n],f)}}return a(t)?t:(e||(e=""),nrWrapper[n.flag]=!0,nrWrapper)}function r(t,e,r,o){r||(r="");var i,s,u,d="-"===r.charAt(0);for(u=0;u<e.length;u++)s=e[u],i=t[s],a(i)||(t[s]=n(i,d?s+r:r,o,s,t))}function o(t,e,n){try{s.emit(t,e,n)}catch(r){i([r,t,e,n])}}function i(t){try{s.emit("internal-error",t)}catch(e){}}function a(t){return!(t&&"function"==typeof t&&t.apply&&!t[n.flag])}var s=t(1),u=t(2);e.exports=n,n.inPlace=r,n.flag="nr@wrapper"},{1:1,2:14}]},{},["G9z0Bl",2,7]);</script><script>
+  //<![CDATA[
+    docElement = this.document.documentElement;
+    docElement.className=docElement.className.replace(/\bno-js\b/,'') + 'js';
+  //]]>
+</script>
+<title>City Quest: A Point & Click Adventure by Ryan Nohr &mdash; Kickstarter</title><script>
+  //<![CDATA[
+    window.report_errors = true;
+    window.honeybadger_configuration = {
+      api_key : "02ab109335c0dd1a93506d92f22217a7",
+      environment : "production",
+      component : "projects",
+      action : "show",
+      onerror : false
+    };
+  //]]>
+</script>
+
+
+<!--[if lt IE 9]>
+  <script src="//html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta content="telephone=no" name="format-detection">
+
+<!--[if !IE]> -->
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base-9f623ad5d021a188cfb2d68a0cdf7a7b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<!-- <![endif]-->
+<!--[if IE]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base_blessed-2640c72487552f9a2ef9f2620b4af860.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<!--[if lte IE 9]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_nine-a93fe10530f175f96c4078b7e070d7e1.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 8]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_eight-f75aeb274436f94a0d243774456b1c62.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 7]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie-c019c01acd3a96588b346cf577a3504f.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_seven-5a3d2cef660cd281fd844b04b2397dbb.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if IE 6]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_six-e4d3caf76e405fe19aee6ece8bda701b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<link href="https://d297h9he240fqh.cloudfront.net/favicon.png" rel="icon" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-precomposed-7b603dba7cf80e4acc57d94a991bebbd.png" rel="apple-touch-icon-precomposed" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-ipad-precomposed-3176f72977daf43dee3b0d348484dc01.png" rel="apple-touch-icon-precomposed" sizes="72x72" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-iphone4-precomposed-b93b70168cd8492c843d0fea873c7f83.png" rel="apple-touch-icon-precomposed" sizes="114x114" type="image/png">
+<link href="https://www.kickstarter.com/services/oembed?url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2F1376534446%2Fcity-quest-a-point-and-click-adventure" rel="alternate" title="City Quest: A Point &amp; Click Adventure Script Tag oEmbed" type="application/json+oembed">
+<link rel="alternate" type="application/atom+xml" title="City Quest: A Point &amp; Click Adventure : Kickstarter" href="https://www.kickstarter.com/projects/1376534446/city-quest-a-point-and-click-adventure/posts.atom" />
+<meta property="twitter:app:id:iphone" content="596961532"/>
+<meta property="twitter:app:name:iphone" content="Kickstarter"/>
+<meta property="twitter:app:url:iphone" content="ksr://www.kickstarter.com/projects/1376534446/city-quest-a-point-and-click-adventure"/>
+<meta name="video_height" content="360"/>
+<meta name="video_width" content="640"/>
+<meta name="video_type" content="application/x-shockwave-flash"/>
+<meta name="title" content="Kickstarter &gt;&gt; City Quest: A Point &amp; Click Adventure by Ryan Nohr"/>
+<meta name="description" content="Ryan Nohr is raising funds for City Quest: A Point &amp; Click Adventure on Kickstarter! 
+
+ City Quest is a classic point &amp; click adventure game with sharp wit and a clear love for its predecessors."/>
+<meta property="og:title" content="City Quest: A Point &amp; Click Adventure"/>
+<meta property="og:type" content="kickstarter:project"/>
+<meta property="og:image" content="https://s3.amazonaws.com/ksr/projects/500150/photo-main.jpg?1397814588"/>
+<meta property="og:url" content="https://www.kickstarter.com/projects/1376534446/city-quest-a-point-and-click-adventure"/>
+<meta property="og:site_name" content="Kickstarter"/>
+<meta property="fb:app_id" content="69103156693"/>
+<meta property="og:description" content="City Quest is a classic point &amp; click adventure game with sharp wit and a clear love for its predecessors."/>
+<meta property="kickstarter:creator" content="https://www.kickstarter.com/profile/1376534446"/>
+<meta property="twitter:url:landing_url" content="https://www.kickstarter.com/projects/1376534446/city-quest-a-point-and-click-adventure"/>
+<meta property="twitter:card" content="2427656750:kickstarter_project"/>
+<meta property="twitter:site" content="@kickstarter"/>
+<meta property="twitter:site:id" content="16186995"/>
+<meta property="twitter:text:title" content="City Quest: A Point &amp; Click Adventure"/>
+<meta property="twitter:text:artist" content="Ryan Nohr"/>
+<meta property="twitter:text:backers" content="539"/>
+<meta property="twitter:text:pledged" content="$8,739 USD"/>
+<meta property="twitter:text:time" content="0 seconds"/>
+<meta property="twitter:text:location" content="Redmond, WA"/>
+<meta property="twitter:image:location_image" content="https://d3mlfyygrfdi2i.cloudfront.net/b40e/pin.png"/>
+<meta property="twitter:text:description" content="City Quest is a classic point &amp; click adventure game with sharp wit and a clear love for its predecessors."/>
+<meta property="twitter:image:media" content="https://s3.amazonaws.com/ksr/projects/500150/photo-main.jpg?1397814588"/>
+<meta property="twitter:image:width" content="640"/>
+<meta property="twitter:image:height" content="480"/>
+<meta property="twitter:player:stream:url" content="https://d2pq0u4uni88oo.cloudfront.net/projects/500150/video-235137-h264_base.mp4"/>
+<meta property="twitter:player:stream:content" content="video/mp4"/>
+<meta property="twitter:player:url" content="https://www.kickstarter.com/projects/1376534446/city-quest-a-point-and-click-adventure/widget/video.html"/>
+<meta property="twitter:player:height" content="360"/>
+<meta property="twitter:player:width" content="640"/>
+<meta property="twitter:maxage" content="60"/>
+<meta property="og:video" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F500150%2Fvideo-235137-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F500150%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Ryan+Nohr&amp;project_title=City+Quest%3A+A+Point+%26+Click+Adventure&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2F1376534446%2Fcity-quest-a-point-and-click-adventure&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:secure_url" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F500150%2Fvideo-235137-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F500150%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Ryan+Nohr&amp;project_title=City+Quest%3A+A+Point+%26+Click+Adventure&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2F1376534446%2Fcity-quest-a-point-and-click-adventure&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:height" content="360"/>
+<meta property="og:video:width" content="640"/>
+<meta property="og:video:type" content="application/x-shockwave-flash"/>
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="KWWIvx0/YhBwYNEeNqTlSCS2EQolO2GGtzJbXEdBLmI=" name="csrf-token" />
+<script type="text/javascript">
+  var _sift = _sift || [];
+  _sift.push(['_setAccount', '637102']);
+  _sift.push(['_setUserId', '']);
+  _sift.push(['_trackPageview']);
+
+  (function() {
+    function loadSift() {
+      var sift, s;
+      if (root.visitor_id) {
+        _sift.push(['_setSessionId', root.visitor_id]);
+      }
+      sift = document.createElement('script');
+      sift.type = 'text/javascript';
+      sift.async = true;
+      sift.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dtlilztwypawv.cloudfront.net/s.js';
+      s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(sift, s);
+    }
+    if (window.attachEvent) {
+      window.attachEvent('onload', loadSift);
+    } else {
+      window.addEventListener('load', loadSift, false);
+    }
+  })();
+</script>
+<link href="http://kck.st/11HvdHf" rel="shorturl">
+<link href="https://www.kickstarter.com/projects/1376534446/city-quest-a-point-and-click-adventure" rel="canonical">
+<link href="https://s3.amazonaws.com/ksr/projects/500150/photo-med.jpg?1397814588" rel="image_src">
+<link href="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F500150%2Fvideo-235137-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F500150%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Ryan+Nohr&amp;project_title=City+Quest%3A+A+Point+%26+Click+Adventure&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2F1376534446%2Fcity-quest-a-point-and-click-adventure&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque" rel="video_src">
+<script>
+  //<![CDATA[
+    window.current_checkout = "{&quot;id&quot;:0,&quot;domestic&quot;:null,&quot;amount&quot;:0.0,&quot;updated_at&quot;:0,&quot;created_at&quot;:0}";
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.current_ip = '94.209.101.212';
+    window.current_ip_datacenter = 'false';
+    window.enabled_features = {"elasticsearch":true,"security_history_read":true,"security_history_write":true,"advanced_discovery_es":true,"ios_crashlytics":true,"ios_mixpanel":true,"stories_veronica_mars":true,"veronica_mars_hero":true,"password_reset_banner":true};
+    window.fb_app_id = '69103156693';
+    
+    var _sf_startpt=(new Date()).getTime();
+    
+    window.current_project = "{&quot;id&quot;:2060459325,&quot;name&quot;:&quot;City Quest: A Point &amp; Click Adventure&quot;,&quot;blurb&quot;:&quot;City Quest is a classic point &amp; click adventure game with sharp wit and a clear love for its predecessors.&quot;,&quot;goal&quot;:8000.0,&quot;pledged&quot;:8739.53,&quot;state&quot;:&quot;successful&quot;,&quot;slug&quot;:&quot;city-quest-a-point-and-click-adventure&quot;,&quot;disable_communication&quot;:false,&quot;country&quot;:&quot;US&quot;,&quot;currency&quot;:&quot;USD&quot;,&quot;currency_symbol&quot;:&quot;$&quot;,&quot;currency_trailing_code&quot;:true,&quot;deadline&quot;:1370196442,&quot;state_changed_at&quot;:1370196442,&quot;created_at&quot;:1364079202,&quot;launched_at&quot;:1367604442,&quot;backers_count&quot;:539,&quot;photo&quot;:{&quot;full&quot;:&quot;https://s3.amazonaws.com/ksr/projects/500150/photo-full.jpg?1397814588&quot;,&quot;ed&quot;:&quot;https://s3.amazonaws.com/ksr/projects/500150/photo-ed.jpg?1397814588&quot;,&quot;med&quot;:&quot;https://s3.amazonaws.com/ksr/projects/500150/photo-med.jpg?1397814588&quot;,&quot;little&quot;:&quot;https://s3.amazonaws.com/ksr/projects/500150/photo-little.jpg?1397814588&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/projects/500150/photo-small.jpg?1397814588&quot;,&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/projects/500150/photo-thumb.jpg?1397814588&quot;,&quot;1024x768&quot;:&quot;https://s3.amazonaws.com/ksr/projects/500150/photo-1024x768.jpg?1397814588&quot;,&quot;1536x1152&quot;:&quot;https://s3.amazonaws.com/ksr/projects/500150/photo-1536x1152.jpg?1397814588&quot;},&quot;creator&quot;:{&quot;id&quot;:1376534446,&quot;name&quot;:&quot;Ryan Nohr&quot;,&quot;avatar&quot;:{&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/2486030/Logo800x800.thumb.jpg?1363974291&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/2486030/Logo800x800.small.jpg?1363974291&quot;,&quot;medium&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/2486030/Logo800x800.medium.jpg?1363974291&quot;},&quot;urls&quot;:{&quot;web&quot;:{&quot;user&quot;:&quot;https://www.kickstarter.com/profile/1376534446&quot;},&quot;api&quot;:{&quot;user&quot;:&quot;https://api.kickstarter.com/v1/users/1376534446?signature=1399959150.f012ec884b8f2088463aa0be5e5d5eac3373279e&quot;}}},&quot;location&quot;:{&quot;id&quot;:2479651,&quot;name&quot;:&quot;Redmond&quot;,&quot;slug&quot;:&quot;redmond-wa&quot;,&quot;short_name&quot;:&quot;Redmond, WA&quot;,&quot;displayable_name&quot;:&quot;Redmond, WA&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:&quot;WA&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/redmond-wa&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/redmond-wa&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1399951871.4e3575459ce3c73af7cb9a3d2c0b61a02c5eb745&amp;woe_id=2479651&quot;}}},&quot;category&quot;:{&quot;id&quot;:35,&quot;name&quot;:&quot;Video Games&quot;,&quot;slug&quot;:&quot;games/video games&quot;,&quot;position&quot;:7,&quot;parent_id&quot;:12,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;http://www.kickstarter.com/discover/categories/games/video%20games&quot;}}},&quot;urls&quot;:{&quot;web&quot;:{&quot;project&quot;:&quot;https://www.kickstarter.com/projects/1376534446/city-quest-a-point-and-click-adventure&quot;,&quot;project_short&quot;:&quot;http://kck.st/11HvdHf&quot;,&quot;updates&quot;:&quot;https://www.kickstarter.com/projects/1376534446/city-quest-a-point-and-click-adventure/posts&quot;},&quot;api&quot;:{&quot;project&quot;:&quot;https://api.kickstarter.com/v1/projects/2060459325?signature=1399959150.a7ce399cce5eb9af9f1680c64034398c998b2ba6&quot;,&quot;comments&quot;:&quot;https://api.kickstarter.com/v1/projects/2060459325/comments?signature=1399959150.7bcf2f1844119cdb71580a1861d48cc389c2ec0c&quot;,&quot;updates&quot;:&quot;https://api.kickstarter.com/v1/projects/2060459325/updates?signature=1399959150.8ef9368a08fbd5b42cbcd60e36bb1b760bb17700&quot;}},&quot;updated_at&quot;:1399445452,&quot;successful_at&quot;:1370196442,&quot;video&quot;:{&quot;id&quot;:235137,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/500150/video-235137-h264_high.mp4?2013&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/500150/video-235137-h264_base.mp4?2013&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/500150/video-235137-webm.webm?2013&quot;,&quot;width&quot;:640,&quot;height&quot;:360,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/500150/video-235137-h264_base.jpg?2013&quot;},&quot;comments_count&quot;:314,&quot;updates_count&quot;:25,&quot;rewards&quot;:[{&quot;id&quot;:0,&quot;minimum&quot;:1,&quot;reward&quot;:&quot;No Reward&quot;},{&quot;id&quot;:1484216,&quot;minimum&quot;:5.0,&quot;reward&quot;:&quot;==============================\\r\\n== EARLY BIRD - BUMPKIN TIER ==\\r\\n==============================\\r\\n1. DRM-FREE DIGITAL DOWNLOAD   \\r\\n==============================\\r\\nGet a digital copy of City Quest for PC, MAC, or LINUX for the low, low price of five American dollars when it releases. How can you resist such an amazing deal?!&quot;,&quot;limit&quot;:500,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1377993600,&quot;project_id&quot;:2060459325,&quot;remaining&quot;:166,&quot;backers_count&quot;:334,&quot;updated_at&quot;:1399784750},{&quot;id&quot;:1484223,&quot;minimum&quot;:8.0,&quot;reward&quot;:&quot;==============================\\r\\n======== BUMPKIN TIER ========\\r\\n==============================\\r\\n1. DRM-FREE DIGITAL DOWNLOAD   \\r\\n==============================\\r\\nOk, you resisted the amazing early bird deal. Congratulations on your superior willpower. Still, you can get a digital download of City Quest for PC, MAC, or LINUX for the slightly less low, low price of Eight Dollars!&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1377993600,&quot;project_id&quot;:2060459325,&quot;backers_count&quot;:23,&quot;updated_at&quot;:1370197450},{&quot;id&quot;:1484267,&quot;minimum&quot;:15.0,&quot;reward&quot;:&quot;==============================\\r\\n========== EARLY BIRD =========\\r\\n======= DISC JOCKEY TIER======= \\r\\n==============================\\r\\n1. DRM-FREE DIGITAL DOWNLOAD  \\r\\n2. NAME ON THE CREDITS SCREEN \\r\\n3. ~~ SOUNDTRACK DOWNLOAD ~~\\r\\n==============================\\r\\nNot only will you get a digital download of City Quest for PC, MAC, or LINUX and a DRM-Free digital download of the soundtrack, but you&#39;ll also get your name on the credits screen. That&#39;s like, a huge honor, man. By the way, buy it early and you&#39;ll only pay fifteen dollars!&quot;,&quot;limit&quot;:100,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1377993600,&quot;project_id&quot;:2060459325,&quot;remaining&quot;:2,&quot;backers_count&quot;:98,&quot;updated_at&quot;:1370286534},{&quot;id&quot;:1484277,&quot;minimum&quot;:20.0,&quot;reward&quot;:&quot;============================== \\r\\n======= DISC JOCKEY TIER ======\\r\\n============================== \\r\\n1. DRM-FREE DIGITAL DOWNLOAD \\r\\n2. NAME ON THE CREDITS SCREEN\\r\\n2. ~~ SOUNDTRACK DOWNLOAD ~~\\r\\n============================== \\r\\n\\r\\nWant the super awesome soundtrack? How about your name on the credits screen? Do you want to be famous?! Well, this tier may not make you all-the-way famous, but it&#39;ll get you started! By the way, you&#39;re also going to get a digital download of City Quest for PC, MAC, or LINUX!&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1375315200,&quot;project_id&quot;:2060459325,&quot;backers_count&quot;:14,&quot;updated_at&quot;:1370197437},{&quot;id&quot;:1484283,&quot;minimum&quot;:50.0,&quot;reward&quot;:&quot;============================== ========== NPC TIER =========== ============================== \\r\\n1. DRM-FREE DIGITAL DOWNLOAD \\r\\n2. NAME ON THE CREDITS SCREEN\\r\\n3. ~~ SOUNDTRACK DOWNLOAD ~~ \\r\\n4. BE A GENERIC NPC IN THE GAME\\r\\n============================== \\r\\nFor fifty dollars, you can be IN THE GAME. At this tier, you will be in the game as a generic character. We make no guarantees about who you will be cast as. It&#39;s entirely possible that you will be cast as something inappropriate. It&#39;s like an awesome gamble. \\r\\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ \\r\\nBy the way, you&#39;ll also get your name in the credits, a digital download of the super awesome soundtrack, and a DRM-Free digital download of City Quest for PC, MAC, or LINUX.\\r\\n\\r\\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ \\r\\nNOTE: Just to be clear, this is a unique, limited tier. Later tiers will not get to be NPCs in the game. Since this is a limited tier, we are offering addons as a way for you to get some of the physical rewards. Simply add the indicated amount to your pledge, and you&#39;ll get the reward! (For example, pledge $75 and you&#39;ll get this tier, plus a poster).\\r\\n\\r\\n~~~~~~~~~~~ADDONS~~~~~~~~~~~~ \\r\\nPOSTER: Select this reward level, but add $15 to your pledge ($25 if you are international, please). \\r\\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ \\r\\nPOSTER + T-SHIRT: Select this reward level, but add $35 to your pledge ($50 if you are international, please).\\r\\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ \\r\\nPOSTER + T-SHIRT + BOXED COPY: Select this reward level, but add $75 to your pledge ($90 if you are international).&quot;,&quot;limit&quot;:40,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1377993600,&quot;project_id&quot;:2060459325,&quot;remaining&quot;:2,&quot;backers_count&quot;:38,&quot;updated_at&quot;:1370728421},{&quot;id&quot;:1517223,&quot;minimum&quot;:65.0,&quot;reward&quot;:&quot;==============================\\r\\n===== ARTIST TIER (PHYSICAL) ====\\r\\n==============================\\r\\n1. DRM-FREE DIGITAL DOWNLOAD \\r\\n2. NAME ON THE CREDITS SCREEN\\r\\n3. ~~ SOUNDTRACK DOWNLOAD ~~\\r\\n4. ~~ POSTER OF THE BOX ART ~~\\r\\n============================== \\r\\nAww yeah, it&#39;s time to get physical. For Sixty, we&#39;ll send you an 18\\&quot;x24\\&quot; (~46x61 cm) poster of the box art. In true 80s style, the box art does not represent the actual in-game graphics at all!\\r\\n\\r\\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\r\\nYou&#39;ll also get your name in the credits, a DRM-Free digital download of the super awesome soundtrack,  and a DRM-Free digital download of City Quest for PC, MAC, or LINUX.&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;10.0&quot;,&quot;estimated_delivery_on&quot;:1380585600,&quot;project_id&quot;:2060459325,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1367277516},{&quot;id&quot;:1619898,&quot;minimum&quot;:65.0,&quot;reward&quot;:&quot;==============================\\r\\n= LI&#39;LEST BOXER TIER (PHYSICAL) =\\r\\n==============================\\r\\n1. DRM-FREE DIGITAL DOWNLOAD \\r\\n2. NAME ON THE CREDITS SCREEN \\r\\n3. ~~ SOUNDTRACK DOWNLOAD ~~ \\r\\n4. ~A BOXED COPY OF THE GAME~ ============================== \\r\\nAre you content being naked and without wall adornment, but still want to get a bit physical with us? Here&#39;s your chance! Get a boxed copy of the game without all that other stuff!\\r\\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ \\r\\nYou&#39;ll also get your name in the credits, a DRM-Free digital download of the super awesome soundtrack, and a DRM-Free digital download of City Quest for PC, MAC, or LINUX.&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;10.0&quot;,&quot;estimated_delivery_on&quot;:1380585600,&quot;project_id&quot;:2060459325,&quot;backers_count&quot;:7,&quot;updated_at&quot;:1370197410},{&quot;id&quot;:1619899,&quot;minimum&quot;:65.0,&quot;reward&quot;:&quot;==============================\\r\\n== NEVER NUDE TIER (PHYSICAL) ==\\r\\n==============================\\r\\n1. DRM-FREE DIGITAL DOWNLOAD \\r\\n2. NAME ON THE CREDITS SCREEN \\r\\n3. ~~ SOUNDTRACK DOWNLOAD ~~ \\r\\n4. KICKSTARTER-EXCLUSIVE SHIRT  ============================== \\r\\nHave your nipples been getting hard reading this page? Does that bring you shame? If so, we\\u2019ve got a solution! This nice, thick T-shirt is (not) guaranteed to (probably) hide your erect nipples from the world!\\r\\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ \\r\\nYou&#39;ll also get your name in the credits, a DRM-Free digital download of the super awesome soundtrack, and a DRM-Free digital download of City Quest for PC, MAC, or LINUX.&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;10.0&quot;,&quot;estimated_delivery_on&quot;:1380585600,&quot;project_id&quot;:2060459325,&quot;backers_count&quot;:3,&quot;updated_at&quot;:1370197441},{&quot;id&quot;:1517240,&quot;minimum&quot;:85.0,&quot;reward&quot;:&quot;==============================\\r\\n==== TAILOR TIER (PHYSICAL) ==== ==============================\\r\\n1. DRM-FREE DIGITAL DOWNLOAD \\r\\n2. NAME ON THE CREDITS SCREEN\\r\\n3. ~~ SOUNDTRACK DOWNLOAD ~~\\r\\n4. ~~ POSTER OF THE BOX ART ~~\\r\\n5. KICKSTARTER-EXCLUSIVE SHIRT    \\r\\n============================== \\r\\n\\r\\nAre you tired of always being nude? We&#39;re not, but in case you are, we&#39;re going to give you something to cover your shame. At this tier, you will get a Kickstarter-exclusive T-Shirt to wear, the box art poster, your name in the credits, the super awesome soundtrack, and a DRM-Free digital download of the game for PC, MAC, or LINUX.&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1380585600,&quot;project_id&quot;:2060459325,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1370197354},{&quot;id&quot;:1619900,&quot;minimum&quot;:85.0,&quot;reward&quot;:&quot;==============================\\r\\n== GROWN-UP TIER (PHYSICAL) ==\\r\\n==============================\\r\\n1. DRM-FREE DIGITAL DOWNLOAD \\r\\n2. NAME ON THE CREDITS SCREEN \\r\\n3. ~~ SOUNDTRACK DOWNLOAD ~~ \\r\\n4. KICKSTARTER-EXCLUSIVE SHIRT \\r\\n5. ~A BOXED COPY OF THE GAME~ ============================== \\r\\nIs your man (or woman) cave full of too much memorabilia? Don\\u2019t need a new poster, but still want a sexy T-shirt and a sweet boxed copy? This one\\u2019s for all of you! \\r\\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ \\r\\nYou&#39;ll also get your name in the credits, a DRM-Free digital download of the super awesome soundtrack, and a DRM-Free digital download of City Quest for PC, MAC, or LINUX.&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1380585600,&quot;project_id&quot;:2060459325,&quot;backers_count&quot;:3,&quot;updated_at&quot;:1370197414},{&quot;id&quot;:1619901,&quot;minimum&quot;:85.0,&quot;reward&quot;:&quot;==============================\\r\\n== THE NUDIST TIER (PHYSICAL) ==\\r\\n==============================\\r\\n1. DRM-FREE DIGITAL DOWNLOAD \\r\\n2. NAME ON THE CREDITS SCREEN \\r\\n3. ~~ SOUNDTRACK DOWNLOAD ~~ \\r\\n4. ~~ POSTER OF THE BOX ART ~~ \\r\\n5. ~A BOXED COPY OF THE GAME~ ============================== \\r\\nDo you live in one of those awesome European countries where people never wear clothes? We assume those places exist, but we\\u2019re not entirely sure, we\\u2019ve never been there, but It sounds awesome. Maybe you just don\\u2019t like T-shirts. One of these reasons is way more awesome, but they\\u2019re both valid. This tier is for you.\\r\\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ \\r\\nYou&#39;ll also get your name in the credits, a DRM-Free digital download of the super awesome soundtrack, and a DRM-Free digital download of City Quest for PC, MAC, or LINUX.&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1380585600,&quot;project_id&quot;:2060459325,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1370197451},{&quot;id&quot;:1619902,&quot;minimum&quot;:110.0,&quot;reward&quot;:&quot;==============================\\r\\n== BARE-KNUCKLE BOXER TIER ==\\r\\n========= (PHYSICAL) =========\\r\\n==============================\\r\\n1. DRM-FREE DIGITAL DOWNLOAD \\r\\n2. NAME ON THE CREDITS SCREEN \\r\\n3. ~~ SOUNDTRACK DOWNLOAD ~~ \\r\\n4. ~~ POSTER OF THE BOX ART ~~ \\r\\n5. KICKSTARTER-EXCLUSIVE SHIRT \\r\\n6. ~A BOXED COPY OF THE GAME~ ============================== \\r\\nLook! We lowered the price! You can now get all 3 of our fantastical physical products at a fraction of the price! That specific fraction 22/25... unless you\\u2019re international. I\\u2019m going to let you reduce that fraction yourselves. Just like the $125 tier, you&#39;ll get a T-shirt, a poster, and a boxed copy for $15 less!\\r\\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ \\r\\nYou&#39;ll also get your name in the credits, a DRM-Free digital download of the super awesome soundtrack, and a DRM-Free digital download of City Quest for PC, MAC, or LINUX.\\r\\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ \\r\\nNOTE ABOUT $125 TIER We can&#39;t change the description of the $125 tier now, but If you&#39;re curious, we&#39;re adding a few things to that tier to differentiate it from this one. That includes: An additional download of both the game and the soundtrack, and we&#39;ll also sign any of the physical rewards you want there.&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1377993600,&quot;project_id&quot;:2060459325,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1368072727},{&quot;id&quot;:1554305,&quot;minimum&quot;:125.0,&quot;reward&quot;:&quot;============================== \\r\\n== FOXY BOXER TIER (PHYSICAL) ==\\r\\n==============================\\r\\n1. DRM-FREE DIGITAL DOWNLOAD \\r\\n2. NAME ON THE CREDITS SCREEN\\r\\n3. ~~ SOUNDTRACK DOWNLOAD ~~\\r\\n4. ~~ POSTER OF THE BOX ART ~~\\r\\n5. KICKSTARTER-EXCLUSIVE SHIRT \\r\\n6. ~A BOXED COPY OF THE GAME~\\r\\n============================== \\r\\nIf you&#39;re anything like us, you still enjoy the feel of a physical copy. Ok, feel maybe isn&#39;t right. You enjoy the look of a boxed copy sitting on a shelf. We&#39;re making a limited run of physical media for the game.\\r\\nThe boxed copies are standard DVD cases with awesome double-sided box art. \\r\\n\\r\\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ \\r\\nIn addition to the boxed copy, you&#39;ll get one poster, one t-shirt, a DRM-Free digital download of the game for PC, MAC, or LINUX, and a DRM-Free digital download of the soundtrack.&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1380585600,&quot;project_id&quot;:2060459325,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1370197361},{&quot;id&quot;:1484298,&quot;minimum&quot;:150.0,&quot;reward&quot;:&quot;==============================\\r\\n== LADY/LAD OF THE NIGHT TIER ==\\r\\n========== (PHYSICAL) ========= ============================== \\r\\n1. DRM-FREE DIGITAL DOWNLOAD \\r\\n2. ~~ SOUNDTRACK DOWNLOAD ~~\\r\\n3. ~~ POSTER OF THE BOX ART ~~\\r\\n4. KICKSTARTER-EXCLUSIVE SHIRT \\r\\n5. ~A BOXED COPY OF THE GAME~\\r\\n6. ~SPECIAL THANKS IN CREDITS~~\\r\\n7. ~~~~~WE&#39;LL SIGN IT ALL~~~~~~~~\\r\\n~~~~~~(IF YOU WANT US TO)~~~~~~ \\r\\n8. ~~~~~ BE AN NPC ON THE ~~~~~~\\r\\n~~~~ \\&quot;LADY/LAD OF THE NIGHT\\&quot; ~~~\\r\\n~~~~~~~~~~ STORYLINE ~~~~~~~~~\\r\\n==============================  \\r\\nEver wonder what it&#39;s like to sell your body? Here you go! Sell your body digitally! You send us a picture of yourself, and we&#39;re going to make you a main character on the \\&quot;Lady/Lad of the Night\\&quot; storyline! You&#39;ll have unique dialogue, interactions with the player, and everything! \\r\\n\\r\\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\r\\nYou&#39;ll also get one boxed copy of the game, one poster, one t-shirt, a DRM-Free digital download of the game for PC, MAC, or LINUX, a DRM-Free digital download of the soundtrack, and special thanks in the credits!&quot;,&quot;limit&quot;:5,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1380585600,&quot;project_id&quot;:2060459325,&quot;remaining&quot;:4,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1370197655},{&quot;id&quot;:1484300,&quot;minimum&quot;:150.0,&quot;reward&quot;:&quot;============================== \\r\\n===== HOBO TIER (PHYSICAL) =====\\r\\n==============================\\r\\n1. DRM-FREE DIGITAL DOWNLOAD \\r\\n2. ~~ SOUNDTRACK DOWNLOAD ~~\\r\\n3. ~~ POSTER OF THE BOX ART ~~\\r\\n4. KICKSTARTER-EXCLUSIVE SHIRT \\r\\n5. ~A BOXED COPY OF THE GAME~\\r\\n6. ~SPECIAL THANKS IN CREDITS~~\\r\\n7. ~~~~~WE&#39;LL SIGN IT ALL~~~~~~~~\\r\\n~~~~~~(IF YOU WANT US TO)~~~~~~ \\r\\n8. ~~~~~ BE AN NPC ON THE ~~~~~~\\r\\n~~~~~~~ \\&quot;HOBO\\&quot; STORYLINE ~~~~~\\r\\n============================== \\r\\nI&#39;m sure you&#39;ve wondered what it&#39;s like to live carefree on the streets, no bills to pay or job to attend, right? Who hasn&#39;t?! Live that dream vicariously through the NPC we&#39;ll model in your image for the \\&quot;Hobo\\&quot; storyline! You&#39;ll have unique dialogue, interactions with the player, and everything! \\r\\n\\r\\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ \\r\\nYou&#39;ll also get one boxed copy of the game, one poster, one t-shirt, a DRM-Free digital download of the game for PC, MAC, or LINUX, a DRM-Free digital download of the soundtrack, and special thanks in the credits!&quot;,&quot;limit&quot;:5,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1380585600,&quot;project_id&quot;:2060459325,&quot;remaining&quot;:3,&quot;backers_count&quot;:2,&quot;updated_at&quot;:1370197430},{&quot;id&quot;:1484307,&quot;minimum&quot;:150.0,&quot;reward&quot;:&quot;==============================\\r\\n=== MAFIOSO TIER (PHYSICAL) ===\\r\\n============================== \\r\\n1. DRM-FREE DIGITAL DOWNLOAD \\r\\n2. ~~ SOUNDTRACK DOWNLOAD ~~\\r\\n3. ~~ POSTER OF THE BOX ART ~~\\r\\n4. KICKSTARTER-EXCLUSIVE SHIRT \\r\\n5. ~A BOXED COPY OF THE GAME~\\r\\n6. ~SPECIAL THANKS IN CREDITS~~\\r\\n7. ~~~~~WE&#39;LL SIGN IT ALL~~~~~~~~\\r\\n~~~~~~(IF YOU WANT US TO)~~~~~~ \\r\\n8. ~~~~~ BE AN NPC ON THE ~~~~~~\\r\\n~~~~~ \\&quot;MAFIOSO\\&quot; STORYLINE ~~~~\\r\\n==============================   \\r\\nHave you ever capped a guy? If so, don&#39;t tell us, we don&#39;t want to keep that secret. If you haven&#39;t, like most of the rest of the world, have an NPC of you do it instead! You&#39;ll send us a picture, and we&#39;ll pixelize it and give it unique dialogue and interactions on the \\&quot;Mafioso\\&quot; storyline.\\r\\n\\r\\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ \\r\\nYou&#39;ll also get one boxed copy of the game, one poster, one t-shirt, a DRM-Free digital download of the game for PC, MAC, or LINUX, a DRM-Free digital download of the soundtrack, and special thanks in the credits!&quot;,&quot;limit&quot;:5,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1380585600,&quot;project_id&quot;:2060459325,&quot;remaining&quot;:2,&quot;backers_count&quot;:3,&quot;updated_at&quot;:1370197360},{&quot;id&quot;:1484309,&quot;minimum&quot;:150.0,&quot;reward&quot;:&quot;==============================\\r\\n== POLITICIAN TIER (PHYSICAL) ==\\r\\n============================== \\r\\n1. DRM-FREE DIGITAL DOWNLOAD \\r\\n2. ~~ SOUNDTRACK DOWNLOAD ~~\\r\\n3. ~~ POSTER OF THE BOX ART ~~\\r\\n4. KICKSTARTER-EXCLUSIVE SHIRT \\r\\n5. ~A BOXED COPY OF THE GAME~\\r\\n6. ~SPECIAL THANKS IN CREDITS~~\\r\\n7. ~~~~~WE&#39;LL SIGN IT ALL~~~~~~~~\\r\\n~~~~~~(IF YOU WANT US TO)~~~~~~ \\r\\n8. ~~~~~ BE AN NPC ON THE ~~~~~~\\r\\n~~~~ \\&quot;POLITICIAN\\&quot; STORYLINE ~~~~\\r\\n==============================  \\r\\nLike most of the world, you are aware that politicians exist. Here&#39;s the perfect way to live the glamorous life of a lawmaker, without all the campaigning! You send us a picture of yourself, and we&#39;ll transform you into a digital politician, complete with sleezy unique dialogue, and custom interactions for the \\&quot;Politician\\&quot; storyline.\\r\\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\r\\nYou&#39;ll also get one boxed copy of the game, one poster, one t-shirt, a DRM-Free digital download of the game for PC, MAC, or LINUX, a DRM-Free digital download of the soundtrack, and special thanks in the credits!&quot;,&quot;limit&quot;:5,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1380585600,&quot;project_id&quot;:2060459325,&quot;remaining&quot;:3,&quot;backers_count&quot;:2,&quot;updated_at&quot;:1370197354},{&quot;id&quot;:1484289,&quot;minimum&quot;:500.0,&quot;reward&quot;:&quot;==============================\\r\\n==== KING OF THE CITY TIER =====\\r\\n======= TIER (PHYSICAL) ========\\r\\n============================== \\r\\n==== 5 OF EVERY ITEM BELOW ====\\r\\n1. DRM-FREE DIGITAL DOWNLOAD \\r\\n2. ~~ SOUNDTRACK DOWNLOAD ~~\\r\\n3. ~~ POSTER OF THE BOX ART ~~\\r\\n4. KICKSTARTER-EXCLUSIVE SHIRT \\r\\n5. ~A BOXED COPY OF THE GAME~\\r\\n========= IN ADDITION =========\\r\\n6. AN NPC ON THE STORYLINE OF \\r\\n~~~~~~~YOUR CHOICE ~~~~~~~~~~\\r\\n7. ~~~WE&#39;LL SIGN EVERYTHING ~~~\\r\\n~~~~~~~~(IF YOU WANT)~~~~~~~~~\\r\\n8. ~~~SUPER SPECIAL THANKS ~~~\\r\\n~~~~ IN THE CREDITS SCREEN ~~~\\r\\n==============================\\r\\nWow! You must really believe in this project. Or you have a lot of extra money and a wicked sense of humor. Or you&#39;ve stolen lots of money and are laundering it through kickstarter somehow (we&#39;re not really sure how money laundering works). One way or another, you&#39;re awesome. \\r\\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\r\\nIn return for your grand gesture, we&#39;ll give you 5 of everything (besides NPCs, you only get one. We only have room for so many)! We&#39;ll also give you super special thanks in the credits, way up near the top! \\r\\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\r\\nIn addition, we&#39;ll sign any of the physical stuff you want us to! This is entirely optional, so we&#39;ll leave it to you to tell us what you want!&quot;,&quot;limit&quot;:5,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;30.0&quot;,&quot;estimated_delivery_on&quot;:1380585600,&quot;project_id&quot;:2060459325,&quot;remaining&quot;:4,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1370966197}]}";
+    
+    
+    
+    
+    
+    
+    
+    
+    window.timeRemaining = function timeRemaining(epochTime){
+    
+      var diff = epochTime - ((new Date()).getTime() / 1000);
+      var num_unit = (diff < 60 && [Math.max(diff, 0), 'seconds']) ||
+        ((diff/=60) < 60 && [diff, 'minutes']) ||
+        ((diff/=60) < 72 && [diff, 'hours']) ||
+        [diff/=24, 'days'];
+    
+      // Round down
+      num_unit[0] = Math.floor(num_unit[0]);
+      // Singularize unit
+      if (num_unit[0] == 1) { num_unit[1] = num_unit[1].replace(/s$/,""); }
+    
+      return num_unit;
+    };
+  //]]>
+</script>
+
+<script>
+  //<![CDATA[
+    window.current_variants = ["discover_link_copy[explore]","rewards_hover[without_hover_text]"];
+  //]]>
+</script>
+
+
+</head>
+
+<body class="project projects not-mobile not-phone not-forces-video-controls not-tablet not-touchable not-native-app-request video_mode" id="projects_show">
+<div class="jGrowl center" id="growl_section"></div>
+<div class="NS_layouts__navigation" id="header">
+<div class="main-nav relative bg-white">
+<h1 class="no-margin ml1 mr2 left">
+<a href="/?ref=nav" class="block p2"><span class="ss-icon green-dark">KICK</span><span class="ss-icon green">STARTER</span>
+</a></h1>
+<ul class="primary-links list no-margin left">
+<li class="left discover-link full-height">
+<a href="/discover?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Explore</a>
+</li>
+<li class="left full-height mr2">
+<a href="/learn?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Start</a>
+</li>
+</ul>
+<ul class="list no-margin right" id="menu-sub">
+<li class="right"><a href="/login?ref=nav" class="block h5 bold p2 full-height border-box">Log in</a></li>
+<li class="right"><a href="/signup?ref=nav" class="block h5 bold p2 full-height border-box">Sign up</a></li>
+</ul>
+<div class="search-link pl2 full-height border-left border-box clip">
+<form accept-charset="UTF-8" action="/projects/search" class="search pt1 pb1 block relative form-simple" method="get"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /></div>
+<div class="field relative pl3">
+<span class="ss-icon ss-search grey-dark ml1 mt1 absolute"></span>
+<input class="input-search header full-width text" data-tracker-name="Header Live Search" id="term" name="term" placeholder="Search projects" type="text" />
+</div>
+</form>
+
+</div>
+<div class="clear"></div>
+</div>
+</div>
+<div class="hide pt4 pb4 bg-grey-light" id="search_results-wrap">
+<div class="relative container" id="search_results">
+<a class="close right grey-dark mr1"><span class="ss-icon ss-delete"></span></a>
+<h3 class="header ml1 clearfix"></h3>
+<div class="clip clearfix" id="search_results_panel"></div>
+<a class="prev arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateleft"></span>
+</a>
+<a class="next arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateright"></span>
+</a>
+</div>
+</div>
+
+
+
+
+<div class="Project-ended-true Project-is_starred- Project-state-successful Project2060459325_cxt border-top" id="main_content">
+<div id="running-board-wrap">
+<div class="container" id="running-board">
+<div id="project-header">
+<div class="NS_projects__running_board ml1 mr1 clearfix">
+<div class="title center py4">
+<h2 class="mb1">
+<a href="/projects/1376534446/city-quest-a-point-and-click-adventure" class="green-dark">City Quest: A Point &amp; Click Adventure</a>
+</h2>
+<p class="no-margin">
+<span class="creator">
+by
+<a href="/projects/1376534446/city-quest-a-point-and-click-adventure/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography" id="name">Ryan Nohr</a>
+</span>
+</p>
+</div>
+<ul class="project-nav list-inline left h5 bold mb1">
+<li class="mr2">
+<a href="/projects/1376534446/city-quest-a-point-and-click-adventure" class="grey-dark py1 current" id="home_nav">Home</a>
+</li>
+<li class="mr2">
+<span data-updates-count="25" id="updates_count">
+<a href="/projects/1376534446/city-quest-a-point-and-click-adventure/posts" class="grey-dark py1" id="updates_nav">Updates
+<span class="count h6 bg-grey-dark white">25</span>
+</a></span>
+</li>
+<li class="mr2">
+<a href="/projects/1376534446/city-quest-a-point-and-click-adventure/backers" class="grey-dark py1" id="backers_nav">Backers
+<span class="count h6 bg-grey-dark white"><data class="Project2060459325" data-format="number" data-value="539" itemprop="Project[backers_count]">539</data></span>
+</a></li>
+<li>
+<span data-comments-count="314" id="comments_count">
+<a href="/projects/1376534446/city-quest-a-point-and-click-adventure/comments" class="grey-dark py1" id="comments_nav">Comments
+<span class="count h6 bg-grey-dark white"><data class="Project2060459325" data-format="number" data-value="314" itemprop="Project[comments_count]">314</data></span>
+</a></span>
+</li>
+</ul>
+<ul class="list-inline right h5 bold mb1">
+<li class="location mr2">
+<a href="/discover/places/redmond-wa?ref=city" class="grey-dark"><span class="ss-icon ss-location margin-right"></span>
+Redmond, WA
+</a></li>
+<li class="category" data-project-parent-category="Games">
+<a href="/discover/categories/games/video%20games?ref=category" class="grey-dark"><span class="ss-icon ss-tag margin-right"></span>
+Video Games
+</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+</div>
+<div class="bg-grey-light pb4" id="content-wrap">
+<div class="Project2060459325" data-conditions="[{&quot;!state&quot;:&quot;live&quot;}]" data-evaluation="true" data-render="&quot;&lt;div class=\&quot;NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-successful Project2060459325_cxt bg-grey container pb1 pt1\&quot;&gt;\n&lt;div class=\&quot;Project2060459325\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;successful&amp;quot;}]\&quot; data-evaluation=\&quot;true\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;Funded!&amp;lt;/b&amp;gt;\\nThis project was successfully funded &amp;lt;data class=\\&amp;quot;Project2060459325\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2013-06-02T14:07:22-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[deadline]\\&amp;quot;&amp;gt;on June 2, 2013&amp;lt;/data&amp;gt;.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;Funded!&lt;/b&gt;\nThis project was successfully funded &lt;data class=\&quot;Project2060459325\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-06-02T14:07:22-04:00&amp;quot;\&quot; itemprop=\&quot;Project[deadline]\&quot;&gt;on June 2, 2013&lt;/data&gt;.\n&lt;/p&gt;\n&lt;/div&gt;&lt;div class=\&quot;Project2060459325\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:[&amp;quot;started&amp;quot;,&amp;quot;submitted&amp;quot;]}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;THIS PROJECT IS NOT LIVE&amp;lt;/b&amp;gt;\\nThis is only a draft that the creator has chosen to share.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project2060459325\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;suspended&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Suspended&amp;lt;/b&amp;gt;\\nFunding for this project was suspended &amp;lt;data class=\\&amp;quot;Project2060459325\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2013-06-02T14:07:22-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on June 2, 2013&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project2060459325\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;canceled&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Canceled&amp;lt;/b&amp;gt;\\nFunding for this project was canceled by the project creator &amp;lt;data class=\\&amp;quot;Project2060459325\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2013-06-02T14:07:22-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on June 2, 2013&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project2060459325\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;failed&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Unsuccessful&amp;lt;/b&amp;gt;\\nThis project\\u2019s funding goal was not reached on &amp;lt;time class=\\&amp;quot;js-adjust\\&amp;quot; data-format=\\&amp;quot;LL\\&amp;quot; datetime=\\&amp;quot;2013-06-02T14:07:22-04:00\\&amp;quot;&amp;gt;June 2, 2013&amp;lt;/time&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project2060459325\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;purged&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;This project is purged and only visible to staff.&amp;lt;/b&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;/div&gt;\n&quot;"><div class="NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-successful Project2060459325_cxt bg-grey container pb1 pt1">
+<div class="Project2060459325" data-conditions="[{&quot;state&quot;:&quot;successful&quot;}]" data-evaluation="true" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;Funded!&lt;/b&gt;\nThis project was successfully funded &lt;data class=\&quot;Project2060459325\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-06-02T14:07:22-04:00&amp;quot;\&quot; itemprop=\&quot;Project[deadline]\&quot;&gt;on June 2, 2013&lt;/data&gt;.\n&lt;/p&gt;\n&quot;"><p class="no-margin">
+<b>Funded!</b>
+This project was successfully funded <data class="Project2060459325" data-format="distance_date" data-value="&quot;2013-06-02T14:07:22-04:00&quot;" itemprop="Project[deadline]">on June 2, 2013</data>.
+</p>
+</div><div class="Project2060459325" data-conditions="[{&quot;state&quot;:[&quot;started&quot;,&quot;submitted&quot;]}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;THIS PROJECT IS NOT LIVE&lt;/b&gt;\nThis is only a draft that the creator has chosen to share.\n&lt;/p&gt;\n&quot;"></div><div class="Project2060459325" data-conditions="[{&quot;state&quot;:&quot;suspended&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Suspended&lt;/b&gt;\nFunding for this project was suspended &lt;data class=\&quot;Project2060459325\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-06-02T14:07:22-04:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on June 2, 2013&lt;/data&gt;.\n&quot;"></div><div class="Project2060459325" data-conditions="[{&quot;state&quot;:&quot;canceled&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Canceled&lt;/b&gt;\nFunding for this project was canceled by the project creator &lt;data class=\&quot;Project2060459325\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-06-02T14:07:22-04:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on June 2, 2013&lt;/data&gt;.\n&quot;"></div><div class="Project2060459325" data-conditions="[{&quot;state&quot;:&quot;failed&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Unsuccessful&lt;/b&gt;\nThis project\u2019s funding goal was not reached on &lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;LL\&quot; datetime=\&quot;2013-06-02T14:07:22-04:00\&quot;&gt;June 2, 2013&lt;/time&gt;.\n&quot;"></div><div class="Project2060459325" data-conditions="[{&quot;state&quot;:&quot;purged&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;This project is purged and only visible to staff.&lt;/b&gt;\n&quot;"></div></div>
+</div>
+<div class="container bg-white border rounded py3 pl2 pr2" id="content">
+<div class="NS-projects-content">
+<div class="grid_11">
+<div data-has-video="true" id="video-section">
+<div class="video-player" data-dimensions="{&quot;width&quot;:640,&quot;height&quot;:480}" data-image="https://s3.amazonaws.com/ksr/projects/500150/photo-main.jpg?1397814588" data-video-tracker-url="https://www.kickstarter.com/projects/1376534446/city-quest-a-point-and-click-adventure/video/plays" data-video-url="https://d2pq0u4uni88oo.cloudfront.net/projects/500150/video-235137-h264_high.mp4" data-video="{&quot;id&quot;:235137,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/500150/video-235137-h264_high.mp4?2013&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/500150/video-235137-h264_base.mp4?2013&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/500150/video-235137-webm.webm?2013&quot;,&quot;width&quot;:640,&quot;height&quot;:360,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/500150/video-235137-h264_base.jpg?2013&quot;}" id="video_pitch"><video class="has_webm landscape" preload="none">
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/500150/video-235137-h264_high.mp4" type='video/mp4; codecs="avc1.64001E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/500150/video-235137-h264_base.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/500150/video-235137-webm.webm" type="video/webm"></source>
+You'll need an HTML5 capable browser to see this content.
+</video>
+<img alt="Photo-main" class="has_played_hide poster landscape" src="https://s3.amazonaws.com/ksr/projects/500150/photo-main.jpg?1397814588" />
+<div class="play_button_big play_button_dark absolute-center rounded has_played_hide">
+<span class="ss-icon ss-play"></span>
+Play
+</div>
+<div class="player_controls clearfix absolute-bottom mb2 rounded white bg-green-dark forces-video-controls_hide">
+<div class="left">
+<a class="button button_icon button_dark playpause play mr1">
+<span class="play ss-icon ss-play"></span>
+<span class="pause ss-icon ss-pause"></span>
+</a>
+<span class="time current_time h12 left">00:00</span>
+</div>
+<div class="right">
+<span class="time total_time h12 left mr1">00:00</span>
+<a class="left button button_icon button_icon_white volume">
+<span class="ss-icon ss-volume icon_volume_nudge"></span>
+<span class="ss-icon ss-highvolume"></span>
+</a>
+<div class="volume_container left">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+<a class="left button button_icon button_icon_white fullscreen">
+<span class="ss-icon ss-expand"></span>
+<span class="ss-icon ss-contract"></span>
+</a>
+</div>
+<div class="clip">
+<div class="progress_container pr1 pl1">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="buffer progress_bar_buffer"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div data-project-state="successful" id="about">
+<div class="NS_projects__project_share clearfix py2 pl1 pr1">
+<ul class="left list-inline no-margin h5 bold">
+<li class="facebook mr2">
+<a href="https://www.kickstarter.com/projects/1376534446/city-quest-a-point-and-click-adventure"><span class="ss-icon ss-social ss-facebook color-facebook"></span>
+<span class="color-facebook">Share</span>
+<span class="share_bubble"><div class="triangle grey"></div>
+<div class="triangle white"></div>
+<span class="count"></span></span>
+</a></li>
+<li class="twitter mr2">
+<a  href="https://twitter.com/intent/tweet?text=City%20Quest%3A%20A%20Point%20%26%20Click%20Adventure%20by%20Ryan%20Nohr&amp;via=kickstarter&amp;url=http://kck.st/11HvdHf" rel="nofollow"><span class="ss-icon ss-social ss-twitter color-twitter"></span>
+<span class="color-twitter">Tweet</span>
+</a></li>
+<li class="embed">
+<a href="/projects/1376534446/city-quest-a-point-and-click-adventure/widget" class="remote_modal_dialog grey-dark" data-modal-title="Embed a widget on your site" data-tracker-name="Embed"><span class="ss-icon ss-navigateleft"></span>
+<span class="ss-icon ss-navigateright"></span>
+Embed
+</a></li>
+</ul>
+<ul class="right list-inline no-margin h5 bold">
+<li class="curate mr2">
+</li>
+<li class="remind">
+<div class="ajax-container" id="watching-widget">
+<div class="Project2060459325" data-conditions="[{&quot;is_starred&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div id=\&quot;unwatch\&quot;&gt;\n&lt;a href=\&quot;/projects/1376534446/city-quest-a-point-and-click-adventure/unwatch\&quot; class=\&quot;on\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"></div><div class="Project2060459325" data-conditions="[{&quot;!is_starred&quot;:true}]" data-evaluation="true" data-render="&quot;&lt;div id=\&quot;watch\&quot;&gt;\n&lt;a href=\&quot;/projects/1376534446/city-quest-a-point-and-click-adventure/watch\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;span class=\&quot;text\&quot;&gt;\n&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"><div id="watch">
+<a href="/projects/1376534446/city-quest-a-point-and-click-adventure/watch"><span class="ss-icon ss-star"></span>
+<span class="text">
+</span>
+</a></div>
+
+</div></div>
+</li>
+</ul>
+</div>
+
+<div class="short_blurb py2 pl1 pr1">
+<p class="h3">City Quest is a classic point &amp; click adventure game with sharp wit and a clear love for its predecessors.</p>
+</div>
+<div class="full-description">
+<p><b>(Update) Rift Support!</b> No... seriously. It started as something silly. VR for a super retro game? Well, turns out it's actually pretty cool!</p><div class="template oembed" contenteditable="false" data-href="http://www.youtube.com/watch?v=vDqQBvtu0NU">
+<iframe width="612" height="344" src="https://www.youtube.com/embed/vDqQBvtu0NU?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div>
+<p><b>Download Rift Demos: </b><a href="http://demo.cityquestgame.com/" target="_blank">http://demo.cityquestgame.com</a></p><p><b>(Update) Kicking it Forward</b>: If this project is successful, we've made a solemn (or at least as solemn as we get, which realistically is not very solemn) vow to give back to the Kickstarter community. Please check out Kicking It Forward for more info and more great projects who are participating :)</p><p><b>People we've yelled at loudly enough to hear: </b><br><i>"City Quest is that rare brand of adventure that plumbs the scummiest depths of tastefulness, yet manages to emerge not covered in, well, crap." - </i><b>Nathan Grayson, <a href="http://www.rockpapershotgun.com/2013/05/27/city-quest-is-a-silly-sierralucasarts-inspired-adventure/" target="_blank">RockPaperShotgun</a></b><br><br><i>"...It’s a *very* compelling game..." - </i><b>David Helgason, Unity CEO </b>(From a tweet to us that we <i>definitely</i> didn't edit down a little.)</p><div class="template asset" contenteditable="false" data-edit_url="/projects/1376534446/city-quest-a-point-and-click-adventure/assets/629444/edit" data-id="629444">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/629/444/ed5735075259ba19df213acc600f49d5_large.png?1369851681"></figure>
+</div>
+<p>First and foremost, let us introduce ourselves. We are Stone Monkey Studios. We're a small two man studio that works in and around Redmond, Washington. </p><p><b>Ryan</b> is the main programmer, <b>Jon </b>is the main artist, and we both share the rest of the work. We've been working together since 2007, and between the two of us, we've had a hand in releasing quite a few games, both for our studio, and with other studios. Most recently (and notably) we pushed out a top 3 entry in Ludum Dare 25 called <a href="http://www.kongregate.com/games/StoneMonkey/the-fall-of-mr-wily" target="_blank">The Fall of Mister Wily</a> with a few good friends.<br><br>Incidentally, the extremely talented <b>Akash Thakkar </b>composed the music, and handled sound design for Mister Wily (as well as the music for the trailer up there). He'll be the one working on the music for <b>City Quest</b> as well, so you know it's going to be good.</p><p>By the way, we also thought we'd mention: We're on Steam Greenlight!<br>If we're Greenlit, all our backers will get steam keys for the game when it hits Steam!</p><a href="http://steamcommunity.com/sharedfiles/filedetails/?id=142450754" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/1376534446/city-quest-a-point-and-click-adventure/assets/556159/edit" data-id="556159">
+<figure><img alt="Click for happy good fun time!" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/556/159/c854015eea73e215c9e0988b531dfe96_large.png?1367372618"><figcaption>Click for happy good fun time!</figcaption></figure>
+</div>
+</a><div class="template asset" contenteditable="false" data-edit_url="/projects/1376534446/city-quest-a-point-and-click-adventure/assets/538591/edit" data-id="538591">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/538/591/feb842559ad080808d800b41f523d4f8_large.png?1366775847"></figure>
+</div>
+<p><b>City Quest </b>is a fantastic new adventure game with stylish, cutting edge high definition graphics. See?</p><div class="template asset" contenteditable="false" data-edit_url="/projects/1376534446/city-quest-a-point-and-click-adventure/assets/538732/edit" data-id="538732">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/538/732/c7865da54127894e11dec60b38a2c96d_large.png?1366779528"></figure>
+</div>
+<p>This concept came about in 2010 when we were discussing one thing or another, probably something awful and inappropriate. <b>Ryan </b>had played many of the Sierra and LucasArts adventure games when he was younger, and Jon had played more modern ones, but both of us enjoyed them immensely, so we set out to create one of our own.<br><br>A few different projects came and went since that time, but we've picked this journey up with a new engine and a new perspective in the past 6 months.</p><p>Which leads us to....</p><a href="http://demo.cityquestgame.com" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/1376534446/city-quest-a-point-and-click-adventure/assets/540302/edit" data-id="540302">
+<figure><img alt="Click it. Go on, you know you want to. Just, please be gentle." class="fit" src="https://s3.amazonaws.com/ksr/assets/000/540/302/ab2bf0d6f0fcc6b46b82490ddb7aefc1_large.png?1366837115"><figcaption>Click it. Go on, you know you want to. Just, please be gentle.</figcaption></figure>
+</div></a>
+<p><b>Click it. Go on, you know you want to. Just, please be gentle.</b></p><p>After a few months of work, we've got an official demo for the game! The  large majority of the point &amp; click engine is in right now, and we're working diligently on content and story now. You can play through the demo now to get a taste for the play style, the humor, the art style, and the storylines.<br><br><a href="http://demo.cityquestgame.com/" target="_blank">Play the demo here!</a></p><p>What was that about storylines?</p><div class="template asset" contenteditable="false" data-edit_url="/projects/1376534446/city-quest-a-point-and-click-adventure/assets/540178/edit" data-id="540178">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/540/178/75949d81fd066fac826857f7aa998490_large.png?1366835226"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1376534446/city-quest-a-point-and-click-adventure/assets/541608/edit" data-id="541608">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/541/608/053461ba8de8c8e03db3803c135e4f9e_large.png?1366866616"></figure>
+</div>
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1376534446/city-quest-a-point-and-click-adventure/assets/541669/edit" data-id="541669">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/541/669/2574a205ae990c061e822859e19442eb_large.png?1366868100"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1376534446/city-quest-a-point-and-click-adventure/assets/541686/edit" data-id="541686">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/541/686/20f2a4f85b184c2a75a9173190adb666_large.png?1366869536"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1376534446/city-quest-a-point-and-click-adventure/assets/541688/edit" data-id="541688">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/541/688/afc026c4f53714d8aa991a18a6ad2b0e_large.png?1366869554"></figure>
+</div>
+<p><b>City Quest </b>has four main stories you can follow through the game.</p><ul>
+<li>
+<b>Hobo - </b>Live the exciting life of a street urchin! Eat garbage! Panhandle! Uncover government plots!</li>
+<li>
+<b>Lady/Lad of the Night - </b>Make new friends! Form a union! Fight against the oppressive pimp overlords!</li>
+<li>
+<b>Mafioso - </b>Bust some kneecaps! Rise up the family! Hey, maybe even take them down from the inside! Or become the Don!</li>
+<li>
+<b>Politician - </b>Join the Rat Party! Make shady deals! Become Mayor! Slime your way to the top!</li>
+</ul><div class="template asset" contenteditable="false" data-edit_url="/projects/1376534446/city-quest-a-point-and-click-adventure/assets/540188/edit" data-id="540188">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/540/188/df084b7016f5bb02646dd95e400a2e45_large.png?1366835473"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1376534446/city-quest-a-point-and-click-adventure/assets/543943/edit" data-id="543943">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/543/943/353025d981a63e02f63529eec3e0945e_large.gif?1366934785"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1376534446/city-quest-a-point-and-click-adventure/assets/544044/edit" data-id="544044">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/544/044/6c241e1a3c4c65198e1fc75571dd2869_large.gif?1366937031"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1376534446/city-quest-a-point-and-click-adventure/assets/544264/edit" data-id="544264">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/544/264/63295469875dd709697f50c62ad1195a_large.gif?1366943427"></figure>
+</div>
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1376534446/city-quest-a-point-and-click-adventure/assets/546604/edit" data-id="546604">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/546/604/8d95c9ef62ab85d3f1c1154276e7c18d_large.gif?1367032211"></figure>
+</div>
+<p><b>City Quest</b> is a classic Point and Click adventure game. You will be, as one might expect, doing much pointing and clicking!</p>The interface consists of several highly revolutionary interface elements to streamline your experience in a way not seen since the mid nineties.<div><br></div><div>
+<ul>
+<li>
+<b>Walk - </b>In an extremely accurate model of the human body, in this game you use your feet to move around the environment.</li>
+<li>
+<b>Look - </b>Experience the big city through the eyes of a bumpkin. Join in his wonder and confusion at all of the modern conveniences that we take for granted. There are also many dangerous things in this world, so it also doesn't hurt to look at things before touching!</li>
+<li>
+<b>Touch - </b>Put your hands on things! This is our catch-all for touching things, using things, generally interacting with objects in the world. Make everything filthy with your grubby hands!</li>
+<li>
+<b>Mouth - </b>A marginal grasp of the English language may have you shouting "That's not a verb! Your list is poorly constructed!". Well that's nice of you to point out. Thank you. We use the "mouth" icon to mean anything that you do with your mouth. This means "eat", "talk", "lick"... <i>anything </i>that you do with your mouth.</li>
+<li>
+<b>Inventory - </b>Throughout your travels in the city you will collect quite a bit of... well, junk. We have created, mostly through witchcraft, a sort of bag that will hold all the things you manage to collect. We call it an "inventory", catchy, right?</li>
+</ul>
+<div><br></div>
+</div><p>Use these key elements to explore a detailed world, solve puzzles, mince words with all manner of unsavory characters, and finally, suffer the consequences of your own poor choices.</p><p>Speaking of poor choices, we want to detail just a bit about dying in the game. There are lots of funny ways to get into trouble in this game, but we have made it our utmost priority to have this be reasonably painless for you as a player. We really want you to explore the world! It's fun to find new things, but not at the expense of losing you progress.</p><p>In general, we strive to remain as true to the old games as possible without <i>completely</i> throwing out decades of gaming advancements.</p><div><br></div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1376534446/city-quest-a-point-and-click-adventure/assets/541520/edit" data-id="541520">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/541/520/95d87439aa50098b13bc36ddd98c9192_large.png?1366863133"></figure>
+</div>
+<p>Ok, by now you know a little bit about us, and a little bit about <b>City Quest</b>. If you haven't already disappeared by this point to throw money at us, you might be asking your computer screen "WHY? WHY DO THEY NEED MY HELP? FOR THE LOVE OF GOD, WHY?"<b>. </b>If you are, you should stop, because your computer screen is inanimate. It's not going to tell you anything.<br>I will, though!</p><p>Down to it, we're a teeny tiny company that is making this game in our spare time on a very tiny budget. We think there are a lot of other people like us out there that enjoy adventure games and would like to support the creation of a new one!</p><p>What are we going to spend your money on?<br><br><b>Music</b><br>Well, first and formost, we want to bring killer music to the game. We could find some stock music online, but having the ability to perfectly match the mood and have a consistent voice by those means would be nigh impossible. We could also make some music ourselves, but it will definitely not be of the same quality as we could get if we bring on a composer. This will be the second project we've worked on with <b>Akash</b>. <br>Here's some of the work he's done with us so far!</p><div class="template oembed" contenteditable="false" data-href="https://soundcloud.com/stone-monkey-studios/the-fall-of-mister-wily">
+<iframe width="639" height="400" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?visual=true&amp;url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F89945699&amp;show_artwork=true&amp;maxwidth=639&amp;scheme=https&amp;width=639"></iframe>
+
+</div>
+
+
+
+<div class="template oembed" contenteditable="false" data-href="https://soundcloud.com/stone-monkey-studios/city-quest-trailer-music">
+<iframe width="639" height="400" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?visual=true&amp;url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F89970642&amp;show_artwork=true&amp;maxwidth=639&amp;scheme=https&amp;width=639"></iframe>
+
+</div><p><b>Tools/Licensing</b>
+We use Unity3d for our base engine (as do many other folks), and we're in need up some license upgrades. This is becoming more and more critical, as update support on the version we're using has been dropped. We're not getting new bug fixes or performance tweaks, nor any new features.
+This would also allow us to ship a Linux version of the game. If we don't raise our funds, then you'll make Tux sad. If you've never seen a penguin cry, consider yourself fortunate.  </p><p>There are a handful of other expenses that would be eased greatly by this campaign as well, but these things are the biggest concern, and are what helped us establish our baseline.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/1376534446/city-quest-a-point-and-click-adventure/assets/550999/edit" data-id="550999">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/550/999/5596cf17c145a31006fe76c29743806e_large.png?1367226849"></figure>
+</div>
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1376534446/city-quest-a-point-and-click-adventure/assets/577313/edit" data-id="577313">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/577/313/6e9668f4bc748ed9e733f701175b565b_large.png?1368072777"></figure>
+</div>
+<p>I'm sure you probably want a few more details about some of these rewards, don't you? Yeah, I thought you might.</p><h1>Digital Download</h1><p>When the game is ready, <b>all tiers</b> will gain access to a <b>DRM-Free digital download </b>of the game for <b>PC, Mac, </b>and <b>Linux</b>. On top of that, if we reach our stretch goals for Ouya or tablet, we'll figure out a way to give those to you as well! Heck, we're even going to give you keys for any platform we can get on, be it Steam (<a href="http://steamcommunity.com/sharedfiles/filedetails/?id=142450754" target="_blank">Check our Greenlight page!</a>), Desura, or GOG.</p><h1>Digital Soundtrack</h1><p>At the <b>third tier</b> and above, we'll also give you a <b>DRM-Free digital download </b>of the soundtrack by <b>Akash Thakkar</b>. Our baseline goal includes budget for a minimum amount of music, but if we meet stretch goals, we can get lots more, and you'll get all that too!</p><h1>NPC Tiers</h1><p><b>$50 Tier - Random NPCs</b></p><p>This tier is a unique, limited tier that allows you to be in the game, but won't break your bank. Well, we really hope it won't break your bank. If it will, for the love of all that is good, please pay your bills before you give us money. Unless you have a credit card and have made your peace with debt. In that case, we'd love to have your support!</p><p>Here you can be a random NPC on the streets, a filler in our virtual world. You will send us a picture, and we'll put you in the game. Possibly somewhere unflattering. It'll be awesome though.</p>
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1376534446/city-quest-a-point-and-click-adventure/assets/541479/edit" data-id="541479">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/541/479/963d6dce48cf5a5e134083e52468fbe9_large.png?1366861538"></figure>
+</div>
+<p><br><br><b>$150 Tiers - Main Storyline NPCs</b><br>These four limited tiers are all the same, except in which storyline you will be a part of. If you choose one of these tiers, we will transform you into a character on one of our four main storylines. You will have <b>unique interactions and dialogue. </b>You will have some sort of meaningful interaction with the player, be it asking them to cap a guy, or helping the character discover the true origins of hobos on earth.</p><p>Note: These tiers are limited purely because we don't yet know how many NPCs we'll need in the game, and we'd rather take a conservative amount than create spaces in the game with little purpose but to fill these rewards. We hope you understand! It we reach stretch goals that allow for a bigger city, it's likely that we'll add more NPC tiers!</p><div class="template asset" contenteditable="false" data-edit_url="/projects/1376534446/city-quest-a-point-and-click-adventure/assets/541485/edit" data-id="541485">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/541/485/f11b7ba6aca9d242cc7f06bdc4379573_large.png?1366861857"></figure>
+</div>
+<h1>Poster</h1><p>The poster will be 18" x 24" or about 45cm x 61cm for our international friends. It's digitally painted by our artist, <b>Jon</b>, and is the basis for the art on the printed box copy. I'm sure you're itching to see what it's going to look like, huh? Here it is! (Note, further detail may be added before printing, but this is approximately what the final version will look like!).</p><div class="template asset" contenteditable="false" data-edit_url="/projects/1376534446/city-quest-a-point-and-click-adventure/assets/548053/edit" data-id="548053">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/548/053/9cae8aaa534a42038bf2868f4ffefb94_large.png?1367099011"></figure>
+</div>
+
+<h1>T-Shirts</h1><p>The t-shirts are charcoal grey (the best kind of grey, really), and on the front have the outline of our city in white, with the main character in negative space. The text, in case you can't read it on the image is <b>"A little man in the big city. City Quest.". </b>The back, in simple text indicate that you are, without a doubt, a <b>Backer</b>.</p><a href="http://i.imgur.com/BNkLcYU.jpg" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/1376534446/city-quest-a-point-and-click-adventure/assets/540900/edit" data-id="540900">
+<figure><img alt='It says "A Little man in the big city". Also, click to make bigger!' class="fit" src="https://s3.amazonaws.com/ksr/assets/000/540/900/1ea20d3fb405497d755f1a8ad2574521_large.png?1366848519"><figcaption>It says "A Little man in the big city". Also, click to make bigger!</figcaption></figure>
+</div>
+</a><h1>Collector's Edition Boxed Copy</h1><p>Everything is digital nowadays, and that's good! Instant access is wonderful, and opens the doors to smaller teams being able to effectively reach an audience.<br><br>That being said, we still like boxed copies. It's still nice to hold a physical product in your hands sometimes. It's a fun feeling peeling open the cellophane on a new game, or it's a nice piece to add to your collection.<br><br>We wanted to follow in the footsteps of our forbearers and produce Big Box style packaging, but we've come to discover that most box printers won't do a run on something so custom when the order would be as small as ours. If anything changes, you'll be the first to know.<br><br>Since the Big Box style is out, we're going with a more modern <b>DVD-Style Case</b>. It's going to be awesome. It will have <b>Super Awesome Art, </b>and it will have a <b>Reversible Insert</b>. We've got a few cool ideas about what we want the inside to be, and we'll likely have a vote down the line to let you all decide what you like best!</p><p>Here it is! (The design may change as we move along with it, but the art will stay the same, albeit with further detailing.)</p><div class="template asset" contenteditable="false" data-edit_url="/projects/1376534446/city-quest-a-point-and-click-adventure/assets/553396/edit" data-id="553396">
+<figure><img alt="Nope, definitely not a template or anything like that." class="fit" src="https://s3.amazonaws.com/ksr/assets/000/553/396/c731a69a93a6d77cf7cd33eb78a4f093_large.png?1367294595"><figcaption>Nope, definitely not a template or anything like that.</figcaption></figure>
+</div>
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1376534446/city-quest-a-point-and-click-adventure/assets/548021/edit" data-id="548021">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/548/021/cf9eb91667dc2214100cdc6265e7be54_large.png?1367097830"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1376534446/city-quest-a-point-and-click-adventure/assets/550478/edit" data-id="550478">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/550/478/5b14788d0bd3f31bb00643005a344a18_large.png?1367202150"></figure>
+</div>
+<p>While we've set our baseline at the modest goal of $8,000, we do have plenty of things we'd love to do if we brought in more capital. Accordingly, we've set a few stretch goals, should you lovely people go above and beyond!</p><ul>
+<li>
+<b>$9,000: OUYA Support - </b>We're pretty excited to see where the OUYA goes, and we'd love to bring <b>City Quest</b> to the OUYA. This stretch goal will cover the additional dev costs in bringing the game to the OUYA. If we reach this level, every tier will get access to the OUYA version!</li>
+<li>
+<b>$10,000: iOS/Android Support - </b>We've actually been developing the tablet versions in tandem with PC versions of the game, but there are additional licensing costs that this tier would cover. Imagine all the shenanigans you could get into if you could play on the go! If we reach this goal, every tier will get access to the mobile versions!</li>
+<li>
+<b>$12,500: Deeper Sound Design and Music - </b>Our baseline goal will get us a good amount of music, but we'd really love to be able to lob more money at our composer to generate more music and build the sound of the world even more!</li>
+<li>
+<b>$15,000: Bigger City and more Side Quests - </b>Our baseline is enough to bring this game through, but there are other areas of the city we'd like to explore, and more substories we'd like to tell. This level would bring additional side quests, an expanded city, and more ways to die!</li>
+<li>
+<b>Beyond! </b>We've got a fair few things we'd like to bring to the game, but we want to talk to you and see what things would be most important for you fine folks to see in the game!</li>
+</ul>
+</div>
+<div id="risks">
+<h2 class="title grey-dark mt6 mb4">
+<span>Risks and challenges</span>
+<a href="/help/faq/kickstarter%20basics#Acco" class="right normal h5" target="_blank">Learn about accountability on Kickstarter</a>
+<div class="divider clear"></div>
+</h2>
+<p><p>As it is, the game is pretty far along, and barring an event such as untimely incineration of one or both of us, this game will get finished. Heck, even if only one of us is incinerated, the other one can probably still finish the game!</p>
+
+<p>We&#39;ve done our legwork and have a pretty solid idea of our fulfillment costs, so we&#39;re confident that we&#39;ll safely be able to fulfill all your rewards and still have enough to make the game as awesome as we&#39;d like.</p>
+
+<p>Realistically, there&#39;s always a chance that a project like this will run long, but our engine is complete, and now it&#39;s down to content and story. We&#39;ve chosen an estimated delivery date that we feel is conservative, and if there&#39;s ever a point where that changes, we will be as transparent as we can about it!</p></p>
+</div>
+</div>
+<div class="NS-projects-faqs" id="project-faqs">
+<h2 class="title grey-dark mt6 mb4">
+FAQ
+<div class="divider clear"></div>
+</h2>
+<ul class="faqs">
+<li class="faq" id="project_faq_55729">
+<div class="faq-question">
+<a href="#project_faq_55729" name="project_faq_55729">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Isn&#39;t the &quot;Foxy Boxer&quot; tier the same as the cheaper &quot;Bare Knuckle Boxer&quot; tier?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Keen of you to notice! We&#39;re not trying to rip you off! Just the opposite! We changed the tiers, and it seemed to us that with the new structure, the $125 tier was a bit overpriced. Since we can&#39;t change the prices on the tiers, we made a new, cheaper tier! The $125 tier, in exchange, gets an additional download of the Soundtrack and the Game, and we&#39;ll also sign any of the physical goods!</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-05-09T01:25:23-04:00">Thu, May 9 2013 1:25 am EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_58328">
+<div class="faq-question">
+<a href="#project_faq_58328" name="project_faq_58328">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">What would you do for a Klondike (tm) Bar?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Ryan says: &quot;Have you ever seen Shawshank Redemption? You know how Tim Robbins spent 2 decades digging that tunnel? Then he went and climbed through a bunch of raw sewage to escape? I would not do that, but I would watch Shawshank Redemption again for a Klondike(tm) Bar.&quot;</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-06-02T01:30:34-04:00">Sun, Jun 2 2013 1:30 am EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_58329">
+<div class="faq-question">
+<a href="#project_faq_58329" name="project_faq_58329">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Hey Ryan! How long did it take you to grow that beard?!</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Ryan says: &quot;Well folks, the better question would be: How many goats did you sacrifice to Odin to grow such a formidable beard? Eleven. The answer is eleven goats. I&#39;m actually pretty sure one of them was Loki&#39;s kid, too. Heh, pun.&quot;</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-06-02T01:51:50-04:00">Sun, Jun 2 2013 1:51 am EDT</time>
+</div>
+</div>
+</li>
+
+</ul>
+<div class="faq-ask-box">
+<a href="/projects/1376534446/city-quest-a-point-and-click-adventure/messages/new?message%5Bto%5D=1376534446&amp;mode=FAQ" class="button button_blue remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Ask a question about City Quest: A Point &amp; Click Adventure">Ask a question</a>
+
+</div>
+</div>
+
+<div class="mt4 ml1 mr1 mb2" id="report-issue-wrap">
+<a href="/login?then=%2Fprojects%2F1376534446%2Fcity-quest-a-point-and-click-adventure" class="button button_grey">Report this project to Kickstarter</a>
+</div>
+</div>
+<div class="NS-projects-rightcol grid_5" id="rightcol">
+<div class="NS_projects__ecom">
+<div class="digits_4 pb2 pl2 pt2" id="stats">
+<h5>
+<div class="num h48 no-margin" data-backers-count="539" id="backers_count"><data class="Project2060459325" data-format="number" data-value="539" itemprop="Project[backers_count]">539</data></div>
+<span><data class="Project2060459325" data-attr="backers_count" data-format="pluralize" data-value="539" data-word="Backer">Backers</data></span>
+</h5>
+<h5>
+<div class="num h48 no-margin" data-goal="8000.0" data-percent-raised="1.09244125" data-pledged="8739.53" id="pledged">
+<data class="Project2060459325" data-currency="USD" data-format="shorter_money" data-precision="0" data-value="8739" data-without_code="true" itemprop="Project[pledged]">$8,739</data>
+<span class="money usd project_currency_code"></span>
+</div>
+pledged of
+<span class="money usd no-code">$8,000</span>
+goal
+</h5>
+<span data-duration="30.0" data-end_time="2013-06-02T14:07:22-04:00" data-hours-remaining="0" id="project_duration_data"></span>
+<div class="Project2060459325" data-conditions="[{&quot;!state&quot;:[&quot;canceled&quot;,&quot;suspended&quot;]}]" data-evaluation="true" data-render="&quot;&lt;h5 class=\&quot;poll \&quot; data-dynamic=\&quot;5\&quot; data-end_time=\&quot;2013-06-02T14:07:22-04:00\&quot; data-poll_url=\&quot;https://d2oher2uhvl0ur.cloudfront.net/projects/1376534446/city-quest-a-point-and-click-adventure/stats.json\&quot;&gt;\n&lt;div class=\&quot;num h48 no-margin\&quot;&gt;0&lt;/div&gt;\n&lt;span class=\&quot;text\&quot;&gt;seconds to go&lt;/span&gt;\n&lt;/h5&gt;\n&quot;"><h5 class="poll " data-dynamic="5" data-end_time="2013-06-02T14:07:22-04:00" data-poll_url="https://d2oher2uhvl0ur.cloudfront.net/projects/1376534446/city-quest-a-point-and-click-adventure/stats.json">
+<div class="num h48 no-margin">0</div>
+<span class="text">seconds to go</span>
+</h5>
+</div></div>
+<div class="Project2060459325" data-conditions="[{&quot;state&quot;:&quot;live&quot;},{&quot;!ended?&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;pr2 pl2\&quot; id=\&quot;pledge-wrap\&quot;&gt;\n&lt;a href=\&quot;/projects/1376534446/city-quest-a-point-and-click-adventure/pledge/new?clicked_reward=false\&quot; class=\&quot;button button_green button_box button_block\&quot; id=\&quot;button-back-this-proj\&quot; title=\&quot;Back this project\&quot;&gt;Back This Project &lt;small class=&#39;h6 normal block green-dark&#39;&gt;&lt;span class=\&quot;money usd \&quot;&gt;$1&lt;/span&gt; minimum pledge&lt;/small&gt;&lt;/a&gt;\n&lt;/div&gt;\n&quot;"></div><div class="Project2060459325" data-conditions="[{&quot;state&quot;:&quot;live&quot;}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;p2\&quot; id=\&quot;banner\&quot;&gt;\n&lt;p class=\&quot;tiny_type no-margin\&quot;&gt;\nThis project will be funded on\n&lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;llll z\&quot; datetime=\&quot;2013-06-02T14:07:22-04:00\&quot;&gt;Sun, Jun 2 2013 2:07 pm EDT&lt;/time&gt;.\n&lt;/p&gt;\n&lt;/div&gt;\n&quot;"></div></div>
+
+<div class="NS_projects__rightcol_projectby bg-blue-light rounded">
+<div class="p2 clearfix">
+<div class="avatar inline-block align-middle">
+<a href="/projects/1376534446/city-quest-a-point-and-click-adventure/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography"><img alt="Logo800x800.small" class="avatar-small" height="80" src="https://s3.amazonaws.com/ksr/avatars/2486030/Logo800x800.small.jpg?1363974291" width="80" />
+</a></div>
+<div class="creator-name inline-block align-middle ml1">
+<h6 class="mb1">Project by</h6>
+<h5 class="mb1">
+<a href="/projects/1376534446/city-quest-a-point-and-click-adventure/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">Ryan Nohr</a>
+</h5>
+<p class="location h6 bold mb1">
+<a href="/discover/places/redmond-wa">Redmond, WA</a>
+</p>
+</div>
+</div>
+<div class="creator-details pl2 pr2 pb1">
+<ul class="list-simple h5 mb1">
+<li class="projects">
+<span class="ss-icon ss-kickstarter grey-dark margin-right"></span>
+<span class="text">
+First created
+<span class="divider">&middot;</span>
+<a href="/profile/1376534446/backed" class="green-dark bold more-button remote_modal_dialog" data-modal-title="Projects backed by Ryan Nohr">15 backed</a>
+</span>
+</li>
+<li class="facebook-connected">
+<span class="ss-icon ss-facebook facebook color-facebook margin-right"></span>
+<span class="text">
+<a href="https://www.facebook.com/71201081" class="popup" target="_blank">Ryan Nohr</a>
+<span class="number h6">
+351
+friends
+</span>
+</span>
+
+</li>
+<li class="links">
+<span class="ss-icon ss-globe margin-right grey-dark"></span>
+<span class="text">
+<a href="http://stonemonkeystudios.com" class="popup" rel="nofollow" target="_blank">stonemonkeystudios.com</a>
+</span>
+</li>
+</ul>
+</div>
+<div class="footer center h5 bold clearfix rounded-bottom clip">
+<a href="/projects/1376534446/city-quest-a-point-and-click-adventure/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">See full bio</a>
+<a href="/projects/1376534446/city-quest-a-point-and-click-adventure/messages/new?message%5Bto%5D=1376534446" class="remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Send a message to Ryan Nohr">Contact me</a>
+
+</div>
+</div>
+
+<ul class="NS-projects-rightcol-rewards rounded clip list mt2" data-reward-count="18" id="what-you-get">
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$5</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+334 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(166 left of 500)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>==============================
+== EARLY BIRD - BUMPKIN TIER ==
+==============================
+1. DRM-FREE DIGITAL DOWNLOAD   
+==============================
+Get a digital copy of City Quest for PC, MAC, or LINUX for the low, low price of five American dollars when it releases. How can you resist such an amazing deal?!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-09-01">Sep 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$8</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+23 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>==============================
+======== BUMPKIN TIER ========
+==============================
+1. DRM-FREE DIGITAL DOWNLOAD   
+==============================
+Ok, you resisted the amazing early bird deal. Congratulations on your superior willpower. Still, you can get a digital download of City Quest for PC, MAC, or LINUX for the slightly less low, low price of Eight Dollars!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-09-01">Sep 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$15</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+98 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(2 left of 100)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>==============================
+========== EARLY BIRD =========
+======= DISC JOCKEY TIER======= 
+==============================
+1. DRM-FREE DIGITAL DOWNLOAD  
+2. NAME ON THE CREDITS SCREEN 
+3. ~~ SOUNDTRACK DOWNLOAD ~~
+==============================
+Not only will you get a digital download of City Quest for PC, MAC, or LINUX and a DRM-Free digital download of the soundtrack, but you&#39;ll also get your name on the credits screen. That&#39;s like, a huge honor, man. By the way, buy it early and you&#39;ll only pay fifteen dollars!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-09-01">Sep 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$20</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+14 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>============================== 
+======= DISC JOCKEY TIER ======
+============================== 
+1. DRM-FREE DIGITAL DOWNLOAD 
+2. NAME ON THE CREDITS SCREEN
+2. ~~ SOUNDTRACK DOWNLOAD ~~
+============================== 
+
+Want the super awesome soundtrack? How about your name on the credits screen? Do you want to be famous?! Well, this tier may not make you all-the-way famous, but it&#39;ll get you started! By the way, you&#39;re also going to get a digital download of City Quest for PC, MAC, or LINUX!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-08-01">Aug 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$50</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+38 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(2 left of 40)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>============================== ========== NPC TIER =========== ============================== 
+1. DRM-FREE DIGITAL DOWNLOAD 
+2. NAME ON THE CREDITS SCREEN
+3. ~~ SOUNDTRACK DOWNLOAD ~~ 
+4. BE A GENERIC NPC IN THE GAME
+============================== 
+For fifty dollars, you can be IN THE GAME. At this tier, you will be in the game as a generic character. We make no guarantees about who you will be cast as. It&#39;s entirely possible that you will be cast as something inappropriate. It&#39;s like an awesome gamble. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+By the way, you&#39;ll also get your name in the credits, a digital download of the super awesome soundtrack, and a DRM-Free digital download of City Quest for PC, MAC, or LINUX.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+NOTE: Just to be clear, this is a unique, limited tier. Later tiers will not get to be NPCs in the game. Since this is a limited tier, we are offering addons as a way for you to get some of the physical rewards. Simply add the indicated amount to your pledge, and you&#39;ll get the reward! (For example, pledge $75 and you&#39;ll get this tier, plus a poster).
+
+~~~~~~~~~~~ADDONS~~~~~~~~~~~~ 
+POSTER: Select this reward level, but add $15 to your pledge ($25 if you are international, please). 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+POSTER + T-SHIRT: Select this reward level, but add $35 to your pledge ($50 if you are international, please).
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+POSTER + T-SHIRT + BOXED COPY: Select this reward level, but add $75 to your pledge ($90 if you are international).</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-09-01">Sep 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$65</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+3 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>==============================
+== NEVER NUDE TIER (PHYSICAL) ==
+==============================
+1. DRM-FREE DIGITAL DOWNLOAD 
+2. NAME ON THE CREDITS SCREEN 
+3. ~~ SOUNDTRACK DOWNLOAD ~~ 
+4. KICKSTARTER-EXCLUSIVE SHIRT  ============================== 
+Have your nipples been getting hard reading this page? Does that bring you shame? If so, we’ve got a solution! This nice, thick T-shirt is (not) guaranteed to (probably) hide your erect nipples from the world!
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+You&#39;ll also get your name in the credits, a DRM-Free digital download of the super awesome soundtrack, and a DRM-Free digital download of City Quest for PC, MAC, or LINUX.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-10-01">Oct 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $10 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$65</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+7 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>==============================
+= LI&#39;LEST BOXER TIER (PHYSICAL) =
+==============================
+1. DRM-FREE DIGITAL DOWNLOAD 
+2. NAME ON THE CREDITS SCREEN 
+3. ~~ SOUNDTRACK DOWNLOAD ~~ 
+4. ~A BOXED COPY OF THE GAME~ ============================== 
+Are you content being naked and without wall adornment, but still want to get a bit physical with us? Here&#39;s your chance! Get a boxed copy of the game without all that other stuff!
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+You&#39;ll also get your name in the credits, a DRM-Free digital download of the super awesome soundtrack, and a DRM-Free digital download of City Quest for PC, MAC, or LINUX.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-10-01">Oct 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $10 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$65</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>==============================
+===== ARTIST TIER (PHYSICAL) ====
+==============================
+1. DRM-FREE DIGITAL DOWNLOAD 
+2. NAME ON THE CREDITS SCREEN
+3. ~~ SOUNDTRACK DOWNLOAD ~~
+4. ~~ POSTER OF THE BOX ART ~~
+============================== 
+Aww yeah, it&#39;s time to get physical. For Sixty, we&#39;ll send you an 18&quot;x24&quot; (~46x61 cm) poster of the box art. In true 80s style, the box art does not represent the actual in-game graphics at all!
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+You&#39;ll also get your name in the credits, a DRM-Free digital download of the super awesome soundtrack,  and a DRM-Free digital download of City Quest for PC, MAC, or LINUX.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-10-01">Oct 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $10 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$85</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>==============================
+==== TAILOR TIER (PHYSICAL) ==== ==============================
+1. DRM-FREE DIGITAL DOWNLOAD 
+2. NAME ON THE CREDITS SCREEN
+3. ~~ SOUNDTRACK DOWNLOAD ~~
+4. ~~ POSTER OF THE BOX ART ~~
+5. KICKSTARTER-EXCLUSIVE SHIRT    
+============================== 
+
+Are you tired of always being nude? We&#39;re not, but in case you are, we&#39;re going to give you something to cover your shame. At this tier, you will get a Kickstarter-exclusive T-Shirt to wear, the box art poster, your name in the credits, the super awesome soundtrack, and a DRM-Free digital download of the game for PC, MAC, or LINUX.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-10-01">Oct 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $15 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$85</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>==============================
+== THE NUDIST TIER (PHYSICAL) ==
+==============================
+1. DRM-FREE DIGITAL DOWNLOAD 
+2. NAME ON THE CREDITS SCREEN 
+3. ~~ SOUNDTRACK DOWNLOAD ~~ 
+4. ~~ POSTER OF THE BOX ART ~~ 
+5. ~A BOXED COPY OF THE GAME~ ============================== 
+Do you live in one of those awesome European countries where people never wear clothes? We assume those places exist, but we’re not entirely sure, we’ve never been there, but It sounds awesome. Maybe you just don’t like T-shirts. One of these reasons is way more awesome, but they’re both valid. This tier is for you.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+You&#39;ll also get your name in the credits, a DRM-Free digital download of the super awesome soundtrack, and a DRM-Free digital download of City Quest for PC, MAC, or LINUX.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-10-01">Oct 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $15 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$85</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+3 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>==============================
+== GROWN-UP TIER (PHYSICAL) ==
+==============================
+1. DRM-FREE DIGITAL DOWNLOAD 
+2. NAME ON THE CREDITS SCREEN 
+3. ~~ SOUNDTRACK DOWNLOAD ~~ 
+4. KICKSTARTER-EXCLUSIVE SHIRT 
+5. ~A BOXED COPY OF THE GAME~ ============================== 
+Is your man (or woman) cave full of too much memorabilia? Don’t need a new poster, but still want a sexy T-shirt and a sweet boxed copy? This one’s for all of you! 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+You&#39;ll also get your name in the credits, a DRM-Free digital download of the super awesome soundtrack, and a DRM-Free digital download of City Quest for PC, MAC, or LINUX.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-10-01">Oct 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $15 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$110</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>==============================
+== BARE-KNUCKLE BOXER TIER ==
+========= (PHYSICAL) =========
+==============================
+1. DRM-FREE DIGITAL DOWNLOAD 
+2. NAME ON THE CREDITS SCREEN 
+3. ~~ SOUNDTRACK DOWNLOAD ~~ 
+4. ~~ POSTER OF THE BOX ART ~~ 
+5. KICKSTARTER-EXCLUSIVE SHIRT 
+6. ~A BOXED COPY OF THE GAME~ ============================== 
+Look! We lowered the price! You can now get all 3 of our fantastical physical products at a fraction of the price! That specific fraction 22/25... unless you’re international. I’m going to let you reduce that fraction yourselves. Just like the $125 tier, you&#39;ll get a T-shirt, a poster, and a boxed copy for $15 less!
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+You&#39;ll also get your name in the credits, a DRM-Free digital download of the super awesome soundtrack, and a DRM-Free digital download of City Quest for PC, MAC, or LINUX.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+NOTE ABOUT $125 TIER We can&#39;t change the description of the $125 tier now, but If you&#39;re curious, we&#39;re adding a few things to that tier to differentiate it from this one. That includes: An additional download of both the game and the soundtrack, and we&#39;ll also sign any of the physical rewards you want there.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-09-01">Sep 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $15 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$125</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>============================== 
+== FOXY BOXER TIER (PHYSICAL) ==
+==============================
+1. DRM-FREE DIGITAL DOWNLOAD 
+2. NAME ON THE CREDITS SCREEN
+3. ~~ SOUNDTRACK DOWNLOAD ~~
+4. ~~ POSTER OF THE BOX ART ~~
+5. KICKSTARTER-EXCLUSIVE SHIRT 
+6. ~A BOXED COPY OF THE GAME~
+============================== 
+If you&#39;re anything like us, you still enjoy the feel of a physical copy. Ok, feel maybe isn&#39;t right. You enjoy the look of a boxed copy sitting on a shelf. We&#39;re making a limited run of physical media for the game.
+The boxed copies are standard DVD cases with awesome double-sided box art. 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+In addition to the boxed copy, you&#39;ll get one poster, one t-shirt, a DRM-Free digital download of the game for PC, MAC, or LINUX, and a DRM-Free digital download of the soundtrack.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-10-01">Oct 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $15 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$150</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(4 left of 5)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>==============================
+== LADY/LAD OF THE NIGHT TIER ==
+========== (PHYSICAL) ========= ============================== 
+1. DRM-FREE DIGITAL DOWNLOAD 
+2. ~~ SOUNDTRACK DOWNLOAD ~~
+3. ~~ POSTER OF THE BOX ART ~~
+4. KICKSTARTER-EXCLUSIVE SHIRT 
+5. ~A BOXED COPY OF THE GAME~
+6. ~SPECIAL THANKS IN CREDITS~~
+7. ~~~~~WE&#39;LL SIGN IT ALL~~~~~~~~
+~~~~~~(IF YOU WANT US TO)~~~~~~ 
+8. ~~~~~ BE AN NPC ON THE ~~~~~~
+~~~~ &quot;LADY/LAD OF THE NIGHT&quot; ~~~
+~~~~~~~~~~ STORYLINE ~~~~~~~~~
+==============================  
+Ever wonder what it&#39;s like to sell your body? Here you go! Sell your body digitally! You send us a picture of yourself, and we&#39;re going to make you a main character on the &quot;Lady/Lad of the Night&quot; storyline! You&#39;ll have unique dialogue, interactions with the player, and everything! 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+You&#39;ll also get one boxed copy of the game, one poster, one t-shirt, a DRM-Free digital download of the game for PC, MAC, or LINUX, a DRM-Free digital download of the soundtrack, and special thanks in the credits!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-10-01">Oct 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $15 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$150</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+2 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(3 left of 5)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>==============================
+== POLITICIAN TIER (PHYSICAL) ==
+============================== 
+1. DRM-FREE DIGITAL DOWNLOAD 
+2. ~~ SOUNDTRACK DOWNLOAD ~~
+3. ~~ POSTER OF THE BOX ART ~~
+4. KICKSTARTER-EXCLUSIVE SHIRT 
+5. ~A BOXED COPY OF THE GAME~
+6. ~SPECIAL THANKS IN CREDITS~~
+7. ~~~~~WE&#39;LL SIGN IT ALL~~~~~~~~
+~~~~~~(IF YOU WANT US TO)~~~~~~ 
+8. ~~~~~ BE AN NPC ON THE ~~~~~~
+~~~~ &quot;POLITICIAN&quot; STORYLINE ~~~~
+==============================  
+Like most of the world, you are aware that politicians exist. Here&#39;s the perfect way to live the glamorous life of a lawmaker, without all the campaigning! You send us a picture of yourself, and we&#39;ll transform you into a digital politician, complete with sleezy unique dialogue, and custom interactions for the &quot;Politician&quot; storyline.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+You&#39;ll also get one boxed copy of the game, one poster, one t-shirt, a DRM-Free digital download of the game for PC, MAC, or LINUX, a DRM-Free digital download of the soundtrack, and special thanks in the credits!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-10-01">Oct 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $15 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$150</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+3 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(2 left of 5)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>==============================
+=== MAFIOSO TIER (PHYSICAL) ===
+============================== 
+1. DRM-FREE DIGITAL DOWNLOAD 
+2. ~~ SOUNDTRACK DOWNLOAD ~~
+3. ~~ POSTER OF THE BOX ART ~~
+4. KICKSTARTER-EXCLUSIVE SHIRT 
+5. ~A BOXED COPY OF THE GAME~
+6. ~SPECIAL THANKS IN CREDITS~~
+7. ~~~~~WE&#39;LL SIGN IT ALL~~~~~~~~
+~~~~~~(IF YOU WANT US TO)~~~~~~ 
+8. ~~~~~ BE AN NPC ON THE ~~~~~~
+~~~~~ &quot;MAFIOSO&quot; STORYLINE ~~~~
+==============================   
+Have you ever capped a guy? If so, don&#39;t tell us, we don&#39;t want to keep that secret. If you haven&#39;t, like most of the rest of the world, have an NPC of you do it instead! You&#39;ll send us a picture, and we&#39;ll pixelize it and give it unique dialogue and interactions on the &quot;Mafioso&quot; storyline.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+You&#39;ll also get one boxed copy of the game, one poster, one t-shirt, a DRM-Free digital download of the game for PC, MAC, or LINUX, a DRM-Free digital download of the soundtrack, and special thanks in the credits!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-10-01">Oct 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $15 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$150</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+2 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(3 left of 5)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>============================== 
+===== HOBO TIER (PHYSICAL) =====
+==============================
+1. DRM-FREE DIGITAL DOWNLOAD 
+2. ~~ SOUNDTRACK DOWNLOAD ~~
+3. ~~ POSTER OF THE BOX ART ~~
+4. KICKSTARTER-EXCLUSIVE SHIRT 
+5. ~A BOXED COPY OF THE GAME~
+6. ~SPECIAL THANKS IN CREDITS~~
+7. ~~~~~WE&#39;LL SIGN IT ALL~~~~~~~~
+~~~~~~(IF YOU WANT US TO)~~~~~~ 
+8. ~~~~~ BE AN NPC ON THE ~~~~~~
+~~~~~~~ &quot;HOBO&quot; STORYLINE ~~~~~
+============================== 
+I&#39;m sure you&#39;ve wondered what it&#39;s like to live carefree on the streets, no bills to pay or job to attend, right? Who hasn&#39;t?! Live that dream vicariously through the NPC we&#39;ll model in your image for the &quot;Hobo&quot; storyline! You&#39;ll have unique dialogue, interactions with the player, and everything! 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+You&#39;ll also get one boxed copy of the game, one poster, one t-shirt, a DRM-Free digital download of the game for PC, MAC, or LINUX, a DRM-Free digital download of the soundtrack, and special thanks in the credits!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-10-01">Oct 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $15 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(4 left of 5)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>==============================
+==== KING OF THE CITY TIER =====
+======= TIER (PHYSICAL) ========
+============================== 
+==== 5 OF EVERY ITEM BELOW ====
+1. DRM-FREE DIGITAL DOWNLOAD 
+2. ~~ SOUNDTRACK DOWNLOAD ~~
+3. ~~ POSTER OF THE BOX ART ~~
+4. KICKSTARTER-EXCLUSIVE SHIRT 
+5. ~A BOXED COPY OF THE GAME~
+========= IN ADDITION =========
+6. AN NPC ON THE STORYLINE OF 
+~~~~~~~YOUR CHOICE ~~~~~~~~~~
+7. ~~~WE&#39;LL SIGN EVERYTHING ~~~
+~~~~~~~~(IF YOU WANT)~~~~~~~~~
+8. ~~~SUPER SPECIAL THANKS ~~~
+~~~~ IN THE CREDITS SCREEN ~~~
+==============================
+Wow! You must really believe in this project. Or you have a lot of extra money and a wicked sense of humor. Or you&#39;ve stolen lots of money and are laundering it through kickstarter somehow (we&#39;re not really sure how money laundering works). One way or another, you&#39;re awesome. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In return for your grand gesture, we&#39;ll give you 5 of everything (besides NPCs, you only get one. We only have room for so many)! We&#39;ll also give you super special thanks in the credits, way up near the top! 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In addition, we&#39;ll sign any of the physical stuff you want us to! This is entirely optional, so we&#39;ll leave it to you to tell us what you want!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-10-01">Oct 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $30 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+</ul>
+
+<div class="p2" id="meta">
+<h5>Funding period</h5>
+<p class="tiny_type">
+<time class="js-adjust" data-format="ll" datetime="2013-05-03T14:07:22-04:00">May 3, 2013</time> - 
+<time class="js-adjust" data-format="ll" datetime="2013-06-02T14:07:22-04:00">Jun 2, 2013</time>
+(30 days)
+</p>
+</div>
+</div>
+
+</div>
+
+<a href="#" id="video_mode_tab" style="display: none;">
+View in Video Mode
+</a>
+
+</div>
+</div>
+
+
+</div>
+
+<div class="h5 bg-green-dark" id="mega-footer-wrap">
+<div class="bg-green-dark white full-height" id="footer-newsletter-signup">
+<div class="container py4">
+<div class="grid_8 prefix_4 suffix_4 center mt4">
+<h2>
+Eureka! You've found
+<br>
+our little secret.
+</h2>
+<p>Sign up for our Happening email for all the inside info about arts and culture in the Kickstarter universe and beyond.</p>
+<div class="newsletter_signup">
+<form accept-charset="UTF-8" action="/newsletters/happening/signup" class="overlabels" method="post"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /><input class="hidden" name="authenticity_token" type="hidden" value="KWWIvx0/YhBwYNEeNqTlSCS2EQolO2GGtzJbXEdBLmI=" /></div><input class="hidden" id="location" name="location" type="hidden" value="footer" />
+<textarea class="hide textarea" id="comment" name="comment">
+</textarea>
+<div class="field newsletter">
+<label class="overlabel z1 overlabel-newsletter">Email address</label>
+<input class="text" id="email" name="email" type="text" />
+</div>
+<input class="button button_green submit" name="commit" type="submit" value="Submit" />
+</form>
+
+</div>
+
+</div>
+</div>
+</div>
+<div class="container relative" id="mega-footer">
+<span class="scissors icon-scissors-1"></span>
+<div class="grid_16 alpha omega pt4 pb2" id="mega-footer-links">
+<div class="grid_4 link-group">
+<h5 class="white">About us</h5>
+<ul class="list">
+<li><a href="/year/2013/?ref=footer">2013 highlights</a></li>
+<li><a href="/year/2012?ref=footer">2012 highlights</a></li>
+<li><a href="/team?ref=footer">Who we are</a></li>
+<li><a href="/jobs?ref=footer">Jobs</a></li>
+<li><a href="/press?ref=footer">Press</a></li>
+<li><a href="/help/stats?ref=footer">Stats</a></li>
+<li><a href="/newsletters/weekly">Projects we love</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group">
+<h5><a href="/help?ref=footer" class="white">Help</a></h5>
+<ul class="list">
+<li><a href="/hello?ref=footer">What is Kickstarter?</a></li>
+<li><a href="/help?ref=footer">FAQ</a></li>
+<li><a href="/contact?ref=footer">Support</a></li>
+<li><a href="/help/school?ref=footer">Kickstarter School</a></li>
+<li><a href="/terms-of-use?ref=footer">Terms of Use</a></li>
+<li><a href="/privacy?ref=footer">Privacy Policy</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group alpha omega suffix_1">
+<h5 class="alpha"><a href="/discover/advanced?ref=footer" class="white">Discover</a></h5>
+<ul class="column column-0 grid_2 list">
+<li><a href="/discover/categories/art?ref=footer">Art</a></li>
+<li><a href="/discover/categories/comics?ref=footer">Comics</a></li>
+<li><a href="/discover/categories/dance?ref=footer">Dance</a></li>
+<li><a href="/discover/categories/design?ref=footer">Design</a></li>
+<li><a href="/discover/categories/fashion?ref=footer">Fashion</a></li>
+<li><a href="/discover/categories/film%20&amp;%20video?ref=footer">Film &amp; Video</a></li>
+<li><a href="/discover/categories/food?ref=footer">Food</a></li>
+</ul>
+<ul class="column column-1 grid_2 list">
+<li><a href="/discover/categories/games?ref=footer">Games</a></li>
+<li><a href="/discover/categories/music?ref=footer">Music</a></li>
+<li><a href="/discover/categories/photography?ref=footer">Photography</a></li>
+<li><a href="/discover/categories/publishing?ref=footer">Publishing</a></li>
+<li><a href="/discover/categories/technology?ref=footer">Technology</a></li>
+<li><a href="/discover/categories/theater?ref=footer">Theater</a></li>
+</ul>
+</div>
+<div class="grid_3 link-group">
+<h5 class="white">Hello</h5>
+<ul class="list">
+<li>
+<a href="https://twitter.com/kickstarter"><span class="ss-icon ss-social-regular ss-twitter"></span>
+Twitter
+</a></li>
+<li>
+<a href="https://www.facebook.com/Kickstarter"><span class="ss-icon ss-social-regular ss-facebook"></span>
+Facebook
+</a></li>
+<li>
+<a href="http://kickstarter.tumblr.com"><span class="ss-icon ss-social-regular ss-tumblr"></span>
+Tumblr
+</a></li>
+<li>
+<a href="http://instagram.com/kickstarter"><span class="ss-icon ss-social-regular ss-instagram"></span>
+Instagram
+</a></li>
+<li>
+<a href="https://vine.co/Kickstarter"><span class="ss-icon ss-social-regular ss-vine"></span>
+Vine
+</a></li>
+<li>
+<a href="/blog?ref=footer">Blog</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="grid_16 py4" id="mega-footer-bottom">
+<div class="logo left">
+<a href="/" class="grey-dark"><span class="ss-icon h3">KICKSTARTER</span>
+</a></div>
+<p class="right h5 grey-dark">
+&copy;
+2014
+Kickstarter, Inc.
+</p>
+</div>
+</div>
+</div>
+
+<script>
+  //<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    var analytics_vars = { google_analytics_id : "UA-7621056-1", logged_in : "false", social_user: "false" }
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.mixpanel_id = '75b1d24a516ecfc955eadfadc4910661';
+    window.mixpanel_debug = false;
+  //]]>
+</script>
+
+
+<noscript>
+<img alt="Quantcast" border="0" height="1" src="//secure.quantserve.com/pixel/p-34IbSpw2K94Sg.gif" style="display:none" width="1" />
+</noscript>
+
+
+<script>
+  //<![CDATA[
+    window.benchmark = (typeof window.performance == 'object' && typeof window.performance.mark == 'function');
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    (function (root) {
+      function instrument_function (original) {
+        return function () {
+          try {
+            return original.apply(this, arguments);
+          } catch (e) {
+            if (e.stack && root.Honeybadger) {
+              Honeybadger.notify(e, {
+                current_project : root.current_project,
+                current_user : root.current_user
+              });
+            }
+            throw(e);
+          }
+        };
+      }
+      root.instrument_function = instrument_function;
+    }(this));
+  //]]>
+</script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+
+<script>
+  //<![CDATA[
+    (function(){function c(a){this.local_start_time=new Date;this.settings={cookie_name:"request_time"};for(var b in a)this.settings[b]=a[b];this.get_remote_offset()}c.prototype.get_remote_offset=function(){this.cookie_value=this.read_cookie();var a=new Date(this.cookie_value);if(!this.cookie_value||"Invalid Date"===a.toString()){if(this.remote_offset=this.read_cookie("local_offset"))this.remote_offset=parseInt(this.remote_offset,10)}else this.remote_offset=a-this.local_start_time;"undefined"!==typeof this.remote_offset&& !isNaN(this.remote_offset)?(document.cookie="local_offset="+this.remote_offset+"; path=/",this.is_set=!0):this.is_set=!1};c.prototype.time_units=[["milliseconds",1],["seconds",1E3],["minutes",6E4],["hours",36E5],["days",864E5]];c.prototype.get_units_in_interval=function(a,b){var d=a.replace(/^\w/,function(d){return"get"+d.toUpperCase()});return b[d]()};c.prototype.milliseconds_in_day=function(a){"undefined"===typeof a&&(a=new Date);for(var b=0,d=this.time_units.length-2;0<=d;d--)b+=this.get_units_in_interval(this.time_units[d][0], a)*this.time_units[d][1];return b};c.prototype.milliseconds_in_interval=function(a,b){return this.milliseconds_in_day(b)%a};c.prototype.milliseconds_to_next_interval=function(a,b){return a-this.milliseconds_in_interval(a,b)};c.prototype.pluralize=function(a,b){1===b&&(a=a.replace(/s$/,""));return a};c.prototype.read_cookie=function(a){for(var b=window.document.cookie.split(";"),a=(a||this.settings.cookie_name)+"=",d=0;d<b.length;d++){for(var e=b[d];" "==e.charAt(0);)e=e.substring(1,e.length);if(0== e.indexOf(a))return b=e.substring(a.length,e.length),decodeURIComponent(b).replace(/\+/g," ")}return null};c.prototype.destroy_cookie=function(a){var b=new Date;a||(a=this.settings.cookie_name);b.setTime(b.getTime()-864E5);window.document.cookie=a+"=; expires="+b.toGMTString()+"; path=/"};c.prototype.get_remote_time=function(){var a=new Date,b=a.getTime()+this.remote_offset;return a=a.setTime(b)};window.ksr_page_clock=new c})(); (function(){function c(d,a,b){if(d){this.options={unit_base:{seconds:119,minutes:119,hours:72,days:0},end_phrase:d.getAttribute("data-word")||"to go",count_down:d.getAttribute("data-dynamic")||!1};for(k in b)this.options[k]=b[k];this.clock=a;this.time_units=this.clock.time_units.slice(1);this.element=d;this.clock.is_set&&this.attach()}}function a(){this.elements=[];this.attach()}var b=function(d,a){var b=a||window.document.body,c=d.split("."),g=c[c.length-1],c=1<c.length&&c[0]?c[0]:"*";if(window.document.getElementsByClassName)return b.getElementsByClassName(g); if(b.querySelectorAll)return b.querySelectorAll(d);for(var c=b.getElementsByTagName(c),h=[],i=0,f;f=c[i];i++)b=RegExp("(^|\\s)"+g+"(\\s|$)"),(""+f.className).match(b)&&h.push(f);return h};c.prototype.get_remaining_time=function(){var d=this.remote_end_time-this.clock.get_remote_time();0>d&&(d=0);return d};c.prototype.get_current_unit=function(){for(var d,a=0;a<this.time_units.length&&!(d=this.time_units[a],this.get_remaining_time()<=this.options.unit_base[d[0]]*d[1]);a++);return d};c.prototype.update_element= function(){var a=this.get_current_unit(),b=Math.floor(this.get_remaining_time()/a[1]);isNaN(b)||(this.number_element.innerHTML=b,this.text_element.innerHTML=this.clock.pluralize(a[0],b)+" "+this.options.end_phrase)};c.prototype.valid=function(){return!(!this.number_element||!this.text_element)};c.prototype.attach=function(){function a(){c.update_element();if(c.options.count_down&&0<c.get_remaining_time()){var b=c.get_current_unit();this.timeout=window.setTimeout(a,c.clock.milliseconds_to_next_interval(b[1]))}} var c=this;if(this.remote_end_time_string=this.element.getAttribute("data-end_time"))this.remote_end_time_string.match(/^\d+$/)?(this.remote_end_time=new Date,this.remote_end_time.setTime(this.remote_end_time_string)):this.remote_end_time=new Date(this.remote_end_time_string),this.number_element=b(".num",this.element)[0],this.text_element=b(".text",this.element)[0],this.element.ksr_page_timer=!0,this.valid()&&a()};c.prototype.cancel=function(){this.timeout&&clearTimeout(this.timeout)};a.prototype.loading= !0;a.prototype.stop_finding=function(){this.attach_timers();this.loading=!1;document.addEventListener?document.removeEventListener("DOMContentLoaded",this.stop_finding,!1):document.attachEvent&&"complete"===document.readyState&&document.detachEvent("onreadystatechange",this.stop_finding)};a.prototype.bind_ready=function(){var a=this,b=function(){a.stop_finding.call(a)};document.addEventListener?(document.addEventListener("DOMContentLoaded",b,!1),window.addEventListener("load",b,!1)):document.attachEvent&& (document.attachEvent("onreadystatechange",b),window.attachEvent("onload",b))};a.prototype.attach_timers=function(){for(var a=b("div.ksr_page_timer"),e=0;e<a.length;e++)a[e].ksr_page_timer||(new c(a[e],window.ksr_page_clock),this.elements.push(a[e]))};a.prototype.attach=function(){var a=this;this.bind_ready();(function(){a.attach_timers();a.loading&&window.setTimeout(function(){a.attach_timers()},200)})()};window.ProjectTimer=c;new a})();
+  //]]>
+</script>
+
+<script class="template" id="template-widgets__video_embed_code" type="text/x-tmpl-mustache"><iframe width="{{width}}" height="{{height}}" src="{{{path}}}" frameborder="0" scrolling="no"> </iframe>
+</script><script class="template" id="template-projects__baseball_card_tall" type="text/x-tmpl-mustache"><div class="project-card-wrap project-card-wrap-tall border bg-white rounded clip">
+  <div class="project-card relative project-live {{#successful?}}successful{{/successful?}}">
+    <div class="project-thumbnail pt1 pl1 pr1">
+      <a href="{{urls.web.project}}" target="">
+        <img alt="Photo-little" class="projectphoto-little" src="{{photo.little}}" class="fit">
+      </a>
+    </div>
+    <div class="project-card-interior p1 h6 grey-dark">
+      <h6 class="project-title">
+        <a href="{{urls.web.project}}" target="" class="green-dark">{{name}}</a>
+      </h6>
+      <p class="mb1 ellipsis">
+        by
+        {{creator.name}}
+      </p>
+      <p class="blurb">
+        {{blurb}}
+      </p>
+    </div>
+    <div class="absolute-bottom bg-white rounded-bottom">
+
+      {{#location}}
+        <ul class="p1 list project-meta no-margin h6">
+          <li class="ellipsis">
+            <a href="{{location.urls.web.discover}}" data-location="{{location_json}}" class="grey-dark">
+              <span class="ss-icon ss-location"></span>
+              <span class="location-name">{{location.displayable_name}}</span>
+            </a>
+          </li>
+        </ul>
+      {{/location}}
+
+      <div class="project-stats-wrap pb1 pl1 pr1">
+
+        {{#failed?}}
+          <div class='project-status project-failed h6'>
+            <strong> Funding Unsuccessful</strong><br />
+            <span class="grey-dark">Project ended on {{formatted_deadline}}</span>
+          </div>
+        {{/failed?}}
+
+        {{#canceled?}}
+          <div class='project-status project-canceled h6'>
+            <strong> Funding Canceled</strong><br />
+            <span class="grey-dark">Project canceled on {{formatted_state_changed_at}}</span>
+          </div>
+        {{/canceled?}}
+
+        {{#successful?}}
+          <div class='project-pledged-successful bg-green white h6 pl1 pr1 mb1'>
+            <strong>Successful!</strong>
+          </div>
+        {{/successful?}}
+
+        {{#live_or_successful?}}
+          {{#live?}}
+            <div class="project-pledged-wrap bg-grey clip mb1">
+              <div class="project-pledged bg-green full-height" style="width: {{percent_raised_to_100}}%"></div>
+            </div>
+          {{/live?}}
+          <ul class="project-stats list no-margin h6 no-wrap">
+            <li class="first funded inline-block mr1">
+              <strong class="block h6">{{percent_raised_rounded}}%</strong>
+              <span class="grey-dark">funded</span>
+            </li>
+            <li class="pledged inline-block mr1">
+              <strong class="block h6">{{currency_symbol}}{{formatted_money}}</strong>
+              <span class="grey-dark">pledged</span>
+            </li>
+            {{#successful?}}
+              <li class="last successful inline-block">
+                <strong class="block h6">Funded</strong>
+                <div class="deadline grey-dark">{{formatted_deadline}}</div>
+              </li>
+            {{/successful?}}
+            {{#live?}}
+              <li class="last ksr_page_timer inline-block" data-end_time="{{javascript_deadline}}">
+                <strong class="block h6">
+                  <div class="num">30</div>
+                </strong>
+                <div class="span text grey-dark" data-word="left">days to go</div>
+              </li>
+            {{/live?}}
+          </ul>
+        {{/live_or_successful?}}
+      </div>
+    </div>
+  </div>
+</div>
+
+{{#friends_backing?}}
+  <div class="friend_project_context">
+    <div class="friend_facepile">
+      {{#truncated_friends}}
+        <img src="{{avatar.thumb}}" class="{{#has_metadata?}}small{{/has_metadata?}}">
+      {{/truncated_friends}}
+    </div>
+    <p class="friend_namepile">
+      {{{escaped_sentence}}}
+    </p>
+  </div>
+{{/friends_backing?}}
+</script><script class="template" id="template-projects__video_mode" type="text/x-tmpl-mustache"><a href='#' id='video_mode_close' class='close_button z2'><span class='ss-icon ss-delete'></span></a>
+
+<div class='title_card z1 {{context_classes}}' style="display:none;">
+  <div class='interior'>
+    <h2 class='project_title normal_weight'>{{name}}</h2>
+    <p class='blurb'>{{blurb}}</p>
+    <nav class='bar'>
+      <a id='play_button' class='left play' href='#'>
+        <span class='play_active'>
+          <span class='ss-icon ss-play'></span>
+          Play
+        </span>
+        <span class='pause_active'>
+          <span class='ss-icon ss-pause'></span>
+          Pause
+        </span>
+      </a>
+      {{#logged_in}}
+        <div class='remind right'>
+          {{#if_not_starred}}
+            <a class='follow' href='{{urls.web.project}}/watch'><span class='ss-icon ss-star'></span></a>
+          {{/if_not_starred}}
+          {{#if_starred}}
+            <a class='unfollow' href='{{urls.web.project}}/unwatch'><span class='ss-icon ss-star active'></span></a>
+          {{/if_starred}}
+        </div>
+      {{/logged_in}}
+      <a class='right explore button button_green small' href='#'>Explore this project</a>
+    </nav>
+  </div>
+</div>
+
+<div class='channel_controls z1'>
+  <a href='#' class='{{#playlist_is_location}}selected {{/playlist_is_location}}location'>Something else near {{location.first_name}} <span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_featured}}selected {{/playlist_is_featured}}featured'>Something different<span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_category}}selected {{/playlist_is_category}}category'>Something else in {{category.name}} <span class='ss-icon ss-navigateright'></span></a>
+</div>
+
+<div class='project_video' style='background-image: url('{{photo.full}}')'>
+  <div class='cover'>
+    <video>
+      <source src='{{video.high}}' type='video/mp4'/>
+      <source src='{{video.webm}}' type='video/webm'/>
+    </video>
+  </div>
+</div>
+</script><script class="template" id="template-site__video_mode_fourohfour" type="text/x-tmpl-mustache"><section class='four_oh_four'>
+  <p class='big_type'>
+    Looks like you've reached the end of the line! <br />Check out <a class="another" href='#'>another channel</a> or <a href='/discover'>browse projects in discover</a>.
+  </p>
+</section>
+</script>
+
+<script id="schwamm_formatting_options" type="text/javascript">
+//<![CDATA[
+(function(){window.formatters = window.formatters || {}; var formatting_options = {"distance_date_intervals":[[5,"just now"],[29,"less than a minute ago"],[89,"1 minute ago"],[2640,"%m minutes ago"],[5340,"about 1 hour ago"],[82800,"about %h hours ago"],[147600,"1 day ago"],[604800,"%d days ago"],[15552000,"on %t"],[0,"on %y"]],"currency_symbol_mappings":{"AFN":"\u060b","ALL":"Lek","ARS":"$","AUD":"$","AWG":"\u0192","AZN":"\u043c\u0430\u043d","BAM":"KM","BBD":"$","BGN":"\u043b\u0432","BMD":"$","BND":"$","BOB":"$b","BRL":"R$","BSD":"$","BWP":"P","BYR":"p.","BZD":"BZ$","CAD":"$","CLP":"$","CNY":"\u00a5","COP":"$","CRC":"\u20a1","CUP":"\u20b1","CZK":"K\u010d","DKK":"kr","DOP":"RD$","EGP":"\u00a3","EUR":"\u20ac","FJD":"$","FKP":"\u00a3","GBP":"\u00a3","GIP":"\u00a3","GTQ":"Q","GYD":"$","HKD":"$","HNL":"L","HRK":"kn","HUF":"Ft","IDR":"Rp","ILS":"\u20aa","IRR":"\ufdfc","ISK":"kr","JMD":"J$","JPY":"\u00a5","KGS":"\u043b\u0432","KHR":"\u17db","KPW":"\u20a9","KRW":"\u20a9","KYD":"$","KZT":"\u043b\u0432","LAK":"\u20ad","LBP":"\u00a3","LKR":"\u20a8","LRD":"$","LTL":"Lt","LVL":"Ls","MKD":"\u0434\u0435\u043d","MNT":"\u20ae","MUR":"\u20a8","MXN":"$","MYR":"RM","MZN":"MT","NAD":"$","NGN":"\u20a6","NIO":"C$","NOK":"kr","NPR":"\u20a8","NZD":"$","OMR":"\ufdfc","PAB":"B/.","PEN":"S/.","PHP":"\u20b1","PKR":"\u20a8","PLN":"z\u0142","PYG":"Gs","QAR":"\ufdfc","RON":"lei","RSD":"\u0414\u0438\u043d.","RUB":"\u0440\u0443\u0431","SAR":"\ufdfc","SBD":"$","SCR":"\u20a8","SEK":"kr","SGD":"$","SHP":"\u00a3","SOS":"S","SRD":"$","SVC":"$","SYP":"\u00a3","THB":"\u0e3f","TRY":"TL","TTD":"TT$","TWD":"NT$","UAH":"\u20b4","USD":"$","UYU":"$U","UZS":"\u043b\u0432","VEF":"Bs","VND":"\u20ab","YER":"\ufdfc","ZAR":"R"},"currency_trailing_code_mappings":{"AUD":true,"CAD":true,"NZD":true,"USD":true},"currency_formats":["money","shorter_money"]}; for (key in formatting_options) {window.formatters[key] = formatting_options[key]};}());
+//]]>
+</script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("begin_base.js_tag");}
+  //]]>
+</script>
+<script src="https://d297h9he240fqh.cloudfront.net/assets/packages/base-45cdab84617ddfb8905b7cddc8500c19.js" type="text/javascript"></script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("end_base.js_tag");}
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    document.domain='kickstarter.com';
+  //]]>
+</script>
+
+<iframe height="0" id="api_xdreceiver" src="https://api.kickstarter.com/xdreceiver/85e6.html" style="display: none;" width="0"></iframe>
+
+
+
+<div id="fb-root"></div>
+<script>
+  //<![CDATA[
+    var channelUrl = window.location.protocol + "//" + window.location.host + "/channel.html",
+      skip_autologin = $('body').is('.skip_autologin');
+    
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId: window.fb_app_id,
+        channelUrl: channelUrl,
+        status: true,    // check login status
+        cookie: true,    // enable cookies to allow the server to access the session
+        xfbml: true,     // parse XFBML
+        logging: false   // turn off logging
+      });
+    
+      FB.getLoginStatus(function (response) {
+        if (response.status === 'connected') {
+          if (read_cookie("logout_from_fb")) {
+            FB.logout();
+            destroy_cookie("logout_from_fb");
+          } else if (!skip_autologin) {
+            $.get("/fb/autologin", {'fbsr': response.authResponse.signedRequest});
+          } else if (false && 0 == response.authResponse.userID) {
+            $.get("/fb/refresh", {'fbsr': response.authResponse.signedRequest});
+          }
+        } else {
+          if (read_cookie("logout_from_fb")) {
+            destroy_cookie("logout_from_fb");
+          }
+        }
+      })
+    
+      $(document).trigger('fb:loaded');
+    };
+    
+    
+    // Load the SDK Asynchronously
+    (function(d){
+      var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+      js = d.createElement('script'); js.id = id; js.async = true;
+      js.src = "//connect.facebook.net/en_US/all.js";
+      d.getElementsByTagName('head')[0].appendChild(js);
+    }(document));
+  //]]>
+</script>
+
+
+</body>
+</html>

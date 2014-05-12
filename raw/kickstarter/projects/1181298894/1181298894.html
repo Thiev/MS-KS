@@ -1,0 +1,2443 @@
+<!DOCTYPE html>
+<html class="projects_show  fontface no-js" lang="en">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# kickstarter: http://ogp.me/ns/fb/kickstarter#">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-5.newrelic.com","errorBeacon":"jserror.newrelic.com","licenseKey":"b04b883ad2","applicationID":"11086","transactionName":"cFteRUULX1wHFhtIEFxeVVJDFxxDCgtD","queueTime":17,"applicationTime":2142,"ttGuid":"","agentToken":null,"agent":"js-agent.newrelic.com/nr-411.min.js"}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"Vw4BVEVSCQMIUg=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e){function n(t,e,n){n||(n={});for(var r=o[t],a=r&&r.length||0,s=n[i]||(n[i]={}),u=0;a>u;u++)r[u].apply(s,e);return s}function r(t,e){var n=o[t]||(o[t]=[]);n.push(e)}var o={},i="nr@context";e.exports={on:r,emit:n}},{}],2:[function(t){function e(t,e,n,i,s){return u?u-=1:r("err",[s||new UncaughtException(t,e,n)]),"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t(5),a=window.onerror,s=!1,u=0;t("loader").features.push("err"),window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(d){"stack"in d&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(4),s=!0)}i.on("fn-start",function(){s&&(u+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&u>0&&(u-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:4,3:3,4:6,5:1,6:14,handle:"D5DuLP",loader:"G9z0Bl"}],3:[function(t){function e(t){r.inPlace(t,["addEventListener","removeEventListener"],"-",n)}function n(t){return t[1]}var r=t(1),o=(t(3),t(2));if(e(window),"getPrototypeOf"in Object){for(var i=document;i&&!i.hasOwnProperty("addEventListener");)i=Object.getPrototypeOf(i);i&&e(i);for(var a=XMLHttpRequest.prototype;a&&!a.hasOwnProperty("addEventListener");)a=Object.getPrototypeOf(a);a&&e(a)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&e(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=e["nr@wrapped"]?t[1]=e["nr@wrapped"]:e["nr@wrapped"]=t[1]=r(e,"fn-"):"function"==typeof e.handleEvent&&r.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:15,2:1,3:14}],4:[function(t){var e=(t(3),t(1)),n=t(2);e.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=e(t[0],"fn-")})},{1:15,2:1,3:14}],5:[function(t){function e(t){var e=t[0];"string"==typeof e&&(e=new Function(e)),t[0]=n(e,"fn-")}var n=(t(3),t(1)),r=t(2);n.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",e)},{1:15,2:1,3:14}],6:[function(t){function e(){o.inPlace(this,s,"fn-")}function n(t,e){o.inPlace(e,["onreadystatechange"],"fn-")}function r(t,e){return e}var o=t(1),i=t(2),a=window.XMLHttpRequest,s=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];window.XMLHttpRequest=function(t){var n=new a(t);try{i.emit("new-xhr",[],n),o.inPlace(n,["addEventListener","removeEventListener"],"-",function(t,e){return e}),n.addEventListener("readystatechange",e,!1)}catch(r){try{i.emit("internal-error",r)}catch(s){}}return n},window.XMLHttpRequest.prototype=a.prototype,o.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",r),i.on("send-xhr-start",n),i.on("open-xhr-start",n)},{1:15,2:1}],7:[function(t){function e(){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;u>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,d="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=e(d);if(f&&(r.rxSize=f),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}t("loader").features.push("xhr");var o=t("handle"),i=t(1),a=t(5),s=["load","error","abort","timeout"],u=s.length,d=t(2);t(3),t(4),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var d=e(o);d&&(r.txSize=d)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",e)}catch(r){}}};for(var f=0;u>f;f++)n.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&e()},{1:8,2:11,3:3,4:6,5:1,handle:"D5DuLP",loader:"G9z0Bl"}],8:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e){var n=r[t];return n?n.apply(this,e):(o[t]||(o[t]=[]),void o[t].push(e))}var r={},o={};e.exports=n,n.queues=o,n.handlers=r},{}],11:[function(t,e){function n(t){if(!t||"object"!=typeof t&&"function"!=typeof t)return-1;if(t===window)return 0;if(o.call(t,"__nr"))return t.__nr;try{return Object.defineProperty(t,"__nr",{value:r,writable:!0,enumerable:!1}),r}catch(e){return t.__nr=r,r}finally{r+=1}}var r=1,o=Object.prototype.hasOwnProperty;e.exports=n},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&u&&u.body){p.proto="https"===c.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=u.createElement("script");e.src=p.proto+t.agent,u.body.appendChild(e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,u=s.document,d="addEventListener",f="attachEvent",c=(""+location).split("?")[0],p=e.exports={offset:i(),origin:c,features:[]};u[d]?(u[d]("DOMContentLoaded",o,!1),s[d]("load",n,!1)):(u[f]("onreadystatechange",r),s[f]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],14:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],15:[function(t,e){function n(t,e,r,s){function nrWrapper(){try{var n,a=u(arguments),d=this,f=r&&r(a,d)||{}}catch(c){i([c,"",[a,d,s],f])}o(e+"start",[a,d,s],f);try{return n=t.apply(d,a)}catch(p){throw o(e+"err",[a,d,p],f),p}finally{o(e+"end",[a,d,n],f)}}return a(t)?t:(e||(e=""),nrWrapper[n.flag]=!0,nrWrapper)}function r(t,e,r,o){r||(r="");var i,s,u,d="-"===r.charAt(0);for(u=0;u<e.length;u++)s=e[u],i=t[s],a(i)||(t[s]=n(i,d?s+r:r,o,s,t))}function o(t,e,n){try{s.emit(t,e,n)}catch(r){i([r,t,e,n])}}function i(t){try{s.emit("internal-error",t)}catch(e){}}function a(t){return!(t&&"function"==typeof t&&t.apply&&!t[n.flag])}var s=t(1),u=t(2);e.exports=n,n.inPlace=r,n.flag="nr@wrapper"},{1:1,2:14}]},{},["G9z0Bl",2,7]);</script><script>
+  //<![CDATA[
+    docElement = this.document.documentElement;
+    docElement.className=docElement.className.replace(/\bno-js\b/,'') + 'js';
+  //]]>
+</script>
+<title>MONT-DE-CASTEL by OLDTOWN GAMETALES &mdash; Kickstarter</title><script>
+  //<![CDATA[
+    window.report_errors = true;
+    window.honeybadger_configuration = {
+      api_key : "02ab109335c0dd1a93506d92f22217a7",
+      environment : "production",
+      component : "projects",
+      action : "show",
+      onerror : false
+    };
+  //]]>
+</script>
+
+
+<!--[if lt IE 9]>
+  <script src="//html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta content="telephone=no" name="format-detection">
+
+<!--[if !IE]> -->
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base-9f623ad5d021a188cfb2d68a0cdf7a7b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<!-- <![endif]-->
+<!--[if IE]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base_blessed-2640c72487552f9a2ef9f2620b4af860.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<!--[if lte IE 9]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_nine-a93fe10530f175f96c4078b7e070d7e1.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 8]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_eight-f75aeb274436f94a0d243774456b1c62.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 7]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie-c019c01acd3a96588b346cf577a3504f.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_seven-5a3d2cef660cd281fd844b04b2397dbb.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if IE 6]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_six-e4d3caf76e405fe19aee6ece8bda701b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<link href="https://d297h9he240fqh.cloudfront.net/favicon.png" rel="icon" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-precomposed-7b603dba7cf80e4acc57d94a991bebbd.png" rel="apple-touch-icon-precomposed" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-ipad-precomposed-3176f72977daf43dee3b0d348484dc01.png" rel="apple-touch-icon-precomposed" sizes="72x72" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-iphone4-precomposed-b93b70168cd8492c843d0fea873c7f83.png" rel="apple-touch-icon-precomposed" sizes="114x114" type="image/png">
+<link href="https://www.kickstarter.com/services/oembed?url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2F118959898%2Fmont-de-castel" rel="alternate" title="MONT-DE-CASTEL Script Tag oEmbed" type="application/json+oembed">
+<link rel="alternate" type="application/atom+xml" title="MONT-DE-CASTEL : Kickstarter" href="https://www.kickstarter.com/projects/118959898/mont-de-castel/posts.atom" />
+<meta property="twitter:app:id:iphone" content="596961532"/>
+<meta property="twitter:app:name:iphone" content="Kickstarter"/>
+<meta property="twitter:app:url:iphone" content="ksr://www.kickstarter.com/projects/118959898/mont-de-castel"/>
+<meta name="video_height" content="360"/>
+<meta name="video_width" content="640"/>
+<meta name="video_type" content="application/x-shockwave-flash"/>
+<meta name="title" content="Kickstarter &gt;&gt; MONT-DE-CASTEL by OLDTOWN GAMETALES"/>
+<meta name="description" content="OLDTOWN GAMETALES is raising funds for MONT-DE-CASTEL on Kickstarter! 
+
+ A unique adventure with Exploration,
+Drama and Music!
+Be a composer,
+a producer, a conductor, a detective..."/>
+<meta name="robots" content="noindex"/>
+<meta property="og:title" content="MONT-DE-CASTEL"/>
+<meta property="og:type" content="kickstarter:project"/>
+<meta property="og:image" content="https://s3.amazonaws.com/ksr/projects/812378/photo-main.jpg?1397861929"/>
+<meta property="og:url" content="https://www.kickstarter.com/projects/118959898/mont-de-castel"/>
+<meta property="og:site_name" content="Kickstarter"/>
+<meta property="fb:app_id" content="69103156693"/>
+<meta property="og:description" content="A unique adventure with Exploration,
+Drama and Music!
+Be a composer,
+a producer, a conductor, a detective..."/>
+<meta property="kickstarter:creator" content="https://www.kickstarter.com/profile/118959898"/>
+<meta property="twitter:url:landing_url" content="https://www.kickstarter.com/projects/118959898/mont-de-castel"/>
+<meta property="twitter:card" content="2427656750:kickstarter_project"/>
+<meta property="twitter:site" content="@kickstarter"/>
+<meta property="twitter:site:id" content="16186995"/>
+<meta property="twitter:text:title" content="MONT-DE-CASTEL"/>
+<meta property="twitter:text:artist" content="OLDTOWN GAMETALES"/>
+<meta property="twitter:text:backers" content="24"/>
+<meta property="twitter:text:pledged" content="£2,048"/>
+<meta property="twitter:text:time" content="0 seconds"/>
+<meta property="twitter:text:location" content="London, UK"/>
+<meta property="twitter:image:location_image" content="https://d3mlfyygrfdi2i.cloudfront.net/b40e/pin.png"/>
+<meta property="twitter:text:description" content="A unique adventure with Exploration,
+Drama and Music!
+Be a composer,
+a producer, a conductor, a detective..."/>
+<meta property="twitter:image:media" content="https://s3.amazonaws.com/ksr/projects/812378/photo-main.jpg?1397861929"/>
+<meta property="twitter:image:width" content="640"/>
+<meta property="twitter:image:height" content="480"/>
+<meta property="twitter:player:stream:url" content="https://d2pq0u4uni88oo.cloudfront.net/projects/812378/video-354582-h264_base.mp4"/>
+<meta property="twitter:player:stream:content" content="video/mp4"/>
+<meta property="twitter:player:url" content="https://www.kickstarter.com/projects/118959898/mont-de-castel/widget/video.html"/>
+<meta property="twitter:player:height" content="360"/>
+<meta property="twitter:player:width" content="640"/>
+<meta property="twitter:maxage" content="60"/>
+<meta property="og:video" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F812378%2Fvideo-354582-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F812378%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+OLDTOWN+GAMETALES&amp;project_title=MONT-DE-CASTEL&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2F118959898%2Fmont-de-castel&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:secure_url" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F812378%2Fvideo-354582-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F812378%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+OLDTOWN+GAMETALES&amp;project_title=MONT-DE-CASTEL&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2F118959898%2Fmont-de-castel&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:height" content="360"/>
+<meta property="og:video:width" content="640"/>
+<meta property="og:video:type" content="application/x-shockwave-flash"/>
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="/feOS4isKwV4jjoD7KRdsYn3UxKcDaS7LAdGRNLSctU=" name="csrf-token" />
+<script type="text/javascript">
+  var _sift = _sift || [];
+  _sift.push(['_setAccount', '637102']);
+  _sift.push(['_setUserId', '']);
+  _sift.push(['_trackPageview']);
+
+  (function() {
+    function loadSift() {
+      var sift, s;
+      if (root.visitor_id) {
+        _sift.push(['_setSessionId', root.visitor_id]);
+      }
+      sift = document.createElement('script');
+      sift.type = 'text/javascript';
+      sift.async = true;
+      sift.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dtlilztwypawv.cloudfront.net/s.js';
+      s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(sift, s);
+    }
+    if (window.attachEvent) {
+      window.attachEvent('onload', loadSift);
+    } else {
+      window.addEventListener('load', loadSift, false);
+    }
+  })();
+</script>
+<link href="http://kck.st/1epCwc8" rel="shorturl">
+<link href="https://www.kickstarter.com/projects/118959898/mont-de-castel" rel="canonical">
+<link href="https://s3.amazonaws.com/ksr/projects/812378/photo-med.jpg?1397861929" rel="image_src">
+<link href="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F812378%2Fvideo-354582-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F812378%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+OLDTOWN+GAMETALES&amp;project_title=MONT-DE-CASTEL&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2F118959898%2Fmont-de-castel&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque" rel="video_src">
+<script>
+  //<![CDATA[
+    window.current_checkout = "{&quot;id&quot;:0,&quot;domestic&quot;:null,&quot;amount&quot;:0.0,&quot;updated_at&quot;:0,&quot;created_at&quot;:0}";
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.current_ip = '94.209.101.212';
+    window.current_ip_datacenter = 'false';
+    window.enabled_features = {"elasticsearch":true,"security_history_read":true,"security_history_write":true,"advanced_discovery_es":true,"ios_crashlytics":true,"ios_mixpanel":true,"stories_veronica_mars":true,"veronica_mars_hero":true,"password_reset_banner":true};
+    window.fb_app_id = '69103156693';
+    
+    var _sf_startpt=(new Date()).getTime();
+    
+    window.current_project = "{&quot;id&quot;:1181298894,&quot;name&quot;:&quot;MONT-DE-CASTEL&quot;,&quot;blurb&quot;:&quot;A unique adventure with Exploration,\\nDrama and Music!\\nBe a composer,\\na producer, a conductor, a detective...&quot;,&quot;goal&quot;:35000.0,&quot;pledged&quot;:2048.0,&quot;state&quot;:&quot;failed&quot;,&quot;slug&quot;:&quot;mont-de-castel&quot;,&quot;disable_communication&quot;:false,&quot;country&quot;:&quot;GB&quot;,&quot;currency&quot;:&quot;GBP&quot;,&quot;currency_symbol&quot;:&quot;\\u00a3&quot;,&quot;currency_trailing_code&quot;:false,&quot;deadline&quot;:1398030429,&quot;state_changed_at&quot;:1398030430,&quot;created_at&quot;:1388496802,&quot;launched_at&quot;:1394574429,&quot;backers_count&quot;:24,&quot;photo&quot;:{&quot;full&quot;:&quot;https://s3.amazonaws.com/ksr/projects/812378/photo-full.jpg?1397861929&quot;,&quot;ed&quot;:&quot;https://s3.amazonaws.com/ksr/projects/812378/photo-ed.jpg?1397861929&quot;,&quot;med&quot;:&quot;https://s3.amazonaws.com/ksr/projects/812378/photo-med.jpg?1397861929&quot;,&quot;little&quot;:&quot;https://s3.amazonaws.com/ksr/projects/812378/photo-little.jpg?1397861929&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/projects/812378/photo-small.jpg?1397861929&quot;,&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/projects/812378/photo-thumb.jpg?1397861929&quot;,&quot;1024x768&quot;:&quot;https://s3.amazonaws.com/ksr/projects/812378/photo-1024x768.jpg?1397861929&quot;,&quot;1536x1152&quot;:&quot;https://s3.amazonaws.com/ksr/projects/812378/photo-1536x1152.jpg?1397861929&quot;},&quot;creator&quot;:{&quot;id&quot;:118959898,&quot;name&quot;:&quot;OLDTOWN GAMETALES&quot;,&quot;avatar&quot;:{&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/2154818/LOGO_6_4for3.thumb.jpg?1392823267&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/2154818/LOGO_6_4for3.small.jpg?1392823267&quot;,&quot;medium&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/2154818/LOGO_6_4for3.medium.jpg?1392823267&quot;},&quot;urls&quot;:{&quot;web&quot;:{&quot;user&quot;:&quot;https://www.kickstarter.com/profile/118959898&quot;},&quot;api&quot;:{&quot;user&quot;:&quot;https://api.kickstarter.com/v1/users/118959898?signature=1399955767.84ff16208598fea797780fe42bda39e490f175d1&quot;}}},&quot;location&quot;:{&quot;id&quot;:44418,&quot;name&quot;:&quot;London&quot;,&quot;slug&quot;:&quot;london-gb&quot;,&quot;short_name&quot;:&quot;London, UK&quot;,&quot;displayable_name&quot;:&quot;London, UK&quot;,&quot;country&quot;:&quot;GB&quot;,&quot;state&quot;:&quot;England&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/london-gb&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/london-gb&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1399951820.4a5a7b0ecc6c7d5db9cf8dec147595e90d6d2ec1&amp;woe_id=44418&quot;}}},&quot;category&quot;:{&quot;id&quot;:35,&quot;name&quot;:&quot;Video Games&quot;,&quot;slug&quot;:&quot;games/video games&quot;,&quot;position&quot;:7,&quot;parent_id&quot;:12,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;http://www.kickstarter.com/discover/categories/games/video%20games&quot;}}},&quot;urls&quot;:{&quot;web&quot;:{&quot;project&quot;:&quot;https://www.kickstarter.com/projects/118959898/mont-de-castel&quot;,&quot;project_short&quot;:&quot;http://kck.st/1epCwc8&quot;,&quot;updates&quot;:&quot;https://www.kickstarter.com/projects/118959898/mont-de-castel/posts&quot;},&quot;api&quot;:{&quot;project&quot;:&quot;https://api.kickstarter.com/v1/projects/1181298894?signature=1399955767.343048a27bdd1a8450adffbca080024eaa638db4&quot;,&quot;comments&quot;:&quot;https://api.kickstarter.com/v1/projects/1181298894/comments?signature=1399955767.265907bfc054e542613d2e05d096493ccdf28f4e&quot;,&quot;updates&quot;:&quot;https://api.kickstarter.com/v1/projects/1181298894/updates?signature=1399955767.f12c680bc66bbe35a488c40eb12763c961f3fa39&quot;}},&quot;updated_at&quot;:1398030432,&quot;failed_at&quot;:1398030430,&quot;video&quot;:{&quot;id&quot;:354582,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/812378/video-354582-h264_high.mp4?2014&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/812378/video-354582-h264_base.mp4?2014&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/812378/video-354582-webm.webm?2014&quot;,&quot;width&quot;:640,&quot;height&quot;:360,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/812378/video-354582-h264_base.jpg?2014&quot;},&quot;comments_count&quot;:3,&quot;updates_count&quot;:0,&quot;rewards&quot;:[{&quot;id&quot;:0,&quot;minimum&quot;:1,&quot;reward&quot;:&quot;No Reward&quot;},{&quot;id&quot;:2260628,&quot;minimum&quot;:5.0,&quot;reward&quot;:&quot;Other currencies est.: $8.2, \\u20ac6\\r\\n------------------------------------------------\\r\\n... be a Mont-de-Castel fan!\\r\\n-------------------------------------------------\\r\\nReceive a personalised signed photo of the Mont-de-Castel Puppet Company (digital) thanking your support. Your name will be listed in the \\&quot;Backers\\&quot; section of the game credits and in the development diary at the official website *.  You will have access to the Official Mont-de-Castel Community forums, with a unique \\&quot;Kickstarter Backer\\&quot; badge, where you get a place to speculate about the game, offer suggestions, and interact with the development team.\\r\\n------------------------------------------------\\r\\n* if explicitly required, your name will not be mentioned/listed&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1398902400,&quot;project_id&quot;:1181298894,&quot;backers_count&quot;:3,&quot;updated_at&quot;:1397902954},{&quot;id&quot;:2259175,&quot;minimum&quot;:10.0,&quot;reward&quot;:&quot;Other currencies est.: $16.3, \\u20ac12\\r\\n----------------------------------------------\\r\\n... be a Mont-de-Castel gamer!\\r\\n----------------------------------------------\\r\\nReceive a digital copy of the Mont-de-Castel game for your computer, along with a digital manual (PDF) at a special backer&#39;s price.  All previous rewards included.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1443657600,&quot;project_id&quot;:1181298894,&quot;backers_count&quot;:9,&quot;updated_at&quot;:1397979346},{&quot;id&quot;:2259176,&quot;minimum&quot;:17.0,&quot;reward&quot;:&quot;Other currencies est.: $28, \\u20ac20.5\\r\\n----------------------------------------------\\r\\n... be a Mont-de-Castel special gamer!\\r\\n----------------------------------------------\\r\\nReceive a Box Edition of the Mont-de-Castel Videogame, including a booklet manual, at a special backer&#39;s price. Rewards of \\u00a35 included \\r\\n-----------------------------------------------\\r\\n(please add 8\\u00a3 ($13, 10\\u20ac) for shipping).&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1443657600,&quot;project_id&quot;:1181298894,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1395783388},{&quot;id&quot;:2259180,&quot;minimum&quot;:20.0,&quot;reward&quot;:&quot;Other currencies est.: $32.6, \\u20ac24\\r\\n-----------------------------------------------\\r\\n... be a Mont-de-Castel listener!\\r\\n------------------------------------------------\\r\\nReceive a digital copy of the Mont-de-Castel Soundtrack. Rewards of \\u00a310 included.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1443657600,&quot;project_id&quot;:1181298894,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1392131227},{&quot;id&quot;:2260629,&quot;minimum&quot;:45.0,&quot;reward&quot;:&quot;Other currencies est.: $73, \\u20ac54\\r\\n----------------------------------------------\\r\\n... be a Mont-de-Castel collector!\\r\\n----------------------------------------------\\r\\nReceive a Collector&#39;s Edition Box of the Mont-de-Castel Videogame, signed by the authors, including a DVD copy of the Videogame, a booklet manual, a CD copy of the soundtrack, a DVD copy of a \\&quot;comics\\&quot; (bande-dessin\\u00e9e) book (PDF) with the Mont-de-Castel storytelling, and a DVD copy of the \\&quot;Making-of\\&quot;. Rewards of \\u00a35 included \\r\\n------------------------------------------------\\r\\n(please add 8\\u00a3 ($13, 10\\u20ac) for shipping).&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1443657600,&quot;project_id&quot;:1181298894,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1397341090},{&quot;id&quot;:2260644,&quot;minimum&quot;:80.0,&quot;reward&quot;:&quot;Other currencies est.: $130, \\u20ac97\\r\\n-------------------------------------------------\\r\\nMont-de-Castel Club Member  \\r\\n-------------------------------------------------                 \\r\\n... be a member of the Mont-de-Castel Club!\\r\\n-------------------------------------------------\\r\\nBecome a member of the Mont-de-Castel Club and cooperate directly with your ideas on the game development, in a restricted club\\u2019s forum, with recurrent personalised feedback from the team. Receive a Mont-de-Castel T-Shirt. You will have special thanks in the game credits. Rewards of \\u00a345 included.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1409529600,&quot;project_id&quot;:1181298894,&quot;backers_count&quot;:4,&quot;updated_at&quot;:1395968101},{&quot;id&quot;:2260648,&quot;minimum&quot;:200.0,&quot;reward&quot;:&quot;Other currencies est.: $326, \\u20ac241\\r\\n-------------------------------------------------\\r\\nMont-de-Castel Club Member\\r\\n------------------------------------------------\\r\\n... be present at Mont-de-Castel!\\r\\n------------------------------------------------\\r\\nYour name (or other of your choice, provided it is not considered a commercial in-game advertisement) inscribed in a game prop - as a book author, on a newspaper notice caption, on a show advertisement credits... Rewards of \\u00a380 included.&quot;,&quot;limit&quot;:40,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1433116800,&quot;project_id&quot;:1181298894,&quot;remaining&quot;:40,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1392893824},{&quot;id&quot;:2260663,&quot;minimum&quot;:200.0,&quot;reward&quot;:&quot;Other currencies est.: $326, \\u20ac241\\r\\n--------------------------------------------\\r\\nMont-de-Castel Club Member\\r\\n----------------------------------------------\\r\\n... your portrait at The Refuge!\\r\\n---------------------------------------------\\r\\nYour portrait (in \\u201csepia\\u201d old appearance) in a collective photo at The Refuge (or other prominent game scenario). Rewards of \\u00a380 included.&quot;,&quot;limit&quot;:40,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1433116800,&quot;project_id&quot;:1181298894,&quot;remaining&quot;:40,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1392894730},{&quot;id&quot;:2260650,&quot;minimum&quot;:350.0,&quot;reward&quot;:&quot;Other currencies est.: $489, \\u20ac362\\r\\n----------------------------------------------\\r\\nMont-de-Castel Club Member\\r\\n-----------------------------------------------\\r\\n... be referred at Mont-de-Castel!\\r\\n------------------------------------------------\\r\\nYour name (or other of your choice, provided it is not considered a commercial in-game advertisement) inscribed in a game prop with protagonism in the game storyline (explicitly referred by the main characters in a game TAKE) - as a book author, on a newspaper notice caption, on a show advertisement credits... Rewards of \\u00a380 included.&quot;,&quot;limit&quot;:10,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1427846400,&quot;project_id&quot;:1181298894,&quot;remaining&quot;:8,&quot;backers_count&quot;:2,&quot;updated_at&quot;:1397069887},{&quot;id&quot;:2260665,&quot;minimum&quot;:350.0,&quot;reward&quot;:&quot;Other currencies est.: $489, \\u20ac362\\r\\n-------------------------------------------------\\r\\n. Mont-de-Castel Club Member\\r\\n-------------------------------------------------\\r\\n.. your portrait well visible at The Refuge!\\r\\n-------------------------------------------------\\r\\nYour single portrait, you and your beloved, your family, or your friends,  in a framed photo (in \\u201csepia\\u201d old appearance) at The Refuge (or other prominent game scenario) . Rewards of \\u00a380 included.&quot;,&quot;limit&quot;:40,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1433116800,&quot;project_id&quot;:1181298894,&quot;remaining&quot;:40,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1392894946},{&quot;id&quot;:2260678,&quot;minimum&quot;:350.0,&quot;reward&quot;:&quot;Other currencies est.: $489, \\u20ac362\\r\\n------------------------------------------------\\r\\nMont-de-Castel Club Member\\r\\n-------------------------------------------------\\r\\nAdditional Designer\\r\\n-------------------------------------------------\\r\\n... be a writer at Mont-de-Castel!\\r\\n------------------------------------------------\\r\\nA one page text of your creation (a poem, a small tale, an anecdote **...) inside the game - in a book, magazine or newspaper (provided it is in accordance with the game ambience, accepted by the game developers team, and not considered offensive or a commercial in-game advertisement). You will have the name of your item with your name under \\&quot;Additional Designer\\&quot; in the credits, along with the development team. Rewards of \\u00a380 included.\\r\\n------------------------------------------------\\r\\n** in one of the five languages of Mont-de-Castel (english, french, portuguese, spanish and italian)&quot;,&quot;limit&quot;:40,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1433116800,&quot;project_id&quot;:1181298894,&quot;remaining&quot;:39,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1394665336},{&quot;id&quot;:2394389,&quot;minimum&quot;:500.0,&quot;reward&quot;:&quot;Other currencies est.: $815, \\u20ac603\\r\\n-------------------------------------------------\\r\\nMont-de-Castel Club Member\\r\\n-------------------------------------------------\\r\\nAdditional Designer\\r\\n-------------------------------------------------\\r\\n... be a notorious writer at Mont-de-Castel!\\r\\n-------------------------------------------------\\r\\nA small poem, story or tale ** (3-4 pages) of your creation inside the game (provided it is in accordance with the game ambience, accepted by the game developers team, and not considered offensive or a commercial in-game advertisement) in a in-game book, with handling pages, consultable by the player. You will have the name of your item with your name under \\&quot;Additional Designer\\&quot; in the credits, along with the development team. Rewards of \\u00a380 included.\\r\\n-------------------------------------------------\\r\\n** in one of the five languages of Mont-de-Castel (english, french, portuguese, spanish and italian)&quot;,&quot;limit&quot;:30,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1433116800,&quot;project_id&quot;:1181298894,&quot;remaining&quot;:30,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1392896108},{&quot;id&quot;:2260662,&quot;minimum&quot;:500.0,&quot;reward&quot;:&quot;Other currencies est.: $815, \\u20ac603\\r\\n-------------------------------------------------\\r\\nMont-de-Castel Club Member\\r\\n-------------------------------------------------\\r\\n... be notoriously considered at Mont-de-Castel!\\r\\n-------------------------------------------------\\r\\nYour name (or other of your choice, provided it is not considered a commercial in-game advertisement) inscribed in-game - as a street name, in a shop signboard, in a opera/theatre/concert poster referred as main author/conductor/performer... Rewards of \\u00a380 included.&quot;,&quot;limit&quot;:10,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1433116800,&quot;project_id&quot;:1181298894,&quot;remaining&quot;:10,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1392894518},{&quot;id&quot;:2260667,&quot;minimum&quot;:500.0,&quot;reward&quot;:&quot;Other currencies est.: $815, \\u20ac603\\r\\n-------------------------------------------------\\r\\nMont-de-Castel Club Member\\r\\n------------------------------------------------\\r\\n... your portrait notoriously visible at The Refuge!\\r\\n-------------------------------------------------\\r\\nYour single portrait, you and your beloved, your family, or your friends,  in a framed photo (in \\u201csepia\\u201d old appearance) at The Refuge (or other prominent game scenario), with protagonism in the game storyline (referred explicitly by the characters in a game TAKE). Rewards of \\u00a380 included.&quot;,&quot;limit&quot;:10,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1427846400,&quot;project_id&quot;:1181298894,&quot;remaining&quot;:10,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1392895147},{&quot;id&quot;:2260668,&quot;minimum&quot;:500.0,&quot;reward&quot;:&quot;Other currencies est.: $815, \\u20ac603\\r\\n-----------------------------------------------\\r\\nMont-de-Castel Club Member\\r\\n-------------------------------------------------\\r\\nAdditional Designer\\r\\n------------------------------------------------\\r\\n... be a painter at Mont-de-Castel!\\r\\n-----------------------------------------------\\r\\nA small piece of art of your creation (a small drawing, an engraving, a B/W photo...) inside a game prop - in a book page, a newspaper new,... (provided it is in accordance with the game ambience, accepted by the game developers team, and not considered offensive or a commercial in-game advertisement). You will have the name of your item with your name under \\&quot;Additional Designer\\&quot; in the credits, along with the development team. Rewards of \\u00a380 included.&quot;,&quot;limit&quot;:30,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1433116800,&quot;project_id&quot;:1181298894,&quot;remaining&quot;:29,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1396996529},{&quot;id&quot;:2394391,&quot;minimum&quot;:750.0,&quot;reward&quot;:&quot;Other currencies est.: $1223, \\u20ac905\\r\\n-------------------------------------------------\\r\\nMont-de-Castel Club Member\\r\\n-------------------------------------------------\\r\\nAdditional Designer\\r\\n-------------------------------------------------\\r\\n... be a musician at Mont-de-Castel!\\r\\n-------------------------------------------------\\r\\nCome to our studio and record your one version of the tune \\&quot;Trois Jeunes Tambours\\&quot; with your own musical instrument, to be available in the game as a choice for the Opera final performance; In alternative you can record a short music of your choice to be preformed in a rehearsal or warming-up team\\u2019s session (travel expenses &amp; accommodation to/in Lisbon - Portugal should be on your account). You will have the name of your item with your name under \\&quot;Additional Designer\\&quot; in the credits along with the development team. Rewards of \\u00a380 included.&quot;,&quot;limit&quot;:10,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1433116800,&quot;project_id&quot;:1181298894,&quot;remaining&quot;:10,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1392896277},{&quot;id&quot;:2260669,&quot;minimum&quot;:750.0,&quot;reward&quot;:&quot;Other currencies est.: $1223, \\u20ac905\\r\\n------------------------------------------------\\r\\nMont-de-Castel Club Member\\r\\n------------------------------------------------\\r\\nAdditional Designer\\r\\n------------------------------------------------\\r\\n... be a framed painter at Mont-de-Castel!\\r\\n-------------------------------------------------\\r\\nA piece of art of your creation (a painting, a draw, an engraving...) inside the game, properly framed (provided it is in accordance with the game ambience, accepted by the game developers team, and not considered offensive or a commercial in-game advertisement). You will have the name of your item with your name under \\&quot;Additional Designer\\&quot; in the credits, along with the development team. Rewards of \\u00a380 included.&quot;,&quot;limit&quot;:20,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1433116800,&quot;project_id&quot;:1181298894,&quot;remaining&quot;:20,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1392895511},{&quot;id&quot;:2260670,&quot;minimum&quot;:1000.0,&quot;reward&quot;:&quot;Other currencies est.: $1631, \\u20ac1206\\r\\n------------------------------------------------\\r\\nMont-de-Castel Club Member\\r\\n-------------------------------------------------\\r\\nAdditional Designer\\r\\n-------------------------------------------------\\r\\n... be a referred notorious painter at Mont-de-Castel!\\r\\n-------------------------------------------------\\r\\nA piece of art of your creation (a painting, a draw, an engraving...) inside the game (provided it is in accordance with the game ambience, accepted by the game developers team, and not considered offensive or a commercial in-game advertisement), referred explicitly in-game by the game characters in a TAKE. You will have the name of your item with your name under \\&quot;Additional Designer\\&quot; in the credits, along with the development team. Rewards of \\u00a380 included.&quot;,&quot;limit&quot;:10,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1427846400,&quot;project_id&quot;:1181298894,&quot;remaining&quot;:10,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1392895682},{&quot;id&quot;:2394392,&quot;minimum&quot;:1250.0,&quot;reward&quot;:&quot;Other currencies est.: $2038, \\u20ac1508\\r\\n-------------------------------------------------\\r\\nMont-de-Castel Club Member\\r\\n------------------------------------------------\\r\\nAdditional co-producer\\r\\n------------------------------------------------\\r\\n... be a Mont-de-Castel guest!\\r\\n------------------------------------------------\\r\\nBe invited to the Mont-de-Castel Launching Party (travel expenses &amp; accommodation to/in Lisbon - Portugal should be on your account). It includes a full-day commented and guided (by archaeologists/historians) excursion to some of the historical places that have been used as models and inspiration for the Mont-de-Castel town recreation. Have your name as \\&quot;Additional Co-Producer\\&quot;, listed in the game credits. Rewards of \\u00a380 included.&quot;,&quot;limit&quot;:20,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1443657600,&quot;project_id&quot;:1181298894,&quot;remaining&quot;:20,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1392896412},{&quot;id&quot;:2394399,&quot;minimum&quot;:1300.0,&quot;reward&quot;:&quot;Other currencies est.: $2120, \\u20ac1568\\r\\n------------------------------------------------\\r\\nMont-de-Castel Club Member\\r\\n------------------------------------------------\\r\\nAdditional co-producer\\r\\n------------------------------------------------\\r\\nAdditional Designer\\r\\n------------------------------------------------\\r\\n\\u2026 be a creative member of the Mont-de-Castel Team. \\r\\n------------------------------------------------\\r\\nIf you share the same passion as we do for gaming the vivid past\\u2026 if you can model in 3D, animate characters, create 2D textures, or simply play and record Music\\u2026 you can become part of the Mont-de-Castel Creative Team. In this case you will be able to create a short expansion of the game to be incorporated in a special game upgrade to be launch after the first game version deliverance. We will send you (approximately in nine months) the Alfa Version of the Mont-de-Castel game (testing version), together with an illustrated course manual (PDF) covering the technical features of the Mont-de-Castel game and RAM engine, fully supported on-line by our team\\u2019s advise. In addition, you will be able to participate in a two-days intensive presential workshop in Lisbon (travel expenses &amp; accommodation to/in Lisbon - Portugal should be on your account). Finally, you will receive for your personal dissemination (around 6 month after first game deliverance) a set of 10 extra copies of the collector\\u2019s edition upgraded with your own expansion. Rewards of \\u00a31250 included.&quot;,&quot;limit&quot;:20,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1422748800,&quot;project_id&quot;:1181298894,&quot;remaining&quot;:20,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1392896953},{&quot;id&quot;:2394401,&quot;minimum&quot;:4000.0,&quot;reward&quot;:&quot;Other currencies est.: $6522, \\u20ac4825\\r\\n-------------------------------------------------\\r\\nMont-de-Castel Club Member\\r\\n-------------------------------------------------\\r\\nAdditional co-producer\\r\\n-------------------------------------------------\\r\\nAdditional Designer\\r\\n-------------------------------------------------\\r\\n... design a NPC!\\r\\n-------------------------------------------------\\r\\nDesign a NPC for the Mont-de-Castel village. You will decide his personal looks, characteristics and occupation (within feasibility, game ambience constraints and accepted by the game developers team). Have your name as \\&quot;Additional Designer\\&quot;, listed in the game credits main section. Rewards of \\u00a31250 included.&quot;,&quot;limit&quot;:5,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1422748800,&quot;project_id&quot;:1181298894,&quot;remaining&quot;:5,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1392897061},{&quot;id&quot;:2394403,&quot;minimum&quot;:4000.0,&quot;reward&quot;:&quot;Other currencies est.: $6522, \\u20ac4825\\r\\n-------------------------------------------------\\r\\nMont-de-Castel Club Member\\r\\n-------------------------------------------------\\r\\nAdditional co-producer\\r\\n-------------------------------------------------\\r\\nAdditional Designer\\r\\n-------------------------------------------------\\r\\n... design a side-story!\\r\\n-------------------------------------------------\\r\\nInclude a complete short story or anecdote (up to around 5 minutes of game-play) to be performed by the game main characters, as a side story (within feasibility, game ambience constraints and accepted by the game developers team). Have your name as \\&quot;Additional Designer\\&quot;, listed in the game credits main section. Rewards of \\u00a31250 included.&quot;,&quot;limit&quot;:5,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1422748800,&quot;project_id&quot;:1181298894,&quot;remaining&quot;:5,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1392898114},{&quot;id&quot;:2394409,&quot;minimum&quot;:5000.0,&quot;reward&quot;:&quot;Other currencies est.: $8153, \\u20ac6031\\r\\n------------------------------------------------\\r\\nMont-de-Castel Club Member\\r\\n------------------------------------------------\\r\\nMain co-producer\\r\\n------------------------------------------------\\r\\nAdditional Designer\\r\\n------------------------------------------------\\r\\n... design a scenario!\\r\\n------------------------------------------------\\r\\nDesign an interior space, a shop, a workshop, a house chamber\\u2026, as a extra scenario in the game (within feasibility, game ambience constraints and accepted by the game developers team). You will provide illustrated descriptions of your scenery elements (architecture, props, ornamentations) in order to permit us to adequately work-out the 3D modelling and game incorporation of your ideas. Design also a NPC and a side-quest as in rewards \\u00a34000. Have your name in the opening credits as a \\&quot;Main Co-Producer\\&quot;. Have your name as \\&quot;Additional Designer\\&quot;, listed in the game credits. Rewards of \\u00a31250 included.&quot;,&quot;limit&quot;:2,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1422748800,&quot;project_id&quot;:1181298894,&quot;remaining&quot;:2,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1392898149},{&quot;id&quot;:2394415,&quot;minimum&quot;:5000.0,&quot;reward&quot;:&quot;Other currencies est.: $8153, \\u20ac6031\\r\\n-------------------------------------------------\\r\\nMont-de-Castel Club Member\\r\\n-------------------------------------------------\\r\\nMain co-producer\\r\\n-------------------------------------------------\\r\\nAdditional Designer\\r\\n-------------------------------------------------\\r\\n... design a special NPC!\\r\\n-------------------------------------------------\\r\\nDesign a NPC with protagonism in the storytelling from the Mont-de-Castel village. You will decide his personal looks, characteristics and occupation (within feasibility, game ambience constraints and accepted by the game developers team). You will provide illustrated descriptions of your character in order to permit us to adequately work-out the 3D modelling and game incorporation of your ideas. Note that the storyline will be adapted to incorporate the recurrent performance of your character. You will have your name in the opening credits as a \\&quot; Main Co-Producer \\&quot;. Have your name as \\&quot;Additional Designer\\&quot;, listed in the game credits. Rewards of \\u00a31250 included.&quot;,&quot;limit&quot;:2,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1422748800,&quot;project_id&quot;:1181298894,&quot;remaining&quot;:2,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1392898239}]}";
+    
+    
+    
+    
+    
+    
+    
+    
+    window.timeRemaining = function timeRemaining(epochTime){
+    
+      var diff = epochTime - ((new Date()).getTime() / 1000);
+      var num_unit = (diff < 60 && [Math.max(diff, 0), 'seconds']) ||
+        ((diff/=60) < 60 && [diff, 'minutes']) ||
+        ((diff/=60) < 72 && [diff, 'hours']) ||
+        [diff/=24, 'days'];
+    
+      // Round down
+      num_unit[0] = Math.floor(num_unit[0]);
+      // Singularize unit
+      if (num_unit[0] == 1) { num_unit[1] = num_unit[1].replace(/s$/,""); }
+    
+      return num_unit;
+    };
+  //]]>
+</script>
+
+<script>
+  //<![CDATA[
+    window.current_variants = ["discover_link_copy[explore]","rewards_hover[without_hover_text]"];
+  //]]>
+</script>
+
+
+</head>
+
+<body class="project projects not-mobile not-phone not-forces-video-controls not-tablet not-touchable not-native-app-request video_mode" id="projects_show">
+<div class="jGrowl center" id="growl_section"></div>
+<div class="NS_layouts__navigation" id="header">
+<div class="main-nav relative bg-white">
+<h1 class="no-margin ml1 mr2 left">
+<a href="/?ref=nav" class="block p2"><span class="ss-icon green-dark">KICK</span><span class="ss-icon green">STARTER</span>
+</a></h1>
+<ul class="primary-links list no-margin left">
+<li class="left discover-link full-height">
+<a href="/discover?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Explore</a>
+</li>
+<li class="left full-height mr2">
+<a href="/learn?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Start</a>
+</li>
+</ul>
+<ul class="list no-margin right" id="menu-sub">
+<li class="right"><a href="/login?ref=nav" class="block h5 bold p2 full-height border-box">Log in</a></li>
+<li class="right"><a href="/signup?ref=nav" class="block h5 bold p2 full-height border-box">Sign up</a></li>
+</ul>
+<div class="search-link pl2 full-height border-left border-box clip">
+<form accept-charset="UTF-8" action="/projects/search" class="search pt1 pb1 block relative form-simple" method="get"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /></div>
+<div class="field relative pl3">
+<span class="ss-icon ss-search grey-dark ml1 mt1 absolute"></span>
+<input class="input-search header full-width text" data-tracker-name="Header Live Search" id="term" name="term" placeholder="Search projects" type="text" />
+</div>
+</form>
+
+</div>
+<div class="clear"></div>
+</div>
+</div>
+<div class="hide pt4 pb4 bg-grey-light" id="search_results-wrap">
+<div class="relative container" id="search_results">
+<a class="close right grey-dark mr1"><span class="ss-icon ss-delete"></span></a>
+<h3 class="header ml1 clearfix"></h3>
+<div class="clip clearfix" id="search_results_panel"></div>
+<a class="prev arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateleft"></span>
+</a>
+<a class="next arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateright"></span>
+</a>
+</div>
+</div>
+
+
+
+
+<div class="Project-ended-true Project-is_starred- Project-state-failed Project1181298894_cxt border-top" id="main_content">
+<div id="running-board-wrap">
+<div class="container" id="running-board">
+<div id="project-header">
+<div class="NS_projects__running_board ml1 mr1 clearfix">
+<div class="title center py4">
+<h2 class="mb1">
+<a href="/projects/118959898/mont-de-castel" class="green-dark">MONT-DE-CASTEL</a>
+</h2>
+<p class="no-margin">
+<span class="creator">
+by
+<a href="/projects/118959898/mont-de-castel/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography" id="name">OLDTOWN GAMETALES</a>
+</span>
+</p>
+</div>
+<ul class="project-nav list-inline left h5 bold mb1">
+<li class="mr2">
+<a href="/projects/118959898/mont-de-castel" class="grey-dark py1 current" id="home_nav">Home</a>
+</li>
+<li class="mr2">
+<span data-updates-count="0" id="updates_count">
+<a href="/projects/118959898/mont-de-castel/posts" class="grey-dark py1" id="updates_nav">Updates
+<span class="count h6 bg-grey-dark white">0</span>
+</a></span>
+</li>
+<li class="mr2">
+<a href="/projects/118959898/mont-de-castel/backers" class="grey-dark py1" id="backers_nav">Backers
+<span class="count h6 bg-grey-dark white"><data class="Project1181298894" data-format="number" data-value="24" itemprop="Project[backers_count]">24</data></span>
+</a></li>
+<li>
+<span data-comments-count="3" id="comments_count">
+<a href="/projects/118959898/mont-de-castel/comments" class="grey-dark py1" id="comments_nav">Comments
+<span class="count h6 bg-grey-dark white"><data class="Project1181298894" data-format="number" data-value="3" itemprop="Project[comments_count]">3</data></span>
+</a></span>
+</li>
+</ul>
+<ul class="list-inline right h5 bold mb1">
+<li class="location mr2">
+<a href="/discover/places/london-gb?ref=city" class="grey-dark"><span class="ss-icon ss-location margin-right"></span>
+London, UK
+</a></li>
+<li class="category" data-project-parent-category="Games">
+<a href="/discover/categories/games/video%20games?ref=category" class="grey-dark"><span class="ss-icon ss-tag margin-right"></span>
+Video Games
+</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+</div>
+<div class="bg-grey-light pb4" id="content-wrap">
+<div class="Project1181298894" data-conditions="[{&quot;!state&quot;:&quot;live&quot;}]" data-evaluation="true" data-render="&quot;&lt;div class=\&quot;NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-failed Project1181298894_cxt bg-grey container pb1 pt1\&quot;&gt;\n&lt;div class=\&quot;Project1181298894\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;successful&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;Funded!&amp;lt;/b&amp;gt;\\nThis project was successfully funded &amp;lt;data class=\\&amp;quot;Project1181298894\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2014-04-20T17:47:09-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[deadline]\\&amp;quot;&amp;gt;on April 20&amp;lt;/data&amp;gt;.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1181298894\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:[&amp;quot;started&amp;quot;,&amp;quot;submitted&amp;quot;]}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;THIS PROJECT IS NOT LIVE&amp;lt;/b&amp;gt;\\nThis is only a draft that the creator has chosen to share.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1181298894\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;suspended&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Suspended&amp;lt;/b&amp;gt;\\nFunding for this project was suspended &amp;lt;data class=\\&amp;quot;Project1181298894\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2014-04-20T17:47:10-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on April 20&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1181298894\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;canceled&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Canceled&amp;lt;/b&amp;gt;\\nFunding for this project was canceled by the project creator &amp;lt;data class=\\&amp;quot;Project1181298894\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2014-04-20T17:47:10-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on April 20&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1181298894\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;failed&amp;quot;}]\&quot; data-evaluation=\&quot;true\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Unsuccessful&amp;lt;/b&amp;gt;\\nThis project\\u2019s funding goal was not reached on &amp;lt;time class=\\&amp;quot;js-adjust\\&amp;quot; data-format=\\&amp;quot;MMMM D\\&amp;quot; datetime=\\&amp;quot;2014-04-20T17:47:09-04:00\\&amp;quot;&amp;gt;April 20&amp;lt;/time&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Unsuccessful&lt;/b&gt;\nThis project\u2019s funding goal was not reached on &lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;MMMM D\&quot; datetime=\&quot;2014-04-20T17:47:09-04:00\&quot;&gt;April 20&lt;/time&gt;.\n&lt;/div&gt;&lt;div class=\&quot;Project1181298894\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;purged&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;This project is purged and only visible to staff.&amp;lt;/b&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;/div&gt;\n&quot;"><div class="NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-failed Project1181298894_cxt bg-grey container pb1 pt1">
+<div class="Project1181298894" data-conditions="[{&quot;state&quot;:&quot;successful&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;Funded!&lt;/b&gt;\nThis project was successfully funded &lt;data class=\&quot;Project1181298894\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2014-04-20T17:47:09-04:00&amp;quot;\&quot; itemprop=\&quot;Project[deadline]\&quot;&gt;on April 20&lt;/data&gt;.\n&lt;/p&gt;\n&quot;"></div><div class="Project1181298894" data-conditions="[{&quot;state&quot;:[&quot;started&quot;,&quot;submitted&quot;]}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;THIS PROJECT IS NOT LIVE&lt;/b&gt;\nThis is only a draft that the creator has chosen to share.\n&lt;/p&gt;\n&quot;"></div><div class="Project1181298894" data-conditions="[{&quot;state&quot;:&quot;suspended&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Suspended&lt;/b&gt;\nFunding for this project was suspended &lt;data class=\&quot;Project1181298894\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2014-04-20T17:47:10-04:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on April 20&lt;/data&gt;.\n&quot;"></div><div class="Project1181298894" data-conditions="[{&quot;state&quot;:&quot;canceled&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Canceled&lt;/b&gt;\nFunding for this project was canceled by the project creator &lt;data class=\&quot;Project1181298894\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2014-04-20T17:47:10-04:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on April 20&lt;/data&gt;.\n&quot;"></div><div class="Project1181298894" data-conditions="[{&quot;state&quot;:&quot;failed&quot;}]" data-evaluation="true" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Unsuccessful&lt;/b&gt;\nThis project\u2019s funding goal was not reached on &lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;MMMM D\&quot; datetime=\&quot;2014-04-20T17:47:09-04:00\&quot;&gt;April 20&lt;/time&gt;.\n&quot;"><p class="no-margin"></p>
+<b>Funding Unsuccessful</b>
+This project’s funding goal was not reached on <time class="js-adjust" data-format="MMMM D" datetime="2014-04-20T17:47:09-04:00">April 20</time>.
+</div><div class="Project1181298894" data-conditions="[{&quot;state&quot;:&quot;purged&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;This project is purged and only visible to staff.&lt;/b&gt;\n&quot;"></div></div>
+</div>
+<div class="container bg-white border rounded py3 pl2 pr2" id="content">
+<div class="NS-projects-content">
+<div class="grid_11">
+<div data-has-video="true" id="video-section">
+<div class="video-player" data-dimensions="{&quot;width&quot;:640,&quot;height&quot;:480}" data-image="https://s3.amazonaws.com/ksr/projects/812378/photo-main.jpg?1397861929" data-video-tracker-url="https://www.kickstarter.com/projects/118959898/mont-de-castel/video/plays" data-video-url="https://d2pq0u4uni88oo.cloudfront.net/projects/812378/video-354582-h264_high.mp4" data-video="{&quot;id&quot;:354582,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/812378/video-354582-h264_high.mp4?2014&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/812378/video-354582-h264_base.mp4?2014&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/812378/video-354582-webm.webm?2014&quot;,&quot;width&quot;:640,&quot;height&quot;:360,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/812378/video-354582-h264_base.jpg?2014&quot;}" id="video_pitch"><video class="has_webm landscape" preload="none">
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/812378/video-354582-h264_high.mp4" type='video/mp4; codecs="avc1.64001E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/812378/video-354582-h264_base.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/812378/video-354582-webm.webm" type="video/webm"></source>
+You'll need an HTML5 capable browser to see this content.
+</video>
+<img alt="Photo-main" class="has_played_hide poster landscape" src="https://s3.amazonaws.com/ksr/projects/812378/photo-main.jpg?1397861929" />
+<div class="play_button_big play_button_dark absolute-center rounded has_played_hide">
+<span class="ss-icon ss-play"></span>
+Play
+</div>
+<div class="player_controls clearfix absolute-bottom mb2 rounded white bg-green-dark forces-video-controls_hide">
+<div class="left">
+<a class="button button_icon button_dark playpause play mr1">
+<span class="play ss-icon ss-play"></span>
+<span class="pause ss-icon ss-pause"></span>
+</a>
+<span class="time current_time h12 left">00:00</span>
+</div>
+<div class="right">
+<span class="time total_time h12 left mr1">00:00</span>
+<a class="left button button_icon button_icon_white volume">
+<span class="ss-icon ss-volume icon_volume_nudge"></span>
+<span class="ss-icon ss-highvolume"></span>
+</a>
+<div class="volume_container left">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+<a class="left button button_icon button_icon_white fullscreen">
+<span class="ss-icon ss-expand"></span>
+<span class="ss-icon ss-contract"></span>
+</a>
+</div>
+<div class="clip">
+<div class="progress_container pr1 pl1">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="buffer progress_bar_buffer"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div data-project-state="failed" id="about">
+<div class="NS_projects__project_share clearfix py2 pl1 pr1">
+<ul class="left list-inline no-margin h5 bold">
+<li class="facebook mr2">
+<a href="https://www.kickstarter.com/projects/118959898/mont-de-castel"><span class="ss-icon ss-social ss-facebook color-facebook"></span>
+<span class="color-facebook">Share</span>
+<span class="share_bubble"><div class="triangle grey"></div>
+<div class="triangle white"></div>
+<span class="count"></span></span>
+</a></li>
+<li class="twitter mr2">
+<a  href="https://twitter.com/intent/tweet?text=MONT-DE-CASTEL%20by%20OLDTOWN%20GAMETALES&amp;via=kickstarter&amp;url=http://kck.st/1epCwc8" rel="nofollow"><span class="ss-icon ss-social ss-twitter color-twitter"></span>
+<span class="color-twitter">Tweet</span>
+</a></li>
+<li class="embed">
+<a href="/projects/118959898/mont-de-castel/widget" class="remote_modal_dialog grey-dark" data-modal-title="Embed a widget on your site" data-tracker-name="Embed"><span class="ss-icon ss-navigateleft"></span>
+<span class="ss-icon ss-navigateright"></span>
+Embed
+</a></li>
+</ul>
+<ul class="right list-inline no-margin h5 bold">
+<li class="curate mr2">
+</li>
+<li class="remind">
+<div class="ajax-container" id="watching-widget">
+<div class="Project1181298894" data-conditions="[{&quot;is_starred&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div id=\&quot;unwatch\&quot;&gt;\n&lt;a href=\&quot;/projects/118959898/mont-de-castel/unwatch\&quot; class=\&quot;on\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"></div><div class="Project1181298894" data-conditions="[{&quot;!is_starred&quot;:true}]" data-evaluation="true" data-render="&quot;&lt;div id=\&quot;watch\&quot;&gt;\n&lt;a href=\&quot;/projects/118959898/mont-de-castel/watch\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;span class=\&quot;text\&quot;&gt;\n&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"><div id="watch">
+<a href="/projects/118959898/mont-de-castel/watch"><span class="ss-icon ss-star"></span>
+<span class="text">
+</span>
+</a></div>
+
+</div></div>
+</li>
+</ul>
+</div>
+
+<div class="short_blurb py2 pl1 pr1">
+<p class="h3">A unique adventure with Exploration,
+Drama and Music!
+Be a composer,
+a producer, a conductor, a detective...</p>
+</div>
+<div class="full-description">
+<p><a href="https://www.youtube.com/watch?v=4wturz3CuDs" target="_blank">video in HD</a></p><div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1524684/edit" data-id="1524684">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/524/684/588116cb8f7aedac6e1c2ddc4e240195_large.jpg?1389704764"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1521391/edit" data-id="1521391">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/521/391/6ecdd864396696dd9d2f92d3d353b861_large.jpg?1389609576"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1521393/edit" data-id="1521393">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/521/393/d92bf25382c6f0d78fde5500d5dd04f8_large.jpg?1389609621"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1535928/edit" data-id="1535928">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/535/928/db992ef6626a908338a1b607bfec19f4_large.jpg?1389973224"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1521612/edit" data-id="1521612">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/521/612/34d1f8b8266dd166c9cee84ef47a84bb_large.jpg?1389621656"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1734222/edit" data-id="1734222">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/734/222/54640f98d777989d695102c40c9e92dc_large.jpg?1394534593"></figure>
+</div><p>                   <a href="https://www.oldtown-gametales.com/" target="_blank">web-page ...............................</a><a href="https://www.facebook.com/MontDeCastel1868" target="_blank"> facebook</a><a href="http://mont-de-castel.blogspot.pt/" target="_blank"> .......................... blog</a></p>
+
+<div class="template asset" contenteditable="false" data-id="1658805">
+<figure><embed allowscriptaccess="always" height="30" src="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?audioonly=true&amp;controlbar.idlehide=false&amp;controlbar=bottom&amp;file=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fassets%2F001%2F658%2F805%2F5f12558a8232e08c84de092e84d13d19_original.mp3%3F1392930774&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf" type="application/x-shockwave-flash" width="560" wmode="transparent"></embed></figure>
+</div><p><b><i>Trois Jeunes Tambour</i></b> modernistic
+     essay by Pablo Cortez</p><div class="template asset" contenteditable="false" data-id="1658809">
+<figure><embed allowscriptaccess="always" height="30" src="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?audioonly=true&amp;controlbar.idlehide=false&amp;controlbar=bottom&amp;file=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fassets%2F001%2F658%2F809%2Fa923be05aeec59cd04136f6f4b125669_original.mp3%3F1392930838&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf" type="application/x-shockwave-flash" width="560" wmode="transparent"></embed></figure>
+</div><p><b><i>The sad days of
+     1871 </i></b>romantic improvisation from Matias Brum (on the
+     Refuge's Collard &amp; Collard fortepiano from 1838)</p><div class="template asset" contenteditable="false" data-id="1658813">
+<figure><embed allowscriptaccess="always" height="30" src="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?audioonly=true&amp;controlbar.idlehide=false&amp;controlbar=bottom&amp;file=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fassets%2F001%2F658%2F813%2F1599735320a432ef8deda81ab61590a1_original.mp3%3F1392930907&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf" type="application/x-shockwave-flash" width="560" wmode="transparent"></embed></figure>
+</div><p><i> <b>Trois Jeunes Tambours</b></i> flute by Gérard d’Aubri</p><div class="template asset" contenteditable="false" data-id="1658896">
+<figure><embed allowscriptaccess="always" height="30" src="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?audioonly=true&amp;controlbar.idlehide=false&amp;controlbar=bottom&amp;file=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fassets%2F001%2F658%2F896%2F7cb16177ba2b8ccd0f894388ea70c794_original.mp3%3F1392931980&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf" type="application/x-shockwave-flash" width="560" wmode="transparent"></embed></figure>
+</div><p> <b><i>Trois Jeunes Tambours</i></b> viola da gamba by Gérard d’Aubri</p><div class="template asset" contenteditable="false" data-id="1658828">
+<figure><embed allowscriptaccess="always" height="30" src="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?audioonly=true&amp;controlbar.idlehide=false&amp;controlbar=bottom&amp;file=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fassets%2F001%2F658%2F828%2F2ce49ecd6faaf2792c132337d20199b8_original.mp3%3F1392931041&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf" type="application/x-shockwave-flash" width="560" wmode="transparent"></embed></figure>
+</div><p><b><i> Trois Jeunes Tambours</i></b> violin by Matias</p><div class="template asset" contenteditable="false" data-id="1658829">
+<figure><embed allowscriptaccess="always" height="30" src="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?audioonly=true&amp;controlbar.idlehide=false&amp;controlbar=bottom&amp;file=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fassets%2F001%2F658%2F829%2F9255a2d7fcec6ba4285e0a112c1240b6_original.mp3%3F1392931100&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf" type="application/x-shockwave-flash" width="560" wmode="transparent"></embed></figure>
+</div><p> <b><i>Trois Jeunes Tambours</i></b> Trio-sonata by Gérard d’Aubri, interpreted by Maria, Gérard, Pablo
+     and Matias</p><div class="template asset" contenteditable="false" data-id="1658832">
+<figure><embed allowscriptaccess="always" height="30" src="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?audioonly=true&amp;controlbar.idlehide=false&amp;controlbar=bottom&amp;file=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fassets%2F001%2F658%2F832%2F5d5d88df93e0938f8c9fcf6546a3ec90_original.mp3%3F1392931162&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf" type="application/x-shockwave-flash" width="560" wmode="transparent"></embed></figure>
+</div><p> <i><b>Trois Jeunes Tambours</b></i> “air
+     de cours” by Gérard d’Aubri</p><p>We play tribute to the French quartet <b><i>Les Quatre Barbus</i></b> and Lucienne Vernay who in the middle of last century created a serious of marvellous <a href="https://www.facebook.com/pages/Lucienne-Vernay-et-les-Quatre-Barbus-Ab%C3%A9c%C3%A9daire-musical/64034107124?ref=profile" target="_blank">vinyl recordings </a>of (dramatised and illustrated) traditional French songs for children. </p><p>We play tribute to the 19th century cartoonists (<a href="http://de.wikipedia.org/wiki/M%C3%BCnchener_Bilderbogen" target="_blank">Münchener Bilderbogen</a>, <a href="http://leonardodesa.interdinamica.net/comics/lds/" target="_blank">Töpffer</a>)</p><div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1708455/edit" data-id="1708455">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/708/455/91032213b632e5af5986a304456e3555_large.jpg?1394019139"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1708989/edit" data-id="1708989">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/708/989/3d8e1a7066c02cde52d6a2f836cac60f_large.jpg?1394031561"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1524696/edit" data-id="1524696">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/524/696/6fe83aa7e754741da1dd1f54b4834a4c_large.jpg?1389705314"></figure>
+</div><h1>You will need creativity, spirit of enterprise, charisma!</h1><p>The primary entity of the gameplay is what we call an <b><i>attitude</i></b> - an expressive set of gestures, mimics and speech. <i><b>Attitudes</b></i>, either isolated or linked to a character or a prop, are organized in scripted <i><b>Takes</b></i>. </p><p>A <b>PERCEPTION MODE</b> can be triggered at any time, to observe and select items.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1708607/edit" data-id="1708607">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/708/607/2a7886a2e2b2688048e3b998b7df67df_large.jpg?1394025223"></figure>
+</div><p>Gameplay jumps freely between <b>FREE MOVEMENT</b>, <b>CINEMATIC </b>and <b>CREATIVE </b>states.</p><p>In FREE-MOVEMENT STATE the player will move around freely using traditional movement. </p><p>
+In CINEMATIC STATE the player is passive and his avatar (and a cinematic camera) is driven by the script to fulfil expressive attitudes according to the storyline (and the intrusion of dreams, visions, and memories). </p><p>
+In CREATIVE STATE the player will follow five alternative modes: </p><ul>
+<li><b>exploring </b></li>
+<li><b>understanding </b></li>
+<li><b>composing </b></li>
+<li><b>talking </b></li>
+<li>
+<b>interacting </b>
+</li>
+</ul><p>These modes, evoked at any time, mimic the natural succession of distinct operative states of mind. </p><div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1524718/edit" data-id="1524718">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/524/718/8d3d43ec013f783fff550b1b92937729_large.jpg?1389706429"></figure>
+</div><p>In<b> EXPLORING</b> mode the player will interact with the space around, through a set of 9 extra attitudes typically after perceiving and selecting scene objects: </p><ul>
+<li>To squat </li>
+<li>To lean </li>
+<li>To sit </li>
+<li>To lay </li>
+<li>To kneel </li>
+<li>To climb </li>
+<li>To pull </li>
+<li>To push </li>
+<li>To grab</li>
+</ul><div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1524719/edit" data-id="1524719">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/524/719/542f4f04dc9e96ee1aa32e6cc2050590_large.jpg?1389706501"></figure>
+</div><p>II - <b>UNDERSTANDING </b>-
+Exploration attitudes give place to "understanding"; There are 9 different cognitive sub-modes: </p><ul>
+<li>To analyse </li>
+<li>To identify </li>
+<li>To recall </li>
+<li>To evoke </li>
+<li>To evaluate </li>
+<li>To question someone's or something's origin </li>
+<li>To question its history </li>
+<li>To question its utility </li>
+<li>To question its integrity</li>
+</ul><div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1524723/edit" data-id="1524723">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/524/723/778d57b444b51de806d1f5372d5c889b_large.jpg?1389706611"></figure>
+</div><p><b>8 Thematic Puzzles</b>
+- To “understand” means to complete 8 large THEMATIC PUZZLES. Mont-de-Castel game is a repository of information on the 19th century culture, covering 8 topics: </p><ul>
+<li><b>Music </b></li>
+<li><b>The "<i>Beaux-Arts</i>" </b></li>
+<li><b>The "<i>Belles-Letters</i>"</b></li>
+<li><b>New Technologies and Inventions </b></li>
+<li><b>New Ideas, Politics and Conflict </b></li>
+<li><b>The Dawn of Natural History and Archaeology</b></li>
+<li><b>Old Rural traditions of Europe </b></li>
+<li>
+<b>Mont-de-Castel (fictional) reality </b>
+</li>
+</ul><p>The player will have the opportunity to master this information. </p><div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1524768/edit" data-id="1524768">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/524/768/b2ee9f471d98938f9361f4975fff4b45_large.png?1389707823"></figure>
+</div><p><b>Receiving, discovering, providing the answers</b> 
+- UNDERSTANDING attitudes assume 3 outcomes (dependent on context and trumps awarded): </p><ul>
+<li>The system provides the answer to the player </li>
+<li>The player is engaged in a discovery sub-task </li>
+<li>The player will respond (TALKING mode) using collected information</li>
+</ul><p>EXPLORING + UNDERSTANDING will permit to assemble the key information to play the <b>CHESS OF MYSTERIES</b> </p><div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1524771/edit" data-id="1524771">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/524/771/ec4c53430969316ced048718b186d6e2_large.png?1389707890"></figure>
+</div><p>III - <b>TALKING </b>refers to interacting with the characters' personalities (a battle to be fought between the 5 company colleagues at the psychological level). Nine attitudes: </p><ul>
+<li>To explain </li>
+<li>To agree / accept </li>
+<li>To contradict / deny </li>
+<li>To chat lightly </li>
+<li>To attack / insult </li>
+<li>To seduce / praise / flatter </li>
+<li>To defend </li>
+<li>To mock </li>
+<li>To show off / peacock </li>
+</ul><div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1524730/edit" data-id="1524730">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/524/730/a9a5612223c8b9b059ec63f182e238bb_large.jpg?1389706808"></figure>
+</div><p>Talking mode will be played in trios, quartets, quintets (at dinner, rehearsals...).</p><div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1535992/edit" data-id="1535992">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/535/992/450b34d54a1cc13ace7c7ca61fded033_large.jpg?1389974329"></figure>
+</div><p>The 8 topics of the thematic puzzels will be used for the discussions, thus a good UNDERSTANDING of these subjects will be essential. </p><p>The Player’s statements will follow three forms at choice: </p><ul>
+<li>The game-traditional multiple choice selection from a set of possible answers </li>
+<li>Collecting phrases from the 8 THEMATIC PUZZLES </li>
+<li>Choosing expressions to be used modularly (derived from pre-defined LEXICS of mode expressions ascribed to the attitudes) </li>
+</ul><p>Arguing will give place to <b>PRESTIGE SCORES.</b></p><p><b>Trumps </b>gathered during the gameplay can be used to access “freely” the appropriate “answers” from the 8 THEMATIC PUZZLES. TRUMPS will be in the form of playing cards, within 8 thematic card decks - the higher the card, the stronger its unveiling capacity.</p><p>TALKING will permit to get key information to play the <b>CHESS OF PERSONALITIES</b>. </p><p>IV – <b>COMPOSING </b>means to “compose” the 3 Chessboards Matias will use to solve the 3 mysteries, to gain leadership and to produce the musical show. These chessboards are templates for puzzles with multiple layers of pieces.  For composing, 9 attitudes will be used: </p><ul>
+<li>To move </li>
+<li>To append </li>
+<li>To insert </li>
+<li>To combine (overlay) </li>
+<li>To tune </li>
+<li>To weight (emphasise / minimise) </li>
+<li>To paint </li>
+<li>To stretch </li>
+<li>9) To hierarchise</li>
+</ul><div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1524751/edit" data-id="1524751">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/524/751/eb5b5fca7aa4e982223d64babe0f0a38_large.jpg?1389707283"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1524760/edit" data-id="1524760">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/524/760/3c8194d16e5e7299379e226d790457a7_large.jpg?1389707556"></figure>
+</div><p>Matias will gather (iconologically) clues and interpretative schemes to help solve mysteries along 8 days of “exploring”, “talking” and “understanding”; Although one should not reveal much to avoid compromising surprise, we’ll say that underlying each square of each mystery chessboard there will be a sort of comic strip story. It describes key events to be unveiled by the use of the right combination of gathered pieces, linking and interpretation schemes. </p><div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1524763/edit" data-id="1524763">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/524/763/6bcf60eb0c7cc250251a01e309967585_large.jpg?1389707622"></figure>
+</div><p>Matias is engaged in his fight to gain leadership in the group. He will use this to compose his “talking” strategy and monitor its results. Matias will recall selectively (CINEMATIC STATE) part of the conversations and attitudes of his colleagues in order to grasp their true meaning in terms of emotions and motivations. From this, Matias will plan the best TALKING strategy for next day.</p><p>Secrets revealed in this quest into the personalities may give clues to the solutions of the 3 mysteries and vive-versa.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1524765/edit" data-id="1524765">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/524/765/7f0ffa885f79625ca3f228d448d1765d_large.jpg?1389707680"></figure>
+</div><p>Mont-de-Castel treats Music as a new game paradigm: <b>its process of creation. </b></p><p>To conceive the show means to assemble (pre-recorded) performance elements as modular items which can be “tuned” or “customised”. <b>The items will be part of large collection of diversified elements, thus giving place to almost infinite combinations, creating a new unique opera-show each time Mont-de-Castel is played. </b>The game ends up with the final performance, according to the unique dynamic scripting each player will define through his gameplay and choices. This performance can be saved and presented to the Mont-de-Castel game community for evaluation and glory(!) in the OLDTOWN GAMETALES web site.</p><p>Imagine a large puzzle with multiple solutions each piece being a performance item we can call <b>OPERITEM </b>(opera-item) – these could be elements of vocal or instrumental music, declamatory texts, (puppets and singers) facial or body expression, scenery props, etc.  OPERITEMS will be conceived (or chosen), supported, ascribed, tuned, mastered, rehearsed and performed on stage.</p><p><b>The OPERITEM maturation chain</b>
+- Music is simple and extremely intuitive - one single module of four 4/4 measures in C Major to be repeated or combined in Polyphony: Anyone, even without musical education, will have a lot of fun, will learn, and will achieve results, although talented people will take it even further, to the Parnassus! </p><p>The SCORE is brought to life through the <b>OPERITEM maturation chain</b>. 10 steps: </p><ul>
+<li>Collecting OPERITEMS in draft (conceptual) stage</li>
+<li>Finding, selecting, assembling and tuning musical instruments </li>
+<li>Assembling marionettes with old puppetry junk </li>
+<li>Gathering scenery and props and making them ready </li>
+<li>COMPOSING the opera score </li>
+<li>Changing expression qualities of OPERITEMS </li>
+<li>Mastering musical instruments </li>
+<li>Convincing and inspiring performers </li>
+<li>Rehearsing the performers </li>
+<li>Conducting</li>
+</ul><p>OPERITEMS will thus change; 5 maturation states:      </p><ul>
+<li>Draft </li>
+<li>Designed </li>
+<li>Made ready </li>
+<li>Rehearsed </li>
+<li>Mastered </li>
+</ul><div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1695992/edit" data-id="1695992">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/695/992/bfada87ed60565b9e8c9583dfd32d03d_large.jpg?1393769657"></figure>
+</div><p>The CHESS OF MUSIC will serve for COMPOSING the opera SCORE. OPERITEMS in iconographic, dummy, or musical script form will be arranged on the board (some overlapping) where its square grid will represent musical 4/4 bars. The location of OPERITEMS on the chessboard will result in different triggering (entry) times for the instrumental music, declamation, or singing to sound, or to launch the animation of actors, puppets, and  stage-effects. Tuning, distortion, time stretching, and other effects are allowed!</p><p><b>Previewing </b>- At any time a thematic preview can be made by sections (music, acting, singing, etc…); the player will be presented with the sequential audible display of the virtual performances; Each day at rehearsal time Matias wil have the opportunity to show a complete preview (all sections together) of the show in its state of maturation.</p><p>The maturation of OPERITEMS is done through <b>8 mini-games</b>; These will simulate the challenges of conceiving, equipping, rehearsing and conducting the puppet opera show.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1709102/edit" data-id="1709102">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/709/102/7eed7468cecdde3a514ccecdb7a2526d_large.jpg?1394033211"></figure>
+</div><p>V – <b>INTERACTING </b>- Finally, physical interacting between characters will constitute the fifth mode. This is where Monte-de-Castel joins the tradition of action-adventure games. Nine attitudes: </p><ul>
+<li>To focus </li>
+<li>To greet </li>
+<li>To receive </li>
+<li>To shake hands </li>
+<li>To strike </li>
+<li>To push </li>
+<li>To kick </li>
+<li>To punch </li>
+<li>To avoid </li>
+</ul><h1>OTHER ASPECTS OF THE GAMEPLAY </h1><p><b>Photography
+	</b>- Matias will use his photographic apparatus to take photos to use in his diary </p><div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1524881/edit" data-id="1524881">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/524/881/f2fc18a2553a5651880af62e479ea624_large.jpg?1389711663"></figure>
+</div><p><b>Notebook
+	</b>- Matias will use a notebook to register his discoveries </p><p><b>Scores
+	</b>- The game will account systematically for 5 different states of Matias (<b><i>mood, prestige, fatigue, sleepiness, hunger</i></b>) to be monitored at any time. These states will influence Matias' performance, thus there must be time to eat, sleep, joke, or to regain self-esteem.   </p><div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1708399/edit" data-id="1708399">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/708/399/748fe3a185facd183b8b6caf8bba1688_large.jpg?1394016791"></figure>
+</div><h1>Musical-Drama in its magic creative moments  </h1><p>In-game Performance Art is a challenge! 
+But our strategy has a secret: We (the musician-actors) recreate the Mont-de-Castel Company by incorporating vividly its members, as if we were possessed - Believe! </p><ul>
+<li>Gérard who is baroque-minded and very French </li>
+<li>Pablo, a fan of Mediterranean ancient folklore and an enthusiastic follower of the rising influence of impressionism in music </li>
+<li>Alfo a furious defender of Italian Opera Singing and an addict of fanfares </li>
+<li>Maria who has a romantic German-Austrian taste but also favours more mundane chansonettes </li>
+<li>Matias who wants music with more innovative (and exotic) approaches</li>
+</ul><p>Our long-standing way of feeling <b>Music </b>- as a mixture of acting, singing and playing - is the very same way the Mont-de-Castel Company members create their own work, imposed by the necessity of a poor itinerant puppet opera group, where all must be versatile jacks-of-all-trades. </p><p>We create our performance art in real sessions of intense drama &amp; music improvisation and rehearsing in our “Music Room”. </p><div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1525010/edit" data-id="1525010">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/525/010/58451fc73e1cb4289e0911fe6765f047_large.JPG?1389714689"></figure>
+</div><p>Here we are recreating the work of our five virtual friends. Alternative styles will be assumed, tested, played. From the video recordings of these sessions we are rebuilding hundreds of audio files (speech, singing, playing) and acting sketches (video footage for character animation). These files will provide hundreds and hundreds of modular items to be used creatively by the player. </p><div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1693221/edit" data-id="1693221">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/693/221/28e85b3fb5ee32df83d15f4d1a06a2a1_large.jpg?1393690466"></figure>
+</div><p>Note that we will end up with contrasting results, from ugly early drafts to highly elaborated performed fragments. </p><p><i><b>But, wait! Not just ourselves! We could already gain the complicity of many of our musician-friends: They will all come to record their one personal interpretations of the "Trois jeunes tambours" little tune. And the audio library grows and grows...</b></i></p><h1><b>The five
+languages of Mont-de-Castel</b></h1>
+
+<p>Mont-de-Castel
+is spoken simultaneously in the typical western dialect of <i>"Europainish" </i>(English, French,
+Portuguese, Spanish, Italian) - each character speeks his mother language! The player can chose one of the five languages for
+captions and help.  </p><h1>RAM Game-Engine</h1>
+
+<p>To permit our gameplay and arts (featuring our OLD TOWN GAMETALES brand) we built a game-engine of our own  - RAM. It evolved from its original form on DirectX9c (in 2007) to its present Version 3B on D3D10/11. </p><p>RAM is an action-adventure game-engine in 1st &amp; 3rd Person. Ancient urban cores with their houses, infrastructures, monuments, and the whole paraphernalia of props has been a major topic for investment using massive instantiation and innovative management of levels of detail and occlusion of the scenery.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1708613/edit" data-id="1708613">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/708/613/197323b30b9f257c804968ff070aa2d6_large.jpg?1394025402"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1708925/edit" data-id="1708925">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/708/925/8c8362b593d5a445b301f7d8d010d2d2_large.jpg?1394030403"></figure>
+</div><p>In the last months we invested in the rendering of house interiors where the same system has been adapted in a versatile way.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1708965/edit" data-id="1708965">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/708/965/04894c87a186dd1705bc0eb4f816b4fd_large.jpg?1394031233"></figure>
+</div><p>A special focus is given to character animation based on a three-fold system of a) scripted animation sets, b) procedural bone animation, and c) facial morphing. Character interface (in duos, trios, quartets, quintets) is the object of special development in our module TAKE - a hybrid system of scripted, finite-state-machine and message-based Artificial Intelligence.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1521673/edit" data-id="1521673">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/521/673/32c973bc3a4dd856bea42035fbbeeb39_large.jpg?1389624265"></figure>
+</div><p>The whole dynamic real-time puzzle of music (and audio) is taking full advantage of the XAudio2 Microsoft API </p><h1>Modelling
+and Animation</h1>
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1486690/edit" data-id="1486690">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/486/690/cebf9d829908bf0df1e6eb8bd3b24422_large.jpg?1388586546"></figure>
+</div><p>Most of Mont-de-Castel small town is conceived and reconstructed, although most of urban props are still missing.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1486691/edit" data-id="1486691">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/486/691/6857c683e5759638492d10383176bbc3_large.jpg?1388586585"></figure>
+</div><p>A set of native plants of South Europe is modeled at various LODs. Vegetation (on road-sides, backyards, gardens,...) is still to be recreated, but its game-engine support is ready.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1486696/edit" data-id="1486696">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/486/696/b3f6f57423e96ae5c96df63c2bdcd50e_large.jpg?1388586872"></figure>
+</div><p>The “Refuge Inn” is almost half-way ready; its ambiance must still be fully enriched with more furniture, mobile-art, books, science and musical instruments, bric-a-brac, and tools (cooking, gardening, backyard husbandry).</p><div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1708621/edit" data-id="1708621">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/708/621/93cf8c62c3d45e7e3051da6cf352cb8b_large.jpg?1394025589"></figure>
+</div><p>We have modelled the main personages - Matias, Alfo, Gérard, Montclaro – who are already “rehearsing”; Maria, Florecita, Pablo and the Count are coming…</p><div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1535893/edit" data-id="1535893">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/535/893/586d55ed54f5182182ce2a03ed99c206_large.jpg?1389972559"></figure>
+</div><p>Secondary characters will include a maid and a cook, the priest, 2 artisans (Horiot and Mère Michèle), the Count’s coachman and his son, and a police-man. In addition a rich set of charactes will be created, to express the social diversity of the town.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1708400/edit" data-id="1708400">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/708/400/21e2ab176983f6338523cd484c0a7cab_large.jpg?1394016878"></figure>
+</div><p><b>Our characters are non-standard NPCs! We avoid to say it in front of them… but… half-real, half caricature, they are our puppets, who play their own puppets…</b></p><p>Alas! Are we ourselves also your puppets?</p><div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1486705/edit" data-id="1486705">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/486/705/f86308e8564ccc5be38d7371858b78b0_large.jpg?1388587418"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1708735/edit" data-id="1708735">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/708/735/898ebeabed762dae6eadf997987b85ee_large.jpg?1394027593"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1708695/edit" data-id="1708695">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/708/695/6f0662500723991efa60f85962cc08ca_large.png?1394026946"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1708710/edit" data-id="1708710">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/708/710/a29caa0e69139d69bd144c268b0cb30a_large.png?1394027256"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1708714/edit" data-id="1708714">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/708/714/9942b544d79091e9f413e0ba1be3c3d9_large.jpg?1394027343"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1708718/edit" data-id="1708718">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/708/718/b15a926321f11d3267537c7d2959e88d_large.png?1394027420"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1708723/edit" data-id="1708723">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/708/723/4ca9f296f3ed7f1049d9a07603bc9c26_large.png?1394027474"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1708727/edit" data-id="1708727">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/708/727/5ebc676fa217f702b34c25523bd6870a_large.png?1394027535"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1708401/edit" data-id="1708401">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/708/401/cb646905b48abc67b6cde1833cb15bae_large.jpg?1394016937"></figure>
+</div><p>We fear our team is quite unique in the game-studio panorama due to our eclectic improbable background on Natural and Heritage Sciences, European Old Drama &amp; Music, and Interactive Computer Graphics:</p><h1>Be sure: The Mont-de-Castel game will be something new - we can’t escape it! ... for the best or the worst …</h1><div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1648566/edit" data-id="1648566">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/648/566/54706df837742b9072745713096e32cc_large.jpg?1392737538"></figure>
+</div><p><b>José Mateus </b>(PhD) with his curriculum on
+Science, Music and Computer Graphics is responsible for the technical and
+artistic aspects of Mont-de-Castel. He has been a researcher in Archaeology and
+Landscape Ecology. He created and directs the Camerata da Cotovia – an Early
+Music group where he plays a dozen instruments. In the last 15
+years he has been mostly concerned with game-engine development. He is the “father” of the RAM engine.</p>
+
+
+
+<p><b>Paula</b> <b>Queiroz
+</b>(PhD) is responsible for the
+conception and modelling of most of the 3D scenery (town, house interiors,
+props, plants). She works with 3DStudio Max (Autodesk), CityEngine (Procedural)
+and XFrog (Greenworks). She also administrates all the data input to the RAM
+engine (structures, scripts, geometries, animations), according to our own IO
+formats. She is a botanist and her long experience on managing research
+consortia at the University is precious here: Paula administrates the whole
+production of Mont-de-Castel.</p>
+
+
+
+<p><b>Ken Rigby</b> is CEO and director of MellaniuM and Tele3dworld.
+With a background of electronics and systems engineering (Hertfordshire), he
+now spends most of his working time researching, evangelising and developing 3D
+techniques to aid learning, communications and innovation. His business
+delivers cost effective VR solutions to clients across the globe.</p>
+
+
+
+<p><b>Stephen Bull</b> is a violinist and a composer. He has
+directed (as conductor) baroque-music orchestras and was responsible for the
+recreation of two puppet operas of the 18th century; This occasionally
+involved the reconstitution of music scores from fragmentary evidence. Stephen
+is also an actor and has a definitive contribution to the acted sketched
+sequences used as video-models (background footage) for the animation
+scripting of the virtual characters. Finally, he is in charge of part of
+the musical composition for the puppet opera. </p>
+
+
+
+<p><b>Alexandre Mateus</b> is a Master-degree student of Computer
+Graphics &amp; Multimedia Systems. He is an experienced 3D artist and has been
+busy on the creation of most our characters and complex models such as
+sculptured portals and statuary. He is an expert on Max and ZBrush. Alexandre
+is also a musician (playing the bass viol). </p>
+
+
+
+<p><b>Jacinto Mateus</b> is a pianist and harpsichordist. His broad
+and long experience as a gamer is precious for his key contribution to the Mont-de-Castel
+Game Concept and Game-Play. Apart form musical performance Jacinto is responsible for part of the new musical creation. He is also in charge of
+the audio recording and sound edition &amp; mastering. </p>
+
+
+
+<p><b>Renata Pacheco</b> is a Master-degree student of Computer
+Graphics &amp; Multimedia Systems. She is an experienced C++ programmer having
+worked with OpenGL and HTML in game prototypes and web design. </p>
+
+
+
+<p><b>Tanja Šimić Queiroz </b>(M.Mus.) is a mezzo-soprano, recognized for the rich, warm colour of her
+instrument and strong acting abilities. She has performed many Opera scenes and
+roles, and she is also an established concert and lied singer. Tanja is also
+singing and performing in Audio and Video Art works, and maintains a private
+vocal studio. <a href="http://tanja-simic-queiroz.com/" target="_blank">http://tanja-simic-queiroz.com/</a></p>
+
+
+
+<p><b>João Canto e Castro</b> is a viola player and an actor,
+specialised in voice imitation and puppets dubbing. For the last 10 years he
+gave his voice (under many different imitative transmutations) to many
+politicians in a famous TV humour series with puppets (similar to the well-known TV programme “The Muppets”). </p>
+
+
+
+<p><b>Robert Rigby </b>is a specialist in Landscape management
+with a long experience on game development and interactive 3D on-line forums at
+MellaniuM. His expertise on project management is precious for the
+production sustainability and global marketing of Mont-de-Castel.</p><p>Other
+creative people (actors, musicians, programmers, animators, modellers, audio
+mastering experts, game testers) are anxious to participate…<b> but major
+contributions will come, surely, from kickstarter backers.</b></p>
+
+
+
+<p><b>Why? Because Mont-de-Castel must be a
+collective repository of memory references from our recent past in the dawn of
+modernity. A shared passion for the unveiling our collective memories from 150
+years ago, through the direct link of our great-great grandfathers' legacy. The
+passion for a vivid Archaeology of our senses, emotions, beliefs.</b></p>
+
+
+
+<h1>We
+want you to join the Mont de Castel Company! Your “inherited” memories and references are the very substance of this
+new game – Playing Our Heritage</h1><div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1708404/edit" data-id="1708404">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/708/404/d1d84a1bf0f404d250771f386b441820_large.jpg?1394016971"></figure>
+</div>
+
+
+
+<p>Mont-de-Castel is more than
+half-way into its production. All laboratories (conception, scripting, actors'
+sketching, modelling, animation, RAM output/input, music &amp; sound) are well established and
+working at full-speed. </p>
+
+<p>Our team is active since
+2003: One interactive multimedia built on a 2D DirectDraw game-engine, and four
+playable game prototypes for our brand OLD TOWN GAMETALES came out. </p>
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1524568/edit" data-id="1524568">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/524/568/d9d3638f6c5a4db748cbf3867fd5ca56_large.jpg?1389696398"></figure>
+</div>
+
+<p>The <b>RAM engine</b> is
+a stable and tested platform. Although not the most sophisticated
+piece of technology (for AAA action-adventure standards) it suits well our
+Exploration, Drama, and Music purposes extending enormously the playabilities
+of traditional point &amp; click adventures.</p>
+
+<p><b>Terrains, plants</b> and <b>vegetation </b>have been a
+major topic of interest due to
+our botany and ecology backgrounds. </p>
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1524583/edit" data-id="1524583">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/524/583/718391cc513f2b24b6f2984f13cba595_large.jpg?1389697070"></figure>
+</div>
+
+<p><b>Urban structure</b>, <b>common architecture</b> and <b>monuments </b>have been modelled
+for many years under different approaches and integrated at 3D game-render. The
+challenge here is to achieve museographic qualities - we are dealing with
+ancient urban cores (in Europe) where surface
+detail is crucial (raw materials, production stigma, and patinas).</p>
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1524585/edit" data-id="1524585">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/524/585/8c9b7984f977a2a7a97b5cba9ec57774_large.jpg?1389697288"></figure>
+</div>
+
+<p><b>Drama </b>is always a great challenge in
+games, and here we are ambitious. Our present investment is in complex
+interaction between characters (such as a quintet of singers): The player will
+take part in group discussions, at dinner table, on stage... This is the true
+battlefield, where Matias will have to master suitable strategies and
+tactics to fulfil his objectives by persuading, bluffing, inspiring, cheating, or
+simply by imposing his wisdom, creativity and charisma. </p>
+
+<p>Will we manage? We
+sincerely hope so…</p>
+
+<p>Another great challenge is <b>Virtual
+Artistic Performance</b>. </p>
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1524909/edit" data-id="1524909">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/524/909/c49b214925a878b36ecd8e2e2106c2f9_large.jpg?1389712351"></figure>
+</div>
+
+<p>Can he provoke interest in
+people used to good cinema or vivid theatre? What do we lose? What can we
+gain? The secret here is that the player should influence alternative NPC
+responses. And this implies that speech-mimic expression in Mont de Castel is not
+completely pre-scripted, but, on the contrary, depends procedurally on game
+casuistic (by the extensive use of real-time IK head-arms-eyes animations and animation-set
+and morph blending). </p>
+
+<p>Can we master this? You will be the judge. So. be attentive to our
+Developers Diary and to the on-going progressive results. </p>
+
+<p>Motion-Capture is expressly
+NOT used. Because we must  grasp the essential, we look at human
+mimics with the mind of the painter, not of the photographer;
+We prefer to analyse and synthesize virtual dramatic expression, occasionally
+tempted by the caricature (stressing eloquent features). </p>
+
+<p>Will it work in the end? We
+hope so... and we are eager to face the challenge.</p>
+
+
+
+<p><b>Musical production</b> (after many years of experience) is
+very mature and natural both in interpretation and improvisation. We have mastered music rehearsal; sound recording; audio mastering: No
+risks!</p>
+
+<p>Finally our strength is our
+weakness (a close circle?): We are a very small team with a
+completely integrated and coherent working scheme. </p><div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1524543/edit" data-id="1524543">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/524/543/14258a456cc6ee00e46894cf4dc182b8_large.jpg?1389695210"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1708405/edit" data-id="1708405">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/708/405/3d5dd322412617942df972fb405fc639_large.jpg?1394017028"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1657485/edit" data-id="1657485">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/657/485/0622af2f30800336c93057e90c7bde58_large.jpg?1392910889"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1696046/edit" data-id="1696046">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/696/046/e1ffdcbffe6e137d8a628d4a2d12ccb4_large.jpg?1393770727"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1696047/edit" data-id="1696047">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/696/047/8b04ee8f2653bd4d3967de9afc254738_large.jpg?1393770756"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1657493/edit" data-id="1657493">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/657/493/7c8480f5cf6d54ea09d2c5e4d654aeb3_large.jpg?1392911152"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1657497/edit" data-id="1657497">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/657/497/3f10340f604c5a4bf0bcedbbfd9c7253_large.jpg?1392911213"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1657502/edit" data-id="1657502">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/657/502/8e6b3027f6660f25efbc41a9f5e141ee_large.jpg?1392911276"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1657504/edit" data-id="1657504">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/657/504/f4d57af587f60b1885e6132523676d37_large.jpg?1392911327"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1657507/edit" data-id="1657507">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/657/507/2ce8ea010b8e30e6ed1862c05158db2b_large.jpg?1392911386"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1657514/edit" data-id="1657514">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/657/514/716470c2f649b853d8fd4c3bd160e696_large.jpg?1392911476"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1657516/edit" data-id="1657516">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/657/516/54280154cf28f9da04b5009cec16f32d_large.jpg?1392911527"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1657518/edit" data-id="1657518">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/657/518/33e644ecf4d2e981302b5e122a5076df_large.jpg?1392911561"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1657522/edit" data-id="1657522">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/657/522/712d9ee8624f9d2eff83637cee5054f8_large.jpg?1392911605"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1657574/edit" data-id="1657574">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/657/574/5217dc3f80c28eb1d9bcc275469556af_large.jpg?1392912364"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1657533/edit" data-id="1657533">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/657/533/77997000f6af037b133a12a3e2bec5ec_large.jpg?1392911703"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1657535/edit" data-id="1657535">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/657/535/052feed25ff29e80c4c4f6ba220c0e53_large.jpg?1392911726"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1657539/edit" data-id="1657539">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/657/539/06f4c29f8f89285045dec99a88ccdfa0_large.jpg?1392911757"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1657541/edit" data-id="1657541">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/657/541/50f7de6c530f4d4a851cd8ae09c5a6ee_large.jpg?1392911787"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/118959898/mont-de-castel/assets/1708444/edit" data-id="1708444">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/708/444/b571ecccf0b57740a07f8bda28403624_large.jpg?1394018851"></figure>
+</div>
+</div>
+<div id="risks">
+<h2 class="title grey-dark mt6 mb4">
+<span>Risks and challenges</span>
+<a href="/help/faq/kickstarter%20basics#Acco" class="right normal h5" target="_blank">Learn about accountability on Kickstarter</a>
+<div class="divider clear"></div>
+</h2>
+<p><p>Risks and Challenges are included in main story</p></p>
+</div>
+</div>
+<div class="NS-projects-faqs" id="project-faqs">
+<h2 class="title grey-dark mt6 mb4">
+FAQ
+<div class="divider clear"></div>
+</h2>
+<ul class="faqs">
+
+</ul>
+<div class="faq-ask-box">
+<p>
+<strong>Have a question?</strong>
+If the info above doesn't help, you can ask the project creator directly.
+</p>
+<a href="/projects/118959898/mont-de-castel/messages/new?message%5Bto%5D=118959898&amp;mode=FAQ" class="button button_blue remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Ask a question about MONT-DE-CASTEL">Ask a question</a>
+
+</div>
+</div>
+
+<div class="mt4 ml1 mr1 mb2" id="report-issue-wrap">
+<a href="/login?then=%2Fprojects%2F118959898%2Fmont-de-castel" class="button button_grey">Report this project to Kickstarter</a>
+</div>
+</div>
+<div class="NS-projects-rightcol grid_5" id="rightcol">
+<div class="NS_projects__ecom">
+<div class="digits_4 pb2 pl2 pt2" id="stats">
+<h5>
+<div class="num h48 no-margin" data-backers-count="24" id="backers_count"><data class="Project1181298894" data-format="number" data-value="24" itemprop="Project[backers_count]">24</data></div>
+<span><data class="Project1181298894" data-attr="backers_count" data-format="pluralize" data-value="24" data-word="Backer">Backers</data></span>
+</h5>
+<h5>
+<div class="num h48 no-margin" data-goal="35000.0" data-percent-raised="0.058514285714285714" data-pledged="2048.0" id="pledged">
+<data class="Project1181298894" data-currency="GBP" data-format="shorter_money" data-precision="0" data-value="2048" data-without_code="true" itemprop="Project[pledged]">£2,048</data>
+<span class="money gbp project_currency_code"></span>
+</div>
+pledged of
+<span class="money gbp no-code">£35,000</span>
+goal
+</h5>
+<span data-duration="40.0" data-end_time="2014-04-20T17:47:09-04:00" data-hours-remaining="0" id="project_duration_data"></span>
+<div class="Project1181298894" data-conditions="[{&quot;!state&quot;:[&quot;canceled&quot;,&quot;suspended&quot;]}]" data-evaluation="true" data-render="&quot;&lt;h5 class=\&quot;poll \&quot; data-dynamic=\&quot;5\&quot; data-end_time=\&quot;2014-04-20T17:47:09-04:00\&quot; data-poll_url=\&quot;https://d2oher2uhvl0ur.cloudfront.net/projects/118959898/mont-de-castel/stats.json\&quot;&gt;\n&lt;div class=\&quot;num h48 no-margin\&quot;&gt;0&lt;/div&gt;\n&lt;span class=\&quot;text\&quot;&gt;seconds to go&lt;/span&gt;\n&lt;/h5&gt;\n&quot;"><h5 class="poll " data-dynamic="5" data-end_time="2014-04-20T17:47:09-04:00" data-poll_url="https://d2oher2uhvl0ur.cloudfront.net/projects/118959898/mont-de-castel/stats.json">
+<div class="num h48 no-margin">0</div>
+<span class="text">seconds to go</span>
+</h5>
+</div></div>
+<div class="Project1181298894" data-conditions="[{&quot;state&quot;:&quot;live&quot;},{&quot;!ended?&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;pr2 pl2\&quot; id=\&quot;pledge-wrap\&quot;&gt;\n&lt;a href=\&quot;/projects/118959898/mont-de-castel/pledge/new?clicked_reward=false\&quot; class=\&quot;button button_green button_box button_block\&quot; id=\&quot;button-back-this-proj\&quot; title=\&quot;Back this project\&quot;&gt;Back This Project &lt;small class=&#39;h6 normal block green-dark&#39;&gt;&lt;span class=\&quot;money gbp no-code\&quot;&gt;\u00a31&lt;/span&gt; minimum pledge&lt;/small&gt;&lt;/a&gt;\n&lt;/div&gt;\n&quot;"></div><div class="Project1181298894" data-conditions="[{&quot;state&quot;:&quot;live&quot;}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;p2\&quot; id=\&quot;banner\&quot;&gt;\n&lt;p class=\&quot;tiny_type no-margin\&quot;&gt;\nThis project will only be funded if at least\n&lt;span class=\&quot;money gbp no-code\&quot;&gt;\u00a335,000&lt;/span&gt;\nis pledged by\n&lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;llll z\&quot; datetime=\&quot;2014-04-20T17:47:09-04:00\&quot;&gt;Sun, Apr 20 2014 5:47 pm EDT&lt;/time&gt;.\n&lt;/p&gt;\n&lt;/div&gt;\n&quot;"></div></div>
+
+<div class="NS_projects__rightcol_projectby bg-blue-light rounded">
+<div class="p2 clearfix">
+<div class="avatar inline-block align-middle">
+<a href="/projects/118959898/mont-de-castel/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography"><img alt="Logo_6_4for3.small" class="avatar-small" height="80" src="https://s3.amazonaws.com/ksr/avatars/2154818/LOGO_6_4for3.small.jpg?1392823267" width="80" />
+</a></div>
+<div class="creator-name inline-block align-middle ml1">
+<h6 class="mb1">Project by</h6>
+<h5 class="mb1">
+<a href="/projects/118959898/mont-de-castel/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">OLDTOWN GAMETALES</a>
+</h5>
+<p class="location h6 bold mb1">
+<a href="/discover/places/preston-london-gb">Preston, UK</a>
+</p>
+</div>
+</div>
+<div class="creator-details pl2 pr2 pb1">
+<ul class="list-simple h5 mb1">
+<li class="projects">
+<span class="ss-icon ss-kickstarter grey-dark margin-right"></span>
+<span class="text">
+First created
+<span class="divider">&middot;</span>
+0 backed
+</span>
+</li>
+<li class="facebook-connected">
+<span class="ss-icon ss-facebook facebook color-facebook margin-right"></span>
+<span class="text">
+<a href="https://www.facebook.com/100001812603491" class="popup" target="_blank">Ken Rigby</a>
+<span class="number h6">
+32
+friends
+</span>
+</span>
+
+</li>
+<li class="links">
+<span class="ss-icon ss-globe margin-right grey-dark"></span>
+<span class="text">
+<a href="http://www.oldtown-gametales.com" class="popup" rel="nofollow" target="_blank">oldtown-gametales.com</a>
+</span>
+</li>
+</ul>
+</div>
+<div class="footer center h5 bold clearfix rounded-bottom clip">
+<a href="/projects/118959898/mont-de-castel/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">See full bio</a>
+<a href="/projects/118959898/mont-de-castel/messages/new?message%5Bto%5D=118959898" class="remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Send a message to OLDTOWN GAMETALES">Contact me</a>
+
+</div>
+</div>
+
+<ul class="NS-projects-rightcol-rewards rounded clip list mt2" data-reward-count="24" id="what-you-get">
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£5</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+3 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Other currencies est.: $8.2, €6
+------------------------------------------------
+... be a Mont-de-Castel fan!
+-------------------------------------------------
+Receive a personalised signed photo of the Mont-de-Castel Puppet Company (digital) thanking your support. Your name will be listed in the &quot;Backers&quot; section of the game credits and in the development diary at the official website *.  You will have access to the Official Mont-de-Castel Community forums, with a unique &quot;Kickstarter Backer&quot; badge, where you get a place to speculate about the game, offer suggestions, and interact with the development team.
+------------------------------------------------
+* if explicitly required, your name will not be mentioned/listed</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-05-01">May 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£10</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+9 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Other currencies est.: $16.3, €12
+----------------------------------------------
+... be a Mont-de-Castel gamer!
+----------------------------------------------
+Receive a digital copy of the Mont-de-Castel game for your computer, along with a digital manual (PDF) at a special backer&#39;s price.  All previous rewards included.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-10-01">Oct 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£17</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Other currencies est.: $28, €20.5
+----------------------------------------------
+... be a Mont-de-Castel special gamer!
+----------------------------------------------
+Receive a Box Edition of the Mont-de-Castel Videogame, including a booklet manual, at a special backer&#39;s price. Rewards of £5 included 
+-----------------------------------------------
+(please add 8£ ($13, 10€) for shipping).</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-10-01">Oct 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£20</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Other currencies est.: $32.6, €24
+-----------------------------------------------
+... be a Mont-de-Castel listener!
+------------------------------------------------
+Receive a digital copy of the Mont-de-Castel Soundtrack. Rewards of £10 included.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-10-01">Oct 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£45</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Other currencies est.: $73, €54
+----------------------------------------------
+... be a Mont-de-Castel collector!
+----------------------------------------------
+Receive a Collector&#39;s Edition Box of the Mont-de-Castel Videogame, signed by the authors, including a DVD copy of the Videogame, a booklet manual, a CD copy of the soundtrack, a DVD copy of a &quot;comics&quot; (bande-dessinée) book (PDF) with the Mont-de-Castel storytelling, and a DVD copy of the &quot;Making-of&quot;. Rewards of £5 included 
+------------------------------------------------
+(please add 8£ ($13, 10€) for shipping).</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-10-01">Oct 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£80</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+4 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Other currencies est.: $130, €97
+-------------------------------------------------
+Mont-de-Castel Club Member  
+-------------------------------------------------                 
+... be a member of the Mont-de-Castel Club!
+-------------------------------------------------
+Become a member of the Mont-de-Castel Club and cooperate directly with your ideas on the game development, in a restricted club’s forum, with recurrent personalised feedback from the team. Receive a Mont-de-Castel T-Shirt. You will have special thanks in the game credits. Rewards of £45 included.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-09-01">Sep 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£200</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(40 left of 40)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Other currencies est.: $326, €241
+-------------------------------------------------
+Mont-de-Castel Club Member
+------------------------------------------------
+... be present at Mont-de-Castel!
+------------------------------------------------
+Your name (or other of your choice, provided it is not considered a commercial in-game advertisement) inscribed in a game prop - as a book author, on a newspaper notice caption, on a show advertisement credits... Rewards of £80 included.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-06-01">Jun 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£200</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(40 left of 40)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Other currencies est.: $326, €241
+--------------------------------------------
+Mont-de-Castel Club Member
+----------------------------------------------
+... your portrait at The Refuge!
+---------------------------------------------
+Your portrait (in “sepia” old appearance) in a collective photo at The Refuge (or other prominent game scenario). Rewards of £80 included.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-06-01">Jun 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£350</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+2 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(8 left of 10)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Other currencies est.: $489, €362
+----------------------------------------------
+Mont-de-Castel Club Member
+-----------------------------------------------
+... be referred at Mont-de-Castel!
+------------------------------------------------
+Your name (or other of your choice, provided it is not considered a commercial in-game advertisement) inscribed in a game prop with protagonism in the game storyline (explicitly referred by the main characters in a game TAKE) - as a book author, on a newspaper notice caption, on a show advertisement credits... Rewards of £80 included.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-04-01">Apr 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£350</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(40 left of 40)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Other currencies est.: $489, €362
+-------------------------------------------------
+. Mont-de-Castel Club Member
+-------------------------------------------------
+.. your portrait well visible at The Refuge!
+-------------------------------------------------
+Your single portrait, you and your beloved, your family, or your friends,  in a framed photo (in “sepia” old appearance) at The Refuge (or other prominent game scenario) . Rewards of £80 included.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-06-01">Jun 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£350</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(39 left of 40)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Other currencies est.: $489, €362
+------------------------------------------------
+Mont-de-Castel Club Member
+-------------------------------------------------
+Additional Designer
+-------------------------------------------------
+... be a writer at Mont-de-Castel!
+------------------------------------------------
+A one page text of your creation (a poem, a small tale, an anecdote **...) inside the game - in a book, magazine or newspaper (provided it is in accordance with the game ambience, accepted by the game developers team, and not considered offensive or a commercial in-game advertisement). You will have the name of your item with your name under &quot;Additional Designer&quot; in the credits, along with the development team. Rewards of £80 included.
+------------------------------------------------
+** in one of the five languages of Mont-de-Castel (english, french, portuguese, spanish and italian)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-06-01">Jun 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(30 left of 30)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Other currencies est.: $815, €603
+-------------------------------------------------
+Mont-de-Castel Club Member
+-------------------------------------------------
+Additional Designer
+-------------------------------------------------
+... be a notorious writer at Mont-de-Castel!
+-------------------------------------------------
+A small poem, story or tale ** (3-4 pages) of your creation inside the game (provided it is in accordance with the game ambience, accepted by the game developers team, and not considered offensive or a commercial in-game advertisement) in a in-game book, with handling pages, consultable by the player. You will have the name of your item with your name under &quot;Additional Designer&quot; in the credits, along with the development team. Rewards of £80 included.
+-------------------------------------------------
+** in one of the five languages of Mont-de-Castel (english, french, portuguese, spanish and italian)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-06-01">Jun 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(29 left of 30)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Other currencies est.: $815, €603
+-----------------------------------------------
+Mont-de-Castel Club Member
+-------------------------------------------------
+Additional Designer
+------------------------------------------------
+... be a painter at Mont-de-Castel!
+-----------------------------------------------
+A small piece of art of your creation (a small drawing, an engraving, a B/W photo...) inside a game prop - in a book page, a newspaper new,... (provided it is in accordance with the game ambience, accepted by the game developers team, and not considered offensive or a commercial in-game advertisement). You will have the name of your item with your name under &quot;Additional Designer&quot; in the credits, along with the development team. Rewards of £80 included.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-06-01">Jun 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(10 left of 10)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Other currencies est.: $815, €603
+-------------------------------------------------
+Mont-de-Castel Club Member
+------------------------------------------------
+... your portrait notoriously visible at The Refuge!
+-------------------------------------------------
+Your single portrait, you and your beloved, your family, or your friends,  in a framed photo (in “sepia” old appearance) at The Refuge (or other prominent game scenario), with protagonism in the game storyline (referred explicitly by the characters in a game TAKE). Rewards of £80 included.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-04-01">Apr 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(10 left of 10)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Other currencies est.: $815, €603
+-------------------------------------------------
+Mont-de-Castel Club Member
+-------------------------------------------------
+... be notoriously considered at Mont-de-Castel!
+-------------------------------------------------
+Your name (or other of your choice, provided it is not considered a commercial in-game advertisement) inscribed in-game - as a street name, in a shop signboard, in a opera/theatre/concert poster referred as main author/conductor/performer... Rewards of £80 included.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-06-01">Jun 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£750</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(10 left of 10)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Other currencies est.: $1223, €905
+-------------------------------------------------
+Mont-de-Castel Club Member
+-------------------------------------------------
+Additional Designer
+-------------------------------------------------
+... be a musician at Mont-de-Castel!
+-------------------------------------------------
+Come to our studio and record your one version of the tune &quot;Trois Jeunes Tambours&quot; with your own musical instrument, to be available in the game as a choice for the Opera final performance; In alternative you can record a short music of your choice to be preformed in a rehearsal or warming-up team’s session (travel expenses &amp; accommodation to/in Lisbon - Portugal should be on your account). You will have the name of your item with your name under &quot;Additional Designer&quot; in the credits along with the development team. Rewards of £80 included.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-06-01">Jun 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£750</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(20 left of 20)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Other currencies est.: $1223, €905
+------------------------------------------------
+Mont-de-Castel Club Member
+------------------------------------------------
+Additional Designer
+------------------------------------------------
+... be a framed painter at Mont-de-Castel!
+-------------------------------------------------
+A piece of art of your creation (a painting, a draw, an engraving...) inside the game, properly framed (provided it is in accordance with the game ambience, accepted by the game developers team, and not considered offensive or a commercial in-game advertisement). You will have the name of your item with your name under &quot;Additional Designer&quot; in the credits, along with the development team. Rewards of £80 included.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-06-01">Jun 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£1,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(10 left of 10)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Other currencies est.: $1631, €1206
+------------------------------------------------
+Mont-de-Castel Club Member
+-------------------------------------------------
+Additional Designer
+-------------------------------------------------
+... be a referred notorious painter at Mont-de-Castel!
+-------------------------------------------------
+A piece of art of your creation (a painting, a draw, an engraving...) inside the game (provided it is in accordance with the game ambience, accepted by the game developers team, and not considered offensive or a commercial in-game advertisement), referred explicitly in-game by the game characters in a TAKE. You will have the name of your item with your name under &quot;Additional Designer&quot; in the credits, along with the development team. Rewards of £80 included.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-04-01">Apr 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£1,250</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(20 left of 20)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Other currencies est.: $2038, €1508
+-------------------------------------------------
+Mont-de-Castel Club Member
+------------------------------------------------
+Additional co-producer
+------------------------------------------------
+... be a Mont-de-Castel guest!
+------------------------------------------------
+Be invited to the Mont-de-Castel Launching Party (travel expenses &amp; accommodation to/in Lisbon - Portugal should be on your account). It includes a full-day commented and guided (by archaeologists/historians) excursion to some of the historical places that have been used as models and inspiration for the Mont-de-Castel town recreation. Have your name as &quot;Additional Co-Producer&quot;, listed in the game credits. Rewards of £80 included.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-10-01">Oct 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£1,300</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(20 left of 20)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Other currencies est.: $2120, €1568
+------------------------------------------------
+Mont-de-Castel Club Member
+------------------------------------------------
+Additional co-producer
+------------------------------------------------
+Additional Designer
+------------------------------------------------
+… be a creative member of the Mont-de-Castel Team. 
+------------------------------------------------
+If you share the same passion as we do for gaming the vivid past… if you can model in 3D, animate characters, create 2D textures, or simply play and record Music… you can become part of the Mont-de-Castel Creative Team. In this case you will be able to create a short expansion of the game to be incorporated in a special game upgrade to be launch after the first game version deliverance. We will send you (approximately in nine months) the Alfa Version of the Mont-de-Castel game (testing version), together with an illustrated course manual (PDF) covering the technical features of the Mont-de-Castel game and RAM engine, fully supported on-line by our team’s advise. In addition, you will be able to participate in a two-days intensive presential workshop in Lisbon (travel expenses &amp; accommodation to/in Lisbon - Portugal should be on your account). Finally, you will receive for your personal dissemination (around 6 month after first game deliverance) a set of 10 extra copies of the collector’s edition upgraded with your own expansion. Rewards of £1250 included.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-02-01">Feb 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£4,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(5 left of 5)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Other currencies est.: $6522, €4825
+-------------------------------------------------
+Mont-de-Castel Club Member
+-------------------------------------------------
+Additional co-producer
+-------------------------------------------------
+Additional Designer
+-------------------------------------------------
+... design a NPC!
+-------------------------------------------------
+Design a NPC for the Mont-de-Castel village. You will decide his personal looks, characteristics and occupation (within feasibility, game ambience constraints and accepted by the game developers team). Have your name as &quot;Additional Designer&quot;, listed in the game credits main section. Rewards of £1250 included.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-02-01">Feb 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£4,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(5 left of 5)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Other currencies est.: $6522, €4825
+-------------------------------------------------
+Mont-de-Castel Club Member
+-------------------------------------------------
+Additional co-producer
+-------------------------------------------------
+Additional Designer
+-------------------------------------------------
+... design a side-story!
+-------------------------------------------------
+Include a complete short story or anecdote (up to around 5 minutes of game-play) to be performed by the game main characters, as a side story (within feasibility, game ambience constraints and accepted by the game developers team). Have your name as &quot;Additional Designer&quot;, listed in the game credits main section. Rewards of £1250 included.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-02-01">Feb 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£5,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(2 left of 2)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Other currencies est.: $8153, €6031
+------------------------------------------------
+Mont-de-Castel Club Member
+------------------------------------------------
+Main co-producer
+------------------------------------------------
+Additional Designer
+------------------------------------------------
+... design a scenario!
+------------------------------------------------
+Design an interior space, a shop, a workshop, a house chamber…, as a extra scenario in the game (within feasibility, game ambience constraints and accepted by the game developers team). You will provide illustrated descriptions of your scenery elements (architecture, props, ornamentations) in order to permit us to adequately work-out the 3D modelling and game incorporation of your ideas. Design also a NPC and a side-quest as in rewards £4000. Have your name in the opening credits as a &quot;Main Co-Producer&quot;. Have your name as &quot;Additional Designer&quot;, listed in the game credits. Rewards of £1250 included.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-02-01">Feb 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£5,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(2 left of 2)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Other currencies est.: $8153, €6031
+-------------------------------------------------
+Mont-de-Castel Club Member
+-------------------------------------------------
+Main co-producer
+-------------------------------------------------
+Additional Designer
+-------------------------------------------------
+... design a special NPC!
+-------------------------------------------------
+Design a NPC with protagonism in the storytelling from the Mont-de-Castel village. You will decide his personal looks, characteristics and occupation (within feasibility, game ambience constraints and accepted by the game developers team). You will provide illustrated descriptions of your character in order to permit us to adequately work-out the 3D modelling and game incorporation of your ideas. Note that the storyline will be adapted to incorporate the recurrent performance of your character. You will have your name in the opening credits as a &quot; Main Co-Producer &quot;. Have your name as &quot;Additional Designer&quot;, listed in the game credits. Rewards of £1250 included.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-02-01">Feb 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+</ul>
+
+<div class="p2" id="meta">
+<h5>Funding period</h5>
+<p class="tiny_type">
+<time class="js-adjust" data-format="ll" datetime="2014-03-11T17:47:09-04:00">Mar 11, 2014</time> - 
+<time class="js-adjust" data-format="ll" datetime="2014-04-20T17:47:09-04:00">Apr 20, 2014</time>
+(40 days)
+</p>
+</div>
+</div>
+
+</div>
+
+<a href="#" id="video_mode_tab" style="display: none;">
+View in Video Mode
+</a>
+
+</div>
+</div>
+
+
+</div>
+
+<div class="h5 bg-green-dark" id="mega-footer-wrap">
+<div class="bg-green-dark white full-height" id="footer-newsletter-signup">
+<div class="container py4">
+<div class="grid_8 prefix_4 suffix_4 center mt4">
+<h2>
+Eureka! You've found
+<br>
+our little secret.
+</h2>
+<p>Sign up for our Happening email for all the inside info about arts and culture in the Kickstarter universe and beyond.</p>
+<div class="newsletter_signup">
+<form accept-charset="UTF-8" action="/newsletters/happening/signup" class="overlabels" method="post"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /><input class="hidden" name="authenticity_token" type="hidden" value="/feOS4isKwV4jjoD7KRdsYn3UxKcDaS7LAdGRNLSctU=" /></div><input class="hidden" id="location" name="location" type="hidden" value="footer" />
+<textarea class="hide textarea" id="comment" name="comment">
+</textarea>
+<div class="field newsletter">
+<label class="overlabel z1 overlabel-newsletter">Email address</label>
+<input class="text" id="email" name="email" type="text" />
+</div>
+<input class="button button_green submit" name="commit" type="submit" value="Submit" />
+</form>
+
+</div>
+
+</div>
+</div>
+</div>
+<div class="container relative" id="mega-footer">
+<span class="scissors icon-scissors-1"></span>
+<div class="grid_16 alpha omega pt4 pb2" id="mega-footer-links">
+<div class="grid_4 link-group">
+<h5 class="white">About us</h5>
+<ul class="list">
+<li><a href="/year/2013/?ref=footer">2013 highlights</a></li>
+<li><a href="/year/2012?ref=footer">2012 highlights</a></li>
+<li><a href="/team?ref=footer">Who we are</a></li>
+<li><a href="/jobs?ref=footer">Jobs</a></li>
+<li><a href="/press?ref=footer">Press</a></li>
+<li><a href="/help/stats?ref=footer">Stats</a></li>
+<li><a href="/newsletters/weekly">Projects we love</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group">
+<h5><a href="/help?ref=footer" class="white">Help</a></h5>
+<ul class="list">
+<li><a href="/hello?ref=footer">What is Kickstarter?</a></li>
+<li><a href="/help?ref=footer">FAQ</a></li>
+<li><a href="/contact?ref=footer">Support</a></li>
+<li><a href="/help/school?ref=footer">Kickstarter School</a></li>
+<li><a href="/terms-of-use?ref=footer">Terms of Use</a></li>
+<li><a href="/privacy?ref=footer">Privacy Policy</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group alpha omega suffix_1">
+<h5 class="alpha"><a href="/discover/advanced?ref=footer" class="white">Discover</a></h5>
+<ul class="column column-0 grid_2 list">
+<li><a href="/discover/categories/art?ref=footer">Art</a></li>
+<li><a href="/discover/categories/comics?ref=footer">Comics</a></li>
+<li><a href="/discover/categories/dance?ref=footer">Dance</a></li>
+<li><a href="/discover/categories/design?ref=footer">Design</a></li>
+<li><a href="/discover/categories/fashion?ref=footer">Fashion</a></li>
+<li><a href="/discover/categories/film%20&amp;%20video?ref=footer">Film &amp; Video</a></li>
+<li><a href="/discover/categories/food?ref=footer">Food</a></li>
+</ul>
+<ul class="column column-1 grid_2 list">
+<li><a href="/discover/categories/games?ref=footer">Games</a></li>
+<li><a href="/discover/categories/music?ref=footer">Music</a></li>
+<li><a href="/discover/categories/photography?ref=footer">Photography</a></li>
+<li><a href="/discover/categories/publishing?ref=footer">Publishing</a></li>
+<li><a href="/discover/categories/technology?ref=footer">Technology</a></li>
+<li><a href="/discover/categories/theater?ref=footer">Theater</a></li>
+</ul>
+</div>
+<div class="grid_3 link-group">
+<h5 class="white">Hello</h5>
+<ul class="list">
+<li>
+<a href="https://twitter.com/kickstarter"><span class="ss-icon ss-social-regular ss-twitter"></span>
+Twitter
+</a></li>
+<li>
+<a href="https://www.facebook.com/Kickstarter"><span class="ss-icon ss-social-regular ss-facebook"></span>
+Facebook
+</a></li>
+<li>
+<a href="http://kickstarter.tumblr.com"><span class="ss-icon ss-social-regular ss-tumblr"></span>
+Tumblr
+</a></li>
+<li>
+<a href="http://instagram.com/kickstarter"><span class="ss-icon ss-social-regular ss-instagram"></span>
+Instagram
+</a></li>
+<li>
+<a href="https://vine.co/Kickstarter"><span class="ss-icon ss-social-regular ss-vine"></span>
+Vine
+</a></li>
+<li>
+<a href="/blog?ref=footer">Blog</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="grid_16 py4" id="mega-footer-bottom">
+<div class="logo left">
+<a href="/" class="grey-dark"><span class="ss-icon h3">KICKSTARTER</span>
+</a></div>
+<p class="right h5 grey-dark">
+&copy;
+2014
+Kickstarter, Inc.
+</p>
+</div>
+</div>
+</div>
+
+<script>
+  //<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    var analytics_vars = { google_analytics_id : "UA-7621056-1", logged_in : "false", social_user: "false" }
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.mixpanel_id = '75b1d24a516ecfc955eadfadc4910661';
+    window.mixpanel_debug = false;
+  //]]>
+</script>
+
+
+<noscript>
+<img alt="Quantcast" border="0" height="1" src="//secure.quantserve.com/pixel/p-34IbSpw2K94Sg.gif" style="display:none" width="1" />
+</noscript>
+
+
+<script>
+  //<![CDATA[
+    window.benchmark = (typeof window.performance == 'object' && typeof window.performance.mark == 'function');
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    (function (root) {
+      function instrument_function (original) {
+        return function () {
+          try {
+            return original.apply(this, arguments);
+          } catch (e) {
+            if (e.stack && root.Honeybadger) {
+              Honeybadger.notify(e, {
+                current_project : root.current_project,
+                current_user : root.current_user
+              });
+            }
+            throw(e);
+          }
+        };
+      }
+      root.instrument_function = instrument_function;
+    }(this));
+  //]]>
+</script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+
+<script>
+  //<![CDATA[
+    (function(){function c(a){this.local_start_time=new Date;this.settings={cookie_name:"request_time"};for(var b in a)this.settings[b]=a[b];this.get_remote_offset()}c.prototype.get_remote_offset=function(){this.cookie_value=this.read_cookie();var a=new Date(this.cookie_value);if(!this.cookie_value||"Invalid Date"===a.toString()){if(this.remote_offset=this.read_cookie("local_offset"))this.remote_offset=parseInt(this.remote_offset,10)}else this.remote_offset=a-this.local_start_time;"undefined"!==typeof this.remote_offset&& !isNaN(this.remote_offset)?(document.cookie="local_offset="+this.remote_offset+"; path=/",this.is_set=!0):this.is_set=!1};c.prototype.time_units=[["milliseconds",1],["seconds",1E3],["minutes",6E4],["hours",36E5],["days",864E5]];c.prototype.get_units_in_interval=function(a,b){var d=a.replace(/^\w/,function(d){return"get"+d.toUpperCase()});return b[d]()};c.prototype.milliseconds_in_day=function(a){"undefined"===typeof a&&(a=new Date);for(var b=0,d=this.time_units.length-2;0<=d;d--)b+=this.get_units_in_interval(this.time_units[d][0], a)*this.time_units[d][1];return b};c.prototype.milliseconds_in_interval=function(a,b){return this.milliseconds_in_day(b)%a};c.prototype.milliseconds_to_next_interval=function(a,b){return a-this.milliseconds_in_interval(a,b)};c.prototype.pluralize=function(a,b){1===b&&(a=a.replace(/s$/,""));return a};c.prototype.read_cookie=function(a){for(var b=window.document.cookie.split(";"),a=(a||this.settings.cookie_name)+"=",d=0;d<b.length;d++){for(var e=b[d];" "==e.charAt(0);)e=e.substring(1,e.length);if(0== e.indexOf(a))return b=e.substring(a.length,e.length),decodeURIComponent(b).replace(/\+/g," ")}return null};c.prototype.destroy_cookie=function(a){var b=new Date;a||(a=this.settings.cookie_name);b.setTime(b.getTime()-864E5);window.document.cookie=a+"=; expires="+b.toGMTString()+"; path=/"};c.prototype.get_remote_time=function(){var a=new Date,b=a.getTime()+this.remote_offset;return a=a.setTime(b)};window.ksr_page_clock=new c})(); (function(){function c(d,a,b){if(d){this.options={unit_base:{seconds:119,minutes:119,hours:72,days:0},end_phrase:d.getAttribute("data-word")||"to go",count_down:d.getAttribute("data-dynamic")||!1};for(k in b)this.options[k]=b[k];this.clock=a;this.time_units=this.clock.time_units.slice(1);this.element=d;this.clock.is_set&&this.attach()}}function a(){this.elements=[];this.attach()}var b=function(d,a){var b=a||window.document.body,c=d.split("."),g=c[c.length-1],c=1<c.length&&c[0]?c[0]:"*";if(window.document.getElementsByClassName)return b.getElementsByClassName(g); if(b.querySelectorAll)return b.querySelectorAll(d);for(var c=b.getElementsByTagName(c),h=[],i=0,f;f=c[i];i++)b=RegExp("(^|\\s)"+g+"(\\s|$)"),(""+f.className).match(b)&&h.push(f);return h};c.prototype.get_remaining_time=function(){var d=this.remote_end_time-this.clock.get_remote_time();0>d&&(d=0);return d};c.prototype.get_current_unit=function(){for(var d,a=0;a<this.time_units.length&&!(d=this.time_units[a],this.get_remaining_time()<=this.options.unit_base[d[0]]*d[1]);a++);return d};c.prototype.update_element= function(){var a=this.get_current_unit(),b=Math.floor(this.get_remaining_time()/a[1]);isNaN(b)||(this.number_element.innerHTML=b,this.text_element.innerHTML=this.clock.pluralize(a[0],b)+" "+this.options.end_phrase)};c.prototype.valid=function(){return!(!this.number_element||!this.text_element)};c.prototype.attach=function(){function a(){c.update_element();if(c.options.count_down&&0<c.get_remaining_time()){var b=c.get_current_unit();this.timeout=window.setTimeout(a,c.clock.milliseconds_to_next_interval(b[1]))}} var c=this;if(this.remote_end_time_string=this.element.getAttribute("data-end_time"))this.remote_end_time_string.match(/^\d+$/)?(this.remote_end_time=new Date,this.remote_end_time.setTime(this.remote_end_time_string)):this.remote_end_time=new Date(this.remote_end_time_string),this.number_element=b(".num",this.element)[0],this.text_element=b(".text",this.element)[0],this.element.ksr_page_timer=!0,this.valid()&&a()};c.prototype.cancel=function(){this.timeout&&clearTimeout(this.timeout)};a.prototype.loading= !0;a.prototype.stop_finding=function(){this.attach_timers();this.loading=!1;document.addEventListener?document.removeEventListener("DOMContentLoaded",this.stop_finding,!1):document.attachEvent&&"complete"===document.readyState&&document.detachEvent("onreadystatechange",this.stop_finding)};a.prototype.bind_ready=function(){var a=this,b=function(){a.stop_finding.call(a)};document.addEventListener?(document.addEventListener("DOMContentLoaded",b,!1),window.addEventListener("load",b,!1)):document.attachEvent&& (document.attachEvent("onreadystatechange",b),window.attachEvent("onload",b))};a.prototype.attach_timers=function(){for(var a=b("div.ksr_page_timer"),e=0;e<a.length;e++)a[e].ksr_page_timer||(new c(a[e],window.ksr_page_clock),this.elements.push(a[e]))};a.prototype.attach=function(){var a=this;this.bind_ready();(function(){a.attach_timers();a.loading&&window.setTimeout(function(){a.attach_timers()},200)})()};window.ProjectTimer=c;new a})();
+  //]]>
+</script>
+
+<script class="template" id="template-widgets__video_embed_code" type="text/x-tmpl-mustache"><iframe width="{{width}}" height="{{height}}" src="{{{path}}}" frameborder="0" scrolling="no"> </iframe>
+</script><script class="template" id="template-projects__baseball_card_tall" type="text/x-tmpl-mustache"><div class="project-card-wrap project-card-wrap-tall border bg-white rounded clip">
+  <div class="project-card relative project-live {{#successful?}}successful{{/successful?}}">
+    <div class="project-thumbnail pt1 pl1 pr1">
+      <a href="{{urls.web.project}}" target="">
+        <img alt="Photo-little" class="projectphoto-little" src="{{photo.little}}" class="fit">
+      </a>
+    </div>
+    <div class="project-card-interior p1 h6 grey-dark">
+      <h6 class="project-title">
+        <a href="{{urls.web.project}}" target="" class="green-dark">{{name}}</a>
+      </h6>
+      <p class="mb1 ellipsis">
+        by
+        {{creator.name}}
+      </p>
+      <p class="blurb">
+        {{blurb}}
+      </p>
+    </div>
+    <div class="absolute-bottom bg-white rounded-bottom">
+
+      {{#location}}
+        <ul class="p1 list project-meta no-margin h6">
+          <li class="ellipsis">
+            <a href="{{location.urls.web.discover}}" data-location="{{location_json}}" class="grey-dark">
+              <span class="ss-icon ss-location"></span>
+              <span class="location-name">{{location.displayable_name}}</span>
+            </a>
+          </li>
+        </ul>
+      {{/location}}
+
+      <div class="project-stats-wrap pb1 pl1 pr1">
+
+        {{#failed?}}
+          <div class='project-status project-failed h6'>
+            <strong> Funding Unsuccessful</strong><br />
+            <span class="grey-dark">Project ended on {{formatted_deadline}}</span>
+          </div>
+        {{/failed?}}
+
+        {{#canceled?}}
+          <div class='project-status project-canceled h6'>
+            <strong> Funding Canceled</strong><br />
+            <span class="grey-dark">Project canceled on {{formatted_state_changed_at}}</span>
+          </div>
+        {{/canceled?}}
+
+        {{#successful?}}
+          <div class='project-pledged-successful bg-green white h6 pl1 pr1 mb1'>
+            <strong>Successful!</strong>
+          </div>
+        {{/successful?}}
+
+        {{#live_or_successful?}}
+          {{#live?}}
+            <div class="project-pledged-wrap bg-grey clip mb1">
+              <div class="project-pledged bg-green full-height" style="width: {{percent_raised_to_100}}%"></div>
+            </div>
+          {{/live?}}
+          <ul class="project-stats list no-margin h6 no-wrap">
+            <li class="first funded inline-block mr1">
+              <strong class="block h6">{{percent_raised_rounded}}%</strong>
+              <span class="grey-dark">funded</span>
+            </li>
+            <li class="pledged inline-block mr1">
+              <strong class="block h6">{{currency_symbol}}{{formatted_money}}</strong>
+              <span class="grey-dark">pledged</span>
+            </li>
+            {{#successful?}}
+              <li class="last successful inline-block">
+                <strong class="block h6">Funded</strong>
+                <div class="deadline grey-dark">{{formatted_deadline}}</div>
+              </li>
+            {{/successful?}}
+            {{#live?}}
+              <li class="last ksr_page_timer inline-block" data-end_time="{{javascript_deadline}}">
+                <strong class="block h6">
+                  <div class="num">30</div>
+                </strong>
+                <div class="span text grey-dark" data-word="left">days to go</div>
+              </li>
+            {{/live?}}
+          </ul>
+        {{/live_or_successful?}}
+      </div>
+    </div>
+  </div>
+</div>
+
+{{#friends_backing?}}
+  <div class="friend_project_context">
+    <div class="friend_facepile">
+      {{#truncated_friends}}
+        <img src="{{avatar.thumb}}" class="{{#has_metadata?}}small{{/has_metadata?}}">
+      {{/truncated_friends}}
+    </div>
+    <p class="friend_namepile">
+      {{{escaped_sentence}}}
+    </p>
+  </div>
+{{/friends_backing?}}
+</script><script class="template" id="template-projects__video_mode" type="text/x-tmpl-mustache"><a href='#' id='video_mode_close' class='close_button z2'><span class='ss-icon ss-delete'></span></a>
+
+<div class='title_card z1 {{context_classes}}' style="display:none;">
+  <div class='interior'>
+    <h2 class='project_title normal_weight'>{{name}}</h2>
+    <p class='blurb'>{{blurb}}</p>
+    <nav class='bar'>
+      <a id='play_button' class='left play' href='#'>
+        <span class='play_active'>
+          <span class='ss-icon ss-play'></span>
+          Play
+        </span>
+        <span class='pause_active'>
+          <span class='ss-icon ss-pause'></span>
+          Pause
+        </span>
+      </a>
+      {{#logged_in}}
+        <div class='remind right'>
+          {{#if_not_starred}}
+            <a class='follow' href='{{urls.web.project}}/watch'><span class='ss-icon ss-star'></span></a>
+          {{/if_not_starred}}
+          {{#if_starred}}
+            <a class='unfollow' href='{{urls.web.project}}/unwatch'><span class='ss-icon ss-star active'></span></a>
+          {{/if_starred}}
+        </div>
+      {{/logged_in}}
+      <a class='right explore button button_green small' href='#'>Explore this project</a>
+    </nav>
+  </div>
+</div>
+
+<div class='channel_controls z1'>
+  <a href='#' class='{{#playlist_is_location}}selected {{/playlist_is_location}}location'>Something else near {{location.first_name}} <span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_featured}}selected {{/playlist_is_featured}}featured'>Something different<span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_category}}selected {{/playlist_is_category}}category'>Something else in {{category.name}} <span class='ss-icon ss-navigateright'></span></a>
+</div>
+
+<div class='project_video' style='background-image: url('{{photo.full}}')'>
+  <div class='cover'>
+    <video>
+      <source src='{{video.high}}' type='video/mp4'/>
+      <source src='{{video.webm}}' type='video/webm'/>
+    </video>
+  </div>
+</div>
+</script><script class="template" id="template-site__video_mode_fourohfour" type="text/x-tmpl-mustache"><section class='four_oh_four'>
+  <p class='big_type'>
+    Looks like you've reached the end of the line! <br />Check out <a class="another" href='#'>another channel</a> or <a href='/discover'>browse projects in discover</a>.
+  </p>
+</section>
+</script>
+
+<script id="schwamm_formatting_options" type="text/javascript">
+//<![CDATA[
+(function(){window.formatters = window.formatters || {}; var formatting_options = {"distance_date_intervals":[[5,"just now"],[29,"less than a minute ago"],[89,"1 minute ago"],[2640,"%m minutes ago"],[5340,"about 1 hour ago"],[82800,"about %h hours ago"],[147600,"1 day ago"],[604800,"%d days ago"],[15552000,"on %t"],[0,"on %y"]],"currency_symbol_mappings":{"AFN":"\u060b","ALL":"Lek","ARS":"$","AUD":"$","AWG":"\u0192","AZN":"\u043c\u0430\u043d","BAM":"KM","BBD":"$","BGN":"\u043b\u0432","BMD":"$","BND":"$","BOB":"$b","BRL":"R$","BSD":"$","BWP":"P","BYR":"p.","BZD":"BZ$","CAD":"$","CLP":"$","CNY":"\u00a5","COP":"$","CRC":"\u20a1","CUP":"\u20b1","CZK":"K\u010d","DKK":"kr","DOP":"RD$","EGP":"\u00a3","EUR":"\u20ac","FJD":"$","FKP":"\u00a3","GBP":"\u00a3","GIP":"\u00a3","GTQ":"Q","GYD":"$","HKD":"$","HNL":"L","HRK":"kn","HUF":"Ft","IDR":"Rp","ILS":"\u20aa","IRR":"\ufdfc","ISK":"kr","JMD":"J$","JPY":"\u00a5","KGS":"\u043b\u0432","KHR":"\u17db","KPW":"\u20a9","KRW":"\u20a9","KYD":"$","KZT":"\u043b\u0432","LAK":"\u20ad","LBP":"\u00a3","LKR":"\u20a8","LRD":"$","LTL":"Lt","LVL":"Ls","MKD":"\u0434\u0435\u043d","MNT":"\u20ae","MUR":"\u20a8","MXN":"$","MYR":"RM","MZN":"MT","NAD":"$","NGN":"\u20a6","NIO":"C$","NOK":"kr","NPR":"\u20a8","NZD":"$","OMR":"\ufdfc","PAB":"B/.","PEN":"S/.","PHP":"\u20b1","PKR":"\u20a8","PLN":"z\u0142","PYG":"Gs","QAR":"\ufdfc","RON":"lei","RSD":"\u0414\u0438\u043d.","RUB":"\u0440\u0443\u0431","SAR":"\ufdfc","SBD":"$","SCR":"\u20a8","SEK":"kr","SGD":"$","SHP":"\u00a3","SOS":"S","SRD":"$","SVC":"$","SYP":"\u00a3","THB":"\u0e3f","TRY":"TL","TTD":"TT$","TWD":"NT$","UAH":"\u20b4","USD":"$","UYU":"$U","UZS":"\u043b\u0432","VEF":"Bs","VND":"\u20ab","YER":"\ufdfc","ZAR":"R"},"currency_trailing_code_mappings":{"AUD":true,"CAD":true,"NZD":true,"USD":true},"currency_formats":["money","shorter_money"]}; for (key in formatting_options) {window.formatters[key] = formatting_options[key]};}());
+//]]>
+</script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("begin_base.js_tag");}
+  //]]>
+</script>
+<script src="https://d297h9he240fqh.cloudfront.net/assets/packages/base-45cdab84617ddfb8905b7cddc8500c19.js" type="text/javascript"></script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("end_base.js_tag");}
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    document.domain='kickstarter.com';
+  //]]>
+</script>
+
+<iframe height="0" id="api_xdreceiver" src="https://api.kickstarter.com/xdreceiver/85e6.html" style="display: none;" width="0"></iframe>
+
+
+
+<div id="fb-root"></div>
+<script>
+  //<![CDATA[
+    var channelUrl = window.location.protocol + "//" + window.location.host + "/channel.html",
+      skip_autologin = $('body').is('.skip_autologin');
+    
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId: window.fb_app_id,
+        channelUrl: channelUrl,
+        status: true,    // check login status
+        cookie: true,    // enable cookies to allow the server to access the session
+        xfbml: true,     // parse XFBML
+        logging: false   // turn off logging
+      });
+    
+      FB.getLoginStatus(function (response) {
+        if (response.status === 'connected') {
+          if (read_cookie("logout_from_fb")) {
+            FB.logout();
+            destroy_cookie("logout_from_fb");
+          } else if (!skip_autologin) {
+            $.get("/fb/autologin", {'fbsr': response.authResponse.signedRequest});
+          } else if (false && 0 == response.authResponse.userID) {
+            $.get("/fb/refresh", {'fbsr': response.authResponse.signedRequest});
+          }
+        } else {
+          if (read_cookie("logout_from_fb")) {
+            destroy_cookie("logout_from_fb");
+          }
+        }
+      })
+    
+      $(document).trigger('fb:loaded');
+    };
+    
+    
+    // Load the SDK Asynchronously
+    (function(d){
+      var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+      js = d.createElement('script'); js.id = id; js.async = true;
+      js.src = "//connect.facebook.net/en_US/all.js";
+      d.getElementsByTagName('head')[0].appendChild(js);
+    }(document));
+  //]]>
+</script>
+
+
+</body>
+</html>

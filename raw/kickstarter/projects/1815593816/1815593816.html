@@ -1,0 +1,2226 @@
+<!DOCTYPE html>
+<html class="projects_show  fontface no-js" lang="en">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# kickstarter: http://ogp.me/ns/fb/kickstarter#">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-5.newrelic.com","errorBeacon":"jserror.newrelic.com","licenseKey":"b04b883ad2","applicationID":"11086","transactionName":"cFteRUULX1wHFhtIEFxeVVJDFxxDCgtD","queueTime":36,"applicationTime":1375,"ttGuid":"","agentToken":null,"agent":"js-agent.newrelic.com/nr-411.min.js"}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"Vw4BVEVSCQMIUg=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e){function n(t,e,n){n||(n={});for(var r=o[t],a=r&&r.length||0,s=n[i]||(n[i]={}),u=0;a>u;u++)r[u].apply(s,e);return s}function r(t,e){var n=o[t]||(o[t]=[]);n.push(e)}var o={},i="nr@context";e.exports={on:r,emit:n}},{}],2:[function(t){function e(t,e,n,i,s){return u?u-=1:r("err",[s||new UncaughtException(t,e,n)]),"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t(5),a=window.onerror,s=!1,u=0;t("loader").features.push("err"),window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(d){"stack"in d&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(4),s=!0)}i.on("fn-start",function(){s&&(u+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&u>0&&(u-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:4,3:3,4:6,5:1,6:14,handle:"D5DuLP",loader:"G9z0Bl"}],3:[function(t){function e(t){r.inPlace(t,["addEventListener","removeEventListener"],"-",n)}function n(t){return t[1]}var r=t(1),o=(t(3),t(2));if(e(window),"getPrototypeOf"in Object){for(var i=document;i&&!i.hasOwnProperty("addEventListener");)i=Object.getPrototypeOf(i);i&&e(i);for(var a=XMLHttpRequest.prototype;a&&!a.hasOwnProperty("addEventListener");)a=Object.getPrototypeOf(a);a&&e(a)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&e(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=e["nr@wrapped"]?t[1]=e["nr@wrapped"]:e["nr@wrapped"]=t[1]=r(e,"fn-"):"function"==typeof e.handleEvent&&r.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:15,2:1,3:14}],4:[function(t){var e=(t(3),t(1)),n=t(2);e.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=e(t[0],"fn-")})},{1:15,2:1,3:14}],5:[function(t){function e(t){var e=t[0];"string"==typeof e&&(e=new Function(e)),t[0]=n(e,"fn-")}var n=(t(3),t(1)),r=t(2);n.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",e)},{1:15,2:1,3:14}],6:[function(t){function e(){o.inPlace(this,s,"fn-")}function n(t,e){o.inPlace(e,["onreadystatechange"],"fn-")}function r(t,e){return e}var o=t(1),i=t(2),a=window.XMLHttpRequest,s=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];window.XMLHttpRequest=function(t){var n=new a(t);try{i.emit("new-xhr",[],n),o.inPlace(n,["addEventListener","removeEventListener"],"-",function(t,e){return e}),n.addEventListener("readystatechange",e,!1)}catch(r){try{i.emit("internal-error",r)}catch(s){}}return n},window.XMLHttpRequest.prototype=a.prototype,o.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",r),i.on("send-xhr-start",n),i.on("open-xhr-start",n)},{1:15,2:1}],7:[function(t){function e(){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;u>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,d="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=e(d);if(f&&(r.rxSize=f),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}t("loader").features.push("xhr");var o=t("handle"),i=t(1),a=t(5),s=["load","error","abort","timeout"],u=s.length,d=t(2);t(3),t(4),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var d=e(o);d&&(r.txSize=d)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",e)}catch(r){}}};for(var f=0;u>f;f++)n.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&e()},{1:8,2:11,3:3,4:6,5:1,handle:"D5DuLP",loader:"G9z0Bl"}],8:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e){var n=r[t];return n?n.apply(this,e):(o[t]||(o[t]=[]),void o[t].push(e))}var r={},o={};e.exports=n,n.queues=o,n.handlers=r},{}],11:[function(t,e){function n(t){if(!t||"object"!=typeof t&&"function"!=typeof t)return-1;if(t===window)return 0;if(o.call(t,"__nr"))return t.__nr;try{return Object.defineProperty(t,"__nr",{value:r,writable:!0,enumerable:!1}),r}catch(e){return t.__nr=r,r}finally{r+=1}}var r=1,o=Object.prototype.hasOwnProperty;e.exports=n},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&u&&u.body){p.proto="https"===c.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=u.createElement("script");e.src=p.proto+t.agent,u.body.appendChild(e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,u=s.document,d="addEventListener",f="attachEvent",c=(""+location).split("?")[0],p=e.exports={offset:i(),origin:c,features:[]};u[d]?(u[d]("DOMContentLoaded",o,!1),s[d]("load",n,!1)):(u[f]("onreadystatechange",r),s[f]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],14:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],15:[function(t,e){function n(t,e,r,s){function nrWrapper(){try{var n,a=u(arguments),d=this,f=r&&r(a,d)||{}}catch(c){i([c,"",[a,d,s],f])}o(e+"start",[a,d,s],f);try{return n=t.apply(d,a)}catch(p){throw o(e+"err",[a,d,p],f),p}finally{o(e+"end",[a,d,n],f)}}return a(t)?t:(e||(e=""),nrWrapper[n.flag]=!0,nrWrapper)}function r(t,e,r,o){r||(r="");var i,s,u,d="-"===r.charAt(0);for(u=0;u<e.length;u++)s=e[u],i=t[s],a(i)||(t[s]=n(i,d?s+r:r,o,s,t))}function o(t,e,n){try{s.emit(t,e,n)}catch(r){i([r,t,e,n])}}function i(t){try{s.emit("internal-error",t)}catch(e){}}function a(t){return!(t&&"function"==typeof t&&t.apply&&!t[n.flag])}var s=t(1),u=t(2);e.exports=n,n.inPlace=r,n.flag="nr@wrapper"},{1:1,2:14}]},{},["G9z0Bl",2,7]);</script><script>
+  //<![CDATA[
+    docElement = this.document.documentElement;
+    docElement.className=docElement.className.replace(/\bno-js\b/,'') + 'js';
+  //]]>
+</script>
+<title>Dominium - Fight for your future amongst the stars! by Mak Software Studio &mdash; Kickstarter</title><script>
+  //<![CDATA[
+    window.report_errors = true;
+    window.honeybadger_configuration = {
+      api_key : "02ab109335c0dd1a93506d92f22217a7",
+      environment : "production",
+      component : "projects",
+      action : "show",
+      onerror : false
+    };
+  //]]>
+</script>
+
+
+<!--[if lt IE 9]>
+  <script src="//html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta content="telephone=no" name="format-detection">
+
+<!--[if !IE]> -->
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base-9f623ad5d021a188cfb2d68a0cdf7a7b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<!-- <![endif]-->
+<!--[if IE]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base_blessed-2640c72487552f9a2ef9f2620b4af860.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<!--[if lte IE 9]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_nine-a93fe10530f175f96c4078b7e070d7e1.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 8]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_eight-f75aeb274436f94a0d243774456b1c62.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 7]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie-c019c01acd3a96588b346cf577a3504f.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_seven-5a3d2cef660cd281fd844b04b2397dbb.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if IE 6]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_six-e4d3caf76e405fe19aee6ece8bda701b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<link href="https://d297h9he240fqh.cloudfront.net/favicon.png" rel="icon" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-precomposed-7b603dba7cf80e4acc57d94a991bebbd.png" rel="apple-touch-icon-precomposed" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-ipad-precomposed-3176f72977daf43dee3b0d348484dc01.png" rel="apple-touch-icon-precomposed" sizes="72x72" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-iphone4-precomposed-b93b70168cd8492c843d0fea873c7f83.png" rel="apple-touch-icon-precomposed" sizes="114x114" type="image/png">
+<link href="https://www.kickstarter.com/services/oembed?url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Fmaksw%2Fdominion-fight-for-your-future-amongst-the-stars" rel="alternate" title="Dominium - Fight for your future amongst the stars! Script Tag oEmbed" type="application/json+oembed">
+<link rel="alternate" type="application/atom+xml" title="Dominium - Fight for your future amongst the stars! : Kickstarter" href="https://www.kickstarter.com/projects/maksw/dominion-fight-for-your-future-amongst-the-stars/posts.atom" />
+<meta property="twitter:app:id:iphone" content="596961532"/>
+<meta property="twitter:app:name:iphone" content="Kickstarter"/>
+<meta property="twitter:app:url:iphone" content="ksr://www.kickstarter.com/projects/maksw/dominion-fight-for-your-future-amongst-the-stars"/>
+<meta name="video_height" content="360"/>
+<meta name="video_width" content="640"/>
+<meta name="video_type" content="application/x-shockwave-flash"/>
+<meta name="title" content="Kickstarter &gt;&gt; Dominium - Fight for your future amongst the stars! by Mak Software Studio"/>
+<meta name="description" content="Mak Software Studio is raising funds for Dominium - Fight for your future amongst the stars! on Kickstarter! 
+
+ The first chapter in an sci-fi space-combat-trade-exploration spectacular - pulling space-sims into the 21st Century!"/>
+<meta name="robots" content="noindex"/>
+<meta property="og:title" content="Dominium - Fight for your future amongst the stars!"/>
+<meta property="og:type" content="kickstarter:project"/>
+<meta property="og:image" content="https://s3.amazonaws.com/ksr/projects/408766/photo-main.jpg?1397804903"/>
+<meta property="og:url" content="https://www.kickstarter.com/projects/maksw/dominion-fight-for-your-future-amongst-the-stars"/>
+<meta property="og:site_name" content="Kickstarter"/>
+<meta property="fb:app_id" content="69103156693"/>
+<meta property="og:description" content="The first chapter in an sci-fi space-combat-trade-exploration spectacular - pulling space-sims into the 21st Century!"/>
+<meta property="kickstarter:creator" content="https://www.kickstarter.com/profile/maksw"/>
+<meta property="twitter:url:landing_url" content="https://www.kickstarter.com/projects/maksw/dominion-fight-for-your-future-amongst-the-stars"/>
+<meta property="twitter:card" content="2427656750:kickstarter_project"/>
+<meta property="twitter:site" content="@kickstarter"/>
+<meta property="twitter:site:id" content="16186995"/>
+<meta property="twitter:text:title" content="Dominium - Fight for your future amongst the stars!"/>
+<meta property="twitter:text:artist" content="Mak Software Studio"/>
+<meta property="twitter:text:backers" content="126"/>
+<meta property="twitter:text:pledged" content="£4,030"/>
+<meta property="twitter:text:time" content="0 seconds"/>
+<meta property="twitter:text:location" content="Northampton, UK"/>
+<meta property="twitter:image:location_image" content="https://d3mlfyygrfdi2i.cloudfront.net/b40e/pin.png"/>
+<meta property="twitter:text:description" content="The first chapter in an sci-fi space-combat-trade-exploration spectacular - pulling space-sims into the 21st Century!"/>
+<meta property="twitter:image:media" content="https://s3.amazonaws.com/ksr/projects/408766/photo-main.jpg?1397804903"/>
+<meta property="twitter:image:width" content="640"/>
+<meta property="twitter:image:height" content="480"/>
+<meta property="twitter:player:stream:url" content="https://d2pq0u4uni88oo.cloudfront.net/projects/408766/video-226499-h264_base.mp4"/>
+<meta property="twitter:player:stream:content" content="video/mp4"/>
+<meta property="twitter:player:url" content="https://www.kickstarter.com/projects/maksw/dominion-fight-for-your-future-amongst-the-stars/widget/video.html"/>
+<meta property="twitter:player:height" content="360"/>
+<meta property="twitter:player:width" content="640"/>
+<meta property="twitter:maxage" content="60"/>
+<meta property="og:video" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F408766%2Fvideo-226499-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F408766%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Mak+Software+Studio&amp;project_title=Dominium+-+Fight+for+your+future+amongst+the+stars%21&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Fmaksw%2Fdominion-fight-for-your-future-amongst-the-stars&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:secure_url" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F408766%2Fvideo-226499-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F408766%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Mak+Software+Studio&amp;project_title=Dominium+-+Fight+for+your+future+amongst+the+stars%21&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Fmaksw%2Fdominion-fight-for-your-future-amongst-the-stars&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:height" content="360"/>
+<meta property="og:video:width" content="640"/>
+<meta property="og:video:type" content="application/x-shockwave-flash"/>
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="deFnxAYvdNb8A/XFvBsYUDSgaB1zxfamDSc3eC62FPQ=" name="csrf-token" />
+<script type="text/javascript">
+  var _sift = _sift || [];
+  _sift.push(['_setAccount', '637102']);
+  _sift.push(['_setUserId', '']);
+  _sift.push(['_trackPageview']);
+
+  (function() {
+    function loadSift() {
+      var sift, s;
+      if (root.visitor_id) {
+        _sift.push(['_setSessionId', root.visitor_id]);
+      }
+      sift = document.createElement('script');
+      sift.type = 'text/javascript';
+      sift.async = true;
+      sift.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dtlilztwypawv.cloudfront.net/s.js';
+      s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(sift, s);
+    }
+    if (window.attachEvent) {
+      window.attachEvent('onload', loadSift);
+    } else {
+      window.addEventListener('load', loadSift, false);
+    }
+  })();
+</script>
+<link href="http://kck.st/139nQKu" rel="shorturl">
+<link href="https://www.kickstarter.com/projects/maksw/dominion-fight-for-your-future-amongst-the-stars" rel="canonical">
+<link href="https://s3.amazonaws.com/ksr/projects/408766/photo-med.jpg?1397804903" rel="image_src">
+<link href="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F408766%2Fvideo-226499-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F408766%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Mak+Software+Studio&amp;project_title=Dominium+-+Fight+for+your+future+amongst+the+stars%21&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Fmaksw%2Fdominion-fight-for-your-future-amongst-the-stars&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque" rel="video_src">
+<script>
+  //<![CDATA[
+    window.current_checkout = "{&quot;id&quot;:0,&quot;domestic&quot;:null,&quot;amount&quot;:0.0,&quot;updated_at&quot;:0,&quot;created_at&quot;:0}";
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.current_ip = '94.209.101.212';
+    window.current_ip_datacenter = 'false';
+    window.enabled_features = {"elasticsearch":true,"security_history_read":true,"security_history_write":true,"advanced_discovery_es":true,"ios_crashlytics":true,"ios_mixpanel":true,"stories_veronica_mars":true,"veronica_mars_hero":true,"password_reset_banner":true};
+    window.fb_app_id = '69103156693';
+    
+    var _sf_startpt=(new Date()).getTime();
+    
+    window.current_project = "{&quot;id&quot;:1815593816,&quot;name&quot;:&quot;Dominium - Fight for your future amongst the stars!&quot;,&quot;blurb&quot;:&quot;The first chapter in an sci-fi space-combat-trade-exploration spectacular - pulling space-sims into the 21st Century!&quot;,&quot;goal&quot;:100000.0,&quot;pledged&quot;:4030.0,&quot;state&quot;:&quot;failed&quot;,&quot;slug&quot;:&quot;dominion-fight-for-your-future-amongst-the-stars&quot;,&quot;disable_communication&quot;:false,&quot;country&quot;:&quot;GB&quot;,&quot;currency&quot;:&quot;GBP&quot;,&quot;currency_symbol&quot;:&quot;\\u00a3&quot;,&quot;currency_trailing_code&quot;:false,&quot;deadline&quot;:1370303940,&quot;state_changed_at&quot;:1370303941,&quot;created_at&quot;:1354899870,&quot;launched_at&quot;:1367622181,&quot;backers_count&quot;:126,&quot;photo&quot;:{&quot;full&quot;:&quot;https://s3.amazonaws.com/ksr/projects/408766/photo-full.jpg?1397804903&quot;,&quot;ed&quot;:&quot;https://s3.amazonaws.com/ksr/projects/408766/photo-ed.jpg?1397804903&quot;,&quot;med&quot;:&quot;https://s3.amazonaws.com/ksr/projects/408766/photo-med.jpg?1397804903&quot;,&quot;little&quot;:&quot;https://s3.amazonaws.com/ksr/projects/408766/photo-little.jpg?1397804903&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/projects/408766/photo-small.jpg?1397804903&quot;,&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/projects/408766/photo-thumb.jpg?1397804903&quot;,&quot;1024x768&quot;:&quot;https://s3.amazonaws.com/ksr/projects/408766/photo-1024x768.jpg?1397804903&quot;,&quot;1536x1152&quot;:&quot;https://s3.amazonaws.com/ksr/projects/408766/photo-1536x1152.jpg?1397804903&quot;},&quot;creator&quot;:{&quot;id&quot;:1862456384,&quot;name&quot;:&quot;Mak Software Studio&quot;,&quot;slug&quot;:&quot;maksw&quot;,&quot;avatar&quot;:{&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/4358783/Mak-Software-Systems-Logo-01.thumb.jpg?1350056294&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/4358783/Mak-Software-Systems-Logo-01.small.jpg?1350056294&quot;,&quot;medium&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/4358783/Mak-Software-Systems-Logo-01.medium.jpg?1350056294&quot;},&quot;urls&quot;:{&quot;web&quot;:{&quot;user&quot;:&quot;https://www.kickstarter.com/profile/maksw&quot;},&quot;api&quot;:{&quot;user&quot;:&quot;https://api.kickstarter.com/v1/users/1862456384?signature=1399953237.a69beec2b27df554afd85e81ec1925d0be33aef3&quot;}}},&quot;location&quot;:{&quot;id&quot;:30599,&quot;name&quot;:&quot;Northampton&quot;,&quot;slug&quot;:&quot;northampton-gb&quot;,&quot;short_name&quot;:&quot;Northampton, UK&quot;,&quot;displayable_name&quot;:&quot;Northampton, UK&quot;,&quot;country&quot;:&quot;GB&quot;,&quot;state&quot;:&quot;England&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/northampton-gb&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/northampton-gb&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1399951957.85cca7ed715bbd5bde4f4f0a7681ff683e9b0337&amp;woe_id=30599&quot;}}},&quot;category&quot;:{&quot;id&quot;:35,&quot;name&quot;:&quot;Video Games&quot;,&quot;slug&quot;:&quot;games/video games&quot;,&quot;position&quot;:7,&quot;parent_id&quot;:12,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;http://www.kickstarter.com/discover/categories/games/video%20games&quot;}}},&quot;urls&quot;:{&quot;web&quot;:{&quot;project&quot;:&quot;https://www.kickstarter.com/projects/maksw/dominion-fight-for-your-future-amongst-the-stars&quot;,&quot;project_short&quot;:&quot;http://kck.st/139nQKu&quot;,&quot;updates&quot;:&quot;https://www.kickstarter.com/projects/maksw/dominion-fight-for-your-future-amongst-the-stars/posts&quot;},&quot;api&quot;:{&quot;project&quot;:&quot;https://api.kickstarter.com/v1/projects/1815593816?signature=1399953237.c66a0f99834c68d5550d00d3282df5bb64109829&quot;,&quot;comments&quot;:&quot;https://api.kickstarter.com/v1/projects/1815593816/comments?signature=1399953237.ade297f6fe38e5bce2bb5a9ebc19d7526ebe280f&quot;,&quot;updates&quot;:&quot;https://api.kickstarter.com/v1/projects/1815593816/updates?signature=1399953237.a7084b2d5efc8991d08da08cffcec18c6e57c938&quot;}},&quot;updated_at&quot;:1397804912,&quot;failed_at&quot;:1370303941,&quot;video&quot;:{&quot;id&quot;:226499,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/408766/video-226499-h264_high.mp4?2013&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/408766/video-226499-h264_base.mp4?2013&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/408766/video-226499-webm.webm?2013&quot;,&quot;width&quot;:640,&quot;height&quot;:360,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/408766/video-226499-h264_base.jpg?2013&quot;},&quot;comments_count&quot;:51,&quot;updates_count&quot;:24,&quot;rewards&quot;:[{&quot;id&quot;:0,&quot;minimum&quot;:1,&quot;reward&quot;:&quot;No Reward&quot;},{&quot;id&quot;:1581992,&quot;minimum&quot;:5.0,&quot;reward&quot;:&quot;Supporter : thanks for your contribution! We&#39;ll send you some snappy digital wallpapers, and a digital \\&quot;I Backed Dominion!\\&quot; banner to use as you will.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1372636800,&quot;project_id&quot;:1815593816,&quot;backers_count&quot;:2,&quot;updated_at&quot;:1370302335},{&quot;id&quot;:1581993,&quot;minimum&quot;:12.0,&quot;reward&quot;:&quot;Early Space Bird : bag a bargain early! A link to the full digital download on launch day.\\r\\n\\r\\n+ the \\u00a35 reward&quot;,&quot;limit&quot;:250,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1435708800,&quot;project_id&quot;:1815593816,&quot;remaining&quot;:191,&quot;backers_count&quot;:59,&quot;updated_at&quot;:1370280019},{&quot;id&quot;:1603012,&quot;minimum&quot;:15.0,&quot;reward&quot;:&quot;Dominion Registration : you get a digital download link for the full game on launch day!\\r\\n\\r\\n+ Rewards below&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1404172800,&quot;project_id&quot;:1815593816,&quot;backers_count&quot;:3,&quot;updated_at&quot;:1368099784},{&quot;id&quot;:1582002,&quot;minimum&quot;:18.0,&quot;reward&quot;:&quot;Game Named : your name* will be entered into the in-game character database to be used by NPC&#39;s within Dominion\\r\\n\\r\\n+ Rewards below \\u00a318&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1404172800,&quot;project_id&quot;:1815593816,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1368253288},{&quot;id&quot;:1625095,&quot;minimum&quot;:19.0,&quot;reward&quot;:&quot;Pengari Race Ticket : Free in-game entry to the new annual Pengari 40 Star Race, plus to commemorate the inaugural race - the awesome  Super Laser Racer from the BAFTA award winning indie dev - New Star Games!\\r\\n+ Rewards below \\u00a319&quot;,&quot;limit&quot;:100,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1404172800,&quot;project_id&quot;:1815593816,&quot;remaining&quot;:98,&quot;backers_count&quot;:2,&quot;updated_at&quot;:1370208191},{&quot;id&quot;:1581994,&quot;minimum&quot;:20.0,&quot;reward&quot;:&quot;Beta Unblocker : You get to test-fly the Beta build as soon as it&#39;s ready, and provide valued feedback into the remaining development of Dominion prior to its release!\\r\\n\\r\\n+ Rewards below \\u00a320&quot;,&quot;limit&quot;:1000,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1396310400,&quot;project_id&quot;:1815593816,&quot;remaining&quot;:997,&quot;backers_count&quot;:3,&quot;updated_at&quot;:1368624802},{&quot;id&quot;:1602880,&quot;minimum&quot;:23.0,&quot;reward&quot;:&quot;The Humble Crumble Bundle : \\r\\nGet Season 1 of the adventures of Crumble, a bar owner on a far off space station that hovers near the dangerous backwaters of the galaxy. Download Episode 1 free, then receive another short story every month for the next nine months until the end of seasons cliffhanger!\\r\\n\\r\\nPreview : http://dominion.maksw.com/story/crumble/s1e1.pdf\\r\\n\\r\\n+ Rewards below \\u00a323&quot;,&quot;limit&quot;:100,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1404172800,&quot;project_id&quot;:1815593816,&quot;remaining&quot;:100,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1367781980},{&quot;id&quot;:1582004,&quot;minimum&quot;:26.0,&quot;reward&quot;:&quot;World Named : you get to name a world within Dominion!*\\r\\n\\r\\n+ Rewards below \\u00a326&quot;,&quot;limit&quot;:500,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1404172800,&quot;project_id&quot;:1815593816,&quot;remaining&quot;:497,&quot;backers_count&quot;:3,&quot;updated_at&quot;:1369046965},{&quot;id&quot;:1602856,&quot;minimum&quot;:28.0,&quot;reward&quot;:&quot;Story : you get the final digital copy of \\&quot;Daria\\&quot; - a story set in the Dominion game universe. Visit http://dominion.maksw.com/story/daria/Chapter-01.pdf for a sample chapter. (Sorry, links don&#39;t seem to work in KS Rewards)\\r\\n\\r\\n+ Rewards below \\u00a328&quot;,&quot;limit&quot;:200,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1404172800,&quot;project_id&quot;:1815593816,&quot;remaining&quot;:200,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1367623286},{&quot;id&quot;:1582012,&quot;minimum&quot;:30.0,&quot;reward&quot;:&quot;Pathfinder : You get a Pathfinder Class vessel - designed &amp; equipped for exploration - unique to backers! No-one else will ever be able to fly this ship.\\r\\n\\r\\n+ Rewards below \\u00a330&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1404172800,&quot;project_id&quot;:1815593816,&quot;backers_count&quot;:4,&quot;updated_at&quot;:1369375293},{&quot;id&quot;:1582013,&quot;minimum&quot;:30.0,&quot;reward&quot;:&quot;Aegis : You get an Aegis Class Defender - designed &amp; equipped for the Imperial Navy for Naval duties - unique to backers! No-one else will ever be able to fly this ship.\\r\\n\\r\\n+ Rewards below \\u00a330&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1404172800,&quot;project_id&quot;:1815593816,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1368201591},{&quot;id&quot;:1582020,&quot;minimum&quot;:30.0,&quot;reward&quot;:&quot;Merchant : You get a Merchant ship designed &amp; equipped for trading - unique to backers! No-one else will ever be able to fly this ship.\\r\\n\\r\\n+ Rewards below \\u00a330&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1404172800,&quot;project_id&quot;:1815593816,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1367623599},{&quot;id&quot;:1582021,&quot;minimum&quot;:30.0,&quot;reward&quot;:&quot;Corsair : You get a Corsair Class raider - designed &amp; equipped for fast hit and run raids - unique to backers! No-one else will ever be able to fly this ship.\\r\\n\\r\\n+ Rewards below \\u00a330&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1404172800,&quot;project_id&quot;:1815593816,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1367623599},{&quot;id&quot;:1582028,&quot;minimum&quot;:35.0,&quot;reward&quot;:&quot;Alpha &amp; Omega : you get to experience the Alpha build of Dominion and contribute to it&#39;s development with vital design feedback, and play testing.\\r\\n\\r\\n+ Rewards below \\u00a335&quot;,&quot;limit&quot;:100,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1385856000,&quot;project_id&quot;:1815593816,&quot;remaining&quot;:92,&quot;backers_count&quot;:8,&quot;updated_at&quot;:1369035749},{&quot;id&quot;:1582035,&quot;minimum&quot;:37.0,&quot;reward&quot;:&quot;Star Namer : name a star system, and all the planets/moons within it!\\r\\n\\r\\n+ Rewards below \\u00a337&quot;,&quot;limit&quot;:199500,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1404172800,&quot;project_id&quot;:1815593816,&quot;remaining&quot;:199498,&quot;backers_count&quot;:2,&quot;updated_at&quot;:1367752922},{&quot;id&quot;:1582045,&quot;minimum&quot;:40.0,&quot;reward&quot;:&quot;Pathfinder : An upgrade to the Pioneer - a Pathfinder Class vessel - bigger, better, and more awesomer!\\r\\n\\r\\n+ Rewards below \\u00a340&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1404172800,&quot;project_id&quot;:1815593816,&quot;backers_count&quot;:11,&quot;updated_at&quot;:1370080563},{&quot;id&quot;:1582053,&quot;minimum&quot;:40.0,&quot;reward&quot;:&quot;Executor : An upgrade to the Aegis - an Executor Class Tactical vessel - bigger, harder, faster and far more deadly!\\r\\n\\r\\n+ Rewards below \\u00a340&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1404172800,&quot;project_id&quot;:1815593816,&quot;backers_count&quot;:3,&quot;updated_at&quot;:1367959932},{&quot;id&quot;:1582054,&quot;minimum&quot;:40.0,&quot;reward&quot;:&quot;Carrack  : As per Merchant, but far bigger - with plenty of room for those must-have bulk buys!\\r\\n\\r\\n+ Rewards below \\u00a340&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1404172800,&quot;project_id&quot;:1815593816,&quot;backers_count&quot;:6,&quot;updated_at&quot;:1370148298},{&quot;id&quot;:1582055,&quot;minimum&quot;:40.0,&quot;reward&quot;:&quot;Buccaneer : An upgrade to the Corsair - a Buccaneer Class - larger for smuggling goods, harder, and far more dangerous!\\r\\n\\r\\n+ Rewards below \\u00a340&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1404172800,&quot;project_id&quot;:1815593816,&quot;backers_count&quot;:2,&quot;updated_at&quot;:1367699638},{&quot;id&quot;:1582056,&quot;minimum&quot;:50.0,&quot;reward&quot;:&quot;Game Face : your face, in-game! NPC&#39;s will then be randomly assigned to your mug-shot, so make it a good one ;)\\r\\n\\r\\n+ Rewards below \\u00a350&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1404172800,&quot;project_id&quot;:1815593816,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1367636814},{&quot;id&quot;:1582061,&quot;minimum&quot;:60.0,&quot;reward&quot;:&quot;Creators Club : A special backer dedicated forum for submitting and discussing ideas, chat with us dev&#39;s and progress updates. Also, details for wannabe author&#39;s who&#39;d like to contribute short stories to the Dominion Universe.\\r\\n\\r\\n+ Rewards below \\u00a360&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1372636800,&quot;project_id&quot;:1815593816,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1367623538},{&quot;id&quot;:1602881,&quot;minimum&quot;:65.0,&quot;reward&quot;:&quot;Factioneer : Create and name a faction within Dominion - inside or outside the Empire, good or bad - your call!\\r\\n\\r\\n+ Rewards below \\u00a365&quot;,&quot;limit&quot;:100,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1404172800,&quot;project_id&quot;:1815593816,&quot;remaining&quot;:99,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1367657204},{&quot;id&quot;:1582062,&quot;minimum&quot;:75.0,&quot;reward&quot;:&quot;Genus &amp; Species : Name a species in Dominion - give an entire race a bit of substance! Contribute towards their history and characteristics, look and feel.\\r\\n\\r\\n+ Rewards below \\u00a375&quot;,&quot;limit&quot;:1000,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1372636800,&quot;project_id&quot;:1815593816,&quot;remaining&quot;:999,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1369684502},{&quot;id&quot;:1610048,&quot;minimum&quot;:90.0,&quot;reward&quot;:&quot;Ultimate Starter Vessel Pack : ALL of the \\u00a330 and ALL of the \\u00a340 rewards - that&#39;s 8 vessels you can pick and choose from!\\r\\n\\r\\n+ Rewards below \\u00a390&quot;,&quot;limit&quot;:150,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1404172800,&quot;project_id&quot;:1815593816,&quot;remaining&quot;:147,&quot;backers_count&quot;:3,&quot;updated_at&quot;:1368203894},{&quot;id&quot;:1582063,&quot;minimum&quot;:100.0,&quot;reward&quot;:&quot;Legend : your name* and face used for a legendary character (alive or dead) within the Dominion Universe!\\r\\n\\r\\nWe will build more rewards at higher values where needed - and we will honour any higher pledges made with these rewards when they are available.\\r\\n\\r\\n+ Rewards below \\u00a3100&quot;,&quot;limit&quot;:50,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1396310400,&quot;project_id&quot;:1815593816,&quot;remaining&quot;:42,&quot;backers_count&quot;:8,&quot;updated_at&quot;:1370147262}]}";
+    
+    
+    
+    
+    
+    
+    
+    
+    window.timeRemaining = function timeRemaining(epochTime){
+    
+      var diff = epochTime - ((new Date()).getTime() / 1000);
+      var num_unit = (diff < 60 && [Math.max(diff, 0), 'seconds']) ||
+        ((diff/=60) < 60 && [diff, 'minutes']) ||
+        ((diff/=60) < 72 && [diff, 'hours']) ||
+        [diff/=24, 'days'];
+    
+      // Round down
+      num_unit[0] = Math.floor(num_unit[0]);
+      // Singularize unit
+      if (num_unit[0] == 1) { num_unit[1] = num_unit[1].replace(/s$/,""); }
+    
+      return num_unit;
+    };
+  //]]>
+</script>
+
+<script>
+  //<![CDATA[
+    window.current_variants = ["discover_link_copy[explore]","rewards_hover[without_hover_text]"];
+  //]]>
+</script>
+
+
+</head>
+
+<body class="project projects not-mobile not-phone not-forces-video-controls not-tablet not-touchable not-native-app-request video_mode" id="projects_show">
+<div class="jGrowl center" id="growl_section"></div>
+<div class="NS_layouts__navigation" id="header">
+<div class="main-nav relative bg-white">
+<h1 class="no-margin ml1 mr2 left">
+<a href="/?ref=nav" class="block p2"><span class="ss-icon green-dark">KICK</span><span class="ss-icon green">STARTER</span>
+</a></h1>
+<ul class="primary-links list no-margin left">
+<li class="left discover-link full-height">
+<a href="/discover?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Explore</a>
+</li>
+<li class="left full-height mr2">
+<a href="/learn?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Start</a>
+</li>
+</ul>
+<ul class="list no-margin right" id="menu-sub">
+<li class="right"><a href="/login?ref=nav" class="block h5 bold p2 full-height border-box">Log in</a></li>
+<li class="right"><a href="/signup?ref=nav" class="block h5 bold p2 full-height border-box">Sign up</a></li>
+</ul>
+<div class="search-link pl2 full-height border-left border-box clip">
+<form accept-charset="UTF-8" action="/projects/search" class="search pt1 pb1 block relative form-simple" method="get"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /></div>
+<div class="field relative pl3">
+<span class="ss-icon ss-search grey-dark ml1 mt1 absolute"></span>
+<input class="input-search header full-width text" data-tracker-name="Header Live Search" id="term" name="term" placeholder="Search projects" type="text" />
+</div>
+</form>
+
+</div>
+<div class="clear"></div>
+</div>
+</div>
+<div class="hide pt4 pb4 bg-grey-light" id="search_results-wrap">
+<div class="relative container" id="search_results">
+<a class="close right grey-dark mr1"><span class="ss-icon ss-delete"></span></a>
+<h3 class="header ml1 clearfix"></h3>
+<div class="clip clearfix" id="search_results_panel"></div>
+<a class="prev arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateleft"></span>
+</a>
+<a class="next arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateright"></span>
+</a>
+</div>
+</div>
+
+
+
+
+<div class="Project-ended-true Project-is_starred- Project-state-failed Project1815593816_cxt border-top" id="main_content">
+<div id="running-board-wrap">
+<div class="container" id="running-board">
+<div id="project-header">
+<div class="NS_projects__running_board ml1 mr1 clearfix">
+<div class="title center py4">
+<h2 class="mb1">
+<a href="/projects/maksw/dominion-fight-for-your-future-amongst-the-stars" class="green-dark">Dominium - Fight for your future amongst the stars!</a>
+</h2>
+<p class="no-margin">
+<span class="creator">
+by
+<a href="/projects/maksw/dominion-fight-for-your-future-amongst-the-stars/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography" id="name">Mak Software Studio</a>
+</span>
+</p>
+</div>
+<ul class="project-nav list-inline left h5 bold mb1">
+<li class="mr2">
+<a href="/projects/maksw/dominion-fight-for-your-future-amongst-the-stars" class="grey-dark py1 current" id="home_nav">Home</a>
+</li>
+<li class="mr2">
+<span data-updates-count="24" id="updates_count">
+<a href="/projects/maksw/dominion-fight-for-your-future-amongst-the-stars/posts" class="grey-dark py1" id="updates_nav">Updates
+<span class="count h6 bg-grey-dark white">24</span>
+</a></span>
+</li>
+<li class="mr2">
+<a href="/projects/maksw/dominion-fight-for-your-future-amongst-the-stars/backers" class="grey-dark py1" id="backers_nav">Backers
+<span class="count h6 bg-grey-dark white"><data class="Project1815593816" data-format="number" data-value="126" itemprop="Project[backers_count]">126</data></span>
+</a></li>
+<li>
+<span data-comments-count="51" id="comments_count">
+<a href="/projects/maksw/dominion-fight-for-your-future-amongst-the-stars/comments" class="grey-dark py1" id="comments_nav">Comments
+<span class="count h6 bg-grey-dark white"><data class="Project1815593816" data-format="number" data-value="51" itemprop="Project[comments_count]">51</data></span>
+</a></span>
+</li>
+</ul>
+<ul class="list-inline right h5 bold mb1">
+<li class="location mr2">
+<a href="/discover/places/northampton-gb?ref=city" class="grey-dark"><span class="ss-icon ss-location margin-right"></span>
+Northampton, UK
+</a></li>
+<li class="category" data-project-parent-category="Games">
+<a href="/discover/categories/games/video%20games?ref=category" class="grey-dark"><span class="ss-icon ss-tag margin-right"></span>
+Video Games
+</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+</div>
+<div class="bg-grey-light pb4" id="content-wrap">
+<div class="Project1815593816" data-conditions="[{&quot;!state&quot;:&quot;live&quot;}]" data-evaluation="true" data-render="&quot;&lt;div class=\&quot;NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-failed Project1815593816_cxt bg-grey container pb1 pt1\&quot;&gt;\n&lt;div class=\&quot;Project1815593816\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;successful&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;Funded!&amp;lt;/b&amp;gt;\\nThis project was successfully funded &amp;lt;data class=\\&amp;quot;Project1815593816\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2013-06-03T19:59:00-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[deadline]\\&amp;quot;&amp;gt;on June 3, 2013&amp;lt;/data&amp;gt;.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1815593816\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:[&amp;quot;started&amp;quot;,&amp;quot;submitted&amp;quot;]}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;THIS PROJECT IS NOT LIVE&amp;lt;/b&amp;gt;\\nThis is only a draft that the creator has chosen to share.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1815593816\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;suspended&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Suspended&amp;lt;/b&amp;gt;\\nFunding for this project was suspended &amp;lt;data class=\\&amp;quot;Project1815593816\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2013-06-03T19:59:01-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on June 3, 2013&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1815593816\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;canceled&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Canceled&amp;lt;/b&amp;gt;\\nFunding for this project was canceled by the project creator &amp;lt;data class=\\&amp;quot;Project1815593816\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2013-06-03T19:59:01-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on June 3, 2013&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1815593816\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;failed&amp;quot;}]\&quot; data-evaluation=\&quot;true\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Unsuccessful&amp;lt;/b&amp;gt;\\nThis project\\u2019s funding goal was not reached on &amp;lt;time class=\\&amp;quot;js-adjust\\&amp;quot; data-format=\\&amp;quot;LL\\&amp;quot; datetime=\\&amp;quot;2013-06-03T19:59:00-04:00\\&amp;quot;&amp;gt;June 3, 2013&amp;lt;/time&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Unsuccessful&lt;/b&gt;\nThis project\u2019s funding goal was not reached on &lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;LL\&quot; datetime=\&quot;2013-06-03T19:59:00-04:00\&quot;&gt;June 3, 2013&lt;/time&gt;.\n&lt;/div&gt;&lt;div class=\&quot;Project1815593816\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;purged&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;This project is purged and only visible to staff.&amp;lt;/b&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;/div&gt;\n&quot;"><div class="NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-failed Project1815593816_cxt bg-grey container pb1 pt1">
+<div class="Project1815593816" data-conditions="[{&quot;state&quot;:&quot;successful&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;Funded!&lt;/b&gt;\nThis project was successfully funded &lt;data class=\&quot;Project1815593816\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-06-03T19:59:00-04:00&amp;quot;\&quot; itemprop=\&quot;Project[deadline]\&quot;&gt;on June 3, 2013&lt;/data&gt;.\n&lt;/p&gt;\n&quot;"></div><div class="Project1815593816" data-conditions="[{&quot;state&quot;:[&quot;started&quot;,&quot;submitted&quot;]}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;THIS PROJECT IS NOT LIVE&lt;/b&gt;\nThis is only a draft that the creator has chosen to share.\n&lt;/p&gt;\n&quot;"></div><div class="Project1815593816" data-conditions="[{&quot;state&quot;:&quot;suspended&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Suspended&lt;/b&gt;\nFunding for this project was suspended &lt;data class=\&quot;Project1815593816\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-06-03T19:59:01-04:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on June 3, 2013&lt;/data&gt;.\n&quot;"></div><div class="Project1815593816" data-conditions="[{&quot;state&quot;:&quot;canceled&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Canceled&lt;/b&gt;\nFunding for this project was canceled by the project creator &lt;data class=\&quot;Project1815593816\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-06-03T19:59:01-04:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on June 3, 2013&lt;/data&gt;.\n&quot;"></div><div class="Project1815593816" data-conditions="[{&quot;state&quot;:&quot;failed&quot;}]" data-evaluation="true" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Unsuccessful&lt;/b&gt;\nThis project\u2019s funding goal was not reached on &lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;LL\&quot; datetime=\&quot;2013-06-03T19:59:00-04:00\&quot;&gt;June 3, 2013&lt;/time&gt;.\n&quot;"><p class="no-margin"></p>
+<b>Funding Unsuccessful</b>
+This project’s funding goal was not reached on <time class="js-adjust" data-format="LL" datetime="2013-06-03T19:59:00-04:00">June 3, 2013</time>.
+</div><div class="Project1815593816" data-conditions="[{&quot;state&quot;:&quot;purged&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;This project is purged and only visible to staff.&lt;/b&gt;\n&quot;"></div></div>
+</div>
+<div class="container bg-white border rounded py3 pl2 pr2" id="content">
+<div class="NS-projects-content">
+<div class="grid_11">
+<div data-has-video="true" id="video-section">
+<div class="video-player" data-dimensions="{&quot;width&quot;:640,&quot;height&quot;:480}" data-image="https://s3.amazonaws.com/ksr/projects/408766/photo-main.jpg?1397804903" data-video-tracker-url="https://www.kickstarter.com/projects/maksw/dominion-fight-for-your-future-amongst-the-stars/video/plays" data-video-url="https://d2pq0u4uni88oo.cloudfront.net/projects/408766/video-226499-h264_high.mp4" data-video="{&quot;id&quot;:226499,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/408766/video-226499-h264_high.mp4?2013&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/408766/video-226499-h264_base.mp4?2013&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/408766/video-226499-webm.webm?2013&quot;,&quot;width&quot;:640,&quot;height&quot;:360,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/408766/video-226499-h264_base.jpg?2013&quot;}" id="video_pitch"><video class="has_webm landscape" preload="none">
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/408766/video-226499-h264_high.mp4" type='video/mp4; codecs="avc1.64001E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/408766/video-226499-h264_base.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/408766/video-226499-webm.webm" type="video/webm"></source>
+You'll need an HTML5 capable browser to see this content.
+</video>
+<img alt="Photo-main" class="has_played_hide poster landscape" src="https://s3.amazonaws.com/ksr/projects/408766/photo-main.jpg?1397804903" />
+<div class="play_button_big play_button_dark absolute-center rounded has_played_hide">
+<span class="ss-icon ss-play"></span>
+Play
+</div>
+<div class="player_controls clearfix absolute-bottom mb2 rounded white bg-green-dark forces-video-controls_hide">
+<div class="left">
+<a class="button button_icon button_dark playpause play mr1">
+<span class="play ss-icon ss-play"></span>
+<span class="pause ss-icon ss-pause"></span>
+</a>
+<span class="time current_time h12 left">00:00</span>
+</div>
+<div class="right">
+<span class="time total_time h12 left mr1">00:00</span>
+<a class="left button button_icon button_icon_white volume">
+<span class="ss-icon ss-volume icon_volume_nudge"></span>
+<span class="ss-icon ss-highvolume"></span>
+</a>
+<div class="volume_container left">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+<a class="left button button_icon button_icon_white fullscreen">
+<span class="ss-icon ss-expand"></span>
+<span class="ss-icon ss-contract"></span>
+</a>
+</div>
+<div class="clip">
+<div class="progress_container pr1 pl1">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="buffer progress_bar_buffer"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div data-project-state="failed" id="about">
+<div class="NS_projects__project_share clearfix py2 pl1 pr1">
+<ul class="left list-inline no-margin h5 bold">
+<li class="facebook mr2">
+<a href="https://www.kickstarter.com/projects/maksw/dominion-fight-for-your-future-amongst-the-stars"><span class="ss-icon ss-social ss-facebook color-facebook"></span>
+<span class="color-facebook">Share</span>
+<span class="share_bubble"><div class="triangle grey"></div>
+<div class="triangle white"></div>
+<span class="count"></span></span>
+</a></li>
+<li class="twitter mr2">
+<a  href="https://twitter.com/intent/tweet?text=Dominium%20-%20Fight%20for%20your%20future%20amongst%20the%20stars%21%20by%20Mak%20Software%20Studio&amp;via=kickstarter&amp;url=http://kck.st/139nQKu" rel="nofollow"><span class="ss-icon ss-social ss-twitter color-twitter"></span>
+<span class="color-twitter">Tweet</span>
+</a></li>
+<li class="embed">
+<a href="/projects/maksw/dominion-fight-for-your-future-amongst-the-stars/widget" class="remote_modal_dialog grey-dark" data-modal-title="Embed a widget on your site" data-tracker-name="Embed"><span class="ss-icon ss-navigateleft"></span>
+<span class="ss-icon ss-navigateright"></span>
+Embed
+</a></li>
+</ul>
+<ul class="right list-inline no-margin h5 bold">
+<li class="curate mr2">
+</li>
+<li class="remind">
+<div class="ajax-container" id="watching-widget">
+<div class="Project1815593816" data-conditions="[{&quot;is_starred&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div id=\&quot;unwatch\&quot;&gt;\n&lt;a href=\&quot;/projects/maksw/dominion-fight-for-your-future-amongst-the-stars/unwatch\&quot; class=\&quot;on\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"></div><div class="Project1815593816" data-conditions="[{&quot;!is_starred&quot;:true}]" data-evaluation="true" data-render="&quot;&lt;div id=\&quot;watch\&quot;&gt;\n&lt;a href=\&quot;/projects/maksw/dominion-fight-for-your-future-amongst-the-stars/watch\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;span class=\&quot;text\&quot;&gt;\n&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"><div id="watch">
+<a href="/projects/maksw/dominion-fight-for-your-future-amongst-the-stars/watch"><span class="ss-icon ss-star"></span>
+<span class="text">
+</span>
+</a></div>
+
+</div></div>
+</li>
+</ul>
+</div>
+
+<div class="short_blurb py2 pl1 pr1">
+<p class="h3">The first chapter in an sci-fi space-combat-trade-exploration spectacular - pulling space-sims into the 21st Century!</p>
+</div>
+<div class="full-description">
+<div></div><div></div><div>
+
+<p>PLEASE NOTE : Due to a Trademark Infringement which we publically acknowledge, "Dominion" is now officially "Dominium" for the duration of this pitch.</p>
+<p><strong>Explore a unique galaxy, and uncover the secrets hidden amongst the stars!</strong></p>
+<p>Become a legend; a pirate overlord, a hero to the people, or forge your own destiny. <em>You </em>decide. Dominium is a <b>sandbox</b> game that never ends, where you choose what to do and where to do it - ignore the story if you want to and get exploring!</p>
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/maksw/dominion-fight-for-your-future-amongst-the-stars/assets/1067058/edit" data-id="1067058">
+<figure><img class="fit" src="https://s3.amazonaws.com/ksr/assets/001/067/058/229bd8614aab5f2e9fe1112ed16f7c21_large.jpg?1381504347"></figure>
+</div>
+<p>Mak Studios is proud to sign up to <a href="http://kickingitforward.org/" target="_blank">http://kickingitforward.org</a> !</p>
+<p><i><b>Nb.</b> Rewards equal to above £30 may choose one of the £30 rewards, and rewards greater than or equal to £40 can choose one from £30 and one from the £40 tier. We will honour this "multi-selection" when we get funded, and ask you your choices.</i></p>
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/maksw/dominion-fight-for-your-future-amongst-the-stars/assets/1067059/edit" data-id="1067059">
+<figure><img class="fit" src="https://s3.amazonaws.com/ksr/assets/001/067/059/18c66a3b9610aec1714a96591069bd3b_large.jpg?1381504348"></figure>
+</div>
+<p>This first release of Dominium is a <b>single player game</b> for PC, that plunges you into a rich, diverse and ever evolving universe. A galaxy full of beauty and wonder, intrigue and betrayal, death and ancient dark forces. As you make your own way across the galaxy the choice is yours as to whether you dive headlong into the upcoming conflict and join the Navy, skirt around its edges and profit from it, or ignore it entirely.</p>
+<p>But - the overarching goal of Dominium is to let you <b>explore </b>-  not just your standard flying around hoping to bump into something kind of space exploration. Send out probes to distant locations, find hidden artifacts, civilizations, and rare ore deposits... and one or two other <b>surprises </b>along the way! The galaxy is waiting to be discovered!</p>
+<div class="template oembed" contenteditable="false" data-href="http://youtu.be/hpa-VB8m__c">
+<iframe width="612" height="344" src="https://www.youtube.com/embed/hpa-VB8m__c?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div>
+<p>Stretch Goals allow for a <b>Mac, iOS</b> and <b>Linux </b>port, potentially even <b>Android</b>!</p>
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/maksw/dominion-fight-for-your-future-amongst-the-stars/assets/565451/edit" data-id="565451">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/565/451/b6f269631fedbdde2cd763a887c9bd3f_large.jpg?1367665113"></figure>
+</div>
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/maksw/dominion-fight-for-your-future-amongst-the-stars/assets/567800/edit" data-id="567800">
+<figure><img alt="Imperial World Catalog : M'thula (Candor was the cuckoo btw ;) it's Maia!)" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/567/800/3ac2adc952956bfd8c9d59a8ea135879_large.jpg?1367780036"><figcaption>Imperial World Catalog : M'thula (Candor was the cuckoo btw ;) it's Maia!)</figcaption></figure>
+</div>
+
+<div class="template oembed" contenteditable="false" data-href="http://youtu.be/78I96E4KV54">
+<iframe width="459" height="344" src="https://www.youtube.com/embed/78I96E4KV54?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/maksw/dominion-fight-for-your-future-amongst-the-stars/assets/578722/edit" data-id="578722">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/578/722/360cf044cb047d77ad62215859b3b12c_large.jpg?1368127585"></figure>
+</div>
+
+<p>.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/maksw/dominion-fight-for-your-future-amongst-the-stars/assets/578731/edit" data-id="578731">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/578/731/d9e516afe08c0fc34b5cbb7a4d9f1d73_large.jpg?1368127695"></figure>
+</div>
+<p>.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/maksw/dominion-fight-for-your-future-amongst-the-stars/assets/578733/edit" data-id="578733">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/578/733/74661e7cdaeba640d1d00bd92465319e_large.jpg?1368127732"></figure>
+</div>
+<p>.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/maksw/dominion-fight-for-your-future-amongst-the-stars/assets/578734/edit" data-id="578734">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/578/734/7782a29f09ba9b6f9917f10ec95199a8_large.jpg?1368127763"></figure>
+</div>
+<p>.</p>
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/maksw/dominion-fight-for-your-future-amongst-the-stars/assets/1067060/edit" data-id="1067060">
+<figure><img class="fit" src="https://s3.amazonaws.com/ksr/assets/001/067/060/58e8c2af71c0a1f43eecf0a10a0ec1b6_large.jpg?1381504350"></figure>
+</div>
+<p>Dominium is a <b>sandbox </b>game. We will give you all the in-game tools and toys which let you do what you want, how and when you want to.</p>
+<p>Playing in the <b>first-person</b>, with a wide choice of <b>newtownian</b>, or <b>non-newtonian</b> flight models depending on the ships you choose to fly, you'll directly integrate with your ship at the AI level, becoming one with it as an extension of your physical being. Feel it's pain as it gets hit by laser-fire!</p>
+<p>If the <b>Fleet Control</b> stretch-goal is attained - more <b>RTS</b>-like controls become available, allowing you to direct your fleet where, when and how you choose to deploy it!</p>
+<p>Our Dynamic Event Engine (<b>DEE</b>) will make use of the "sandbox" and throw in a wide range of dangerous, fun, and mysterious events at you as you travel the galaxy. A standard distress call could be exactly that, or a pirate's trap... or perhaps something more dangerous, as you stumble upon something that wasn't meant to be found.</p>
+<p>The flip-side of the DEE is that you can drive these same events as you play. Perhaps <em>you</em> sent out a distress call after suffering a catastrophic engine failure. Maybe <em>your</em> distress call is a trap, pirate scum that you might be!</p>
+<p>If tech-talk is your thing - feel free to pop by our <a href="http://dominion.maksw.com/devlog/" title="Dominion - Devlog" target="_blank">devlog</a> to see our posts on the tech behind Dominium as we beaver away behind the scenes!</p>
+<p><b>"Today I will mostly be a... "</b></p>
+<p>There are no classes. You won't be type-cast as "a trader" or "a pirate" or any other classification. Your role in the game is determined by your actions, and the local laws and policies of whichever system you are in. The only assigned "role" you might choose to get involved in is if you enlist with the Imperial Navy, earning rank, medals a glory/infamy as you go.</p>
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/maksw/dominion-fight-for-your-future-amongst-the-stars/assets/1067061/edit" data-id="1067061">
+<figure><img class="fit" src="https://s3.amazonaws.com/ksr/assets/001/067/061/94a4eadd5ec887838b4d815217974c2e_large.jpg?1381504352"></figure>
+</div>
+<p><strong>So what <em>can</em> you do?</strong></p>
+<p>- bounty hunt - and we do mean 'hunt' not just sit at a co-ordinate and wait for them to turn up<br>- enlist in the Imperial Navy<br>- do commercial jobs - cargo transporting, passenger taxi services, be a courier...<br>- purchase orbital bases or stations (Stretch Goal)<br>- go rogue/pirate, steal cargo, fulfil a hit, even order a hit...<br>- explore - there's plenty of the Great Unknown still out there!<br>- pimp your ride - reskin/reconfigure your ships to your hearts content (Stretch Goal)<br>- go mining - resources are always in demand!</p>
+<p>Even better - why not do <em>all</em> of them at once? Kit out your Explorer class vessel with mining kit "just in case", or commit piracy in a Naval Cruiser - just be prepared for the consequences of upsetting both the pirates <em>and</em> the Navy... upsetting the factions by being found out as "disloyal" is a sure-fire way to get a hole in our hull!</p>
+<p>This list might seem ambitious for an small Indie – but we've been careful to be sure we only put up the features we know we can deliver within the budget and time-frame we're proposing - there's far <em>far</em> more planned for later releases!</p>
+<p><b>Playing the Game
+</b>
+</p>
+<p>Gameplay itself will be largely 1st person - in Dominium  ou play as "you" - and see the universe exactly as you would yourself.
+
+</p>
+<p>Thanks to nano-integration technology, you will be connected directly to your ships AI via the qNet, which means you see get a virtual cockpit view from within your ship, along with direct access to all ship systems.
+
+</p>
+<p>Then thanks to "Observer" technology - you can pretty much create a viewpoint from anywhere outside your ship, so if you choose you can go 3rd person, view from the left/rear/front/back et al. We plan to even let you hard-mount your own view points on the hull of your ship, viewing from turrets and even taking them over is also on the cards.
+
+</p>
+<p>Initially there won't be any physical cockpit - modelling these to any decent detail will be too complex and time-consuming. But, future releases and modders will allow this to happen.</p>
+
+<p><b>Physics</b></p>
+<p>
+The drive tech on offer in Dominium largely means non-Newtonian physics are involved. The laws of physics have been totally mastered (with certain limits). A fighter can pretty much spin on a dime and change orientation and velocity without the occupant being aware of anything. That said, we don't want 70,000t Carriers doing the same thing!</p>
+<p><br>However, Newtonian physics will still feature - with tech from outside the empire (and very old Imperial tech) still being subject to Newtonian physics, putting them at a major disadvantage to Imperial technology!</p>
+<p>So flying with Newtonian physics won't be "optional" in that you can turn it on/off - it's optional in that you can <em>buy</em> a ship that has Newtonian/non-Newtonian drive systems. </p>
+<p><b>Ship with a Past
+</b>
+</p>
+<p>It's not just the characters in Dominium who have a history, the ships do as well. Just like buying a used car - buying a used ship you have to be careful of where it came from. How many light-years on the clock? Was it a former pirate ship? What about it's markings? Clearly some kind of faction. Is someone going to shoot you on sight because it's from a rival clan? Will the Navy haul you in for piracy when you've never stolen a single credit? You may want to get the ship re-id'd to make sure, and best give it a paint job before someone recognises it...
+
+ 
+
+</p>
+<p><b>Main Man, Hard Man, Iron Man
+</b>
+</p>
+<p>Which would you be?
+
+We want to cater for all gamers - pick up and play through to hard-core.
+
+</p>
+<p>There's no "Easy" mode - <b>Main Man</b> is "Normal" difficulty - posing challenge enough whilst being playable, fair and square, and letting you get on about your business exploring, progressing and buying all the shiny kit.
+
+</p>
+<p><b>Hard Man</b> poses more of a challenge - things cost more, ships are typically harder and their weapons pack more punch.
+
+Iron Man sorts the boys from the men. It plays as per Hard mode, and still saves your progress as you go. But - when you die - that's it. No checkpoints, no resume, no loading an old save. Game Over.
+
+ 
+
+</p>
+<p><b>Localisation
+</b>
+</p>
+<p>The initial release will be in English - however if we achieve the first Stretch Goal, we can look to supporting FIGS locales (French, Italian, German, Spanish). Non-latin1 language support would be left for a subsequent release.</p>
+
+
+<p>For more info than I can fit in this pitch (because I can - and will - go on, and on, and on...) feel free to visit our homepage at <strong><a href="http://dominium.maksw.com/" target="_blank">http://dominium.maksw.com</a></strong>  to see more about our longer term plans for Dominium!</p>
+<p>Also! <b>Kick It Forward!</b> We subscribe to the ethos behind <a href="http://kickingitforward.org" target="_blank"><b>http://kickingitforward.org</b></a> - not just for the sake of it, but because we believe this is the honourable way to respect crowd-funding as a whole!</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/maksw/dominion-fight-for-your-future-amongst-the-stars/assets/573071/edit" data-id="573071">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/573/071/e03e6f965a2f349805771be0f2287891_large.jpg?1367953674"></figure>
+</div>
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/maksw/dominion-fight-for-your-future-amongst-the-stars/assets/572181/edit" data-id="572181">
+<figure><img alt="Maia, Roth System" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/572/181/e4d5b688505b7860544cb3849698d443_large.png?1367928557"><figcaption>Maia, Roth System</figcaption></figure>
+</div>
+
+
+<p>The Kalarian Pathfinder mission has just discovered a new world in the Roth system, called <b><a href="http://www.maiagame.com" target="_blank">Maia</a></b> - details have been filed with the Imperial World Catalog as follows in the attached v-feed.</p>
+<div class="template oembed" contenteditable="false" data-href="http://youtu.be/zeWV2ANqmqM">
+<iframe width="612" height="344" src="https://www.youtube.com/embed/zeWV2ANqmqM?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div>
+<p><strong>Verdant - aka Greenlight</strong></p>
+<p>Verdant is a centre of excellence for all technology within the Empire - technicians from all disciplines either come from there, or move there to train and become experts in their chosen field.</p>
+<p>It's a "reward" field for the Greenlight community voting us to 5 stars for a game they'd like to see on Steam - we hope to be able to accommodate!</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/maksw/dominion-fight-for-your-future-amongst-the-stars/assets/578788/edit" data-id="578788">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/578/788/95d50694a5314d0d75a0f7837241644c_large.jpg?1368129165"></figure>
+</div>
+<p><strong><div class="template asset" contenteditable="false" data-edit_url="/projects/maksw/dominion-fight-for-your-future-amongst-the-stars/assets/1067062/edit" data-id="1067062">
+<figure><img class="fit" src="https://s3.amazonaws.com/ksr/assets/001/067/062/f9c28bdbb36c92f37d78b3ef327b99aa_large.jpg?1381504354"></figure>
+</div></strong></p>
+
+<p><strong>Discover new systems, races, and celestial bodies in the totally unique Explorer Mode</strong></p>
+<p>We're building Dominium  o have 200,000 stars, over 1,000,000 planets, at least 1,200 unique species and civilisations - most of which are waiting to be discovered!</p>
+<p>Imagine an experience where, instead of just flying around aimlessly, you could map and plan your journey before you leave dock. Even if it's into uncharted territory.</p>
+<p>Discover comets, deadly planet-threatening asteroids, new resources, first-contact species, and much more!</p>
+<p>Send out probes to do the grunt work - but just be prepared for what they may discover...</p>
+<p><b>Techy Stuff</b></p>
+
+<p>Dominium has been generated using astronomical statistical data to produce stars of various categories, which determine the likelihood of having planets, with the stars "Goldilocks zone" determining if they are habitable, etc. Binary systems exist - as well as some other surprises and artifacts waiting to be discovered.</p>
+<p>Dominium is not the galaxy it might seem on first entering it, there are some deep seeded truths lurking deep within... </p>
+<div><br></div>
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/maksw/dominion-fight-for-your-future-amongst-the-stars/assets/1067063/edit" data-id="1067063">
+<figure><img class="fit" src="https://s3.amazonaws.com/ksr/assets/001/067/063/e8f762ba2d7d752d8c73f8154616833a_large.jpg?1381504358"></figure>
+</div>
+<p>... why not create your <em>own</em> content? Modders welcome!</p>
+<p>We'll provide the tools to get your own spaceships and stations into Dominium - and if you want you can submit them into the game's downloadable content for everyone to see!</p>
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/maksw/dominion-fight-for-your-future-amongst-the-stars/assets/1067064/edit" data-id="1067064">
+<figure><img class="fit" src="https://s3.amazonaws.com/ksr/assets/001/067/064/b47020686b3e716a25860cfb40bfb6d7_large.jpg?1381504360"></figure>
+</div>
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/maksw/dominion-fight-for-your-future-amongst-the-stars/assets/1067065/edit" data-id="1067065">
+<figure><img class="fit" src="https://s3.amazonaws.com/ksr/assets/001/067/065/0c7d73faba2c66e1b49afef41b2e3f0b_large.jpg?1381504362"></figure>
+</div>
+<p>Trading forms a large part of the peaceful route to riches in Dominium  as such we will build on and evolve the trading which normally takes place in such games.</p>
+<p>As players move goods about, the economies of the systems selling/buying the goods reflect the trade - new relations/routes are forged dynamically - old unused ones will fade away... the economy is dynamic and always changing, just as it is in reality!</p>
+<p>Disasters, heavy pirate activity, political actions - these will all impact the economies of the systems involved. If they go on for long enough – you will see their effect ripple out across the galaxy.</p>
+<p>And it's not just peaceful traders that should take note here. If you are up to nefarious activities in a dangerous backwater system, you'll still have to find somewhere to fence those stolen diamonds or illegal commodities. You can't upgrade your ship or buy those replacement missiles without income!</p>
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/maksw/dominion-fight-for-your-future-amongst-the-stars/assets/1067066/edit" data-id="1067066">
+<figure><img class="fit" src="https://s3.amazonaws.com/ksr/assets/001/067/066/8072d5e73d7752706c1635cf362fe2cf_large.jpg?1381504364"></figure>
+</div>
+<p>Death is coming... a dark and unforgiving force is rising. It has a one-track mind, one goal to attain - and it won't stop for anything. It consumes everything in its path, and destroys what it can't consume. The Empire is preparing for a conflict which it has no idea if it can win.</p>
+<p>Take on recon missions for the Imperial Navy, know the enemy. Find their strengths and weaknesses, take part in hit and run missions - and ultimately full-scale campaigns to liberate systems from their clutches.</p>
+<p><strong>Guns n' stuff...</strong></p>
+<p>Dominium will feature all the ships and guns and missiles you could ever want in a space-game, the aim is to provide as many as possible for launch and refuse to stop making more of them for as long as the game stays live with on-going downloadable updates, Too many is not enough for us!</p>
+<p>Destructibility is a big thing for us too. Ships will explode into bits, and feel the shrapnel bounce of your hull! Those hulks will float around forever in space - unless they get salvaged, or blasted to smithereens!</p>
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/maksw/dominion-fight-for-your-future-amongst-the-stars/assets/1067067/edit" data-id="1067067">
+<figure><img class="fit" src="https://s3.amazonaws.com/ksr/assets/001/067/067/29a15f9a36a5ea75f1f4a55e8ba593ee_large.jpg?1381504366"></figure>
+</div>
+<p><strong>"Shoot to kill, men..."</strong></p>
+<p>You're going to have to defend yourself at some point. If you can afford multiple ships, you can probably afford wingmen. So sign them up, strap them in... and maybe whack them up front to take (or deal) the majority of the damage!</p>
+<p>Every ship in Dominium can be cracked and split and blown into a thousand bits. That includes the space stations. Become powerful enough, and you could laser one right in half - if the Navy lets you that is!</p>
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/maksw/dominion-fight-for-your-future-amongst-the-stars/assets/1067068/edit" data-id="1067068">
+<figure><img class="fit" src="https://s3.amazonaws.com/ksr/assets/001/067/068/321d826651e4f4a5552f238c16ed1720_large.jpg?1381504368"></figure>
+</div>
+<p><strong>"You got a job, we can do it, don't much care what it is."</strong></p>
+<p>Who wants to <em>work</em> in a game? Well - buying shiny kit requires money, and doing jobs is a fast track to earning some serious moolah and reputation. Jobs for the fair and jobs for the foul, and jobs for everyone else in-between. But you get to choose what and where, we won't force you to work!</p>
+<p>We're classing them as jobs because - quite frankly - taking some cargo from one place to another isn't really a mission. Or a quest. We aren't going to dress chores up like other games might do. Missions will be <em>missions</em>...</p>
+<p>Chances are doing a job well will mean more jobs come out of it, and earn you a good reputation - invaluable in a galaxy where everyone is out for the same thing - money!</p>
+<p>It could be carrying some papers from one place to another. Or carrying people. Or even less savoury jobs like making someone dead... it's your choice.</p>
+<p>Do a job, do it well, and you'll see the rewards.</p>
+<p>As for missions? When you get a mission in Dominium you will know that it's a mission. A <em>proper</em> mission. There will probably be big guns involved, lots of ships, and lots of explosions. The risks will be high, and so will the rewards. If you survive them - you'll <em>definitely</em> make a name for yourself.</p>
+
+<p><a href="http://dominion.maksw.com/images/pitch/breaks/Break-StretchGoals.jpg" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/maksw/dominion-fight-for-your-future-amongst-the-stars/assets/1067069/edit" data-id="1067069">
+<figure><img class="fit" src="https://s3.amazonaws.com/ksr/assets/001/067/069/8f19d773e8ed0706711beed78090e07d_large.jpg?1381504370"></figure>
+</div></a></p>
+<p>But, that's not enough. We want more. Far more. As a taster - here are some game-play and feature extensions we feel Dominium needs on day one, but we need even more support to allow these awesome features to be developed!</p>
+<p><a href="http://dominion.maksw.com/images/pitch/breaks/Break-StretchGoals.jpg" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/maksw/dominion-fight-for-your-future-amongst-the-stars/assets/1067070/edit" data-id="1067070">
+<figure><img class="fit" src="https://s3.amazonaws.com/ksr/assets/001/067/070/d610c51c1fcdea54701013554aec4c0d_large.jpg?1381504372"></figure>
+</div></a></p>
+
+<p>We could go on, and on - but we want to keep it real. We know we're not Star Citizen - we know we can't expect bazillions. So we're keeping the Stretch Goals and the fund at modest, realistic and more importantly deliverable levels. Again - check out <a href="http://dominium.maksw.com/" target="_blank">dominium.maksw.com</a> if you want to see our longer term vision for the Dominium universe!</p>
+
+<p><strong>Stretch Goal Rewards</strong></p>
+<p>You'll notice our reward tiers trail off at £100 - there's a reason for that. We have some great additional rewards to add in across all tiers, but they rely on the Stretch Goals being reached to "unlock" them. So - if you are super-generous and back us above £100 from day one, we promise on our honour - one of two things ;</p>
+<p>1) When a stretch goal is reached and it's rewards are unlocked, we will ensure your pledge is granted the rewards it qualifies for</p>
+<p>2) As the campaign progresses - we will put up more rewards, and ensure your pledge is granted the rewards it qualifies for</p>
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/maksw/dominion-fight-for-your-future-amongst-the-stars/assets/1067071/edit" data-id="1067071">
+<figure><img class="fit" src="https://s3.amazonaws.com/ksr/assets/001/067/071/1cb08171cc8c036fe133c223a244455a_large.jpg?1381504376"></figure>
+</div>
+<p><strong>Small, but perfectly formed...</strong></p>
+<p>So - a one-man-band-indie-studio... and an artist... how can we possibly expect to achieve this?</p>
+<p>First - <em><strong>passion</strong></em>... Dominium has been gestating in my brain for 27 years - yes, 27! I've been turning over what I want it to do, and how it will happen for <em>that</em> long - held back only by time and finances. I’m as confident as I can be that I know what to deliver, and how to deliver it. If this funding route fails - I'll figure out some other way to realise the awesome universe that's unfolding in my head ...</p>
+<p>Second - we've already started work. I've been realising some of my basic ideas over the past months, resulting in a solid prototype that demo's the core-tech which hopefully you've seen in our <a href="http://www.youtube.com/watch?v=ButqmIZDIb8" title="Dominion Trailer" target="_blank">trailer</a> I've only committed to this Kickstarter project after making sure what I am planning is feasible, and that I could realise it the way I wish.</p>
+<p>Third - Crowd-development - or "modding" - our ambitious plan is to provide the largest and most diverse content set any game has ever dared to hope for. But how can we do that with such a small team, and a (relatively) modest budget when even the big publishers would not dare? Because we are Indie! And we are prepared to take the risk to achieve something unheard of. Well - we petition <em>anyone</em> to join our cause - worldwide! We want to form what could be the largest content development effort ever, to produce the most diverse and graphically rich universe for Dominium that can be made... visit <a href="http://dominion.maksw.com/modding/" title="Dominion - Modding" target="_blank">here</a> for more details (even if you're just curious as to our madness!). And if this fails? We're prepared for that - you'll still get some superb content (just less of it...) and we intend to keep shoving more in after release as the project hopefully grows!</p>
+<p>Fourth - it won't just be "me and my mate" - that is why we need you! Your generous funding support will allow us to hire the developers we'll need to produce the full game (such as the team I've drawn up below). So the more funding we can get, the more we can achieve!</p>
+<p>Fifth - my entire career (games and app's) has been spent honing my "deliver- quality-product-come-what-may" skills - so far successfully! Without being immodest, I know we have what it takes to produce something to this scale.</p>
+<p>Overall our development <em>aim</em> is “AAA” – of course, even the most dedicated team with the budget requested for a game of this scale couldn’t consistently reach AAA – the big- boy studios churn millions of £’s to achieve that. But – our motto is “Aim high…” If you shoot for the moon but fall short, chances are you at least made it into space… the trick is to plan for what happens next!</p>
+<p>Finally, we've got our own kit - laptops, beast-PC's with dual displays, Mac's, iOS devices, file/SCM/Web/FTP servers, software licenses, off-site backups... so we don't need to buy anything. The money being raised is for <em>developing</em> Dominium, <em>not</em> for creating a studio or buying or renting expensive premises!</p>
+
+<p><strong>How will the funding be used?</strong></p>
+<ul>
+<li>The "target" fund will be used for delivering the <strong>MVP</strong> (Minimum Viable Product), i.e. 200,000 stars with worlds to explore, space/combat/trading/missions and as much content as we can squeeze out the target fund.</li>
+<li>Excess funding (!) will be used toward stretch-goals, and ramping up what we have beyond the MVP plan above.</li>
+<li>Feeding developers - I'm sorry, but there it is. Passion requires energy...</li>
+<li>Public Relations / Marketing</li>
+<li>Audio content</li>
+<li>Licensing 3rd party software (as appropriate/if needed)</li>
+<li>Additional ad-hoc asset purchases which cannot be catered for in-house, or where our Content Author submission goals fall short.</li>
+<li>Final release server platform(s).</li>
+</ul>
+<p>Dominium will be a stand-alone game that can be purchased and downloaded. Further user-modded content updates will be provided free of charge, and expansion packs as purchasable content add-ons.</p>
+<p>Your generous contribution will allow us to develop the initial platform for something much bigger and better down the road!</p>
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/maksw/dominion-fight-for-your-future-amongst-the-stars/assets/1067072/edit" data-id="1067072">
+<figure><img class="fit" src="https://s3.amazonaws.com/ksr/assets/001/067/072/d4a7c42ca3614651064a71650ee19ed4_large.jpg?1381504378"></figure>
+</div>
+<p>Everyone involved is a hard-bitten gaming vet, who have all shipped multiple AAA titles. To give you an idea, here's a small selection of titles we've worked on...</p>
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/maksw/dominion-fight-for-your-future-amongst-the-stars/assets/1067073/edit" data-id="1067073">
+<figure><img class="fit" src="https://s3.amazonaws.com/ksr/assets/001/067/073/41b373839408c85e5163a1d9398b30db_large.jpg?1381504380"></figure>
+</div>
+<p>I'm afraid some of the people I will include need safe-guarding due to their current commitments, so forgive the aliases!</p>
+
+<p><strong>Principal : Myself, Malcolm Sparrow</strong></p>
+<p><em><strong>Lead Developer/Producer/Designer/Fixer</strong></em></p>
+<p>12yr veteran, 8 published games(EA/SEGA), 2 self-published, 14 iOS App's - has worked full time as a Development Consultant, Lead Programmer, Ops Manager, Database Administrator, BSc Computer Science (Hons)</p>
+
+<p><strong>Andy Debus (aka PixelDad)</strong></p>
+<p><em><strong>2D/3D Artist - UI/Textures/3DCG/Content Reviewer</strong></em></p>
+<p>17yr veteran, 11 published games + a further 13 games/apps contributed to whilst freelance - has worked as a Senior / Lead Artist, Illustrator,Graphic and Product Designer</p>
+
+<p><strong>SolCommand</strong></p>
+<p><em><strong>3D Modeller</strong></em></p>
+<p>SolCommand is lined as one of our Content Authors ready to  knock out some awesome ship content for us - check out his website <a title="SolCommand" href="http://www.solcommand.com/" target="_blank">here</a> to see some of  what to expect in Dominium!</p>
+
+<p>That's the core team working on Dominium at the moment - there are more recruits if we get funded - click <a title="Meet the Team" href="http://dominion.maksw.com/team/" target="_blank">here </a>to see the full team!</p>
+
+<p><strong><div class="template asset" contenteditable="false" data-edit_url="/projects/maksw/dominion-fight-for-your-future-amongst-the-stars/assets/1067074/edit" data-id="1067074">
+<figure><img class="fit" src="https://s3.amazonaws.com/ksr/assets/001/067/074/1af996ecdd4f104d60295446a61282e3_large.jpg?1381504382"></figure>
+</div></strong></p>
+<p>This fund allows a 12 month development timeframe,</p>
+<p>As early as possible (hopefully at 6 to 8 months), we'll provide an Alpha to get feedback and allow us to review our process/design.</p>
+<p>At 8 to 10 months we will provide a Beta for proper game testing.</p>
+<p>The remaining 2 months will be spent bug-killing and polishing!</p>
+<p>Finally, all being well at 12 months, we will have a shippable title, ready for download!</p>
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/maksw/dominion-fight-for-your-future-amongst-the-stars/assets/1067075/edit" data-id="1067075">
+<figure><img class="fit" src="https://s3.amazonaws.com/ksr/assets/001/067/075/bca07773bb9f18111609bee97038782f_large.jpg?1381504383"></figure>
+</div>
+<p>Ok, so that's a lot of jabbering - and thank you for reading through it! I apologise if I rambled on, but there's so much to tell! But before you decide to donate (or not) I want to be clear on what your hard earned cash will be helping to build.</p>
+<p>This initial release is a building block - the hopeful starting point of a <em>much</em> grander thing.</p>
+<p>It may slip a few things here and there, or gain a few things - but essentially, your donation will be going towards building a space-combat game, set in as rich and as diverse a game-universe as we can achieve in the time-frame and budget we've set out.</p>
+<p><strong>What happens after that - we can't wait to find out! We hope you can't either!</strong></p>
+
+<p><i>* No profane/offensive/copyrighted/trademarked names or aliases will be allowed.</i></p>
+<p><i>* All user content will be vetted and anything found to breach copyright/legal rights will be removed without warning. That means no Star Wars ships in-game I'm afraid!</i></p>
+
+
+
+
+
+</div>
+</div>
+<div id="risks">
+<h2 class="title grey-dark mt6 mb4">
+<span>Risks and challenges</span>
+<a href="/help/faq/kickstarter%20basics#Acco" class="right normal h5" target="_blank">Learn about accountability on Kickstarter</a>
+<div class="divider clear"></div>
+</h2>
+<p><p>Developing games is a risk - even the biggest and best have fallen foul of over-reaching and/or under-funding. Whilst we are confident we can deliver (otherwise we wouldn&#39;t be putting our names out on this!) certain things may have to slip, but if they do - it will slip into the next point release, or the next Episode at the worst. However, our overheads are far-far-far lower than a traditional studio, because we don&#39;t have one! Hence we think we can do &quot;as good as them&quot; but for far less dosh.</p>
+
+<p>Using our own engine - make no mistake, we know it&#39;s unproven in a commercial product - and therefore is a risk. I know it&#39;s fit for the task, but tools will need creating (for Maya exports, Blender and/or others - although Max is done already), and more tool support means more in-engine changes to cater for specifics. Worst case - we restrict content to existing working tools. Extreme worst case - we dump it and pick up another engine. Dumping tech is painful, we&#39;ve done it before for other studios - and it&#39;s not something I&#39;d care to do again believe me. I&#39;m confident we won&#39;t need to otherwise I&#39;d already be downloading another engine and evaluating it...</p></p>
+</div>
+</div>
+<div class="NS-projects-faqs" id="project-faqs">
+<h2 class="title grey-dark mt6 mb4">
+FAQ
+<div class="divider clear"></div>
+</h2>
+<ul class="faqs">
+<li class="faq" id="project_faq_55298">
+<div class="faq-question">
+<a href="#project_faq_55298" name="project_faq_55298">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">I saw your first pitch for  Dominion Episode 1, and I wondered how have you changed the first project from 350K/18 months to 100K/12 months?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>We pulled out all the &quot;not online, online&quot; aspects which we wanted to put in as the foundation for going MMO later. The original pitch would have played the game in a persistent online universe which allowed you to share your game world with others, even if you couldn&#39;t play head to head. So lots of server comm&#39;s, database setups, account management, transaction processing, and not to mention testing could be detached from the pitch this time around.</p>
+
+<p>We&#39;ve also moved a lot of gameplay features from the original pitch into stretch goals to make our minimum fund more attainable. If you look to the Stretch Goal ladder it totals £150k (ish) to bring in features which were part of the original £325k pitch - such as buying and running stations.</p>
+
+<p>We worked long and hard to try and reduce the game to core features which will deliver a good game in this time-frame at this budget, and we believe we&#39;ve hit the spot!</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-05-05T10:37:09-04:00">Sun, May 5 2013 10:37 am EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_55299">
+<div class="faq-question">
+<a href="#project_faq_55299" name="project_faq_55299">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">What makes Dominion different to games like Elite, Limited Theory or Star Citizen?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>I may not be able to give you a &quot;superb&quot; answer here. I&#39;ve backed both SC and ED - being a space game nut - but, due to having already been working on Dom for a long, long, long time - I didn&#39;t want to get the in&#39;s and out&#39;s of what they are up to for two reasons. 1) so that I don&#39;t accidentally mix their ideas into Dom and 2) to avoid the obvious &quot;this is nicked from SC&quot; or &quot;from ED&quot; etc.</p>
+
+<p>Dom has to stand on it&#39;s own two feet - sure there are bound to be similarities - it&#39;s a space game! but, I want Dom to be cool for it&#39;s own reasons, and not it&#39;s &quot;similarities&quot;.So! What do we do - well, we have a deep background for the game universe - but one we want anyone to be able to contribute to. Mod&#39;s to roll into the game content, short stories set in the universe, we want to big up &quot;exploring&quot; and not just &quot;shooting&quot; stuff. Actually encountering new species, or having to save worlds from destruction. These will happen in Dominion. Our Dynamic Event Engine allows that.In most space games you expire just to SEE something new. In Dominion you explore to FIND something new. That&#39;s a crucial difference. That&#39;s why we are offering specific Explorer ships in game. We want these to be fitted with everything from geological survey information, to probes that you can launch to scout new systems for you.We want you to feel unrestricted by the game - but not left feeling aimless and lost with no objectives. The main draw for us is the ultimate destination we are aiming toward - a vast MMO with user submitted content - worlds to walk on, ships &amp; stations to wander around, FPS levels made by players so people can explore their creations online.The universe is dynamic - even though everyone will get the same galaxy - it won&#39;t be the same after you&#39;ve played it. Discovering new species could lead to war, or new trade routes opening up... and we&#39;ve not mentioned the secrets hidden deep in Dominion&#39;s past...We don&#39;t just want YOU to be able to do anything in Dom, we want you to be able to build anything as well. Fleets, stations, bases, colonies, control worlds and star systems. These are all very grand aims of course, but we think by taking small steps and building it up as we go, with the approach we have - we reckon we can get there, otherwise we wouldn&#39;t be asking people for their hard-earned to share our vision ;) I hope that helps - if not, ask for more!</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-05-05T10:50:09-04:00">Sun, May 5 2013 10:50 am EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_55934">
+<div class="faq-question">
+<a href="#project_faq_55934" name="project_faq_55934">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Will it be DRM Free?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Yes :) </p>
+
+<p>Even though we intend to go for Greenlight approval on Steam - we remain committed to being DRM Free so your game remains your game, and not locked to the machine you install it on.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-05-10T15:13:53-04:00">Fri, May 10 2013 3:13 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_55219">
+<div class="faq-question">
+<a href="#project_faq_55219" name="project_faq_55219">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">I notice instead of the higher tears there&#39;s just the &#39;Legend&#39; tier for 100 and above. In the old campaign I pledged for the &#39;Planet Lord&#39; tier at 250. Would it be possible to donate the same amount here and get that same reward?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>We&#39;ve had to think long and hard with the rewards - as much of the gameplay fro the original gave the higher tier rewards are now stretch goals, we don&#39;t feel it&#39;s right to promise them as rewards for higher tiers until we hit the stretch goals themselves.  This poses us a problem though. You may (generously!) back us for £250, and hope for a similar reward to come from the stretch goals - however we may get funded yet miss such a goal. At that point, I would genuinely expect you to wish to change your pledge, and would honour that wish. Or, we could perhaps produce other rewards which may sit well instead. At this time, I&#39;m hoping to do an update shortly about 3D prints of vessels, possibly as rewards... so if that might interest you, I&#39;d say hold fire for a few hours until I get chance to check out the results ;)  Also, if someone does donate higher than £100, we have committed (in the £100 pledge) to back-reward anything we come up with which that pledge should have been granted.  With respect to the Planet-Lord tier - we think realistically, that at £100k, or even £150k, this gameplay feature will be beyond what the fund will allow development wise :( But, given your (return) interest and faith, we&#39;ll have a think and see if we can nudge another stretch goal onto the ladder.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-05-04T10:03:06-04:00">Sat, May 4 2013 10:03 am EDT</time>
+</div>
+</div>
+</li>
+
+</ul>
+<div class="faq-ask-box">
+<a href="/projects/maksw/dominion-fight-for-your-future-amongst-the-stars/messages/new?message%5Bto%5D=maksw&amp;mode=FAQ" class="button button_blue remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Ask a question about Dominium - Fight for your future amongst the st...">Ask a question</a>
+
+</div>
+</div>
+
+<div class="mt4 ml1 mr1 mb2" id="report-issue-wrap">
+<a href="/login?then=%2Fprojects%2Fmaksw%2Fdominion-fight-for-your-future-amongst-the-stars" class="button button_grey">Report this project to Kickstarter</a>
+</div>
+</div>
+<div class="NS-projects-rightcol grid_5" id="rightcol">
+<div class="NS_projects__ecom">
+<div class="digits_4 pb2 pl2 pt2" id="stats">
+<h5>
+<div class="num h48 no-margin" data-backers-count="126" id="backers_count"><data class="Project1815593816" data-format="number" data-value="126" itemprop="Project[backers_count]">126</data></div>
+<span><data class="Project1815593816" data-attr="backers_count" data-format="pluralize" data-value="126" data-word="Backer">Backers</data></span>
+</h5>
+<h5>
+<div class="num h48 no-margin" data-goal="100000.0" data-percent-raised="0.0403" data-pledged="4030.0" id="pledged">
+<data class="Project1815593816" data-currency="GBP" data-format="shorter_money" data-precision="0" data-value="4030" data-without_code="true" itemprop="Project[pledged]">£4,030</data>
+<span class="money gbp project_currency_code"></span>
+</div>
+pledged of
+<span class="money gbp no-code">£100,000</span>
+goal
+</h5>
+<span data-duration="31.038877314814815" data-end_time="2013-06-03T19:59:00-04:00" data-hours-remaining="0" id="project_duration_data"></span>
+<div class="Project1815593816" data-conditions="[{&quot;!state&quot;:[&quot;canceled&quot;,&quot;suspended&quot;]}]" data-evaluation="true" data-render="&quot;&lt;h5 class=\&quot;poll \&quot; data-dynamic=\&quot;5\&quot; data-end_time=\&quot;2013-06-03T19:59:00-04:00\&quot; data-poll_url=\&quot;https://d2oher2uhvl0ur.cloudfront.net/projects/maksw/dominion-fight-for-your-future-amongst-the-stars/stats.json\&quot;&gt;\n&lt;div class=\&quot;num h48 no-margin\&quot;&gt;0&lt;/div&gt;\n&lt;span class=\&quot;text\&quot;&gt;seconds to go&lt;/span&gt;\n&lt;/h5&gt;\n&quot;"><h5 class="poll " data-dynamic="5" data-end_time="2013-06-03T19:59:00-04:00" data-poll_url="https://d2oher2uhvl0ur.cloudfront.net/projects/maksw/dominion-fight-for-your-future-amongst-the-stars/stats.json">
+<div class="num h48 no-margin">0</div>
+<span class="text">seconds to go</span>
+</h5>
+</div></div>
+<div class="Project1815593816" data-conditions="[{&quot;state&quot;:&quot;live&quot;},{&quot;!ended?&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;pr2 pl2\&quot; id=\&quot;pledge-wrap\&quot;&gt;\n&lt;a href=\&quot;/projects/maksw/dominion-fight-for-your-future-amongst-the-stars/pledge/new?clicked_reward=false\&quot; class=\&quot;button button_green button_box button_block\&quot; id=\&quot;button-back-this-proj\&quot; title=\&quot;Back this project\&quot;&gt;Back This Project &lt;small class=&#39;h6 normal block green-dark&#39;&gt;&lt;span class=\&quot;money gbp no-code\&quot;&gt;\u00a31&lt;/span&gt; minimum pledge&lt;/small&gt;&lt;/a&gt;\n&lt;/div&gt;\n&quot;"></div><div class="Project1815593816" data-conditions="[{&quot;state&quot;:&quot;live&quot;}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;p2\&quot; id=\&quot;banner\&quot;&gt;\n&lt;p class=\&quot;tiny_type no-margin\&quot;&gt;\nThis project will only be funded if at least\n&lt;span class=\&quot;money gbp no-code\&quot;&gt;\u00a3100,000&lt;/span&gt;\nis pledged by\n&lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;llll z\&quot; datetime=\&quot;2013-06-03T19:59:00-04:00\&quot;&gt;Mon, Jun 3 2013 7:59 pm EDT&lt;/time&gt;.\n&lt;/p&gt;\n&lt;/div&gt;\n&quot;"></div></div>
+
+<div class="NS_projects__rightcol_projectby bg-blue-light rounded">
+<div class="p2 clearfix">
+<div class="avatar inline-block align-middle">
+<a href="/projects/maksw/dominion-fight-for-your-future-amongst-the-stars/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography"><img alt="Mak-software-systems-logo-01.small" class="avatar-small" height="80" src="https://s3.amazonaws.com/ksr/avatars/4358783/Mak-Software-Systems-Logo-01.small.jpg?1350056294" width="80" />
+</a></div>
+<div class="creator-name inline-block align-middle ml1">
+<h6 class="mb1">Project by</h6>
+<h5 class="mb1">
+<a href="/projects/maksw/dominion-fight-for-your-future-amongst-the-stars/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">Mak Software Studio</a>
+</h5>
+<p class="location h6 bold mb1">
+<a href="/discover/places/cambridgeshire-gb">Cambridgeshire, UK</a>
+</p>
+</div>
+</div>
+<div class="creator-details pl2 pr2 pb1">
+<ul class="list-simple h5 mb1">
+<li class="projects-more">
+<span class="ss-icon ss-kickstarter grey-dark margin-right"></span>
+<span class="text">
+<a href="/profile/maksw/created" class="green-dark bold more-button remote_modal_dialog" data-modal-title="Projects created by Mak Software Studio">2 created</a>
+<span class="divider">&middot;</span>
+<a href="/profile/maksw/backed" class="green-dark bold more-button remote_modal_dialog" data-modal-title="Projects backed by Mak Software Studio">12 backed</a>
+</span>
+</li>
+<li class="facebook-connected">
+<span class="ss-icon ss-facebook facebook color-facebook margin-right"></span>
+<span class="text">
+<a href="https://www.facebook.com/100000913153935" class="popup" target="_blank">Malcolm Sparrow</a>
+<span class="number h6">
+38
+friends
+</span>
+</span>
+
+</li>
+<li class="links">
+<span class="ss-icon ss-globe margin-right grey-dark"></span>
+<span class="text">
+<a href="http://www.maksw.com" class="popup" rel="nofollow" target="_blank">maksw.com</a>
+</span>
+</li>
+</ul>
+</div>
+<div class="footer center h5 bold clearfix rounded-bottom clip">
+<a href="/projects/maksw/dominion-fight-for-your-future-amongst-the-stars/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">See full bio</a>
+<a href="/projects/maksw/dominion-fight-for-your-future-amongst-the-stars/messages/new?message%5Bto%5D=maksw" class="remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Send a message to Mak Software Studio">Contact me</a>
+
+</div>
+</div>
+
+<ul class="NS-projects-rightcol-rewards rounded clip list mt2" data-reward-count="25" id="what-you-get">
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£5</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+2 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Supporter : thanks for your contribution! We&#39;ll send you some snappy digital wallpapers, and a digital &quot;I Backed Dominion!&quot; banner to use as you will.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-07-01">Jul 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£12</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+59 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(191 left of 250)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Early Space Bird : bag a bargain early! A link to the full digital download on launch day.
+
++ the £5 reward</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-07-01">Jul 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£15</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+3 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Dominion Registration : you get a digital download link for the full game on launch day!
+
++ Rewards below</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-07-01">Jul 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£18</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Game Named : your name* will be entered into the in-game character database to be used by NPC&#39;s within Dominion
+
++ Rewards below £18</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-07-01">Jul 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£19</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+2 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(98 left of 100)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Pengari Race Ticket : Free in-game entry to the new annual Pengari 40 Star Race, plus to commemorate the inaugural race - the awesome  Super Laser Racer from the BAFTA award winning indie dev - New Star Games!
++ Rewards below £19</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-07-01">Jul 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£20</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+3 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(997 left of 1000)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Beta Unblocker : You get to test-fly the Beta build as soon as it&#39;s ready, and provide valued feedback into the remaining development of Dominion prior to its release!
+
++ Rewards below £20</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-04-01">Apr 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£23</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(100 left of 100)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>The Humble Crumble Bundle : 
+Get Season 1 of the adventures of Crumble, a bar owner on a far off space station that hovers near the dangerous backwaters of the galaxy. Download Episode 1 free, then receive another short story every month for the next nine months until the end of seasons cliffhanger!
+
+Preview : http://dominion.maksw.com/story/crumble/s1e1.pdf
+
++ Rewards below £23</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-07-01">Jul 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£26</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+3 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(497 left of 500)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>World Named : you get to name a world within Dominion!*
+
++ Rewards below £26</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-07-01">Jul 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£28</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(200 left of 200)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Story : you get the final digital copy of &quot;Daria&quot; - a story set in the Dominion game universe. Visit http://dominion.maksw.com/story/daria/Chapter-01.pdf for a sample chapter. (Sorry, links don&#39;t seem to work in KS Rewards)
+
++ Rewards below £28</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-07-01">Jul 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£30</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+4 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Pathfinder : You get a Pathfinder Class vessel - designed &amp; equipped for exploration - unique to backers! No-one else will ever be able to fly this ship.
+
++ Rewards below £30</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-07-01">Jul 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£30</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Aegis : You get an Aegis Class Defender - designed &amp; equipped for the Imperial Navy for Naval duties - unique to backers! No-one else will ever be able to fly this ship.
+
++ Rewards below £30</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-07-01">Jul 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£30</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Merchant : You get a Merchant ship designed &amp; equipped for trading - unique to backers! No-one else will ever be able to fly this ship.
+
++ Rewards below £30</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-07-01">Jul 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£30</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Corsair : You get a Corsair Class raider - designed &amp; equipped for fast hit and run raids - unique to backers! No-one else will ever be able to fly this ship.
+
++ Rewards below £30</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-07-01">Jul 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£35</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+8 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(92 left of 100)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Alpha &amp; Omega : you get to experience the Alpha build of Dominion and contribute to it&#39;s development with vital design feedback, and play testing.
+
++ Rewards below £35</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-12-01">Dec 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£37</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+2 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(199498 left of 199500)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Star Namer : name a star system, and all the planets/moons within it!
+
++ Rewards below £37</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-07-01">Jul 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£40</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+3 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Executor : An upgrade to the Aegis - an Executor Class Tactical vessel - bigger, harder, faster and far more deadly!
+
++ Rewards below £40</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-07-01">Jul 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£40</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+11 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Pathfinder : An upgrade to the Pioneer - a Pathfinder Class vessel - bigger, better, and more awesomer!
+
++ Rewards below £40</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-07-01">Jul 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£40</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+6 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Carrack  : As per Merchant, but far bigger - with plenty of room for those must-have bulk buys!
+
++ Rewards below £40</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-07-01">Jul 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£40</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+2 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Buccaneer : An upgrade to the Corsair - a Buccaneer Class - larger for smuggling goods, harder, and far more dangerous!
+
++ Rewards below £40</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-07-01">Jul 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£50</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Game Face : your face, in-game! NPC&#39;s will then be randomly assigned to your mug-shot, so make it a good one ;)
+
++ Rewards below £50</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-07-01">Jul 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£60</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Creators Club : A special backer dedicated forum for submitting and discussing ideas, chat with us dev&#39;s and progress updates. Also, details for wannabe author&#39;s who&#39;d like to contribute short stories to the Dominion Universe.
+
++ Rewards below £60</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-07-01">Jul 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£65</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(99 left of 100)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Factioneer : Create and name a faction within Dominion - inside or outside the Empire, good or bad - your call!
+
++ Rewards below £65</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-07-01">Jul 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£75</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(999 left of 1000)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Genus &amp; Species : Name a species in Dominion - give an entire race a bit of substance! Contribute towards their history and characteristics, look and feel.
+
++ Rewards below £75</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-07-01">Jul 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£90</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+3 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(147 left of 150)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Ultimate Starter Vessel Pack : ALL of the £30 and ALL of the £40 rewards - that&#39;s 8 vessels you can pick and choose from!
+
++ Rewards below £90</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-07-01">Jul 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£100</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+8 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(42 left of 50)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Legend : your name* and face used for a legendary character (alive or dead) within the Dominion Universe!
+
+We will build more rewards at higher values where needed - and we will honour any higher pledges made with these rewards when they are available.
+
++ Rewards below £100</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-04-01">Apr 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+</ul>
+
+<div class="p2" id="meta">
+<h5>Funding period</h5>
+<p class="tiny_type">
+<time class="js-adjust" data-format="ll" datetime="2013-05-03T19:03:01-04:00">May 3, 2013</time> - 
+<time class="js-adjust" data-format="ll" datetime="2013-06-03T19:59:00-04:00">Jun 3, 2013</time>
+(31 days)
+</p>
+</div>
+</div>
+
+</div>
+
+<a href="#" id="video_mode_tab" style="display: none;">
+View in Video Mode
+</a>
+
+</div>
+</div>
+
+
+</div>
+
+<div class="h5 bg-green-dark" id="mega-footer-wrap">
+<div class="bg-green-dark white full-height" id="footer-newsletter-signup">
+<div class="container py4">
+<div class="grid_8 prefix_4 suffix_4 center mt4">
+<h2>
+Eureka! You've found
+<br>
+our little secret.
+</h2>
+<p>Sign up for our Happening email for all the inside info about arts and culture in the Kickstarter universe and beyond.</p>
+<div class="newsletter_signup">
+<form accept-charset="UTF-8" action="/newsletters/happening/signup" class="overlabels" method="post"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /><input class="hidden" name="authenticity_token" type="hidden" value="deFnxAYvdNb8A/XFvBsYUDSgaB1zxfamDSc3eC62FPQ=" /></div><input class="hidden" id="location" name="location" type="hidden" value="footer" />
+<textarea class="hide textarea" id="comment" name="comment">
+</textarea>
+<div class="field newsletter">
+<label class="overlabel z1 overlabel-newsletter">Email address</label>
+<input class="text" id="email" name="email" type="text" />
+</div>
+<input class="button button_green submit" name="commit" type="submit" value="Submit" />
+</form>
+
+</div>
+
+</div>
+</div>
+</div>
+<div class="container relative" id="mega-footer">
+<span class="scissors icon-scissors-1"></span>
+<div class="grid_16 alpha omega pt4 pb2" id="mega-footer-links">
+<div class="grid_4 link-group">
+<h5 class="white">About us</h5>
+<ul class="list">
+<li><a href="/year/2013/?ref=footer">2013 highlights</a></li>
+<li><a href="/year/2012?ref=footer">2012 highlights</a></li>
+<li><a href="/team?ref=footer">Who we are</a></li>
+<li><a href="/jobs?ref=footer">Jobs</a></li>
+<li><a href="/press?ref=footer">Press</a></li>
+<li><a href="/help/stats?ref=footer">Stats</a></li>
+<li><a href="/newsletters/weekly">Projects we love</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group">
+<h5><a href="/help?ref=footer" class="white">Help</a></h5>
+<ul class="list">
+<li><a href="/hello?ref=footer">What is Kickstarter?</a></li>
+<li><a href="/help?ref=footer">FAQ</a></li>
+<li><a href="/contact?ref=footer">Support</a></li>
+<li><a href="/help/school?ref=footer">Kickstarter School</a></li>
+<li><a href="/terms-of-use?ref=footer">Terms of Use</a></li>
+<li><a href="/privacy?ref=footer">Privacy Policy</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group alpha omega suffix_1">
+<h5 class="alpha"><a href="/discover/advanced?ref=footer" class="white">Discover</a></h5>
+<ul class="column column-0 grid_2 list">
+<li><a href="/discover/categories/art?ref=footer">Art</a></li>
+<li><a href="/discover/categories/comics?ref=footer">Comics</a></li>
+<li><a href="/discover/categories/dance?ref=footer">Dance</a></li>
+<li><a href="/discover/categories/design?ref=footer">Design</a></li>
+<li><a href="/discover/categories/fashion?ref=footer">Fashion</a></li>
+<li><a href="/discover/categories/film%20&amp;%20video?ref=footer">Film &amp; Video</a></li>
+<li><a href="/discover/categories/food?ref=footer">Food</a></li>
+</ul>
+<ul class="column column-1 grid_2 list">
+<li><a href="/discover/categories/games?ref=footer">Games</a></li>
+<li><a href="/discover/categories/music?ref=footer">Music</a></li>
+<li><a href="/discover/categories/photography?ref=footer">Photography</a></li>
+<li><a href="/discover/categories/publishing?ref=footer">Publishing</a></li>
+<li><a href="/discover/categories/technology?ref=footer">Technology</a></li>
+<li><a href="/discover/categories/theater?ref=footer">Theater</a></li>
+</ul>
+</div>
+<div class="grid_3 link-group">
+<h5 class="white">Hello</h5>
+<ul class="list">
+<li>
+<a href="https://twitter.com/kickstarter"><span class="ss-icon ss-social-regular ss-twitter"></span>
+Twitter
+</a></li>
+<li>
+<a href="https://www.facebook.com/Kickstarter"><span class="ss-icon ss-social-regular ss-facebook"></span>
+Facebook
+</a></li>
+<li>
+<a href="http://kickstarter.tumblr.com"><span class="ss-icon ss-social-regular ss-tumblr"></span>
+Tumblr
+</a></li>
+<li>
+<a href="http://instagram.com/kickstarter"><span class="ss-icon ss-social-regular ss-instagram"></span>
+Instagram
+</a></li>
+<li>
+<a href="https://vine.co/Kickstarter"><span class="ss-icon ss-social-regular ss-vine"></span>
+Vine
+</a></li>
+<li>
+<a href="/blog?ref=footer">Blog</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="grid_16 py4" id="mega-footer-bottom">
+<div class="logo left">
+<a href="/" class="grey-dark"><span class="ss-icon h3">KICKSTARTER</span>
+</a></div>
+<p class="right h5 grey-dark">
+&copy;
+2014
+Kickstarter, Inc.
+</p>
+</div>
+</div>
+</div>
+
+<script>
+  //<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    var analytics_vars = { google_analytics_id : "UA-7621056-1", logged_in : "false", social_user: "false" }
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.mixpanel_id = '75b1d24a516ecfc955eadfadc4910661';
+    window.mixpanel_debug = false;
+  //]]>
+</script>
+
+
+<noscript>
+<img alt="Quantcast" border="0" height="1" src="//secure.quantserve.com/pixel/p-34IbSpw2K94Sg.gif" style="display:none" width="1" />
+</noscript>
+
+
+<script>
+  //<![CDATA[
+    window.benchmark = (typeof window.performance == 'object' && typeof window.performance.mark == 'function');
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    (function (root) {
+      function instrument_function (original) {
+        return function () {
+          try {
+            return original.apply(this, arguments);
+          } catch (e) {
+            if (e.stack && root.Honeybadger) {
+              Honeybadger.notify(e, {
+                current_project : root.current_project,
+                current_user : root.current_user
+              });
+            }
+            throw(e);
+          }
+        };
+      }
+      root.instrument_function = instrument_function;
+    }(this));
+  //]]>
+</script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+
+<script>
+  //<![CDATA[
+    (function(){function c(a){this.local_start_time=new Date;this.settings={cookie_name:"request_time"};for(var b in a)this.settings[b]=a[b];this.get_remote_offset()}c.prototype.get_remote_offset=function(){this.cookie_value=this.read_cookie();var a=new Date(this.cookie_value);if(!this.cookie_value||"Invalid Date"===a.toString()){if(this.remote_offset=this.read_cookie("local_offset"))this.remote_offset=parseInt(this.remote_offset,10)}else this.remote_offset=a-this.local_start_time;"undefined"!==typeof this.remote_offset&& !isNaN(this.remote_offset)?(document.cookie="local_offset="+this.remote_offset+"; path=/",this.is_set=!0):this.is_set=!1};c.prototype.time_units=[["milliseconds",1],["seconds",1E3],["minutes",6E4],["hours",36E5],["days",864E5]];c.prototype.get_units_in_interval=function(a,b){var d=a.replace(/^\w/,function(d){return"get"+d.toUpperCase()});return b[d]()};c.prototype.milliseconds_in_day=function(a){"undefined"===typeof a&&(a=new Date);for(var b=0,d=this.time_units.length-2;0<=d;d--)b+=this.get_units_in_interval(this.time_units[d][0], a)*this.time_units[d][1];return b};c.prototype.milliseconds_in_interval=function(a,b){return this.milliseconds_in_day(b)%a};c.prototype.milliseconds_to_next_interval=function(a,b){return a-this.milliseconds_in_interval(a,b)};c.prototype.pluralize=function(a,b){1===b&&(a=a.replace(/s$/,""));return a};c.prototype.read_cookie=function(a){for(var b=window.document.cookie.split(";"),a=(a||this.settings.cookie_name)+"=",d=0;d<b.length;d++){for(var e=b[d];" "==e.charAt(0);)e=e.substring(1,e.length);if(0== e.indexOf(a))return b=e.substring(a.length,e.length),decodeURIComponent(b).replace(/\+/g," ")}return null};c.prototype.destroy_cookie=function(a){var b=new Date;a||(a=this.settings.cookie_name);b.setTime(b.getTime()-864E5);window.document.cookie=a+"=; expires="+b.toGMTString()+"; path=/"};c.prototype.get_remote_time=function(){var a=new Date,b=a.getTime()+this.remote_offset;return a=a.setTime(b)};window.ksr_page_clock=new c})(); (function(){function c(d,a,b){if(d){this.options={unit_base:{seconds:119,minutes:119,hours:72,days:0},end_phrase:d.getAttribute("data-word")||"to go",count_down:d.getAttribute("data-dynamic")||!1};for(k in b)this.options[k]=b[k];this.clock=a;this.time_units=this.clock.time_units.slice(1);this.element=d;this.clock.is_set&&this.attach()}}function a(){this.elements=[];this.attach()}var b=function(d,a){var b=a||window.document.body,c=d.split("."),g=c[c.length-1],c=1<c.length&&c[0]?c[0]:"*";if(window.document.getElementsByClassName)return b.getElementsByClassName(g); if(b.querySelectorAll)return b.querySelectorAll(d);for(var c=b.getElementsByTagName(c),h=[],i=0,f;f=c[i];i++)b=RegExp("(^|\\s)"+g+"(\\s|$)"),(""+f.className).match(b)&&h.push(f);return h};c.prototype.get_remaining_time=function(){var d=this.remote_end_time-this.clock.get_remote_time();0>d&&(d=0);return d};c.prototype.get_current_unit=function(){for(var d,a=0;a<this.time_units.length&&!(d=this.time_units[a],this.get_remaining_time()<=this.options.unit_base[d[0]]*d[1]);a++);return d};c.prototype.update_element= function(){var a=this.get_current_unit(),b=Math.floor(this.get_remaining_time()/a[1]);isNaN(b)||(this.number_element.innerHTML=b,this.text_element.innerHTML=this.clock.pluralize(a[0],b)+" "+this.options.end_phrase)};c.prototype.valid=function(){return!(!this.number_element||!this.text_element)};c.prototype.attach=function(){function a(){c.update_element();if(c.options.count_down&&0<c.get_remaining_time()){var b=c.get_current_unit();this.timeout=window.setTimeout(a,c.clock.milliseconds_to_next_interval(b[1]))}} var c=this;if(this.remote_end_time_string=this.element.getAttribute("data-end_time"))this.remote_end_time_string.match(/^\d+$/)?(this.remote_end_time=new Date,this.remote_end_time.setTime(this.remote_end_time_string)):this.remote_end_time=new Date(this.remote_end_time_string),this.number_element=b(".num",this.element)[0],this.text_element=b(".text",this.element)[0],this.element.ksr_page_timer=!0,this.valid()&&a()};c.prototype.cancel=function(){this.timeout&&clearTimeout(this.timeout)};a.prototype.loading= !0;a.prototype.stop_finding=function(){this.attach_timers();this.loading=!1;document.addEventListener?document.removeEventListener("DOMContentLoaded",this.stop_finding,!1):document.attachEvent&&"complete"===document.readyState&&document.detachEvent("onreadystatechange",this.stop_finding)};a.prototype.bind_ready=function(){var a=this,b=function(){a.stop_finding.call(a)};document.addEventListener?(document.addEventListener("DOMContentLoaded",b,!1),window.addEventListener("load",b,!1)):document.attachEvent&& (document.attachEvent("onreadystatechange",b),window.attachEvent("onload",b))};a.prototype.attach_timers=function(){for(var a=b("div.ksr_page_timer"),e=0;e<a.length;e++)a[e].ksr_page_timer||(new c(a[e],window.ksr_page_clock),this.elements.push(a[e]))};a.prototype.attach=function(){var a=this;this.bind_ready();(function(){a.attach_timers();a.loading&&window.setTimeout(function(){a.attach_timers()},200)})()};window.ProjectTimer=c;new a})();
+  //]]>
+</script>
+
+<script class="template" id="template-widgets__video_embed_code" type="text/x-tmpl-mustache"><iframe width="{{width}}" height="{{height}}" src="{{{path}}}" frameborder="0" scrolling="no"> </iframe>
+</script><script class="template" id="template-projects__baseball_card_tall" type="text/x-tmpl-mustache"><div class="project-card-wrap project-card-wrap-tall border bg-white rounded clip">
+  <div class="project-card relative project-live {{#successful?}}successful{{/successful?}}">
+    <div class="project-thumbnail pt1 pl1 pr1">
+      <a href="{{urls.web.project}}" target="">
+        <img alt="Photo-little" class="projectphoto-little" src="{{photo.little}}" class="fit">
+      </a>
+    </div>
+    <div class="project-card-interior p1 h6 grey-dark">
+      <h6 class="project-title">
+        <a href="{{urls.web.project}}" target="" class="green-dark">{{name}}</a>
+      </h6>
+      <p class="mb1 ellipsis">
+        by
+        {{creator.name}}
+      </p>
+      <p class="blurb">
+        {{blurb}}
+      </p>
+    </div>
+    <div class="absolute-bottom bg-white rounded-bottom">
+
+      {{#location}}
+        <ul class="p1 list project-meta no-margin h6">
+          <li class="ellipsis">
+            <a href="{{location.urls.web.discover}}" data-location="{{location_json}}" class="grey-dark">
+              <span class="ss-icon ss-location"></span>
+              <span class="location-name">{{location.displayable_name}}</span>
+            </a>
+          </li>
+        </ul>
+      {{/location}}
+
+      <div class="project-stats-wrap pb1 pl1 pr1">
+
+        {{#failed?}}
+          <div class='project-status project-failed h6'>
+            <strong> Funding Unsuccessful</strong><br />
+            <span class="grey-dark">Project ended on {{formatted_deadline}}</span>
+          </div>
+        {{/failed?}}
+
+        {{#canceled?}}
+          <div class='project-status project-canceled h6'>
+            <strong> Funding Canceled</strong><br />
+            <span class="grey-dark">Project canceled on {{formatted_state_changed_at}}</span>
+          </div>
+        {{/canceled?}}
+
+        {{#successful?}}
+          <div class='project-pledged-successful bg-green white h6 pl1 pr1 mb1'>
+            <strong>Successful!</strong>
+          </div>
+        {{/successful?}}
+
+        {{#live_or_successful?}}
+          {{#live?}}
+            <div class="project-pledged-wrap bg-grey clip mb1">
+              <div class="project-pledged bg-green full-height" style="width: {{percent_raised_to_100}}%"></div>
+            </div>
+          {{/live?}}
+          <ul class="project-stats list no-margin h6 no-wrap">
+            <li class="first funded inline-block mr1">
+              <strong class="block h6">{{percent_raised_rounded}}%</strong>
+              <span class="grey-dark">funded</span>
+            </li>
+            <li class="pledged inline-block mr1">
+              <strong class="block h6">{{currency_symbol}}{{formatted_money}}</strong>
+              <span class="grey-dark">pledged</span>
+            </li>
+            {{#successful?}}
+              <li class="last successful inline-block">
+                <strong class="block h6">Funded</strong>
+                <div class="deadline grey-dark">{{formatted_deadline}}</div>
+              </li>
+            {{/successful?}}
+            {{#live?}}
+              <li class="last ksr_page_timer inline-block" data-end_time="{{javascript_deadline}}">
+                <strong class="block h6">
+                  <div class="num">30</div>
+                </strong>
+                <div class="span text grey-dark" data-word="left">days to go</div>
+              </li>
+            {{/live?}}
+          </ul>
+        {{/live_or_successful?}}
+      </div>
+    </div>
+  </div>
+</div>
+
+{{#friends_backing?}}
+  <div class="friend_project_context">
+    <div class="friend_facepile">
+      {{#truncated_friends}}
+        <img src="{{avatar.thumb}}" class="{{#has_metadata?}}small{{/has_metadata?}}">
+      {{/truncated_friends}}
+    </div>
+    <p class="friend_namepile">
+      {{{escaped_sentence}}}
+    </p>
+  </div>
+{{/friends_backing?}}
+</script><script class="template" id="template-projects__video_mode" type="text/x-tmpl-mustache"><a href='#' id='video_mode_close' class='close_button z2'><span class='ss-icon ss-delete'></span></a>
+
+<div class='title_card z1 {{context_classes}}' style="display:none;">
+  <div class='interior'>
+    <h2 class='project_title normal_weight'>{{name}}</h2>
+    <p class='blurb'>{{blurb}}</p>
+    <nav class='bar'>
+      <a id='play_button' class='left play' href='#'>
+        <span class='play_active'>
+          <span class='ss-icon ss-play'></span>
+          Play
+        </span>
+        <span class='pause_active'>
+          <span class='ss-icon ss-pause'></span>
+          Pause
+        </span>
+      </a>
+      {{#logged_in}}
+        <div class='remind right'>
+          {{#if_not_starred}}
+            <a class='follow' href='{{urls.web.project}}/watch'><span class='ss-icon ss-star'></span></a>
+          {{/if_not_starred}}
+          {{#if_starred}}
+            <a class='unfollow' href='{{urls.web.project}}/unwatch'><span class='ss-icon ss-star active'></span></a>
+          {{/if_starred}}
+        </div>
+      {{/logged_in}}
+      <a class='right explore button button_green small' href='#'>Explore this project</a>
+    </nav>
+  </div>
+</div>
+
+<div class='channel_controls z1'>
+  <a href='#' class='{{#playlist_is_location}}selected {{/playlist_is_location}}location'>Something else near {{location.first_name}} <span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_featured}}selected {{/playlist_is_featured}}featured'>Something different<span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_category}}selected {{/playlist_is_category}}category'>Something else in {{category.name}} <span class='ss-icon ss-navigateright'></span></a>
+</div>
+
+<div class='project_video' style='background-image: url('{{photo.full}}')'>
+  <div class='cover'>
+    <video>
+      <source src='{{video.high}}' type='video/mp4'/>
+      <source src='{{video.webm}}' type='video/webm'/>
+    </video>
+  </div>
+</div>
+</script><script class="template" id="template-site__video_mode_fourohfour" type="text/x-tmpl-mustache"><section class='four_oh_four'>
+  <p class='big_type'>
+    Looks like you've reached the end of the line! <br />Check out <a class="another" href='#'>another channel</a> or <a href='/discover'>browse projects in discover</a>.
+  </p>
+</section>
+</script>
+
+<script id="schwamm_formatting_options" type="text/javascript">
+//<![CDATA[
+(function(){window.formatters = window.formatters || {}; var formatting_options = {"distance_date_intervals":[[5,"just now"],[29,"less than a minute ago"],[89,"1 minute ago"],[2640,"%m minutes ago"],[5340,"about 1 hour ago"],[82800,"about %h hours ago"],[147600,"1 day ago"],[604800,"%d days ago"],[15552000,"on %t"],[0,"on %y"]],"currency_symbol_mappings":{"AFN":"\u060b","ALL":"Lek","ARS":"$","AUD":"$","AWG":"\u0192","AZN":"\u043c\u0430\u043d","BAM":"KM","BBD":"$","BGN":"\u043b\u0432","BMD":"$","BND":"$","BOB":"$b","BRL":"R$","BSD":"$","BWP":"P","BYR":"p.","BZD":"BZ$","CAD":"$","CLP":"$","CNY":"\u00a5","COP":"$","CRC":"\u20a1","CUP":"\u20b1","CZK":"K\u010d","DKK":"kr","DOP":"RD$","EGP":"\u00a3","EUR":"\u20ac","FJD":"$","FKP":"\u00a3","GBP":"\u00a3","GIP":"\u00a3","GTQ":"Q","GYD":"$","HKD":"$","HNL":"L","HRK":"kn","HUF":"Ft","IDR":"Rp","ILS":"\u20aa","IRR":"\ufdfc","ISK":"kr","JMD":"J$","JPY":"\u00a5","KGS":"\u043b\u0432","KHR":"\u17db","KPW":"\u20a9","KRW":"\u20a9","KYD":"$","KZT":"\u043b\u0432","LAK":"\u20ad","LBP":"\u00a3","LKR":"\u20a8","LRD":"$","LTL":"Lt","LVL":"Ls","MKD":"\u0434\u0435\u043d","MNT":"\u20ae","MUR":"\u20a8","MXN":"$","MYR":"RM","MZN":"MT","NAD":"$","NGN":"\u20a6","NIO":"C$","NOK":"kr","NPR":"\u20a8","NZD":"$","OMR":"\ufdfc","PAB":"B/.","PEN":"S/.","PHP":"\u20b1","PKR":"\u20a8","PLN":"z\u0142","PYG":"Gs","QAR":"\ufdfc","RON":"lei","RSD":"\u0414\u0438\u043d.","RUB":"\u0440\u0443\u0431","SAR":"\ufdfc","SBD":"$","SCR":"\u20a8","SEK":"kr","SGD":"$","SHP":"\u00a3","SOS":"S","SRD":"$","SVC":"$","SYP":"\u00a3","THB":"\u0e3f","TRY":"TL","TTD":"TT$","TWD":"NT$","UAH":"\u20b4","USD":"$","UYU":"$U","UZS":"\u043b\u0432","VEF":"Bs","VND":"\u20ab","YER":"\ufdfc","ZAR":"R"},"currency_trailing_code_mappings":{"AUD":true,"CAD":true,"NZD":true,"USD":true},"currency_formats":["money","shorter_money"]}; for (key in formatting_options) {window.formatters[key] = formatting_options[key]};}());
+//]]>
+</script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("begin_base.js_tag");}
+  //]]>
+</script>
+<script src="https://d297h9he240fqh.cloudfront.net/assets/packages/base-45cdab84617ddfb8905b7cddc8500c19.js" type="text/javascript"></script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("end_base.js_tag");}
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    document.domain='kickstarter.com';
+  //]]>
+</script>
+
+<iframe height="0" id="api_xdreceiver" src="https://api.kickstarter.com/xdreceiver/85e6.html" style="display: none;" width="0"></iframe>
+
+
+
+<div id="fb-root"></div>
+<script>
+  //<![CDATA[
+    var channelUrl = window.location.protocol + "//" + window.location.host + "/channel.html",
+      skip_autologin = $('body').is('.skip_autologin');
+    
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId: window.fb_app_id,
+        channelUrl: channelUrl,
+        status: true,    // check login status
+        cookie: true,    // enable cookies to allow the server to access the session
+        xfbml: true,     // parse XFBML
+        logging: false   // turn off logging
+      });
+    
+      FB.getLoginStatus(function (response) {
+        if (response.status === 'connected') {
+          if (read_cookie("logout_from_fb")) {
+            FB.logout();
+            destroy_cookie("logout_from_fb");
+          } else if (!skip_autologin) {
+            $.get("/fb/autologin", {'fbsr': response.authResponse.signedRequest});
+          } else if (false && 0 == response.authResponse.userID) {
+            $.get("/fb/refresh", {'fbsr': response.authResponse.signedRequest});
+          }
+        } else {
+          if (read_cookie("logout_from_fb")) {
+            destroy_cookie("logout_from_fb");
+          }
+        }
+      })
+    
+      $(document).trigger('fb:loaded');
+    };
+    
+    
+    // Load the SDK Asynchronously
+    (function(d){
+      var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+      js = d.createElement('script'); js.id = id; js.async = true;
+      js.src = "//connect.facebook.net/en_US/all.js";
+      d.getElementsByTagName('head')[0].appendChild(js);
+    }(document));
+  //]]>
+</script>
+
+
+</body>
+</html>

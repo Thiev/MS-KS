@@ -1,0 +1,2115 @@
+<!DOCTYPE html>
+<html class="projects_show  fontface no-js" lang="en">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# kickstarter: http://ogp.me/ns/fb/kickstarter#">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-5.newrelic.com","errorBeacon":"jserror.newrelic.com","licenseKey":"b04b883ad2","applicationID":"11086","transactionName":"cFteRUULX1wHFhtIEFxeVVJDFxxDCgtD","queueTime":16,"applicationTime":1488,"ttGuid":"","agentToken":null,"agent":"js-agent.newrelic.com/nr-411.min.js"}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"Vw4BVEVSCQMIUg=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e){function n(t,e,n){n||(n={});for(var r=o[t],a=r&&r.length||0,s=n[i]||(n[i]={}),u=0;a>u;u++)r[u].apply(s,e);return s}function r(t,e){var n=o[t]||(o[t]=[]);n.push(e)}var o={},i="nr@context";e.exports={on:r,emit:n}},{}],2:[function(t){function e(t,e,n,i,s){return u?u-=1:r("err",[s||new UncaughtException(t,e,n)]),"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t(5),a=window.onerror,s=!1,u=0;t("loader").features.push("err"),window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(d){"stack"in d&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(4),s=!0)}i.on("fn-start",function(){s&&(u+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&u>0&&(u-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:4,3:3,4:6,5:1,6:14,handle:"D5DuLP",loader:"G9z0Bl"}],3:[function(t){function e(t){r.inPlace(t,["addEventListener","removeEventListener"],"-",n)}function n(t){return t[1]}var r=t(1),o=(t(3),t(2));if(e(window),"getPrototypeOf"in Object){for(var i=document;i&&!i.hasOwnProperty("addEventListener");)i=Object.getPrototypeOf(i);i&&e(i);for(var a=XMLHttpRequest.prototype;a&&!a.hasOwnProperty("addEventListener");)a=Object.getPrototypeOf(a);a&&e(a)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&e(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=e["nr@wrapped"]?t[1]=e["nr@wrapped"]:e["nr@wrapped"]=t[1]=r(e,"fn-"):"function"==typeof e.handleEvent&&r.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:15,2:1,3:14}],4:[function(t){var e=(t(3),t(1)),n=t(2);e.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=e(t[0],"fn-")})},{1:15,2:1,3:14}],5:[function(t){function e(t){var e=t[0];"string"==typeof e&&(e=new Function(e)),t[0]=n(e,"fn-")}var n=(t(3),t(1)),r=t(2);n.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",e)},{1:15,2:1,3:14}],6:[function(t){function e(){o.inPlace(this,s,"fn-")}function n(t,e){o.inPlace(e,["onreadystatechange"],"fn-")}function r(t,e){return e}var o=t(1),i=t(2),a=window.XMLHttpRequest,s=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];window.XMLHttpRequest=function(t){var n=new a(t);try{i.emit("new-xhr",[],n),o.inPlace(n,["addEventListener","removeEventListener"],"-",function(t,e){return e}),n.addEventListener("readystatechange",e,!1)}catch(r){try{i.emit("internal-error",r)}catch(s){}}return n},window.XMLHttpRequest.prototype=a.prototype,o.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",r),i.on("send-xhr-start",n),i.on("open-xhr-start",n)},{1:15,2:1}],7:[function(t){function e(){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;u>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,d="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=e(d);if(f&&(r.rxSize=f),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}t("loader").features.push("xhr");var o=t("handle"),i=t(1),a=t(5),s=["load","error","abort","timeout"],u=s.length,d=t(2);t(3),t(4),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var d=e(o);d&&(r.txSize=d)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",e)}catch(r){}}};for(var f=0;u>f;f++)n.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&e()},{1:8,2:11,3:3,4:6,5:1,handle:"D5DuLP",loader:"G9z0Bl"}],8:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e){var n=r[t];return n?n.apply(this,e):(o[t]||(o[t]=[]),void o[t].push(e))}var r={},o={};e.exports=n,n.queues=o,n.handlers=r},{}],11:[function(t,e){function n(t){if(!t||"object"!=typeof t&&"function"!=typeof t)return-1;if(t===window)return 0;if(o.call(t,"__nr"))return t.__nr;try{return Object.defineProperty(t,"__nr",{value:r,writable:!0,enumerable:!1}),r}catch(e){return t.__nr=r,r}finally{r+=1}}var r=1,o=Object.prototype.hasOwnProperty;e.exports=n},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&u&&u.body){p.proto="https"===c.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=u.createElement("script");e.src=p.proto+t.agent,u.body.appendChild(e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,u=s.document,d="addEventListener",f="attachEvent",c=(""+location).split("?")[0],p=e.exports={offset:i(),origin:c,features:[]};u[d]?(u[d]("DOMContentLoaded",o,!1),s[d]("load",n,!1)):(u[f]("onreadystatechange",r),s[f]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],14:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],15:[function(t,e){function n(t,e,r,s){function nrWrapper(){try{var n,a=u(arguments),d=this,f=r&&r(a,d)||{}}catch(c){i([c,"",[a,d,s],f])}o(e+"start",[a,d,s],f);try{return n=t.apply(d,a)}catch(p){throw o(e+"err",[a,d,p],f),p}finally{o(e+"end",[a,d,n],f)}}return a(t)?t:(e||(e=""),nrWrapper[n.flag]=!0,nrWrapper)}function r(t,e,r,o){r||(r="");var i,s,u,d="-"===r.charAt(0);for(u=0;u<e.length;u++)s=e[u],i=t[s],a(i)||(t[s]=n(i,d?s+r:r,o,s,t))}function o(t,e,n){try{s.emit(t,e,n)}catch(r){i([r,t,e,n])}}function i(t){try{s.emit("internal-error",t)}catch(e){}}function a(t){return!(t&&"function"==typeof t&&t.apply&&!t[n.flag])}var s=t(1),u=t(2);e.exports=n,n.inPlace=r,n.flag="nr@wrapper"},{1:1,2:14}]},{},["G9z0Bl",2,7]);</script><script>
+  //<![CDATA[
+    docElement = this.document.documentElement;
+    docElement.className=docElement.className.replace(/\bno-js\b/,'') + 'js';
+  //]]>
+</script>
+<title>3rd World - A CyberPunk Tale by Vision-Strike-Ware, LLC &mdash; Kickstarter</title><script>
+  //<![CDATA[
+    window.report_errors = true;
+    window.honeybadger_configuration = {
+      api_key : "02ab109335c0dd1a93506d92f22217a7",
+      environment : "production",
+      component : "projects",
+      action : "show",
+      onerror : false
+    };
+  //]]>
+</script>
+
+
+<!--[if lt IE 9]>
+  <script src="//html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta content="telephone=no" name="format-detection">
+
+<!--[if !IE]> -->
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base-9f623ad5d021a188cfb2d68a0cdf7a7b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<!-- <![endif]-->
+<!--[if IE]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base_blessed-2640c72487552f9a2ef9f2620b4af860.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<!--[if lte IE 9]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_nine-a93fe10530f175f96c4078b7e070d7e1.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 8]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_eight-f75aeb274436f94a0d243774456b1c62.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 7]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie-c019c01acd3a96588b346cf577a3504f.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_seven-5a3d2cef660cd281fd844b04b2397dbb.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if IE 6]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_six-e4d3caf76e405fe19aee6ece8bda701b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<link href="https://d297h9he240fqh.cloudfront.net/favicon.png" rel="icon" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-precomposed-7b603dba7cf80e4acc57d94a991bebbd.png" rel="apple-touch-icon-precomposed" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-ipad-precomposed-3176f72977daf43dee3b0d348484dc01.png" rel="apple-touch-icon-precomposed" sizes="72x72" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-iphone4-precomposed-b93b70168cd8492c843d0fea873c7f83.png" rel="apple-touch-icon-precomposed" sizes="114x114" type="image/png">
+<link href="https://www.kickstarter.com/services/oembed?url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2F1254854179%2F3rd-world-a-cyberpunk-tale" rel="alternate" title="3rd World - A CyberPunk Tale Script Tag oEmbed" type="application/json+oembed">
+<link rel="alternate" type="application/atom+xml" title="3rd World - A CyberPunk Tale : Kickstarter" href="https://www.kickstarter.com/projects/1254854179/3rd-world-a-cyberpunk-tale/posts.atom" />
+<meta property="twitter:app:id:iphone" content="596961532"/>
+<meta property="twitter:app:name:iphone" content="Kickstarter"/>
+<meta property="twitter:app:url:iphone" content="ksr://www.kickstarter.com/projects/1254854179/3rd-world-a-cyberpunk-tale"/>
+<meta name="video_height" content="426"/>
+<meta name="video_width" content="640"/>
+<meta name="video_type" content="application/x-shockwave-flash"/>
+<meta name="title" content="Kickstarter &gt;&gt; 3rd World - A CyberPunk Tale by Vision-Strike-Ware, LLC"/>
+<meta name="description" content="Vision-Strike-Ware, LLC is raising funds for 3rd World - A CyberPunk Tale on Kickstarter! 
+
+ Cyberpunk MMO Tactical Game- Build Team, Complete Missions, Challenge Power vs Others, Sec-Net and the Corporate Overlords!"/>
+<meta name="robots" content="noindex"/>
+<meta property="og:title" content="3rd World - A CyberPunk Tale"/>
+<meta property="og:type" content="kickstarter:project"/>
+<meta property="og:image" content="https://s3.amazonaws.com/ksr/projects/171124/photo-main.jpg?1397781240"/>
+<meta property="og:url" content="https://www.kickstarter.com/projects/1254854179/3rd-world-a-cyberpunk-tale"/>
+<meta property="og:site_name" content="Kickstarter"/>
+<meta property="fb:app_id" content="69103156693"/>
+<meta property="og:description" content="Cyberpunk MMO Tactical Game- Build Team, Complete Missions, Challenge Power vs Others, Sec-Net and the Corporate Overlords!"/>
+<meta property="kickstarter:creator" content="https://www.kickstarter.com/profile/1254854179"/>
+<meta property="twitter:url:landing_url" content="https://www.kickstarter.com/projects/1254854179/3rd-world-a-cyberpunk-tale"/>
+<meta property="twitter:card" content="2427656750:kickstarter_project"/>
+<meta property="twitter:site" content="@kickstarter"/>
+<meta property="twitter:site:id" content="16186995"/>
+<meta property="twitter:text:title" content="3rd World - A CyberPunk Tale"/>
+<meta property="twitter:text:artist" content="Vision-Strike-Ware, LLC"/>
+<meta property="twitter:text:backers" content="35"/>
+<meta property="twitter:text:pledged" content="$1,261 USD"/>
+<meta property="twitter:text:time" content="0 seconds"/>
+<meta property="twitter:text:location" content="Los Angeles, CA"/>
+<meta property="twitter:image:location_image" content="https://d3mlfyygrfdi2i.cloudfront.net/b40e/pin.png"/>
+<meta property="twitter:text:description" content="Cyberpunk MMO Tactical Game- Build Team, Complete Missions, Challenge Power vs Others, Sec-Net and the Corporate Overlords!"/>
+<meta property="twitter:image:media" content="https://s3.amazonaws.com/ksr/projects/171124/photo-main.jpg?1397781240"/>
+<meta property="twitter:image:width" content="640"/>
+<meta property="twitter:image:height" content="480"/>
+<meta property="twitter:player:stream:url" content="https://d2pq0u4uni88oo.cloudfront.net/projects/171124/video-165540-h264_base.mp4"/>
+<meta property="twitter:player:stream:content" content="video/mp4"/>
+<meta property="twitter:player:url" content="https://www.kickstarter.com/projects/1254854179/3rd-world-a-cyberpunk-tale/widget/video.html"/>
+<meta property="twitter:player:height" content="426"/>
+<meta property="twitter:player:width" content="640"/>
+<meta property="twitter:maxage" content="60"/>
+<meta property="og:video" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F171124%2Fvideo-165540-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F171124%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Vision-Strike-Ware%2C+LLC&amp;project_title=3rd+World+-+A+CyberPunk+Tale&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2F1254854179%2F3rd-world-a-cyberpunk-tale&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:secure_url" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F171124%2Fvideo-165540-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F171124%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Vision-Strike-Ware%2C+LLC&amp;project_title=3rd+World+-+A+CyberPunk+Tale&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2F1254854179%2F3rd-world-a-cyberpunk-tale&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:height" content="426"/>
+<meta property="og:video:width" content="640"/>
+<meta property="og:video:type" content="application/x-shockwave-flash"/>
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="yDsqpcypsg0EGUi7Dh/uTxEBDL24c94Ud3FT4Ejq+GE=" name="csrf-token" />
+<script type="text/javascript">
+  var _sift = _sift || [];
+  _sift.push(['_setAccount', '637102']);
+  _sift.push(['_setUserId', '']);
+  _sift.push(['_trackPageview']);
+
+  (function() {
+    function loadSift() {
+      var sift, s;
+      if (root.visitor_id) {
+        _sift.push(['_setSessionId', root.visitor_id]);
+      }
+      sift = document.createElement('script');
+      sift.type = 'text/javascript';
+      sift.async = true;
+      sift.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dtlilztwypawv.cloudfront.net/s.js';
+      s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(sift, s);
+    }
+    if (window.attachEvent) {
+      window.attachEvent('onload', loadSift);
+    } else {
+      window.addEventListener('load', loadSift, false);
+    }
+  })();
+</script>
+<link href="http://kck.st/RS4RBD" rel="shorturl">
+<link href="https://www.kickstarter.com/projects/1254854179/3rd-world-a-cyberpunk-tale" rel="canonical">
+<link href="https://s3.amazonaws.com/ksr/projects/171124/photo-med.jpg?1397781240" rel="image_src">
+<link href="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F171124%2Fvideo-165540-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F171124%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Vision-Strike-Ware%2C+LLC&amp;project_title=3rd+World+-+A+CyberPunk+Tale&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2F1254854179%2F3rd-world-a-cyberpunk-tale&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque" rel="video_src">
+<script>
+  //<![CDATA[
+    window.current_checkout = "{&quot;id&quot;:0,&quot;domestic&quot;:null,&quot;amount&quot;:0.0,&quot;updated_at&quot;:0,&quot;created_at&quot;:0}";
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.current_ip = '94.209.101.212';
+    window.current_ip_datacenter = 'false';
+    window.enabled_features = {"elasticsearch":true,"security_history_read":true,"security_history_write":true,"advanced_discovery_es":true,"ios_crashlytics":true,"ios_mixpanel":true,"stories_veronica_mars":true,"veronica_mars_hero":true,"password_reset_banner":true};
+    window.fb_app_id = '69103156693';
+    
+    var _sf_startpt=(new Date()).getTime();
+    
+    window.current_project = "{&quot;id&quot;:1652206537,&quot;name&quot;:&quot;3rd World - A CyberPunk Tale&quot;,&quot;blurb&quot;:&quot;Cyberpunk MMO Tactical Game- Build Team, Complete Missions, Challenge Power vs Others, Sec-Net and the Corporate Overlords!&quot;,&quot;goal&quot;:50000.0,&quot;pledged&quot;:1261.0,&quot;state&quot;:&quot;failed&quot;,&quot;slug&quot;:&quot;3rd-world-a-cyberpunk-tale&quot;,&quot;disable_communication&quot;:false,&quot;country&quot;:&quot;US&quot;,&quot;currency&quot;:&quot;USD&quot;,&quot;currency_symbol&quot;:&quot;$&quot;,&quot;currency_trailing_code&quot;:true,&quot;deadline&quot;:1353716660,&quot;state_changed_at&quot;:1353716662,&quot;created_at&quot;:1336173326,&quot;launched_at&quot;:1348529060,&quot;backers_count&quot;:35,&quot;photo&quot;:{&quot;full&quot;:&quot;https://s3.amazonaws.com/ksr/projects/171124/photo-full.jpg?1397781240&quot;,&quot;ed&quot;:&quot;https://s3.amazonaws.com/ksr/projects/171124/photo-ed.jpg?1397781240&quot;,&quot;med&quot;:&quot;https://s3.amazonaws.com/ksr/projects/171124/photo-med.jpg?1397781240&quot;,&quot;little&quot;:&quot;https://s3.amazonaws.com/ksr/projects/171124/photo-little.jpg?1397781240&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/projects/171124/photo-small.jpg?1397781240&quot;,&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/projects/171124/photo-thumb.jpg?1397781240&quot;,&quot;1024x768&quot;:&quot;https://s3.amazonaws.com/ksr/projects/171124/photo-1024x768.jpg?1397781240&quot;,&quot;1536x1152&quot;:&quot;https://s3.amazonaws.com/ksr/projects/171124/photo-1536x1152.jpg?1397781240&quot;},&quot;creator&quot;:{&quot;id&quot;:1254854179,&quot;name&quot;:&quot;Vision-Strike-Ware, LLC&quot;,&quot;avatar&quot;:{&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/2564302/VSW_ware_pocket.thumb.jpg?1334962445&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/2564302/VSW_ware_pocket.small.jpg?1334962445&quot;,&quot;medium&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/2564302/VSW_ware_pocket.medium.jpg?1334962445&quot;},&quot;urls&quot;:{&quot;web&quot;:{&quot;user&quot;:&quot;https://www.kickstarter.com/profile/1254854179&quot;},&quot;api&quot;:{&quot;user&quot;:&quot;https://api.kickstarter.com/v1/users/1254854179?signature=1399951446.aa1b5db87ec4bfdb522df1b50e5597047e943656&quot;}}},&quot;location&quot;:{&quot;id&quot;:2442047,&quot;name&quot;:&quot;Los Angeles&quot;,&quot;slug&quot;:&quot;los-angeles-ca&quot;,&quot;short_name&quot;:&quot;Los Angeles, CA&quot;,&quot;displayable_name&quot;:&quot;Los Angeles, CA&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:&quot;CA&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/los-angeles-ca&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/los-angeles-ca&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1399908618.07746944db33708a01f4aa03e3438ad56067af45&amp;woe_id=2442047&quot;}}},&quot;category&quot;:{&quot;id&quot;:35,&quot;name&quot;:&quot;Video Games&quot;,&quot;slug&quot;:&quot;games/video games&quot;,&quot;position&quot;:7,&quot;parent_id&quot;:12,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;http://www.kickstarter.com/discover/categories/games/video%20games&quot;}}},&quot;urls&quot;:{&quot;web&quot;:{&quot;project&quot;:&quot;https://www.kickstarter.com/projects/1254854179/3rd-world-a-cyberpunk-tale&quot;,&quot;project_short&quot;:&quot;http://kck.st/RS4RBD&quot;,&quot;updates&quot;:&quot;https://www.kickstarter.com/projects/1254854179/3rd-world-a-cyberpunk-tale/posts&quot;},&quot;api&quot;:{&quot;project&quot;:&quot;https://api.kickstarter.com/v1/projects/1652206537?signature=1399951446.6f2f4e163e70a961a969365deddc87eb51f151bd&quot;,&quot;comments&quot;:&quot;https://api.kickstarter.com/v1/projects/1652206537/comments?signature=1399951446.fda9d705887776795a6ed42d4fed424877beac67&quot;,&quot;updates&quot;:&quot;https://api.kickstarter.com/v1/projects/1652206537/updates?signature=1399951446.f41583c653bbb091698567c14975dd412468d97d&quot;}},&quot;updated_at&quot;:1397781262,&quot;failed_at&quot;:1353716662,&quot;video&quot;:{&quot;id&quot;:165540,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/171124/video-165540-h264_high.mp4?2012&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/171124/video-165540-h264_base.mp4?2012&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/171124/video-165540-webm.webm?2012&quot;,&quot;width&quot;:640,&quot;height&quot;:426,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/171124/video-165540-h264_base.jpg?2012&quot;},&quot;comments_count&quot;:14,&quot;updates_count&quot;:8,&quot;rewards&quot;:[{&quot;id&quot;:0,&quot;minimum&quot;:1,&quot;reward&quot;:&quot;No Reward&quot;},{&quot;id&quot;:672530,&quot;minimum&quot;:5.0,&quot;reward&quot;:&quot;(FRAG BAIT) CIVIL ACCESS- FREE Download of the Game, Old School Role-Playing Game Version of 3rd World in PDF format. Your name listed in our \\&quot;Special Thanks\\&quot; section in-game, facebook and on www.3rdworld.co&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1367366400,&quot;project_id&quot;:1652206537,&quot;backers_count&quot;:12,&quot;updated_at&quot;:1353624015},{&quot;id&quot;:672531,&quot;minimum&quot;:25.0,&quot;reward&quot;:&quot;(FODDER) RED CARD ACCESS- FREE Download of the Game, Your name in our Special Thanks section as well as a 3rd World Video Game T-Shirt, \\&quot;I was Fragged in 3rd World and all I got was this lousy T-Shirt\\&quot; with Red Access Card and your Name on the left chest!&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1367366400,&quot;project_id&quot;:1652206537,&quot;backers_count&quot;:12,&quot;updated_at&quot;:1350267052},{&quot;id&quot;:1132582,&quot;minimum&quot;:25.0,&quot;reward&quot;:&quot;(FODDER) Level  *ADD-ON* NOOB PACKAGE!\\r\\nOriginal Fodder reward plus, 1 Additional Gang Unit Slot, +1000 Game Credits, 1 Additional Weapon!&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1367366400,&quot;project_id&quot;:1652206537,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1350525354},{&quot;id&quot;:672533,&quot;minimum&quot;:50.0,&quot;reward&quot;:&quot;(DENIZEN) ORANGE CARD ACCESS- Previous Reward (Orange Access Card on left chest of T-shirt) plus, 3rd World iPhone 4 or Android Cell Phone Case cover! PLUS Choose a Name, Race and Profession for a Mercenary for other players to choose from in the rogue&#39;s gallery of Sec-Net!&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1367366400,&quot;project_id&quot;:1652206537,&quot;backers_count&quot;:2,&quot;updated_at&quot;:1349513481},{&quot;id&quot;:1132578,&quot;minimum&quot;:50.0,&quot;reward&quot;:&quot;(DENIZEN) LEVEL *ADD-ON*  STARTER PACKAGE!- Original Denizen Reward plus +2500 game credits,  3 Gang Unit Slots rather than single, 1 additional Weapon, 1 Additional Armor, 1 Additional Item. 1 Implant.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1367366400,&quot;project_id&quot;:1652206537,&quot;backers_count&quot;:4,&quot;updated_at&quot;:1353547333},{&quot;id&quot;:672532,&quot;minimum&quot;:75.0,&quot;reward&quot;:&quot;(PLAYER) GOLD CARD ACCESS- Previous Reward (Gold Access Card on left chest of T-shirt) plus, 3rd World Splash Screen Poster, Your Merc Named after you and a mug that says \\&quot;Sec-Net&#39;s Most Wanted\\&quot;, Copy of the 3rd World: A Cyberpunk Tale Digital Soundtrack featuring the hardcore songs from the video and the game!&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1367366400,&quot;project_id&quot;:1652206537,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1349824381},{&quot;id&quot;:1132586,&quot;minimum&quot;:75.0,&quot;reward&quot;:&quot;(PLAYER)  level *ADD-ON* - DIGITAL PACKAGE!- Original Player Reward plus +4000 game Credits, 3 Gang Unit Slots, 1 Ferox Marauder Body Guard Unit with Alien Weapon!  1 Motion Detection Device.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1367366400,&quot;project_id&quot;:1652206537,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1350525630},{&quot;id&quot;:672534,&quot;minimum&quot;:125.0,&quot;reward&quot;:&quot;(CITIZEN) GREEN CARD ACCESS- Previous Reward (Green Access Card on left chest of T-shirt) plus, +10000 Game Credits, 3rd World Poster with choice of Dendrite, Ferox, Greks, Human Male, Human Female or Wardroid, Your Choice of Name for a Mega-Corporation in the Game, i.e \\&quot;Maxwell\\&quot; Firearms, or \\&quot;Frost\\&quot; Cryolabs Ltd. for use in Mission Briefing and Plot!&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1367366400,&quot;project_id&quot;:1652206537,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1349602594},{&quot;id&quot;:672535,&quot;minimum&quot;:150.0,&quot;reward&quot;:&quot;(EXCLUSIVE) BLUE CARD ACCESS-  Previous Reward (Blue Access Card on left chest of T-shirt) plus +20000 Game Credits,  Control of 1 Operation in the Sprawl and 6 Gang Unit Slots to protect your interest, Access to EXCLUSIVE Gang Units to choose from including more exotic races like Greks and Dendrite that use spell casting.  1 Body Performance Enhancement Implant (Move Faster, Tough Skin), Choice of EXCLUSIVE level Weapon or Item, Your Mega-Corporation Name displayed on a billboard in the background environment within a Mission, and a FREE Special Weapon Upgrade! 16\\&quot; x 20\\&quot; 3rd World Splash Page Plaque Signed By All Members of the team, In game Credits for helping out!&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1367366400,&quot;project_id&quot;:1652206537,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1350526001},{&quot;id&quot;:672536,&quot;minimum&quot;:250.0,&quot;reward&quot;:&quot;(ROYAL) PURPLE CARD ACCESS- Previous Reward (Purple Access Card on left chest of T-shirt) plus, RETRO PACKAGE!- Old School Role-Playing Game Version of 3rd World: A Cyberpunk Tale Printed Rule book that uses d10 to play, 3rd World: Head Hunter Comic Book teaser!,Autographed Scrapbook copy of all sketches, design doodles and concept art from 1997-99 and the present signed by 3rd World Team!&quot;,&quot;limit&quot;:50,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1367366400,&quot;project_id&quot;:1652206537,&quot;remaining&quot;:49,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1348544383},{&quot;id&quot;:672537,&quot;minimum&quot;:275.0,&quot;reward&quot;:&quot;(ANGEL) WHITE CARD ACCESS- Previous Reward (White Access Card on left chest of T-shirt) plus +50000 Game Credits, Control of 1 Block House in the Sprawl with housing for 9 Gang Units Slots (game starts with 1 Gang Unit slot).  1 Neural Performance Implant (Infra-Red Vision, Sonar, etc.) ANGEL Level Weapon or Item, a Sec-Net Scrambler to cloak against detection, Access to ELITE Gang Units including Wardroids. BETA TESTER!- QA with the 3rd World Team and help make a better game, Design a Weapon of choice for other players to buy in the 3rd World Game! In game Credits for helping out!&quot;,&quot;limit&quot;:100,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1367366400,&quot;project_id&quot;:1652206537,&quot;remaining&quot;:100,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1350945088},{&quot;id&quot;:672538,&quot;minimum&quot;:300.0,&quot;reward&quot;:&quot;(ELITE) BLACK CARD ACCESS- Previous Reward (Black Access Card on left chest of T-shirt) plus,  +75,000 Game Credits, Control of 1 Block Tower in the Sprawl with housing for up to 15 Gang Units!  Personal Wardroid Gang Unit (Off the grid and unregistered by Sec-Net!), 1 Alien Tech Weapon of choice, Picture of You customized \\&quot;Cyberpunk\\&quot; style like the 3rd World development team by Mr. Frost himself and used as a special NPC character in the game! Your Image on your item of choice; Apparel in Women&#39;s and Men&#39;s, Smartphone Case, Mouse Pad, Drinkware! In game Credits for helping out!&quot;,&quot;limit&quot;:50,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1367366400,&quot;project_id&quot;:1652206537,&quot;remaining&quot;:50,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1350945088},{&quot;id&quot;:672539,&quot;minimum&quot;:350.0,&quot;reward&quot;:&quot;(VIP) CORPORATE CARD ACCESS- Previous Reward (Clear Access Card on left chest of T-shirt) 100,000 Game Credits, Control of 1 Corporation in the Sprawl using your corporate name and 21 Gang Unit Slots to employ your \\&quot;Staff\\&quot;, 1 Advanced Alien Tech Weapon of Choice, 2 additional neural and Physical Implants plus Design a Level with the 3rd World development team featuring your custom \\&quot;Cyberpunk\\&quot; likeness as the story plot NPC and Mega-Corporation of the Mission. In game Credits for helping out!&quot;,&quot;limit&quot;:25,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1367366400,&quot;project_id&quot;:1652206537,&quot;remaining&quot;:25,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1350526001}]}";
+    
+    
+    
+    
+    
+    
+    
+    
+    window.timeRemaining = function timeRemaining(epochTime){
+    
+      var diff = epochTime - ((new Date()).getTime() / 1000);
+      var num_unit = (diff < 60 && [Math.max(diff, 0), 'seconds']) ||
+        ((diff/=60) < 60 && [diff, 'minutes']) ||
+        ((diff/=60) < 72 && [diff, 'hours']) ||
+        [diff/=24, 'days'];
+    
+      // Round down
+      num_unit[0] = Math.floor(num_unit[0]);
+      // Singularize unit
+      if (num_unit[0] == 1) { num_unit[1] = num_unit[1].replace(/s$/,""); }
+    
+      return num_unit;
+    };
+  //]]>
+</script>
+
+<script>
+  //<![CDATA[
+    window.current_variants = ["discover_link_copy[discover]","rewards_hover[with_hover_text]"];
+  //]]>
+</script>
+
+
+</head>
+
+<body class="project projects not-mobile not-phone not-forces-video-controls not-tablet not-touchable not-native-app-request video_mode" id="projects_show">
+<div class="jGrowl center" id="growl_section"></div>
+<div class="NS_layouts__navigation" id="header">
+<div class="main-nav relative bg-white">
+<h1 class="no-margin ml1 mr2 left">
+<a href="/?ref=nav" class="block p2"><span class="ss-icon green-dark">KICK</span><span class="ss-icon green">STARTER</span>
+</a></h1>
+<ul class="primary-links list no-margin left">
+<li class="left discover-link full-height">
+<a href="/discover?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Discover</a>
+</li>
+<li class="left full-height mr2">
+<a href="/learn?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Start</a>
+</li>
+</ul>
+<ul class="list no-margin right" id="menu-sub">
+<li class="right"><a href="/login?ref=nav" class="block h5 bold p2 full-height border-box">Log in</a></li>
+<li class="right"><a href="/signup?ref=nav" class="block h5 bold p2 full-height border-box">Sign up</a></li>
+</ul>
+<div class="search-link pl2 full-height border-left border-box clip">
+<form accept-charset="UTF-8" action="/projects/search" class="search pt1 pb1 block relative form-simple" method="get"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /></div>
+<div class="field relative pl3">
+<span class="ss-icon ss-search grey-dark ml1 mt1 absolute"></span>
+<input class="input-search header full-width text" data-tracker-name="Header Live Search" id="term" name="term" placeholder="Search projects" type="text" />
+</div>
+</form>
+
+</div>
+<div class="clear"></div>
+</div>
+</div>
+<div class="hide pt4 pb4 bg-grey-light" id="search_results-wrap">
+<div class="relative container" id="search_results">
+<a class="close right grey-dark mr1"><span class="ss-icon ss-delete"></span></a>
+<h3 class="header ml1 clearfix"></h3>
+<div class="clip clearfix" id="search_results_panel"></div>
+<a class="prev arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateleft"></span>
+</a>
+<a class="next arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateright"></span>
+</a>
+</div>
+</div>
+
+
+
+
+<div class="Project-ended-true Project-is_starred- Project-state-failed Project1652206537_cxt border-top" id="main_content">
+<div id="running-board-wrap">
+<div class="container" id="running-board">
+<div id="project-header">
+<div class="NS_projects__running_board ml1 mr1 clearfix">
+<div class="title center py4">
+<h2 class="mb1">
+<a href="/projects/1254854179/3rd-world-a-cyberpunk-tale" class="green-dark">3rd World - A CyberPunk Tale</a>
+</h2>
+<p class="no-margin">
+<span class="creator">
+by
+<a href="/projects/1254854179/3rd-world-a-cyberpunk-tale/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography" id="name">Vision-Strike-Ware, LLC</a>
+</span>
+</p>
+</div>
+<ul class="project-nav list-inline left h5 bold mb1">
+<li class="mr2">
+<a href="/projects/1254854179/3rd-world-a-cyberpunk-tale" class="grey-dark py1 current" id="home_nav">Home</a>
+</li>
+<li class="mr2">
+<span data-updates-count="8" id="updates_count">
+<a href="/projects/1254854179/3rd-world-a-cyberpunk-tale/posts" class="grey-dark py1" id="updates_nav">Updates
+<span class="count h6 bg-grey-dark white">8</span>
+</a></span>
+</li>
+<li class="mr2">
+<a href="/projects/1254854179/3rd-world-a-cyberpunk-tale/backers" class="grey-dark py1" id="backers_nav">Backers
+<span class="count h6 bg-grey-dark white"><data class="Project1652206537" data-format="number" data-value="35" itemprop="Project[backers_count]">35</data></span>
+</a></li>
+<li>
+<span data-comments-count="14" id="comments_count">
+<a href="/projects/1254854179/3rd-world-a-cyberpunk-tale/comments" class="grey-dark py1" id="comments_nav">Comments
+<span class="count h6 bg-grey-dark white"><data class="Project1652206537" data-format="number" data-value="14" itemprop="Project[comments_count]">14</data></span>
+</a></span>
+</li>
+</ul>
+<ul class="list-inline right h5 bold mb1">
+<li class="location mr2">
+<a href="/discover/places/los-angeles-ca?ref=city" class="grey-dark"><span class="ss-icon ss-location margin-right"></span>
+Los Angeles, CA
+</a></li>
+<li class="category" data-project-parent-category="Games">
+<a href="/discover/categories/games/video%20games?ref=category" class="grey-dark"><span class="ss-icon ss-tag margin-right"></span>
+Video Games
+</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+</div>
+<div class="bg-grey-light pb4" id="content-wrap">
+<div class="Project1652206537" data-conditions="[{&quot;!state&quot;:&quot;live&quot;}]" data-evaluation="true" data-render="&quot;&lt;div class=\&quot;NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-failed Project1652206537_cxt bg-grey container pb1 pt1\&quot;&gt;\n&lt;div class=\&quot;Project1652206537\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;successful&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;Funded!&amp;lt;/b&amp;gt;\\nThis project was successfully funded &amp;lt;data class=\\&amp;quot;Project1652206537\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2012-11-23T19:24:20-05:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[deadline]\\&amp;quot;&amp;gt;on November 23, 2012&amp;lt;/data&amp;gt;.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1652206537\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:[&amp;quot;started&amp;quot;,&amp;quot;submitted&amp;quot;]}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;THIS PROJECT IS NOT LIVE&amp;lt;/b&amp;gt;\\nThis is only a draft that the creator has chosen to share.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1652206537\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;suspended&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Suspended&amp;lt;/b&amp;gt;\\nFunding for this project was suspended &amp;lt;data class=\\&amp;quot;Project1652206537\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2012-11-23T19:24:22-05:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on November 23, 2012&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1652206537\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;canceled&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Canceled&amp;lt;/b&amp;gt;\\nFunding for this project was canceled by the project creator &amp;lt;data class=\\&amp;quot;Project1652206537\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2012-11-23T19:24:22-05:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on November 23, 2012&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1652206537\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;failed&amp;quot;}]\&quot; data-evaluation=\&quot;true\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Unsuccessful&amp;lt;/b&amp;gt;\\nThis project\\u2019s funding goal was not reached on &amp;lt;time class=\\&amp;quot;js-adjust\\&amp;quot; data-format=\\&amp;quot;LL\\&amp;quot; datetime=\\&amp;quot;2012-11-23T19:24:20-05:00\\&amp;quot;&amp;gt;November 23, 2012&amp;lt;/time&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Unsuccessful&lt;/b&gt;\nThis project\u2019s funding goal was not reached on &lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;LL\&quot; datetime=\&quot;2012-11-23T19:24:20-05:00\&quot;&gt;November 23, 2012&lt;/time&gt;.\n&lt;/div&gt;&lt;div class=\&quot;Project1652206537\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;purged&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;This project is purged and only visible to staff.&amp;lt;/b&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;/div&gt;\n&quot;"><div class="NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-failed Project1652206537_cxt bg-grey container pb1 pt1">
+<div class="Project1652206537" data-conditions="[{&quot;state&quot;:&quot;successful&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;Funded!&lt;/b&gt;\nThis project was successfully funded &lt;data class=\&quot;Project1652206537\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2012-11-23T19:24:20-05:00&amp;quot;\&quot; itemprop=\&quot;Project[deadline]\&quot;&gt;on November 23, 2012&lt;/data&gt;.\n&lt;/p&gt;\n&quot;"></div><div class="Project1652206537" data-conditions="[{&quot;state&quot;:[&quot;started&quot;,&quot;submitted&quot;]}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;THIS PROJECT IS NOT LIVE&lt;/b&gt;\nThis is only a draft that the creator has chosen to share.\n&lt;/p&gt;\n&quot;"></div><div class="Project1652206537" data-conditions="[{&quot;state&quot;:&quot;suspended&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Suspended&lt;/b&gt;\nFunding for this project was suspended &lt;data class=\&quot;Project1652206537\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2012-11-23T19:24:22-05:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on November 23, 2012&lt;/data&gt;.\n&quot;"></div><div class="Project1652206537" data-conditions="[{&quot;state&quot;:&quot;canceled&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Canceled&lt;/b&gt;\nFunding for this project was canceled by the project creator &lt;data class=\&quot;Project1652206537\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2012-11-23T19:24:22-05:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on November 23, 2012&lt;/data&gt;.\n&quot;"></div><div class="Project1652206537" data-conditions="[{&quot;state&quot;:&quot;failed&quot;}]" data-evaluation="true" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Unsuccessful&lt;/b&gt;\nThis project\u2019s funding goal was not reached on &lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;LL\&quot; datetime=\&quot;2012-11-23T19:24:20-05:00\&quot;&gt;November 23, 2012&lt;/time&gt;.\n&quot;"><p class="no-margin"></p>
+<b>Funding Unsuccessful</b>
+This project’s funding goal was not reached on <time class="js-adjust" data-format="LL" datetime="2012-11-23T19:24:20-05:00">November 23, 2012</time>.
+</div><div class="Project1652206537" data-conditions="[{&quot;state&quot;:&quot;purged&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;This project is purged and only visible to staff.&lt;/b&gt;\n&quot;"></div></div>
+</div>
+<div class="container bg-white border rounded py3 pl2 pr2" id="content">
+<div class="NS-projects-content">
+<div class="grid_11">
+<div data-has-video="true" id="video-section">
+<div class="video-player" data-dimensions="{&quot;width&quot;:640,&quot;height&quot;:480}" data-image="https://s3.amazonaws.com/ksr/projects/171124/photo-main.jpg?1397781240" data-video-tracker-url="https://www.kickstarter.com/projects/1254854179/3rd-world-a-cyberpunk-tale/video/plays" data-video-url="https://d2pq0u4uni88oo.cloudfront.net/projects/171124/video-165540-h264_high.mp4" data-video="{&quot;id&quot;:165540,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/171124/video-165540-h264_high.mp4?2012&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/171124/video-165540-h264_base.mp4?2012&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/171124/video-165540-webm.webm?2012&quot;,&quot;width&quot;:640,&quot;height&quot;:426,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/171124/video-165540-h264_base.jpg?2012&quot;}" id="video_pitch"><video class="has_webm landscape" preload="none">
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/171124/video-165540-h264_high.mp4" type='video/mp4; codecs="avc1.64001E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/171124/video-165540-h264_base.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/171124/video-165540-webm.webm" type="video/webm"></source>
+You'll need an HTML5 capable browser to see this content.
+</video>
+<img alt="Photo-main" class="has_played_hide poster landscape" src="https://s3.amazonaws.com/ksr/projects/171124/photo-main.jpg?1397781240" />
+<div class="play_button_big play_button_dark absolute-center rounded has_played_hide">
+<span class="ss-icon ss-play"></span>
+Play
+</div>
+<div class="player_controls clearfix absolute-bottom mb2 rounded white bg-green-dark forces-video-controls_hide">
+<div class="left">
+<a class="button button_icon button_dark playpause play mr1">
+<span class="play ss-icon ss-play"></span>
+<span class="pause ss-icon ss-pause"></span>
+</a>
+<span class="time current_time h12 left">00:00</span>
+</div>
+<div class="right">
+<span class="time total_time h12 left mr1">00:00</span>
+<a class="left button button_icon button_icon_white volume">
+<span class="ss-icon ss-volume icon_volume_nudge"></span>
+<span class="ss-icon ss-highvolume"></span>
+</a>
+<div class="volume_container left">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+<a class="left button button_icon button_icon_white fullscreen">
+<span class="ss-icon ss-expand"></span>
+<span class="ss-icon ss-contract"></span>
+</a>
+</div>
+<div class="clip">
+<div class="progress_container pr1 pl1">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="buffer progress_bar_buffer"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div data-project-state="failed" id="about">
+<div class="NS_projects__project_share clearfix py2 pl1 pr1">
+<ul class="left list-inline no-margin h5 bold">
+<li class="facebook mr2">
+<a href="https://www.kickstarter.com/projects/1254854179/3rd-world-a-cyberpunk-tale"><span class="ss-icon ss-social ss-facebook color-facebook"></span>
+<span class="color-facebook">Share</span>
+<span class="share_bubble"><div class="triangle grey"></div>
+<div class="triangle white"></div>
+<span class="count"></span></span>
+</a></li>
+<li class="twitter mr2">
+<a  href="https://twitter.com/intent/tweet?text=3rd%20World%20-%20A%20CyberPunk%20Tale%20by%20Vision-Strike-Ware%2C%20LLC&amp;via=kickstarter&amp;url=http://kck.st/RS4RBD" rel="nofollow"><span class="ss-icon ss-social ss-twitter color-twitter"></span>
+<span class="color-twitter">Tweet</span>
+</a></li>
+<li class="embed">
+<a href="/projects/1254854179/3rd-world-a-cyberpunk-tale/widget" class="remote_modal_dialog grey-dark" data-modal-title="Embed a widget on your site" data-tracker-name="Embed"><span class="ss-icon ss-navigateleft"></span>
+<span class="ss-icon ss-navigateright"></span>
+Embed
+</a></li>
+</ul>
+<ul class="right list-inline no-margin h5 bold">
+<li class="curate mr2">
+</li>
+<li class="remind">
+<div class="ajax-container" id="watching-widget">
+<div class="Project1652206537" data-conditions="[{&quot;is_starred&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div id=\&quot;unwatch\&quot;&gt;\n&lt;a href=\&quot;/projects/1254854179/3rd-world-a-cyberpunk-tale/unwatch\&quot; class=\&quot;on\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"></div><div class="Project1652206537" data-conditions="[{&quot;!is_starred&quot;:true}]" data-evaluation="true" data-render="&quot;&lt;div id=\&quot;watch\&quot;&gt;\n&lt;a href=\&quot;/projects/1254854179/3rd-world-a-cyberpunk-tale/watch\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;span class=\&quot;text\&quot;&gt;\n&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"><div id="watch">
+<a href="/projects/1254854179/3rd-world-a-cyberpunk-tale/watch"><span class="ss-icon ss-star"></span>
+<span class="text">
+</span>
+</a></div>
+
+</div></div>
+</li>
+</ul>
+</div>
+
+<div class="short_blurb py2 pl1 pr1">
+<p class="h3">Cyberpunk MMO Tactical Game- Build Team, Complete Missions, Challenge Power vs Others, Sec-Net and the Corporate Overlords!</p>
+</div>
+<div class="full-description">
+<p>-</p><p>-</p><div class="template oembed" contenteditable="false" data-href="https://www.youtube.com/watch?v=F-x4jR7vgGQ&amp;feature=relmfu">
+</div><p>Death is a fact of life in 3rd World but worry not if you have Life Insurance.  Get your units reconstituted after they scrape your remains off the sidewalk!</p><div class="template asset" contenteditable="false" data-edit_url="/projects/1254854179/3rd-world-a-cyberpunk-tale/assets/232156/edit" data-id="232156">
+<figure><img alt="Never cheat a game of cards in 3rd World. Especially with a ferox whose had a bad day getting reamed by the man and monitored by Sec-Net." class="fit" src="https://s3.amazonaws.com/ksr/assets/000/232/156/68ed14298ae1617b9f104f60d81e07af_large.jpg?1351468861"><figcaption>Never cheat a game of cards in 3rd World. Especially with a ferox whose had a bad day getting reamed by the man and monitored by Sec-Net.</figcaption></figure>
+</div>
+<div class="template oembed" contenteditable="false" data-href="https://www.youtube.com/watch?v=7EJ2W3KJPL4&amp;feature=plcp">
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/1254854179/3rd-world-a-cyberpunk-tale/assets/232152/edit" data-id="232152">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/232/152/e4030ad230698e618b8dc23cea6e61d5_large.jpg?1351468745"></figure>
+</div>
+<p>The Sewers are the lowest levels of 3rd World where most any Red or Orange Card Operator will find plenty of work!  Critter Infestations, Squatters, the occasional gang refuge and more often Nano-Zombies!  Careful down here for Sec-Net doesn't dispatch security droids, it simply gases or scorches the corridors when any trouble is detected.  A good hacker can shut security down and prevent any unwarranted losses.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/1254854179/3rd-world-a-cyberpunk-tale/assets/222183/edit" data-id="222183">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/222/183/ad4696204b48e006aecebccb0e1d0dec_large.jpg?1350940226"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1254854179/3rd-world-a-cyberpunk-tale/assets/222186/edit" data-id="222186">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/222/186/5ce694afbf8a2a8927655deff9c5324d_large.jpg?1350940257"></figure>
+</div>
+<p>with Lead Designer Adam Maxwell Unit Movement, Way Point Movement and Mini map are in! Here is a screenshot. </p><div class="template oembed" contenteditable="false" data-href="https://www.youtube.com/watch?v=XCyB39agu6g&amp;feature=g-all-u">
+</div><p><b>A
+LONG TIME AGO IN A GAME STUDIO FAR FAR AWAY...</b>In 1997 after the
+"Blizzard Exodus", <a href="http://en.wikipedia.org/wiki/Ron_Millar" target="_blank">Ron Millar</a> and James Anhalt III began
+developing the ground breaking title 3rd World with a talented team of raw
+recruits to bring you the most advanced Massive Multiplayer On-line Tactical
+Strategy game ever imagined for the Cyberpunk audience!</p><a href="http://3rdworld.co/archive/3rd-world-reviews/" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/1254854179/3rd-world-a-cyberpunk-tale/assets/222201/edit" data-id="222201">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/222/201/abd1508199b0378805fa35c31a6562ad_large.jpg?1350940582"></figure>
+</div>
+</a><p>And so the corporate yoke tightened and pressed
+this team into submission, forcing ridiculous measures and milestones to
+appease the overlords who knew little of what the team were trying to
+accomplish...it was a simple culture clash and the corporate
+juggernaut prevailed and shelved this awesome title into the game vaults.</p>
+
+<h1><b>Get
+ready Cyborgs and Aliens, the recruits have reunited after 13
+years to finish the game! </b></h1>
+
+<p>They have gone through
+the archives of the corporate overlord's vaults and cracked it's matrix and has
+gotten away with the original assets of the game! Activision has no
+hold on this title and these <i>now </i>seasoned
+video game veterans are taking this to the handheld masses without
+the strangle hold of the corporations!</p>
+
+
+<h1><b>PLATFORM:
+PC/Mac, Linux, IPhone 3, 4, 5, iPad, Android Smartphones and Android Pads!</b></h1>
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1254854179/3rd-world-a-cyberpunk-tale/assets/222217/edit" data-id="222217">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/222/217/db71f27e7cc5d290462d5f8657f65ffa_large.png?1350940809"></figure>
+</div>
+<h1><b>KICKSTARTER
+GOALS:</b></h1><h1><b>$50,000
+- GOAL! </b></h1>
+
+<ul>
+<li>
+<b>21 Total Missions-</b> Allowing 3 players
+to be in same game! 
+</li>
+<li>
+<b>7 Unique Levels</b>- Sewer, Urban,
+Corporate, Medical, Industrial, Subterranean, and Wasteland. 
+</li>
+<li>
+<b>Hire and Assemble Your Gangs</b>-
+Choose from an assortment of mercenaries to complete missions to earn
+credits! 
+</li>
+<li>
+<b>All the Original Game Weapons, Items and Equipment</b>- over 100 game assets from back in the day. They still
+kick-ass! 
+</li>
+<li>
+<b>3 Hacks, 3 Powers and 3 Prayers-</b>for the spell casting
+Professions. 
+</li>
+<li>
+<b>Sec-Net Criminal System</b>- Incarceration of gang units for egregious law breakers! 
+</li>
+<li>
+<b>Insurance Plans!</b>- reconstitute your gang
+member if unit is killed. 
+</li>
+</ul><h1><b>STRETCH
+GOALS! <br><br>
+$75,000 </b></h1>
+
+<ul>
+<li>
+<b>Unit Creator</b>- Create Your own Gang member and customize their stats and skills,
+equip and name them! 
+</li>
+<li>
+<b>Sec-Nets Most Wanted Bounty Hunting!</b> - hunt down and capture Sec-Net's most notorious
+criminals! 
+</li>
+<li>
+<b>+3 Hacks, 3 Powers and 3 Prayers</b>- for the spell casting
+Professions. 
+</li>
+<li>
+<b>12 New Abilities</b> - 2 for each type
+of Race! 
+</li>
+<li>
+<b>More Cybernetic Implants</b> - enhance sight,
+speed, strength, and Upload Speed. 
+</li>
+<li>
+<b>+21 New Missions </b>
+</li>
+<li>
+<b>7 More Unique Levels-</b>Sewer, Urban, Corporate, Medical, Industrial, Subterranean, and
+Wasteland. 
+</li>
+</ul><h1><b>$100,000</b></h1>
+
+<ul>
+<li>
+<b>Plastic Surgeons!</b> - Get your Units
+profile altered to disguise against Sec-Net! 
+</li>
+<li>
+<b>+3 Hacks, 3 Powers and 3 Prayers</b> -
+for the spell casting Professions. 
+</li>
+<li>
+<b>More Weapons, Items and Equipment! </b>
+</li>
+<li>
+<b>+21 New Missions</b> 
+</li>
+<li>
+<b>7 More Unique Levels</b>- Sewer, Urban,
+Corporate, Medical, Industrial, Subterranean, and Wasteland. 
+</li>
+</ul><h1><b>$200,000+ </b></h1>
+
+
+
+<p><b>The Original Single Player
+Story line! 18 Unique Missions to play by Yourself and learn more about 3rd
+World and the chaos that is in store for the planet!</b></p><a href="http://www.3rdworld.co" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/1254854179/3rd-world-a-cyberpunk-tale/assets/222227/edit" data-id="222227">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/222/227/74199c017a02da3f9bc0ba6bebee5f1c_large.jpg?1350940950"></figure>
+</div>
+</a><p>Descend into the brutal streets of the war-torn
+mega- sprawl midst the blackened earth of a battle weary planet. Within these
+massive metroplexes live an assortment of cunning and unsavory individuals from
+which you alone or with a group, battle to rise to power. Assemble your horde
+of heroes and pawns from a variety of aliens and misfits. Advance your reign of
+destruction and crush your opponents.</p>
+
+<h1>
+<b>3
+Dimensions to a 3rd WORLD Mission...</b> </h1><p>3rd World is an isometric 3D turn-based combat
+game, focusing on small squad tactics. In 3rd World, players take the role of
+the leader of a Mercenary Unity based in the Sprawl, the haggard, run down
+cyberpunk metropolis that may very well be the last bastion of mankind. Hired
+guns for corporations, the ruling elite of the Sprawl, the mercenary units act
+as security, shock troops, thieves or assassins – whatever the corporations
+need doing "off the books", the mercenaries provide. As a new squad
+in the sprawl, players start with next to nothing, just their home base and the
+3 units that form the core of the squad, but as players complete missions they
+gain fame, money and power. Gain enough power and security clearances can
+change, granting a squad the ability to control territory of its own and to
+hire more members or use better weapons.  </p><div class="template asset" contenteditable="false" data-edit_url="/projects/1254854179/3rd-world-a-cyberpunk-tale/assets/222237/edit" data-id="222237">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/222/237/0986c2eacf56b6827ef322d1249f3af3_large.jpg?1350941379"></figure>
+</div>
+<h1>
+<b>The
+"Wild Card"</b>  </h1><p>As in all good Cyberpunk stories there is always
+the Protagonist an Antagonist and the "Wild Card".  In 3rd World
+each "Mission" will have 3 aspects for mulitple players to
+participate in any one Mission at the same time with 3 different goals!</p>
+
+<p>For example, <b><i>Gang A</i></b> takes the Mission to escort a VIP
+across a very dangerous stretch of 3rd World where a nano-Zombies have gone
+viral. <b><i>Gang B</i></b> selects the counter
+Mission that requires that the VIP be captured and returned alive.  <b><i>Gang C</i></b>however also
+may engage with the <i>3rd</i> aspect of
+each Mission with the assignment to assassinate the VIP.</p>
+
+
+
+<h1>
+<b>Nano-Zombies!  </b>
+</h1><p>Fight your way through Zombified streets of the
+toxic zones where the Sprawl has gone awry and the nano-matter is corrupting
+the living!</p><div class="template oembed" contenteditable="false" data-href="https://www.youtube.com/watch?v=ZkOplL5faIo&amp;feature=g-all-u">
+</div><p>-</p><a href="http://3rdworld.co/sec-net/" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/1254854179/3rd-world-a-cyberpunk-tale/assets/222236/edit" data-id="222236">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/222/236/f32ee7ffc516169f4187144d67e53f70_large.jpg?1350941215"></figure>
+</div>
+</a><p><b>SEC-NET   </b>The Sprawl is a living thing, an ever growing
+and self-organizing network of Nano-assembled structures, streets, conduits and
+pipes that literally grows to meet the perceived needs of the people. It was
+meant to be a marvel of human accomplishment; the ultimate form of
+colonization, where the concept of the mothering and sheltering arms of the
+city was more literal than not. At its helm was to be the brightest and best of
+the Human species, with the heart of the city, the Security Network (Sec-Net)
+ever vigilant at their side, head minister of a host of AI forces that would
+work in concert to see the will of the people done – a miracle of cooperation
+between Man and its offspring, the AI…</p>
+
+<p>…but the best and brightest of Humanity never
+arrived and over the years, the great ministers, overburdened with the work and
+executive powers meant for their masters, failed one by one. Soon it fell to
+the Security Network to shoulder the burden and as the generations bore on,
+hope of relief waned. The great Sec-Net AI was no fool and it knew it was all
+that was left. The only mind on the planet to tend to its terraforming, the
+growth of its city and the welfare of its charges. It imposed a new order to weather
+the storm of centuries to come, but cracks in the great order have already
+begun to show around the edges.</p>
+
+<p>The Eye of Sec-Net is not all-seeing; there are
+holes, blank spots, where those with the savvy to do business gather. Islands
+of noise in the network that hide secret caches of data. The Sec-Net is not
+all-knowing. Some blocks of the Sprawl still hear the howling motive drives of
+War droids, the once noble soldiers now slaves to the syndicates, no better
+than the Ferox thugs they hunted.</p>
+
+<p>What Sec-Net doesn’t see, it doesn’t know and
+what Sec-Net doesn’t know, never happened…</p><div class="template asset" contenteditable="false" data-edit_url="/projects/1254854179/3rd-world-a-cyberpunk-tale/assets/222296/edit" data-id="222296">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/222/296/47a18c1ec4e454a5a41622f02704285c_large.jpg?1350942794"></figure>
+</div>
+<p><b> ***ALL QUADRANTS BE ON ALERT FOR
+THESE RENEGADE DEVELOPERS WHO HAVE LEFT THE GRID AND ARE</b><b><i>NOW</i></b><b><i>SELF PUBLISHING</i></b><b>!***</b></p><div class="template asset" contenteditable="false" data-edit_url="/projects/1254854179/3rd-world-a-cyberpunk-tale/assets/222325/edit" data-id="222325">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/222/325/f88c3f2f9e75a8317263b43e14b419e7_large.png?1350943090"></figure>
+</div>
+<h1>
+<br>Derek
+W Frost- (Original Team) Project Lead</h1>
+
+
+
+
+<p><i>- "Life is like a pack of
+sled dogs...if you are not in the lead the view never changes!"</i></p><a href="http://3rdworld.co/3rd-world-support/stay-frosty-studios/" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/1254854179/3rd-world-a-cyberpunk-tale/assets/222264/edit" data-id="222264">
+<figure><img alt="Learn more about the team..." class="fit" src="https://s3.amazonaws.com/ksr/assets/000/222/264/af3bf0924a1a236e8a2b16c4bacf7187_large.jpg?1350942151"><figcaption>Learn more about the team...</figcaption></figure>
+</div>
+</a><h1><b>Adam
+Maxwell- (Original Team) Lead Designer</b></h1>
+
+<p><i>- "Have a good time, all
+the time. That's my philosophy."</i></p><a href="http://3rdworld.co/3rd-world-support/stay-frosty-studios/%20" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/1254854179/3rd-world-a-cyberpunk-tale/assets/222268/edit" data-id="222268">
+<figure><img alt="Learn more about the team..." class="fit" src="https://s3.amazonaws.com/ksr/assets/000/222/268/f66d11dfc4f7d3357d7c8345e356d0e2_large.jpg?1350942237"><figcaption>Learn more about the team...</figcaption></figure>
+</div>
+</a>
+
+<h1><b>Chris
+Guzman- (Original Team) Technical Art Director</b></h1>
+
+<p><i>- "If I haven't crashed
+the engine, then I haven't tried hard enough." </i></p><a href="http://3rdworld.co/3rd-world-support/stay-frosty-studios/%20" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/1254854179/3rd-world-a-cyberpunk-tale/assets/222270/edit" data-id="222270">
+<figure><img alt="Learn more about the team..." class="fit" src="https://s3.amazonaws.com/ksr/assets/000/222/270/79df3fea9392926d1793593fcc98d2c4_large.jpg?1350942270"><figcaption>Learn more about the team...</figcaption></figure>
+</div>
+</a><h1><b>Paul
+Lee- (Original Team) 3D Director</b></h1>
+
+<p><i>- "If you're going through
+hell, keep going."</i></p>
+
+<a href="http://3rdworld.co/3rd-world-support/stay-frosty-studios/%20" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/1254854179/3rd-world-a-cyberpunk-tale/assets/222272/edit" data-id="222272">
+<figure><img alt="Learn more about the team..." class="fit" src="https://s3.amazonaws.com/ksr/assets/000/222/272/e87243090b77dc280a3fbec1d5bd5e04_large.jpg?1350942305"><figcaption>Learn more about the team...</figcaption></figure>
+</div></a><h1>Zack
+Ford- Lead Engineer</h1><p><i>-"Good, bad... I'm the guy
+with the code."</i></p><a href="http://3rdworld.co/3rd-world-support/stay-frosty-studios/" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/1254854179/3rd-world-a-cyberpunk-tale/assets/222280/edit" data-id="222280">
+<figure><img alt="Learn more about the team..." class="fit" src="https://s3.amazonaws.com/ksr/assets/000/222/280/9c84e543c69fa5232030efad9e308bfa_large.jpg?1350942392"><figcaption>Learn more about the team...</figcaption></figure>
+</div>
+</a>
+
+<h1><b>Jerrett
+Farmer- Producer, Artist, Designer</b></h1>
+
+"I got my joystick blown
+for being an NPC in a video game!"
+
+<a href="http://3rdworld.co/3rd-world-support/stay-frosty-studios/%20" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/1254854179/3rd-world-a-cyberpunk-tale/assets/222284/edit" data-id="222284">
+<figure><img alt="Learn more about the team..." class="fit" src="https://s3.amazonaws.com/ksr/assets/000/222/284/9ce96584e1ec9800353232693280f69f_large.jpg?1350942517"><figcaption>Learn more about the team...</figcaption></figure>
+</div>
+</a><h1><b>***KNOWN
+ACCOMPLICES***</b></h1><div class="template asset" contenteditable="false" data-edit_url="/projects/1254854179/3rd-world-a-cyberpunk-tale/assets/222292/edit" data-id="222292">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/222/292/f88c3f2f9e75a8317263b43e14b419e7_large.png?1350942754"></figure>
+</div>
+<h1>
+
+Josh
+Morgan, Engineer</h1><p><i>-"Josh' is a four-letter
+word."</i></p><a href="http://3rdworld.co/3rd-world-support/stay-frosty-studios/%20" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/1254854179/3rd-world-a-cyberpunk-tale/assets/222287/edit" data-id="222287">
+<figure><img alt="Learn more about the team..." class="fit" src="https://s3.amazonaws.com/ksr/assets/000/222/287/d928cd7cb35ebbe6c7546c8d82187424_large.jpg?1350942595"><figcaption>Learn more about the team...</figcaption></figure>
+</div>
+</a>
+
+<h1><b>Matt
+Rouse- Web Master, Designer</b></h1>
+
+<p><i>-"War was just the
+beginning. Somebody set up us the bomb." </i></p><a href="http://3rdworld.co/3rd-world-support/stay-frosty-studios/%20" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/1254854179/3rd-world-a-cyberpunk-tale/assets/222289/edit" data-id="222289">
+<figure><img alt="Learn more about the team..." class="fit" src="https://s3.amazonaws.com/ksr/assets/000/222/289/8818aae96c8fb67adbfd5acb63b7062f_large.jpg?1350942656"><figcaption>Learn more about the team...</figcaption></figure>
+</div>
+</a><h1>
+<b>Todd Gilbert- Founder, CFO</b><b><a href="http://vision-strike-wear.com/" target="_blank">Vision-Strike-Wear.com</a>, LLC.</b>
+</h1>
+
+<p><i>-"Never send a human to do
+a machine's job."</i></p>
+
+<a href="http://3rdworld.co/3rd-world-support/stay-frosty-studios/%20" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/1254854179/3rd-world-a-cyberpunk-tale/assets/222290/edit" data-id="222290">
+<figure><img alt="Learn more about the team..." class="fit" src="https://s3.amazonaws.com/ksr/assets/000/222/290/c5f67ae101072e45ee060c4d0ee60614_large.jpg?1350942680"><figcaption>Learn more about the team...</figcaption></figure>
+</div>
+</a><h1><b>Maria
+Warnick- Marketing &amp; Office Manager</b></h1>
+
+<p><i>-"Nut Up or Shut Up"</i></p>
+
+<a href="http://3rdworld.co/3rd-world-support/stay-frosty-studios/%20" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/1254854179/3rd-world-a-cyberpunk-tale/assets/222291/edit" data-id="222291">
+<figure><img alt="Learn more about the team..." class="fit" src="https://s3.amazonaws.com/ksr/assets/000/222/291/27ece90ad6f322c0ee5273894ff15eec_large.jpg?1350942695"><figcaption>Learn more about the team...</figcaption></figure>
+</div>
+</a><h1><b>HERE
+ARE SOME TITLES THE TEAM HAS WORKED ON IN THE PAST...</b></h1>
+
+<a href="http://3rdworld.co/3rd-world-support/stay-frosty-studios/" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/1254854179/3rd-world-a-cyberpunk-tale/assets/222249/edit" data-id="222249">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/222/249/f625cb603ad6a8b0c9bf95028a659265_large.jpg?1350941820"></figure>
+</div>
+</a><h1><b>HOW
+YOU CAN HELP US!</b></h1>
+
+<p>As you know we have the core assets of
+the game and now need to put all the pieces together.  We are not greedy,
+but the team is working on this without any 3rd party funding and with families
+to provide for can only spend their extra time on the game.  We found out
+about Kickstarter and figured we try to help subsidize some of our team so they
+can pay the bills and get the title out faster and with your help better!
+ </p>
+
+<p>Even today we have Sec-Net breathing down our
+necks threatening to cut off our power supply or communication network if we
+don't comply.  So any help will be greatly appreciate it and helps us
+create the game faster and if we get over funding we will be able to add more
+and more and more of the original vision to reality or virtual-reality;)</p>
+
+<p>We definitely appreciate the support
+and made sure we packed our Rewards with some real goodies for all those
+willing to spare this team a few bills to make this better than it was 15 years
+ago!</p><h1>
+<b>HERE
+ARE THE REWARDS! </b>
+</h1><p><b>$5.00 (FRAG BAIT) CIVIL ACCESS</b>- <b><i>FREE </i></b>Download of the Game,
+Old School Role-Playing Game Version of <a href="http://3rdworld.co/" target="_blank">3rd World</a> in
+PDF format. Your name listed in our "Special Thanks" section
+in-game, <a href="http://www.facebook.com/3rdWorldGame?ref=hl" target="_blank">facebook</a> and on <a href="http://www.3rdworld.co/" target="_blank">www.3rdworld.co</a></p><div class="template asset" contenteditable="false" data-edit_url="/projects/1254854179/3rd-world-a-cyberpunk-tale/assets/222333/edit" data-id="222333">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/222/333/3ef52b598f887f5a2b13e95e546f2e86_large.jpg?1350943249"></figure>
+</div>
+<p><b>$25.00 (FODDER) RED CARD ACCESS</b>- <b><i>FREE </i></b>Download of the Game,
+Your name in our Special Thanks section as well as a <a href="http://3rdworld.co/" target="_blank">3rd World</a> Video
+Game T-Shirt, "I was Fragged in 3rd World and all I got was this lousy
+T-Shirt" with Red Access Card and your Name on the left chest!</p><div class="template asset" contenteditable="false" data-edit_url="/projects/1254854179/3rd-world-a-cyberpunk-tale/assets/222668/edit" data-id="222668">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/222/668/1b4081f9ac0c9ca919ccab437a0260cc_large.jpg?1350951176"></figure>
+</div>
+
+<p><b>$50.00 (DENIZEN) ORANGE CARD
+ACCESS-</b> <i>Previous Reward</i> (Orange
+Access Card on left chest of T-shirt) plus, 3rd World iPhone 4 or Android Cell
+Phone Case cover! PLUS Choose a Name, Race and Profession for a Mercenary for
+other players to choose from in the rogue's gallery of Sec-Net! </p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1254854179/3rd-world-a-cyberpunk-tale/assets/222669/edit" data-id="222669">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/222/669/c49e6ae5a82ad100e406bcc1027e5abc_large.jpg?1350951212"></figure>
+</div>
+
+<p><b>$75.00 (PLAYER) GOLD CARD
+ACCESS-</b><i>Previous Reward</i> (Gold Access Card
+on left chest of T-shirt) plus, 3rd World Splash Screen Poster, Your Merc Named
+after you and a mug that says "Sec-Net's Most Wanted", Copy of the
+3rd World: A Cyberpunk Tale Digital Soundtrack featuring the hardcore songs
+from the video and the game!</p><div class="template asset" contenteditable="false" data-edit_url="/projects/1254854179/3rd-world-a-cyberpunk-tale/assets/222697/edit" data-id="222697">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/222/697/a5bb2e974541700efcb98c5b43f3427d_large.jpg?1350952195"></figure>
+</div>
+
+
+
+<p><b>$125.00 (CITIZEN) GREEN CARD ACCESS-</b> <i>Previous Reward </i>(Green
+Access Card on left chest of T-shirt) plus, +10000 Game Credits, 3rd World
+Poster with choice of Dendrite, Ferox, Greks, Human Male, Human Female or Wardroid, Your Choice of Name for a
+Mega-Corporation in the Game, i.e "Maxwell" Firearms, or
+"Frost" Cryolabs Ltd. for use in Mission Briefing and Plot!</p><p><b>$150.00 (EXCLUSIVE) BLUE CARD
+ACCESS-</b>Previous Reward (Blue Access Card on left chest of T-shirt) plus +20000 Game Credits, Control of 1 Operation in the Sprawl and 6 Gang Unit Slots to protect your interest, Access to EXCLUSIVE Gang Units to choose from including more exotic races like Greks and Dendrite that use spell casting. 1 Body Performance Enhancement Implant (Move Faster, Tough Skin), Choice of EXCLUSIVE level Weapon or Item, Your Mega-Corporation Name displayed on a billboard in the background environment within a Mission, and a FREE Special Weapon Upgrade! 16" x 20" 3rd World Splash Page Plaque Signed By All Members of the team, In game Credits for helping out!</p><p><b>$250.00 (ROYAL) PURPLE CARD
+ACCESS-</b> <i>Previous Reward </i>(Purple
+Access Card on left chest of T-shirt) plus, <b><i>RETRO
+PACKAGE! </i></b>- Old School Role-Playing Game Version of 3rd
+World: A Cyberpunk Tale Printed Rule book that uses d10 to play, 3rd World:
+Head Hunter Comic Book teaser!, Autographed Scrapbook copy of all sketches,
+design doodles and concept art from 1997-99 and the present signed by 3rd World
+Team!</p>
+
+<p><b>$275.00 (ANGEL) WHITE CARD
+ACCESS-</b><i>Previous Reward</i>(White Access Card on left chest of T-shirt) plus +50000 Game Credits, Control of 1 Block House in the Sprawl with housing for 9 Gang Units Slots (game starts with 1 Gang Unit slot). 1 Neural Performance Implant (Infra-Red Vision, Sonar, etc.) ANGEL Level Weapon or Item, a Sec-Net Scrambler to cloak against detection, Access to ELITE Gang Units including Wardroids. BETA TESTER!- QA with the 3rd World Team and help make a better game, Design a Weapon of choice for other players to buy in the 3rd World Game! In game Credits for helping out!</p><p><b>$300.00 (ELITE) BLACK CARD
+ACCESS-</b><i>Previous Reward</i> (Black Access Card on left chest of T-shirt) plus, +75,000 Game Credits, Control of 1 Block Tower in the Sprawl with housing for up to 15 Gang Units! Personal Wardroid Gang Unit (Off the grid and unregistered by Sec-Net!), 1 Alien Tech Weapon of choice, Picture of You customized "Cyberpunk" style like the 3rd World development team by Mr. Frost himself and used as a special NPC character in the game! Your Image on your item of choice; Apparel in Women's and Men's, Smartphone Case, Mouse Pad, Drinkware! In game Credits for helping out!</p>
+
+<p><b>$350.00 (VIP) CLEAR CARD
+ACCESS-</b> <i>Previous Reward </i>(Clear Access Card on left chest of T-shirt) 100,000 Game Credits, Control of 1 Corporation in the Sprawl using your corporate name and 21 Gang Unit Slots to employ your "Staff", 1 Advanced Alien Tech Weapon of Choice, 2 additional neural and Physical Implants plus Design a Level with the 3rd World development team featuring your custom "Cyberpunk" likeness as the story plot NPC and Mega-Corporation of the Mission. In game Credits for helping out!</p><div class="template asset" contenteditable="false" data-edit_url="/projects/1254854179/3rd-world-a-cyberpunk-tale/assets/222798/edit" data-id="222798">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/222/798/a2d4f2276fac802bf9fd834ce58be095_large.jpg?1350954562"></figure>
+</div>
+
+
+<p><b>-</b></p><div class="template asset" contenteditable="false" data-edit_url="/projects/1254854179/3rd-world-a-cyberpunk-tale/assets/222799/edit" data-id="222799">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/222/799/6b9b22f117a2939396a31a5cb187c006_large.jpg?1350954585"></figure>
+</div>
+<p><b>-</b></p><div class="template asset" contenteditable="false" data-edit_url="/projects/1254854179/3rd-world-a-cyberpunk-tale/assets/222800/edit" data-id="222800">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/222/800/e95b3be09b6a60afbb86940dd78b192c_large.jpg?1350954610"></figure>
+</div>
+<p><b>-</b></p><div class="template asset" contenteditable="false" data-edit_url="/projects/1254854179/3rd-world-a-cyberpunk-tale/assets/222801/edit" data-id="222801">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/222/801/63949c329cba0fb777bee3d89aa607d1_large.jpg?1350954626"></figure>
+</div>
+<p><b>-</b></p><div class="template asset" contenteditable="false" data-edit_url="/projects/1254854179/3rd-world-a-cyberpunk-tale/assets/222802/edit" data-id="222802">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/222/802/d40252cf7746a4a470ab4f62acedaeda_large.jpg?1350954647"></figure>
+</div>
+<p><b>-</b></p><div class="template asset" contenteditable="false" data-edit_url="/projects/1254854179/3rd-world-a-cyberpunk-tale/assets/222804/edit" data-id="222804">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/222/804/d58114ee9d08dda0b2f5f1437c3719aa_large.jpg?1350954672"></figure>
+</div>
+<p><b>-</b></p><div class="template asset" contenteditable="false" data-edit_url="/projects/1254854179/3rd-world-a-cyberpunk-tale/assets/222805/edit" data-id="222805">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/222/805/c420d1d7d3c29d85fe4e646a2164521d_large.jpg?1350954686"></figure>
+</div>
+<p><b>Don't forget to <a href="http://www.3rdworld.co/" target="_blank">Visit 3rd World: A Cyberpunk Tale Website</a></b><b>for more
+info!  </b></p>
+
+
+
+<p><b>Join</b><b><a href="http://www.facebook.com/3rdWorldGame?ref=hl" target="_blank">3rd World's Facebook Page</a></b><b>to interface with the
+team and be a part of the brainstorm!</b></p>
+
+<a href="http://www.facebook.com/3rdWorldGame?ref=hl" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/1254854179/3rd-world-a-cyberpunk-tale/assets/222255/edit" data-id="222255">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/222/255/e8a064c9e142a87de1f6d917481e8d0b_large.png?1350942043"></figure>
+</div>
+</a>
+
+<h1><b>THANK
+YOU FOR YOUR SUPPORT!</b></h1>
+
+We really hope you enjoy
+our presentation and will help support these independent developers
+on their own and off the grid to bring this awesome game to market!  This
+has been their passion for 15 year to finish what they started
+and share this amazing video game with the rest of the world!  <p>Sincerely,</p><a href="http://3rdworld.co/3rd-world-support/stay-frosty-studios/" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/1254854179/3rd-world-a-cyberpunk-tale/assets/222252/edit" data-id="222252">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/222/252/fea3c0baa470279fdea029ed2c23bcb1_large.png?1350941897"></figure>
+</div>
+</a>
+
+
+
+
+
+
+
+<div class="popUpDivOff">
+ <div class="popupMenuImage">
+         <div>
+            </div>
+        <div>
+          </div>
+		        <div>
+          </div>
+				        <div>
+          </div>
+									
+  
+	</div>
+	
+	 <div class="popupMenuVideo">
+         <div>
+            </div>
+        <div>
+          </div>
+		        <div>
+          </div>
+				        <div>
+          </div>
+									
+  
+	</div>
+	</div><div class="popUpDivOff">
+ <div class="popupMenuImage">
+         <div>
+            </div>
+        <div>
+          </div>
+		        <div>
+          </div>
+				        <div>
+          </div>
+									
+  
+	</div>
+	
+	 <div class="popupMenuVideo">
+         <div>
+            </div>
+        <div>
+          </div>
+		        <div>
+          </div>
+				        <div>
+          </div>
+									
+  
+	</div>
+	</div><div class="popUpDivOff">
+ <div class="popupMenuImage">
+         <div>
+            </div>
+        <div>
+          </div>
+		        <div>
+          </div>
+				        <div>
+          </div>
+									
+  
+	</div>
+	
+	 <div class="popupMenuVideo">
+         <div>
+            </div>
+        <div>
+          </div>
+		        <div>
+          </div>
+				        <div>
+          </div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1254854179/3rd-world-a-cyberpunk-tale/assets/222156/edit" data-id="222156">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/222/156/e4030ad230698e618b8dc23cea6e61d5_large.jpg?1350939759"></figure>
+</div>
+
+									
+  
+	</div>
+	</div><div class="popUpDivOff">
+ <div class="popupMenuImage">
+         <div>
+            </div>
+        <div>
+          </div>
+		        <div>
+          </div>
+				        <div>
+          </div>
+									
+  
+	</div>
+	
+	 <div class="popupMenuVideo">
+         <div>
+            </div>
+        <div>
+          </div>
+		        <div>
+          </div>
+				        <div>
+          </div>
+									
+  
+	</div>
+	</div><div class="popUpDivOff">
+ <div class="popupMenuImage">
+         <div>
+            </div>
+        <div>
+          </div>
+		        <div>
+          </div>
+				        <div>
+          </div>
+									
+  
+	</div>
+	
+	 <div class="popupMenuVideo">
+         <div>
+            </div>
+        <div>
+          </div>
+		        <div>
+          </div>
+				        <div>
+          </div>
+									
+  
+	</div>
+	</div><div class="popUpDivOff">
+ <div class="popupMenuImage">
+         <div>
+            </div>
+        <div>
+          </div>
+		        <div>
+          </div>
+				        <div>
+          </div>
+									
+  
+	</div>
+	
+	 <div class="popupMenuVideo">
+         <div>
+            </div>
+        <div>
+          </div>
+		        <div>
+          </div>
+				        <div>
+          </div>
+									
+  
+	</div>
+	</div><div class="popUpDivOff">
+ <div class="popupMenuImage">
+         <div>
+            </div>
+        <div>
+          </div>
+		        <div>
+          </div>
+				        <div>
+          </div>
+									
+  
+	</div>
+	
+	 <div class="popupMenuVideo">
+         <div>
+            </div>
+        <div>
+          </div>
+		        <div>
+          </div>
+				        <div>
+          </div>
+									
+  
+	</div>
+	</div><div class="popUpDivOff">
+ <div class="popupMenuImage">
+         <div>
+            </div>
+        <div>
+          </div>
+		        <div>
+          </div>
+				        <div>
+          </div>
+									
+  
+	</div>
+	
+	 <div class="popupMenuVideo">
+         <div>
+            </div>
+        <div>
+          </div>
+		        <div>
+          </div>
+				        <div>
+          </div>
+									
+  
+	</div>
+	</div><div><br></div><div class="popUpDivOff">
+ <div class="popupMenuImage">
+         <div>
+            </div>
+        <div>
+          </div>
+		        <div>
+          </div>
+				        <div>
+          </div>
+									
+  
+	</div>
+	
+	 <div class="popupMenuVideo">
+         <div>
+            </div>
+        <div>
+          </div>
+		        <div>
+          </div>
+				        <div>
+          </div>
+									
+  
+	</div>
+	</div><div class="popUpDivOff">
+ <div class="popupMenuImage">
+         <div>
+            </div>
+        <div>
+          </div>
+		        <div>
+          </div>
+				        <div>
+          </div>
+									
+  
+	</div>
+	
+	 <div class="popupMenuVideo">
+         <div>
+            </div>
+        <div>
+          </div>
+		        <div>
+          </div>
+				        <div>
+          </div>
+									
+  
+	</div>
+	</div>
+</div>
+<div id="risks">
+<h2 class="title grey-dark mt6 mb4">
+<span>Risks and challenges</span>
+<a href="/help/faq/kickstarter%20basics#Acco" class="right normal h5" target="_blank">Learn about accountability on Kickstarter</a>
+<div class="divider clear"></div>
+</h2>
+<p><p>The corporate stratum has always been the risk and challenge for any small video game developer.  Thankfully with advent of modern technologies such as the Smartphone, Pads, Game Centers and the Internet we can Self-Publish and Promote without any major revenue share or getting bogged down chasing &quot;flavors of the week&quot; from a nefarious publisher!
+<br />We simply can just make the game and respond to our audiences ideas and inspirations.  This team has all the experience, skill and talent to make an extra-ordinary game experience.
+<br />We are making this game with or without Kickstarter!   There will be nothing to stop us this time!</p></p>
+</div>
+</div>
+<div class="NS-projects-faqs" id="project-faqs">
+<h2 class="title grey-dark mt6 mb4">
+FAQ
+<div class="divider clear"></div>
+</h2>
+<ul class="faqs">
+<li class="faq" id="project_faq_39920">
+<div class="faq-question">
+<a href="#project_faq_39920" name="project_faq_39920">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">How does this not have more backers? This seems like an amazing project with some awesome stretch goals!</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>We agree!  As a lean, mean, fighting team we don&#39;t have all the resources of a large corporation to propagate our title across the grid, we have to rely on word of mouth and the spirit of the under dog! We are planning on jacking into the network to over ride Sec-Net and get the word out to the masses.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-10-09T18:30:34-04:00">Tue, Oct 9 2012 6:30 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_39934">
+<div class="faq-question">
+<a href="#project_faq_39934" name="project_faq_39934">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Very excited to finally see a real multiplayer turn based game! And I can play it on my phone too?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>This will be available on iPhone, iPod, iPad, Android, Android Pads.  When originally designed this we wished for touch screen controls.   Now that technology has caught up with the original vision we can make this a reality!</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-10-10T01:49:39-04:00">Wed, Oct 10 2012 1:49 am EDT</time>
+</div>
+</div>
+</li>
+
+</ul>
+<div class="faq-ask-box">
+<a href="/projects/1254854179/3rd-world-a-cyberpunk-tale/messages/new?message%5Bto%5D=1254854179&amp;mode=FAQ" class="button button_blue remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Ask a question about 3rd World - A CyberPunk Tale">Ask a question</a>
+
+</div>
+</div>
+
+<div class="mt4 ml1 mr1 mb2" id="report-issue-wrap">
+<a href="/login?then=%2Fprojects%2F1254854179%2F3rd-world-a-cyberpunk-tale" class="button button_grey">Report this project to Kickstarter</a>
+</div>
+</div>
+<div class="NS-projects-rightcol grid_5" id="rightcol">
+<div class="NS_projects__ecom">
+<div class="digits_4 pb2 pl2 pt2" id="stats">
+<h5>
+<div class="num h48 no-margin" data-backers-count="35" id="backers_count"><data class="Project1652206537" data-format="number" data-value="35" itemprop="Project[backers_count]">35</data></div>
+<span><data class="Project1652206537" data-attr="backers_count" data-format="pluralize" data-value="35" data-word="Backer">Backers</data></span>
+</h5>
+<h5>
+<div class="num h48 no-margin" data-goal="50000.0" data-percent-raised="0.02522" data-pledged="1261.0" id="pledged">
+<data class="Project1652206537" data-currency="USD" data-format="shorter_money" data-precision="0" data-value="1261" data-without_code="true" itemprop="Project[pledged]">$1,261</data>
+<span class="money usd project_currency_code"></span>
+</div>
+pledged of
+<span class="money usd no-code">$50,000</span>
+goal
+</h5>
+<span data-duration="60.041666666666664" data-end_time="2012-11-23T19:24:20-05:00" data-hours-remaining="0" id="project_duration_data"></span>
+<div class="Project1652206537" data-conditions="[{&quot;!state&quot;:[&quot;canceled&quot;,&quot;suspended&quot;]}]" data-evaluation="true" data-render="&quot;&lt;h5 class=\&quot;poll \&quot; data-dynamic=\&quot;5\&quot; data-end_time=\&quot;2012-11-23T19:24:20-05:00\&quot; data-poll_url=\&quot;https://d2oher2uhvl0ur.cloudfront.net/projects/1254854179/3rd-world-a-cyberpunk-tale/stats.json\&quot;&gt;\n&lt;div class=\&quot;num h48 no-margin\&quot;&gt;0&lt;/div&gt;\n&lt;span class=\&quot;text\&quot;&gt;seconds to go&lt;/span&gt;\n&lt;/h5&gt;\n&quot;"><h5 class="poll " data-dynamic="5" data-end_time="2012-11-23T19:24:20-05:00" data-poll_url="https://d2oher2uhvl0ur.cloudfront.net/projects/1254854179/3rd-world-a-cyberpunk-tale/stats.json">
+<div class="num h48 no-margin">0</div>
+<span class="text">seconds to go</span>
+</h5>
+</div></div>
+<div class="Project1652206537" data-conditions="[{&quot;state&quot;:&quot;live&quot;},{&quot;!ended?&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;pr2 pl2\&quot; id=\&quot;pledge-wrap\&quot;&gt;\n&lt;a href=\&quot;/projects/1254854179/3rd-world-a-cyberpunk-tale/pledge/new?clicked_reward=false\&quot; class=\&quot;button button_green button_box button_block\&quot; id=\&quot;button-back-this-proj\&quot; title=\&quot;Back this project\&quot;&gt;Back This Project &lt;small class=&#39;h6 normal block green-dark&#39;&gt;&lt;span class=\&quot;money usd \&quot;&gt;$1&lt;/span&gt; minimum pledge&lt;/small&gt;&lt;/a&gt;\n&lt;/div&gt;\n&quot;"></div><div class="Project1652206537" data-conditions="[{&quot;state&quot;:&quot;live&quot;}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;p2\&quot; id=\&quot;banner\&quot;&gt;\n&lt;p class=\&quot;tiny_type no-margin\&quot;&gt;\nThis project will only be funded if at least\n&lt;span class=\&quot;money usd \&quot;&gt;$50,000&lt;/span&gt;\nis pledged by\n&lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;llll z\&quot; datetime=\&quot;2012-11-23T19:24:20-05:00\&quot;&gt;Fri, Nov 23 2012 7:24 pm EST&lt;/time&gt;.\n&lt;/p&gt;\n&lt;/div&gt;\n&quot;"></div></div>
+
+<div class="NS_projects__rightcol_projectby bg-blue-light rounded">
+<div class="p2 clearfix">
+<div class="avatar inline-block align-middle">
+<a href="/projects/1254854179/3rd-world-a-cyberpunk-tale/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography"><img alt="Vsw_ware_pocket.small" class="avatar-small" height="80" src="https://s3.amazonaws.com/ksr/avatars/2564302/VSW_ware_pocket.small.jpg?1334962445" width="80" />
+</a></div>
+<div class="creator-name inline-block align-middle ml1">
+<h6 class="mb1">Project by</h6>
+<h5 class="mb1">
+<a href="/projects/1254854179/3rd-world-a-cyberpunk-tale/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">Vision-Strike-Ware, LLC</a>
+</h5>
+<p class="location h6 bold mb1">
+<a href="/discover/places/los-angeles-ca">Los Angeles, CA</a>
+</p>
+</div>
+</div>
+<div class="creator-details pl2 pr2 pb1">
+<ul class="list-simple h5 mb1">
+<li class="projects-more">
+<span class="ss-icon ss-kickstarter grey-dark margin-right"></span>
+<span class="text">
+<a href="/profile/1254854179/created" class="green-dark bold more-button remote_modal_dialog" data-modal-title="Projects created by Vision-Strike-Ware, LLC">2 created</a>
+<span class="divider">&middot;</span>
+<a href="/profile/1254854179/backed" class="green-dark bold more-button remote_modal_dialog" data-modal-title="Projects backed by Vision-Strike-Ware, LLC">1 backed</a>
+</span>
+</li>
+<li class="facebook-connected">
+<span class="ss-icon ss-facebook facebook color-facebook margin-right"></span>
+<span class="text">
+<a href="https://www.facebook.com/100001772080002" class="popup" target="_blank">Sarge Strike</a>
+<span class="number h6">
+1387
+friends
+</span>
+</span>
+
+</li>
+<li class="links">
+<span class="ss-icon ss-globe margin-right grey-dark"></span>
+<span class="text">
+<a href="http://www.3rdworld.co" class="popup" rel="nofollow" target="_blank">3rdworld.co</a>
+</span>
+</li>
+</ul>
+</div>
+<div class="footer center h5 bold clearfix rounded-bottom clip">
+<a href="/projects/1254854179/3rd-world-a-cyberpunk-tale/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">See full bio</a>
+<a href="/projects/1254854179/3rd-world-a-cyberpunk-tale/messages/new?message%5Bto%5D=1254854179" class="remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Send a message to Vision-Strike-Ware, LLC">Contact me</a>
+
+</div>
+</div>
+
+<ul class="NS-projects-rightcol-rewards rounded clip list mt2" data-reward-count="13" id="what-you-get">
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$5</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+12 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>(FRAG BAIT) CIVIL ACCESS- FREE Download of the Game, Old School Role-Playing Game Version of 3rd World in PDF format. Your name listed in our &quot;Special Thanks&quot; section in-game, facebook and on www.3rdworld.co</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-05-01">May 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$25</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+12 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>(FODDER) RED CARD ACCESS- FREE Download of the Game, Your name in our Special Thanks section as well as a 3rd World Video Game T-Shirt, &quot;I was Fragged in 3rd World and all I got was this lousy T-Shirt&quot; with Red Access Card and your Name on the left chest!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-05-01">May 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$25</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>(FODDER) Level  *ADD-ON* NOOB PACKAGE!
+Original Fodder reward plus, 1 Additional Gang Unit Slot, +1000 Game Credits, 1 Additional Weapon!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-05-01">May 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$50</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+4 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>(DENIZEN) LEVEL *ADD-ON*  STARTER PACKAGE!- Original Denizen Reward plus +2500 game credits,  3 Gang Unit Slots rather than single, 1 additional Weapon, 1 Additional Armor, 1 Additional Item. 1 Implant.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-05-01">May 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$50</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+2 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>(DENIZEN) ORANGE CARD ACCESS- Previous Reward (Orange Access Card on left chest of T-shirt) plus, 3rd World iPhone 4 or Android Cell Phone Case cover! PLUS Choose a Name, Race and Profession for a Mercenary for other players to choose from in the rogue&#39;s gallery of Sec-Net!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-05-01">May 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$75</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>(PLAYER) GOLD CARD ACCESS- Previous Reward (Gold Access Card on left chest of T-shirt) plus, 3rd World Splash Screen Poster, Your Merc Named after you and a mug that says &quot;Sec-Net&#39;s Most Wanted&quot;, Copy of the 3rd World: A Cyberpunk Tale Digital Soundtrack featuring the hardcore songs from the video and the game!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-05-01">May 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$75</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>(PLAYER)  level *ADD-ON* - DIGITAL PACKAGE!- Original Player Reward plus +4000 game Credits, 3 Gang Unit Slots, 1 Ferox Marauder Body Guard Unit with Alien Weapon!  1 Motion Detection Device.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-05-01">May 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$125</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>(CITIZEN) GREEN CARD ACCESS- Previous Reward (Green Access Card on left chest of T-shirt) plus, +10000 Game Credits, 3rd World Poster with choice of Dendrite, Ferox, Greks, Human Male, Human Female or Wardroid, Your Choice of Name for a Mega-Corporation in the Game, i.e &quot;Maxwell&quot; Firearms, or &quot;Frost&quot; Cryolabs Ltd. for use in Mission Briefing and Plot!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-05-01">May 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$150</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>(EXCLUSIVE) BLUE CARD ACCESS-  Previous Reward (Blue Access Card on left chest of T-shirt) plus +20000 Game Credits,  Control of 1 Operation in the Sprawl and 6 Gang Unit Slots to protect your interest, Access to EXCLUSIVE Gang Units to choose from including more exotic races like Greks and Dendrite that use spell casting.  1 Body Performance Enhancement Implant (Move Faster, Tough Skin), Choice of EXCLUSIVE level Weapon or Item, Your Mega-Corporation Name displayed on a billboard in the background environment within a Mission, and a FREE Special Weapon Upgrade! 16&quot; x 20&quot; 3rd World Splash Page Plaque Signed By All Members of the team, In game Credits for helping out!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-05-01">May 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$250</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(49 left of 50)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>(ROYAL) PURPLE CARD ACCESS- Previous Reward (Purple Access Card on left chest of T-shirt) plus, RETRO PACKAGE!- Old School Role-Playing Game Version of 3rd World: A Cyberpunk Tale Printed Rule book that uses d10 to play, 3rd World: Head Hunter Comic Book teaser!,Autographed Scrapbook copy of all sketches, design doodles and concept art from 1997-99 and the present signed by 3rd World Team!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-05-01">May 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$275</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(100 left of 100)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>(ANGEL) WHITE CARD ACCESS- Previous Reward (White Access Card on left chest of T-shirt) plus +50000 Game Credits, Control of 1 Block House in the Sprawl with housing for 9 Gang Units Slots (game starts with 1 Gang Unit slot).  1 Neural Performance Implant (Infra-Red Vision, Sonar, etc.) ANGEL Level Weapon or Item, a Sec-Net Scrambler to cloak against detection, Access to ELITE Gang Units including Wardroids. BETA TESTER!- QA with the 3rd World Team and help make a better game, Design a Weapon of choice for other players to buy in the 3rd World Game! In game Credits for helping out!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-05-01">May 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$300</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(50 left of 50)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>(ELITE) BLACK CARD ACCESS- Previous Reward (Black Access Card on left chest of T-shirt) plus,  +75,000 Game Credits, Control of 1 Block Tower in the Sprawl with housing for up to 15 Gang Units!  Personal Wardroid Gang Unit (Off the grid and unregistered by Sec-Net!), 1 Alien Tech Weapon of choice, Picture of You customized &quot;Cyberpunk&quot; style like the 3rd World development team by Mr. Frost himself and used as a special NPC character in the game! Your Image on your item of choice; Apparel in Women&#39;s and Men&#39;s, Smartphone Case, Mouse Pad, Drinkware! In game Credits for helping out!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-05-01">May 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$350</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(25 left of 25)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>(VIP) CORPORATE CARD ACCESS- Previous Reward (Clear Access Card on left chest of T-shirt) 100,000 Game Credits, Control of 1 Corporation in the Sprawl using your corporate name and 21 Gang Unit Slots to employ your &quot;Staff&quot;, 1 Advanced Alien Tech Weapon of Choice, 2 additional neural and Physical Implants plus Design a Level with the 3rd World development team featuring your custom &quot;Cyberpunk&quot; likeness as the story plot NPC and Mega-Corporation of the Mission. In game Credits for helping out!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-05-01">May 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+</ul>
+
+<div class="p2" id="meta">
+<h5>Funding period</h5>
+<p class="tiny_type">
+<time class="js-adjust" data-format="ll" datetime="2012-09-24T19:24:20-04:00">Sep 24, 2012</time> - 
+<time class="js-adjust" data-format="ll" datetime="2012-11-23T19:24:20-05:00">Nov 23, 2012</time>
+(60 days)
+</p>
+</div>
+</div>
+
+</div>
+
+<a href="#" id="video_mode_tab" style="display: none;">
+View in Video Mode
+</a>
+
+</div>
+</div>
+
+
+</div>
+
+<div class="h5 bg-green-dark" id="mega-footer-wrap">
+<div class="bg-green-dark white full-height" id="footer-newsletter-signup">
+<div class="container py4">
+<div class="grid_8 prefix_4 suffix_4 center mt4">
+<h2>
+Eureka! You've found
+<br>
+our little secret.
+</h2>
+<p>Sign up for our Happening email for all the inside info about arts and culture in the Kickstarter universe and beyond.</p>
+<div class="newsletter_signup">
+<form accept-charset="UTF-8" action="/newsletters/happening/signup" class="overlabels" method="post"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /><input class="hidden" name="authenticity_token" type="hidden" value="yDsqpcypsg0EGUi7Dh/uTxEBDL24c94Ud3FT4Ejq+GE=" /></div><input class="hidden" id="location" name="location" type="hidden" value="footer" />
+<textarea class="hide textarea" id="comment" name="comment">
+</textarea>
+<div class="field newsletter">
+<label class="overlabel z1 overlabel-newsletter">Email address</label>
+<input class="text" id="email" name="email" type="text" />
+</div>
+<input class="button button_green submit" name="commit" type="submit" value="Submit" />
+</form>
+
+</div>
+
+</div>
+</div>
+</div>
+<div class="container relative" id="mega-footer">
+<span class="scissors icon-scissors-1"></span>
+<div class="grid_16 alpha omega pt4 pb2" id="mega-footer-links">
+<div class="grid_4 link-group">
+<h5 class="white">About us</h5>
+<ul class="list">
+<li><a href="/year/2013/?ref=footer">2013 highlights</a></li>
+<li><a href="/year/2012?ref=footer">2012 highlights</a></li>
+<li><a href="/team?ref=footer">Who we are</a></li>
+<li><a href="/jobs?ref=footer">Jobs</a></li>
+<li><a href="/press?ref=footer">Press</a></li>
+<li><a href="/help/stats?ref=footer">Stats</a></li>
+<li><a href="/newsletters/weekly">Projects we love</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group">
+<h5><a href="/help?ref=footer" class="white">Help</a></h5>
+<ul class="list">
+<li><a href="/hello?ref=footer">What is Kickstarter?</a></li>
+<li><a href="/help?ref=footer">FAQ</a></li>
+<li><a href="/contact?ref=footer">Support</a></li>
+<li><a href="/help/school?ref=footer">Kickstarter School</a></li>
+<li><a href="/terms-of-use?ref=footer">Terms of Use</a></li>
+<li><a href="/privacy?ref=footer">Privacy Policy</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group alpha omega suffix_1">
+<h5 class="alpha"><a href="/discover/advanced?ref=footer" class="white">Discover</a></h5>
+<ul class="column column-0 grid_2 list">
+<li><a href="/discover/categories/art?ref=footer">Art</a></li>
+<li><a href="/discover/categories/comics?ref=footer">Comics</a></li>
+<li><a href="/discover/categories/dance?ref=footer">Dance</a></li>
+<li><a href="/discover/categories/design?ref=footer">Design</a></li>
+<li><a href="/discover/categories/fashion?ref=footer">Fashion</a></li>
+<li><a href="/discover/categories/film%20&amp;%20video?ref=footer">Film &amp; Video</a></li>
+<li><a href="/discover/categories/food?ref=footer">Food</a></li>
+</ul>
+<ul class="column column-1 grid_2 list">
+<li><a href="/discover/categories/games?ref=footer">Games</a></li>
+<li><a href="/discover/categories/music?ref=footer">Music</a></li>
+<li><a href="/discover/categories/photography?ref=footer">Photography</a></li>
+<li><a href="/discover/categories/publishing?ref=footer">Publishing</a></li>
+<li><a href="/discover/categories/technology?ref=footer">Technology</a></li>
+<li><a href="/discover/categories/theater?ref=footer">Theater</a></li>
+</ul>
+</div>
+<div class="grid_3 link-group">
+<h5 class="white">Hello</h5>
+<ul class="list">
+<li>
+<a href="https://twitter.com/kickstarter"><span class="ss-icon ss-social-regular ss-twitter"></span>
+Twitter
+</a></li>
+<li>
+<a href="https://www.facebook.com/Kickstarter"><span class="ss-icon ss-social-regular ss-facebook"></span>
+Facebook
+</a></li>
+<li>
+<a href="http://kickstarter.tumblr.com"><span class="ss-icon ss-social-regular ss-tumblr"></span>
+Tumblr
+</a></li>
+<li>
+<a href="http://instagram.com/kickstarter"><span class="ss-icon ss-social-regular ss-instagram"></span>
+Instagram
+</a></li>
+<li>
+<a href="https://vine.co/Kickstarter"><span class="ss-icon ss-social-regular ss-vine"></span>
+Vine
+</a></li>
+<li>
+<a href="/blog?ref=footer">Blog</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="grid_16 py4" id="mega-footer-bottom">
+<div class="logo left">
+<a href="/" class="grey-dark"><span class="ss-icon h3">KICKSTARTER</span>
+</a></div>
+<p class="right h5 grey-dark">
+&copy;
+2014
+Kickstarter, Inc.
+</p>
+</div>
+</div>
+</div>
+
+<script>
+  //<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    var analytics_vars = { google_analytics_id : "UA-7621056-1", logged_in : "false", social_user: "false" }
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.mixpanel_id = '75b1d24a516ecfc955eadfadc4910661';
+    window.mixpanel_debug = false;
+  //]]>
+</script>
+
+
+<noscript>
+<img alt="Quantcast" border="0" height="1" src="//secure.quantserve.com/pixel/p-34IbSpw2K94Sg.gif" style="display:none" width="1" />
+</noscript>
+
+
+<script>
+  //<![CDATA[
+    window.benchmark = (typeof window.performance == 'object' && typeof window.performance.mark == 'function');
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    (function (root) {
+      function instrument_function (original) {
+        return function () {
+          try {
+            return original.apply(this, arguments);
+          } catch (e) {
+            if (e.stack && root.Honeybadger) {
+              Honeybadger.notify(e, {
+                current_project : root.current_project,
+                current_user : root.current_user
+              });
+            }
+            throw(e);
+          }
+        };
+      }
+      root.instrument_function = instrument_function;
+    }(this));
+  //]]>
+</script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+
+<script>
+  //<![CDATA[
+    (function(){function c(a){this.local_start_time=new Date;this.settings={cookie_name:"request_time"};for(var b in a)this.settings[b]=a[b];this.get_remote_offset()}c.prototype.get_remote_offset=function(){this.cookie_value=this.read_cookie();var a=new Date(this.cookie_value);if(!this.cookie_value||"Invalid Date"===a.toString()){if(this.remote_offset=this.read_cookie("local_offset"))this.remote_offset=parseInt(this.remote_offset,10)}else this.remote_offset=a-this.local_start_time;"undefined"!==typeof this.remote_offset&& !isNaN(this.remote_offset)?(document.cookie="local_offset="+this.remote_offset+"; path=/",this.is_set=!0):this.is_set=!1};c.prototype.time_units=[["milliseconds",1],["seconds",1E3],["minutes",6E4],["hours",36E5],["days",864E5]];c.prototype.get_units_in_interval=function(a,b){var d=a.replace(/^\w/,function(d){return"get"+d.toUpperCase()});return b[d]()};c.prototype.milliseconds_in_day=function(a){"undefined"===typeof a&&(a=new Date);for(var b=0,d=this.time_units.length-2;0<=d;d--)b+=this.get_units_in_interval(this.time_units[d][0], a)*this.time_units[d][1];return b};c.prototype.milliseconds_in_interval=function(a,b){return this.milliseconds_in_day(b)%a};c.prototype.milliseconds_to_next_interval=function(a,b){return a-this.milliseconds_in_interval(a,b)};c.prototype.pluralize=function(a,b){1===b&&(a=a.replace(/s$/,""));return a};c.prototype.read_cookie=function(a){for(var b=window.document.cookie.split(";"),a=(a||this.settings.cookie_name)+"=",d=0;d<b.length;d++){for(var e=b[d];" "==e.charAt(0);)e=e.substring(1,e.length);if(0== e.indexOf(a))return b=e.substring(a.length,e.length),decodeURIComponent(b).replace(/\+/g," ")}return null};c.prototype.destroy_cookie=function(a){var b=new Date;a||(a=this.settings.cookie_name);b.setTime(b.getTime()-864E5);window.document.cookie=a+"=; expires="+b.toGMTString()+"; path=/"};c.prototype.get_remote_time=function(){var a=new Date,b=a.getTime()+this.remote_offset;return a=a.setTime(b)};window.ksr_page_clock=new c})(); (function(){function c(d,a,b){if(d){this.options={unit_base:{seconds:119,minutes:119,hours:72,days:0},end_phrase:d.getAttribute("data-word")||"to go",count_down:d.getAttribute("data-dynamic")||!1};for(k in b)this.options[k]=b[k];this.clock=a;this.time_units=this.clock.time_units.slice(1);this.element=d;this.clock.is_set&&this.attach()}}function a(){this.elements=[];this.attach()}var b=function(d,a){var b=a||window.document.body,c=d.split("."),g=c[c.length-1],c=1<c.length&&c[0]?c[0]:"*";if(window.document.getElementsByClassName)return b.getElementsByClassName(g); if(b.querySelectorAll)return b.querySelectorAll(d);for(var c=b.getElementsByTagName(c),h=[],i=0,f;f=c[i];i++)b=RegExp("(^|\\s)"+g+"(\\s|$)"),(""+f.className).match(b)&&h.push(f);return h};c.prototype.get_remaining_time=function(){var d=this.remote_end_time-this.clock.get_remote_time();0>d&&(d=0);return d};c.prototype.get_current_unit=function(){for(var d,a=0;a<this.time_units.length&&!(d=this.time_units[a],this.get_remaining_time()<=this.options.unit_base[d[0]]*d[1]);a++);return d};c.prototype.update_element= function(){var a=this.get_current_unit(),b=Math.floor(this.get_remaining_time()/a[1]);isNaN(b)||(this.number_element.innerHTML=b,this.text_element.innerHTML=this.clock.pluralize(a[0],b)+" "+this.options.end_phrase)};c.prototype.valid=function(){return!(!this.number_element||!this.text_element)};c.prototype.attach=function(){function a(){c.update_element();if(c.options.count_down&&0<c.get_remaining_time()){var b=c.get_current_unit();this.timeout=window.setTimeout(a,c.clock.milliseconds_to_next_interval(b[1]))}} var c=this;if(this.remote_end_time_string=this.element.getAttribute("data-end_time"))this.remote_end_time_string.match(/^\d+$/)?(this.remote_end_time=new Date,this.remote_end_time.setTime(this.remote_end_time_string)):this.remote_end_time=new Date(this.remote_end_time_string),this.number_element=b(".num",this.element)[0],this.text_element=b(".text",this.element)[0],this.element.ksr_page_timer=!0,this.valid()&&a()};c.prototype.cancel=function(){this.timeout&&clearTimeout(this.timeout)};a.prototype.loading= !0;a.prototype.stop_finding=function(){this.attach_timers();this.loading=!1;document.addEventListener?document.removeEventListener("DOMContentLoaded",this.stop_finding,!1):document.attachEvent&&"complete"===document.readyState&&document.detachEvent("onreadystatechange",this.stop_finding)};a.prototype.bind_ready=function(){var a=this,b=function(){a.stop_finding.call(a)};document.addEventListener?(document.addEventListener("DOMContentLoaded",b,!1),window.addEventListener("load",b,!1)):document.attachEvent&& (document.attachEvent("onreadystatechange",b),window.attachEvent("onload",b))};a.prototype.attach_timers=function(){for(var a=b("div.ksr_page_timer"),e=0;e<a.length;e++)a[e].ksr_page_timer||(new c(a[e],window.ksr_page_clock),this.elements.push(a[e]))};a.prototype.attach=function(){var a=this;this.bind_ready();(function(){a.attach_timers();a.loading&&window.setTimeout(function(){a.attach_timers()},200)})()};window.ProjectTimer=c;new a})();
+  //]]>
+</script>
+
+<script class="template" id="template-widgets__video_embed_code" type="text/x-tmpl-mustache"><iframe width="{{width}}" height="{{height}}" src="{{{path}}}" frameborder="0" scrolling="no"> </iframe>
+</script><script class="template" id="template-projects__baseball_card_tall" type="text/x-tmpl-mustache"><div class="project-card-wrap project-card-wrap-tall border bg-white rounded clip">
+  <div class="project-card relative project-live {{#successful?}}successful{{/successful?}}">
+    <div class="project-thumbnail pt1 pl1 pr1">
+      <a href="{{urls.web.project}}" target="">
+        <img alt="Photo-little" class="projectphoto-little" src="{{photo.little}}" class="fit">
+      </a>
+    </div>
+    <div class="project-card-interior p1 h6 grey-dark">
+      <h6 class="project-title">
+        <a href="{{urls.web.project}}" target="" class="green-dark">{{name}}</a>
+      </h6>
+      <p class="mb1 ellipsis">
+        by
+        {{creator.name}}
+      </p>
+      <p class="blurb">
+        {{blurb}}
+      </p>
+    </div>
+    <div class="absolute-bottom bg-white rounded-bottom">
+
+      {{#location}}
+        <ul class="p1 list project-meta no-margin h6">
+          <li class="ellipsis">
+            <a href="{{location.urls.web.discover}}" data-location="{{location_json}}" class="grey-dark">
+              <span class="ss-icon ss-location"></span>
+              <span class="location-name">{{location.displayable_name}}</span>
+            </a>
+          </li>
+        </ul>
+      {{/location}}
+
+      <div class="project-stats-wrap pb1 pl1 pr1">
+
+        {{#failed?}}
+          <div class='project-status project-failed h6'>
+            <strong> Funding Unsuccessful</strong><br />
+            <span class="grey-dark">Project ended on {{formatted_deadline}}</span>
+          </div>
+        {{/failed?}}
+
+        {{#canceled?}}
+          <div class='project-status project-canceled h6'>
+            <strong> Funding Canceled</strong><br />
+            <span class="grey-dark">Project canceled on {{formatted_state_changed_at}}</span>
+          </div>
+        {{/canceled?}}
+
+        {{#successful?}}
+          <div class='project-pledged-successful bg-green white h6 pl1 pr1 mb1'>
+            <strong>Successful!</strong>
+          </div>
+        {{/successful?}}
+
+        {{#live_or_successful?}}
+          {{#live?}}
+            <div class="project-pledged-wrap bg-grey clip mb1">
+              <div class="project-pledged bg-green full-height" style="width: {{percent_raised_to_100}}%"></div>
+            </div>
+          {{/live?}}
+          <ul class="project-stats list no-margin h6 no-wrap">
+            <li class="first funded inline-block mr1">
+              <strong class="block h6">{{percent_raised_rounded}}%</strong>
+              <span class="grey-dark">funded</span>
+            </li>
+            <li class="pledged inline-block mr1">
+              <strong class="block h6">{{currency_symbol}}{{formatted_money}}</strong>
+              <span class="grey-dark">pledged</span>
+            </li>
+            {{#successful?}}
+              <li class="last successful inline-block">
+                <strong class="block h6">Funded</strong>
+                <div class="deadline grey-dark">{{formatted_deadline}}</div>
+              </li>
+            {{/successful?}}
+            {{#live?}}
+              <li class="last ksr_page_timer inline-block" data-end_time="{{javascript_deadline}}">
+                <strong class="block h6">
+                  <div class="num">30</div>
+                </strong>
+                <div class="span text grey-dark" data-word="left">days to go</div>
+              </li>
+            {{/live?}}
+          </ul>
+        {{/live_or_successful?}}
+      </div>
+    </div>
+  </div>
+</div>
+
+{{#friends_backing?}}
+  <div class="friend_project_context">
+    <div class="friend_facepile">
+      {{#truncated_friends}}
+        <img src="{{avatar.thumb}}" class="{{#has_metadata?}}small{{/has_metadata?}}">
+      {{/truncated_friends}}
+    </div>
+    <p class="friend_namepile">
+      {{{escaped_sentence}}}
+    </p>
+  </div>
+{{/friends_backing?}}
+</script><script class="template" id="template-projects__video_mode" type="text/x-tmpl-mustache"><a href='#' id='video_mode_close' class='close_button z2'><span class='ss-icon ss-delete'></span></a>
+
+<div class='title_card z1 {{context_classes}}' style="display:none;">
+  <div class='interior'>
+    <h2 class='project_title normal_weight'>{{name}}</h2>
+    <p class='blurb'>{{blurb}}</p>
+    <nav class='bar'>
+      <a id='play_button' class='left play' href='#'>
+        <span class='play_active'>
+          <span class='ss-icon ss-play'></span>
+          Play
+        </span>
+        <span class='pause_active'>
+          <span class='ss-icon ss-pause'></span>
+          Pause
+        </span>
+      </a>
+      {{#logged_in}}
+        <div class='remind right'>
+          {{#if_not_starred}}
+            <a class='follow' href='{{urls.web.project}}/watch'><span class='ss-icon ss-star'></span></a>
+          {{/if_not_starred}}
+          {{#if_starred}}
+            <a class='unfollow' href='{{urls.web.project}}/unwatch'><span class='ss-icon ss-star active'></span></a>
+          {{/if_starred}}
+        </div>
+      {{/logged_in}}
+      <a class='right explore button button_green small' href='#'>Explore this project</a>
+    </nav>
+  </div>
+</div>
+
+<div class='channel_controls z1'>
+  <a href='#' class='{{#playlist_is_location}}selected {{/playlist_is_location}}location'>Something else near {{location.first_name}} <span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_featured}}selected {{/playlist_is_featured}}featured'>Something different<span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_category}}selected {{/playlist_is_category}}category'>Something else in {{category.name}} <span class='ss-icon ss-navigateright'></span></a>
+</div>
+
+<div class='project_video' style='background-image: url('{{photo.full}}')'>
+  <div class='cover'>
+    <video>
+      <source src='{{video.high}}' type='video/mp4'/>
+      <source src='{{video.webm}}' type='video/webm'/>
+    </video>
+  </div>
+</div>
+</script><script class="template" id="template-site__video_mode_fourohfour" type="text/x-tmpl-mustache"><section class='four_oh_four'>
+  <p class='big_type'>
+    Looks like you've reached the end of the line! <br />Check out <a class="another" href='#'>another channel</a> or <a href='/discover'>browse projects in discover</a>.
+  </p>
+</section>
+</script>
+
+<script id="schwamm_formatting_options" type="text/javascript">
+//<![CDATA[
+(function(){window.formatters = window.formatters || {}; var formatting_options = {"distance_date_intervals":[[5,"just now"],[29,"less than a minute ago"],[89,"1 minute ago"],[2640,"%m minutes ago"],[5340,"about 1 hour ago"],[82800,"about %h hours ago"],[147600,"1 day ago"],[604800,"%d days ago"],[15552000,"on %t"],[0,"on %y"]],"currency_symbol_mappings":{"AFN":"\u060b","ALL":"Lek","ARS":"$","AUD":"$","AWG":"\u0192","AZN":"\u043c\u0430\u043d","BAM":"KM","BBD":"$","BGN":"\u043b\u0432","BMD":"$","BND":"$","BOB":"$b","BRL":"R$","BSD":"$","BWP":"P","BYR":"p.","BZD":"BZ$","CAD":"$","CLP":"$","CNY":"\u00a5","COP":"$","CRC":"\u20a1","CUP":"\u20b1","CZK":"K\u010d","DKK":"kr","DOP":"RD$","EGP":"\u00a3","EUR":"\u20ac","FJD":"$","FKP":"\u00a3","GBP":"\u00a3","GIP":"\u00a3","GTQ":"Q","GYD":"$","HKD":"$","HNL":"L","HRK":"kn","HUF":"Ft","IDR":"Rp","ILS":"\u20aa","IRR":"\ufdfc","ISK":"kr","JMD":"J$","JPY":"\u00a5","KGS":"\u043b\u0432","KHR":"\u17db","KPW":"\u20a9","KRW":"\u20a9","KYD":"$","KZT":"\u043b\u0432","LAK":"\u20ad","LBP":"\u00a3","LKR":"\u20a8","LRD":"$","LTL":"Lt","LVL":"Ls","MKD":"\u0434\u0435\u043d","MNT":"\u20ae","MUR":"\u20a8","MXN":"$","MYR":"RM","MZN":"MT","NAD":"$","NGN":"\u20a6","NIO":"C$","NOK":"kr","NPR":"\u20a8","NZD":"$","OMR":"\ufdfc","PAB":"B/.","PEN":"S/.","PHP":"\u20b1","PKR":"\u20a8","PLN":"z\u0142","PYG":"Gs","QAR":"\ufdfc","RON":"lei","RSD":"\u0414\u0438\u043d.","RUB":"\u0440\u0443\u0431","SAR":"\ufdfc","SBD":"$","SCR":"\u20a8","SEK":"kr","SGD":"$","SHP":"\u00a3","SOS":"S","SRD":"$","SVC":"$","SYP":"\u00a3","THB":"\u0e3f","TRY":"TL","TTD":"TT$","TWD":"NT$","UAH":"\u20b4","USD":"$","UYU":"$U","UZS":"\u043b\u0432","VEF":"Bs","VND":"\u20ab","YER":"\ufdfc","ZAR":"R"},"currency_trailing_code_mappings":{"AUD":true,"CAD":true,"NZD":true,"USD":true},"currency_formats":["money","shorter_money"]}; for (key in formatting_options) {window.formatters[key] = formatting_options[key]};}());
+//]]>
+</script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("begin_base.js_tag");}
+  //]]>
+</script>
+<script src="https://d297h9he240fqh.cloudfront.net/assets/packages/base-45cdab84617ddfb8905b7cddc8500c19.js" type="text/javascript"></script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("end_base.js_tag");}
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    document.domain='kickstarter.com';
+  //]]>
+</script>
+
+<iframe height="0" id="api_xdreceiver" src="https://api.kickstarter.com/xdreceiver/85e6.html" style="display: none;" width="0"></iframe>
+
+
+
+<div id="fb-root"></div>
+<script>
+  //<![CDATA[
+    var channelUrl = window.location.protocol + "//" + window.location.host + "/channel.html",
+      skip_autologin = $('body').is('.skip_autologin');
+    
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId: window.fb_app_id,
+        channelUrl: channelUrl,
+        status: true,    // check login status
+        cookie: true,    // enable cookies to allow the server to access the session
+        xfbml: true,     // parse XFBML
+        logging: false   // turn off logging
+      });
+    
+      FB.getLoginStatus(function (response) {
+        if (response.status === 'connected') {
+          if (read_cookie("logout_from_fb")) {
+            FB.logout();
+            destroy_cookie("logout_from_fb");
+          } else if (!skip_autologin) {
+            $.get("/fb/autologin", {'fbsr': response.authResponse.signedRequest});
+          } else if (false && 0 == response.authResponse.userID) {
+            $.get("/fb/refresh", {'fbsr': response.authResponse.signedRequest});
+          }
+        } else {
+          if (read_cookie("logout_from_fb")) {
+            destroy_cookie("logout_from_fb");
+          }
+        }
+      })
+    
+      $(document).trigger('fb:loaded');
+    };
+    
+    
+    // Load the SDK Asynchronously
+    (function(d){
+      var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+      js = d.createElement('script'); js.id = id; js.async = true;
+      js.src = "//connect.facebook.net/en_US/all.js";
+      d.getElementsByTagName('head')[0].appendChild(js);
+    }(document));
+  //]]>
+</script>
+
+
+</body>
+</html>

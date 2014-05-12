@@ -1,0 +1,2297 @@
+<!DOCTYPE html>
+<html class="projects_show  fontface no-js" lang="en">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# kickstarter: http://ogp.me/ns/fb/kickstarter#">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-5.newrelic.com","errorBeacon":"jserror.newrelic.com","licenseKey":"b04b883ad2","applicationID":"11086","transactionName":"cFteRUULX1wHFhtIEFxeVVJDFxxDCgtD","queueTime":8,"applicationTime":372,"ttGuid":"","agentToken":null,"agent":"js-agent.newrelic.com/nr-411.min.js"}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"Vw4BVEVSCQMIUg=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e){function n(t,e,n){n||(n={});for(var r=o[t],a=r&&r.length||0,s=n[i]||(n[i]={}),u=0;a>u;u++)r[u].apply(s,e);return s}function r(t,e){var n=o[t]||(o[t]=[]);n.push(e)}var o={},i="nr@context";e.exports={on:r,emit:n}},{}],2:[function(t){function e(t,e,n,i,s){return u?u-=1:r("err",[s||new UncaughtException(t,e,n)]),"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t(5),a=window.onerror,s=!1,u=0;t("loader").features.push("err"),window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(d){"stack"in d&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(4),s=!0)}i.on("fn-start",function(){s&&(u+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&u>0&&(u-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:4,3:3,4:6,5:1,6:14,handle:"D5DuLP",loader:"G9z0Bl"}],3:[function(t){function e(t){r.inPlace(t,["addEventListener","removeEventListener"],"-",n)}function n(t){return t[1]}var r=t(1),o=(t(3),t(2));if(e(window),"getPrototypeOf"in Object){for(var i=document;i&&!i.hasOwnProperty("addEventListener");)i=Object.getPrototypeOf(i);i&&e(i);for(var a=XMLHttpRequest.prototype;a&&!a.hasOwnProperty("addEventListener");)a=Object.getPrototypeOf(a);a&&e(a)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&e(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=e["nr@wrapped"]?t[1]=e["nr@wrapped"]:e["nr@wrapped"]=t[1]=r(e,"fn-"):"function"==typeof e.handleEvent&&r.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:15,2:1,3:14}],4:[function(t){var e=(t(3),t(1)),n=t(2);e.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=e(t[0],"fn-")})},{1:15,2:1,3:14}],5:[function(t){function e(t){var e=t[0];"string"==typeof e&&(e=new Function(e)),t[0]=n(e,"fn-")}var n=(t(3),t(1)),r=t(2);n.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",e)},{1:15,2:1,3:14}],6:[function(t){function e(){o.inPlace(this,s,"fn-")}function n(t,e){o.inPlace(e,["onreadystatechange"],"fn-")}function r(t,e){return e}var o=t(1),i=t(2),a=window.XMLHttpRequest,s=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];window.XMLHttpRequest=function(t){var n=new a(t);try{i.emit("new-xhr",[],n),o.inPlace(n,["addEventListener","removeEventListener"],"-",function(t,e){return e}),n.addEventListener("readystatechange",e,!1)}catch(r){try{i.emit("internal-error",r)}catch(s){}}return n},window.XMLHttpRequest.prototype=a.prototype,o.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",r),i.on("send-xhr-start",n),i.on("open-xhr-start",n)},{1:15,2:1}],7:[function(t){function e(){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;u>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,d="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=e(d);if(f&&(r.rxSize=f),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}t("loader").features.push("xhr");var o=t("handle"),i=t(1),a=t(5),s=["load","error","abort","timeout"],u=s.length,d=t(2);t(3),t(4),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var d=e(o);d&&(r.txSize=d)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",e)}catch(r){}}};for(var f=0;u>f;f++)n.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&e()},{1:8,2:11,3:3,4:6,5:1,handle:"D5DuLP",loader:"G9z0Bl"}],8:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e){var n=r[t];return n?n.apply(this,e):(o[t]||(o[t]=[]),void o[t].push(e))}var r={},o={};e.exports=n,n.queues=o,n.handlers=r},{}],11:[function(t,e){function n(t){if(!t||"object"!=typeof t&&"function"!=typeof t)return-1;if(t===window)return 0;if(o.call(t,"__nr"))return t.__nr;try{return Object.defineProperty(t,"__nr",{value:r,writable:!0,enumerable:!1}),r}catch(e){return t.__nr=r,r}finally{r+=1}}var r=1,o=Object.prototype.hasOwnProperty;e.exports=n},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&u&&u.body){p.proto="https"===c.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=u.createElement("script");e.src=p.proto+t.agent,u.body.appendChild(e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,u=s.document,d="addEventListener",f="attachEvent",c=(""+location).split("?")[0],p=e.exports={offset:i(),origin:c,features:[]};u[d]?(u[d]("DOMContentLoaded",o,!1),s[d]("load",n,!1)):(u[f]("onreadystatechange",r),s[f]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],14:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],15:[function(t,e){function n(t,e,r,s){function nrWrapper(){try{var n,a=u(arguments),d=this,f=r&&r(a,d)||{}}catch(c){i([c,"",[a,d,s],f])}o(e+"start",[a,d,s],f);try{return n=t.apply(d,a)}catch(p){throw o(e+"err",[a,d,p],f),p}finally{o(e+"end",[a,d,n],f)}}return a(t)?t:(e||(e=""),nrWrapper[n.flag]=!0,nrWrapper)}function r(t,e,r,o){r||(r="");var i,s,u,d="-"===r.charAt(0);for(u=0;u<e.length;u++)s=e[u],i=t[s],a(i)||(t[s]=n(i,d?s+r:r,o,s,t))}function o(t,e,n){try{s.emit(t,e,n)}catch(r){i([r,t,e,n])}}function i(t){try{s.emit("internal-error",t)}catch(e){}}function a(t){return!(t&&"function"==typeof t&&t.apply&&!t[n.flag])}var s=t(1),u=t(2);e.exports=n,n.inPlace=r,n.flag="nr@wrapper"},{1:1,2:14}]},{},["G9z0Bl",2,7]);</script><script>
+  //<![CDATA[
+    docElement = this.document.documentElement;
+    docElement.className=docElement.className.replace(/\bno-js\b/,'') + 'js';
+  //]]>
+</script>
+<title>Pixel Press: Draw Your Own Video Game by Robin @ Roundthird &mdash; Kickstarter</title><script>
+  //<![CDATA[
+    window.report_errors = true;
+    window.honeybadger_configuration = {
+      api_key : "02ab109335c0dd1a93506d92f22217a7",
+      environment : "production",
+      component : "projects",
+      action : "show",
+      onerror : false
+    };
+  //]]>
+</script>
+
+
+<!--[if lt IE 9]>
+  <script src="//html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta content="telephone=no" name="format-detection">
+
+<!--[if !IE]> -->
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base-9f623ad5d021a188cfb2d68a0cdf7a7b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<!-- <![endif]-->
+<!--[if IE]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base_blessed-2640c72487552f9a2ef9f2620b4af860.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<!--[if lte IE 9]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_nine-a93fe10530f175f96c4078b7e070d7e1.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 8]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_eight-f75aeb274436f94a0d243774456b1c62.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 7]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie-c019c01acd3a96588b346cf577a3504f.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_seven-5a3d2cef660cd281fd844b04b2397dbb.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if IE 6]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_six-e4d3caf76e405fe19aee6ece8bda701b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<link href="https://d297h9he240fqh.cloudfront.net/favicon.png" rel="icon" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-precomposed-7b603dba7cf80e4acc57d94a991bebbd.png" rel="apple-touch-icon-precomposed" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-ipad-precomposed-3176f72977daf43dee3b0d348484dc01.png" rel="apple-touch-icon-precomposed" sizes="72x72" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-iphone4-precomposed-b93b70168cd8492c843d0fea873c7f83.png" rel="apple-touch-icon-precomposed" sizes="114x114" type="image/png">
+<link href="https://www.kickstarter.com/services/oembed?url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Frobinrath%2Fpixel-press-draw-your-own-video-game" rel="alternate" title="Pixel Press: Draw Your Own Video Game Script Tag oEmbed" type="application/json+oembed">
+<link rel="alternate" type="application/atom+xml" title="Pixel Press: Draw Your Own Video Game : Kickstarter" href="https://www.kickstarter.com/projects/robinrath/pixel-press-draw-your-own-video-game/posts.atom" />
+<meta property="twitter:app:id:iphone" content="596961532"/>
+<meta property="twitter:app:name:iphone" content="Kickstarter"/>
+<meta property="twitter:app:url:iphone" content="ksr://www.kickstarter.com/projects/robinrath/pixel-press-draw-your-own-video-game"/>
+<meta name="video_height" content="360"/>
+<meta name="video_width" content="640"/>
+<meta name="video_type" content="application/x-shockwave-flash"/>
+<meta name="title" content="Kickstarter &gt;&gt; Pixel Press: Draw Your Own Video Game by Robin @ Roundthird"/>
+<meta name="description" content="Robin @ Roundthird is raising funds for Pixel Press: Draw Your Own Video Game on Kickstarter! 
+
+ Pixel Press is an iOS &amp; Android app that lets you draw your own video game level (no code required!) and share it with others."/>
+<meta property="og:title" content="Pixel Press: Draw Your Own Video Game"/>
+<meta property="og:type" content="kickstarter:project"/>
+<meta property="og:image" content="https://s3.amazonaws.com/ksr/projects/527466/photo-main.jpg?1397817441"/>
+<meta property="og:url" content="https://www.kickstarter.com/projects/robinrath/pixel-press-draw-your-own-video-game"/>
+<meta property="og:site_name" content="Kickstarter"/>
+<meta property="fb:app_id" content="69103156693"/>
+<meta property="og:description" content="Pixel Press is an iOS &amp; Android app that lets you draw your own video game level (no code required!) and share it with others."/>
+<meta property="kickstarter:creator" content="https://www.kickstarter.com/profile/robinrath"/>
+<meta property="twitter:url:landing_url" content="https://www.kickstarter.com/projects/robinrath/pixel-press-draw-your-own-video-game"/>
+<meta property="twitter:card" content="2427656750:kickstarter_project"/>
+<meta property="twitter:site" content="@kickstarter"/>
+<meta property="twitter:site:id" content="16186995"/>
+<meta property="twitter:text:title" content="Pixel Press: Draw Your Own Video Game"/>
+<meta property="twitter:text:artist" content="Robin @ Roundthird"/>
+<meta property="twitter:text:backers" content="2256"/>
+<meta property="twitter:text:pledged" content="$108,950 USD"/>
+<meta property="twitter:text:time" content="0 seconds"/>
+<meta property="twitter:text:location" content="St. Louis, MO"/>
+<meta property="twitter:image:location_image" content="https://d3mlfyygrfdi2i.cloudfront.net/b40e/pin.png"/>
+<meta property="twitter:text:description" content="Pixel Press is an iOS &amp; Android app that lets you draw your own video game level (no code required!) and share it with others."/>
+<meta property="twitter:image:media" content="https://s3.amazonaws.com/ksr/projects/527466/photo-main.jpg?1397817441"/>
+<meta property="twitter:image:width" content="640"/>
+<meta property="twitter:image:height" content="480"/>
+<meta property="twitter:player:stream:url" content="https://d2pq0u4uni88oo.cloudfront.net/projects/527466/video-245674-h264_base.mp4"/>
+<meta property="twitter:player:stream:content" content="video/mp4"/>
+<meta property="twitter:player:url" content="https://www.kickstarter.com/projects/robinrath/pixel-press-draw-your-own-video-game/widget/video.html"/>
+<meta property="twitter:player:height" content="360"/>
+<meta property="twitter:player:width" content="640"/>
+<meta property="twitter:maxage" content="60"/>
+<meta property="og:video" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F527466%2Fvideo-245674-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F527466%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Robin+%40+Roundthird&amp;project_title=Pixel+Press%3A+Draw+Your+Own+Video+Game&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Frobinrath%2Fpixel-press-draw-your-own-video-game&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:secure_url" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F527466%2Fvideo-245674-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F527466%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Robin+%40+Roundthird&amp;project_title=Pixel+Press%3A+Draw+Your+Own+Video+Game&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Frobinrath%2Fpixel-press-draw-your-own-video-game&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:height" content="360"/>
+<meta property="og:video:width" content="640"/>
+<meta property="og:video:type" content="application/x-shockwave-flash"/>
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="/s5i77IDaupCxdqim7fK8xx5YTm4XDUXPVDgeUhnZsY=" name="csrf-token" />
+<script type="text/javascript">
+  var _sift = _sift || [];
+  _sift.push(['_setAccount', '637102']);
+  _sift.push(['_setUserId', '']);
+  _sift.push(['_trackPageview']);
+
+  (function() {
+    function loadSift() {
+      var sift, s;
+      if (root.visitor_id) {
+        _sift.push(['_setSessionId', root.visitor_id]);
+      }
+      sift = document.createElement('script');
+      sift.type = 'text/javascript';
+      sift.async = true;
+      sift.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dtlilztwypawv.cloudfront.net/s.js';
+      s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(sift, s);
+    }
+    if (window.attachEvent) {
+      window.attachEvent('onload', loadSift);
+    } else {
+      window.addEventListener('load', loadSift, false);
+    }
+  })();
+</script>
+<link href="http://kck.st/YBDf7Y" rel="shorturl">
+<link href="https://www.kickstarter.com/projects/robinrath/pixel-press-draw-your-own-video-game" rel="canonical">
+<link href="https://s3.amazonaws.com/ksr/projects/527466/photo-med.jpg?1397817441" rel="image_src">
+<link href="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F527466%2Fvideo-245674-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F527466%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Robin+%40+Roundthird&amp;project_title=Pixel+Press%3A+Draw+Your+Own+Video+Game&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Frobinrath%2Fpixel-press-draw-your-own-video-game&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque" rel="video_src">
+<script>
+  //<![CDATA[
+    window.current_checkout = "{&quot;id&quot;:0,&quot;domestic&quot;:null,&quot;amount&quot;:0.0,&quot;updated_at&quot;:0,&quot;created_at&quot;:0}";
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.current_ip = '94.209.101.212';
+    window.current_ip_datacenter = 'false';
+    window.enabled_features = {"elasticsearch":true,"security_history_read":true,"security_history_write":true,"advanced_discovery_es":true,"ios_crashlytics":true,"ios_mixpanel":true,"stories_veronica_mars":true,"veronica_mars_hero":true,"password_reset_banner":true};
+    window.fb_app_id = '69103156693';
+    
+    var _sf_startpt=(new Date()).getTime();
+    
+    window.current_project = "{&quot;id&quot;:1004649506,&quot;name&quot;:&quot;Pixel Press: Draw Your Own Video Game&quot;,&quot;blurb&quot;:&quot;Pixel Press is an iOS &amp; Android app that lets you draw your own video game level (no code required!) and share it with others.&quot;,&quot;goal&quot;:100000.0,&quot;pledged&quot;:108950.86,&quot;state&quot;:&quot;successful&quot;,&quot;slug&quot;:&quot;pixel-press-draw-your-own-video-game&quot;,&quot;disable_communication&quot;:false,&quot;country&quot;:&quot;US&quot;,&quot;currency&quot;:&quot;USD&quot;,&quot;currency_symbol&quot;:&quot;$&quot;,&quot;currency_trailing_code&quot;:true,&quot;deadline&quot;:1371185940,&quot;state_changed_at&quot;:1371185940,&quot;created_at&quot;:1366250499,&quot;launched_at&quot;:1367902612,&quot;backers_count&quot;:2256,&quot;photo&quot;:{&quot;full&quot;:&quot;https://s3.amazonaws.com/ksr/projects/527466/photo-full.jpg?1397817441&quot;,&quot;ed&quot;:&quot;https://s3.amazonaws.com/ksr/projects/527466/photo-ed.jpg?1397817441&quot;,&quot;med&quot;:&quot;https://s3.amazonaws.com/ksr/projects/527466/photo-med.jpg?1397817441&quot;,&quot;little&quot;:&quot;https://s3.amazonaws.com/ksr/projects/527466/photo-little.jpg?1397817441&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/projects/527466/photo-small.jpg?1397817441&quot;,&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/projects/527466/photo-thumb.jpg?1397817441&quot;,&quot;1024x768&quot;:&quot;https://s3.amazonaws.com/ksr/projects/527466/photo-1024x768.jpg?1397817441&quot;,&quot;1536x1152&quot;:&quot;https://s3.amazonaws.com/ksr/projects/527466/photo-1536x1152.jpg?1397817441&quot;},&quot;creator&quot;:{&quot;id&quot;:1897582229,&quot;name&quot;:&quot;Robin @ Roundthird&quot;,&quot;slug&quot;:&quot;robinrath&quot;,&quot;avatar&quot;:{&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/528438/_528970_10150802994966585_1712979101_n.thumb.jpg?1367776317&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/528438/_528970_10150802994966585_1712979101_n.small.jpg?1367776317&quot;,&quot;medium&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/528438/_528970_10150802994966585_1712979101_n.medium.jpg?1367776317&quot;},&quot;urls&quot;:{&quot;web&quot;:{&quot;user&quot;:&quot;https://www.kickstarter.com/profile/robinrath&quot;},&quot;api&quot;:{&quot;user&quot;:&quot;https://api.kickstarter.com/v1/users/1897582229?signature=1399959162.2cd4b8377c26ea53b8f4b363f8a385a24ca25e25&quot;}}},&quot;location&quot;:{&quot;id&quot;:2486982,&quot;name&quot;:&quot;St. Louis&quot;,&quot;slug&quot;:&quot;st-louis-mo&quot;,&quot;short_name&quot;:&quot;St. Louis, MO&quot;,&quot;displayable_name&quot;:&quot;St. Louis, MO&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:&quot;MO&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/st-louis-mo&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/st-louis-mo&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1399951826.5ab65ab40094d0812137e48bcdd82c3af660695d&amp;woe_id=2486982&quot;}}},&quot;category&quot;:{&quot;id&quot;:35,&quot;name&quot;:&quot;Video Games&quot;,&quot;slug&quot;:&quot;games/video games&quot;,&quot;position&quot;:7,&quot;parent_id&quot;:12,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;http://www.kickstarter.com/discover/categories/games/video%20games&quot;}}},&quot;urls&quot;:{&quot;web&quot;:{&quot;project&quot;:&quot;https://www.kickstarter.com/projects/robinrath/pixel-press-draw-your-own-video-game&quot;,&quot;project_short&quot;:&quot;http://kck.st/YBDf7Y&quot;,&quot;updates&quot;:&quot;https://www.kickstarter.com/projects/robinrath/pixel-press-draw-your-own-video-game/posts&quot;},&quot;api&quot;:{&quot;project&quot;:&quot;https://api.kickstarter.com/v1/projects/1004649506?signature=1399959162.7d31ad8450dcaeee6c65496b1697b183ff8e7193&quot;,&quot;comments&quot;:&quot;https://api.kickstarter.com/v1/projects/1004649506/comments?signature=1399959162.c13ea0bf93acf1219a0798275899e2090a5b23f5&quot;,&quot;updates&quot;:&quot;https://api.kickstarter.com/v1/projects/1004649506/updates?signature=1399959162.24ebd25f4a6f41d8a368ba936eaa3a2ef36ad37f&quot;}},&quot;updated_at&quot;:1398448071,&quot;successful_at&quot;:1371185940,&quot;video&quot;:{&quot;id&quot;:245674,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/527466/video-245674-h264_high.mp4?2013&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/527466/video-245674-h264_base.mp4?2013&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/527466/video-245674-webm.webm?2013&quot;,&quot;width&quot;:640,&quot;height&quot;:360,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/527466/video-245674-h264_base.jpg?2013&quot;},&quot;comments_count&quot;:409,&quot;updates_count&quot;:37,&quot;rewards&quot;:[{&quot;id&quot;:0,&quot;minimum&quot;:1,&quot;reward&quot;:&quot;No Reward&quot;},{&quot;id&quot;:1652590,&quot;minimum&quot;:1.0,&quot;reward&quot;:&quot;I HEART PIXEL PRESS // You want to show your support, and we are truly grateful! Exclusive access to project updates + a special VIDEO thanks of our team doing a remake of our childhood Michael Jackson dance! - see www.vimeo.com/robinrath/mj \\u25cf Included with all rewards.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1372636800,&quot;project_id&quot;:1004649506,&quot;backers_count&quot;:50,&quot;updated_at&quot;:1396764392},{&quot;id&quot;:1596210,&quot;minimum&quot;:6.0,&quot;reward&quot;:&quot;PIXEL PRESS GAME EARLY BIRD  // A download of the game for iOS devices (iPod Touch, iPhone, iPad Mini &amp; iPad) at our special early bird price! Your option of Android (phone &amp; tablet) version if stretch goal reached. PLUS you will get the official \\&quot;Backer\\&quot; Badge on your profile showing you were here from the start. Thank you!  \\u25cf PLUS if you post a message to our Facebook wall (fb.com/pixelpressgame) or tweet with #pixelpress, you&#39;ll get an EXTRA copy for your little brother or sister.&quot;,&quot;limit&quot;:396,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1385856000,&quot;project_id&quot;:1004649506,&quot;remaining&quot;:0,&quot;backers_count&quot;:396,&quot;updated_at&quot;:1399764819},{&quot;id&quot;:1596211,&quot;minimum&quot;:10.0,&quot;reward&quot;:&quot;PIXEL PRESS GAME // A download of the game for iOS devices (iPod Touch, iPhone, iPad Mini &amp; iPad). Your option of Android (phone &amp; Tablet) version if stretch goal reached. PLUS you will get the official \\&quot;Backer\\&quot; Badge on your profile showing you we&#39;re here from the start. Thank you! \\u25cf PLUS if you post a message to our Facebook wall (fb.com/pixelpressgame) or Tweet with #pixelpress, you&#39;ll get an EXTRA copy for your little brother or sister.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1385856000,&quot;project_id&quot;:1004649506,&quot;backers_count&quot;:1008,&quot;updated_at&quot;:1399672718},{&quot;id&quot;:1652274,&quot;minimum&quot;:25.0,&quot;reward&quot;:&quot;ANDROID BACKER // To celebrate our Android users! Game Download + Pre-Printed Sketch Pad with special Android Logo + the Android \\&quot;Backer\\&quot; Badge (both available with all packages at this level and above if you are an Android user) PLUS all users at all levels that choose the ANDROID Game Download will get a special playable Android Robot character to use in their levels!&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1385856000,&quot;project_id&quot;:1004649506,&quot;backers_count&quot;:93,&quot;updated_at&quot;:1398955895},{&quot;id&quot;:1596217,&quot;minimum&quot;:25.0,&quot;reward&quot;:&quot;GAME &amp; SKETCH PAD // Game Download + Pre-Printed Sketch Pad (Sketch Pad delivered in Aug/Sept to give you extra time to create your levels!)&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1385856000,&quot;project_id&quot;:1004649506,&quot;backers_count&quot;:266,&quot;updated_at&quot;:1399489246},{&quot;id&quot;:1596220,&quot;minimum&quot;:35.0,&quot;reward&quot;:&quot;GAME + STICKERS + EXTRA COPY // 2 Game Download (one for you, one for your little brother or sister) + Sketch Pad + Pixel Press STICKERS!!! \\u25cf Only this package includes 2x Game Downloads&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1385856000,&quot;project_id&quot;:1004649506,&quot;backers_count&quot;:125,&quot;updated_at&quot;:1398981071},{&quot;id&quot;:1596219,&quot;minimum&quot;:40.0,&quot;reward&quot;:&quot;TEACHER PACKAGE // Our special teacher package (cause teachers are awesome) includes 10 Game Downloads + 3 Sketch Pads + 10 Stickers + exclusive access to the educational portal (focusing on using Pixel Press in the classroom) on our website. Must validate by sending us an email from your school address - anytime AFTER our Kickstarter is over. \\u25cf This package is not included with any other packages.&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1385856000,&quot;project_id&quot;:1004649506,&quot;backers_count&quot;:76,&quot;updated_at&quot;:1398902816},{&quot;id&quot;:1652338,&quot;minimum&quot;:40.0,&quot;reward&quot;:&quot;GAME + POSTER + DIGITAL ART BOOK  // Everything in the $25 Game &amp; Pad package plus our special \\&quot;Ryo the Ninja\\&quot; poster and our digital art book, a specially created eBook that includes behind-the-scenes photos and artwork from the creation of Pixel Press.&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1385856000,&quot;project_id&quot;:1004649506,&quot;backers_count&quot;:11,&quot;updated_at&quot;:1371311057},{&quot;id&quot;:1596230,&quot;minimum&quot;:50.0,&quot;reward&quot;:&quot;T-SHIRT // The Pixel Press T-Shirt (Your choice on size, American Apparel brand, shipped in Aug/Sept) \\u25cf Includes all previous rewards (1 Game Download)&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1385856000,&quot;project_id&quot;:1004649506,&quot;backers_count&quot;:39,&quot;updated_at&quot;:1399625241},{&quot;id&quot;:1596231,&quot;minimum&quot;:75.0,&quot;reward&quot;:&quot;OFFICIAL BETA TESTER // Invite to become a pre-release Tester (and get the official \\&quot;Beta Tester\\&quot; Badge on your profile), also gives you access to the exclusive message boards + Bonus Credits for downloading new level artwork and game features \\u25cf Includes all  previous rewards (1 Game Download)&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1385856000,&quot;project_id&quot;:1004649506,&quot;backers_count&quot;:34,&quot;updated_at&quot;:1390105672},{&quot;id&quot;:1611149,&quot;minimum&quot;:100.0,&quot;reward&quot;:&quot;PIXEL PRESS THREADS // You can&#39;t wait for Pixel Press and are willing to throw $100 our way to make it happen. For real. This package includes everything previously (1 Game Download) plus our Pixel Press embroidered HOODIE and T-SHIRT (Your choice on size, American Apparel brand, shipped in Aug/Sept).&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1385856000,&quot;project_id&quot;:1004649506,&quot;backers_count&quot;:34,&quot;updated_at&quot;:1388599383},{&quot;id&quot;:1609848,&quot;minimum&quot;:125.0,&quot;reward&quot;:&quot;THE KAWECO SPECIAL EARLY BIRD // Amazingly crafted, metal 0.5mm Kaweco Special mechanical pencil - shipped from Germany - featuring a hand-applied Pixel Press logo ($75 value, shipped in Aug/Sept), at our special early bird price! SEE PICS IN OUR DESCRIPTION. \\u25cf Includes all previous rewards (1 Game Download, choice of T-Shirt or Hoodie).&quot;,&quot;limit&quot;:50,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1385856000,&quot;project_id&quot;:1004649506,&quot;remaining&quot;:13,&quot;backers_count&quot;:37,&quot;updated_at&quot;:1390946652},{&quot;id&quot;:1652330,&quot;minimum&quot;:150.0,&quot;reward&quot;:&quot;TEACHER KING HIPPO // You asked for it and here it is, the ultimate teacher package! 25 game downloads + 10 Sketch Pads + 25 Stickers + exclusive access to the educational portal + exclusive classroom 1-on-1 hour-long web cam session with the creators + \\&quot;King Hippo Mode\\&quot; badge for all 25 downloads, giving your classroom devices free downloads for life (see KING HIPPO MODE below). Must validate by sending us an email from your school address - anytime AFTER our Kickstarter is over. \\u25cf This package is not included with any other packages. Includes Beta Tester access.&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1385856000,&quot;project_id&quot;:1004649506,&quot;backers_count&quot;:7,&quot;updated_at&quot;:1371187227},{&quot;id&quot;:1596232,&quot;minimum&quot;:200.0,&quot;reward&quot;:&quot;KING HIPPO MODE // The \\&quot;King Hippo Mode\\&quot; badge on your profile, gives you access to lifetime upgrades for free, and other cool features we&#39;ll share with you only later. Also incudes the Exclusive Level Assets Pack for building levels that only \\&quot;King Hippo\\&quot; Mode users will have. \\u25cf Includes all previous rewards, including the Kaweco pencil, T-Shirt &amp; Hoodie (1 Game Download).&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1385856000,&quot;project_id&quot;:1004649506,&quot;backers_count&quot;:11,&quot;updated_at&quot;:1399744513},{&quot;id&quot;:1652287,&quot;minimum&quot;:250.0,&quot;reward&quot;:&quot;GAME BOX + ART BOOK // The ultimate fan collectible, we&#39;ll create an actual Nintendo-style game box of \\&quot;Ninja Fury\\&quot;, our first Pixel Press level + a finely-printed art book featuring behind the scenes photos and artwork from the creation of Pixel Press.  \\u25cf Includes all previous rewards $200 and less, including King Hippo, the Kaweco pencil, T-Shirt &amp; Hoodie (1 Game Download).&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1385856000,&quot;project_id&quot;:1004649506,&quot;backers_count&quot;:3,&quot;updated_at&quot;:1371593280},{&quot;id&quot;:1596237,&quot;minimum&quot;:250.0,&quot;reward&quot;:&quot;THE SILVER BALLROOM LAUNCH PARTY // We&#39;re keeping our launch party for real and local. Join us at The Silver Ballroom, St. Louis&#39; own pinball bar, where you&#39;ll enjoy a night of free music, food, drinks, and unlimited pinball action. Space is limited (88 people), so if you want in, this is your ticket! 21 and up only. Transportation not included. Package includes ticket for you and a guest.  \\u25cf Includes all previous rewards $100 and less, choice of T-Shirt or Hoodie and the Kaweco pencil.&quot;,&quot;limit&quot;:30,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1380585600,&quot;project_id&quot;:1004649506,&quot;remaining&quot;:22,&quot;backers_count&quot;:8,&quot;updated_at&quot;:1371214973},{&quot;id&quot;:1596233,&quot;minimum&quot;:300.0,&quot;reward&quot;:&quot;FIRST 100 LEVEL DESIGN // Already thinking of level ideas? Get the First 100 Level Design Token, giving you the privilege of being one of the exclusive first 100 users to upload a user submitted level (includes a \\&quot;First 100\\&quot; badge on your level and your profile) + Hand-signed sketch sheet signed by the entire Pixel Press team. + Your level will also featured in a special area of the Pixel Press app thanking you for your contribution. \\u25cf Includes all previous rewards $200 and less, including King Hippo, the Kaweco pencil, T-Shirt &amp; Hoodie (1 Game Download).&quot;,&quot;limit&quot;:100,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1385856000,&quot;project_id&quot;:1004649506,&quot;remaining&quot;:96,&quot;backers_count&quot;:4,&quot;updated_at&quot;:1371187176},{&quot;id&quot;:1697980,&quot;minimum&quot;:300.0,&quot;reward&quot;:&quot;THE HI-IMPACT STUDENT WORKSHOP // \\u2028\\u2028Our student workshop package includes four (4) 1-hour long video-chat sessions where we explain to your students the principles of video game creation, including sketching &amp; level layout, testing, design, and audio. In these sessions we&#39;ll explain core concepts, show them how to build them in Pixel Press, and then answer questions - your class will also get special recognition on our website. Package includes 30 game downloads + 10 Sketch Pads + 30 Stickers + exclusive access to the educational portal + \\&quot;King Hippo Mode\\&quot; badge for all 30 downloads, giving your classroom devices free downloads for life (see KING HIPPO MODE). Must validate by sending us an email from your school address - anytime AFTER our Kickstarter is over. \\u25cf This package is not included with any other packages. Includes Beta Tester access. \\u25cf By participating in this package you are in not associating yourself with hi-impact, and your information and privacy will be maintained.&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1385856000,&quot;project_id&quot;:1004649506,&quot;backers_count&quot;:2,&quot;updated_at&quot;:1371194605},{&quot;id&quot;:1652311,&quot;minimum&quot;:500.0,&quot;reward&quot;:&quot;CUSTOM BOX ART + PRINT // We&#39;ll design a custom Nintendo-style game box, in our own Pixel Press style, printed and assembled just for you - themed after any concept you like (must be kid friendly!). Your Box Art will be featured in a special area of the Pixel Press app thanking you for your contribution. \\u25cf Includes all previous rewards $200 and less, including King Hippo, the Kaweco pencil, T-Shirt &amp; Hoodie (1 Game Download).&quot;,&quot;limit&quot;:10,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1385856000,&quot;project_id&quot;:1004649506,&quot;remaining&quot;:10,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1369018360},{&quot;id&quot;:1596297,&quot;minimum&quot;:1000.0,&quot;reward&quot;:&quot;YOUR THING IN THE GAME // You give us an idea of something you want in one of the featured game levels (such as your dog, but must be kid friendly!), plus you&#39;ll get original artwork of your design.  \\u25cf Includes all previous rewards $200 and less (1 Game Download).&quot;,&quot;limit&quot;:10,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1385856000,&quot;project_id&quot;:1004649506,&quot;remaining&quot;:7,&quot;backers_count&quot;:3,&quot;updated_at&quot;:1371186981},{&quot;id&quot;:1596236,&quot;minimum&quot;:2000.0,&quot;reward&quot;:&quot;FIRST 10 LEVEL DESIGN + 3D PRINT OF LEVEL + BOX ART + PRINT // For our most dedicated backers! You are involved in level design, creative, and audio direction of your own featured Pixel Press level, and you get to define the character design and story for that level. Because this will be one of the first 10 levels that comes with Pixel Press, it&#39;s the ultimate way to get involved early in the creation of Pixel Press! Your level will also be featured in a special area of the Pixel Press app thanking you for your contribution. PLUS We&#39;ll create a 3D print of your level and a custom Nintendo-style game box of your level design, all put in a shadowbox frame to show off your hard work. Brand promotion ok if kid friendly, and as long as we can do it with style. \\u25cf Includes all previous rewards $200 and less (1 Game Download) and the LAUNCH PARTY INVITE described above.&quot;,&quot;limit&quot;:10,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1385856000,&quot;project_id&quot;:1004649506,&quot;remaining&quot;:5,&quot;backers_count&quot;:5,&quot;updated_at&quot;:1371187153},{&quot;id&quot;:1596238,&quot;minimum&quot;:5000.0,&quot;reward&quot;:&quot;PIXEL PRESS AMBASSADOR // With this package you are going above and beyond to ensure that Pixel Press is created, and we want you to be a part of helping us drive the future development of the Pixel Press platform. We&#39;ll look forward to feedback from you on how to continue to drive both the education and \\&quot;fun-factor\\&quot; elements of the game, and to help us determine what genres to focus on in future Pixel Press editions. \\u25cf Includes all previous rewards $200 and less (1 Game Download) and the LAUNCH PARTY INVITE described above. Legal terms will apply, strictly does not include any ownership stake in the company.&quot;,&quot;limit&quot;:3,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1385856000,&quot;project_id&quot;:1004649506,&quot;remaining&quot;:2,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1371186931},{&quot;id&quot;:1611357,&quot;minimum&quot;:10000.0,&quot;reward&quot;:&quot;KONAMI CODE // You define the Pixel Press equivalent of the Konami Code. UUDDLRLRBA + START. For real. \\u25cf Includes all previous rewards $200 and less (1 Game Download) and the LAUNCH PARTY INVITE described above.&quot;,&quot;limit&quot;:1,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1385856000,&quot;project_id&quot;:1004649506,&quot;remaining&quot;:0,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1371187156}]}";
+    
+    
+    
+    
+    
+    
+    
+    
+    window.timeRemaining = function timeRemaining(epochTime){
+    
+      var diff = epochTime - ((new Date()).getTime() / 1000);
+      var num_unit = (diff < 60 && [Math.max(diff, 0), 'seconds']) ||
+        ((diff/=60) < 60 && [diff, 'minutes']) ||
+        ((diff/=60) < 72 && [diff, 'hours']) ||
+        [diff/=24, 'days'];
+    
+      // Round down
+      num_unit[0] = Math.floor(num_unit[0]);
+      // Singularize unit
+      if (num_unit[0] == 1) { num_unit[1] = num_unit[1].replace(/s$/,""); }
+    
+      return num_unit;
+    };
+  //]]>
+</script>
+
+<script>
+  //<![CDATA[
+    window.current_variants = ["discover_link_copy[explore]","rewards_hover[without_hover_text]"];
+  //]]>
+</script>
+
+
+</head>
+
+<body class="project projects not-mobile not-phone not-forces-video-controls not-tablet not-touchable not-native-app-request video_mode" id="projects_show">
+<div class="jGrowl center" id="growl_section"></div>
+<div class="NS_layouts__navigation" id="header">
+<div class="main-nav relative bg-white">
+<h1 class="no-margin ml1 mr2 left">
+<a href="/?ref=nav" class="block p2"><span class="ss-icon green-dark">KICK</span><span class="ss-icon green">STARTER</span>
+</a></h1>
+<ul class="primary-links list no-margin left">
+<li class="left discover-link full-height">
+<a href="/discover?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Explore</a>
+</li>
+<li class="left full-height mr2">
+<a href="/learn?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Start</a>
+</li>
+</ul>
+<ul class="list no-margin right" id="menu-sub">
+<li class="right"><a href="/login?ref=nav" class="block h5 bold p2 full-height border-box">Log in</a></li>
+<li class="right"><a href="/signup?ref=nav" class="block h5 bold p2 full-height border-box">Sign up</a></li>
+</ul>
+<div class="search-link pl2 full-height border-left border-box clip">
+<form accept-charset="UTF-8" action="/projects/search" class="search pt1 pb1 block relative form-simple" method="get"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /></div>
+<div class="field relative pl3">
+<span class="ss-icon ss-search grey-dark ml1 mt1 absolute"></span>
+<input class="input-search header full-width text" data-tracker-name="Header Live Search" id="term" name="term" placeholder="Search projects" type="text" />
+</div>
+</form>
+
+</div>
+<div class="clear"></div>
+</div>
+</div>
+<div class="hide pt4 pb4 bg-grey-light" id="search_results-wrap">
+<div class="relative container" id="search_results">
+<a class="close right grey-dark mr1"><span class="ss-icon ss-delete"></span></a>
+<h3 class="header ml1 clearfix"></h3>
+<div class="clip clearfix" id="search_results_panel"></div>
+<a class="prev arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateleft"></span>
+</a>
+<a class="next arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateright"></span>
+</a>
+</div>
+</div>
+
+
+
+
+<div class="Project-ended-true Project-is_starred- Project-state-successful Project1004649506_cxt border-top" id="main_content">
+<div id="running-board-wrap">
+<div class="container" id="running-board">
+<div id="project-header">
+<div class="NS_projects__running_board ml1 mr1 clearfix">
+<div class="title center py4">
+<h2 class="mb1">
+<a href="/projects/robinrath/pixel-press-draw-your-own-video-game" class="green-dark">Pixel Press: Draw Your Own Video Game</a>
+</h2>
+<p class="no-margin">
+<span class="creator">
+by
+<a href="/projects/robinrath/pixel-press-draw-your-own-video-game/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography" id="name">Robin @ Roundthird</a>
+</span>
+</p>
+</div>
+<ul class="project-nav list-inline left h5 bold mb1">
+<li class="mr2">
+<a href="/projects/robinrath/pixel-press-draw-your-own-video-game" class="grey-dark py1 current" id="home_nav">Home</a>
+</li>
+<li class="mr2">
+<span data-updates-count="37" id="updates_count">
+<a href="/projects/robinrath/pixel-press-draw-your-own-video-game/posts" class="grey-dark py1" id="updates_nav">Updates
+<span class="count h6 bg-grey-dark white">37</span>
+</a></span>
+</li>
+<li class="mr2">
+<a href="/projects/robinrath/pixel-press-draw-your-own-video-game/backers" class="grey-dark py1" id="backers_nav">Backers
+<span class="count h6 bg-grey-dark white"><data class="Project1004649506" data-format="number" data-value="2256" itemprop="Project[backers_count]">2,256</data></span>
+</a></li>
+<li>
+<span data-comments-count="409" id="comments_count">
+<a href="/projects/robinrath/pixel-press-draw-your-own-video-game/comments" class="grey-dark py1" id="comments_nav">Comments
+<span class="count h6 bg-grey-dark white"><data class="Project1004649506" data-format="number" data-value="408" itemprop="Project[comments_count]">408</data></span>
+</a></span>
+</li>
+</ul>
+<ul class="list-inline right h5 bold mb1">
+<li class="location mr2">
+<a href="/discover/places/st-louis-mo?ref=city" class="grey-dark"><span class="ss-icon ss-location margin-right"></span>
+St. Louis, MO
+</a></li>
+<li class="category" data-project-parent-category="Games">
+<a href="/discover/categories/games/video%20games?ref=category" class="grey-dark"><span class="ss-icon ss-tag margin-right"></span>
+Video Games
+</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+</div>
+<div class="bg-grey-light pb4" id="content-wrap">
+<div class="Project1004649506" data-conditions="[{&quot;!state&quot;:&quot;live&quot;}]" data-evaluation="true" data-render="&quot;&lt;div class=\&quot;NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-successful Project1004649506_cxt bg-grey container pb1 pt1\&quot;&gt;\n&lt;div class=\&quot;Project1004649506\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;successful&amp;quot;}]\&quot; data-evaluation=\&quot;true\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;Funded!&amp;lt;/b&amp;gt;\\nThis project was successfully funded &amp;lt;data class=\\&amp;quot;Project1004649506\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2013-06-14T00:59:00-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[deadline]\\&amp;quot;&amp;gt;on June 14, 2013&amp;lt;/data&amp;gt;.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;Funded!&lt;/b&gt;\nThis project was successfully funded &lt;data class=\&quot;Project1004649506\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-06-14T00:59:00-04:00&amp;quot;\&quot; itemprop=\&quot;Project[deadline]\&quot;&gt;on June 14, 2013&lt;/data&gt;.\n&lt;/p&gt;\n&lt;/div&gt;&lt;div class=\&quot;Project1004649506\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:[&amp;quot;started&amp;quot;,&amp;quot;submitted&amp;quot;]}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;THIS PROJECT IS NOT LIVE&amp;lt;/b&amp;gt;\\nThis is only a draft that the creator has chosen to share.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1004649506\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;suspended&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Suspended&amp;lt;/b&amp;gt;\\nFunding for this project was suspended &amp;lt;data class=\\&amp;quot;Project1004649506\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2013-06-14T00:59:00-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on June 14, 2013&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1004649506\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;canceled&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Canceled&amp;lt;/b&amp;gt;\\nFunding for this project was canceled by the project creator &amp;lt;data class=\\&amp;quot;Project1004649506\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2013-06-14T00:59:00-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on June 14, 2013&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1004649506\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;failed&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Unsuccessful&amp;lt;/b&amp;gt;\\nThis project\\u2019s funding goal was not reached on &amp;lt;time class=\\&amp;quot;js-adjust\\&amp;quot; data-format=\\&amp;quot;LL\\&amp;quot; datetime=\\&amp;quot;2013-06-14T00:59:00-04:00\\&amp;quot;&amp;gt;June 14, 2013&amp;lt;/time&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1004649506\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;purged&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;This project is purged and only visible to staff.&amp;lt;/b&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;/div&gt;\n&quot;"><div class="NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-successful Project1004649506_cxt bg-grey container pb1 pt1">
+<div class="Project1004649506" data-conditions="[{&quot;state&quot;:&quot;successful&quot;}]" data-evaluation="true" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;Funded!&lt;/b&gt;\nThis project was successfully funded &lt;data class=\&quot;Project1004649506\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-06-14T00:59:00-04:00&amp;quot;\&quot; itemprop=\&quot;Project[deadline]\&quot;&gt;on June 14, 2013&lt;/data&gt;.\n&lt;/p&gt;\n&quot;"><p class="no-margin">
+<b>Funded!</b>
+This project was successfully funded <data class="Project1004649506" data-format="distance_date" data-value="&quot;2013-06-14T00:59:00-04:00&quot;" itemprop="Project[deadline]">on June 14, 2013</data>.
+</p>
+</div><div class="Project1004649506" data-conditions="[{&quot;state&quot;:[&quot;started&quot;,&quot;submitted&quot;]}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;THIS PROJECT IS NOT LIVE&lt;/b&gt;\nThis is only a draft that the creator has chosen to share.\n&lt;/p&gt;\n&quot;"></div><div class="Project1004649506" data-conditions="[{&quot;state&quot;:&quot;suspended&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Suspended&lt;/b&gt;\nFunding for this project was suspended &lt;data class=\&quot;Project1004649506\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-06-14T00:59:00-04:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on June 14, 2013&lt;/data&gt;.\n&quot;"></div><div class="Project1004649506" data-conditions="[{&quot;state&quot;:&quot;canceled&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Canceled&lt;/b&gt;\nFunding for this project was canceled by the project creator &lt;data class=\&quot;Project1004649506\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-06-14T00:59:00-04:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on June 14, 2013&lt;/data&gt;.\n&quot;"></div><div class="Project1004649506" data-conditions="[{&quot;state&quot;:&quot;failed&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Unsuccessful&lt;/b&gt;\nThis project\u2019s funding goal was not reached on &lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;LL\&quot; datetime=\&quot;2013-06-14T00:59:00-04:00\&quot;&gt;June 14, 2013&lt;/time&gt;.\n&quot;"></div><div class="Project1004649506" data-conditions="[{&quot;state&quot;:&quot;purged&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;This project is purged and only visible to staff.&lt;/b&gt;\n&quot;"></div></div>
+</div>
+<div class="container bg-white border rounded py3 pl2 pr2" id="content">
+<div class="NS-projects-content">
+<div class="grid_11">
+<div data-has-video="true" id="video-section">
+<div class="video-player" data-dimensions="{&quot;width&quot;:640,&quot;height&quot;:480}" data-image="https://s3.amazonaws.com/ksr/projects/527466/photo-main.jpg?1397817441" data-video-tracker-url="https://www.kickstarter.com/projects/robinrath/pixel-press-draw-your-own-video-game/video/plays" data-video-url="https://d2pq0u4uni88oo.cloudfront.net/projects/527466/video-245674-h264_high.mp4" data-video="{&quot;id&quot;:245674,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/527466/video-245674-h264_high.mp4?2013&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/527466/video-245674-h264_base.mp4?2013&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/527466/video-245674-webm.webm?2013&quot;,&quot;width&quot;:640,&quot;height&quot;:360,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/527466/video-245674-h264_base.jpg?2013&quot;}" id="video_pitch"><video class="has_webm landscape" preload="none">
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/527466/video-245674-h264_high.mp4" type='video/mp4; codecs="avc1.64001E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/527466/video-245674-h264_base.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/527466/video-245674-webm.webm" type="video/webm"></source>
+You'll need an HTML5 capable browser to see this content.
+</video>
+<img alt="Photo-main" class="has_played_hide poster landscape" src="https://s3.amazonaws.com/ksr/projects/527466/photo-main.jpg?1397817441" />
+<div class="play_button_big play_button_dark absolute-center rounded has_played_hide">
+<span class="ss-icon ss-play"></span>
+Play
+</div>
+<div class="player_controls clearfix absolute-bottom mb2 rounded white bg-green-dark forces-video-controls_hide">
+<div class="left">
+<a class="button button_icon button_dark playpause play mr1">
+<span class="play ss-icon ss-play"></span>
+<span class="pause ss-icon ss-pause"></span>
+</a>
+<span class="time current_time h12 left">00:00</span>
+</div>
+<div class="right">
+<span class="time total_time h12 left mr1">00:00</span>
+<a class="left button button_icon button_icon_white volume">
+<span class="ss-icon ss-volume icon_volume_nudge"></span>
+<span class="ss-icon ss-highvolume"></span>
+</a>
+<div class="volume_container left">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+<a class="left button button_icon button_icon_white fullscreen">
+<span class="ss-icon ss-expand"></span>
+<span class="ss-icon ss-contract"></span>
+</a>
+</div>
+<div class="clip">
+<div class="progress_container pr1 pl1">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="buffer progress_bar_buffer"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div data-project-state="successful" id="about">
+<div class="NS_projects__project_share clearfix py2 pl1 pr1">
+<ul class="left list-inline no-margin h5 bold">
+<li class="facebook mr2">
+<a href="https://www.kickstarter.com/projects/robinrath/pixel-press-draw-your-own-video-game"><span class="ss-icon ss-social ss-facebook color-facebook"></span>
+<span class="color-facebook">Share</span>
+<span class="share_bubble"><div class="triangle grey"></div>
+<div class="triangle white"></div>
+<span class="count"></span></span>
+</a></li>
+<li class="twitter mr2">
+<a  href="https://twitter.com/intent/tweet?text=Pixel%20Press%3A%20Draw%20Your%20Own%20Video%20Game%20by%20Robin%20%40%20Roundthird&amp;via=kickstarter&amp;url=http://kck.st/YBDf7Y" rel="nofollow"><span class="ss-icon ss-social ss-twitter color-twitter"></span>
+<span class="color-twitter">Tweet</span>
+</a></li>
+<li class="embed">
+<a href="/projects/robinrath/pixel-press-draw-your-own-video-game/widget" class="remote_modal_dialog grey-dark" data-modal-title="Embed a widget on your site" data-tracker-name="Embed"><span class="ss-icon ss-navigateleft"></span>
+<span class="ss-icon ss-navigateright"></span>
+Embed
+</a></li>
+</ul>
+<ul class="right list-inline no-margin h5 bold">
+<li class="curate mr2">
+</li>
+<li class="remind">
+<div class="ajax-container" id="watching-widget">
+<div class="Project1004649506" data-conditions="[{&quot;is_starred&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div id=\&quot;unwatch\&quot;&gt;\n&lt;a href=\&quot;/projects/robinrath/pixel-press-draw-your-own-video-game/unwatch\&quot; class=\&quot;on\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"></div><div class="Project1004649506" data-conditions="[{&quot;!is_starred&quot;:true}]" data-evaluation="true" data-render="&quot;&lt;div id=\&quot;watch\&quot;&gt;\n&lt;a href=\&quot;/projects/robinrath/pixel-press-draw-your-own-video-game/watch\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;span class=\&quot;text\&quot;&gt;\n&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"><div id="watch">
+<a href="/projects/robinrath/pixel-press-draw-your-own-video-game/watch"><span class="ss-icon ss-star"></span>
+<span class="text">
+</span>
+</a></div>
+
+</div></div>
+</li>
+</ul>
+</div>
+
+<div class="short_blurb py2 pl1 pr1">
+<p class="h3">Pixel Press is an iOS &amp; Android app that lets you draw your own video game level (no code required!) and share it with others.</p>
+</div>
+<div class="full-description">
+<a href="http://www.pixelpressgame.com/order.php" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/robinrath/pixel-press-draw-your-own-video-game/assets/672763/edit" data-id="672763">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/672/763/930acdad4093e09babe0869e39f4f93b_large.png?1371183664"></figure>
+</div>
+</a><p><b>Thank you for supporting us!</b><br>To stay up to date with us after our campaign is over, visit us at <a href="http://pixelpressgame.com" target="_blank">pixelpressgame.com</a>, you can also <a href="http://www.pixelpressgame.com/order.php" target="_blank">click here to pre-order Pixel Press</a> using your credit card or PayPal account.</p>
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/robinrath/pixel-press-draw-your-own-video-game/assets/654146/edit" data-id="654146">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/654/146/d55972370ca23989cd463b8d65e3313e_large.png?1370614742"></figure>
+</div>
+<p>"Pixel Press appears to hit that sweet spot where technology, ambition and design come together to bring to life something you could once only <i>dream</i> about." <a href="http://kotaku.com/you-might-soon-be-able-to-draw-your-own-video-games-508790754" target="_blank">Kotaku</a></p><p>"Pixel Press could be very useful in educational classes where students learn computational thinking through game-making."</p><p>Erin Shaw<br>VAST K-12 STEM Outreach Specialist, Viterbi School of Engineering<br>Research Computer Scientist, Co-PI Pedagogical Games Project, Information Sciences Institute, University of Southern California</p><a href="https://plus.google.com/share?url=http://www.kickstarter.com/projects/robinrath/pixel-press-draw-your-own-video-game" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/robinrath/pixel-press-draw-your-own-video-game/assets/605366/edit" data-id="605366">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/605/366/f2dbf36cf0620041e2e34779ed116bb4_large.png?1369066971"></figure>
+</div>
+</a><div class="template asset" contenteditable="false" data-edit_url="/projects/robinrath/pixel-press-draw-your-own-video-game/assets/604981/edit" data-id="604981">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/604/981/d55972370ca23989cd463b8d65e3313e_large.png?1369057788"></figure>
+</div>
+<p>With the upcoming release of Pixel Press on iOS &amp; Android, you can create your own video game levels in just four easy steps - draw a level, take a picture, design it, play &amp; share. </p>
+<p>In the past, video games like <i>Super Mario Brothers</i> and <i>Metroid</i> were groundbreaking. Today, Pixel Press recreates the run and jump gaming experience, but in a completely new way. Don't just play a video game - create your own! Pixel Press is making video game creation accessible to everyone, with no coding required.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/robinrath/pixel-press-draw-your-own-video-game/assets/600491/edit" data-id="600491">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/600/491/bcc760ffb2a6f23bbd1a9111be59c194_large.png?1368860882"></figure>
+</div>
+
+
+
+<p><b>But it's not just about creating - it's also about experiencing what others have created. </b>If you're not in the mood to create, or just don't have the time, you can play levels designed by your friends or other members of the Pixel Press community. </p><p>As new designs are continuously uploaded by users, there will always be a new level to play and a new way to compete. With Pixel Press, it's not just about creating levels, it's about great interactive experiences, created by a community of people of all ages.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/robinrath/pixel-press-draw-your-own-video-game/assets/654153/edit" data-id="654153">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/654/153/751eba20a38b22b6aa75d4cac079376e_large.png?1370614867"></figure>
+</div>
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/robinrath/pixel-press-draw-your-own-video-game/assets/650525/edit" data-id="650525">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/650/525/9e5fab7c285cab42c90f6bf46ed0a4ae_large.png?1370498127"></figure>
+</div>
+
+
+
+
+
+
+<a href="http://www.fastcodesign.com/1672557/draw-your-own-mario-game-with-this-kickstarter-app" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/robinrath/pixel-press-draw-your-own-video-game/assets/601074/edit" data-id="601074">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/601/074/0069fe21d13b1f9ccce898fd8a5021c6_large.png?1368898144"></figure>
+</div></a>
+<a href="http://www.joystiq.com/2013/05/03/pixel-press-creates-games-from-your-drawings/" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/robinrath/pixel-press-draw-your-own-video-game/assets/601077/edit" data-id="601077">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/601/077/b8710f9244fdb1272a20ce4d133c09ad_large.png?1368898160"></figure>
+</div></a>
+<a href="http://www.theverge.com/2013/5/3/4297950/pixel-press-design-your-own-game-by-drawing-it" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/robinrath/pixel-press-draw-your-own-video-game/assets/601078/edit" data-id="601078">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/601/078/3bce407bf615238c34f910a65b45ac3a_large.png?1368898169"></figure>
+</div></a>
+<a href="http://www.nbcnews.com/technology/ingame/paper-pencil-make-you-game-designer-new-app-6C9775266" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/robinrath/pixel-press-draw-your-own-video-game/assets/601080/edit" data-id="601080">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/601/080/9f13c4eb1282bdfc97d939f1b1477ebe_large.png?1368898180"></figure>
+</div></a>
+
+
+
+
+
+<a href="http://pixelpressgame.tumblr.com/post/50749091021/pixelpress-press-praise-passion" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/robinrath/pixel-press-draw-your-own-video-game/assets/601096/edit" data-id="601096">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/601/096/ed0759744c7f656bc500bbfe0003d644_large.png?1368898642"></figure>
+</div>
+</a>
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/robinrath/pixel-press-draw-your-own-video-game/assets/612941/edit" data-id="612941">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/612/941/16114930ffea59c80229882d91cd1186_large.png?1369274306"></figure>
+</div><p>Pixel Press can be used as a <b>family</b> project, in <b>classrooms</b>, by <b>creative artists</b>, or as a hobby for an avid <b>gamer</b>.</p><p>But, let’s get more specific. Were you a fan of <i>Super Mario Brothers</i> and <i>Metroid</i> in the '80’s? Have you ever imagined what it would be like to create your own video game? Maybe you even used to draw video games like us? Are you generally an awesome person? <b>Then yeah, you’ll love Pixel Press. </b></p><div class="template asset" contenteditable="false" data-edit_url="/projects/robinrath/pixel-press-draw-your-own-video-game/assets/604257/edit" data-id="604257">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/604/257/80d8acb1b856993b16bf99e60a686261_large.png?1369021612"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/robinrath/pixel-press-draw-your-own-video-game/assets/604259/edit" data-id="604259">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/604/259/96f39b10fdddf3dd87da889f5f428fc4_large.png?1369021628"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/robinrath/pixel-press-draw-your-own-video-game/assets/604261/edit" data-id="604261">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/604/261/ff499ae9e9f07d303b0959794cfeb8ab_large.png?1369021643"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/robinrath/pixel-press-draw-your-own-video-game/assets/612945/edit" data-id="612945">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/612/945/0f23e86710c698f4623a77e5b9dc38ba_large.png?1369274327"></figure>
+</div>
+<p><b>How does it work?</b> With the Pixel Press video game level creator you are designing five floors of a video game level (Think Mario level 1-1, level 1-2, etc). Your hero will start at the bottom floor and attempt to overcome the obstacles you create to reach the elevator at the end of each floor to advance up to the next floor. Your objective is to create a level that is progressively more challenging from bottom to top. </p>
+<a href="http://pixelpressgame.com/assets/img/faq/designed-big.png" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/robinrath/pixel-press-draw-your-own-video-game/assets/612926/edit" data-id="612926">
+<figure><img alt="Click here to see this up close." class="fit" src="https://s3.amazonaws.com/ksr/assets/000/612/926/bc79d3b8cb36c959ba11bce072141aee_large.png?1369273994"><figcaption>Click here to see this up close.</figcaption></figure>
+</div>
+</a><p>Creating a level is a simple four step process - <b>draw, upload &amp; test, design, play &amp; share.</b> </p><div class="template asset" contenteditable="false" data-edit_url="/projects/robinrath/pixel-press-draw-your-own-video-game/assets/556501/edit" data-id="556501">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/556/501/5fbb4a019a9df40524c89d220cb337bc_large.png?1367379236"></figure>
+</div><p>Pixel Press uses a specially designed graph paper that you can print at home by <a href="http://pixelpressgame.com/sketchkit.php" target="_blank">downloading our FREE Sketch Kit (Printable PDF)</a> - any white paper works. Follow the instructions in the Sketch Kit to create the general terrain. Then, integrate hazard pits &amp; monkey bars, moving platforms, spikes &amp; barriers, as well as portals &amp; powerups using the simple to use shorthand system. <a href="http://pixelpressgame.com/assets/img/faq/sketchsample-big.jpg" target="_blank">Here</a> is a sample drawing.  A level drawing can be done in less than an hour, and faster once you get the hang of it.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/robinrath/pixel-press-draw-your-own-video-game/assets/556505/edit" data-id="556505">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/556/505/e453a319fafa8edb05eef3d47bb14e20_large.png?1367379333"></figure>
+</div><p><b>Finished drawing your level? </b>Use Pixel Press on your iOS device (iPhone, iPad, iPad mini, or iPod Touch) to snap a photo of your drawing. Pixel Press digitizes your drawing into a (wait for it....) playable video game! It’s MAGIC! </p><p>Now its time to figure out if you can beat the level you just created, by testing it. See if you made a mistake by playing through your level - if there is a error you can fix it right in the app. Is your level ready? Move on to the design phase.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/robinrath/pixel-press-draw-your-own-video-game/assets/556507/edit" data-id="556507">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/556/507/e47dfeb3274e0942a4a5d5373efd00e1_large.png?1367379355"></figure>
+</div>
+<p>Now it's time to make your level real by adding a design skin and music from our library, you can pick from different textures, colors, characters, music, sound effects, and more.  </p><p>Want to give your level a completely custom look and feel? Create your own skin and upload it to Pixel Press to make your video game truly unique. Watch the "drawing tutorial" video below to learn more. </p><div class="template asset" contenteditable="false" data-edit_url="/projects/robinrath/pixel-press-draw-your-own-video-game/assets/556509/edit" data-id="556509">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/556/509/c0016e56cd36784517caabadf342538d_large.png?1367379381"></figure>
+</div>
+<p>This is where Pixel Press gets social. Share your level with friends, family, classmates and co-workers to compete for the best times. In the mood to play instead of create? Search Pixel Press for levels created by others in the community and compete for Pixel Press street cred, or follow your favorite designers to get notifications when new levels are available. </p><p>The gameplay and social community Pixel Press fosters is as important as its ability to create levels, because if it's not fun, who cares?</p><p><i>So, is creating your own level really as cool as we make it sound? You bet. Let us show you:</i></p><div class="template asset" contenteditable="false" data-edit_url="/projects/robinrath/pixel-press-draw-your-own-video-game/assets/562644/edit" data-id="562644">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/562/644/eb592d5feeac6fa734ce1ad84c35d715_large.png?1367546721"></figure>
+</div><div class="template oembed" contenteditable="false" data-href="https://vimeo.com/65273306">
+<iframe src="//player.vimeo.com/video/65273306" width="639" height="359" frameborder="0" title="Pixel Press Walkthrough" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+</div><a href="http://pixelpressgame.com/sketchkit.php" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/robinrath/pixel-press-draw-your-own-video-game/assets/579321/edit" data-id="579321">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/579/321/079bc17592045b1feac44150bbf0ada1_large.png?1368142734"></figure>
+</div></a><div class="template asset" contenteditable="false" data-edit_url="/projects/robinrath/pixel-press-draw-your-own-video-game/assets/574587/edit" data-id="574587">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/574/587/0ffe8745631797c48c874cce86f23979_large.png?1367990146"></figure>
+</div>
+<p>Pixel Press is the creation of <a href="http://www.robinrath.com/" target="_blank">Robin Rath</a>, founder of <a href="http://www.roundthird.com/" target="_blank">Roundthird</a>, a software creation company based in St. Louis. Robin grew up in the '80's and was an avid fan of platformer video games, and as a 
+child he used to beat video games and then draw the ‘next’ level. This activity is what led to the idea of Pixel Press, and with inspiration from friends and family, started an effort to bring it to market beginning January 2013.</p><p>Robin released <a href="http://www.radial50.com/" target="_blank">Radial 50</a> in 2009, a game for the iPhone and has led many other software &amp; hardware development projects since. Over these last 3 months – while creating the Pixel Press brand strategy, creative materials and gathering feedback –  Robin has assembled a team of trusted developers and designers (and kids of all ages to test it!) who are working on the early stage prototype and ready to bring the Pixel Press platform to life. </p><p>Follow along with us on <a href="http://www.twitter.com/pixelpressgame/" target="_blank">Twitter</a>, <a href="http://www.facebook.com/pixelpressgame/" target="_blank">Facebook</a>, our <a href="http://pixelpressgame.tumblr.com/" target="_blank">blog</a> and on our website, <a href="http://www.pixelpressgame.com/" target="_blank">pixelpressgame.com</a>.</p><p><b>Why are we creating Pixel Press?</b>
+</p><p>We have been dreaming of creating our own video games since we were kids - drawing levels, imaging our characters navigating the obstacles, and sharing our ideas with friends. When we realized modern (and accessible) technology could turn game creation into something that even kids could do, we knew we had to make it happen. Pixel Press is exciting because users do not have to know how to write code, meaning everyday gamers can now become game level designers - and may eventually be inspired to take their skills to the next level and create entire games on their own.</p><p><b>Checkout <a href="https://vimeo.com/61302489" target="_blank">this video</a> (also below) for more footage of my friend Josh, brother Christian, and I playing games growing up, and some bonus "Michael Jackson" footage!</b></p><div class="template oembed" contenteditable="false" data-href="https://vimeo.com/61302489">
+<iframe src="//player.vimeo.com/video/61302489" width="639" height="359" frameborder="0" title="Growing Up Games" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+</div><p><b>We're a bit torn.</b> Are we building this for kids or for ourselves (the adults)? There's no clear answer, and there doesn't need to be, everybody enjoys great video games, no matter how trivial - because we can play them and enjoy them together.</p><p><b>Why are we raising money on Kickstarter?</b></p>
+<p>Over the last 3 months we've been focused heavily on testing Pixel Press conceptually with family, friends, kids and others in our industry. Based on that positive feedback, during this last month our development team has ramped up work on a prototype to lay the groundwork for the technology behind Pixel Press. </p><a href="http://www.pixelpressgame.com/beta/" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/robinrath/pixel-press-draw-your-own-video-game/assets/567967/edit" data-id="567967">
+<figure><img alt="Register to for the prototype queue by clicking here." class="fit" src="https://s3.amazonaws.com/ksr/assets/000/567/967/c97ccda46f4c30d0e634ad120fd4f495_large.png?1367786581"><figcaption>Register to for the prototype queue by clicking here.</figcaption></figure>
+</div>
+</a><p>We've begun by building a PAX-MAN (like PAC-MAN, no enemies,<i> maybe cherries</i>) game to keep things simple to start. Quickly we've learned that while it's absolutely possible to pull off the Pixel Press vision, we'll need to invest in creating our own optical character recognition (<a href="http://en.wikipedia.org/wiki/Optical_character_recognition" target="_blank">OCR</a>) software to make the level upload feature work well. </p><p><b>We're setting a goal of $100k </b>to help keep part of our development team focused on this key feature and to free up some of our budget to focus the rest of our team on world-class platformer gameplay and top-notch pixel artwork.</p><p>Raising money here on Kickstarter, rather than taking on outside investors or partnering with a game shop, will give us the flexibility we need to build Pixel Press as we see fit - fan first.</p>
+<p>So that's the story - and if we're so lucky to go beyond our $100k goal, we'll use those funds to build out more great features. See below for more information on our stretch goals.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/robinrath/pixel-press-draw-your-own-video-game/assets/603777/edit" data-id="603777">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/603/777/c7f78434fcc650debd20f828ec498234_large.png?1369008270"></figure>
+</div>
+<p>Pixel Press is excited to offer the following rewards to our backers. <b>For the full list and pricing see the column on the right. Also the chart below gives you a breakdown of all rewards per package.</b></p><div class="template asset" contenteditable="false" data-edit_url="/projects/robinrath/pixel-press-draw-your-own-video-game/assets/647455/edit" data-id="647455">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/647/455/37899ed4321958adeffd7a0d3d23cf38_large.png?1370409918"></figure>
+</div>
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/robinrath/pixel-press-draw-your-own-video-game/assets/600495/edit" data-id="600495">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/600/495/d55972370ca23989cd463b8d65e3313e_large.png?1368861180"></figure>
+</div>
+<p><b>Pixel Press Game Download</b></p><p><b>A </b><b>digital download of the Pixel Press game</b> for your iOS or Android device. See chart below for release timing.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/robinrath/pixel-press-draw-your-own-video-game/assets/612875/edit" data-id="612875">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/612/875/d2b3f3295917f4a21448b5e763970f44_large.png?1369273221"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<p>Be sure to check out our <b>TEACHERS</b> reward packages on the right that are the perfect for the classroom, including the 10 game download package, the 25 game download package, and the 30 game download package that comes with exclusive bonuses.</p><p><i>Game Download included with all rewards $10 and up, and all packages include an extra copy if you share Pixel Press on Twitter or Facebook (see package details).</i></p><p><i>See our <a href="http://www.kickstarter.com/projects/robinrath/pixel-press-draw-your-own-video-game#faq" target="_blank">FAQ</a> for more info on how to get your game download once Pixel Press is released, and for information on supported devices.</i></p><div class="template asset" contenteditable="false" data-edit_url="/projects/robinrath/pixel-press-draw-your-own-video-game/assets/604298/edit" data-id="604298">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/604/298/d55972370ca23989cd463b8d65e3313e_large.png?1369022239"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/robinrath/pixel-press-draw-your-own-video-game/assets/613040/edit" data-id="613040">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/613/040/e52c8162f1d1e638c05fcee30ff303e8_large.png?1369276154"></figure>
+</div>
+<p><b>Pixel Press Sketch Pad</b></p><p>The Pixel Press sketch sheets are always <a href="http://pixelpressgame.com/sketchkit.php" target="_blank">FREE to download and print (PDF)</a>, but this upgrade gets you a nicely packaged pre-printed <b>Pixel Press Sketch Pad </b>that includes level grids already printed on nice-heavy card stock to make it easier to draw. </p><p><i>Included with all rewards $25 and over, and a special Android version for our Android backers!</i></p><div class="template asset" contenteditable="false" data-edit_url="/projects/robinrath/pixel-press-draw-your-own-video-game/assets/562846/edit" data-id="562846">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/562/846/d55972370ca23989cd463b8d65e3313e_large.png?1367552868"></figure>
+</div>
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/robinrath/pixel-press-draw-your-own-video-game/assets/571080/edit" data-id="571080">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/571/080/595c65dbba5ce5c46a6b10967d13a54c_large.png?1367885200"></figure>
+</div>
+<p><b>Pixel Press Stickers</b><br>Everyone likes stickers, so get your official <b>Pixel Press sticker pack</b> with select rewards. Size and shapes may vary from what you see above.</p><p><i>Included with all rewards $35 and over.</i></p><div class="template asset" contenteditable="false" data-edit_url="/projects/robinrath/pixel-press-draw-your-own-video-game/assets/562851/edit" data-id="562851">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/562/851/d55972370ca23989cd463b8d65e3313e_large.png?1367552948"></figure>
+</div>
+
+
+
+
+
+<p><b>In-Game Bonus Credits</b><br>Credits can be earned by playing Pixel Press to unlock features like levels and enhancements, new level artwork and advanced game features. Select packages include <b>Bonus Credits</b> that will be assigned to your Pixel Press user account.</p><p><i>Included in all rewards $75 and over. </i></p><p><i>ABOUT CREDITS: A lot of users are wondering if Pixel Press will be like many of the other games out there, where in-app purchasing dominates the experience. </i></p><p><i>Pixel Press will work something like this: Items like new level skin packs will be available periodically, you can buy these to use for your levels OR you can download them for free using the credits/points you earn for playing other peoples levels, submitting levels, etc. </i></p><div class="template asset" contenteditable="false" data-edit_url="/projects/robinrath/pixel-press-draw-your-own-video-game/assets/605379/edit" data-id="605379">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/605/379/57b76e9ddce5ea7e02edefdd77691358_large.png?1369067250"></figure>
+</div>
+
+
+
+
+
+
+<p><b>In-Game Badges</b><br><i>For our Kickstarter backers only;</i> select packages will include badges that will be displayed on your user account, including the Kickstarter <b>Backer Badge</b> for all backers showing you are part of the team that helped build Pixel Press, the <b>Beta Tester Badge, The "First 100" Badge, The "First 10" Badge</b> (more on these below) and the <b>King Hippo Mode Badge</b>, which gives you access to lifetime in-app upgrades for free, and other cool features we'll share with you only later. We've also recently added the <b>Android Badge</b> for users who will be downloading Pixel Press for Android.</p><p>Also, all backers will also be recognized nicely in the credits of the game and on our website (with your Twitter link if you want).</p><p><i>Available with various rewards.</i></p><div class="template asset" contenteditable="false" data-edit_url="/projects/robinrath/pixel-press-draw-your-own-video-game/assets/604308/edit" data-id="604308">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/604/308/d55972370ca23989cd463b8d65e3313e_large.png?1369022477"></figure>
+</div>
+<p><b>Posters, Art Book, "Ninja Fury" Game Box, and Custom Game Boxes</b><br>We've recently added new packages that include custom artwork created from the upcoming levels of Pixel Press. To celebrate our first level, "Ninja Fury" we've created this custom design poster and included it in most of our packages $40 and above.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/robinrath/pixel-press-draw-your-own-video-game/assets/604315/edit" data-id="604315">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/604/315/9087b1b813c6ac4d2c332fe1869b998f_large.png?1369022636"></figure>
+</div>
+<p>A number of our packages will also include rewards like a printed &amp; constructed version of the <i>Nintendo-style</i> game-box you see above, and digital &amp; printed art books that include artwork and photography from the Pixel Press creation process. A few of our packages even include the opportunity for you to help us design a custom game-box art just for you! </p><p><i>Note: Frame not included with poster.</i></p><div class="template asset" contenteditable="false" data-edit_url="/projects/robinrath/pixel-press-draw-your-own-video-game/assets/562853/edit" data-id="562853">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/562/853/d55972370ca23989cd463b8d65e3313e_large.png?1367552970"></figure>
+</div>
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/robinrath/pixel-press-draw-your-own-video-game/assets/612990/edit" data-id="612990">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/612/990/fa9656dee638195baf1d626f1ebeaf56_large.png?1369275381"></figure>
+</div>
+<p><b>Pixel Press T-Shirt &amp; Hoodie</b><br>Every Kickstarter needs swag right? We’ve got the <b>Official Pixel Press Hoodie &amp; T-Shirt </b>right here. We’re not cheapin' out either, this shirt will be of <i>American Apparel</i> brand (or similar, good quality) and in your choice of size (including women's) - the Hoodie will be embroidered. Colors and styles may vary, but will try to give everyone as many choices as possible.</p><p><i>Included in various rewards $50 and over. </i></p><div class="template asset" contenteditable="false" data-edit_url="/projects/robinrath/pixel-press-draw-your-own-video-game/assets/562854/edit" data-id="562854">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/562/854/d55972370ca23989cd463b8d65e3313e_large.png?1367552981"></figure>
+</div>
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/robinrath/pixel-press-draw-your-own-video-game/assets/613251/edit" data-id="613251">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/613/251/32ffefc53b8f1894cc8fb6aa4aa06ae1_large.png?1369283338"></figure>
+</div>
+<p><b>Pixel Press Kaweco-Brand Mechanical Pencil</b><br>For those looking for the ultimate Pixel Press experience, we're offering this amazingly crafted metal <b>Customized 0.5mm </b><a href="http://www.kaweco-pen.com/en/" target="_blank">Kaweco</a><b> Mechanical Pencil (see it <a href="http://www.pixelpressgame.com/assets/img/kaweco.jpg" target="_blank">here</a>) </b>- shipped from Germany, featuring a hand-applied Pixel Press logo. We're honored to be working directly with the Kaweco family on this reward. They've been making writing instruments since 1883 and are the perfect companion to a dedicated Pixel Press level creator.</p><p><i>Available with most rewards $125 and over.</i></p><div class="template asset" contenteditable="false" data-edit_url="/projects/robinrath/pixel-press-draw-your-own-video-game/assets/562856/edit" data-id="562856">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/562/856/d55972370ca23989cd463b8d65e3313e_large.png?1367552990"></figure>
+</div>
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/robinrath/pixel-press-draw-your-own-video-game/assets/571159/edit" data-id="571159">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/571/159/2f7986d2d6321b007ba58ca145c1e75e_large.png?1367886711"></figure>
+</div>
+<p><b>Digital Assets Pack</b><br>When we create the first group of levels that come with Pixel Press, we’ll have lots of 'left over' assets, including artwork, music and sound effects. You’ll get the entire<b> Collection of Digital Assets</b> wrapped up in neat package to use to build your level designs. </p><p><i>Available with all rewards $200 and over.</i></p><div class="template asset" contenteditable="false" data-edit_url="/projects/robinrath/pixel-press-draw-your-own-video-game/assets/562861/edit" data-id="562861">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/562/861/d55972370ca23989cd463b8d65e3313e_large.png?1367553014"></figure>
+</div>
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/robinrath/pixel-press-draw-your-own-video-game/assets/571182/edit" data-id="571182">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/571/182/a125cbe646501f5cf36109dc16d8336c_large.png?1367887249"></figure>
+</div>
+<p><b>Signed Sketch Sheet</b>For those that love to collect niche and limited items, a <b>Hand-Signed Sketch Sheet,</b> signed by the entire Pixel Press team will be delivered to you - with a custom message if you like. We're honored to be a part of your 'stuff'.</p><p><i>Available with all $300 rewards and up.</i></p><div class="template asset" contenteditable="false" data-edit_url="/projects/robinrath/pixel-press-draw-your-own-video-game/assets/567683/edit" data-id="567683">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/567/683/d55972370ca23989cd463b8d65e3313e_large.png?1367776418"></figure>
+</div>
+<p><b>"First 100" Exclusive Level Token &amp; Badge</b><br>A First 100 
+Level Token, giving you the privilege of being one of the first 100 
+users to upload a user submitted level (includes a <b>"First 100" Badge</b>
+ on your level and your profile). Everyone will know you were one of the 
+first people to upload a level to the Pixel Press community.</p><p><i>Available with the $300 reward package.</i></p><div class="template asset" contenteditable="false" data-edit_url="/projects/robinrath/pixel-press-draw-your-own-video-game/assets/562863/edit" data-id="562863">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/562/863/d55972370ca23989cd463b8d65e3313e_large.png?1367553029"></figure>
+</div><b>Your "Thing" in the Game</b><p>You give us an idea of something 
+you want in a game level (such as your 
+dog, but must be kid friendly!) and we'll add it to one of the featured 
+levels that comes with Pixel Press. This a great way to work with the Pixel Press design team directly. You'll also receive some of 
+the original concept art from the level design process.</p><p><i>Available with the $1,000 reward package.</i></p><div class="template asset" contenteditable="false" data-edit_url="/projects/robinrath/pixel-press-draw-your-own-video-game/assets/562865/edit" data-id="562865">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/562/865/d55972370ca23989cd463b8d65e3313e_large.png?1367553041"></figure>
+</div><p><b>Help us Create a "First 10" Release Level Design</b><br>Want to 
+have a hand in the design of the first 10 featured levels? You are 
+involved in level design, creative, and audio direction of your own 
+featured Pixel Press level, and choose character design and the story 
+for that level. This is the ultimate way to get involved early in the 
+creation of Pixel Press! </p><p>Backers will also have their profile associated with that level, and the <b>"First 10" Badge</b>
+ on their profile - plus get co-credits for creative direction of your 
+level. You'll also receive some of the original concept art from the 
+level design process.</p><p>Includes an invite to our launch party PLUS We'll create a 3D print of your level and a custom Nintendo-style game box of your level design, all put in a shadowbox frame to show off your hard work. </p><p>This package also includes our launch party invite, see below.</p><p><i>Available with the $2,000 reward package.</i></p><div class="template asset" contenteditable="false" data-edit_url="/projects/robinrath/pixel-press-draw-your-own-video-game/assets/562866/edit" data-id="562866">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/562/866/d55972370ca23989cd463b8d65e3313e_large.png?1367553049"></figure>
+</div>
+
+<p><b>Launch Party &amp; our Big Giveaways ($5,000 and $10,000 levels)</b><br>With these packages (and the $2,000 package) we’ll roll out the proverbial red carpet for you to join us at our launch party in St. Louis. You're a huge reason we've reached our Kickstarter goal and been able to build Pixel Press, and we want you to celebrate with you. You will also be recognized as a key contributor in the game credits.</p><p>Our launch party will be at <a href="http://thesilverballroom.com/" target="_blank">The Silver Ballroom</a>, St. Louis' own pinball bar, where you'll enjoy a night of free music, food, drinks, and unlimited pinball action. Space is limited (88 people), so if you want in, this is your ticket! 21 and up only. </p><p><i>Transportation not included. Package includes ticket for you and a guest. Location subject to change.</i></p><p>For our $5,000 backers, we want you to be a part of helping us drive the future development of the Pixel Press platform by becoming an Ambassador. We'll look forward to consulting with you on how to continue to drive both the education and "fun-factor" elements of Pixel Press into the future. </p><p>Also see the $10,000 limit <b>1</b> Konami Code package. Don't know what the Konami code is? See <a href="http://en.wikipedia.org/wiki/Konami_Code" target="_blank">here</a>.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/robinrath/pixel-press-draw-your-own-video-game/assets/600498/edit" data-id="600498">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/600/498/2885998f411a8bbe29160b9c77c3c0d0_large.png?1368861454"></figure>
+</div>
+<p>If we’re able to exceed our $100k funding goal, here are the milestones related to the awesome additional things we’ll build to make Pixel Press even better. </p><p><b>Want to help us reach these goals?</b> Please share and encourage your friends to contribute!</p><div class="template asset" contenteditable="false" data-edit_url="/projects/robinrath/pixel-press-draw-your-own-video-game/assets/654162/edit" data-id="654162">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/654/162/4054a22674478bdf4d51d99fb9f34ad1_large.png?1370615187"></figure>
+</div>
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/robinrath/pixel-press-draw-your-own-video-game/assets/654163/edit" data-id="654163">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/654/163/4b8517550e9a0f483196743baaa7b469_large.png?1370615214"></figure>
+</div>
+<p>Our first goal, if we hit $100k we’ll make Pixel Press available on iOS devices (phones and tablets) by December 2013 and on Android Devices (phones and tablets) by June of 2014. See the <a href="http://www.kickstarter.com/projects/robinrath/pixel-press-draw-your-own-video-game#faq" target="_blank">FAQ</a> for details on supported devices.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/robinrath/pixel-press-draw-your-own-video-game/assets/600505/edit" data-id="600505">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/600/505/113bc36ff3c2cd3ddca5f8ebae7e10b1_large.png?1368861957"></figure>
+</div>
+
+
+
+
+
+<p>If we’re able to reach the $125k point we’ll also make Pixel Press available on Android in December 2013, instead of June 2014. See the <a href="http://www.kickstarter.com/projects/robinrath/pixel-press-draw-your-own-video-game#faq" target="_blank">FAQ</a> for details on supported devices. </p><div class="template asset" contenteditable="false" data-edit_url="/projects/robinrath/pixel-press-draw-your-own-video-game/assets/600506/edit" data-id="600506">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/600/506/98d49488a9c69028e93c73b8720cfeac_large.png?1368861969"></figure>
+</div>
+
+
+
+
+
+
+<p>At the $150k point we’ll add in Support for <a href="http://www.ouya.tv/" target="_blank">Ouya</a>, include the ability for you to upload your own graphics, music and sound effects so you can make your own 100% unique levels, and we’ll also add in the ability for you to alter the physics of your character. With this feature you’ll be able to control things like how fast the player moves, how far they jump, and more  – with a slider! Also we’ll add in a wall-cling physic (think Ninja Gaiden) which means you will need to design your levels differently. Sweet.</p><p>
+
+We’re considering other controller options like <a href="http://www.thinkgeek.com/product/ecea/?cpg=cj&amp;ref=&amp;CJURL=&amp;CJID=2470763" target="_blank">iCade</a> - if we do this leaderboards will likely be separated by input style (screen vs. controller) to keep things fair.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/robinrath/pixel-press-draw-your-own-video-game/assets/612890/edit" data-id="612890">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/612/890/f1d63b7186bb527ea9ba6c418b636d1a_large.png?1369273562"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/robinrath/pixel-press-draw-your-own-video-game/assets/600507/edit" data-id="600507">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/600/507/7003458a2483fab26a977b540ea67f02_large.png?1368861983"></figure>
+</div>
+
+
+
+
+
+<p>At the $175k point we’ll add “Big Squares” Mode, an alternate mode  that will utilize a specially designed sketch sheet for younger kids - <b>with 9 times bigger squares! </b>This means the sketch sheet will be have less squares, giving designers more room to work within the space and ultimately making it easier to create levels. These levels will be more simple than their big brother levels, but will help kids get familiar with building levels in Pixel Press.</p><p>We want to release Big-Square Mode as soon as possible because we know how important it is for our younger gamers. This <i>will</i> be a part of Pixel Press’ future, but because of the additional development, we’re not sure when. Contributing now and helping us reach this stretch goal will guarantee that Big-Square Mode will happen by the end of 2013!</p><div class="template asset" contenteditable="false" data-edit_url="/projects/robinrath/pixel-press-draw-your-own-video-game/assets/600512/edit" data-id="600512">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/600/512/d8ec00117efb179772589aad94365d92_large.png?1368862290"></figure>
+</div>
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/robinrath/pixel-press-draw-your-own-video-game/assets/612894/edit" data-id="612894">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/612/894/aa61b42a2fa992e7bc3b03991b1da72d_large.png?1369273608"></figure>
+</div>
+<p>If we’re fortunate enough to start approaching this fund raising level, will start to talk with our backers about what things they would like to see us add .
+
+One our top supports, <a href="http://www.kickstarter.com/profile/1598776975" target="_blank">Griffin</a> is already working on a shared <i>Google Doc</i> right now that will capture all of the ideas from comments, emails, and messages from the web. We’ll be sharing that with you as we approach this goal, and then work on prioritizing these additions and adding them to new milestones if we hit this point.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/robinrath/pixel-press-draw-your-own-video-game/assets/579392/edit" data-id="579392">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/579/392/d993a703fb7341283203edeb377e1ecd_large.png?1368144766"></figure>
+</div>
+
+
+
+<p>On behalf of the entire Pixel Press team, thank you for taking the time to check us out. Your well wishes, contributions, and posts to Facebook and Twitter are what make us love what we do and will help us make Pixel Press a reality. Thank you!</p><div class="template asset" contenteditable="false" data-edit_url="/projects/robinrath/pixel-press-draw-your-own-video-game/assets/556603/edit" data-id="556603">
+<figure><img alt="Robin Rath" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/556/603/d0b20f629238271187018791881b46fa_large.png?1367381044"><figcaption>Robin Rath</figcaption></figure>
+</div>
+</div>
+<div id="risks">
+<h2 class="title grey-dark mt6 mb4">
+<span>Risks and challenges</span>
+<a href="/help/faq/kickstarter%20basics#Acco" class="right normal h5" target="_blank">Learn about accountability on Kickstarter</a>
+<div class="divider clear"></div>
+</h2>
+<p><p>Our most unique challenges deal with building the optical character recognition (OCR) system described above. There is a potential for lengthy quality assurance testing and related adjustments that must be made that could cause timeline delays, however our efforts to this point have left us feeling positive about the road ahead.</p>
+
+<p>We’re estimating release of Pixel Press in approximately 6 months from the end of our Kickstarter (December 2013). At this point in our progress, we are confident in the estimated delivery timeline.</p>
+
+<p>===</p>
+
+<p>If you have any questions - please feel free to email me at <a href="mailto:robin@pixelpressgame.com" rel="nofollow">robin@pixelpressgame.com</a> - will get back to you as soon as I can.</p>
+
+<p>Our website is pixelpressgame.com</p></p>
+</div>
+</div>
+<div class="NS-projects-faqs" id="project-faqs">
+<h2 class="title grey-dark mt6 mb4">
+FAQ
+<div class="divider clear"></div>
+</h2>
+<ul class="faqs">
+<li class="faq" id="project_faq_55602">
+<div class="faq-question">
+<a href="#project_faq_55602" name="project_faq_55602">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">When will Pixel Press be available?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>If we are successful in our $100k fundraising goal, Pixel Press will be available for iOS no later than December 2013 and for Android in June 2014. If we reach the $125k stretch goal, Pixel Press will be available on both platforms by December 2013.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-05-20T10:28:18-04:00">Mon, May 20 2013 10:28 am EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_55612">
+<div class="faq-question">
+<a href="#project_faq_55612" name="project_faq_55612">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">How much will Pixel Press cost when it is available?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Pricing for Pixel Press will be established at a later date, however  it will likely consist of a combination of $0.00-$1.99 for a lite  version focused on playing limited levels, the full app which will be no  more than $9.99, and in-app purchases for upgrades.</p>
+
+<p>                               Not all upgrades will  be built around a  paid model, users will also be able to earn participation points to  unlock features, and some new features will be rolled out as part of  regular releases.</p>
+
+<p>The base Kickstarter package that includes the game is $10. This also includes our special &quot;Backer&quot; badge that displays on your account and the opportunity to get an extra download by simply sharing it with friends. See package for more details.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-05-18T03:38:10-04:00">Sat, May 18 2013 3:38 am EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_55613">
+<div class="faq-question">
+<a href="#project_faq_55613" name="project_faq_55613">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Can I draw the level on the device? How about my computer?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Are you one of the few that are not particularly interested in drawing? That&#39;s ok, we think you&#39;ll change you mind but we get the hesitation.</p>
+
+<p>Drawing will not be an &quot;in-app&quot; capability, however, one of our backers has suggested that drawing could be done on a computer, by opening the spreadsheet in Illustrator or Photoshop, drawing the design, and then uploading that file to the app. This is something we could probably easily support, or worst case you print it, and then take the picture of that.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-05-08T01:49:31-04:00">Wed, May 8 2013 1:49 am EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_55512">
+<div class="faq-question">
+<a href="#project_faq_55512" name="project_faq_55512">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Can the Teacher Package game downloads be Android &amp; iOS, can it be mixed &amp; matched?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Yes, we can give you any combination of Android &amp; iOS you prefer. These details will be sorted out after the campaign is complete.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-05-18T03:38:10-04:00">Sat, May 18 2013 3:38 am EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_55858">
+<div class="faq-question">
+<a href="#project_faq_55858" name="project_faq_55858">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">How does the &quot;extra download for sharing&quot; offer work?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>If you are a backer and share Pixel Press on Facebook or Twitter, you&#39;ll get an extra copy when the game is released, all you need to do is post a message to our Facebook wall (<a href="http://fb.com/pixelpressgame" rel="nofollow">http://fb.com/pixelpressgame</a>) or tweet with #pixelpress. </p>
+
+<p>A few people have asked how we are going to validate this. Once the campaign is over, when you are providing us with your contact information, we&#39;ll also collect your social account handles and just check to see if you posted during the campaign.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-05-09T23:02:49-04:00">Thu, May 9 2013 11:02 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_56746">
+<div class="faq-question">
+<a href="#project_faq_56746" name="project_faq_56746">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">What iOS and Android Devices will Pixel Press work with?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>We&#39;re actively working to best answer this question, here are the details we have to date.</p>
+
+<p>iOS: iPhone 4+, iPod Touch 4th Gen.+, iPad 2+, iPad Mini. The primary reason for limiting to newer devices is the camera capture quality, which is important for making Pixel Press work.</p>
+
+<p>Android: This is a more complex question. We don&#39;t want to rush to answering this question until we&#39;ve worked with Pixel Press on more devices.</p>
+
+<p>With that said, here is the current status update from our development team:</p>
+
+<p>===</p>
+
+<p>Android device support will be broken into 2 categories: </p>
+
+<p>1) Playing Levels.  Our aim will be to support every screen resolution and Android 1.6+.   </p>
+
+<p>2) Level Creation.  Given the need for a decent camera and also decent processing power on the device, we cannot yet say what devices we can support until we are further into development.  Again though, we will aim to provide the broadest support possible including older OS versions and lower screen resolutions whenever possible.  In building Pixel Press for Android, we want the barrier to entry to be minimal so that hopefully everyone can start using Pixel Press.</p>
+
+<p>We have a full range of devices for testing - over 15 different android devices which gives us a very nice cross spectrum for testing and that&#39;s what allowed our other apps to work on literally everything. We&#39;ll take a lot of time to streamline, optimize, and adapt. </p>
+
+<p>===</p>
+
+<p>More details will be listed here as we work with more devices.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-05-20T10:36:40-04:00">Mon, May 20 2013 10:36 am EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_56850">
+<div class="faq-question">
+<a href="#project_faq_56850" name="project_faq_56850">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">How will I get my game once Pixel Press is released?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Download the game to your device will be no different than downloading any app from your app store, and there will be no additional fees beyond your contribution on Kickstarter.</p>
+
+<p>To make this happen, We&#39;ll work directly with Apple and Google (Android) to identify the best way to get you your game - many successful Kickstarter projects before us have paved the way on how to distribute apps to their backers and we&#39;ll be following in their footsteps.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-05-19T23:16:46-04:00">Sun, May 19 2013 11:16 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_57202">
+<div class="faq-question">
+<a href="#project_faq_57202" name="project_faq_57202">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">I don&#39;t draw, can I just play?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Yes! Pixel Press is so much more than just creating video game levels. Whether you are creating levels or not, every level that is created by users can be uploaded to the community for you to play, rate, share and compete. You’ll be able to follow other level designers and browse top rated levels.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-05-22T21:49:22-04:00">Wed, May 22 2013 9:49 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_57203">
+<div class="faq-question">
+<a href="#project_faq_57203" name="project_faq_57203">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">How about Gameplay?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Pixel Press will always focus on great gameplay - we want to build the best possible platformer for mobile devices, and continually improve it based on your feedback. As we build Pixel Press, we’ll be getting input from our backers to make the Pixel Press platformer experience world-class.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-05-22T21:49:22-04:00">Wed, May 22 2013 9:49 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_57204">
+<div class="faq-question">
+<a href="#project_faq_57204" name="project_faq_57204">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">What is the biggest challenge of making Pixel Press come to life?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Challenges we&#39;ve run into include handling light-colored pencil marks and how those marks are photographed across a wide range of mobile devices. However, the most difficult challenge is accounting for a wide range of ages (kids to adults) who may have trouble staying in the lines. It&#39;s no simple task - but it&#39;s something we need to get right.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-05-22T21:49:22-04:00">Wed, May 22 2013 9:49 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_57880">
+<div class="faq-question">
+<a href="#project_faq_57880" name="project_faq_57880">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Will Pixel Press ever be available on PC (Windows), Mac or Linux?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>We hope so, if you are interested in seeing Pixel Press on these platforms please support us on Steam Greenlight at <a href="http://steamcommunity.com/sharedfiles/filedetails/?id=148818112" rel="nofollow">http://steamcommunity.com/sharedfiles/filedetails/&hellip;</a></p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-05-29T16:57:09-04:00">Wed, May 29 2013 4:57 pm EDT</time>
+</div>
+</div>
+</li>
+
+</ul>
+<div class="faq-ask-box">
+<a href="/projects/robinrath/pixel-press-draw-your-own-video-game/messages/new?message%5Bto%5D=robinrath&amp;mode=FAQ" class="button button_blue remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Ask a question about Pixel Press: Draw Your Own Video Game">Ask a question</a>
+
+</div>
+</div>
+
+<div class="mt4 ml1 mr1 mb2" id="report-issue-wrap">
+<a href="/login?then=%2Fprojects%2Frobinrath%2Fpixel-press-draw-your-own-video-game" class="button button_grey">Report this project to Kickstarter</a>
+</div>
+</div>
+<div class="NS-projects-rightcol grid_5" id="rightcol">
+<div class="NS_projects__ecom">
+<div class="digits_6 pb2 pl2 pt2" id="stats">
+<h5>
+<div class="num h48 no-margin" data-backers-count="2256" id="backers_count"><data class="Project1004649506" data-format="number" data-value="2256" itemprop="Project[backers_count]">2,256</data></div>
+<span><data class="Project1004649506" data-attr="backers_count" data-format="pluralize" data-value="2256" data-word="Backer">Backers</data></span>
+</h5>
+<h5>
+<div class="num h48 no-margin" data-goal="100000.0" data-percent-raised="1.0895086" data-pledged="108950.86" id="pledged">
+<data class="Project1004649506" data-currency="USD" data-format="shorter_money" data-precision="0" data-value="108950" data-without_code="true" itemprop="Project[pledged]">$108,950</data>
+<span class="money usd project_currency_code"></span>
+</div>
+pledged of
+<span class="money usd no-code">$100,000</span>
+goal
+</h5>
+<span data-duration="38.001481481481484" data-end_time="2013-06-14T00:59:00-04:00" data-hours-remaining="0" id="project_duration_data"></span>
+<div class="Project1004649506" data-conditions="[{&quot;!state&quot;:[&quot;canceled&quot;,&quot;suspended&quot;]}]" data-evaluation="true" data-render="&quot;&lt;h5 class=\&quot;poll \&quot; data-dynamic=\&quot;5\&quot; data-end_time=\&quot;2013-06-14T00:59:00-04:00\&quot; data-poll_url=\&quot;https://d2oher2uhvl0ur.cloudfront.net/projects/robinrath/pixel-press-draw-your-own-video-game/stats.json\&quot;&gt;\n&lt;div class=\&quot;num h48 no-margin\&quot;&gt;0&lt;/div&gt;\n&lt;span class=\&quot;text\&quot;&gt;seconds to go&lt;/span&gt;\n&lt;/h5&gt;\n&quot;"><h5 class="poll " data-dynamic="5" data-end_time="2013-06-14T00:59:00-04:00" data-poll_url="https://d2oher2uhvl0ur.cloudfront.net/projects/robinrath/pixel-press-draw-your-own-video-game/stats.json">
+<div class="num h48 no-margin">0</div>
+<span class="text">seconds to go</span>
+</h5>
+</div></div>
+<div class="Project1004649506" data-conditions="[{&quot;state&quot;:&quot;live&quot;},{&quot;!ended?&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;pr2 pl2\&quot; id=\&quot;pledge-wrap\&quot;&gt;\n&lt;a href=\&quot;/projects/robinrath/pixel-press-draw-your-own-video-game/pledge/new?clicked_reward=false\&quot; class=\&quot;button button_green button_box button_block\&quot; id=\&quot;button-back-this-proj\&quot; title=\&quot;Back this project\&quot;&gt;Back This Project &lt;small class=&#39;h6 normal block green-dark&#39;&gt;&lt;span class=\&quot;money usd \&quot;&gt;$1&lt;/span&gt; minimum pledge&lt;/small&gt;&lt;/a&gt;\n&lt;/div&gt;\n&quot;"></div><div class="Project1004649506" data-conditions="[{&quot;state&quot;:&quot;live&quot;}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;p2\&quot; id=\&quot;banner\&quot;&gt;\n&lt;p class=\&quot;tiny_type no-margin\&quot;&gt;\nThis project will be funded on\n&lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;llll z\&quot; datetime=\&quot;2013-06-14T00:59:00-04:00\&quot;&gt;Fri, Jun 14 2013 12:59 am EDT&lt;/time&gt;.\n&lt;/p&gt;\n&lt;/div&gt;\n&quot;"></div></div>
+
+<div class="NS_projects__rightcol_projectby bg-blue-light rounded">
+<div class="p2 clearfix">
+<div class="avatar inline-block align-middle">
+<a href="/projects/robinrath/pixel-press-draw-your-own-video-game/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography"><img alt="_528970_10150802994966585_1712979101_n.small" class="avatar-small" height="80" src="https://s3.amazonaws.com/ksr/avatars/528438/_528970_10150802994966585_1712979101_n.small.jpg?1367776317" width="80" />
+</a></div>
+<div class="creator-name inline-block align-middle ml1">
+<h6 class="mb1">Project by</h6>
+<h5 class="mb1">
+<a href="/projects/robinrath/pixel-press-draw-your-own-video-game/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">Robin @ Roundthird</a>
+</h5>
+<p class="location h6 bold mb1">
+<a href="/discover/places/st-louis-mo">St. Louis, MO</a>
+</p>
+</div>
+</div>
+<div class="creator-details pl2 pr2 pb1">
+<ul class="list-simple h5 mb1">
+<li class="projects">
+<span class="ss-icon ss-kickstarter grey-dark margin-right"></span>
+<span class="text">
+First created
+<span class="divider">&middot;</span>
+<a href="/profile/robinrath/backed" class="green-dark bold more-button remote_modal_dialog" data-modal-title="Projects backed by Robin @ Roundthird">18 backed</a>
+</span>
+</li>
+<li class="facebook-connected">
+<span class="ss-icon ss-facebook facebook color-facebook margin-right"></span>
+<span class="text">
+<a href="https://www.facebook.com/507201584" class="popup" target="_blank">Robin Rath</a>
+<span class="number h6">
+989
+friends
+</span>
+</span>
+
+</li>
+<li class="links">
+<span class="ss-icon ss-globe margin-right grey-dark"></span>
+<span class="text">
+<a href="http://www.pixelpressgame.com" class="popup" rel="nofollow" target="_blank">pixelpressgame.com</a>
+</span>
+</li>
+</ul>
+</div>
+<div class="footer center h5 bold clearfix rounded-bottom clip">
+<a href="/projects/robinrath/pixel-press-draw-your-own-video-game/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">See full bio</a>
+<a href="/projects/robinrath/pixel-press-draw-your-own-video-game/messages/new?message%5Bto%5D=robinrath" class="remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Send a message to Robin @ Roundthird">Contact me</a>
+
+</div>
+</div>
+
+<ul class="NS-projects-rightcol-rewards rounded clip list mt2" data-reward-count="23" id="what-you-get">
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$1</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+50 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>I HEART PIXEL PRESS // You want to show your support, and we are truly grateful! Exclusive access to project updates + a special VIDEO thanks of our team doing a remake of our childhood Michael Jackson dance! - see www.vimeo.com/robinrath/mj ● Included with all rewards.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-07-01">Jul 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$6</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+396 backers
+</span>
+<span class="bg-grey no-wrap pl1 pr1 sold-out">
+All gone!
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>PIXEL PRESS GAME EARLY BIRD  // A download of the game for iOS devices (iPod Touch, iPhone, iPad Mini &amp; iPad) at our special early bird price! Your option of Android (phone &amp; tablet) version if stretch goal reached. PLUS you will get the official &quot;Backer&quot; Badge on your profile showing you were here from the start. Thank you!  ● PLUS if you post a message to our Facebook wall (fb.com/pixelpressgame) or tweet with #pixelpress, you&#39;ll get an EXTRA copy for your little brother or sister.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-12-01">Dec 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$10</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1008 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>PIXEL PRESS GAME // A download of the game for iOS devices (iPod Touch, iPhone, iPad Mini &amp; iPad). Your option of Android (phone &amp; Tablet) version if stretch goal reached. PLUS you will get the official &quot;Backer&quot; Badge on your profile showing you we&#39;re here from the start. Thank you! ● PLUS if you post a message to our Facebook wall (fb.com/pixelpressgame) or Tweet with #pixelpress, you&#39;ll get an EXTRA copy for your little brother or sister.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-12-01">Dec 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$25</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+93 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>ANDROID BACKER // To celebrate our Android users! Game Download + Pre-Printed Sketch Pad with special Android Logo + the Android &quot;Backer&quot; Badge (both available with all packages at this level and above if you are an Android user) PLUS all users at all levels that choose the ANDROID Game Download will get a special playable Android Robot character to use in their levels!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-12-01">Dec 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $15 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$25</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+266 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>GAME &amp; SKETCH PAD // Game Download + Pre-Printed Sketch Pad (Sketch Pad delivered in Aug/Sept to give you extra time to create your levels!)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-12-01">Dec 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $15 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$35</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+125 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>GAME + STICKERS + EXTRA COPY // 2 Game Download (one for you, one for your little brother or sister) + Sketch Pad + Pixel Press STICKERS!!! ● Only this package includes 2x Game Downloads</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-12-01">Dec 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $15 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$40</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+76 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>TEACHER PACKAGE // Our special teacher package (cause teachers are awesome) includes 10 Game Downloads + 3 Sketch Pads + 10 Stickers + exclusive access to the educational portal (focusing on using Pixel Press in the classroom) on our website. Must validate by sending us an email from your school address - anytime AFTER our Kickstarter is over. ● This package is not included with any other packages.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-12-01">Dec 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $15 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$40</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+11 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>GAME + POSTER + DIGITAL ART BOOK  // Everything in the $25 Game &amp; Pad package plus our special &quot;Ryo the Ninja&quot; poster and our digital art book, a specially created eBook that includes behind-the-scenes photos and artwork from the creation of Pixel Press.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-12-01">Dec 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $15 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$50</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+39 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>T-SHIRT // The Pixel Press T-Shirt (Your choice on size, American Apparel brand, shipped in Aug/Sept) ● Includes all previous rewards (1 Game Download)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-12-01">Dec 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $15 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$75</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+34 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>OFFICIAL BETA TESTER // Invite to become a pre-release Tester (and get the official &quot;Beta Tester&quot; Badge on your profile), also gives you access to the exclusive message boards + Bonus Credits for downloading new level artwork and game features ● Includes all  previous rewards (1 Game Download)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-12-01">Dec 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $15 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$100</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+34 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>PIXEL PRESS THREADS // You can&#39;t wait for Pixel Press and are willing to throw $100 our way to make it happen. For real. This package includes everything previously (1 Game Download) plus our Pixel Press embroidered HOODIE and T-SHIRT (Your choice on size, American Apparel brand, shipped in Aug/Sept).</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-12-01">Dec 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $15 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$125</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+37 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(13 left of 50)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>THE KAWECO SPECIAL EARLY BIRD // Amazingly crafted, metal 0.5mm Kaweco Special mechanical pencil - shipped from Germany - featuring a hand-applied Pixel Press logo ($75 value, shipped in Aug/Sept), at our special early bird price! SEE PICS IN OUR DESCRIPTION. ● Includes all previous rewards (1 Game Download, choice of T-Shirt or Hoodie).</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-12-01">Dec 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $15 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$150</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+7 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>TEACHER KING HIPPO // You asked for it and here it is, the ultimate teacher package! 25 game downloads + 10 Sketch Pads + 25 Stickers + exclusive access to the educational portal + exclusive classroom 1-on-1 hour-long web cam session with the creators + &quot;King Hippo Mode&quot; badge for all 25 downloads, giving your classroom devices free downloads for life (see KING HIPPO MODE below). Must validate by sending us an email from your school address - anytime AFTER our Kickstarter is over. ● This package is not included with any other packages. Includes Beta Tester access.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-12-01">Dec 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $15 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$200</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+11 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>KING HIPPO MODE // The &quot;King Hippo Mode&quot; badge on your profile, gives you access to lifetime upgrades for free, and other cool features we&#39;ll share with you only later. Also incudes the Exclusive Level Assets Pack for building levels that only &quot;King Hippo&quot; Mode users will have. ● Includes all previous rewards, including the Kaweco pencil, T-Shirt &amp; Hoodie (1 Game Download).</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-12-01">Dec 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $15 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$250</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+8 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(22 left of 30)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>THE SILVER BALLROOM LAUNCH PARTY // We&#39;re keeping our launch party for real and local. Join us at The Silver Ballroom, St. Louis&#39; own pinball bar, where you&#39;ll enjoy a night of free music, food, drinks, and unlimited pinball action. Space is limited (88 people), so if you want in, this is your ticket! 21 and up only. Transportation not included. Package includes ticket for you and a guest.  ● Includes all previous rewards $100 and less, choice of T-Shirt or Hoodie and the Kaweco pencil.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-10-01">Oct 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$250</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+3 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>GAME BOX + ART BOOK // The ultimate fan collectible, we&#39;ll create an actual Nintendo-style game box of &quot;Ninja Fury&quot;, our first Pixel Press level + a finely-printed art book featuring behind the scenes photos and artwork from the creation of Pixel Press.  ● Includes all previous rewards $200 and less, including King Hippo, the Kaweco pencil, T-Shirt &amp; Hoodie (1 Game Download).</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-12-01">Dec 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $15 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$300</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+4 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(96 left of 100)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>FIRST 100 LEVEL DESIGN // Already thinking of level ideas? Get the First 100 Level Design Token, giving you the privilege of being one of the exclusive first 100 users to upload a user submitted level (includes a &quot;First 100&quot; badge on your level and your profile) + Hand-signed sketch sheet signed by the entire Pixel Press team. + Your level will also featured in a special area of the Pixel Press app thanking you for your contribution. ● Includes all previous rewards $200 and less, including King Hippo, the Kaweco pencil, T-Shirt &amp; Hoodie (1 Game Download).</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-12-01">Dec 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $15 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$300</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+2 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>THE HI-IMPACT STUDENT WORKSHOP //   Our student workshop package includes four (4) 1-hour long video-chat sessions where we explain to your students the principles of video game creation, including sketching &amp; level layout, testing, design, and audio. In these sessions we&#39;ll explain core concepts, show them how to build them in Pixel Press, and then answer questions - your class will also get special recognition on our website. Package includes 30 game downloads + 10 Sketch Pads + 30 Stickers + exclusive access to the educational portal + &quot;King Hippo Mode&quot; badge for all 30 downloads, giving your classroom devices free downloads for life (see KING HIPPO MODE). Must validate by sending us an email from your school address - anytime AFTER our Kickstarter is over. ● This package is not included with any other packages. Includes Beta Tester access. ● By participating in this package you are in not associating yourself with hi-impact, and your information and privacy will be maintained.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-12-01">Dec 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $15 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(10 left of 10)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>CUSTOM BOX ART + PRINT // We&#39;ll design a custom Nintendo-style game box, in our own Pixel Press style, printed and assembled just for you - themed after any concept you like (must be kid friendly!). Your Box Art will be featured in a special area of the Pixel Press app thanking you for your contribution. ● Includes all previous rewards $200 and less, including King Hippo, the Kaweco pencil, T-Shirt &amp; Hoodie (1 Game Download).</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-12-01">Dec 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $15 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$1,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+3 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(7 left of 10)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>YOUR THING IN THE GAME // You give us an idea of something you want in one of the featured game levels (such as your dog, but must be kid friendly!), plus you&#39;ll get original artwork of your design.  ● Includes all previous rewards $200 and less (1 Game Download).</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-12-01">Dec 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $15 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$2,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+5 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(5 left of 10)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>FIRST 10 LEVEL DESIGN + 3D PRINT OF LEVEL + BOX ART + PRINT // For our most dedicated backers! You are involved in level design, creative, and audio direction of your own featured Pixel Press level, and you get to define the character design and story for that level. Because this will be one of the first 10 levels that comes with Pixel Press, it&#39;s the ultimate way to get involved early in the creation of Pixel Press! Your level will also be featured in a special area of the Pixel Press app thanking you for your contribution. PLUS We&#39;ll create a 3D print of your level and a custom Nintendo-style game box of your level design, all put in a shadowbox frame to show off your hard work. Brand promotion ok if kid friendly, and as long as we can do it with style. ● Includes all previous rewards $200 and less (1 Game Download) and the LAUNCH PARTY INVITE described above.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-12-01">Dec 2013</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $15 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$5,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(2 left of 3)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>PIXEL PRESS AMBASSADOR // With this package you are going above and beyond to ensure that Pixel Press is created, and we want you to be a part of helping us drive the future development of the Pixel Press platform. We&#39;ll look forward to feedback from you on how to continue to drive both the education and &quot;fun-factor&quot; elements of the game, and to help us determine what genres to focus on in future Pixel Press editions. ● Includes all previous rewards $200 and less (1 Game Download) and the LAUNCH PARTY INVITE described above. Legal terms will apply, strictly does not include any ownership stake in the company.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-12-01">Dec 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$10,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+<span class="bg-grey no-wrap pl1 pr1 sold-out">
+All gone!
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>KONAMI CODE // You define the Pixel Press equivalent of the Konami Code. UUDDLRLRBA + START. For real. ● Includes all previous rewards $200 and less (1 Game Download) and the LAUNCH PARTY INVITE described above.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-12-01">Dec 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+</ul>
+
+<div class="p2" id="meta">
+<h5>Funding period</h5>
+<p class="tiny_type">
+<time class="js-adjust" data-format="ll" datetime="2013-05-07T00:56:52-04:00">May 7, 2013</time> - 
+<time class="js-adjust" data-format="ll" datetime="2013-06-14T00:59:00-04:00">Jun 14, 2013</time>
+(38 days)
+</p>
+</div>
+</div>
+
+</div>
+
+<a href="#" id="video_mode_tab" style="display: none;">
+View in Video Mode
+</a>
+
+</div>
+</div>
+
+
+</div>
+
+<div class="h5 bg-green-dark" id="mega-footer-wrap">
+<div class="bg-green-dark white full-height" id="footer-newsletter-signup">
+<div class="container py4">
+<div class="grid_8 prefix_4 suffix_4 center mt4">
+<h2>
+Eureka! You've found
+<br>
+our little secret.
+</h2>
+<p>Sign up for our Happening email for all the inside info about arts and culture in the Kickstarter universe and beyond.</p>
+<div class="newsletter_signup">
+<form accept-charset="UTF-8" action="/newsletters/happening/signup" class="overlabels" method="post"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /><input class="hidden" name="authenticity_token" type="hidden" value="/s5i77IDaupCxdqim7fK8xx5YTm4XDUXPVDgeUhnZsY=" /></div><input class="hidden" id="location" name="location" type="hidden" value="footer" />
+<textarea class="hide textarea" id="comment" name="comment">
+</textarea>
+<div class="field newsletter">
+<label class="overlabel z1 overlabel-newsletter">Email address</label>
+<input class="text" id="email" name="email" type="text" />
+</div>
+<input class="button button_green submit" name="commit" type="submit" value="Submit" />
+</form>
+
+</div>
+
+</div>
+</div>
+</div>
+<div class="container relative" id="mega-footer">
+<span class="scissors icon-scissors-1"></span>
+<div class="grid_16 alpha omega pt4 pb2" id="mega-footer-links">
+<div class="grid_4 link-group">
+<h5 class="white">About us</h5>
+<ul class="list">
+<li><a href="/year/2013/?ref=footer">2013 highlights</a></li>
+<li><a href="/year/2012?ref=footer">2012 highlights</a></li>
+<li><a href="/team?ref=footer">Who we are</a></li>
+<li><a href="/jobs?ref=footer">Jobs</a></li>
+<li><a href="/press?ref=footer">Press</a></li>
+<li><a href="/help/stats?ref=footer">Stats</a></li>
+<li><a href="/newsletters/weekly">Projects we love</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group">
+<h5><a href="/help?ref=footer" class="white">Help</a></h5>
+<ul class="list">
+<li><a href="/hello?ref=footer">What is Kickstarter?</a></li>
+<li><a href="/help?ref=footer">FAQ</a></li>
+<li><a href="/contact?ref=footer">Support</a></li>
+<li><a href="/help/school?ref=footer">Kickstarter School</a></li>
+<li><a href="/terms-of-use?ref=footer">Terms of Use</a></li>
+<li><a href="/privacy?ref=footer">Privacy Policy</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group alpha omega suffix_1">
+<h5 class="alpha"><a href="/discover/advanced?ref=footer" class="white">Discover</a></h5>
+<ul class="column column-0 grid_2 list">
+<li><a href="/discover/categories/art?ref=footer">Art</a></li>
+<li><a href="/discover/categories/comics?ref=footer">Comics</a></li>
+<li><a href="/discover/categories/dance?ref=footer">Dance</a></li>
+<li><a href="/discover/categories/design?ref=footer">Design</a></li>
+<li><a href="/discover/categories/fashion?ref=footer">Fashion</a></li>
+<li><a href="/discover/categories/film%20&amp;%20video?ref=footer">Film &amp; Video</a></li>
+<li><a href="/discover/categories/food?ref=footer">Food</a></li>
+</ul>
+<ul class="column column-1 grid_2 list">
+<li><a href="/discover/categories/games?ref=footer">Games</a></li>
+<li><a href="/discover/categories/music?ref=footer">Music</a></li>
+<li><a href="/discover/categories/photography?ref=footer">Photography</a></li>
+<li><a href="/discover/categories/publishing?ref=footer">Publishing</a></li>
+<li><a href="/discover/categories/technology?ref=footer">Technology</a></li>
+<li><a href="/discover/categories/theater?ref=footer">Theater</a></li>
+</ul>
+</div>
+<div class="grid_3 link-group">
+<h5 class="white">Hello</h5>
+<ul class="list">
+<li>
+<a href="https://twitter.com/kickstarter"><span class="ss-icon ss-social-regular ss-twitter"></span>
+Twitter
+</a></li>
+<li>
+<a href="https://www.facebook.com/Kickstarter"><span class="ss-icon ss-social-regular ss-facebook"></span>
+Facebook
+</a></li>
+<li>
+<a href="http://kickstarter.tumblr.com"><span class="ss-icon ss-social-regular ss-tumblr"></span>
+Tumblr
+</a></li>
+<li>
+<a href="http://instagram.com/kickstarter"><span class="ss-icon ss-social-regular ss-instagram"></span>
+Instagram
+</a></li>
+<li>
+<a href="https://vine.co/Kickstarter"><span class="ss-icon ss-social-regular ss-vine"></span>
+Vine
+</a></li>
+<li>
+<a href="/blog?ref=footer">Blog</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="grid_16 py4" id="mega-footer-bottom">
+<div class="logo left">
+<a href="/" class="grey-dark"><span class="ss-icon h3">KICKSTARTER</span>
+</a></div>
+<p class="right h5 grey-dark">
+&copy;
+2014
+Kickstarter, Inc.
+</p>
+</div>
+</div>
+</div>
+
+<script>
+  //<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    var analytics_vars = { google_analytics_id : "UA-7621056-1", logged_in : "false", social_user: "false" }
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.mixpanel_id = '75b1d24a516ecfc955eadfadc4910661';
+    window.mixpanel_debug = false;
+  //]]>
+</script>
+
+
+<noscript>
+<img alt="Quantcast" border="0" height="1" src="//secure.quantserve.com/pixel/p-34IbSpw2K94Sg.gif" style="display:none" width="1" />
+</noscript>
+
+
+<script>
+  //<![CDATA[
+    window.benchmark = (typeof window.performance == 'object' && typeof window.performance.mark == 'function');
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    (function (root) {
+      function instrument_function (original) {
+        return function () {
+          try {
+            return original.apply(this, arguments);
+          } catch (e) {
+            if (e.stack && root.Honeybadger) {
+              Honeybadger.notify(e, {
+                current_project : root.current_project,
+                current_user : root.current_user
+              });
+            }
+            throw(e);
+          }
+        };
+      }
+      root.instrument_function = instrument_function;
+    }(this));
+  //]]>
+</script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+
+<script>
+  //<![CDATA[
+    (function(){function c(a){this.local_start_time=new Date;this.settings={cookie_name:"request_time"};for(var b in a)this.settings[b]=a[b];this.get_remote_offset()}c.prototype.get_remote_offset=function(){this.cookie_value=this.read_cookie();var a=new Date(this.cookie_value);if(!this.cookie_value||"Invalid Date"===a.toString()){if(this.remote_offset=this.read_cookie("local_offset"))this.remote_offset=parseInt(this.remote_offset,10)}else this.remote_offset=a-this.local_start_time;"undefined"!==typeof this.remote_offset&& !isNaN(this.remote_offset)?(document.cookie="local_offset="+this.remote_offset+"; path=/",this.is_set=!0):this.is_set=!1};c.prototype.time_units=[["milliseconds",1],["seconds",1E3],["minutes",6E4],["hours",36E5],["days",864E5]];c.prototype.get_units_in_interval=function(a,b){var d=a.replace(/^\w/,function(d){return"get"+d.toUpperCase()});return b[d]()};c.prototype.milliseconds_in_day=function(a){"undefined"===typeof a&&(a=new Date);for(var b=0,d=this.time_units.length-2;0<=d;d--)b+=this.get_units_in_interval(this.time_units[d][0], a)*this.time_units[d][1];return b};c.prototype.milliseconds_in_interval=function(a,b){return this.milliseconds_in_day(b)%a};c.prototype.milliseconds_to_next_interval=function(a,b){return a-this.milliseconds_in_interval(a,b)};c.prototype.pluralize=function(a,b){1===b&&(a=a.replace(/s$/,""));return a};c.prototype.read_cookie=function(a){for(var b=window.document.cookie.split(";"),a=(a||this.settings.cookie_name)+"=",d=0;d<b.length;d++){for(var e=b[d];" "==e.charAt(0);)e=e.substring(1,e.length);if(0== e.indexOf(a))return b=e.substring(a.length,e.length),decodeURIComponent(b).replace(/\+/g," ")}return null};c.prototype.destroy_cookie=function(a){var b=new Date;a||(a=this.settings.cookie_name);b.setTime(b.getTime()-864E5);window.document.cookie=a+"=; expires="+b.toGMTString()+"; path=/"};c.prototype.get_remote_time=function(){var a=new Date,b=a.getTime()+this.remote_offset;return a=a.setTime(b)};window.ksr_page_clock=new c})(); (function(){function c(d,a,b){if(d){this.options={unit_base:{seconds:119,minutes:119,hours:72,days:0},end_phrase:d.getAttribute("data-word")||"to go",count_down:d.getAttribute("data-dynamic")||!1};for(k in b)this.options[k]=b[k];this.clock=a;this.time_units=this.clock.time_units.slice(1);this.element=d;this.clock.is_set&&this.attach()}}function a(){this.elements=[];this.attach()}var b=function(d,a){var b=a||window.document.body,c=d.split("."),g=c[c.length-1],c=1<c.length&&c[0]?c[0]:"*";if(window.document.getElementsByClassName)return b.getElementsByClassName(g); if(b.querySelectorAll)return b.querySelectorAll(d);for(var c=b.getElementsByTagName(c),h=[],i=0,f;f=c[i];i++)b=RegExp("(^|\\s)"+g+"(\\s|$)"),(""+f.className).match(b)&&h.push(f);return h};c.prototype.get_remaining_time=function(){var d=this.remote_end_time-this.clock.get_remote_time();0>d&&(d=0);return d};c.prototype.get_current_unit=function(){for(var d,a=0;a<this.time_units.length&&!(d=this.time_units[a],this.get_remaining_time()<=this.options.unit_base[d[0]]*d[1]);a++);return d};c.prototype.update_element= function(){var a=this.get_current_unit(),b=Math.floor(this.get_remaining_time()/a[1]);isNaN(b)||(this.number_element.innerHTML=b,this.text_element.innerHTML=this.clock.pluralize(a[0],b)+" "+this.options.end_phrase)};c.prototype.valid=function(){return!(!this.number_element||!this.text_element)};c.prototype.attach=function(){function a(){c.update_element();if(c.options.count_down&&0<c.get_remaining_time()){var b=c.get_current_unit();this.timeout=window.setTimeout(a,c.clock.milliseconds_to_next_interval(b[1]))}} var c=this;if(this.remote_end_time_string=this.element.getAttribute("data-end_time"))this.remote_end_time_string.match(/^\d+$/)?(this.remote_end_time=new Date,this.remote_end_time.setTime(this.remote_end_time_string)):this.remote_end_time=new Date(this.remote_end_time_string),this.number_element=b(".num",this.element)[0],this.text_element=b(".text",this.element)[0],this.element.ksr_page_timer=!0,this.valid()&&a()};c.prototype.cancel=function(){this.timeout&&clearTimeout(this.timeout)};a.prototype.loading= !0;a.prototype.stop_finding=function(){this.attach_timers();this.loading=!1;document.addEventListener?document.removeEventListener("DOMContentLoaded",this.stop_finding,!1):document.attachEvent&&"complete"===document.readyState&&document.detachEvent("onreadystatechange",this.stop_finding)};a.prototype.bind_ready=function(){var a=this,b=function(){a.stop_finding.call(a)};document.addEventListener?(document.addEventListener("DOMContentLoaded",b,!1),window.addEventListener("load",b,!1)):document.attachEvent&& (document.attachEvent("onreadystatechange",b),window.attachEvent("onload",b))};a.prototype.attach_timers=function(){for(var a=b("div.ksr_page_timer"),e=0;e<a.length;e++)a[e].ksr_page_timer||(new c(a[e],window.ksr_page_clock),this.elements.push(a[e]))};a.prototype.attach=function(){var a=this;this.bind_ready();(function(){a.attach_timers();a.loading&&window.setTimeout(function(){a.attach_timers()},200)})()};window.ProjectTimer=c;new a})();
+  //]]>
+</script>
+
+<script class="template" id="template-widgets__video_embed_code" type="text/x-tmpl-mustache"><iframe width="{{width}}" height="{{height}}" src="{{{path}}}" frameborder="0" scrolling="no"> </iframe>
+</script><script class="template" id="template-projects__baseball_card_tall" type="text/x-tmpl-mustache"><div class="project-card-wrap project-card-wrap-tall border bg-white rounded clip">
+  <div class="project-card relative project-live {{#successful?}}successful{{/successful?}}">
+    <div class="project-thumbnail pt1 pl1 pr1">
+      <a href="{{urls.web.project}}" target="">
+        <img alt="Photo-little" class="projectphoto-little" src="{{photo.little}}" class="fit">
+      </a>
+    </div>
+    <div class="project-card-interior p1 h6 grey-dark">
+      <h6 class="project-title">
+        <a href="{{urls.web.project}}" target="" class="green-dark">{{name}}</a>
+      </h6>
+      <p class="mb1 ellipsis">
+        by
+        {{creator.name}}
+      </p>
+      <p class="blurb">
+        {{blurb}}
+      </p>
+    </div>
+    <div class="absolute-bottom bg-white rounded-bottom">
+
+      {{#location}}
+        <ul class="p1 list project-meta no-margin h6">
+          <li class="ellipsis">
+            <a href="{{location.urls.web.discover}}" data-location="{{location_json}}" class="grey-dark">
+              <span class="ss-icon ss-location"></span>
+              <span class="location-name">{{location.displayable_name}}</span>
+            </a>
+          </li>
+        </ul>
+      {{/location}}
+
+      <div class="project-stats-wrap pb1 pl1 pr1">
+
+        {{#failed?}}
+          <div class='project-status project-failed h6'>
+            <strong> Funding Unsuccessful</strong><br />
+            <span class="grey-dark">Project ended on {{formatted_deadline}}</span>
+          </div>
+        {{/failed?}}
+
+        {{#canceled?}}
+          <div class='project-status project-canceled h6'>
+            <strong> Funding Canceled</strong><br />
+            <span class="grey-dark">Project canceled on {{formatted_state_changed_at}}</span>
+          </div>
+        {{/canceled?}}
+
+        {{#successful?}}
+          <div class='project-pledged-successful bg-green white h6 pl1 pr1 mb1'>
+            <strong>Successful!</strong>
+          </div>
+        {{/successful?}}
+
+        {{#live_or_successful?}}
+          {{#live?}}
+            <div class="project-pledged-wrap bg-grey clip mb1">
+              <div class="project-pledged bg-green full-height" style="width: {{percent_raised_to_100}}%"></div>
+            </div>
+          {{/live?}}
+          <ul class="project-stats list no-margin h6 no-wrap">
+            <li class="first funded inline-block mr1">
+              <strong class="block h6">{{percent_raised_rounded}}%</strong>
+              <span class="grey-dark">funded</span>
+            </li>
+            <li class="pledged inline-block mr1">
+              <strong class="block h6">{{currency_symbol}}{{formatted_money}}</strong>
+              <span class="grey-dark">pledged</span>
+            </li>
+            {{#successful?}}
+              <li class="last successful inline-block">
+                <strong class="block h6">Funded</strong>
+                <div class="deadline grey-dark">{{formatted_deadline}}</div>
+              </li>
+            {{/successful?}}
+            {{#live?}}
+              <li class="last ksr_page_timer inline-block" data-end_time="{{javascript_deadline}}">
+                <strong class="block h6">
+                  <div class="num">30</div>
+                </strong>
+                <div class="span text grey-dark" data-word="left">days to go</div>
+              </li>
+            {{/live?}}
+          </ul>
+        {{/live_or_successful?}}
+      </div>
+    </div>
+  </div>
+</div>
+
+{{#friends_backing?}}
+  <div class="friend_project_context">
+    <div class="friend_facepile">
+      {{#truncated_friends}}
+        <img src="{{avatar.thumb}}" class="{{#has_metadata?}}small{{/has_metadata?}}">
+      {{/truncated_friends}}
+    </div>
+    <p class="friend_namepile">
+      {{{escaped_sentence}}}
+    </p>
+  </div>
+{{/friends_backing?}}
+</script><script class="template" id="template-projects__video_mode" type="text/x-tmpl-mustache"><a href='#' id='video_mode_close' class='close_button z2'><span class='ss-icon ss-delete'></span></a>
+
+<div class='title_card z1 {{context_classes}}' style="display:none;">
+  <div class='interior'>
+    <h2 class='project_title normal_weight'>{{name}}</h2>
+    <p class='blurb'>{{blurb}}</p>
+    <nav class='bar'>
+      <a id='play_button' class='left play' href='#'>
+        <span class='play_active'>
+          <span class='ss-icon ss-play'></span>
+          Play
+        </span>
+        <span class='pause_active'>
+          <span class='ss-icon ss-pause'></span>
+          Pause
+        </span>
+      </a>
+      {{#logged_in}}
+        <div class='remind right'>
+          {{#if_not_starred}}
+            <a class='follow' href='{{urls.web.project}}/watch'><span class='ss-icon ss-star'></span></a>
+          {{/if_not_starred}}
+          {{#if_starred}}
+            <a class='unfollow' href='{{urls.web.project}}/unwatch'><span class='ss-icon ss-star active'></span></a>
+          {{/if_starred}}
+        </div>
+      {{/logged_in}}
+      <a class='right explore button button_green small' href='#'>Explore this project</a>
+    </nav>
+  </div>
+</div>
+
+<div class='channel_controls z1'>
+  <a href='#' class='{{#playlist_is_location}}selected {{/playlist_is_location}}location'>Something else near {{location.first_name}} <span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_featured}}selected {{/playlist_is_featured}}featured'>Something different<span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_category}}selected {{/playlist_is_category}}category'>Something else in {{category.name}} <span class='ss-icon ss-navigateright'></span></a>
+</div>
+
+<div class='project_video' style='background-image: url('{{photo.full}}')'>
+  <div class='cover'>
+    <video>
+      <source src='{{video.high}}' type='video/mp4'/>
+      <source src='{{video.webm}}' type='video/webm'/>
+    </video>
+  </div>
+</div>
+</script><script class="template" id="template-site__video_mode_fourohfour" type="text/x-tmpl-mustache"><section class='four_oh_four'>
+  <p class='big_type'>
+    Looks like you've reached the end of the line! <br />Check out <a class="another" href='#'>another channel</a> or <a href='/discover'>browse projects in discover</a>.
+  </p>
+</section>
+</script>
+
+<script id="schwamm_formatting_options" type="text/javascript">
+//<![CDATA[
+(function(){window.formatters = window.formatters || {}; var formatting_options = {"distance_date_intervals":[[5,"just now"],[29,"less than a minute ago"],[89,"1 minute ago"],[2640,"%m minutes ago"],[5340,"about 1 hour ago"],[82800,"about %h hours ago"],[147600,"1 day ago"],[604800,"%d days ago"],[15552000,"on %t"],[0,"on %y"]],"currency_symbol_mappings":{"AFN":"\u060b","ALL":"Lek","ARS":"$","AUD":"$","AWG":"\u0192","AZN":"\u043c\u0430\u043d","BAM":"KM","BBD":"$","BGN":"\u043b\u0432","BMD":"$","BND":"$","BOB":"$b","BRL":"R$","BSD":"$","BWP":"P","BYR":"p.","BZD":"BZ$","CAD":"$","CLP":"$","CNY":"\u00a5","COP":"$","CRC":"\u20a1","CUP":"\u20b1","CZK":"K\u010d","DKK":"kr","DOP":"RD$","EGP":"\u00a3","EUR":"\u20ac","FJD":"$","FKP":"\u00a3","GBP":"\u00a3","GIP":"\u00a3","GTQ":"Q","GYD":"$","HKD":"$","HNL":"L","HRK":"kn","HUF":"Ft","IDR":"Rp","ILS":"\u20aa","IRR":"\ufdfc","ISK":"kr","JMD":"J$","JPY":"\u00a5","KGS":"\u043b\u0432","KHR":"\u17db","KPW":"\u20a9","KRW":"\u20a9","KYD":"$","KZT":"\u043b\u0432","LAK":"\u20ad","LBP":"\u00a3","LKR":"\u20a8","LRD":"$","LTL":"Lt","LVL":"Ls","MKD":"\u0434\u0435\u043d","MNT":"\u20ae","MUR":"\u20a8","MXN":"$","MYR":"RM","MZN":"MT","NAD":"$","NGN":"\u20a6","NIO":"C$","NOK":"kr","NPR":"\u20a8","NZD":"$","OMR":"\ufdfc","PAB":"B/.","PEN":"S/.","PHP":"\u20b1","PKR":"\u20a8","PLN":"z\u0142","PYG":"Gs","QAR":"\ufdfc","RON":"lei","RSD":"\u0414\u0438\u043d.","RUB":"\u0440\u0443\u0431","SAR":"\ufdfc","SBD":"$","SCR":"\u20a8","SEK":"kr","SGD":"$","SHP":"\u00a3","SOS":"S","SRD":"$","SVC":"$","SYP":"\u00a3","THB":"\u0e3f","TRY":"TL","TTD":"TT$","TWD":"NT$","UAH":"\u20b4","USD":"$","UYU":"$U","UZS":"\u043b\u0432","VEF":"Bs","VND":"\u20ab","YER":"\ufdfc","ZAR":"R"},"currency_trailing_code_mappings":{"AUD":true,"CAD":true,"NZD":true,"USD":true},"currency_formats":["money","shorter_money"]}; for (key in formatting_options) {window.formatters[key] = formatting_options[key]};}());
+//]]>
+</script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("begin_base.js_tag");}
+  //]]>
+</script>
+<script src="https://d297h9he240fqh.cloudfront.net/assets/packages/base-45cdab84617ddfb8905b7cddc8500c19.js" type="text/javascript"></script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("end_base.js_tag");}
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    document.domain='kickstarter.com';
+  //]]>
+</script>
+
+<iframe height="0" id="api_xdreceiver" src="https://api.kickstarter.com/xdreceiver/85e6.html" style="display: none;" width="0"></iframe>
+
+
+
+<div id="fb-root"></div>
+<script>
+  //<![CDATA[
+    var channelUrl = window.location.protocol + "//" + window.location.host + "/channel.html",
+      skip_autologin = $('body').is('.skip_autologin');
+    
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId: window.fb_app_id,
+        channelUrl: channelUrl,
+        status: true,    // check login status
+        cookie: true,    // enable cookies to allow the server to access the session
+        xfbml: true,     // parse XFBML
+        logging: false   // turn off logging
+      });
+    
+      FB.getLoginStatus(function (response) {
+        if (response.status === 'connected') {
+          if (read_cookie("logout_from_fb")) {
+            FB.logout();
+            destroy_cookie("logout_from_fb");
+          } else if (!skip_autologin) {
+            $.get("/fb/autologin", {'fbsr': response.authResponse.signedRequest});
+          } else if (false && 0 == response.authResponse.userID) {
+            $.get("/fb/refresh", {'fbsr': response.authResponse.signedRequest});
+          }
+        } else {
+          if (read_cookie("logout_from_fb")) {
+            destroy_cookie("logout_from_fb");
+          }
+        }
+      })
+    
+      $(document).trigger('fb:loaded');
+    };
+    
+    
+    // Load the SDK Asynchronously
+    (function(d){
+      var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+      js = d.createElement('script'); js.id = id; js.async = true;
+      js.src = "//connect.facebook.net/en_US/all.js";
+      d.getElementsByTagName('head')[0].appendChild(js);
+    }(document));
+  //]]>
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,2617 @@
+<!DOCTYPE html>
+<html class="projects_show  fontface no-js" lang="en">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# kickstarter: http://ogp.me/ns/fb/kickstarter#">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-5.newrelic.com","errorBeacon":"jserror.newrelic.com","licenseKey":"b04b883ad2","applicationID":"11086","transactionName":"cFteRUULX1wHFhtIEFxeVVJDFxxDCgtD","queueTime":15,"applicationTime":1472,"ttGuid":"","agentToken":null,"agent":"js-agent.newrelic.com/nr-411.min.js"}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"Vw4BVEVSCQMIUg=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e){function n(t,e,n){n||(n={});for(var r=o[t],a=r&&r.length||0,s=n[i]||(n[i]={}),u=0;a>u;u++)r[u].apply(s,e);return s}function r(t,e){var n=o[t]||(o[t]=[]);n.push(e)}var o={},i="nr@context";e.exports={on:r,emit:n}},{}],2:[function(t){function e(t,e,n,i,s){return u?u-=1:r("err",[s||new UncaughtException(t,e,n)]),"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t(5),a=window.onerror,s=!1,u=0;t("loader").features.push("err"),window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(d){"stack"in d&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(4),s=!0)}i.on("fn-start",function(){s&&(u+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&u>0&&(u-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:4,3:3,4:6,5:1,6:14,handle:"D5DuLP",loader:"G9z0Bl"}],3:[function(t){function e(t){r.inPlace(t,["addEventListener","removeEventListener"],"-",n)}function n(t){return t[1]}var r=t(1),o=(t(3),t(2));if(e(window),"getPrototypeOf"in Object){for(var i=document;i&&!i.hasOwnProperty("addEventListener");)i=Object.getPrototypeOf(i);i&&e(i);for(var a=XMLHttpRequest.prototype;a&&!a.hasOwnProperty("addEventListener");)a=Object.getPrototypeOf(a);a&&e(a)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&e(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=e["nr@wrapped"]?t[1]=e["nr@wrapped"]:e["nr@wrapped"]=t[1]=r(e,"fn-"):"function"==typeof e.handleEvent&&r.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:15,2:1,3:14}],4:[function(t){var e=(t(3),t(1)),n=t(2);e.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=e(t[0],"fn-")})},{1:15,2:1,3:14}],5:[function(t){function e(t){var e=t[0];"string"==typeof e&&(e=new Function(e)),t[0]=n(e,"fn-")}var n=(t(3),t(1)),r=t(2);n.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",e)},{1:15,2:1,3:14}],6:[function(t){function e(){o.inPlace(this,s,"fn-")}function n(t,e){o.inPlace(e,["onreadystatechange"],"fn-")}function r(t,e){return e}var o=t(1),i=t(2),a=window.XMLHttpRequest,s=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];window.XMLHttpRequest=function(t){var n=new a(t);try{i.emit("new-xhr",[],n),o.inPlace(n,["addEventListener","removeEventListener"],"-",function(t,e){return e}),n.addEventListener("readystatechange",e,!1)}catch(r){try{i.emit("internal-error",r)}catch(s){}}return n},window.XMLHttpRequest.prototype=a.prototype,o.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",r),i.on("send-xhr-start",n),i.on("open-xhr-start",n)},{1:15,2:1}],7:[function(t){function e(){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;u>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,d="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=e(d);if(f&&(r.rxSize=f),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}t("loader").features.push("xhr");var o=t("handle"),i=t(1),a=t(5),s=["load","error","abort","timeout"],u=s.length,d=t(2);t(3),t(4),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var d=e(o);d&&(r.txSize=d)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",e)}catch(r){}}};for(var f=0;u>f;f++)n.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&e()},{1:8,2:11,3:3,4:6,5:1,handle:"D5DuLP",loader:"G9z0Bl"}],8:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e){var n=r[t];return n?n.apply(this,e):(o[t]||(o[t]=[]),void o[t].push(e))}var r={},o={};e.exports=n,n.queues=o,n.handlers=r},{}],11:[function(t,e){function n(t){if(!t||"object"!=typeof t&&"function"!=typeof t)return-1;if(t===window)return 0;if(o.call(t,"__nr"))return t.__nr;try{return Object.defineProperty(t,"__nr",{value:r,writable:!0,enumerable:!1}),r}catch(e){return t.__nr=r,r}finally{r+=1}}var r=1,o=Object.prototype.hasOwnProperty;e.exports=n},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&u&&u.body){p.proto="https"===c.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=u.createElement("script");e.src=p.proto+t.agent,u.body.appendChild(e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,u=s.document,d="addEventListener",f="attachEvent",c=(""+location).split("?")[0],p=e.exports={offset:i(),origin:c,features:[]};u[d]?(u[d]("DOMContentLoaded",o,!1),s[d]("load",n,!1)):(u[f]("onreadystatechange",r),s[f]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],14:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],15:[function(t,e){function n(t,e,r,s){function nrWrapper(){try{var n,a=u(arguments),d=this,f=r&&r(a,d)||{}}catch(c){i([c,"",[a,d,s],f])}o(e+"start",[a,d,s],f);try{return n=t.apply(d,a)}catch(p){throw o(e+"err",[a,d,p],f),p}finally{o(e+"end",[a,d,n],f)}}return a(t)?t:(e||(e=""),nrWrapper[n.flag]=!0,nrWrapper)}function r(t,e,r,o){r||(r="");var i,s,u,d="-"===r.charAt(0);for(u=0;u<e.length;u++)s=e[u],i=t[s],a(i)||(t[s]=n(i,d?s+r:r,o,s,t))}function o(t,e,n){try{s.emit(t,e,n)}catch(r){i([r,t,e,n])}}function i(t){try{s.emit("internal-error",t)}catch(e){}}function a(t){return!(t&&"function"==typeof t&&t.apply&&!t[n.flag])}var s=t(1),u=t(2);e.exports=n,n.inPlace=r,n.flag="nr@wrapper"},{1:1,2:14}]},{},["G9z0Bl",2,7]);</script><script>
+  //<![CDATA[
+    docElement = this.document.documentElement;
+    docElement.className=docElement.className.replace(/\bno-js\b/,'') + 'js';
+  //]]>
+</script>
+<title>Face of Mankind: Fall of the Dominion by Nexeon Technologies, Inc. &mdash; Kickstarter</title><script>
+  //<![CDATA[
+    window.report_errors = true;
+    window.honeybadger_configuration = {
+      api_key : "02ab109335c0dd1a93506d92f22217a7",
+      environment : "production",
+      component : "projects",
+      action : "show",
+      onerror : false
+    };
+  //]]>
+</script>
+
+
+<!--[if lt IE 9]>
+  <script src="//html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta content="telephone=no" name="format-detection">
+
+<!--[if !IE]> -->
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base-9f623ad5d021a188cfb2d68a0cdf7a7b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<!-- <![endif]-->
+<!--[if IE]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base_blessed-2640c72487552f9a2ef9f2620b4af860.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<!--[if lte IE 9]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_nine-a93fe10530f175f96c4078b7e070d7e1.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 8]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_eight-f75aeb274436f94a0d243774456b1c62.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 7]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie-c019c01acd3a96588b346cf577a3504f.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_seven-5a3d2cef660cd281fd844b04b2397dbb.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if IE 6]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_six-e4d3caf76e405fe19aee6ece8bda701b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<link href="https://d297h9he240fqh.cloudfront.net/favicon.png" rel="icon" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-precomposed-7b603dba7cf80e4acc57d94a991bebbd.png" rel="apple-touch-icon-precomposed" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-ipad-precomposed-3176f72977daf43dee3b0d348484dc01.png" rel="apple-touch-icon-precomposed" sizes="72x72" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-iphone4-precomposed-b93b70168cd8492c843d0fea873c7f83.png" rel="apple-touch-icon-precomposed" sizes="114x114" type="image/png">
+<link href="https://www.kickstarter.com/services/oembed?url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Fnexeon%2Fface-of-mankind-fall-of-the-dominion" rel="alternate" title="Face of Mankind: Fall of the Dominion Script Tag oEmbed" type="application/json+oembed">
+<link rel="alternate" type="application/atom+xml" title="Face of Mankind: Fall of the Dominion : Kickstarter" href="https://www.kickstarter.com/projects/nexeon/face-of-mankind-fall-of-the-dominion/posts.atom" />
+<meta property="twitter:app:id:iphone" content="596961532"/>
+<meta property="twitter:app:name:iphone" content="Kickstarter"/>
+<meta property="twitter:app:url:iphone" content="ksr://www.kickstarter.com/projects/nexeon/face-of-mankind-fall-of-the-dominion"/>
+<meta name="video_height" content="360"/>
+<meta name="video_width" content="640"/>
+<meta name="video_type" content="application/x-shockwave-flash"/>
+<meta name="title" content="Kickstarter &gt;&gt; Face of Mankind: Fall of the Dominion by Nexeon Technologies, Inc."/>
+<meta name="description" content="Nexeon Technologies, Inc. is raising funds for Face of Mankind: Fall of the Dominion on Kickstarter! 
+
+ A futuristic sandbox MMO ruled by the harsh realities of human nature. You forge your own future and rise to fame."/>
+<meta property="og:title" content="Face of Mankind: Fall of the Dominion"/>
+<meta property="og:type" content="kickstarter:project"/>
+<meta property="og:image" content="https://s3.amazonaws.com/ksr/projects/373053/photo-main.jpg?1397801075"/>
+<meta property="og:url" content="https://www.kickstarter.com/projects/nexeon/face-of-mankind-fall-of-the-dominion"/>
+<meta property="og:site_name" content="Kickstarter"/>
+<meta property="fb:app_id" content="69103156693"/>
+<meta property="og:description" content="A futuristic sandbox MMO ruled by the harsh realities of human nature. You forge your own future and rise to fame."/>
+<meta property="kickstarter:creator" content="https://www.kickstarter.com/profile/nexeon"/>
+<meta property="twitter:url:landing_url" content="https://www.kickstarter.com/projects/nexeon/face-of-mankind-fall-of-the-dominion"/>
+<meta property="twitter:card" content="2427656750:kickstarter_project"/>
+<meta property="twitter:site" content="@kickstarter"/>
+<meta property="twitter:site:id" content="16186995"/>
+<meta property="twitter:text:title" content="Face of Mankind: Fall of the Dominion"/>
+<meta property="twitter:text:artist" content="Nexeon Technologies, Inc."/>
+<meta property="twitter:text:backers" content="392"/>
+<meta property="twitter:text:pledged" content="$60,771 USD"/>
+<meta property="twitter:text:time" content="0 seconds"/>
+<meta property="twitter:text:location" content="Houston, TX"/>
+<meta property="twitter:image:location_image" content="https://d3mlfyygrfdi2i.cloudfront.net/b40e/pin.png"/>
+<meta property="twitter:text:description" content="A futuristic sandbox MMO ruled by the harsh realities of human nature. You forge your own future and rise to fame."/>
+<meta property="twitter:image:media" content="https://s3.amazonaws.com/ksr/projects/373053/photo-main.jpg?1397801075"/>
+<meta property="twitter:image:width" content="640"/>
+<meta property="twitter:image:height" content="480"/>
+<meta property="twitter:player:stream:url" content="https://d2pq0u4uni88oo.cloudfront.net/projects/373053/video-246008-h264_base.mp4"/>
+<meta property="twitter:player:stream:content" content="video/mp4"/>
+<meta property="twitter:player:url" content="https://www.kickstarter.com/projects/nexeon/face-of-mankind-fall-of-the-dominion/widget/video.html"/>
+<meta property="twitter:player:height" content="360"/>
+<meta property="twitter:player:width" content="640"/>
+<meta property="twitter:maxage" content="60"/>
+<meta property="og:video" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F373053%2Fvideo-246008-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F373053%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Nexeon+Technologies%2C+Inc.&amp;project_title=Face+of+Mankind%3A+Fall+of+the+Dominion&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Fnexeon%2Fface-of-mankind-fall-of-the-dominion&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:secure_url" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F373053%2Fvideo-246008-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F373053%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Nexeon+Technologies%2C+Inc.&amp;project_title=Face+of+Mankind%3A+Fall+of+the+Dominion&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Fnexeon%2Fface-of-mankind-fall-of-the-dominion&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:height" content="360"/>
+<meta property="og:video:width" content="640"/>
+<meta property="og:video:type" content="application/x-shockwave-flash"/>
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="4XnZx8FVufbr95TY8prI5ICoZFGqeGXQSG+cG2Qt8+k=" name="csrf-token" />
+<script type="text/javascript">
+  var _sift = _sift || [];
+  _sift.push(['_setAccount', '637102']);
+  _sift.push(['_setUserId', '']);
+  _sift.push(['_trackPageview']);
+
+  (function() {
+    function loadSift() {
+      var sift, s;
+      if (root.visitor_id) {
+        _sift.push(['_setSessionId', root.visitor_id]);
+      }
+      sift = document.createElement('script');
+      sift.type = 'text/javascript';
+      sift.async = true;
+      sift.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dtlilztwypawv.cloudfront.net/s.js';
+      s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(sift, s);
+    }
+    if (window.attachEvent) {
+      window.attachEvent('onload', loadSift);
+    } else {
+      window.addEventListener('load', loadSift, false);
+    }
+  })();
+</script>
+<link href="http://kck.st/Ys6cRv" rel="shorturl">
+<link href="https://www.kickstarter.com/projects/nexeon/face-of-mankind-fall-of-the-dominion" rel="canonical">
+<link href="https://s3.amazonaws.com/ksr/projects/373053/photo-med.jpg?1397801075" rel="image_src">
+<link href="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F373053%2Fvideo-246008-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F373053%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Nexeon+Technologies%2C+Inc.&amp;project_title=Face+of+Mankind%3A+Fall+of+the+Dominion&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Fnexeon%2Fface-of-mankind-fall-of-the-dominion&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque" rel="video_src">
+<script>
+  //<![CDATA[
+    window.current_checkout = "{&quot;id&quot;:0,&quot;domestic&quot;:null,&quot;amount&quot;:0.0,&quot;updated_at&quot;:0,&quot;created_at&quot;:0}";
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.current_ip = '94.209.101.212';
+    window.current_ip_datacenter = 'false';
+    window.enabled_features = {"elasticsearch":true,"security_history_read":true,"security_history_write":true,"advanced_discovery_es":true,"ios_crashlytics":true,"ios_mixpanel":true,"stories_veronica_mars":true,"veronica_mars_hero":true,"password_reset_banner":true};
+    window.fb_app_id = '69103156693';
+    
+    var _sf_startpt=(new Date()).getTime();
+    
+    window.current_project = "{&quot;id&quot;:1233510311,&quot;name&quot;:&quot;Face of Mankind: Fall of the Dominion&quot;,&quot;blurb&quot;:&quot;A futuristic sandbox MMO ruled by the harsh realities of human nature. You forge your own future and rise to fame.&quot;,&quot;goal&quot;:50000.0,&quot;pledged&quot;:60771.0,&quot;state&quot;:&quot;successful&quot;,&quot;slug&quot;:&quot;face-of-mankind-fall-of-the-dominion&quot;,&quot;disable_communication&quot;:false,&quot;country&quot;:&quot;US&quot;,&quot;currency&quot;:&quot;USD&quot;,&quot;currency_symbol&quot;:&quot;$&quot;,&quot;currency_trailing_code&quot;:true,&quot;deadline&quot;:1370528891,&quot;state_changed_at&quot;:1370528891,&quot;created_at&quot;:1350922282,&quot;launched_at&quot;:1367936891,&quot;backers_count&quot;:392,&quot;photo&quot;:{&quot;full&quot;:&quot;https://s3.amazonaws.com/ksr/projects/373053/photo-full.jpg?1397801075&quot;,&quot;ed&quot;:&quot;https://s3.amazonaws.com/ksr/projects/373053/photo-ed.jpg?1397801075&quot;,&quot;med&quot;:&quot;https://s3.amazonaws.com/ksr/projects/373053/photo-med.jpg?1397801075&quot;,&quot;little&quot;:&quot;https://s3.amazonaws.com/ksr/projects/373053/photo-little.jpg?1397801075&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/projects/373053/photo-small.jpg?1397801075&quot;,&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/projects/373053/photo-thumb.jpg?1397801075&quot;,&quot;1024x768&quot;:&quot;https://s3.amazonaws.com/ksr/projects/373053/photo-1024x768.jpg?1397801075&quot;,&quot;1536x1152&quot;:&quot;https://s3.amazonaws.com/ksr/projects/373053/photo-1536x1152.jpg?1397801075&quot;},&quot;creator&quot;:{&quot;id&quot;:1663021075,&quot;name&quot;:&quot;Nexeon Technologies, Inc.&quot;,&quot;slug&quot;:&quot;nexeon&quot;,&quot;avatar&quot;:{&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/4449344/Untitled-2-4.thumb.jpg?1350924653&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/4449344/Untitled-2-4.small.jpg?1350924653&quot;,&quot;medium&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/4449344/Untitled-2-4.medium.jpg?1350924653&quot;},&quot;urls&quot;:{&quot;web&quot;:{&quot;user&quot;:&quot;https://www.kickstarter.com/profile/nexeon&quot;},&quot;api&quot;:{&quot;user&quot;:&quot;https://api.kickstarter.com/v1/users/1663021075?signature=1399959174.76fe17f3a74893188d002eaecba9ae0342b69906&quot;}}},&quot;location&quot;:{&quot;id&quot;:2424766,&quot;name&quot;:&quot;Houston&quot;,&quot;slug&quot;:&quot;houston-tx&quot;,&quot;short_name&quot;:&quot;Houston, TX&quot;,&quot;displayable_name&quot;:&quot;Houston, TX&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:&quot;TX&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/houston-tx&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/houston-tx&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1399951825.9e825b6042fd1269bd0766057ad3ab1272db3fe4&amp;woe_id=2424766&quot;}}},&quot;category&quot;:{&quot;id&quot;:35,&quot;name&quot;:&quot;Video Games&quot;,&quot;slug&quot;:&quot;games/video games&quot;,&quot;position&quot;:7,&quot;parent_id&quot;:12,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;http://www.kickstarter.com/discover/categories/games/video%20games&quot;}}},&quot;urls&quot;:{&quot;web&quot;:{&quot;project&quot;:&quot;https://www.kickstarter.com/projects/nexeon/face-of-mankind-fall-of-the-dominion&quot;,&quot;project_short&quot;:&quot;http://kck.st/Ys6cRv&quot;,&quot;updates&quot;:&quot;https://www.kickstarter.com/projects/nexeon/face-of-mankind-fall-of-the-dominion/posts&quot;},&quot;api&quot;:{&quot;project&quot;:&quot;https://api.kickstarter.com/v1/projects/1233510311?signature=1399959174.186bc9ab54192f9af6126fa64861c9ee43bbee8d&quot;,&quot;comments&quot;:&quot;https://api.kickstarter.com/v1/projects/1233510311/comments?signature=1399959174.9e33c3059448ad4aceacfb7358e12bfcb00559c5&quot;,&quot;updates&quot;:&quot;https://api.kickstarter.com/v1/projects/1233510311/updates?signature=1399959174.853f131f55c7e811d27e1be59f5cd8a5f2668f72&quot;}},&quot;updated_at&quot;:1399323724,&quot;successful_at&quot;:1370528891,&quot;video&quot;:{&quot;id&quot;:246008,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/373053/video-246008-h264_high.mp4?2013&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/373053/video-246008-h264_base.mp4?2013&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/373053/video-246008-webm.webm?2013&quot;,&quot;width&quot;:640,&quot;height&quot;:360,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/373053/video-246008-h264_base.jpg?2013&quot;},&quot;comments_count&quot;:655,&quot;updates_count&quot;:27,&quot;rewards&quot;:[{&quot;id&quot;:0,&quot;minimum&quot;:1,&quot;reward&quot;:&quot;No Reward&quot;},{&quot;id&quot;:1265649,&quot;minimum&quot;:5.0,&quot;reward&quot;:&quot;We would like to thank you sincerely for your support in helping build this amazing sandbox multiplayer game. You will receive a SPECIAL in-game shirt for your character which will let everyone know that YOU helped this project succeed.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1391212800,&quot;project_id&quot;:1233510311,&quot;backers_count&quot;:25,&quot;updated_at&quot;:1371135621},{&quot;id&quot;:1265650,&quot;minimum&quot;:15.0,&quot;reward&quot;:&quot;You will receive an EXCLUSIVE in-game Kickstarter hat for your character plus SPECIAL ACCESS to the private DEVELOPER FORUM to help us improve the game. We will share exclusive information and our undying gratitude. You will also receive a unique icon on your in-game \\&quot;player file\\&quot; to show others that you are an original backer. \\u25cf Includes all the above rewards \\u25cf&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1391212800,&quot;project_id&quot;:1233510311,&quot;backers_count&quot;:27,&quot;updated_at&quot;:1371135621},{&quot;id&quot;:1294709,&quot;minimum&quot;:30.0,&quot;reward&quot;:&quot;\\u25cf EARLY BACKERS! \\u25cf You will receive EXCLUSIVE player name reservation before launch, ONE MONTH of PREMIUM GAMEPLAY, and EARLY ACCESS to the game&#39;s release \\u25cf Includes all the above rewards \\u25cf&quot;,&quot;limit&quot;:300,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1391212800,&quot;project_id&quot;:1233510311,&quot;remaining&quot;:181,&quot;backers_count&quot;:119,&quot;updated_at&quot;:1397317520},{&quot;id&quot;:1265651,&quot;minimum&quot;:35.0,&quot;reward&quot;:&quot;You will receive EXCLUSIVE player name reservation before launch, ONE MONTH of PREMIUM GAMEPLAY, and EARLY ACCESS to the game&#39;s release \\u25cf Includes all the above rewards (except limited tiers) \\u25cf&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1391212800,&quot;project_id&quot;:1233510311,&quot;backers_count&quot;:15,&quot;updated_at&quot;:1371135618},{&quot;id&quot;:1552727,&quot;minimum&quot;:55.0,&quot;reward&quot;:&quot;\\u25cf EARLY BACKERS! \\u25cf You will receive TWO ADDITIONAL MONTHS of PREMIUM GAMEPLAY (total 3 including previous tiers), a BOXED copy of the game, your name in the official game credits (the same credits the developers are in!), and special access to EXCLUSIVE FACTION EMBLEM components, allowing you to create unique faction emblems not available to normal accounts. You will also receive five sets of in-game STARTER GEAR which you can keep for yourself or give to your friends to help gain some footing in the large game universe. \\u25cf Includes all the above rewards (except limited tiers) \\u25cf&quot;,&quot;limit&quot;:50,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;20.0&quot;,&quot;estimated_delivery_on&quot;:1391212800,&quot;project_id&quot;:1233510311,&quot;remaining&quot;:23,&quot;backers_count&quot;:27,&quot;updated_at&quot;:1398320214},{&quot;id&quot;:1633640,&quot;minimum&quot;:60.0,&quot;reward&quot;:&quot;\\u25cf DIGITAL ONLY: This tier includes no physical rewards! \\u25cf You will receive TWO ADDITIONAL MONTHS of PREMIUM GAMEPLAY (total 3 including previous tiers), ADDITIONAL 600 FOUNDER COINS (Total 1,200 Coins), your name in the official game credits (the same credits the developers are in!), and special access to EXCLUSIVE FACTION EMBLEM components, allowing you to create unique faction emblems not available to normal accounts. You will also receive five sets of in-game STARTER GEAR which you can keep for yourself or give to your friends to help gain some footing in the large game universe. \\u25cf Includes all the above rewards (except limited tiers) \\u25cf&quot;,&quot;limit&quot;:1000,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1391212800,&quot;project_id&quot;:1233510311,&quot;remaining&quot;:975,&quot;backers_count&quot;:25,&quot;updated_at&quot;:1370535998},{&quot;id&quot;:1265652,&quot;minimum&quot;:60.0,&quot;reward&quot;:&quot;You will receive TWO ADDITIONAL MONTHS of PREMIUM GAMEPLAY (total 3 including previous tiers), a BOXED copy of the game, your name in the official game credits (the same credits the developers are in!), and special access to EXCLUSIVE FACTION EMBLEM components, allowing you to create unique faction emblems not available to normal accounts. You will also receive five sets of in-game STARTER GEAR which you can keep for yourself or give to your friends to help gain some footing in the large game universe. \\u25cf Includes all the above rewards (except limited tiers) \\u25cf&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;20.0&quot;,&quot;estimated_delivery_on&quot;:1391212800,&quot;project_id&quot;:1233510311,&quot;backers_count&quot;:2,&quot;updated_at&quot;:1370998771},{&quot;id&quot;:1633641,&quot;minimum&quot;:75.0,&quot;reward&quot;:&quot;\\u25cf DIGITAL ONLY: This tier includes no physical rewards! \\u25cf You will receive an ADDITIONAL 750 FOUNDER COINS (Total 1,500 Coins), a BRONZE icon next to your name in the in-game chat with a special forum name color and title to go with it, and your name will be shown in the game universe on the \\&quot;Revolutionary Wall\\&quot; in the hub of NYC - Brooklyn. \\u25cf Includes all the above rewards (except limited tiers) \\u25cf&quot;,&quot;limit&quot;:1000,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1391212800,&quot;project_id&quot;:1233510311,&quot;remaining&quot;:984,&quot;backers_count&quot;:16,&quot;updated_at&quot;:1370529865},{&quot;id&quot;:1265653,&quot;minimum&quot;:75.0,&quot;reward&quot;:&quot;You will receive a KICKSTARTER EXCLUSIVE Face of Mankind T-Shirt, a BRONZE icon next to your name in the in-game chat with a special forum name color and title to go with it, and your name will be shown in the game universe on the \\&quot;Revolutionary Wall\\&quot; in the hub of NYC - Brooklyn. \\u25cf Includes all the above rewards (except limited tiers) \\u25cf&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;25.0&quot;,&quot;estimated_delivery_on&quot;:1391212800,&quot;project_id&quot;:1233510311,&quot;backers_count&quot;:6,&quot;updated_at&quot;:1370557150},{&quot;id&quot;:1535786,&quot;minimum&quot;:100.0,&quot;reward&quot;:&quot;\\u25cf EARLY BACKERS! \\u25cf You will receive an upgrade to the SPECIAL EDITION BOXED copy of the game, an EXCLUSIVE POSTER, and a KICKSTARTER EXCLUSIVE WEAPON that does not decay and drops to storage on death. The attributes of this weapon will be balanced and not overpowered. You will also receive some more exclusive faction emblem components. \\u25cf Includes all the above rewards (except limited tiers) \\u25cf&quot;,&quot;limit&quot;:50,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;25.0&quot;,&quot;estimated_delivery_on&quot;:1391212800,&quot;project_id&quot;:1233510311,&quot;remaining&quot;:29,&quot;backers_count&quot;:21,&quot;updated_at&quot;:1396137806},{&quot;id&quot;:1633642,&quot;minimum&quot;:110.0,&quot;reward&quot;:&quot;\\u25cf DIGITAL ONLY: This tier includes no physical rewards! \\u25cf You will receive an ADDITIONAL 1,100 FOUNDER COINS (Total 2,200 Coins) and a KICKSTARTER EXCLUSIVE WEAPON that does not decay and drops to storage on death. You will also receive some more exclusive faction emblem components. \\u25cf Includes all the above rewards (except limited tiers) \\u25cf&quot;,&quot;limit&quot;:1000,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1391212800,&quot;project_id&quot;:1233510311,&quot;remaining&quot;:990,&quot;backers_count&quot;:10,&quot;updated_at&quot;:1371135621},{&quot;id&quot;:1265654,&quot;minimum&quot;:110.0,&quot;reward&quot;:&quot;You will receive an upgrade to the SPECIAL EDITION BOXED copy of the game, an EXCLUSIVE POSTER, and a KICKSTARTER EXCLUSIVE WEAPON that does not decay and drops to storage on death. The attributes of this weapon will be balanced and not overpowered. You will also receive some more exclusive faction emblem components. \\u25cf Includes all the above rewards (except limited tiers) \\u25cf&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;25.0&quot;,&quot;estimated_delivery_on&quot;:1391212800,&quot;project_id&quot;:1233510311,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1370529865},{&quot;id&quot;:1265655,&quot;minimum&quot;:150.0,&quot;reward&quot;:&quot;You will receive KICKSTARTER EXCLUSIVE ARMOR that does not decay and does not drop on death. Just as with the weapon, it will be balanced and not overpowered. You will also get a SILVER ICON next to your name in-game, showing players your higher level of dedication in the building of this project, as well as a matching forum name color and title to go with it. \\u25cf Includes all the above rewards (except limited tiers) \\u25cf&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;25.0&quot;,&quot;estimated_delivery_on&quot;:1391212800,&quot;project_id&quot;:1233510311,&quot;backers_count&quot;:12,&quot;updated_at&quot;:1371135621},{&quot;id&quot;:1265656,&quot;minimum&quot;:200.0,&quot;reward&quot;:&quot;You will receive a KICKSTARTER EXCLUSIVE PENTHOUSE APARTMENT in-game. Invite other players to your penthouse to show them how awesome you are as an original founder of the game. This penthouse comes with unlimited \\&quot;featured apartment\\&quot; status in the public apartment list, allowing you to use it for special events or to show off your unique apartment. (Of course, you can also keep it private and not on the public list too.) \\u25cf Includes all the above rewards (except limited tiers) \\u25cf&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;25.0&quot;,&quot;estimated_delivery_on&quot;:1391212800,&quot;project_id&quot;:1233510311,&quot;backers_count&quot;:21,&quot;updated_at&quot;:1370529865},{&quot;id&quot;:1640282,&quot;minimum&quot;:250.0,&quot;reward&quot;:&quot;\\u25cf DIGITAL ONLY: This tier includes no physical rewards! \\u25cf You will receive early FACTION NAME RESERVATION before launch (subject to approval), THREE ADDITIONAL MONTHS of PREMIUM GAMEPLAY (total 6 including previous tiers), an ADDITIONAL 2,500 FOUNDER COINS (Total 5,000 Coins), and a special BACKER RING to wear on the hand of your character in-game for all to see. You will also receive additional unique faction emblem components to make your faction even more unique. \\u25cf Includes all the above rewards (except limited tiers) \\u25cf (Please note that faction names reserved cannot be one of the faction names listed in any of the $2,500 reward tiers) \\u25cf&quot;,&quot;limit&quot;:1000,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1391212800,&quot;project_id&quot;:1233510311,&quot;remaining&quot;:989,&quot;backers_count&quot;:11,&quot;updated_at&quot;:1370870055},{&quot;id&quot;:1265657,&quot;minimum&quot;:250.0,&quot;reward&quot;:&quot;You will receive early FACTION NAME RESERVATION before launch (subject to approval), THREE ADDITIONAL MONTHS of PREMIUM GAMEPLAY (total 6 including previous tiers), and a special BACKER RING to wear on the hand of your character in-game for all to see. You will also receive additional unique faction emblem components to make your faction even more unique. \\u25cf Includes all the above rewards (except limited tiers) \\u25cf (Please note that faction names reserved cannot be one of the faction names listed in any of the $2,500 reward tiers).&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;25.0&quot;,&quot;estimated_delivery_on&quot;:1391212800,&quot;project_id&quot;:1233510311,&quot;backers_count&quot;:3,&quot;updated_at&quot;:1370529838},{&quot;id&quot;:1549928,&quot;minimum&quot;:300.0,&quot;reward&quot;:&quot;You will be able to NAME AN AREA of a world in the Face of Mankind universe such as a club or other location in-game (subject to approval). Other players can see this location name every time they enter or reference it. \\u25cf Includes all the above rewards (except limited tiers) \\u25cf&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;25.0&quot;,&quot;estimated_delivery_on&quot;:1391212800,&quot;project_id&quot;:1233510311,&quot;backers_count&quot;:6,&quot;updated_at&quot;:1371053251},{&quot;id&quot;:1541604,&quot;minimum&quot;:500.0,&quot;reward&quot;:&quot;You will receive an upgrade to the SPECIAL COLLECTOR&#39;S EDITION BOXED copy of the game, along with a CHARACTER FIGURINE unique to this Kickstarter campaign. You will also receive a special STATUE designed to look like your player character in an in-game hall of fame. This special statue will show your character&#39;s name so that all can know of how you helped found Face of Mankind: Fall of the Dominion. \\u25cf Includes all the above rewards (except limited tiers) \\u25cf&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;30.0&quot;,&quot;estimated_delivery_on&quot;:1391212800,&quot;project_id&quot;:1233510311,&quot;backers_count&quot;:2,&quot;updated_at&quot;:1371135618},{&quot;id&quot;:1695058,&quot;minimum&quot;:750.0,&quot;reward&quot;:&quot;\\u25cf DIGITAL ONLY: This tier includes no physical rewards! \\u25cf You will receive VIP ACCOUNT STATUS that allows you access to ALL PREMIUM GAMEPLAY FEATURES such as additional clothing, faction emblem components, apartment types, and other benefits. You will receive a GOLD ICON next to your name in-game, showing players your epic level of dedication in the building of this project, as well as a matching forum name color and title to go with it. You will also gain the ability to NAME AN ITEM in-game which others can see and use plus an ADDITIONAL 7,500 FOUNDER COINS (Total 15,000 Coins) \\u25cf Includes all the above rewards (except limited tiers) \\u25cf&quot;,&quot;limit&quot;:1000,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1391212800,&quot;project_id&quot;:1233510311,&quot;remaining&quot;:999,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1370529842},{&quot;id&quot;:1265658,&quot;minimum&quot;:750.0,&quot;reward&quot;:&quot;You will receive VIP ACCOUNT STATUS that allows you access to ALL PREMIUM GAMEPLAY FEATURES such as additional clothing, faction emblem components, apartment types, and other benefits. You will receive a GOLD ICON next to your name in-game, showing players your epic level of dedication in the building of this project, as well as a matching forum name color and title to go with it. You will also gain the ability to NAME AN ITEM in-game which others can see and use. \\u25cf Includes all the above rewards (except limited tiers) \\u25cf&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;30.0&quot;,&quot;estimated_delivery_on&quot;:1391212800,&quot;project_id&quot;:1233510311,&quot;backers_count&quot;:8,&quot;updated_at&quot;:1392532221},{&quot;id&quot;:1354185,&quot;minimum&quot;:1000.0,&quot;reward&quot;:&quot;You will get to name one of the GALACTIC SECTORS on the starmap whatever you would like (subject to approval). \\u25cf Includes all the above rewards (except limited tiers) \\u25cf&quot;,&quot;limit&quot;:2,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;30.0&quot;,&quot;estimated_delivery_on&quot;:1391212800,&quot;project_id&quot;:1233510311,&quot;remaining&quot;:0,&quot;backers_count&quot;:2,&quot;updated_at&quot;:1370529809},{&quot;id&quot;:1661648,&quot;minimum&quot;:1250.0,&quot;reward&quot;:&quot;You will receive an ADDITIONAL VIP ACCOUNT that allows you access to ALL PREMIUM GAMEPLAY FEATURES such as additional clothing, faction emblem components, apartment types, and other benefits. \\u25cf Includes all the above rewards (except limited tiers)&quot;,&quot;limit&quot;:75,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;30.0&quot;,&quot;estimated_delivery_on&quot;:1391212800,&quot;project_id&quot;:1233510311,&quot;remaining&quot;:74,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1370529812},{&quot;id&quot;:1625382,&quot;minimum&quot;:2500.0,&quot;reward&quot;:&quot;You will receive leadership of one of the original Face of Mankind storyline factions, the ASIAN COALITION, retaining the original unique faction logo as well as faction specific clothing. \\u25cf Includes all the above rewards (except limited tiers) \\u25cf&quot;,&quot;limit&quot;:1,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;30.0&quot;,&quot;estimated_delivery_on&quot;:1391212800,&quot;project_id&quot;:1233510311,&quot;remaining&quot;:1,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1368216447},{&quot;id&quot;:1625227,&quot;minimum&quot;:2500.0,&quot;reward&quot;:&quot;You will receive leadership of one of the original Face of Mankind storyline factions, AMERICAN ENTERPRISES, retaining the original unique faction logo as well as faction specific clothing. \\u25cf Includes all the above rewards (except limited tiers) \\u25cf&quot;,&quot;limit&quot;:1,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;30.0&quot;,&quot;estimated_delivery_on&quot;:1391212800,&quot;project_id&quot;:1233510311,&quot;remaining&quot;:0,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1370535408},{&quot;id&quot;:1549738,&quot;minimum&quot;:2500.0,&quot;reward&quot;:&quot;You will receive leadership of one of the original Face of Mankind storyline factions, the LAW ENFORCEMENT DEPARTMENT, retaining the original unique faction logo as well as faction specific clothing. \\u25cf Includes all the above rewards (except limited tiers) \\u25cf&quot;,&quot;limit&quot;:1,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;30.0&quot;,&quot;estimated_delivery_on&quot;:1391212800,&quot;project_id&quot;:1233510311,&quot;remaining&quot;:1,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1367869194},{&quot;id&quot;:1549739,&quot;minimum&quot;:2500.0,&quot;reward&quot;:&quot;You will receive leadership of one of the original Face of Mankind storyline factions, the FREEDOM DEFENSE CORPS, retaining the original unique faction logo as well as faction specific clothing. \\u25cf Includes all the above rewards (except limited tiers) \\u25cf&quot;,&quot;limit&quot;:1,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;30.0&quot;,&quot;estimated_delivery_on&quot;:1391212800,&quot;project_id&quot;:1233510311,&quot;remaining&quot;:0,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1371135618},{&quot;id&quot;:1549740,&quot;minimum&quot;:2500.0,&quot;reward&quot;:&quot;You will receive leadership of one of the original Face of Mankind storyline factions, the MERCENARIES OF THE BLOOD, retaining the original unique faction logo as well as faction specific clothing. \\u25cf Includes all the above rewards (except limited tiers) \\u25cf&quot;,&quot;limit&quot;:1,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;30.0&quot;,&quot;estimated_delivery_on&quot;:1391212800,&quot;project_id&quot;:1233510311,&quot;remaining&quot;:1,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1367869194},{&quot;id&quot;:1549741,&quot;minimum&quot;:2500.0,&quot;reward&quot;:&quot;You will receive leadership of one of the original Face of Mankind storyline factions, the BROTHERHOOD OF THE SHADOWS, retaining the original unique faction logo as well as faction specific clothing. \\u25cf Includes all the above rewards (except limited tiers) \\u25cf&quot;,&quot;limit&quot;:1,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;30.0&quot;,&quot;estimated_delivery_on&quot;:1391212800,&quot;project_id&quot;:1233510311,&quot;remaining&quot;:1,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1367869194},{&quot;id&quot;:1549742,&quot;minimum&quot;:2500.0,&quot;reward&quot;:&quot;You will receive leadership of one of the original Face of Mankind storyline factions, the GUARDIANS OF MANKIND, retaining the original unique faction logo as well as faction specific clothing. \\u25cf Includes all the above rewards (except limited tiers) \\u25cf&quot;,&quot;limit&quot;:1,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;30.0&quot;,&quot;estimated_delivery_on&quot;:1391212800,&quot;project_id&quot;:1233510311,&quot;remaining&quot;:1,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1367869194},{&quot;id&quot;:1549743,&quot;minimum&quot;:2500.0,&quot;reward&quot;:&quot;You will receive leadership of one of the original Face of Mankind storyline factions, VORTEX INCORPORATED, retaining the original unique faction logo as well as faction specific clothing. \\u25cf Includes all the above rewards (except limited tiers) \\u25cf&quot;,&quot;limit&quot;:1,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;30.0&quot;,&quot;estimated_delivery_on&quot;:1391212800,&quot;project_id&quot;:1233510311,&quot;remaining&quot;:1,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1367869194},{&quot;id&quot;:1549744,&quot;minimum&quot;:2500.0,&quot;reward&quot;:&quot;You will receive leadership of one of the original Face of Mankind storyline factions, EUROCORE, retaining the original unique faction logo as well as faction specific clothing. \\u25cf Includes all the above rewards (except limited tiers) \\u25cf&quot;,&quot;limit&quot;:1,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;30.0&quot;,&quot;estimated_delivery_on&quot;:1391212800,&quot;project_id&quot;:1233510311,&quot;remaining&quot;:1,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1367869194},{&quot;id&quot;:1549745,&quot;minimum&quot;:2500.0,&quot;reward&quot;:&quot;You will receive leadership of one of the original Face of Mankind storyline factions, the COLONIZATION AND MINING GUILD, retaining the original unique faction logo as well as faction specific clothing. \\u25cf Includes all the above rewards (except limited tiers) \\u25cf&quot;,&quot;limit&quot;:1,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;30.0&quot;,&quot;estimated_delivery_on&quot;:1391212800,&quot;project_id&quot;:1233510311,&quot;remaining&quot;:1,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1367869194},{&quot;id&quot;:1354244,&quot;minimum&quot;:3500.0,&quot;reward&quot;:&quot;You will receive a special PLATINUM ICON next to your name in-game, showing players your epic level of dedication in the building of this project, as well as a special forum name color and PRODUCER forum title to go with it. Also included is a CUSTOM SET OF CLOTHING (shirt and pants), your name displayed in a special PRODUCER section of the credits, and your name on a special PLATE near the Revolutionary Wall in NYC - Brooklyn. You will also receive an EXCLUSIVE PRODUCER CHARACTER BADGE above your name in-game as well as on your \\&quot;player file\\&quot; in-game. \\&quot;Custom\\&quot; content can be designed by yourself utilizing a template we provide you with, or designed by our own artists. Please note that all custom content is subject to approval. \\u25cf Includes all the above rewards (except limited tiers) \\u25cf&quot;,&quot;limit&quot;:5,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;30.0&quot;,&quot;estimated_delivery_on&quot;:1391212800,&quot;project_id&quot;:1233510311,&quot;remaining&quot;:4,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1370529855},{&quot;id&quot;:1403775,&quot;minimum&quot;:6000.0,&quot;reward&quot;:&quot;You will be given the opportunity to work alongside our art staff to design a UNIQUE, ONE OF A KIND CHARACTER in-game just for you. This includes a CUSTOM SET OF ARMOR, CUSTOM CLOTHING (shirt and pants), CUSTOM CHARACTER FACE, CUSTOM WEAPON, and CUSTOM HAT. You will receive a special PLATINUM ICON next to your name in-game, showing players your epic level of dedication in the building of this project, as well as a special forum name color and EXECUTIVE PRODUCER title on the forums. You will be listed in our credits as an EXECUTIVE PRODUCER right near the names of our very own game developers and team members. Your name will be featured on a special EXECUTIVE PRODUCER GOLDEN PLATE in NYC - Brooklyn, near the Revolutionary Wall. You will also receive an EXCLUSIVE EXECUTIVE PRODUCER CHARACTER BADGE above your name in-game as well as on your \\&quot;player file\\&quot; in-game. \\&quot;Custom\\&quot; content can be designed by yourself utilizing a template we provide you with, or designed by our own artists. Please note that all custom content is subject to approval. \\u25cf Includes all the above rewards (except limited tiers) \\u25cf&quot;,&quot;limit&quot;:5,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;30.0&quot;,&quot;estimated_delivery_on&quot;:1391212800,&quot;project_id&quot;:1233510311,&quot;remaining&quot;:3,&quot;backers_count&quot;:2,&quot;updated_at&quot;:1370607038},{&quot;id&quot;:1695038,&quot;minimum&quot;:10000.0,&quot;reward&quot;:&quot;You will be given the opportunity to work alongside our art staff to design a UNIQUE, ONE OF A KIND CHARACTER in-game just for you. This includes a CUSTOM SET OF ARMOR, CUSTOM CLOTHING (shirt and pants), CUSTOM CHARACTER FACE, CUSTOM WEAPON, and CUSTOM HAT. You will receive a special PLATINUM ICON next to your name in-game, showing players your epic level of dedication in the building of this project, as well as a special forum name color and EXECUTIVE PRODUCER title on the forums. You will be listed in our credits as an EXECUTIVE PRODUCER right near the names of our very own game developers and team members. Your name will be featured on a special EXECUTIVE PRODUCER GOLDEN PLATE in NYC - Brooklyn, near the Revolutionary Wall. You will also receive an EXCLUSIVE EXECUTIVE PRODUCER CHARACTER BADGE above your name in-game as well as on your \\&quot;player file\\&quot; in-game. \\&quot;Custom\\&quot; content can be designed by yourself utilizing a template we provide you with, or designed by our own artists. Please note that all custom content is subject to approval. \\u25cf We also invite you to a very special PAINTBALL event, where you can compete with us. Afterwards we invite you to a relaxed dinner to end this unforgettable day. \\u25cf Includes all the above rewards (except limited tiers) \\u25cf&quot;,&quot;limit&quot;:5,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1391212800,&quot;project_id&quot;:1233510311,&quot;remaining&quot;:5,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1370285065}]}";
+    
+    
+    
+    
+    
+    
+    
+    
+    window.timeRemaining = function timeRemaining(epochTime){
+    
+      var diff = epochTime - ((new Date()).getTime() / 1000);
+      var num_unit = (diff < 60 && [Math.max(diff, 0), 'seconds']) ||
+        ((diff/=60) < 60 && [diff, 'minutes']) ||
+        ((diff/=60) < 72 && [diff, 'hours']) ||
+        [diff/=24, 'days'];
+    
+      // Round down
+      num_unit[0] = Math.floor(num_unit[0]);
+      // Singularize unit
+      if (num_unit[0] == 1) { num_unit[1] = num_unit[1].replace(/s$/,""); }
+    
+      return num_unit;
+    };
+  //]]>
+</script>
+
+<script>
+  //<![CDATA[
+    window.current_variants = ["discover_link_copy[explore]","rewards_hover[without_hover_text]"];
+  //]]>
+</script>
+
+
+</head>
+
+<body class="project projects not-mobile not-phone not-forces-video-controls not-tablet not-touchable not-native-app-request video_mode" id="projects_show">
+<div class="jGrowl center" id="growl_section"></div>
+<div class="NS_layouts__navigation" id="header">
+<div class="main-nav relative bg-white">
+<h1 class="no-margin ml1 mr2 left">
+<a href="/?ref=nav" class="block p2"><span class="ss-icon green-dark">KICK</span><span class="ss-icon green">STARTER</span>
+</a></h1>
+<ul class="primary-links list no-margin left">
+<li class="left discover-link full-height">
+<a href="/discover?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Explore</a>
+</li>
+<li class="left full-height mr2">
+<a href="/learn?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Start</a>
+</li>
+</ul>
+<ul class="list no-margin right" id="menu-sub">
+<li class="right"><a href="/login?ref=nav" class="block h5 bold p2 full-height border-box">Log in</a></li>
+<li class="right"><a href="/signup?ref=nav" class="block h5 bold p2 full-height border-box">Sign up</a></li>
+</ul>
+<div class="search-link pl2 full-height border-left border-box clip">
+<form accept-charset="UTF-8" action="/projects/search" class="search pt1 pb1 block relative form-simple" method="get"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /></div>
+<div class="field relative pl3">
+<span class="ss-icon ss-search grey-dark ml1 mt1 absolute"></span>
+<input class="input-search header full-width text" data-tracker-name="Header Live Search" id="term" name="term" placeholder="Search projects" type="text" />
+</div>
+</form>
+
+</div>
+<div class="clear"></div>
+</div>
+</div>
+<div class="hide pt4 pb4 bg-grey-light" id="search_results-wrap">
+<div class="relative container" id="search_results">
+<a class="close right grey-dark mr1"><span class="ss-icon ss-delete"></span></a>
+<h3 class="header ml1 clearfix"></h3>
+<div class="clip clearfix" id="search_results_panel"></div>
+<a class="prev arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateleft"></span>
+</a>
+<a class="next arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateright"></span>
+</a>
+</div>
+</div>
+
+
+
+
+<div class="Project-ended-true Project-is_starred- Project-state-successful Project1233510311_cxt border-top" id="main_content">
+<div id="running-board-wrap">
+<div class="container" id="running-board">
+<div id="project-header">
+<div class="NS_projects__running_board ml1 mr1 clearfix">
+<div class="title center py4">
+<h2 class="mb1">
+<a href="/projects/nexeon/face-of-mankind-fall-of-the-dominion" class="green-dark">Face of Mankind: Fall of the Dominion</a>
+</h2>
+<p class="no-margin">
+<span class="creator">
+by
+<a href="/projects/nexeon/face-of-mankind-fall-of-the-dominion/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography" id="name">Nexeon Technologies, Inc.</a>
+</span>
+</p>
+</div>
+<ul class="project-nav list-inline left h5 bold mb1">
+<li class="mr2">
+<a href="/projects/nexeon/face-of-mankind-fall-of-the-dominion" class="grey-dark py1 current" id="home_nav">Home</a>
+</li>
+<li class="mr2">
+<span data-updates-count="27" id="updates_count">
+<a href="/projects/nexeon/face-of-mankind-fall-of-the-dominion/posts" class="grey-dark py1" id="updates_nav">Updates
+<span class="count h6 bg-grey-dark white">27</span>
+</a></span>
+</li>
+<li class="mr2">
+<a href="/projects/nexeon/face-of-mankind-fall-of-the-dominion/backers" class="grey-dark py1" id="backers_nav">Backers
+<span class="count h6 bg-grey-dark white"><data class="Project1233510311" data-format="number" data-value="392" itemprop="Project[backers_count]">392</data></span>
+</a></li>
+<li>
+<span data-comments-count="655" id="comments_count">
+<a href="/projects/nexeon/face-of-mankind-fall-of-the-dominion/comments" class="grey-dark py1" id="comments_nav">Comments
+<span class="count h6 bg-grey-dark white"><data class="Project1233510311" data-format="number" data-value="655" itemprop="Project[comments_count]">655</data></span>
+</a></span>
+</li>
+</ul>
+<ul class="list-inline right h5 bold mb1">
+<li class="location mr2">
+<a href="/discover/places/houston-tx?ref=city" class="grey-dark"><span class="ss-icon ss-location margin-right"></span>
+Houston, TX
+</a></li>
+<li class="category" data-project-parent-category="Games">
+<a href="/discover/categories/games/video%20games?ref=category" class="grey-dark"><span class="ss-icon ss-tag margin-right"></span>
+Video Games
+</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+</div>
+<div class="bg-grey-light pb4" id="content-wrap">
+<div class="Project1233510311" data-conditions="[{&quot;!state&quot;:&quot;live&quot;}]" data-evaluation="true" data-render="&quot;&lt;div class=\&quot;NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-successful Project1233510311_cxt bg-grey container pb1 pt1\&quot;&gt;\n&lt;div class=\&quot;Project1233510311\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;successful&amp;quot;}]\&quot; data-evaluation=\&quot;true\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;Funded!&amp;lt;/b&amp;gt;\\nThis project was successfully funded &amp;lt;data class=\\&amp;quot;Project1233510311\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2013-06-06T10:28:11-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[deadline]\\&amp;quot;&amp;gt;on June 6, 2013&amp;lt;/data&amp;gt;.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;Funded!&lt;/b&gt;\nThis project was successfully funded &lt;data class=\&quot;Project1233510311\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-06-06T10:28:11-04:00&amp;quot;\&quot; itemprop=\&quot;Project[deadline]\&quot;&gt;on June 6, 2013&lt;/data&gt;.\n&lt;/p&gt;\n&lt;/div&gt;&lt;div class=\&quot;Project1233510311\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:[&amp;quot;started&amp;quot;,&amp;quot;submitted&amp;quot;]}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;THIS PROJECT IS NOT LIVE&amp;lt;/b&amp;gt;\\nThis is only a draft that the creator has chosen to share.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1233510311\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;suspended&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Suspended&amp;lt;/b&amp;gt;\\nFunding for this project was suspended &amp;lt;data class=\\&amp;quot;Project1233510311\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2013-06-06T10:28:11-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on June 6, 2013&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1233510311\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;canceled&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Canceled&amp;lt;/b&amp;gt;\\nFunding for this project was canceled by the project creator &amp;lt;data class=\\&amp;quot;Project1233510311\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2013-06-06T10:28:11-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on June 6, 2013&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1233510311\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;failed&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Unsuccessful&amp;lt;/b&amp;gt;\\nThis project\\u2019s funding goal was not reached on &amp;lt;time class=\\&amp;quot;js-adjust\\&amp;quot; data-format=\\&amp;quot;LL\\&amp;quot; datetime=\\&amp;quot;2013-06-06T10:28:11-04:00\\&amp;quot;&amp;gt;June 6, 2013&amp;lt;/time&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project1233510311\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;purged&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;This project is purged and only visible to staff.&amp;lt;/b&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;/div&gt;\n&quot;"><div class="NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-successful Project1233510311_cxt bg-grey container pb1 pt1">
+<div class="Project1233510311" data-conditions="[{&quot;state&quot;:&quot;successful&quot;}]" data-evaluation="true" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;Funded!&lt;/b&gt;\nThis project was successfully funded &lt;data class=\&quot;Project1233510311\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-06-06T10:28:11-04:00&amp;quot;\&quot; itemprop=\&quot;Project[deadline]\&quot;&gt;on June 6, 2013&lt;/data&gt;.\n&lt;/p&gt;\n&quot;"><p class="no-margin">
+<b>Funded!</b>
+This project was successfully funded <data class="Project1233510311" data-format="distance_date" data-value="&quot;2013-06-06T10:28:11-04:00&quot;" itemprop="Project[deadline]">on June 6, 2013</data>.
+</p>
+</div><div class="Project1233510311" data-conditions="[{&quot;state&quot;:[&quot;started&quot;,&quot;submitted&quot;]}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;THIS PROJECT IS NOT LIVE&lt;/b&gt;\nThis is only a draft that the creator has chosen to share.\n&lt;/p&gt;\n&quot;"></div><div class="Project1233510311" data-conditions="[{&quot;state&quot;:&quot;suspended&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Suspended&lt;/b&gt;\nFunding for this project was suspended &lt;data class=\&quot;Project1233510311\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-06-06T10:28:11-04:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on June 6, 2013&lt;/data&gt;.\n&quot;"></div><div class="Project1233510311" data-conditions="[{&quot;state&quot;:&quot;canceled&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Canceled&lt;/b&gt;\nFunding for this project was canceled by the project creator &lt;data class=\&quot;Project1233510311\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-06-06T10:28:11-04:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on June 6, 2013&lt;/data&gt;.\n&quot;"></div><div class="Project1233510311" data-conditions="[{&quot;state&quot;:&quot;failed&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Unsuccessful&lt;/b&gt;\nThis project\u2019s funding goal was not reached on &lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;LL\&quot; datetime=\&quot;2013-06-06T10:28:11-04:00\&quot;&gt;June 6, 2013&lt;/time&gt;.\n&quot;"></div><div class="Project1233510311" data-conditions="[{&quot;state&quot;:&quot;purged&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;This project is purged and only visible to staff.&lt;/b&gt;\n&quot;"></div></div>
+</div>
+<div class="container bg-white border rounded py3 pl2 pr2" id="content">
+<div class="NS-projects-content">
+<div class="grid_11">
+<div data-has-video="true" id="video-section">
+<div class="video-player" data-dimensions="{&quot;width&quot;:640,&quot;height&quot;:480}" data-image="https://s3.amazonaws.com/ksr/projects/373053/photo-main.jpg?1397801075" data-video-tracker-url="https://www.kickstarter.com/projects/nexeon/face-of-mankind-fall-of-the-dominion/video/plays" data-video-url="https://d2pq0u4uni88oo.cloudfront.net/projects/373053/video-246008-h264_high.mp4" data-video="{&quot;id&quot;:246008,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/373053/video-246008-h264_high.mp4?2013&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/373053/video-246008-h264_base.mp4?2013&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/373053/video-246008-webm.webm?2013&quot;,&quot;width&quot;:640,&quot;height&quot;:360,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/373053/video-246008-h264_base.jpg?2013&quot;}" id="video_pitch"><video class="has_webm landscape" preload="none">
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/373053/video-246008-h264_high.mp4" type='video/mp4; codecs="avc1.64001E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/373053/video-246008-h264_base.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/373053/video-246008-webm.webm" type="video/webm"></source>
+You'll need an HTML5 capable browser to see this content.
+</video>
+<img alt="Photo-main" class="has_played_hide poster landscape" src="https://s3.amazonaws.com/ksr/projects/373053/photo-main.jpg?1397801075" />
+<div class="play_button_big play_button_dark absolute-center rounded has_played_hide">
+<span class="ss-icon ss-play"></span>
+Play
+</div>
+<div class="player_controls clearfix absolute-bottom mb2 rounded white bg-green-dark forces-video-controls_hide">
+<div class="left">
+<a class="button button_icon button_dark playpause play mr1">
+<span class="play ss-icon ss-play"></span>
+<span class="pause ss-icon ss-pause"></span>
+</a>
+<span class="time current_time h12 left">00:00</span>
+</div>
+<div class="right">
+<span class="time total_time h12 left mr1">00:00</span>
+<a class="left button button_icon button_icon_white volume">
+<span class="ss-icon ss-volume icon_volume_nudge"></span>
+<span class="ss-icon ss-highvolume"></span>
+</a>
+<div class="volume_container left">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+<a class="left button button_icon button_icon_white fullscreen">
+<span class="ss-icon ss-expand"></span>
+<span class="ss-icon ss-contract"></span>
+</a>
+</div>
+<div class="clip">
+<div class="progress_container pr1 pl1">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="buffer progress_bar_buffer"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div data-project-state="successful" id="about">
+<div class="NS_projects__project_share clearfix py2 pl1 pr1">
+<ul class="left list-inline no-margin h5 bold">
+<li class="facebook mr2">
+<a href="https://www.kickstarter.com/projects/nexeon/face-of-mankind-fall-of-the-dominion"><span class="ss-icon ss-social ss-facebook color-facebook"></span>
+<span class="color-facebook">Share</span>
+<span class="share_bubble"><div class="triangle grey"></div>
+<div class="triangle white"></div>
+<span class="count"></span></span>
+</a></li>
+<li class="twitter mr2">
+<a  href="https://twitter.com/intent/tweet?text=Face%20of%20Mankind%3A%20Fall%20of%20the%20Dominion%20by%20Nexeon%20Technologies%2C%20Inc.&amp;via=kickstarter&amp;url=http://kck.st/Ys6cRv" rel="nofollow"><span class="ss-icon ss-social ss-twitter color-twitter"></span>
+<span class="color-twitter">Tweet</span>
+</a></li>
+<li class="embed">
+<a href="/projects/nexeon/face-of-mankind-fall-of-the-dominion/widget" class="remote_modal_dialog grey-dark" data-modal-title="Embed a widget on your site" data-tracker-name="Embed"><span class="ss-icon ss-navigateleft"></span>
+<span class="ss-icon ss-navigateright"></span>
+Embed
+</a></li>
+</ul>
+<ul class="right list-inline no-margin h5 bold">
+<li class="curate mr2">
+</li>
+<li class="remind">
+<div class="ajax-container" id="watching-widget">
+<div class="Project1233510311" data-conditions="[{&quot;is_starred&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div id=\&quot;unwatch\&quot;&gt;\n&lt;a href=\&quot;/projects/nexeon/face-of-mankind-fall-of-the-dominion/unwatch\&quot; class=\&quot;on\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"></div><div class="Project1233510311" data-conditions="[{&quot;!is_starred&quot;:true}]" data-evaluation="true" data-render="&quot;&lt;div id=\&quot;watch\&quot;&gt;\n&lt;a href=\&quot;/projects/nexeon/face-of-mankind-fall-of-the-dominion/watch\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;span class=\&quot;text\&quot;&gt;\n&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"><div id="watch">
+<a href="/projects/nexeon/face-of-mankind-fall-of-the-dominion/watch"><span class="ss-icon ss-star"></span>
+<span class="text">
+</span>
+</a></div>
+
+</div></div>
+</li>
+</ul>
+</div>
+
+<div class="short_blurb py2 pl1 pr1">
+<p class="h3">A futuristic sandbox MMO ruled by the harsh realities of human nature. You forge your own future and rise to fame.</p>
+</div>
+<div class="full-description">
+<a href="http://paypal.faceofmankind.com/" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/nexeon/face-of-mankind-fall-of-the-dominion/assets/645430/edit" data-id="645430">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/645/430/d61c1f63331df6609898f5adfd8524b6_large.jpg?1370367853"></figure>
+</div>
+</a><h1>NEW TECHNOLOGY TEASER</h1><div class="template oembed" contenteditable="false" data-href="http://youtu.be/E-fRuyMULU8">
+<iframe width="612" height="344" src="https://www.youtube.com/embed/E-fRuyMULU8?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div><h1>
+<br>PITCH VIDEO v2</h1><div class="template oembed" contenteditable="false" data-href="http://youtu.be/Zx5lrzowNqg">
+<iframe width="612" height="344" src="https://www.youtube.com/embed/Zx5lrzowNqg?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/nexeon/face-of-mankind-fall-of-the-dominion/assets/645413/edit" data-id="645413">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/645/413/02f1019b54ae724515f80bb8ecc7f327_large.jpg?1370367564"></figure>
+</div>
+<p>Here are just a few of the cool things we think you'll love about our game:</p><p><b>1. Open Faction System:</b>
+ Our game is built around player interaction with a strong toolset for 
+players to organize themselves. Any player can create their own faction,
+ and from there the world is theirs to explore.</p>
+<p><b>2. No Grinding:</b>
+ While player progression is important, any system that forces players 
+to mindlessly repeat the same task for hours is out of the question. Our
+ game features a time-based skill system, which allows you to simply 
+select the skill you want to progress and continue to play while it 
+progresses.</p><p><b>3. No Classes:</b>
+ Face of Mankind: Fall of the Dominion features a broad skill system, 
+rather than a very vertical one. This means that everything you progress
+ is defined purely by your own interests, without any mechanically 
+defined role telling you what to do. Theoretically, you could even have 
+every skill in the game if you play long enough.</p><p><b>4. Player-driven Economy:</b>
+ The economy bends to the players, with all that they do defining the 
+prices and available items. Virtually every item in the game is crafted 
+by players and then auctioned or sold to other players.</p>
+<p><b>5. Open PvP / Active Combat System:</b> Not
+ wanting to conform to what everything else on the market is, our core 
+combat system is that of a twitch-based first/third person shooter. Few 
+places in the universe are safe, but we have systems in place to allow 
+users some level of protection. Place a bounty on them if you feel 
+wronged, and someone is sure to exact your sweet sweet revenge.</p><p><b>6. Persistent Universe:</b>
+ Our universe is vast, ready for the players to conquer. The game 
+features a persistent universe where everything you do leaves a 
+footprint long after you log off.</p><p><b>7. True Weight of Player Actions:</b>
+ Everything you do within the game comes with a consequence. These 
+consequences cannot be escaped, and everything you do leaves a lasting 
+impact on the game world. No argument or friendship will ever go 
+unheard, and every experience will be different than the last.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/nexeon/face-of-mankind-fall-of-the-dominion/assets/642159/edit" data-id="642159">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/642/159/60ca6be1a7cc3f9e199bb0d3e1fcf3f1_large.jpg?1370286491"></figure>
+</div>
+<p>This is the <b>Daily Deal</b> for today. Everyone who backs the project 
+until the Daily Deal changes (around 10:00am CST the day after) will 
+receive a copy of this item <b>for free</b>!</p><div class="template asset" contenteditable="false" data-edit_url="/projects/nexeon/face-of-mankind-fall-of-the-dominion/assets/635919/edit" data-id="635919">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/635/919/d5766676654b70283592ecfdf43f8a47_large.jpg?1370042930"></figure>
+</div>
+<p>If you missed out out on a previous deal, you will be able to add the items as optional pledge add-ons later in the campaign.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/nexeon/face-of-mankind-fall-of-the-dominion/assets/582681/edit" data-id="582681">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/582/681/2367a5937359762798e3622dc4fcd88f_large.jpg?1368278011"></figure>
+</div><p>Ten years ago, Duplex Systems created a game that was built around the concept of player interaction and freedom, owing its 
+limitless potential to the imaginations and passions of the players. Now, Nexeon Technologies aims to take this to the next level, creating
+ something even greater.</p><p><b>Face of Mankind: Fall of the Dominion</b> is a game about a potential future, far removed from human civilization as we know it. Driven by memories of violence, overcrowding and a depletion of all natural resources, mankind has left Earth to seek out remote locations among the stars to begin anew. All across the galaxy colonies were built, connected through a series of gates referred to as the Vortex Network. From its seat of power in Manhattan, a single government known only as the <i>Dominion </i>controlled all of humanity. </p><div class="template asset" contenteditable="false" data-edit_url="/projects/nexeon/face-of-mankind-fall-of-the-dominion/assets/599544/edit" data-id="599544">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/599/544/cc842081039fc8e5c8dccc719135795b_large.jpg?1368826680"></figure>
+</div><p>Now the Dominion has fallen and anarchy is soon to spread across the stars. New empires will rise and fall, blood will be spilt, and men will be broken. </p><p>What you do with power is your choice to make; your destiny is yours and yours alone to define. Create your own faction and make your mark on the galaxy. </p><p>How will you shape the Face of Mankind?</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/nexeon/face-of-mankind-fall-of-the-dominion/assets/582690/edit" data-id="582690">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/582/690/3b7244520c530387ddf78c286692bac0_large.jpg?1368278390"></figure>
+</div><p>For us, the original game was a testing bed of experimentation. It allowed us to work with new ideas and concepts and to grow as developers and designers along the way. A sandbox game should be about the players and their interactions. This should be the defining characteristic of the game and must be expanded upon to make it as fun and interesting as possible.</p><p>As a player, everything you do will have an impact on other players in some way. Through this, we add true weight to players, making them the focus of the game's design and enabling them to drive the gameplay and even the story. Players begin the game with nothing, both socially and mechanically, aspiring to one day earn everything.</p><p>This kind of hardcore gameplay is necessary to have a truly immersive world, which is what we're aiming to achieve. For a player to fully enjoy their success, it must be contrasted by the hardship of getting there and maintaining it. This may seem unusual in an era polluted by games that spoon feed content, but we think it is what will make an amazing experience.</p><p>Every
+ game is the sum of all it can offer, and with Face of Mankind: 
+Fall of the Dominion, we aim to offer a diverse and powerful tool set that
+ will empower the players in the best way possible. Through the core 
+mechanics of the game, players will be able to influence each other and 
+the world, carving out their own mark on the universe.</p><h1>
+<br>FACTIONS</h1><p>At the center lies a powerful 
+Faction system. This system creates the foundation for every mechanic in
+ the game, with almost all conflict potentially escalating to war if the
+ politics aren’t played well. How it pans out is entirely up to the 
+players to decide. Players can create their own faction, capture 
+territories, and dominate the universe.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/nexeon/face-of-mankind-fall-of-the-dominion/assets/570735/edit" data-id="570735">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/570/735/7d7544114010e47a28b3449038659294_large.jpg?1367878831"></figure>
+</div><h1>
+<br>COMBAT</h1><p>Fall of the Dominion features a third person shooter interface and comes with open PvP and full loot drops, a system that will
+ keep players coming back for more - one that focuses on a player’s 
+skill rather than their character level. The combat growth comes 
+from your dedication to the art. It is our desire to create the most 
+immersive gameplay and character levels cannot contribute to that.<br><br>For those of you wondering what "open PvP with full loot drops" actually means, it is that your character can possibly be killed anywhere, for any reason, by anyone, and you can drop everything that is 
+not clothing into a loot pack. In killing someone, however, there can be consequences, all of which are controlled by other players within the game universe. For instance, if you were to murder a notorious criminal leader, it is quite likely that his minions and allied factions (who are also other players) could retaliate against you. Everything is completely up to the players and their decisions.<br><br>In
+ doing this, you ARE your character, and your own growth as a player is 
+reflected in the character you portray. We feel this is central to 
+creating a true sandbox universe. The primary drive of the game is that it 
+isn’t so much about the characters as it is the people playing them.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/nexeon/face-of-mankind-fall-of-the-dominion/assets/572096/edit" data-id="572096">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/572/096/55d08182bbb48fadadd224246ce1ea7b_large.jpg?1367924711"></figure>
+</div><h1>CRIME AND PUNISHMENT</h1><p>An open world massively multiplayer game is a griefer's playpen. This is an 
+obvious issue in many sandbox games, and the solution lies in the 
+problem itself. If you give the players suitable tools to defend 
+themselves with, they will do a very effective job, and it will only 
+serve to enhance the gameplay. A “criminal” in the game will be defined 
+by the players themselves through a special bounty system, allowing them
+ to place a price on the head of others. </p><p>Another interesting mechanic that will
+ exist for the community is a system of arresting and imprisonment. In 
+Face of Mankind: Fall of the Dominion, we have decided to offer two 
+capturable prison territories. These prison territories will give the 
+owning faction the ability to arrest through combat. The players will 
+then have to serve out their bounty in the prison, with it being paid 
+out to the owning faction (with a nice bonus for arresting!) as your 
+time is served. Of course, this is a sandbox, so you can be broken out of jail 
+by your allies too.</p><h1>
+<br>APARTMENTS</h1><p>Players are able to own apartments in the 
+game and these apartments can be broken into by thieves. Thieves 
+can then steal items from the owner and will have to carry them around 
+for a while before they can be laundered. Items that are “hot,” cannot 
+be sold at the markets, or stored in any location other than a player’s 
+inventory. There will be numerous types of apartments, ranging from run-down  "rat holes" to luxury penthouses, with varying levels of customization such as furniture and other upgrades, allowing you to utilize them for parties, tactical meetings, or just a nice comfortable place to relax and keep your belongings.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/nexeon/face-of-mankind-fall-of-the-dominion/assets/572098/edit" data-id="572098">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/572/098/b2b113726e060c7326452bef52f570de_large.jpg?1367924739"></figure>
+</div><h1>CRAFTING</h1><p>Almost every item in the economy will be produced and sold by players. For us
+ to give as much control as possible to the players, the entire economy 
+must revolve around them and their transactions. Mining in the game 
+will be done using specialized tools, and the minerals will drop when 
+your character dies, allowing for pirates to take your materials if you aren’t 
+careful enough. Production in the game will be done using schematics and 
+may require many layers of production to create complex items. On top of all
+ of this, factions that own these territories will be able to levy taxes
+ and raise the costs, giving them revenue and making you want to wage war against 
+them, especially if they gain a monopoly over certain materials or key areas. </p><div class="template asset" contenteditable="false" data-edit_url="/projects/nexeon/face-of-mankind-fall-of-the-dominion/assets/570749/edit" data-id="570749">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/570/749/725010580c562bf57248900bba4bf21b_large.jpg?1367879333"></figure>
+</div><h1>EXPLORATION AND TRAVEL</h1><p>There
+ are many places to travel in Face of Mankind: Fall of the Dominion. 
+Travel in the game requires you to move along the Vortex Network (sample
+ shown above), creating a number of physical bottlenecks and hubs in the
+ game. 
+These locations will become prime hotspots for galactic warfare and 
+commerce, building a unique game world for you to explore. Combining 
+this with open PvP means that safety only exists in numbers, and the 
+darkest parts of the galaxy will be full of crime and illegal 
+underground dealings. 
+It creates an interesting contrast between all our worlds and really 
+reinforces the cyberpunk themes of the game.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/nexeon/face-of-mankind-fall-of-the-dominion/assets/572130/edit" data-id="572130">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/572/130/2c07fa9fa86a391bf2ad46ebaccbcbd7_large.jpg?1367926127"></figure>
+</div><h1>PLAYER PROGRESSION</h1><p>We believe that grinding is far too
+ common and that the idea of "player progression" is far removed from 
+what it should be about. The progression that a player makes in the game
+ needs to be about choice and investment in the game rather than 
+mindlessly killing a series of creatures in order to get to the next 
+level. Face of Mankind: Fall of the Dominion features time-based skill 
+progression, with the emphasis of combat being upon your hand/eye 
+coordination. This system allows you 
+to select what skills you would like to progress. These skills will not 
+directly affect combat in terms of damage output, but will allow you 
+access to more specialized equipment and a plethora of other features 
+and tools. You can freely choose what paths to progress through, and 
+moving down one will not decrease your ability to one day move down 
+another. However, not all skills have to be time-based, and some skills 
+can be based off your actual actions, allowing for some complexity and 
+immersion in the sense that some things require time to learn and excel 
+at, whereas others are skills that you can learn through actual 
+experiences. You are free to be whatever you want 
+and play the game however you want to play it.</p><h1>BUSINESS MODEL</h1><p>Massively Multiplayer Online Games are unique in that the developers continue to develop it over an extended period of time. They add new features and content, neither of which comes without a cost. </p><p>We have decided to give paying customers things that enhance their experience without impeding the experiences of those that cannot pay for the game. We aim to offer the game free for everyone to join, while still earning the income necessary to sustain development and make the game better. Premium accounts will gain access to special features and conveniences that are not afforded to free players, while the in-game marketplace will allow users to purchase nice looking unique clothing and other miscellaneous things, regardless of account type and status.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/nexeon/face-of-mankind-fall-of-the-dominion/assets/582911/edit" data-id="582911">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/582/911/06bd8fad46f3e05546ee3df974d07307_large.jpg?1368289101"></figure>
+</div><p>Face
+ of Mankind: Fall of the Dominion is a full redesign of all gameplay 
+mechanics. We have gotten some of the core systems in place, but
+ there is a lot of work that still needs to be done before the game is 
+ready for release. </p><p>The goal of <b>$50,000</b> is the minimum goal to be able to complete the development work that we started. This includes programming, improving a range of art assets and it will ensure a proper launch with a small advertising budget.</p><p>At <b>$75,000</b> we will be able to afford additional art assets, allowing us to add more character customization to the game. We feel it’s 
+important that you are able to express yourself through your character. </p><p>At <b>$100,000</b> we will expand the galaxy, creating two completely new colonies to explore and conquer. This will expand the size of the Vortex Network and lets us make the galaxy even more epic.</p><p>At <b>$175,000</b> we will redesign and remake all of the characters and their equipment. We would like to see new avatars that better reflect the cyberpunk theme of the game, and we have always dreamt of redoing the animations.</p><p>At <b>$250,000</b> we will have raised enough capital to fully remake of the game, including a new rendering engine, new wide open worlds, new vegetation, vehicles, and breathtaking outdoor complexes. Replacing the rendering engine is no small task, requiring us to remake all of the worlds and rewrite large parts of the code. Using the old assets in a new game engine would be a waste because they are not designed to use any of the newer technologies it would support. The new engine will support DirectX11 and feature deferred rendering, realtime soft shadow maps, dynamic ambient occlusion, motion blur, depth of field, HDR lighting, highly enhanced terrain rendering and fog, and support parallax and relief bump mapping. In addition to this, performance will increase significantly due to its ability to utilize newer hardware much more efficiently.</p><p>If we reach this stretch goal, we will be holding a party to celebrate! It will be near Houston, Texas, and any backer who pledged $100 or more will be invited to come celebrate with us!</p><p>Between these key stretch goals will be a number of sub-stretch goals, giving additional rewards to certain reward tiers along the way. Anything beyond this is more than we could ever dream of, and we will create additional stretch goals if this dream becomes a reality.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/nexeon/face-of-mankind-fall-of-the-dominion/assets/582913/edit" data-id="582913">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/582/913/4eaa46511bd6afde9e162a77885a7e7f_large.jpg?1368289176"></figure>
+</div><p>Nexeon Technologies originally started as a server hosting business, later we hosted the services for online games and expanded into game development. We have developed and operated online games for more than 10 years. Aided by the original creator of the game, we have all the experience required for programming, game and level design, and to operate and support the games. </p><p>Games
+ today have become stagnate and old, with many studios only capable of 
+pushing out the same game in a new case. Few advances are made, and risk
+ taking has been all but eliminated. With the creation of Kickstarter, 
+we seek to break this status quo and create something unique, something 
+new. </p><div class="template asset" contenteditable="false" data-edit_url="/projects/nexeon/face-of-mankind-fall-of-the-dominion/assets/582916/edit" data-id="582916">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/582/916/f4126b2efa9bc7134702ca7a0b40e9eb_large.jpg?1368289245"></figure>
+</div><p>We are passionate players, and our love of this and other sandbox
+ games has not been lost in our transition to working in the games industry. Face of Mankind: Fall of The
+ Dominion is a game <i>by the players, for the players</i>.</p><p>Kickstarter
+ stands as the ultimate testament to the power that consumers have over 
+the industry and creates a new means of getting the funding necessary 
+to bring ideas to life. Games are a risky business, and despite all of 
+the exciting ideas many designers have, publishers rarely want to invest
+ in a game that is higher risk than profit. In the past, if a publisher 
+or investor didn’t have faith in an idea turning them a large enough 
+profit, they would just take their money elsewhere. A place like 
+Kickstarter though changes this entirely and provides a new soap box for
+ us developers to speak on. Rather than asking a publisher to invest in 
+our game, we get to go straight to the source and ask YOU to buy it. In 
+doing this, we are able to create a game far beyond our wildest dreams, 
+and you are able to get one that otherwise would have never been 
+created.</p><a href="http://kickingitforward.org" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/nexeon/face-of-mankind-fall-of-the-dominion/assets/596803/edit" data-id="596803">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/596/803/9b7cc5dc974dc0cdff87ddc7fea614d3_large.jpg?1368735384"></figure>
+</div></a>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/nexeon/face-of-mankind-fall-of-the-dominion/assets/582919/edit" data-id="582919">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/582/919/a30983c710959db38d2dd9214fb5de1b_large.jpg?1368289360"></figure>
+</div><p>If you share our excitement for this project, this is your chance. With the following rewards we want to thank you dearly for your support. </p><h1>PLEDGE ADD-ONS
+
+</h1><div class="template asset" contenteditable="false" data-edit_url="/projects/nexeon/face-of-mankind-fall-of-the-dominion/assets/635937/edit" data-id="635937">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/635/937/95cd5b7efe93a2eb6089c85c420a03cb_large.jpg?1370043772"></figure>
+</div>
+<p>Simply increase your pledge by 
+the amount your desired add-ons will cost. At the end of the campaign 
+we will send out surveys, where you will be given the opportunity to say
+ what addons you wanted. </p><p>The Founder Coins will be usable in the 
+in-game Marketplace once we have released it. You can purchase various items, conveniences and aesthetics with them.</p><h1>Pledge Updates</h1>- Founder Coins added to every pledge from $100. 
+For every dollar you receive 10 Founder Points on top. (Example: $200 
+reward gets 2000 Founder Points). The reward image boxes further below 
+show the correct complete amount.<p>- Digital copy of Face of Mankind soundtrack added to every pledge from $55</p><div class="template asset" contenteditable="false" data-edit_url="/projects/nexeon/face-of-mankind-fall-of-the-dominion/assets/569883/edit" data-id="569883">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/569/883/5288d6ab7fa43e528f18b6f6d38c00dc_large.jpg?1367863946"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/nexeon/face-of-mankind-fall-of-the-dominion/assets/569886/edit" data-id="569886">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/569/886/8dd6b64e713b542b4216378308ef4db2_large.jpg?1367863967"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/nexeon/face-of-mankind-fall-of-the-dominion/assets/642079/edit" data-id="642079">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/642/079/1b15629c10bb3890f1d7d87fb193cd67_large.jpg?1370285513"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/nexeon/face-of-mankind-fall-of-the-dominion/assets/642080/edit" data-id="642080">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/642/080/6369a54779f800254863083e82b6fa13_large.jpg?1370285532"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/nexeon/face-of-mankind-fall-of-the-dominion/assets/642081/edit" data-id="642081">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/642/081/3b1acd2be4cb10dd3ac80859c7b9a322_large.jpg?1370285546"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/nexeon/face-of-mankind-fall-of-the-dominion/assets/642082/edit" data-id="642082">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/642/082/b409033564497877877c07e631c7cfe7_large.jpg?1370285566"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/nexeon/face-of-mankind-fall-of-the-dominion/assets/642085/edit" data-id="642085">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/642/085/10f425a09aa01353775e4df5d66e2d29_large.jpg?1370285581"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/nexeon/face-of-mankind-fall-of-the-dominion/assets/642087/edit" data-id="642087">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/642/087/4c2b54fd3255d60be525256255bb5176_large.jpg?1370285599"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/nexeon/face-of-mankind-fall-of-the-dominion/assets/642088/edit" data-id="642088">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/642/088/9ec2850a870075c0334a87ae8d7fcbd5_large.jpg?1370285613"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/nexeon/face-of-mankind-fall-of-the-dominion/assets/642090/edit" data-id="642090">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/642/090/59f8bf52e85b1ea20891e9b3cadc8918_large.jpg?1370285629"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/nexeon/face-of-mankind-fall-of-the-dominion/assets/642091/edit" data-id="642091">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/642/091/ff56b1731183615ee38d6bbb88cd80fb_large.jpg?1370285647"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/nexeon/face-of-mankind-fall-of-the-dominion/assets/642092/edit" data-id="642092">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/642/092/bce1d938bb2f33d5f5b348ffdf349f05_large.jpg?1370285661"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/nexeon/face-of-mankind-fall-of-the-dominion/assets/642093/edit" data-id="642093">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/642/093/0b724be060c17e52b3b876d88c839f58_large.jpg?1370285675"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/nexeon/face-of-mankind-fall-of-the-dominion/assets/642096/edit" data-id="642096">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/642/096/11323749e5fe6ffba9611b819793bd44_large.jpg?1370285690"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/nexeon/face-of-mankind-fall-of-the-dominion/assets/642097/edit" data-id="642097">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/642/097/3a105f13545c54ebb6c044f6c30e110a_large.jpg?1370285704"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/nexeon/face-of-mankind-fall-of-the-dominion/assets/642098/edit" data-id="642098">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/642/098/1a2a7b6e4f03ba51985c810fecaa791e_large.jpg?1370285720"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/nexeon/face-of-mankind-fall-of-the-dominion/assets/642099/edit" data-id="642099">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/642/099/78d1771b173ac065d9037e44a2d4484c_large.jpg?1370285736"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/nexeon/face-of-mankind-fall-of-the-dominion/assets/642104/edit" data-id="642104">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/642/104/0175473e8b91adaac1119adb0f2037ba_large.jpg?1370285752"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/nexeon/face-of-mankind-fall-of-the-dominion/assets/642105/edit" data-id="642105">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/642/105/e4b72fbcf5189530d0d43da51c02c22d_large.jpg?1370285766"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/nexeon/face-of-mankind-fall-of-the-dominion/assets/642107/edit" data-id="642107">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/642/107/2d1776d243d37197be93ec7a022b3362_large.jpg?1370285781"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/nexeon/face-of-mankind-fall-of-the-dominion/assets/642110/edit" data-id="642110">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/642/110/11de19bb3fdccb0c93fcf67baa9e3af1_large.jpg?1370285795"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/nexeon/face-of-mankind-fall-of-the-dominion/assets/642115/edit" data-id="642115">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/642/115/495e917db4a110461b43cce7c9ada281_large.jpg?1370285811"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/nexeon/face-of-mankind-fall-of-the-dominion/assets/642117/edit" data-id="642117">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/642/117/cbea043929e02059df9b6c0dcef9a5a0_large.jpg?1370285826"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/nexeon/face-of-mankind-fall-of-the-dominion/assets/642119/edit" data-id="642119">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/642/119/6ae8162d94af471a64af8f60afa4c2ab_large.jpg?1370285840"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/nexeon/face-of-mankind-fall-of-the-dominion/assets/642120/edit" data-id="642120">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/642/120/6fc5b641224d0271268ff0ceccc80b9b_large.jpg?1370285855"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/nexeon/face-of-mankind-fall-of-the-dominion/assets/642122/edit" data-id="642122">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/642/122/d8b844ef69decd40ba108ba2efd5fb0d_large.jpg?1370285867"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/nexeon/face-of-mankind-fall-of-the-dominion/assets/570567/edit" data-id="570567">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/570/567/00e5df78b250d89666b39a4c95737f0a_large.gif?1367876056"></figure>
+</div><a href="http://www.kicktraq.com/projects/nexeon/face-of-mankind-fall-of-the-dominion/" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/nexeon/face-of-mankind-fall-of-the-dominion/assets/600874/edit" data-id="600874">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/600/874/a349434cfc315f572b8c0ff6f80198a6_large.jpg?1368888828"></figure>
+</div></a>
+</div>
+<div id="risks">
+<h2 class="title grey-dark mt6 mb4">
+<span>Risks and challenges</span>
+<a href="/help/faq/kickstarter%20basics#Acco" class="right normal h5" target="_blank">Learn about accountability on Kickstarter</a>
+<div class="divider clear"></div>
+</h2>
+<p><p>Sandbox games are difficult, VERY difficult. Many of them fail for more reasons than we can even count. This makes them one of the riskiest types of games to develop and some of the most complicated to design. Sandbox games rely so much on understanding how the players will interact with the world and each other, and every mechanic in the game must be designed around that understanding. Collectively, we have been developing and observing sandbox games for almost a decade. We have watched them rise then fall, having had MANY discussions not only about why they failed, but about what could have been done better.</p>
+
+<p>The last two years have been spent testing and expanding upon these theories, growing and learning each step of the way. We have made mistakes, but we have also learned from those mistakes and corrected them. It is for this reason that we are confident we have discovered the formula to creating a successful sandbox game.</p>
+
+<p>Even though developing the game itself comes with many challenges, launching and managing it is the even more challenging part. The continued success of the game depends entirely on the effectiveness of our designs and the behavior of the player. Keep in mind too that after release, development will not cease. We will continue to study and to grow, working hand in hand with the community - the players - correcting and mastering until Face of Mankind: Fall of the Dominion is worthy of being considered the greatest sandbox game of all time.</p></p>
+</div>
+</div>
+<div class="NS-projects-faqs" id="project-faqs">
+<h2 class="title grey-dark mt6 mb4">
+FAQ
+<div class="divider clear"></div>
+</h2>
+<ul class="faqs">
+<li class="faq" id="project_faq_55553">
+<div class="faq-question">
+<a href="#project_faq_55553" name="project_faq_55553">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Can you tell us more about the system requirements to play the game? What platforms are supported? Linux, OSX?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>These are the requirements of the game as of right now. The minimum requirements should hold even when we get the chance to upgrade the rendering engine.
+<br />The initial release of Face of Mankind: Fall of the Dominion will not have direct support for Linux or OSX, it&#39;s very possible you could see support later on. Some users in the past have had positive experiences utilizing WINE to run the game on Linux.</p>
+
+<p>Minimum System Requirements:
+<br />- PC with Windows® XP/Windows Vista®/Windows® 7
+<br />- 2.0 GHz processor
+<br />- 2 GB RAM
+<br />- DirectX 9 compatible VGA card with pixel shader 2.0 support and 128 MB video RAM
+<br />- Minimum graphical resolution of 1024x768 pixels
+<br />- Broadband Internet connection
+<br />- DirectX 9.0c
+<br />- DirectX compatible sound card
+<br />- 5 GB available HD space</p>
+
+<p>Recommended System Specifications:
+<br />- PC with Windows Vista®/Windows® 7/8
+<br />- Dual Core 2.0Ghz Processor
+<br />- 4 GB RAM
+<br />- GeForce 6600GT 256MB video card or better</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-05-07T13:37:21-04:00">Tue, May 7 2013 1:37 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_56226">
+<div class="faq-question">
+<a href="#project_faq_56226" name="project_faq_56226">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">What does Premium Gameplay include?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>A number of people have asked for a clarification on what &quot;Premium  Gameplay&quot; is. At the core, we are running a free-to-play game with an  optional premium subscription that expands gameplay and offers  additional conveniences and features. As a further explanation of this,  we will list a few of the premium perks that we are considering:</p>
+
+<p>- Unique character gear Enhanced cloning speed 
+<br />- Exclusive upper tier apartments 
+<br />- More production slots 
+<br />- Longer market offer and auction durations 
+<br />- Additional item storage slots 
+<br />- Longer skill queue 
+<br />- Additional faction features, such as your own headquarters for your members 
+<br />- Access to premium-only items 
+<br />- Advanced mining tool 
+<br />- Unique in-game and website identifiers for your account 
+<br />- Discounts in the Marketplace (described below)   
+<br />... and more! </p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-05-20T12:01:58-04:00">Mon, May 20 2013 12:01 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_55547">
+<div class="faq-question">
+<a href="#project_faq_55547" name="project_faq_55547">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Why are you asking for $50,000 only?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>For the initial goal of $50,000 we will not be able to recreate the game with new assets and visuals. However, we will be able to finish the work that we started on completing this complete overhaul of all gameplay systems.</p>
+
+<p>Of course, we all want to recreate the game with new assets and a more modern rendering engine. We all love the game very much and we wanted to secure the future of it, first. </p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2013-05-18T10:49:19-04:00">Sat, May 18 2013 10:49 am EDT</time>
+</div>
+</div>
+</li>
+
+</ul>
+<div class="faq-ask-box">
+<a href="/projects/nexeon/face-of-mankind-fall-of-the-dominion/messages/new?message%5Bto%5D=nexeon&amp;mode=FAQ" class="button button_blue remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Ask a question about Face of Mankind: Fall of the Dominion">Ask a question</a>
+
+</div>
+</div>
+
+<div class="mt4 ml1 mr1 mb2" id="report-issue-wrap">
+<a href="/login?then=%2Fprojects%2Fnexeon%2Fface-of-mankind-fall-of-the-dominion" class="button button_grey">Report this project to Kickstarter</a>
+</div>
+</div>
+<div class="NS-projects-rightcol grid_5" id="rightcol">
+<div class="NS_projects__ecom">
+<div class="digits_5 pb2 pl2 pt2" id="stats">
+<h5>
+<div class="num h48 no-margin" data-backers-count="392" id="backers_count"><data class="Project1233510311" data-format="number" data-value="392" itemprop="Project[backers_count]">392</data></div>
+<span><data class="Project1233510311" data-attr="backers_count" data-format="pluralize" data-value="392" data-word="Backer">Backers</data></span>
+</h5>
+<h5>
+<div class="num h48 no-margin" data-goal="50000.0" data-percent-raised="1.21542" data-pledged="60771.0" id="pledged">
+<data class="Project1233510311" data-currency="USD" data-format="shorter_money" data-precision="0" data-value="60771" data-without_code="true" itemprop="Project[pledged]">$60,771</data>
+<span class="money usd project_currency_code"></span>
+</div>
+pledged of
+<span class="money usd no-code">$50,000</span>
+goal
+</h5>
+<span data-duration="30.0" data-end_time="2013-06-06T10:28:11-04:00" data-hours-remaining="0" id="project_duration_data"></span>
+<div class="Project1233510311" data-conditions="[{&quot;!state&quot;:[&quot;canceled&quot;,&quot;suspended&quot;]}]" data-evaluation="true" data-render="&quot;&lt;h5 class=\&quot;poll \&quot; data-dynamic=\&quot;5\&quot; data-end_time=\&quot;2013-06-06T10:28:11-04:00\&quot; data-poll_url=\&quot;https://d2oher2uhvl0ur.cloudfront.net/projects/nexeon/face-of-mankind-fall-of-the-dominion/stats.json\&quot;&gt;\n&lt;div class=\&quot;num h48 no-margin\&quot;&gt;0&lt;/div&gt;\n&lt;span class=\&quot;text\&quot;&gt;seconds to go&lt;/span&gt;\n&lt;/h5&gt;\n&quot;"><h5 class="poll " data-dynamic="5" data-end_time="2013-06-06T10:28:11-04:00" data-poll_url="https://d2oher2uhvl0ur.cloudfront.net/projects/nexeon/face-of-mankind-fall-of-the-dominion/stats.json">
+<div class="num h48 no-margin">0</div>
+<span class="text">seconds to go</span>
+</h5>
+</div></div>
+<div class="Project1233510311" data-conditions="[{&quot;state&quot;:&quot;live&quot;},{&quot;!ended?&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;pr2 pl2\&quot; id=\&quot;pledge-wrap\&quot;&gt;\n&lt;a href=\&quot;/projects/nexeon/face-of-mankind-fall-of-the-dominion/pledge/new?clicked_reward=false\&quot; class=\&quot;button button_green button_box button_block\&quot; id=\&quot;button-back-this-proj\&quot; title=\&quot;Back this project\&quot;&gt;Back This Project &lt;small class=&#39;h6 normal block green-dark&#39;&gt;&lt;span class=\&quot;money usd \&quot;&gt;$1&lt;/span&gt; minimum pledge&lt;/small&gt;&lt;/a&gt;\n&lt;/div&gt;\n&quot;"></div><div class="Project1233510311" data-conditions="[{&quot;state&quot;:&quot;live&quot;}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;p2\&quot; id=\&quot;banner\&quot;&gt;\n&lt;p class=\&quot;tiny_type no-margin\&quot;&gt;\nThis project will be funded on\n&lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;llll z\&quot; datetime=\&quot;2013-06-06T10:28:11-04:00\&quot;&gt;Thu, Jun 6 2013 10:28 am EDT&lt;/time&gt;.\n&lt;/p&gt;\n&lt;/div&gt;\n&quot;"></div></div>
+
+<div class="NS_projects__rightcol_projectby bg-blue-light rounded">
+<div class="p2 clearfix">
+<div class="avatar inline-block align-middle">
+<a href="/projects/nexeon/face-of-mankind-fall-of-the-dominion/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography"><img alt="Untitled-2-4.small" class="avatar-small" height="80" src="https://s3.amazonaws.com/ksr/avatars/4449344/Untitled-2-4.small.jpg?1350924653" width="80" />
+</a></div>
+<div class="creator-name inline-block align-middle ml1">
+<h6 class="mb1">Project by</h6>
+<h5 class="mb1">
+<a href="/projects/nexeon/face-of-mankind-fall-of-the-dominion/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">Nexeon Technologies, Inc.</a>
+</h5>
+<p class="location h6 bold mb1">
+<a href="/discover/places/houston-tx">Houston, TX</a>
+</p>
+</div>
+</div>
+<div class="creator-details pl2 pr2 pb1">
+<ul class="list-simple h5 mb1">
+<li class="projects">
+<span class="ss-icon ss-kickstarter grey-dark margin-right"></span>
+<span class="text">
+First created
+<span class="divider">&middot;</span>
+<a href="/profile/nexeon/backed" class="green-dark bold more-button remote_modal_dialog" data-modal-title="Projects backed by Nexeon Technologies, Inc.">11 backed</a>
+</span>
+</li>
+<li>
+<span class="ss-icon ss-facebook margin-right grey-dark"></span>
+<span class="text">
+Has not connected Facebook
+</span>
+</li>
+</ul>
+</div>
+<div class="footer center h5 bold clearfix rounded-bottom clip">
+<a href="/projects/nexeon/face-of-mankind-fall-of-the-dominion/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">See full bio</a>
+<a href="/projects/nexeon/face-of-mankind-fall-of-the-dominion/messages/new?message%5Bto%5D=nexeon" class="remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Send a message to Nexeon Technologies, Inc.">Contact me</a>
+
+</div>
+</div>
+
+<ul class="NS-projects-rightcol-rewards rounded clip list mt2" data-reward-count="35" id="what-you-get">
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$5</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+25 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>We would like to thank you sincerely for your support in helping build this amazing sandbox multiplayer game. You will receive a SPECIAL in-game shirt for your character which will let everyone know that YOU helped this project succeed.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-02-01">Feb 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$15</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+27 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>You will receive an EXCLUSIVE in-game Kickstarter hat for your character plus SPECIAL ACCESS to the private DEVELOPER FORUM to help us improve the game. We will share exclusive information and our undying gratitude. You will also receive a unique icon on your in-game &quot;player file&quot; to show others that you are an original backer. ● Includes all the above rewards ●</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-02-01">Feb 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$30</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+119 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(181 left of 300)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>● EARLY BACKERS! ● You will receive EXCLUSIVE player name reservation before launch, ONE MONTH of PREMIUM GAMEPLAY, and EARLY ACCESS to the game&#39;s release ● Includes all the above rewards ●</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-02-01">Feb 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$35</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+15 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>You will receive EXCLUSIVE player name reservation before launch, ONE MONTH of PREMIUM GAMEPLAY, and EARLY ACCESS to the game&#39;s release ● Includes all the above rewards (except limited tiers) ●</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-02-01">Feb 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$55</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+27 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(23 left of 50)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>● EARLY BACKERS! ● You will receive TWO ADDITIONAL MONTHS of PREMIUM GAMEPLAY (total 3 including previous tiers), a BOXED copy of the game, your name in the official game credits (the same credits the developers are in!), and special access to EXCLUSIVE FACTION EMBLEM components, allowing you to create unique faction emblems not available to normal accounts. You will also receive five sets of in-game STARTER GEAR which you can keep for yourself or give to your friends to help gain some footing in the large game universe. ● Includes all the above rewards (except limited tiers) ●</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-02-01">Feb 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $20 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$60</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+25 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(975 left of 1000)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>● DIGITAL ONLY: This tier includes no physical rewards! ● You will receive TWO ADDITIONAL MONTHS of PREMIUM GAMEPLAY (total 3 including previous tiers), ADDITIONAL 600 FOUNDER COINS (Total 1,200 Coins), your name in the official game credits (the same credits the developers are in!), and special access to EXCLUSIVE FACTION EMBLEM components, allowing you to create unique faction emblems not available to normal accounts. You will also receive five sets of in-game STARTER GEAR which you can keep for yourself or give to your friends to help gain some footing in the large game universe. ● Includes all the above rewards (except limited tiers) ●</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-02-01">Feb 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$60</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+2 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>You will receive TWO ADDITIONAL MONTHS of PREMIUM GAMEPLAY (total 3 including previous tiers), a BOXED copy of the game, your name in the official game credits (the same credits the developers are in!), and special access to EXCLUSIVE FACTION EMBLEM components, allowing you to create unique faction emblems not available to normal accounts. You will also receive five sets of in-game STARTER GEAR which you can keep for yourself or give to your friends to help gain some footing in the large game universe. ● Includes all the above rewards (except limited tiers) ●</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-02-01">Feb 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $20 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$75</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+16 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(984 left of 1000)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>● DIGITAL ONLY: This tier includes no physical rewards! ● You will receive an ADDITIONAL 750 FOUNDER COINS (Total 1,500 Coins), a BRONZE icon next to your name in the in-game chat with a special forum name color and title to go with it, and your name will be shown in the game universe on the &quot;Revolutionary Wall&quot; in the hub of NYC - Brooklyn. ● Includes all the above rewards (except limited tiers) ●</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-02-01">Feb 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$75</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+6 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>You will receive a KICKSTARTER EXCLUSIVE Face of Mankind T-Shirt, a BRONZE icon next to your name in the in-game chat with a special forum name color and title to go with it, and your name will be shown in the game universe on the &quot;Revolutionary Wall&quot; in the hub of NYC - Brooklyn. ● Includes all the above rewards (except limited tiers) ●</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-02-01">Feb 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $25 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$100</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+21 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(29 left of 50)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>● EARLY BACKERS! ● You will receive an upgrade to the SPECIAL EDITION BOXED copy of the game, an EXCLUSIVE POSTER, and a KICKSTARTER EXCLUSIVE WEAPON that does not decay and drops to storage on death. The attributes of this weapon will be balanced and not overpowered. You will also receive some more exclusive faction emblem components. ● Includes all the above rewards (except limited tiers) ●</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-02-01">Feb 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $25 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$110</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+10 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(990 left of 1000)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>● DIGITAL ONLY: This tier includes no physical rewards! ● You will receive an ADDITIONAL 1,100 FOUNDER COINS (Total 2,200 Coins) and a KICKSTARTER EXCLUSIVE WEAPON that does not decay and drops to storage on death. You will also receive some more exclusive faction emblem components. ● Includes all the above rewards (except limited tiers) ●</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-02-01">Feb 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$110</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>You will receive an upgrade to the SPECIAL EDITION BOXED copy of the game, an EXCLUSIVE POSTER, and a KICKSTARTER EXCLUSIVE WEAPON that does not decay and drops to storage on death. The attributes of this weapon will be balanced and not overpowered. You will also receive some more exclusive faction emblem components. ● Includes all the above rewards (except limited tiers) ●</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-02-01">Feb 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $25 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$150</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+12 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>You will receive KICKSTARTER EXCLUSIVE ARMOR that does not decay and does not drop on death. Just as with the weapon, it will be balanced and not overpowered. You will also get a SILVER ICON next to your name in-game, showing players your higher level of dedication in the building of this project, as well as a matching forum name color and title to go with it. ● Includes all the above rewards (except limited tiers) ●</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-02-01">Feb 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $25 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$200</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+21 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>You will receive a KICKSTARTER EXCLUSIVE PENTHOUSE APARTMENT in-game. Invite other players to your penthouse to show them how awesome you are as an original founder of the game. This penthouse comes with unlimited &quot;featured apartment&quot; status in the public apartment list, allowing you to use it for special events or to show off your unique apartment. (Of course, you can also keep it private and not on the public list too.) ● Includes all the above rewards (except limited tiers) ●</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-02-01">Feb 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $25 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$250</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+11 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(989 left of 1000)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>● DIGITAL ONLY: This tier includes no physical rewards! ● You will receive early FACTION NAME RESERVATION before launch (subject to approval), THREE ADDITIONAL MONTHS of PREMIUM GAMEPLAY (total 6 including previous tiers), an ADDITIONAL 2,500 FOUNDER COINS (Total 5,000 Coins), and a special BACKER RING to wear on the hand of your character in-game for all to see. You will also receive additional unique faction emblem components to make your faction even more unique. ● Includes all the above rewards (except limited tiers) ● (Please note that faction names reserved cannot be one of the faction names listed in any of the $2,500 reward tiers) ●</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-02-01">Feb 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$250</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+3 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>You will receive early FACTION NAME RESERVATION before launch (subject to approval), THREE ADDITIONAL MONTHS of PREMIUM GAMEPLAY (total 6 including previous tiers), and a special BACKER RING to wear on the hand of your character in-game for all to see. You will also receive additional unique faction emblem components to make your faction even more unique. ● Includes all the above rewards (except limited tiers) ● (Please note that faction names reserved cannot be one of the faction names listed in any of the $2,500 reward tiers).</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-02-01">Feb 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $25 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$300</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+6 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>You will be able to NAME AN AREA of a world in the Face of Mankind universe such as a club or other location in-game (subject to approval). Other players can see this location name every time they enter or reference it. ● Includes all the above rewards (except limited tiers) ●</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-02-01">Feb 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $25 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+2 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>You will receive an upgrade to the SPECIAL COLLECTOR&#39;S EDITION BOXED copy of the game, along with a CHARACTER FIGURINE unique to this Kickstarter campaign. You will also receive a special STATUE designed to look like your player character in an in-game hall of fame. This special statue will show your character&#39;s name so that all can know of how you helped found Face of Mankind: Fall of the Dominion. ● Includes all the above rewards (except limited tiers) ●</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-02-01">Feb 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $30 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$750</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(999 left of 1000)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>● DIGITAL ONLY: This tier includes no physical rewards! ● You will receive VIP ACCOUNT STATUS that allows you access to ALL PREMIUM GAMEPLAY FEATURES such as additional clothing, faction emblem components, apartment types, and other benefits. You will receive a GOLD ICON next to your name in-game, showing players your epic level of dedication in the building of this project, as well as a matching forum name color and title to go with it. You will also gain the ability to NAME AN ITEM in-game which others can see and use plus an ADDITIONAL 7,500 FOUNDER COINS (Total 15,000 Coins) ● Includes all the above rewards (except limited tiers) ●</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-02-01">Feb 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$750</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+8 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>You will receive VIP ACCOUNT STATUS that allows you access to ALL PREMIUM GAMEPLAY FEATURES such as additional clothing, faction emblem components, apartment types, and other benefits. You will receive a GOLD ICON next to your name in-game, showing players your epic level of dedication in the building of this project, as well as a matching forum name color and title to go with it. You will also gain the ability to NAME AN ITEM in-game which others can see and use. ● Includes all the above rewards (except limited tiers) ●</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-02-01">Feb 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $30 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$1,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+2 backers
+</span>
+<span class="bg-grey no-wrap pl1 pr1 sold-out">
+All gone!
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>You will get to name one of the GALACTIC SECTORS on the starmap whatever you would like (subject to approval). ● Includes all the above rewards (except limited tiers) ●</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-02-01">Feb 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $30 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$1,250</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(74 left of 75)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>You will receive an ADDITIONAL VIP ACCOUNT that allows you access to ALL PREMIUM GAMEPLAY FEATURES such as additional clothing, faction emblem components, apartment types, and other benefits. ● Includes all the above rewards (except limited tiers)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-02-01">Feb 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $30 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$2,500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(1 left of 1)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>You will receive leadership of one of the original Face of Mankind storyline factions, the LAW ENFORCEMENT DEPARTMENT, retaining the original unique faction logo as well as faction specific clothing. ● Includes all the above rewards (except limited tiers) ●</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-02-01">Feb 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $30 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$2,500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+<span class="bg-grey no-wrap pl1 pr1 sold-out">
+All gone!
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>You will receive leadership of one of the original Face of Mankind storyline factions, AMERICAN ENTERPRISES, retaining the original unique faction logo as well as faction specific clothing. ● Includes all the above rewards (except limited tiers) ●</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-02-01">Feb 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $30 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$2,500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(1 left of 1)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>You will receive leadership of one of the original Face of Mankind storyline factions, the ASIAN COALITION, retaining the original unique faction logo as well as faction specific clothing. ● Includes all the above rewards (except limited tiers) ●</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-02-01">Feb 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $30 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$2,500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+<span class="bg-grey no-wrap pl1 pr1 sold-out">
+All gone!
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>You will receive leadership of one of the original Face of Mankind storyline factions, the FREEDOM DEFENSE CORPS, retaining the original unique faction logo as well as faction specific clothing. ● Includes all the above rewards (except limited tiers) ●</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-02-01">Feb 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $30 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$2,500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(1 left of 1)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>You will receive leadership of one of the original Face of Mankind storyline factions, the COLONIZATION AND MINING GUILD, retaining the original unique faction logo as well as faction specific clothing. ● Includes all the above rewards (except limited tiers) ●</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-02-01">Feb 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $30 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$2,500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(1 left of 1)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>You will receive leadership of one of the original Face of Mankind storyline factions, the BROTHERHOOD OF THE SHADOWS, retaining the original unique faction logo as well as faction specific clothing. ● Includes all the above rewards (except limited tiers) ●</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-02-01">Feb 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $30 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$2,500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(1 left of 1)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>You will receive leadership of one of the original Face of Mankind storyline factions, the GUARDIANS OF MANKIND, retaining the original unique faction logo as well as faction specific clothing. ● Includes all the above rewards (except limited tiers) ●</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-02-01">Feb 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $30 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$2,500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(1 left of 1)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>You will receive leadership of one of the original Face of Mankind storyline factions, VORTEX INCORPORATED, retaining the original unique faction logo as well as faction specific clothing. ● Includes all the above rewards (except limited tiers) ●</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-02-01">Feb 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $30 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$2,500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(1 left of 1)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>You will receive leadership of one of the original Face of Mankind storyline factions, EUROCORE, retaining the original unique faction logo as well as faction specific clothing. ● Includes all the above rewards (except limited tiers) ●</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-02-01">Feb 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $30 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$2,500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(1 left of 1)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>You will receive leadership of one of the original Face of Mankind storyline factions, the MERCENARIES OF THE BLOOD, retaining the original unique faction logo as well as faction specific clothing. ● Includes all the above rewards (except limited tiers) ●</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-02-01">Feb 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $30 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$3,500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(4 left of 5)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>You will receive a special PLATINUM ICON next to your name in-game, showing players your epic level of dedication in the building of this project, as well as a special forum name color and PRODUCER forum title to go with it. Also included is a CUSTOM SET OF CLOTHING (shirt and pants), your name displayed in a special PRODUCER section of the credits, and your name on a special PLATE near the Revolutionary Wall in NYC - Brooklyn. You will also receive an EXCLUSIVE PRODUCER CHARACTER BADGE above your name in-game as well as on your &quot;player file&quot; in-game. &quot;Custom&quot; content can be designed by yourself utilizing a template we provide you with, or designed by our own artists. Please note that all custom content is subject to approval. ● Includes all the above rewards (except limited tiers) ●</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-02-01">Feb 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $30 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$6,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+2 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(3 left of 5)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>You will be given the opportunity to work alongside our art staff to design a UNIQUE, ONE OF A KIND CHARACTER in-game just for you. This includes a CUSTOM SET OF ARMOR, CUSTOM CLOTHING (shirt and pants), CUSTOM CHARACTER FACE, CUSTOM WEAPON, and CUSTOM HAT. You will receive a special PLATINUM ICON next to your name in-game, showing players your epic level of dedication in the building of this project, as well as a special forum name color and EXECUTIVE PRODUCER title on the forums. You will be listed in our credits as an EXECUTIVE PRODUCER right near the names of our very own game developers and team members. Your name will be featured on a special EXECUTIVE PRODUCER GOLDEN PLATE in NYC - Brooklyn, near the Revolutionary Wall. You will also receive an EXCLUSIVE EXECUTIVE PRODUCER CHARACTER BADGE above your name in-game as well as on your &quot;player file&quot; in-game. &quot;Custom&quot; content can be designed by yourself utilizing a template we provide you with, or designed by our own artists. Please note that all custom content is subject to approval. ● Includes all the above rewards (except limited tiers) ●</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-02-01">Feb 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $30 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$10,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(5 left of 5)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>You will be given the opportunity to work alongside our art staff to design a UNIQUE, ONE OF A KIND CHARACTER in-game just for you. This includes a CUSTOM SET OF ARMOR, CUSTOM CLOTHING (shirt and pants), CUSTOM CHARACTER FACE, CUSTOM WEAPON, and CUSTOM HAT. You will receive a special PLATINUM ICON next to your name in-game, showing players your epic level of dedication in the building of this project, as well as a special forum name color and EXECUTIVE PRODUCER title on the forums. You will be listed in our credits as an EXECUTIVE PRODUCER right near the names of our very own game developers and team members. Your name will be featured on a special EXECUTIVE PRODUCER GOLDEN PLATE in NYC - Brooklyn, near the Revolutionary Wall. You will also receive an EXCLUSIVE EXECUTIVE PRODUCER CHARACTER BADGE above your name in-game as well as on your &quot;player file&quot; in-game. &quot;Custom&quot; content can be designed by yourself utilizing a template we provide you with, or designed by our own artists. Please note that all custom content is subject to approval. ● We also invite you to a very special PAINTBALL event, where you can compete with us. Afterwards we invite you to a relaxed dinner to end this unforgettable day. ● Includes all the above rewards (except limited tiers) ●</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-02-01">Feb 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+</ul>
+
+<div class="p2" id="meta">
+<h5>Funding period</h5>
+<p class="tiny_type">
+<time class="js-adjust" data-format="ll" datetime="2013-05-07T10:28:11-04:00">May 7, 2013</time> - 
+<time class="js-adjust" data-format="ll" datetime="2013-06-06T10:28:11-04:00">Jun 6, 2013</time>
+(30 days)
+</p>
+</div>
+</div>
+
+</div>
+
+<a href="#" id="video_mode_tab" style="display: none;">
+View in Video Mode
+</a>
+
+</div>
+</div>
+
+
+</div>
+
+<div class="h5 bg-green-dark" id="mega-footer-wrap">
+<div class="bg-green-dark white full-height" id="footer-newsletter-signup">
+<div class="container py4">
+<div class="grid_8 prefix_4 suffix_4 center mt4">
+<h2>
+Eureka! You've found
+<br>
+our little secret.
+</h2>
+<p>Sign up for our Happening email for all the inside info about arts and culture in the Kickstarter universe and beyond.</p>
+<div class="newsletter_signup">
+<form accept-charset="UTF-8" action="/newsletters/happening/signup" class="overlabels" method="post"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /><input class="hidden" name="authenticity_token" type="hidden" value="4XnZx8FVufbr95TY8prI5ICoZFGqeGXQSG+cG2Qt8+k=" /></div><input class="hidden" id="location" name="location" type="hidden" value="footer" />
+<textarea class="hide textarea" id="comment" name="comment">
+</textarea>
+<div class="field newsletter">
+<label class="overlabel z1 overlabel-newsletter">Email address</label>
+<input class="text" id="email" name="email" type="text" />
+</div>
+<input class="button button_green submit" name="commit" type="submit" value="Submit" />
+</form>
+
+</div>
+
+</div>
+</div>
+</div>
+<div class="container relative" id="mega-footer">
+<span class="scissors icon-scissors-1"></span>
+<div class="grid_16 alpha omega pt4 pb2" id="mega-footer-links">
+<div class="grid_4 link-group">
+<h5 class="white">About us</h5>
+<ul class="list">
+<li><a href="/year/2013/?ref=footer">2013 highlights</a></li>
+<li><a href="/year/2012?ref=footer">2012 highlights</a></li>
+<li><a href="/team?ref=footer">Who we are</a></li>
+<li><a href="/jobs?ref=footer">Jobs</a></li>
+<li><a href="/press?ref=footer">Press</a></li>
+<li><a href="/help/stats?ref=footer">Stats</a></li>
+<li><a href="/newsletters/weekly">Projects we love</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group">
+<h5><a href="/help?ref=footer" class="white">Help</a></h5>
+<ul class="list">
+<li><a href="/hello?ref=footer">What is Kickstarter?</a></li>
+<li><a href="/help?ref=footer">FAQ</a></li>
+<li><a href="/contact?ref=footer">Support</a></li>
+<li><a href="/help/school?ref=footer">Kickstarter School</a></li>
+<li><a href="/terms-of-use?ref=footer">Terms of Use</a></li>
+<li><a href="/privacy?ref=footer">Privacy Policy</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group alpha omega suffix_1">
+<h5 class="alpha"><a href="/discover/advanced?ref=footer" class="white">Discover</a></h5>
+<ul class="column column-0 grid_2 list">
+<li><a href="/discover/categories/art?ref=footer">Art</a></li>
+<li><a href="/discover/categories/comics?ref=footer">Comics</a></li>
+<li><a href="/discover/categories/dance?ref=footer">Dance</a></li>
+<li><a href="/discover/categories/design?ref=footer">Design</a></li>
+<li><a href="/discover/categories/fashion?ref=footer">Fashion</a></li>
+<li><a href="/discover/categories/film%20&amp;%20video?ref=footer">Film &amp; Video</a></li>
+<li><a href="/discover/categories/food?ref=footer">Food</a></li>
+</ul>
+<ul class="column column-1 grid_2 list">
+<li><a href="/discover/categories/games?ref=footer">Games</a></li>
+<li><a href="/discover/categories/music?ref=footer">Music</a></li>
+<li><a href="/discover/categories/photography?ref=footer">Photography</a></li>
+<li><a href="/discover/categories/publishing?ref=footer">Publishing</a></li>
+<li><a href="/discover/categories/technology?ref=footer">Technology</a></li>
+<li><a href="/discover/categories/theater?ref=footer">Theater</a></li>
+</ul>
+</div>
+<div class="grid_3 link-group">
+<h5 class="white">Hello</h5>
+<ul class="list">
+<li>
+<a href="https://twitter.com/kickstarter"><span class="ss-icon ss-social-regular ss-twitter"></span>
+Twitter
+</a></li>
+<li>
+<a href="https://www.facebook.com/Kickstarter"><span class="ss-icon ss-social-regular ss-facebook"></span>
+Facebook
+</a></li>
+<li>
+<a href="http://kickstarter.tumblr.com"><span class="ss-icon ss-social-regular ss-tumblr"></span>
+Tumblr
+</a></li>
+<li>
+<a href="http://instagram.com/kickstarter"><span class="ss-icon ss-social-regular ss-instagram"></span>
+Instagram
+</a></li>
+<li>
+<a href="https://vine.co/Kickstarter"><span class="ss-icon ss-social-regular ss-vine"></span>
+Vine
+</a></li>
+<li>
+<a href="/blog?ref=footer">Blog</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="grid_16 py4" id="mega-footer-bottom">
+<div class="logo left">
+<a href="/" class="grey-dark"><span class="ss-icon h3">KICKSTARTER</span>
+</a></div>
+<p class="right h5 grey-dark">
+&copy;
+2014
+Kickstarter, Inc.
+</p>
+</div>
+</div>
+</div>
+
+<script>
+  //<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    var analytics_vars = { google_analytics_id : "UA-7621056-1", logged_in : "false", social_user: "false" }
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.mixpanel_id = '75b1d24a516ecfc955eadfadc4910661';
+    window.mixpanel_debug = false;
+  //]]>
+</script>
+
+
+<noscript>
+<img alt="Quantcast" border="0" height="1" src="//secure.quantserve.com/pixel/p-34IbSpw2K94Sg.gif" style="display:none" width="1" />
+</noscript>
+
+
+<script>
+  //<![CDATA[
+    window.benchmark = (typeof window.performance == 'object' && typeof window.performance.mark == 'function');
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    (function (root) {
+      function instrument_function (original) {
+        return function () {
+          try {
+            return original.apply(this, arguments);
+          } catch (e) {
+            if (e.stack && root.Honeybadger) {
+              Honeybadger.notify(e, {
+                current_project : root.current_project,
+                current_user : root.current_user
+              });
+            }
+            throw(e);
+          }
+        };
+      }
+      root.instrument_function = instrument_function;
+    }(this));
+  //]]>
+</script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+
+<script>
+  //<![CDATA[
+    (function(){function c(a){this.local_start_time=new Date;this.settings={cookie_name:"request_time"};for(var b in a)this.settings[b]=a[b];this.get_remote_offset()}c.prototype.get_remote_offset=function(){this.cookie_value=this.read_cookie();var a=new Date(this.cookie_value);if(!this.cookie_value||"Invalid Date"===a.toString()){if(this.remote_offset=this.read_cookie("local_offset"))this.remote_offset=parseInt(this.remote_offset,10)}else this.remote_offset=a-this.local_start_time;"undefined"!==typeof this.remote_offset&& !isNaN(this.remote_offset)?(document.cookie="local_offset="+this.remote_offset+"; path=/",this.is_set=!0):this.is_set=!1};c.prototype.time_units=[["milliseconds",1],["seconds",1E3],["minutes",6E4],["hours",36E5],["days",864E5]];c.prototype.get_units_in_interval=function(a,b){var d=a.replace(/^\w/,function(d){return"get"+d.toUpperCase()});return b[d]()};c.prototype.milliseconds_in_day=function(a){"undefined"===typeof a&&(a=new Date);for(var b=0,d=this.time_units.length-2;0<=d;d--)b+=this.get_units_in_interval(this.time_units[d][0], a)*this.time_units[d][1];return b};c.prototype.milliseconds_in_interval=function(a,b){return this.milliseconds_in_day(b)%a};c.prototype.milliseconds_to_next_interval=function(a,b){return a-this.milliseconds_in_interval(a,b)};c.prototype.pluralize=function(a,b){1===b&&(a=a.replace(/s$/,""));return a};c.prototype.read_cookie=function(a){for(var b=window.document.cookie.split(";"),a=(a||this.settings.cookie_name)+"=",d=0;d<b.length;d++){for(var e=b[d];" "==e.charAt(0);)e=e.substring(1,e.length);if(0== e.indexOf(a))return b=e.substring(a.length,e.length),decodeURIComponent(b).replace(/\+/g," ")}return null};c.prototype.destroy_cookie=function(a){var b=new Date;a||(a=this.settings.cookie_name);b.setTime(b.getTime()-864E5);window.document.cookie=a+"=; expires="+b.toGMTString()+"; path=/"};c.prototype.get_remote_time=function(){var a=new Date,b=a.getTime()+this.remote_offset;return a=a.setTime(b)};window.ksr_page_clock=new c})(); (function(){function c(d,a,b){if(d){this.options={unit_base:{seconds:119,minutes:119,hours:72,days:0},end_phrase:d.getAttribute("data-word")||"to go",count_down:d.getAttribute("data-dynamic")||!1};for(k in b)this.options[k]=b[k];this.clock=a;this.time_units=this.clock.time_units.slice(1);this.element=d;this.clock.is_set&&this.attach()}}function a(){this.elements=[];this.attach()}var b=function(d,a){var b=a||window.document.body,c=d.split("."),g=c[c.length-1],c=1<c.length&&c[0]?c[0]:"*";if(window.document.getElementsByClassName)return b.getElementsByClassName(g); if(b.querySelectorAll)return b.querySelectorAll(d);for(var c=b.getElementsByTagName(c),h=[],i=0,f;f=c[i];i++)b=RegExp("(^|\\s)"+g+"(\\s|$)"),(""+f.className).match(b)&&h.push(f);return h};c.prototype.get_remaining_time=function(){var d=this.remote_end_time-this.clock.get_remote_time();0>d&&(d=0);return d};c.prototype.get_current_unit=function(){for(var d,a=0;a<this.time_units.length&&!(d=this.time_units[a],this.get_remaining_time()<=this.options.unit_base[d[0]]*d[1]);a++);return d};c.prototype.update_element= function(){var a=this.get_current_unit(),b=Math.floor(this.get_remaining_time()/a[1]);isNaN(b)||(this.number_element.innerHTML=b,this.text_element.innerHTML=this.clock.pluralize(a[0],b)+" "+this.options.end_phrase)};c.prototype.valid=function(){return!(!this.number_element||!this.text_element)};c.prototype.attach=function(){function a(){c.update_element();if(c.options.count_down&&0<c.get_remaining_time()){var b=c.get_current_unit();this.timeout=window.setTimeout(a,c.clock.milliseconds_to_next_interval(b[1]))}} var c=this;if(this.remote_end_time_string=this.element.getAttribute("data-end_time"))this.remote_end_time_string.match(/^\d+$/)?(this.remote_end_time=new Date,this.remote_end_time.setTime(this.remote_end_time_string)):this.remote_end_time=new Date(this.remote_end_time_string),this.number_element=b(".num",this.element)[0],this.text_element=b(".text",this.element)[0],this.element.ksr_page_timer=!0,this.valid()&&a()};c.prototype.cancel=function(){this.timeout&&clearTimeout(this.timeout)};a.prototype.loading= !0;a.prototype.stop_finding=function(){this.attach_timers();this.loading=!1;document.addEventListener?document.removeEventListener("DOMContentLoaded",this.stop_finding,!1):document.attachEvent&&"complete"===document.readyState&&document.detachEvent("onreadystatechange",this.stop_finding)};a.prototype.bind_ready=function(){var a=this,b=function(){a.stop_finding.call(a)};document.addEventListener?(document.addEventListener("DOMContentLoaded",b,!1),window.addEventListener("load",b,!1)):document.attachEvent&& (document.attachEvent("onreadystatechange",b),window.attachEvent("onload",b))};a.prototype.attach_timers=function(){for(var a=b("div.ksr_page_timer"),e=0;e<a.length;e++)a[e].ksr_page_timer||(new c(a[e],window.ksr_page_clock),this.elements.push(a[e]))};a.prototype.attach=function(){var a=this;this.bind_ready();(function(){a.attach_timers();a.loading&&window.setTimeout(function(){a.attach_timers()},200)})()};window.ProjectTimer=c;new a})();
+  //]]>
+</script>
+
+<script class="template" id="template-widgets__video_embed_code" type="text/x-tmpl-mustache"><iframe width="{{width}}" height="{{height}}" src="{{{path}}}" frameborder="0" scrolling="no"> </iframe>
+</script><script class="template" id="template-projects__baseball_card_tall" type="text/x-tmpl-mustache"><div class="project-card-wrap project-card-wrap-tall border bg-white rounded clip">
+  <div class="project-card relative project-live {{#successful?}}successful{{/successful?}}">
+    <div class="project-thumbnail pt1 pl1 pr1">
+      <a href="{{urls.web.project}}" target="">
+        <img alt="Photo-little" class="projectphoto-little" src="{{photo.little}}" class="fit">
+      </a>
+    </div>
+    <div class="project-card-interior p1 h6 grey-dark">
+      <h6 class="project-title">
+        <a href="{{urls.web.project}}" target="" class="green-dark">{{name}}</a>
+      </h6>
+      <p class="mb1 ellipsis">
+        by
+        {{creator.name}}
+      </p>
+      <p class="blurb">
+        {{blurb}}
+      </p>
+    </div>
+    <div class="absolute-bottom bg-white rounded-bottom">
+
+      {{#location}}
+        <ul class="p1 list project-meta no-margin h6">
+          <li class="ellipsis">
+            <a href="{{location.urls.web.discover}}" data-location="{{location_json}}" class="grey-dark">
+              <span class="ss-icon ss-location"></span>
+              <span class="location-name">{{location.displayable_name}}</span>
+            </a>
+          </li>
+        </ul>
+      {{/location}}
+
+      <div class="project-stats-wrap pb1 pl1 pr1">
+
+        {{#failed?}}
+          <div class='project-status project-failed h6'>
+            <strong> Funding Unsuccessful</strong><br />
+            <span class="grey-dark">Project ended on {{formatted_deadline}}</span>
+          </div>
+        {{/failed?}}
+
+        {{#canceled?}}
+          <div class='project-status project-canceled h6'>
+            <strong> Funding Canceled</strong><br />
+            <span class="grey-dark">Project canceled on {{formatted_state_changed_at}}</span>
+          </div>
+        {{/canceled?}}
+
+        {{#successful?}}
+          <div class='project-pledged-successful bg-green white h6 pl1 pr1 mb1'>
+            <strong>Successful!</strong>
+          </div>
+        {{/successful?}}
+
+        {{#live_or_successful?}}
+          {{#live?}}
+            <div class="project-pledged-wrap bg-grey clip mb1">
+              <div class="project-pledged bg-green full-height" style="width: {{percent_raised_to_100}}%"></div>
+            </div>
+          {{/live?}}
+          <ul class="project-stats list no-margin h6 no-wrap">
+            <li class="first funded inline-block mr1">
+              <strong class="block h6">{{percent_raised_rounded}}%</strong>
+              <span class="grey-dark">funded</span>
+            </li>
+            <li class="pledged inline-block mr1">
+              <strong class="block h6">{{currency_symbol}}{{formatted_money}}</strong>
+              <span class="grey-dark">pledged</span>
+            </li>
+            {{#successful?}}
+              <li class="last successful inline-block">
+                <strong class="block h6">Funded</strong>
+                <div class="deadline grey-dark">{{formatted_deadline}}</div>
+              </li>
+            {{/successful?}}
+            {{#live?}}
+              <li class="last ksr_page_timer inline-block" data-end_time="{{javascript_deadline}}">
+                <strong class="block h6">
+                  <div class="num">30</div>
+                </strong>
+                <div class="span text grey-dark" data-word="left">days to go</div>
+              </li>
+            {{/live?}}
+          </ul>
+        {{/live_or_successful?}}
+      </div>
+    </div>
+  </div>
+</div>
+
+{{#friends_backing?}}
+  <div class="friend_project_context">
+    <div class="friend_facepile">
+      {{#truncated_friends}}
+        <img src="{{avatar.thumb}}" class="{{#has_metadata?}}small{{/has_metadata?}}">
+      {{/truncated_friends}}
+    </div>
+    <p class="friend_namepile">
+      {{{escaped_sentence}}}
+    </p>
+  </div>
+{{/friends_backing?}}
+</script><script class="template" id="template-projects__video_mode" type="text/x-tmpl-mustache"><a href='#' id='video_mode_close' class='close_button z2'><span class='ss-icon ss-delete'></span></a>
+
+<div class='title_card z1 {{context_classes}}' style="display:none;">
+  <div class='interior'>
+    <h2 class='project_title normal_weight'>{{name}}</h2>
+    <p class='blurb'>{{blurb}}</p>
+    <nav class='bar'>
+      <a id='play_button' class='left play' href='#'>
+        <span class='play_active'>
+          <span class='ss-icon ss-play'></span>
+          Play
+        </span>
+        <span class='pause_active'>
+          <span class='ss-icon ss-pause'></span>
+          Pause
+        </span>
+      </a>
+      {{#logged_in}}
+        <div class='remind right'>
+          {{#if_not_starred}}
+            <a class='follow' href='{{urls.web.project}}/watch'><span class='ss-icon ss-star'></span></a>
+          {{/if_not_starred}}
+          {{#if_starred}}
+            <a class='unfollow' href='{{urls.web.project}}/unwatch'><span class='ss-icon ss-star active'></span></a>
+          {{/if_starred}}
+        </div>
+      {{/logged_in}}
+      <a class='right explore button button_green small' href='#'>Explore this project</a>
+    </nav>
+  </div>
+</div>
+
+<div class='channel_controls z1'>
+  <a href='#' class='{{#playlist_is_location}}selected {{/playlist_is_location}}location'>Something else near {{location.first_name}} <span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_featured}}selected {{/playlist_is_featured}}featured'>Something different<span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_category}}selected {{/playlist_is_category}}category'>Something else in {{category.name}} <span class='ss-icon ss-navigateright'></span></a>
+</div>
+
+<div class='project_video' style='background-image: url('{{photo.full}}')'>
+  <div class='cover'>
+    <video>
+      <source src='{{video.high}}' type='video/mp4'/>
+      <source src='{{video.webm}}' type='video/webm'/>
+    </video>
+  </div>
+</div>
+</script><script class="template" id="template-site__video_mode_fourohfour" type="text/x-tmpl-mustache"><section class='four_oh_four'>
+  <p class='big_type'>
+    Looks like you've reached the end of the line! <br />Check out <a class="another" href='#'>another channel</a> or <a href='/discover'>browse projects in discover</a>.
+  </p>
+</section>
+</script>
+
+<script id="schwamm_formatting_options" type="text/javascript">
+//<![CDATA[
+(function(){window.formatters = window.formatters || {}; var formatting_options = {"distance_date_intervals":[[5,"just now"],[29,"less than a minute ago"],[89,"1 minute ago"],[2640,"%m minutes ago"],[5340,"about 1 hour ago"],[82800,"about %h hours ago"],[147600,"1 day ago"],[604800,"%d days ago"],[15552000,"on %t"],[0,"on %y"]],"currency_symbol_mappings":{"AFN":"\u060b","ALL":"Lek","ARS":"$","AUD":"$","AWG":"\u0192","AZN":"\u043c\u0430\u043d","BAM":"KM","BBD":"$","BGN":"\u043b\u0432","BMD":"$","BND":"$","BOB":"$b","BRL":"R$","BSD":"$","BWP":"P","BYR":"p.","BZD":"BZ$","CAD":"$","CLP":"$","CNY":"\u00a5","COP":"$","CRC":"\u20a1","CUP":"\u20b1","CZK":"K\u010d","DKK":"kr","DOP":"RD$","EGP":"\u00a3","EUR":"\u20ac","FJD":"$","FKP":"\u00a3","GBP":"\u00a3","GIP":"\u00a3","GTQ":"Q","GYD":"$","HKD":"$","HNL":"L","HRK":"kn","HUF":"Ft","IDR":"Rp","ILS":"\u20aa","IRR":"\ufdfc","ISK":"kr","JMD":"J$","JPY":"\u00a5","KGS":"\u043b\u0432","KHR":"\u17db","KPW":"\u20a9","KRW":"\u20a9","KYD":"$","KZT":"\u043b\u0432","LAK":"\u20ad","LBP":"\u00a3","LKR":"\u20a8","LRD":"$","LTL":"Lt","LVL":"Ls","MKD":"\u0434\u0435\u043d","MNT":"\u20ae","MUR":"\u20a8","MXN":"$","MYR":"RM","MZN":"MT","NAD":"$","NGN":"\u20a6","NIO":"C$","NOK":"kr","NPR":"\u20a8","NZD":"$","OMR":"\ufdfc","PAB":"B/.","PEN":"S/.","PHP":"\u20b1","PKR":"\u20a8","PLN":"z\u0142","PYG":"Gs","QAR":"\ufdfc","RON":"lei","RSD":"\u0414\u0438\u043d.","RUB":"\u0440\u0443\u0431","SAR":"\ufdfc","SBD":"$","SCR":"\u20a8","SEK":"kr","SGD":"$","SHP":"\u00a3","SOS":"S","SRD":"$","SVC":"$","SYP":"\u00a3","THB":"\u0e3f","TRY":"TL","TTD":"TT$","TWD":"NT$","UAH":"\u20b4","USD":"$","UYU":"$U","UZS":"\u043b\u0432","VEF":"Bs","VND":"\u20ab","YER":"\ufdfc","ZAR":"R"},"currency_trailing_code_mappings":{"AUD":true,"CAD":true,"NZD":true,"USD":true},"currency_formats":["money","shorter_money"]}; for (key in formatting_options) {window.formatters[key] = formatting_options[key]};}());
+//]]>
+</script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("begin_base.js_tag");}
+  //]]>
+</script>
+<script src="https://d297h9he240fqh.cloudfront.net/assets/packages/base-45cdab84617ddfb8905b7cddc8500c19.js" type="text/javascript"></script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("end_base.js_tag");}
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    document.domain='kickstarter.com';
+  //]]>
+</script>
+
+<iframe height="0" id="api_xdreceiver" src="https://api.kickstarter.com/xdreceiver/85e6.html" style="display: none;" width="0"></iframe>
+
+
+
+<div id="fb-root"></div>
+<script>
+  //<![CDATA[
+    var channelUrl = window.location.protocol + "//" + window.location.host + "/channel.html",
+      skip_autologin = $('body').is('.skip_autologin');
+    
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId: window.fb_app_id,
+        channelUrl: channelUrl,
+        status: true,    // check login status
+        cookie: true,    // enable cookies to allow the server to access the session
+        xfbml: true,     // parse XFBML
+        logging: false   // turn off logging
+      });
+    
+      FB.getLoginStatus(function (response) {
+        if (response.status === 'connected') {
+          if (read_cookie("logout_from_fb")) {
+            FB.logout();
+            destroy_cookie("logout_from_fb");
+          } else if (!skip_autologin) {
+            $.get("/fb/autologin", {'fbsr': response.authResponse.signedRequest});
+          } else if (false && 0 == response.authResponse.userID) {
+            $.get("/fb/refresh", {'fbsr': response.authResponse.signedRequest});
+          }
+        } else {
+          if (read_cookie("logout_from_fb")) {
+            destroy_cookie("logout_from_fb");
+          }
+        }
+      })
+    
+      $(document).trigger('fb:loaded');
+    };
+    
+    
+    // Load the SDK Asynchronously
+    (function(d){
+      var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+      js = d.createElement('script'); js.id = id; js.async = true;
+      js.src = "//connect.facebook.net/en_US/all.js";
+      d.getElementsByTagName('head')[0].appendChild(js);
+    }(document));
+  //]]>
+</script>
+
+
+</body>
+</html>

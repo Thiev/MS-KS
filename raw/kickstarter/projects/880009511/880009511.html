@@ -1,0 +1,2798 @@
+<!DOCTYPE html>
+<html class="projects_show  fontface no-js" lang="en">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# kickstarter: http://ogp.me/ns/fb/kickstarter#">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-5.newrelic.com","errorBeacon":"jserror.newrelic.com","licenseKey":"b04b883ad2","applicationID":"11086","transactionName":"cFteRUULX1wHFhtIEFxeVVJDFxxDCgtD","queueTime":15,"applicationTime":413,"ttGuid":"","agentToken":null,"agent":"js-agent.newrelic.com/nr-411.min.js"}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"Vw4BVEVSCQMIUg=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e){function n(t,e,n){n||(n={});for(var r=o[t],a=r&&r.length||0,s=n[i]||(n[i]={}),u=0;a>u;u++)r[u].apply(s,e);return s}function r(t,e){var n=o[t]||(o[t]=[]);n.push(e)}var o={},i="nr@context";e.exports={on:r,emit:n}},{}],2:[function(t){function e(t,e,n,i,s){return u?u-=1:r("err",[s||new UncaughtException(t,e,n)]),"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t(5),a=window.onerror,s=!1,u=0;t("loader").features.push("err"),window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(d){"stack"in d&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(4),s=!0)}i.on("fn-start",function(){s&&(u+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&u>0&&(u-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:4,3:3,4:6,5:1,6:14,handle:"D5DuLP",loader:"G9z0Bl"}],3:[function(t){function e(t){r.inPlace(t,["addEventListener","removeEventListener"],"-",n)}function n(t){return t[1]}var r=t(1),o=(t(3),t(2));if(e(window),"getPrototypeOf"in Object){for(var i=document;i&&!i.hasOwnProperty("addEventListener");)i=Object.getPrototypeOf(i);i&&e(i);for(var a=XMLHttpRequest.prototype;a&&!a.hasOwnProperty("addEventListener");)a=Object.getPrototypeOf(a);a&&e(a)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&e(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=e["nr@wrapped"]?t[1]=e["nr@wrapped"]:e["nr@wrapped"]=t[1]=r(e,"fn-"):"function"==typeof e.handleEvent&&r.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:15,2:1,3:14}],4:[function(t){var e=(t(3),t(1)),n=t(2);e.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=e(t[0],"fn-")})},{1:15,2:1,3:14}],5:[function(t){function e(t){var e=t[0];"string"==typeof e&&(e=new Function(e)),t[0]=n(e,"fn-")}var n=(t(3),t(1)),r=t(2);n.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",e)},{1:15,2:1,3:14}],6:[function(t){function e(){o.inPlace(this,s,"fn-")}function n(t,e){o.inPlace(e,["onreadystatechange"],"fn-")}function r(t,e){return e}var o=t(1),i=t(2),a=window.XMLHttpRequest,s=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];window.XMLHttpRequest=function(t){var n=new a(t);try{i.emit("new-xhr",[],n),o.inPlace(n,["addEventListener","removeEventListener"],"-",function(t,e){return e}),n.addEventListener("readystatechange",e,!1)}catch(r){try{i.emit("internal-error",r)}catch(s){}}return n},window.XMLHttpRequest.prototype=a.prototype,o.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",r),i.on("send-xhr-start",n),i.on("open-xhr-start",n)},{1:15,2:1}],7:[function(t){function e(){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;u>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,d="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=e(d);if(f&&(r.rxSize=f),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}t("loader").features.push("xhr");var o=t("handle"),i=t(1),a=t(5),s=["load","error","abort","timeout"],u=s.length,d=t(2);t(3),t(4),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var d=e(o);d&&(r.txSize=d)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",e)}catch(r){}}};for(var f=0;u>f;f++)n.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&e()},{1:8,2:11,3:3,4:6,5:1,handle:"D5DuLP",loader:"G9z0Bl"}],8:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e){var n=r[t];return n?n.apply(this,e):(o[t]||(o[t]=[]),void o[t].push(e))}var r={},o={};e.exports=n,n.queues=o,n.handlers=r},{}],11:[function(t,e){function n(t){if(!t||"object"!=typeof t&&"function"!=typeof t)return-1;if(t===window)return 0;if(o.call(t,"__nr"))return t.__nr;try{return Object.defineProperty(t,"__nr",{value:r,writable:!0,enumerable:!1}),r}catch(e){return t.__nr=r,r}finally{r+=1}}var r=1,o=Object.prototype.hasOwnProperty;e.exports=n},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&u&&u.body){p.proto="https"===c.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=u.createElement("script");e.src=p.proto+t.agent,u.body.appendChild(e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,u=s.document,d="addEventListener",f="attachEvent",c=(""+location).split("?")[0],p=e.exports={offset:i(),origin:c,features:[]};u[d]?(u[d]("DOMContentLoaded",o,!1),s[d]("load",n,!1)):(u[f]("onreadystatechange",r),s[f]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],14:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],15:[function(t,e){function n(t,e,r,s){function nrWrapper(){try{var n,a=u(arguments),d=this,f=r&&r(a,d)||{}}catch(c){i([c,"",[a,d,s],f])}o(e+"start",[a,d,s],f);try{return n=t.apply(d,a)}catch(p){throw o(e+"err",[a,d,p],f),p}finally{o(e+"end",[a,d,n],f)}}return a(t)?t:(e||(e=""),nrWrapper[n.flag]=!0,nrWrapper)}function r(t,e,r,o){r||(r="");var i,s,u,d="-"===r.charAt(0);for(u=0;u<e.length;u++)s=e[u],i=t[s],a(i)||(t[s]=n(i,d?s+r:r,o,s,t))}function o(t,e,n){try{s.emit(t,e,n)}catch(r){i([r,t,e,n])}}function i(t){try{s.emit("internal-error",t)}catch(e){}}function a(t){return!(t&&"function"==typeof t&&t.apply&&!t[n.flag])}var s=t(1),u=t(2);e.exports=n,n.inPlace=r,n.flag="nr@wrapper"},{1:1,2:14}]},{},["G9z0Bl",2,7]);</script><script>
+  //<![CDATA[
+    docElement = this.document.documentElement;
+    docElement.className=docElement.className.replace(/\bno-js\b/,'') + 'js';
+  //]]>
+</script>
+<title>Elite: Dangerous by Frontier Developments &mdash; Kickstarter</title><script>
+  //<![CDATA[
+    window.report_errors = true;
+    window.honeybadger_configuration = {
+      api_key : "02ab109335c0dd1a93506d92f22217a7",
+      environment : "production",
+      component : "projects",
+      action : "show",
+      onerror : false
+    };
+  //]]>
+</script>
+
+
+<!--[if lt IE 9]>
+  <script src="//html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta content="telephone=no" name="format-detection">
+
+<!--[if !IE]> -->
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base-9f623ad5d021a188cfb2d68a0cdf7a7b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<!-- <![endif]-->
+<!--[if IE]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base_blessed-2640c72487552f9a2ef9f2620b4af860.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<!--[if lte IE 9]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_nine-a93fe10530f175f96c4078b7e070d7e1.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 8]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_eight-f75aeb274436f94a0d243774456b1c62.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 7]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie-c019c01acd3a96588b346cf577a3504f.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_seven-5a3d2cef660cd281fd844b04b2397dbb.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if IE 6]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_six-e4d3caf76e405fe19aee6ece8bda701b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<link href="https://d297h9he240fqh.cloudfront.net/favicon.png" rel="icon" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-precomposed-7b603dba7cf80e4acc57d94a991bebbd.png" rel="apple-touch-icon-precomposed" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-ipad-precomposed-3176f72977daf43dee3b0d348484dc01.png" rel="apple-touch-icon-precomposed" sizes="72x72" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-iphone4-precomposed-b93b70168cd8492c843d0fea873c7f83.png" rel="apple-touch-icon-precomposed" sizes="114x114" type="image/png">
+<link href="https://www.kickstarter.com/services/oembed?url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2F1461411552%2Felite-dangerous" rel="alternate" title="Elite: Dangerous Script Tag oEmbed" type="application/json+oembed">
+<link rel="alternate" type="application/atom+xml" title="Elite: Dangerous : Kickstarter" href="https://www.kickstarter.com/projects/1461411552/elite-dangerous/posts.atom" />
+<meta property="twitter:app:id:iphone" content="596961532"/>
+<meta property="twitter:app:name:iphone" content="Kickstarter"/>
+<meta property="twitter:app:url:iphone" content="ksr://www.kickstarter.com/projects/1461411552/elite-dangerous"/>
+<meta name="video_height" content="360"/>
+<meta name="video_width" content="640"/>
+<meta name="video_type" content="application/x-shockwave-flash"/>
+<meta name="title" content="Kickstarter &gt;&gt; Elite: Dangerous by Frontier Developments"/>
+<meta name="description" content="Frontier Developments is raising funds for Elite: Dangerous on Kickstarter! 
+
+ Take a ship and 100 credits to make money legally or illegally - trade, bounty-hunt, pirate, assassinate your way across the galaxy."/>
+<meta property="og:title" content="Elite: Dangerous"/>
+<meta property="og:type" content="kickstarter:project"/>
+<meta property="og:image" content="https://s3.amazonaws.com/ksr/projects/380246/photo-main.jpg?1397801819"/>
+<meta property="og:url" content="https://www.kickstarter.com/projects/1461411552/elite-dangerous"/>
+<meta property="og:site_name" content="Kickstarter"/>
+<meta property="fb:app_id" content="69103156693"/>
+<meta property="og:description" content="Take a ship and 100 credits to make money legally or illegally - trade, bounty-hunt, pirate, assassinate your way across the galaxy."/>
+<meta property="kickstarter:creator" content="https://www.kickstarter.com/profile/1461411552"/>
+<meta property="twitter:url:landing_url" content="https://www.kickstarter.com/projects/1461411552/elite-dangerous"/>
+<meta property="twitter:card" content="2427656750:kickstarter_project"/>
+<meta property="twitter:site" content="@kickstarter"/>
+<meta property="twitter:site:id" content="16186995"/>
+<meta property="twitter:text:title" content="Elite: Dangerous"/>
+<meta property="twitter:text:artist" content="Frontier Developments"/>
+<meta property="twitter:text:backers" content="25681"/>
+<meta property="twitter:text:pledged" content="£1,578,316"/>
+<meta property="twitter:text:time" content="0 seconds"/>
+<meta property="twitter:text:location" content="Cambridge, UK"/>
+<meta property="twitter:image:location_image" content="https://d3mlfyygrfdi2i.cloudfront.net/b40e/pin.png"/>
+<meta property="twitter:text:description" content="Take a ship and 100 credits to make money legally or illegally - trade, bounty-hunt, pirate, assassinate your way across the galaxy."/>
+<meta property="twitter:image:media" content="https://s3.amazonaws.com/ksr/projects/380246/photo-main.jpg?1397801819"/>
+<meta property="twitter:image:width" content="640"/>
+<meta property="twitter:image:height" content="480"/>
+<meta property="twitter:player:stream:url" content="https://d2pq0u4uni88oo.cloudfront.net/projects/380246/video-192413-h264_base.mp4"/>
+<meta property="twitter:player:stream:content" content="video/mp4"/>
+<meta property="twitter:player:url" content="https://www.kickstarter.com/projects/1461411552/elite-dangerous/widget/video.html"/>
+<meta property="twitter:player:height" content="360"/>
+<meta property="twitter:player:width" content="640"/>
+<meta property="twitter:maxage" content="60"/>
+<meta property="og:video" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F380246%2Fvideo-192413-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F380246%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Frontier+Developments&amp;project_title=Elite%3A+Dangerous&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2F1461411552%2Felite-dangerous&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:secure_url" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F380246%2Fvideo-192413-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F380246%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Frontier+Developments&amp;project_title=Elite%3A+Dangerous&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2F1461411552%2Felite-dangerous&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:height" content="360"/>
+<meta property="og:video:width" content="640"/>
+<meta property="og:video:type" content="application/x-shockwave-flash"/>
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="bLcQ3wkFogEhoSBrEO4DiXXk2w/zchcTa0igTn1zZeA=" name="csrf-token" />
+<script type="text/javascript">
+  var _sift = _sift || [];
+  _sift.push(['_setAccount', '637102']);
+  _sift.push(['_setUserId', '']);
+  _sift.push(['_trackPageview']);
+
+  (function() {
+    function loadSift() {
+      var sift, s;
+      if (root.visitor_id) {
+        _sift.push(['_setSessionId', root.visitor_id]);
+      }
+      sift = document.createElement('script');
+      sift.type = 'text/javascript';
+      sift.async = true;
+      sift.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dtlilztwypawv.cloudfront.net/s.js';
+      s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(sift, s);
+    }
+    if (window.attachEvent) {
+      window.attachEvent('onload', loadSift);
+    } else {
+      window.addEventListener('load', loadSift, false);
+    }
+  })();
+</script>
+<link href="http://kck.st/YN6rVC" rel="shorturl">
+<link href="https://www.kickstarter.com/projects/1461411552/elite-dangerous" rel="canonical">
+<link href="https://s3.amazonaws.com/ksr/projects/380246/photo-med.jpg?1397801819" rel="image_src">
+<link href="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F380246%2Fvideo-192413-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F380246%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Frontier+Developments&amp;project_title=Elite%3A+Dangerous&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2F1461411552%2Felite-dangerous&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque" rel="video_src">
+<script>
+  //<![CDATA[
+    window.current_checkout = "{&quot;id&quot;:0,&quot;domestic&quot;:null,&quot;amount&quot;:0.0,&quot;updated_at&quot;:0,&quot;created_at&quot;:0}";
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.current_ip = '94.209.101.212';
+    window.current_ip_datacenter = 'false';
+    window.enabled_features = {"elasticsearch":true,"security_history_read":true,"security_history_write":true,"advanced_discovery_es":true,"ios_crashlytics":true,"ios_mixpanel":true,"stories_veronica_mars":true,"veronica_mars_hero":true,"password_reset_banner":true};
+    window.fb_app_id = '69103156693';
+    
+    var _sf_startpt=(new Date()).getTime();
+    
+    window.current_project = "{&quot;id&quot;:880009511,&quot;name&quot;:&quot;Elite: Dangerous&quot;,&quot;blurb&quot;:&quot;Take a ship and 100 credits to make money legally or illegally - trade, bounty-hunt, pirate, assassinate your way across the galaxy.&quot;,&quot;goal&quot;:1250000.0,&quot;pledged&quot;:1578316.08,&quot;state&quot;:&quot;successful&quot;,&quot;slug&quot;:&quot;elite-dangerous&quot;,&quot;disable_communication&quot;:false,&quot;country&quot;:&quot;GB&quot;,&quot;currency&quot;:&quot;GBP&quot;,&quot;currency_symbol&quot;:&quot;\\u00a3&quot;,&quot;currency_trailing_code&quot;:false,&quot;deadline&quot;:1357344057,&quot;state_changed_at&quot;:1357344057,&quot;created_at&quot;:1351699718,&quot;launched_at&quot;:1352160057,&quot;backers_count&quot;:25681,&quot;photo&quot;:{&quot;full&quot;:&quot;https://s3.amazonaws.com/ksr/projects/380246/photo-full.jpg?1397801819&quot;,&quot;ed&quot;:&quot;https://s3.amazonaws.com/ksr/projects/380246/photo-ed.jpg?1397801819&quot;,&quot;med&quot;:&quot;https://s3.amazonaws.com/ksr/projects/380246/photo-med.jpg?1397801819&quot;,&quot;little&quot;:&quot;https://s3.amazonaws.com/ksr/projects/380246/photo-little.jpg?1397801819&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/projects/380246/photo-small.jpg?1397801819&quot;,&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/projects/380246/photo-thumb.jpg?1397801819&quot;,&quot;1024x768&quot;:&quot;https://s3.amazonaws.com/ksr/projects/380246/photo-1024x768.jpg?1397801819&quot;,&quot;1536x1152&quot;:&quot;https://s3.amazonaws.com/ksr/projects/380246/photo-1536x1152.jpg?1397801819&quot;},&quot;creator&quot;:{&quot;id&quot;:1461411552,&quot;name&quot;:&quot;Frontier Developments&quot;,&quot;avatar&quot;:{&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/4511234/FrontierLogo2012_Small_4-3.thumb.jpg?1354881840&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/4511234/FrontierLogo2012_Small_4-3.small.jpg?1354881840&quot;,&quot;medium&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/4511234/FrontierLogo2012_Small_4-3.medium.jpg?1354881840&quot;},&quot;urls&quot;:{&quot;web&quot;:{&quot;user&quot;:&quot;https://www.kickstarter.com/profile/1461411552&quot;},&quot;api&quot;:{&quot;user&quot;:&quot;https://api.kickstarter.com/v1/users/1461411552?signature=1399958617.fd128ce2b7ba959ce938aef0b78f263aad6321e4&quot;}}},&quot;location&quot;:{&quot;id&quot;:14979,&quot;name&quot;:&quot;Cambridge&quot;,&quot;slug&quot;:&quot;cambridge-cambridge-city-gb&quot;,&quot;short_name&quot;:&quot;Cambridge, UK&quot;,&quot;displayable_name&quot;:&quot;Cambridge, UK&quot;,&quot;country&quot;:&quot;GB&quot;,&quot;state&quot;:&quot;England&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/cambridge-cambridge-city-gb&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/cambridge-cambridge-city-gb&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1399951845.b3a76d219c7521f73432e2212eccc75ab6175369&amp;woe_id=14979&quot;}}},&quot;category&quot;:{&quot;id&quot;:35,&quot;name&quot;:&quot;Video Games&quot;,&quot;slug&quot;:&quot;games/video games&quot;,&quot;position&quot;:7,&quot;parent_id&quot;:12,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;http://www.kickstarter.com/discover/categories/games/video%20games&quot;}}},&quot;urls&quot;:{&quot;web&quot;:{&quot;project&quot;:&quot;https://www.kickstarter.com/projects/1461411552/elite-dangerous&quot;,&quot;project_short&quot;:&quot;http://kck.st/YN6rVC&quot;,&quot;updates&quot;:&quot;https://www.kickstarter.com/projects/1461411552/elite-dangerous/posts&quot;},&quot;api&quot;:{&quot;project&quot;:&quot;https://api.kickstarter.com/v1/projects/880009511?signature=1399958617.d58713c162ba0822d27f8bed619c1f7c1c7a6fb8&quot;,&quot;comments&quot;:&quot;https://api.kickstarter.com/v1/projects/880009511/comments?signature=1399958617.3309cbd9e4a481388fd836429134e3073dfa5bc5&quot;,&quot;updates&quot;:&quot;https://api.kickstarter.com/v1/projects/880009511/updates?signature=1399958617.d83dd8041f2f1f438b4b2f93745779ee822781b2&quot;}},&quot;updated_at&quot;:1397801827,&quot;successful_at&quot;:1357344057,&quot;video&quot;:{&quot;id&quot;:192413,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/380246/video-192413-h264_high.mp4?2012&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/380246/video-192413-h264_base.mp4?2012&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/380246/video-192413-webm.webm?2012&quot;,&quot;width&quot;:640,&quot;height&quot;:360,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/380246/video-192413-h264_base.jpg?2012&quot;},&quot;comments_count&quot;:122881,&quot;updates_count&quot;:60,&quot;rewards&quot;:[{&quot;id&quot;:0,&quot;minimum&quot;:1,&quot;reward&quot;:&quot;No Reward&quot;},{&quot;id&quot;:1164101,&quot;minimum&quot;:5.0,&quot;reward&quot;:&quot;Be an Elite supporter, and get a digital code when the game is released to apply a transferrable decal to your ship, unique to you, the game\\u2019s backers&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1393632000,&quot;project_id&quot;:880009511,&quot;backers_count&quot;:371,&quot;updated_at&quot;:1398780175},{&quot;id&quot;:1164102,&quot;minimum&quot;:10.0,&quot;reward&quot;:&quot;Receive the digital newsletter and progress updates, plus the reward above.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1359676800,&quot;project_id&quot;:880009511,&quot;backers_count&quot;:181,&quot;updated_at&quot;:1393512161},{&quot;id&quot;:1164103,&quot;minimum&quot;:15.0,&quot;reward&quot;:&quot;Reserve your Commander name in the game (first come, first served, except Jameson), plus all rewards above.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1356998400,&quot;project_id&quot;:880009511,&quot;backers_count&quot;:129,&quot;updated_at&quot;:1392842752},{&quot;id&quot;:1164104,&quot;minimum&quot;:20.0,&quot;reward&quot;:&quot;Reserve a digital copy of the game, plus all rewards above.&quot;,&quot;limit&quot;:10000,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1393632000,&quot;project_id&quot;:880009511,&quot;remaining&quot;:0,&quot;backers_count&quot;:10000,&quot;updated_at&quot;:1399450304},{&quot;id&quot;:1282180,&quot;minimum&quot;:25.0,&quot;reward&quot;:&quot;Download a single copy of the game  and also gain 500 credits when starting a new game. Plus all of the rewards listed above, except the limited \\u00a320 reward. Higher rewards gain the 500 credit bonus, but this only applies if the default starting option is selected.&quot;,&quot;limit&quot;:5000,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1393632000,&quot;project_id&quot;:880009511,&quot;remaining&quot;:3611,&quot;backers_count&quot;:1389,&quot;updated_at&quot;:1398895464},{&quot;id&quot;:1164106,&quot;minimum&quot;:30.0,&quot;reward&quot;:&quot;Reserve a digital copy of the game, plus all rewards above.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1393632000,&quot;project_id&quot;:880009511,&quot;backers_count&quot;:738,&quot;updated_at&quot;:1397770034},{&quot;id&quot;:1267712,&quot;minimum&quot;:32.0,&quot;reward&quot;:&quot;Imperial Bounty Hunter: Have the option to start in an Imperial Colony with an Imperial Eagle Mk II Fighter with upgraded weapons and shields and 1,000 CR (randomised start system choice for multiplayer reasons)** plus all rewards above.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1393632000,&quot;project_id&quot;:880009511,&quot;backers_count&quot;:921,&quot;updated_at&quot;:1396956954},{&quot;id&quot;:1200820,&quot;minimum&quot;:35.0,&quot;reward&quot;:&quot;Download a digital copy of the official sequel to \\u201cThe Dark Wheel\\u201d novel, plus all rewards above.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1393632000,&quot;project_id&quot;:880009511,&quot;backers_count&quot;:138,&quot;updated_at&quot;:1396390792},{&quot;id&quot;:1267713,&quot;minimum&quot;:37.0,&quot;reward&quot;:&quot;Federal Trader: Have the option to start in a Federal border system with a basic Cobra Mk III loaded with cargo worth 1,000 CR and 1,000 CR in cash.(randomised system choice for multiplayer reasons)** plus all rewards above.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1393632000,&quot;project_id&quot;:880009511,&quot;backers_count&quot;:641,&quot;updated_at&quot;:1386910232},{&quot;id&quot;:1164150,&quot;minimum&quot;:40.0,&quot;reward&quot;:&quot;Your name* forms part of the naming database (so your name will be one of those used randomly for non-player in-game characters), plus all rewards above.&quot;,&quot;limit&quot;:10000,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1393632000,&quot;project_id&quot;:880009511,&quot;remaining&quot;:8004,&quot;backers_count&quot;:1996,&quot;updated_at&quot;:1399471916},{&quot;id&quot;:1267714,&quot;minimum&quot;:42.0,&quot;reward&quot;:&quot;Pirate: Have the option to start in an anarchic Frontier system with a stolen but upgraded Cobra Mk III and only 100 CR.(randomised system choice for multiplayer reasons)** plus all rewards above.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1393632000,&quot;project_id&quot;:880009511,&quot;backers_count&quot;:577,&quot;updated_at&quot;:1397243981},{&quot;id&quot;:1200830,&quot;minimum&quot;:45.0,&quot;reward&quot;:&quot;Download a digital copy of the \\u201cElite: Dangerous\\u201d music, plus all rewards above&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1393632000,&quot;project_id&quot;:880009511,&quot;backers_count&quot;:369,&quot;updated_at&quot;:1399566403},{&quot;id&quot;:1164151,&quot;minimum&quot;:50.0,&quot;reward&quot;:&quot;Participate in the second round private beta test, plus all rewards above.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1391212800,&quot;project_id&quot;:880009511,&quot;backers_count&quot;:1278,&quot;updated_at&quot;:1397952420},{&quot;id&quot;:1267715,&quot;minimum&quot;:55.0,&quot;reward&quot;:&quot;Independent Trader: Have the option to start in the Lave system with a basic Cobra Mk III and only 100 CR** plus all rewards above.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1393632000,&quot;project_id&quot;:880009511,&quot;backers_count&quot;:344,&quot;updated_at&quot;:1392599193},{&quot;id&quot;:1213460,&quot;minimum&quot;:60.0,&quot;reward&quot;:&quot;Physical DRM-free boxed edition of \\&quot;Elite: Dangerous\\&quot; plus all rewards above (please note: the disc in the pack is simply an alternative way to install the game - it will have the same online account code whether installed off disc or downloaded digitally).&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1393632000,&quot;project_id&quot;:880009511,&quot;backers_count&quot;:374,&quot;updated_at&quot;:1396207573},{&quot;id&quot;:1267716,&quot;minimum&quot;:70.0,&quot;reward&quot;:&quot;Explorer: Have the option to start on the edge of explored space with a long range version of the Cobra Mk III and 3,000 CR (randomised system choice for multiplayer reasons)** plus all rewards above.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1393632000,&quot;project_id&quot;:880009511,&quot;backers_count&quot;:159,&quot;updated_at&quot;:1387584179},{&quot;id&quot;:1164152,&quot;minimum&quot;:75.0,&quot;reward&quot;:&quot;Access to the private backer\\u2019s discussion forum, plus all rewards above.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1356998400,&quot;project_id&quot;:880009511,&quot;backers_count&quot;:60,&quot;updated_at&quot;:1357953170},{&quot;id&quot;:1265429,&quot;minimum&quot;:80.0,&quot;reward&quot;:&quot;Digital Download Pack.  This includes a single digital download of the game, and any expansions, and all the other rewards above except those requiring physical delivery.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1393632000,&quot;project_id&quot;:880009511,&quot;backers_count&quot;:485,&quot;updated_at&quot;:1397322837},{&quot;id&quot;:1267717,&quot;minimum&quot;:85.0,&quot;reward&quot;:&quot;Kickstarter Special: Have the option to start in the founder&#39;s world with any starter ship and 4,000 CR. Note: any Kickstarter decal-carrier will be able to travel to this secret system in gameplay** plus all rewards above.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1393632000,&quot;project_id&quot;:880009511,&quot;backers_count&quot;:843,&quot;updated_at&quot;:1395923364},{&quot;id&quot;:1213461,&quot;minimum&quot;:90.0,&quot;reward&quot;:&quot;Physical DRM-free collector&#39;s premium boxed edition of \\&quot;Elite: Dangerous\\&quot;. This includes all the rewards above, except a premium boxed edition is in place of the standard boxed addition, which includes a T shirt with \\&quot;I backed Elite: Dangerous\\&quot; on the back, and a paperback copy of the official sequel to \\&quot;The Dark Wheel\\&quot;.&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1393632000,&quot;project_id&quot;:880009511,&quot;backers_count&quot;:1339,&quot;updated_at&quot;:1394043067},{&quot;id&quot;:1164153,&quot;minimum&quot;:100.0,&quot;reward&quot;:&quot;Participate in the first round private beta test, plus all rewards above.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1388534400,&quot;project_id&quot;:880009511,&quot;backers_count&quot;:1125,&quot;updated_at&quot;:1398871755},{&quot;id&quot;:1164154,&quot;minimum&quot;:150.0,&quot;reward&quot;:&quot;Be a founding member of \\u2018The Elite\\u2019 in the game, plus all rewards above.&quot;,&quot;limit&quot;:5000,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1393632000,&quot;project_id&quot;:880009511,&quot;remaining&quot;:3833,&quot;backers_count&quot;:1167,&quot;updated_at&quot;:1397705417},{&quot;id&quot;:1164155,&quot;minimum&quot;:200.0,&quot;reward&quot;:&quot;Participate in the private alpha test, plus all rewards above.&quot;,&quot;limit&quot;:1000,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1385856000,&quot;project_id&quot;:880009511,&quot;remaining&quot;:739,&quot;backers_count&quot;:261,&quot;updated_at&quot;:1398718919},{&quot;id&quot;:1164156,&quot;minimum&quot;:300.0,&quot;reward&quot;:&quot;Be a design decision forum member, plus all rewards above.&quot;,&quot;limit&quot;:500,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1356998400,&quot;project_id&quot;:880009511,&quot;remaining&quot;:113,&quot;backers_count&quot;:387,&quot;updated_at&quot;:1393846457},{&quot;id&quot;:1164157,&quot;minimum&quot;:500.0,&quot;reward&quot;:&quot;Have a space station named* after you, plus all rewards above.&quot;,&quot;limit&quot;:250,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1393632000,&quot;project_id&quot;:880009511,&quot;remaining&quot;:137,&quot;backers_count&quot;:113,&quot;updated_at&quot;:1357953172},{&quot;id&quot;:1164158,&quot;minimum&quot;:750.0,&quot;reward&quot;:&quot;Have a planet named* after you, and an invitation to the UK launch party, plus all rewards above.&quot;,&quot;limit&quot;:100,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1393632000,&quot;project_id&quot;:880009511,&quot;remaining&quot;:0,&quot;backers_count&quot;:100,&quot;updated_at&quot;:1357739213},{&quot;id&quot;:1164159,&quot;minimum&quot;:1500.0,&quot;reward&quot;:&quot;Be a \\u201cCommander Jameson\\u201d - have a reserved commander name* xxxx Jameson (eg Commander Peter Jameson etc) \\u2013 first come first served on the forenames - plus all rewards above.&quot;,&quot;limit&quot;:25,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1393632000,&quot;project_id&quot;:880009511,&quot;remaining&quot;:9,&quot;backers_count&quot;:16,&quot;updated_at&quot;:1357569080},{&quot;id&quot;:1164208,&quot;minimum&quot;:3000.0,&quot;reward&quot;:&quot;Have a frontier star system named* after you, and a &#39;special thanks&#39; game credit, plus all rewards above.&quot;,&quot;limit&quot;:15,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1393632000,&quot;project_id&quot;:880009511,&quot;remaining&quot;:8,&quot;backers_count&quot;:7,&quot;updated_at&quot;:1357652692},{&quot;id&quot;:1200811,&quot;minimum&quot;:4500.0,&quot;reward&quot;:&quot;The writer\\u2019s pack: The right to write one piece of written fiction set in the Elite: Dangerous world, and (subject to reasonable approval of the content) release it commercially, without paying Frontier further royalties, independently of the game. This category includes all the rewards above. Frontier will cooperate to allow the system name, commander name, planet name, planet description, space station names to be positioned and used in a way to support the fiction within the game. Frontier will also help publicise your title at the time of release of \\u201cElite: Dangerous\\u201d, as long as it is finished at that point, alongside the official sequel to \\u201cThe Dark Wheel\\u201d.&quot;,&quot;limit&quot;:14,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1393632000,&quot;project_id&quot;:880009511,&quot;remaining&quot;:2,&quot;backers_count&quot;:12,&quot;updated_at&quot;:1357650777},{&quot;id&quot;:1267718,&quot;minimum&quot;:5000.0,&quot;reward&quot;:&quot;Name the secret founder&#39;s system*. This includes all the benefits of the \\u00a33,000 pledge tier.&quot;,&quot;limit&quot;:1,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1393632000,&quot;project_id&quot;:880009511,&quot;remaining&quot;:0,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1357350448},{&quot;id&quot;:1164340,&quot;minimum&quot;:5000.0,&quot;reward&quot;:&quot;Dinner with myself and the key team members in Cambridge, Have a central star system named* after you, plus all rewards above.&quot;,&quot;limit&quot;:5,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1393632000,&quot;project_id&quot;:880009511,&quot;remaining&quot;:0,&quot;backers_count&quot;:5,&quot;updated_at&quot;:1357953168}]}";
+    
+    
+    
+    
+    
+    
+    
+    
+    window.timeRemaining = function timeRemaining(epochTime){
+    
+      var diff = epochTime - ((new Date()).getTime() / 1000);
+      var num_unit = (diff < 60 && [Math.max(diff, 0), 'seconds']) ||
+        ((diff/=60) < 60 && [diff, 'minutes']) ||
+        ((diff/=60) < 72 && [diff, 'hours']) ||
+        [diff/=24, 'days'];
+    
+      // Round down
+      num_unit[0] = Math.floor(num_unit[0]);
+      // Singularize unit
+      if (num_unit[0] == 1) { num_unit[1] = num_unit[1].replace(/s$/,""); }
+    
+      return num_unit;
+    };
+  //]]>
+</script>
+
+<script>
+  //<![CDATA[
+    window.current_variants = ["discover_link_copy[explore]","rewards_hover[without_hover_text]"];
+  //]]>
+</script>
+
+
+</head>
+
+<body class="project projects not-mobile not-phone not-forces-video-controls not-tablet not-touchable not-native-app-request video_mode" id="projects_show">
+<div class="jGrowl center" id="growl_section"></div>
+<div class="NS_layouts__navigation" id="header">
+<div class="main-nav relative bg-white">
+<h1 class="no-margin ml1 mr2 left">
+<a href="/?ref=nav" class="block p2"><span class="ss-icon green-dark">KICK</span><span class="ss-icon green">STARTER</span>
+</a></h1>
+<ul class="primary-links list no-margin left">
+<li class="left discover-link full-height">
+<a href="/discover?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Explore</a>
+</li>
+<li class="left full-height mr2">
+<a href="/learn?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Start</a>
+</li>
+</ul>
+<ul class="list no-margin right" id="menu-sub">
+<li class="right"><a href="/login?ref=nav" class="block h5 bold p2 full-height border-box">Log in</a></li>
+<li class="right"><a href="/signup?ref=nav" class="block h5 bold p2 full-height border-box">Sign up</a></li>
+</ul>
+<div class="search-link pl2 full-height border-left border-box clip">
+<form accept-charset="UTF-8" action="/projects/search" class="search pt1 pb1 block relative form-simple" method="get"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /></div>
+<div class="field relative pl3">
+<span class="ss-icon ss-search grey-dark ml1 mt1 absolute"></span>
+<input class="input-search header full-width text" data-tracker-name="Header Live Search" id="term" name="term" placeholder="Search projects" type="text" />
+</div>
+</form>
+
+</div>
+<div class="clear"></div>
+</div>
+</div>
+<div class="hide pt4 pb4 bg-grey-light" id="search_results-wrap">
+<div class="relative container" id="search_results">
+<a class="close right grey-dark mr1"><span class="ss-icon ss-delete"></span></a>
+<h3 class="header ml1 clearfix"></h3>
+<div class="clip clearfix" id="search_results_panel"></div>
+<a class="prev arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateleft"></span>
+</a>
+<a class="next arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateright"></span>
+</a>
+</div>
+</div>
+
+
+
+
+<div class="Project-ended-true Project-is_starred- Project-state-successful Project880009511_cxt border-top" id="main_content">
+<div id="running-board-wrap">
+<div class="container" id="running-board">
+<div id="project-header">
+<div class="NS_projects__running_board ml1 mr1 clearfix">
+<div class="title center py4">
+<h2 class="mb1">
+<a href="/projects/1461411552/elite-dangerous" class="green-dark">Elite: Dangerous</a>
+</h2>
+<p class="no-margin">
+<span class="creator">
+by
+<a href="/projects/1461411552/elite-dangerous/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography" id="name">Frontier Developments</a>
+</span>
+</p>
+</div>
+<ul class="project-nav list-inline left h5 bold mb1">
+<li class="mr2">
+<a href="/projects/1461411552/elite-dangerous" class="grey-dark py1 current" id="home_nav">Home</a>
+</li>
+<li class="mr2">
+<span data-updates-count="60" id="updates_count">
+<a href="/projects/1461411552/elite-dangerous/posts" class="grey-dark py1" id="updates_nav">Updates
+<span class="count h6 bg-grey-dark white">60</span>
+</a></span>
+</li>
+<li class="mr2">
+<a href="/projects/1461411552/elite-dangerous/backers" class="grey-dark py1" id="backers_nav">Backers
+<span class="count h6 bg-grey-dark white"><data class="Project880009511" data-format="number" data-value="25681" itemprop="Project[backers_count]">25,681</data></span>
+</a></li>
+<li>
+<span data-comments-count="122881" id="comments_count">
+<a href="/projects/1461411552/elite-dangerous/comments" class="grey-dark py1" id="comments_nav">Comments
+<span class="count h6 bg-grey-dark white"><data class="Project880009511" data-format="number" data-value="122877" itemprop="Project[comments_count]">122,877</data></span>
+</a></span>
+</li>
+</ul>
+<ul class="list-inline right h5 bold mb1">
+<li class="location mr2">
+<a href="/discover/places/cambridge-cambridge-city-gb?ref=city" class="grey-dark"><span class="ss-icon ss-location margin-right"></span>
+Cambridge, UK
+</a></li>
+<li class="category" data-project-parent-category="Games">
+<a href="/discover/categories/games/video%20games?ref=category" class="grey-dark"><span class="ss-icon ss-tag margin-right"></span>
+Video Games
+</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+</div>
+<div class="bg-grey-light pb4" id="content-wrap">
+<div class="Project880009511" data-conditions="[{&quot;!state&quot;:&quot;live&quot;}]" data-evaluation="true" data-render="&quot;&lt;div class=\&quot;NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-successful Project880009511_cxt bg-grey container pb1 pt1\&quot;&gt;\n&lt;div class=\&quot;Project880009511\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;successful&amp;quot;}]\&quot; data-evaluation=\&quot;true\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;Funded!&amp;lt;/b&amp;gt;\\nThis project was successfully funded &amp;lt;data class=\\&amp;quot;Project880009511\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2013-01-04T19:00:57-05:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[deadline]\\&amp;quot;&amp;gt;on January 4, 2013&amp;lt;/data&amp;gt;.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;Funded!&lt;/b&gt;\nThis project was successfully funded &lt;data class=\&quot;Project880009511\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-01-04T19:00:57-05:00&amp;quot;\&quot; itemprop=\&quot;Project[deadline]\&quot;&gt;on January 4, 2013&lt;/data&gt;.\n&lt;/p&gt;\n&lt;/div&gt;&lt;div class=\&quot;Project880009511\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:[&amp;quot;started&amp;quot;,&amp;quot;submitted&amp;quot;]}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;THIS PROJECT IS NOT LIVE&amp;lt;/b&amp;gt;\\nThis is only a draft that the creator has chosen to share.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project880009511\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;suspended&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Suspended&amp;lt;/b&amp;gt;\\nFunding for this project was suspended &amp;lt;data class=\\&amp;quot;Project880009511\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2013-01-04T19:00:57-05:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on January 4, 2013&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project880009511\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;canceled&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Canceled&amp;lt;/b&amp;gt;\\nFunding for this project was canceled by the project creator &amp;lt;data class=\\&amp;quot;Project880009511\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2013-01-04T19:00:57-05:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on January 4, 2013&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project880009511\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;failed&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Unsuccessful&amp;lt;/b&amp;gt;\\nThis project\\u2019s funding goal was not reached on &amp;lt;time class=\\&amp;quot;js-adjust\\&amp;quot; data-format=\\&amp;quot;LL\\&amp;quot; datetime=\\&amp;quot;2013-01-04T19:00:57-05:00\\&amp;quot;&amp;gt;January 4, 2013&amp;lt;/time&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project880009511\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;purged&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;This project is purged and only visible to staff.&amp;lt;/b&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;/div&gt;\n&quot;"><div class="NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-successful Project880009511_cxt bg-grey container pb1 pt1">
+<div class="Project880009511" data-conditions="[{&quot;state&quot;:&quot;successful&quot;}]" data-evaluation="true" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;Funded!&lt;/b&gt;\nThis project was successfully funded &lt;data class=\&quot;Project880009511\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-01-04T19:00:57-05:00&amp;quot;\&quot; itemprop=\&quot;Project[deadline]\&quot;&gt;on January 4, 2013&lt;/data&gt;.\n&lt;/p&gt;\n&quot;"><p class="no-margin">
+<b>Funded!</b>
+This project was successfully funded <data class="Project880009511" data-format="distance_date" data-value="&quot;2013-01-04T19:00:57-05:00&quot;" itemprop="Project[deadline]">on January 4, 2013</data>.
+</p>
+</div><div class="Project880009511" data-conditions="[{&quot;state&quot;:[&quot;started&quot;,&quot;submitted&quot;]}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;THIS PROJECT IS NOT LIVE&lt;/b&gt;\nThis is only a draft that the creator has chosen to share.\n&lt;/p&gt;\n&quot;"></div><div class="Project880009511" data-conditions="[{&quot;state&quot;:&quot;suspended&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Suspended&lt;/b&gt;\nFunding for this project was suspended &lt;data class=\&quot;Project880009511\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-01-04T19:00:57-05:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on January 4, 2013&lt;/data&gt;.\n&quot;"></div><div class="Project880009511" data-conditions="[{&quot;state&quot;:&quot;canceled&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Canceled&lt;/b&gt;\nFunding for this project was canceled by the project creator &lt;data class=\&quot;Project880009511\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2013-01-04T19:00:57-05:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on January 4, 2013&lt;/data&gt;.\n&quot;"></div><div class="Project880009511" data-conditions="[{&quot;state&quot;:&quot;failed&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Unsuccessful&lt;/b&gt;\nThis project\u2019s funding goal was not reached on &lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;LL\&quot; datetime=\&quot;2013-01-04T19:00:57-05:00\&quot;&gt;January 4, 2013&lt;/time&gt;.\n&quot;"></div><div class="Project880009511" data-conditions="[{&quot;state&quot;:&quot;purged&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;This project is purged and only visible to staff.&lt;/b&gt;\n&quot;"></div></div>
+</div>
+<div class="container bg-white border rounded py3 pl2 pr2" id="content">
+<div class="NS-projects-content">
+<div class="grid_11">
+<div data-has-video="true" id="video-section">
+<div class="video-player" data-dimensions="{&quot;width&quot;:640,&quot;height&quot;:480}" data-image="https://s3.amazonaws.com/ksr/projects/380246/photo-main.jpg?1397801819" data-video-tracker-url="https://www.kickstarter.com/projects/1461411552/elite-dangerous/video/plays" data-video-url="https://d2pq0u4uni88oo.cloudfront.net/projects/380246/video-192413-h264_high.mp4" data-video="{&quot;id&quot;:192413,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/380246/video-192413-h264_high.mp4?2012&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/380246/video-192413-h264_base.mp4?2012&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/380246/video-192413-webm.webm?2012&quot;,&quot;width&quot;:640,&quot;height&quot;:360,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/380246/video-192413-h264_base.jpg?2012&quot;}" id="video_pitch"><video class="has_webm landscape" preload="none">
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/380246/video-192413-h264_high.mp4" type='video/mp4; codecs="avc1.64001E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/380246/video-192413-h264_base.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/380246/video-192413-webm.webm" type="video/webm"></source>
+You'll need an HTML5 capable browser to see this content.
+</video>
+<img alt="Photo-main" class="has_played_hide poster landscape" src="https://s3.amazonaws.com/ksr/projects/380246/photo-main.jpg?1397801819" />
+<div class="play_button_big play_button_dark absolute-center rounded has_played_hide">
+<span class="ss-icon ss-play"></span>
+Play
+</div>
+<div class="player_controls clearfix absolute-bottom mb2 rounded white bg-green-dark forces-video-controls_hide">
+<div class="left">
+<a class="button button_icon button_dark playpause play mr1">
+<span class="play ss-icon ss-play"></span>
+<span class="pause ss-icon ss-pause"></span>
+</a>
+<span class="time current_time h12 left">00:00</span>
+</div>
+<div class="right">
+<span class="time total_time h12 left mr1">00:00</span>
+<a class="left button button_icon button_icon_white volume">
+<span class="ss-icon ss-volume icon_volume_nudge"></span>
+<span class="ss-icon ss-highvolume"></span>
+</a>
+<div class="volume_container left">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+<a class="left button button_icon button_icon_white fullscreen">
+<span class="ss-icon ss-expand"></span>
+<span class="ss-icon ss-contract"></span>
+</a>
+</div>
+<div class="clip">
+<div class="progress_container pr1 pl1">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="buffer progress_bar_buffer"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div data-project-state="successful" id="about">
+<div class="NS_projects__project_share clearfix py2 pl1 pr1">
+<ul class="left list-inline no-margin h5 bold">
+<li class="facebook mr2">
+<a href="https://www.kickstarter.com/projects/1461411552/elite-dangerous"><span class="ss-icon ss-social ss-facebook color-facebook"></span>
+<span class="color-facebook">Share</span>
+<span class="share_bubble"><div class="triangle grey"></div>
+<div class="triangle white"></div>
+<span class="count"></span></span>
+</a></li>
+<li class="twitter mr2">
+<a  href="https://twitter.com/intent/tweet?text=Elite%3A%20Dangerous%20by%20Frontier%20Developments&amp;via=kickstarter&amp;url=http://kck.st/YN6rVC" rel="nofollow"><span class="ss-icon ss-social ss-twitter color-twitter"></span>
+<span class="color-twitter">Tweet</span>
+</a></li>
+<li class="embed">
+<a href="/projects/1461411552/elite-dangerous/widget" class="remote_modal_dialog grey-dark" data-modal-title="Embed a widget on your site" data-tracker-name="Embed"><span class="ss-icon ss-navigateleft"></span>
+<span class="ss-icon ss-navigateright"></span>
+Embed
+</a></li>
+</ul>
+<ul class="right list-inline no-margin h5 bold">
+<li class="curate mr2">
+</li>
+<li class="remind">
+<div class="ajax-container" id="watching-widget">
+<div class="Project880009511" data-conditions="[{&quot;is_starred&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div id=\&quot;unwatch\&quot;&gt;\n&lt;a href=\&quot;/projects/1461411552/elite-dangerous/unwatch\&quot; class=\&quot;on\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"></div><div class="Project880009511" data-conditions="[{&quot;!is_starred&quot;:true}]" data-evaluation="true" data-render="&quot;&lt;div id=\&quot;watch\&quot;&gt;\n&lt;a href=\&quot;/projects/1461411552/elite-dangerous/watch\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;span class=\&quot;text\&quot;&gt;\n&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"><div id="watch">
+<a href="/projects/1461411552/elite-dangerous/watch"><span class="ss-icon ss-star"></span>
+<span class="text">
+</span>
+</a></div>
+
+</div></div>
+</li>
+</ul>
+</div>
+
+<div class="short_blurb py2 pl1 pr1">
+<p class="h3">Take a ship and 100 credits to make money legally or illegally - trade, bounty-hunt, pirate, assassinate your way across the galaxy.</p>
+</div>
+<div class="full-description">
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1461411552/elite-dangerous/assets/271767/edit" data-id="271767">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/271/767/743487eab735997b4c15ef0b78679607_large.JPG?1353425136"></figure>
+</div>
+<p>“Elite: Dangerous” is the latest installment of a long series of epic space games, starting with "Elite" - one of the most successful games of the 1980s. </p>
+<p><em><strong><a href="http://elite.frontier.co.uk/" target="_blank">If you cannot use Kickstarter to pledge  then visit our website to pledge via PayPal.</a></strong></em></p>
+<p><strong><em>The £80 pledge tier and higher now also includes free expansions for Elite: Dangerous! For more information on likely expansions check the Development Plan video further down the page.</em></strong></p>
+<p><strong><em>We have announced a stretch goal for a Mac version of the game. If we reach the stretch goal of £1.4 million through the Kickstarter we will release a Mac version approximately 3 months after the Windows PC release.</em></strong></p>
+<p><strong>New stretch goal announced, if we reach £1.5 million then we'll add another 10 playable ships to the game.</strong></p>
+<p>Our galaxy.  Its an awe inspiring, beautiful, vast place; with billions of star systems, planets, moons and asteroid fields just waiting to be explored, and exploited. The triumverate superpowers of the Empire, Federation and Independents dominate their core system volumes and constantly skirmish to outmaneouver one another on their frontiers. Outside their influence, in the vast majority of the galaxy, anarchy reigns supreme and spectacular discoveries await the bold.</p>
+<p>Its dog-eat-dog out there – you need to keep your friends close, and your enemies closer.</p>
+<p>Whether you want to trade for profit between systems, take part in multiplayer co-op mission alliances, free-for-all group battles and team raids to bring down planetary economies, even tip the balance of power in the galaxy (for your own advantage, of course..), or simply explore the wonders of the galaxy (and who knows what you’ll find out there..) is up to you.</p>
+<p>Your second-to-second actions could have you taking the roles of trader, pirate, bounty hunter, leader, team player, opportunistic assassin, grand schemer, and more. You are at the centre of the action any time, any place and any way you choose – each action has a consequence, and influences the galaxy around you.</p>
+<p>Starting with a few credits and a basic starship, carve your own path through the richest, largest gaming sandbox ever created, set against a backdrop of raw anarchy, galactic powerplays and intrigue.  Do whatever it takes to upgrade your ship’s hull, engines, weapons, defences, cargo hold; constantly improve your capabilities and influence on your journey towards the most coveted rank in the history of gaming - ‘Elite’.</p>
+<div class="template oembed" contenteditable="false" data-href="http://www.youtube.com/watch?v=mrrNlml4Ibk">
+<iframe width="612" height="344" src="https://www.youtube.com/embed/mrrNlml4Ibk?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div>
+<p>Fight, trade, hunt your way across a giant galaxy of billions of star systems, starting with a basic starship and a few credits. You can make money from trading goods between the many star systems, by destroying pirate ships (and collecting bounty), or even by attacking traders and collecting their cargo (which in turn will get a bounty on <em>your</em> head!). There will be missions too, and exploration. Most people will do some combination of these things. Upgrade your ship and specialise in one activity - have a trader with a huge cargo bay, or use the space for weapons and maneuverability.</p>
+<p><strong>Real Freedom</strong> - Go where you like, be what you like - pirate, bounty hunter, trader, assassin, or some mix of all of these.</p>
+<p><strong>Trade - </strong>Buy low, cross dangerous space lanes, evade or destroy pirates en route, then sell high, if you make the journey!</p>
+<p><strong>Fight - </strong>Take on the pirates or be one yourself</p>
+<p><strong>Progress - </strong>Get your pilot rating all the way from "Harmless" to "Elite"</p>
+<p><strong>Explore - </strong>Head out to the far reaches of space and discover amazing sights</p>
+<p>And the best part - you can do all this online with your friends, or other "Elite" pilots like yourself, or even alone. The choice is yours...  </p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1461411552/elite-dangerous/assets/265431/edit" data-id="265431">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/265/431/31c3644eea8fadc88e930978e8280e6c_large.JPG?1353088989"></figure>
+</div>
+<p>In "Elite: Dangerous" you fly a spaceship using a first person from-the-cockpit view, building on the elements from the previous games, with sumptious graphics enabled by the performance of modern PCs - all made possible using procedural techniques (see video on 'Procedural Generation' below). </p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1461411552/elite-dangerous/assets/271930/edit" data-id="271930">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/271/930/f668d58473792709a312d5bc9197fcda_large.JPG?1353432852"></figure>
+</div>
+<p> <b>Scavenger Hunt Teaser</b></p>
+<div class="template oembed" contenteditable="false" data-href="http://www.youtube.com/watch?v=44K9bnjcUSc">
+<iframe width="612" height="344" src="https://www.youtube.com/embed/44K9bnjcUSc?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div>
+<p><strong>Dev Diary Video #1: Multiplayer - showing unedited work-in-progress gameplay footage:</strong></p>
+<div class="template oembed" contenteditable="false" data-href="http://www.youtube.com/watch?v=P5JYRyhxYhI&amp;feature=youtu.be">
+<iframe width="612" height="344" src="https://www.youtube.com/embed/P5JYRyhxYhI?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div>
+<p><strong>Dev Diary Video #2: The Galaxy and How it Evolves:</strong></p>
+<div class="template oembed" contenteditable="false" data-href="http://youtu.be/5uKD1ap5hsI">
+<iframe width="612" height="344" src="https://www.youtube.com/embed/5uKD1ap5hsI?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div>
+<p> <strong>Dev Diary Video #3 - More multiplayer footage and discussion of player roles in the game:</strong></p>
+<div class="template oembed" contenteditable="false" data-href="http://youtu.be/6gMbLjUjs1w">
+<iframe width="612" height="344" src="https://www.youtube.com/embed/6gMbLjUjs1w?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div>
+<p><b>Dev Diary Video #4  - Trading</b></p>
+<div class="template oembed" contenteditable="false" data-href="http://youtu.be/lFECllA71qc">
+<iframe width="612" height="344" src="https://www.youtube.com/embed/lFECllA71qc?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div>
+<p><b>Elite: Dangerous Development Plan</b></p>
+<div class="template oembed" contenteditable="false" data-href="http://www.youtube.com/watch?v=EM0Gcl7iUM8">
+<iframe width="612" height="344" src="https://www.youtube.com/embed/EM0Gcl7iUM8?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div>
+<p><strong>Podcast Part 1- Gary Whitta interviews Chris Roberts and David Braben about Kickstarter, Star Citizen, and Elite: Dangerous:</strong></p>
+<div class="template oembed" contenteditable="false" data-href="http://youtu.be/NvPU8e2ezgo">
+<iframe width="612" height="344" src="https://www.youtube.com/embed/NvPU8e2ezgo?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div>
+<p><strong>Podcast Part 2:</strong></p>
+<div class="template oembed" contenteditable="false" data-href="http://youtu.be/IoLYNN7NltY">
+<iframe width="612" height="344" src="https://www.youtube.com/embed/IoLYNN7NltY?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div>
+<p><strong>Podcast Part 3:</strong></p>
+<div class="template oembed" contenteditable="false" data-href="http://www.youtube.com/watch?feature=player_embedded&amp;v=N9ENkIB0cic">
+<iframe width="612" height="344" src="https://www.youtube.com/embed/N9ENkIB0cic?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div>
+<p><strong>Podcast Part 4:</strong></p>
+<div class="template oembed" contenteditable="false" data-href="http://www.youtube.com/watch?v=CGE0_WSHGHc">
+<iframe width="612" height="344" src="https://www.youtube.com/embed/CGE0_WSHGHc?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1461411552/elite-dangerous/assets/310985/edit" data-id="310985">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/310/985/d733d905e698d9f210a945adfba14a69_large.JPG?1355928744"></figure>
+</div>
+<p>Pledge upgrades are unlimited and available to all tiers of £30 or more. Simply up your pledge by the total of the items you would like (including additional postage if you are outside the UK), but keep the same tier on the “Manage my Pledge Screen”.</p>
+<p><strong>Please note: each of these items is separate – it does not include all the previous items.</strong></p>
+<p>Once the Kickstarter campaign for Elite: Dangerous has completed successfully we will ask you how you want the additional funds allocating (ie the amount over and above your selected tier), and then provide the additional items as described on the dates described.</p>
+<p>+£5 Have a digital copy of the official sequel to “The Dark Wheel” (Delivery March 2014)<br>+£5 Have a digital copy of the Elite: Dangerous soundtrack (Delivery March 2014)<br>+£5 Pick one of the ship decals, at least 10 will  be available, they can be used as the decal to access the Founders' World  (Delivery March 2014)<br>+£15* Have a physical paperback copy of the official sequel to “The Dark Wheel” (Delivery March 2014)<br>+£20* Have a physical CD of the “Elite: Dangerous” music (Delivery March 2014)<br>+£20* Have an "Elite: Dangerous mug" (Delivery February 2013)<br>+£20* Have a quality A3 concept art print (Delivery February 2013)<br>+£25 Have an additional digital copy of the game<br>+£35* Have a signed (by David Braben) quality A3 concept art print (Delivery February 2013)<br>+£50* Have an “Elite: Dangerous” mug and “Elite: Dangerous” T shirt with “I backed Elite: Dangerous” on the back shipped to you (Delivery February 2013)</p>
+<p>+£50* Have a signed (by David Braben) physical hardback copy of the official sequel to the Dark Wheel (Delivery March 2014)<br>+£80 Have an additional Digital Download Pack. This is effectively the same as an additional £80 pledge tier and includes any future expansions (Delivery March 2014)<br>+£90 Have an additional Premium Boxed Edition. This is effectively the same as an additional £90 pledge tier and includes any future expansions (Delivery March 2014)<br>+£500* Have a physical 3D model of a Cobra Mk III to scale (approx. 15cm) shipped to you (Delivery March 2014)<br>+£700* Have a physical 3D model of an Anaconda to scale (approx. 35 cm) shipped to you (Delivery March 2014)<br>+£400* Have a physical 3D model of a Viper Mk II to scale (approx. 10 cm) shipped to you (Delivery March 2014)<br>+£700* Have a physical 3D model of a partial cut-away (revealing the interior) of a Cobra Mk III to scale (approx. 15cm) shipped to you (Delivery March 2014)<br>+£950* Have a physical 3D model of a partial cut-away (revealing the interior) of an Anaconda to scale (approx. 35cm) shipped to you (Delivery March 2014)<br>+£550* Have a physical 3D model of a partial cut-away (revealing the interior) of a Viper Mk II to scale (approx. 10cm) shipped to you (Delivery March 2014)</p>
+<p><em>*UK shipping is included, please add an extra £15 for international shipping.</em></p>
+<h1>Gift Pledges</h1>
+<p>Gift pledges can also be made for any pledges that are not limited in availability (for example the £20 pledge cannot be pledged as an gift). To add a gift pledge follow the same procedure as for the pledge upgrades.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1461411552/elite-dangerous/assets/310986/edit" data-id="310986">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/310/986/5dc90433f59e983fd92809aca74d5457_large.jpg?1355928789"></figure>
+</div>
+<p><b><i>We have announced a stretch goal for a Mac version of the game. If we reach the stretch goal of £1.4 million through the Kickstarter we will release a Mac version approximately 3 months after the Windows PC release.</i></b></p>
+<p><strong>New stretch goal announced, if we reach £1.5 million then we'll add another 10 playable ships to the game.</strong></p>
+<p>The initial release of Elite: Dangerous doesn't mark the end of development. We intend to continue expanding the game both with new content and new features. A good example of this is planetary landings. We have an ambitious goal for landings to include new gameplay and a rich variety of worlds to explore. To achieve our goal we want the planets to come to life. We also want to add leaving the ships so you can explore space stations or board enemy vessels or even just to look around your own.</p>
+<p>The main reason for treating these as expansions is so we can approach these with the proper development resources that we require to do them well. We don't plan or desire to just tick a box, we want to make these additions something significant.</p>
+<p>Another avenue we intend to explore is other platforms, but for now the focus is very much on the Windows PC release. Only once the initial game is done will we start to look at other platforms.</p>
+<p>Really big expansions are likely to be paid for while we also intend for some smaller free updates. If you have pledged to to £80 tier or above you will receive all expansions for free.</p>
+<p><strong>Press Links</strong></p>
+<p>The POD  Delusion (Podcast)</p>
+<p><a href="http://poddelusion.co.uk/blog/2012/12/21/episode-167-21st-december-2012-end-of-the-world-special/" target="_blank">http://poddelusion.co.uk/blog/2012/12/21/episode-167-21st-december-2012-end-of-the-world-special/</a></p>
+<p>BBC News:</p>
+<p><a href="http://www.bbc.co.uk/news/technology-20205555" target="_blank">http://www.bbc.co.uk/news/technology-20205555</a></p>
+<p><a href="http://www.bbc.co.uk/news/technology-20165344" target="_blank">http://www.bbc.co.uk/news/technology-20165344</a></p>
+<p>VG24/7:</p>
+<p><a href="http://www.vg247.com/2012/11/23/elite-dangerous-brabens-square-peg/" target="_blank">http://www.vg247.com/2012/11/23/elite-dangerous-brabens-square-peg/</a></p>
+<p>Eurogamer:</p>
+<p><a href="http://www.eurogamer.net/articles/2012-11-26-elite-dangerous-dev-diary-shows-multiplayer-gameplay-as-kickstarter-pushes-past-500k-mark" target="_blank">http://www.eurogamer.net/articles/2012-11-26-elite-dangerous-dev-diary-shows-multiplayer-gameplay-as-kickstarter-pushes-past-500k-mark</a></p>
+<p> BeefJack:</p>
+<p><a href="http://beefjack.com/features/david-braben-elite-dangerous-interview/" target="_blank">http://beefjack.com/features/david-braben-elite-dangerous-interview/</a></p>
+<p>PC Gamer:</p>
+<p><a href="http://www.pcgamer.com/2012/12/03/new-elite-dangerous-dev-diary-shows-off-galaxy-evolution/" target="_blank">http://www.pcgamer.com/2012/12/03/new-elite-dangerous-dev-diary-shows-off-galaxy-evolution/</a></p>
+<p><b>Incgamer</b></p>
+<p><a href="http://www.incgamers.com/2012/11/credits-cobras-and-crowd-funding-david-braben-tells-us-about-elite-dangerous/" target="_blank">http://www.incgamers.com/2012/11/credits-cobras-and-crowd-funding-david-braben-tells-us-about-elite-dangerous/</a></p><strong>International Press Links</strong> 
+<div class="main">
+<p>Developer Diary 3: <br><a href="http://www.playm.de/2012/12/elite-dangerous-drittes-entwicklervideo-mit-neuen-spielszenen-66215/" target="_blank">http://www.playm.de/2012/12/elite-dangerous-drittes-entwicklervideo-mit-neuen-spielszenen-66215/</a> <br><a href="http://www.eurogamer.it/articles/2012-12-12-news-videogiochi-un-nuovo-filmato-per-elite-dangerous" target="_blank">http://www.eurogamer.it/articles/2012-12-12-news-videogiochi-un-nuovo-filmato-per-elite-dangerous</a></p>
+<p>Developer Diary 2 / Interview part I: <br><a href="http://www.gizmodo.de/2012/12/06/elite-dangerous-hat-die-halfte-seiner-kickstartersumme-eingespielt.html" target="_blank">http://www.gizmodo.de/2012/12/06/elite-dangerous-hat-die-halfte-seiner-kickstartersumme-eingespielt.html</a></p>
+<p>Developer Diary 2: <br><a href="http://www.gry-online.pl/S013.asp?ID=73093" target="_blank">http://www.gry-online.pl/S013.asp?ID=73093</a><br><a href="http://www.gry-online.pl/S013.asp?ID=73209" target="_blank">http://www.gry-online.pl/S013.asp?ID=73209</a><br><a href="http://www.gamesblog.it/post/75423/elite-dangerous-in-un-nuovo-video-diario-di-sviluppo" target="_blank">http://www.gamesblog.it/post/75423/elite-dangerous-in-un-nuovo-video-diario-di-sviluppo</a></p>
+<p>Intro video: <br><a href="http://www.gameplorer.de/elite-dangerous-kickstarter-projekt-fuer-die-fortsetzung-eines-klassikers/" target="_blank">http://www.gameplorer.de/elite-dangerous-kickstarter-projekt-fuer-die-fortsetzung-eines-klassikers/</a></p>
+<p><a href="http://www.stern.de/spiele/vorschau/neues-elite-dangerous-entwicklertagebuch-zeigt-evolution-der-galaxie-12101.html" target="_blank">http://www.stern.de/spiele/vorschau/neues-elite-dangerous-entwicklertagebuch-zeigt-evolution-der-galaxie-12101.html</a></p>
+<p>Golem.de:<br><a href="http://www.golem.de/news/elite-dangerous-raumstationen-schiffe-und-planeten-besuchen-1212-96386.html" target="_blank">http://www.golem.de/news/elite-dangerous-raumstationen-schiffe-und-planeten-besuchen-1212-96386.html</a></p>
+<p><a href="http://www.golem.de/news/elite-macher-david-braben-ich-mag-keine-zwischensequenzen-1211-95684.html" target="_blank">http://www.golem.de/news/elite-macher-david-braben-ich-mag-keine-zwischensequenzen-1211-95684.html</a></p>
+<p><a href="http://www.golem.de/news/frontier-developments-david-braben-stellt-elite-dangerous-im-video-vor-1211-95630.html" target="_blank">http://www.golem.de/news/frontier-developments-david-braben-stellt-elite-dangerous-im-video-vor-1211-95630.html</a></p>
+<strong>Books Set in the Elite: Dangerous world:</strong> </div>
+<div class="main"></div>
+<div class="main"></div>
+<p><strong>"Elite - Reclamation"  by Drew Wagar</strong>. It was the first to reach its funding level through Kickstarter and funding is still open:</p>
+<p><a href="http://www.kickstarter.com/projects/1245019716/reclamation-an-elite-novella-by-a-fan-for-the-fans?ref=search" target="_blank">http://www.kickstarter.com/projects/1245019716/reclamation-an-elite-novella-by-a-fan-for-the-fans?ref=search</a></p>
+<p><strong>"The Cost of Exploration" by Commander Boz.</strong> It has been funded through Kickstarter, and successfully reached its funding level on December 2nd, just before funding closed:</p>
+<p><a href="http://www.kickstarter.com/projects/336512366/the-cost-of-exploration-an-elite-dangerous-world-b?ref=search" target="_blank">http://www.kickstarter.com/projects/336512366/the-cost-of-exploration-an-elite-dangerous-world-b?ref=search</a></p>
+<p><strong>"...And Here the Wheel" by John Harper. </strong>This has reached itsfunding on <a href="http://www.indiegogo.com/" target="_blank">www.indiegogo.com</a>, here:</p>
+<p><a href="http://www.indiegogo.com/EliteDangerous-And-here-the-wheel" target="_blank">http://www.indiegogo.com/EliteDangerous-And-here-the-wheel</a></p>
+<p><b>"Elite: Dangerous - Out of the Darkness" by T. James. </b>This has been successfully funded on Kickstarter here:</p>
+<p><a href="http://www.kickstarter.com/projects/tjameswriter/an-elite-dangerous-book-out-of-the-darkness" target="_blank">http://www.kickstarter.com/projects/tjameswriter/an-elite-dangerous-book-out-of-the-darkness</a></p>
+<p><b>"Elite Anthology: Tales from the Frontier" by Chris Booker. </b>This is currently part funded on Kickstarter here:</p>
+<p><a href="http://www.kickstarter.com/projects/1410794241/elite-anthology-tales-from-the-frontier-working-ti?ref=live" target="_blank">http://www.kickstarter.com/projects/1410794241/elite-anthology-tales-from-the-frontier-working-ti?ref=live</a></p>
+<p><b>"Survivor - An Elite: Dangerous Gamebook" by Nathanael Page. </b>This has been  funded on Kickstarter here:</p>
+<p><a href="http://www.kickstarter.com/projects/232063970/survivor-an-elite-dangerous-gamebook" target="_blank">http://www.kickstarter.com/projects/232063970/survivor-an-elite-dangerous-gamebook</a></p>
+<p><b>"The Space Farer's Tale" by Sean A Curtin</b>. This is currently part funded on Indiegogo here:</p>
+<p><a href="http://www.indiegogo.com/EliteDangerousTSFT" target="_blank">http://www.indiegogo.com/EliteDangerousTSFT</a></p>
+<p><b>"Supermassive" by Andre Czausov</b>. This is currently part funded on Pozible here:</p>
+<p><a href="http://www.pozible.com/index.php/archive/index/13383/description/0/0" target="_blank">http://www.pozible.com/index.php/archive/index/13383/description/0/0</a></p>
+<p><b>"Elite Chronicles" by C L</b>. This is currently part funded on Kickstarter here:</p>
+<p><a href="http://www.kickstarter.com/projects/1483152934/elite-chronicles" target="_blank">http://www.kickstarter.com/projects/1483152934/elite-chronicles</a></p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1461411552/elite-dangerous/assets/271797/edit" data-id="271797">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/271/797/19b3101307f79ffcc326783ab647ac6e_large.JPG?1353426600"></figure>
+</div>
+<p><b>Mostly Harmless.</b></p>
+<p>“Elite” has gone down in history as one of the most successful games of the 1980s. It was the first ‘open world’ game in which the player can freely roam a vast space. It was the first true 3D game too, and set many other benchmarks. Ian Bell and I set out to make a game for <i>ourselves</i> rather than for some imagined market. We were sick of games with three lives then a new life every 10,000 score; we wanted something new.</p>
+<p>The original “Elite” fitted into around 22K of memory, out of a total of 32K on the BBC Micro Model B computer on which it was launched (8K was needed for the screen, 2K for the system). This is less than a single typical email today. In it were eight galaxies each with 256 star systems. Each planet in those systems had its own legal system, economy and so on. Clearly some magic had to happen to fit it into 22K, and that magic was procedural generation.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1461411552/elite-dangerous/assets/252835/edit" data-id="252835">
+<figure><img alt='Combat in the original "Elite" on the BBC Micro' class="fit" src="https://s3.amazonaws.com/ksr/assets/000/252/835/e6eaf332de1408d2508d2ab6543c27cd_large.jpg?1352462788"><figcaption>Combat in the original "Elite" on the BBC Micro</figcaption></figure>
+</div>
+<p><b>Competent</b></p>
+<p>“Frontier” followed in 1993 on 16 bit computers, and pushed these procedural techniques further. In it I made a model of the whole of the Milky Way galaxy with all 100,000,000,000 or so star systems, and many more planets and moons, each of which you could visit. It is something I am really proud of, as it was as scientifically accurate as I could make it, and provided a great backdrop for a game. I loved the richness of the galaxy, but with the benefit of hindsight I think the way the ships flew detracted from the joyous immediacy of those in “Elite”.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1461411552/elite-dangerous/assets/252840/edit" data-id="252840">
+<figure><img alt='Data on the Fomalhaut system in "Frontier" on the Amiga' class="fit" src="https://s3.amazonaws.com/ksr/assets/000/252/840/e0874c3b2a48e2cdbc163da435b4d6ac_large.gif?1352463104"><figcaption>Data on the Fomalhaut system in "Frontier" on the Amiga</figcaption></figure>
+</div>
+<p><b>Dangerous...</b></p>
+<p>Imagine what is now possible, squeezing the last drop of performance from modern computers in the way “Elite” and “Frontier” did in their days? It is not just a question of raw performance (though of course these elements will make it look gorgeous), but we can push the way the networking works too – something very few people had access to in the days of Frontier.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1461411552/elite-dangerous/assets/265487/edit" data-id="265487">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/265/487/9993070b01b30bebca12a00cbe344f51_large.jpg?1353090848"></figure>
+</div>
+<p>Frontier Developments, the company I founded in January 1994 (and whose first product was a version of the “Frontier” game for the CD32 console), is now a very well established game development company with 235 people in the UK and Canada, with its own technology and tools and a great team of game developers.  We have a long track record of delivering high quality games on time and to budget, both published by ourselves and through big publishers like Microsoft, LucasArts, Atari, and Sony. </p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1461411552/elite-dangerous/assets/271799/edit" data-id="271799">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/271/799/743487eab735997b4c15ef0b78679607_large.JPG?1353426754"></figure>
+</div>
+<p>Elite: Dangerous is the game I have wanted Frontier to make for a very long time. The next game in the Elite series - an amazing space epic with stunning visuals, incredible gameplay and breath-taking scope, but this time you can play with your friends too. I want a game that feels more like the original “Elite” to fly, and with more rapid travel (to allow for the multi-player nature of the game) – so you travel quickly using local ‘hyperspace’ travel rather than by fast-forwarding time – but with the rich galaxy of Frontier – and more, so much more.</p>
+<p>I’ll be frank - we have had a couple of false starts on this over the years, where progress wasn’t as good as I wanted. Also, understandably, other projects have been prioritised – projects with announced dates or other commitments. Up to now “Elite” has been worked upon by a small team as a ‘skunk-works’ activity in the background as availability permits. Nevertheless, we have been preparing; laying the technology and design foundations for when the time is right. And that time is now.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1461411552/elite-dangerous/assets/271804/edit" data-id="271804">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/271/804/8cd5ff4467315fb2439aeb64b66de470_large.jpg?1353427056"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1461411552/elite-dangerous/assets/271803/edit" data-id="271803">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/271/803/170080a66251e37ecf24e22080d0cf9f_large.JPG?1353427012"></figure>
+</div>
+<p>We’re using Kickstarter both as a means of test-marketing the concept to verify there is still interest in such a game that extends beyond the individuals who regularly contact me about the game, and raising the funds to do so. There is also the fact that as long as we hit the threshold, it commits us to making the game. From where we are now, $2M/£1.25M will get us the minimum game, but I am hoping we can get more than that as it will allow us to be more ambitious with content and platforms; something the design decision forum members (the £300 reward tier and above) will be part of a discussion about.</p>
+<p>We will rely heavily on artist-directed procedural generation, using techniques that are a logical expansion of what was done in the previous “Elite” and “Frontier” games. This will greatly reduce the required budget – bringing it to within reach of Kickstarter. It also means it becomes a viable project to avoid the conventional publishing route – something that I don’t believe can deliver a game like this successfully.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1461411552/elite-dangerous/assets/252842/edit" data-id="252842">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/252/842/f508b77af85d30c36b41d393685862be_large.jpg?1352463783"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1461411552/elite-dangerous/assets/271805/edit" data-id="271805">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/271/805/d86a4aeb56bdb4fe40056144be8df489_large.JPG?1353427105"></figure>
+</div>
+<p>Procedural generation of content is a technique where content is generated from rules. It abstracts repetitive or arbitrary elements of content creation in a very efficient way. Imagine a medieval landscape. Laying out towns, roads, castles, farm land, forests and so on can be done by a system of rules – putting castles widely spaced out on vantage points, towns near rivers but under the protection of such a castle, roads between them, then with farm land to support them all. An artist can still design the castle, the houses in the towns, but this approach greatly magnifies the content that can be created. “Frontier” did this for the star systems, and planets, and with Elite: Dangerous, we will go further.</p>
+<p>For those who are interested in further information on procedural generation, here is a video talking some more about it. It is not everyone's 'cup of tea' as it is quite detailed, but there is some more game footage in the background...</p>
+<div class="template oembed" contenteditable="false" data-href="http://youtu.be/iTBvpd3_Vqk">
+<iframe width="612" height="344" src="https://www.youtube.com/embed/iTBvpd3_Vqk?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div>
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1461411552/elite-dangerous/assets/271807/edit" data-id="271807">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/271/807/5de286f1a9fc0bde4bb102394a84115e_large.JPG?1353427162"></figure>
+</div>
+<p>In the game, you will of course begin with a spacecraft and a small sum of Credits. You will be able to trade, pirate, bounty-hunt, explore, and salvage your way to wealth and fame, building on those key elements of the previous games, and with sumptuous graphics only now possible with the performance of today’s machines. Only this time some of the ships out there will be other players like yourself – other members of a secret ‘Elite’ group of space-farers…</p>
+<p>·         <b>Multiplayer</b>: you will be able to control who else you might encounter in your game – perhaps limit it to just your friends? Cooperate on adventures or chase your friends down to get that booty. The game will work in a seamless, lobby-less way, with the ability to rendezvous with friends as you choose. This technology is already working, using a combination of peer-to-peer (to reduce lag) and server connections.</p>
+<p>·         <b>Play it your way</b>: Your reputation is affected by your personal choices. Play the game your way: dangerous pirate, famous explorer or notorious assassin - the choice is yours to make. Take on missions and affect the world around you, alone or with your friends.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1461411552/elite-dangerous/assets/252853/edit" data-id="252853">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/252/853/9893c8aef99f8ef5a6206f5d41d73f41_large.jpg?1352465277"></figure>
+</div>
+<p> ·         <b>Trade</b>: Buy low, sell high and discover the most profitable trade-routes. Keep an eye on the markets, supply and demand may create opportunities for quick profit. Unscrupulous players may even try distorting those markets.</p>
+<p> ·         <b>Fight</b>: take on the pirates, or become one yourself. Engage in combat missions within a rich and dynamic simulation to earn a reputation, or perhaps you want to become a famous bounty-hunter – feared by those that you chase, but staying the right side of the law.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1461411552/elite-dangerous/assets/252843/edit" data-id="252843">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/252/843/fce994007179ff0945da3f9c9833aa4e_large.jpg?1352463982"></figure>
+</div>
+<p> ·         <b>Travel</b>: Travel across star systems and between them. Risk leaving the relative safety of the Corporate-run space station to explore distant planets or stars. Space is big and you never know what you might find; perhaps a salvageable freighter wreck or some valuable asteroids? There are secrets and startling beauty waiting to be discovered by the intrepid explorer.</p>
+<p>·         <b>Ships</b>: save your credits and upgrade your ship. Get new weapons, engines and equipment and customize your ship the way you want it. Check out the body-kits and paint jobs on offer, give your ship that personal touch.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1461411552/elite-dangerous/assets/252846/edit" data-id="252846">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/252/846/6d6fc7d6e18b5b85634f6795e8dfacde_large.jpg?1352464273"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1461411552/elite-dangerous/assets/252854/edit" data-id="252854">
+<figure><img alt="A render of just the mesh of a heavily damaged Anaconda" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/252/854/0a6e57d8d21559a4f115654fa08ed8c6_large.png?1352466176"><figcaption>A render of just the mesh of a heavily damaged Anaconda</figcaption></figure>
+</div>
+
+<p>The game is planned to be released on the PC in March 2014. Make no mistake – this is a massive game, but by using procedural techniques that we have been cultivating over the years, a new approach to multiplayer, and bringing the raw power of today’s machines to bear, it is astonishing what is possible. This is your chance to help make it happen. Become one of “The Elite” once more.</p>
+<p>David Braben</p>
+
+<p><strong>Concept Art</strong></p>
+<p><em>Please note: the Kickstarter system reduces the resolution of these images. They can be found at higher resolution here:</em></p>
+<p> <a href="http://www.frontier.co.uk/elitedownloads/wallpapers/" target="_blank">http://www.frontier.co.uk/elitedownloads/wallpapers/</a></p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1461411552/elite-dangerous/assets/290529/edit" data-id="290529">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/290/529/b28a60eaeaff3694ac4f3b4a00359450_large.jpg?1354547301"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1461411552/elite-dangerous/assets/290530/edit" data-id="290530">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/290/530/69f4f935af99c6a82c7be057349cab9e_large.jpg?1354547361"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1461411552/elite-dangerous/assets/263425/edit" data-id="263425">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/263/425/7078d301b00b439a824c77043b5c9495_large.jpg?1352997254"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1461411552/elite-dangerous/assets/263421/edit" data-id="263421">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/263/421/ab49e6a7e000579cfed771aa1078509a_large.jpg?1352997140"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1461411552/elite-dangerous/assets/263442/edit" data-id="263442">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/263/442/a69e13d1070a4a86fef8cc2a698cd7f6_large.jpg?1352998604"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1461411552/elite-dangerous/assets/263443/edit" data-id="263443">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/263/443/2e7da44c9debc25c1d0b3097601dc6ac_large.jpg?1352998661"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1461411552/elite-dangerous/assets/263445/edit" data-id="263445">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/263/445/5dea453d14d27f1aafa6ab371c42b568_large.JPG?1352998705"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1461411552/elite-dangerous/assets/263450/edit" data-id="263450">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/263/450/f508b77af85d30c36b41d393685862be_large.jpg?1352998866"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/1461411552/elite-dangerous/assets/263453/edit" data-id="263453">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/263/453/a106694d4ffccde556c2a52e013c5210_large.jpg?1352998986"></figure>
+</div>
+
+<p><i>*All names must not be offensive, trademarks, or in any way problematic for us to include in the game, and must follow our naming guidelines.</i></p>
+</div>
+<div id="risks">
+<h2 class="title grey-dark mt6 mb4">
+<span>Risks and challenges</span>
+<a href="/help/faq/kickstarter%20basics#Acco" class="right normal h5" target="_blank">Learn about accountability on Kickstarter</a>
+<div class="divider clear"></div>
+</h2>
+<p><p>Stating the obvious, all projects, whether building a bridge, making a film, studying for an exam or whatever, carry risk.  Projects can run out of time or money, people can leave, assumptions that were made at the start may prove to be mistaken, or the results may simply not be as good as expected. Games development is no different.</p>
+
+<p>Looking at all the high quality games we at Frontier have produced, from RollerCoaster Tycoon 3 to Kinectimals to LostWinds to Disneyland Adventures, I think the risk of non-delivery is small. We already have a large team who are very experienced at delivering complicated projects, and the key high-risk components (like networking) are already in place. If necessary then we will delay the release beyond March 2014, but I do not believe we will need to do so.</p>
+
+<p>Fundamentally this is the game I want to make and have wanted to make for a long time. I want to make this game for myself – it is the sort of game I want to play. There are many more like me at Frontier that want this for themselves too, and, I hope, out there in Kickstarter-land. Right at the start, Ian and I took that risk when making the first “Elite” amidst cries that it needed three lives and a score – but we took the risk that others wanted what we wanted – and the result was a great success. If Elite: Dangerous is something you also want, then let’s all take that risk together and help make the fantastic freedom of the “Elite” series return to our screens, in current state-of-the-art glory!</p>
+
+<p>David Braben</p></p>
+</div>
+</div>
+<div class="NS-projects-faqs" id="project-faqs">
+<h2 class="title grey-dark mt6 mb4">
+FAQ
+<div class="divider clear"></div>
+</h2>
+<ul class="faqs">
+<li class="faq" id="project_faq_41798">
+<div class="faq-question">
+<a href="#project_faq_41798" name="project_faq_41798">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Can you release “Elite: Dangerous” on the (iPhone/iPad/Console/Mac/Linux/Oculus Rift/Raspberry Pi) platform?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Yes. It would be great. The PC version comes first though, and then we will look at the demand for other platforms. If the game exceeds its target, then there will be scope to increase the number of platforms. We will discuss with the backers in the design discussion forum, and how to address the issues that will arise, but I have every hope that we will cover some or all of these platforms.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-11-21T11:22:26-05:00">Wed, Nov 21 2012 11:22 am EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_41799">
+<div class="faq-question">
+<a href="#project_faq_41799" name="project_faq_41799">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Will you have Newtonian physics in the game?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Yes. The degree of the fly-by-wire to override the feeling of skidding is something we will carefully tune.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-11-14T07:40:31-05:00">Wed, Nov 14 2012 7:40 am EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_41800">
+<div class="faq-question">
+<a href="#project_faq_41800" name="project_faq_41800">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Will I be able to speed up time?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>No, not in the sense that “Frontier” allowed you to travel huge distances in a short period of time. Instead we plan to use ‘local hyperspace’ travel. This is because time has to stay locked between the players (otherwise multiplayer doesn’t work).</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-11-07T09:09:47-05:00">Wed, Nov 7 2012 9:09 am EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_41801">
+<div class="faq-question">
+<a href="#project_faq_41801" name="project_faq_41801">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Will space be blue?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>No, it will be black, with a rich, realistic-looking star field and other background objects. The reason I had the background blue in “Frontier” was so that the planets could be seen as dark against a brighter background – but on some people’s screens it looked awful. It was supposed to reflect the rich mass of background stars.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-11-07T09:09:47-05:00">Wed, Nov 7 2012 9:09 am EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_41802">
+<div class="faq-question">
+<a href="#project_faq_41802" name="project_faq_41802">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Will there be a wireframe mode?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>No, not planned at least. It is a fun idea but it would destroy the beauty of the game, but if enough wanted it we could consider it as a special ‘cheat’ – as long as there wasn’t a gameplay benefit to those using it.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-11-07T09:09:47-05:00">Wed, Nov 7 2012 9:09 am EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_41803">
+<div class="faq-question">
+<a href="#project_faq_41803" name="project_faq_41803">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">How will the Star System named after me work? Will there therefore be five star systems with the same name?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>For those who get to name star systems or space stations, the name will be your choice, within reason. It does not have to be precisely your name – it could be your nickname or something else (within reason). So if your name were John Smith, it could be Smithworld, John Smith, Smithy’s Station, JS Station, and so on. Some have asked if it could be named after a relative who is no longer with us. All these things are possible. It should be something that isn’t offensive, or legally we cannot use without permission, or has some other problem (so if your name is Coca Cola, then maybe you might want to use your nickname!). If you are naming multiple systems, then we ask that you choose a different variant – so they are not identical. For the star systems there will be scope for a sentence, appearing on the system information in the game  – for example “This system was first discovered by the famous explorer John Smith, who came from Paris, Texas, Earth”. This sentence should be no more than about twenty or so words, and should fit the character of the game, and will be agreed with you. If we cannot agree then a standard sentence (like the one given here) will be used.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-11-14T07:40:31-05:00">Wed, Nov 14 2012 7:40 am EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_42231">
+<div class="faq-question">
+<a href="#project_faq_42231" name="project_faq_42231">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Will the game be DRM-free?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Yes, the game code will not include DRM (Digital Rights Management), but there will be server authentication when you connect for multiplayer and/or updates and to synchronise with the server.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-12-10T06:54:41-05:00">Mon, Dec 10 2012 6:54 am EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_42233">
+<div class="faq-question">
+<a href="#project_faq_42233" name="project_faq_42233">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Speed of Communication</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Players will be able to communicate directly with each other. This has to be done instantaneously, otherwise we think it would be very frustrating. Space is truly huge, so an inter-system distance would mean delays of several years or more if we were being realistic!</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-11-14T07:50:20-05:00">Wed, Nov 14 2012 7:50 am EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_42234">
+<div class="faq-question">
+<a href="#project_faq_42234" name="project_faq_42234">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">How does multiplayer work?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>You simply play the game, and depending on your configuration (your choice) some of the other ships you meet as you travel around are real players as opposed to computer-controlled ships. It may be a friend you have agreed to rendezvous with here, or it may be another real player you have encountered by chance. All players will be part of a “Pilot’s Federation” – that is how they are distinguished from non-players – so you will be able to tell who is a player and who is a non-player easily.</p>
+
+<p> You will be able to save your position in certain key places (probably just in space stations, but possibly while in hyperspace too, if we feel it is needed). A save-and-quit option will be freely available at those points, as will the subsequent reload, but there will be a game cost for a reload following player death. Your ship will still be intact in the condition it was when the save occurred, but there will be a game currency charge (referred to as an insurance policy) for this. This is to prevent the obvious exploit of friends cooperating and killing each other to get each other’s cargo. If you can’t pay, then it will accumulate as an in-game debt, and the police may chase you!</p>
+
+<p> There are no multiplayer lobbies, and the game will be played across many servers, augmented by peer-to-peer traffic for fast responses. Session creation and destruction happens during the long-range hyperspace countdown and hyperspace effect (which is a few seconds only), so is transparent to the player.</p>
+
+<p>We have the concept of “groups”. They can be private groups just of your friends or open groups (that form part of the game) based on the play styles people prefer, and the rules in each can be different. Players will begin in the group “All” but can change groups at will, though it will be possible to be banned from groups due to antisocial behaviour, and you will only meet others in that group.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-11-14T07:52:06-05:00">Wed, Nov 14 2012 7:52 am EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_42235">
+<div class="faq-question">
+<a href="#project_faq_42235" name="project_faq_42235">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">How do we plan to address PvP (player vs player) “griefing”?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>An obvious danger is an advanced player with a big well-armed ship in a busy system spends their time just picking off beginners, for fun.</p>
+
+<p> To understand how this will be stopped requires a little bit of understanding how real player ships will be treated slightly differently to non-player ships. Players will automatically be part of a “Pilot’s Federation” and will be identified as such, together with their ranking and name. Bounties are paid by this Federation – something that is therefore much higher for those that kill other Federation members. It will be balanced so that this cannot be used as an exploit (so a beginner killing a beginner is taken less seriously than an Elite pilot killing a beginner – it will be based on the ranking difference).</p>
+
+<p>  There are four separate ways we will address this:</p>
+
+<p> 1.       The offender will very quickly get a serious price on their head (bounty) and criminal record. That price on their head will attract bounty hunters.</p>
+
+<p> 2.       Local police or military will respond very quickly and strongly to them.</p>
+
+<p> 3.       It will be legitimate for other players to attack them for the attractive bounty without attracting a bounty for themselves, as once there is a bounty on their head they are officially a pirate and ‘free game’ for everyone.</p>
+
+<p> 4.       If enough players complain about the offender&#39;s behaviour in a certain time, then they will be banned from this group.</p>
+
+<p>  </p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-11-14T07:52:06-05:00">Wed, Nov 14 2012 7:52 am EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_42393">
+<div class="faq-question">
+<a href="#project_faq_42393" name="project_faq_42393">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">What does it mean to be a ‘Founding member of “The Elite”‘?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>“The Elite” are a secretive group of intrepid pilots. Throughout human space, there are a great many people that have been helped by “The Elite” over the years, and because of this “The Elite” are treated well, wherever they go. Whether it be discounts on buying special items or repairs, and the small number of founding members even greater benefits. Other benefits include a greater likelihood of being offered rare missions or opportunities. Membership is offered to pilots who have proven their ability by reaching “Elite” rating within the Pilot’s Federation, but the founding members are not put through such an indignity. All “The Elite” are entitled to display a special silver “Elite” emblem, and the founders a golden one with the word ‘Founder’ beneath it.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-11-21T11:22:26-05:00">Wed, Nov 21 2012 11:22 am EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_42659">
+<div class="faq-question">
+<a href="#project_faq_42659" name="project_faq_42659">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Will the game be free to play after the initial purchase?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>We do not plan to make it subscription-based. Once you have purchased the game up front, you will be able to play thereafter for no further cost. Everything in the game will be purchasable with in-game Credits, earned from trading, bounty-hunting, etc. We will probably allow the supplemental purchase of Credits with real money, for those who want to accelerate their progress through the game.</p>
+
+<p>We do plan to charge for additional updates, to be available sometime after the original release. These will offer additional content, features and gameplay.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-11-21T11:49:03-05:00">Wed, Nov 21 2012 11:49 am EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_42661">
+<div class="faq-question">
+<a href="#project_faq_42661" name="project_faq_42661">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Can I destroy planets?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>No. Think how quickly we’d be planet-less in the core systems in a multi-player game!</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-11-21T11:49:03-05:00">Wed, Nov 21 2012 11:49 am EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_42662">
+<div class="faq-question">
+<a href="#project_faq_42662" name="project_faq_42662">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">How many craft types will you be able to fly?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>At least 15 at launch, and we plan to add more after launch.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-11-21T12:31:47-05:00">Wed, Nov 21 2012 12:31 pm EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_42663">
+<div class="faq-question">
+<a href="#project_faq_42663" name="project_faq_42663">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">How many different types of goods can I trade in?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>A huge number. You will trade in goods classes, but now we will have variants too – based on location of origin (creating a rarity factor based on distance away) and quality – so you might have Lavian Brandy in the category Liquor/Wine.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-11-21T11:49:03-05:00">Wed, Nov 21 2012 11:49 am EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_42664">
+<div class="faq-question">
+<a href="#project_faq_42664" name="project_faq_42664">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Will there be missions? What kind of missions will there be? How will they be generated (procedural or scripted)?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Yes. There will be both scripted and procedural missions. Some missions will be implied rather than explicitly signed up to – ie you will simply encounter something and you can choose to engage or not. An example of this is an incoming distress call or a derelict ship. They might be what they seem, or they might not…</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-11-21T11:49:03-05:00">Wed, Nov 21 2012 11:49 am EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_42665">
+<div class="faq-question">
+<a href="#project_faq_42665" name="project_faq_42665">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Will there be alien races or factions?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Please wait and see (don&#39;t want any spoilers do we?)...</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-11-21T11:49:03-05:00">Wed, Nov 21 2012 11:49 am EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_42673">
+<div class="faq-question">
+<a href="#project_faq_42673" name="project_faq_42673">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Will you be able to script your own missions for your friends to play through?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>It&#39;s something I&#39;d like to see, but supporting dev tools externally is not something we&#39;d want to do on day one. Down the line, maybe...</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-11-21T12:31:47-05:00">Wed, Nov 21 2012 12:31 pm EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_42740">
+<div class="faq-question">
+<a href="#project_faq_42740" name="project_faq_42740">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">What happens if I successfully raise funds (eg via Kickstarter) for the £4,500 &#39;Writer&#39;s Pack&#39; pledge, but then the &quot;Elite: Dangerous&quot; project does not reach its funding level?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Firstly, we are confident that we will reach the funding level. However, in the very unlikely event that the funding level is not met, at the end of the funding period we will be happy to make a deal outside Kickstarter for half the pledge level (ie £2,250), available to all those who have &#39;Writer&#39;s Pack&#39; pledges at the end of the funding period, which will grant all the rights you need, and a license to use the relevant materials and imagery, so the book publishing can still go ahead. This should address the concern about a writer achieving funding via another route (eg from a publisher, or from another Kickstarter project), and ours not succeeding, leaving the potentially difficult situation where the writer cannot deliver on their promise.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-11-22T12:48:29-05:00">Thu, Nov 22 2012 12:48 pm EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_43734">
+<div class="faq-question">
+<a href="#project_faq_43734" name="project_faq_43734">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">How will single player work? Will I need to connect to a server to play?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>The galaxy for Elite: Dangerous is a shared universe maintained by a central server. All of the meta data for the galaxy is shared between players. This includes the galaxy itself as well as transient information like economies. The aim here is that a player&#39;s actions will influence the development of the galaxy, without necessarily having to play multiplayer.</p>
+
+<p> The other important aspect for us is that we can seed the galaxy with events, often these events will be triggered by player actions. With a living breathing galaxy players can discover new and interesting things long after they have started playing.</p>
+
+<p> Update! The above is the intended single player experience. However it will be possible to have a single player game without connecting to the galaxy server. You won&#39;t get the features of the evolving galaxy (although we will investigate minimising those differences) and you probably won&#39;t be able to sync between server and non-server (again we&#39;ll investigate).</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-12-11T04:56:52-05:00">Tue, Dec 11 2012 4:56 am EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_43735">
+<div class="faq-question">
+<a href="#project_faq_43735" name="project_faq_43735">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Can I gift pledges?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>The main Kickstarter page has been updated to provide more information on pledge upgrades and gifting pledges. In essence if you increase your pledge by the correct amount you can duplicate a pledge. This does not apply to pledges that are limited in number, these require  account for each pledge.</p>
+
+<p> Additional digital copies of the game can be added for £25.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-12-10T13:55:30-05:00">Mon, Dec 10 2012 1:55 pm EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_43736">
+<div class="faq-question">
+<a href="#project_faq_43736" name="project_faq_43736">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">What is the minumum specs for the game?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>These have not been determined yet. We will endeavour to ensure that the game runs as wide a range of PC&#39;s as possible, while still making sure it looks amazing on more capable machines.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-12-11T05:29:52-05:00">Tue, Dec 11 2012 5:29 am EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_43858">
+<div class="faq-question">
+<a href="#project_faq_43858" name="project_faq_43858">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">If I pledge to a level which includes multiple physical items, do I need to pay extra postage and packing?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Postage fees are only for people that are outside the UK and are in two categories, the main pledges (eg a premium box etc ) and the pledge add ons (sound track, books etc). Pledge add ons for customers outside the UK will only attract a flat postage fee of £15 either for a single level (eg the soundtrack) or multiple level (eg the sound track and the signed book). If you ordered the premium box this is one of the main pledges and it attracts postage of £15, and if you ordered any add on on top of the main pledge this is another £15 even for multiple items. In summary, if you have a premium box *and* multiple add on pledges (sound track, signed book etc) then you will not pay postage of more than £30 if you are outside the UK</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-12-12T16:18:28-05:00">Wed, Dec 12 2012 4:18 pm EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_44085">
+<div class="faq-question">
+<a href="#project_faq_44085" name="project_faq_44085">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Can I land on planets?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Yes, but not in the initial release. Our aim is to make planetary landings a much richer experience than ever before and that requires considerable development effort. To achieve this we&#39;ll focus on landing on planets after the initial release.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-12-15T05:03:44-05:00">Sat, Dec 15 2012 5:03 am EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_44086">
+<div class="faq-question">
+<a href="#project_faq_44086" name="project_faq_44086">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Can I leave the space ship?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Yes, but not in the initial release. The core release of the game focusses on the ships and space. We&#39;ll then be working to expand the game. This includes exploring your ship and space stations. The potential content for Elite is huge,so we&#39;re keeping a sensible strategy to add to the game in stages.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-12-15T05:16:27-05:00">Sat, Dec 15 2012 5:16 am EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_44087">
+<div class="faq-question">
+<a href="#project_faq_44087" name="project_faq_44087">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Will I have to pay for updates, or expansions, or new content?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Some new features and content will be paid for, especially those that build significantly on the game. If you have pledged to £90 tier or higher then any expansions or updates are free.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-12-15T05:16:27-05:00">Sat, Dec 15 2012 5:16 am EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_44166">
+<div class="faq-question">
+<a href="#project_faq_44166" name="project_faq_44166">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Can I mine resources?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Yes, we intend to support asteroid mining as well as mining for gases and liquids.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-12-17T09:21:00-05:00">Mon, Dec 17 2012 9:21 am EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_44167">
+<div class="faq-question">
+<a href="#project_faq_44167" name="project_faq_44167">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">How do I travel to other star systems?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>There are no jump gates in ELite: Dangerous. Your ship is fitted with a hyper drive that allows you to jump to star systems in range of the engine. You can also use the drive to jump large distances within the star system.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-12-19T08:45:42-05:00">Wed, Dec 19 2012 8:45 am EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_44168">
+<div class="faq-question">
+<a href="#project_faq_44168" name="project_faq_44168">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">How do star systems differ from each other?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Each star systems has its own collection of planets, moons and other bodies like asteroids. There are a large number of planets types from small and rocky to immense gas giants and all kinds between. Different systems also have different habitations like space and mining stations.</p>
+
+<p> Celestial bodies like nebula are also present. </p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-12-17T09:21:00-05:00">Mon, Dec 17 2012 9:21 am EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_44169">
+<div class="faq-question">
+<a href="#project_faq_44169" name="project_faq_44169">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">How many ships can I encounter at the same time?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>For AI controlled ships this is likely to be in the hundreds, for player controlled ships this will be a smaller number, exactly how many isn&#39;t determined yet, but we&#39;re aiming for more than 32.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-12-17T09:24:28-05:00">Mon, Dec 17 2012 9:24 am EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_44392">
+<div class="faq-question">
+<a href="#project_faq_44392" name="project_faq_44392">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Can I name my ship?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Yes, although ship names are not unique. Your commander name will be unique and used to identify players.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-12-21T17:08:57-05:00">Fri, Dec 21 2012 5:08 pm EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_44418">
+<div class="faq-question">
+<a href="#project_faq_44418" name="project_faq_44418">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">If my pledge tier contains multiple starting options can I choose which one?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Yes, you choose one of the starting options when starting a new game.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-12-22T10:46:36-05:00">Sat, Dec 22 2012 10:46 am EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_44446">
+<div class="faq-question">
+<a href="#project_faq_44446" name="project_faq_44446">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Can I get a free copy if I pledged for a copy and the game is released on my preferred platform?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Yes. As long as we control the distribution channel and are able to provide a free copy. This should be fine for Linux or Mac versions of the game. </p>
+
+<p>Note that we cannot guarantee at this stage that other platforms will be supported, but we intend to see what we can once the WIndows PC version is released.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-12-23T13:57:50-05:00">Sun, Dec 23 2012 1:57 pm EST</time>
+</div>
+</div>
+</li>
+
+</ul>
+<div class="faq-ask-box">
+<a href="/projects/1461411552/elite-dangerous/messages/new?message%5Bto%5D=1461411552&amp;mode=FAQ" class="button button_blue remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Ask a question about Elite: Dangerous">Ask a question</a>
+
+</div>
+</div>
+
+<div class="mt4 ml1 mr1 mb2" id="report-issue-wrap">
+<a href="/login?then=%2Fprojects%2F1461411552%2Felite-dangerous" class="button button_grey">Report this project to Kickstarter</a>
+</div>
+</div>
+<div class="NS-projects-rightcol grid_5" id="rightcol">
+<div class="NS_projects__ecom">
+<div class="digits_7 pb2 pl2 pt2" id="stats">
+<h5>
+<div class="num h48 no-margin" data-backers-count="25681" id="backers_count"><data class="Project880009511" data-format="number" data-value="25681" itemprop="Project[backers_count]">25,681</data></div>
+<span><data class="Project880009511" data-attr="backers_count" data-format="pluralize" data-value="25681" data-word="Backer">Backers</data></span>
+</h5>
+<h5>
+<div class="num h48 no-margin" data-goal="1250000.0" data-percent-raised="1.262652864" data-pledged="1578316.08" id="pledged">
+<data class="Project880009511" data-currency="GBP" data-format="shorter_money" data-precision="0" data-value="1578316" data-without_code="true" itemprop="Project[pledged]">£1,578,316</data>
+<span class="money gbp project_currency_code"></span>
+</div>
+pledged of
+<span class="money gbp no-code">£1,250,000</span>
+goal
+</h5>
+<span data-duration="60.0" data-end_time="2013-01-04T19:00:57-05:00" data-hours-remaining="0" id="project_duration_data"></span>
+<div class="Project880009511" data-conditions="[{&quot;!state&quot;:[&quot;canceled&quot;,&quot;suspended&quot;]}]" data-evaluation="true" data-render="&quot;&lt;h5 class=\&quot;poll \&quot; data-dynamic=\&quot;5\&quot; data-end_time=\&quot;2013-01-04T19:00:57-05:00\&quot; data-poll_url=\&quot;https://d2oher2uhvl0ur.cloudfront.net/projects/1461411552/elite-dangerous/stats.json\&quot;&gt;\n&lt;div class=\&quot;num h48 no-margin\&quot;&gt;0&lt;/div&gt;\n&lt;span class=\&quot;text\&quot;&gt;seconds to go&lt;/span&gt;\n&lt;/h5&gt;\n&quot;"><h5 class="poll " data-dynamic="5" data-end_time="2013-01-04T19:00:57-05:00" data-poll_url="https://d2oher2uhvl0ur.cloudfront.net/projects/1461411552/elite-dangerous/stats.json">
+<div class="num h48 no-margin">0</div>
+<span class="text">seconds to go</span>
+</h5>
+</div></div>
+<div class="Project880009511" data-conditions="[{&quot;state&quot;:&quot;live&quot;},{&quot;!ended?&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;pr2 pl2\&quot; id=\&quot;pledge-wrap\&quot;&gt;\n&lt;a href=\&quot;/projects/1461411552/elite-dangerous/pledge/new?clicked_reward=false\&quot; class=\&quot;button button_green button_box button_block\&quot; id=\&quot;button-back-this-proj\&quot; title=\&quot;Back this project\&quot;&gt;Back This Project &lt;small class=&#39;h6 normal block green-dark&#39;&gt;&lt;span class=\&quot;money gbp no-code\&quot;&gt;\u00a31&lt;/span&gt; minimum pledge&lt;/small&gt;&lt;/a&gt;\n&lt;/div&gt;\n&quot;"></div><div class="Project880009511" data-conditions="[{&quot;state&quot;:&quot;live&quot;}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;p2\&quot; id=\&quot;banner\&quot;&gt;\n&lt;p class=\&quot;tiny_type no-margin\&quot;&gt;\nThis project will be funded on\n&lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;llll z\&quot; datetime=\&quot;2013-01-04T19:00:57-05:00\&quot;&gt;Fri, Jan 4 2013 7:00 pm EST&lt;/time&gt;.\n&lt;/p&gt;\n&lt;/div&gt;\n&quot;"></div></div>
+
+<div class="NS_projects__rightcol_projectby bg-blue-light rounded">
+<div class="p2 clearfix">
+<div class="avatar inline-block align-middle">
+<a href="/projects/1461411552/elite-dangerous/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography"><img alt="Frontierlogo2012_small_4-3.small" class="avatar-small" height="80" src="https://s3.amazonaws.com/ksr/avatars/4511234/FrontierLogo2012_Small_4-3.small.jpg?1354881840" width="80" />
+</a></div>
+<div class="creator-name inline-block align-middle ml1">
+<h6 class="mb1">Project by</h6>
+<h5 class="mb1">
+<a href="/projects/1461411552/elite-dangerous/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">Frontier Developments</a>
+</h5>
+<p class="location h6 bold mb1">
+<a href="/discover/places/cambridge-cambridge-city-gb">Cambridge, UK</a>
+</p>
+</div>
+</div>
+<div class="creator-details pl2 pr2 pb1">
+<ul class="list-simple h5 mb1">
+<li class="projects">
+<span class="ss-icon ss-kickstarter grey-dark margin-right"></span>
+<span class="text">
+First created
+<span class="divider">&middot;</span>
+0 backed
+</span>
+</li>
+<li class="facebook-connected">
+<span class="ss-icon ss-facebook facebook color-facebook margin-right"></span>
+<span class="text">
+<a href="https://www.facebook.com/100000403993098" class="popup" target="_blank">Frontier Developments</a>
+<span class="number h6">
+0
+friends
+</span>
+</span>
+
+</li>
+<li class="links">
+<span class="ss-icon ss-globe margin-right grey-dark"></span>
+<span class="text">
+<a href="http://elite.frontier.co.uk" class="popup" rel="nofollow" target="_blank">elite.frontier.co.uk</a>
+</span>
+</li>
+</ul>
+</div>
+<div class="footer center h5 bold clearfix rounded-bottom clip">
+<a href="/projects/1461411552/elite-dangerous/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">See full bio</a>
+<a href="/projects/1461411552/elite-dangerous/messages/new?message%5Bto%5D=1461411552" class="remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Send a message to Frontier Developments">Contact me</a>
+
+</div>
+</div>
+
+<ul class="NS-projects-rightcol-rewards rounded clip list mt2" data-reward-count="31" id="what-you-get">
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£5</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+371 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Be an Elite supporter, and get a digital code when the game is released to apply a transferrable decal to your ship, unique to you, the game’s backers</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-03-01">Mar 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£10</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+181 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Receive the digital newsletter and progress updates, plus the reward above.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-02-01">Feb 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£15</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+129 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Reserve your Commander name in the game (first come, first served, except Jameson), plus all rewards above.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-01-01">Jan 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£20</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+10000 backers
+</span>
+<span class="bg-grey no-wrap pl1 pr1 sold-out">
+All gone!
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Reserve a digital copy of the game, plus all rewards above.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-03-01">Mar 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£25</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1389 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(3611 left of 5000)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Download a single copy of the game  and also gain 500 credits when starting a new game. Plus all of the rewards listed above, except the limited £20 reward. Higher rewards gain the 500 credit bonus, but this only applies if the default starting option is selected.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-03-01">Mar 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£30</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+738 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Reserve a digital copy of the game, plus all rewards above.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-03-01">Mar 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£32</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+921 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Imperial Bounty Hunter: Have the option to start in an Imperial Colony with an Imperial Eagle Mk II Fighter with upgraded weapons and shields and 1,000 CR (randomised start system choice for multiplayer reasons)** plus all rewards above.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-03-01">Mar 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£35</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+138 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Download a digital copy of the official sequel to “The Dark Wheel” novel, plus all rewards above.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-03-01">Mar 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£37</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+641 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Federal Trader: Have the option to start in a Federal border system with a basic Cobra Mk III loaded with cargo worth 1,000 CR and 1,000 CR in cash.(randomised system choice for multiplayer reasons)** plus all rewards above.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-03-01">Mar 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£40</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1996 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(8004 left of 10000)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Your name* forms part of the naming database (so your name will be one of those used randomly for non-player in-game characters), plus all rewards above.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-03-01">Mar 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£42</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+577 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Pirate: Have the option to start in an anarchic Frontier system with a stolen but upgraded Cobra Mk III and only 100 CR.(randomised system choice for multiplayer reasons)** plus all rewards above.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-03-01">Mar 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£45</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+369 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Download a digital copy of the “Elite: Dangerous” music, plus all rewards above</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-03-01">Mar 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£50</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1278 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Participate in the second round private beta test, plus all rewards above.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-02-01">Feb 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£55</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+344 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Independent Trader: Have the option to start in the Lave system with a basic Cobra Mk III and only 100 CR** plus all rewards above.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-03-01">Mar 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£60</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+374 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Physical DRM-free boxed edition of &quot;Elite: Dangerous&quot; plus all rewards above (please note: the disc in the pack is simply an alternative way to install the game - it will have the same online account code whether installed off disc or downloaded digitally).</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-03-01">Mar 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add £15 to ship outside the UK
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£70</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+159 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Explorer: Have the option to start on the edge of explored space with a long range version of the Cobra Mk III and 3,000 CR (randomised system choice for multiplayer reasons)** plus all rewards above.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-03-01">Mar 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£75</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+60 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Access to the private backer’s discussion forum, plus all rewards above.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-01-01">Jan 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£80</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+485 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Digital Download Pack.  This includes a single digital download of the game, and any expansions, and all the other rewards above except those requiring physical delivery.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-03-01">Mar 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£85</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+843 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Kickstarter Special: Have the option to start in the founder&#39;s world with any starter ship and 4,000 CR. Note: any Kickstarter decal-carrier will be able to travel to this secret system in gameplay** plus all rewards above.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-03-01">Mar 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£90</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1339 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Physical DRM-free collector&#39;s premium boxed edition of &quot;Elite: Dangerous&quot;. This includes all the rewards above, except a premium boxed edition is in place of the standard boxed addition, which includes a T shirt with &quot;I backed Elite: Dangerous&quot; on the back, and a paperback copy of the official sequel to &quot;The Dark Wheel&quot;.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-03-01">Mar 2014</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add £15 to ship outside the UK
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£100</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1125 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Participate in the first round private beta test, plus all rewards above.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-01-01">Jan 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£150</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1167 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(3833 left of 5000)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Be a founding member of ‘The Elite’ in the game, plus all rewards above.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-03-01">Mar 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£200</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+261 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(739 left of 1000)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Participate in the private alpha test, plus all rewards above.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-12-01">Dec 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£300</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+387 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(113 left of 500)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Be a design decision forum member, plus all rewards above.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-01-01">Jan 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+113 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(137 left of 250)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Have a space station named* after you, plus all rewards above.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-03-01">Mar 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£750</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+100 backers
+</span>
+<span class="bg-grey no-wrap pl1 pr1 sold-out">
+All gone!
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Have a planet named* after you, and an invitation to the UK launch party, plus all rewards above.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-03-01">Mar 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£1,500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+16 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(9 left of 25)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Be a “Commander Jameson” - have a reserved commander name* xxxx Jameson (eg Commander Peter Jameson etc) – first come first served on the forenames - plus all rewards above.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-03-01">Mar 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£3,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+7 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(8 left of 15)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Have a frontier star system named* after you, and a &#39;special thanks&#39; game credit, plus all rewards above.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-03-01">Mar 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£4,500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+12 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(2 left of 14)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>The writer’s pack: The right to write one piece of written fiction set in the Elite: Dangerous world, and (subject to reasonable approval of the content) release it commercially, without paying Frontier further royalties, independently of the game. This category includes all the rewards above. Frontier will cooperate to allow the system name, commander name, planet name, planet description, space station names to be positioned and used in a way to support the fiction within the game. Frontier will also help publicise your title at the time of release of “Elite: Dangerous”, as long as it is finished at that point, alongside the official sequel to “The Dark Wheel”.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-03-01">Mar 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£5,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+<span class="bg-grey no-wrap pl1 pr1 sold-out">
+All gone!
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Name the secret founder&#39;s system*. This includes all the benefits of the £3,000 pledge tier.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-03-01">Mar 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money gbp no-code">£5,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+5 backers
+</span>
+<span class="bg-grey no-wrap pl1 pr1 sold-out">
+All gone!
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Dinner with myself and the key team members in Cambridge, Have a central star system named* after you, plus all rewards above.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2014-03-01">Mar 2014</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+</ul>
+
+<div class="small_type bg-blue-light mt2 mb2 p2" id="mentions">
+<h5>Featured!</h5>
+<ul>
+<li>
+<a href="/blog/kickstarter-in-the-uk-the-first-year">Kickstarter in the UK: The First Year</a>
+<time class="js-adjust" data-format="ll" datetime="2013-11-04T00:34:00-05:00">Nov 4, 2013</time>
+</li>
+</ul>
+
+</div>
+<div class="p2" id="meta">
+<h5>Funding period</h5>
+<p class="tiny_type">
+<time class="js-adjust" data-format="ll" datetime="2012-11-05T19:00:57-05:00">Nov 5, 2012</time> - 
+<time class="js-adjust" data-format="ll" datetime="2013-01-04T19:00:57-05:00">Jan 4, 2013</time>
+(60 days)
+</p>
+</div>
+</div>
+
+</div>
+
+<a href="#" id="video_mode_tab" style="display: none;">
+View in Video Mode
+</a>
+
+</div>
+</div>
+
+
+</div>
+
+<div class="h5 bg-green-dark" id="mega-footer-wrap">
+<div class="bg-green-dark white full-height" id="footer-newsletter-signup">
+<div class="container py4">
+<div class="grid_8 prefix_4 suffix_4 center mt4">
+<h2>
+Eureka! You've found
+<br>
+our little secret.
+</h2>
+<p>Sign up for our Happening email for all the inside info about arts and culture in the Kickstarter universe and beyond.</p>
+<div class="newsletter_signup">
+<form accept-charset="UTF-8" action="/newsletters/happening/signup" class="overlabels" method="post"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /><input class="hidden" name="authenticity_token" type="hidden" value="bLcQ3wkFogEhoSBrEO4DiXXk2w/zchcTa0igTn1zZeA=" /></div><input class="hidden" id="location" name="location" type="hidden" value="footer" />
+<textarea class="hide textarea" id="comment" name="comment">
+</textarea>
+<div class="field newsletter">
+<label class="overlabel z1 overlabel-newsletter">Email address</label>
+<input class="text" id="email" name="email" type="text" />
+</div>
+<input class="button button_green submit" name="commit" type="submit" value="Submit" />
+</form>
+
+</div>
+
+</div>
+</div>
+</div>
+<div class="container relative" id="mega-footer">
+<span class="scissors icon-scissors-1"></span>
+<div class="grid_16 alpha omega pt4 pb2" id="mega-footer-links">
+<div class="grid_4 link-group">
+<h5 class="white">About us</h5>
+<ul class="list">
+<li><a href="/year/2013/?ref=footer">2013 highlights</a></li>
+<li><a href="/year/2012?ref=footer">2012 highlights</a></li>
+<li><a href="/team?ref=footer">Who we are</a></li>
+<li><a href="/jobs?ref=footer">Jobs</a></li>
+<li><a href="/press?ref=footer">Press</a></li>
+<li><a href="/help/stats?ref=footer">Stats</a></li>
+<li><a href="/newsletters/weekly">Projects we love</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group">
+<h5><a href="/help?ref=footer" class="white">Help</a></h5>
+<ul class="list">
+<li><a href="/hello?ref=footer">What is Kickstarter?</a></li>
+<li><a href="/help?ref=footer">FAQ</a></li>
+<li><a href="/contact?ref=footer">Support</a></li>
+<li><a href="/help/school?ref=footer">Kickstarter School</a></li>
+<li><a href="/terms-of-use?ref=footer">Terms of Use</a></li>
+<li><a href="/privacy?ref=footer">Privacy Policy</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group alpha omega suffix_1">
+<h5 class="alpha"><a href="/discover/advanced?ref=footer" class="white">Discover</a></h5>
+<ul class="column column-0 grid_2 list">
+<li><a href="/discover/categories/art?ref=footer">Art</a></li>
+<li><a href="/discover/categories/comics?ref=footer">Comics</a></li>
+<li><a href="/discover/categories/dance?ref=footer">Dance</a></li>
+<li><a href="/discover/categories/design?ref=footer">Design</a></li>
+<li><a href="/discover/categories/fashion?ref=footer">Fashion</a></li>
+<li><a href="/discover/categories/film%20&amp;%20video?ref=footer">Film &amp; Video</a></li>
+<li><a href="/discover/categories/food?ref=footer">Food</a></li>
+</ul>
+<ul class="column column-1 grid_2 list">
+<li><a href="/discover/categories/games?ref=footer">Games</a></li>
+<li><a href="/discover/categories/music?ref=footer">Music</a></li>
+<li><a href="/discover/categories/photography?ref=footer">Photography</a></li>
+<li><a href="/discover/categories/publishing?ref=footer">Publishing</a></li>
+<li><a href="/discover/categories/technology?ref=footer">Technology</a></li>
+<li><a href="/discover/categories/theater?ref=footer">Theater</a></li>
+</ul>
+</div>
+<div class="grid_3 link-group">
+<h5 class="white">Hello</h5>
+<ul class="list">
+<li>
+<a href="https://twitter.com/kickstarter"><span class="ss-icon ss-social-regular ss-twitter"></span>
+Twitter
+</a></li>
+<li>
+<a href="https://www.facebook.com/Kickstarter"><span class="ss-icon ss-social-regular ss-facebook"></span>
+Facebook
+</a></li>
+<li>
+<a href="http://kickstarter.tumblr.com"><span class="ss-icon ss-social-regular ss-tumblr"></span>
+Tumblr
+</a></li>
+<li>
+<a href="http://instagram.com/kickstarter"><span class="ss-icon ss-social-regular ss-instagram"></span>
+Instagram
+</a></li>
+<li>
+<a href="https://vine.co/Kickstarter"><span class="ss-icon ss-social-regular ss-vine"></span>
+Vine
+</a></li>
+<li>
+<a href="/blog?ref=footer">Blog</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="grid_16 py4" id="mega-footer-bottom">
+<div class="logo left">
+<a href="/" class="grey-dark"><span class="ss-icon h3">KICKSTARTER</span>
+</a></div>
+<p class="right h5 grey-dark">
+&copy;
+2014
+Kickstarter, Inc.
+</p>
+</div>
+</div>
+</div>
+
+<script>
+  //<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    var analytics_vars = { google_analytics_id : "UA-7621056-1", logged_in : "false", social_user: "false" }
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.mixpanel_id = '75b1d24a516ecfc955eadfadc4910661';
+    window.mixpanel_debug = false;
+  //]]>
+</script>
+
+
+<noscript>
+<img alt="Quantcast" border="0" height="1" src="//secure.quantserve.com/pixel/p-34IbSpw2K94Sg.gif" style="display:none" width="1" />
+</noscript>
+
+
+<script>
+  //<![CDATA[
+    window.benchmark = (typeof window.performance == 'object' && typeof window.performance.mark == 'function');
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    (function (root) {
+      function instrument_function (original) {
+        return function () {
+          try {
+            return original.apply(this, arguments);
+          } catch (e) {
+            if (e.stack && root.Honeybadger) {
+              Honeybadger.notify(e, {
+                current_project : root.current_project,
+                current_user : root.current_user
+              });
+            }
+            throw(e);
+          }
+        };
+      }
+      root.instrument_function = instrument_function;
+    }(this));
+  //]]>
+</script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+
+<script>
+  //<![CDATA[
+    (function(){function c(a){this.local_start_time=new Date;this.settings={cookie_name:"request_time"};for(var b in a)this.settings[b]=a[b];this.get_remote_offset()}c.prototype.get_remote_offset=function(){this.cookie_value=this.read_cookie();var a=new Date(this.cookie_value);if(!this.cookie_value||"Invalid Date"===a.toString()){if(this.remote_offset=this.read_cookie("local_offset"))this.remote_offset=parseInt(this.remote_offset,10)}else this.remote_offset=a-this.local_start_time;"undefined"!==typeof this.remote_offset&& !isNaN(this.remote_offset)?(document.cookie="local_offset="+this.remote_offset+"; path=/",this.is_set=!0):this.is_set=!1};c.prototype.time_units=[["milliseconds",1],["seconds",1E3],["minutes",6E4],["hours",36E5],["days",864E5]];c.prototype.get_units_in_interval=function(a,b){var d=a.replace(/^\w/,function(d){return"get"+d.toUpperCase()});return b[d]()};c.prototype.milliseconds_in_day=function(a){"undefined"===typeof a&&(a=new Date);for(var b=0,d=this.time_units.length-2;0<=d;d--)b+=this.get_units_in_interval(this.time_units[d][0], a)*this.time_units[d][1];return b};c.prototype.milliseconds_in_interval=function(a,b){return this.milliseconds_in_day(b)%a};c.prototype.milliseconds_to_next_interval=function(a,b){return a-this.milliseconds_in_interval(a,b)};c.prototype.pluralize=function(a,b){1===b&&(a=a.replace(/s$/,""));return a};c.prototype.read_cookie=function(a){for(var b=window.document.cookie.split(";"),a=(a||this.settings.cookie_name)+"=",d=0;d<b.length;d++){for(var e=b[d];" "==e.charAt(0);)e=e.substring(1,e.length);if(0== e.indexOf(a))return b=e.substring(a.length,e.length),decodeURIComponent(b).replace(/\+/g," ")}return null};c.prototype.destroy_cookie=function(a){var b=new Date;a||(a=this.settings.cookie_name);b.setTime(b.getTime()-864E5);window.document.cookie=a+"=; expires="+b.toGMTString()+"; path=/"};c.prototype.get_remote_time=function(){var a=new Date,b=a.getTime()+this.remote_offset;return a=a.setTime(b)};window.ksr_page_clock=new c})(); (function(){function c(d,a,b){if(d){this.options={unit_base:{seconds:119,minutes:119,hours:72,days:0},end_phrase:d.getAttribute("data-word")||"to go",count_down:d.getAttribute("data-dynamic")||!1};for(k in b)this.options[k]=b[k];this.clock=a;this.time_units=this.clock.time_units.slice(1);this.element=d;this.clock.is_set&&this.attach()}}function a(){this.elements=[];this.attach()}var b=function(d,a){var b=a||window.document.body,c=d.split("."),g=c[c.length-1],c=1<c.length&&c[0]?c[0]:"*";if(window.document.getElementsByClassName)return b.getElementsByClassName(g); if(b.querySelectorAll)return b.querySelectorAll(d);for(var c=b.getElementsByTagName(c),h=[],i=0,f;f=c[i];i++)b=RegExp("(^|\\s)"+g+"(\\s|$)"),(""+f.className).match(b)&&h.push(f);return h};c.prototype.get_remaining_time=function(){var d=this.remote_end_time-this.clock.get_remote_time();0>d&&(d=0);return d};c.prototype.get_current_unit=function(){for(var d,a=0;a<this.time_units.length&&!(d=this.time_units[a],this.get_remaining_time()<=this.options.unit_base[d[0]]*d[1]);a++);return d};c.prototype.update_element= function(){var a=this.get_current_unit(),b=Math.floor(this.get_remaining_time()/a[1]);isNaN(b)||(this.number_element.innerHTML=b,this.text_element.innerHTML=this.clock.pluralize(a[0],b)+" "+this.options.end_phrase)};c.prototype.valid=function(){return!(!this.number_element||!this.text_element)};c.prototype.attach=function(){function a(){c.update_element();if(c.options.count_down&&0<c.get_remaining_time()){var b=c.get_current_unit();this.timeout=window.setTimeout(a,c.clock.milliseconds_to_next_interval(b[1]))}} var c=this;if(this.remote_end_time_string=this.element.getAttribute("data-end_time"))this.remote_end_time_string.match(/^\d+$/)?(this.remote_end_time=new Date,this.remote_end_time.setTime(this.remote_end_time_string)):this.remote_end_time=new Date(this.remote_end_time_string),this.number_element=b(".num",this.element)[0],this.text_element=b(".text",this.element)[0],this.element.ksr_page_timer=!0,this.valid()&&a()};c.prototype.cancel=function(){this.timeout&&clearTimeout(this.timeout)};a.prototype.loading= !0;a.prototype.stop_finding=function(){this.attach_timers();this.loading=!1;document.addEventListener?document.removeEventListener("DOMContentLoaded",this.stop_finding,!1):document.attachEvent&&"complete"===document.readyState&&document.detachEvent("onreadystatechange",this.stop_finding)};a.prototype.bind_ready=function(){var a=this,b=function(){a.stop_finding.call(a)};document.addEventListener?(document.addEventListener("DOMContentLoaded",b,!1),window.addEventListener("load",b,!1)):document.attachEvent&& (document.attachEvent("onreadystatechange",b),window.attachEvent("onload",b))};a.prototype.attach_timers=function(){for(var a=b("div.ksr_page_timer"),e=0;e<a.length;e++)a[e].ksr_page_timer||(new c(a[e],window.ksr_page_clock),this.elements.push(a[e]))};a.prototype.attach=function(){var a=this;this.bind_ready();(function(){a.attach_timers();a.loading&&window.setTimeout(function(){a.attach_timers()},200)})()};window.ProjectTimer=c;new a})();
+  //]]>
+</script>
+
+<script class="template" id="template-widgets__video_embed_code" type="text/x-tmpl-mustache"><iframe width="{{width}}" height="{{height}}" src="{{{path}}}" frameborder="0" scrolling="no"> </iframe>
+</script><script class="template" id="template-projects__baseball_card_tall" type="text/x-tmpl-mustache"><div class="project-card-wrap project-card-wrap-tall border bg-white rounded clip">
+  <div class="project-card relative project-live {{#successful?}}successful{{/successful?}}">
+    <div class="project-thumbnail pt1 pl1 pr1">
+      <a href="{{urls.web.project}}" target="">
+        <img alt="Photo-little" class="projectphoto-little" src="{{photo.little}}" class="fit">
+      </a>
+    </div>
+    <div class="project-card-interior p1 h6 grey-dark">
+      <h6 class="project-title">
+        <a href="{{urls.web.project}}" target="" class="green-dark">{{name}}</a>
+      </h6>
+      <p class="mb1 ellipsis">
+        by
+        {{creator.name}}
+      </p>
+      <p class="blurb">
+        {{blurb}}
+      </p>
+    </div>
+    <div class="absolute-bottom bg-white rounded-bottom">
+
+      {{#location}}
+        <ul class="p1 list project-meta no-margin h6">
+          <li class="ellipsis">
+            <a href="{{location.urls.web.discover}}" data-location="{{location_json}}" class="grey-dark">
+              <span class="ss-icon ss-location"></span>
+              <span class="location-name">{{location.displayable_name}}</span>
+            </a>
+          </li>
+        </ul>
+      {{/location}}
+
+      <div class="project-stats-wrap pb1 pl1 pr1">
+
+        {{#failed?}}
+          <div class='project-status project-failed h6'>
+            <strong> Funding Unsuccessful</strong><br />
+            <span class="grey-dark">Project ended on {{formatted_deadline}}</span>
+          </div>
+        {{/failed?}}
+
+        {{#canceled?}}
+          <div class='project-status project-canceled h6'>
+            <strong> Funding Canceled</strong><br />
+            <span class="grey-dark">Project canceled on {{formatted_state_changed_at}}</span>
+          </div>
+        {{/canceled?}}
+
+        {{#successful?}}
+          <div class='project-pledged-successful bg-green white h6 pl1 pr1 mb1'>
+            <strong>Successful!</strong>
+          </div>
+        {{/successful?}}
+
+        {{#live_or_successful?}}
+          {{#live?}}
+            <div class="project-pledged-wrap bg-grey clip mb1">
+              <div class="project-pledged bg-green full-height" style="width: {{percent_raised_to_100}}%"></div>
+            </div>
+          {{/live?}}
+          <ul class="project-stats list no-margin h6 no-wrap">
+            <li class="first funded inline-block mr1">
+              <strong class="block h6">{{percent_raised_rounded}}%</strong>
+              <span class="grey-dark">funded</span>
+            </li>
+            <li class="pledged inline-block mr1">
+              <strong class="block h6">{{currency_symbol}}{{formatted_money}}</strong>
+              <span class="grey-dark">pledged</span>
+            </li>
+            {{#successful?}}
+              <li class="last successful inline-block">
+                <strong class="block h6">Funded</strong>
+                <div class="deadline grey-dark">{{formatted_deadline}}</div>
+              </li>
+            {{/successful?}}
+            {{#live?}}
+              <li class="last ksr_page_timer inline-block" data-end_time="{{javascript_deadline}}">
+                <strong class="block h6">
+                  <div class="num">30</div>
+                </strong>
+                <div class="span text grey-dark" data-word="left">days to go</div>
+              </li>
+            {{/live?}}
+          </ul>
+        {{/live_or_successful?}}
+      </div>
+    </div>
+  </div>
+</div>
+
+{{#friends_backing?}}
+  <div class="friend_project_context">
+    <div class="friend_facepile">
+      {{#truncated_friends}}
+        <img src="{{avatar.thumb}}" class="{{#has_metadata?}}small{{/has_metadata?}}">
+      {{/truncated_friends}}
+    </div>
+    <p class="friend_namepile">
+      {{{escaped_sentence}}}
+    </p>
+  </div>
+{{/friends_backing?}}
+</script><script class="template" id="template-projects__video_mode" type="text/x-tmpl-mustache"><a href='#' id='video_mode_close' class='close_button z2'><span class='ss-icon ss-delete'></span></a>
+
+<div class='title_card z1 {{context_classes}}' style="display:none;">
+  <div class='interior'>
+    <h2 class='project_title normal_weight'>{{name}}</h2>
+    <p class='blurb'>{{blurb}}</p>
+    <nav class='bar'>
+      <a id='play_button' class='left play' href='#'>
+        <span class='play_active'>
+          <span class='ss-icon ss-play'></span>
+          Play
+        </span>
+        <span class='pause_active'>
+          <span class='ss-icon ss-pause'></span>
+          Pause
+        </span>
+      </a>
+      {{#logged_in}}
+        <div class='remind right'>
+          {{#if_not_starred}}
+            <a class='follow' href='{{urls.web.project}}/watch'><span class='ss-icon ss-star'></span></a>
+          {{/if_not_starred}}
+          {{#if_starred}}
+            <a class='unfollow' href='{{urls.web.project}}/unwatch'><span class='ss-icon ss-star active'></span></a>
+          {{/if_starred}}
+        </div>
+      {{/logged_in}}
+      <a class='right explore button button_green small' href='#'>Explore this project</a>
+    </nav>
+  </div>
+</div>
+
+<div class='channel_controls z1'>
+  <a href='#' class='{{#playlist_is_location}}selected {{/playlist_is_location}}location'>Something else near {{location.first_name}} <span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_featured}}selected {{/playlist_is_featured}}featured'>Something different<span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_category}}selected {{/playlist_is_category}}category'>Something else in {{category.name}} <span class='ss-icon ss-navigateright'></span></a>
+</div>
+
+<div class='project_video' style='background-image: url('{{photo.full}}')'>
+  <div class='cover'>
+    <video>
+      <source src='{{video.high}}' type='video/mp4'/>
+      <source src='{{video.webm}}' type='video/webm'/>
+    </video>
+  </div>
+</div>
+</script><script class="template" id="template-site__video_mode_fourohfour" type="text/x-tmpl-mustache"><section class='four_oh_four'>
+  <p class='big_type'>
+    Looks like you've reached the end of the line! <br />Check out <a class="another" href='#'>another channel</a> or <a href='/discover'>browse projects in discover</a>.
+  </p>
+</section>
+</script>
+
+<script id="schwamm_formatting_options" type="text/javascript">
+//<![CDATA[
+(function(){window.formatters = window.formatters || {}; var formatting_options = {"distance_date_intervals":[[5,"just now"],[29,"less than a minute ago"],[89,"1 minute ago"],[2640,"%m minutes ago"],[5340,"about 1 hour ago"],[82800,"about %h hours ago"],[147600,"1 day ago"],[604800,"%d days ago"],[15552000,"on %t"],[0,"on %y"]],"currency_symbol_mappings":{"AFN":"\u060b","ALL":"Lek","ARS":"$","AUD":"$","AWG":"\u0192","AZN":"\u043c\u0430\u043d","BAM":"KM","BBD":"$","BGN":"\u043b\u0432","BMD":"$","BND":"$","BOB":"$b","BRL":"R$","BSD":"$","BWP":"P","BYR":"p.","BZD":"BZ$","CAD":"$","CLP":"$","CNY":"\u00a5","COP":"$","CRC":"\u20a1","CUP":"\u20b1","CZK":"K\u010d","DKK":"kr","DOP":"RD$","EGP":"\u00a3","EUR":"\u20ac","FJD":"$","FKP":"\u00a3","GBP":"\u00a3","GIP":"\u00a3","GTQ":"Q","GYD":"$","HKD":"$","HNL":"L","HRK":"kn","HUF":"Ft","IDR":"Rp","ILS":"\u20aa","IRR":"\ufdfc","ISK":"kr","JMD":"J$","JPY":"\u00a5","KGS":"\u043b\u0432","KHR":"\u17db","KPW":"\u20a9","KRW":"\u20a9","KYD":"$","KZT":"\u043b\u0432","LAK":"\u20ad","LBP":"\u00a3","LKR":"\u20a8","LRD":"$","LTL":"Lt","LVL":"Ls","MKD":"\u0434\u0435\u043d","MNT":"\u20ae","MUR":"\u20a8","MXN":"$","MYR":"RM","MZN":"MT","NAD":"$","NGN":"\u20a6","NIO":"C$","NOK":"kr","NPR":"\u20a8","NZD":"$","OMR":"\ufdfc","PAB":"B/.","PEN":"S/.","PHP":"\u20b1","PKR":"\u20a8","PLN":"z\u0142","PYG":"Gs","QAR":"\ufdfc","RON":"lei","RSD":"\u0414\u0438\u043d.","RUB":"\u0440\u0443\u0431","SAR":"\ufdfc","SBD":"$","SCR":"\u20a8","SEK":"kr","SGD":"$","SHP":"\u00a3","SOS":"S","SRD":"$","SVC":"$","SYP":"\u00a3","THB":"\u0e3f","TRY":"TL","TTD":"TT$","TWD":"NT$","UAH":"\u20b4","USD":"$","UYU":"$U","UZS":"\u043b\u0432","VEF":"Bs","VND":"\u20ab","YER":"\ufdfc","ZAR":"R"},"currency_trailing_code_mappings":{"AUD":true,"CAD":true,"NZD":true,"USD":true},"currency_formats":["money","shorter_money"]}; for (key in formatting_options) {window.formatters[key] = formatting_options[key]};}());
+//]]>
+</script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("begin_base.js_tag");}
+  //]]>
+</script>
+<script src="https://d297h9he240fqh.cloudfront.net/assets/packages/base-45cdab84617ddfb8905b7cddc8500c19.js" type="text/javascript"></script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("end_base.js_tag");}
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    document.domain='kickstarter.com';
+  //]]>
+</script>
+
+<iframe height="0" id="api_xdreceiver" src="https://api.kickstarter.com/xdreceiver/85e6.html" style="display: none;" width="0"></iframe>
+
+
+
+<div id="fb-root"></div>
+<script>
+  //<![CDATA[
+    var channelUrl = window.location.protocol + "//" + window.location.host + "/channel.html",
+      skip_autologin = $('body').is('.skip_autologin');
+    
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId: window.fb_app_id,
+        channelUrl: channelUrl,
+        status: true,    // check login status
+        cookie: true,    // enable cookies to allow the server to access the session
+        xfbml: true,     // parse XFBML
+        logging: false   // turn off logging
+      });
+    
+      FB.getLoginStatus(function (response) {
+        if (response.status === 'connected') {
+          if (read_cookie("logout_from_fb")) {
+            FB.logout();
+            destroy_cookie("logout_from_fb");
+          } else if (!skip_autologin) {
+            $.get("/fb/autologin", {'fbsr': response.authResponse.signedRequest});
+          } else if (false && 0 == response.authResponse.userID) {
+            $.get("/fb/refresh", {'fbsr': response.authResponse.signedRequest});
+          }
+        } else {
+          if (read_cookie("logout_from_fb")) {
+            destroy_cookie("logout_from_fb");
+          }
+        }
+      })
+    
+      $(document).trigger('fb:loaded');
+    };
+    
+    
+    // Load the SDK Asynchronously
+    (function(d){
+      var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+      js = d.createElement('script'); js.id = id; js.async = true;
+      js.src = "//connect.facebook.net/en_US/all.js";
+      d.getElementsByTagName('head')[0].appendChild(js);
+    }(document));
+  //]]>
+</script>
+
+
+</body>
+</html>

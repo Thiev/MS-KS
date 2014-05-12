@@ -1,0 +1,2167 @@
+<!DOCTYPE html>
+<html class="projects_show  fontface no-js" lang="en">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# kickstarter: http://ogp.me/ns/fb/kickstarter#">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-5.newrelic.com","errorBeacon":"jserror.newrelic.com","licenseKey":"b04b883ad2","applicationID":"11086","transactionName":"cFteRUULX1wHFhtIEFxeVVJDFxxDCgtD","queueTime":10,"applicationTime":405,"ttGuid":"","agentToken":null,"agent":"js-agent.newrelic.com/nr-411.min.js"}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"Vw4BVEVSCQMIUg=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e){function n(t,e,n){n||(n={});for(var r=o[t],a=r&&r.length||0,s=n[i]||(n[i]={}),u=0;a>u;u++)r[u].apply(s,e);return s}function r(t,e){var n=o[t]||(o[t]=[]);n.push(e)}var o={},i="nr@context";e.exports={on:r,emit:n}},{}],2:[function(t){function e(t,e,n,i,s){return u?u-=1:r("err",[s||new UncaughtException(t,e,n)]),"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t(5),a=window.onerror,s=!1,u=0;t("loader").features.push("err"),window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(d){"stack"in d&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(4),s=!0)}i.on("fn-start",function(){s&&(u+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&u>0&&(u-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:4,3:3,4:6,5:1,6:14,handle:"D5DuLP",loader:"G9z0Bl"}],3:[function(t){function e(t){r.inPlace(t,["addEventListener","removeEventListener"],"-",n)}function n(t){return t[1]}var r=t(1),o=(t(3),t(2));if(e(window),"getPrototypeOf"in Object){for(var i=document;i&&!i.hasOwnProperty("addEventListener");)i=Object.getPrototypeOf(i);i&&e(i);for(var a=XMLHttpRequest.prototype;a&&!a.hasOwnProperty("addEventListener");)a=Object.getPrototypeOf(a);a&&e(a)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&e(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=e["nr@wrapped"]?t[1]=e["nr@wrapped"]:e["nr@wrapped"]=t[1]=r(e,"fn-"):"function"==typeof e.handleEvent&&r.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:15,2:1,3:14}],4:[function(t){var e=(t(3),t(1)),n=t(2);e.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=e(t[0],"fn-")})},{1:15,2:1,3:14}],5:[function(t){function e(t){var e=t[0];"string"==typeof e&&(e=new Function(e)),t[0]=n(e,"fn-")}var n=(t(3),t(1)),r=t(2);n.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",e)},{1:15,2:1,3:14}],6:[function(t){function e(){o.inPlace(this,s,"fn-")}function n(t,e){o.inPlace(e,["onreadystatechange"],"fn-")}function r(t,e){return e}var o=t(1),i=t(2),a=window.XMLHttpRequest,s=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];window.XMLHttpRequest=function(t){var n=new a(t);try{i.emit("new-xhr",[],n),o.inPlace(n,["addEventListener","removeEventListener"],"-",function(t,e){return e}),n.addEventListener("readystatechange",e,!1)}catch(r){try{i.emit("internal-error",r)}catch(s){}}return n},window.XMLHttpRequest.prototype=a.prototype,o.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",r),i.on("send-xhr-start",n),i.on("open-xhr-start",n)},{1:15,2:1}],7:[function(t){function e(){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;u>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,d="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=e(d);if(f&&(r.rxSize=f),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}t("loader").features.push("xhr");var o=t("handle"),i=t(1),a=t(5),s=["load","error","abort","timeout"],u=s.length,d=t(2);t(3),t(4),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var d=e(o);d&&(r.txSize=d)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",e)}catch(r){}}};for(var f=0;u>f;f++)n.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&e()},{1:8,2:11,3:3,4:6,5:1,handle:"D5DuLP",loader:"G9z0Bl"}],8:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e){var n=r[t];return n?n.apply(this,e):(o[t]||(o[t]=[]),void o[t].push(e))}var r={},o={};e.exports=n,n.queues=o,n.handlers=r},{}],11:[function(t,e){function n(t){if(!t||"object"!=typeof t&&"function"!=typeof t)return-1;if(t===window)return 0;if(o.call(t,"__nr"))return t.__nr;try{return Object.defineProperty(t,"__nr",{value:r,writable:!0,enumerable:!1}),r}catch(e){return t.__nr=r,r}finally{r+=1}}var r=1,o=Object.prototype.hasOwnProperty;e.exports=n},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&u&&u.body){p.proto="https"===c.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=u.createElement("script");e.src=p.proto+t.agent,u.body.appendChild(e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,u=s.document,d="addEventListener",f="attachEvent",c=(""+location).split("?")[0],p=e.exports={offset:i(),origin:c,features:[]};u[d]?(u[d]("DOMContentLoaded",o,!1),s[d]("load",n,!1)):(u[f]("onreadystatechange",r),s[f]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],14:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],15:[function(t,e){function n(t,e,r,s){function nrWrapper(){try{var n,a=u(arguments),d=this,f=r&&r(a,d)||{}}catch(c){i([c,"",[a,d,s],f])}o(e+"start",[a,d,s],f);try{return n=t.apply(d,a)}catch(p){throw o(e+"err",[a,d,p],f),p}finally{o(e+"end",[a,d,n],f)}}return a(t)?t:(e||(e=""),nrWrapper[n.flag]=!0,nrWrapper)}function r(t,e,r,o){r||(r="");var i,s,u,d="-"===r.charAt(0);for(u=0;u<e.length;u++)s=e[u],i=t[s],a(i)||(t[s]=n(i,d?s+r:r,o,s,t))}function o(t,e,n){try{s.emit(t,e,n)}catch(r){i([r,t,e,n])}}function i(t){try{s.emit("internal-error",t)}catch(e){}}function a(t){return!(t&&"function"==typeof t&&t.apply&&!t[n.flag])}var s=t(1),u=t(2);e.exports=n,n.inPlace=r,n.flag="nr@wrapper"},{1:1,2:14}]},{},["G9z0Bl",2,7]);</script><script>
+  //<![CDATA[
+    docElement = this.document.documentElement;
+    docElement.className=docElement.className.replace(/\bno-js\b/,'') + 'js';
+  //]]>
+</script>
+<title>Treachery in Beatdown City: A tactical brawler! by Shawn Alexander Allen &mdash; Kickstarter</title><script>
+  //<![CDATA[
+    window.report_errors = true;
+    window.honeybadger_configuration = {
+      api_key : "02ab109335c0dd1a93506d92f22217a7",
+      environment : "production",
+      component : "projects",
+      action : "show",
+      onerror : false
+    };
+  //]]>
+</script>
+
+
+<!--[if lt IE 9]>
+  <script src="//html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta content="telephone=no" name="format-detection">
+
+<!--[if !IE]> -->
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base-9f623ad5d021a188cfb2d68a0cdf7a7b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<!-- <![endif]-->
+<!--[if IE]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base_blessed-2640c72487552f9a2ef9f2620b4af860.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<!--[if lte IE 9]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_nine-a93fe10530f175f96c4078b7e070d7e1.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 8]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_eight-f75aeb274436f94a0d243774456b1c62.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 7]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie-c019c01acd3a96588b346cf577a3504f.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_seven-5a3d2cef660cd281fd844b04b2397dbb.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if IE 6]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_six-e4d3caf76e405fe19aee6ece8bda701b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<link href="https://d297h9he240fqh.cloudfront.net/favicon.png" rel="icon" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-precomposed-7b603dba7cf80e4acc57d94a991bebbd.png" rel="apple-touch-icon-precomposed" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-ipad-precomposed-3176f72977daf43dee3b0d348484dc01.png" rel="apple-touch-icon-precomposed" sizes="72x72" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-iphone4-precomposed-b93b70168cd8492c843d0fea873c7f83.png" rel="apple-touch-icon-precomposed" sizes="114x114" type="image/png">
+<link href="https://www.kickstarter.com/services/oembed?url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Fnuchallenger%2Ftreachery-in-beatdown-city-a-tactical-beat-em-up" rel="alternate" title="Treachery in Beatdown City: A tactical brawler! Script Tag oEmbed" type="application/json+oembed">
+<link rel="alternate" type="application/atom+xml" title="Treachery in Beatdown City: A tactical brawler! : Kickstarter" href="https://www.kickstarter.com/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/posts.atom" />
+<meta property="twitter:app:id:iphone" content="596961532"/>
+<meta property="twitter:app:name:iphone" content="Kickstarter"/>
+<meta property="twitter:app:url:iphone" content="ksr://www.kickstarter.com/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up"/>
+<meta name="video_height" content="360"/>
+<meta name="video_width" content="640"/>
+<meta name="video_type" content="application/x-shockwave-flash"/>
+<meta name="title" content="Kickstarter &gt;&gt; Treachery in Beatdown City: A tactical brawler! by Shawn Alexander Allen"/>
+<meta name="description" content="Shawn Alexander Allen is raising funds for Treachery in Beatdown City: A tactical brawler! on Kickstarter! 
+
+ 3 unique heroes fight punks, thugs &amp; ninjas &amp; more in this innovative brawler with tactics &amp; RPG elements. All to save the president!"/>
+<meta name="robots" content="noindex"/>
+<meta property="og:title" content="Treachery in Beatdown City: A tactical brawler!"/>
+<meta property="og:type" content="kickstarter:project"/>
+<meta property="og:image" content="https://s3.amazonaws.com/ksr/projects/857050/photo-main.jpg?1397866625"/>
+<meta property="og:url" content="https://www.kickstarter.com/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up"/>
+<meta property="og:site_name" content="Kickstarter"/>
+<meta property="fb:app_id" content="69103156693"/>
+<meta property="og:description" content="3 unique heroes fight punks, thugs &amp; ninjas &amp; more in this innovative brawler with tactics &amp; RPG elements. All to save the president!"/>
+<meta property="kickstarter:creator" content="https://www.kickstarter.com/profile/nuchallenger"/>
+<meta property="twitter:url:landing_url" content="https://www.kickstarter.com/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up"/>
+<meta property="twitter:card" content="2427656750:kickstarter_project"/>
+<meta property="twitter:site" content="@kickstarter"/>
+<meta property="twitter:site:id" content="16186995"/>
+<meta property="twitter:text:title" content="Treachery in Beatdown City: A tactical brawler!"/>
+<meta property="twitter:text:artist" content="Shawn Alexander Allen"/>
+<meta property="twitter:text:backers" content="487"/>
+<meta property="twitter:text:pledged" content="$21,342 USD"/>
+<meta property="twitter:text:time" content="0 seconds"/>
+<meta property="twitter:text:location" content="New York, NY"/>
+<meta property="twitter:image:location_image" content="https://d3mlfyygrfdi2i.cloudfront.net/b40e/pin.png"/>
+<meta property="twitter:text:description" content="3 unique heroes fight punks, thugs &amp; ninjas &amp; more in this innovative brawler with tactics &amp; RPG elements. All to save the president!"/>
+<meta property="twitter:image:media" content="https://s3.amazonaws.com/ksr/projects/857050/photo-main.jpg?1397866625"/>
+<meta property="twitter:image:width" content="640"/>
+<meta property="twitter:image:height" content="480"/>
+<meta property="twitter:player:stream:url" content="https://d2pq0u4uni88oo.cloudfront.net/projects/857050/video-356761-h264_base.mp4"/>
+<meta property="twitter:player:stream:content" content="video/mp4"/>
+<meta property="twitter:player:url" content="https://www.kickstarter.com/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/widget/video.html"/>
+<meta property="twitter:player:height" content="360"/>
+<meta property="twitter:player:width" content="640"/>
+<meta property="twitter:maxage" content="60"/>
+<meta property="og:video" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F857050%2Fvideo-356761-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F857050%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Shawn+Alexander+Allen&amp;project_title=Treachery+in+Beatdown+City%3A+A+tactical+brawler%21&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Fnuchallenger%2Ftreachery-in-beatdown-city-a-tactical-beat-em-up&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:secure_url" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F857050%2Fvideo-356761-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F857050%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Shawn+Alexander+Allen&amp;project_title=Treachery+in+Beatdown+City%3A+A+tactical+brawler%21&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Fnuchallenger%2Ftreachery-in-beatdown-city-a-tactical-beat-em-up&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:height" content="360"/>
+<meta property="og:video:width" content="640"/>
+<meta property="og:video:type" content="application/x-shockwave-flash"/>
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="R+D+Mk9fvIZsF9/RFEllo3p5tPyyaAyUnxYGPIduTFg=" name="csrf-token" />
+<script type="text/javascript">
+  var _sift = _sift || [];
+  _sift.push(['_setAccount', '637102']);
+  _sift.push(['_setUserId', '']);
+  _sift.push(['_trackPageview']);
+
+  (function() {
+    function loadSift() {
+      var sift, s;
+      if (root.visitor_id) {
+        _sift.push(['_setSessionId', root.visitor_id]);
+      }
+      sift = document.createElement('script');
+      sift.type = 'text/javascript';
+      sift.async = true;
+      sift.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dtlilztwypawv.cloudfront.net/s.js';
+      s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(sift, s);
+    }
+    if (window.attachEvent) {
+      window.attachEvent('onload', loadSift);
+    } else {
+      window.addEventListener('load', loadSift, false);
+    }
+  })();
+</script>
+<link href="http://kck.st/1dKNc3R" rel="shorturl">
+<link href="https://www.kickstarter.com/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up" rel="canonical">
+<link href="https://s3.amazonaws.com/ksr/projects/857050/photo-med.jpg?1397866625" rel="image_src">
+<link href="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F857050%2Fvideo-356761-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F857050%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Shawn+Alexander+Allen&amp;project_title=Treachery+in+Beatdown+City%3A+A+tactical+brawler%21&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Fnuchallenger%2Ftreachery-in-beatdown-city-a-tactical-beat-em-up&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque" rel="video_src">
+<script>
+  //<![CDATA[
+    window.current_checkout = "{&quot;id&quot;:0,&quot;domestic&quot;:null,&quot;amount&quot;:0.0,&quot;updated_at&quot;:0,&quot;created_at&quot;:0}";
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.current_ip = '94.209.101.212';
+    window.current_ip_datacenter = 'false';
+    window.enabled_features = {"elasticsearch":true,"security_history_read":true,"security_history_write":true,"advanced_discovery_es":true,"ios_crashlytics":true,"ios_mixpanel":true,"stories_veronica_mars":true,"veronica_mars_hero":true,"password_reset_banner":true};
+    window.fb_app_id = '69103156693';
+    
+    var _sf_startpt=(new Date()).getTime();
+    
+    window.current_project = "{&quot;id&quot;:917810227,&quot;name&quot;:&quot;Treachery in Beatdown City: A tactical brawler!&quot;,&quot;blurb&quot;:&quot;3 unique heroes fight punks, thugs &amp; ninjas &amp; more in this innovative brawler with tactics &amp; RPG elements. All to save the president!&quot;,&quot;goal&quot;:50000.0,&quot;pledged&quot;:21342.91,&quot;state&quot;:&quot;failed&quot;,&quot;slug&quot;:&quot;treachery-in-beatdown-city-a-tactical-beat-em-up&quot;,&quot;disable_communication&quot;:false,&quot;country&quot;:&quot;US&quot;,&quot;currency&quot;:&quot;USD&quot;,&quot;currency_symbol&quot;:&quot;$&quot;,&quot;currency_trailing_code&quot;:true,&quot;deadline&quot;:1394895734,&quot;state_changed_at&quot;:1394895737,&quot;created_at&quot;:1391530888,&quot;launched_at&quot;:1392307334,&quot;backers_count&quot;:487,&quot;photo&quot;:{&quot;full&quot;:&quot;https://s3.amazonaws.com/ksr/projects/857050/photo-full.jpg?1397866625&quot;,&quot;ed&quot;:&quot;https://s3.amazonaws.com/ksr/projects/857050/photo-ed.jpg?1397866625&quot;,&quot;med&quot;:&quot;https://s3.amazonaws.com/ksr/projects/857050/photo-med.jpg?1397866625&quot;,&quot;little&quot;:&quot;https://s3.amazonaws.com/ksr/projects/857050/photo-little.jpg?1397866625&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/projects/857050/photo-small.jpg?1397866625&quot;,&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/projects/857050/photo-thumb.jpg?1397866625&quot;,&quot;1024x768&quot;:&quot;https://s3.amazonaws.com/ksr/projects/857050/photo-1024x768.jpg?1397866625&quot;,&quot;1536x1152&quot;:&quot;https://s3.amazonaws.com/ksr/projects/857050/photo-1536x1152.jpg?1397866625&quot;},&quot;creator&quot;:{&quot;id&quot;:1992620318,&quot;name&quot;:&quot;Shawn Alexander Allen&quot;,&quot;slug&quot;:&quot;nuchallenger&quot;,&quot;avatar&quot;:{&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/1963103/shawn.thumb.jpg?1392232851&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/1963103/shawn.small.jpg?1392232851&quot;,&quot;medium&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/1963103/shawn.medium.jpg?1392232851&quot;},&quot;urls&quot;:{&quot;web&quot;:{&quot;user&quot;:&quot;https://www.kickstarter.com/profile/nuchallenger&quot;},&quot;api&quot;:{&quot;user&quot;:&quot;https://api.kickstarter.com/v1/users/1992620318?signature=1399955548.685575d5d79139baed75b7898e4a475fbb24b707&quot;}}},&quot;location&quot;:{&quot;id&quot;:2459115,&quot;name&quot;:&quot;New York&quot;,&quot;slug&quot;:&quot;new-york-ny&quot;,&quot;short_name&quot;:&quot;New York, NY&quot;,&quot;displayable_name&quot;:&quot;New York, NY&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:&quot;NY&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/new-york-ny&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/new-york-ny&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1399951819.8822237ba145c6f4bb1b6259854128a88fbe8598&amp;woe_id=2459115&quot;}}},&quot;category&quot;:{&quot;id&quot;:35,&quot;name&quot;:&quot;Video Games&quot;,&quot;slug&quot;:&quot;games/video games&quot;,&quot;position&quot;:7,&quot;parent_id&quot;:12,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;http://www.kickstarter.com/discover/categories/games/video%20games&quot;}}},&quot;urls&quot;:{&quot;web&quot;:{&quot;project&quot;:&quot;https://www.kickstarter.com/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up&quot;,&quot;project_short&quot;:&quot;http://kck.st/1dKNc3R&quot;,&quot;updates&quot;:&quot;https://www.kickstarter.com/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/posts&quot;},&quot;api&quot;:{&quot;project&quot;:&quot;https://api.kickstarter.com/v1/projects/917810227?signature=1399955548.fa7359a7d15bfaaa1bea9e90e92a2e63d555bf28&quot;,&quot;comments&quot;:&quot;https://api.kickstarter.com/v1/projects/917810227/comments?signature=1399955548.20107121b318ba6b4ce58544f3139d5136ac3205&quot;,&quot;updates&quot;:&quot;https://api.kickstarter.com/v1/projects/917810227/updates?signature=1399955548.0e791f461a9a42b933a489c67a1beb2259d8b061&quot;}},&quot;updated_at&quot;:1397866636,&quot;failed_at&quot;:1394895737,&quot;video&quot;:{&quot;id&quot;:356761,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/857050/video-356761-h264_high.mp4?2014&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/857050/video-356761-h264_base.mp4?2014&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/857050/video-356761-webm.webm?2014&quot;,&quot;width&quot;:640,&quot;height&quot;:360,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/857050/video-356761-h264_base.jpg?2014&quot;},&quot;comments_count&quot;:71,&quot;updates_count&quot;:18,&quot;rewards&quot;:[{&quot;id&quot;:0,&quot;minimum&quot;:1,&quot;reward&quot;:&quot;No Reward&quot;},{&quot;id&quot;:2352641,&quot;minimum&quot;:10.0,&quot;reward&quot;:&quot;EARLY BIRD - BRAWLER! - Receive a digital copy of Treachery in Beatdown City for PC/MAC (if we get listed on Steam you will get that key too!)+ access to the game before the general public close to release and access to backer forums to help vote on ideas at an early bird price! \\r\\n\\r\\nYour name will be listed as an EARLY BRAWLER backer in the credits.&quot;,&quot;limit&quot;:99,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1422748800,&quot;project_id&quot;:917810227,&quot;remaining&quot;:0,&quot;backers_count&quot;:99,&quot;updated_at&quot;:1394773282},{&quot;id&quot;:2352648,&quot;minimum&quot;:15.0,&quot;reward&quot;:&quot;BRAWLER! -- Receive a digital copy of Treachery in Beatdown City for PC/MAC (if we get listed on Steam you will get that key too!) + access to the game before the general public close to release and access to backer forums to help vote on ideas! \\r\\n\\r\\nYour name will be listed as a BRAWLER backer in the credits.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1422748800,&quot;project_id&quot;:917810227,&quot;backers_count&quot;:131,&quot;updated_at&quot;:1394882544},{&quot;id&quot;:2352652,&quot;minimum&quot;:20.0,&quot;reward&quot;:&quot;EARLY FRESH BEATS ---\\r\\nReceive a digital copy of the full soundtrack to Treachery in Beatdown City when it releases.\\r\\n\\r\\n+ Receive everything in the EARLY BIRD BRAWLER tier (And immediately receive the already released Treachery in Beatdown City EP when the campaign closes)&quot;,&quot;limit&quot;:100,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1422748800,&quot;project_id&quot;:917810227,&quot;remaining&quot;:1,&quot;backers_count&quot;:99,&quot;updated_at&quot;:1394700767},{&quot;id&quot;:2437041,&quot;minimum&quot;:22.0,&quot;reward&quot;:&quot;DOUBLE BRAWLER - It&#39;s a BRAWLER bundle! Get 2 digital copies of Treachery in Beatdown City at a Kickstarter only price + the other perks of being a BRAWLER!&quot;,&quot;limit&quot;:100,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1422748800,&quot;project_id&quot;:917810227,&quot;remaining&quot;:88,&quot;backers_count&quot;:12,&quot;updated_at&quot;:1394831812},{&quot;id&quot;:2352670,&quot;minimum&quot;:25.0,&quot;reward&quot;:&quot;FRESH BEATS ----------------------------Receive a digital copy of the full soundtrack to Treachery in Beatdown City when it releases + Receive everything in the BRAWLER tier (And immediately receive the already released Treachery in Beatdown City EP when the campaign closes)&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1422748800,&quot;project_id&quot;:917810227,&quot;backers_count&quot;:24,&quot;updated_at&quot;:1394870227},{&quot;id&quot;:2352671,&quot;minimum&quot;:30.0,&quot;reward&quot;:&quot;FIGHTERS&#39; MANUAL \\r\\n\\r\\nReceive a digital manual filled with art, back stories, strategies and tips about the game. \\r\\n\\r\\n+ Receive everything in the FRESH BEATS tier.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1422748800,&quot;project_id&quot;:917810227,&quot;backers_count&quot;:22,&quot;updated_at&quot;:1394806882},{&quot;id&quot;:2411147,&quot;minimum&quot;:35.0,&quot;reward&quot;:&quot;WEAPONIZER - Receive exclusive early access to bonus weapons - The Steel Chair, Brass Knuckles, Nunchucks, and get to vote on 3 more! These will appear in your inventory to use in fights, and also show up in breakable objects. Also includes FIGHTER&#39;S MANUAL tier. \\r\\n\\r\\nAlso choose to be labeled as a WEAPONIZER in the game&#39;s credits.\\r\\n\\r\\nAll tiers above $35 will receive this reward, too!&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1422748800,&quot;project_id&quot;:917810227,&quot;backers_count&quot;:2,&quot;updated_at&quot;:1394836947},{&quot;id&quot;:2352678,&quot;minimum&quot;:40.0,&quot;reward&quot;:&quot;DEDICATED FIGHTER - Receive access to the earliest, unfinished builds to help with active development of the game. + Receive everything in the FRESH BEATS tier. Your name will be listed under Dedicated Fighter or Brawler in the credits, you decide!&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1422748800,&quot;project_id&quot;:917810227,&quot;backers_count&quot;:13,&quot;updated_at&quot;:1394834824},{&quot;id&quot;:2413934,&quot;minimum&quot;:45.0,&quot;reward&quot;:&quot;EXTRA DEDICATED FIGHTER ON top of DEDICATED FIGHTER tier, receive a PRINTED manual filled with art, back stories, strategies and tips about the game.&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;10.0&quot;,&quot;estimated_delivery_on&quot;:1422748800,&quot;project_id&quot;:917810227,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1393529139},{&quot;id&quot;:2352685,&quot;minimum&quot;:50.0,&quot;reward&quot;:&quot;FIGHTING ARTIST - Receive a lovingly laid out digital art book featuring watercolor, ink, pencil and digital art from the game as well as an in depth strategy guide detailing enemy stats, bios, and tips you won&#39;t find in the manual! \\r\\n\\r\\n+Receive everything in the DEDICATED FIGHTER tier. \\r\\n\\r\\nYour name will be listed under Fighting Artist, Dedicated Fighter or Brawler, you decide!&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1422748800,&quot;project_id&quot;:917810227,&quot;backers_count&quot;:20,&quot;updated_at&quot;:1394874690},{&quot;id&quot;:2411148,&quot;minimum&quot;:60.0,&quot;reward&quot;:&quot;DECKED OUT - Receive exclusive early access to bonus costumes. 3 per character: 2 shown here plus get to help design/vote on the last 1 per character!\\r\\n\\r\\n+ Receive everything in the DEDICATED FIGHTER TIER\\r\\n\\r\\nAll tiers above $65 will receive this reward, too!&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1422748800,&quot;project_id&quot;:917810227,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1393454521},{&quot;id&quot;:2352679,&quot;minimum&quot;:72.0,&quot;reward&quot;:&quot;RAD ENOUGH - Are you rad enough to show your solidarity with the citizens of East Fulton to wear this T - SHIRT?\\r\\n\\r\\n+Receive everything in the FIGHTING ARTIST tier. \\r\\n\\r\\nYour name will be listed in the credits under RAD ENOUGH, Fighting Artist, Dedicated Fighter, or Brawler, you decide!&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;10.0&quot;,&quot;estimated_delivery_on&quot;:1422748800,&quot;project_id&quot;:917810227,&quot;backers_count&quot;:12,&quot;updated_at&quot;:1394895492},{&quot;id&quot;:2361604,&quot;minimum&quot;:85.0,&quot;reward&quot;:&quot;PHYSICALITY - On top of showing your solidarity for the cause, receive a nice physical copy of the soundtrack. \\r\\n\\r\\n+ Receive everything in the RAD ENOUGH tier. Later tiers do not automatically include these items.&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;15.0&quot;,&quot;estimated_delivery_on&quot;:1422748800,&quot;project_id&quot;:917810227,&quot;backers_count&quot;:9,&quot;updated_at&quot;:1394678277},{&quot;id&quot;:2413933,&quot;minimum&quot;:109.0,&quot;reward&quot;:&quot;EXTRA PHYSICALITY - Receive a lovingly laid out PRINTED art book featuring watercolor, ink, pencil and digital art from the game as well as an in depth strategy guide detailing enemy stats, bios, and tips you won&#39;t find in the manual! +Receive everything in the PHYSICALITY tier. Your name will be listed under Fighting Artist, Dedicated Fighter or Brawler, you decide!&quot;,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;20.0&quot;,&quot;estimated_delivery_on&quot;:1422748800,&quot;project_id&quot;:917810227,&quot;backers_count&quot;:4,&quot;updated_at&quot;:1394860645},{&quot;id&quot;:2361609,&quot;minimum&quot;:149.0,&quot;reward&quot;:&quot;POST NO BILLS------------------------------ Get a picture of yourself, a character you created or just your name immortalized on a poster in the background of a fight stage. Warning, 8 bit stylization can be tricky for intricate ideas.\\r\\n\\r\\nCharacter must be your own design and we reserve the right to reject any concepts, but we&#39;ll work with you to make it fit. \\r\\n\\r\\n+ Receive everything in the FIGHTING ARTIST tier. \\r\\n\\r\\nShirt + Physical Soundtrack not included. Please  see add-ons section.&quot;,&quot;limit&quot;:5,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1422748800,&quot;project_id&quot;:917810227,&quot;remaining&quot;:0,&quot;backers_count&quot;:5,&quot;updated_at&quot;:1393449261},{&quot;id&quot;:2413932,&quot;minimum&quot;:159.0,&quot;reward&quot;:&quot;SERIOUSLY, POST NO BILLS II----------------- Get a picture of yourself, a character you created or just your name immortalized on a poster in the background of a fight stage. Warning, 8 bit stylization can be tricky for intricate ideas. Character must be your own design and we reserve the right to reject any concepts, but we&#39;ll work with you to make it fit. + Receive everything in the FIGHTING ARTIST tier. \\r\\n\\r\\nShirt + Physical Soundtrack not included. Please see add-ons section.&quot;,&quot;limit&quot;:5,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1422748800,&quot;project_id&quot;:917810227,&quot;remaining&quot;:1,&quot;backers_count&quot;:4,&quot;updated_at&quot;:1394855187},{&quot;id&quot;:2361610,&quot;minimum&quot;:199.0,&quot;reward&quot;:&quot;PAINT THE TOWN - We will make some graffiti using your name, avatar or whatever you want us to or submit your own graffiti design to be pixelated and put in the game (must be your own creation).  We reserve the right to reject any concepts, but will work with you to make sure you are happy.\\r\\n\\r\\nDoes not include POST NO BILLS tier.\\r\\n\\r\\n+ Receive everything in the FIGHTING ARTIST tier. \\r\\n\\r\\nShirt + Physical Soundtrack not included. Please  see add-ons section.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1422748800,&quot;project_id&quot;:917810227,&quot;backers_count&quot;:2,&quot;updated_at&quot;:1394050669},{&quot;id&quot;:2361611,&quot;minimum&quot;:299.0,&quot;reward&quot;:&quot;PIXEL PORTRAIT ----- Have your likeness or that of a character you created immortalized in Treachery in Beatdown City style! Receive a digital sprite sheet that includes a detailed portrait, a smaller version of the portrait, as well as regular fighter style character complete with walk cycle and a couple of attacks! \\r\\n\\r\\n+ Receive everything in the FIGHTING ARTIST tier. \\r\\n\\r\\nDoes not include POST NO BILLS or PAINT THE TOWN tier.\\r\\n\\r\\nShirt + Physical Soundtrack not included. Please  see add-ons section.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1422748800,&quot;project_id&quot;:917810227,&quot;backers_count&quot;:3,&quot;updated_at&quot;:1394497234},{&quot;id&quot;:2372722,&quot;minimum&quot;:375.0,&quot;reward&quot;:&quot;Designer of Terror - Help us design 1 of the Ninja Dragon Terrorist enemies! This group is so mysterious that very few people have ever seen any of them and lived. \\r\\n\\r\\nThey are known for their cross cultural garbs, and you can help design one with the team. Choose their color palette/accessories, fighting style and more! \\r\\n\\r\\nWe reserve the right to reject any concepts, but we will work with you over skype one on one to make sure everyone is happy.\\r\\n\\r\\n+ Receive everything in the FIGHTING ARTIST tier!&quot;,&quot;limit&quot;:5,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1422748800,&quot;project_id&quot;:917810227,&quot;remaining&quot;:5,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1393201626},{&quot;id&quot;:2369479,&quot;minimum&quot;:375.0,&quot;reward&quot;:&quot;FINE ART OF FIGHTING - Receive a physical water color and ink drawing of any enemy,  signed by the artist Diana Santiago!\\r\\n\\r\\nAlso receive a digital scan of the file.\\r\\n\\r\\n+ Receive everything in the FIGHTING ARTIST tier!\\r\\n\\r\\nDoes not Include Designer of Terror&quot;,&quot;limit&quot;:5,&quot;shipping_applicable&quot;:true,&quot;shipping&quot;:&quot;international&quot;,&quot;shipping_amount&quot;:&quot;20.0&quot;,&quot;estimated_delivery_on&quot;:1422748800,&quot;project_id&quot;:917810227,&quot;remaining&quot;:5,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1393201626},{&quot;id&quot;:2372961,&quot;minimum&quot;:500.0,&quot;reward&quot;:&quot;VAIN FIGHTER - Receive a physical water color and ink drawing of yourself done in Treachery in Beatdown City style (in an action pose if you want!) - signed by the artist Diana Santiago!\\r\\n\\r\\nAlso receive a digital scan of the file.\\r\\n\\r\\nAnd you will have your name in the credits apart from other backer credits in a special thank you section.\\r\\n\\r\\n+ Receive everything in the FIGHTING ARTIST tier!&quot;,&quot;limit&quot;:3,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1422748800,&quot;project_id&quot;:917810227,&quot;remaining&quot;:3,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1393201626},{&quot;id&quot;:2372962,&quot;minimum&quot;:1000.0,&quot;reward&quot;:&quot;ULTIMATE COUNTER \\r\\nHave your likeness placed as an enemy on the streets of East Fulton! You will be an alternate to one of the regular enemies but with increased stats. \\r\\n\\r\\nYou will receive everything in PIXEL PORTRAIT tier (sprite sheet, etc.) + you will have a bio in the game, as well as a cutscene featuring your character that you will get to help write!\\r\\n\\r\\nAlso receive ULTIMATE COUNTER backer credit and a special thank you.\\r\\n\\r\\n+ Receive everything in the PIXEL PORTRAIT TIER&quot;,&quot;limit&quot;:10,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1422748800,&quot;project_id&quot;:917810227,&quot;remaining&quot;:8,&quot;backers_count&quot;:2,&quot;updated_at&quot;:1394765459},{&quot;id&quot;:2373105,&quot;minimum&quot;:2000.0,&quot;reward&quot;:&quot;BEATDOWN TOUR Come to New York City (flight and living arrangements not included) and have a tour with the team of New York from their unique perspective. We&#39;ll even buy you lunch at one of our favorite places, Katz&#39; deli! \\r\\n\\r\\nThese tours will begin after the game is done.\\r\\n\\r\\nAlso receive BEATDOWN TOURIST credit and a special thank you. \\r\\n\\r\\n+ Receive everything in the FIGHTING ARTIST tier!&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1425168000,&quot;project_id&quot;:917810227,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1392230338}]}";
+    
+    
+    
+    
+    
+    
+    
+    
+    window.timeRemaining = function timeRemaining(epochTime){
+    
+      var diff = epochTime - ((new Date()).getTime() / 1000);
+      var num_unit = (diff < 60 && [Math.max(diff, 0), 'seconds']) ||
+        ((diff/=60) < 60 && [diff, 'minutes']) ||
+        ((diff/=60) < 72 && [diff, 'hours']) ||
+        [diff/=24, 'days'];
+    
+      // Round down
+      num_unit[0] = Math.floor(num_unit[0]);
+      // Singularize unit
+      if (num_unit[0] == 1) { num_unit[1] = num_unit[1].replace(/s$/,""); }
+    
+      return num_unit;
+    };
+  //]]>
+</script>
+
+<script>
+  //<![CDATA[
+    window.current_variants = ["discover_link_copy[discover]","rewards_hover[with_hover_text]"];
+  //]]>
+</script>
+
+
+</head>
+
+<body class="project projects not-mobile not-phone not-forces-video-controls not-tablet not-touchable not-native-app-request video_mode" id="projects_show">
+<div class="jGrowl center" id="growl_section"></div>
+<div class="NS_layouts__navigation" id="header">
+<div class="main-nav relative bg-white">
+<h1 class="no-margin ml1 mr2 left">
+<a href="/?ref=nav" class="block p2"><span class="ss-icon green-dark">KICK</span><span class="ss-icon green">STARTER</span>
+</a></h1>
+<ul class="primary-links list no-margin left">
+<li class="left discover-link full-height">
+<a href="/discover?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Discover</a>
+</li>
+<li class="left full-height mr2">
+<a href="/learn?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Start</a>
+</li>
+</ul>
+<ul class="list no-margin right" id="menu-sub">
+<li class="right"><a href="/login?ref=nav" class="block h5 bold p2 full-height border-box">Log in</a></li>
+<li class="right"><a href="/signup?ref=nav" class="block h5 bold p2 full-height border-box">Sign up</a></li>
+</ul>
+<div class="search-link pl2 full-height border-left border-box clip">
+<form accept-charset="UTF-8" action="/projects/search" class="search pt1 pb1 block relative form-simple" method="get"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /></div>
+<div class="field relative pl3">
+<span class="ss-icon ss-search grey-dark ml1 mt1 absolute"></span>
+<input class="input-search header full-width text" data-tracker-name="Header Live Search" id="term" name="term" placeholder="Search projects" type="text" />
+</div>
+</form>
+
+</div>
+<div class="clear"></div>
+</div>
+</div>
+<div class="hide pt4 pb4 bg-grey-light" id="search_results-wrap">
+<div class="relative container" id="search_results">
+<a class="close right grey-dark mr1"><span class="ss-icon ss-delete"></span></a>
+<h3 class="header ml1 clearfix"></h3>
+<div class="clip clearfix" id="search_results_panel"></div>
+<a class="prev arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateleft"></span>
+</a>
+<a class="next arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateright"></span>
+</a>
+</div>
+</div>
+
+
+
+
+<div class="Project-ended-true Project-is_starred- Project-state-failed Project917810227_cxt border-top" id="main_content">
+<div id="running-board-wrap">
+<div class="container" id="running-board">
+<div id="project-header">
+<div class="NS_projects__running_board ml1 mr1 clearfix">
+<div class="title center py4">
+<h2 class="mb1">
+<a href="/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up" class="green-dark">Treachery in Beatdown City: A tactical brawler!</a>
+</h2>
+<p class="no-margin">
+<span class="creator">
+by
+<a href="/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography" id="name">Shawn Alexander Allen</a>
+</span>
+</p>
+</div>
+<ul class="project-nav list-inline left h5 bold mb1">
+<li class="mr2">
+<a href="/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up" class="grey-dark py1 current" id="home_nav">Home</a>
+</li>
+<li class="mr2">
+<span data-updates-count="18" id="updates_count">
+<a href="/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/posts" class="grey-dark py1" id="updates_nav">Updates
+<span class="count h6 bg-grey-dark white">18</span>
+</a></span>
+</li>
+<li class="mr2">
+<a href="/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/backers" class="grey-dark py1" id="backers_nav">Backers
+<span class="count h6 bg-grey-dark white"><data class="Project917810227" data-format="number" data-value="487" itemprop="Project[backers_count]">487</data></span>
+</a></li>
+<li>
+<span data-comments-count="71" id="comments_count">
+<a href="/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/comments" class="grey-dark py1" id="comments_nav">Comments
+<span class="count h6 bg-grey-dark white"><data class="Project917810227" data-format="number" data-value="71" itemprop="Project[comments_count]">71</data></span>
+</a></span>
+</li>
+</ul>
+<ul class="list-inline right h5 bold mb1">
+<li class="location mr2">
+<a href="/discover/places/new-york-ny?ref=city" class="grey-dark"><span class="ss-icon ss-location margin-right"></span>
+New York, NY
+</a></li>
+<li class="category" data-project-parent-category="Games">
+<a href="/discover/categories/games/video%20games?ref=category" class="grey-dark"><span class="ss-icon ss-tag margin-right"></span>
+Video Games
+</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+</div>
+<div class="bg-grey-light pb4" id="content-wrap">
+<div class="Project917810227" data-conditions="[{&quot;!state&quot;:&quot;live&quot;}]" data-evaluation="true" data-render="&quot;&lt;div class=\&quot;NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-failed Project917810227_cxt bg-grey container pb1 pt1\&quot;&gt;\n&lt;div class=\&quot;Project917810227\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;successful&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;Funded!&amp;lt;/b&amp;gt;\\nThis project was successfully funded &amp;lt;data class=\\&amp;quot;Project917810227\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2014-03-15T11:02:14-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[deadline]\\&amp;quot;&amp;gt;on March 15&amp;lt;/data&amp;gt;.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project917810227\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:[&amp;quot;started&amp;quot;,&amp;quot;submitted&amp;quot;]}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;THIS PROJECT IS NOT LIVE&amp;lt;/b&amp;gt;\\nThis is only a draft that the creator has chosen to share.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project917810227\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;suspended&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Suspended&amp;lt;/b&amp;gt;\\nFunding for this project was suspended &amp;lt;data class=\\&amp;quot;Project917810227\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2014-03-15T11:02:17-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on March 15&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project917810227\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;canceled&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Canceled&amp;lt;/b&amp;gt;\\nFunding for this project was canceled by the project creator &amp;lt;data class=\\&amp;quot;Project917810227\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2014-03-15T11:02:17-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on March 15&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project917810227\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;failed&amp;quot;}]\&quot; data-evaluation=\&quot;true\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Unsuccessful&amp;lt;/b&amp;gt;\\nThis project\\u2019s funding goal was not reached on &amp;lt;time class=\\&amp;quot;js-adjust\\&amp;quot; data-format=\\&amp;quot;MMMM D\\&amp;quot; datetime=\\&amp;quot;2014-03-15T11:02:14-04:00\\&amp;quot;&amp;gt;March 15&amp;lt;/time&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Unsuccessful&lt;/b&gt;\nThis project\u2019s funding goal was not reached on &lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;MMMM D\&quot; datetime=\&quot;2014-03-15T11:02:14-04:00\&quot;&gt;March 15&lt;/time&gt;.\n&lt;/div&gt;&lt;div class=\&quot;Project917810227\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;purged&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;This project is purged and only visible to staff.&amp;lt;/b&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;/div&gt;\n&quot;"><div class="NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-failed Project917810227_cxt bg-grey container pb1 pt1">
+<div class="Project917810227" data-conditions="[{&quot;state&quot;:&quot;successful&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;Funded!&lt;/b&gt;\nThis project was successfully funded &lt;data class=\&quot;Project917810227\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2014-03-15T11:02:14-04:00&amp;quot;\&quot; itemprop=\&quot;Project[deadline]\&quot;&gt;on March 15&lt;/data&gt;.\n&lt;/p&gt;\n&quot;"></div><div class="Project917810227" data-conditions="[{&quot;state&quot;:[&quot;started&quot;,&quot;submitted&quot;]}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;THIS PROJECT IS NOT LIVE&lt;/b&gt;\nThis is only a draft that the creator has chosen to share.\n&lt;/p&gt;\n&quot;"></div><div class="Project917810227" data-conditions="[{&quot;state&quot;:&quot;suspended&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Suspended&lt;/b&gt;\nFunding for this project was suspended &lt;data class=\&quot;Project917810227\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2014-03-15T11:02:17-04:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on March 15&lt;/data&gt;.\n&quot;"></div><div class="Project917810227" data-conditions="[{&quot;state&quot;:&quot;canceled&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Canceled&lt;/b&gt;\nFunding for this project was canceled by the project creator &lt;data class=\&quot;Project917810227\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2014-03-15T11:02:17-04:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on March 15&lt;/data&gt;.\n&quot;"></div><div class="Project917810227" data-conditions="[{&quot;state&quot;:&quot;failed&quot;}]" data-evaluation="true" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Unsuccessful&lt;/b&gt;\nThis project\u2019s funding goal was not reached on &lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;MMMM D\&quot; datetime=\&quot;2014-03-15T11:02:14-04:00\&quot;&gt;March 15&lt;/time&gt;.\n&quot;"><p class="no-margin"></p>
+<b>Funding Unsuccessful</b>
+This project’s funding goal was not reached on <time class="js-adjust" data-format="MMMM D" datetime="2014-03-15T11:02:14-04:00">March 15</time>.
+</div><div class="Project917810227" data-conditions="[{&quot;state&quot;:&quot;purged&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;This project is purged and only visible to staff.&lt;/b&gt;\n&quot;"></div></div>
+</div>
+<div class="container bg-white border rounded py3 pl2 pr2" id="content">
+<div class="NS-projects-content">
+<div class="grid_11">
+<div data-has-video="true" id="video-section">
+<div class="video-player" data-dimensions="{&quot;width&quot;:640,&quot;height&quot;:480}" data-image="https://s3.amazonaws.com/ksr/projects/857050/photo-main.jpg?1397866625" data-video-tracker-url="https://www.kickstarter.com/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/video/plays" data-video-url="https://d2pq0u4uni88oo.cloudfront.net/projects/857050/video-356761-h264_high.mp4" data-video="{&quot;id&quot;:356761,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/857050/video-356761-h264_high.mp4?2014&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/857050/video-356761-h264_base.mp4?2014&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/857050/video-356761-webm.webm?2014&quot;,&quot;width&quot;:640,&quot;height&quot;:360,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/857050/video-356761-h264_base.jpg?2014&quot;}" id="video_pitch"><video class="has_webm landscape" preload="none">
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/857050/video-356761-h264_high.mp4" type='video/mp4; codecs="avc1.64001E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/857050/video-356761-h264_base.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/857050/video-356761-webm.webm" type="video/webm"></source>
+You'll need an HTML5 capable browser to see this content.
+</video>
+<img alt="Photo-main" class="has_played_hide poster landscape" src="https://s3.amazonaws.com/ksr/projects/857050/photo-main.jpg?1397866625" />
+<div class="play_button_big play_button_dark absolute-center rounded has_played_hide">
+<span class="ss-icon ss-play"></span>
+Play
+</div>
+<div class="player_controls clearfix absolute-bottom mb2 rounded white bg-green-dark forces-video-controls_hide">
+<div class="left">
+<a class="button button_icon button_dark playpause play mr1">
+<span class="play ss-icon ss-play"></span>
+<span class="pause ss-icon ss-pause"></span>
+</a>
+<span class="time current_time h12 left">00:00</span>
+</div>
+<div class="right">
+<span class="time total_time h12 left mr1">00:00</span>
+<a class="left button button_icon button_icon_white volume">
+<span class="ss-icon ss-volume icon_volume_nudge"></span>
+<span class="ss-icon ss-highvolume"></span>
+</a>
+<div class="volume_container left">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+<a class="left button button_icon button_icon_white fullscreen">
+<span class="ss-icon ss-expand"></span>
+<span class="ss-icon ss-contract"></span>
+</a>
+</div>
+<div class="clip">
+<div class="progress_container pr1 pl1">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="buffer progress_bar_buffer"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div data-project-state="failed" id="about">
+<div class="NS_projects__project_share clearfix py2 pl1 pr1">
+<ul class="left list-inline no-margin h5 bold">
+<li class="facebook mr2">
+<a href="https://www.kickstarter.com/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up"><span class="ss-icon ss-social ss-facebook color-facebook"></span>
+<span class="color-facebook">Share</span>
+<span class="share_bubble"><div class="triangle grey"></div>
+<div class="triangle white"></div>
+<span class="count"></span></span>
+</a></li>
+<li class="twitter mr2">
+<a  href="https://twitter.com/intent/tweet?text=Treachery%20in%20Beatdown%20City%3A%20A%20tactical%20brawler%21%20by%20Shawn%20Alexander%20Allen&amp;via=kickstarter&amp;url=http://kck.st/1dKNc3R" rel="nofollow"><span class="ss-icon ss-social ss-twitter color-twitter"></span>
+<span class="color-twitter">Tweet</span>
+</a></li>
+<li class="embed">
+<a href="/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/widget" class="remote_modal_dialog grey-dark" data-modal-title="Embed a widget on your site" data-tracker-name="Embed"><span class="ss-icon ss-navigateleft"></span>
+<span class="ss-icon ss-navigateright"></span>
+Embed
+</a></li>
+</ul>
+<ul class="right list-inline no-margin h5 bold">
+<li class="curate mr2">
+</li>
+<li class="remind">
+<div class="ajax-container" id="watching-widget">
+<div class="Project917810227" data-conditions="[{&quot;is_starred&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div id=\&quot;unwatch\&quot;&gt;\n&lt;a href=\&quot;/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/unwatch\&quot; class=\&quot;on\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"></div><div class="Project917810227" data-conditions="[{&quot;!is_starred&quot;:true}]" data-evaluation="true" data-render="&quot;&lt;div id=\&quot;watch\&quot;&gt;\n&lt;a href=\&quot;/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/watch\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;span class=\&quot;text\&quot;&gt;\n&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"><div id="watch">
+<a href="/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/watch"><span class="ss-icon ss-star"></span>
+<span class="text">
+</span>
+</a></div>
+
+</div></div>
+</li>
+</ul>
+</div>
+
+<div class="short_blurb py2 pl1 pr1">
+<p class="h3">3 unique heroes fight punks, thugs &amp; ninjas &amp; more in this innovative brawler with tactics &amp; RPG elements. All to save the president!</p>
+</div>
+<div class="full-description">
+<h1>
+<a href="https://www.kickstarter.com/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/posts/769736" target="_blank">Update 10: Final Week - Announcing New Game Modes + Multiplayer!</a>
+</h1><h1>
+<b><a href="https://www.kickstarter.com/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/posts/768115" target="_blank">Update 9: A dialog with Diana about marriage &amp; game development + art behind the scenes photos</a></b>
+</h1><h1>30 minutes of game footage - more to come soon!</h1><div class="template oembed" contenteditable="false" data-href="http://www.youtube.com/watch?v=YZUdKPp-6xM">
+<iframe width="612" height="344" src="https://www.youtube.com/embed/YZUdKPp-6xM?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div><h1>
+<a href="https://www.kickstarter.com/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/posts/767838" target="_blank">Update 8: New locale, gameplay + wallpapers/avatars!</a>
+</h1><h1><a href="https://www.kickstarter.com/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/posts/764188" target="_blank">Update 7: More shirt options </a></h1><h1><a href="https://www.kickstarter.com/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/posts/760108" target="_blank">Update 6: - Printed Art Book/Strategy Guide rewards!</a></h1><h1><a href="https://www.kickstarter.com/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/posts/759998" target="_blank">Update 5: Costumes!</a></h1><h1>
+<a href="https://www.kickstarter.com/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/posts/755868" target="_blank">Update 4: Pure, uncut gameplay + Updates</a>
+</h1><h1><a href="https://www.kickstarter.com/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/posts/753305" target="_blank">Update 3: A relationship with graffiti</a></h1><h1><a href="https://www.kickstarter.com/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/posts/753021" target="_blank">Update 2 : A Tale of Fighting</a></h1><h1><a href="https://www.kickstarter.com/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/posts/747928" target="_blank">Update 1: In it to win it</a></h1><p>It's 20XX and world stability is in danger. The US
+President Barak Orama travels to East Fulton to attend a summit at the UN, but
+is kidnapped during his speech.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/assets/1675887/edit" data-id="1675887">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/675/887/4acb766abd64247446bed1439de2ce72_large.gif?1393339510"></figure>
+</div><p>A mysterious group, the Ninja Dragon Terrorist organization takes responsibility
+for the kidnapping, demanding $1 trillion for the safe return of the president.</p><p>The corrupt billionaire mayor of East Fulton, Mike
+Moneybags, won't let the police investigate unless the federal government pays
+the city billions of dollars in relief. </p><p>The dutiful chief of police, Antonio Santiago, calls his
+daughter and two friends to investigate in his stead. He needs to find out what
+is going on, although in the back of his mind, something about all of this just
+isn't right...</p><p>Welcome to Treachery in Beatdown City, a beat ‘em up game
+like no other. </p><div class="template asset" contenteditable="false" data-edit_url="/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/assets/1605199/edit" data-id="1605199">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/605/199/1f61200c3b3ec2d55d18c06dd371017d_large.png?1391709335"></figure>
+</div><p>What makes Treachery in Beatdown City Unique?</p><p><a href="http://www.youtube.com/watch?v=KUnW-vlLqRQ" target="_blank">T</a>railer 2!</p><div class="template oembed" contenteditable="false" data-href="http://www.youtube.com/watch?v=KUnW-vlLqRQ">
+<iframe width="612" height="344" src="https://www.youtube.com/embed/KUnW-vlLqRQ?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div><p><b>Designed by super mega fans of brawlers:</b> We LOVE brawlers. We grew up playing the classics: Streets of Rage, Double Dragon, Teenage Mutant Ninja Turtles, Guardian Heroes, The Punisher, Aliens Vs. Predator, etc. When setting out to create a new game in the genre we wanted to take the things we loved, and build on that. Also, we noticed when studying the greats that there are problems too, like brain dead enemies, overpowered moves, and gameplay that tends to favor dominant strategies that break the "fun".</p><p>We're here to reinvent the way you play a side
+scrolling beat ‘em up because we want to grow the genre!</p><p><b>Tactical Brawling:</b> Use real time movement to walk around the
+arena, and even use some real time attacks to break open a few garbage cans or mailboxes for health or other items. When it comes to
+attacking, your COMBO menu becomes your best tool. </p><p>Using a combination of Fight Points (FP) and combo meter, players of all skill
+types can choose up to 3 moves out of dozens of moves that will be learned over the course of the adventure to create any number of unique combinations of attacks.
+</p><p>Combine strikes with grapples, or do multiple grapple moves
+in a row. It's your choice!</p><p><b>Over 26 unique enemies and growing! :</b> Enemies look
+different, walk differently and all have their own unique ways of attacking. The
+only repetition in attacks is that there are only so many ways that a person
+can throw a punch. Enemies range from fast and agile to slow, lumbering and
+extremely powerful. Some will charge you, others will play keep away.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/assets/1635094/edit" data-id="1635094">
+<figure><img alt="Plus many more to come!" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/635/094/8c498e7d939a740e10ba8fa479ff02fe_large.png?1392400495"><figcaption>Plus many more to come!</figcaption></figure>
+</div><p>Enemies are broken down into class types.</p><p>Grunts have regular attacks, but also usually have 1 or 2 hidden super strong attacks.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/assets/1635092/edit" data-id="1635092">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/635/092/483b98c51e31b43ec719d0bd7942c512_large.gif?1392400489"></figure>
+</div><p>Sneaky enemies focus on lowering offensive options for players.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/assets/1635107/edit" data-id="1635107">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/635/107/7fc53acd8af88c9233bf9b9b8278468b_large.gif?1392400800"></figure>
+</div><p>Grapplers focus on throwing the player.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/assets/1661185/edit" data-id="1661185">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/661/185/2df36495961ca4eb642976723b498200_large.gif?1392993374"></figure>
+</div><p>Support characters taunt and cheer in the fight to cast buffs on your foes and give them an advantage. </p><div class="template asset" contenteditable="false" data-edit_url="/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/assets/1635100/edit" data-id="1635100">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/635/100/a847ad4764c9a959dfaf91f67d9cc18c_large.gif?1392400631"></figure>
+</div><p>Giants have super strong offense, but are often on the slower side.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/assets/1635113/edit" data-id="1635113">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/635/113/34d8a3d79f19e7746f703c009ee67600_large.gif?1392400904"></figure>
+</div><p>These class types make fighting mixed groups of enemies a real challenge. And enemies can take on sub classes, so there can be a Giant Support with enormous amounts of HP and high evade or a grappler grunt who has strong strikes as well as strong grapples!</p><p>The possibilities are endless!</p><p><b>Learn a large array of new moves as the game goes on!</b> –
+Moves aren’t in just for the sake of adding moves, as every attack, defensive maneuver
+and combo is tested and included only if it adds to the fighting mechanics in a
+positive way.</p><p>Experimentation &amp; creativity are key elements to the experience whereas execution is not.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/assets/1635014/edit" data-id="1635014">
+<figure><img alt="In Progress Over world map" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/635/014/bddddcf9b12ba82b615782a1215e0ad0_large.png?1392399181"><figcaption>In Progress Over world map</figcaption></figure>
+</div><p><b>Top down overworld exploration gameplay:</b> Choose your paths
+through East Fulton, looking for hidden items to heal or power up your player and
+encounter hidden boss fights that teach your fighters even more moves! </p><p>Plus, heal your player, seek out shortcuts through densely populated areas and find files on every enemy in the game. Read those to find out enemy weaknesses and their personal stories. </p><p><b>Super special attacks! :</b> It wouldn’t be a beat ‘em up
+without a super bar that fills up and allows players to turn the tide in
+battle. Some of these moves can even be chained from regular attacks!</p><p><b>A dark humor story played out in classic frame by frame
+cutscenes : </b>Engage with enemies, find out the personalities behind the heroes
+and enemies and perhaps gain empathy for them… before having to lay a beatdown on
+them.</p><p><b>Teaser trailer from 2013, featuring a brief story introduction.</b></p><div class="template oembed" contenteditable="false" data-href="http://www.youtube.com/watch?v=8O5bY7dP4Hg">
+<iframe width="612" height="344" src="https://www.youtube.com/embed/8O5bY7dP4Hg?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div><p><b>Switch characters strategically!</b>: Each of the player
+characters has his or her strengths and weaknesses against every enemy in the
+game. Switching can be done on the overworld with the press of a button, and strategic use of each characters strengths can make a fight that would usually be very difficult much easier. </p><p>Damage taken in between fights is cumulative, so make
+sure to switch, or heal your character before their next fight!</p><div class="template asset" contenteditable="false" data-edit_url="/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/assets/1611474/edit" data-id="1611474">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/611/474/3b6292d136d0e4da5da16eba70359646_large.png?1391854638"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/assets/1626563/edit" data-id="1626563">
+<figure><img alt="The cover!" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/626/563/21349c220fd09197cfec2a5dae6dfd51_large.jpg?1392218858"><figcaption>The cover!</figcaption></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/assets/1627492/edit" data-id="1627492">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/627/492/322946b39e853e2a8e0f8b5c1860edf6_large.gif?1392235579"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/assets/1627038/edit" data-id="1627038">
+<figure><img alt="Health items found by breaking objects" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/627/038/5d3e63ab55d570a1c2d1b95b835ec3eb_large.png?1392227904"><figcaption>Health items found by breaking objects</figcaption></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/assets/1621941/edit" data-id="1621941">
+<figure><img alt="Enemy bios" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/621/941/b27d0aebf2a60f256c34470560c1d291_large.png?1392111749"><figcaption>Enemy bios</figcaption></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/assets/1611566/edit" data-id="1611566">
+<figure><img alt="Ninja Dragon Terrorist concept art" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/611/566/13c5e7555828e5e754b8b64092b70d86_large.jpg?1391862823"><figcaption>Ninja Dragon Terrorist concept art</figcaption></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/assets/1611570/edit" data-id="1611570">
+<figure><img alt="Example attack" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/611/570/d73b415857d48ccb5532ff89837019f0_large.gif?1391862942"><figcaption>Example attack</figcaption></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/assets/1626561/edit" data-id="1626561">
+<figure><img alt="From concept sketch to finished pixel art" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/626/561/6e6beb351f61c580814ad23572f91e23_large.jpg?1392218820"><figcaption>From concept sketch to finished pixel art</figcaption></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/assets/1611480/edit" data-id="1611480">
+<figure><img alt="The cast" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/611/480/71b8f95840c2441688be7ca83c1a59a4_large.png?1391854962"><figcaption>The cast</figcaption></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/assets/1621862/edit" data-id="1621862">
+<figure><img alt="Electric Spin Kick" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/621/862/d685005a01186c2d352afb522574bd80_large.gif?1392109446"><figcaption>Electric Spin Kick</figcaption></figure>
+</div><p><b>Bruce Maxwell</b> is a wealthy stockbroker with an affinity for Asian languages and culture, without forgetting his Jamaican roots. Bruce is the lightweight character, fighting with a mix of Jeet Kune Do and Capoeira filled with lighting fast punches and acrobatic kicks.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/assets/1621865/edit" data-id="1621865">
+<figure><img alt="Burning Lariat" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/621/865/d6f4682008c71fa964fe9442f94a88cb_large.gif?1392109486"><figcaption>Burning Lariat</figcaption></figure>
+</div><p><b>Brad "The Bull Killer" Steele</b> is a former professional wrestler, born in Texas from a Spanish-Mexican family. Brad runs a community center in the SoNo section of East Fulton to help people in need. Brad is the heavyweight character fighting with high powered wrestling throws and heavy strikes. </p><div class="template asset" contenteditable="false" data-edit_url="/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/assets/1621868/edit" data-id="1621868">
+<figure><img alt="Icy Spin Lobs" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/621/868/dafa60847b4c11f9f574959302c183d5_large.gif?1392109507"><figcaption>Icy Spin Lobs</figcaption></figure>
+</div><p><b>Lisa Santiago</b> is enrolled in the police academy and has an eye for forensic science. She focuses on boxing and mma, with a mix of holds and brutal kicks/punches.</p><p><a href="http://beatdowncity.com/people-beatdown-city/" target="_blank">Click here for a more in depth look at the backgrounds of the cast.</a></p><div class="template asset" contenteditable="false" data-edit_url="/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/assets/1611425/edit" data-id="1611425">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/611/425/e1fe4260ac8ed2f8128bfe4477b4b88d_large.png?1391850036"></figure>
+</div><p> These are just a few tracks from the very beginning of the game, all made by the amazing INVERSEPHASE!</p><div class="template oembed" contenteditable="false" data-href="https://soundcloud.com/nuchallenger-1/treachery-in-beatdown-city">
+<iframe width="639" height="400" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?visual=true&amp;url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F133196665&amp;show_artwork=true&amp;maxwidth=639&amp;scheme=https&amp;width=639"></iframe>
+
+</div><div class="template oembed" contenteditable="false" data-href="https://soundcloud.com/nuchallenger-1/energetic-fist?in=nuchallenger-1/sets/treachery-in-beatdown-city">
+<iframe width="639" height="400" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?visual=true&amp;url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F133196517&amp;show_artwork=true&amp;maxwidth=639&amp;scheme=https&amp;width=639&amp;in=nuchallenger-1%2Fsets%2Ftreachery-in-beatdown-city"></iframe>
+
+</div><div class="template oembed" contenteditable="false" data-href="https://soundcloud.com/nuchallenger-1/encounter-with-ninja-dragon">
+<iframe width="639" height="400" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?visual=true&amp;url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F133202198&amp;show_artwork=true&amp;maxwidth=639&amp;scheme=https&amp;width=639"></iframe>
+
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/assets/1611451/edit" data-id="1611451">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/611/451/01300955574789ec506736a8a522f141_large.png?1391851905"></figure>
+</div><p>We started this project conceptually as a way to create something new and
+inventive while working other jobs in the AAA games industry back in
+2009. Since then the amount of effort put in has grown significantly when we
+figured out that this was something people actually would want to play, and
+2013 was the first full year that we were able to work on Treachery in Beatdown
+City in full time mode. </p><p>We spent most of that year building the core fighting system,
+but any good fighting system is built with tweaks to balance, as well as additions to the system. We have also gathered
+a lot of playtesting feedback from a large amount of people from a number of
+shows like PAX, Indiecade, GDC, E3 and the world’s largest international
+fighting game tournament, EVO. </p><p>Our current progress is that we are almost done with the first level which takes a few hours to beat (longer than most full length brawlers!). The level features numerous songs, over 26
+completely unique enemies and dozens of player attacks. We plan to add 5 more
+levels that will add at least another 20 enemies, a couple of dozen more
+attacks as well as more exotic locations and music to go along with them that
+we can't quite reveal yet. </p><p>Beyond adding content we will also be porting the game to
+Unity out of the Playstation Mobile framework and that, while similar, is a very different environment that will no doubt speed up our development, but will require moving over and changing the code as necessary.</p><p>Treachery in Beatdown City is all about creating a tactical
+brawler with fighting game elements, so of course we need the community to give
+us feedback on how best to tweak for balance. Every single backer will be able to play the game early, while those who want to get in extra early can pledge to gain even
+earlier access to in production levels to help us build the best fights
+possible. </p><p>The only way we’ll be able to launch in early 2015 is with
+your help. </p><h1>Budget breakdown</h1><p>We have already invested quite a lot of our own funds into this game, and have already paid for some of the events/talks that we will be attending this year to support Treachery in Beatdown City - the next one being GDC in March. </p><p>Besides that, Manny and I are working on the game full time, and need support to cover bare minimum living expenses for the next year. </p><p>Shawn will be creating the individually drawn art for 5 or more new levels, (which don't all take place in the city, and will even end up in areas like a desert) as well as close to 30 + new enemies, complete with new animations and profile pictures, as well as writing all of the dialog and all of the other things that will need to be taken care of. </p><p>Manny will be doing all of the coding, creating all of the new enemy behavior patterns and setting up all of the new enemy battle systems and encounters. </p><p>Between the two of them they will also be the primary QA people, with a few friends helping out with primary bug fixes and taking all of your data to tweak the game.</p><p>We will also be paying Inverse Phase for all of the remaining music that he will create. </p><p>And this is not counting Diana who donates a lot of her spare time to consult on and create all of the production art assets that you see, and other industry friends who will be helping out with copy editing on the writing. </p><p>This is all keeping in mind that Kickstarter &amp; Amazon payments takes their fees, and reward fulfillment fees as well. </p><p>Even though we are working to get the game done by around February of next year, we will still need to work past that to give you, and everyone else, post launch support, as well.</p><div class="template asset" contenteditable="false" data-edit_url="/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/assets/1666166/edit" data-id="1666166">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/666/166/a58a94e1f50652e832178cf5f9b51cd4_large.png?1393112640"></figure>
+</div><p>We have new shirt ideas!</p><div class="template asset" contenteditable="false" data-edit_url="/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/assets/1734611/edit" data-id="1734611">
+<figure><img alt="Vote on a 2nd shirt option!" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/734/611/79b2d413490d1a2b7e49227313233167_large.png?1394545323"><figcaption>Vote on a 2nd shirt option!</figcaption></figure>
+</div><p>Check out the near finished art for the RAD ENOUGH tier t-shirt</p><div class="desc">
+<div class="template asset" contenteditable="false" data-edit_url="/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/assets/1635324/edit" data-id="1635324">
+<figure><img alt="ARE YOU RAD ENOUGH TO WEAR THIS SHIRT?" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/635/324/5a8cf79dc6b2644e0f5b698c5bb3cb7c_large.jpg?1392403620"><figcaption>ARE YOU RAD ENOUGH TO WEAR THIS SHIRT?</figcaption></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/assets/1666167/edit" data-id="1666167">
+<figure><img alt="Shirt detailing - High Res drawing" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/666/167/4b9f436bed73688bdf35c704b45cb93d_large.jpg?1393112664"><figcaption>Shirt detailing - High Res drawing</figcaption></figure>
+</div>
+<p>Want to be on a poster? Pick up POST NO BILLS and make that happen</p>
+
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/assets/1635344/edit" data-id="1635344">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/635/344/99ea5c417940fbdee36809dd324bbefe_large.jpg?1392403881"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/assets/1635346/edit" data-id="1635346">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/635/346/1857b3ab0b23815807be50d72a293ae2_large.jpg?1392403894"></figure>
+</div><p>Want your own personal graffiti, sketched in high resolution as well as put in the game? Pick up <b>PAINT THE TOWN</b></p><div class="template asset" contenteditable="false" data-edit_url="/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/assets/1635358/edit" data-id="1635358">
+<figure><img alt="Graffiti concept sketch" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/635/358/c246441a9276e27a5c04a93e48312215_large.jpg?1392404042"><figcaption>Graffiti concept sketch</figcaption></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/assets/1635356/edit" data-id="1635356">
+<figure><img alt="In game graffiti" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/635/356/6f425822b27b7cbad019c6a9c4eb121b_large.jpg?1392404022"><figcaption>In game graffiti</figcaption></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/assets/1635360/edit" data-id="1635360">
+<figure><img alt="Rad Guys graffiti" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/635/360/6f5b64762d03cb13f26431953d4fe7a2_large.jpg?1392404061"><figcaption>Rad Guys graffiti</figcaption></figure>
+</div><p>Want us to draw you, or a character you created in gorgeous pixelly goodness in a variety of stances/pixel sizes? Pick up PIXEL PORTRAIT</p><div class="template asset" contenteditable="false" data-edit_url="/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/assets/1635367/edit" data-id="1635367">
+<figure><img alt="THIS COULD BE YOU" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/635/367/1db984b722589ace4f59268b6edfbd53_large.jpg?1392404144"><figcaption>THIS COULD BE YOU</figcaption></figure>
+</div><p>Would you like to help design some of the mysterious Ninja Dragon Terrorist group? Or even make a character you created into one? Pick up <b>DESIGNER OF TERROR</b></p><div class="template asset" contenteditable="false" data-edit_url="/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/assets/1635372/edit" data-id="1635372">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/635/372/75b9b121458b2da3fde94618cb2ce2b0_large.jpg?1392404221"></figure>
+</div><p>Want an exclusive piece of art created just for you of a character from the game? Pick up<b> FINE ART OF FIGHTING</b></p><div class="template asset" contenteditable="false" data-edit_url="/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/assets/1635379/edit" data-id="1635379">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/635/379/af2b308f5f5a5a9476dc956e0e335a8d_large.png?1392404306"></figure>
+</div><p>Do you want to be in the game, as a super cool alt character, AND get yourself drawn in a variety of poses, AND have your own personal bio/cutscene interaction? Pick up ULTIMATE COUNTER</p><div class="template asset" contenteditable="false" data-edit_url="/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/assets/1635384/edit" data-id="1635384">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/635/384/b78d22ceb5da4721429ae90f71f3a3d8_large.png?1392404415"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/assets/1605201/edit" data-id="1605201">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/605/201/9c1a572ee65cc7d12fa0169f69448bf3_large.png?1391709362"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/assets/1621853/edit" data-id="1621853">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/621/853/054bbb3057785a7d3b3c94bce03def5c_large.gif?1392109311"></figure>
+</div><p>Shawn Alexander Allen (<a href="https://twitter.com/aNuChallenger" target="_blank">@anuchallenger</a>) is the game designer, director,
+animator, artist, and founder of Nuchallenger. Before creating Treachery in Beatdown City Shawn worked for 4.5 years at Rockstar games where he worked on a variety of tasks, such as creating trailers, short films, cutscene cameras, writing/performing character dialog &amp;
+game analysis on numerous titles spanning GTA IV, Ballad of Gay Tony/Lost and
+Damned, Red Dead Redemption, LA Noire, Max Payne 3 &amp; the preliminary stages
+of the GTA V marketing campaign.</p><p>Shawn began doing in depth analysis of fighting in games years ago both for work and on his own time, and it became more and more evident that the only thing to satiate that would be to build his own unique brawler.</p><p>You can also read about his past in this feature on <a href="http://kotaku.com/from-poverty-to-playstation-one-game-devs-climb-towa-1458980654" target="_blank">Kotaku - From Poverty to Playstation.</a></p><p>There is an interview on <a href="http://www.giantbomb.com/articles/write-what-you-know-learn-what-you-don-t/1100-4777/" target="_blank">Giantbomb as well about writing in games </a></p><div class="template asset" contenteditable="false" data-edit_url="/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/assets/1627405/edit" data-id="1627405">
+<figure><img alt="Front page of Giant Bomb!" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/627/405/cccf4e83482f947a6905b54382dde281_large.png?1392233754"><figcaption>Front page of Giant Bomb!</figcaption></figure>
+</div><p>Shawn was also featured on the<a href="http://thegrio.com/2014/01/31/thegrios-100-shawn-allen-insider-pressing-the-reset-button-on-the-gaming-industry/" target="_blank"> Grio 100 </a></p><div class="template asset" contenteditable="false" data-edit_url="/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/assets/1627307/edit" data-id="1627307">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/627/307/ca3e25995126d769efe77dd865dfe7dd_large.jpg?1392232074"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/assets/1621855/edit" data-id="1621855">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/621/855/befbf0bdf32400106b5a2fd8cdaadfe7_large.gif?1392109333"></figure>
+</div><p>Manny A. Marcano (<a href="https://twitter.com/cavaliergames" target="_blank">@cavaliergames</a>) is the coder and co-designer on Treachery in Beatdown City, having initially built a prototype with
+Shawn in Gamemaker to make sure they both weren't out of their minds creating a turn based beat 'em up. </p><p>Manny grew up playing all manner of RPGs, beating complex games at the age of 4. He takes pride in building the stats that drive Treachery in Beatdown Cities unique battles.</p><p>Before working on Treachery in Beatdown City Manny worked
+at Take Two and Rockstar Games on The Darkness, Bioshock &amp; Max
+Payne 3 in a number of roles. </p><div class="template asset" contenteditable="false" data-edit_url="/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/assets/1627310/edit" data-id="1627310">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/627/310/25799f0c25d96bab6df7f5f460e984e2_large.jpg?1392232100"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/assets/1626601/edit" data-id="1626601">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/626/601/7000eb656630e85f9426f7de2931961a_large.gif?1392219760"></figure>
+</div><p>Diana Santiago (<a href="https://twitter.com/deeluxdi" target="_blank">@deeluxdi</a>) designed Lisa, the female protagonist, makes all of the beautiful non-digital art assets for the game and serves as the producer. She also created those lenticular business cards that Shawn carries around, in case you've ever seen them.</p><p>She has her <a href="http://dianasantiago.com/" target="_blank">Masters in Fine Art</a> and she is also a performance artist and co-creator of the web series <a href="http://www.youtube.com/watch?v=mY2Bee1J_WA" target="_blank">Supertight</a>. She had been married to Shawn for just 6 months before development of Treachery in Beatdown City became a full time thing, when the prototype was in full swing. </p><p>Diana was working part time while Shawn worked in AAA, but took on a full time job to keep the family afloat during development. </p><div class="template asset" contenteditable="false" data-edit_url="/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/assets/1627312/edit" data-id="1627312">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/627/312/d49f4b38ce3ccb71cf6b47bd8acb3eb3_large.jpg?1392232111"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/assets/1626604/edit" data-id="1626604">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/626/604/11b0165e3e0f61cab3afdf3ca94c7656_large.gif?1392219890"></figure>
+</div><p>Inverse Phase (<a href="https://twitter.com/inversephase" target="_blank">@inversephase</a>) is the composer for all of the music. Previously he had music on a number of
+soundtracks including the Super Meatboy OST. Besides working with Shawn to
+develop the musical tone of Treachery in Beatdown City he also launched a Trent
+Reznor approved Nine Inch Nails cover CD called <a href="http://inversephase.bandcamp.com/album/pretty-eight-machine" target="_blank">Pretty Eight Machine</a>, after
+having a successful kickstarter to raise funds for it.</p><p>Over the year he has played excerpts from the Treachery in
+Beatdown City soundtrack at events like Magfest that got the crowd going wild. </p><div class="template asset" contenteditable="false" data-edit_url="/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/assets/1627314/edit" data-id="1627314">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/627/314/76e6d4e5d2b13f81e354cb02696255dd_large.jpg?1392232137"></figure>
+</div><p>If you would like to hear more from Shawn, he was on Destructoid's Sup Holmes late in 2013 and you can check out the interview below! Find out how he ended up being attacked at his Gamestop job a week before working at Rockstar games!</p><div class="template oembed" contenteditable="false" data-href="http://www.youtube.com/watch?v=uPY9CQmcXiU">
+<iframe width="612" height="344" src="https://www.youtube.com/embed/uPY9CQmcXiU?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/assets/1627261/edit" data-id="1627261">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/627/261/b8e87924f0f48686839cd82022d2b8f6_large.png?1392231375"></figure>
+</div><p>In order to add-on to your pledge, you can go and manage your pledge and just add the amount for any extras you want to pick up. You do not need to change your reward tier, so all Early Birds get the cheaper copy of the game.</p><p>For an extra copy of the game, add $11 -&gt;this is a kickstarter only discount </p><p>To add on the shirt to any tier, add $22</p><p>To add the physical soundtrack CD, add $13</p><div class="template asset" contenteditable="false" data-edit_url="/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/assets/1627299/edit" data-id="1627299">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/627/299/ba230a7b4dd6ec955dceac3263232ad7_large.png?1392231773"></figure>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/assets/1661126/edit" data-id="1661126">
+<figure><img alt="Stretch Goals!" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/661/126/f2c4b403b9e4c8a68d70aebb5af29f38_large.png?1392991638"><figcaption>Stretch Goals!</figcaption></figure>
+</div><p>THANKS!</p>
+</div>
+<div id="risks">
+<h2 class="title grey-dark mt6 mb4">
+<span>Risks and challenges</span>
+<a href="/help/faq/kickstarter%20basics#Acco" class="right normal h5" target="_blank">Learn about accountability on Kickstarter</a>
+<div class="divider clear"></div>
+</h2>
+<p><p>Game development is an often crazy event filled with technical difficulties, playtesting, bug testing, and numerous other things that can drive a project off rails and delay it substantially. </p>
+
+<p>Shawn has worked on numerous projects on the AAA game level that were delayed at the last minute, as well as smaller projects that shipped on time, so the experience with shipping video games, both large and small, is nothing new. </p>
+
+<p>At the same time Shawn, Diana and Manny have a lot of their own money in the project already, and have spent a lot of time on preproduction to make sure that game development can go as smoothly as possible.</p></p>
+</div>
+</div>
+<div class="NS-projects-faqs" id="project-faqs">
+<h2 class="title grey-dark mt6 mb4">
+FAQ
+<div class="divider clear"></div>
+</h2>
+<ul class="faqs">
+<li class="faq" id="project_faq_81431">
+<div class="faq-question">
+<a href="#project_faq_81431" name="project_faq_81431">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">What platforms will this be coming out on?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>This kickstarter campaign is for the PC/Mac release of the full story for Treachery in Beatdown City.</p>
+
+<p>We will make every effort to get this game on Steam. </p>
+
+<p>We are also aiming for Playstation 4 and Vita as well but we can&#39;t promise that yet.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2014-02-27T00:19:01-05:00">Thu, Feb 27 2014 12:19 am EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_81746">
+<div class="faq-question">
+<a href="#project_faq_81746" name="project_faq_81746">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Given you are going for PC first? Aiming for Steam Greenlight? Desura?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Yes and yes. Steam Greenlight has seemingly amended their terms so games that are almost finished are the only ones that can be put on the service, which puts us in a bind. We have to wait until our development is closer to complete in order to even get the game on Greenlight, but I am confident that we will make it one way or another.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2014-02-17T20:24:11-05:00">Mon, Feb 17 2014 8:24 pm EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_82457">
+<div class="faq-question">
+<a href="#project_faq_82457" name="project_faq_82457">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Why isn&#39;t this on Greenlight?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Steam policy has changed and only games that are near completion may be put up on Greenlight. As this project is close to a year away, we will have to put it up on Greenlight closer to release.</p>
+
+<p>We are also talking with other folks, including publishers, to get on that marketplace one way or another.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2014-02-27T00:19:01-05:00">Thu, Feb 27 2014 12:19 am EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_81535">
+<div class="faq-question">
+<a href="#project_faq_81535" name="project_faq_81535">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">I heard this was coming to Playstation Vita, is that still happening?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>There is some minor confusion on this, and rightfully so. </p>
+
+<p>This campaign is for the PC/MAC release of the full story of Treachery in Beatdown City and will include all of the great backer rewards, lots of enemies, several stages, and whatever balance tweaks that are made over the course of the year of development.</p>
+
+<p>However -</p>
+
+<p>Treachery in Beatdown City Episode 1 is still scheduled to ship on Playstation Mobile, which will run on Vitas as well as other Playstation Mobile certified devices, and has been feature locked for some time. It will include the 26 characters we have created, as well as the first level of the game and is set to be an introduction to the world of East Fulton. It will not include anything extra from this campaign.</p>
+
+<p>I hope that clears it up.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2014-02-27T00:22:05-05:00">Thu, Feb 27 2014 12:22 am EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_81744">
+<div class="faq-question">
+<a href="#project_faq_81744" name="project_faq_81744">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">So it appears that there are traditional JRPG menu mechanics when choosing moves. Is there a stat and skill tree system? If not, why not?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>There are stats that drive everything, but there are no skill trees. Lisa, Bruce, and Brad are all set in stone. They will learn all of the same moves every time you play the game. That is, aside from hidden moves that can only be learned by fighting their rivals spread throughout the world.</p>
+
+<p>Skill trees are good, of course, but the three playable characters will be unique enough that switching between them should be suitable. </p>
+
+<p>I&#39;ll also add leveling will be automatic, and not experience based. This is to avoid making players feel like they have to fight everyone on each map.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2014-02-17T20:16:53-05:00">Mon, Feb 17 2014 8:16 pm EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_81745">
+<div class="faq-question">
+<a href="#project_faq_81745" name="project_faq_81745">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">How much brawler is this versus how much classic side scroller? In the video looks like PC breaks away, breaks object for health and then can return to turn based combat? How does it work?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Players move around each fight screen with full real time movement. In fact sometimes you will end up in a scrolling fight where you fight multiple enemies.</p>
+
+<p>The games biggest hook is the menu based combat. But there is also a quick attack that can be used strategically as well. </p>
+
+<p>Menu based attacks take FP &amp; Combo meter to execute, and the player can pick whichever moves they have the amount of FP to use. This is always a constant. </p>
+
+<p>Quick attacks are locked to a specific combo, which is achieved by tapping a button outside of the menu. These are ideal for breaking objects in the environment as they do not take any resource to do so. </p>
+
+<p>Quick attacks do however take some combo meter if you hit the enemy. They also are much more prone to miss, and the combo meter used for quick attacks takes longer to refill. </p>
+
+<p>Players shouldn&#39;t rely on Quick Attacks as their primary offense, but in a jam, you might want to just jam out a quick combo to see if you can beat an enemy who is bearing down on you!</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2014-02-27T00:22:05-05:00">Thu, Feb 27 2014 12:22 am EST</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_81747">
+<div class="faq-question">
+<a href="#project_faq_81747" name="project_faq_81747">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">How mod-able will the game be? Expansions in the old school sense with new areas, moves and characters?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Currently those questions aren&#39;t things we are looking to. The game has a finite ending, but we do have plans for some hidden goodies in it. </p>
+
+<p>We are exploring the idea of making the full game&#39;s source available after we launch, or at least important bits of it.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2014-02-17T20:24:11-05:00">Mon, Feb 17 2014 8:24 pm EST</time>
+</div>
+</div>
+</li>
+
+</ul>
+<div class="faq-ask-box">
+<a href="/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/messages/new?message%5Bto%5D=nuchallenger&amp;mode=FAQ" class="button button_blue remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Ask a question about Treachery in Beatdown City: A tactical brawler!">Ask a question</a>
+
+</div>
+</div>
+
+<div class="mt4 ml1 mr1 mb2" id="report-issue-wrap">
+<a href="/login?then=%2Fprojects%2Fnuchallenger%2Ftreachery-in-beatdown-city-a-tactical-beat-em-up" class="button button_grey">Report this project to Kickstarter</a>
+</div>
+</div>
+<div class="NS-projects-rightcol grid_5" id="rightcol">
+<div class="NS_projects__ecom">
+<div class="digits_5 pb2 pl2 pt2" id="stats">
+<h5>
+<div class="num h48 no-margin" data-backers-count="487" id="backers_count"><data class="Project917810227" data-format="number" data-value="487" itemprop="Project[backers_count]">487</data></div>
+<span><data class="Project917810227" data-attr="backers_count" data-format="pluralize" data-value="487" data-word="Backer">Backers</data></span>
+</h5>
+<h5>
+<div class="num h48 no-margin" data-goal="50000.0" data-percent-raised="0.4268582" data-pledged="21342.91" id="pledged">
+<data class="Project917810227" data-currency="USD" data-format="shorter_money" data-precision="0" data-value="21342" data-without_code="true" itemprop="Project[pledged]">$21,342</data>
+<span class="money usd project_currency_code"></span>
+</div>
+pledged of
+<span class="money usd no-code">$50,000</span>
+goal
+</h5>
+<span data-duration="29.958333333333332" data-end_time="2014-03-15T11:02:14-04:00" data-hours-remaining="0" id="project_duration_data"></span>
+<div class="Project917810227" data-conditions="[{&quot;!state&quot;:[&quot;canceled&quot;,&quot;suspended&quot;]}]" data-evaluation="true" data-render="&quot;&lt;h5 class=\&quot;poll \&quot; data-dynamic=\&quot;5\&quot; data-end_time=\&quot;2014-03-15T11:02:14-04:00\&quot; data-poll_url=\&quot;https://d2oher2uhvl0ur.cloudfront.net/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/stats.json\&quot;&gt;\n&lt;div class=\&quot;num h48 no-margin\&quot;&gt;0&lt;/div&gt;\n&lt;span class=\&quot;text\&quot;&gt;seconds to go&lt;/span&gt;\n&lt;/h5&gt;\n&quot;"><h5 class="poll " data-dynamic="5" data-end_time="2014-03-15T11:02:14-04:00" data-poll_url="https://d2oher2uhvl0ur.cloudfront.net/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/stats.json">
+<div class="num h48 no-margin">0</div>
+<span class="text">seconds to go</span>
+</h5>
+</div></div>
+<div class="Project917810227" data-conditions="[{&quot;state&quot;:&quot;live&quot;},{&quot;!ended?&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;pr2 pl2\&quot; id=\&quot;pledge-wrap\&quot;&gt;\n&lt;a href=\&quot;/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/pledge/new?clicked_reward=false\&quot; class=\&quot;button button_green button_box button_block\&quot; id=\&quot;button-back-this-proj\&quot; title=\&quot;Back this project\&quot;&gt;Back This Project &lt;small class=&#39;h6 normal block green-dark&#39;&gt;&lt;span class=\&quot;money usd \&quot;&gt;$1&lt;/span&gt; minimum pledge&lt;/small&gt;&lt;/a&gt;\n&lt;/div&gt;\n&quot;"></div><div class="Project917810227" data-conditions="[{&quot;state&quot;:&quot;live&quot;}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;p2\&quot; id=\&quot;banner\&quot;&gt;\n&lt;p class=\&quot;tiny_type no-margin\&quot;&gt;\nThis project will only be funded if at least\n&lt;span class=\&quot;money usd \&quot;&gt;$50,000&lt;/span&gt;\nis pledged by\n&lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;llll z\&quot; datetime=\&quot;2014-03-15T11:02:14-04:00\&quot;&gt;Sat, Mar 15 2014 11:02 am EDT&lt;/time&gt;.\n&lt;/p&gt;\n&lt;/div&gt;\n&quot;"></div></div>
+
+<div class="NS_projects__rightcol_projectby bg-blue-light rounded">
+<div class="p2 clearfix">
+<div class="avatar inline-block align-middle">
+<a href="/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography"><img alt="Shawn.small" class="avatar-small" height="80" src="https://s3.amazonaws.com/ksr/avatars/1963103/shawn.small.jpg?1392232851" width="80" />
+</a></div>
+<div class="creator-name inline-block align-middle ml1">
+<h6 class="mb1">Project by</h6>
+<h5 class="mb1">
+<a href="/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">Shawn Alexander Allen</a>
+</h5>
+<p class="location h6 bold mb1">
+<a href="/discover/places/new-york-ny">New York, NY</a>
+</p>
+</div>
+</div>
+<div class="creator-details pl2 pr2 pb1">
+<ul class="list-simple h5 mb1">
+<li class="projects-more">
+<span class="ss-icon ss-kickstarter grey-dark margin-right"></span>
+<span class="text">
+<a href="/profile/nuchallenger/created" class="green-dark bold more-button remote_modal_dialog" data-modal-title="Projects created by Shawn Alexander Allen">2 created</a>
+<span class="divider">&middot;</span>
+<a href="/profile/nuchallenger/backed" class="green-dark bold more-button remote_modal_dialog" data-modal-title="Projects backed by Shawn Alexander Allen">20 backed</a>
+</span>
+</li>
+<li class="facebook-connected">
+<span class="ss-icon ss-facebook facebook color-facebook margin-right"></span>
+<span class="text">
+<a href="https://www.facebook.com/525642206" class="popup" target="_blank">Shawn Alexander Allen</a>
+<span class="number h6">
+404
+friends
+</span>
+</span>
+
+</li>
+<li class="links">
+<span class="ss-icon ss-globe margin-right grey-dark"></span>
+<span class="text">
+<a href="http://beatdowncity.com" class="popup" rel="nofollow" target="_blank">beatdowncity.com</a>
+</span>
+</li>
+</ul>
+</div>
+<div class="footer center h5 bold clearfix rounded-bottom clip">
+<a href="/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">See full bio</a>
+<a href="/projects/nuchallenger/treachery-in-beatdown-city-a-tactical-beat-em-up/messages/new?message%5Bto%5D=nuchallenger" class="remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Send a message to Shawn Alexander Allen">Contact me</a>
+
+</div>
+</div>
+
+<ul class="NS-projects-rightcol-rewards rounded clip list mt2" data-reward-count="23" id="what-you-get">
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$10</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+99 backers
+</span>
+<span class="bg-grey no-wrap pl1 pr1 sold-out">
+All gone!
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>EARLY BIRD - BRAWLER! - Receive a digital copy of Treachery in Beatdown City for PC/MAC (if we get listed on Steam you will get that key too!)+ access to the game before the general public close to release and access to backer forums to help vote on ideas at an early bird price! 
+
+Your name will be listed as an EARLY BRAWLER backer in the credits.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-02-01">Feb 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$15</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+131 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>BRAWLER! -- Receive a digital copy of Treachery in Beatdown City for PC/MAC (if we get listed on Steam you will get that key too!) + access to the game before the general public close to release and access to backer forums to help vote on ideas! 
+
+Your name will be listed as a BRAWLER backer in the credits.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-02-01">Feb 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$20</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+99 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(1 left of 100)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>EARLY FRESH BEATS ---
+Receive a digital copy of the full soundtrack to Treachery in Beatdown City when it releases.
+
++ Receive everything in the EARLY BIRD BRAWLER tier (And immediately receive the already released Treachery in Beatdown City EP when the campaign closes)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-02-01">Feb 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$22</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+12 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(88 left of 100)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>DOUBLE BRAWLER - It&#39;s a BRAWLER bundle! Get 2 digital copies of Treachery in Beatdown City at a Kickstarter only price + the other perks of being a BRAWLER!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-02-01">Feb 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$25</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+24 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>FRESH BEATS ----------------------------Receive a digital copy of the full soundtrack to Treachery in Beatdown City when it releases + Receive everything in the BRAWLER tier (And immediately receive the already released Treachery in Beatdown City EP when the campaign closes)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-02-01">Feb 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$30</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+22 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>FIGHTERS&#39; MANUAL 
+
+Receive a digital manual filled with art, back stories, strategies and tips about the game. 
+
++ Receive everything in the FRESH BEATS tier.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-02-01">Feb 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$35</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+2 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>WEAPONIZER - Receive exclusive early access to bonus weapons - The Steel Chair, Brass Knuckles, Nunchucks, and get to vote on 3 more! These will appear in your inventory to use in fights, and also show up in breakable objects. Also includes FIGHTER&#39;S MANUAL tier. 
+
+Also choose to be labeled as a WEAPONIZER in the game&#39;s credits.
+
+All tiers above $35 will receive this reward, too!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-02-01">Feb 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$40</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+13 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>DEDICATED FIGHTER - Receive access to the earliest, unfinished builds to help with active development of the game. + Receive everything in the FRESH BEATS tier. Your name will be listed under Dedicated Fighter or Brawler in the credits, you decide!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-02-01">Feb 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$45</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>EXTRA DEDICATED FIGHTER ON top of DEDICATED FIGHTER tier, receive a PRINTED manual filled with art, back stories, strategies and tips about the game.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-02-01">Feb 2015</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $10 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$50</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+20 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>FIGHTING ARTIST - Receive a lovingly laid out digital art book featuring watercolor, ink, pencil and digital art from the game as well as an in depth strategy guide detailing enemy stats, bios, and tips you won&#39;t find in the manual! 
+
++Receive everything in the DEDICATED FIGHTER tier. 
+
+Your name will be listed under Fighting Artist, Dedicated Fighter or Brawler, you decide!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-02-01">Feb 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$60</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>DECKED OUT - Receive exclusive early access to bonus costumes. 3 per character: 2 shown here plus get to help design/vote on the last 1 per character!
+
++ Receive everything in the DEDICATED FIGHTER TIER
+
+All tiers above $65 will receive this reward, too!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-02-01">Feb 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$72</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+12 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>RAD ENOUGH - Are you rad enough to show your solidarity with the citizens of East Fulton to wear this T - SHIRT?
+
++Receive everything in the FIGHTING ARTIST tier. 
+
+Your name will be listed in the credits under RAD ENOUGH, Fighting Artist, Dedicated Fighter, or Brawler, you decide!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-02-01">Feb 2015</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $10 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$85</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+9 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>PHYSICALITY - On top of showing your solidarity for the cause, receive a nice physical copy of the soundtrack. 
+
++ Receive everything in the RAD ENOUGH tier. Later tiers do not automatically include these items.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-02-01">Feb 2015</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $15 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$109</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+4 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>EXTRA PHYSICALITY - Receive a lovingly laid out PRINTED art book featuring watercolor, ink, pencil and digital art from the game as well as an in depth strategy guide detailing enemy stats, bios, and tips you won&#39;t find in the manual! +Receive everything in the PHYSICALITY tier. Your name will be listed under Fighting Artist, Dedicated Fighter or Brawler, you decide!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-02-01">Feb 2015</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $20 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$149</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+5 backers
+</span>
+<span class="bg-grey no-wrap pl1 pr1 sold-out">
+All gone!
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>POST NO BILLS------------------------------ Get a picture of yourself, a character you created or just your name immortalized on a poster in the background of a fight stage. Warning, 8 bit stylization can be tricky for intricate ideas.
+
+Character must be your own design and we reserve the right to reject any concepts, but we&#39;ll work with you to make it fit. 
+
++ Receive everything in the FIGHTING ARTIST tier. 
+
+Shirt + Physical Soundtrack not included. Please  see add-ons section.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-02-01">Feb 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$159</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+4 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(1 left of 5)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>SERIOUSLY, POST NO BILLS II----------------- Get a picture of yourself, a character you created or just your name immortalized on a poster in the background of a fight stage. Warning, 8 bit stylization can be tricky for intricate ideas. Character must be your own design and we reserve the right to reject any concepts, but we&#39;ll work with you to make it fit. + Receive everything in the FIGHTING ARTIST tier. 
+
+Shirt + Physical Soundtrack not included. Please see add-ons section.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-02-01">Feb 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$199</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+2 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>PAINT THE TOWN - We will make some graffiti using your name, avatar or whatever you want us to or submit your own graffiti design to be pixelated and put in the game (must be your own creation).  We reserve the right to reject any concepts, but will work with you to make sure you are happy.
+
+Does not include POST NO BILLS tier.
+
++ Receive everything in the FIGHTING ARTIST tier. 
+
+Shirt + Physical Soundtrack not included. Please  see add-ons section.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-02-01">Feb 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$299</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+3 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>PIXEL PORTRAIT ----- Have your likeness or that of a character you created immortalized in Treachery in Beatdown City style! Receive a digital sprite sheet that includes a detailed portrait, a smaller version of the portrait, as well as regular fighter style character complete with walk cycle and a couple of attacks! 
+
++ Receive everything in the FIGHTING ARTIST tier. 
+
+Does not include POST NO BILLS or PAINT THE TOWN tier.
+
+Shirt + Physical Soundtrack not included. Please  see add-ons section.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-02-01">Feb 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$375</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(5 left of 5)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>Designer of Terror - Help us design 1 of the Ninja Dragon Terrorist enemies! This group is so mysterious that very few people have ever seen any of them and lived. 
+
+They are known for their cross cultural garbs, and you can help design one with the team. Choose their color palette/accessories, fighting style and more! 
+
+We reserve the right to reject any concepts, but we will work with you over skype one on one to make sure everyone is happy.
+
++ Receive everything in the FIGHTING ARTIST tier!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-02-01">Feb 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$375</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(5 left of 5)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>FINE ART OF FIGHTING - Receive a physical water color and ink drawing of any enemy,  signed by the artist Diana Santiago!
+
+Also receive a digital scan of the file.
+
++ Receive everything in the FIGHTING ARTIST tier!
+
+Does not Include Designer of Terror</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-02-01">Feb 2015</time>
+</div>
+<div class="h6">
+<div class="NS_backer_rewards__shipping">
+<span class="international">
+Add $20 USD to ship outside the US
+</span>
+</div>
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(3 left of 3)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>VAIN FIGHTER - Receive a physical water color and ink drawing of yourself done in Treachery in Beatdown City style (in an action pose if you want!) - signed by the artist Diana Santiago!
+
+Also receive a digital scan of the file.
+
+And you will have your name in the credits apart from other backer credits in a special thank you section.
+
++ Receive everything in the FIGHTING ARTIST tier!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-02-01">Feb 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$1,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+2 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(8 left of 10)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>ULTIMATE COUNTER 
+Have your likeness placed as an enemy on the streets of East Fulton! You will be an alternate to one of the regular enemies but with increased stats. 
+
+You will receive everything in PIXEL PORTRAIT tier (sprite sheet, etc.) + you will have a bio in the game, as well as a cutscene featuring your character that you will get to help write!
+
+Also receive ULTIMATE COUNTER backer credit and a special thank you.
+
++ Receive everything in the PIXEL PORTRAIT TIER</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-02-01">Feb 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$2,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>BEATDOWN TOUR Come to New York City (flight and living arrangements not included) and have a tour with the team of New York from their unique perspective. We&#39;ll even buy you lunch at one of our favorite places, Katz&#39; deli! 
+
+These tours will begin after the game is done.
+
+Also receive BEATDOWN TOURIST credit and a special thank you. 
+
++ Receive everything in the FIGHTING ARTIST tier!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-03-01">Mar 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+</ul>
+
+<div class="p2" id="meta">
+<h5>Funding period</h5>
+<p class="tiny_type">
+<time class="js-adjust" data-format="ll" datetime="2014-02-13T11:02:14-05:00">Feb 13, 2014</time> - 
+<time class="js-adjust" data-format="ll" datetime="2014-03-15T11:02:14-04:00">Mar 15, 2014</time>
+(30 days)
+</p>
+</div>
+</div>
+
+</div>
+
+<a href="#" id="video_mode_tab" style="display: none;">
+View in Video Mode
+</a>
+
+</div>
+</div>
+
+
+</div>
+
+<div class="h5 bg-green-dark" id="mega-footer-wrap">
+<div class="bg-green-dark white full-height" id="footer-newsletter-signup">
+<div class="container py4">
+<div class="grid_8 prefix_4 suffix_4 center mt4">
+<h2>
+Eureka! You've found
+<br>
+our little secret.
+</h2>
+<p>Sign up for our Happening email for all the inside info about arts and culture in the Kickstarter universe and beyond.</p>
+<div class="newsletter_signup">
+<form accept-charset="UTF-8" action="/newsletters/happening/signup" class="overlabels" method="post"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /><input class="hidden" name="authenticity_token" type="hidden" value="R+D+Mk9fvIZsF9/RFEllo3p5tPyyaAyUnxYGPIduTFg=" /></div><input class="hidden" id="location" name="location" type="hidden" value="footer" />
+<textarea class="hide textarea" id="comment" name="comment">
+</textarea>
+<div class="field newsletter">
+<label class="overlabel z1 overlabel-newsletter">Email address</label>
+<input class="text" id="email" name="email" type="text" />
+</div>
+<input class="button button_green submit" name="commit" type="submit" value="Submit" />
+</form>
+
+</div>
+
+</div>
+</div>
+</div>
+<div class="container relative" id="mega-footer">
+<span class="scissors icon-scissors-1"></span>
+<div class="grid_16 alpha omega pt4 pb2" id="mega-footer-links">
+<div class="grid_4 link-group">
+<h5 class="white">About us</h5>
+<ul class="list">
+<li><a href="/year/2013/?ref=footer">2013 highlights</a></li>
+<li><a href="/year/2012?ref=footer">2012 highlights</a></li>
+<li><a href="/team?ref=footer">Who we are</a></li>
+<li><a href="/jobs?ref=footer">Jobs</a></li>
+<li><a href="/press?ref=footer">Press</a></li>
+<li><a href="/help/stats?ref=footer">Stats</a></li>
+<li><a href="/newsletters/weekly">Projects we love</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group">
+<h5><a href="/help?ref=footer" class="white">Help</a></h5>
+<ul class="list">
+<li><a href="/hello?ref=footer">What is Kickstarter?</a></li>
+<li><a href="/help?ref=footer">FAQ</a></li>
+<li><a href="/contact?ref=footer">Support</a></li>
+<li><a href="/help/school?ref=footer">Kickstarter School</a></li>
+<li><a href="/terms-of-use?ref=footer">Terms of Use</a></li>
+<li><a href="/privacy?ref=footer">Privacy Policy</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group alpha omega suffix_1">
+<h5 class="alpha"><a href="/discover/advanced?ref=footer" class="white">Discover</a></h5>
+<ul class="column column-0 grid_2 list">
+<li><a href="/discover/categories/art?ref=footer">Art</a></li>
+<li><a href="/discover/categories/comics?ref=footer">Comics</a></li>
+<li><a href="/discover/categories/dance?ref=footer">Dance</a></li>
+<li><a href="/discover/categories/design?ref=footer">Design</a></li>
+<li><a href="/discover/categories/fashion?ref=footer">Fashion</a></li>
+<li><a href="/discover/categories/film%20&amp;%20video?ref=footer">Film &amp; Video</a></li>
+<li><a href="/discover/categories/food?ref=footer">Food</a></li>
+</ul>
+<ul class="column column-1 grid_2 list">
+<li><a href="/discover/categories/games?ref=footer">Games</a></li>
+<li><a href="/discover/categories/music?ref=footer">Music</a></li>
+<li><a href="/discover/categories/photography?ref=footer">Photography</a></li>
+<li><a href="/discover/categories/publishing?ref=footer">Publishing</a></li>
+<li><a href="/discover/categories/technology?ref=footer">Technology</a></li>
+<li><a href="/discover/categories/theater?ref=footer">Theater</a></li>
+</ul>
+</div>
+<div class="grid_3 link-group">
+<h5 class="white">Hello</h5>
+<ul class="list">
+<li>
+<a href="https://twitter.com/kickstarter"><span class="ss-icon ss-social-regular ss-twitter"></span>
+Twitter
+</a></li>
+<li>
+<a href="https://www.facebook.com/Kickstarter"><span class="ss-icon ss-social-regular ss-facebook"></span>
+Facebook
+</a></li>
+<li>
+<a href="http://kickstarter.tumblr.com"><span class="ss-icon ss-social-regular ss-tumblr"></span>
+Tumblr
+</a></li>
+<li>
+<a href="http://instagram.com/kickstarter"><span class="ss-icon ss-social-regular ss-instagram"></span>
+Instagram
+</a></li>
+<li>
+<a href="https://vine.co/Kickstarter"><span class="ss-icon ss-social-regular ss-vine"></span>
+Vine
+</a></li>
+<li>
+<a href="/blog?ref=footer">Blog</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="grid_16 py4" id="mega-footer-bottom">
+<div class="logo left">
+<a href="/" class="grey-dark"><span class="ss-icon h3">KICKSTARTER</span>
+</a></div>
+<p class="right h5 grey-dark">
+&copy;
+2014
+Kickstarter, Inc.
+</p>
+</div>
+</div>
+</div>
+
+<script>
+  //<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    var analytics_vars = { google_analytics_id : "UA-7621056-1", logged_in : "false", social_user: "false" }
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.mixpanel_id = '75b1d24a516ecfc955eadfadc4910661';
+    window.mixpanel_debug = false;
+  //]]>
+</script>
+
+
+<noscript>
+<img alt="Quantcast" border="0" height="1" src="//secure.quantserve.com/pixel/p-34IbSpw2K94Sg.gif" style="display:none" width="1" />
+</noscript>
+
+
+<script>
+  //<![CDATA[
+    window.benchmark = (typeof window.performance == 'object' && typeof window.performance.mark == 'function');
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    (function (root) {
+      function instrument_function (original) {
+        return function () {
+          try {
+            return original.apply(this, arguments);
+          } catch (e) {
+            if (e.stack && root.Honeybadger) {
+              Honeybadger.notify(e, {
+                current_project : root.current_project,
+                current_user : root.current_user
+              });
+            }
+            throw(e);
+          }
+        };
+      }
+      root.instrument_function = instrument_function;
+    }(this));
+  //]]>
+</script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+
+<script>
+  //<![CDATA[
+    (function(){function c(a){this.local_start_time=new Date;this.settings={cookie_name:"request_time"};for(var b in a)this.settings[b]=a[b];this.get_remote_offset()}c.prototype.get_remote_offset=function(){this.cookie_value=this.read_cookie();var a=new Date(this.cookie_value);if(!this.cookie_value||"Invalid Date"===a.toString()){if(this.remote_offset=this.read_cookie("local_offset"))this.remote_offset=parseInt(this.remote_offset,10)}else this.remote_offset=a-this.local_start_time;"undefined"!==typeof this.remote_offset&& !isNaN(this.remote_offset)?(document.cookie="local_offset="+this.remote_offset+"; path=/",this.is_set=!0):this.is_set=!1};c.prototype.time_units=[["milliseconds",1],["seconds",1E3],["minutes",6E4],["hours",36E5],["days",864E5]];c.prototype.get_units_in_interval=function(a,b){var d=a.replace(/^\w/,function(d){return"get"+d.toUpperCase()});return b[d]()};c.prototype.milliseconds_in_day=function(a){"undefined"===typeof a&&(a=new Date);for(var b=0,d=this.time_units.length-2;0<=d;d--)b+=this.get_units_in_interval(this.time_units[d][0], a)*this.time_units[d][1];return b};c.prototype.milliseconds_in_interval=function(a,b){return this.milliseconds_in_day(b)%a};c.prototype.milliseconds_to_next_interval=function(a,b){return a-this.milliseconds_in_interval(a,b)};c.prototype.pluralize=function(a,b){1===b&&(a=a.replace(/s$/,""));return a};c.prototype.read_cookie=function(a){for(var b=window.document.cookie.split(";"),a=(a||this.settings.cookie_name)+"=",d=0;d<b.length;d++){for(var e=b[d];" "==e.charAt(0);)e=e.substring(1,e.length);if(0== e.indexOf(a))return b=e.substring(a.length,e.length),decodeURIComponent(b).replace(/\+/g," ")}return null};c.prototype.destroy_cookie=function(a){var b=new Date;a||(a=this.settings.cookie_name);b.setTime(b.getTime()-864E5);window.document.cookie=a+"=; expires="+b.toGMTString()+"; path=/"};c.prototype.get_remote_time=function(){var a=new Date,b=a.getTime()+this.remote_offset;return a=a.setTime(b)};window.ksr_page_clock=new c})(); (function(){function c(d,a,b){if(d){this.options={unit_base:{seconds:119,minutes:119,hours:72,days:0},end_phrase:d.getAttribute("data-word")||"to go",count_down:d.getAttribute("data-dynamic")||!1};for(k in b)this.options[k]=b[k];this.clock=a;this.time_units=this.clock.time_units.slice(1);this.element=d;this.clock.is_set&&this.attach()}}function a(){this.elements=[];this.attach()}var b=function(d,a){var b=a||window.document.body,c=d.split("."),g=c[c.length-1],c=1<c.length&&c[0]?c[0]:"*";if(window.document.getElementsByClassName)return b.getElementsByClassName(g); if(b.querySelectorAll)return b.querySelectorAll(d);for(var c=b.getElementsByTagName(c),h=[],i=0,f;f=c[i];i++)b=RegExp("(^|\\s)"+g+"(\\s|$)"),(""+f.className).match(b)&&h.push(f);return h};c.prototype.get_remaining_time=function(){var d=this.remote_end_time-this.clock.get_remote_time();0>d&&(d=0);return d};c.prototype.get_current_unit=function(){for(var d,a=0;a<this.time_units.length&&!(d=this.time_units[a],this.get_remaining_time()<=this.options.unit_base[d[0]]*d[1]);a++);return d};c.prototype.update_element= function(){var a=this.get_current_unit(),b=Math.floor(this.get_remaining_time()/a[1]);isNaN(b)||(this.number_element.innerHTML=b,this.text_element.innerHTML=this.clock.pluralize(a[0],b)+" "+this.options.end_phrase)};c.prototype.valid=function(){return!(!this.number_element||!this.text_element)};c.prototype.attach=function(){function a(){c.update_element();if(c.options.count_down&&0<c.get_remaining_time()){var b=c.get_current_unit();this.timeout=window.setTimeout(a,c.clock.milliseconds_to_next_interval(b[1]))}} var c=this;if(this.remote_end_time_string=this.element.getAttribute("data-end_time"))this.remote_end_time_string.match(/^\d+$/)?(this.remote_end_time=new Date,this.remote_end_time.setTime(this.remote_end_time_string)):this.remote_end_time=new Date(this.remote_end_time_string),this.number_element=b(".num",this.element)[0],this.text_element=b(".text",this.element)[0],this.element.ksr_page_timer=!0,this.valid()&&a()};c.prototype.cancel=function(){this.timeout&&clearTimeout(this.timeout)};a.prototype.loading= !0;a.prototype.stop_finding=function(){this.attach_timers();this.loading=!1;document.addEventListener?document.removeEventListener("DOMContentLoaded",this.stop_finding,!1):document.attachEvent&&"complete"===document.readyState&&document.detachEvent("onreadystatechange",this.stop_finding)};a.prototype.bind_ready=function(){var a=this,b=function(){a.stop_finding.call(a)};document.addEventListener?(document.addEventListener("DOMContentLoaded",b,!1),window.addEventListener("load",b,!1)):document.attachEvent&& (document.attachEvent("onreadystatechange",b),window.attachEvent("onload",b))};a.prototype.attach_timers=function(){for(var a=b("div.ksr_page_timer"),e=0;e<a.length;e++)a[e].ksr_page_timer||(new c(a[e],window.ksr_page_clock),this.elements.push(a[e]))};a.prototype.attach=function(){var a=this;this.bind_ready();(function(){a.attach_timers();a.loading&&window.setTimeout(function(){a.attach_timers()},200)})()};window.ProjectTimer=c;new a})();
+  //]]>
+</script>
+
+<script class="template" id="template-widgets__video_embed_code" type="text/x-tmpl-mustache"><iframe width="{{width}}" height="{{height}}" src="{{{path}}}" frameborder="0" scrolling="no"> </iframe>
+</script><script class="template" id="template-projects__baseball_card_tall" type="text/x-tmpl-mustache"><div class="project-card-wrap project-card-wrap-tall border bg-white rounded clip">
+  <div class="project-card relative project-live {{#successful?}}successful{{/successful?}}">
+    <div class="project-thumbnail pt1 pl1 pr1">
+      <a href="{{urls.web.project}}" target="">
+        <img alt="Photo-little" class="projectphoto-little" src="{{photo.little}}" class="fit">
+      </a>
+    </div>
+    <div class="project-card-interior p1 h6 grey-dark">
+      <h6 class="project-title">
+        <a href="{{urls.web.project}}" target="" class="green-dark">{{name}}</a>
+      </h6>
+      <p class="mb1 ellipsis">
+        by
+        {{creator.name}}
+      </p>
+      <p class="blurb">
+        {{blurb}}
+      </p>
+    </div>
+    <div class="absolute-bottom bg-white rounded-bottom">
+
+      {{#location}}
+        <ul class="p1 list project-meta no-margin h6">
+          <li class="ellipsis">
+            <a href="{{location.urls.web.discover}}" data-location="{{location_json}}" class="grey-dark">
+              <span class="ss-icon ss-location"></span>
+              <span class="location-name">{{location.displayable_name}}</span>
+            </a>
+          </li>
+        </ul>
+      {{/location}}
+
+      <div class="project-stats-wrap pb1 pl1 pr1">
+
+        {{#failed?}}
+          <div class='project-status project-failed h6'>
+            <strong> Funding Unsuccessful</strong><br />
+            <span class="grey-dark">Project ended on {{formatted_deadline}}</span>
+          </div>
+        {{/failed?}}
+
+        {{#canceled?}}
+          <div class='project-status project-canceled h6'>
+            <strong> Funding Canceled</strong><br />
+            <span class="grey-dark">Project canceled on {{formatted_state_changed_at}}</span>
+          </div>
+        {{/canceled?}}
+
+        {{#successful?}}
+          <div class='project-pledged-successful bg-green white h6 pl1 pr1 mb1'>
+            <strong>Successful!</strong>
+          </div>
+        {{/successful?}}
+
+        {{#live_or_successful?}}
+          {{#live?}}
+            <div class="project-pledged-wrap bg-grey clip mb1">
+              <div class="project-pledged bg-green full-height" style="width: {{percent_raised_to_100}}%"></div>
+            </div>
+          {{/live?}}
+          <ul class="project-stats list no-margin h6 no-wrap">
+            <li class="first funded inline-block mr1">
+              <strong class="block h6">{{percent_raised_rounded}}%</strong>
+              <span class="grey-dark">funded</span>
+            </li>
+            <li class="pledged inline-block mr1">
+              <strong class="block h6">{{currency_symbol}}{{formatted_money}}</strong>
+              <span class="grey-dark">pledged</span>
+            </li>
+            {{#successful?}}
+              <li class="last successful inline-block">
+                <strong class="block h6">Funded</strong>
+                <div class="deadline grey-dark">{{formatted_deadline}}</div>
+              </li>
+            {{/successful?}}
+            {{#live?}}
+              <li class="last ksr_page_timer inline-block" data-end_time="{{javascript_deadline}}">
+                <strong class="block h6">
+                  <div class="num">30</div>
+                </strong>
+                <div class="span text grey-dark" data-word="left">days to go</div>
+              </li>
+            {{/live?}}
+          </ul>
+        {{/live_or_successful?}}
+      </div>
+    </div>
+  </div>
+</div>
+
+{{#friends_backing?}}
+  <div class="friend_project_context">
+    <div class="friend_facepile">
+      {{#truncated_friends}}
+        <img src="{{avatar.thumb}}" class="{{#has_metadata?}}small{{/has_metadata?}}">
+      {{/truncated_friends}}
+    </div>
+    <p class="friend_namepile">
+      {{{escaped_sentence}}}
+    </p>
+  </div>
+{{/friends_backing?}}
+</script><script class="template" id="template-projects__video_mode" type="text/x-tmpl-mustache"><a href='#' id='video_mode_close' class='close_button z2'><span class='ss-icon ss-delete'></span></a>
+
+<div class='title_card z1 {{context_classes}}' style="display:none;">
+  <div class='interior'>
+    <h2 class='project_title normal_weight'>{{name}}</h2>
+    <p class='blurb'>{{blurb}}</p>
+    <nav class='bar'>
+      <a id='play_button' class='left play' href='#'>
+        <span class='play_active'>
+          <span class='ss-icon ss-play'></span>
+          Play
+        </span>
+        <span class='pause_active'>
+          <span class='ss-icon ss-pause'></span>
+          Pause
+        </span>
+      </a>
+      {{#logged_in}}
+        <div class='remind right'>
+          {{#if_not_starred}}
+            <a class='follow' href='{{urls.web.project}}/watch'><span class='ss-icon ss-star'></span></a>
+          {{/if_not_starred}}
+          {{#if_starred}}
+            <a class='unfollow' href='{{urls.web.project}}/unwatch'><span class='ss-icon ss-star active'></span></a>
+          {{/if_starred}}
+        </div>
+      {{/logged_in}}
+      <a class='right explore button button_green small' href='#'>Explore this project</a>
+    </nav>
+  </div>
+</div>
+
+<div class='channel_controls z1'>
+  <a href='#' class='{{#playlist_is_location}}selected {{/playlist_is_location}}location'>Something else near {{location.first_name}} <span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_featured}}selected {{/playlist_is_featured}}featured'>Something different<span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_category}}selected {{/playlist_is_category}}category'>Something else in {{category.name}} <span class='ss-icon ss-navigateright'></span></a>
+</div>
+
+<div class='project_video' style='background-image: url('{{photo.full}}')'>
+  <div class='cover'>
+    <video>
+      <source src='{{video.high}}' type='video/mp4'/>
+      <source src='{{video.webm}}' type='video/webm'/>
+    </video>
+  </div>
+</div>
+</script><script class="template" id="template-site__video_mode_fourohfour" type="text/x-tmpl-mustache"><section class='four_oh_four'>
+  <p class='big_type'>
+    Looks like you've reached the end of the line! <br />Check out <a class="another" href='#'>another channel</a> or <a href='/discover'>browse projects in discover</a>.
+  </p>
+</section>
+</script>
+
+<script id="schwamm_formatting_options" type="text/javascript">
+//<![CDATA[
+(function(){window.formatters = window.formatters || {}; var formatting_options = {"distance_date_intervals":[[5,"just now"],[29,"less than a minute ago"],[89,"1 minute ago"],[2640,"%m minutes ago"],[5340,"about 1 hour ago"],[82800,"about %h hours ago"],[147600,"1 day ago"],[604800,"%d days ago"],[15552000,"on %t"],[0,"on %y"]],"currency_symbol_mappings":{"AFN":"\u060b","ALL":"Lek","ARS":"$","AUD":"$","AWG":"\u0192","AZN":"\u043c\u0430\u043d","BAM":"KM","BBD":"$","BGN":"\u043b\u0432","BMD":"$","BND":"$","BOB":"$b","BRL":"R$","BSD":"$","BWP":"P","BYR":"p.","BZD":"BZ$","CAD":"$","CLP":"$","CNY":"\u00a5","COP":"$","CRC":"\u20a1","CUP":"\u20b1","CZK":"K\u010d","DKK":"kr","DOP":"RD$","EGP":"\u00a3","EUR":"\u20ac","FJD":"$","FKP":"\u00a3","GBP":"\u00a3","GIP":"\u00a3","GTQ":"Q","GYD":"$","HKD":"$","HNL":"L","HRK":"kn","HUF":"Ft","IDR":"Rp","ILS":"\u20aa","IRR":"\ufdfc","ISK":"kr","JMD":"J$","JPY":"\u00a5","KGS":"\u043b\u0432","KHR":"\u17db","KPW":"\u20a9","KRW":"\u20a9","KYD":"$","KZT":"\u043b\u0432","LAK":"\u20ad","LBP":"\u00a3","LKR":"\u20a8","LRD":"$","LTL":"Lt","LVL":"Ls","MKD":"\u0434\u0435\u043d","MNT":"\u20ae","MUR":"\u20a8","MXN":"$","MYR":"RM","MZN":"MT","NAD":"$","NGN":"\u20a6","NIO":"C$","NOK":"kr","NPR":"\u20a8","NZD":"$","OMR":"\ufdfc","PAB":"B/.","PEN":"S/.","PHP":"\u20b1","PKR":"\u20a8","PLN":"z\u0142","PYG":"Gs","QAR":"\ufdfc","RON":"lei","RSD":"\u0414\u0438\u043d.","RUB":"\u0440\u0443\u0431","SAR":"\ufdfc","SBD":"$","SCR":"\u20a8","SEK":"kr","SGD":"$","SHP":"\u00a3","SOS":"S","SRD":"$","SVC":"$","SYP":"\u00a3","THB":"\u0e3f","TRY":"TL","TTD":"TT$","TWD":"NT$","UAH":"\u20b4","USD":"$","UYU":"$U","UZS":"\u043b\u0432","VEF":"Bs","VND":"\u20ab","YER":"\ufdfc","ZAR":"R"},"currency_trailing_code_mappings":{"AUD":true,"CAD":true,"NZD":true,"USD":true},"currency_formats":["money","shorter_money"]}; for (key in formatting_options) {window.formatters[key] = formatting_options[key]};}());
+//]]>
+</script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("begin_base.js_tag");}
+  //]]>
+</script>
+<script src="https://d297h9he240fqh.cloudfront.net/assets/packages/base-45cdab84617ddfb8905b7cddc8500c19.js" type="text/javascript"></script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("end_base.js_tag");}
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    document.domain='kickstarter.com';
+  //]]>
+</script>
+
+<iframe height="0" id="api_xdreceiver" src="https://api.kickstarter.com/xdreceiver/85e6.html" style="display: none;" width="0"></iframe>
+
+
+
+<div id="fb-root"></div>
+<script>
+  //<![CDATA[
+    var channelUrl = window.location.protocol + "//" + window.location.host + "/channel.html",
+      skip_autologin = $('body').is('.skip_autologin');
+    
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId: window.fb_app_id,
+        channelUrl: channelUrl,
+        status: true,    // check login status
+        cookie: true,    // enable cookies to allow the server to access the session
+        xfbml: true,     // parse XFBML
+        logging: false   // turn off logging
+      });
+    
+      FB.getLoginStatus(function (response) {
+        if (response.status === 'connected') {
+          if (read_cookie("logout_from_fb")) {
+            FB.logout();
+            destroy_cookie("logout_from_fb");
+          } else if (!skip_autologin) {
+            $.get("/fb/autologin", {'fbsr': response.authResponse.signedRequest});
+          } else if (false && 0 == response.authResponse.userID) {
+            $.get("/fb/refresh", {'fbsr': response.authResponse.signedRequest});
+          }
+        } else {
+          if (read_cookie("logout_from_fb")) {
+            destroy_cookie("logout_from_fb");
+          }
+        }
+      })
+    
+      $(document).trigger('fb:loaded');
+    };
+    
+    
+    // Load the SDK Asynchronously
+    (function(d){
+      var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+      js = d.createElement('script'); js.id = id; js.async = true;
+      js.src = "//connect.facebook.net/en_US/all.js";
+      d.getElementsByTagName('head')[0].appendChild(js);
+    }(document));
+  //]]>
+</script>
+
+
+</body>
+</html>

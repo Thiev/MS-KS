@@ -1,0 +1,2544 @@
+<!DOCTYPE html>
+<html class="projects_show  fontface no-js" lang="en">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# kickstarter: http://ogp.me/ns/fb/kickstarter#">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-5.newrelic.com","errorBeacon":"jserror.newrelic.com","licenseKey":"b04b883ad2","applicationID":"11086","transactionName":"cFteRUULX1wHFhtIEFxeVVJDFxxDCgtD","queueTime":7,"applicationTime":1214,"ttGuid":"","agentToken":null,"agent":"js-agent.newrelic.com/nr-411.min.js"}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"Vw4BVEVSCQMIUg=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e){function n(t,e,n){n||(n={});for(var r=o[t],a=r&&r.length||0,s=n[i]||(n[i]={}),u=0;a>u;u++)r[u].apply(s,e);return s}function r(t,e){var n=o[t]||(o[t]=[]);n.push(e)}var o={},i="nr@context";e.exports={on:r,emit:n}},{}],2:[function(t){function e(t,e,n,i,s){return u?u-=1:r("err",[s||new UncaughtException(t,e,n)]),"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t(5),a=window.onerror,s=!1,u=0;t("loader").features.push("err"),window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(d){"stack"in d&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(4),s=!0)}i.on("fn-start",function(){s&&(u+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&u>0&&(u-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:4,3:3,4:6,5:1,6:14,handle:"D5DuLP",loader:"G9z0Bl"}],3:[function(t){function e(t){r.inPlace(t,["addEventListener","removeEventListener"],"-",n)}function n(t){return t[1]}var r=t(1),o=(t(3),t(2));if(e(window),"getPrototypeOf"in Object){for(var i=document;i&&!i.hasOwnProperty("addEventListener");)i=Object.getPrototypeOf(i);i&&e(i);for(var a=XMLHttpRequest.prototype;a&&!a.hasOwnProperty("addEventListener");)a=Object.getPrototypeOf(a);a&&e(a)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&e(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=e["nr@wrapped"]?t[1]=e["nr@wrapped"]:e["nr@wrapped"]=t[1]=r(e,"fn-"):"function"==typeof e.handleEvent&&r.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:15,2:1,3:14}],4:[function(t){var e=(t(3),t(1)),n=t(2);e.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=e(t[0],"fn-")})},{1:15,2:1,3:14}],5:[function(t){function e(t){var e=t[0];"string"==typeof e&&(e=new Function(e)),t[0]=n(e,"fn-")}var n=(t(3),t(1)),r=t(2);n.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",e)},{1:15,2:1,3:14}],6:[function(t){function e(){o.inPlace(this,s,"fn-")}function n(t,e){o.inPlace(e,["onreadystatechange"],"fn-")}function r(t,e){return e}var o=t(1),i=t(2),a=window.XMLHttpRequest,s=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];window.XMLHttpRequest=function(t){var n=new a(t);try{i.emit("new-xhr",[],n),o.inPlace(n,["addEventListener","removeEventListener"],"-",function(t,e){return e}),n.addEventListener("readystatechange",e,!1)}catch(r){try{i.emit("internal-error",r)}catch(s){}}return n},window.XMLHttpRequest.prototype=a.prototype,o.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",r),i.on("send-xhr-start",n),i.on("open-xhr-start",n)},{1:15,2:1}],7:[function(t){function e(){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;u>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,d="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=e(d);if(f&&(r.rxSize=f),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}t("loader").features.push("xhr");var o=t("handle"),i=t(1),a=t(5),s=["load","error","abort","timeout"],u=s.length,d=t(2);t(3),t(4),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var d=e(o);d&&(r.txSize=d)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",e)}catch(r){}}};for(var f=0;u>f;f++)n.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&e()},{1:8,2:11,3:3,4:6,5:1,handle:"D5DuLP",loader:"G9z0Bl"}],8:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e){var n=r[t];return n?n.apply(this,e):(o[t]||(o[t]=[]),void o[t].push(e))}var r={},o={};e.exports=n,n.queues=o,n.handlers=r},{}],11:[function(t,e){function n(t){if(!t||"object"!=typeof t&&"function"!=typeof t)return-1;if(t===window)return 0;if(o.call(t,"__nr"))return t.__nr;try{return Object.defineProperty(t,"__nr",{value:r,writable:!0,enumerable:!1}),r}catch(e){return t.__nr=r,r}finally{r+=1}}var r=1,o=Object.prototype.hasOwnProperty;e.exports=n},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&u&&u.body){p.proto="https"===c.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=u.createElement("script");e.src=p.proto+t.agent,u.body.appendChild(e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,u=s.document,d="addEventListener",f="attachEvent",c=(""+location).split("?")[0],p=e.exports={offset:i(),origin:c,features:[]};u[d]?(u[d]("DOMContentLoaded",o,!1),s[d]("load",n,!1)):(u[f]("onreadystatechange",r),s[f]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],14:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],15:[function(t,e){function n(t,e,r,s){function nrWrapper(){try{var n,a=u(arguments),d=this,f=r&&r(a,d)||{}}catch(c){i([c,"",[a,d,s],f])}o(e+"start",[a,d,s],f);try{return n=t.apply(d,a)}catch(p){throw o(e+"err",[a,d,p],f),p}finally{o(e+"end",[a,d,n],f)}}return a(t)?t:(e||(e=""),nrWrapper[n.flag]=!0,nrWrapper)}function r(t,e,r,o){r||(r="");var i,s,u,d="-"===r.charAt(0);for(u=0;u<e.length;u++)s=e[u],i=t[s],a(i)||(t[s]=n(i,d?s+r:r,o,s,t))}function o(t,e,n){try{s.emit(t,e,n)}catch(r){i([r,t,e,n])}}function i(t){try{s.emit("internal-error",t)}catch(e){}}function a(t){return!(t&&"function"==typeof t&&t.apply&&!t[n.flag])}var s=t(1),u=t(2);e.exports=n,n.inPlace=r,n.flag="nr@wrapper"},{1:1,2:14}]},{},["G9z0Bl",2,7]);</script><script>
+  //<![CDATA[
+    docElement = this.document.documentElement;
+    docElement.className=docElement.className.replace(/\bno-js\b/,'') + 'js';
+  //]]>
+</script>
+<title>SKYJACKER by DIGITILUS &mdash; Kickstarter</title><script>
+  //<![CDATA[
+    window.report_errors = true;
+    window.honeybadger_configuration = {
+      api_key : "02ab109335c0dd1a93506d92f22217a7",
+      environment : "production",
+      component : "projects",
+      action : "show",
+      onerror : false
+    };
+  //]]>
+</script>
+
+
+<!--[if lt IE 9]>
+  <script src="//html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta content="telephone=no" name="format-detection">
+
+<!--[if !IE]> -->
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base-9f623ad5d021a188cfb2d68a0cdf7a7b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<!-- <![endif]-->
+<!--[if IE]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base_blessed-2640c72487552f9a2ef9f2620b4af860.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<!--[if lte IE 9]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_nine-a93fe10530f175f96c4078b7e070d7e1.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 8]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_eight-f75aeb274436f94a0d243774456b1c62.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 7]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie-c019c01acd3a96588b346cf577a3504f.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_seven-5a3d2cef660cd281fd844b04b2397dbb.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if IE 6]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_six-e4d3caf76e405fe19aee6ece8bda701b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<link href="https://d297h9he240fqh.cloudfront.net/favicon.png" rel="icon" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-precomposed-7b603dba7cf80e4acc57d94a991bebbd.png" rel="apple-touch-icon-precomposed" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-ipad-precomposed-3176f72977daf43dee3b0d348484dc01.png" rel="apple-touch-icon-precomposed" sizes="72x72" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-iphone4-precomposed-b93b70168cd8492c843d0fea873c7f83.png" rel="apple-touch-icon-precomposed" sizes="114x114" type="image/png">
+<link href="https://www.kickstarter.com/services/oembed?url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Fdigitilus%2Fal-skyjacker" rel="alternate" title="SKYJACKER Script Tag oEmbed" type="application/json+oembed">
+<link rel="alternate" type="application/atom+xml" title="SKYJACKER : Kickstarter" href="https://www.kickstarter.com/projects/digitilus/al-skyjacker/posts.atom" />
+<meta property="twitter:app:id:iphone" content="596961532"/>
+<meta property="twitter:app:name:iphone" content="Kickstarter"/>
+<meta property="twitter:app:url:iphone" content="ksr://www.kickstarter.com/projects/digitilus/al-skyjacker"/>
+<meta name="video_height" content="314"/>
+<meta name="video_width" content="560"/>
+<meta name="video_type" content="application/x-shockwave-flash"/>
+<meta name="title" content="Kickstarter &gt;&gt; SKYJACKER by DIGITILUS"/>
+<meta name="description" content="DIGITILUS is raising funds for SKYJACKER on Kickstarter! 
+
+ Grand Theft Auto and Wing Commander just had a baby.  Skyjacker - an open-world, full-throttle space combat game."/>
+<meta name="robots" content="noindex"/>
+<meta property="og:title" content="SKYJACKER"/>
+<meta property="og:type" content="kickstarter:project"/>
+<meta property="og:image" content="https://s3.amazonaws.com/ksr/projects/193221/photo-main.jpg?1397783387"/>
+<meta property="og:url" content="https://www.kickstarter.com/projects/digitilus/al-skyjacker"/>
+<meta property="og:site_name" content="Kickstarter"/>
+<meta property="fb:app_id" content="69103156693"/>
+<meta property="og:description" content="Grand Theft Auto and Wing Commander just had a baby.  Skyjacker - an open-world, full-throttle space combat game."/>
+<meta property="kickstarter:creator" content="https://www.kickstarter.com/profile/digitilus"/>
+<meta property="twitter:url:landing_url" content="https://www.kickstarter.com/projects/digitilus/al-skyjacker"/>
+<meta property="twitter:card" content="2427656750:kickstarter_project"/>
+<meta property="twitter:site" content="@kickstarter"/>
+<meta property="twitter:site:id" content="16186995"/>
+<meta property="twitter:text:title" content="SKYJACKER"/>
+<meta property="twitter:text:artist" content="DIGITILUS"/>
+<meta property="twitter:text:backers" content="2890"/>
+<meta property="twitter:text:pledged" content="$128,238 USD"/>
+<meta property="twitter:text:time" content="0 seconds"/>
+<meta property="twitter:text:location" content="Los Angeles, CA"/>
+<meta property="twitter:image:location_image" content="https://d3mlfyygrfdi2i.cloudfront.net/b40e/pin.png"/>
+<meta property="twitter:text:description" content="Grand Theft Auto and Wing Commander just had a baby.  Skyjacker - an open-world, full-throttle space combat game."/>
+<meta property="twitter:image:media" content="https://s3.amazonaws.com/ksr/projects/193221/photo-main.jpg?1397783387"/>
+<meta property="twitter:image:width" content="640"/>
+<meta property="twitter:image:height" content="480"/>
+<meta property="twitter:player:stream:url" content="https://d2pq0u4uni88oo.cloudfront.net/projects/193221/video-115026-h264_base.mp4"/>
+<meta property="twitter:player:stream:content" content="video/mp4"/>
+<meta property="twitter:player:url" content="https://www.kickstarter.com/projects/digitilus/al-skyjacker/widget/video.html"/>
+<meta property="twitter:player:height" content="314"/>
+<meta property="twitter:player:width" content="560"/>
+<meta property="twitter:maxage" content="60"/>
+<meta property="og:video" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F193221%2Fvideo-115026-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F193221%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+DIGITILUS&amp;project_title=SKYJACKER&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Fdigitilus%2Fal-skyjacker&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:secure_url" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F193221%2Fvideo-115026-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F193221%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+DIGITILUS&amp;project_title=SKYJACKER&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Fdigitilus%2Fal-skyjacker&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:height" content="314"/>
+<meta property="og:video:width" content="560"/>
+<meta property="og:video:type" content="application/x-shockwave-flash"/>
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="Pl5tWjB6JaxJz3ucC9LdeAP7PpHkbyj8UW9RtoZGAK4=" name="csrf-token" />
+<script type="text/javascript">
+  var _sift = _sift || [];
+  _sift.push(['_setAccount', '637102']);
+  _sift.push(['_setUserId', '']);
+  _sift.push(['_trackPageview']);
+
+  (function() {
+    function loadSift() {
+      var sift, s;
+      if (root.visitor_id) {
+        _sift.push(['_setSessionId', root.visitor_id]);
+      }
+      sift = document.createElement('script');
+      sift.type = 'text/javascript';
+      sift.async = true;
+      sift.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dtlilztwypawv.cloudfront.net/s.js';
+      s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(sift, s);
+    }
+    if (window.attachEvent) {
+      window.attachEvent('onload', loadSift);
+    } else {
+      window.addEventListener('load', loadSift, false);
+    }
+  })();
+</script>
+<link href="http://kck.st/Lkp0vc" rel="shorturl">
+<link href="https://www.kickstarter.com/projects/digitilus/al-skyjacker" rel="canonical">
+<link href="https://s3.amazonaws.com/ksr/projects/193221/photo-med.jpg?1397783387" rel="image_src">
+<link href="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F193221%2Fvideo-115026-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F193221%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+DIGITILUS&amp;project_title=SKYJACKER&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Fdigitilus%2Fal-skyjacker&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque" rel="video_src">
+<script>
+  //<![CDATA[
+    window.current_checkout = "{&quot;id&quot;:0,&quot;domestic&quot;:null,&quot;amount&quot;:0.0,&quot;updated_at&quot;:0,&quot;created_at&quot;:0}";
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.current_ip = '94.209.101.212';
+    window.current_ip_datacenter = 'false';
+    window.enabled_features = {"elasticsearch":true,"security_history_read":true,"security_history_write":true,"advanced_discovery_es":true,"ios_crashlytics":true,"ios_mixpanel":true,"stories_veronica_mars":true,"veronica_mars_hero":true,"password_reset_banner":true};
+    window.fb_app_id = '69103156693';
+    
+    var _sf_startpt=(new Date()).getTime();
+    
+    window.current_project = "{&quot;id&quot;:567051422,&quot;name&quot;:&quot;SKYJACKER&quot;,&quot;blurb&quot;:&quot;Grand Theft Auto and Wing Commander just had a baby.  Skyjacker - an open-world, full-throttle space combat game.&quot;,&quot;goal&quot;:200000.0,&quot;pledged&quot;:128238.02,&quot;state&quot;:&quot;failed&quot;,&quot;slug&quot;:&quot;al-skyjacker&quot;,&quot;disable_communication&quot;:false,&quot;country&quot;:&quot;US&quot;,&quot;currency&quot;:&quot;USD&quot;,&quot;currency_symbol&quot;:&quot;$&quot;,&quot;currency_trailing_code&quot;:true,&quot;deadline&quot;:1343026800,&quot;state_changed_at&quot;:1343026832,&quot;created_at&quot;:1337681153,&quot;launched_at&quot;:1337995163,&quot;backers_count&quot;:2890,&quot;photo&quot;:{&quot;full&quot;:&quot;https://s3.amazonaws.com/ksr/projects/193221/photo-full.jpg?1397783387&quot;,&quot;ed&quot;:&quot;https://s3.amazonaws.com/ksr/projects/193221/photo-ed.jpg?1397783387&quot;,&quot;med&quot;:&quot;https://s3.amazonaws.com/ksr/projects/193221/photo-med.jpg?1397783387&quot;,&quot;little&quot;:&quot;https://s3.amazonaws.com/ksr/projects/193221/photo-little.jpg?1397783387&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/projects/193221/photo-small.jpg?1397783387&quot;,&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/projects/193221/photo-thumb.jpg?1397783387&quot;,&quot;1024x768&quot;:&quot;https://s3.amazonaws.com/ksr/projects/193221/photo-1024x768.jpg?1397783387&quot;,&quot;1536x1152&quot;:&quot;https://s3.amazonaws.com/ksr/projects/193221/photo-1536x1152.jpg?1397783387&quot;},&quot;creator&quot;:{&quot;id&quot;:778199971,&quot;name&quot;:&quot;DIGITILUS&quot;,&quot;slug&quot;:&quot;digitilus&quot;,&quot;avatar&quot;:{&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/2326260/dgtls_web-logo_SQR_03_600x600.thumb.jpg?1350321658&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/2326260/dgtls_web-logo_SQR_03_600x600.small.jpg?1350321658&quot;,&quot;medium&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/2326260/dgtls_web-logo_SQR_03_600x600.medium.jpg?1350321658&quot;},&quot;urls&quot;:{&quot;web&quot;:{&quot;user&quot;:&quot;https://www.kickstarter.com/profile/digitilus&quot;},&quot;api&quot;:{&quot;user&quot;:&quot;https://api.kickstarter.com/v1/users/778199971?signature=1399962051.3cc57f08712f7c13b3dec3e385094ec981500357&quot;}}},&quot;location&quot;:{&quot;id&quot;:2442047,&quot;name&quot;:&quot;Los Angeles&quot;,&quot;slug&quot;:&quot;los-angeles-ca&quot;,&quot;short_name&quot;:&quot;Los Angeles, CA&quot;,&quot;displayable_name&quot;:&quot;Los Angeles, CA&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:&quot;CA&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/los-angeles-ca&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/los-angeles-ca&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1399951818.e609e9257aa2bbc4a05b2f5e5d3584cce5ac138e&amp;woe_id=2442047&quot;}}},&quot;category&quot;:{&quot;id&quot;:35,&quot;name&quot;:&quot;Video Games&quot;,&quot;slug&quot;:&quot;games/video games&quot;,&quot;position&quot;:7,&quot;parent_id&quot;:12,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;http://www.kickstarter.com/discover/categories/games/video%20games&quot;}}},&quot;urls&quot;:{&quot;web&quot;:{&quot;project&quot;:&quot;https://www.kickstarter.com/projects/digitilus/al-skyjacker&quot;,&quot;project_short&quot;:&quot;http://kck.st/Lkp0vc&quot;,&quot;updates&quot;:&quot;https://www.kickstarter.com/projects/digitilus/al-skyjacker/posts&quot;},&quot;api&quot;:{&quot;project&quot;:&quot;https://api.kickstarter.com/v1/projects/567051422?signature=1399962051.17c51458ff33045e4da0db27825c50a5b31fe17a&quot;,&quot;comments&quot;:&quot;https://api.kickstarter.com/v1/projects/567051422/comments?signature=1399962051.474b229919bc825c7af5e7d1e6a6f84a619e2829&quot;,&quot;updates&quot;:&quot;https://api.kickstarter.com/v1/projects/567051422/updates?signature=1399962051.86ecc77b7cf1db557df8019a792876a3138e0404&quot;}},&quot;updated_at&quot;:1397783397,&quot;failed_at&quot;:1343026832,&quot;video&quot;:{&quot;id&quot;:115026,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/193221/video-115026-h264_high.mp4?2012&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/193221/video-115026-h264_base.mp4?2012&quot;,&quot;width&quot;:560,&quot;height&quot;:314,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/193221/video-115026-h264_base.jpg?2012&quot;},&quot;comments_count&quot;:2200,&quot;updates_count&quot;:42,&quot;rewards&quot;:[{&quot;id&quot;:0,&quot;minimum&quot;:1,&quot;reward&quot;:&quot;No Reward&quot;},{&quot;id&quot;:724599,&quot;minimum&quot;:5.0,&quot;reward&quot;:&quot;WALLPAPER SET: A large collection of Skyjacker wallpapers for your PC, Mac, tablet or mobile device, along with our heartfelt thanks.  We appreciate your contribution!&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1354320000,&quot;project_id&quot;:567051422,&quot;backers_count&quot;:8,&quot;updated_at&quot;:1343006588},{&quot;id&quot;:724596,&quot;minimum&quot;:10.0,&quot;reward&quot;:&quot;SOUNDTRACK PACK: As the Wallpaper Set, plus: the complete game soundtrack (DRM-free digital downloadable version, 320k or lossless). Take Skyjacker on the road!&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1362096000,&quot;project_id&quot;:567051422,&quot;backers_count&quot;:5,&quot;updated_at&quot;:1343001401},{&quot;id&quot;:724595,&quot;minimum&quot;:15.0,&quot;reward&quot;:&quot;COMPLETE EDITION: As the Soundtrack Pack, plus: THE GAME in all of its unearthly beauty on PC or Mac (DRM-free digital downloadable version). Walk the ruthless path of Ael-Skyjacker, the lone human in a galaxy of conflict, as he tears apart the stars in search of fame and fortune.  Sabotage, assassination, robbery, grift - all in a day\\u2019s work!  This includes everything - all cutscenes, voiceovers, missions, and content.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1375315200,&quot;project_id&quot;:567051422,&quot;backers_count&quot;:1146,&quot;updated_at&quot;:1343026474},{&quot;id&quot;:724594,&quot;minimum&quot;:20.0,&quot;reward&quot;:&quot;COMPLETE BUNDLE: A bundle of two Complete Editions, for you and a friend.  Every bundle contains a spare of everything that isn\\u2019t physical; in this case, you\\u2019ll receive two wallpaper sets, two soundtrack packs, and two Skyjacker games to play together.  Or maybe you want one for your PC and one for your Mac?  We can do that.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1375315200,&quot;project_id&quot;:567051422,&quot;backers_count&quot;:322,&quot;updated_at&quot;:1343017675},{&quot;id&quot;:724600,&quot;minimum&quot;:25.0,&quot;reward&quot;:&quot;COMMUNITY EDITION: As the Complete Edition, plus: exclusive access to the beta release of the game and its private discussion community. We&#39;ll keep you in the loop and include your feedback in the game creation process, and we\\u2019ll grant you the title of Beta Tester on all our forums, public and private.  You\\u2019ll also get the PDF version of the Skyjacker artbook, with 100+ pages of concept art - detailed illustrations of alien races, planetary habitats, designs and technology, and extras left on the cutting-room floor.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1375315200,&quot;project_id&quot;:567051422,&quot;backers_count&quot;:325,&quot;updated_at&quot;:1343023311},{&quot;id&quot;:724601,&quot;minimum&quot;:35.0,&quot;reward&quot;:&quot;COMMUNITY BUNDLE: A bundle of two Community Editions.  You\\u2019ll receive two PDF artbooks, two voices in everything we do, two early downloads of the game in progress, and two logins with the title of Beta Tester on top of the Complete Bundle.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1375315200,&quot;project_id&quot;:567051422,&quot;backers_count&quot;:50,&quot;updated_at&quot;:1343017740},{&quot;id&quot;:724597,&quot;minimum&quot;:40.0,&quot;reward&quot;:&quot;SETTLER EDITION: As the Community Edition, plus: all future content we make for Skyjacker for free, forever!  We already have post-launch plans for an EXPANSION PACK of a few dozen additional missions where you step out of the shoes of humans and become the aliens - on both sides of the conflict. Smash the planetary colonies in the name of the pirate brotherhood, or fight to the death for the honor of your race!  (Check out the FAQ for more details on the expansion pack.)  Of course, we\\u2019ll promote you to the title of Settler on all our forums, so everyone knows you\\u2019re not afraid of commitment.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1375315200,&quot;project_id&quot;:567051422,&quot;backers_count&quot;:609,&quot;updated_at&quot;:1343026093},{&quot;id&quot;:724604,&quot;minimum&quot;:60.0,&quot;reward&quot;:&quot;SETTLER BUNDLE: A bundle of two Settler Editions.  You\\u2019ll receive two of everything Skyjacker in the future (as long as it\\u2019s digital), on top of the Community Bundle.  Since you\\u2019ll both be beta-release backers, you\\u2019ll get in on the beta release of future content too.  Pretty nifty, huh?&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1375315200,&quot;project_id&quot;:567051422,&quot;backers_count&quot;:105,&quot;updated_at&quot;:1343026502},{&quot;id&quot;:724645,&quot;minimum&quot;:80.0,&quot;reward&quot;:&quot;PIRATE EDITION: As the Settler Edition, plus: special thanks in the game credits as a Skyjacker supporter! We&#39;ll thank you by name, or the name of your choosing (subject to editorial approval).  And we\\u2019ll upgrade your title to Pirate on the forums too, so everyone can shiver in terror at your presence.  But here\\u2019s the best part - we\\u2019ll take all the downloads and put them on a professionally-packaged, pressed DVD.  Then we\\u2019ll put it into your hands.  No firewall in the world will stop you!  (All physical items are exclusive to the campaign, and ship free within the US; please add $15 to your pledge for international shipping.)&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1375315200,&quot;project_id&quot;:567051422,&quot;backers_count&quot;:89,&quot;updated_at&quot;:1343017423},{&quot;id&quot;:724644,&quot;minimum&quot;:100.0,&quot;reward&quot;:&quot;CAPTAIN\\u2019S EDITION: As the Pirate Edition, plus: one t-shirt of any design.  Protect your frail human flesh from the dangers of space!  We\\u2019ll also ship you a limited edition print of the game poster in full size (36\\u201d x 24\\u201d) for your bedroom, barracks, hangar or gun cabinet.  But what\\u2019s a Captain without a crew?  We\\u2019ll give you TWO downloads of everything.  All rewards from this point forward are bundle packs!  This includes 2x beta releases, 2x forum handles, 2x wallpapers, 2x soundtracks - everything that isn\\u2019t physical.  And we\\u2019ll thank you both in the credits, in even BIGGER letters, and on the forums with the even SNAZZIER title of Captain.  We\\u2019ll thank you right now, just for reading this!  Thank you!&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1375315200,&quot;project_id&quot;:567051422,&quot;backers_count&quot;:80,&quot;updated_at&quot;:1343019585},{&quot;id&quot;:724643,&quot;minimum&quot;:150.0,&quot;reward&quot;:&quot;COLLECTOR\\u2019S EDITION: As the Captain\\u2019s Edition, plus: we\\u2019ll go even further.  We\\u2019ll put together a physical game box for all this loot, with the soundtrack on CD as well as the game DVD.  It\\u2019ll be personally signed by Eugene Zhukov and the rest of the team leads, unless you ask us not to.  In fact, we\\u2019ll sign everything we can get our hands on; the jewel cases, the poster, even the t-shirt (and those aren\\u2019t easy).  Of course you\\u2019ll still get your downloads, so you can leave the box in mint condition.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1375315200,&quot;project_id&quot;:567051422,&quot;backers_count&quot;:71,&quot;updated_at&quot;:1343026604},{&quot;id&quot;:724642,&quot;minimum&quot;:200.0,&quot;reward&quot;:&quot;WOLFPACK EDITION: As the Collector\\u2019s Edition, plus: we\\u2019ll hook all your friends up too by giving you FOUR downloads of everything and sending you FOUR Portable Skyjacker USB drives, each preloaded with the Complete Edition game. We\\u2019ll set you all up with the title of Privateer on the forum, and for the credits, we\\u2019ll thank all four of you by name, under the clan name of your choice and billed proudly above the Captains.  Added bonus: we&#39;ll send out a second t-shirt of any design!&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1375315200,&quot;project_id&quot;:567051422,&quot;backers_count&quot;:17,&quot;updated_at&quot;:1343021744},{&quot;id&quot;:724658,&quot;minimum&quot;:250.0,&quot;reward&quot;:&quot;MEMEPACK EDITION: As the Wolfpack Edition, plus: we\\u2019ll add your message to the credits as your clan motto, anything you like (subject to editorial approval; keep it around Twitter-length, please).  Plug your website, propose to your girlfriend, throw out your favorite quote, or make us spout memes and in-jokes at everyone who plays!&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1375315200,&quot;project_id&quot;:567051422,&quot;backers_count&quot;:10,&quot;updated_at&quot;:1343003407},{&quot;id&quot;:724657,&quot;minimum&quot;:500.0,&quot;reward&quot;:&quot;HARDCOVER EDITION: As the Memepack Edition, plus: the hardcover Skyjacker art book.  Yes, we\\u2019ll sign it with pride!  We\\u2019ll wrap it up in a third t-shirt of any design, a total of three, and call you out in the forums and credits as a Broker.  Then we&#39;ll further acknowledge your financial acumen by putting your name in the game, as the designation of a weapon, part, planet, or ship (we\\u2019ll make sure it\\u2019s something you like).  You\\u2019ll be a part of the Skyjacker universe from here on out.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1375315200,&quot;project_id&quot;:567051422,&quot;backers_count&quot;:8,&quot;updated_at&quot;:1343004907},{&quot;id&quot;:724664,&quot;minimum&quot;:1200.0,&quot;reward&quot;:&quot;BOSS EDITION: As the Hardcover Edition, plus: our designers will draw YOU, in full space pirate regalia.  And then we&#39;ll put it on an exclusive jacket of your very own!  Materials and exact design to be determined - but it&#39;ll be nice.  We won\\u2019t try to sign this one. While that\\u2019s happening we&#39;ll attach your name to a character in-game (or leave it as a designation, your choice), and elevate you to the regal position of Boss on our forums and in the credits.  Don&#39;t worry about the cost of shipping; even if you&#39;re outside the US, we&#39;ll take care of it. Nothing but the best for the Boss.&quot;,&quot;limit&quot;:100,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1375315200,&quot;project_id&quot;:567051422,&quot;remaining&quot;:95,&quot;backers_count&quot;:5,&quot;updated_at&quot;:1343014319},{&quot;id&quot;:724665,&quot;minimum&quot;:5000.0,&quot;reward&quot;:&quot;EPIC EDITION: As the Boss Edition, plus: we&#39;ll put you in the game. We&#39;ll animate YOU in 3D as the subject for a CUSTOM PLAYER CHARACTER. This includes your face and proportions, a personal logo, and the highest category of criminal community rating in the game. Only you can play as this character (we&#39;ll give you a secret code to activate it) but other players can hire you as an NPC, so they&#39;ll get to enjoy it too!  You will be known across the skies as a true Hero... or a Villain, your choice.&quot;,&quot;limit&quot;:10,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1375315200,&quot;project_id&quot;:567051422,&quot;remaining&quot;:9,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1340882257},{&quot;id&quot;:724663,&quot;minimum&quot;:10000.0,&quot;reward&quot;:&quot;LEGEND EDITION: As the Epic Edition, plus: with your permission, we&#39;ll use your character in our promotional campaigns. You&#39;ll be on our posters, in our trailers, and on whatever other media we produce. Your name will, in fact, be Legend.  Furthermore we cordially invite you to come hang out with us in Los Angeles, CA, USA. We&#39;re from Russia - we know how to party. (Please contact us directly to make personal arrangements before the end of the campaign.)&quot;,&quot;limit&quot;:4,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1375315200,&quot;project_id&quot;:567051422,&quot;remaining&quot;:3,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1342897487}]}";
+    
+    
+    
+    
+    
+    
+    
+    
+    window.timeRemaining = function timeRemaining(epochTime){
+    
+      var diff = epochTime - ((new Date()).getTime() / 1000);
+      var num_unit = (diff < 60 && [Math.max(diff, 0), 'seconds']) ||
+        ((diff/=60) < 60 && [diff, 'minutes']) ||
+        ((diff/=60) < 72 && [diff, 'hours']) ||
+        [diff/=24, 'days'];
+    
+      // Round down
+      num_unit[0] = Math.floor(num_unit[0]);
+      // Singularize unit
+      if (num_unit[0] == 1) { num_unit[1] = num_unit[1].replace(/s$/,""); }
+    
+      return num_unit;
+    };
+  //]]>
+</script>
+
+<script>
+  //<![CDATA[
+    window.current_variants = ["discover_link_copy[explore]","rewards_hover[without_hover_text]"];
+  //]]>
+</script>
+
+
+</head>
+
+<body class="project projects not-mobile not-phone not-forces-video-controls not-tablet not-touchable not-native-app-request video_mode" id="projects_show">
+<div class="jGrowl center" id="growl_section"></div>
+<div class="NS_layouts__navigation" id="header">
+<div class="main-nav relative bg-white">
+<h1 class="no-margin ml1 mr2 left">
+<a href="/?ref=nav" class="block p2"><span class="ss-icon green-dark">KICK</span><span class="ss-icon green">STARTER</span>
+</a></h1>
+<ul class="primary-links list no-margin left">
+<li class="left discover-link full-height">
+<a href="/discover?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Explore</a>
+</li>
+<li class="left full-height mr2">
+<a href="/learn?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Start</a>
+</li>
+</ul>
+<ul class="list no-margin right" id="menu-sub">
+<li class="right"><a href="/login?ref=nav" class="block h5 bold p2 full-height border-box">Log in</a></li>
+<li class="right"><a href="/signup?ref=nav" class="block h5 bold p2 full-height border-box">Sign up</a></li>
+</ul>
+<div class="search-link pl2 full-height border-left border-box clip">
+<form accept-charset="UTF-8" action="/projects/search" class="search pt1 pb1 block relative form-simple" method="get"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /></div>
+<div class="field relative pl3">
+<span class="ss-icon ss-search grey-dark ml1 mt1 absolute"></span>
+<input class="input-search header full-width text" data-tracker-name="Header Live Search" id="term" name="term" placeholder="Search projects" type="text" />
+</div>
+</form>
+
+</div>
+<div class="clear"></div>
+</div>
+</div>
+<div class="hide pt4 pb4 bg-grey-light" id="search_results-wrap">
+<div class="relative container" id="search_results">
+<a class="close right grey-dark mr1"><span class="ss-icon ss-delete"></span></a>
+<h3 class="header ml1 clearfix"></h3>
+<div class="clip clearfix" id="search_results_panel"></div>
+<a class="prev arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateleft"></span>
+</a>
+<a class="next arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateright"></span>
+</a>
+</div>
+</div>
+
+
+
+
+<div class="Project-ended-true Project-is_starred- Project-state-failed Project567051422_cxt border-top" id="main_content">
+<div id="running-board-wrap">
+<div class="container" id="running-board">
+<div id="project-header">
+<div class="NS_projects__running_board ml1 mr1 clearfix">
+<div class="title center py4">
+<h2 class="mb1">
+<a href="/projects/digitilus/al-skyjacker" class="green-dark">SKYJACKER</a>
+</h2>
+<p class="no-margin">
+<span class="creator">
+by
+<a href="/projects/digitilus/al-skyjacker/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography" id="name">DIGITILUS</a>
+</span>
+</p>
+</div>
+<ul class="project-nav list-inline left h5 bold mb1">
+<li class="mr2">
+<a href="/projects/digitilus/al-skyjacker" class="grey-dark py1 current" id="home_nav">Home</a>
+</li>
+<li class="mr2">
+<span data-updates-count="42" id="updates_count">
+<a href="/projects/digitilus/al-skyjacker/posts" class="grey-dark py1" id="updates_nav">Updates
+<span class="count h6 bg-grey-dark white">42</span>
+</a></span>
+</li>
+<li class="mr2">
+<a href="/projects/digitilus/al-skyjacker/backers" class="grey-dark py1" id="backers_nav">Backers
+<span class="count h6 bg-grey-dark white"><data class="Project567051422" data-format="number" data-value="2890" itemprop="Project[backers_count]">2,890</data></span>
+</a></li>
+<li>
+<span data-comments-count="2200" id="comments_count">
+<a href="/projects/digitilus/al-skyjacker/comments" class="grey-dark py1" id="comments_nav">Comments
+<span class="count h6 bg-grey-dark white"><data class="Project567051422" data-format="number" data-value="2200" itemprop="Project[comments_count]">2,200</data></span>
+</a></span>
+</li>
+</ul>
+<ul class="list-inline right h5 bold mb1">
+<li class="location mr2">
+<a href="/discover/places/los-angeles-ca?ref=city" class="grey-dark"><span class="ss-icon ss-location margin-right"></span>
+Los Angeles, CA
+</a></li>
+<li class="category" data-project-parent-category="Games">
+<a href="/discover/categories/games/video%20games?ref=category" class="grey-dark"><span class="ss-icon ss-tag margin-right"></span>
+Video Games
+</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+</div>
+<div class="bg-grey-light pb4" id="content-wrap">
+<div class="Project567051422" data-conditions="[{&quot;!state&quot;:&quot;live&quot;}]" data-evaluation="true" data-render="&quot;&lt;div class=\&quot;NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-failed Project567051422_cxt bg-grey container pb1 pt1\&quot;&gt;\n&lt;div class=\&quot;Project567051422\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;successful&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;Funded!&amp;lt;/b&amp;gt;\\nThis project was successfully funded &amp;lt;data class=\\&amp;quot;Project567051422\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2012-07-23T03:00:00-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[deadline]\\&amp;quot;&amp;gt;on July 23, 2012&amp;lt;/data&amp;gt;.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project567051422\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:[&amp;quot;started&amp;quot;,&amp;quot;submitted&amp;quot;]}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;THIS PROJECT IS NOT LIVE&amp;lt;/b&amp;gt;\\nThis is only a draft that the creator has chosen to share.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project567051422\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;suspended&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Suspended&amp;lt;/b&amp;gt;\\nFunding for this project was suspended &amp;lt;data class=\\&amp;quot;Project567051422\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2012-07-23T03:00:32-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on July 23, 2012&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project567051422\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;canceled&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Canceled&amp;lt;/b&amp;gt;\\nFunding for this project was canceled by the project creator &amp;lt;data class=\\&amp;quot;Project567051422\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2012-07-23T03:00:32-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on July 23, 2012&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project567051422\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;failed&amp;quot;}]\&quot; data-evaluation=\&quot;true\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Unsuccessful&amp;lt;/b&amp;gt;\\nThis project\\u2019s funding goal was not reached on &amp;lt;time class=\\&amp;quot;js-adjust\\&amp;quot; data-format=\\&amp;quot;LL\\&amp;quot; datetime=\\&amp;quot;2012-07-23T03:00:00-04:00\\&amp;quot;&amp;gt;July 23, 2012&amp;lt;/time&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Unsuccessful&lt;/b&gt;\nThis project\u2019s funding goal was not reached on &lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;LL\&quot; datetime=\&quot;2012-07-23T03:00:00-04:00\&quot;&gt;July 23, 2012&lt;/time&gt;.\n&lt;/div&gt;&lt;div class=\&quot;Project567051422\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;purged&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;This project is purged and only visible to staff.&amp;lt;/b&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;/div&gt;\n&quot;"><div class="NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-failed Project567051422_cxt bg-grey container pb1 pt1">
+<div class="Project567051422" data-conditions="[{&quot;state&quot;:&quot;successful&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;Funded!&lt;/b&gt;\nThis project was successfully funded &lt;data class=\&quot;Project567051422\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2012-07-23T03:00:00-04:00&amp;quot;\&quot; itemprop=\&quot;Project[deadline]\&quot;&gt;on July 23, 2012&lt;/data&gt;.\n&lt;/p&gt;\n&quot;"></div><div class="Project567051422" data-conditions="[{&quot;state&quot;:[&quot;started&quot;,&quot;submitted&quot;]}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;THIS PROJECT IS NOT LIVE&lt;/b&gt;\nThis is only a draft that the creator has chosen to share.\n&lt;/p&gt;\n&quot;"></div><div class="Project567051422" data-conditions="[{&quot;state&quot;:&quot;suspended&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Suspended&lt;/b&gt;\nFunding for this project was suspended &lt;data class=\&quot;Project567051422\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2012-07-23T03:00:32-04:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on July 23, 2012&lt;/data&gt;.\n&quot;"></div><div class="Project567051422" data-conditions="[{&quot;state&quot;:&quot;canceled&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Canceled&lt;/b&gt;\nFunding for this project was canceled by the project creator &lt;data class=\&quot;Project567051422\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2012-07-23T03:00:32-04:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on July 23, 2012&lt;/data&gt;.\n&quot;"></div><div class="Project567051422" data-conditions="[{&quot;state&quot;:&quot;failed&quot;}]" data-evaluation="true" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Unsuccessful&lt;/b&gt;\nThis project\u2019s funding goal was not reached on &lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;LL\&quot; datetime=\&quot;2012-07-23T03:00:00-04:00\&quot;&gt;July 23, 2012&lt;/time&gt;.\n&quot;"><p class="no-margin"></p>
+<b>Funding Unsuccessful</b>
+This project’s funding goal was not reached on <time class="js-adjust" data-format="LL" datetime="2012-07-23T03:00:00-04:00">July 23, 2012</time>.
+</div><div class="Project567051422" data-conditions="[{&quot;state&quot;:&quot;purged&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;This project is purged and only visible to staff.&lt;/b&gt;\n&quot;"></div></div>
+</div>
+<div class="container bg-white border rounded py3 pl2 pr2" id="content">
+<div class="NS-projects-content">
+<div class="grid_11">
+<div data-has-video="true" id="video-section">
+<div class="video-player" data-dimensions="{&quot;width&quot;:560,&quot;height&quot;:480}" data-image="https://s3.amazonaws.com/ksr/projects/193221/photo-main.jpg?1397783387" data-video-tracker-url="https://www.kickstarter.com/projects/digitilus/al-skyjacker/video/plays" data-video-url="https://d2pq0u4uni88oo.cloudfront.net/projects/193221/video-115026-h264_high.mp4" data-video="{&quot;id&quot;:115026,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/193221/video-115026-h264_high.mp4?2012&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/193221/video-115026-h264_base.mp4?2012&quot;,&quot;width&quot;:560,&quot;height&quot;:314,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/193221/video-115026-h264_base.jpg?2012&quot;}" id="video_pitch"><video class="landscape" preload="none">
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/193221/video-115026-h264_high.mp4" type='video/mp4; codecs="avc1.64001E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/193221/video-115026-h264_base.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></source>
+You'll need an HTML5 capable browser to see this content.
+</video>
+<img alt="Photo-main" class="has_played_hide poster landscape" src="https://s3.amazonaws.com/ksr/projects/193221/photo-main.jpg?1397783387" />
+<div class="play_button_big play_button_dark absolute-center rounded has_played_hide">
+<span class="ss-icon ss-play"></span>
+Play
+</div>
+<div class="player_controls clearfix absolute-bottom mb2 rounded white bg-green-dark forces-video-controls_hide">
+<div class="left">
+<a class="button button_icon button_dark playpause play mr1">
+<span class="play ss-icon ss-play"></span>
+<span class="pause ss-icon ss-pause"></span>
+</a>
+<span class="time current_time h12 left">00:00</span>
+</div>
+<div class="right">
+<span class="time total_time h12 left mr1">00:00</span>
+<a class="left button button_icon button_icon_white volume">
+<span class="ss-icon ss-volume icon_volume_nudge"></span>
+<span class="ss-icon ss-highvolume"></span>
+</a>
+<div class="volume_container left">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+<a class="left button button_icon button_icon_white fullscreen">
+<span class="ss-icon ss-expand"></span>
+<span class="ss-icon ss-contract"></span>
+</a>
+</div>
+<div class="clip">
+<div class="progress_container pr1 pl1">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="buffer progress_bar_buffer"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div data-project-state="failed" id="about">
+<div class="NS_projects__project_share clearfix py2 pl1 pr1">
+<ul class="left list-inline no-margin h5 bold">
+<li class="facebook mr2">
+<a href="https://www.kickstarter.com/projects/digitilus/al-skyjacker"><span class="ss-icon ss-social ss-facebook color-facebook"></span>
+<span class="color-facebook">Share</span>
+<span class="share_bubble"><div class="triangle grey"></div>
+<div class="triangle white"></div>
+<span class="count"></span></span>
+</a></li>
+<li class="twitter mr2">
+<a  href="https://twitter.com/intent/tweet?text=SKYJACKER%20by%20DIGITILUS&amp;via=kickstarter&amp;url=http://kck.st/Lkp0vc" rel="nofollow"><span class="ss-icon ss-social ss-twitter color-twitter"></span>
+<span class="color-twitter">Tweet</span>
+</a></li>
+<li class="embed">
+<a href="/projects/digitilus/al-skyjacker/widget" class="remote_modal_dialog grey-dark" data-modal-title="Embed a widget on your site" data-tracker-name="Embed"><span class="ss-icon ss-navigateleft"></span>
+<span class="ss-icon ss-navigateright"></span>
+Embed
+</a></li>
+</ul>
+<ul class="right list-inline no-margin h5 bold">
+<li class="curate mr2">
+</li>
+<li class="remind">
+<div class="ajax-container" id="watching-widget">
+<div class="Project567051422" data-conditions="[{&quot;is_starred&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div id=\&quot;unwatch\&quot;&gt;\n&lt;a href=\&quot;/projects/digitilus/al-skyjacker/unwatch\&quot; class=\&quot;on\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"></div><div class="Project567051422" data-conditions="[{&quot;!is_starred&quot;:true}]" data-evaluation="true" data-render="&quot;&lt;div id=\&quot;watch\&quot;&gt;\n&lt;a href=\&quot;/projects/digitilus/al-skyjacker/watch\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;span class=\&quot;text\&quot;&gt;\n&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"><div id="watch">
+<a href="/projects/digitilus/al-skyjacker/watch"><span class="ss-icon ss-star"></span>
+<span class="text">
+</span>
+</a></div>
+
+</div></div>
+</li>
+</ul>
+</div>
+
+<div class="short_blurb py2 pl1 pr1">
+<p class="h3">Grand Theft Auto and Wing Commander just had a baby.  Skyjacker - an open-world, full-throttle space combat game.</p>
+</div>
+<div class="full-description">
+<p>Like us on <b><a href="http://www.facebook.com/Digitilus" target="_blank">http://www.facebook.com/Digitilus</a></b></p><p>Follow us on <a href="https://twitter.com/alskyjacker" target="_blank"><b>https://twitter.com/alskyjacker</b></a></p><p><b>======================================================</b></p><div>
+<h1>
+<b>WHAT IS SKYJACKER?</b>
+</h1>
+<ul>
+<li>
+<b>LOTR</b> by its atmosphere of high adventure</li>
+<li>
+<b>GTA</b> by its criminal background and freedom of choice inside the game</li>
+<li>
+<b>NFS</b> by its energy and gameplay dynamics, and ability to customize the vehicle</li>
+</ul>
+<p>And all of them together, in the deepest reaches of space.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/digitilus/al-skyjacker/assets/4371/edit" data-id="4371">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/004/371/dcea4b6abc83040eeeb5b88c88021cf2_large.png?1338108596"></figure>
+</div>
+<p>Skyjacker is a first-person
+free-roaming space combat game with unique features rarely - or never - seen in
+other space games to date.</p>
+
+<ul>
+<li>Travel from the surface of a
+planet to the tunnels and bays of orbital space stations, with no transitions
+or cuts in between.</li>
+<li>Bump space hulks and asteroids
+into collision courses with your enemies and watch the pretty fireworks.</li>
+<li>Disable and destroy component
+parts of a ship. Cargo ship's getting
+away?  Slow it down with some neighborly
+torpedoes to the engine.</li>
+<li>Salvage the parts you didn't
+destroy and mount them on your own ship. 
+Add insult to injury - rip enemies apart with their own guns!</li>
+<li>Swap out engine parts to change
+the behavior of your ship - play it like an arcade game, like a classic space
+game, or with full inertia and momentum.</li>
+<li>And all this in professional
+graphics and gameplay.</li>
+</ul>
+<p>These aren't idle dreams - we've
+already done it.  We just need to polish
+it up.</p>
+<p>-------------------------------------------------------------------------------------------------------</p>
+
+<h1><b>THE GAME</b></h1>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/digitilus/al-skyjacker/assets/4373/edit" data-id="4373">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/004/373/c346162544d17fe95faf5bf45db8bbc0_large.png?1338108664"></figure>
+</div>
+
+
+<p>Skyjacker is based on the "Abyss Lights" book series written by our project lead, Eugene Zhukov. The player is the lone human in a galaxy of conflict - abducted by aliens, raised by pirates, wanted by privateers and mercenaries alike.  You start on the bottom of the Pirate Stock Exchange and work your way up to the top, not by deliveries and fetch-quests, but through brutal missions like assassinations, sabotage, kidnapping, robberies, infiltrations and extractions.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/digitilus/al-skyjacker/assets/4375/edit" data-id="4375">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/004/375/aa6c24cf5c9e1241a262c7cbb540c488_large.jpg?1338108697"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/digitilus/al-skyjacker/assets/4374/edit" data-id="4374">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/004/374/9002eb5d86dc0a45ee181119f9c218e6_large.png?1338108687"></figure>
+</div>
+
+
+<p>There is no fixed path. You bid on the jobs you want, and if you screw up, the game doesn't end.  When you succeed, you grow in prestige and power; you'll start to receive exclusive proposals and rewards, customize your ship with high-grade parts that fit your style, and build up a crew of dangerous, hopefully-loyal wingmen.  And as you become strong, remember one thing: you're a pirate.  With great power comes no responsibility.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/digitilus/al-skyjacker/assets/4376/edit" data-id="4376">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/004/376/cf79ac34cd748ce95d8caeb81742f76a_large.jpg?1338108714"></figure>
+</div>
+
+<p>The Skyjacker universe is rich in details that unfold around you.  There are ten significant alien races, each with unique biological features, social structures, interlocking histories, and star faring technologies - some industrial, some organic, and a few biotech that literally farm their spaceships in deep space. </p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/digitilus/al-skyjacker/assets/4378/edit" data-id="4378">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/004/378/5ecd30fe808fc70e669720b78b4bca53_large.jpg?1338108727"></figure>
+</div>
+
+
+<p>We've developed a radical set of visual designs that don't rely on classic cubic forms, to really drive home the fact that you're not in Kansas anymore, and we've got the talents of composer <b><i><a href="http://wierza.com/" target="_blank">Krzysztof Wierzynkiewic</a></i></b> (<b><i>"Witcher 2"</i></b> and <b><i>"Bulletstorm"</i></b>) to help bring out the colors of space.</p>
+<div class="template oembed" contenteditable="false" data-href="http://soundcloud.com/skyjaker/03skj-voice-of-eternity/s-0rY2c">
+<iframe width="639" height="400" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?visual=true&amp;url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F47494159&amp;show_artwork=true&amp;maxwidth=639&amp;scheme=https&amp;width=639&amp;secret_token=s-0rY2c"></iframe>
+
+</div>
+<p>On top of the single player
+campaign Skyjacker also features a robust <b>MULTIPLAYER</b> experience.  The standard game types are all available:
+<b><i>Deathmatch</i></b>, <b><i>Team Deathmatch</i></b>, <b><i>Capture the Flag</i></b>, and <b><i>Last Man Standing</i></b>. There’s even a <b><i>Cooperative </i></b>multiplayer mode,
+with a variety of encounters players can work together to survive.  We say “can” instead of “should” - you are
+pirates, after all.</p>
+
+<p>This is our dream, so if there’s anything else you want to know, ask away - we promise to respond as quickly as we can! </p>
+<p>-------------------------------------------------------------------------------------------------------</p>
+<h1><b>DEMO ME!</b></h1>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/digitilus/al-skyjacker/assets/4379/edit" data-id="4379">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/004/379/bbd10f7e0937360bc3e172f398f00fcc_large.png?1338108748"></figure>
+</div>
+<p>You got it!</p>
+
+<p>What you're about to experience is an alpha
+build of the game, a prototype.  THIS IS NOT A POLISHED END PRODUCT! It's going
+to be buggy, it's going to have placeholders, and it's going to crash. Here are some responses up front:</p>
+
+<ul>
+<li>There will be several color schemes available
+for the HUD and in-game menus.</li>
+<li>The voices you hear are the developers and are
+very much temporary, there to make sure voices work and offer the right
+"feel". Professional voice
+actors are another thing Kickstarter will be paying for!</li>
+<li>Inverse flight controls are disabled in the
+current demo, but will be enabled in the final version of the game. Same goes for the chase cam and third-person
+views.</li>
+<li>If you just can't get it running, let us know
+and we'll try to sort it out.</li>
+</ul>
+<p><b><a href="http://www.skyjackergame.com/demo-is-on/" target="_blank">HERE</a></b> is a list of links to download the demo. Please don't forget to <b><a href="http://www.skyjackergame.com/demo/2012/patch_2012.07.03.zip" target="_blank">PATCH</a></b> the demo to get completely new experience!</p>
+<p>Enjoy!</p>
+
+<p>------------------------------------------------------------------------------------------------------</p>
+<h1><b>SPACE COMBAT</b></h1>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/digitilus/al-skyjacker/assets/4380/edit" data-id="4380">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/004/380/097e0425dead18b9387796ca7e64df61_large.png?1338108764"></figure>
+</div>
+<p>Space combat is a large focus of the game. This is a place where the player uses all his skills and talents in tandem with battle features of his spacecraft to achieve mission goals. The intro video of this project's head demonstrates real gameplay of space combat in the current version of the game.</p>
+<p>Such factors as Flight Model, vehicle physical parameters (mass, type of armor, engines power, etc.) and weaponry settings (number of fire points, types and quality of ammo, weaponry features) have a direct influence on the combat result. The player is motivated to progress in all aspects of the game to win his space battles.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/digitilus/al-skyjacker/assets/4382/edit" data-id="4382">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/004/382/a454e28ef3a9402c8c76838f87eaba73_large.jpg?1338108852"></figure>
+</div>
+<p>The ability to break any in-game objects into their component parts is the key factor of space battle in <b>SKYJACKER</b>.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/digitilus/al-skyjacker/assets/4386/edit" data-id="4386">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/004/386/8eb25d68ef2807b80f2f848d2ac1b4bb_large.jpg?1338108904"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/digitilus/al-skyjacker/assets/4385/edit" data-id="4385">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/004/385/5e472008ade438dcbe8a20b58b1f8088_large.jpg?1338108889"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/digitilus/al-skyjacker/assets/4384/edit" data-id="4384">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/004/384/7198eb69ffd8ec8738e2e2781ef6fdbc_large.jpg?1338108873"></figure>
+</div>
+<p>------------------------------------------------------------------------------------------------------</p>
+<h1><b>LEVEL OF COMPLETENESS</b></h1>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/digitilus/al-skyjacker/assets/4388/edit" data-id="4388">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/004/388/1e18a168daaeba6ed7bd3d80847b66a2_large.png?1338108955"></figure>
+</div>
+<p><b>Here's
+what we've got:</b></p>
+
+<ul>
+<li>100% of the know-how and features related to the controllable demolition
+of compound in-game objects, including a system for construction of ships in
+hangars.</li>
+<li>Fully realized game design documents with all basic aspects of the
+gameplay, all single player mission descriptions, schematics of game locations,
+multiplayer mode balance tables and basic scenarios, etc.</li>
+<li>90% of the total art content is complete, including 300+ visual assets
+for hangar mode, 80+ designs of enemy ships, numerous types of asteroids,
+atmospheres, planets, etc.</li>
+<li>A playable alpha build of the game as a proof in concept.</li>
+<li>16 tracks from the soundtrack, with more on the way.</li>
+</ul>
+<p><b>Space Battle Mode screens</b></p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/digitilus/al-skyjacker/assets/4389/edit" data-id="4389">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/004/389/ddc4702e8e3442fe2725c30f07e73c56_large.jpg?1338108969"></figure>
+</div>
+<p><b>Game Menu screens</b></p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/digitilus/al-skyjacker/assets/4390/edit" data-id="4390">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/004/390/8f3bee1227e74247368b88cfa8339826_large.jpg?1338108983"></figure>
+</div>
+
+
+<p> <b>And
+here's what we need:</b></p>
+
+<ul>
+<li>Game missions for the campaign assembled according to the game design
+document, and multiplayer load balance and testing.  This is the biggest task that needs
+funding!  We have to weave the assets
+into an actual game.</li>
+<li>The last 10% of art content, including solar plasma clouds, asteroids
+with armored tunnels for interior battles, more environmental parts to enrich
+locations, another pass on textures for spaceships, etc.</li>
+<li>Voice recording and localization - especially to English.</li>
+<li>Testing and debugging of the final game.</li>
+</ul>
+<p>We are planning to reach beta in 8 months and a
+release candidate in 10.  Then, another
+2-3 months to stress test and stamp out all possible bugs.  And then: we go gold!</p>
+<p>------------------------------------------------------------------------------------------------------
+</p>
+<h1> <b>WHY KICKSTARTER?</b>
+</h1>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/digitilus/al-skyjacker/assets/4392/edit" data-id="4392">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/004/392/ad0bbb6a053779ded9bbe989b376b4a3_large.png?1338108997"></figure>
+</div>
+<p>We’ve gotten this far through internal
+development, while running odd jobs for other developers and publishers to make
+ends meet.  We’ve already invested years
+of our time and savings into reaching this point.  We need your help to reach this last mark. We
+need your funding, because that’s how we’ll keep the lights on and our families
+fed. </p>
+
+<p>What do you get out of it? We’ve got loads of
+rewards lined up on the sidebar; the full game itself of course as a DRM-free
+digital download, but also the game soundtrack (equally DRM-free), t-shirts,
+boxed and unboxed sets, wallpapers for your phone and posters for your room,
+digital and hardcover Art-Books, your name in lights, early access to
+in-development builds and direct communication with the dev team, potential
+inclusion in the game, future content drops... all the great stuff a
+Kickstarter is made from.  And that’s
+just the start!  Good things are coming
+on the horizon, and we will always remember our friends.</p>
+
+<p>So thank you! 
+Thank you for checking Skyjacker out. 
+Watch our trailer, try our demo, give us feedback, back the project,
+join our community, get some swag.  Help
+us bring space games back - and help Skyjacker rise!</p>
+<p>------------------------------------------------------------------------------------------------------ </p>
+
+<h1>REWARDS</h1>
+<p>We prepared rewards spreadsheet to help you orient in our rewards chart. You can find it <b><a href="https://docs.google.com/spreadsheet/ccc?key=0AksjubTyv_aSdHc1M21na2g1LVdqbzU0RTBjVkJnbWc#gid=1" target="_blank">HERE </a></b></p>
+<p>Furthermore, please read very important information <b><a href="http://www.kickstarter.com/projects/digitilus/al-skyjacker/posts/271385" target="_blank">HERE</a></b></p>
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/digitilus/al-skyjacker/assets/59555/edit" data-id="59555">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/059/555/c9cf30db6cc0997429f98aad5fbcc152_large.jpg?1341694474"></figure>
+</div>
+<p>Here is a small part of what is expected to be there in SKYJACKER ArtBook:</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/digitilus/al-skyjacker/assets/4396/edit" data-id="4396">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/004/396/88b279295705a7d96de9177bc2f07f78_large.jpg?1338109093"></figure>
+</div>
+<p>SKYJACKER official soundtrack examples:</p>
+<div class="template oembed" contenteditable="false" data-href="http://soundcloud.com/skyjaker/sets/skyjacker-1">
+<iframe width="639" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?visual=true&amp;url=http%3A%2F%2Fapi.soundcloud.com%2Fplaylists%2F2093075&amp;show_artwork=true&amp;maxwidth=639&amp;scheme=https&amp;width=639"></iframe>
+
+</div>
+<p><b>BOLT-ONS FOR ALL</b></p>
+<p>If you add <b>$25</b> to a pledge (any pledge) we'll add to your reward. We're calling these extras <b>"bolt-ons"</b> because they add to your rewards, never replace them. The following bolt-ons are available:</p>
+
+<ul>
+<li>
+<b>SKYJACKER T-SHIRT</b> - the same designs in the reward tiers.</li>
+<li>
+<b>PORTABLE SKYJACKER</b>. - the Complete Edition of Skyjacker on a <b>sleek 8GB USB flash drive</b>.</li>
+<li>
+<b>SKYJACKER SKETCHBOOK - </b>It’s a trade paperback collection of the sketches, roughs, blueprints and outtakes that set the stage for<b>SKYJACKER</b>’s unique style, all narrated with inside information and development trivia.</li>
+</ul>
+<i>*** As usual, customers outside the US should add $15 for shipping. </i>
+<p>------------------------------------------------------------------------------------------------------</p>
+<h1><b>WHO WE ARE, TO PROMISE SUCH GOOD THINGS?</b></h1>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/digitilus/al-skyjacker/assets/4397/edit" data-id="4397">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/004/397/c047c219b3b76486dd6e5f02d16e2c07_large.png?1338109107"></figure>
+</div>
+<p><i>(Game Convention in Leipzig; 2005; Days when SKYJACKER was just an idea in Eugene's mind)</i></p>
+<p>Our professional background was and is the core team of <b><a href="http://www.abyss-lights.com/index_en.html#/Main/" target="_blank">Abyss Lights Studio</a></b>. It was the first company of <i>Eugene Zhukov </i>(CEO and Producer of Digitilus), where <b>SKYJACKER </b>went from by its program technology, art design and gameplay features.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/digitilus/al-skyjacker/assets/4398/edit" data-id="4398">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/004/398/d86c61faa86938ba71ce5725163bd2b8_large.jpg?1338109123"></figure>
+</div>
+<p>We’ve been developing Skyjacker for years now as
+our own property.We paid the bills by
+working internally with over100 clients and 400+
+projects under the name Abyss Lights Studio. We’ve produced content for titles
+like <b><i>Need for Speed</i></b>, <b><i>League of Legends</i></b>, <b><i>Asterix &amp; Obelix</i></b>, <b><i>Batman &amp;
+Robin</i></b>, <b><i>World of Tanks</i></b>, <b><i>Penumbra</i></b>, <b><i>Aliens in the Attic</i></b> (everyone's gotta eat),
+and the children's TV show <b><i>"Lazy Town"</i></b>. You can check out our
+professional demo reel <a href="http://www.abyss-lights.com/index_en.html#/Portfolio/category1/5/" target="_blank"><b>here</b></a>,
+and our new web-site <a href="http://www.digitilus.com/" target="_blank"><b>here</b></a>.</p>
+
+<p>Recently we made the decision to focus on
+in-house game development. The result:
+<b>Digitilus LLC</b>, with its two offices based in Los Angeles (California , United
+States) and Kiev (Ukraine). Our mission is to aggressively promote the theme of
+space exploration, using our talents and passion to bring the genre back to
+life.  <b>SKYJACKER</b>, with years of
+development already behind it, will be our first step on this road.</p>
+<div class="template oembed" contenteditable="false" data-href="http://youtu.be/lcX9Nyko1XA">
+<iframe width="612" height="344" src="https://www.youtube.com/embed/lcX9Nyko1XA?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/digitilus/al-skyjacker/assets/70673/edit" data-id="70673">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/070/673/5959e687b08caa238dcd754b4f051dc6_large.jpg?1342398963"></figure>
+</div>
+
+
+<p>-------------------------------------------------------------------------------------------------------   </p>
+<h1><b>THANK YOU!</b></h1>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/digitilus/al-skyjacker/assets/72476/edit" data-id="72476">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/072/476/f53851443bc4fdd4d5e1105ac3fe9cf8_large.png?1342517264"></figure>
+</div>
+
+<p>======================================================</p>
+
+<h1><a href="http://www.kickstarter.com/projects/digitilus/al-skyjacker/posts/272270" target="_blank">Update #16: THIRTY-TWO AND THIRTY</a></h1>
+New patch to the demo <b><a href="http://www.skyjackergame.com/demo/2012/patch_2012.07.22.zip" target="_blank">FREE-FOR-ALL</a></b>
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/digitilus/al-skyjacker/assets/80173/edit" data-id="80173">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/080/173/1fdbaded75fa6097d6a9da6e1ba5e1fc_large.jpg?1343007071"></figure>
+</div>
+
+<h1><a href="http://www.kickstarter.com/projects/digitilus/al-skyjacker/posts/271385" target="_blank"><b>Update #15: THE FINAL COUNTDOWN</b></a></h1>
+
+
+<ul><li>
+Our little way of saying thanks - REWARDS TO VERYBODY.</li></ul>
+<h1><b><a href="http://www.kickstarter.com/projects/digitilus/al-skyjacker/posts/269668" target="_blank">Update #14: DIGISTORE</a></b></h1>
+<div>Our store page is open! Visit us at <a href="http://store.digitilus.com/" target="_blank"><b>http://store.digitilus.com</b></a> (we work with <b>PayPal</b> there now).<br>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/digitilus/al-skyjacker/assets/80161/edit" data-id="80161">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/080/161/4fb44181872a998d621a22e877a25d8f_large.jpg?1343006290"></figure>
+</div>
+<h1><b><a href="http://www.kickstarter.com/projects/digitilus/al-skyjacker/posts/266737" target="_blank">Update #13: FRIDAY #13</a></b></h1>
+<ul>
+<li>
+<b><a href="http://youtu.be/lcX9Nyko1XA" target="_blank">Team Video</a></b> </li>
+<li>
+<b><a href="http://soundcloud.com/skyjaker/years-and-years-away" target="_blank">Ambient Soundtrack</a></b> </li>
+<li>
+<b>Skyjacker &amp; OUYA</b>
+</li>
+</ul>
+<h1><b><a href="http://www.kickstarter.com/projects/digitilus/al-skyjacker/posts/264651" target="_blank">Update #12: A PERSONAL MESSAGE</a></b></h1>
+<ul>
+<li><b><a href="http://youtu.be/RJpSN5mU1UU" target="_blank">Personal message to gamers</a> </b></li>
+<li><b>How to help Skyjacker to succeed </b></li>
+<li><b>The Shaarkarians are back (Facebook banners) </b></li>
+</ul>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/digitilus/al-skyjacker/assets/72479/edit" data-id="72479">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/072/479/37e234a06b353fc6216d7551d84064b0_large.jpg?1342518037"></figure>
+</div>
+<div></div><div>
+<h1><b><a href="http://www.kickstarter.com/projects/digitilus/al-skyjacker/posts/262321" target="_blank">Update #11: THE REAL ONE
+</a></b></h1>
+<ul>
+<li><b>Meet the pirates (<a href="http://www.skyjackergame.com/content/kickstarter/dts/avatar_set_02.zip" target="_blank">new pack of pirate avatars</a>)</b></li>
+<li>
+<b>Skyjacker Q&amp;A</b>
+</li>
+</ul>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/digitilus/al-skyjacker/assets/72480/edit" data-id="72480">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/072/480/d8b41c95e0075a7c4f64c379fd5f786e_large.jpg?1342518132"></figure>
+</div>
+<h1><b><a href="http://www.kickstarter.com/projects/digitilus/al-skyjacker/posts/262246" target="_blank">Update #10: THE TENTH UPDATE EVER
+</a></b></h1>
+
+<b>LIST OF ALL LINKS: </b>Bolt-Ons, Documents , Official Videos, Music, Fan Videos, Screenshots, Operation "Destroy The Silence", Gameplay Demo, Starship Disassembly App, Help Us Out
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/digitilus/al-skyjacker/assets/72483/edit" data-id="72483">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/072/483/50c1ed4773ff1577147d3f921e5b16c7_large.jpg?1342518213"></figure>
+</div>
+<div>
+<h1><b><a href="http://www.kickstarter.com/projects/digitilus/al-skyjacker/posts/259979" target="_blank">Update #9: BACK THE PLANET</a></b></h1>
+
+<ul>
+<li>
+<b>HARDCORE MODE DEMO <a href="http://www.skyjackergame.com/demo/2012/patch_2012.07.03.zip" target="_blank">PATCH</a> </b>
+</li>
+<li>
+<b>Prepare to die (<a href="http://youtu.be/895hBf6z_9k" target="_blank">funny video</a>)</b>
+</li>
+<li>
+<b>PSA#3 First mode even (<a href="http://youtu.be/az6RiwsEols" target="_blank">video</a>)</b>
+</li>
+</ul>
+<h1><b><a href="http://www.kickstarter.com/projects/digitilus/al-skyjacker/posts/257575" target="_blank">Update #8: MEET THE DEMO
+</a></b></h1>
+
+<ul>
+<li>
+<b>Shaarkarians in a <a href="http://www.skyjackergame.com/media/screenshots/" target="_blank">Gallery</a></b>
+</li>
+<li>
+<b>CARGO PINATA - custom <a href="http://www.skyjackergame.com/demo/2012/patch_2012.06.30.zip" target="_blank">LEVEL</a>, <a href="http://youtu.be/NN3T0nV_uzQ" target="_blank">VIDEO</a> and <a href="http://soundcloud.com/skyjaker/space-rush" target="_blank">MUSIC</a></b>
+</li>
+<li>
+<b>PSA#2 - Skyjacker demo flight models (<a href="http://youtu.be/pTYHM-UahLE" target="_blank">video</a>)</b>
+</li>
+<li><b>Fan video - Skyjacker custom level (<a href="http://youtu.be/ziBITicYGd8" target="_blank">video</a>)</b></li>
+</ul>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/digitilus/al-skyjacker/assets/72488/edit" data-id="72488">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/072/488/20cda34ff58081a7eb9bbafde362aa30_large.jpg?1342518934"></figure>
+</div>
+
+
+<h1>
+<b><a href="http://www.kickstarter.com/projects/digitilus/al-skyjacker/posts/255876" target="_blank">Update #7: BY THE NUMBERS</a></b> </h1>
+
+<ul>
+<li>
+<b>SHAARKARIANS FLEET - <a href="http://youtu.be/uByTvEa3I4E" target="_blank">VIDEO</a> and <a href="http://soundcloud.com/skyjaker/11-eugene-zhukov-drums-of-fire" target="_blank">MUSIC</a></b>
+</li>
+<li>
+<b>Short story from the book: <a href="https://docs.google.com/document/d/1jN9vAmKnnKCmscYQR1DSjq4elIU5V8z8t3wwsjxdSpI/edit" target="_blank">SAND FEVER</a></b>
+</li>
+<li>
+<b>PSA#1 - HUDless Skyjacker (<a href="http://youtu.be/C3mBoGVXJOI" target="_blank">video</a>)</b>
+</li>
+</ul>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/digitilus/al-skyjacker/assets/72489/edit" data-id="72489">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/072/489/57bd21e88ba52f396316f0f247ded502_large.jpg?1342519288"></figure>
+</div>
+
+<h1><b><a href="http://www.kickstarter.com/projects/digitilus/al-skyjacker/posts/252126" target="_blank">Update #6: BEHIND THE SCENES
+</a></b></h1>
+
+
+<ul>
+<li>
+<b>Aquatilus Digitarium (<a href="http://youtu.be/E4HWs9M_390" target="_blank">video</a>)</b>
+</li>
+<li>
+<b>YATAGOOSHEE FLEET - <a href="http://youtu.be/HHeBkLKr7Aw" target="_blank">VIDEO</a> and <a href="http://soundcloud.com/skyjaker/yatagooshee-fleet" target="_blank">MUSIC</a></b>
+</li>
+<li><b>List of suggestions and new features (<a href="https://docs.google.com/document/d/1HIyqTH2da5q2CIpIdxa-zFeZmz5r4Ayltk17qgnz5b0/edit" target="_blank">document</a>)</b></li>
+<li><b>Skyjacker &amp; Linux</b></li>
+<li><b>Demonoid (<a href="http://www.skyjackergame.com/demo/2012/Skyjacker_concept_demo.torrent" target="_blank">link to demo torrent</a>)</b></li>
+</ul>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/digitilus/al-skyjacker/assets/72490/edit" data-id="72490">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/072/490/c85ea77d237734face2659bf6b0d4a49_large.jpg?1342519628"></figure>
+</div>
+<h1>
+<a href="http://www.kickstarter.com/projects/digitilus/al-skyjacker/posts/248375" target="_blank"><b>Update #5 MID OF JUNE</b> </a>
+</h1>
+
+<ul><li><b>DESTROY THE SILENCE 2 (new banners for <a href="http://www.skyjackergame.com/content/kickstarter/dts/facebook.zip" target="_blank">Facebook Timeline</a> and <a href="http://www.skyjackergame.com/content/kickstarter/dts/google+.zip" target="_blank">Google+</a>)</b></li></ul>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/digitilus/al-skyjacker/assets/72496/edit" data-id="72496">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/072/496/7388af5ed6d3c96dc1d002adbb5434c9_large.jpg?1342520361"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/digitilus/al-skyjacker/assets/72497/edit" data-id="72497">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/072/497/6fbc93adf4e11d78d696546c389af961_large.jpg?1342520389"></figure>
+</div>
+
+<ul><li><b>STARSHIP DISASSEMBLY - mini game for your <a href="http://www.skyjackergame.com/starship_disassembly.zip" target="_blank">Windows</a>, <a href="http://itunes.apple.com/us/app/starship-disassembly-3d/id530527293?mt=12" target="_blank">MacOS</a>, <a href="http://itunes.apple.com/us/app/starship-disassembly-3d/id525459932?mt=8" target="_blank">iOS</a> and <a href="https://play.google.com/store/apps/details?id=com.nobleempire.StarshipDisassembly" target="_blank">Android</a> devices</b></li></ul>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/digitilus/al-skyjacker/assets/72500/edit" data-id="72500">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/072/500/4276cb70b4bbed1901ad9708cf86ab56_large.jpg?1342520715"></figure>
+</div>
+
+<ul><li>
+<b>YATAGOOSHEE FLEET - screenshots in a <a href="http://www.skyjackergame.com/media/screenshots/" target="_blank">Gallery</a></b>
+</li></ul>
+</div><div>
+<h1><b><a href="http://www.kickstarter.com/projects/digitilus/al-skyjacker/posts/242601" target="_blank">Update #4: WE WEREN'T AT E3
+</a></b></h1>
+<br><ul><li><b>ASPIROGANS' FLEET - <a href="http://youtu.be/YST5RQCDsHo" target="_blank">VIDEO</a> and <a href="http://soundcloud.com/skyjaker/aspirogan-fleet" target="_blank">MUSIC</a></b></li></ul>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/digitilus/al-skyjacker/assets/72501/edit" data-id="72501">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/072/501/6192fee65aa8c2f6bfa7b9aab9433784_large.jpg?1342520918"></figure>
+</div>
+
+<ul><li><b>Operation <a href="http://www.skyjackergame.com/content/Destroy_The_Silence.zip" target="_blank">DESTROY THE SILENCE</a></b></li></ul>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/digitilus/al-skyjacker/assets/72502/edit" data-id="72502">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/072/502/7648371ff79fbbc61f55ca6fcab9cdf9_large.jpg?1342520975"></figure>
+</div>
+<h1>
+<b><a href="http://www.kickstarter.com/projects/digitilus/al-skyjacker/posts/238847" target="_blank">Update #2: THE BACKER ENRICHMENT CENTER</a></b> </h1>
+<ul><li><b><a href="http://www.digitilus.com/content/wallpapers/digitilus_x1080.zip" target="_blank">DIGITILUS</a> wallpapers</b></li></ul>
+</div><div class="template asset" contenteditable="false" data-edit_url="/projects/digitilus/al-skyjacker/assets/72505/edit" data-id="72505">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/072/505/17edc500b7cd1771f8f93e3dd24efc46_large.jpg?1342521765"></figure>
+</div>
+<div><ul>
+<li>
+<b>STARSHIP DISASSEMBLY (first edition)</b>
+</li>
+<li><b>BOLT-ONS FOR ALL - Skyjacker T-shirts and USB card</b></li>
+</ul></div><div class="template asset" contenteditable="false" data-edit_url="/projects/digitilus/al-skyjacker/assets/72506/edit" data-id="72506">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/072/506/978ea315ef64b61932f030f0dce7f8a3_large.jpg?1342521855"></figure>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/digitilus/al-skyjacker/assets/72504/edit" data-id="72504">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/000/072/504/fd6a048bf7f118af11db9b22a0bfaf86_large.jpg?1342521734"></figure>
+</div>
+
+<p>====================================================</p><p>We solemnly pledge 5% of the profits from the finished product back to the Kickstarter community to help fund other people's dreams. 
+<br><br><br>More information on <b><a href="http://www.kickingitforward.org/" target="_blank">Kicking it Forward</a></b>.</p>
+</div>
+</div>
+<div class="NS-projects-faqs" id="project-faqs">
+<h2 class="title grey-dark mt6 mb4">
+FAQ
+<div class="divider clear"></div>
+</h2>
+<ul class="faqs">
+<li class="faq" id="project_faq_29058">
+<div class="faq-question">
+<a href="#project_faq_29058" name="project_faq_29058">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">IS SKYJACKER REALLY AN INDIE TITLE?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>We approached major publishers with our game, and here&#39;s what they had to say:  </p>
+
+<p>&quot;Our main interest is in innovative gameplay feature and/or technology rather than in game genre. This said, there are indeed some genres and themes that we do not particularly like (sci-fi, adventure, space sim)&quot; (UbiSoft) </p>
+
+<p> &quot;Thanks for showing me Skyjacker – it looks like you are fairly far through development – congratulations for getting this far. Unfortunately this would not be of interest to EA, but good luck on moving it forward.&quot; (Electronic Arts)</p>
+
+<p> &quot;I&#39;m rather busy at the moment so I can&#39;t provide detailed feedback for a couple of weeks. From a very brief glance, I&#39;d say that this probably isn&#39;t right for us.&quot; (Square Enix)</p>
+
+<p> They never said it wouldn&#39;t be good for GAMERS - just not for PUBLISHERS.  So we&#39;re not making this game with them, under them, or for them.  Skyjacker is an independent in-house title and it’s being made for you.  That means we need your help, so we can finally buckle down and make this happen.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-07-28T20:18:13-04:00">Sat, Jul 28 2012 8:18 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_29061">
+<div class="faq-question">
+<a href="#project_faq_29061" name="project_faq_29061">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">THE RULES ON SHIPPING?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>We&#39;re shipping out of Los Angeles, CA, USA, where Digitilus LLC is based. Anything within the United States is free shipping. Unless otherwise specified we ask you to pledge $15 above your rewards for shipping outside of the United States.</p>
+
+<p>There&#39;s also a USPS  calculator you can use here to find the exact cost of international shipping to your address, if you want to pledge a more precise amount - <a href="http://ircalc.usps.com/" rel="nofollow">http://ircalc.usps.com/</a>.  Fair warning - it&#39;s pretty complex and we&#39;re not experts in the area.  (We&#39;re also not going to steal your game if you come up a buck short.  As long as you&#39;re in the ballpark in the end, we&#39;ll call it a day.)</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-07-28T20:18:13-04:00">Sat, Jul 28 2012 8:18 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_33977">
+<div class="faq-question">
+<a href="#project_faq_33977" name="project_faq_33977">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">WHAT HAPPENS WITH SKYJACKER NOW?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Well, this is a very good question my friend! The fact - Kickstarter met its end and we didn&#39;t get out 200K bank here. But we don&#39;t give up! We have a strong desire to release SKYJACKER in Summer 2013 as was promised, despite all circumstances!</p>
+
+<p>We launched our Plan B. In brief:</p>
+
+<p>1) We raise money selling rewards there in our own site <a href="http://store.digitilus.com/" rel="nofollow">http://store.digitilus.com/</a></p>
+
+<p>2) We divide the whole project/budget to stages/sub-budgets, and will launch series of small kickstarters heving in mind to raise smaller budgets and to move forward step by step.</p>
+
+<p>Currently we continue this game development despite an unsuccessful funding here on Kickstarter. Hundreds of backers already support us there in our own site, droping their pledge at <a href="http://store.digitilus.com" rel="nofollow">http://store.digitilus.com</a>. So you can join us there too.</p>
+
+<p>Furthermore, we continue inform the World about this project progress - check our uodates here.</p>
+
+<p>Then, you can visit our facebook page <a href="http://www.facebook.com/Digitilus" rel="nofollow">http://www.facebook.com/Digitilus</a></p>
+
+<p>And finally, upcoming Kickstarters are on their way. We are working on them now, preparing content and projects materials.</p>
+
+<p>So follow us, this story to be continued :))</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-07-28T20:19:31-04:00">Sat, Jul 28 2012 8:19 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_29079">
+<div class="faq-question">
+<a href="#project_faq_29079" name="project_faq_29079">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">DEMO - I HAVE PROBLEMS WITH DEMO LAUNCH</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>There are several reasons why you got that trouble with demo.</p>
+
+<p>First of all, we found there are some links with broken version of the demo. Here is a list of links with 100% proof version of the demo: </p>
+
+<p>For US located recipients:</p>
+
+<p><a href="http://download.devkapi.com/skyjacker_install.zip" rel="nofollow">http://download.devkapi.com/skyjacker_install.zip</a></p>
+
+<p><a href="http://thewebworks.org/skyjacker_install.zip" rel="nofollow">http://thewebworks.org/skyjacker_install.zip</a></p>
+
+<p><a href="http://www.believe.vg/skyjacker/skyjacker_install.zip" rel="nofollow">http://www.believe.vg/skyjacker/skyjacker_install.zip</a></p>
+
+<p>For Eastern European backers - you can download the demo at:  <a href="http://www.igray.ru/news/4826" rel="nofollow">http://www.igray.ru/news/4826</a></p>
+
+<p>RapidShare link:</p>
+
+<p><a href="https://www.rapidshare.com/files/2998849772/skyjacker_install.zip" rel="nofollow">https://www.rapidshare.com/files/2998849772/skyjacker_install.zip</a></p>
+
+<p>Then, be sure you have last version of drivers installed there in your computer. </p>
+
+<p>Latest NVIDIA drivers: <a href="http://www.nvidia.com/Download/index.aspx?lang=en-us" rel="nofollow">http://www.nvidia.com/Download/index.aspx&hellip;</a></p>
+
+<p>Latest ATI Video driver: <a href="http://support.amd.com/us/gpudownload/Pages/index.aspx" rel="nofollow">http://support.amd.com/us/gpudownload/Pages/index.aspx</a></p>
+
+<p>Latest PhysX middleware <a href="http://www.nvidia.com/object/physx-9.12.0213-driver.html" rel="nofollow">http://www.nvidia.com/object/physx-9.12.0213-driver.html</a></p>
+
+<p>Furthermore, be sure you have installed the latest version of DirectX. Check here:</p>
+
+<p><a href="http://www.microsoft.com/en-us/download/details.aspx?id=35" rel="nofollow">http://www.microsoft.com/en-us/download/details.aspx&hellip;</a></p>
+
+<p>And correct video codec (we propose to install FFDSHOW while demo installation cause we have few videos played there in demo).</p>
+
+<p>In addition, be sure you launch the demo as an Administrator - very usual issue for Vista and Windows 7 users.</p>
+
+<p>Moreover, be sure, your antivirus doesn&#39;t block our application or its files. And finally, if everything is Ok with these requirements, please launch Setup.exe and be sure, you selected correct screen resolution (please check it there in Video options section). After all, if you proceed all these procedures and still cannot get the demo launched, we need to watch your profile.</p>
+
+<p>For this purpose you have to prepare the following files:</p>
+
+<p>1) DXDIAG log (go to Start menu/RUN type there dxdiag and proceed through direct x diagnostics) </p>
+
+<p>2) game.log - you can find it there in a root directory of the demo </p>
+
+<p>3) Your current config.cfg - you can also find it there in a root directory of the demo.</p>
+
+<p>Then contact us, sending a message either here on Kickstarter, or there in our web-site mailing form (<a href="http://www.digitilus.com/contact-us" rel="nofollow">http://www.digitilus.com/contact-us</a> ). We will answer you giving an e-mail address where you will need to send these files to let us check them for possible incompatibility issues.</p>
+
+<p>Contact us and we will do ALL OUR BEST to help you play our incredible demo!</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-07-28T20:18:13-04:00">Sat, Jul 28 2012 8:18 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_29067">
+<div class="faq-question">
+<a href="#project_faq_29067" name="project_faq_29067">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">WHAT PLATFORMS / REGIONS / DEVICES WILL SKYJACKER BE AVAILABLE FOR?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Our targeted platforms are PC and Mac.</p>
+
+<p>EFIGS+R text is in - English, French, Italian, German, Spanish, and also Russian (it&#39;s easy for us!) - with full voice on English and Russian. We&#39;ve also had some volunteers offering to voice the other languages and we&#39;re definitely open to the idea.  Let us know if you&#39;ve got a language to contribute!</p>
+
+<p>Any controller can be used as an input device.  We&#39;ve created games in the past for FFB Joysticks and we used a Thrustmaster to record the videos on Youtube, so we guarantee support is in for that!  We also have bindings all set for smooth keyboard+mouse mode, and will build out a library of defaults for common gamepads like the Xbox 360 controller.</p>
+
+<p>We&#39;re using Unity as a framework, so we&#39;ll be looking at our options for a Xbox 360/Playstation build following the initial release on PC and Mac.  </p>
+
+<p>Portable devices such as PSP, Vita, iOS and Android are becoming powerful gaming platforms.  That said, Skyjacker features complex physics and detailed demolition of all in-game objects; these devices aren&#39;t ready (yet) to handle those demands.  We&#39;ll be looking into streaming services such as OnLive to get around this.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-07-28T20:18:13-04:00">Sat, Jul 28 2012 8:18 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_29323">
+<div class="faq-question">
+<a href="#project_faq_29323" name="project_faq_29323">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">LINUX</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Is there any chance of a LINUX port?</p>
+
+<p>We would like to support Linux! Currently our basic engine technology is Unity, but they don&#39;t have an option to build out to Linux at this time. Here is discussion concerning this: <a href="http://answers.unity3d.com/questions/27136/because-the-unity-3d-does-not-run-in-linux-environ.html" rel="nofollow">http://answers.unity3d.com/questions/27136/because-the-unity-3d-does-not-run-in-linux-environ.html</a></p>
+
+<p>As soon as Unity will support Linux, we&#39;ll be able to make Linux build of the game too. We hope this fact won&#39;t change your desire to be our backer as well.</p>
+
+<p>From other point, Unity supposedly supports NativeClient, which is cross-platform and will run on Linux using Google Chrome. You can probably offer a Linux port through that. We know that, but we prefer don&#39;t promise unproof / untested things. Means, currently we have no test results about our technology work in such condition. </p>
+
+<p>So our position: better don&#39;t promise, but to do, than to promise and don&#39;t realize.</p>
+
+<p>In result: there is a real technical solution to play this game on Linux without ANY special improvement. But we cannot 100% promise you this before we&#39;ll test it in the future. So our official answer is:</p>
+
+<p>The Unity game engine doesn&#39;t natively support Linux... yet!  We HOPE to make a Linux build of the game available too, and are going to be actively working with other Unity developers towards this end, but we can&#39;t make any guarantees at this stage.  </p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-07-28T20:18:13-04:00">Sat, Jul 28 2012 8:18 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_29429">
+<div class="faq-question">
+<a href="#project_faq_29429" name="project_faq_29429">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">GAME CONTROLS</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Can I change scheme of controls?</p>
+
+<p>Yes. We have an own system of controls related to our native set of functions. There is a Setup tool, which lets you re-assign keys for keyboard, mouse, joystick or gamepad manually. Just launch Setup.exe before to launch the game itself. The only control feature, which is disabled in the current demo is an inverse scheme of controls. But we are planning to enable it there in the final version of the game. </p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-07-28T20:18:13-04:00">Sat, Jul 28 2012 8:18 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_29259">
+<div class="faq-question">
+<a href="#project_faq_29259" name="project_faq_29259">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">STORY LINE</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>QUESTION: Does your game has any story line?</p>
+
+<p>ANSWER: Yes, it has. During our Ice Age, a young human male named Ael was taken from the wild Earth aboard an alien spaceship. Raised by a space wanderer, he left his teacher at age 16 to become one of the most ruthless pirates in the Galaxy. He earned infamy by robbing trade convoys and being engaged in sabotage for hire all around the Galaxy.</p>
+
+<p>The chaos of global interstellar war turns him from small-time pirate into high-priced mercenary. When the war ends, he’s forced to escape from the prosecution of justice into the dark unpopulated Galaxy regions, where he undertakes several bold missions, earning acclaim and protection from several mystical races.</p>
+
+<p>New troubles arise when the race of hostile invaders called “Shaarkarians”, approach from the dark abyss of space, devastating inhabited worlds and killing all life they meet on their way. They exploit the telepathic abilities possessed by most of the galaxy’s inhabitants, using psi-controllers to enslave them. Capitalizing on the well-known fact that humans are mentally deaf, the Galactic Society hires Ael and other such “freaks” to stop the ruthless alien onslaught. And - check this - some of them are human, like Ael!</p>
+
+<p>The book series reveals more details ...</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-07-28T20:18:13-04:00">Sat, Jul 28 2012 8:18 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_29260">
+<div class="faq-question">
+<a href="#project_faq_29260" name="project_faq_29260">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">HOW THE GAMEPLAY INTERSECTS WITH GAME STORY LINE?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>In single player mode of Skyjacker we play different missions, progressing in ranks, while the global story line progress on the background is changing gaming environment. Here is a rank chart: <a href="http://www.skyjackergame.com/the-game/game/player-ranks/" rel="nofollow">http://www.skyjackergame.com/the-game/game/player-ranks/</a> You can juxtapose it with story line too.</p>
+
+<p>Player has a freedom of choice inside of each mission, but there is a global story line of the Galaxy, and missions types submit to the global storyline. I.e. you cannot play any military mission before the Global Galaxy War begins. Same way, you cannot get any mission against Shaarkarians before their invasion happens.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-07-28T20:18:13-04:00">Sat, Jul 28 2012 8:18 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_29064">
+<div class="faq-question">
+<a href="#project_faq_29064" name="project_faq_29064">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">KIND OF MISSIONS</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Oh, you know, destroy this, escort that.  Stay in the radio shadow of this to avoid detection while creeping up on that.</p>
+
+<p>Hug the shell of a huge transport (almost sitting on it) to reach shipyards inside a hollowed-out moon, loot their stockpiles and escape under enemy fire.  If you messed up in the asteroids, you have a chance to be ambushed by a guard on arrival.  If you succeed in reaching the shipyard, your friends can attack the main base, drawing aggro to help you escape.  Also: pirates are jerks.  Watch your back, even around your employer...</p>
+
+<p>In one mission a general hires you to kill the enemy leader.  You enter the battlefield with your gang, amidst the two armies slugging it out.  Your task is to reach one army&#39;s staging grounds and destroy the capital ship.  But BOTH armies are primed to attack you - the soldiers don&#39;t know you’re on the take.  And if you&#39;re too slow, the enemy army will destroy your client&#39;s forces.  There are complex trigger scenarios in missions that include several consequences depending on your actions, and each misstep increases the complexity.</p>
+
+<p>There are ships you can only destroy by using smart drones.  You have to release them at the right moment (when the enemy disables their energy shield to fire at you) and at close range, so the drones can burrow through the crevices between armor plates.  The ability to destroy ships piece by piece opens up a whole new universe of gameplay features, tricks, tasks and possibilities!  We&#39;ve isolated numerous bugs and unintended behaviors during testing that we&#39;ve exploited, unlocking new objectives and emergent activities.  We promise that Skyjacker will not be the same game from one end to the other - and it will not be the same games you&#39;ve played before.</p>
+
+<p>Especially when you punch through the spore planet.  :)</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-07-28T20:18:13-04:00">Sat, Jul 28 2012 8:18 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_29072">
+<div class="faq-question">
+<a href="#project_faq_29072" name="project_faq_29072">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">THE FUTURE CONTENT</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Skyjacker is the story of a human caught in the storm of galactic conflict.  The game and the content being developed revolves around this protagonist and the decisions they make.</p>
+
+<p>But then we&#39;ve got this powerful game engine and all these assets (models, animations, AI, hundreds of parts).  Why stop there?  Once the game is done, we&#39;re going to leverage those assets to write some other stories - stories about the aliens.  Some of them will be from the perspective of the pirates, and others, from their victims: the settlers, colonists, merchants and marines.  There will be planetary missions with factors largely not present in the Skyjacker campaign, such as atmospheric turbulence, gravity, and terrestrial obstacles, more like a flight sim than a space sim.  There will also be a wide variety of unique interfaces and features specific to each alien race.</p>
+
+<p>The number of missions is subject to change, but we anticipate not less than 12-15 additional missions from each side, pirate and colonial - a minimum of 24-30 additional missions and related content.  If you&#39;re a part of the beta community, you&#39;ll have access to early builds of this content when the time comes; if you pledge high enough in the Kickstarter (and it doesn&#39;t take much) you&#39;ll receive it for free when it goes gold.  At that point it will also be made available for purchase in online stores.</p>
+
+<p>(For those who followed from the first Kickstarter: this combines the content described as the Planetary and Anti-Pirate mission packs.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-07-28T20:18:13-04:00">Sat, Jul 28 2012 8:18 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_29066">
+<div class="faq-question">
+<a href="#project_faq_29066" name="project_faq_29066">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">MINING AND TRADING</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>These are classic features of many excellent open-world space games.  It&#39;d be great to cover all the traditional aspects, including trading!  But our professional experience says not to force everything into one game.  We&#39;re focusing on a particular experience and polishing it to a high shine.  This time that focus is in all aspects of space combat, rather than resource management.</p>
+
+<p>You can absolutely sell loot, salvage, and unwanted devices on the pirate stock market, then turn around and buy parts and commodities (such as fuel, air, ammo, drones, etc.); you can even buy and sell information, like choice missions and locations.  So there is an economy present in the game!  But it exists as a means to an end.  And at the end: merciless, adrenaline-soaked galactic espionage.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-07-28T20:18:13-04:00">Sat, Jul 28 2012 8:18 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_29070">
+<div class="faq-question">
+<a href="#project_faq_29070" name="project_faq_29070">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">MULTIPLAYER</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Skyjacker includes the classic multiplayer modes of deathmatch, team deathmatch, capture the flag, and last man standing.  There is also a cooperative mode where players potentially work together to survive strong odds.</p>
+
+<p>We&#39;re testing at 32 players per session for now - that number may go up or down depending on how release candidates perform, but we&#39;ll be aiming high and pushing for higher.</p>
+
+<p>4 types on multiplayer campaign will be available: Deathmatch, Team Deathmatch, Capture the Flag and Last Man Standing.</p>
+
+<p>Furthermore we will provide co-operative mode for the most of the team based missions from the single player mission set. This will let player invite his real friends to fulfil these missions together with him.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-07-28T20:18:13-04:00">Sat, Jul 28 2012 8:18 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_29430">
+<div class="faq-question">
+<a href="#project_faq_29430" name="project_faq_29430">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">AI WINGMEN / PARTNERS</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>What about to hire AI WINGMEN who will support you during the missions?</p>
+
+<p>EXACTLY! Even there in this demo you flight with AI partners. 
+<br />There in the game you will need to hire (or to be hired in) a gang in case if you got a TEAM mission. There in PIRATE STOCK EXCHANGE is a directory, where you can select pirates to hire. You will see their high score, their status, even how much of money they have available to invest, so you can require them to add money to buy some mission together. Additionally you can ask dealer for loan ;)) Let me convince you, this STOCK EXCHANGE is a very attractive game inside the game. 
+<br />From other point, if somebody don&#39;t like to manage this process, we have auto-hiring mode there - system can pass through this hiring process automatically. </p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-07-28T20:18:13-04:00">Sat, Jul 28 2012 8:18 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_29065">
+<div class="faq-question">
+<a href="#project_faq_29065" name="project_faq_29065">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">WHERE&#39;S THE COCKPIT?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>The standard perspective in Skyjacker is a first-person view, with a virtual head&#39;s-up display.  In this setting there is no cockpit - the pilot is sitting deep inside their ship, in an armored conning capsule, receiving visual information from external sensors and cameras to a virtual helmet of sorts.  If a pilot can see space with their own eyes something has gone terribly, horribly wrong.</p>
+
+<p>Some of these cameras can be separated from the ship, for a third-person view.  This is absolutely an intended feature!  We&#39;re letting you make your own personalized ship and we&#39;re definitely going to help show it off.  Third person views are disabled in the demo because they&#39;re buggy as hell at the moment, but it will be a fully realized option in the game, and sooner, not later.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-07-28T20:18:13-04:00">Sat, Jul 28 2012 8:18 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_30070">
+<div class="faq-question">
+<a href="#project_faq_30070" name="project_faq_30070">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">3RD PERSON VIEW MODE?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>QUESTION: Will there be a chance of 1st and 3rd person views of t he ship?</p>
+
+<p>ANSWER: Definitely YES! Third person views are disabled in the demo because they&#39;re buggy as hell at the moment, but it will be a fully realized option in the game, and sooner, not later.</p>
+
+<p>In the final release we will provide several camera modes and effects (1st person, 3rd person, zoom to target, special screen to watch camera mounted onto the rocket, turn to side while the flight, etc.). So yes, we will seriously improve this section in the game later.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-07-28T20:18:13-04:00">Sat, Jul 28 2012 8:18 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_29071">
+<div class="faq-question">
+<a href="#project_faq_29071" name="project_faq_29071">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">SHIPS IN THE HANGAR</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>QUESTION: How many ships can I store in the hangar? </p>
+
+<p>ANSWER: You&#39;ll be using one basic ship throughout the game as the foundation for hundreds of modular ship components.  There are a massive array of parts you can acquire, and you aren&#39;t limited to those of a single source or alien species - you can build out your ship any way you like, from a tiny hummingbird to a massive bulldog.  Some parts have slots to add more parts, and I&#39;ll just let that blow your mind for a while...</p>
+
+<p>We are including configuration &quot;save slots&quot;, so you can quickly swap between preferred assemblies.  That way you don&#39;t have to manually rebuild your ship every time you want to change your approach.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-07-28T20:18:13-04:00">Sat, Jul 28 2012 8:18 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_29063">
+<div class="faq-question">
+<a href="#project_faq_29063" name="project_faq_29063">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">TURRETS / DRONES / MINES / CAPITAL SHIPS</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>There are missions where you must use drones as your primary weapon to reach your mission objectives, and the same goes for mines.  As for turrets, that cruiser from the image there on the front page has seven turrets.  Blow it up, take the turrets, put them on your ship.  Please!  :)</p>
+
+<p>The protagonist normally flies a fighter-class spaceship.  There are a few missions that mix it up, including piloting the military cruiser seen on the front page.  But there will be more opportunities when we get to the expansion pack - at that point we won&#39;t have continuity to worry about!</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-07-28T20:18:13-04:00">Sat, Jul 28 2012 8:18 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_29062">
+<div class="faq-question">
+<a href="#project_faq_29062" name="project_faq_29062">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">PLANETARY LANDING</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Yes!  Sometimes it will be necessary - we even have armor and engines explicitly designed for it.  Other times it will be optional, but you can always head on over!</p>
+
+<p>The only thing to remember is that planets are pretty big.  We&#39;re stocking the vast reaches of space with plenty of things to see and do, but if you head away from missions and populated areas and start poking around planets, most of what you&#39;ll see is unpopulated, unaltered terrain.  We can&#39;t have a fully-featured planetary environment simulator and a space combat simulator as the same game.</p>
+
+<p>The expansion pack of course will feature several planetary environments where we expect you to drop in, and there will be a lot more to play with then.  :)</p>
+
+<p>===================================================</p>
+
+<p>A bit more about the landing: we definitely will let you LAND the planet !!! We have advanced set of features related to this option. Before to land the planet you should check, is current configuration of your ship let you do this? 
+<br />For example, there are two types of ASP race armor: vanbram and danbram. The difference between both types is the following: the first armor&#39;s production is located in a planetary condition and that armor is a solid monolith. It&#39;s still strong, but not enough comparing to second one. Second type of armor consists of dozens of layers with small empty space between them. It&#39;s stronger, because it can be springy. From other point, this second armor will be broken after the flight in atmosphere, when pilot will turn back to vacuum due to the air and moisture between layers, which will explode the armor or will fix its layers. The first armor, being less strong, will keep its features in both space and atmosphere conditions. 
+<br />There are many other features, connected to the landing. But let us keep it closed for a while. Others already claimed us that we disclosed too much of game details in advance :)</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-07-28T20:18:13-04:00">Sat, Jul 28 2012 8:18 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_29069">
+<div class="faq-question">
+<a href="#project_faq_29069" name="project_faq_29069">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">MOD TOOLS</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>We&#39;ll absolutely provide the community with our tools for creating and editing mission scenarios.</p>
+
+<p>We want to let you make your own parts, we really do.  Right now we predict many problems with physics and engine crashes due to the complexity of this feature.  If we can&#39;t make it work, we&#39;ve discussed community-voted assemblies; the top ones get sent to us, we integrate it into the game, and regularly post updates with your content seamlessly packaged (attributed under your name, of course).  So we&#39;re very open to the idea of modding - there are just a few quirks to work out.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-07-28T20:18:13-04:00">Sat, Jul 28 2012 8:18 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_29432">
+<div class="faq-question">
+<a href="#project_faq_29432" name="project_faq_29432">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">REPLAYABILITY FACTORS IN THE GAME</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>What are the REPLAYABILITY FACTORS in the game?</p>
+
+<p>- different assembly of your ship - each time you can play your mission differently due to the different configuration of your spaceship </p>
+
+<p>- wide range of methods to destroy enemy ship (crash it on parts; shoot long until it will explode; blow up its engines making it unmanaged and wait until it will meet some huge asteroid on its path; etc.) </p>
+
+<p>- alternate path of a mission - even there in demo you can choose to kill the runner ship in the beginning of mission to prevent new fighters appearance later then. Or you can choose to focus your fire on faster demolition of main targets of the mission (2 big and 4 small transport ship) having in mind to destroy them faster than additional enemy fighter will appear</p>
+
+<p>- hidden &quot;unfair&quot; triggers -  sometimes shit happens :) it&#39;s possible that your gang (which hired you) won the mission, but then they will decide to kill all hired members to not share the loot with too many pirates. In this case you can get the mission after mission, when you should survive or to try to escape as soon as possible - you live in space pirates world and must be prepared for such scenario ;)</p>
+
+<p>- Multiple characters - we have a bunch of characters with their names and well programmed personal features, who you will interact with, meeting them from time to time and interacting with them. Some of them will be your friends, others will be your permanent enemies - even pirates!</p>
+
+<p>- Unlockable content</p>
+
+<p>Etc.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-07-28T20:18:13-04:00">Sat, Jul 28 2012 8:18 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_29431">
+<div class="faq-question">
+<a href="#project_faq_29431" name="project_faq_29431">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">RPG EXPERIENCE</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Does player ranks system let me get any RPG EXPERIENCE?</p>
+
+<p>Progressing in ranks the player gets access to different TYPES of missions, which he won&#39;t fulfill on his earlier stages. It is related to that set of weapons and devices, which have been collected for each rank. And for sure, it&#39;s related to his skills (real trained skills of the player) to operate with different flight models, different devices, weapons and to use different tactics in space combat.</p>
+
+<p>For example, a Thief should always pay the dealer to get each new deal. The only type of mission he can expect is a thieving mission, where he can steal some loot from a broken transport ship or grab goods in lost warehouse. He cannot fight against military crafts, being forced to flee when the military guard arrives.</p>
+
+<p>The gang of Robbers can attack a trade convoy, fighting the light armored guard, but they are still too weak against military squadrons. The Robber still has to pay for new deals, but he&#39;s able to attack rich and powerful targets, fighting military forces as well. Saboteur and other higher ranks comprise a level of pirate elite. Such ranks have a choice either to buy deals or to take exclusive proposals from unknown clients and to get paid for  serving them. Exclusive proposals include such tasks as  destroying some industrial object (shipyard, asteroid mining camp) or assassinating some VIP. Getting an exclusive proposal, the player will be paid for his service. But he still able to get new devices and technologies, captured during the mission.</p>
+
+<p>Here you can read more about ranks: <a href="http://www.skyjackergame.com/the-game/game/player-ranks/" rel="nofollow">http://www.skyjackergame.com/the-game/game/player-ranks/</a></p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-07-28T20:18:13-04:00">Sat, Jul 28 2012 8:18 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_29068">
+<div class="faq-question">
+<a href="#project_faq_29068" name="project_faq_29068">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">STRETCH GOALS</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>QUESTION: Do you have any stretch goals?</p>
+
+<p>ANSWER: When we get closer to that point we’ll sit down with the backer community and have an open discussion about what you want for your stretch goals.  We’ve been focused like a laser on the promises you see above - things we know for a fact we can deliver on.  We do want to get the original books translated, so that’s the first 15k, and backers would receive at least the PDF for free. Beyond that, we’re going to be asking you that question... do YOU have any stretch goals?</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-07-28T20:18:13-04:00">Sat, Jul 28 2012 8:18 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_29428">
+<div class="faq-question">
+<a href="#project_faq_29428" name="project_faq_29428">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">BETA OF THE GAME</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>When are you planning to release BETA of the game?</p>
+
+<p>As for beta - we guess to get it available in 8 months as the latest. Alpha will be ready much earlier and we have in mind to invite our the most active backer to help us test it despite the fact it wasn&#39;t promised in rewards ;))</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-07-28T20:18:13-04:00">Sat, Jul 28 2012 8:18 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_29091">
+<div class="faq-question">
+<a href="#project_faq_29091" name="project_faq_29091">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">ARE YOU PLANNING TO BE PUBLISHED ON STEAM?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Yes, we do! The reason why we still are not there on Steam - they have rules and they would like to see more finished game, than we have now. So we definitely will be there, but later, when we&#39;ll have a beta version ready.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-07-28T20:18:13-04:00">Sat, Jul 28 2012 8:18 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_29626">
+<div class="faq-question">
+<a href="#project_faq_29626" name="project_faq_29626">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">IN-GAME PHYSICS</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>QUESTION: I was wondering how &quot;hard&quot; the physics will be in the game, i.e. Will there be gravity, orbit etc?</p>
+
+<p>   ANSWER: we are planning to do nothing of such mentioned above. In Skyjacker we have no goal to create realistic simulator of the flight in Space. I guess, it would be very boring to play,  Our goal is to make attractive game, where player could fly in space and shoot enemies.     From other point, our current physics is complex enough, it includes shock wave and many other physical effects, which enrich space combat.      And finally, we have an expansion pack, where will be around 15 planetary missions. In those missions we will use gravity for sure, cause it;s naturally to have a gravity flying over the planetary surface.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-07-28T20:18:13-04:00">Sat, Jul 28 2012 8:18 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_30071">
+<div class="faq-question">
+<a href="#project_faq_30071" name="project_faq_30071">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">SKYJACKER BOOKS</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>QUESTION:  Any chance of an English edition of the novels?</p>
+
+<p>ANSWER: The moment we hit 215k the Abyss Light book translations are paid for. We really cannot promise unreal or impossible rewards. We need a budget to translate books. They are big enough. In Russian version. First book&#39;s words count is 83 000 (150 pages of very dense text in MS Word), second book - 115 000 ( 212 pages) Furthermore, text itself is very specifically written - a lot of native alien slang, plus different narrative styles depending on race. For example, if there is a description of Balagore&#39;s adventure, narrative style is more criminal, like if one gangster would narrate some story to another one. And so on all over those books.</p>
+
+<p>In overall, it&#39;s planned to create 7-8 books in this game Universe. But translation of books is a very specific and not easy deal. So if we&#39;ll get extra budget, our first Stretch goal stretch will be books translation, I promise </p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2012-07-28T20:18:13-04:00">Sat, Jul 28 2012 8:18 pm EDT</time>
+</div>
+</div>
+</li>
+
+</ul>
+<div class="faq-ask-box">
+<a href="/projects/digitilus/al-skyjacker/messages/new?message%5Bto%5D=digitilus&amp;mode=FAQ" class="button button_blue remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Ask a question about SKYJACKER">Ask a question</a>
+
+</div>
+</div>
+
+<div class="mt4 ml1 mr1 mb2" id="report-issue-wrap">
+<a href="/login?then=%2Fprojects%2Fdigitilus%2Fal-skyjacker" class="button button_grey">Report this project to Kickstarter</a>
+</div>
+</div>
+<div class="NS-projects-rightcol grid_5" id="rightcol">
+<div class="NS_projects__ecom">
+<div class="digits_6 pb2 pl2 pt2" id="stats">
+<h5>
+<div class="num h48 no-margin" data-backers-count="2890" id="backers_count"><data class="Project567051422" data-format="number" data-value="2890" itemprop="Project[backers_count]">2,890</data></div>
+<span><data class="Project567051422" data-attr="backers_count" data-format="pluralize" data-value="2890" data-word="Backer">Backers</data></span>
+</h5>
+<h5>
+<div class="num h48 no-margin" data-goal="200000.0" data-percent-raised="0.6411901" data-pledged="128238.02" id="pledged">
+<data class="Project567051422" data-currency="USD" data-format="shorter_money" data-precision="0" data-value="128238" data-without_code="true" itemprop="Project[pledged]">$128,238</data>
+<span class="money usd project_currency_code"></span>
+</div>
+pledged of
+<span class="money usd no-code">$200,000</span>
+goal
+</h5>
+<span data-duration="58.23653935185185" data-end_time="2012-07-23T03:00:00-04:00" data-hours-remaining="0" id="project_duration_data"></span>
+<div class="Project567051422" data-conditions="[{&quot;!state&quot;:[&quot;canceled&quot;,&quot;suspended&quot;]}]" data-evaluation="true" data-render="&quot;&lt;h5 class=\&quot;poll \&quot; data-dynamic=\&quot;5\&quot; data-end_time=\&quot;2012-07-23T03:00:00-04:00\&quot; data-poll_url=\&quot;https://d2oher2uhvl0ur.cloudfront.net/projects/digitilus/al-skyjacker/stats.json\&quot;&gt;\n&lt;div class=\&quot;num h48 no-margin\&quot;&gt;0&lt;/div&gt;\n&lt;span class=\&quot;text\&quot;&gt;seconds to go&lt;/span&gt;\n&lt;/h5&gt;\n&quot;"><h5 class="poll " data-dynamic="5" data-end_time="2012-07-23T03:00:00-04:00" data-poll_url="https://d2oher2uhvl0ur.cloudfront.net/projects/digitilus/al-skyjacker/stats.json">
+<div class="num h48 no-margin">0</div>
+<span class="text">seconds to go</span>
+</h5>
+</div></div>
+<div class="Project567051422" data-conditions="[{&quot;state&quot;:&quot;live&quot;},{&quot;!ended?&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;pr2 pl2\&quot; id=\&quot;pledge-wrap\&quot;&gt;\n&lt;a href=\&quot;/projects/digitilus/al-skyjacker/pledge/new?clicked_reward=false\&quot; class=\&quot;button button_green button_box button_block\&quot; id=\&quot;button-back-this-proj\&quot; title=\&quot;Back this project\&quot;&gt;Back This Project &lt;small class=&#39;h6 normal block green-dark&#39;&gt;&lt;span class=\&quot;money usd \&quot;&gt;$1&lt;/span&gt; minimum pledge&lt;/small&gt;&lt;/a&gt;\n&lt;/div&gt;\n&quot;"></div><div class="Project567051422" data-conditions="[{&quot;state&quot;:&quot;live&quot;}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;p2\&quot; id=\&quot;banner\&quot;&gt;\n&lt;p class=\&quot;tiny_type no-margin\&quot;&gt;\nThis project will only be funded if at least\n&lt;span class=\&quot;money usd \&quot;&gt;$200,000&lt;/span&gt;\nis pledged by\n&lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;llll z\&quot; datetime=\&quot;2012-07-23T03:00:00-04:00\&quot;&gt;Mon, Jul 23 2012 3:00 am EDT&lt;/time&gt;.\n&lt;/p&gt;\n&lt;/div&gt;\n&quot;"></div></div>
+
+<div class="NS_projects__rightcol_projectby bg-blue-light rounded">
+<div class="p2 clearfix">
+<div class="avatar inline-block align-middle">
+<a href="/projects/digitilus/al-skyjacker/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography"><img alt="Dgtls_web-logo_sqr_03_600x600.small" class="avatar-small" height="80" src="https://s3.amazonaws.com/ksr/avatars/2326260/dgtls_web-logo_SQR_03_600x600.small.jpg?1350321658" width="80" />
+</a></div>
+<div class="creator-name inline-block align-middle ml1">
+<h6 class="mb1">Project by</h6>
+<h5 class="mb1">
+<a href="/projects/digitilus/al-skyjacker/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">DIGITILUS</a>
+</h5>
+<p class="location h6 bold mb1">
+<a href="/discover/places/los-angeles-ca">Los Angeles, CA</a>
+</p>
+</div>
+</div>
+<div class="creator-details pl2 pr2 pb1">
+<ul class="list-simple h5 mb1">
+<li class="projects-more">
+<span class="ss-icon ss-kickstarter grey-dark margin-right"></span>
+<span class="text">
+<a href="/profile/digitilus/created" class="green-dark bold more-button remote_modal_dialog" data-modal-title="Projects created by DIGITILUS">4 created</a>
+<span class="divider">&middot;</span>
+<a href="/profile/digitilus/backed" class="green-dark bold more-button remote_modal_dialog" data-modal-title="Projects backed by DIGITILUS">9 backed</a>
+</span>
+</li>
+<li class="facebook-connected">
+<span class="ss-icon ss-facebook facebook color-facebook margin-right"></span>
+<span class="text">
+<a href="https://www.facebook.com/100001571477958" class="popup" target="_blank">Eugene Zhukov</a>
+<span class="number h6">
+520
+friends
+</span>
+</span>
+
+</li>
+<li class="links">
+<span class="ss-icon ss-globe margin-right grey-dark"></span>
+<span class="text">
+<a href="http://www.skyjackergame.com/" class="popup" rel="nofollow" target="_blank">skyjackergame.com</a>
+</span>
+</li>
+</ul>
+</div>
+<div class="footer center h5 bold clearfix rounded-bottom clip">
+<a href="/projects/digitilus/al-skyjacker/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">See full bio</a>
+<a href="/projects/digitilus/al-skyjacker/messages/new?message%5Bto%5D=digitilus" class="remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Send a message to DIGITILUS">Contact me</a>
+
+</div>
+</div>
+
+<ul class="NS-projects-rightcol-rewards rounded clip list mt2" data-reward-count="17" id="what-you-get">
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$5</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+8 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>WALLPAPER SET: A large collection of Skyjacker wallpapers for your PC, Mac, tablet or mobile device, along with our heartfelt thanks.  We appreciate your contribution!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2012-12-01">Dec 2012</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$10</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+5 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>SOUNDTRACK PACK: As the Wallpaper Set, plus: the complete game soundtrack (DRM-free digital downloadable version, 320k or lossless). Take Skyjacker on the road!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-03-01">Mar 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$15</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1146 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>COMPLETE EDITION: As the Soundtrack Pack, plus: THE GAME in all of its unearthly beauty on PC or Mac (DRM-free digital downloadable version). Walk the ruthless path of Ael-Skyjacker, the lone human in a galaxy of conflict, as he tears apart the stars in search of fame and fortune.  Sabotage, assassination, robbery, grift - all in a day’s work!  This includes everything - all cutscenes, voiceovers, missions, and content.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-08-01">Aug 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$20</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+322 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>COMPLETE BUNDLE: A bundle of two Complete Editions, for you and a friend.  Every bundle contains a spare of everything that isn’t physical; in this case, you’ll receive two wallpaper sets, two soundtrack packs, and two Skyjacker games to play together.  Or maybe you want one for your PC and one for your Mac?  We can do that.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-08-01">Aug 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$25</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+325 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>COMMUNITY EDITION: As the Complete Edition, plus: exclusive access to the beta release of the game and its private discussion community. We&#39;ll keep you in the loop and include your feedback in the game creation process, and we’ll grant you the title of Beta Tester on all our forums, public and private.  You’ll also get the PDF version of the Skyjacker artbook, with 100+ pages of concept art - detailed illustrations of alien races, planetary habitats, designs and technology, and extras left on the cutting-room floor.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-08-01">Aug 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$35</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+50 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>COMMUNITY BUNDLE: A bundle of two Community Editions.  You’ll receive two PDF artbooks, two voices in everything we do, two early downloads of the game in progress, and two logins with the title of Beta Tester on top of the Complete Bundle.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-08-01">Aug 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$40</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+609 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>SETTLER EDITION: As the Community Edition, plus: all future content we make for Skyjacker for free, forever!  We already have post-launch plans for an EXPANSION PACK of a few dozen additional missions where you step out of the shoes of humans and become the aliens - on both sides of the conflict. Smash the planetary colonies in the name of the pirate brotherhood, or fight to the death for the honor of your race!  (Check out the FAQ for more details on the expansion pack.)  Of course, we’ll promote you to the title of Settler on all our forums, so everyone knows you’re not afraid of commitment.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-08-01">Aug 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$60</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+105 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>SETTLER BUNDLE: A bundle of two Settler Editions.  You’ll receive two of everything Skyjacker in the future (as long as it’s digital), on top of the Community Bundle.  Since you’ll both be beta-release backers, you’ll get in on the beta release of future content too.  Pretty nifty, huh?</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-08-01">Aug 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$80</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+89 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>PIRATE EDITION: As the Settler Edition, plus: special thanks in the game credits as a Skyjacker supporter! We&#39;ll thank you by name, or the name of your choosing (subject to editorial approval).  And we’ll upgrade your title to Pirate on the forums too, so everyone can shiver in terror at your presence.  But here’s the best part - we’ll take all the downloads and put them on a professionally-packaged, pressed DVD.  Then we’ll put it into your hands.  No firewall in the world will stop you!  (All physical items are exclusive to the campaign, and ship free within the US; please add $15 to your pledge for international shipping.)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-08-01">Aug 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$100</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+80 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>CAPTAIN’S EDITION: As the Pirate Edition, plus: one t-shirt of any design.  Protect your frail human flesh from the dangers of space!  We’ll also ship you a limited edition print of the game poster in full size (36” x 24”) for your bedroom, barracks, hangar or gun cabinet.  But what’s a Captain without a crew?  We’ll give you TWO downloads of everything.  All rewards from this point forward are bundle packs!  This includes 2x beta releases, 2x forum handles, 2x wallpapers, 2x soundtracks - everything that isn’t physical.  And we’ll thank you both in the credits, in even BIGGER letters, and on the forums with the even SNAZZIER title of Captain.  We’ll thank you right now, just for reading this!  Thank you!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-08-01">Aug 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$150</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+71 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>COLLECTOR’S EDITION: As the Captain’s Edition, plus: we’ll go even further.  We’ll put together a physical game box for all this loot, with the soundtrack on CD as well as the game DVD.  It’ll be personally signed by Eugene Zhukov and the rest of the team leads, unless you ask us not to.  In fact, we’ll sign everything we can get our hands on; the jewel cases, the poster, even the t-shirt (and those aren’t easy).  Of course you’ll still get your downloads, so you can leave the box in mint condition.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-08-01">Aug 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$200</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+17 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>WOLFPACK EDITION: As the Collector’s Edition, plus: we’ll hook all your friends up too by giving you FOUR downloads of everything and sending you FOUR Portable Skyjacker USB drives, each preloaded with the Complete Edition game. We’ll set you all up with the title of Privateer on the forum, and for the credits, we’ll thank all four of you by name, under the clan name of your choice and billed proudly above the Captains.  Added bonus: we&#39;ll send out a second t-shirt of any design!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-08-01">Aug 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$250</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+10 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>MEMEPACK EDITION: As the Wolfpack Edition, plus: we’ll add your message to the credits as your clan motto, anything you like (subject to editorial approval; keep it around Twitter-length, please).  Plug your website, propose to your girlfriend, throw out your favorite quote, or make us spout memes and in-jokes at everyone who plays!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-08-01">Aug 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+8 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>HARDCOVER EDITION: As the Memepack Edition, plus: the hardcover Skyjacker art book.  Yes, we’ll sign it with pride!  We’ll wrap it up in a third t-shirt of any design, a total of three, and call you out in the forums and credits as a Broker.  Then we&#39;ll further acknowledge your financial acumen by putting your name in the game, as the designation of a weapon, part, planet, or ship (we’ll make sure it’s something you like).  You’ll be a part of the Skyjacker universe from here on out.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-08-01">Aug 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$1,200</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+5 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(95 left of 100)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>BOSS EDITION: As the Hardcover Edition, plus: our designers will draw YOU, in full space pirate regalia.  And then we&#39;ll put it on an exclusive jacket of your very own!  Materials and exact design to be determined - but it&#39;ll be nice.  We won’t try to sign this one. While that’s happening we&#39;ll attach your name to a character in-game (or leave it as a designation, your choice), and elevate you to the regal position of Boss on our forums and in the credits.  Don&#39;t worry about the cost of shipping; even if you&#39;re outside the US, we&#39;ll take care of it. Nothing but the best for the Boss.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-08-01">Aug 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$5,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(9 left of 10)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>EPIC EDITION: As the Boss Edition, plus: we&#39;ll put you in the game. We&#39;ll animate YOU in 3D as the subject for a CUSTOM PLAYER CHARACTER. This includes your face and proportions, a personal logo, and the highest category of criminal community rating in the game. Only you can play as this character (we&#39;ll give you a secret code to activate it) but other players can hire you as an NPC, so they&#39;ll get to enjoy it too!  You will be known across the skies as a true Hero... or a Villain, your choice.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-08-01">Aug 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$10,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(3 left of 4)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>LEGEND EDITION: As the Epic Edition, plus: with your permission, we&#39;ll use your character in our promotional campaigns. You&#39;ll be on our posters, in our trailers, and on whatever other media we produce. Your name will, in fact, be Legend.  Furthermore we cordially invite you to come hang out with us in Los Angeles, CA, USA. We&#39;re from Russia - we know how to party. (Please contact us directly to make personal arrangements before the end of the campaign.)</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2013-08-01">Aug 2013</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+</ul>
+
+<div class="p2" id="meta">
+<h5>Funding period</h5>
+<p class="tiny_type">
+<time class="js-adjust" data-format="ll" datetime="2012-05-25T21:19:23-04:00">May 25, 2012</time> - 
+<time class="js-adjust" data-format="ll" datetime="2012-07-23T03:00:00-04:00">Jul 23, 2012</time>
+(58 days)
+</p>
+</div>
+</div>
+
+</div>
+
+<a href="#" id="video_mode_tab" style="display: none;">
+View in Video Mode
+</a>
+
+</div>
+</div>
+
+
+</div>
+
+<div class="h5 bg-green-dark" id="mega-footer-wrap">
+<div class="bg-green-dark white full-height" id="footer-newsletter-signup">
+<div class="container py4">
+<div class="grid_8 prefix_4 suffix_4 center mt4">
+<h2>
+Eureka! You've found
+<br>
+our little secret.
+</h2>
+<p>Sign up for our Happening email for all the inside info about arts and culture in the Kickstarter universe and beyond.</p>
+<div class="newsletter_signup">
+<form accept-charset="UTF-8" action="/newsletters/happening/signup" class="overlabels" method="post"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /><input class="hidden" name="authenticity_token" type="hidden" value="Pl5tWjB6JaxJz3ucC9LdeAP7PpHkbyj8UW9RtoZGAK4=" /></div><input class="hidden" id="location" name="location" type="hidden" value="footer" />
+<textarea class="hide textarea" id="comment" name="comment">
+</textarea>
+<div class="field newsletter">
+<label class="overlabel z1 overlabel-newsletter">Email address</label>
+<input class="text" id="email" name="email" type="text" />
+</div>
+<input class="button button_green submit" name="commit" type="submit" value="Submit" />
+</form>
+
+</div>
+
+</div>
+</div>
+</div>
+<div class="container relative" id="mega-footer">
+<span class="scissors icon-scissors-1"></span>
+<div class="grid_16 alpha omega pt4 pb2" id="mega-footer-links">
+<div class="grid_4 link-group">
+<h5 class="white">About us</h5>
+<ul class="list">
+<li><a href="/year/2013/?ref=footer">2013 highlights</a></li>
+<li><a href="/year/2012?ref=footer">2012 highlights</a></li>
+<li><a href="/team?ref=footer">Who we are</a></li>
+<li><a href="/jobs?ref=footer">Jobs</a></li>
+<li><a href="/press?ref=footer">Press</a></li>
+<li><a href="/help/stats?ref=footer">Stats</a></li>
+<li><a href="/newsletters/weekly">Projects we love</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group">
+<h5><a href="/help?ref=footer" class="white">Help</a></h5>
+<ul class="list">
+<li><a href="/hello?ref=footer">What is Kickstarter?</a></li>
+<li><a href="/help?ref=footer">FAQ</a></li>
+<li><a href="/contact?ref=footer">Support</a></li>
+<li><a href="/help/school?ref=footer">Kickstarter School</a></li>
+<li><a href="/terms-of-use?ref=footer">Terms of Use</a></li>
+<li><a href="/privacy?ref=footer">Privacy Policy</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group alpha omega suffix_1">
+<h5 class="alpha"><a href="/discover/advanced?ref=footer" class="white">Discover</a></h5>
+<ul class="column column-0 grid_2 list">
+<li><a href="/discover/categories/art?ref=footer">Art</a></li>
+<li><a href="/discover/categories/comics?ref=footer">Comics</a></li>
+<li><a href="/discover/categories/dance?ref=footer">Dance</a></li>
+<li><a href="/discover/categories/design?ref=footer">Design</a></li>
+<li><a href="/discover/categories/fashion?ref=footer">Fashion</a></li>
+<li><a href="/discover/categories/film%20&amp;%20video?ref=footer">Film &amp; Video</a></li>
+<li><a href="/discover/categories/food?ref=footer">Food</a></li>
+</ul>
+<ul class="column column-1 grid_2 list">
+<li><a href="/discover/categories/games?ref=footer">Games</a></li>
+<li><a href="/discover/categories/music?ref=footer">Music</a></li>
+<li><a href="/discover/categories/photography?ref=footer">Photography</a></li>
+<li><a href="/discover/categories/publishing?ref=footer">Publishing</a></li>
+<li><a href="/discover/categories/technology?ref=footer">Technology</a></li>
+<li><a href="/discover/categories/theater?ref=footer">Theater</a></li>
+</ul>
+</div>
+<div class="grid_3 link-group">
+<h5 class="white">Hello</h5>
+<ul class="list">
+<li>
+<a href="https://twitter.com/kickstarter"><span class="ss-icon ss-social-regular ss-twitter"></span>
+Twitter
+</a></li>
+<li>
+<a href="https://www.facebook.com/Kickstarter"><span class="ss-icon ss-social-regular ss-facebook"></span>
+Facebook
+</a></li>
+<li>
+<a href="http://kickstarter.tumblr.com"><span class="ss-icon ss-social-regular ss-tumblr"></span>
+Tumblr
+</a></li>
+<li>
+<a href="http://instagram.com/kickstarter"><span class="ss-icon ss-social-regular ss-instagram"></span>
+Instagram
+</a></li>
+<li>
+<a href="https://vine.co/Kickstarter"><span class="ss-icon ss-social-regular ss-vine"></span>
+Vine
+</a></li>
+<li>
+<a href="/blog?ref=footer">Blog</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="grid_16 py4" id="mega-footer-bottom">
+<div class="logo left">
+<a href="/" class="grey-dark"><span class="ss-icon h3">KICKSTARTER</span>
+</a></div>
+<p class="right h5 grey-dark">
+&copy;
+2014
+Kickstarter, Inc.
+</p>
+</div>
+</div>
+</div>
+
+<script>
+  //<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    var analytics_vars = { google_analytics_id : "UA-7621056-1", logged_in : "false", social_user: "false" }
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.mixpanel_id = '75b1d24a516ecfc955eadfadc4910661';
+    window.mixpanel_debug = false;
+  //]]>
+</script>
+
+
+<noscript>
+<img alt="Quantcast" border="0" height="1" src="//secure.quantserve.com/pixel/p-34IbSpw2K94Sg.gif" style="display:none" width="1" />
+</noscript>
+
+
+<script>
+  //<![CDATA[
+    window.benchmark = (typeof window.performance == 'object' && typeof window.performance.mark == 'function');
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    (function (root) {
+      function instrument_function (original) {
+        return function () {
+          try {
+            return original.apply(this, arguments);
+          } catch (e) {
+            if (e.stack && root.Honeybadger) {
+              Honeybadger.notify(e, {
+                current_project : root.current_project,
+                current_user : root.current_user
+              });
+            }
+            throw(e);
+          }
+        };
+      }
+      root.instrument_function = instrument_function;
+    }(this));
+  //]]>
+</script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+
+<script>
+  //<![CDATA[
+    (function(){function c(a){this.local_start_time=new Date;this.settings={cookie_name:"request_time"};for(var b in a)this.settings[b]=a[b];this.get_remote_offset()}c.prototype.get_remote_offset=function(){this.cookie_value=this.read_cookie();var a=new Date(this.cookie_value);if(!this.cookie_value||"Invalid Date"===a.toString()){if(this.remote_offset=this.read_cookie("local_offset"))this.remote_offset=parseInt(this.remote_offset,10)}else this.remote_offset=a-this.local_start_time;"undefined"!==typeof this.remote_offset&& !isNaN(this.remote_offset)?(document.cookie="local_offset="+this.remote_offset+"; path=/",this.is_set=!0):this.is_set=!1};c.prototype.time_units=[["milliseconds",1],["seconds",1E3],["minutes",6E4],["hours",36E5],["days",864E5]];c.prototype.get_units_in_interval=function(a,b){var d=a.replace(/^\w/,function(d){return"get"+d.toUpperCase()});return b[d]()};c.prototype.milliseconds_in_day=function(a){"undefined"===typeof a&&(a=new Date);for(var b=0,d=this.time_units.length-2;0<=d;d--)b+=this.get_units_in_interval(this.time_units[d][0], a)*this.time_units[d][1];return b};c.prototype.milliseconds_in_interval=function(a,b){return this.milliseconds_in_day(b)%a};c.prototype.milliseconds_to_next_interval=function(a,b){return a-this.milliseconds_in_interval(a,b)};c.prototype.pluralize=function(a,b){1===b&&(a=a.replace(/s$/,""));return a};c.prototype.read_cookie=function(a){for(var b=window.document.cookie.split(";"),a=(a||this.settings.cookie_name)+"=",d=0;d<b.length;d++){for(var e=b[d];" "==e.charAt(0);)e=e.substring(1,e.length);if(0== e.indexOf(a))return b=e.substring(a.length,e.length),decodeURIComponent(b).replace(/\+/g," ")}return null};c.prototype.destroy_cookie=function(a){var b=new Date;a||(a=this.settings.cookie_name);b.setTime(b.getTime()-864E5);window.document.cookie=a+"=; expires="+b.toGMTString()+"; path=/"};c.prototype.get_remote_time=function(){var a=new Date,b=a.getTime()+this.remote_offset;return a=a.setTime(b)};window.ksr_page_clock=new c})(); (function(){function c(d,a,b){if(d){this.options={unit_base:{seconds:119,minutes:119,hours:72,days:0},end_phrase:d.getAttribute("data-word")||"to go",count_down:d.getAttribute("data-dynamic")||!1};for(k in b)this.options[k]=b[k];this.clock=a;this.time_units=this.clock.time_units.slice(1);this.element=d;this.clock.is_set&&this.attach()}}function a(){this.elements=[];this.attach()}var b=function(d,a){var b=a||window.document.body,c=d.split("."),g=c[c.length-1],c=1<c.length&&c[0]?c[0]:"*";if(window.document.getElementsByClassName)return b.getElementsByClassName(g); if(b.querySelectorAll)return b.querySelectorAll(d);for(var c=b.getElementsByTagName(c),h=[],i=0,f;f=c[i];i++)b=RegExp("(^|\\s)"+g+"(\\s|$)"),(""+f.className).match(b)&&h.push(f);return h};c.prototype.get_remaining_time=function(){var d=this.remote_end_time-this.clock.get_remote_time();0>d&&(d=0);return d};c.prototype.get_current_unit=function(){for(var d,a=0;a<this.time_units.length&&!(d=this.time_units[a],this.get_remaining_time()<=this.options.unit_base[d[0]]*d[1]);a++);return d};c.prototype.update_element= function(){var a=this.get_current_unit(),b=Math.floor(this.get_remaining_time()/a[1]);isNaN(b)||(this.number_element.innerHTML=b,this.text_element.innerHTML=this.clock.pluralize(a[0],b)+" "+this.options.end_phrase)};c.prototype.valid=function(){return!(!this.number_element||!this.text_element)};c.prototype.attach=function(){function a(){c.update_element();if(c.options.count_down&&0<c.get_remaining_time()){var b=c.get_current_unit();this.timeout=window.setTimeout(a,c.clock.milliseconds_to_next_interval(b[1]))}} var c=this;if(this.remote_end_time_string=this.element.getAttribute("data-end_time"))this.remote_end_time_string.match(/^\d+$/)?(this.remote_end_time=new Date,this.remote_end_time.setTime(this.remote_end_time_string)):this.remote_end_time=new Date(this.remote_end_time_string),this.number_element=b(".num",this.element)[0],this.text_element=b(".text",this.element)[0],this.element.ksr_page_timer=!0,this.valid()&&a()};c.prototype.cancel=function(){this.timeout&&clearTimeout(this.timeout)};a.prototype.loading= !0;a.prototype.stop_finding=function(){this.attach_timers();this.loading=!1;document.addEventListener?document.removeEventListener("DOMContentLoaded",this.stop_finding,!1):document.attachEvent&&"complete"===document.readyState&&document.detachEvent("onreadystatechange",this.stop_finding)};a.prototype.bind_ready=function(){var a=this,b=function(){a.stop_finding.call(a)};document.addEventListener?(document.addEventListener("DOMContentLoaded",b,!1),window.addEventListener("load",b,!1)):document.attachEvent&& (document.attachEvent("onreadystatechange",b),window.attachEvent("onload",b))};a.prototype.attach_timers=function(){for(var a=b("div.ksr_page_timer"),e=0;e<a.length;e++)a[e].ksr_page_timer||(new c(a[e],window.ksr_page_clock),this.elements.push(a[e]))};a.prototype.attach=function(){var a=this;this.bind_ready();(function(){a.attach_timers();a.loading&&window.setTimeout(function(){a.attach_timers()},200)})()};window.ProjectTimer=c;new a})();
+  //]]>
+</script>
+
+<script class="template" id="template-widgets__video_embed_code" type="text/x-tmpl-mustache"><iframe width="{{width}}" height="{{height}}" src="{{{path}}}" frameborder="0" scrolling="no"> </iframe>
+</script><script class="template" id="template-projects__baseball_card_tall" type="text/x-tmpl-mustache"><div class="project-card-wrap project-card-wrap-tall border bg-white rounded clip">
+  <div class="project-card relative project-live {{#successful?}}successful{{/successful?}}">
+    <div class="project-thumbnail pt1 pl1 pr1">
+      <a href="{{urls.web.project}}" target="">
+        <img alt="Photo-little" class="projectphoto-little" src="{{photo.little}}" class="fit">
+      </a>
+    </div>
+    <div class="project-card-interior p1 h6 grey-dark">
+      <h6 class="project-title">
+        <a href="{{urls.web.project}}" target="" class="green-dark">{{name}}</a>
+      </h6>
+      <p class="mb1 ellipsis">
+        by
+        {{creator.name}}
+      </p>
+      <p class="blurb">
+        {{blurb}}
+      </p>
+    </div>
+    <div class="absolute-bottom bg-white rounded-bottom">
+
+      {{#location}}
+        <ul class="p1 list project-meta no-margin h6">
+          <li class="ellipsis">
+            <a href="{{location.urls.web.discover}}" data-location="{{location_json}}" class="grey-dark">
+              <span class="ss-icon ss-location"></span>
+              <span class="location-name">{{location.displayable_name}}</span>
+            </a>
+          </li>
+        </ul>
+      {{/location}}
+
+      <div class="project-stats-wrap pb1 pl1 pr1">
+
+        {{#failed?}}
+          <div class='project-status project-failed h6'>
+            <strong> Funding Unsuccessful</strong><br />
+            <span class="grey-dark">Project ended on {{formatted_deadline}}</span>
+          </div>
+        {{/failed?}}
+
+        {{#canceled?}}
+          <div class='project-status project-canceled h6'>
+            <strong> Funding Canceled</strong><br />
+            <span class="grey-dark">Project canceled on {{formatted_state_changed_at}}</span>
+          </div>
+        {{/canceled?}}
+
+        {{#successful?}}
+          <div class='project-pledged-successful bg-green white h6 pl1 pr1 mb1'>
+            <strong>Successful!</strong>
+          </div>
+        {{/successful?}}
+
+        {{#live_or_successful?}}
+          {{#live?}}
+            <div class="project-pledged-wrap bg-grey clip mb1">
+              <div class="project-pledged bg-green full-height" style="width: {{percent_raised_to_100}}%"></div>
+            </div>
+          {{/live?}}
+          <ul class="project-stats list no-margin h6 no-wrap">
+            <li class="first funded inline-block mr1">
+              <strong class="block h6">{{percent_raised_rounded}}%</strong>
+              <span class="grey-dark">funded</span>
+            </li>
+            <li class="pledged inline-block mr1">
+              <strong class="block h6">{{currency_symbol}}{{formatted_money}}</strong>
+              <span class="grey-dark">pledged</span>
+            </li>
+            {{#successful?}}
+              <li class="last successful inline-block">
+                <strong class="block h6">Funded</strong>
+                <div class="deadline grey-dark">{{formatted_deadline}}</div>
+              </li>
+            {{/successful?}}
+            {{#live?}}
+              <li class="last ksr_page_timer inline-block" data-end_time="{{javascript_deadline}}">
+                <strong class="block h6">
+                  <div class="num">30</div>
+                </strong>
+                <div class="span text grey-dark" data-word="left">days to go</div>
+              </li>
+            {{/live?}}
+          </ul>
+        {{/live_or_successful?}}
+      </div>
+    </div>
+  </div>
+</div>
+
+{{#friends_backing?}}
+  <div class="friend_project_context">
+    <div class="friend_facepile">
+      {{#truncated_friends}}
+        <img src="{{avatar.thumb}}" class="{{#has_metadata?}}small{{/has_metadata?}}">
+      {{/truncated_friends}}
+    </div>
+    <p class="friend_namepile">
+      {{{escaped_sentence}}}
+    </p>
+  </div>
+{{/friends_backing?}}
+</script><script class="template" id="template-projects__video_mode" type="text/x-tmpl-mustache"><a href='#' id='video_mode_close' class='close_button z2'><span class='ss-icon ss-delete'></span></a>
+
+<div class='title_card z1 {{context_classes}}' style="display:none;">
+  <div class='interior'>
+    <h2 class='project_title normal_weight'>{{name}}</h2>
+    <p class='blurb'>{{blurb}}</p>
+    <nav class='bar'>
+      <a id='play_button' class='left play' href='#'>
+        <span class='play_active'>
+          <span class='ss-icon ss-play'></span>
+          Play
+        </span>
+        <span class='pause_active'>
+          <span class='ss-icon ss-pause'></span>
+          Pause
+        </span>
+      </a>
+      {{#logged_in}}
+        <div class='remind right'>
+          {{#if_not_starred}}
+            <a class='follow' href='{{urls.web.project}}/watch'><span class='ss-icon ss-star'></span></a>
+          {{/if_not_starred}}
+          {{#if_starred}}
+            <a class='unfollow' href='{{urls.web.project}}/unwatch'><span class='ss-icon ss-star active'></span></a>
+          {{/if_starred}}
+        </div>
+      {{/logged_in}}
+      <a class='right explore button button_green small' href='#'>Explore this project</a>
+    </nav>
+  </div>
+</div>
+
+<div class='channel_controls z1'>
+  <a href='#' class='{{#playlist_is_location}}selected {{/playlist_is_location}}location'>Something else near {{location.first_name}} <span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_featured}}selected {{/playlist_is_featured}}featured'>Something different<span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_category}}selected {{/playlist_is_category}}category'>Something else in {{category.name}} <span class='ss-icon ss-navigateright'></span></a>
+</div>
+
+<div class='project_video' style='background-image: url('{{photo.full}}')'>
+  <div class='cover'>
+    <video>
+      <source src='{{video.high}}' type='video/mp4'/>
+      <source src='{{video.webm}}' type='video/webm'/>
+    </video>
+  </div>
+</div>
+</script><script class="template" id="template-site__video_mode_fourohfour" type="text/x-tmpl-mustache"><section class='four_oh_four'>
+  <p class='big_type'>
+    Looks like you've reached the end of the line! <br />Check out <a class="another" href='#'>another channel</a> or <a href='/discover'>browse projects in discover</a>.
+  </p>
+</section>
+</script>
+
+<script id="schwamm_formatting_options" type="text/javascript">
+//<![CDATA[
+(function(){window.formatters = window.formatters || {}; var formatting_options = {"distance_date_intervals":[[5,"just now"],[29,"less than a minute ago"],[89,"1 minute ago"],[2640,"%m minutes ago"],[5340,"about 1 hour ago"],[82800,"about %h hours ago"],[147600,"1 day ago"],[604800,"%d days ago"],[15552000,"on %t"],[0,"on %y"]],"currency_symbol_mappings":{"AFN":"\u060b","ALL":"Lek","ARS":"$","AUD":"$","AWG":"\u0192","AZN":"\u043c\u0430\u043d","BAM":"KM","BBD":"$","BGN":"\u043b\u0432","BMD":"$","BND":"$","BOB":"$b","BRL":"R$","BSD":"$","BWP":"P","BYR":"p.","BZD":"BZ$","CAD":"$","CLP":"$","CNY":"\u00a5","COP":"$","CRC":"\u20a1","CUP":"\u20b1","CZK":"K\u010d","DKK":"kr","DOP":"RD$","EGP":"\u00a3","EUR":"\u20ac","FJD":"$","FKP":"\u00a3","GBP":"\u00a3","GIP":"\u00a3","GTQ":"Q","GYD":"$","HKD":"$","HNL":"L","HRK":"kn","HUF":"Ft","IDR":"Rp","ILS":"\u20aa","IRR":"\ufdfc","ISK":"kr","JMD":"J$","JPY":"\u00a5","KGS":"\u043b\u0432","KHR":"\u17db","KPW":"\u20a9","KRW":"\u20a9","KYD":"$","KZT":"\u043b\u0432","LAK":"\u20ad","LBP":"\u00a3","LKR":"\u20a8","LRD":"$","LTL":"Lt","LVL":"Ls","MKD":"\u0434\u0435\u043d","MNT":"\u20ae","MUR":"\u20a8","MXN":"$","MYR":"RM","MZN":"MT","NAD":"$","NGN":"\u20a6","NIO":"C$","NOK":"kr","NPR":"\u20a8","NZD":"$","OMR":"\ufdfc","PAB":"B/.","PEN":"S/.","PHP":"\u20b1","PKR":"\u20a8","PLN":"z\u0142","PYG":"Gs","QAR":"\ufdfc","RON":"lei","RSD":"\u0414\u0438\u043d.","RUB":"\u0440\u0443\u0431","SAR":"\ufdfc","SBD":"$","SCR":"\u20a8","SEK":"kr","SGD":"$","SHP":"\u00a3","SOS":"S","SRD":"$","SVC":"$","SYP":"\u00a3","THB":"\u0e3f","TRY":"TL","TTD":"TT$","TWD":"NT$","UAH":"\u20b4","USD":"$","UYU":"$U","UZS":"\u043b\u0432","VEF":"Bs","VND":"\u20ab","YER":"\ufdfc","ZAR":"R"},"currency_trailing_code_mappings":{"AUD":true,"CAD":true,"NZD":true,"USD":true},"currency_formats":["money","shorter_money"]}; for (key in formatting_options) {window.formatters[key] = formatting_options[key]};}());
+//]]>
+</script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("begin_base.js_tag");}
+  //]]>
+</script>
+<script src="https://d297h9he240fqh.cloudfront.net/assets/packages/base-45cdab84617ddfb8905b7cddc8500c19.js" type="text/javascript"></script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("end_base.js_tag");}
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    document.domain='kickstarter.com';
+  //]]>
+</script>
+
+<iframe height="0" id="api_xdreceiver" src="https://api.kickstarter.com/xdreceiver/85e6.html" style="display: none;" width="0"></iframe>
+
+
+
+<div id="fb-root"></div>
+<script>
+  //<![CDATA[
+    var channelUrl = window.location.protocol + "//" + window.location.host + "/channel.html",
+      skip_autologin = $('body').is('.skip_autologin');
+    
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId: window.fb_app_id,
+        channelUrl: channelUrl,
+        status: true,    // check login status
+        cookie: true,    // enable cookies to allow the server to access the session
+        xfbml: true,     // parse XFBML
+        logging: false   // turn off logging
+      });
+    
+      FB.getLoginStatus(function (response) {
+        if (response.status === 'connected') {
+          if (read_cookie("logout_from_fb")) {
+            FB.logout();
+            destroy_cookie("logout_from_fb");
+          } else if (!skip_autologin) {
+            $.get("/fb/autologin", {'fbsr': response.authResponse.signedRequest});
+          } else if (false && 0 == response.authResponse.userID) {
+            $.get("/fb/refresh", {'fbsr': response.authResponse.signedRequest});
+          }
+        } else {
+          if (read_cookie("logout_from_fb")) {
+            destroy_cookie("logout_from_fb");
+          }
+        }
+      })
+    
+      $(document).trigger('fb:loaded');
+    };
+    
+    
+    // Load the SDK Asynchronously
+    (function(d){
+      var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+      js = d.createElement('script'); js.id = id; js.async = true;
+      js.src = "//connect.facebook.net/en_US/all.js";
+      d.getElementsByTagName('head')[0].appendChild(js);
+    }(document));
+  //]]>
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,3099 @@
+<!DOCTYPE html>
+<html class="projects_show  fontface no-js" lang="en">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# kickstarter: http://ogp.me/ns/fb/kickstarter#">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-5.newrelic.com","errorBeacon":"jserror.newrelic.com","licenseKey":"b04b883ad2","applicationID":"11086","transactionName":"cFteRUULX1wHFhtIEFxeVVJDFxxDCgtD","queueTime":12,"applicationTime":573,"ttGuid":"","agentToken":null,"agent":"js-agent.newrelic.com/nr-411.min.js"}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"Vw4BVEVSCQMIUg=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e){function n(t,e,n){n||(n={});for(var r=o[t],a=r&&r.length||0,s=n[i]||(n[i]={}),u=0;a>u;u++)r[u].apply(s,e);return s}function r(t,e){var n=o[t]||(o[t]=[]);n.push(e)}var o={},i="nr@context";e.exports={on:r,emit:n}},{}],2:[function(t){function e(t,e,n,i,s){return u?u-=1:r("err",[s||new UncaughtException(t,e,n)]),"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t(5),a=window.onerror,s=!1,u=0;t("loader").features.push("err"),window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(d){"stack"in d&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(4),s=!0)}i.on("fn-start",function(){s&&(u+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&u>0&&(u-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:4,3:3,4:6,5:1,6:14,handle:"D5DuLP",loader:"G9z0Bl"}],3:[function(t){function e(t){r.inPlace(t,["addEventListener","removeEventListener"],"-",n)}function n(t){return t[1]}var r=t(1),o=(t(3),t(2));if(e(window),"getPrototypeOf"in Object){for(var i=document;i&&!i.hasOwnProperty("addEventListener");)i=Object.getPrototypeOf(i);i&&e(i);for(var a=XMLHttpRequest.prototype;a&&!a.hasOwnProperty("addEventListener");)a=Object.getPrototypeOf(a);a&&e(a)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&e(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=e["nr@wrapped"]?t[1]=e["nr@wrapped"]:e["nr@wrapped"]=t[1]=r(e,"fn-"):"function"==typeof e.handleEvent&&r.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:15,2:1,3:14}],4:[function(t){var e=(t(3),t(1)),n=t(2);e.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=e(t[0],"fn-")})},{1:15,2:1,3:14}],5:[function(t){function e(t){var e=t[0];"string"==typeof e&&(e=new Function(e)),t[0]=n(e,"fn-")}var n=(t(3),t(1)),r=t(2);n.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",e)},{1:15,2:1,3:14}],6:[function(t){function e(){o.inPlace(this,s,"fn-")}function n(t,e){o.inPlace(e,["onreadystatechange"],"fn-")}function r(t,e){return e}var o=t(1),i=t(2),a=window.XMLHttpRequest,s=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];window.XMLHttpRequest=function(t){var n=new a(t);try{i.emit("new-xhr",[],n),o.inPlace(n,["addEventListener","removeEventListener"],"-",function(t,e){return e}),n.addEventListener("readystatechange",e,!1)}catch(r){try{i.emit("internal-error",r)}catch(s){}}return n},window.XMLHttpRequest.prototype=a.prototype,o.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",r),i.on("send-xhr-start",n),i.on("open-xhr-start",n)},{1:15,2:1}],7:[function(t){function e(){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;u>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,d="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=e(d);if(f&&(r.rxSize=f),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}t("loader").features.push("xhr");var o=t("handle"),i=t(1),a=t(5),s=["load","error","abort","timeout"],u=s.length,d=t(2);t(3),t(4),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var d=e(o);d&&(r.txSize=d)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",e)}catch(r){}}};for(var f=0;u>f;f++)n.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&e()},{1:8,2:11,3:3,4:6,5:1,handle:"D5DuLP",loader:"G9z0Bl"}],8:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e){var n=r[t];return n?n.apply(this,e):(o[t]||(o[t]=[]),void o[t].push(e))}var r={},o={};e.exports=n,n.queues=o,n.handlers=r},{}],11:[function(t,e){function n(t){if(!t||"object"!=typeof t&&"function"!=typeof t)return-1;if(t===window)return 0;if(o.call(t,"__nr"))return t.__nr;try{return Object.defineProperty(t,"__nr",{value:r,writable:!0,enumerable:!1}),r}catch(e){return t.__nr=r,r}finally{r+=1}}var r=1,o=Object.prototype.hasOwnProperty;e.exports=n},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&u&&u.body){p.proto="https"===c.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=u.createElement("script");e.src=p.proto+t.agent,u.body.appendChild(e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,u=s.document,d="addEventListener",f="attachEvent",c=(""+location).split("?")[0],p=e.exports={offset:i(),origin:c,features:[]};u[d]?(u[d]("DOMContentLoaded",o,!1),s[d]("load",n,!1)):(u[f]("onreadystatechange",r),s[f]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],14:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],15:[function(t,e){function n(t,e,r,s){function nrWrapper(){try{var n,a=u(arguments),d=this,f=r&&r(a,d)||{}}catch(c){i([c,"",[a,d,s],f])}o(e+"start",[a,d,s],f);try{return n=t.apply(d,a)}catch(p){throw o(e+"err",[a,d,p],f),p}finally{o(e+"end",[a,d,n],f)}}return a(t)?t:(e||(e=""),nrWrapper[n.flag]=!0,nrWrapper)}function r(t,e,r,o){r||(r="");var i,s,u,d="-"===r.charAt(0);for(u=0;u<e.length;u++)s=e[u],i=t[s],a(i)||(t[s]=n(i,d?s+r:r,o,s,t))}function o(t,e,n){try{s.emit(t,e,n)}catch(r){i([r,t,e,n])}}function i(t){try{s.emit("internal-error",t)}catch(e){}}function a(t){return!(t&&"function"==typeof t&&t.apply&&!t[n.flag])}var s=t(1),u=t(2);e.exports=n,n.inPlace=r,n.flag="nr@wrapper"},{1:1,2:14}]},{},["G9z0Bl",2,7]);</script><script>
+  //<![CDATA[
+    docElement = this.document.documentElement;
+    docElement.className=docElement.className.replace(/\bno-js\b/,'') + 'js';
+  //]]>
+</script>
+<title>Dragon Fin Soup by Grimm Bros &mdash; Kickstarter</title><script>
+  //<![CDATA[
+    window.report_errors = true;
+    window.honeybadger_configuration = {
+      api_key : "02ab109335c0dd1a93506d92f22217a7",
+      environment : "production",
+      component : "projects",
+      action : "show",
+      onerror : false
+    };
+  //]]>
+</script>
+
+
+<!--[if lt IE 9]>
+  <script src="//html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta content="telephone=no" name="format-detection">
+
+<!--[if !IE]> -->
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base-9f623ad5d021a188cfb2d68a0cdf7a7b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<!-- <![endif]-->
+<!--[if IE]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base_blessed-2640c72487552f9a2ef9f2620b4af860.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<!--[if lte IE 9]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_nine-a93fe10530f175f96c4078b7e070d7e1.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 8]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_eight-f75aeb274436f94a0d243774456b1c62.css" media="screen" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if lte IE 7]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie-c019c01acd3a96588b346cf577a3504f.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_seven-5a3d2cef660cd281fd844b04b2397dbb.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!--[if IE 6]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_six-e4d3caf76e405fe19aee6ece8bda701b.css" media="screen,print" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+<link href="https://d297h9he240fqh.cloudfront.net/favicon.png" rel="icon" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-precomposed-7b603dba7cf80e4acc57d94a991bebbd.png" rel="apple-touch-icon-precomposed" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-ipad-precomposed-3176f72977daf43dee3b0d348484dc01.png" rel="apple-touch-icon-precomposed" sizes="72x72" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-iphone4-precomposed-b93b70168cd8492c843d0fea873c7f83.png" rel="apple-touch-icon-precomposed" sizes="114x114" type="image/png">
+<link href="https://www.kickstarter.com/services/oembed?url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Fgrimmbros%2Fdragon-fin-soup" rel="alternate" title="Dragon Fin Soup Script Tag oEmbed" type="application/json+oembed">
+<link rel="alternate" type="application/atom+xml" title="Dragon Fin Soup : Kickstarter" href="https://www.kickstarter.com/projects/grimmbros/dragon-fin-soup/posts.atom" />
+<meta property="twitter:app:id:iphone" content="596961532"/>
+<meta property="twitter:app:name:iphone" content="Kickstarter"/>
+<meta property="twitter:app:url:iphone" content="ksr://www.kickstarter.com/projects/grimmbros/dragon-fin-soup"/>
+<meta name="video_height" content="360"/>
+<meta name="video_width" content="640"/>
+<meta name="video_type" content="application/x-shockwave-flash"/>
+<meta name="title" content="Kickstarter &gt;&gt; Dragon Fin Soup by Grimm Bros"/>
+<meta name="description" content="Grimm Bros is raising funds for Dragon Fin Soup on Kickstarter! 
+
+ A  charming SNES style RPG with Roguelike elements, set in a twisted fairytale world with a cheerful, yet raging alcoholic Heroine"/>
+<meta property="og:title" content="Dragon Fin Soup"/>
+<meta property="og:type" content="kickstarter:project"/>
+<meta property="og:image" content="https://s3.amazonaws.com/ksr/projects/866917/photo-main.jpg?1397867732"/>
+<meta property="og:url" content="https://www.kickstarter.com/projects/grimmbros/dragon-fin-soup"/>
+<meta property="og:site_name" content="Kickstarter"/>
+<meta property="fb:app_id" content="69103156693"/>
+<meta property="og:description" content="A  charming SNES style RPG with Roguelike elements, set in a twisted fairytale world with a cheerful, yet raging alcoholic Heroine"/>
+<meta property="kickstarter:creator" content="https://www.kickstarter.com/profile/grimmbros"/>
+<meta property="twitter:url:landing_url" content="https://www.kickstarter.com/projects/grimmbros/dragon-fin-soup"/>
+<meta property="twitter:card" content="2427656750:kickstarter_project"/>
+<meta property="twitter:site" content="@kickstarter"/>
+<meta property="twitter:site:id" content="16186995"/>
+<meta property="twitter:text:title" content="Dragon Fin Soup"/>
+<meta property="twitter:text:artist" content="Grimm Bros"/>
+<meta property="twitter:text:backers" content="4044"/>
+<meta property="twitter:text:pledged" content="$119,719 USD"/>
+<meta property="twitter:text:time" content="0 seconds"/>
+<meta property="twitter:text:location" content="Philadelphia, PA"/>
+<meta property="twitter:image:location_image" content="https://d3mlfyygrfdi2i.cloudfront.net/b40e/pin.png"/>
+<meta property="twitter:text:description" content="A  charming SNES style RPG with Roguelike elements, set in a twisted fairytale world with a cheerful, yet raging alcoholic Heroine"/>
+<meta property="twitter:image:media" content="https://s3.amazonaws.com/ksr/projects/866917/photo-main.jpg?1397867732"/>
+<meta property="twitter:image:width" content="640"/>
+<meta property="twitter:image:height" content="480"/>
+<meta property="twitter:player:stream:url" content="https://d2pq0u4uni88oo.cloudfront.net/projects/866917/video-355462-h264_base.mp4"/>
+<meta property="twitter:player:stream:content" content="video/mp4"/>
+<meta property="twitter:player:url" content="https://www.kickstarter.com/projects/grimmbros/dragon-fin-soup/widget/video.html"/>
+<meta property="twitter:player:height" content="360"/>
+<meta property="twitter:player:width" content="640"/>
+<meta property="twitter:maxage" content="60"/>
+<meta property="og:video" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F866917%2Fvideo-355462-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F866917%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Grimm+Bros&amp;project_title=Dragon+Fin+Soup&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Fgrimmbros%2Fdragon-fin-soup&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:secure_url" content="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F866917%2Fvideo-355462-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F866917%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Grimm+Bros&amp;project_title=Dragon+Fin+Soup&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Fgrimmbros%2Fdragon-fin-soup&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque"/>
+<meta property="og:video:height" content="360"/>
+<meta property="og:video:width" content="640"/>
+<meta property="og:video:type" content="application/x-shockwave-flash"/>
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="6V9EVRgL8vkoc7WiEHfsJ9G0TN4QHvljrtteHLAE4Xg=" name="csrf-token" />
+<script type="text/javascript">
+  var _sift = _sift || [];
+  _sift.push(['_setAccount', '637102']);
+  _sift.push(['_setUserId', '']);
+  _sift.push(['_trackPageview']);
+
+  (function() {
+    function loadSift() {
+      var sift, s;
+      if (root.visitor_id) {
+        _sift.push(['_setSessionId', root.visitor_id]);
+      }
+      sift = document.createElement('script');
+      sift.type = 'text/javascript';
+      sift.async = true;
+      sift.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dtlilztwypawv.cloudfront.net/s.js';
+      s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(sift, s);
+    }
+    if (window.attachEvent) {
+      window.attachEvent('onload', loadSift);
+    } else {
+      window.addEventListener('load', loadSift, false);
+    }
+  })();
+</script>
+<link href="http://kck.st/1cTbc5U" rel="shorturl">
+<link href="https://www.kickstarter.com/projects/grimmbros/dragon-fin-soup" rel="canonical">
+<link href="https://s3.amazonaws.com/ksr/projects/866917/photo-med.jpg?1397867732" rel="image_src">
+<link href="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?allowfullscreen=true&amp;autostart=true&amp;backcolor=000000&amp;controlbar=over&amp;file=https%3A%2F%2Fd2pq0u4uni88oo.cloudfront.net%2Fprojects%2F866917%2Fvideo-355462-h264_high.mp4&amp;image=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fprojects%2F866917%2Fphoto-full.jpg&amp;project_creators=A+Video+Games+project+by+Grimm+Bros&amp;project_title=Dragon+Fin+Soup&amp;project_url=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Fgrimmbros%2Fdragon-fin-soup&amp;screencolor=000000&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf&amp;wmode=opaque" rel="video_src">
+<script>
+  //<![CDATA[
+    window.current_checkout = "{&quot;id&quot;:0,&quot;domestic&quot;:null,&quot;amount&quot;:0.0,&quot;updated_at&quot;:0,&quot;created_at&quot;:0}";
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.current_ip = '94.209.101.212';
+    window.current_ip_datacenter = 'false';
+    window.enabled_features = {"elasticsearch":true,"security_history_read":true,"security_history_write":true,"advanced_discovery_es":true,"ios_crashlytics":true,"ios_mixpanel":true,"stories_veronica_mars":true,"veronica_mars_hero":true,"password_reset_banner":true};
+    window.fb_app_id = '69103156693';
+    
+    var _sf_startpt=(new Date()).getTime();
+    
+    window.current_project = "{&quot;id&quot;:615356724,&quot;name&quot;:&quot;Dragon Fin Soup&quot;,&quot;blurb&quot;:&quot;A  charming SNES style RPG with Roguelike elements, set in a twisted fairytale world with a cheerful, yet raging alcoholic Heroine&quot;,&quot;goal&quot;:24000.0,&quot;pledged&quot;:119719.59,&quot;state&quot;:&quot;successful&quot;,&quot;slug&quot;:&quot;dragon-fin-soup&quot;,&quot;disable_communication&quot;:false,&quot;country&quot;:&quot;US&quot;,&quot;currency&quot;:&quot;USD&quot;,&quot;currency_symbol&quot;:&quot;$&quot;,&quot;currency_trailing_code&quot;:true,&quot;deadline&quot;:1397229321,&quot;state_changed_at&quot;:1397229321,&quot;created_at&quot;:1392177964,&quot;launched_at&quot;:1394637321,&quot;backers_count&quot;:4044,&quot;photo&quot;:{&quot;full&quot;:&quot;https://s3.amazonaws.com/ksr/projects/866917/photo-full.jpg?1397867732&quot;,&quot;ed&quot;:&quot;https://s3.amazonaws.com/ksr/projects/866917/photo-ed.jpg?1397867732&quot;,&quot;med&quot;:&quot;https://s3.amazonaws.com/ksr/projects/866917/photo-med.jpg?1397867732&quot;,&quot;little&quot;:&quot;https://s3.amazonaws.com/ksr/projects/866917/photo-little.jpg?1397867732&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/projects/866917/photo-small.jpg?1397867732&quot;,&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/projects/866917/photo-thumb.jpg?1397867732&quot;,&quot;1024x768&quot;:&quot;https://s3.amazonaws.com/ksr/projects/866917/photo-1024x768.jpg?1397867732&quot;,&quot;1536x1152&quot;:&quot;https://s3.amazonaws.com/ksr/projects/866917/photo-1536x1152.jpg?1397867732&quot;},&quot;creator&quot;:{&quot;id&quot;:2102369501,&quot;name&quot;:&quot;Grimm Bros&quot;,&quot;slug&quot;:&quot;grimmbros&quot;,&quot;avatar&quot;:{&quot;thumb&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/9367669/Grimm_Bros_logo_copy.thumb.jpg?1394748686&quot;,&quot;small&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/9367669/Grimm_Bros_logo_copy.small.jpg?1394748686&quot;,&quot;medium&quot;:&quot;https://s3.amazonaws.com/ksr/avatars/9367669/Grimm_Bros_logo_copy.medium.jpg?1394748686&quot;},&quot;urls&quot;:{&quot;web&quot;:{&quot;user&quot;:&quot;https://www.kickstarter.com/profile/grimmbros&quot;},&quot;api&quot;:{&quot;user&quot;:&quot;https://api.kickstarter.com/v1/users/2102369501?signature=1399960303.9955fe4acb09a7317395ebbbd38e4b7149f5692e&quot;}}},&quot;location&quot;:{&quot;id&quot;:2471217,&quot;name&quot;:&quot;Philadelphia&quot;,&quot;slug&quot;:&quot;philadelphia-pa&quot;,&quot;short_name&quot;:&quot;Philadelphia, PA&quot;,&quot;displayable_name&quot;:&quot;Philadelphia, PA&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:&quot;PA&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/philadelphia-pa&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/philadelphia-pa&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1399951822.633f9943a0a9d04cbc2dad83d443fce6fe9f7d12&amp;woe_id=2471217&quot;}}},&quot;category&quot;:{&quot;id&quot;:35,&quot;name&quot;:&quot;Video Games&quot;,&quot;slug&quot;:&quot;games/video games&quot;,&quot;position&quot;:7,&quot;parent_id&quot;:12,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;http://www.kickstarter.com/discover/categories/games/video%20games&quot;}}},&quot;urls&quot;:{&quot;web&quot;:{&quot;project&quot;:&quot;https://www.kickstarter.com/projects/grimmbros/dragon-fin-soup&quot;,&quot;project_short&quot;:&quot;http://kck.st/1cTbc5U&quot;,&quot;updates&quot;:&quot;https://www.kickstarter.com/projects/grimmbros/dragon-fin-soup/posts&quot;},&quot;api&quot;:{&quot;project&quot;:&quot;https://api.kickstarter.com/v1/projects/615356724?signature=1399960303.80150fd193a0f73cf863d7cd830e5bf378d44b31&quot;,&quot;comments&quot;:&quot;https://api.kickstarter.com/v1/projects/615356724/comments?signature=1399960303.24f5117202a691676ee42348ec70d2a60e59f02b&quot;,&quot;updates&quot;:&quot;https://api.kickstarter.com/v1/projects/615356724/updates?signature=1399960303.ef9255d791841d22b5aa3259dd7333ede9503514&quot;}},&quot;updated_at&quot;:1399327484,&quot;successful_at&quot;:1397229321,&quot;video&quot;:{&quot;id&quot;:355462,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/866917/video-355462-h264_high.mp4?2014&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/866917/video-355462-h264_base.mp4?2014&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/866917/video-355462-webm.webm?2014&quot;,&quot;width&quot;:640,&quot;height&quot;:360,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/866917/video-355462-h264_base.jpg?2014&quot;},&quot;comments_count&quot;:1578,&quot;updates_count&quot;:17,&quot;rewards&quot;:[{&quot;id&quot;:0,&quot;minimum&quot;:1,&quot;reward&quot;:&quot;No Reward&quot;},{&quot;id&quot;:2419687,&quot;minimum&quot;:5.0,&quot;reward&quot;:&quot;THE ORIGINAL SOUNDTRACK\\t\\r\\n==============================\\r\\nDragon Fin Soup OST + HD Wallpaper Pack\\r\\n==============================\\r\\nWe thank you for supporting Dragon Fin Soup and want you to enjoy the fantastic ORIGINAL SOUNDTRACK by our very own talented music composer Jade Leamcharaskul!  In addition we will give you a gorgeous HD WALLPAPER PACK!  Available for digital download.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1427846400,&quot;project_id&quot;:615356724,&quot;backers_count&quot;:27,&quot;updated_at&quot;:1397817237},{&quot;id&quot;:2419692,&quot;minimum&quot;:15.0,&quot;reward&quot;:&quot;DRAGON FIN SOUP THE GAME\\t\\t\\t\\t\\r\\n==============================\\r\\nDragon Fin Soup OST + HD Wallpaper Pack + Dragon Fin Soup the Game + Game Manual + Forum Access\\r\\n==============================\\r\\nGratz!  You are now the proud owner of Dragon Fin Soup the GAME featuring epic tales of murder, madness and dark secrets!  In addition we will be including a sleek digital game MANUAL and access to our FORUMS to chat with the Grimm team and discuss tips, tricks and strategies with other players help you in your adventure. All previous rewards are included.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1427846400,&quot;project_id&quot;:615356724,&quot;backers_count&quot;:2131,&quot;updated_at&quot;:1399564473},{&quot;id&quot;:2419703,&quot;minimum&quot;:20.0,&quot;reward&quot;:&quot;DIGITAL PLUS EDITION\\t\\t\\r\\n==============================\\r\\nDragon Fin Soup OST + HD Wallpaper Pack (2) + Dragon Fin Soup the Game + Game Manual + Forum Access + Digital Art Book\\r\\n==============================\\r\\nNabbing the Digital Plus Edition of Dragon Fin Soup gets you our beautifully illustrated digital ART BOOK!   You can now enjoy a behind-the-scenes view of our production art, design sketches, and our next snazzy HD WALLPAPER PACK all created by Randis Albion.   All previous rewards are included.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1427846400,&quot;project_id&quot;:615356724,&quot;backers_count&quot;:660,&quot;updated_at&quot;:1399188628},{&quot;id&quot;:2423052,&quot;minimum&quot;:30.0,&quot;reward&quot;:&quot;PET FAMILIAR - EARLY BIRD - EDITION ============================== Dragon Fin Soup OST + HD Wallpaper Pack (2) + Dragon Fin Soup the Game + Game Manual + Forum Access + Digital Art Book + Exclusive Pet ============================== As an early backer of Dragon Fin Soup we offer a special limited tier to adopt your own PET FAMILIAR! A variety of familiars can be found and collected in Dragon Fin Soup, but this special one is chosen by you! Join us on our developer forums and vote on the kind of pet and name you would like for your adventures. All previous rewards are included.&quot;,&quot;limit&quot;:200,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1427846400,&quot;project_id&quot;:615356724,&quot;remaining&quot;:0,&quot;backers_count&quot;:200,&quot;updated_at&quot;:1397836816},{&quot;id&quot;:2419709,&quot;minimum&quot;:35.0,&quot;reward&quot;:&quot;PET FAMILIAR EDITION\\t\\t\\r\\n==============================\\r\\nDragon Fin Soup OST + HD Wallpaper Pack (2) + Dragon Fin Soup the Game + Game Manual + Forum Access + Digital Art Book + Exclusive Pet\\r\\n==============================\\r\\nAdopt your own PET FAMILIAR!  As mentioned above there are a variety of familiars that can be found and collected in Dragon Fin Soup, but this special one is chosen by you!  Join us on our developer forums and vote on the kind of pet and name you would like for your adventures.  All previous rewards are included.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1427846400,&quot;project_id&quot;:615356724,&quot;backers_count&quot;:332,&quot;updated_at&quot;:1399594294},{&quot;id&quot;:2477628,&quot;minimum&quot;:40.0,&quot;reward&quot;:&quot;ARTISAN EDITION\\r\\n============================== \\r\\nDragon Fin Soup OST + HD Wallpaper Pack (2) + Dragon Fin Soup the Game + Game Manual + Forum Access + Digital Art Book + Poster (1)\\r\\n============================== \\r\\n\\u25ae Global shipping cost included! \\u25ae \\r\\n============================== \\r\\nHere by popular demand we are introducing the Artisan Edition of Dragon Fin Soup in which we offer you an awesome 20x15 inch ART PRINT signed by our one and only Randis Albion :)  All previous rewards are included with the exception of the EXCLUSIVE PET as we need to make this tier balanced among the rest of our rewards.&quot;,&quot;limit&quot;:2000,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1427846400,&quot;project_id&quot;:615356724,&quot;remaining&quot;:1841,&quot;backers_count&quot;:159,&quot;updated_at&quot;:1397577703},{&quot;id&quot;:2477620,&quot;minimum&quot;:50.0,&quot;reward&quot;:&quot;GHOST EDITION\\r\\n============================== \\r\\nDragon Fin Soup OST + HD Wallpaper Pack (2) + Dragon Fin Soup the Game + Game Manual + Forum Access + Digital Art Book + Exclusive Pet + Add your name to the Ghost Pool + Spirit Familiar\\r\\n==============================\\r\\nBecome a haunted specter from beyond the grave with the Ghost Edition.  Many of our enemies in game have randomly generated names.  We will add your name to the GHOST POOL.  Now you might encounter a ghost in-game with your name!  In addition you will also receive a special, cute SPIRIT FAMILIAR!  This lil fella will not come with any gameplay advantages as we do not want to be unfair for those who did not back this tier.&quot;,&quot;limit&quot;:2000,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1427846400,&quot;project_id&quot;:615356724,&quot;remaining&quot;:1789,&quot;backers_count&quot;:211,&quot;updated_at&quot;:1397836825},{&quot;id&quot;:2419731,&quot;minimum&quot;:70.0,&quot;reward&quot;:&quot;BLOOD RING EDITION\\t\\t\\r\\n==============================\\r\\nDragon Fin Soup OST + HD Wallpaper Pack (2) + Dragon Fin Soup the Game + Game Manual + Forum Access + Digital Art Book + Exclusive Pet + Blood Ring + Poster (1)\\r\\n==============================\\r\\n\\u25ae Global shipping cost included!\\u25ae\\r\\n==============================\\r\\nWant cool schwag?  Proudly display your support of Dragon Fin Soup \\r\\nwith an awesome BLOOD RING (one size fits all) and a gorgeous 20x12 inch POSTER PRINT. All previous rewards are included.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1427846400,&quot;project_id&quot;:615356724,&quot;backers_count&quot;:14,&quot;updated_at&quot;:1397230884},{&quot;id&quot;:2423098,&quot;minimum&quot;:99.0,&quot;reward&quot;:&quot;EYE CANDY - EARLY BIRD - EDITION\\t\\t\\t\\r\\n==============================\\r\\nDragon Fin Soup OST + HD Wallpaper Pack (2) + Dragon Fin Soup the Game + Game Manual + Forum Access + Digital Art Book + Exclusive Pet + Blood Ring + Poster (4) + LE T-Shirt + Name in Credits\\r\\n==============================\\r\\n\\u25ae Global shipping cost included! \\u25ae\\r\\n==============================\\r\\nAs an early backer you get a special offer for this Tier!  We will be sending you a limited edition Grimm Bros team T-SHIRT (L) and three additional brilliant photo paper POSTERS signed by the Grimm Bros!  We consider you now an honorary part of the Grimm Team and you get your name listed in the game CREDITS. All previous rewards are included except where limited.&quot;,&quot;limit&quot;:111,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1427846400,&quot;project_id&quot;:615356724,&quot;remaining&quot;:1,&quot;backers_count&quot;:110,&quot;updated_at&quot;:1397847639},{&quot;id&quot;:2418630,&quot;minimum&quot;:100.0,&quot;reward&quot;:&quot;WOLF PLUSHIE EDITION\\r\\n==============================\\r\\nDragon Fin Soup OST + HD Wallpaper Pack (2) + Dragon Fin Soup the Game + Game Manual + Forum Access + Digital Art Book +  Exclusive Pet + Blood Ring + Poster (1) + Wolf Plushie\\r\\n==============================\\r\\n\\u25ae Global shipping cost included! \\u25ae\\r\\n==============================\\r\\nGrab an exclusive limited edition plushie of BIG BAD WOLF PET FAMILIAR! This cute cuddly companion will keep you company on all of your real life or gaming adventures.  All previous rewards are included except where limited.&quot;,&quot;limit&quot;:1000,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1427846400,&quot;project_id&quot;:615356724,&quot;remaining&quot;:909,&quot;backers_count&quot;:91,&quot;updated_at&quot;:1397862041},{&quot;id&quot;:2419739,&quot;minimum&quot;:150.0,&quot;reward&quot;:&quot;EYE CANDY EDITION\\t\\t\\t\\r\\n==============================\\r\\nDragon Fin Soup OST + HD Wallpaper Pack (2) + Dragon Fin Soup the Game + Game Manual + Forum Access + Digital Art Book + Exclusive Pet + Blood Ring + Poster (4) + LE T-Shirt + Name in Credits\\r\\n==============================\\r\\n\\u25ae Global shipping cost included! \\u25ae\\r\\n==============================\\r\\nThank you for your generous support! To show our appreciation we will be sending you a limited edition Grimm Bros team T-SHIRT (L) and three additional brilliant photo paper POSTERS signed by the Grimm Bros!  We consider you now an honorary part of the Grimm Team and you get your name listed in the game CREDITS. All previous rewards are included except where limited.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1427846400,&quot;project_id&quot;:615356724,&quot;backers_count&quot;:4,&quot;updated_at&quot;:1397230669},{&quot;id&quot;:2420012,&quot;minimum&quot;:200.0,&quot;reward&quot;:&quot;CRYSTAL EDITION\\t\\t\\t\\r\\n==============================\\r\\nDragon Fin Soup OST + HD Wallpaper Pack (2) + Dragon Fin Soup the Game + Game Manual + Forum Access + Digital Art Book + Exclusive Pet + Blood Ring + Poster (4) + LE T-Shirt + Name in Credits + Name added to Monster Pool + Engraved Crystal\\r\\n==============================\\r\\n\\u25ae Global shipping cost included! \\u25ae\\r\\n==============================\\r\\nImmortalize your name in Dragon Fin Soup. How you may ask?  First off we will add your name to our MONSTER POOL.  Now you have a chance of meeting a monster named after yourself in-game!  Then to commemorate this grand occasion we will engrave your name on a beautiful natural CRYSTAL and send it to you in a crafted wooden chest.  How awesome is that?  All previous rewards are included except where limited.&quot;,&quot;limit&quot;:200,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1427846400,&quot;project_id&quot;:615356724,&quot;remaining&quot;:185,&quot;backers_count&quot;:15,&quot;updated_at&quot;:1397836822},{&quot;id&quot;:2420032,&quot;minimum&quot;:200.0,&quot;reward&quot;:&quot;MUSIC BOX 1.0 EDITION\\t\\t\\r\\n==============================\\r\\nDragon Fin Soup OST + HD Wallpaper Pack (2) + Dragon Fin Soup of the Game + Game Manual + Forum Access + Digital Art Book + Exclusive Pet + Blood Ring + Poster (4) + LE T-Shirt + Name in Credits + Name added to Monster Pool + Music Box 1.0 \\r\\n==============================\\r\\n\\u25ae Global shipping cost included! \\u25ae \\r\\n==============================\\r\\nExperience the wonder of listening to the main theme song of Dragon Fin Soup softly played by a limited edition ACRYLIC MUSIC BOX made in Japan. Listen to the sample in the Music Section. All previous rewards are included except where limited.&quot;,&quot;limit&quot;:500,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1427846400,&quot;project_id&quot;:615356724,&quot;remaining&quot;:490,&quot;backers_count&quot;:10,&quot;updated_at&quot;:1397252408},{&quot;id&quot;:2423019,&quot;minimum&quot;:250.0,&quot;reward&quot;:&quot;GRIMM EDITION ==============================\\r\\nDragon Fin Soup OST + HD Wallpaper Pack (2) + Dragon Fin Soup the Game + Game Manual + Forum Access + Digital Art Book + Exclusive Pet + Name in Credits + Name added to Monster Pool + Grimm Caricature\\r\\n============================== \\r\\nGet your very own personal GRIMM CARICATURE!  Moody, Foreboding, and Striking Awesome these personal caricatures are great as a profile pict on any social media site :)  The the Grimm Caricature is not included in any other tiers, unless specified. All previous digital rewards included!&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1427846400,&quot;project_id&quot;:615356724,&quot;backers_count&quot;:5,&quot;updated_at&quot;:1397235770},{&quot;id&quot;:2423181,&quot;minimum&quot;:350.0,&quot;reward&quot;:&quot;WEAPON EDITION\\t\\t\\t\\r\\n==============================\\r\\nDragon Fin Soup OST + HD Wallpaper Pack (2) + Dragon Fin Soup the Game + Game Manual + Forum Access + Digital Art Book + Exclusive Pet + Blood Ring + Poster (4) + LE T-Shirt + Name in Credits + Name added to Monster Pool + Design a Weapon\\r\\n ============================== \\r\\n\\u25ae Global shipping cost included! \\u25ae ==============================\\r\\nGrimm Bros is big on creative collaboration and invite you to join us for a fun design jam on our forums and Skype to DESIGN AND NAME A WEAPON!  We will guide you through the process and together explore ideas on how to craft a unique and deadly weapon.  All previous rewards are included except where limited&quot;,&quot;limit&quot;:30,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1427846400,&quot;project_id&quot;:615356724,&quot;remaining&quot;:28,&quot;backers_count&quot;:2,&quot;updated_at&quot;:1397230589},{&quot;id&quot;:2423204,&quot;minimum&quot;:350.0,&quot;reward&quot;:&quot;MAGIC RING EDITION\\t\\t\\r\\n============================\\r\\nDragon Fin Soup OST + HD Wallpaper Pack (2) + Dragon Fin Soup the Game + Game Manual + Forum Access + Digital Art Book + Exclusive Pet + Blood Ring + Poster (4) + LE T-Shirt + Name in Credits + Name added to Monster Pool + Design a Magic Ring\\r\\n============================== \\r\\n\\u25ae Global shipping cost included! \\u25ae ==============================\\r\\nGot a cool idea for a magical item?  Excellent!   We invite you to join the Grimm team on our forums and Skype for fun collaborative design jam to DESIGN AND NAME A MAGIC RING!   We will guide you through the process and together explore ideas for the look and the name of this special item.  All previous rewards are included except where limited.&quot;,&quot;limit&quot;:30,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1427846400,&quot;project_id&quot;:615356724,&quot;remaining&quot;:29,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1397230337},{&quot;id&quot;:2420061,&quot;minimum&quot;:400.0,&quot;reward&quot;:&quot;MUSIC BOX 2.0 EDITION\\t\\t\\r\\n==============================\\r\\nDragon Fin Soup OST + HD Wallpaper Pack (2) + Dragon Fin Soup the Game + Game Manual + Forum Access + Digital Art Book + Exclusive Pet + Blood Ring + Poster (4) + LE T-Shirt + Name in Credits + Name added to Monster Pool + Music Box 1.0 + Music Box 2.0\\r\\n==============================\\r\\n\\u25ae Global shipping cost included! \\u25ae\\r\\n==============================\\r\\nPresenting the next refinement in our musical rewards tiers, a limited edition WOODEN MUSIC BOX that will play a memorable music melody from Dragon Fin Soup in lovely soft chimes.  This Tier also contains the Music Box  1.0! \\r\\nTo listen to a sample please see the Youtube link in the Music Section in our Kickstarter page. All previous rewards are included except where limited.&quot;,&quot;limit&quot;:500,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1427846400,&quot;project_id&quot;:615356724,&quot;remaining&quot;:493,&quot;backers_count&quot;:7,&quot;updated_at&quot;:1397607922},{&quot;id&quot;:2420099,&quot;minimum&quot;:999.0,&quot;reward&quot;:&quot;OTAKU EDITION\\t\\t\\t\\r\\n==============================\\r\\nDragon Fin Soup OST + HD Wallpaper Pack (2) + Dragon Fin Soup the Game + Game Manual + Forum Access + Digital Art Book + Exclusive Pet + Blood Ring + Poster (4) + Wolf Plushie + LE T-Shirt + Name in Credits + Name added to Monster Pool + Engraved Crystal + Soft Cover Art Book + Hand Drawn Illustration + Music Box 1.0 + Music Box 2.0 + Become a Zombie\\r\\n==============================\\r\\n\\u25ae Global shipping cost included! \\u25ae\\r\\n==============================\\r\\nThe must-have for any gamer aficionado! We proudly offer the Otaku Edition of Dragon Fin Soup which includes a limited edition soft cover ART BOOK of Dragon Fin Soup, a one-of-a-kind HAND DRAWN ILLUSTRATION signed by Randis Albion, as well as MUSIC BOX 1.0 and MUSIC BOX 2.O. Last but not least join the Grimm team for a fun collaborative design jam to create a ZOMBIE WHO LOOKS LIKE YOU!  What could be more fun that going on a mission or quest and running into your gloriously undead self!?  Includes all previous rewards except where limited plus the WOLF PLUSHIE and ENGRAVED CRYSTAL.&quot;,&quot;limit&quot;:20,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1427846400,&quot;project_id&quot;:615356724,&quot;remaining&quot;:17,&quot;backers_count&quot;:3,&quot;updated_at&quot;:1397230676},{&quot;id&quot;:2420118,&quot;minimum&quot;:2500.0,&quot;reward&quot;:&quot;MATRIX EDITION\\t\\t\\r\\n==============================\\r\\nDragon Fin Soup OST + HD Wallpaper Pack (2) + Dragon Fin Soup the Game + Game Manual + Forum Access + Digital Art Book + Exclusive Pet + Blood Ring + Poster (4) + Wolf Plushie + LE T-Shirt + Name in Credits + Name added to Monster Pool + Engraved Crystal + Soft Cover Art Book + Hand Drawn Illustration + Music Box 1.0 + Music Box 2.0 + Become a NPC \\r\\n==============================\\r\\n\\u25ae Global shipping cost included! \\u25ae\\r\\n==============================\\r\\nCelebrate the launch of our debut title Dragon Fin Soup in style!  For our Anniversary Edition you will BECOME AN IN-GAME NPC!  This new character will look like you, be named after you, and you will even get to help design a short dialogue sequence in-game!  How cool is that?  (Dialogue needs to fit in the world - No Ads!) Includes all the previous rewards except where limited plus all physical rewards from the OTAKU TIER.&quot;,&quot;limit&quot;:10,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1427846400,&quot;project_id&quot;:615356724,&quot;remaining&quot;:10,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1394603718},{&quot;id&quot;:2420143,&quot;minimum&quot;:3000.0,&quot;reward&quot;:&quot;MUSIC BOX 3.0 EDITION\\t\\t\\r\\n==============================\\r\\nDragon Fin Soup OST + HD Wallpaper Pack (2) + Dragon Fin Soup the Game + Game Manual + Forum Access + Digital Art Book + Exclusive Pet + Blood Ring + Poster (4) + Wolf Plushie + LE T-Shirt + Name in Credits + Name added to Monster Pool + Soft Cover Art Book + Music Box 1.0 + Music Box 2.0 + Music Box 3.0\\r\\n==============================\\r\\n\\u25ae Global shipping cost included! \\u25ae\\r\\n==============================\\r\\nIndulge in the musical splendor of ALL THREE OF OUR LIMITED EDITION DRAGON FIN SOUP MUSIC BOXES!!! This amazing collection features not only the wooden and acrylic 18 Note Sankyo Music Box but also the supurb 50 Note Sankyo Orpheus Movement Music Box for a brilliantly complex melody.  To listen to a sample please see the Youtube link in the Music Section in our Kickstarter page. Includes all previous rewards except where limited plus the ART BOOK and WOLF PUSHIE.&quot;,&quot;limit&quot;:50,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1427846400,&quot;project_id&quot;:615356724,&quot;remaining&quot;:49,&quot;backers_count&quot;:1,&quot;updated_at&quot;:1397239404},{&quot;id&quot;:2419983,&quot;minimum&quot;:5000.0,&quot;reward&quot;:&quot;FINE ART EDITION\\t\\t\\t\\r\\n==============================\\r\\nDragon Fin Soup OST + HD Wallpaper Pack (2) + Dragon Fin Soup the Game + Game Manual + Forum Access + Digital Art Book + Exclusive Pet + Blood Ring + Poster (4) + Wolf Plushie + LE T-Shirt + Name in Credits + Name added to Monster Pool + Soft Cover Art Book + Hand Drawn Illustration + Oil Painting with Frame\\r\\n==============================\\r\\n\\u25ae Global shipping cost included! \\u25ae\\r\\n==============================\\r\\nGrimm Bros is honored by your patronage and we proudly we will create for you a beautiful hand painted and framed OIL PAINTING ON CANVAS. This wonderful hand-painted work of art will look stunning in your home \\r\\nor office.  Includes all previous rewards except where limited plus the ART BOOK, WOLF PUSHIE and HAND DRAWN ILLUSTRATION.&quot;,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1427846400,&quot;project_id&quot;:615356724,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1394603773},{&quot;id&quot;:2419781,&quot;minimum&quot;:10000.0,&quot;reward&quot;:&quot;MEGA WORKSHOP EDITION\\t\\r\\n==============================\\r\\nDragon Fin Soup OST + HD Wallpaper Pack (2) + Dragon Fin Soup the Game + Game Manual + Forum Access + Digital Art Book + Exclusive Pet + Blood Ring + Poster (4) + Wolf Plushie + LE T-Shirt + Name added to Monster Pool + + Grimm Caricature + Engraved Crystal + LE Soft Cover Art Book + Hand Drawn Illustration + Music Box 1.0 + Music Box 2.0 + Music Box 3.0 + Oil Painting with Frame + Become a Zombie + Design a Weapon + Design a Magic Ring + Become an NPC + Special Credit in the game + Game Development Workshop + Dinner with Grimm Bros\\r\\n==============================\\r\\n\\u25ae Global shipping cost included! \\u25ae\\r\\n==============================\\r\\nJoin Grimm Bros for a 3 day GAME DEVELOPMENT WORKSHOP!  We will share with you in-depth and advance lessons regarding Art, Design, Production, and Business Development based on our years of experience.  Afterwards we will all go out to dinner to relax and enjoy ourselves.   Hotel and Travel are not included. All previous rewards and all limited rewards are included!&quot;,&quot;limit&quot;:10,&quot;shipping_applicable&quot;:false,&quot;estimated_delivery_on&quot;:1427846400,&quot;project_id&quot;:615356724,&quot;remaining&quot;:10,&quot;backers_count&quot;:0,&quot;updated_at&quot;:1394603816}]}";
+    
+    
+    
+    
+    
+    
+    
+    
+    window.timeRemaining = function timeRemaining(epochTime){
+    
+      var diff = epochTime - ((new Date()).getTime() / 1000);
+      var num_unit = (diff < 60 && [Math.max(diff, 0), 'seconds']) ||
+        ((diff/=60) < 60 && [diff, 'minutes']) ||
+        ((diff/=60) < 72 && [diff, 'hours']) ||
+        [diff/=24, 'days'];
+    
+      // Round down
+      num_unit[0] = Math.floor(num_unit[0]);
+      // Singularize unit
+      if (num_unit[0] == 1) { num_unit[1] = num_unit[1].replace(/s$/,""); }
+    
+      return num_unit;
+    };
+  //]]>
+</script>
+
+<script>
+  //<![CDATA[
+    window.current_variants = ["discover_link_copy[explore]","rewards_hover[without_hover_text]"];
+  //]]>
+</script>
+
+
+</head>
+
+<body class="project projects not-mobile not-phone not-forces-video-controls not-tablet not-touchable not-native-app-request video_mode" id="projects_show">
+<div class="jGrowl center" id="growl_section"></div>
+<div class="NS_layouts__navigation" id="header">
+<div class="main-nav relative bg-white">
+<h1 class="no-margin ml1 mr2 left">
+<a href="/?ref=nav" class="block p2"><span class="ss-icon green-dark">KICK</span><span class="ss-icon green">STARTER</span>
+</a></h1>
+<ul class="primary-links list no-margin left">
+<li class="left discover-link full-height">
+<a href="/discover?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Explore</a>
+</li>
+<li class="left full-height mr2">
+<a href="/learn?ref=nav" class="block p2 grey-dark h5 bold full-height border-box">Start</a>
+</li>
+</ul>
+<ul class="list no-margin right" id="menu-sub">
+<li class="right"><a href="/login?ref=nav" class="block h5 bold p2 full-height border-box">Log in</a></li>
+<li class="right"><a href="/signup?ref=nav" class="block h5 bold p2 full-height border-box">Sign up</a></li>
+</ul>
+<div class="search-link pl2 full-height border-left border-box clip">
+<form accept-charset="UTF-8" action="/projects/search" class="search pt1 pb1 block relative form-simple" method="get"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /></div>
+<div class="field relative pl3">
+<span class="ss-icon ss-search grey-dark ml1 mt1 absolute"></span>
+<input class="input-search header full-width text" data-tracker-name="Header Live Search" id="term" name="term" placeholder="Search projects" type="text" />
+</div>
+</form>
+
+</div>
+<div class="clear"></div>
+</div>
+</div>
+<div class="hide pt4 pb4 bg-grey-light" id="search_results-wrap">
+<div class="relative container" id="search_results">
+<a class="close right grey-dark mr1"><span class="ss-icon ss-delete"></span></a>
+<h3 class="header ml1 clearfix"></h3>
+<div class="clip clearfix" id="search_results_panel"></div>
+<a class="prev arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateleft"></span>
+</a>
+<a class="next arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateright"></span>
+</a>
+</div>
+</div>
+
+
+
+
+<div class="Project-ended-true Project-is_starred- Project-state-successful Project615356724_cxt border-top" id="main_content">
+<div id="running-board-wrap">
+<div class="container" id="running-board">
+<div id="project-header">
+<div class="NS_projects__running_board ml1 mr1 clearfix">
+<div class="title center py4">
+<h2 class="mb1">
+<a href="/projects/grimmbros/dragon-fin-soup" class="green-dark">Dragon Fin Soup</a>
+</h2>
+<p class="no-margin">
+<span class="creator">
+by
+<a href="/projects/grimmbros/dragon-fin-soup/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography" id="name">Grimm Bros</a>
+</span>
+</p>
+</div>
+<ul class="project-nav list-inline left h5 bold mb1">
+<li class="mr2">
+<a href="/projects/grimmbros/dragon-fin-soup" class="grey-dark py1 current" id="home_nav">Home</a>
+</li>
+<li class="mr2">
+<span data-updates-count="17" id="updates_count">
+<a href="/projects/grimmbros/dragon-fin-soup/posts" class="grey-dark py1" id="updates_nav">Updates
+<span class="count h6 bg-grey-dark white">17</span>
+</a></span>
+</li>
+<li class="mr2">
+<a href="/projects/grimmbros/dragon-fin-soup/backers" class="grey-dark py1" id="backers_nav">Backers
+<span class="count h6 bg-grey-dark white"><data class="Project615356724" data-format="number" data-value="4044" itemprop="Project[backers_count]">4,044</data></span>
+</a></li>
+<li>
+<span data-comments-count="1578" id="comments_count">
+<a href="/projects/grimmbros/dragon-fin-soup/comments" class="grey-dark py1" id="comments_nav">Comments
+<span class="count h6 bg-grey-dark white"><data class="Project615356724" data-format="number" data-value="1575" itemprop="Project[comments_count]">1,575</data></span>
+</a></span>
+</li>
+</ul>
+<ul class="list-inline right h5 bold mb1">
+<li class="location mr2">
+<a href="/discover/places/philadelphia-pa?ref=city" class="grey-dark"><span class="ss-icon ss-location margin-right"></span>
+Philadelphia, PA
+</a></li>
+<li class="category" data-project-parent-category="Games">
+<a href="/discover/categories/games/video%20games?ref=category" class="grey-dark"><span class="ss-icon ss-tag margin-right"></span>
+Video Games
+</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+</div>
+<div class="bg-grey-light pb4" id="content-wrap">
+<div class="Project615356724" data-conditions="[{&quot;!state&quot;:&quot;live&quot;}]" data-evaluation="true" data-render="&quot;&lt;div class=\&quot;NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-successful Project615356724_cxt bg-grey container pb1 pt1\&quot;&gt;\n&lt;div class=\&quot;Project615356724\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;successful&amp;quot;}]\&quot; data-evaluation=\&quot;true\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;Funded!&amp;lt;/b&amp;gt;\\nThis project was successfully funded &amp;lt;data class=\\&amp;quot;Project615356724\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2014-04-11T11:15:21-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[deadline]\\&amp;quot;&amp;gt;on April 11&amp;lt;/data&amp;gt;.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;Funded!&lt;/b&gt;\nThis project was successfully funded &lt;data class=\&quot;Project615356724\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2014-04-11T11:15:21-04:00&amp;quot;\&quot; itemprop=\&quot;Project[deadline]\&quot;&gt;on April 11&lt;/data&gt;.\n&lt;/p&gt;\n&lt;/div&gt;&lt;div class=\&quot;Project615356724\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:[&amp;quot;started&amp;quot;,&amp;quot;submitted&amp;quot;]}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;\\n&amp;lt;b&amp;gt;THIS PROJECT IS NOT LIVE&amp;lt;/b&amp;gt;\\nThis is only a draft that the creator has chosen to share.\\n&amp;lt;/p&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project615356724\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;suspended&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Suspended&amp;lt;/b&amp;gt;\\nFunding for this project was suspended &amp;lt;data class=\\&amp;quot;Project615356724\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2014-04-11T11:15:21-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on April 11&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project615356724\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;canceled&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Canceled&amp;lt;/b&amp;gt;\\nFunding for this project was canceled by the project creator &amp;lt;data class=\\&amp;quot;Project615356724\\&amp;quot; data-format=\\&amp;quot;distance_date\\&amp;quot; data-value=\\&amp;quot;&amp;amp;quot;2014-04-11T11:15:21-04:00&amp;amp;quot;\\&amp;quot; itemprop=\\&amp;quot;Project[state_changed_at]\\&amp;quot;&amp;gt;on April 11&amp;lt;/data&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project615356724\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;failed&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;Funding Unsuccessful&amp;lt;/b&amp;gt;\\nThis project\\u2019s funding goal was not reached on &amp;lt;time class=\\&amp;quot;js-adjust\\&amp;quot; data-format=\\&amp;quot;MMMM D\\&amp;quot; datetime=\\&amp;quot;2014-04-11T11:15:21-04:00\\&amp;quot;&amp;gt;April 11&amp;lt;/time&amp;gt;.\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;div class=\&quot;Project615356724\&quot; data-conditions=\&quot;[{&amp;quot;state&amp;quot;:&amp;quot;purged&amp;quot;}]\&quot; data-evaluation=\&quot;false\&quot; data-render=\&quot;&amp;quot;&amp;lt;p class=\\&amp;quot;no-margin\\&amp;quot;&amp;gt;&amp;lt;/p&amp;gt;\\n&amp;lt;b&amp;gt;This project is purged and only visible to staff.&amp;lt;/b&amp;gt;\\n&amp;quot;\&quot;&gt;&lt;/div&gt;&lt;/div&gt;\n&quot;"><div class="NS_projects__funding_bar Project-ended-true Project-is_starred- Project-state-successful Project615356724_cxt bg-grey container pb1 pt1">
+<div class="Project615356724" data-conditions="[{&quot;state&quot;:&quot;successful&quot;}]" data-evaluation="true" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;Funded!&lt;/b&gt;\nThis project was successfully funded &lt;data class=\&quot;Project615356724\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2014-04-11T11:15:21-04:00&amp;quot;\&quot; itemprop=\&quot;Project[deadline]\&quot;&gt;on April 11&lt;/data&gt;.\n&lt;/p&gt;\n&quot;"><p class="no-margin">
+<b>Funded!</b>
+This project was successfully funded <data class="Project615356724" data-format="distance_date" data-value="&quot;2014-04-11T11:15:21-04:00&quot;" itemprop="Project[deadline]">on April 11</data>.
+</p>
+</div><div class="Project615356724" data-conditions="[{&quot;state&quot;:[&quot;started&quot;,&quot;submitted&quot;]}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;\n&lt;b&gt;THIS PROJECT IS NOT LIVE&lt;/b&gt;\nThis is only a draft that the creator has chosen to share.\n&lt;/p&gt;\n&quot;"></div><div class="Project615356724" data-conditions="[{&quot;state&quot;:&quot;suspended&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Suspended&lt;/b&gt;\nFunding for this project was suspended &lt;data class=\&quot;Project615356724\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2014-04-11T11:15:21-04:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on April 11&lt;/data&gt;.\n&quot;"></div><div class="Project615356724" data-conditions="[{&quot;state&quot;:&quot;canceled&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Canceled&lt;/b&gt;\nFunding for this project was canceled by the project creator &lt;data class=\&quot;Project615356724\&quot; data-format=\&quot;distance_date\&quot; data-value=\&quot;&amp;quot;2014-04-11T11:15:21-04:00&amp;quot;\&quot; itemprop=\&quot;Project[state_changed_at]\&quot;&gt;on April 11&lt;/data&gt;.\n&quot;"></div><div class="Project615356724" data-conditions="[{&quot;state&quot;:&quot;failed&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;Funding Unsuccessful&lt;/b&gt;\nThis project\u2019s funding goal was not reached on &lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;MMMM D\&quot; datetime=\&quot;2014-04-11T11:15:21-04:00\&quot;&gt;April 11&lt;/time&gt;.\n&quot;"></div><div class="Project615356724" data-conditions="[{&quot;state&quot;:&quot;purged&quot;}]" data-evaluation="false" data-render="&quot;&lt;p class=\&quot;no-margin\&quot;&gt;&lt;/p&gt;\n&lt;b&gt;This project is purged and only visible to staff.&lt;/b&gt;\n&quot;"></div></div>
+</div>
+<div class="container bg-white border rounded py3 pl2 pr2" id="content">
+<div class="NS-projects-content">
+<div class="grid_11">
+<div data-has-video="true" id="video-section">
+<div class="video-player" data-dimensions="{&quot;width&quot;:640,&quot;height&quot;:480}" data-image="https://s3.amazonaws.com/ksr/projects/866917/photo-main.jpg?1397867732" data-video-tracker-url="https://www.kickstarter.com/projects/grimmbros/dragon-fin-soup/video/plays" data-video-url="https://d2pq0u4uni88oo.cloudfront.net/projects/866917/video-355462-h264_high.mp4" data-video="{&quot;id&quot;:355462,&quot;status&quot;:&quot;successful&quot;,&quot;high&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/866917/video-355462-h264_high.mp4?2014&quot;,&quot;base&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/866917/video-355462-h264_base.mp4?2014&quot;,&quot;webm&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/866917/video-355462-webm.webm?2014&quot;,&quot;width&quot;:640,&quot;height&quot;:360,&quot;frame&quot;:&quot;https://d2pq0u4uni88oo.cloudfront.net/projects/866917/video-355462-h264_base.jpg?2014&quot;}" id="video_pitch"><video class="has_webm landscape" preload="none">
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/866917/video-355462-h264_high.mp4" type='video/mp4; codecs="avc1.64001E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/866917/video-355462-h264_base.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></source>
+<source src="https://d2pq0u4uni88oo.cloudfront.net/projects/866917/video-355462-webm.webm" type="video/webm"></source>
+You'll need an HTML5 capable browser to see this content.
+</video>
+<img alt="Photo-main" class="has_played_hide poster landscape" src="https://s3.amazonaws.com/ksr/projects/866917/photo-main.jpg?1397867732" />
+<div class="play_button_big play_button_dark absolute-center rounded has_played_hide">
+<span class="ss-icon ss-play"></span>
+Play
+</div>
+<div class="player_controls clearfix absolute-bottom mb2 rounded white bg-green-dark forces-video-controls_hide">
+<div class="left">
+<a class="button button_icon button_dark playpause play mr1">
+<span class="play ss-icon ss-play"></span>
+<span class="pause ss-icon ss-pause"></span>
+</a>
+<span class="time current_time h12 left">00:00</span>
+</div>
+<div class="right">
+<span class="time total_time h12 left mr1">00:00</span>
+<a class="left button button_icon button_icon_white volume">
+<span class="ss-icon ss-volume icon_volume_nudge"></span>
+<span class="ss-icon ss-highvolume"></span>
+</a>
+<div class="volume_container left">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+<a class="left button button_icon button_icon_white fullscreen">
+<span class="ss-icon ss-expand"></span>
+<span class="ss-icon ss-contract"></span>
+</a>
+</div>
+<div class="clip">
+<div class="progress_container pr1 pl1">
+<div class="progress_bar progress_bar_dark progress_bg">
+<div class="progress_bar_bg"></div>
+<div class="buffer progress_bar_buffer"></div>
+<div class="progress progress_bar_progress"></div>
+<div class="progress_handle progress_bar_handle"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div data-project-state="successful" id="about">
+<div class="NS_projects__project_share clearfix py2 pl1 pr1">
+<ul class="left list-inline no-margin h5 bold">
+<li class="facebook mr2">
+<a href="https://www.kickstarter.com/projects/grimmbros/dragon-fin-soup"><span class="ss-icon ss-social ss-facebook color-facebook"></span>
+<span class="color-facebook">Share</span>
+<span class="share_bubble"><div class="triangle grey"></div>
+<div class="triangle white"></div>
+<span class="count"></span></span>
+</a></li>
+<li class="twitter mr2">
+<a  href="https://twitter.com/intent/tweet?text=Dragon%20Fin%20Soup%20by%20Grimm%20Bros&amp;via=kickstarter&amp;url=http://kck.st/1cTbc5U" rel="nofollow"><span class="ss-icon ss-social ss-twitter color-twitter"></span>
+<span class="color-twitter">Tweet</span>
+</a></li>
+<li class="embed">
+<a href="/projects/grimmbros/dragon-fin-soup/widget" class="remote_modal_dialog grey-dark" data-modal-title="Embed a widget on your site" data-tracker-name="Embed"><span class="ss-icon ss-navigateleft"></span>
+<span class="ss-icon ss-navigateright"></span>
+Embed
+</a></li>
+</ul>
+<ul class="right list-inline no-margin h5 bold">
+<li class="curate mr2">
+</li>
+<li class="remind">
+<div class="ajax-container" id="watching-widget">
+<div class="Project615356724" data-conditions="[{&quot;is_starred&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div id=\&quot;unwatch\&quot;&gt;\n&lt;a href=\&quot;/projects/grimmbros/dragon-fin-soup/unwatch\&quot; class=\&quot;on\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"></div><div class="Project615356724" data-conditions="[{&quot;!is_starred&quot;:true}]" data-evaluation="true" data-render="&quot;&lt;div id=\&quot;watch\&quot;&gt;\n&lt;a href=\&quot;/projects/grimmbros/dragon-fin-soup/watch\&quot;&gt;&lt;span class=\&quot;ss-icon ss-star\&quot;&gt;&lt;/span&gt;\n&lt;span class=\&quot;text\&quot;&gt;\n&lt;/span&gt;\n&lt;/a&gt;&lt;/div&gt;\n\n&quot;"><div id="watch">
+<a href="/projects/grimmbros/dragon-fin-soup/watch"><span class="ss-icon ss-star"></span>
+<span class="text">
+</span>
+</a></div>
+
+</div></div>
+</li>
+</ul>
+</div>
+
+<div class="short_blurb py2 pl1 pr1">
+<p class="h3">A  charming SNES style RPG with Roguelike elements, set in a twisted fairytale world with a cheerful, yet raging alcoholic Heroine</p>
+</div>
+<div class="full-description">
+<div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1820621/edit" data-id="1820621">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/820/621/68f08cd3019fec2edc21629087676a1e_large.jpg?1396311859"></figure>
+</div><a href="http://dragonfinsoup.com/store.html" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1867722/edit" data-id="1867722">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/867/722/e41c89c51b3a436b7a11d0c3c43364f6_large.jpg?1397225454"></figure>
+</div>
+<h1>Our Kickstarter campaign may be over, but our Quest continues! </h1>  </a><h1>Visit our website at <a href="http://dragonfinsoup.com/store.html" target="_blank">DragonFinSoup.com</a> to become a Slacker Backer to get all of the same cool Prizes and Rewards that we offer here!</h1><div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1820625/edit" data-id="1820625">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/820/625/608e28487776c2f9487f3137d22a6c7d_large.jpg?1396311889"></figure>
+</div><div> </div><div></div><div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1820542/edit" data-id="1820542">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/820/542/2630f27a27acada7c3292ac468036bfd_large.jpg?1396310739"></figure>
+</div><p><a href="http://steamcommunity.com/sharedfiles/filedetails/?id=231462918" target="_blank"> PS4, PS Vita, PS3, PC Windows, DRM-Free, Linux, Mac, Steam</a></p><a href="http://steamcommunity.com/sharedfiles/filedetails/?id=231462918" target="_blank"><div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1820559/edit" data-id="1820559">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/820/559/067eec365fa0ca46021102979f0374dd_large.jpg?1396310934"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</a><div>
+
+
+
+    <div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1809529/edit" data-id="1809529">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/809/529/9684fd3e2249fdfb9d4552b922671618_large.gif?1396035876"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1809536/edit" data-id="1809536">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/809/536/692e30aea2650dc6d2f7e6431d8c274d_large.gif?1396035946"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1809538/edit" data-id="1809538">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/809/538/5324835d245afb414f37981456db7541_large.gif?1396035965"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1809540/edit" data-id="1809540">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/809/540/e4cebe6dc601ab81ff396fbeda23e9f8_large.gif?1396035984"></figure>
+</div>
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1867834/edit" data-id="1867834">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/867/834/2a1162b4d9461deb1b12b7e0761aa994_large.jpg?1397227836"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+
+
+
+          <div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1781586/edit" data-id="1781586">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/781/586/8758fb97083f891cc97d921167412215_large.jpg?1395446100"></figure>
+</div>
+<p>A bit of what the press is saying about Dragon Fin Soup... </p>
+<p>"<i>Having left AAA development, the space created by Albion and Monif with Grimm Bros is one of pure passion.</i>” - <b><a href="http://www.polygon.com/2014/3/12/5467046/roguelike-jrpg-dragon-fin-soup-is-two-developers-quest-for-creative" target="_blank">Polygon</a></b></p>
+<p>"<i>Yes, this isn't for you Disney fans who think fairy tales are all cutesy and sweet. This hearkens back to old-school dark fable madness. And it looks wonderful.</i>" - <b><a href="http://operationrainfall.com/pax-2013-first-look-dragon-fin-soup/" target="_blank">Operation Rainfall</a></b></p>
+<p>“.<i>..there's an old-school zelda vibe crossed with tactical combat and crafting. That appeals.</i>” - <b><a href="http://www.rockpapershotgun.com/2014/03/21/fairy-tale-tactics-dragon-fin-soup/" target="_blank">Rock Paper Shotgun</a></b></p>
+<p>"<i>It's a colourful, eye-catching and visually charming game with a story mode (like a normal RPG) and survival mode (permadeath).</i>” - <b><a href="http://www.eurogamer.net/articles/2014-03-19-dragon-fin-soup-a-snes-style-rpg-for-ps4-ps3-vita-and-pc" target="_blank">EuroGamer </a></b></p>
+<p>"<i>Dragon Fin Soup uses sex, violence, and a sense of humor to create an RPG that even non-questers will enjoy</i>.” - <b><a href="http://www.busygamernation.com/2013/09/pax_prime_2013_kickstarters_in.html" target="_blank">Busy Gamer Nation</a></b></p>
+<p>Watch our Kickstarter video in 1080p <a href="http://youtu.be/WX0QwvXojDk" target="_blank">HERE</a>!</p>
+
+    <div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1731418/edit" data-id="1731418">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/731/418/f91ebc2dac038c9af1c8a3d9c0e18967_large.jpg?1394484886"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1723105/edit" data-id="1723105">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/723/105/825294fafc3457aa907451bf2a8a5221_large.jpg?1394310480"></figure>
+</div>
+
+<p>Grimm Bros is proud to present Dragon Fin Soup.  A Tactical Action RPG with roguelike elements set in a charming, twisted, dark, fairy tale inspired world featuring a 2D top down camera and fluid turn-based movement that allows you to set the pace.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1688502/edit" data-id="1688502">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/688/502/539357905ea9d39a29679423d3ef21ec_large.jpg?1393568734"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1688308/edit" data-id="1688308">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/688/308/13988e40b570cfa191730022f90bd522_large.jpg?1393565566"></figure>
+</div>
+<p>The World of Dragon Fin Soup is set on the back of a giant dragon-turtle god called Asura who swims the multiverse of space-time.  The player can choose to unravel the tale of your chosen character in Story Mode or embark on a journey to discover the wilds of Asura in Survival Mode.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1682920/edit" data-id="1682920">
+<figure><img alt="Story Mode" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/682/920/02dfaed9302d5063f51052d055422e0f_large.jpg?1393462780"><figcaption>Story Mode</figcaption></figure>
+</div>
+<p>Story Mode is designed to focus on storytelling, character progression and exploration. The game begins in a small country village where you slowly learn about the mysteries of the world of Asura. You will encountering a custom blend of procedural content, scripted events, crafted story quests and procedurally generated missions.  The World Map of Asura and Save/Load options will be available to you.</p>
+<div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1682924/edit" data-id="1682924">
+<figure><img alt="Survival Mode" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/682/924/286f644a7f5ee6e8d24d0440e5600cb0_large.jpg?1393462806"><figcaption>Survival Mode</figcaption></figure>
+</div>
+<p>Survival Mode is designed for the thrills and terrors that come with exploring the wilds of Asura, fighting challenging monsters, and surviving to achieve the highest score in single life. The game begins in a forest at level 1 with limited supplies. You will encounter waves of procedurally generated dungeons filled with traps, monsters, and mini-games that grow in increasing difficult over time.  Tread carefully Save/Load options are available but death is permanent.</p>
+</div>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1688512/edit" data-id="1688512">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/688/512/8746ff3c780abdf2c422c1534950b317_large.gif?1393569025"></figure>
+</div>
+<p>A key defining aspect to Dragon Fin Soup is our fluid turn-based gameplay. Typically turn based games are slow and discontinuous.  However in Dragon Fin Soup our movement, combat and controls have been streamlined to empower you to set your own pace.  At any time you can choose to speed-up to rapidly progress and fight swift battles or slow-down to calculate your next move and assess each encounter.</p>
+<p>Dragon Fin Soup will appeal to core gamers looking for deep rich tactical experience and RPG fans who love dark twisted tales. </p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1723516/edit" data-id="1723516">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/723/516/b28c94e30a8fa0aa26b6601d91b036a3_large.jpg?1394317899"></figure>
+</div>
+<p>Inspired by classic fairy tales the world of Dragon Fin soup does not try to retell existing stories but is rather set in a brave new world of twisted adventures, magic and mysteries. Our first playable character in Dragon Fin Soup is Red Robin, a reimagined version of the classic Red Riding Hood character. Robin is a cheerful yet raging alcoholic that makes a living as a sword for hire and bounty hunter in a remote country village.</p>
+<p>A year ago Robin lost her memory but her dark bloody past has come back to haunt her with a vengeance. Slowly as Robin rediscovers herself she begins to remember the horrible events of her violent past, the death of her family, betrayal, and exile.  But there is much more to Robin's existence… As the story unfolds and with every twist in the plot the player is pulled deeper into a world of murder, conspiracies and magic.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1688509/edit" data-id="1688509">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/688/509/539357905ea9d39a29679423d3ef21ec_large.jpg?1393568932"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1686939/edit" data-id="1686939">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/686/939/02a96960a626f6789e4fc36def051421_large.jpg?1393542751"></figure>
+</div>
+<ul><li>
+<b>Beautiful HD World</b> - The world of Dragon Fin Soup is charming, colorful, detailed and designed to look fantastic at multiple HD resolutions and screen sizes. </li></ul>
+<ul><li>
+<b>Collectible Pet Familiars </b>- You can have up to 2 pets familiars active at the same time. You will be able to collect a variety of pets each with their own stats and level that will grow while fighting at your side.</li></ul>
+<ul><li>
+<b>Crafted Story Quests</b> - Our story quests are carefully written and scripted to advance the unfolding tale of your character within the world of Asura.  No spoilers!</li></ul>
+<ul><li>
+<b>Deep Tactical Combat </b>- Combat features multiple tactical elements such as directional damage, various ranged attacks, melee, magic, DOT and AOA. The damage model features blunt, piercing and slashing damage types as well as elemental damage, projectile damage and defense.  You can perform Backstabs, sneak around and so on. Over 15 equipment slots and dual-wielding feature offer interesting choices of gear combinations. </li></ul>
+<ul><li>
+<b>Dynamically Generated World </b>- The world of Asura is dynamically generated with a large numbers of prefabricated landmarks, scripted events and random gameplay elements.  Our dungeons features a wide range of compelling locations and layouts for you to explore such as Spider Forests, Ice Caves, Abandoned Mines, Scorching Deserts, Mushroom Forests, Haunted Mansions, Castles, Ancient Ruins and much much more.</li></ul>
+<ul><li>
+<b>Extensive Crafting</b> - Loot everywhere! While cutting down foes and trees, digging and exploring you will find gazillions of items that can be used to craft new gear, food, magic potions and what not!</li></ul>
+<ul><li>
+<b>Fluid Turn based Gameplay</b> - Streamlined controls, movement and combat allow for you to set your own pace of progression.  Choose to speed-up to quickly move and strike or slow-down to carefully plan your next move. </li></ul>
+<ul><li>
+<b>High Accessibility -</b> We designed fun and intuitive controls for your play style choice. Keyboard, Mouse, Keyboard + Mouse, Joypad, and Touch controls are all supported. </li></ul>
+<ul><li>
+<b>Interactive Environmen</b>t - In the world you can destroy, move or manipulate a wide range of props, trees, rocks, blocks, and chests.  Beware of trees falling over if you cut them down!</li></ul>
+<ul><li>
+<b>Mini Games &amp; Puzzles</b> - Tired of killing? Kick back and relax! Go fishing or pick up a shovel and dig some holes into the ground, who knows what you may find? There is much to do in DFS aside of spilling blood!  Rune tracking, gathering, puzzles, side quests, fishing!  Dungeons are loaded with scripted events, ambushes, traps and movable blocks!</li></ul>
+<ul><li>
+<b>NPCs for Hire </b>- Having trouble with a mission or need company? Hire some muscle! Badass Sword specialists, Metal Head Rangers or a dude who will carry your purse are at your service!</li></ul>
+<ul><li>
+<b>Procedurally Generated Missions</b> - We offer a variety of fun and engaging mission themes such as escort, gathering, retrieval, raid, delivery, seek-and-destroy, and crafting.  </li></ul>
+<ul><li>
+<b>Twisted Characters </b>- In Dragon Fin Soup there are no lame stereotypical heroes. Instead we feature fairy tale inspired characters each with their own deep flaws, witty humor, abilities, and motivations. Our first tale begins with Red Robin, whose dark bloody past has come back to haunt her with a vengeance.</li></ul>
+<ul>
+<li>
+<b>Unpredictable Weather &amp; Day/Night Cycles </b>- Each time you visit or revisit a location a new kind of weather will be picked randomly.  Day and night cycles gradually progress the more game turns pass. Beware of dangerous monsters rumored to hunt during specific times!</li>
+</ul>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1688515/edit" data-id="1688515">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/688/515/539357905ea9d39a29679423d3ef21ec_large.jpg?1393569166"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1686944/edit" data-id="1686944">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/686/944/c82521f134e8430c41468d29594692a4_large.jpg?1393542901"></figure>
+</div>
+<p> Once upon a time, twas a great Dragon Turtle god Asura swimming the vast cosmos of the multiverse.  Upon its back was born a world of magic and wonderment.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1682891/edit" data-id="1682891">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/682/891/9ff2607d30c343f2049373ab87489f35_large.jpg?1393462320"></figure>
+</div>
+<p>Of the Asura realm ancient songs do tell of a great endless war lasting centuries between Man and Wesen, know as the Age of Fire.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1682895/edit" data-id="1682895">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/682/895/62dfc317b6b5f2d527e16cb73814a7ff_large.jpg?1393462382"></figure>
+</div>
+<p>
+The endless war threatened to extinguish all life on the Dragon Turtle god, until a heroic Human Princess sacrificed her life to protect her lover, a Wesen.  Her love moved the hearts of all across the Asura kingdoms. The Princess’s heir, a bastard child, born of both Human-Wesen blood, eventually became the Emperor of all the kingdoms and his bloodline has ruled since this time.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1682900/edit" data-id="1682900">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/682/900/32e0a523c9c637fcf8a9213a9b73e5ac_large.jpg?1393462446"></figure>
+</div>
+<p>A thousand years passed until one day a burning rogue planet crossed paths with the Dragon Turtle god, filling the skies with blood red colors and raining down crystal shards. Tis now the beginning of a new era, foretold by the prophets that will give rise to new heroes and tales of lore.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1682904/edit" data-id="1682904">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/682/904/3367f31ff0042725a8ed3d35c8866ba8_large.jpg?1393462486"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1688516/edit" data-id="1688516">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/688/516/539357905ea9d39a29679423d3ef21ec_large.jpg?1393569186"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1688580/edit" data-id="1688580">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/688/580/092e1efdaafb2eeff9b8bc1b81e6242f_large.jpg?1393570264"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1748011/edit" data-id="1748011">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/748/011/6f1e694ece3992a985cb883e5660b200_large.jpg?1394783975"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1779592/edit" data-id="1779592">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/779/592/da396454804897a002b91a2d2677e10d_large.jpg?1395417433"></figure>
+</div>
+<p><br> [Disclaimer: Grimm Bros is only responsible for reward delivery.   Additional taxes and fees, if any are the sole responsibility of the backer.]</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1779661/edit" data-id="1779661">
+<figure><img alt="Here by popular demand we are introducing the Artisan Edition of Dragon Fin Soup in which we offer you an awesome 20x15 inch Art Print signed by our one and only Randis Albion :)" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/779/661/9f1ee525604530c3bc67341e12fd59da_large.jpg?1395418459"><figcaption>Here by popular demand we are introducing the Artisan Edition of Dragon Fin Soup in which we offer you an awesome 20x15 inch Art Print signed by our one and only Randis Albion :)</figcaption></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1779610/edit" data-id="1779610">
+<figure><img alt="Become a haunted specter from beyond the grave with the Ghost Edition.  Many of our enemies in game have randomly generated names.  We will add your name to the Ghost Pool so now you might encounter a ghost in-game with your name!" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/779/610/a80c5f3487d840b40ed76bd29e4ec09f_large.jpg?1395417638"><figcaption>Become a haunted specter from beyond the grave with the Ghost Edition.  Many of our enemies in game have randomly generated names.  We will add your name to the Ghost Pool so now you might encounter a ghost in-game with your name!</figcaption></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1688353/edit" data-id="1688353">
+<figure><img alt="This cool bloodring is a physical reward that comes with many of the tiers! Complete with a bloody look and magic unknown it will fit just about any human finger and more." class="fit" src="https://s3.amazonaws.com/ksr/assets/001/688/353/fe1383b243f7c72bb45d6df039d456b8_large.jpg?1393566171"><figcaption>This cool bloodring is a physical reward that comes with many of the tiers! Complete with a bloody look and magic unknown it will fit just about any human finger and more.</figcaption></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1723707/edit" data-id="1723707">
+<figure><img alt="Beautiful high quality photo paper Art Prints of images and illustrations from Dragon Fin Soup!" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/723/707/95127e2e6627532dac5a348b6fc9e1ac_large.png?1394321325"><figcaption>Beautiful high quality photo paper Art Prints of images and illustrations from Dragon Fin Soup!</figcaption></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1688383/edit" data-id="1688383">
+<figure><img alt="Super cute and fiercely loyal Big Bad Plushy will keep you company on all of your adventures!" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/688/383/d849af20bfae8056c0c08464ea7bd25b_large.png?1393566731"><figcaption>Super cute and fiercely loyal Big Bad Plushy will keep you company on all of your adventures!</figcaption></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1688387/edit" data-id="1688387">
+<figure><img alt="This awesome crystal with your name engraved in it comes in a neat wooden box and could be yours if you want it! Check out the Crystal Edition!" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/688/387/0a8930e1edc170ea23bd8a686944b28f_large.jpg?1393566810"><figcaption>This awesome crystal with your name engraved in it comes in a neat wooden box and could be yours if you want it! Check out the Crystal Edition!</figcaption></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1688402/edit" data-id="1688402">
+<figure><img alt="This awesome 18 note Music box comes with an acrylic box and plays the DFS theme melody. This item is part of the Music Box 1.0 Tier. To listen to a sample check out the Music box video in the music section!" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/688/402/ecf4f8a1268770bfea9f075ec110e037_large.jpg?1393567090"><figcaption>This awesome 18 note Music box comes with an acrylic box and plays the DFS theme melody. This item is part of the Music Box 1.0 Tier. To listen to a sample check out the Music box video in the music section!</figcaption></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1723764/edit" data-id="1723764">
+<figure><img alt="As part of the “Grimm Tier” you will receive a badass grimm portrait of yourself, painted by our Artist! You can use it as your avatar on facebook or twitter or print and put on your night desk!" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/723/764/a768a655d613cc7d5d92e5b813b65d0a_large.jpg?1394322097"><figcaption>As part of the “Grimm Tier” you will receive a badass grimm portrait of yourself, painted by our Artist! You can use it as your avatar on facebook or twitter or print and put on your night desk!</figcaption></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1714711/edit" data-id="1714711">
+<figure><img alt="This beautiful 18 note Music box comes in a engraved wooden box and plays the DFS theme melody. This item is part of the Music Box 2.0 Tier that also includes the 1.0 music box. So, you get both music boxes! Listen to a sample in the music section!" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/714/711/8deee92c837406d40e74d19b85a8c257_large.jpg?1394133032"><figcaption>This beautiful 18 note Music box comes in a engraved wooden box and plays the DFS theme melody. This item is part of the Music Box 2.0 Tier that also includes the 1.0 music box. So, you get both music boxes! Listen to a sample in the music section!</figcaption></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1723794/edit" data-id="1723794">
+<figure><img alt="Using your Photo as a reference we will paint a zombie Portrait of you and let you roam the world of Dragon Fin Soup! Tasty adventurer Brains are waiting for you!" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/723/794/49287c4133486790960ef8ade695a0a4_large.jpg?1394322752"><figcaption>Using your Photo as a reference we will paint a zombie Portrait of you and let you roam the world of Dragon Fin Soup! Tasty adventurer Brains are waiting for you!</figcaption></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1723800/edit" data-id="1723800">
+<figure><img alt="You will send us a Photo of yourself and we will paint your portrait and add you in Dragon Fin soup as an NPC! You will be able to help designing your own dialog as well!" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/723/800/d425ea4c8f8db20d0523b47e4d16c142_large.jpg?1394322830"><figcaption>You will send us a Photo of yourself and we will paint your portrait and add you in Dragon Fin soup as an NPC! You will be able to help designing your own dialog as well!</figcaption></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1688403/edit" data-id="1688403">
+<figure><img alt="Grimm Bros is honored by your patronage and we proudly we will  create for you a beautiful handpainted and framed oil painting on canvas!  This wonderful hand-painted work of art will look stunning in your home or office." class="fit" src="https://s3.amazonaws.com/ksr/assets/001/688/403/38177ba02faefe6bcdb3ca78fa52a151_large.jpg?1393567124"><figcaption>Grimm Bros is honored by your patronage and we proudly we will  create for you a beautiful handpainted and framed oil painting on canvas!  This wonderful hand-painted work of art will look stunning in your home or office.</figcaption></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1688406/edit" data-id="1688406">
+<figure><img alt="This amazing beauty of a music box is the superb 50 notes Orpheus Movement playing a brilliantly complex melody of the Dragon Fin Soup main Theme. Featuring a very deep sound true to its name this music box is a very special collector’s Item!" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/688/406/b07d3edcc92844a6f5b9bfe18d4ac9c4_large.jpg?1393567178"><figcaption>This amazing beauty of a music box is the superb 50 notes Orpheus Movement playing a brilliantly complex melody of the Dragon Fin Soup main Theme. Featuring a very deep sound true to its name this music box is a very special collector’s Item!</figcaption></figure>
+</div>
+<p><i>Music Box Style from BetterMusicBoxes.com </i></p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1739312/edit" data-id="1739312">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/739/312/539357905ea9d39a29679423d3ef21ec_large.jpg?1394634075"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1739244/edit" data-id="1739244">
+<figure><img alt="Morgiana from the fairy tale Alibaba and the 40 Thieves! Enslaved and trained as an Assassin and dancer Morgiana was used as a deadly weapon for as long as she remembers, until one day when she decided to turn her sharp blades against her oppressors." class="fit" src="https://s3.amazonaws.com/ksr/assets/001/739/244/4fc324116d08dcddb2f337a020fc090f_large.jpg?1394633114"><figcaption>Morgiana from the fairy tale Alibaba and the 40 Thieves! Enslaved and trained as an Assassin and dancer Morgiana was used as a deadly weapon for as long as she remembers, until one day when she decided to turn her sharp blades against her oppressors.</figcaption></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1739253/edit" data-id="1739253">
+<figure><img alt="Geppetto from the Adventures of Pinocchio! Unable to save his family he managed to bind the last remaining fragments of his son’s soul to a wooded doll. The crude golem is less than a faint shadow of his beloved son but he is all that Geppetto has left." class="fit" src="https://s3.amazonaws.com/ksr/assets/001/739/253/a7d51014ba628f3e007fdb9f94e001f2_large.jpg?1394633260"><figcaption>Geppetto from the Adventures of Pinocchio! Unable to save his family he managed to bind the last remaining fragments of his son’s soul to a wooded doll. The crude golem is less than a faint shadow of his beloved son but he is all that Geppetto has left.</figcaption></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1739262/edit" data-id="1739262">
+<figure><img alt="On the right you can see an alternative sprite model for Robin. We would love to add this to the game along with some other wicked features." class="fit" src="https://s3.amazonaws.com/ksr/assets/001/739/262/bb5da3b0d3b72b3bd2aa4935b539a83d_large.jpg?1394633354"><figcaption>On the right you can see an alternative sprite model for Robin. We would love to add this to the game along with some other wicked features.</figcaption></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1739276/edit" data-id="1739276">
+<figure><img alt="As Robin takes damage or uses health items and magic the rage meter slowly builds up only to explode into hot rage, transforming Robin into a mighty, uncontrollable beast. There might even be ways to control the beast, who knows…" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/739/276/3d7cbf684140b72a3409a15a980d71e1_large.jpg?1394633481"><figcaption>As Robin takes damage or uses health items and magic the rage meter slowly builds up only to explode into hot rage, transforming Robin into a mighty, uncontrollable beast. There might even be ways to control the beast, who knows…</figcaption></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1739282/edit" data-id="1739282">
+<figure><img alt="Ever wanted to have the eyes of a Sea Troll, the hearth of a weretiger or the teeth of a vampire? No problem! With this feature a new crazy Fringe scientists would be added to the game. For gold he is willing to just do about any experiment to your body." class="fit" src="https://s3.amazonaws.com/ksr/assets/001/739/282/e4f630576c81d4b59e0d0d465384a563_large.jpg?1394633567"><figcaption>Ever wanted to have the eyes of a Sea Troll, the hearth of a weretiger or the teeth of a vampire? No problem! With this feature a new crazy Fringe scientists would be added to the game. For gold he is willing to just do about any experiment to your body.</figcaption></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1688520/edit" data-id="1688520">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/688/520/539357905ea9d39a29679423d3ef21ec_large.jpg?1393569238"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1686998/edit" data-id="1686998">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/686/998/6837035ac44dc05940caebb885333828_large.jpg?1393543652"></figure>
+</div>
+<p>We see Kickstarter as a great platform to connect with gamers and are here asking for your backing to help us finish the game and make Dragon Fin Soup a phenomenal experience!</p>
+<p>Grimm Bros is a new indie RPG game company of veteran developers. We are very small and 100% indie.  Our entire team is spread around the world with members located in Philadelphia, Bangkok, Chicago, San Francisco, and London.   We all work together online making games from our home offices, pubs, cafes… basically anywhere with a power outlet and wifi.   </p>
+<p>As an indie studio it’s important to be in control of the development without not having to bend and compromise from outside influences. We are indie because we really want to make the kind of games we would personally enjoy playing and not doing work for hire or work on projects where the focus is on the business model.   </p>
+<p>Our development has been funded so far with the help of our amazing friends and family in addition to our own personal money, time, and efforts. </p>
+<p>Dragon Fin Soup is our debut title that we’ve been pouring all of our time, efforts, and hearts into over the past year in order to craft a fantastic game experience to share with you.  Every day we proudly sacrifice our souls to the elder gods of gaming to bring you yummy RPG goodes!</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1688521/edit" data-id="1688521">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/688/521/539357905ea9d39a29679423d3ef21ec_large.jpg?1393569252"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1687000/edit" data-id="1687000">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/687/000/37ecfe471c319961c76178211b38c904_large.jpg?1393543693"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1688597/edit" data-id="1688597">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/688/597/e2a2f1517edbf81c602c125bac75a0c6_large.gif?1393571011"></figure>
+</div>
+<p><b>Randis Albion - </b>Leading the production Team and is in charge of the Game Design and Art Direction, doing all the Graphics, Concepts, SFX and something something. </p>
+<p>Been around the block with almost 18 years industry exp, has 7 cats, is the official Final Fantasy Superfan, video game collector and loves reading Sci-Fi novels and anime/manga.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1688604/edit" data-id="1688604">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/688/604/4d4fda454219ea31d14d154ffe43d09a_large.gif?1393571141"></figure>
+</div>
+<p><b>Pongkasem Natprasert (Sem) - </b>Being an avid gamer since early childhood Sem always knew what he wanted to become a game developer.</p>
+<p>With decades of production experience he still is madly in love with games, especially tactics and strategy RPG titles such as the Ogre Saga and FF Tactics. Sem is doing a lot of work on the Dungeon Generation and all kinds of game features.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1688629/edit" data-id="1688629">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/688/629/2377aad26b96e4878e4e8b6701981afd_large.gif?1393572412"></figure>
+</div>
+<p><b>Kritaya Kridakorn Na Ayuthaya (Nick) - </b>His first encounter with video games as a kid was a love on first sight. </p>
+<p>Nick loves playing all kinds of games, preferably tactics RPGs, he also loves cats and spends the rest of his free time with Reading, talking long walks, watching Drama and sleeping. Nick is working on the UI, the AI and controls of the game.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1688633/edit" data-id="1688633">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/688/633/de2be4a5c3c6570e456ffe55175c2eae_large.gif?1393572605"></figure>
+</div>
+<p><b>Mark Wimmer </b>- Mark has been coding and designing games since about 1990 or so, beginning on an Apple IIe computer.   </p>
+<p>Many of his favorite games are from the SNES era, including titles such as Space Megaforce (Super Aleste in Japan), ActRaiser (one of the best game soundtracks of all time), Zelda 3-A Link To The Past, Street Fighter 2, Contra III, TMNT IV, Bomberman, Mario Kart...  the list could go on and on. Mark is in charge of the graphics, engine, and mission scripting.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1688651/edit" data-id="1688651">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/688/651/b37abdafe332f0fa2593504e2ae09e5e_large.gif?1393573100"></figure>
+</div>
+<p><b>Aaron Weingarten </b>- Aaron has been bouncing around the industry for a couple of years doing games from mobile to console before joining Grimm Bros. <br><br>His favorite game is Batman Arkham City for its perfect blend of comics and games. Aaron is supporting development every way possible whether its coding, level design, or QA.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1731805/edit" data-id="1731805">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/731/805/862480a7190542e82e691698ebe5b7c4_large.gif?1394488743"></figure>
+</div>
+<p><b>Ashley Monif (Ash)  </b>- Ash fights for Grimm Bros doing extreme bare knuckle Biz Dev, Ops, PR and Production among many other things. <br><br>Ash grew up playing games already before he even learned to walk and had his hands in the Game Industry for over 15 years working for companies like EA, Atari, Subatomic and Human Head in leading positions.   He has a cute little dog named Mr. Roo and savors slowly taking his time to play-through the latest Zelda game as a reward for hard work.</p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1688522/edit" data-id="1688522">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/688/522/539357905ea9d39a29679423d3ef21ec_large.jpg?1393569273"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1688582/edit" data-id="1688582">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/688/582/32e69606ae08f035bb33bbd218b9bdd1_large.jpg?1393570363"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1688478/edit" data-id="1688478">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/688/478/806446940b04995a0f0fcdc97279bf88_large.gif?1393568332"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1688491/edit" data-id="1688491">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/688/491/6cc25dfe5b06df16f85fe749c7df431d_large.jpg?1393568496"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1688495/edit" data-id="1688495">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/688/495/b7d663bb52363655c1ed75bfc48c1430_large.jpg?1393568545"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1688437/edit" data-id="1688437">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/688/437/9a53da93888838d5c5d4b9f465ba81ec_large.jpg?1393567628"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1688441/edit" data-id="1688441">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/688/441/0f27cc1f8a8faf969c239b31e8eb313b_large.jpg?1393567647"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1688446/edit" data-id="1688446">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/688/446/c04f3e536f2ce197e0d84edb351c0f45_large.jpg?1393567697"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1688448/edit" data-id="1688448">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/688/448/27d695ce031e3096ccbc4bc6918df638_large.jpg?1393567747"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1688469/edit" data-id="1688469">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/688/469/ab76691e19fcff5f9a4a58a01c7aeccd_large.jpg?1393568173"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1688471/edit" data-id="1688471">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/688/471/dadabacf4c17644480de08534d59e6e5_large.jpg?1393568228"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1688474/edit" data-id="1688474">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/688/474/980b4651c994cd0abba722c99775c4a8_large.jpg?1393568260"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1760474/edit" data-id="1760474">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/760/474/539357905ea9d39a29679423d3ef21ec_large.jpg?1395053062"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1760471/edit" data-id="1760471">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/760/471/dfd22fecffb0ca4771bb2d9208a603dc_large.jpg?1395052994"></figure>
+</div>
+<p>Introducing Jade Leamcharaskul, the talented music composer of Dragon Fin Soup! Jade has worked very closely with the team in order to create the right composition, tone and sound that will bring the world of Dragon Fin Soup to life.</p>
+<p>Here are a few sample tracks created for Dragon Fin Soup...
+</p>
+<p><b>The Journey Ahead</b></p>
+<div class="template asset" contenteditable="false" data-id="1760476">
+<figure><embed allowscriptaccess="always" height="30" src="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?audioonly=true&amp;controlbar.idlehide=false&amp;controlbar=bottom&amp;file=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fassets%2F001%2F760%2F476%2Fe3e7238eb0a2ac6d4365b84c3def170f_original.mp3%3F1395053191&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf" type="application/x-shockwave-flash" width="560" wmode="transparent"></embed></figure>
+</div>
+<p><b> Imperial Castle - Royal Blood</b></p>
+<div class="template asset" contenteditable="false" data-id="1760480">
+<figure><embed allowscriptaccess="always" height="30" src="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?audioonly=true&amp;controlbar.idlehide=false&amp;controlbar=bottom&amp;file=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fassets%2F001%2F760%2F480%2F33ff56693bda69cad643237d20eede38_original.mp3%3F1395053255&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf" type="application/x-shockwave-flash" width="560" wmode="transparent"></embed></figure>
+</div>
+<p><b> Home is where the Hearth is</b></p>
+<div class="template asset" contenteditable="false" data-id="1760482">
+<figure><embed allowscriptaccess="always" height="30" src="https://d3mlfyygrfdi2i.cloudfront.net/321f/kickplayer.swf?audioonly=true&amp;controlbar.idlehide=false&amp;controlbar=bottom&amp;file=https%3A%2F%2Fs3.amazonaws.com%2Fksr%2Fassets%2F001%2F760%2F482%2Fc71c36e9738675ea3b64afe2bc0b16fe_original.mp3%3F1395053323&amp;skin=https%3A%2F%2Fd3mlfyygrfdi2i.cloudfront.net%2Fcc3a%2Fkickskin.swf" type="application/x-shockwave-flash" width="560" wmode="transparent"></embed></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1760486/edit" data-id="1760486">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/760/486/f91ebc2dac038c9af1c8a3d9c0e18967_large.jpg?1395053403"></figure>
+</div>
+<p> Grimm Bros is proud to offer these lovely Sankyo MUSIC BOXES as part of our Reward Tiers that will be playing original melody soundtracks from Dragon Fin Soup!</p>
+<div class="template oembed" contenteditable="false" data-href="http://youtu.be/9SH2-hzHy2c">
+<iframe width="459" height="344" src="https://www.youtube.com/embed/9SH2-hzHy2c?feature=oembed&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+
+</div>
+<p>The large 50 notes Sankyo luxurious Music Box series "Orpheus" was named after a minstrel master "Orpheus" of Greek mythology .</p>
+<p>The Sankyo "Orpheus" music box have very deep sound true to its name. Sankyo reproduced the "nailing" techonology which means "driving nails into the cylinder of music box". The nailing technology has been polished among skilled craftmen of Europe of the 19th century.</p>
+<p>By moving sideway the cylinder, it can play multiple tracks of 2 songs, 3 songs, and also can play one long song!</p>
+<p><a href="http://www.nidec-sankyo.co.jp/orgel/e/images/orpheus/slide.avi" target="_blank">http://www.nidec-sankyo.co.jp/orgel/e/images/orpheus/slide.avi</a></p>
+<div class="template asset" contenteditable="false" data-edit_url="/projects/grimmbros/dragon-fin-soup/assets/1760492/edit" data-id="1760492">
+<figure><img alt="" class="fit" src="https://s3.amazonaws.com/ksr/assets/001/760/492/f91ebc2dac038c9af1c8a3d9c0e18967_large.jpg?1395053716"></figure>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+<div id="risks">
+<h2 class="title grey-dark mt6 mb4">
+<span>Risks and challenges</span>
+<a href="/help/faq/kickstarter%20basics#Acco" class="right normal h5" target="_blank">Learn about accountability on Kickstarter</a>
+<div class="divider clear"></div>
+</h2>
+<p><p>Dragon Fin Soup is self-funded with the help of our amazing friends and family.  The base funding goal and the stretch goals will give us additional development time to add additional features, polish and porting to make Dragon Fin Soup a fantastic game experience!</p>
+
+<p>Roguelikes are a challenging experience that gamers typically love or hate.  Not everyone is a huge fan of the harsh punishments, permanent death and the highscore-survival aspects.</p>
+
+<p>Grimm Bros is an indie RPG studio that loves Roguelikes but also loves Action Adventures and JRPGs.  So we asked ourselves how would it feel to combine a classic console JRPG with Roguelike mechanics, procedural content and tactical turn-based combat?</p>
+
+<p>12 month later our answer to that question is Dragon Fin Soup!  A fast paced and yet tactical 2D RPG hybrid experience that features everything that we love about classic console JRPGs and PC roguelikes!  Fluid controls, brilliant graphics, scaling difficulty and a great story.</p>
+
+<p>Randis and Ash are industry veterans with over 15 years of experience each developing and producing a wide variety of games.  We know how to make games and we have a solid track record of delivering on what we promise.  We aren’t just another indie who won’t deliver.</p>
+
+<p>Dragon Fin Soup is currently at Alpha and once we finishing adding the rest of the story quests, magic, and game balancing we will begin extended focus testing and a Closed Beta to insure the game is as fun and enjoyable as possible.</p></p>
+</div>
+</div>
+<div class="NS-projects-faqs" id="project-faqs">
+<h2 class="title grey-dark mt6 mb4">
+FAQ
+<div class="divider clear"></div>
+</h2>
+<ul class="faqs">
+<li class="faq" id="project_faq_85644">
+<div class="faq-question">
+<a href="#project_faq_85644" name="project_faq_85644">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Why is the base funding goal lower than the Stretch Goals?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Dragon Fin Soup is self-funded with the help of our amazing friends and family. The base funding goal and the stretch goals will give us additional development time to add additional features, polish and porting to make Dragon Fin Soup a fantastic game experience!</p>
+
+<p>The lower base goal of 24k is additional funding that will buy us more development time, but the actual development cost already spend on this game is much higher than that! We have already been working for one year on Dragon Fin Soup. We had decided on a lower base goal because frankly we did not know what to expect, this is our first Kickstarter and all :) </p>
+
+<p>But as we already explained, every penny will go into development! We are not recouping with the money raised and we will work hard to make this game as great as we can and you can expect that we will deliver quality!</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2014-03-31T20:18:21-04:00">Mon, Mar 31 2014 8:18 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_85021">
+<div class="faq-question">
+<a href="#project_faq_85021" name="project_faq_85021">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">When will Dragon Fin Soup Launch?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Our plan is to begin launching Dragon Fin Soup in 2014!  We will be shipping on multiple platforms and due to our small team size will need to ship each SKU one at a time to insure a smooth launch and the highest quality possible.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2014-03-24T13:32:21-04:00">Mon, Mar 24 2014 1:32 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_85022">
+<div class="faq-question">
+<a href="#project_faq_85022" name="project_faq_85022">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">When will we get our physical Rewards?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>April 2015 is the date we plan to have all of the physical goods finally shipped out to our backers as some of the rewards will take time to produce.  However, there is a very high chance that people will begin to receive their backer rewards much earlier than this date!</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2014-03-24T13:33:32-04:00">Mon, Mar 24 2014 1:33 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_85023">
+<div class="faq-question">
+<a href="#project_faq_85023" name="project_faq_85023">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Will Dragon Fin Soup be cross-buy on Sony Playstation?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Yes!  To us this feels like the right thing to do and will hopefully make it easier for all Playstation console owners to enjoy :)</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2014-03-24T13:35:44-04:00">Mon, Mar 24 2014 1:35 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_85024">
+<div class="faq-question">
+<a href="#project_faq_85024" name="project_faq_85024">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Will Dragon Fin Soup be coming to Xbone?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>We hope so!  Right now we are in talks with Microsoft and hope to be able to get an agreement in place soon, but for now we can&#39;t promise if/when we will be coming to that platform.</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2014-03-24T13:32:21-04:00">Mon, Mar 24 2014 1:32 pm EDT</time>
+</div>
+</div>
+</li>
+<li class="faq" id="project_faq_85026">
+<div class="faq-question">
+<a href="#project_faq_85026" name="project_faq_85026">
+<span class="ss-icon ss-navigateright"></span>
+<span class="question">Can I back Dragon Fin Soup with Paypal?</span>
+</a>
+</div>
+<div class="faq-answer">
+<p>Yes!  We will be adding Humble Bundle Widgets to our main webpage with a link to our Kickstarter page very soon!</p>
+<div class="timestamp">
+Last updated:
+<time class="js-adjust" data-format="llll z" datetime="2014-03-24T13:50:47-04:00">Mon, Mar 24 2014 1:50 pm EDT</time>
+</div>
+</div>
+</li>
+
+</ul>
+<div class="faq-ask-box">
+<a href="/projects/grimmbros/dragon-fin-soup/messages/new?message%5Bto%5D=grimmbros&amp;mode=FAQ" class="button button_blue remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Ask a question about Dragon Fin Soup">Ask a question</a>
+
+</div>
+</div>
+
+<div class="mt4 ml1 mr1 mb2" id="report-issue-wrap">
+<a href="/login?then=%2Fprojects%2Fgrimmbros%2Fdragon-fin-soup" class="button button_grey">Report this project to Kickstarter</a>
+</div>
+</div>
+<div class="NS-projects-rightcol grid_5" id="rightcol">
+<div class="NS_projects__ecom">
+<div class="digits_6 pb2 pl2 pt2" id="stats">
+<h5>
+<div class="num h48 no-margin" data-backers-count="4044" id="backers_count"><data class="Project615356724" data-format="number" data-value="4044" itemprop="Project[backers_count]">4,044</data></div>
+<span><data class="Project615356724" data-attr="backers_count" data-format="pluralize" data-value="4044" data-word="Backer">Backers</data></span>
+</h5>
+<h5>
+<div class="num h48 no-margin" data-goal="24000.0" data-percent-raised="4.98831625" data-pledged="119719.59" id="pledged">
+<data class="Project615356724" data-currency="USD" data-format="shorter_money" data-precision="0" data-value="119719" data-without_code="true" itemprop="Project[pledged]">$119,719</data>
+<span class="money usd project_currency_code"></span>
+</div>
+pledged of
+<span class="money usd no-code">$24,000</span>
+goal
+</h5>
+<span data-duration="30.0" data-end_time="2014-04-11T11:15:21-04:00" data-hours-remaining="0" id="project_duration_data"></span>
+<div class="Project615356724" data-conditions="[{&quot;!state&quot;:[&quot;canceled&quot;,&quot;suspended&quot;]}]" data-evaluation="true" data-render="&quot;&lt;h5 class=\&quot;poll \&quot; data-dynamic=\&quot;5\&quot; data-end_time=\&quot;2014-04-11T11:15:21-04:00\&quot; data-poll_url=\&quot;https://d2oher2uhvl0ur.cloudfront.net/projects/grimmbros/dragon-fin-soup/stats.json\&quot;&gt;\n&lt;div class=\&quot;num h48 no-margin\&quot;&gt;0&lt;/div&gt;\n&lt;span class=\&quot;text\&quot;&gt;seconds to go&lt;/span&gt;\n&lt;/h5&gt;\n&quot;"><h5 class="poll " data-dynamic="5" data-end_time="2014-04-11T11:15:21-04:00" data-poll_url="https://d2oher2uhvl0ur.cloudfront.net/projects/grimmbros/dragon-fin-soup/stats.json">
+<div class="num h48 no-margin">0</div>
+<span class="text">seconds to go</span>
+</h5>
+</div></div>
+<div class="Project615356724" data-conditions="[{&quot;state&quot;:&quot;live&quot;},{&quot;!ended?&quot;:true}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;pr2 pl2\&quot; id=\&quot;pledge-wrap\&quot;&gt;\n&lt;a href=\&quot;/projects/grimmbros/dragon-fin-soup/pledge/new?clicked_reward=false\&quot; class=\&quot;button button_green button_box button_block\&quot; id=\&quot;button-back-this-proj\&quot; title=\&quot;Back this project\&quot;&gt;Back This Project &lt;small class=&#39;h6 normal block green-dark&#39;&gt;&lt;span class=\&quot;money usd \&quot;&gt;$1&lt;/span&gt; minimum pledge&lt;/small&gt;&lt;/a&gt;\n&lt;/div&gt;\n&quot;"></div><div class="Project615356724" data-conditions="[{&quot;state&quot;:&quot;live&quot;}]" data-evaluation="false" data-render="&quot;&lt;div class=\&quot;p2\&quot; id=\&quot;banner\&quot;&gt;\n&lt;p class=\&quot;tiny_type no-margin\&quot;&gt;\nThis project will be funded on\n&lt;time class=\&quot;js-adjust\&quot; data-format=\&quot;llll z\&quot; datetime=\&quot;2014-04-11T11:15:21-04:00\&quot;&gt;Fri, Apr 11 2014 11:15 am EDT&lt;/time&gt;.\n&lt;/p&gt;\n&lt;/div&gt;\n&quot;"></div></div>
+
+<div class="NS_projects__rightcol_projectby bg-blue-light rounded">
+<div class="p2 clearfix">
+<div class="avatar inline-block align-middle">
+<a href="/projects/grimmbros/dragon-fin-soup/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography"><img alt="Grimm_bros_logo_copy.small" class="avatar-small" height="80" src="https://s3.amazonaws.com/ksr/avatars/9367669/Grimm_Bros_logo_copy.small.jpg?1394748686" width="80" />
+</a></div>
+<div class="creator-name inline-block align-middle ml1">
+<h6 class="mb1">Project by</h6>
+<h5 class="mb1">
+<a href="/projects/grimmbros/dragon-fin-soup/creator_bio" class="green-dark remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">Grimm Bros</a>
+</h5>
+<p class="location h6 bold mb1">
+<a href="/discover/places/philadelphia-pa">Philadelphia, PA</a>
+</p>
+</div>
+</div>
+<div class="creator-details pl2 pr2 pb1">
+<ul class="list-simple h5 mb1">
+<li class="projects">
+<span class="ss-icon ss-kickstarter grey-dark margin-right"></span>
+<span class="text">
+First created
+<span class="divider">&middot;</span>
+<a href="/profile/grimmbros/backed" class="green-dark bold more-button remote_modal_dialog" data-modal-title="Projects backed by Grimm Bros">5 backed</a>
+</span>
+</li>
+<li>
+<span class="ss-icon ss-facebook margin-right grey-dark"></span>
+<span class="text">
+Has not connected Facebook
+</span>
+</li>
+<li class="links">
+<span class="ss-icon ss-globe margin-right grey-dark"></span>
+<span class="text">
+<a href="http://grimm-bros.com/" class="popup" rel="nofollow" target="_blank">grimm-bros.com</a>
+</span>
+</li>
+</ul>
+</div>
+<div class="footer center h5 bold clearfix rounded-bottom clip">
+<a href="/projects/grimmbros/dragon-fin-soup/creator_bio" class="remote_modal_dialog" data-modal-class="modal_project_by" data-modal-title="Biography">See full bio</a>
+<a href="/projects/grimmbros/dragon-fin-soup/messages/new?message%5Bto%5D=grimmbros" class="remote_modal_dialog message_creator_modal_link" data-modal-class="modal_send_message" data-modal-title="Send a message to Grimm Bros">Contact me</a>
+
+</div>
+</div>
+
+<ul class="NS-projects-rightcol-rewards rounded clip list mt2" data-reward-count="22" id="what-you-get">
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$5</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+27 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>THE ORIGINAL SOUNDTRACK	
+==============================
+Dragon Fin Soup OST + HD Wallpaper Pack
+==============================
+We thank you for supporting Dragon Fin Soup and want you to enjoy the fantastic ORIGINAL SOUNDTRACK by our very own talented music composer Jade Leamcharaskul!  In addition we will give you a gorgeous HD WALLPAPER PACK!  Available for digital download.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-04-01">Apr 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$15</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+2131 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>DRAGON FIN SOUP THE GAME				
+==============================
+Dragon Fin Soup OST + HD Wallpaper Pack + Dragon Fin Soup the Game + Game Manual + Forum Access
+==============================
+Gratz!  You are now the proud owner of Dragon Fin Soup the GAME featuring epic tales of murder, madness and dark secrets!  In addition we will be including a sleek digital game MANUAL and access to our FORUMS to chat with the Grimm team and discuss tips, tricks and strategies with other players help you in your adventure. All previous rewards are included.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-04-01">Apr 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$20</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+660 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>DIGITAL PLUS EDITION		
+==============================
+Dragon Fin Soup OST + HD Wallpaper Pack (2) + Dragon Fin Soup the Game + Game Manual + Forum Access + Digital Art Book
+==============================
+Nabbing the Digital Plus Edition of Dragon Fin Soup gets you our beautifully illustrated digital ART BOOK!   You can now enjoy a behind-the-scenes view of our production art, design sketches, and our next snazzy HD WALLPAPER PACK all created by Randis Albion.   All previous rewards are included.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-04-01">Apr 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$30</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+200 backers
+</span>
+<span class="bg-grey no-wrap pl1 pr1 sold-out">
+All gone!
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>PET FAMILIAR - EARLY BIRD - EDITION ============================== Dragon Fin Soup OST + HD Wallpaper Pack (2) + Dragon Fin Soup the Game + Game Manual + Forum Access + Digital Art Book + Exclusive Pet ============================== As an early backer of Dragon Fin Soup we offer a special limited tier to adopt your own PET FAMILIAR! A variety of familiars can be found and collected in Dragon Fin Soup, but this special one is chosen by you! Join us on our developer forums and vote on the kind of pet and name you would like for your adventures. All previous rewards are included.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-04-01">Apr 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$35</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+332 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>PET FAMILIAR EDITION		
+==============================
+Dragon Fin Soup OST + HD Wallpaper Pack (2) + Dragon Fin Soup the Game + Game Manual + Forum Access + Digital Art Book + Exclusive Pet
+==============================
+Adopt your own PET FAMILIAR!  As mentioned above there are a variety of familiars that can be found and collected in Dragon Fin Soup, but this special one is chosen by you!  Join us on our developer forums and vote on the kind of pet and name you would like for your adventures.  All previous rewards are included.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-04-01">Apr 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$40</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+159 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(1841 left of 2000)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>ARTISAN EDITION
+============================== 
+Dragon Fin Soup OST + HD Wallpaper Pack (2) + Dragon Fin Soup the Game + Game Manual + Forum Access + Digital Art Book + Poster (1)
+============================== 
+▮ Global shipping cost included! ▮ 
+============================== 
+Here by popular demand we are introducing the Artisan Edition of Dragon Fin Soup in which we offer you an awesome 20x15 inch ART PRINT signed by our one and only Randis Albion :)  All previous rewards are included with the exception of the EXCLUSIVE PET as we need to make this tier balanced among the rest of our rewards.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-04-01">Apr 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$50</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+211 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(1789 left of 2000)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>GHOST EDITION
+============================== 
+Dragon Fin Soup OST + HD Wallpaper Pack (2) + Dragon Fin Soup the Game + Game Manual + Forum Access + Digital Art Book + Exclusive Pet + Add your name to the Ghost Pool + Spirit Familiar
+==============================
+Become a haunted specter from beyond the grave with the Ghost Edition.  Many of our enemies in game have randomly generated names.  We will add your name to the GHOST POOL.  Now you might encounter a ghost in-game with your name!  In addition you will also receive a special, cute SPIRIT FAMILIAR!  This lil fella will not come with any gameplay advantages as we do not want to be unfair for those who did not back this tier.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-04-01">Apr 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$70</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+14 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>BLOOD RING EDITION		
+==============================
+Dragon Fin Soup OST + HD Wallpaper Pack (2) + Dragon Fin Soup the Game + Game Manual + Forum Access + Digital Art Book + Exclusive Pet + Blood Ring + Poster (1)
+==============================
+▮ Global shipping cost included!▮
+==============================
+Want cool schwag?  Proudly display your support of Dragon Fin Soup 
+with an awesome BLOOD RING (one size fits all) and a gorgeous 20x12 inch POSTER PRINT. All previous rewards are included.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-04-01">Apr 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$99</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+110 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(1 left of 111)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>EYE CANDY - EARLY BIRD - EDITION			
+==============================
+Dragon Fin Soup OST + HD Wallpaper Pack (2) + Dragon Fin Soup the Game + Game Manual + Forum Access + Digital Art Book + Exclusive Pet + Blood Ring + Poster (4) + LE T-Shirt + Name in Credits
+==============================
+▮ Global shipping cost included! ▮
+==============================
+As an early backer you get a special offer for this Tier!  We will be sending you a limited edition Grimm Bros team T-SHIRT (L) and three additional brilliant photo paper POSTERS signed by the Grimm Bros!  We consider you now an honorary part of the Grimm Team and you get your name listed in the game CREDITS. All previous rewards are included except where limited.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-04-01">Apr 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$100</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+91 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(909 left of 1000)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>WOLF PLUSHIE EDITION
+==============================
+Dragon Fin Soup OST + HD Wallpaper Pack (2) + Dragon Fin Soup the Game + Game Manual + Forum Access + Digital Art Book +  Exclusive Pet + Blood Ring + Poster (1) + Wolf Plushie
+==============================
+▮ Global shipping cost included! ▮
+==============================
+Grab an exclusive limited edition plushie of BIG BAD WOLF PET FAMILIAR! This cute cuddly companion will keep you company on all of your real life or gaming adventures.  All previous rewards are included except where limited.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-04-01">Apr 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$150</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+4 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>EYE CANDY EDITION			
+==============================
+Dragon Fin Soup OST + HD Wallpaper Pack (2) + Dragon Fin Soup the Game + Game Manual + Forum Access + Digital Art Book + Exclusive Pet + Blood Ring + Poster (4) + LE T-Shirt + Name in Credits
+==============================
+▮ Global shipping cost included! ▮
+==============================
+Thank you for your generous support! To show our appreciation we will be sending you a limited edition Grimm Bros team T-SHIRT (L) and three additional brilliant photo paper POSTERS signed by the Grimm Bros!  We consider you now an honorary part of the Grimm Team and you get your name listed in the game CREDITS. All previous rewards are included except where limited.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-04-01">Apr 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$200</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+10 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(490 left of 500)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>MUSIC BOX 1.0 EDITION		
+==============================
+Dragon Fin Soup OST + HD Wallpaper Pack (2) + Dragon Fin Soup of the Game + Game Manual + Forum Access + Digital Art Book + Exclusive Pet + Blood Ring + Poster (4) + LE T-Shirt + Name in Credits + Name added to Monster Pool + Music Box 1.0 
+==============================
+▮ Global shipping cost included! ▮ 
+==============================
+Experience the wonder of listening to the main theme song of Dragon Fin Soup softly played by a limited edition ACRYLIC MUSIC BOX made in Japan. Listen to the sample in the Music Section. All previous rewards are included except where limited.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-04-01">Apr 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$200</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+15 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(185 left of 200)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>CRYSTAL EDITION			
+==============================
+Dragon Fin Soup OST + HD Wallpaper Pack (2) + Dragon Fin Soup the Game + Game Manual + Forum Access + Digital Art Book + Exclusive Pet + Blood Ring + Poster (4) + LE T-Shirt + Name in Credits + Name added to Monster Pool + Engraved Crystal
+==============================
+▮ Global shipping cost included! ▮
+==============================
+Immortalize your name in Dragon Fin Soup. How you may ask?  First off we will add your name to our MONSTER POOL.  Now you have a chance of meeting a monster named after yourself in-game!  Then to commemorate this grand occasion we will engrave your name on a beautiful natural CRYSTAL and send it to you in a crafted wooden chest.  How awesome is that?  All previous rewards are included except where limited.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-04-01">Apr 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$250</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+5 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>GRIMM EDITION ==============================
+Dragon Fin Soup OST + HD Wallpaper Pack (2) + Dragon Fin Soup the Game + Game Manual + Forum Access + Digital Art Book + Exclusive Pet + Name in Credits + Name added to Monster Pool + Grimm Caricature
+============================== 
+Get your very own personal GRIMM CARICATURE!  Moody, Foreboding, and Striking Awesome these personal caricatures are great as a profile pict on any social media site :)  The the Grimm Caricature is not included in any other tiers, unless specified. All previous digital rewards included!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-04-01">Apr 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$350</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+2 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(28 left of 30)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>WEAPON EDITION			
+==============================
+Dragon Fin Soup OST + HD Wallpaper Pack (2) + Dragon Fin Soup the Game + Game Manual + Forum Access + Digital Art Book + Exclusive Pet + Blood Ring + Poster (4) + LE T-Shirt + Name in Credits + Name added to Monster Pool + Design a Weapon
+ ============================== 
+▮ Global shipping cost included! ▮ ==============================
+Grimm Bros is big on creative collaboration and invite you to join us for a fun design jam on our forums and Skype to DESIGN AND NAME A WEAPON!  We will guide you through the process and together explore ideas on how to craft a unique and deadly weapon.  All previous rewards are included except where limited</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-04-01">Apr 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$350</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(29 left of 30)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>MAGIC RING EDITION		
+============================
+Dragon Fin Soup OST + HD Wallpaper Pack (2) + Dragon Fin Soup the Game + Game Manual + Forum Access + Digital Art Book + Exclusive Pet + Blood Ring + Poster (4) + LE T-Shirt + Name in Credits + Name added to Monster Pool + Design a Magic Ring
+============================== 
+▮ Global shipping cost included! ▮ ==============================
+Got a cool idea for a magical item?  Excellent!   We invite you to join the Grimm team on our forums and Skype for fun collaborative design jam to DESIGN AND NAME A MAGIC RING!   We will guide you through the process and together explore ideas for the look and the name of this special item.  All previous rewards are included except where limited.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-04-01">Apr 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$400</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+7 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(493 left of 500)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>MUSIC BOX 2.0 EDITION		
+==============================
+Dragon Fin Soup OST + HD Wallpaper Pack (2) + Dragon Fin Soup the Game + Game Manual + Forum Access + Digital Art Book + Exclusive Pet + Blood Ring + Poster (4) + LE T-Shirt + Name in Credits + Name added to Monster Pool + Music Box 1.0 + Music Box 2.0
+==============================
+▮ Global shipping cost included! ▮
+==============================
+Presenting the next refinement in our musical rewards tiers, a limited edition WOODEN MUSIC BOX that will play a memorable music melody from Dragon Fin Soup in lovely soft chimes.  This Tier also contains the Music Box  1.0! 
+To listen to a sample please see the Youtube link in the Music Section in our Kickstarter page. All previous rewards are included except where limited.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-04-01">Apr 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$999</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+3 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(17 left of 20)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>OTAKU EDITION			
+==============================
+Dragon Fin Soup OST + HD Wallpaper Pack (2) + Dragon Fin Soup the Game + Game Manual + Forum Access + Digital Art Book + Exclusive Pet + Blood Ring + Poster (4) + Wolf Plushie + LE T-Shirt + Name in Credits + Name added to Monster Pool + Engraved Crystal + Soft Cover Art Book + Hand Drawn Illustration + Music Box 1.0 + Music Box 2.0 + Become a Zombie
+==============================
+▮ Global shipping cost included! ▮
+==============================
+The must-have for any gamer aficionado! We proudly offer the Otaku Edition of Dragon Fin Soup which includes a limited edition soft cover ART BOOK of Dragon Fin Soup, a one-of-a-kind HAND DRAWN ILLUSTRATION signed by Randis Albion, as well as MUSIC BOX 1.0 and MUSIC BOX 2.O. Last but not least join the Grimm team for a fun collaborative design jam to create a ZOMBIE WHO LOOKS LIKE YOU!  What could be more fun that going on a mission or quest and running into your gloriously undead self!?  Includes all previous rewards except where limited plus the WOLF PLUSHIE and ENGRAVED CRYSTAL.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-04-01">Apr 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$2,500</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(10 left of 10)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>MATRIX EDITION		
+==============================
+Dragon Fin Soup OST + HD Wallpaper Pack (2) + Dragon Fin Soup the Game + Game Manual + Forum Access + Digital Art Book + Exclusive Pet + Blood Ring + Poster (4) + Wolf Plushie + LE T-Shirt + Name in Credits + Name added to Monster Pool + Engraved Crystal + Soft Cover Art Book + Hand Drawn Illustration + Music Box 1.0 + Music Box 2.0 + Become a NPC 
+==============================
+▮ Global shipping cost included! ▮
+==============================
+Celebrate the launch of our debut title Dragon Fin Soup in style!  For our Anniversary Edition you will BECOME AN IN-GAME NPC!  This new character will look like you, be named after you, and you will even get to help design a short dialogue sequence in-game!  How cool is that?  (Dialogue needs to fit in the world - No Ads!) Includes all the previous rewards except where limited plus all physical rewards from the OTAKU TIER.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-04-01">Apr 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$3,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+1 backer
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(49 left of 50)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>MUSIC BOX 3.0 EDITION		
+==============================
+Dragon Fin Soup OST + HD Wallpaper Pack (2) + Dragon Fin Soup the Game + Game Manual + Forum Access + Digital Art Book + Exclusive Pet + Blood Ring + Poster (4) + Wolf Plushie + LE T-Shirt + Name in Credits + Name added to Monster Pool + Soft Cover Art Book + Music Box 1.0 + Music Box 2.0 + Music Box 3.0
+==============================
+▮ Global shipping cost included! ▮
+==============================
+Indulge in the musical splendor of ALL THREE OF OUR LIMITED EDITION DRAGON FIN SOUP MUSIC BOXES!!! This amazing collection features not only the wooden and acrylic 18 Note Sankyo Music Box but also the supurb 50 Note Sankyo Orpheus Movement Music Box for a brilliantly complex melody.  To listen to a sample please see the Youtube link in the Music Section in our Kickstarter page. Includes all previous rewards except where limited plus the ART BOOK and WOLF PUSHIE.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-04-01">Apr 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$5,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>FINE ART EDITION			
+==============================
+Dragon Fin Soup OST + HD Wallpaper Pack (2) + Dragon Fin Soup the Game + Game Manual + Forum Access + Digital Art Book + Exclusive Pet + Blood Ring + Poster (4) + Wolf Plushie + LE T-Shirt + Name in Credits + Name added to Monster Pool + Soft Cover Art Book + Hand Drawn Illustration + Oil Painting with Frame
+==============================
+▮ Global shipping cost included! ▮
+==============================
+Grimm Bros is honored by your patronage and we proudly we will create for you a beautiful hand painted and framed OIL PAINTING ON CANVAS. This wonderful hand-painted work of art will look stunning in your home 
+or office.  Includes all previous rewards except where limited plus the ART BOOK, WOLF PUSHIE and HAND DRAWN ILLUSTRATION.</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-04-01">Apr 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+<li class="NS-projects-reward bg-grey-light border-bottom relative">
+<div class="NS_backer_rewards__reward p2">
+<span class="indicator you-selected h6 bold bg-green white pl1 pr1 relative t0 hide">
+You selected
+</span>
+<h5 class="mb1">
+Pledge
+<span class="money usd ">$10,000</span>
+or more
+</h5>
+<p class="backers-limits">
+<span class="ss-icon ss-backer green h4 icon-nudge-down"></span>
+<span class="backers-wrap h6 bold">
+<span class="num-backers mr1">
+0 backers
+</span>
+<span class="bg-yellow limited no-wrap pl1 pr1">
+Limited
+<span class="limited-number">(10 left of 10)</span>
+</span>
+</span>
+</p>
+<div class="desc h5 mb2 break-word">
+<p>MEGA WORKSHOP EDITION	
+==============================
+Dragon Fin Soup OST + HD Wallpaper Pack (2) + Dragon Fin Soup the Game + Game Manual + Forum Access + Digital Art Book + Exclusive Pet + Blood Ring + Poster (4) + Wolf Plushie + LE T-Shirt + Name added to Monster Pool + + Grimm Caricature + Engraved Crystal + LE Soft Cover Art Book + Hand Drawn Illustration + Music Box 1.0 + Music Box 2.0 + Music Box 3.0 + Oil Painting with Frame + Become a Zombie + Design a Weapon + Design a Magic Ring + Become an NPC + Special Credit in the game + Game Development Workshop + Dinner with Grimm Bros
+==============================
+▮ Global shipping cost included! ▮
+==============================
+Join Grimm Bros for a 3 day GAME DEVELOPMENT WORKSHOP!  We will share with you in-depth and advance lessons regarding Art, Design, Production, and Business Development based on our years of experience.  Afterwards we will all go out to dinner to relax and enjoy ourselves.   Hotel and Travel are not included. All previous rewards and all limited rewards are included!</p>
+</div>
+<div class="delivery-date h6">
+<b>Estimated delivery:</b>
+<time class="js-adjust" data-format="MMM YYYY" datetime="2015-04-01">Apr 2015</time>
+</div>
+<div class="h6">
+
+</div>
+</div>
+
+
+
+</li>
+</ul>
+
+<div class="p2" id="meta">
+<h5>Funding period</h5>
+<p class="tiny_type">
+<time class="js-adjust" data-format="ll" datetime="2014-03-12T11:15:21-04:00">Mar 12, 2014</time> - 
+<time class="js-adjust" data-format="ll" datetime="2014-04-11T11:15:21-04:00">Apr 11, 2014</time>
+(30 days)
+</p>
+</div>
+</div>
+
+</div>
+
+<a href="#" id="video_mode_tab" style="display: none;">
+View in Video Mode
+</a>
+
+</div>
+</div>
+
+
+</div>
+
+<div class="h5 bg-green-dark" id="mega-footer-wrap">
+<div class="bg-green-dark white full-height" id="footer-newsletter-signup">
+<div class="container py4">
+<div class="grid_8 prefix_4 suffix_4 center mt4">
+<h2>
+Eureka! You've found
+<br>
+our little secret.
+</h2>
+<p>Sign up for our Happening email for all the inside info about arts and culture in the Kickstarter universe and beyond.</p>
+<div class="newsletter_signup">
+<form accept-charset="UTF-8" action="/newsletters/happening/signup" class="overlabels" method="post"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="&#x2713;" /><input class="hidden" name="authenticity_token" type="hidden" value="6V9EVRgL8vkoc7WiEHfsJ9G0TN4QHvljrtteHLAE4Xg=" /></div><input class="hidden" id="location" name="location" type="hidden" value="footer" />
+<textarea class="hide textarea" id="comment" name="comment">
+</textarea>
+<div class="field newsletter">
+<label class="overlabel z1 overlabel-newsletter">Email address</label>
+<input class="text" id="email" name="email" type="text" />
+</div>
+<input class="button button_green submit" name="commit" type="submit" value="Submit" />
+</form>
+
+</div>
+
+</div>
+</div>
+</div>
+<div class="container relative" id="mega-footer">
+<span class="scissors icon-scissors-1"></span>
+<div class="grid_16 alpha omega pt4 pb2" id="mega-footer-links">
+<div class="grid_4 link-group">
+<h5 class="white">About us</h5>
+<ul class="list">
+<li><a href="/year/2013/?ref=footer">2013 highlights</a></li>
+<li><a href="/year/2012?ref=footer">2012 highlights</a></li>
+<li><a href="/team?ref=footer">Who we are</a></li>
+<li><a href="/jobs?ref=footer">Jobs</a></li>
+<li><a href="/press?ref=footer">Press</a></li>
+<li><a href="/help/stats?ref=footer">Stats</a></li>
+<li><a href="/newsletters/weekly">Projects we love</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group">
+<h5><a href="/help?ref=footer" class="white">Help</a></h5>
+<ul class="list">
+<li><a href="/hello?ref=footer">What is Kickstarter?</a></li>
+<li><a href="/help?ref=footer">FAQ</a></li>
+<li><a href="/contact?ref=footer">Support</a></li>
+<li><a href="/help/school?ref=footer">Kickstarter School</a></li>
+<li><a href="/terms-of-use?ref=footer">Terms of Use</a></li>
+<li><a href="/privacy?ref=footer">Privacy Policy</a></li>
+</ul>
+</div>
+<div class="grid_4 link-group alpha omega suffix_1">
+<h5 class="alpha"><a href="/discover/advanced?ref=footer" class="white">Discover</a></h5>
+<ul class="column column-0 grid_2 list">
+<li><a href="/discover/categories/art?ref=footer">Art</a></li>
+<li><a href="/discover/categories/comics?ref=footer">Comics</a></li>
+<li><a href="/discover/categories/dance?ref=footer">Dance</a></li>
+<li><a href="/discover/categories/design?ref=footer">Design</a></li>
+<li><a href="/discover/categories/fashion?ref=footer">Fashion</a></li>
+<li><a href="/discover/categories/film%20&amp;%20video?ref=footer">Film &amp; Video</a></li>
+<li><a href="/discover/categories/food?ref=footer">Food</a></li>
+</ul>
+<ul class="column column-1 grid_2 list">
+<li><a href="/discover/categories/games?ref=footer">Games</a></li>
+<li><a href="/discover/categories/music?ref=footer">Music</a></li>
+<li><a href="/discover/categories/photography?ref=footer">Photography</a></li>
+<li><a href="/discover/categories/publishing?ref=footer">Publishing</a></li>
+<li><a href="/discover/categories/technology?ref=footer">Technology</a></li>
+<li><a href="/discover/categories/theater?ref=footer">Theater</a></li>
+</ul>
+</div>
+<div class="grid_3 link-group">
+<h5 class="white">Hello</h5>
+<ul class="list">
+<li>
+<a href="https://twitter.com/kickstarter"><span class="ss-icon ss-social-regular ss-twitter"></span>
+Twitter
+</a></li>
+<li>
+<a href="https://www.facebook.com/Kickstarter"><span class="ss-icon ss-social-regular ss-facebook"></span>
+Facebook
+</a></li>
+<li>
+<a href="http://kickstarter.tumblr.com"><span class="ss-icon ss-social-regular ss-tumblr"></span>
+Tumblr
+</a></li>
+<li>
+<a href="http://instagram.com/kickstarter"><span class="ss-icon ss-social-regular ss-instagram"></span>
+Instagram
+</a></li>
+<li>
+<a href="https://vine.co/Kickstarter"><span class="ss-icon ss-social-regular ss-vine"></span>
+Vine
+</a></li>
+<li>
+<a href="/blog?ref=footer">Blog</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="grid_16 py4" id="mega-footer-bottom">
+<div class="logo left">
+<a href="/" class="grey-dark"><span class="ss-icon h3">KICKSTARTER</span>
+</a></div>
+<p class="right h5 grey-dark">
+&copy;
+2014
+Kickstarter, Inc.
+</p>
+</div>
+</div>
+</div>
+
+<script>
+  //<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    var analytics_vars = { google_analytics_id : "UA-7621056-1", logged_in : "false", social_user: "false" }
+  //]]>
+</script>
+
+
+<script>
+  //<![CDATA[
+    window.mixpanel_id = '75b1d24a516ecfc955eadfadc4910661';
+    window.mixpanel_debug = false;
+  //]]>
+</script>
+
+
+<noscript>
+<img alt="Quantcast" border="0" height="1" src="//secure.quantserve.com/pixel/p-34IbSpw2K94Sg.gif" style="display:none" width="1" />
+</noscript>
+
+
+<script>
+  //<![CDATA[
+    window.benchmark = (typeof window.performance == 'object' && typeof window.performance.mark == 'function');
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    (function (root) {
+      function instrument_function (original) {
+        return function () {
+          try {
+            return original.apply(this, arguments);
+          } catch (e) {
+            if (e.stack && root.Honeybadger) {
+              Honeybadger.notify(e, {
+                current_project : root.current_project,
+                current_user : root.current_user
+              });
+            }
+            throw(e);
+          }
+        };
+      }
+      root.instrument_function = instrument_function;
+    }(this));
+  //]]>
+</script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+
+<script>
+  //<![CDATA[
+    (function(){function c(a){this.local_start_time=new Date;this.settings={cookie_name:"request_time"};for(var b in a)this.settings[b]=a[b];this.get_remote_offset()}c.prototype.get_remote_offset=function(){this.cookie_value=this.read_cookie();var a=new Date(this.cookie_value);if(!this.cookie_value||"Invalid Date"===a.toString()){if(this.remote_offset=this.read_cookie("local_offset"))this.remote_offset=parseInt(this.remote_offset,10)}else this.remote_offset=a-this.local_start_time;"undefined"!==typeof this.remote_offset&& !isNaN(this.remote_offset)?(document.cookie="local_offset="+this.remote_offset+"; path=/",this.is_set=!0):this.is_set=!1};c.prototype.time_units=[["milliseconds",1],["seconds",1E3],["minutes",6E4],["hours",36E5],["days",864E5]];c.prototype.get_units_in_interval=function(a,b){var d=a.replace(/^\w/,function(d){return"get"+d.toUpperCase()});return b[d]()};c.prototype.milliseconds_in_day=function(a){"undefined"===typeof a&&(a=new Date);for(var b=0,d=this.time_units.length-2;0<=d;d--)b+=this.get_units_in_interval(this.time_units[d][0], a)*this.time_units[d][1];return b};c.prototype.milliseconds_in_interval=function(a,b){return this.milliseconds_in_day(b)%a};c.prototype.milliseconds_to_next_interval=function(a,b){return a-this.milliseconds_in_interval(a,b)};c.prototype.pluralize=function(a,b){1===b&&(a=a.replace(/s$/,""));return a};c.prototype.read_cookie=function(a){for(var b=window.document.cookie.split(";"),a=(a||this.settings.cookie_name)+"=",d=0;d<b.length;d++){for(var e=b[d];" "==e.charAt(0);)e=e.substring(1,e.length);if(0== e.indexOf(a))return b=e.substring(a.length,e.length),decodeURIComponent(b).replace(/\+/g," ")}return null};c.prototype.destroy_cookie=function(a){var b=new Date;a||(a=this.settings.cookie_name);b.setTime(b.getTime()-864E5);window.document.cookie=a+"=; expires="+b.toGMTString()+"; path=/"};c.prototype.get_remote_time=function(){var a=new Date,b=a.getTime()+this.remote_offset;return a=a.setTime(b)};window.ksr_page_clock=new c})(); (function(){function c(d,a,b){if(d){this.options={unit_base:{seconds:119,minutes:119,hours:72,days:0},end_phrase:d.getAttribute("data-word")||"to go",count_down:d.getAttribute("data-dynamic")||!1};for(k in b)this.options[k]=b[k];this.clock=a;this.time_units=this.clock.time_units.slice(1);this.element=d;this.clock.is_set&&this.attach()}}function a(){this.elements=[];this.attach()}var b=function(d,a){var b=a||window.document.body,c=d.split("."),g=c[c.length-1],c=1<c.length&&c[0]?c[0]:"*";if(window.document.getElementsByClassName)return b.getElementsByClassName(g); if(b.querySelectorAll)return b.querySelectorAll(d);for(var c=b.getElementsByTagName(c),h=[],i=0,f;f=c[i];i++)b=RegExp("(^|\\s)"+g+"(\\s|$)"),(""+f.className).match(b)&&h.push(f);return h};c.prototype.get_remaining_time=function(){var d=this.remote_end_time-this.clock.get_remote_time();0>d&&(d=0);return d};c.prototype.get_current_unit=function(){for(var d,a=0;a<this.time_units.length&&!(d=this.time_units[a],this.get_remaining_time()<=this.options.unit_base[d[0]]*d[1]);a++);return d};c.prototype.update_element= function(){var a=this.get_current_unit(),b=Math.floor(this.get_remaining_time()/a[1]);isNaN(b)||(this.number_element.innerHTML=b,this.text_element.innerHTML=this.clock.pluralize(a[0],b)+" "+this.options.end_phrase)};c.prototype.valid=function(){return!(!this.number_element||!this.text_element)};c.prototype.attach=function(){function a(){c.update_element();if(c.options.count_down&&0<c.get_remaining_time()){var b=c.get_current_unit();this.timeout=window.setTimeout(a,c.clock.milliseconds_to_next_interval(b[1]))}} var c=this;if(this.remote_end_time_string=this.element.getAttribute("data-end_time"))this.remote_end_time_string.match(/^\d+$/)?(this.remote_end_time=new Date,this.remote_end_time.setTime(this.remote_end_time_string)):this.remote_end_time=new Date(this.remote_end_time_string),this.number_element=b(".num",this.element)[0],this.text_element=b(".text",this.element)[0],this.element.ksr_page_timer=!0,this.valid()&&a()};c.prototype.cancel=function(){this.timeout&&clearTimeout(this.timeout)};a.prototype.loading= !0;a.prototype.stop_finding=function(){this.attach_timers();this.loading=!1;document.addEventListener?document.removeEventListener("DOMContentLoaded",this.stop_finding,!1):document.attachEvent&&"complete"===document.readyState&&document.detachEvent("onreadystatechange",this.stop_finding)};a.prototype.bind_ready=function(){var a=this,b=function(){a.stop_finding.call(a)};document.addEventListener?(document.addEventListener("DOMContentLoaded",b,!1),window.addEventListener("load",b,!1)):document.attachEvent&& (document.attachEvent("onreadystatechange",b),window.attachEvent("onload",b))};a.prototype.attach_timers=function(){for(var a=b("div.ksr_page_timer"),e=0;e<a.length;e++)a[e].ksr_page_timer||(new c(a[e],window.ksr_page_clock),this.elements.push(a[e]))};a.prototype.attach=function(){var a=this;this.bind_ready();(function(){a.attach_timers();a.loading&&window.setTimeout(function(){a.attach_timers()},200)})()};window.ProjectTimer=c;new a})();
+  //]]>
+</script>
+
+<script class="template" id="template-widgets__video_embed_code" type="text/x-tmpl-mustache"><iframe width="{{width}}" height="{{height}}" src="{{{path}}}" frameborder="0" scrolling="no"> </iframe>
+</script><script class="template" id="template-projects__baseball_card_tall" type="text/x-tmpl-mustache"><div class="project-card-wrap project-card-wrap-tall border bg-white rounded clip">
+  <div class="project-card relative project-live {{#successful?}}successful{{/successful?}}">
+    <div class="project-thumbnail pt1 pl1 pr1">
+      <a href="{{urls.web.project}}" target="">
+        <img alt="Photo-little" class="projectphoto-little" src="{{photo.little}}" class="fit">
+      </a>
+    </div>
+    <div class="project-card-interior p1 h6 grey-dark">
+      <h6 class="project-title">
+        <a href="{{urls.web.project}}" target="" class="green-dark">{{name}}</a>
+      </h6>
+      <p class="mb1 ellipsis">
+        by
+        {{creator.name}}
+      </p>
+      <p class="blurb">
+        {{blurb}}
+      </p>
+    </div>
+    <div class="absolute-bottom bg-white rounded-bottom">
+
+      {{#location}}
+        <ul class="p1 list project-meta no-margin h6">
+          <li class="ellipsis">
+            <a href="{{location.urls.web.discover}}" data-location="{{location_json}}" class="grey-dark">
+              <span class="ss-icon ss-location"></span>
+              <span class="location-name">{{location.displayable_name}}</span>
+            </a>
+          </li>
+        </ul>
+      {{/location}}
+
+      <div class="project-stats-wrap pb1 pl1 pr1">
+
+        {{#failed?}}
+          <div class='project-status project-failed h6'>
+            <strong> Funding Unsuccessful</strong><br />
+            <span class="grey-dark">Project ended on {{formatted_deadline}}</span>
+          </div>
+        {{/failed?}}
+
+        {{#canceled?}}
+          <div class='project-status project-canceled h6'>
+            <strong> Funding Canceled</strong><br />
+            <span class="grey-dark">Project canceled on {{formatted_state_changed_at}}</span>
+          </div>
+        {{/canceled?}}
+
+        {{#successful?}}
+          <div class='project-pledged-successful bg-green white h6 pl1 pr1 mb1'>
+            <strong>Successful!</strong>
+          </div>
+        {{/successful?}}
+
+        {{#live_or_successful?}}
+          {{#live?}}
+            <div class="project-pledged-wrap bg-grey clip mb1">
+              <div class="project-pledged bg-green full-height" style="width: {{percent_raised_to_100}}%"></div>
+            </div>
+          {{/live?}}
+          <ul class="project-stats list no-margin h6 no-wrap">
+            <li class="first funded inline-block mr1">
+              <strong class="block h6">{{percent_raised_rounded}}%</strong>
+              <span class="grey-dark">funded</span>
+            </li>
+            <li class="pledged inline-block mr1">
+              <strong class="block h6">{{currency_symbol}}{{formatted_money}}</strong>
+              <span class="grey-dark">pledged</span>
+            </li>
+            {{#successful?}}
+              <li class="last successful inline-block">
+                <strong class="block h6">Funded</strong>
+                <div class="deadline grey-dark">{{formatted_deadline}}</div>
+              </li>
+            {{/successful?}}
+            {{#live?}}
+              <li class="last ksr_page_timer inline-block" data-end_time="{{javascript_deadline}}">
+                <strong class="block h6">
+                  <div class="num">30</div>
+                </strong>
+                <div class="span text grey-dark" data-word="left">days to go</div>
+              </li>
+            {{/live?}}
+          </ul>
+        {{/live_or_successful?}}
+      </div>
+    </div>
+  </div>
+</div>
+
+{{#friends_backing?}}
+  <div class="friend_project_context">
+    <div class="friend_facepile">
+      {{#truncated_friends}}
+        <img src="{{avatar.thumb}}" class="{{#has_metadata?}}small{{/has_metadata?}}">
+      {{/truncated_friends}}
+    </div>
+    <p class="friend_namepile">
+      {{{escaped_sentence}}}
+    </p>
+  </div>
+{{/friends_backing?}}
+</script><script class="template" id="template-projects__video_mode" type="text/x-tmpl-mustache"><a href='#' id='video_mode_close' class='close_button z2'><span class='ss-icon ss-delete'></span></a>
+
+<div class='title_card z1 {{context_classes}}' style="display:none;">
+  <div class='interior'>
+    <h2 class='project_title normal_weight'>{{name}}</h2>
+    <p class='blurb'>{{blurb}}</p>
+    <nav class='bar'>
+      <a id='play_button' class='left play' href='#'>
+        <span class='play_active'>
+          <span class='ss-icon ss-play'></span>
+          Play
+        </span>
+        <span class='pause_active'>
+          <span class='ss-icon ss-pause'></span>
+          Pause
+        </span>
+      </a>
+      {{#logged_in}}
+        <div class='remind right'>
+          {{#if_not_starred}}
+            <a class='follow' href='{{urls.web.project}}/watch'><span class='ss-icon ss-star'></span></a>
+          {{/if_not_starred}}
+          {{#if_starred}}
+            <a class='unfollow' href='{{urls.web.project}}/unwatch'><span class='ss-icon ss-star active'></span></a>
+          {{/if_starred}}
+        </div>
+      {{/logged_in}}
+      <a class='right explore button button_green small' href='#'>Explore this project</a>
+    </nav>
+  </div>
+</div>
+
+<div class='channel_controls z1'>
+  <a href='#' class='{{#playlist_is_location}}selected {{/playlist_is_location}}location'>Something else near {{location.first_name}} <span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_featured}}selected {{/playlist_is_featured}}featured'>Something different<span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_category}}selected {{/playlist_is_category}}category'>Something else in {{category.name}} <span class='ss-icon ss-navigateright'></span></a>
+</div>
+
+<div class='project_video' style='background-image: url('{{photo.full}}')'>
+  <div class='cover'>
+    <video>
+      <source src='{{video.high}}' type='video/mp4'/>
+      <source src='{{video.webm}}' type='video/webm'/>
+    </video>
+  </div>
+</div>
+</script><script class="template" id="template-site__video_mode_fourohfour" type="text/x-tmpl-mustache"><section class='four_oh_four'>
+  <p class='big_type'>
+    Looks like you've reached the end of the line! <br />Check out <a class="another" href='#'>another channel</a> or <a href='/discover'>browse projects in discover</a>.
+  </p>
+</section>
+</script>
+
+<script id="schwamm_formatting_options" type="text/javascript">
+//<![CDATA[
+(function(){window.formatters = window.formatters || {}; var formatting_options = {"distance_date_intervals":[[5,"just now"],[29,"less than a minute ago"],[89,"1 minute ago"],[2640,"%m minutes ago"],[5340,"about 1 hour ago"],[82800,"about %h hours ago"],[147600,"1 day ago"],[604800,"%d days ago"],[15552000,"on %t"],[0,"on %y"]],"currency_symbol_mappings":{"AFN":"\u060b","ALL":"Lek","ARS":"$","AUD":"$","AWG":"\u0192","AZN":"\u043c\u0430\u043d","BAM":"KM","BBD":"$","BGN":"\u043b\u0432","BMD":"$","BND":"$","BOB":"$b","BRL":"R$","BSD":"$","BWP":"P","BYR":"p.","BZD":"BZ$","CAD":"$","CLP":"$","CNY":"\u00a5","COP":"$","CRC":"\u20a1","CUP":"\u20b1","CZK":"K\u010d","DKK":"kr","DOP":"RD$","EGP":"\u00a3","EUR":"\u20ac","FJD":"$","FKP":"\u00a3","GBP":"\u00a3","GIP":"\u00a3","GTQ":"Q","GYD":"$","HKD":"$","HNL":"L","HRK":"kn","HUF":"Ft","IDR":"Rp","ILS":"\u20aa","IRR":"\ufdfc","ISK":"kr","JMD":"J$","JPY":"\u00a5","KGS":"\u043b\u0432","KHR":"\u17db","KPW":"\u20a9","KRW":"\u20a9","KYD":"$","KZT":"\u043b\u0432","LAK":"\u20ad","LBP":"\u00a3","LKR":"\u20a8","LRD":"$","LTL":"Lt","LVL":"Ls","MKD":"\u0434\u0435\u043d","MNT":"\u20ae","MUR":"\u20a8","MXN":"$","MYR":"RM","MZN":"MT","NAD":"$","NGN":"\u20a6","NIO":"C$","NOK":"kr","NPR":"\u20a8","NZD":"$","OMR":"\ufdfc","PAB":"B/.","PEN":"S/.","PHP":"\u20b1","PKR":"\u20a8","PLN":"z\u0142","PYG":"Gs","QAR":"\ufdfc","RON":"lei","RSD":"\u0414\u0438\u043d.","RUB":"\u0440\u0443\u0431","SAR":"\ufdfc","SBD":"$","SCR":"\u20a8","SEK":"kr","SGD":"$","SHP":"\u00a3","SOS":"S","SRD":"$","SVC":"$","SYP":"\u00a3","THB":"\u0e3f","TRY":"TL","TTD":"TT$","TWD":"NT$","UAH":"\u20b4","USD":"$","UYU":"$U","UZS":"\u043b\u0432","VEF":"Bs","VND":"\u20ab","YER":"\ufdfc","ZAR":"R"},"currency_trailing_code_mappings":{"AUD":true,"CAD":true,"NZD":true,"USD":true},"currency_formats":["money","shorter_money"]}; for (key in formatting_options) {window.formatters[key] = formatting_options[key]};}());
+//]]>
+</script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("begin_base.js_tag");}
+  //]]>
+</script>
+<script src="https://d297h9he240fqh.cloudfront.net/assets/packages/base-45cdab84617ddfb8905b7cddc8500c19.js" type="text/javascript"></script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("end_base.js_tag");}
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    document.domain='kickstarter.com';
+  //]]>
+</script>
+
+<iframe height="0" id="api_xdreceiver" src="https://api.kickstarter.com/xdreceiver/85e6.html" style="display: none;" width="0"></iframe>
+
+
+
+<div id="fb-root"></div>
+<script>
+  //<![CDATA[
+    var channelUrl = window.location.protocol + "//" + window.location.host + "/channel.html",
+      skip_autologin = $('body').is('.skip_autologin');
+    
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId: window.fb_app_id,
+        channelUrl: channelUrl,
+        status: true,    // check login status
+        cookie: true,    // enable cookies to allow the server to access the session
+        xfbml: true,     // parse XFBML
+        logging: false   // turn off logging
+      });
+    
+      FB.getLoginStatus(function (response) {
+        if (response.status === 'connected') {
+          if (read_cookie("logout_from_fb")) {
+            FB.logout();
+            destroy_cookie("logout_from_fb");
+          } else if (!skip_autologin) {
+            $.get("/fb/autologin", {'fbsr': response.authResponse.signedRequest});
+          } else if (false && 0 == response.authResponse.userID) {
+            $.get("/fb/refresh", {'fbsr': response.authResponse.signedRequest});
+          }
+        } else {
+          if (read_cookie("logout_from_fb")) {
+            destroy_cookie("logout_from_fb");
+          }
+        }
+      })
+    
+      $(document).trigger('fb:loaded');
+    };
+    
+    
+    // Load the SDK Asynchronously
+    (function(d){
+      var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+      js = d.createElement('script'); js.id = id; js.async = true;
+      js.src = "//connect.facebook.net/en_US/all.js";
+      d.getElementsByTagName('head')[0].appendChild(js);
+    }(document));
+  //]]>
+</script>
+
+
+</body>
+</html>
