@@ -70,24 +70,27 @@ require(XML)
 require(stringr)
 
 downloadKickstarterProjectPage <- function(pid,url,rootdir) {
-    projectdir = paste0(rawprojectsdir,'/',pid,'/')
+    projectdir <- paste0(rawprojectsdir,'/',pid,'/')
     if (!file.exists(projectdir)) {
-        message(paste("Processing project",pid,"(",url,")."))
+        message(paste("Processing Kickstarter project",pid,"(",url,")."))
         dir.create(projectdir, recursive=TRUE, showWarnings=FALSE)
         htmlfile <- paste0(projectdir,pid,'.html')
         jsonfile <- paste0(projectdir,pid,'.json')
         download.file(url,htmlfile,method="curl")
         html <- htmlTreeParse(htmlfile,useInternalNodes=T)
+        system(paste("gzip",htmlfile))
         script <- xpathSApply(html, "//script[contains(./text(),'window.current_project')]" ,xmlValue)
         matcher <- str_match(script,"window.current_project.*\"(\\{.*\\})\"")
         if (!is.na(matcher[,2])) {
             json <- gsub('&quot;','"',matcher[,2])
             json <- gsub('\\\\\"','\\"',json)
-            cat(prettify(toJSON(fromJSON(json))),file = jsonfile)        
+            cat(prettify(toJSON(fromJSON(json))),file = jsonfile)
+            system(paste("gzip",jsonfile))
         }
     }
     else {
-        message(paste("Skipping project",pid,"(",url,"), because raw files already exist."))
+        message(paste("Skipping Kickstarter project",pid,"(",url,"), because raw files already exist."))
+        unlink(projectdir, recursive=T)
     }
 }
 
@@ -104,7 +107,43 @@ for(pagefile in pagefiles) {
 ```
 
 #### Data collection from Indiegogo
-Indiegogo details go here
+Indiegogo does provide one REST service which allows to retrieve a project JSON file knowing the project id. However, there is no service that gives project ids per category, and we have to loop over all indiegogo projects and retrieve all of them.
+
+Another problem is that the project category is being interpreted more freely than on Kickstarter - gaming category includes computer games, board games, even requests for support to buy new hardware. A classification based on project description is required to filter out projects that are not related to computer games.
+
+```{r}
+
+downloadIndiegogoProjectPage <- function(pid,rootdir) {
+    projectdir <- paste0(rootdir,'/',pid)
+    url <- paste0("https://www.indiegogo.com/projects",'/',pid,'/')
+    if (!file.exists(projectdir)) {
+        message(paste("Processing Indiegogo project",pid,"(",url,")."))
+        dir.create(projectdir, recursive=TRUE, showWarnings=FALSE)
+        jsonfile <- paste0(projectdir,'/',pid,".json")
+        download.file(url, jsonfile,
+            method = "curl", extra = c("--header","accept:application/json"))
+        if (file.info(jsonfile)$size > 5) {
+        system(paste("gzip",jsonfile))
+        htmlfile <- paste0(projectdir,'/',pid,".html")
+        download.file(paste0(url,"widget"),htmlfile,
+            method = "curl", extra = c("--header","accept:text/html"))
+        system(paste("gzip",htmlfile))
+        }
+        else {
+            message(paste("Skipping Indiegogo project",pid," because of empty JSON file. Probably project is a draft that never got published."))
+            unlink(projectdir, recursive=T)
+        }
+    }
+    else {
+        message(paste("Skipping Indiegogo project",pid,"(",url,"), because raw files already exist."))        
+    }
+}
+
+rawdir_indiegogo <- "./raw/indiegogo/projects/20001-30000"
+pids <- c(20001:30000)
+mapply(downloadIndiegogoProjectPage,
+       pids,MoreArgs = list(rootdir = rawdir_indiegogo))
+```
 
 ### Clean the data
 In this chapter we are going to process every project JSON file and build one data table file with all the variables we can extract from that file.
@@ -140,6 +179,14 @@ cleanAndProcessProject <- function(projectdir) {
     if (is.null(reward_backers_count)) {
         reward_backers_count <- rep(NA,length(reward_value))
     }
+    reward_shipping_applicable <- json$rewards$shipping_applicable
+    if (is.null(reward_shipping_applicable)) {
+        reward_shipping_applicable <- rep(NA,length(reward_value))
+    }
+    reward_backers_limit <- json$rewards$limit
+    if (is.null(reward_backers_limit)) {
+        reward_backers_limit <- rep(NA,length(reward_value))
+    }
     data.table(pid=json$id, name=json$name, blurb=json$blurb, goal=json$goal, 
                       pledged=json$pledged, state=json$state, country=json$country, currency=json$currency,
                       deadline=structure(json$deadline,class=c('POSIXct')),
@@ -156,7 +203,9 @@ cleanAndProcessProject <- function(projectdir) {
                       updates_count=json$updates_count,
                       reward_value=reward_value,
                       reward_desc=json$rewards$reward,
-                      reward_backers_count=reward_backers_count)
+                      reward_shipping_applicable=reward_shipping_applicable,
+                      reward_backers_count=reward_backers_count,
+                      reward_backers_limit=reward_backers_limit)
 }
 
 rawprojectsdir <- "./raw/kickstarter/projects"
@@ -166,6 +215,8 @@ message(paste("Processing ",length(projectsubdirs)," JSON project files."))
 dt <- data.table()
 dt <- rbindlist(mapply(cleanAndProcessProject,projectsubdirs,SIMPLIFY=F))
 write.csv(dt,file = paste0(cleandir,'/',"kickstarter_clean_withRewards.csv"))
+udt <- unique(dt[,1:19,with=F],by=c(1))
+write.csv(udt,file = paste0(cleandir,'/',"kickstarter_clean_noRewards.csv"))
 ```
 
 ### Exploratory data analysis
